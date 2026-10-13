@@ -28,6 +28,13 @@ echo "uso: $DEV"
 [ "$DEV" = "CPU" ] && { echo "NESSUNA GPU FUNZIONANTE: mi fermo. Manda lo screenshot."; exit 1; }
 
 MODE=${1:-test}
+if [ "$MODE" = "preview" ]; then
+  step "4/5 ANTEPRIMA: 1 fotogramma ogni 2 secondi, risoluzione ridotta"
+  rm -rf out/prev
+  $PY build_render.py -- data out/prev --frames 1 7839 --step 48 --res 960 540 --samples 8 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  ffmpeg -loglevel error -y -framerate 4 -pattern_type glob -i 'out/prev/*.png' -c:v libx264 -crf 20 -pix_fmt yuv420p out/preview.mp4
+  ls -lh out/preview.mp4; step "FINITO"; echo "Scarica city3d/out/preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
+fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
   $PY build_render.py -- data out/full --frames 1 7839 --res 1920 1080 --samples 16 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
