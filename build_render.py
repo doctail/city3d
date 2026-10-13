@@ -71,33 +71,63 @@ def city_mat():
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = 0.35; L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
+def land_mat():
+    m = bpy.data.materials.new('land'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+    b.inputs['Roughness'].default_value = 0.95
+    yv = N.new('ShaderNodeValue'); LAND_YEAR.append(yv)
+    at = N.new('ShaderNodeAttribute'); at.attribute_name = 'uy'; at.attribute_type = 'GEOMETRY'
+    d = N.new('ShaderNodeMath'); d.operation = 'SUBTRACT'; L(yv.outputs[0], d.inputs[0]); L(at.outputs['Fac'], d.inputs[1])
+    k = N.new('ShaderNodeMapRange'); L(d.outputs[0], k.inputs['Value']); k.inputs['From Min'].default_value = -5; k.inputs['From Max'].default_value = 5
+    nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.004; nz.inputs['Detail'].default_value = 3
+    tc = N.new('ShaderNodeTexCoord'); L(tc.outputs['Object'], nz.inputs['Vector'])
+    fields = N.new('ShaderNodeValToRGB'); L(nz.outputs['Fac'], fields.inputs[0])
+    fields.color_ramp.elements[0].color = (*srgb('#55703a'), 1); fields.color_ramp.elements[1].color = (*srgb('#8a8a4e'), 1)
+    mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
+    L(mx.outputs[2], b.inputs['Base Color'])
+    return hazeify(m)
+LAND_YEAR = []
 def obj(name, bm, m):
     me = bpy.data.meshes.new(name); bm.to_mesh(me); bm.free(); o = bpy.data.objects.new(name, me); sc.collection.objects.link(o); me.materials.append(m); return o
 
 # ---------- edifici ----------
 blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
+hist = json.load(open(f'{DATA}/hist.json')) if os.path.exists(f'{DATA}/hist.json') else []
+for hb in hist: hb['old'] = True
+log('predecessori storici', len(hist)); blds = blds + hist
+OLDROOF = ['#7a4a35', '#6b4a3a', '#8a5a40', '#5e4636', '#94664a']
 rnd = random.Random(3)
 LOW = ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f74', '#d8c7a4', '#a04a38', '#8a5236']
 MID = ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
 GLASS = ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
-bm = bmesh.new(); col = bm.loops.layers.color.new('col'); vyear = []; polys = []
+bm = bmesh.new(); col = bm.loops.layers.color.new('col'); vyear = []; vdie = []; polys = []
 for b in blds:
     ring = [tuple(p) for p in b['r']]
     try: poly = Polygon(ring)
     except Exception: continue
     if not poly.is_valid or poly.area < 6: continue
     if not poly.exterior.is_ccw: ring = ring[::-1]
-    polys.append(poly); h = max(3.0, b['h']); y = b['y']
+    old = b.get('old', False)
+    if not old: polys.append(poly)
+    h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999)
     gl = h > 90 and y > 1955
     pal = GLASS if gl else MID if h > 35 else LOW
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(ROOF)); wa = 0.5 if gl else 1.0
     vb = [bm.verts.new((x, yy, 0)) for x, yy in ring]; vt = [bm.verts.new((x, yy, h)) for x, yy in ring]
-    vyear += [y] * (2 * len(ring))
-    try:
-        f = bm.faces.new(vt)
-        for l in f.loops: l[col] = (*rc, 0.0)
-    except ValueError: pass
+    vyear += [y] * (2 * len(ring)); vdie += [dd] * (2 * len(ring))
+    if old and y < 1840:   # case antiche: tetto a falde (piramide sul centroide)
+        rc2 = srgb(rnd.choice(OLDROOF)); cx, cy = poly.centroid.x, poly.centroid.y
+        ap = bm.verts.new((cx, cy, h + min(6.0, math.sqrt(poly.area) * 0.45))); vyear.append(y); vdie.append(dd)
+        for i in range(len(ring)):
+            try:
+                f = bm.faces.new((vt[i], vt[(i + 1) % len(ring)], ap))
+                for l in f.loops: l[col] = (*rc2, 0.0)
+            except ValueError: pass
+    else:
+        try:
+            f = bm.faces.new(vt)
+            for l in f.loops: l[col] = (*rc, 0.0)
+        except ValueError: pass
     for i in range(len(ring)):
         j = (i + 1) % len(ring)
         try:
@@ -107,6 +137,7 @@ for b in blds:
 city = obj('city', bm, city_mat())
 me = city.data; me.color_attributes.active_color_name = 'col'
 at = me.attributes.new('yb', 'FLOAT', 'POINT'); at.data.foreach_set('value', vyear)
+ad = me.attributes.new('yd', 'FLOAT', 'POINT'); ad.data.foreach_set('value', vdie)
 log('mesh città', len(me.vertices), 'vertici')
 
 # ---------- crescita: Geometry Nodes ----------
@@ -129,11 +160,17 @@ cl = N.new('ShaderNodeClamp'); L(div.outputs[0], cl.inputs['Value'])
 # g + 0.18*sin(pi*g): piccolo rimbalzo sopra l'altezza finale a metà crescita
 mpi = M('MULTIPLY', math.pi); L(cl.outputs[0], mpi.inputs[0]); sn = M('SINE'); L(mpi.outputs[0], sn.inputs[0])
 k = M('MULTIPLY', 0.18); L(sn.outputs[0], k.inputs[0]); g = M('ADD'); L(cl.outputs[0], g.inputs[0]); L(k.outputs[0], g.inputs[1])
+nd = N.new('GeometryNodeInputNamedAttribute'); nd.data_type = 'FLOAT'; nd.inputs['Name'].default_value = 'yd'
+sd = M('SUBTRACT'); L(yr.outputs[0], sd.inputs[0]); L(nd.outputs['Attribute'], sd.inputs[1])
+dv = M('DIVIDE', 3.0); L(sd.outputs[0], dv.inputs[0]); dc = N.new('ShaderNodeClamp'); L(dv.outputs[0], dc.inputs['Value'])
+keep = M('SUBTRACT'); keep.inputs[0].default_value = 1.0; L(dc.outputs[0], keep.inputs[1])
+g2 = M('MULTIPLY'); L(g.outputs[0], g2.inputs[0]); L(keep.outputs[0], g2.inputs[1]); g = g2
+alive = M('MULTIPLY'); L(cl.outputs[0], alive.inputs[0]); L(keep.outputs[0], alive.inputs[1])
 pos = N.new('GeometryNodeInputPosition'); sep = N.new('ShaderNodeSeparateXYZ'); L(pos.outputs[0], sep.inputs[0])
 mz = M('MULTIPLY'); L(sep.outputs['Z'], mz.inputs[0]); L(g.outputs[0], mz.inputs[1])
 cmb = N.new('ShaderNodeCombineXYZ'); L(sep.outputs['X'], cmb.inputs['X']); L(sep.outputs['Y'], cmb.inputs['Y']); L(mz.outputs[0], cmb.inputs['Z'])
 sp = N.new('GeometryNodeSetPosition'); L(gi.outputs[0], sp.inputs['Geometry']); L(cmb.outputs[0], sp.inputs['Position'])
-lt = M('LESS_THAN', 0.002); L(cl.outputs[0], lt.inputs[0])
+lt = M('LESS_THAN', 0.002); L(alive.outputs[0], lt.inputs[0])
 dg = N.new('GeometryNodeDeleteGeometry'); dg.domain = 'POINT'; L(sp.outputs[0], dg.inputs['Geometry']); L(lt.outputs[0], dg.inputs['Selection'])
 L(dg.outputs[0], go.inputs[0])
 mod = city.modifiers.new('grow', 'NODES'); mod.node_group = ng
@@ -141,25 +178,42 @@ mod = city.modifiers.new('grow', 'NODES'); mod.node_group = ng
 # anno per fotogramma: lento all'inizio, veloce nel Novecento (curva morbida)
 def year_at(f):
     t = (f - F0) / max(1, F1 - F0); return Y0 + (Y1 - Y0) * (t ** 0.8)
-for f in range(F0, F1 + 1, 4):
-    yr.outputs[0].default_value = year_at(f); yr.outputs[0].keyframe_insert('default_value', frame=f)
-yr.outputs[0].default_value = year_at(F1); yr.outputs[0].keyframe_insert('default_value', frame=F1)
+YEAR_NODES = [yr]
+def key_years():
+    for nd_ in YEAR_NODES:
+        if nd_.outputs[0].is_property_set('default_value') and getattr(nd_, '_keyed', False): continue
+        for f in list(range(F0, F1 + 1, 4)) + [F1]:
+            nd_.outputs[0].default_value = year_at(f); nd_.outputs[0].keyframe_insert('default_value', frame=f)
+key_years()
 json.dump({str(f): year_at(f) for f in range(F0, F1 + 1)}, open(f'{OUT}/years.json', 'w'))
 
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
-bm = bmesh.new()
-if land:
-    for ring in land:
-        try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in ring])
-        except ValueError: pass
-else:
-    u = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
-    for gg in (u.geoms if hasattr(u, 'geoms') else [u]):
-        try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(gg.exterior.coords)[:-1]])
-        except ValueError: pass
-bmesh.ops.triangulate(bm, faces=bm.faces)
-obj('land', bm, mat('land', srgb('#3e3d3c'), 0.95))   # asfalto: le strade restano scure
+if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3])
+else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from hist_nyc import urban_year
+except Exception: urban_year = None
+from shapely.prepared import prep
+# terra a celle di 120 m: ogni cella sa da che anno e' citta' (prima e' campagna verde, poi asfalto)
+CELL = 120.0; pl = prep(lgeom); x0, y0, x1, y1 = lgeom.bounds; bm = bmesh.new(); uyl = []
+from shapely.geometry import box as sbox
+yy = y0
+while yy < y1:
+    xx = x0
+    while xx < x1:
+        c = sbox(xx, yy, xx + CELL, yy + CELL)
+        if pl.intersects(c):
+            q = c if pl.contains(c) else lgeom.intersection(c)
+            uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0
+            for g_ in (q.geoms if hasattr(q, 'geoms') else [q]):
+                if isinstance(g_, Polygon) and g_.area > 1:
+                    try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(g_.exterior.coords)[:-1]]); uyl.append(uy)
+                    except ValueError: pass
+        xx += CELL
+    yy += CELL
+lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
 blocks = []
@@ -168,12 +222,28 @@ cells = {}
 for p in polys:
     c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
 for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
-bm = bmesh.new()
+bm = bmesh.new(); byear = []
 for r in blocks:
-    try: bm.faces.new([bm.verts.new((x, y, 0.12)) for x, y in r])
-    except ValueError: pass
+    by = urban_year(*Polygon(r).centroid.coords[0]) if (urban_year and hist) else 0
+    try:
+        vs = [bm.verts.new((x, y, 0.12)) for x, y in r]; bm.faces.new(vs); byear += [by] * len(vs)
+    except ValueError:
+        for v in vs: bm.verts.remove(v)
 bmesh.ops.triangulate(bm, faces=bm.faces)
 bo = obj('blocks', bm, mat('blocks', srgb('#b4ab9c'), 0.9))
+bo.data.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', byear)
+# isolati non ancora urbanizzati: spostati sotto terra (indici stabili, cosi' gli alberi non saltano)
+hg = bpy.data.node_groups.new('hide', 'GeometryNodeTree')
+hg.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); hg.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
+HN = hg.nodes; HL = hg.links.new; hi = HN.new('NodeGroupInput'); ho = HN.new('NodeGroupOutput')
+hy = HN.new('ShaderNodeValue'); YEAR_NODES.append(hy); YEAR_NODES.extend(LAND_YEAR)
+ha = HN.new('GeometryNodeInputNamedAttribute'); ha.data_type = 'FLOAT'; ha.inputs['Name'].default_value = 'yb'
+hc = HN.new('ShaderNodeMath'); hc.operation = 'LESS_THAN'; HL(hy.outputs[0], hc.inputs[0]); HL(ha.outputs['Attribute'], hc.inputs[1])
+hm = HN.new('ShaderNodeMath'); hm.operation = 'MULTIPLY'; hm.inputs[1].default_value = -1000; HL(hc.outputs[0], hm.inputs[0])
+hx = HN.new('ShaderNodeCombineXYZ'); HL(hm.outputs[0], hx.inputs['Z'])
+hs = HN.new('GeometryNodeSetPosition'); HL(hi.outputs[0], hs.inputs['Geometry']); HL(hx.outputs[0], hs.inputs['Offset']); HL(hs.outputs[0], ho.inputs[0])
+bo.modifiers.new('hide', 'NODES').node_group = hg
+key_years()
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
 parks = json.load(open(f'{DATA}/parks.json')) if os.path.exists(f'{DATA}/parks.json') else []

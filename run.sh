@@ -18,6 +18,7 @@ PY=/workspace/bl/bin/python
 cd /workspace/city3d
 step "3/5 dati New York"
 [ -s data/buildings.json ] || $PY fetch_nyc.py data
+$PY hist_nyc.py data
 
 step "3b/5 prova GPU"
 nvidia-smi --query-gpu=name,driver_version,compute_mode --format=csv,noheader || true
