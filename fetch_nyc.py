@@ -95,10 +95,10 @@ def nj_land_geom():
         z = requests.get(url, headers=H, timeout=300); z.raise_for_status(); zf = zipfile.ZipFile(io.BytesIO(z.content))
         return shapefile.Reader(shp=io.BytesIO(zf.read(base + '.shp')), dbf=io.BytesIO(zf.read(base + '.dbf')))
     rd = shp('https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip', 'cb_2023_us_county_500k')
-    area = box(W - 0.05, S - 0.03, E + 0.05, N + 0.03); land = []; geoids = []
+    area = box(W - 0.40, S - 0.25, E + 0.40, N + 0.25); land = []; geoids = []   # ampio: i bordi spariscono nella foschia
     for sr in rd.iterShapeRecords():
         rec = sr.record.as_dict()
-        if rec.get('STATEFP') != '34': continue
+        if rec.get('STATEFP') not in ('34', '36'): continue
         g = shape(sr.shape.__geo_interface__)
         if g.intersects(area): land.append(g.intersection(area)); geoids.append(rec['GEOID'])
     land = unary_union(land); water = []
@@ -123,9 +123,9 @@ def build_land():
     bor = nyc_boroughs()
     json.dump({k: to_rings(unary_union(v)) for k, v in bor.items()}, open(f'{OUT}/boroughs.json', 'w'))
     parts = [unary_union(v) for v in bor.values()]
-    try: parts.append(nj_land_geom()); log('New Jersey aggiunto')
+    try: parts.append(nj_land_geom()); log('New Jersey e contee vicine aggiunti')
     except Exception as e: log('New Jersey non disponibile:', e)
-    land = to_rings(unary_union(parts)); json.dump(land, open(f'{OUT}/land.json', 'w')); open(f'{OUT}/land_v2.ok', 'w').write('ok')
+    land = to_rings(unary_union(parts)); json.dump(land, open(f'{OUT}/land.json', 'w')); open(f'{OUT}/land_v3.ok', 'w').write('ok')
     log('terra:', len(land), 'poligoni; distretti:', list(bor.keys())); return land
 
 def nyc_parks():

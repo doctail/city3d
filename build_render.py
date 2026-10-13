@@ -208,22 +208,30 @@ try:
 except Exception: urban_year = None
 from shapely.prepared import prep
 # terra a celle di 120 m: ogni cella sa da che anno e' citta' (prima e' campagna verde, poi asfalto)
-CELL = 120.0; pl = prep(lgeom); x0, y0, x1, y1 = lgeom.bounds; bm = bmesh.new(); uyl = []
+BOR = None
+if os.path.exists(f'{DATA}/boroughs.json'):
+    _bj = json.load(open(f'{DATA}/boroughs.json')); BOR = prep(unary_union([Polygon(r).buffer(0) for v in _bj.values() for r in v]).buffer(30))
+pl = prep(lgeom); bm = bmesh.new(); uyl = []
 from shapely.geometry import box as sbox
-yy = y0
-while yy < y1:
-    xx = x0
-    while xx < x1:
-        c = sbox(xx, yy, xx + CELL, yy + CELL)
-        if pl.intersects(c):
-            q = c if pl.contains(c) else lgeom.intersection(c)
-            uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0
-            for g_ in (q.geoms if hasattr(q, 'geoms') else [q]):
-                if isinstance(g_, Polygon) and g_.area > 1:
-                    try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(g_.exterior.coords)[:-1]]); uyl.append(uy)
-                    except ValueError: pass
-        xx += CELL
-    yy += CELL
+core = sbox(-9000, -9500, 9000, 16000)          # zona citta': celle fini; fuori celle grandi (campagna lontana)
+def cells(bounds, CELL, skip_core):
+    x0, y0, x1, y1 = bounds; yy = y0
+    while yy < y1:
+        xx = x0
+        while xx < x1:
+            c = sbox(xx, yy, xx + CELL, yy + CELL)
+            if (not skip_core or not core.contains(c)) and pl.intersects(c):
+                q = c if pl.contains(c) else lgeom.intersection(c)
+                uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0
+                if BOR and not BOR.intersects(c): uy = 9999
+                for g_ in (q.geoms if hasattr(q, 'geoms') else [q]):
+                    if isinstance(g_, Polygon) and g_.area > 1:
+                        try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(g_.exterior.coords)[:-1]]); uyl.append(uy)
+                        except ValueError: pass
+            xx += CELL
+        yy += CELL
+cells(core.bounds, 120.0, False)
+cells(lgeom.bounds, 1500.0, True)
 lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
@@ -312,7 +320,7 @@ SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); s
 w.node_tree.links.new(sky.outputs['Color'], w.node_tree.nodes['Background'].inputs['Color']); w.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.35
 sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 4.4; sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
 so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
-cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, '30')); cam.clip_end = 200000
+cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
 tg = bpy.data.objects.new('target', None); sc.collection.objects.link(tg)
 c = co.constraints.new('TRACK_TO'); c.target = tg; c.track_axis = 'TRACK_NEGATIVE_Z'; c.up_axis = 'UP_Y'

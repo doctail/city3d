@@ -18,7 +18,7 @@ PY=/workspace/bl/bin/python
 cd /workspace/city3d
 step "3/5 dati New York"
 [ -s data/buildings.json ] || $PY fetch_nyc.py data
-[ -f data/land_v2.ok ] || $PY fetch_nyc.py data --land-only
+[ -f data/land_v3.ok ] || $PY fetch_nyc.py data --land-only
 $PY hist_nyc.py data
 
 step "3b/5 prova GPU"
