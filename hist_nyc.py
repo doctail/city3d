@@ -3,10 +3,11 @@
 # Se l'edificio attuale e' molto piu' recente, sullo stesso lotto c'erano case dell'epoca: nascono con il fronte
 # e spariscono quando arriva l'edificio moderno. Uscita: <dir>/hist.json [{"r", "h", "y", "d"}]
 import json, math, random, sys
-from shapely.geometry import Polygon, box
+from shapely.geometry import Polygon, Point, box
 from shapely import affinity
 
 DATA = sys.argv[1] if len(sys.argv) > 1 else 'data'
+os_ = __import__('os'); os_.environ.setdefault('CITY_DATA', DATA)
 LAT0, LON0 = 40.758, -73.985
 KX = math.cos(math.radians(LAT0)) * 111320; KY = 110540
 lat = lambda y: LAT0 + y / KY; lon = lambda x: LON0 + x / KX
@@ -25,9 +26,24 @@ MAN = [(40.7025, 1626), (40.7065, 1660), (40.7105, 1720), (40.7140, 1767), (40.7
 FERRY = (40.7036, -73.9945)
 BK = [(0.0, 1800), (1.0, 1825), (2.0, 1845), (3.5, 1860), (5.0, 1875), (6.5, 1890), (8.0, 1905), (10.0, 1920)]
 
+import os
+_MAN = None
+def _man_poly():
+    global _MAN
+    if _MAN is None:
+        _MAN = False
+        for d in ('data', os.environ.get('CITY_DATA', '')):
+            f = os.path.join(d, 'boroughs.json')
+            if d and os.path.exists(f):
+                from shapely.ops import unary_union
+                from shapely.prepared import prep
+                bj = json.load(open(f)); k = [n for n in bj if n.lower() == 'manhattan']
+                if k: _MAN = prep(unary_union([Polygon(r).buffer(0) for r in bj[k[0]]]).buffer(60))
+    return _MAN
 def urban_year(x, y):
-    la, lo = lat(y), lon(x)
-    manhattan = lo < -73.97 + (la - 40.70) * 0.35 and lo > -74.025 and la > 40.70  # a ovest dell'East River (approssimato)
+    la, lo = lat(y), lon(x); mp = _man_poly()
+    if mp: manhattan = mp.contains(Point(x, y))
+    else: manhattan = lo < -73.975 + (la - 40.70) * 0.6 and lo > -74.025 and la > 40.70   # ripiego approssimato
     wob = 9 * math.sin(x / 170.0) + 7 * math.sin(y / 230.0 + x / 410.0)   # fronte irregolare, non una linea dritta
     if manhattan: return interp(la, MAN) + wob
     d = math.hypot((la - FERRY[0]) * 111.0, (lo - FERRY[1]) * 84.3)
