@@ -23,22 +23,64 @@ def srgb(h):
 bpy.ops.wm.read_factory_settings(use_empty=True); sc = bpy.context.scene
 sc.render.fps = FPS; sc.frame_start = F0; sc.frame_end = F1
 
-def mat(name, col=None, rough=0.9, attr=None):
+def mat(name, col=None, rough=0.9, attr=None, haze=True):
     m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
     b.inputs['Roughness'].default_value = rough
     if attr:
         n = m.node_tree.nodes.new('ShaderNodeAttribute'); n.attribute_name = attr; m.node_tree.links.new(n.outputs['Color'], b.inputs['Base Color'])
     else: b.inputs['Base Color'].default_value = (*col, 1)
+    return hazeify(m) if haze else m
+HAZE = (0.78, 0.76, 0.74); HAZE_K = float(opt('--haze', 1, '13000'))
+def hazeify(m):
+    nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
+    cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
+    L(cd.outputs['View Distance'], e1.inputs[0]); ex = N.new('ShaderNodeMath'); ex.operation = 'EXPONENT'; L(e1.outputs[0], ex.inputs[0])
+    f = N.new('ShaderNodeMath'); f.operation = 'SUBTRACT'; f.inputs[0].default_value = 1.0; L(ex.outputs[0], f.inputs[1])
+    em = N.new('ShaderNodeEmission'); em.inputs['Color'].default_value = (*HAZE, 1); em.inputs['Strength'].default_value = 1.0
+    mx = N.new('ShaderNodeMixShader'); L(f.outputs[0], mx.inputs[0]); L(sh, mx.inputs[1]); L(em.outputs[0], mx.inputs[2]); L(mx.outputs[0], outn.inputs['Surface'])
     return m
+def city_mat():
+    m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+    def M(op, x=None, y=None):
+        n = N.new('ShaderNodeMath'); n.operation = op
+        if x is not None: n.inputs[1].default_value = x
+        return n
+    def mm(op, a, x=None, b_=None):
+        n = M(op, x); L(a, n.inputs[0])
+        if b_ is not None: L(b_, n.inputs[1])
+        return n.outputs[0]
+    ca = N.new('ShaderNodeVertexColor'); ca.layer_name = 'col'
+    geo = N.new('ShaderNodeNewGeometry'); sp = N.new('ShaderNodeSeparateXYZ'); L(geo.outputs['Position'], sp.inputs[0])
+    sn = N.new('ShaderNodeSeparateXYZ'); L(geo.outputs['Normal'], sn.inputs[0])
+    anx = mm('ABSOLUTE', sn.outputs['X']); any_ = mm('ABSOLUTE', sn.outputs['Y']); anz = mm('ABSOLUTE', sn.outputs['Z'])
+    wall = mm('LESS_THAN', anz, 0.5)
+    u = mm('ADD', mm('MULTIPLY', sp.outputs['X'], None, any_), None, mm('MULTIPLY', sp.outputs['Y'], None, anx))
+    fu = mm('FRACT', mm('DIVIDE', u, 3.1)); fz = mm('FRACT', mm('DIVIDE', sp.outputs['Z'], 3.6))
+    mu = mm('MULTIPLY', mm('GREATER_THAN', fu, 0.24), None, mm('LESS_THAN', fu, 0.76))
+    mz = mm('MULTIPLY', mm('GREATER_THAN', fz, 0.30), None, mm('LESS_THAN', fz, 0.80))
+    up = mm('GREATER_THAN', sp.outputs['Z'], 3.2)
+    win = mm('MULTIPLY', mm('MULTIPLY', mu, None, mz), None, mm('MULTIPLY', wall, None, up))
+    al = ca.outputs['Alpha']; glass = mm('MULTIPLY', mm('GREATER_THAN', al, 0.25), None, mm('LESS_THAN', al, 0.75))
+    band = mm('MULTIPLY', mm('LESS_THAN', fz, 0.18), None, wall)  # marcapiano sui grattacieli
+    one_minus_g = M('SUBTRACT'); one_minus_g.inputs[0].default_value = 1.0; L(glass, one_minus_g.inputs[1])
+    wmask = mm('MULTIPLY', win, None, one_minus_g.outputs[0])
+    c1 = N.new('ShaderNodeMix'); c1.data_type = 'RGBA'; L(wmask, c1.inputs['Factor']); L(ca.outputs['Color'], c1.inputs[6]); c1.inputs[7].default_value = (0.07, 0.08, 0.10, 1)
+    c2 = N.new('ShaderNodeMix'); c2.data_type = 'RGBA'; L(mm('MULTIPLY', band, None, glass), c2.inputs['Factor']); L(c1.outputs[2], c2.inputs[6]); c2.inputs[7].default_value = (0.55, 0.57, 0.58, 1)
+    L(c2.outputs[2], b.inputs['Base Color'])
+    rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = 0.12
+    L(rg.outputs[0], b.inputs['Roughness'])
+    mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = 0.35; L(mt.outputs[0], b.inputs['Metallic'])
+    return hazeify(m)
 def obj(name, bm, m):
     me = bpy.data.meshes.new(name); bm.to_mesh(me); bm.free(); o = bpy.data.objects.new(name, me); sc.collection.objects.link(o); me.materials.append(m); return o
 
 # ---------- edifici ----------
 blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
 rnd = random.Random(3)
-LOW = ['#b98d6e', '#a8765a', '#c9b49a', '#d8cdb8', '#9c6b52', '#bfae95', '#cfc3ad', '#a36a50']
-MID = ['#c8c2b6', '#b5ada0', '#d6d0c4', '#a59d90', '#bdb2a0', '#9e9486']
-GLASS = ['#7f97a8', '#6f8798', '#93a7b5', '#8a9aa4', '#a3b0b8', '#5f7686']
+LOW = ['#8b4a3a', '#7a4b3a', '#9c5a45', '#6e4a3c', '#a8664c', '#b07a5a', '#c9b59a', '#8f5f4a', '#bfa88a']
+MID = ['#c4b49a', '#b9a88e', '#a8765a', '#9a8f84', '#cfc3ad', '#b3a690', '#8c7a6a']
+GLASS = ['#6f8796', '#5f7686', '#7d93a3', '#56697a', '#8aa0ae', '#4e6070']
+ROOF = ['#5b5a57', '#6e6b66', '#4a4846', '#7a776f', '#63605a', '#858178']
 bm = bmesh.new(); col = bm.loops.layers.color.new('col'); vyear = []; polys = []
 for b in blds:
     ring = [tuple(p) for p in b['r']]
@@ -47,21 +89,22 @@ for b in blds:
     if not poly.is_valid or poly.area < 6: continue
     if not poly.exterior.is_ccw: ring = ring[::-1]
     polys.append(poly); h = max(3.0, b['h']); y = b['y']
-    pal = GLASS if (h > 110 and y > 1950) else MID if h > 40 else LOW
-    wc = srgb(rnd.choice(pal)); rc = tuple(v * 0.78 for v in wc)
+    gl = h > 90 and y > 1955
+    pal = GLASS if gl else MID if h > 35 else LOW
+    wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(ROOF)); wa = 0.5 if gl else 1.0
     vb = [bm.verts.new((x, yy, 0)) for x, yy in ring]; vt = [bm.verts.new((x, yy, h)) for x, yy in ring]
     vyear += [y] * (2 * len(ring))
     try:
         f = bm.faces.new(vt)
-        for l in f.loops: l[col] = (*rc, 1)
+        for l in f.loops: l[col] = (*rc, 0.0)
     except ValueError: pass
     for i in range(len(ring)):
         j = (i + 1) % len(ring)
         try:
             f = bm.faces.new((vb[i], vb[j], vt[j], vt[i]))
-            for l in f.loops: l[col] = (*wc, 1)
+            for l in f.loops: l[col] = (*wc, wa)
         except ValueError: pass
-city = obj('city', bm, mat('city', rough=0.55, attr='col'))
+city = obj('city', bm, city_mat())
 me = city.data; me.color_attributes.active_color_name = 'col'
 at = me.attributes.new('yb', 'FLOAT', 'POINT'); at.data.foreach_set('value', vyear)
 log('mesh città', len(me.vertices), 'vertici')
@@ -116,10 +159,56 @@ else:
         try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(gg.exterior.coords)[:-1]])
         except ValueError: pass
 bmesh.ops.triangulate(bm, faces=bm.faces)
-obj('land', bm, mat('land', srgb('#8e8a80'), 0.95))
-bm = bmesh.new(); s = 120000
+obj('land', bm, mat('land', srgb('#4f4d4a'), 0.95))   # asfalto: le strade restano scure
+# isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
+def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
+blocks = []
+CH = 600
+cells = {}
+for p in polys:
+    c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
+for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
+bm = bmesh.new()
+for r in blocks:
+    try: bm.faces.new([bm.verts.new((x, y, 0.12)) for x, y in r])
+    except ValueError: pass
+bmesh.ops.triangulate(bm, faces=bm.faces)
+obj('blocks', bm, mat('blocks', srgb('#9b958a'), 0.9))
+log('isolati', len(blocks))
+# parchi con alberi (data/parks.json opzionale: lista di anelli)
+parks = json.load(open(f'{DATA}/parks.json')) if os.path.exists(f'{DATA}/parks.json') else []
+if parks:
+    bm = bmesh.new()
+    for r in parks:
+        try: bm.faces.new([bm.verts.new((x, y, 0.25)) for x, y in r])
+        except ValueError: pass
+    bmesh.ops.triangulate(bm, faces=bm.faces)
+    po = obj('parks', bm, mat('grass', srgb('#5d7a3a'), 1.0))
+    tm = mat('tree', srgb('#3d5c2a'), 0.9)
+    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
+    tree.scale = (1, 1, 1.2); tree.hide_render = True; tree.hide_viewport = True
+    tg_ = bpy.data.node_groups.new('trees', 'GeometryNodeTree')
+    tg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); tg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
+    TN = tg_.nodes; TL = tg_.links.new; i_ = TN.new('NodeGroupInput'); o_ = TN.new('NodeGroupOutput')
+    dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = 0.012; TL(i_.outputs[0], dp.inputs['Mesh'])
+    oi = TN.new('GeometryNodeObjectInfo'); oi.inputs['Object'].default_value = tree
+    rv = TN.new('FunctionNodeRandomValue'); rv.data_type = 'FLOAT'
+    fl = [x for x in rv.inputs if x.type == 'VALUE' and x.name in ('Min', 'Max')]; fl[0].default_value = 3.5; fl[1].default_value = 6.5
+    rvo = [x for x in rv.outputs if x.type == 'VALUE'][0]
+    ip = TN.new('GeometryNodeInstanceOnPoints'); TL(dp.outputs['Points'], ip.inputs['Points']); TL(oi.outputs['Geometry'], ip.inputs['Instance']); TL(rvo, ip.inputs['Scale'])
+    tr_ = TN.new('GeometryNodeTranslateInstances'); tr_.inputs['Translation'].default_value = (0, 0, 4); TL(ip.outputs[0], tr_.inputs['Instances'])
+    jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0]); TL(jg.outputs[0], o_.inputs[0])
+    po.modifiers.new('trees', 'NODES').node_group = tg_
+    log('parchi', len(parks))
+# acqua: piccole onde in rilievo, riflessi
+bm = bmesh.new(); s = 400000
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
-obj('water', bm, mat('water', srgb('#2c5866'), 0.1))
+wm = mat('water', srgb('#1d4652'), 0.06, haze=False); nt = wm.node_tree
+nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
+bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
+mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
+nt.links.new(bp.outputs['Normal'], nt.nodes['Principled BSDF'].inputs['Normal'])
+obj('water', bm, hazeify(wm))
 log('terra', len(land), 'poligoni')
 
 # ---------- luce, cielo, camera ----------
@@ -127,16 +216,17 @@ w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
 try: sky.sky_type = 'NISHITA'
 except Exception: pass
-sky.sun_elevation = math.radians(24); sky.sun_rotation = math.radians(230)
-w.node_tree.links.new(sky.outputs['Color'], w.node_tree.nodes['Background'].inputs['Color']); w.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.3
-sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 3.0; sun.angle = math.radians(1.2); sun.color = (1, 0.9, 0.78)
-so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(66), 0, math.radians(230))
-cam = bpy.data.cameras.new('cam'); cam.lens = 30; cam.clip_end = 200000
+SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
+w.node_tree.links.new(sky.outputs['Color'], w.node_tree.nodes['Background'].inputs['Color']); w.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.35
+sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 4.4; sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
+so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
+cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
 tg = bpy.data.objects.new('target', None); sc.collection.objects.link(tg)
 c = co.constraints.new('TRACK_TO'); c.target = tg; c.track_axis = 'TRACK_NEGATIVE_Z'; c.up_axis = 'UP_Y'
 # lenta orbita da sud-ovest sopra il porto, puntando sulla parte bassa di Manhattan e poi verso Midtown
 for f, p, t in [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -9600, 2900), (-300, -2600, 0))]:
+    if '--cam' in a: v = list(map(float, opt('--cam', 6))); p, t = v[:3], v[3:]
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
 
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
@@ -147,7 +237,7 @@ if DEV in ('OPTIX', 'CUDA'):
     sc.cycles.device = 'GPU'; log('GPU', DEV, [d.name for d in pr.devices if d.use])
 else: log('CPU')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
-sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.7
+sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
 sc.render.image_settings.file_format = 'PNG'; sc.render.filepath = os.path.join(OUT, '')
 sc.render.use_persistent_data = True
 sc.frame_step = int(opt('--step', 1, '1'))

@@ -87,6 +87,40 @@ def nyc_land():
             if polys: return polys
     raise RuntimeError('confini non trovati')
 
+def nyc_parks():
+    for r in catalog('parks properties'):
+        nm = r['resource']['name'].lower()
+        if 'parks properties' in nm:
+            rid = r['resource']['id']; log('parchi', rid, r['resource']['name'])
+            g = requests.get(f'https://data.cityofnewyork.us/resource/{rid}.geojson', params={'$limit': 20000}, headers=H, timeout=300); g.raise_for_status()
+            area = box(W, S, E, N); out = []
+            for f in g.json()['features']:
+                if not f.get('geometry'): continue
+                for p in rings(f['geometry']):
+                    p = p.intersection(area)
+                    for q in (p.geoms if hasattr(p, 'geoms') else [p]):
+                        if isinstance(q, Polygon) and q.area > 2e-8: out.append([P(*c) for c in list(q.simplify(0.00002).exterior.coords)[:-1]])
+            return out
+    return []
+
+def nj_land():
+    # contee del New Jersey affacciate sull'Hudson (confini Census gia' ritagliati sulla costa)
+    import io, zipfile, shapefile
+    z = requests.get('https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip', headers=H, timeout=300); z.raise_for_status()
+    zf = zipfile.ZipFile(io.BytesIO(z.content)); base = 'cb_2023_us_county_500k'
+    rd = shapefile.Reader(shp=io.BytesIO(zf.read(base + '.shp')), dbf=io.BytesIO(zf.read(base + '.dbf')))
+    area = box(W - 0.05, S - 0.03, E + 0.05, N + 0.03); out = []
+    for sr in rd.iterShapeRecords():
+        rec = sr.record.as_dict()
+        if rec.get('STATEFP') not in ('34', '36'): continue
+        g = shape(sr.shape.__geo_interface__)
+        if not g.intersects(area): continue
+        for p in rings(g.__geo_interface__):
+            p = p.intersection(area)
+            for q in (p.geoms if hasattr(p, 'geoms') else [p]):
+                if isinstance(q, Polygon) and q.area > 0: out.append([P(*c) for c in list(q.simplify(0.00003).exterior.coords)[:-1]])
+    return out
+
 def osm_buildings():
     q = f'[out:json][timeout:600];(way["building"]({S},{W},{N},{E}););out geom;'
     for srv in ['https://overpass.private.coffee/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass-api.de/api/interpreter']:
@@ -125,9 +159,13 @@ if __name__ == '__main__':
         log('NYC Open Data non disponibile:', e, '-> OpenStreetMap'); blds = osm_buildings(); src = 'OpenStreetMap'
     fill_missing(blds)
     json.dump(blds, open(f'{OUT}/buildings.json', 'w'))
-    try: land = nyc_land()
+    try: land = nj_land(); log('terra da Census (NY+NJ):', len(land))
     except Exception as e:
-        log('confini non disponibili:', e, '-> inviluppo edifici'); land = []
+        log('Census non disponibile:', e)
+        try: land = nyc_land()
+        except Exception as e2: log('confini non disponibili:', e2, '-> inviluppo edifici'); land = []
+    try: parks = nyc_parks(); json.dump(parks, open(f'{OUT}/parks.json', 'w')); log('parchi', len(parks))
+    except Exception as e: log('parchi non disponibili:', e)
     json.dump(land, open(f'{OUT}/land.json', 'w'))
     ys = sorted(b['y'] for b in blds)
     log(f'FATTO: {len(blds)} edifici da {src}, {len(land)} poligoni di terra, anni {ys[0]}..{ys[-1]}, mediana {ys[len(ys)//2]}, {time.time()-t0:.0f}s')

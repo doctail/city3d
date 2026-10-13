@@ -12,7 +12,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 step "2/5 Blender (bpy) in Python 3.13"
 pip install -q uv
 [ -x /workspace/bl/bin/python ] || uv venv -q -p 3.13 /workspace/bl
-uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests
+uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests pyshp
 PY=/workspace/bl/bin/python
 
 cd /workspace/city3d
@@ -28,7 +28,7 @@ echo "uso: $DEV"
 
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
-$PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 32 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+$PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
 
 step "5/5 video"
 ffmpeg -loglevel error -y -framerate 24 -i out/frames/%04d.png -c:v libx264 -crf 17 -pix_fmt yuv420p out/test_nyc.mp4
