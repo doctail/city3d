@@ -2,7 +2,7 @@
 # Test New York sul Pod RunPod: installa Blender, scarica i dati, renderizza 10 secondi, crea l'mp4.
 # Uso (dal terminale web del Pod):  cd /workspace && git clone https://github.com/doctail/city3d && bash city3d/run.sh
 set -e
-cd /workspace
+mkdir -p /workspace && cd /workspace
 T0=$(date +%s); step(){ echo; echo "=== $1  ($(( $(date +%s) - T0 ))s) ==="; }
 
 step "1/5 pacchetti di sistema"
