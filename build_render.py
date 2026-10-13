@@ -87,7 +87,7 @@ def land_mat():
     for pos_, colh in [(0.2, '#7c8a4f'), (0.4, '#5f7840'), (0.6, '#9a9465')]:
         e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
-    fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.52; fk.inputs['From Max'].default_value = 0.56
+    fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.70; fk.inputs['From Max'].default_value = 0.74
     L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
@@ -223,6 +223,10 @@ BOR = None
 if os.path.exists(f'{DATA}/boroughs.json'):
     _bj = json.load(open(f'{DATA}/boroughs.json')); BOR = prep(unary_union([Polygon(r).buffer(0) for v in _bj.values() for r in v]).buffer(30))
 pl = prep(lgeom); bm = bmesh.new(); uyl = []
+bmm = bmesh.new(); muy = []
+try:
+    _shore = lgeom.boundary.buffer(170); _shp = prep(_shore)
+except Exception: _shore = None
 from shapely.geometry import box as sbox
 core = sbox(-9000, -9500, 9000, 16000)          # zona citta': celle fini; fuori celle grandi (campagna lontana)
 def cells(bounds, CELL, skip_core):
@@ -239,10 +243,26 @@ def cells(bounds, CELL, skip_core):
                     if isinstance(g_, Polygon) and g_.area > 1:
                         try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(g_.exterior.coords)[:-1]]); uyl.append(uy)
                         except ValueError: pass
+                if CELL < 500 and _shore is not None and _shp.intersects(c) and uy < 9000:
+                    mq = q.intersection(_shore)
+                    for g_ in (mq.geoms if hasattr(mq, 'geoms') else [mq]):
+                        if isinstance(g_, Polygon) and g_.area > 50:
+                            try:
+                                vs_ = [bmm.verts.new((x, y, 0.08)) for x, y in list(g_.exterior.coords)[:-1]]; bmm.faces.new(vs_); muy.extend([uy] * len(vs_))
+                            except ValueError: pass
             xx += CELL
         yy += CELL
 cells(core.bounds, 120.0, False)
 cells(lgeom.bounds, 1500.0, True)
+MARSH = None
+if len(bmm.faces):
+    mm_ = bpy.data.materials.new('marsh'); mm_.use_nodes = True; mn = mm_.node_tree.nodes; ml = mm_.node_tree.links.new; mb = mn['Principled BSDF']
+    mtc = mn.new('ShaderNodeTexCoord'); mv = mn.new('ShaderNodeTexVoronoi'); mv.feature = 'DISTANCE_TO_EDGE'; mv.inputs['Scale'].default_value = 0.03; ml(mtc.outputs['Object'], mv.inputs['Vector'])
+    mr = mn.new('ShaderNodeMapRange'); ml(mv.outputs['Distance'], mr.inputs['Value']); mr.inputs['From Min'].default_value = 0.02; mr.inputs['From Max'].default_value = 0.06
+    mmx = mn.new('ShaderNodeMix'); mmx.data_type = 'RGBA'; ml(mr.outputs[0], mmx.inputs['Factor']); mmx.inputs[6].default_value = (*srgb('#2a3a3c'), 1); mmx.inputs[7].default_value = (*srgb('#7d8452'), 1)
+    ml(mmx.outputs[2], mb.inputs['Base Color']); mb.inputs['Roughness'].default_value = 0.6
+    MARSH = obj('marsh', bmm, hazeify(mm_)); MARSH.data.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', muy)
+else: bmm.free()
 lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 fm = lo_.data.copy(); fo = bpy.data.objects.new('forest_base', fm); sc.collection.objects.link(fo)
@@ -303,6 +323,7 @@ _a = [n for n in fg.nodes if n.bl_idname == 'GeometryNodeInputNamedAttribute'][0
 _c = [n for n in fg.nodes if n.bl_idname == 'ShaderNodeMath' and n.operation == 'LESS_THAN'][0]; _c.operation = 'GREATER_THAN'
 YEAR_NODES.append([n for n in fg.nodes if n.bl_idname == 'ShaderNodeValue'][0])
 FOREST.modifiers.new('hide', 'NODES').node_group = fg
+if MARSH: MARSH.modifiers.new('hide', 'NODES').node_group = fg
 key_years()
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
