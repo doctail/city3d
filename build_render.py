@@ -80,15 +80,15 @@ def land_mat():
     k = N.new('ShaderNodeMapRange'); L(d.outputs[0], k.inputs['Value']); k.inputs['From Min'].default_value = -5; k.inputs['From Max'].default_value = 5
     nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.004; nz.inputs['Detail'].default_value = 3
     tc = N.new('ShaderNodeTexCoord'); L(tc.outputs['Object'], nz.inputs['Vector'])
-    vo = N.new('ShaderNodeTexVoronoi'); vo.inputs['Scale'].default_value = 0.012; L(tc.outputs['Object'], vo.inputs['Vector'])
+    vo = N.new('ShaderNodeTexVoronoi'); vo.distance = 'CHEBYCHEV'; vo.inputs['Scale'].default_value = 0.006; L(tc.outputs['Object'], vo.inputs['Vector'])
     fields = N.new('ShaderNodeValToRGB'); L(vo.outputs['Color'] if 'Color' in vo.outputs else vo.outputs[1], fields.inputs[0])
     cr = fields.color_ramp; cr.interpolation = 'CONSTANT'
-    cr.elements[0].color = (*srgb('#5e7a3e'), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb('#8a8a52'), 1)
-    for pos_, colh in [(0.2, '#6f8b45'), (0.4, '#9c9460'), (0.6, '#506b34')]:
+    cr.elements[0].color = (*srgb('#6a7f45'), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb('#8f8f5c'), 1)
+    for pos_, colh in [(0.2, '#7c8a4f'), (0.4, '#5f7840'), (0.6, '#9a9465')]:
         e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
     fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.52; fk.inputs['From Max'].default_value = 0.56
-    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#2f4424'), 1)
+    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     L(mx.outputs[2], b.inputs['Base Color'])
@@ -251,6 +251,24 @@ for p_, u_ in zip(fm.polygons, uyl):
     for vi in p_.vertices: fuy[vi] = u_
 fm.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', fuy)
 FOREST = fo
+ROADS_LL = [
+  [(40.7045,-74.0135),(40.7128,-74.0072),(40.7195,-74.0021),(40.7290,-73.9965),(40.7359,-73.9911),(40.7411,-73.9897),(40.7500,-73.9877),(40.7580,-73.9855),(40.7681,-73.9819),(40.7870,-73.9754),(40.8000,-73.9680),(40.8160,-73.9590),(40.8340,-73.9450),(40.8550,-73.9330),(40.8750,-73.9100)],
+  [(40.7128,-74.0060),(40.7150,-73.9960),(40.7240,-73.9920),(40.7300,-73.9910),(40.7410,-73.9870),(40.7590,-73.9700),(40.7800,-73.9520),(40.7950,-73.9450),(40.8050,-73.9380),(40.8200,-73.9300)],
+  [(40.7036,-73.9945),(40.6920,-73.9870),(40.6860,-73.9750),(40.6800,-73.9500),(40.6750,-73.9200),(40.6780,-73.8900)],
+  [(40.6920,-73.9870),(40.6650,-73.9620),(40.6400,-73.9600),(40.6200,-73.9550)],
+  [(40.7140,-74.0330),(40.7300,-74.0500),(40.7450,-74.0600),(40.7650,-74.0450),(40.7900,-74.0200),(40.8200,-73.9950)],
+  [(40.7400,-73.9500),(40.7550,-73.9200),(40.7650,-73.8900),(40.7600,-73.8500)]]
+_LAT0, _LON0 = 40.758, -73.985; _KX = math.cos(math.radians(_LAT0)) * 111320; _KY = 110540
+from shapely.geometry import LineString
+_rg = unary_union([LineString([((lo - _LON0) * _KX, (la - _LAT0) * _KY) for la, lo in r]).buffer(5, cap_style=1) for r in ROADS_LL])
+if not lgeom.is_empty: _rg = _rg.intersection(lgeom)
+bm = bmesh.new()
+for g_ in (_rg.geoms if hasattr(_rg, 'geoms') else [_rg]):
+    if isinstance(g_, Polygon) and not g_.is_empty:
+        try: bm.faces.new([bm.verts.new((x, y, 0.18)) for x, y in list(g_.exterior.coords)[:-1]])
+        except ValueError: pass
+bmesh.ops.triangulate(bm, faces=bm.faces)
+obj('roads', bm, mat('road', srgb('#c2b38f'), 0.95))
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
 blocks = []
