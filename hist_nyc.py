@@ -69,6 +69,13 @@ if __name__ == '__main__':
         for q in split(p):
             born = u + rnd.uniform(0, 12); died = b['y'] - rnd.uniform(0.3, 2.0)
             if died - born < 8: continue
-            out.append({'r': [[round(x, 2), round(yv, 2)] for x, yv in list(q.exterior.coords)[:-1]], 'h': round(era_height(born, rnd), 1), 'y': int(born), 'd': round(died, 1)})
+            ring = [[round(x, 2), round(yv, 2)] for x, yv in list(q.exterior.coords)[:-1]]
+            # seconda generazione: le case di legno pre-1830 sostituite da brownstone/tenement prima dell'edificio attuale
+            if born < 1830 and died > 1885:
+                swap = rnd.uniform(max(born + 25, 1835), 1875)
+                out.append({'r': ring, 'h': round(era_height(born, rnd), 1), 'y': int(born), 'd': round(swap - 0.5, 1)})
+                out.append({'r': ring, 'h': round(era_height(swap, rnd), 1), 'y': int(swap), 'd': round(died, 1)})
+            else:
+                out.append({'r': ring, 'h': round(era_height(born, rnd), 1), 'y': int(born), 'd': round(died, 1)})
     json.dump(out, open(f'{DATA}/hist.json', 'w'))
     print(f'[hist] {len(out)} predecessori da {len(blds)} edifici attuali', flush=True)

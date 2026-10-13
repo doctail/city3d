@@ -27,6 +27,15 @@ DEV=$($PY gputest.py | tee /dev/stderr | grep DEVICE= | cut -d= -f2)
 echo "uso: $DEV"
 [ "$DEV" = "CPU" ] && { echo "NESSUNA GPU FUNZIONANTE: mi fermo. Manda lo screenshot."; exit 1; }
 
+MODE=${1:-test}
+if [ "$MODE" = "full" ]; then
+  step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
+  $PY build_render.py -- data out/full --frames 1 7839 --res 1920 1080 --samples 16 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  step "5/5 video"
+  ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.png -c:v libx264 -preset slow -crf 21 -pix_fmt yuv420p out/nyc_full.mp4
+  cp out/full/years.json out/years.json
+  ls -lh out/nyc_full.mp4; step "FINITO"; echo "Scarica city3d/out/nyc_full.mp4 e years.json, poi TERMINA il Pod."; exit 0
+fi
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
 $PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"

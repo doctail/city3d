@@ -30,7 +30,7 @@ def mat(name, col=None, rough=0.9, attr=None, haze=True):
         n = m.node_tree.nodes.new('ShaderNodeAttribute'); n.attribute_name = attr; m.node_tree.links.new(n.outputs['Color'], b.inputs['Base Color'])
     else: b.inputs['Base Color'].default_value = (*col, 1)
     return hazeify(m) if haze else m
-HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, '16000'))
+HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, '32000'))
 def hazeify(m):
     nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
     cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
@@ -162,7 +162,7 @@ mpi = M('MULTIPLY', math.pi); L(cl.outputs[0], mpi.inputs[0]); sn = M('SINE'); L
 k = M('MULTIPLY', 0.18); L(sn.outputs[0], k.inputs[0]); g = M('ADD'); L(cl.outputs[0], g.inputs[0]); L(k.outputs[0], g.inputs[1])
 nd = N.new('GeometryNodeInputNamedAttribute'); nd.data_type = 'FLOAT'; nd.inputs['Name'].default_value = 'yd'
 sd = M('SUBTRACT'); L(yr.outputs[0], sd.inputs[0]); L(nd.outputs['Attribute'], sd.inputs[1])
-dv = M('DIVIDE', 3.0); L(sd.outputs[0], dv.inputs[0]); dc = N.new('ShaderNodeClamp'); L(dv.outputs[0], dc.inputs['Value'])
+dv = M('DIVIDE'); L(sd.outputs[0], dv.inputs[0]); L(DUR.outputs[0], dv.inputs[1]); dc = N.new('ShaderNodeClamp'); L(dv.outputs[0], dc.inputs['Value'])
 keep = M('SUBTRACT'); keep.inputs[0].default_value = 1.0; L(dc.outputs[0], keep.inputs[1])
 g2 = M('MULTIPLY'); L(g.outputs[0], g2.inputs[0]); L(keep.outputs[0], g2.inputs[1]); g = g2
 alive = M('MULTIPLY'); L(cl.outputs[0], alive.inputs[0]); L(keep.outputs[0], alive.inputs[1])
@@ -176,7 +176,14 @@ L(dg.outputs[0], go.inputs[0])
 mod = city.modifiers.new('grow', 'NODES'); mod.node_group = ng
 
 # anno per fotogramma: lento all'inizio, veloce nel Novecento (curva morbida)
+SCHED = json.load(open(opt('--schedule'))) if opt('--schedule') else None
+def _lerp(v, pts):
+    if v <= pts[0][0]: return pts[0][1]
+    for (a_, ya), (b_, yb_) in zip(pts, pts[1:]):
+        if v <= b_: return ya + (yb_ - ya) * (v - a_) / (b_ - a_)
+    return pts[-1][1]
 def year_at(f):
+    if SCHED: return _lerp((f - 1) / FPS, SCHED['years'])
     t = (f - F0) / max(1, F1 - F0); return Y0 + (Y1 - Y0) * (t ** 0.8)
 YEAR_NODES = [yr]
 def key_years():
@@ -185,6 +192,10 @@ def key_years():
         for f in list(range(F0, F1 + 1, 4)) + [F1]:
             nd_.outputs[0].default_value = year_at(f); nd_.outputs[0].keyframe_insert('default_value', frame=f)
 key_years()
+# durata della crescita in anni = ~0.6 s di video al ritmo corrente (lento negli anni lenti, veloce nei rapidi)
+for f in list(range(F0, F1 + 1, 4)) + [F1]:
+    q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS)
+    DUR.outputs[0].default_value = max(0.4, min(25.0, rate * 0.6)); DUR.outputs[0].keyframe_insert('default_value', frame=f)
 json.dump({str(f): year_at(f) for f in range(F0, F1 + 1)}, open(f'{OUT}/years.json', 'w'))
 
 # ---------- terra e acqua ----------
@@ -254,6 +265,13 @@ if parks:
         except ValueError: pass
     bmesh.ops.triangulate(bm, faces=bm.faces)
     po = obj('parks', bm, mat('grass', srgb('#5d7a3a'), 1.0))
+    pyl = []
+    for r in parks:
+        c_ = Polygon(r).centroid; py_ = urban_year(c_.x, c_.y) if (urban_year and hist) else 0
+        if -900 < c_.x < 1700 and 900 < c_.y < 5300: py_ = max(py_, 1858)   # Central Park
+        pyl += [py_] * len(r)
+    if len(pyl) == len(po.data.vertices): po.data.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', pyl)
+    po.modifiers.new('hide', 'NODES').node_group = hg
     tm = mat('tree', srgb('#3d5c2a'), 0.9)
     bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
     tree.scale = (1, 1, 1.2); tree.hide_render = True; tree.hide_viewport = True
@@ -299,7 +317,8 @@ co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera
 tg = bpy.data.objects.new('target', None); sc.collection.objects.link(tg)
 c = co.constraints.new('TRACK_TO'); c.target = tg; c.track_axis = 'TRACK_NEGATIVE_Z'; c.up_axis = 'UP_Y'
 # lenta orbita da sud-ovest sopra il porto, puntando sulla parte bassa di Manhattan e poi verso Midtown
-for f, p, t in [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -9600, 2900), (-300, -2600, 0))]:
+CAMKEYS = [(int(round(t_ * FPS)) + 1, p_, q_) for t_, p_, q_ in SCHED['cam']] if SCHED else [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -9600, 2900), (-300, -2600, 0))]
+for f, p, t in CAMKEYS:
     if '--cam' in a: v = list(map(float, opt('--cam', 6))); p, t = v[:3], v[3:]
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
 
@@ -314,6 +333,7 @@ sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
 sc.render.image_settings.file_format = 'PNG'; sc.render.filepath = os.path.join(OUT, '')
 sc.render.use_persistent_data = True
+sc.render.use_overwrite = False; sc.render.use_placeholder = True   # ripartenza: salta i fotogrammi gia' fatti
 sc.frame_step = int(opt('--step', 1, '1'))
 log('render', F0, '->', F1, f'{RW}x{RH}', SAMPLES, 'campioni')
 tr = time.time()
