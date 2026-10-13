@@ -30,7 +30,7 @@ def mat(name, col=None, rough=0.9, attr=None, haze=True):
         n = m.node_tree.nodes.new('ShaderNodeAttribute'); n.attribute_name = attr; m.node_tree.links.new(n.outputs['Color'], b.inputs['Base Color'])
     else: b.inputs['Base Color'].default_value = (*col, 1)
     return hazeify(m) if haze else m
-HAZE = (0.78, 0.76, 0.74); HAZE_K = float(opt('--haze', 1, '13000'))
+HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, '16000'))
 def hazeify(m):
     nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
     cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
@@ -77,10 +77,10 @@ def obj(name, bm, m):
 # ---------- edifici ----------
 blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
 rnd = random.Random(3)
-LOW = ['#8b4a3a', '#7a4b3a', '#9c5a45', '#6e4a3c', '#a8664c', '#b07a5a', '#c9b59a', '#8f5f4a', '#bfa88a']
-MID = ['#c4b49a', '#b9a88e', '#a8765a', '#9a8f84', '#cfc3ad', '#b3a690', '#8c7a6a']
-GLASS = ['#6f8796', '#5f7686', '#7d93a3', '#56697a', '#8aa0ae', '#4e6070']
-ROOF = ['#5b5a57', '#6e6b66', '#4a4846', '#7a776f', '#63605a', '#858178']
+LOW = ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f74', '#d8c7a4', '#a04a38', '#8a5236']
+MID = ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
+GLASS = ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
+ROOF = ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
 bm = bmesh.new(); col = bm.loops.layers.color.new('col'); vyear = []; polys = []
 for b in blds:
     ring = [tuple(p) for p in b['r']]
@@ -159,7 +159,7 @@ else:
         try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(gg.exterior.coords)[:-1]])
         except ValueError: pass
 bmesh.ops.triangulate(bm, faces=bm.faces)
-obj('land', bm, mat('land', srgb('#4f4d4a'), 0.95))   # asfalto: le strade restano scure
+obj('land', bm, mat('land', srgb('#3e3d3c'), 0.95))   # asfalto: le strade restano scure
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
 blocks = []
@@ -173,7 +173,7 @@ for r in blocks:
     try: bm.faces.new([bm.verts.new((x, y, 0.12)) for x, y in r])
     except ValueError: pass
 bmesh.ops.triangulate(bm, faces=bm.faces)
-obj('blocks', bm, mat('blocks', srgb('#9b958a'), 0.9))
+bo = obj('blocks', bm, mat('blocks', srgb('#b4ab9c'), 0.9))
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
 parks = json.load(open(f'{DATA}/parks.json')) if os.path.exists(f'{DATA}/parks.json') else []
@@ -200,10 +200,14 @@ if parks:
     jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0]); TL(jg.outputs[0], o_.inputs[0])
     po.modifiers.new('trees', 'NODES').node_group = tg_
     log('parchi', len(parks))
+TREES = tg_ if parks else None
+if TREES:
+    t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = 0.0018
+    bo.modifiers.new('trees', 'NODES').node_group = t2
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
-wm = mat('water', srgb('#1d4652'), 0.06, haze=False); nt = wm.node_tree
+wm = mat('water', srgb('#1f5a6e'), 0.06, haze=False); nt = wm.node_tree
 nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
 bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
 mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
