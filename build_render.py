@@ -80,8 +80,16 @@ def land_mat():
     k = N.new('ShaderNodeMapRange'); L(d.outputs[0], k.inputs['Value']); k.inputs['From Min'].default_value = -5; k.inputs['From Max'].default_value = 5
     nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.004; nz.inputs['Detail'].default_value = 3
     tc = N.new('ShaderNodeTexCoord'); L(tc.outputs['Object'], nz.inputs['Vector'])
-    fields = N.new('ShaderNodeValToRGB'); L(nz.outputs['Fac'], fields.inputs[0])
-    fields.color_ramp.elements[0].color = (*srgb('#4f7136'), 1); fields.color_ramp.elements[1].color = (*srgb('#7f8f48'), 1)
+    vo = N.new('ShaderNodeTexVoronoi'); vo.inputs['Scale'].default_value = 0.012; L(tc.outputs['Object'], vo.inputs['Vector'])
+    fields = N.new('ShaderNodeValToRGB'); L(vo.outputs['Color'] if 'Color' in vo.outputs else vo.outputs[1], fields.inputs[0])
+    cr = fields.color_ramp; cr.interpolation = 'CONSTANT'
+    cr.elements[0].color = (*srgb('#5e7a3e'), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb('#8a8a52'), 1)
+    for pos_, colh in [(0.2, '#6f8b45'), (0.4, '#9c9460'), (0.6, '#506b34')]:
+        e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
+    fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
+    fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.52; fk.inputs['From Max'].default_value = 0.56
+    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#2f4424'), 1)
+    fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     L(mx.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
@@ -329,7 +337,7 @@ if TREES:
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
-wm = mat('water', srgb('#1f5a6e'), 0.06, haze=False); nt = wm.node_tree
+wm = mat('water', srgb('#24363c'), 0.08, haze=False); nt = wm.node_tree
 nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
 bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
 mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
