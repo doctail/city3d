@@ -81,7 +81,7 @@ def land_mat():
     nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.004; nz.inputs['Detail'].default_value = 3
     tc = N.new('ShaderNodeTexCoord'); L(tc.outputs['Object'], nz.inputs['Vector'])
     fields = N.new('ShaderNodeValToRGB'); L(nz.outputs['Fac'], fields.inputs[0])
-    fields.color_ramp.elements[0].color = (*srgb('#55703a'), 1); fields.color_ramp.elements[1].color = (*srgb('#8a8a4e'), 1)
+    fields.color_ramp.elements[0].color = (*srgb('#4f7136'), 1); fields.color_ramp.elements[1].color = (*srgb('#7f8f48'), 1)
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     L(mx.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
@@ -94,6 +94,9 @@ blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
 hist = json.load(open(f'{DATA}/hist.json')) if os.path.exists(f'{DATA}/hist.json') else []
 for hb in hist: hb['old'] = True
 log('predecessori storici', len(hist)); blds = blds + hist
+if '--crop' in a:   # prove locali con poca memoria: solo gli edifici dentro un rettangolo (metri)
+    cx0, cy0, cx1, cy1 = map(float, opt('--crop', 4)); blds = [b_ for b_ in blds if cx0 < b_['r'][0][0] < cx1 and cy0 < b_['r'][0][1] < cy1]
+    hist = [h_ for h_ in hist if cx0 < h_['r'][0][0] < cx1 and cy0 < h_['r'][0][1] < cy1]; log('ritaglio', len(blds))
 OLDROOF = ['#7a4a35', '#6b4a3a', '#8a5a40', '#5e4636', '#94664a']
 rnd = random.Random(3)
 LOW = ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f74', '#d8c7a4', '#a04a38', '#8a5236']
@@ -233,6 +236,13 @@ def cells(bounds, CELL, skip_core):
 cells(core.bounds, 120.0, False)
 cells(lgeom.bounds, 1500.0, True)
 lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
+# copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
+fm = lo_.data.copy(); fo = bpy.data.objects.new('forest_base', fm); sc.collection.objects.link(fo)
+fuy = [0.0] * len(fm.vertices)
+for p_, u_ in zip(fm.polygons, uyl):
+    for vi in p_.vertices: fuy[vi] = u_
+fm.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', fuy)
+FOREST = fo
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
 blocks = []
@@ -262,6 +272,11 @@ hm = HN.new('ShaderNodeMath'); hm.operation = 'MULTIPLY'; hm.inputs[1].default_v
 hx = HN.new('ShaderNodeCombineXYZ'); HL(hm.outputs[0], hx.inputs['Z'])
 hs = HN.new('GeometryNodeSetPosition'); HL(hi.outputs[0], hs.inputs['Geometry']); HL(hx.outputs[0], hs.inputs['Offset']); HL(hs.outputs[0], ho.inputs[0])
 bo.modifiers.new('hide', 'NODES').node_group = hg
+fg = hg.copy(); fg.name = 'hide_after'
+_a = [n for n in fg.nodes if n.bl_idname == 'GeometryNodeInputNamedAttribute'][0]; _a.inputs['Name'].default_value = 'fy'
+_c = [n for n in fg.nodes if n.bl_idname == 'ShaderNodeMath' and n.operation == 'LESS_THAN'][0]; _c.operation = 'GREATER_THAN'
+YEAR_NODES.append([n for n in fg.nodes if n.bl_idname == 'ShaderNodeValue'][0])
+FOREST.modifiers.new('hide', 'NODES').node_group = fg
 key_years()
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
@@ -297,6 +312,17 @@ if parks:
     po.modifiers.new('trees', 'NODES').node_group = tg_
     log('parchi', len(parks))
 TREES = tg_ if parks else None
+if TREES and FOREST:
+    t3 = TREES.copy(); d3 = [n for n in t3.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0]; d3.inputs['Density'].default_value = float(opt('--forest', 1, '0.0015'))
+    # radure e campi: selezione con rumore (circa meta' boschi, meta' campi)
+    N3 = t3.nodes; L3 = t3.links.new; nz3 = N3.new('ShaderNodeTexNoise'); nz3.inputs['Scale'].default_value = 0.0009
+    ps3 = N3.new('GeometryNodeInputPosition'); L3(ps3.outputs[0], nz3.inputs['Vector'])
+    gt3 = N3.new('ShaderNodeMath'); gt3.operation = 'GREATER_THAN'; gt3.inputs[1].default_value = 0.5; L3(nz3.outputs['Fac'], gt3.inputs[0])
+    L3(gt3.outputs[0], d3.inputs['Selection'])
+    jg3 = [n for n in N3 if n.bl_idname == 'GeometryNodeJoinGeometry'][0]
+    for l_ in list(t3.links):
+        if l_.to_node == jg3 and l_.from_node.bl_idname == 'NodeGroupInput': t3.links.remove(l_)
+    FOREST.modifiers.new('trees', 'NODES').node_group = t3
 if TREES:
     t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = 0.0018
     bo.modifiers.new('trees', 'NODES').node_group = t2
@@ -317,7 +343,11 @@ sky = w.node_tree.nodes.new('ShaderNodeTexSky')
 try: sky.sky_type = 'NISHITA'
 except Exception: pass
 SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
-w.node_tree.links.new(sky.outputs['Color'], w.node_tree.nodes['Background'].inputs['Color']); w.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.35
+WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
+WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 0.35
+bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
+lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader'); WL(lp.outputs['Is Camera Ray'], mxw.inputs[0]); WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
+WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
 sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 4.4; sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
 so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
 cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000

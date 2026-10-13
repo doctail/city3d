@@ -42,7 +42,7 @@ def _man_poly():
     return _MAN
 def urban_year(x, y):
     la, lo = lat(y), lon(x); mp = _man_poly()
-    if mp: manhattan = mp.contains(Point(x, y))
+    if mp: manhattan = mp.contains(Point(x, y)) and la > 40.6995   # escluse Governors e Liberty Island
     else: manhattan = lo < -73.975 + (la - 40.70) * 0.6 and lo > -74.025 and la > 40.70   # ripiego approssimato
     wob = 9 * math.sin(x / 170.0) + 7 * math.sin(y / 230.0 + x / 410.0)   # fronte irregolare, non una linea dritta
     if manhattan: return interp(la, MAN) + wob
