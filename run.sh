@@ -19,9 +19,16 @@ cd /workspace/city3d
 step "3/5 dati New York"
 [ -s data/buildings.json ] || $PY fetch_nyc.py data
 
+step "3b/5 prova GPU"
+nvidia-smi --query-gpu=name,driver_version,compute_mode --format=csv,noheader || true
+echo "caps=$NVIDIA_DRIVER_CAPABILITIES"
+DEV=$($PY gputest.py | tee /dev/stderr | grep DEVICE= | cut -d= -f2)
+echo "uso: $DEV"
+[ "$DEV" = "CPU" ] && { echo "NESSUNA GPU FUNZIONANTE: mi fermo. Manda lo screenshot."; exit 1; }
+
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
-$PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 32 --gpu 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+$PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 32 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
 
 step "5/5 video"
 ffmpeg -loglevel error -y -framerate 24 -i out/frames/%04d.png -c:v libx264 -crf 17 -pix_fmt yuv420p out/test_nyc.mp4

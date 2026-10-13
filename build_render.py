@@ -140,17 +140,12 @@ for f, p, t in [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -96
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
 
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
-if GPU:
-    pr = bpy.context.preferences.addons['cycles'].preferences
-    for dt in ('OPTIX', 'CUDA'):
-        try:
-            pr.compute_device_type = dt; pr.get_devices()
-            devs = [d for d in pr.devices if d.type == dt]
-            if devs:
-                for d in pr.devices: d.use = d.type == dt
-                sc.cycles.device = 'GPU'; log('GPU', dt, [d.name for d in devs]); break
-        except Exception as e: log('device', dt, e)
-    else: log('ATTENZIONE: nessuna GPU trovata, uso CPU')
+DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
+if DEV in ('OPTIX', 'CUDA'):
+    pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV; pr.get_devices()
+    for d in pr.devices: d.use = d.type == DEV
+    sc.cycles.device = 'GPU'; log('GPU', DEV, [d.name for d in pr.devices if d.use])
+else: log('CPU')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.7
 sc.render.image_settings.file_format = 'PNG'; sc.render.filepath = os.path.join(OUT, '')
