@@ -26,6 +26,8 @@ if [ "$CITY" = "nyc" ]; then
 else
   D=data_$CITY; SCHED=schedule_$CITY.json; CARGS="--city city_$CITY.json"
   step "3/5 dati $CITY"
+  mkdir -p $D
+  if [ -d data_${CITY}_src ]; then for g in data_${CITY}_src/*.gz; do b=$(basename $g .gz); [ -s $D/$b ] || gunzip -c $g > $D/$b; done; echo ok > $D/land_v3.ok; fi   # dati gia' preparati in chat
   if [ "$CITY" = "madrid" ]; then [ -s $D/buildings.json ] || $PY fetch_es.py $D city_$CITY.json $(ls /workspace/*.zip 2>/dev/null | head -1); fi
   $PY hist_$CITY.py $D
 fi
