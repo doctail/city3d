@@ -115,12 +115,13 @@ LOW = ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f7
 MID = ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
 GLASS = ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
-bm = bmesh.new(); col = bm.loops.layers.color.new('col'); vyear = []; vdie = []; polys = []
-for b in blds:
+BIN = float(opt('--bin', 1, '4'))
+CHUNKS = []; polys = []
+def add_bld(bm, col, vyear, vdie, b):
     ring = [tuple(p) for p in b['r']]
     try: poly = Polygon(ring)
-    except Exception: continue
-    if not poly.is_valid or poly.area < 6: continue
+    except Exception: return
+    if not poly.is_valid or poly.area < 6: return
     if not poly.exterior.is_ccw: ring = ring[::-1]
     old = b.get('old', False)
     if not old: polys.append(poly)
@@ -149,11 +150,26 @@ for b in blds:
             f = bm.faces.new((vb[i], vb[j], vt[j], vt[i]))
             for l in f.loops: l[col] = (*wc, wa)
         except ValueError: pass
-city = obj('city', bm, city_mat())
-me = city.data; me.color_attributes.active_color_name = 'col'
-at = me.attributes.new('yb', 'FLOAT', 'POINT'); at.data.foreach_set('value', vyear)
-ad = me.attributes.new('yd', 'FLOAT', 'POINT'); ad.data.foreach_set('value', vdie)
-log('mesh città', len(me.vertices), 'vertici')
+CM = city_mat()
+def ckey(b_):
+    dd_ = b_.get('d', 99999); return (int(b_['y'] // BIN), int(dd_ // BIN) if dd_ < 9000 else 99999)
+blds.sort(key=ckey)
+cur = None; nv = 0
+def flush(cur):
+    k_, bm_, col_, vy_, vd_ = cur
+    if not len(bm_.faces): bm_.free(); return 0
+    o_ = obj(f'city_{k_[0]}_{k_[1]}', bm_, CM); m_ = o_.data; m_.color_attributes.active_color_name = 'col'
+    m_.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', vy_); m_.attributes.new('yd', 'FLOAT', 'POINT').data.foreach_set('value', vd_)
+    CHUNKS.append({'obj': o_, 'b0': k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'd0': (k_[1] * BIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * BIN if k_[1] != 99999 else None)})
+    return len(m_.vertices)
+for b in blds:
+    k_ = ckey(b)
+    if cur is None or cur[0] != k_:
+        if cur: nv += flush(cur)
+        bm_ = bmesh.new(); cur = (k_, bm_, bm_.loops.layers.color.new('col'), [], [])
+    add_bld(cur[1], cur[2], cur[3], cur[4], b)
+if cur: nv += flush(cur)
+log('città in', len(CHUNKS), 'blocchi per anno,', nv, 'vertici')
 
 # ---------- crescita: Geometry Nodes ----------
 ng = bpy.data.node_groups.new('grow', 'GeometryNodeTree')
@@ -188,7 +204,8 @@ sp = N.new('GeometryNodeSetPosition'); L(gi.outputs[0], sp.inputs['Geometry']); 
 lt = M('LESS_THAN', 0.002); L(alive.outputs[0], lt.inputs[0])
 dg = N.new('GeometryNodeDeleteGeometry'); dg.domain = 'POINT'; L(sp.outputs[0], dg.inputs['Geometry']); L(lt.outputs[0], dg.inputs['Selection'])
 L(dg.outputs[0], go.inputs[0])
-mod = city.modifiers.new('grow', 'NODES'); mod.node_group = ng
+for ch in CHUNKS:
+    ch['mod'] = ch['obj'].modifiers.new('grow', 'NODES'); ch['mod'].node_group = ng
 
 # anno per fotogramma: lento all'inizio, veloce nel Novecento (curva morbida)
 SCHED = json.load(open(opt('--schedule'))) if opt('--schedule') else None
@@ -213,6 +230,23 @@ for f in list(range(F0, F1 + 1, 4)) + [F1]:
     DUR.outputs[0].default_value = max(0.4, min(25.0, rate * 0.6)); DUR.outputs[0].keyframe_insert('default_value', frame=f)
 json.dump({str(f): year_at(f) for f in range(F0, F1 + 1)}, open(f'{OUT}/years.json', 'w'))
 
+
+# oggetti statici divisi per anno: compaiono ('appear') o spariscono ('vanish') con hide_render a chiave (niente ricalcolo per fotogramma)
+VIS = []
+def chunked(name, items, z, m, kind, binw=3.0):
+    groups = {}
+    for ring, yv in items: groups.setdefault(int(yv // binw) if yv < 9000 else 99999, []).append(ring)
+    objs = []
+    for k_, rings in sorted(groups.items()):
+        bm_ = bmesh.new()
+        for r_ in rings:
+            try: bm_.faces.new([bm_.verts.new((x, y, z)) for x, y in r_])
+            except ValueError: pass
+        if not len(bm_.faces): bm_.free(); continue
+        bmesh.ops.triangulate(bm_, faces=bm_.faces)
+        o_ = obj(f'{name}_{k_}', bm_, m); objs.append(o_)
+        VIS.append((o_, kind, k_ * binw if k_ != 99999 else 99999))
+    return objs
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
 if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3])
@@ -279,18 +313,14 @@ lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE'
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
 FB = list(map(float, opt('--forest-box', 4, ['-7500', '-9500', '5500', '9000'])))
-fbm = bmesh.new(); fuy = []
+_fit = []
 for p_, u_ in zip(lo_.data.polygons, uyl):
     cx_, cy_ = p_.center.x, p_.center.y
     if not (FB[0] < cx_ < FB[2] and FB[1] < cy_ < FB[3]) or p_.area > 20000: continue
-    vs_ = [fbm.verts.new(lo_.data.vertices[i].co) for i in p_.vertices]
-    try: fbm.faces.new(vs_); fuy += [u_] * len(vs_)
-    except ValueError: pass
-fm = bpy.data.meshes.new('forest_base'); fbm.to_mesh(fm); fbm.free()
-fo = bpy.data.objects.new('forest_base', fm); sc.collection.objects.link(fo)
-fm.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', fuy)
-log('base boschi', len(fm.polygons), 'celle')
-FOREST = fo
+    _fit.append(([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_))
+FOREST = chunked('forest', _fit, 0.0, mat('fbase', srgb('#4f7136'), 1.0), 'vanish')
+for o_ in FOREST: o_.hide_render = False
+log('boschi', len(_fit), 'celle in', len(FOREST), 'blocchi')
 ROADS_LL = [
   [(40.7045,-74.0135),(40.7128,-74.0072),(40.7195,-74.0021),(40.7290,-73.9965),(40.7359,-73.9911),(40.7411,-73.9897),(40.7500,-73.9877),(40.7580,-73.9855),(40.7681,-73.9819),(40.7870,-73.9754),(40.8000,-73.9680),(40.8160,-73.9590),(40.8340,-73.9450),(40.8550,-73.9330),(40.8750,-73.9100)],
   [(40.7128,-74.0060),(40.7150,-73.9960),(40.7240,-73.9920),(40.7300,-73.9910),(40.7410,-73.9870),(40.7590,-73.9700),(40.7800,-73.9520),(40.7950,-73.9450),(40.8050,-73.9380),(40.8200,-73.9300)],
@@ -317,16 +347,11 @@ cells = {}
 for p in polys:
     c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
 for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
-bm = bmesh.new(); byear = []
+_bit = []
 for r in blocks:
     by = urban_year(*Polygon(r).centroid.coords[0]) if (urban_year and hist) else 0
-    try:
-        vs = [bm.verts.new((x, y, 0.12)) for x, y in r]; bm.faces.new(vs); byear += [by] * len(vs)
-    except ValueError:
-        for v in vs: bm.verts.remove(v)
-bmesh.ops.triangulate(bm, faces=bm.faces)
-bo = obj('blocks', bm, mat('blocks', srgb('#b4ab9c'), 0.9))
-bo.data.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', byear)
+    _bit.append((r, by))
+BO = chunked('blocks', _bit, 0.12, mat('blocks', srgb('#b4ab9c'), 0.9), 'appear')
 # isolati non ancora urbanizzati: spostati sotto terra (indici stabili, cosi' gli alberi non saltano)
 hg = bpy.data.node_groups.new('hide', 'GeometryNodeTree')
 hg.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); hg.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
@@ -337,31 +362,22 @@ hc = HN.new('ShaderNodeMath'); hc.operation = 'LESS_THAN'; HL(hy.outputs[0], hc.
 hm = HN.new('ShaderNodeMath'); hm.operation = 'MULTIPLY'; hm.inputs[1].default_value = -1000; HL(hc.outputs[0], hm.inputs[0])
 hx = HN.new('ShaderNodeCombineXYZ'); HL(hm.outputs[0], hx.inputs['Z'])
 hs = HN.new('GeometryNodeSetPosition'); HL(hi.outputs[0], hs.inputs['Geometry']); HL(hx.outputs[0], hs.inputs['Offset']); HL(hs.outputs[0], ho.inputs[0])
-bo.modifiers.new('hide', 'NODES').node_group = hg
 fg = hg.copy(); fg.name = 'hide_after'
 _a = [n for n in fg.nodes if n.bl_idname == 'GeometryNodeInputNamedAttribute'][0]; _a.inputs['Name'].default_value = 'fy'
 _c = [n for n in fg.nodes if n.bl_idname == 'ShaderNodeMath' and n.operation == 'LESS_THAN'][0]; _c.operation = 'GREATER_THAN'
 YEAR_NODES.append([n for n in fg.nodes if n.bl_idname == 'ShaderNodeValue'][0])
-FOREST.modifiers.new('hide', 'NODES').node_group = fg
 if MARSH: MARSH.modifiers.new('hide', 'NODES').node_group = fg
 key_years()
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
 parks = json.load(open(f'{DATA}/parks.json')) if os.path.exists(f'{DATA}/parks.json') else []
 if parks:
-    bm = bmesh.new()
-    for r in parks:
-        try: bm.faces.new([bm.verts.new((x, y, 0.25)) for x, y in r])
-        except ValueError: pass
-    bmesh.ops.triangulate(bm, faces=bm.faces)
-    po = obj('parks', bm, mat('grass', srgb('#5d7a3a'), 1.0))
-    pyl = []
+    _pit = []
     for r in parks:
         c_ = Polygon(r).centroid; py_ = urban_year(c_.x, c_.y) if (urban_year and hist) else 0
         if -900 < c_.x < 1700 and 900 < c_.y < 5300: py_ = max(py_, 1858)   # Central Park
-        pyl += [py_] * len(r)
-    if len(pyl) == len(po.data.vertices): po.data.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', pyl)
-    po.modifiers.new('hide', 'NODES').node_group = hg
+        _pit.append(([tuple(v) for v in r], py_))
+    PO = chunked('parks', _pit, 0.25, mat('grass', srgb('#5d7a3a'), 1.0), 'appear')
     tm = mat('tree', srgb('#3d5c2a'), 0.9)
     bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
     tree.scale = (1, 1, 1.2); tree.hide_render = True; tree.hide_viewport = True
@@ -376,7 +392,7 @@ if parks:
     ip = TN.new('GeometryNodeInstanceOnPoints'); TL(dp.outputs['Points'], ip.inputs['Points']); TL(oi.outputs['Geometry'], ip.inputs['Instance']); TL(rvo, ip.inputs['Scale'])
     tr_ = TN.new('GeometryNodeTranslateInstances'); tr_.inputs['Translation'].default_value = (0, 0, 4); TL(ip.outputs[0], tr_.inputs['Instances'])
     jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0]); TL(jg.outputs[0], o_.inputs[0])
-    po.modifiers.new('trees', 'NODES').node_group = tg_
+    for o_ in PO: o_.modifiers.new('trees', 'NODES').node_group = tg_
     log('parchi', len(parks))
 TREES = tg_ if parks else None
 if TREES and FOREST:
@@ -389,10 +405,10 @@ if TREES and FOREST:
     jg3 = [n for n in N3 if n.bl_idname == 'GeometryNodeJoinGeometry'][0]
     for l_ in list(t3.links):
         if l_.to_node == jg3 and l_.from_node.bl_idname == 'NodeGroupInput': t3.links.remove(l_)
-    FOREST.modifiers.new('trees', 'NODES').node_group = t3
+    for o_ in FOREST: o_.modifiers.new('trees', 'NODES').node_group = t3
 if TREES:
     t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = 0.0018
-    bo.modifiers.new('trees', 'NODES').node_group = t2
+    for o_ in BO: o_.modifiers.new('trees', 'NODES').node_group = t2
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
@@ -427,6 +443,36 @@ for f, p, t in CAMKEYS:
     if '--cam' in a: v = list(map(float, opt('--cam', 6))); p, t = v[:3], v[3:]
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
 
+
+# ---------- visibilita' per fotogramma: solo cio' che cambia viene ricalcolato ----------
+def _dur(f):
+    q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS); return max(0.4, min(25.0, rate * 0.6))
+YF = {f: year_at(f) for f in range(F0, F1 + 1)}; DF = {f: _dur(f) for f in range(F0, F1 + 1)}
+def keyset(target, prop, states):
+    last = None
+    for f in range(F0, F1 + 1):
+        v = states(f)
+        if v != last:
+            setattr(target, prop, v); target.keyframe_insert(prop, frame=f); last = v
+nk = 0
+for ch in CHUNKS:
+    def st(f, ch=ch):
+        y_, d_ = YF[f], DF[f] * 1.15 + 0.3
+        if y_ < ch['b0']: return 'H'
+        if ch['d1'] is not None and y_ >= ch['d1'] + d_: return 'H'
+        if y_ - d_ < ch['b1']: return 'A'
+        if ch['d0'] is not None and y_ >= ch['d0'] - 0.2: return 'A'
+        return 'S'
+    S = {f: st(f) for f in range(F0, F1 + 1)}
+    keyset(ch['obj'], 'hide_render', lambda f: S[f] == 'H')
+    keyset(ch['mod'], 'show_render', lambda f: S[f] == 'A')
+for o_, kind, thr in VIS:
+    if kind == 'appear': keyset(o_, 'hide_render', lambda f, t=thr: YF[f] < t)
+    else: keyset(o_, 'hide_render', lambda f, t=thr: YF[f] >= t)
+for ac in bpy.data.actions:
+    for fc in getattr(ac, 'fcurves', []):
+        for kp in fc.keyframe_points: kp.interpolation = 'CONSTANT'
+log('visibilita\' a chiave:', len(CHUNKS), 'blocchi città,', len(VIS), 'blocchi statici')
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
 DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
 if DEV in ('OPTIX', 'CUDA'):
