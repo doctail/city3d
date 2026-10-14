@@ -40,11 +40,11 @@ echo "uso: $DEV"
 
 MODE=${1:-test}
 if [ "$MODE" = "preview" ]; then
-  step "4/5 ANTEPRIMA: 1 fotogramma ogni 2 secondi, risoluzione ridotta"
+  step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev
-  $PY build_render.py -- $D out/prev --frames 1 7839 --step 48 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
-  ffmpeg -loglevel error -y -framerate 4 -pattern_type glob -i 'out/prev/*.png' -c:v libx264 -crf 20 -pix_fmt yuv420p out/preview.mp4
-  ls -lh out/preview.mp4; step "FINITO"; echo "Scarica city3d/out/preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
+  $PY build_render.py -- $D out/prev --frames 1 7839 --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  ffmpeg -loglevel error -y -framerate 2 -pattern_type glob -i 'out/prev/*.jpg' -c:v libx264 -crf 20 -pix_fmt yuv420p out/${CITY}_preview.mp4
+  ls -lh out/${CITY}_preview.mp4; step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
 if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
