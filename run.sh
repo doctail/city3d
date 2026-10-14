@@ -53,6 +53,16 @@ if [ "$MODE" = "profile" ]; then
     $PY build_render.py -- $D /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
   done; step "FINITO profilo: manda lo screenshot"; exit 0
 fi
+if [ "$MODE" = "shorts" ]; then
+  step "SHORTS verticali 1080x1920 (3 tratti, fotogrammi saltati = accelerazione)"
+  # tratto: primo ultimo passo  (in fotogrammi del video lungo, 24 fps)
+  for S in "1 133 7839 7" "2 5593 7839 2" "3 133 2400 2"; do set -- $S
+    mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
+    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+  done
+  tar cf out/shorts_${CITY}.tar out/short1 out/short2 out/short3 && ls -lh out/shorts_${CITY}.tar
+  step "FINITO shorts: scarica out/shorts_${CITY}.tar"; exit 0
+fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete

@@ -416,7 +416,7 @@ if parks:
     tg_ = bpy.data.node_groups.new('trees', 'GeometryNodeTree')
     tg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); tg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
     TN = tg_.nodes; TL = tg_.links.new; i_ = TN.new('NodeGroupInput'); o_ = TN.new('NodeGroupOutput')
-    dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = float(opt('--parkdens', 1, '0.012')); TL(i_.outputs[0], dp.inputs['Mesh'])
+    dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = float(opt('--parkdens', 1, str(CITY.get('park_trees', 0.012)))); TL(i_.outputs[0], dp.inputs['Mesh'])
     oi = TN.new('GeometryNodeObjectInfo'); oi.inputs['Object'].default_value = tree
     rv = TN.new('FunctionNodeRandomValue'); rv.data_type = 'FLOAT'
     fl = [x for x in rv.inputs if x.type == 'VALUE' and x.name in ('Min', 'Max')]; fl[0].default_value = 3.5; fl[1].default_value = 6.5
@@ -440,7 +440,7 @@ if TREES and FOREST:
         if l_.to_node == jg3 and l_.from_node.bl_idname == 'NodeGroupInput': t3.links.remove(l_)
     for o_ in FOREST: o_.modifiers.new('trees', 'NODES').node_group = t3
 if TREES:
-    t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = 0.0018
+    t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = float(CITY.get('block_trees', 0.0018))
     for o_ in BO: o_.modifiers.new('trees', 'NODES').node_group = t2
 # alberi "cotti" in geometria statica: spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
 _dg = bpy.context.evaluated_depsgraph_get(); nb = 0

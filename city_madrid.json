@@ -70,5 +70,7 @@
   "Río Manzanares": 60,
   "Río Jarama": 70
  },
- "land_from_buildings": true
+ "land_from_buildings": true,
+ "block_trees": 0.0003,
+ "park_trees": 0.006
 }
