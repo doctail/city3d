@@ -358,7 +358,8 @@ for g_ in (_rg.geoms if hasattr(_rg, 'geoms') else [_rg]):
         try: bm.faces.new([bm.verts.new((x, y, 0.18)) for x, y in list(g_.exterior.coords)[:-1]])
         except ValueError: pass
 bmesh.ops.triangulate(bm, faces=bm.faces)
-obj('roads', bm, mat('road', srgb('#c2b38f'), 0.95))
+if '--roads' in a: obj('roads', bm, mat('road', srgb('#c2b38f'), 0.95))   # strade disegnate a mano: spente di default (sembravano righe dritte finte)
+else: bm.free()
 # isolati: impronte degli edifici allargate di qualche metro, piu' chiare (marciapiedi, cortili)
 def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasattr(g, 'geoms') else [g]) if not p.is_empty]
 blocks = []
@@ -529,7 +530,6 @@ sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoisin
 sc.cycles.diffuse_bounces = 2; sc.cycles.glossy_bounces = 1; sc.cycles.transmission_bounces = 0; sc.cycles.volume_bounces = 0
 sc.cycles.transparent_max_bounces = 2; sc.cycles.caustics_reflective = False; sc.cycles.caustics_refractive = False
 sc.cycles.use_adaptive_sampling = True; sc.cycles.adaptive_threshold = 0.05
-sc.render.image_settings.compression = 10
 DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
 if DEV in ('OPTIX', 'CUDA'):
     pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV; pr.get_devices()
@@ -538,7 +538,11 @@ if DEV in ('OPTIX', 'CUDA'):
 else: log('CPU')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
-sc.render.image_settings.file_format = 'PNG'; sc.render.filepath = os.path.join(OUT, '')
+EXT = opt('--ext', 1, 'jpg')   # jpg 95: ~0,7 MB a 1080p (png ~3-8 MB: 7839 fotogrammi riempiono il disco)
+_is = sc.render.image_settings; _is.file_format = 'JPEG' if EXT == 'jpg' else 'PNG'; _is.color_mode = 'RGB'
+if EXT == 'jpg': _is.quality = 95
+else: _is.compression = 15
+sc.render.filepath = os.path.join(OUT, '')
 sc.render.use_persistent_data = True
 # BVH dinamico: Cycles non 'cuoce' le trasformazioni nelle mesh, quindi spostare/scalare un oggetto grande non ricostruisce la sua geometria
 if opt('--bvh', 1, 'dynamic') == 'dynamic': sc.cycles.debug_bvh_type = 'DYNAMIC_BVH'
@@ -566,8 +570,8 @@ def setvis(o_, hidden):
         o_.location.z = -5000.0 if hidden else 0.0; VISSET[o_.name] = hidden
 done = 0
 for f in range(F0, F1 + 1, sc.frame_step):
-    path = os.path.join(OUT, f'{f:04d}.png')
-    if os.path.exists(path) and os.path.getsize(path) > 0: continue
+    path = os.path.join(OUT, f'{f:04d}.{EXT}')
+    if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:04d}.jpg'), os.path.join(OUT, f'{f:04d}.png'))): continue
     t_ = time.time(); sc.frame_set(f); y_ = YF[f]
     _l = lens_at(f)
     if abs(cam.lens - _l) > 1e-3: cam.lens = _l
