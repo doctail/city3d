@@ -71,8 +71,8 @@ def city_mat():
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = 0.35; L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
-def land_mat():
-    m = bpy.data.materials.new('land'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+def land_mat(mode='fields'):
+    m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
     b.inputs['Roughness'].default_value = 0.95
     yv = N.new('ShaderNodeValue'); LAND_YEAR.append(yv)
     at = N.new('ShaderNodeAttribute'); at.attribute_name = 'uy'; at.attribute_type = 'GEOMETRY'
@@ -95,7 +95,7 @@ def land_mat():
     bk.inputs['Color1'].default_value = (*srgb('#8a7f72'), 1); bk.inputs['Color2'].default_value = (*srgb('#7a6e63'), 1); bk.inputs['Mortar'].default_value = (*srgb('#3e3d3c'), 1)
     bk.inputs['Mortar Size'].default_value = 0.06; bk.inputs['Brick Width'].default_value = 1.1; bk.inputs['Row Height'].default_value = 0.7; bk.offset = 0.0
     L(bk.outputs['Color'], mx.inputs[7])
-    L(mx.outputs[2], b.inputs['Base Color'])
+    L(fields.outputs[0] if mode == 'fields' else bk.outputs['Color'], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
 def obj(name, bm, m):
@@ -204,8 +204,7 @@ sp = N.new('GeometryNodeSetPosition'); L(gi.outputs[0], sp.inputs['Geometry']); 
 lt = M('LESS_THAN', 0.002); L(alive.outputs[0], lt.inputs[0])
 dg = N.new('GeometryNodeDeleteGeometry'); dg.domain = 'POINT'; L(sp.outputs[0], dg.inputs['Geometry']); L(lt.outputs[0], dg.inputs['Selection'])
 L(dg.outputs[0], go.inputs[0])
-for ch in CHUNKS:
-    ch['mod'] = ch['obj'].modifiers.new('grow', 'NODES'); ch['mod'].node_group = ng
+# crescita: ogni blocco (stesso anno di nascita e di demolizione) sale scalando l'oggetto in altezza: Cycles riusa la geometria
 
 # anno per fotogramma: lento all'inizio, veloce nel Novecento (curva morbida)
 SCHED = json.load(open(opt('--schedule'))) if opt('--schedule') else None
@@ -217,17 +216,15 @@ def _lerp(v, pts):
 def year_at(f):
     if SCHED: return _lerp((f - 1) / FPS, SCHED['years'])
     t = (f - F0) / max(1, F1 - F0); return Y0 + (Y1 - Y0) * (t ** 0.8)
-YEAR_NODES = [yr]
+YEAR_NODES = []
 def key_years():
+    return
     for nd_ in YEAR_NODES:
         if nd_.outputs[0].is_property_set('default_value') and getattr(nd_, '_keyed', False): continue
         for f in list(range(F0, F1 + 1, 4)) + [F1]:
             nd_.outputs[0].default_value = year_at(f); nd_.outputs[0].keyframe_insert('default_value', frame=f)
 key_years()
 # durata della crescita in anni = ~0.6 s di video al ritmo corrente (lento negli anni lenti, veloce nei rapidi)
-for f in list(range(F0, F1 + 1, 4)) + [F1]:
-    q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS)
-    DUR.outputs[0].default_value = max(0.4, min(25.0, rate * 0.6)); DUR.outputs[0].keyframe_insert('default_value', frame=f)
 json.dump({str(f): year_at(f) for f in range(F0, F1 + 1)}, open(f'{OUT}/years.json', 'w'))
 
 
@@ -307,9 +304,15 @@ if len(bmm.faces):
     mr = mn.new('ShaderNodeMapRange'); ml(mv.outputs['Distance'], mr.inputs['Value']); mr.inputs['From Min'].default_value = 0.02; mr.inputs['From Max'].default_value = 0.06
     mmx = mn.new('ShaderNodeMix'); mmx.data_type = 'RGBA'; ml(mr.outputs[0], mmx.inputs['Factor']); mmx.inputs[6].default_value = (*srgb('#2a3a3c'), 1); mmx.inputs[7].default_value = (*srgb('#7d8452'), 1)
     ml(mmx.outputs[2], mb.inputs['Base Color']); mb.inputs['Roughness'].default_value = 0.6
-    MARSH = obj('marsh', bmm, hazeify(mm_)); MARSH.data.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', muy)
+    _mt = obj('marsh_tmp', bmm, hazeify(mm_)); _mv = _mt.data.vertices
+    _mit = []; _vi = 0
+    for p_ in _mt.data.polygons: _mit.append(([tuple(_mv[i].co[:2]) for i in p_.vertices], muy[p_.vertices[0]]))
+    MARSH = chunked('marsh', _mit, 0.08, _mt.data.materials[0], 'vanish'); bpy.data.objects.remove(_mt, do_unlink=True)
 else: bmm.free()
-lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
+lo_ = obj('land_tmp', bm, land_mat())
+_lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
+LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
+log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
 FB = list(map(float, opt('--forest-box', 4, ['-7500', '-9500', '5500', '9000'])))
@@ -319,8 +322,8 @@ for p_, u_ in zip(lo_.data.polygons, uyl):
     if not (FB[0] < cx_ < FB[2] and FB[1] < cy_ < FB[3]) or p_.area > 20000: continue
     _fit.append(([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_))
 FOREST = chunked('forest', _fit, 0.0, mat('fbase', srgb('#4f7136'), 1.0), 'vanish')
-for o_ in FOREST: o_.hide_render = False
 log('boschi', len(_fit), 'celle in', len(FOREST), 'blocchi')
+bpy.data.objects.remove(lo_, do_unlink=True)
 ROADS_LL = [
   [(40.7045,-74.0135),(40.7128,-74.0072),(40.7195,-74.0021),(40.7290,-73.9965),(40.7359,-73.9911),(40.7411,-73.9897),(40.7500,-73.9877),(40.7580,-73.9855),(40.7681,-73.9819),(40.7870,-73.9754),(40.8000,-73.9680),(40.8160,-73.9590),(40.8340,-73.9450),(40.8550,-73.9330),(40.8750,-73.9100)],
   [(40.7128,-74.0060),(40.7150,-73.9960),(40.7240,-73.9920),(40.7300,-73.9910),(40.7410,-73.9870),(40.7590,-73.9700),(40.7800,-73.9520),(40.7950,-73.9450),(40.8050,-73.9380),(40.8200,-73.9300)],
@@ -366,11 +369,11 @@ fg = hg.copy(); fg.name = 'hide_after'
 _a = [n for n in fg.nodes if n.bl_idname == 'GeometryNodeInputNamedAttribute'][0]; _a.inputs['Name'].default_value = 'fy'
 _c = [n for n in fg.nodes if n.bl_idname == 'ShaderNodeMath' and n.operation == 'LESS_THAN'][0]; _c.operation = 'GREATER_THAN'
 YEAR_NODES.append([n for n in fg.nodes if n.bl_idname == 'ShaderNodeValue'][0])
-if MARSH: MARSH.modifiers.new('hide', 'NODES').node_group = fg
 key_years()
 log('isolati', len(blocks))
 # parchi con alberi (data/parks.json opzionale: lista di anelli)
 parks = json.load(open(f'{DATA}/parks.json')) if os.path.exists(f'{DATA}/parks.json') else []
+if '--crop' in a: parks = [r for r in parks if cx0 < r[0][0] < cx1 and cy0 < r[0][1] < cy1]
 if parks:
     _pit = []
     for r in parks:
@@ -384,14 +387,15 @@ if parks:
     tg_ = bpy.data.node_groups.new('trees', 'GeometryNodeTree')
     tg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); tg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
     TN = tg_.nodes; TL = tg_.links.new; i_ = TN.new('NodeGroupInput'); o_ = TN.new('NodeGroupOutput')
-    dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = 0.012; TL(i_.outputs[0], dp.inputs['Mesh'])
+    dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = float(opt('--parkdens', 1, '0.012')); TL(i_.outputs[0], dp.inputs['Mesh'])
     oi = TN.new('GeometryNodeObjectInfo'); oi.inputs['Object'].default_value = tree
     rv = TN.new('FunctionNodeRandomValue'); rv.data_type = 'FLOAT'
     fl = [x for x in rv.inputs if x.type == 'VALUE' and x.name in ('Min', 'Max')]; fl[0].default_value = 3.5; fl[1].default_value = 6.5
     rvo = [x for x in rv.outputs if x.type == 'VALUE'][0]
     ip = TN.new('GeometryNodeInstanceOnPoints'); TL(dp.outputs['Points'], ip.inputs['Points']); TL(oi.outputs['Geometry'], ip.inputs['Instance']); TL(rvo, ip.inputs['Scale'])
     tr_ = TN.new('GeometryNodeTranslateInstances'); tr_.inputs['Translation'].default_value = (0, 0, 4); TL(ip.outputs[0], tr_.inputs['Instances'])
-    jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0]); TL(jg.outputs[0], o_.inputs[0])
+    jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0])
+    rz_ = TN.new('GeometryNodeRealizeInstances'); TL(jg.outputs[0], rz_.inputs[0]); TL(rz_.outputs[0], o_.inputs[0])
     for o_ in PO: o_.modifiers.new('trees', 'NODES').node_group = tg_
     log('parchi', len(parks))
 TREES = tg_ if parks else None
@@ -409,6 +413,13 @@ if TREES and FOREST:
 if TREES:
     t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = 0.0018
     for o_ in BO: o_.modifiers.new('trees', 'NODES').node_group = t2
+# alberi "cotti" in geometria statica: spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
+_dg = bpy.context.evaluated_depsgraph_get(); nb = 0
+for o_ in list(bpy.data.objects):
+    if o_.type == 'MESH' and any(m_.name == 'trees' for m_ in o_.modifiers):
+        me_ = bpy.data.meshes.new_from_object(o_.evaluated_get(_dg), preserve_all_data_layers=True, depsgraph=_dg)
+        o_.modifiers.clear(); old_me = o_.data; o_.data = me_; bpy.data.meshes.remove(old_me); nb += len(me_.vertices)
+log('alberi cotti:', nb, 'vertici')
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
@@ -448,31 +459,17 @@ for f, p, t in CAMKEYS:
 def _dur(f):
     q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS); return max(0.4, min(25.0, rate * 0.6))
 YF = {f: year_at(f) for f in range(F0, F1 + 1)}; DF = {f: _dur(f) for f in range(F0, F1 + 1)}
-def keyset(target, prop, states):
-    last = None
-    for f in range(F0, F1 + 1):
-        v = states(f)
-        if v != last:
-            setattr(target, prop, v); target.keyframe_insert(prop, frame=f); last = v
-nk = 0
-for ch in CHUNKS:
-    def st(f, ch=ch):
-        y_, d_ = YF[f], DF[f] * 1.15 + 0.3
-        if y_ < ch['b0']: return 'H'
-        if ch['d1'] is not None and y_ >= ch['d1'] + d_: return 'H'
-        if y_ - d_ < ch['b1']: return 'A'
-        if ch['d0'] is not None and y_ >= ch['d0'] - 0.2: return 'A'
-        return 'S'
-    S = {f: st(f) for f in range(F0, F1 + 1)}
-    keyset(ch['obj'], 'hide_render', lambda f: S[f] == 'H')
-    keyset(ch['mod'], 'show_render', lambda f: S[f] == 'A')
-for o_, kind, thr in VIS:
-    if kind == 'appear': keyset(o_, 'hide_render', lambda f, t=thr: YF[f] < t)
-    else: keyset(o_, 'hide_render', lambda f, t=thr: YF[f] >= t)
-for ac in bpy.data.actions:
-    for fc in getattr(ac, 'fcurves', []):
-        for kp in fc.keyframe_points: kp.interpolation = 'CONSTANT'
-log('visibilita\' a chiave:', len(CHUNKS), 'blocchi città,', len(VIS), 'blocchi statici')
+def growth(ch, f):
+    y_, d_ = YF[f], DF[f]
+    t = (y_ - ch['b0']) / d_
+    if t <= 0: return 0.0
+    g = 1.0 if t >= 1 else t + 0.18 * math.sin(math.pi * t)
+    if ch['d0'] is not None:
+        k = (y_ - ch['d0']) / d_
+        if k >= 1: return 0.0
+        if k > 0: g *= (1 - k)
+    return g
+log('blocchi:', len(CHUNKS), 'città,', len(VIS), 'statici')
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
 DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
 if DEV in ('OPTIX', 'CUDA'):
@@ -491,6 +488,26 @@ tr = time.time()
 _tf = [time.time()]
 def _post(scene, *_):
     now = time.time(); print(f'[build] fotogramma {scene.frame_current}: {now - _tf[0]:.1f}s', flush=True); _tf[0] = now
-bpy.app.handlers.render_post.append(_post)
-bpy.ops.render.render(animation=True)
-n = len(range(F0, F1 + 1, sc.frame_step)); log(f'FATTO {n} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')
+
+for idb in list(bpy.data.materials) + list(bpy.data.worlds) + list(bpy.data.node_groups) + [o for o in bpy.data.objects if o.type == 'MESH']:
+    try: idb.animation_data_clear()
+    except Exception: pass
+    nt_ = getattr(idb, 'node_tree', None)
+    if nt_: nt_.animation_data_clear()
+VISSET = {}
+def setvis(o_, hidden):
+    # niente hide_render (cambia la scena per Cycles e la ricostruisce): gli oggetti nascosti scendono sotto terra
+    if VISSET.get(o_.name) != hidden:
+        o_.location.z = -5000.0 if hidden else 0.0; VISSET[o_.name] = hidden
+done = 0
+for f in range(F0, F1 + 1, sc.frame_step):
+    path = os.path.join(OUT, f'{f:04d}.png')
+    if os.path.exists(path) and os.path.getsize(path) > 0: continue
+    t_ = time.time(); sc.frame_set(f); y_ = YF[f]
+    for ch in CHUNKS:
+        g_ = growth(ch, f); setvis(ch['obj'], g_ < 0.002)
+        if g_ >= 0.002 and abs(ch['obj'].scale.z - g_) > 1e-4: ch['obj'].scale.z = g_
+    for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr))
+    sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
+    print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
+n = max(1, done); log(f'FATTO {done} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')
