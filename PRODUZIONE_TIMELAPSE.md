@@ -46,3 +46,11 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 - Barcellona: Catasto spagnolo INSPIRE (anno e piani di ogni edificio, tutta la Spagna) — da verificare.
 - Chicago: footprints comunali con year_built; evento forte (incendio 1871); pubblico USA — da verificare.
 - Amsterdam / Rotterdam: registro BAG (bouwjaar) + 3DBAG (altezze); Rotterdam ha il bombardamento del 1940 — da verificare.
+
+## Ricerca vidIQ (14 ott 2026) — vale per tutti i video
+- Il pubblico cerca **"evolution"**, non "grow": "city evolution 3d" ~28.000 ricerche/mese, concorrenza 24/100, +131% in 30 giorni; "city evolution" 28.700 (+33%); "city evolution timelapse" 12.000; "3d city evolution" 9.700; "evolution of new york city" 10.400; "evolution of madrid" 4.700 con concorrenza 12/100 (bassissima).
+- Il formato dominante della nicchia è "Evolution of <Città> | Fixed-Camera Timelapse: N Years in M Minutes", quasi tutto generato con AI. Canali piccoli esplodono: EvolveInTime (1.570 iscritti) 76K, Civilizations in Motion (9K) 2M, Restored Timeline Chicago 3,5M, Timelapse Professor "History Of Rome - 3D Timelapse (NO AI)" 19K con 1.950 iscritti. Quindi NON è vero che le visualizzazioni vanno solo ai canali affermati.
+- Differenza nostra da difendere: dati reali, niente AI → "(No AI)" e "Every Real Building" restano nel titolo.
+- Punteggi titolo vidIQ: "Watch New York Grow for 400 Years — Every Real Building, 1609–2026 (No AI)" 91; "Evolution of New York City in 3D | 400 Years, Every Real Building (No AI)" 96; Madrid "Evolution of Madrid in 3D | 500 Years, Every Real Building (No AI)" 90.
+- Schema titolo da qui in avanti: **Evolution of <City> in 3D | N Years, Every Real Building (No AI)**. Tag di base: city evolution 3d, 3d city evolution, city evolution timelapse, evolution of <city>, <city> history, history of <city>, <city> timelapse, 3d timelapse, historical reconstruction.
+- Primi dati New York (circa 4 ore): 1.100 impressioni, CTR 1,3% (basso), 30 visualizzazioni, durata media 1:02 su 5:27 (19%). Campione troppo piccolo per giudicare.
