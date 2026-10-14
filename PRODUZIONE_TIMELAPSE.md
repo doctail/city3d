@@ -32,4 +32,14 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 ## Stato
 - **New York** (primo video): render completo lanciato il 14 ott 2026 su RTX 5080. In attesa dell'mp4 per il montaggio. Musica: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library), 5:27.
 - Difetti noti accettati: New Jersey senza edifici (solo tessuto urbano disegnato); leggera macchiatura del denoiser sulle facciate a vetri; edifici pre-1900 ricostruiti in modo illustrativo.
-- Prossima città candidata: Amsterdam (registro BAG con anno di costruzione di ogni edificio, altezze da 3DBAG) — da verificare.
+- Prossima città: da scegliere tra Barcellona, Chicago, Amsterdam (vedi sotto).
+
+## Concorrenza (aggiornare prima di ogni città)
+- Già fatte da altri (ott 2026): Roma, Berlino, Londra (CityEons); Parigi (virale gen 2026); Manhattan 1600–2026 (CITY 3D TIMELAPSE, virale ago 2026); Las Vegas (Cornerstone); Budapest (Urbis Anno); Firenze (Tree The City); Gerusalemme (Urbavision); Praga (Latos Charts).
+- Formato copertina della nicchia: anni in alto con freccia, nome città enorme e spaziato in basso, bandiera, immagine piena. Script: `thumb_city.py`. Titoli senza "No AI" (decisione di Fabio, 14 ott 2026).
+- Regola: prima di ogni città, cercare su YouTube "<città> 3D timelapse"; precedenza alle città libere.
+
+## Città candidate e dati (anno di costruzione per edificio)
+- Barcellona: Catasto spagnolo INSPIRE (anno e piani di ogni edificio, tutta la Spagna) — da verificare.
+- Chicago: footprints comunali con year_built; evento forte (incendio 1871); pubblico USA — da verificare.
+- Amsterdam / Rotterdam: registro BAG (bouwjaar) + 3DBAG (altezze); Rotterdam ha il bombardamento del 1940 — da verificare.
