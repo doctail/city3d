@@ -91,19 +91,26 @@ def land_mat(mode='fields'):
     L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
-    # tessuto urbano: isolati deformati (non una griglia perfetta), piu' scuri, quartieri con tinte diverse
-    wn = N.new('ShaderNodeTexNoise'); wn.inputs['Scale'].default_value = 0.0012; wn.inputs['Detail'].default_value = 2; L(tc.outputs['Object'], wn.inputs['Vector'])
-    wc = N.new('ShaderNodeVectorMath'); wc.operation = 'SUBTRACT'; L(wn.outputs['Color'], wc.inputs[0]); wc.inputs[1].default_value = (0.5, 0.5, 0.5)
-    ws = N.new('ShaderNodeVectorMath'); ws.operation = 'SCALE'; L(wc.outputs[0], ws.inputs[0]); ws.inputs['Scale'].default_value = 420.0
-    wv = N.new('ShaderNodeVectorMath'); wv.operation = 'ADD'; L(tc.outputs['Object'], wv.inputs[0]); L(ws.outputs[0], wv.inputs[1])
-    bk = N.new('ShaderNodeTexBrick'); L(wv.outputs[0], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.012
-    bk.inputs['Color1'].default_value = (*srgb('#6b6158'), 1); bk.inputs['Color2'].default_value = (*srgb('#5a5049'), 1); bk.inputs['Mortar'].default_value = (*srgb('#2f2e2d'), 1)
-    bk.inputs['Mortar Size'].default_value = 0.07; bk.inputs['Brick Width'].default_value = 1.1; bk.inputs['Row Height'].default_value = 0.7; bk.offset = 0.37; bk.inputs['Bias'].default_value = 0.0
+    # tessuto urbano visto dall'alto: tetti a celle piccole (toni spenti), strade dritte parallele alla griglia di Manhattan,
+    # un po' di verde nei cortili, quartieri con tinte diverse. Basso contrasto: e' sfondo, non deve sembrare un pavimento.
+    vr = N.new('ShaderNodeVectorRotate'); vr.rotation_type = 'Z_AXIS'; vr.inputs['Angle'].default_value = math.radians(29); L(tc.outputs['Object'], vr.inputs['Vector'])
+    rv = N.new('ShaderNodeTexVoronoi'); rv.inputs['Scale'].default_value = 0.045; rv.inputs['Randomness'].default_value = 0.85; L(vr.outputs[0], rv.inputs['Vector'])
+    rr = N.new('ShaderNodeValToRGB'); L(rv.outputs['Color'], rr.inputs[0]); rcr = rr.color_ramp; rcr.interpolation = 'CONSTANT'
+    rcr.elements[0].color = (*srgb('#6e655c'), 1); rcr.elements[1].position = 0.84; rcr.elements[1].color = (*srgb('#6b5148'), 1)
+    for p_, c_ in [(0.17, '#7d7064'), (0.34, '#5d5853'), (0.5, '#857565'), (0.67, '#77706a')]:
+        e_ = rcr.elements.new(p_); e_.color = (*srgb(c_), 1)
+    bk = N.new('ShaderNodeTexBrick'); L(vr.outputs[0], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.0105; bk.offset = 0.0
+    bk.inputs['Color1'].default_value = (1, 1, 1, 1); bk.inputs['Color2'].default_value = (1, 1, 1, 1); bk.inputs['Mortar'].default_value = (0.42, 0.42, 0.42, 1)
+    bk.inputs['Mortar Size'].default_value = 0.03; bk.inputs['Mortar Smooth'].default_value = 0.3; bk.inputs['Brick Width'].default_value = 0.85; bk.inputs['Row Height'].default_value = 2.4
+    sm = N.new('ShaderNodeMix'); sm.data_type = 'RGBA'; sm.blend_type = 'MULTIPLY'; sm.inputs['Factor'].default_value = 1.0; L(rr.outputs[0], sm.inputs[6]); L(bk.outputs['Color'], sm.inputs[7])
+    gn = N.new('ShaderNodeTexNoise'); gn.inputs['Scale'].default_value = 0.03; gn.inputs['Detail'].default_value = 3; L(tc.outputs['Object'], gn.inputs['Vector'])
+    gk = N.new('ShaderNodeMapRange'); L(gn.outputs['Fac'], gk.inputs['Value']); gk.inputs['From Min'].default_value = 0.6; gk.inputs['From Max'].default_value = 0.66; gk.inputs['To Max'].default_value = 0.7
+    gm = N.new('ShaderNodeMix'); gm.data_type = 'RGBA'; L(gk.outputs[0], gm.inputs['Factor']); L(sm.outputs[2], gm.inputs[6]); gm.inputs[7].default_value = (*srgb('#4d5b3c'), 1)
     dn = N.new('ShaderNodeTexNoise'); dn.inputs['Scale'].default_value = 0.0025; dn.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], dn.inputs['Vector'])
-    dr = N.new('ShaderNodeValToRGB'); L(dn.outputs['Fac'], dr.inputs[0]); dr.color_ramp.elements[0].position = 0.3; dr.color_ramp.elements[0].color = (*srgb('#8c8880'), 1)
-    dr.color_ramp.elements[1].position = 0.7; dr.color_ramp.elements[1].color = (*srgb('#e6d6c4'), 1)
+    dr = N.new('ShaderNodeValToRGB'); L(dn.outputs['Fac'], dr.inputs[0]); dr.color_ramp.elements[0].position = 0.3; dr.color_ramp.elements[0].color = (*srgb('#a8a49c'), 1)
+    dr.color_ramp.elements[1].position = 0.7; dr.color_ramp.elements[1].color = (*srgb('#ece0d2'), 1)
     um = N.new('ShaderNodeMix'); um.data_type = 'RGBA'; um.blend_type = 'MULTIPLY'; um.inputs['Factor'].default_value = 1.0
-    L(bk.outputs['Color'], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
+    L(gm.outputs[2], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
     L(um.outputs[2], mx.inputs[7])
     L(fields.outputs[0] if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
@@ -256,7 +263,7 @@ def chunked(name, items, z, m, kind, binw=3.0):
     return objs
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
-if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3])
+if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3]).buffer(12, join_style=2).buffer(-12, join_style=2)   # chiude le fessure tra contee
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
