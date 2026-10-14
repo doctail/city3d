@@ -39,7 +39,7 @@ fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full -name "*.png" -size 0 -delete
-  $PY build_render.py -- data out/full --frames 1 7839 --res 1920 1080 --samples 16 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  $PY build_render.py -- data out/full --frames 1 7839 --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   step "5/5 video"
   ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.png -c:v libx264 -preset slow -crf 21 -pix_fmt yuv420p out/nyc_full.mp4
   cp out/full/years.json out/years.json

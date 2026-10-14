@@ -519,6 +519,10 @@ def growth(ch, f):
     return g
 log('blocchi:', len(CHUNKS), 'città,', len(VIS), 'statici')
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
+sc.cycles.diffuse_bounces = 2; sc.cycles.glossy_bounces = 1; sc.cycles.transmission_bounces = 0; sc.cycles.volume_bounces = 0
+sc.cycles.transparent_max_bounces = 2; sc.cycles.caustics_reflective = False; sc.cycles.caustics_refractive = False
+sc.cycles.use_adaptive_sampling = True; sc.cycles.adaptive_threshold = 0.05
+sc.render.image_settings.compression = 10
 DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
 if DEV in ('OPTIX', 'CUDA'):
     pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV; pr.get_devices()
