@@ -17,6 +17,11 @@
 - Riavvolgimento 2026→1609: ~7 s/fotogramma per circa 90 fotogrammi (migliaia di oggetti che cambiano).
 - Totale stimato: ~8,3 ore, ~3,3 $.
 
+## Risultato del profilo (RTX 5080, 1080p, 8 campioni)
+- Denoiser OIDN 3,72 s · OptiX 1,29 s · nessuno 1,24 s · OptiX 2 campioni 0,89 s · OptiX 960x540 0,75 s.
+- Il costo fisso era il denoiser OIDN. Con OptiX il render completo gira a ~1,0 s/fotogramma: ~2,3 ore, ~0,9 $.
+- Difetto noto di OptiX a 8 campioni: leggera macchiatura sulle facciate a vetri blu. Se dà fastidio: `SAMPLES=12 bash run.sh full` (~+0,3 s/fotogramma).
+
 ## Obiettivo per il prossimo
 - ≤ 2 s/fotogramma → ~4,5 ore → < 2 € su 5080.
 - Ordine al pod: `run.sh profile` → scelgo la variante → `run.sh full`.
