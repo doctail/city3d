@@ -60,8 +60,9 @@ if [ "$MODE" = "shorts" ]; then
     mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
     $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   done
-  tar cf out/shorts_${CITY}.tar out/short1 out/short2 out/short3 && ls -lh out/shorts_${CITY}.tar
-  step "FINITO shorts: scarica out/shorts_${CITY}.tar"; exit 0
+  for n in 1 2 3; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
+  ls -lh out/${CITY}_short*.mp4
+  step "FINITO shorts: scarica out/${CITY}_short1.mp4, _short2.mp4, _short3.mp4"; exit 0
 fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
