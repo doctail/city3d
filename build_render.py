@@ -277,11 +277,19 @@ if len(bmm.faces):
 else: bmm.free()
 lo_ = obj('land', bm, land_mat()); lo_.data.attributes.new('uy', 'FLOAT', 'FACE').data.foreach_set('value', uyl)
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
-fm = lo_.data.copy(); fo = bpy.data.objects.new('forest_base', fm); sc.collection.objects.link(fo)
-fuy = [0.0] * len(fm.vertices)
-for p_, u_ in zip(fm.polygons, uyl):
-    for vi in p_.vertices: fuy[vi] = u_
+# base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
+FB = list(map(float, opt('--forest-box', 4, ['-7500', '-9500', '5500', '9000'])))
+fbm = bmesh.new(); fuy = []
+for p_, u_ in zip(lo_.data.polygons, uyl):
+    cx_, cy_ = p_.center.x, p_.center.y
+    if not (FB[0] < cx_ < FB[2] and FB[1] < cy_ < FB[3]) or p_.area > 20000: continue
+    vs_ = [fbm.verts.new(lo_.data.vertices[i].co) for i in p_.vertices]
+    try: fbm.faces.new(vs_); fuy += [u_] * len(vs_)
+    except ValueError: pass
+fm = bpy.data.meshes.new('forest_base'); fbm.to_mesh(fm); fbm.free()
+fo = bpy.data.objects.new('forest_base', fm); sc.collection.objects.link(fo)
 fm.attributes.new('fy', 'FLOAT', 'POINT').data.foreach_set('value', fuy)
+log('base boschi', len(fm.polygons), 'celle')
 FOREST = fo
 ROADS_LL = [
   [(40.7045,-74.0135),(40.7128,-74.0072),(40.7195,-74.0021),(40.7290,-73.9965),(40.7359,-73.9911),(40.7411,-73.9897),(40.7500,-73.9877),(40.7580,-73.9855),(40.7681,-73.9819),(40.7870,-73.9754),(40.8000,-73.9680),(40.8160,-73.9590),(40.8340,-73.9450),(40.8550,-73.9330),(40.8750,-73.9100)],
@@ -434,5 +442,9 @@ sc.render.use_overwrite = False; sc.render.use_placeholder = True   # ripartenza
 sc.frame_step = int(opt('--step', 1, '1'))
 log('render', F0, '->', F1, f'{RW}x{RH}', SAMPLES, 'campioni')
 tr = time.time()
+_tf = [time.time()]
+def _post(scene, *_):
+    now = time.time(); print(f'[build] fotogramma {scene.frame_current}: {now - _tf[0]:.1f}s', flush=True); _tf[0] = now
+bpy.app.handlers.render_post.append(_post)
 bpy.ops.render.render(animation=True)
 n = len(range(F0, F1 + 1, sc.frame_step)); log(f'FATTO {n} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')
