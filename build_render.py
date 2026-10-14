@@ -91,11 +91,21 @@ def land_mat(mode='fields'):
     L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
-    bk = N.new('ShaderNodeTexBrick'); L(tc.outputs['Object'], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.012
-    bk.inputs['Color1'].default_value = (*srgb('#8a7f72'), 1); bk.inputs['Color2'].default_value = (*srgb('#7a6e63'), 1); bk.inputs['Mortar'].default_value = (*srgb('#3e3d3c'), 1)
-    bk.inputs['Mortar Size'].default_value = 0.06; bk.inputs['Brick Width'].default_value = 1.1; bk.inputs['Row Height'].default_value = 0.7; bk.offset = 0.0
-    L(bk.outputs['Color'], mx.inputs[7])
-    L(fields.outputs[0] if mode == 'fields' else bk.outputs['Color'], b.inputs['Base Color'])
+    # tessuto urbano: isolati deformati (non una griglia perfetta), piu' scuri, quartieri con tinte diverse
+    wn = N.new('ShaderNodeTexNoise'); wn.inputs['Scale'].default_value = 0.0012; wn.inputs['Detail'].default_value = 2; L(tc.outputs['Object'], wn.inputs['Vector'])
+    wc = N.new('ShaderNodeVectorMath'); wc.operation = 'SUBTRACT'; L(wn.outputs['Color'], wc.inputs[0]); wc.inputs[1].default_value = (0.5, 0.5, 0.5)
+    ws = N.new('ShaderNodeVectorMath'); ws.operation = 'SCALE'; L(wc.outputs[0], ws.inputs[0]); ws.inputs['Scale'].default_value = 420.0
+    wv = N.new('ShaderNodeVectorMath'); wv.operation = 'ADD'; L(tc.outputs['Object'], wv.inputs[0]); L(ws.outputs[0], wv.inputs[1])
+    bk = N.new('ShaderNodeTexBrick'); L(wv.outputs[0], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.012
+    bk.inputs['Color1'].default_value = (*srgb('#6b6158'), 1); bk.inputs['Color2'].default_value = (*srgb('#5a5049'), 1); bk.inputs['Mortar'].default_value = (*srgb('#2f2e2d'), 1)
+    bk.inputs['Mortar Size'].default_value = 0.07; bk.inputs['Brick Width'].default_value = 1.1; bk.inputs['Row Height'].default_value = 0.7; bk.offset = 0.37; bk.inputs['Bias'].default_value = 0.0
+    dn = N.new('ShaderNodeTexNoise'); dn.inputs['Scale'].default_value = 0.0025; dn.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], dn.inputs['Vector'])
+    dr = N.new('ShaderNodeValToRGB'); L(dn.outputs['Fac'], dr.inputs[0]); dr.color_ramp.elements[0].position = 0.3; dr.color_ramp.elements[0].color = (*srgb('#8c8880'), 1)
+    dr.color_ramp.elements[1].position = 0.7; dr.color_ramp.elements[1].color = (*srgb('#e6d6c4'), 1)
+    um = N.new('ShaderNodeMix'); um.data_type = 'RGBA'; um.blend_type = 'MULTIPLY'; um.inputs['Factor'].default_value = 1.0
+    L(bk.outputs['Color'], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
+    L(um.outputs[2], mx.inputs[7])
+    L(fields.outputs[0] if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
 def obj(name, bm, m):
