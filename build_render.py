@@ -91,6 +91,10 @@ def land_mat():
     L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
+    bk = N.new('ShaderNodeTexBrick'); L(tc.outputs['Object'], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.012
+    bk.inputs['Color1'].default_value = (*srgb('#8a7f72'), 1); bk.inputs['Color2'].default_value = (*srgb('#7a6e63'), 1); bk.inputs['Mortar'].default_value = (*srgb('#3e3d3c'), 1)
+    bk.inputs['Mortar Size'].default_value = 0.06; bk.inputs['Brick Width'].default_value = 1.1; bk.inputs['Row Height'].default_value = 0.7; bk.offset = 0.0
+    L(bk.outputs['Color'], mx.inputs[7])
     L(mx.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
@@ -222,6 +226,14 @@ from shapely.prepared import prep
 BOR = None
 if os.path.exists(f'{DATA}/boroughs.json'):
     _bj = json.load(open(f'{DATA}/boroughs.json')); BOR = prep(unary_union([Polygon(r).buffer(0) for v in _bj.values() for r in v]).buffer(30))
+def nj_year(x, y):
+    # fuori dai distretti NYC (New Jersey, Westchester...): urbanizzazione per distanza da Hoboken / Jersey City
+    la = 40.758 + y / 110540; lo = -73.985 + x / (math.cos(math.radians(40.758)) * 111320)
+    d = min(math.hypot((la - 40.737) * 111.0, (lo + 74.030) * 84.3), math.hypot((la - 40.714) * 111.0, (lo + 74.034) * 84.3))
+    pts = [(0, 1835), (1.5, 1860), (3, 1885), (5, 1905), (8, 1925), (12, 1950), (20, 1965)]
+    for (a_, ya), (b_, yb) in zip(pts, pts[1:]):
+        if d <= b_: return ya + (yb - ya) * (d - a_) / (b_ - a_)
+    return 1970
 pl = prep(lgeom); bm = bmesh.new(); uyl = []
 bmm = bmesh.new(); muy = []
 try:
@@ -238,7 +250,7 @@ def cells(bounds, CELL, skip_core):
             if (not skip_core or not core.contains(c)) and pl.intersects(c):
                 q = c if pl.contains(c) else lgeom.intersection(c)
                 uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0
-                if BOR and not BOR.intersects(c): uy = 9999
+                if BOR and not BOR.intersects(c): uy = nj_year(xx + CELL / 2, yy + CELL / 2)
                 for g_ in (q.geoms if hasattr(q, 'geoms') else [q]):
                     if isinstance(g_, Polygon) and g_.area > 1:
                         try: bm.faces.new([bm.verts.new((x, y, 0)) for x, y in list(g_.exterior.coords)[:-1]]); uyl.append(uy)
