@@ -450,6 +450,37 @@ SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); s
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
 WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 0.35
 bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
+# cielo visto dalla camera: sfumato (foschia all'orizzonte -> azzurro in alto), alone caldo verso il sole, nuvole sottili
+def sky_grad():
+    tc_ = WN.new('ShaderNodeTexCoord'); nd = WN.new('ShaderNodeVectorMath'); nd.operation = 'NORMALIZE'; WL(tc_.outputs['Generated'], nd.inputs[0])
+    sp = WN.new('ShaderNodeSeparateXYZ'); WL(nd.outputs[0], sp.inputs[0])
+    rp = WN.new('ShaderNodeValToRGB'); WL(sp.outputs['Z'], rp.inputs[0]); cr_ = rp.color_ramp; cr_.interpolation = 'EASE'
+    cr_.elements[0].position = 0.0; cr_.elements[0].color = (*HAZE, 1)
+    cr_.elements[1].position = 0.5; cr_.elements[1].color = (0.08, 0.20, 0.52, 1)
+    for p_, c_ in [(0.035, (0.86, 0.78, 0.70)), (0.10, (0.50, 0.62, 0.84)), (0.25, (0.20, 0.36, 0.70))]:
+        e_ = cr_.elements.new(p_); e_.color = (*c_, 1)
+    a_, c2 = math.radians(90 - SUNEL), math.radians(230)
+    sv = (math.sin(a_) * math.sin(c2), -math.sin(a_) * math.cos(c2), math.cos(a_))
+    dt = WN.new('ShaderNodeVectorMath'); dt.operation = 'DOT_PRODUCT'; WL(nd.outputs[0], dt.inputs[0]); dt.inputs[1].default_value = sv
+    mx0 = WN.new('ShaderNodeMath'); mx0.operation = 'MAXIMUM'; WL(dt.outputs['Value'], mx0.inputs[0]); mx0.inputs[1].default_value = 0.0
+    p1 = WN.new('ShaderNodeMath'); p1.operation = 'POWER'; WL(mx0.outputs[0], p1.inputs[0]); p1.inputs[1].default_value = 6.0
+    p2 = WN.new('ShaderNodeMath'); p2.operation = 'POWER'; WL(mx0.outputs[0], p2.inputs[0]); p2.inputs[1].default_value = 80.0
+    g1 = WN.new('ShaderNodeMath'); g1.operation = 'MULTIPLY_ADD'; WL(p1.outputs[0], g1.inputs[0]); g1.inputs[1].default_value = 0.9; WL(p2.outputs[0], g1.inputs[2])
+    ad = WN.new('ShaderNodeMix'); ad.data_type = 'RGBA'; ad.blend_type = 'ADD'; ad.clamp_result = False
+    WL(g1.outputs[0], ad.inputs['Factor']); WL(rp.outputs[0], ad.inputs[6]); ad.inputs[7].default_value = (1.0, 0.72, 0.45, 1)
+    # nuvole: rumore proiettato su un piano alto (prospettiva verso l'orizzonte), solo sopra l'orizzonte
+    zb = WN.new('ShaderNodeMath'); zb.operation = 'ADD'; WL(sp.outputs['Z'], zb.inputs[0]); zb.inputs[1].default_value = 0.06
+    pr = WN.new('ShaderNodeVectorMath'); pr.operation = 'DIVIDE'; WL(nd.outputs[0], pr.inputs[0])
+    cz = WN.new('ShaderNodeCombineXYZ'); WL(zb.outputs[0], cz.inputs[0]); WL(zb.outputs[0], cz.inputs[1]); cz.inputs[2].default_value = 1.0; WL(cz.outputs[0], pr.inputs[1])
+    stv = WN.new('ShaderNodeVectorMath'); stv.operation = 'MULTIPLY'; WL(pr.outputs[0], stv.inputs[0]); stv.inputs[1].default_value = (1.0, 2.2, 0.0)
+    nzc = WN.new('ShaderNodeTexNoise'); nzc.inputs['Scale'].default_value = 0.9; nzc.inputs['Detail'].default_value = 7; nzc.inputs['Roughness'].default_value = 0.6; WL(stv.outputs[0], nzc.inputs['Vector'])
+    cm = WN.new('ShaderNodeMapRange'); WL(nzc.outputs['Fac'], cm.inputs['Value']); cm.inputs['From Min'].default_value = 0.50; cm.inputs['From Max'].default_value = 0.66
+    hz = WN.new('ShaderNodeMapRange'); WL(sp.outputs['Z'], hz.inputs['Value']); hz.inputs['From Min'].default_value = 0.015; hz.inputs['From Max'].default_value = 0.14
+    cmul = WN.new('ShaderNodeMath'); cmul.operation = 'MULTIPLY'; WL(cm.outputs[0], cmul.inputs[0]); WL(hz.outputs[0], cmul.inputs[1])
+    cmul2 = WN.new('ShaderNodeMath'); cmul2.operation = 'MULTIPLY'; WL(cmul.outputs[0], cmul2.inputs[0]); cmul2.inputs[1].default_value = 0.9
+    cl = WN.new('ShaderNodeMix'); cl.data_type = 'RGBA'; WL(cmul2.outputs[0], cl.inputs['Factor']); WL(ad.outputs[2], cl.inputs[6]); cl.inputs[7].default_value = (1.25, 1.05, 0.90, 1)
+    WL(cl.outputs[2], bg2.inputs['Color'])
+if '--flat-sky' not in a: sky_grad()
 lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader'); WL(lp.outputs['Is Camera Ray'], mxw.inputs[0]); WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
 WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
 sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 4.4; sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
