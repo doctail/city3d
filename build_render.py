@@ -481,6 +481,12 @@ sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
 sc.render.image_settings.file_format = 'PNG'; sc.render.filepath = os.path.join(OUT, '')
 sc.render.use_persistent_data = True
+# BVH dinamico: Cycles non 'cuoce' le trasformazioni nelle mesh, quindi spostare/scalare un oggetto grande non ricostruisce la sua geometria
+if opt('--bvh', 1, 'dynamic') == 'dynamic': sc.cycles.debug_bvh_type = 'DYNAMIC_BVH'
+# la foschia e' un'emissione finta: fuori dal campionamento delle luci, altrimenti ogni oggetto che compare/sparisce ricostruisce l'albero delle luci
+for m_ in bpy.data.materials:
+    try: m_.cycles.emission_sampling = 'NONE'
+    except Exception: pass
 sc.render.use_overwrite = False; sc.render.use_placeholder = True   # ripartenza: salta i fotogrammi gia' fatti
 sc.frame_step = int(opt('--step', 1, '1'))
 log('render', F0, '->', F1, f'{RW}x{RH}', SAMPLES, 'campioni')
