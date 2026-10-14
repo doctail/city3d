@@ -263,7 +263,7 @@ def chunked(name, items, z, m, kind, binw=3.0):
     return objs
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
-if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3]).buffer(12, join_style=2).buffer(-12, join_style=2)   # chiude le fessure tra contee
+if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3]).buffer(45, join_style=2).buffer(-45, join_style=2)   # chiude le fessure tra contee
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
