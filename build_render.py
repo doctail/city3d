@@ -459,7 +459,14 @@ co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera
 tg = bpy.data.objects.new('target', None); sc.collection.objects.link(tg)
 c = co.constraints.new('TRACK_TO'); c.target = tg; c.track_axis = 'TRACK_NEGATIVE_Z'; c.up_axis = 'UP_Y'
 # lenta orbita da sud-ovest sopra il porto, puntando sulla parte bassa di Manhattan e poi verso Midtown
-CAMKEYS = [(int(round(t_ * FPS)) + 1, p_, q_) for t_, p_, q_ in SCHED['cam']] if SCHED else [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -9600, 2900), (-300, -2600, 0))]
+LENSK = [(int(round(k_[0] * FPS)) + 1, float(k_[3]) if len(k_) > 3 else cam.lens) for k_ in SCHED['cam']] if SCHED else []
+def lens_at(f):   # obiettivo per fotogramma (4o elemento opzionale delle chiavi camera), interpolato dolce
+    if not LENSK or '--lens' in a: return cam.lens
+    if f <= LENSK[0][0]: return LENSK[0][1]
+    for (fa, la), (fb, lb) in zip(LENSK, LENSK[1:]):
+        if f <= fb: u = (f - fa) / max(1, fb - fa); u = u * u * (3 - 2 * u); return la + (lb - la) * u
+    return LENSK[-1][1]
+CAMKEYS = [(int(round(k_[0] * FPS)) + 1, k_[1], k_[2]) for k_ in SCHED['cam']] if SCHED else [(F0, (-5200, -11500, 2300), (-1200, -4800, 0)), (F1, (-6200, -9600, 2900), (-300, -2600, 0))]
 for f, p, t in CAMKEYS:
     if '--cam' in a: v = list(map(float, opt('--cam', 6))); p, t = v[:3], v[3:]
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
@@ -520,6 +527,8 @@ for f in range(F0, F1 + 1, sc.frame_step):
     path = os.path.join(OUT, f'{f:04d}.png')
     if os.path.exists(path) and os.path.getsize(path) > 0: continue
     t_ = time.time(); sc.frame_set(f); y_ = YF[f]
+    _l = lens_at(f)
+    if abs(cam.lens - _l) > 1e-3: cam.lens = _l
     for ch in CHUNKS:
         g_ = growth(ch, f); setvis(ch['obj'], g_ < 0.002)
         if g_ >= 0.002 and abs(ch['obj'].scale.z - g_) > 1e-4: ch['obj'].scale.z = g_
