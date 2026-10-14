@@ -269,7 +269,7 @@ def chunked(name, items, z, m, kind, binw=3.0):
     return objs
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
-if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3]).buffer(45, join_style=2).buffer(-45, join_style=2)   # chiude le fessure tra contee
+if land: lgeom = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land if len(r) >= 1]).buffer(45, join_style=2).buffer(-45, join_style=2)   # chiude le fessure tra contee
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
@@ -301,9 +301,12 @@ def cells(bounds, CELL, skip_core):
         xx = x0
         while xx < x1:
             c = sbox(xx, yy, xx + CELL, yy + CELL)
-            if (not skip_core or not core.contains(c)) and pl.intersects(c):
+            if skip_core and c.intersects(core): c = c.difference(core)   # niente sovrapposizioni con le celle fini (era una riga scura)
+            if not c.is_empty and c.area > 1 and pl.intersects(c):
                 q = c if pl.contains(c) else lgeom.intersection(c)
                 uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0
+                if CELLMIN is not None and CELL < 500:   # terreno urbano dal primo edificio vero della cella (niente quadretti vuoti)
+                    uy = CELLMIN.get((int((xx - core.bounds[0]) // CELL), int((yy - core.bounds[1]) // CELL)), 9999)
                 if BOR and not BOR.intersects(c): uy = nj_year(xx + CELL / 2, yy + CELL / 2)
                 for g_ in (q.geoms if hasattr(q, 'geoms') else [q]):
                     if isinstance(g_, Polygon) and g_.area > 1:
@@ -318,6 +321,13 @@ def cells(bounds, CELL, skip_core):
                             except ValueError: pass
             xx += CELL
         yy += CELL
+CELLMIN = None
+if CITY.get('land_from_buildings'):
+    CELLMIN = {}
+    for b_ in blds:
+        x_ = sum(p_[0] for p_ in b_['r']) / len(b_['r']); y_ = sum(p_[1] for p_ in b_['r']) / len(b_['r'])
+        k_ = (int((x_ - core.bounds[0]) // 120.0), int((y_ - core.bounds[1]) // 120.0))
+        if b_['y'] < CELLMIN.get(k_, 99999): CELLMIN[k_] = b_['y'] - 2
 cells(core.bounds, 120.0, False)
 cells(lgeom.bounds, 1500.0, True)
 MARSH = None

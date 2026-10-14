@@ -17,7 +17,22 @@
   -3000,
   2500
  ],
- "parks": [],
+ "parks": [
+  [
+   900,
+   -900,
+   2300,
+   600,
+   1632
+  ],
+  [
+   -6500,
+   -1900,
+   -2700,
+   2600,
+   1560
+  ]
+ ],
  "roads": [],
  "radius_m": 12000,
  "land_half_m": 30000,
@@ -49,5 +64,11 @@
   ],
   "max": 2000
  },
- "_forest": "solo Casa de Campo (bosco reale dal 1560); attorno a Madrid campi aridi, non foresta"
+ "_forest": "solo Casa de Campo (bosco reale dal 1560); attorno a Madrid campi aridi, non foresta",
+ "_parks": "Retiro (giardini reali dagli anni 1630), Casa de Campo (tenuta reale dal 1560)",
+ "river_width": {
+  "Río Manzanares": 60,
+  "Río Jarama": 70
+ },
+ "land_from_buildings": true
 }
