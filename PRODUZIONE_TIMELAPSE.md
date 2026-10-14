@@ -37,6 +37,7 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 ## Concorrenza (aggiornare prima di ogni città)
 - Già fatte da altri (ott 2026): Roma, Berlino, Londra (CityEons); Parigi (virale gen 2026); Manhattan 1600–2026 (CITY 3D TIMELAPSE, virale ago 2026); Las Vegas (Cornerstone); Budapest (Urbis Anno); Firenze (Tree The City); Gerusalemme (Urbavision); Praga (Latos Charts).
 - Formato copertina della nicchia: anni in alto con freccia, nome città enorme e spaziato in basso, bandiera, immagine piena. Script: `thumb_city.py`. Titoli senza "No AI" (decisione di Fabio, 14 ott 2026).
+- Verifica del 14 ott 2026 (ricerche YouTube di Fabio): Chicago 4+ video nelle ultime 2 settimane (Cornerstone 60K, gli altri 2–8K); Barcellona Latos Charts 342K + 3 canali piccoli; Amsterdam Latos 502K e una decina di canali nuovi da 20 a 2.000 visualizzazioni, tra cui UrbanRewind con lo stesso nostro angolo ("35,455 Real Buildings", 22 visualizzazioni). Conclusione: la nicchia è già affollata di canali nuovi; le visualizzazioni vanno quasi tutte ai canali affermati (Latos Charts, CITY 3D TIMELAPSE, CityEons, Cornerstone). "(No AI)" è usato dai canali grandi.
 - Regola: prima di ogni città, cercare su YouTube "<città> 3D timelapse"; precedenza alle città libere.
 
 ## Città candidate e dati (anno di costruzione per edificio)
