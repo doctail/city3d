@@ -46,3 +46,11 @@ Music: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library).
 - Non usare "No AI" nel titolo (vedi discussione): puntare su "real buildings / real data".
 - Icona: icona_800.png (cerchio ritagliato automaticamente da YouTube).
 - Banner: banner_2560x1440.png — testo nell'area sicura 1546x423, visibile su mobile, desktop e TV.
+
+## Playlist (crearle quando hanno almeno 2–3 video; una playlist con un solo video non aiuta)
+1. **Every City, Year by Year — All 3D Timelapses** (tutti i video lunghi, dal più recente). Desc: "Every Year Built city in one place: real buildings, real construction years, from the first houses to today's skyline."
+2. **American Cities in 3D** (New York, poi le altre USA). Desc: "How America's great cities grew, building by building — rendered in 3D from open city data."
+3. **Cities of Spain in 3D** (Madrid, poi le altre dal catasto). Desc: "Madrid, Barcelona, Seville and more: every building in its real year, from medieval walls to modern towers."
+4. **Year Built Shorts** (tutti gli Shorts). Desc: "Centuries of city growth in under a minute."
+- Più avanti, playlist a tema (quando ci sono 4+ video adatti): "Cities That Burned and Rose Again", "From Walls to Skyscrapers".
+- Ogni video lungo va in: playlist 1 + playlist del paese. Ogni Short: playlist 4.
