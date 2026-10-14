@@ -12,15 +12,23 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 step "2/5 Blender (bpy) in Python 3.13"
 pip install -q uv
 [ -x /workspace/bl/bin/python ] || uv venv -q -p 3.13 /workspace/bl
-uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests pyshp
+uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests pyshp pyproj
 PY=/workspace/bl/bin/python
 
 cd /workspace/city3d
-step "3/5 dati New York"
-[ -s data/buildings.json ] || $PY fetch_nyc.py data
-[ -f data/land_v3.ok ] || $PY fetch_nyc.py data --land-only
-$PY hist_nyc.py data
-
+CITY=${CITY:-nyc}   # CITY=madrid bash run.sh full
+if [ "$CITY" = "nyc" ]; then
+  D=data; SCHED=schedule_nyc.json; CARGS=""
+  step "3/5 dati New York"
+  [ -s data/buildings.json ] || $PY fetch_nyc.py data
+  [ -f data/land_v3.ok ] || $PY fetch_nyc.py data --land-only
+  $PY hist_nyc.py data
+else
+  D=data_$CITY; SCHED=schedule_$CITY.json; CARGS="--city city_$CITY.json"
+  step "3/5 dati $CITY"
+  if [ "$CITY" = "madrid" ]; then [ -s $D/buildings.json ] || $PY fetch_es.py $D city_$CITY.json $(ls /workspace/*.zip 2>/dev/null | head -1); fi
+  $PY hist_$CITY.py $D
+fi
 step "3b/5 prova GPU"
 nvidia-smi --query-gpu=name,driver_version,compute_mode --format=csv,noheader || true
 echo "caps=$NVIDIA_DRIVER_CAPABILITIES"
@@ -32,7 +40,7 @@ MODE=${1:-test}
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 1 fotogramma ogni 2 secondi, risoluzione ridotta"
   rm -rf out/prev
-  $PY build_render.py -- data out/prev --frames 1 7839 --step 48 --res 960 540 --samples 8 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  $PY build_render.py -- $D out/prev --frames 1 7839 --step 48 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   ffmpeg -loglevel error -y -framerate 4 -pattern_type glob -i 'out/prev/*.png' -c:v libx264 -crf 20 -pix_fmt yuv420p out/preview.mp4
   ls -lh out/preview.mp4; step "FINITO"; echo "Scarica city3d/out/preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
@@ -40,22 +48,22 @@ if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
   for V in "--denoiser optix" "--denoiser oidn" "--denoiser none" "--denoiser optix --samples 2" "--denoiser optix --res 960 540"; do
     rm -rf /tmp/prof; echo "--- variante: $V"
-    $PY build_render.py -- data /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
+    $PY build_render.py -- $D /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
   done; step "FINITO profilo: manda lo screenshot"; exit 0
 fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
-  $PY build_render.py -- data out/full --frames 1 7839 --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  $PY build_render.py -- $D out/full --frames 1 7839 --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
-  ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/nyc_full.mp4
+  ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   cp out/full/years.json out/years.json
-  ls -lh out/nyc_full.mp4; step "FINITO"; echo "Scarica city3d/out/nyc_full.mp4 e years.json, poi TERMINA il Pod."; exit 0
+  ls -lh out/${CITY}_full.mp4; step "FINITO"; echo "Scarica city3d/out/${CITY}_full.mp4 e years.json, poi TERMINA il Pod."; exit 0
 fi
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
-$PY build_render.py -- data out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+$PY build_render.py -- $D out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
 
 step "5/5 video"
 ffmpeg -loglevel error -y -framerate 24 -i out/frames/%04d.png -c:v libx264 -crf 17 -pix_fmt yuv420p out/test_nyc.mp4

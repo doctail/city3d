@@ -7,6 +7,12 @@ from shapely.ops import unary_union
 
 a = sys.argv[sys.argv.index('--') + 1:]
 DATA, OUT = a[0], a[1]
+import json as _j, os as _o
+# configurazione citta' (default: New York, come prima). Vedi city_nyc.json / city_madrid.json
+CITY = {'name': 'nyc', 'lat0': 40.758, 'lon0': -73.985, 'grid_deg': 29, 'hist': 'hist_nyc', 'core_box': [-9000, -9500, 9000, 16000],
+        'forest_box': [-7500, -9500, 5500, 9000], 'parks': [[-900, 900, 1700, 5300, 1858]], 'roads': [],
+        'outer': {'centers': [[40.737, -74.030], [40.714, -74.034]], 'curve': [[0, 1835], [1.5, 1860], [3, 1885], [5, 1905], [8, 1925], [12, 1950], [20, 1965]], 'max': 1970}}
+if '--city' in a: CITY.update(_j.load(open(a[a.index('--city') + 1])))
 def opt(name, n=1, default=None):
     if name in a: i = a.index(name); return a[i + 1:i + 1 + n] if n > 1 else a[i + 1]
     return default
@@ -93,7 +99,7 @@ def land_mat(mode='fields'):
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     # tessuto urbano visto dall'alto: tetti a celle piccole (toni spenti), strade dritte parallele alla griglia di Manhattan,
     # un po' di verde nei cortili, quartieri con tinte diverse. Basso contrasto: e' sfondo, non deve sembrare un pavimento.
-    vr = N.new('ShaderNodeVectorRotate'); vr.rotation_type = 'Z_AXIS'; vr.inputs['Angle'].default_value = math.radians(29); L(tc.outputs['Object'], vr.inputs['Vector'])
+    vr = N.new('ShaderNodeVectorRotate'); vr.rotation_type = 'Z_AXIS'; vr.inputs['Angle'].default_value = math.radians(CITY['grid_deg']); L(tc.outputs['Object'], vr.inputs['Vector'])
     rv = N.new('ShaderNodeTexVoronoi'); rv.inputs['Scale'].default_value = 0.045; rv.inputs['Randomness'].default_value = 0.85; L(vr.outputs[0], rv.inputs['Vector'])
     rr = N.new('ShaderNodeValToRGB'); L(rv.outputs['Color'], rr.inputs[0]); rcr = rr.color_ramp; rcr.interpolation = 'CONSTANT'
     rcr.elements[0].color = (*srgb('#6e655c'), 1); rcr.elements[1].position = 0.84; rcr.elements[1].color = (*srgb('#6b5148'), 1)
@@ -267,28 +273,28 @@ if land: lgeom = unary_union([Polygon(r).buffer(0) for r in land if len(r) >= 3]
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
-    from hist_nyc import urban_year
-except Exception: urban_year = None
+    urban_year = __import__(CITY['hist']).urban_year
+except Exception as e_: urban_year = None; print('[build] storia non disponibile:', e_, flush=True)
 from shapely.prepared import prep
 # terra a celle di 120 m: ogni cella sa da che anno e' citta' (prima e' campagna verde, poi asfalto)
 BOR = None
 if os.path.exists(f'{DATA}/boroughs.json'):
     _bj = json.load(open(f'{DATA}/boroughs.json')); BOR = prep(unary_union([Polygon(r).buffer(0) for v in _bj.values() for r in v]).buffer(30))
 def nj_year(x, y):
-    # fuori dai distretti NYC (New Jersey, Westchester...): urbanizzazione per distanza da Hoboken / Jersey City
-    la = 40.758 + y / 110540; lo = -73.985 + x / (math.cos(math.radians(40.758)) * 111320)
-    d = min(math.hypot((la - 40.737) * 111.0, (lo + 74.030) * 84.3), math.hypot((la - 40.714) * 111.0, (lo + 74.034) * 84.3))
-    pts = [(0, 1835), (1.5, 1860), (3, 1885), (5, 1905), (8, 1925), (12, 1950), (20, 1965)]
+    # fuori dai confini della citta' (per NYC: New Jersey): urbanizzazione per distanza dai centri di 'outer' nella config
+    o_ = CITY['outer']; la = CITY['lat0'] + y / 110540; lo = CITY['lon0'] + x / (math.cos(math.radians(CITY['lat0'])) * 111320)
+    d = min(math.hypot((la - c_[0]) * 111.0, (lo - c_[1]) * 111.32 * math.cos(math.radians(c_[0]))) for c_ in o_['centers'])
+    pts = o_['curve']
     for (a_, ya), (b_, yb) in zip(pts, pts[1:]):
         if d <= b_: return ya + (yb - ya) * (d - a_) / (b_ - a_)
-    return 1970
+    return o_['max']
 pl = prep(lgeom); bm = bmesh.new(); uyl = []
 bmm = bmesh.new(); muy = []
 try:
     _shore = lgeom.boundary.buffer(170); _shp = prep(_shore)
 except Exception: _shore = None
 from shapely.geometry import box as sbox
-core = sbox(-9000, -9500, 9000, 16000)          # zona citta': celle fini; fuori celle grandi (campagna lontana)
+core = sbox(*CITY['core_box'])          # zona citta': celle fini; fuori celle grandi (campagna lontana)
 def cells(bounds, CELL, skip_core):
     x0, y0, x1, y1 = bounds; yy = y0
     while yy < y1:
@@ -332,7 +338,7 @@ LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = ch
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
-FB = list(map(float, opt('--forest-box', 4, ['-7500', '-9500', '5500', '9000'])))
+FB = list(map(float, opt('--forest-box', 4, [str(v) for v in CITY['forest_box']])))
 _fit = []
 for p_, u_ in zip(lo_.data.polygons, uyl):
     cx_, cy_ = p_.center.x, p_.center.y
@@ -341,14 +347,8 @@ for p_, u_ in zip(lo_.data.polygons, uyl):
 FOREST = chunked('forest', _fit, 0.0, mat('fbase', srgb('#4f7136'), 1.0), 'vanish')
 log('boschi', len(_fit), 'celle in', len(FOREST), 'blocchi')
 bpy.data.objects.remove(lo_, do_unlink=True)
-ROADS_LL = [
-  [(40.7045,-74.0135),(40.7128,-74.0072),(40.7195,-74.0021),(40.7290,-73.9965),(40.7359,-73.9911),(40.7411,-73.9897),(40.7500,-73.9877),(40.7580,-73.9855),(40.7681,-73.9819),(40.7870,-73.9754),(40.8000,-73.9680),(40.8160,-73.9590),(40.8340,-73.9450),(40.8550,-73.9330),(40.8750,-73.9100)],
-  [(40.7128,-74.0060),(40.7150,-73.9960),(40.7240,-73.9920),(40.7300,-73.9910),(40.7410,-73.9870),(40.7590,-73.9700),(40.7800,-73.9520),(40.7950,-73.9450),(40.8050,-73.9380),(40.8200,-73.9300)],
-  [(40.7036,-73.9945),(40.6920,-73.9870),(40.6860,-73.9750),(40.6800,-73.9500),(40.6750,-73.9200),(40.6780,-73.8900)],
-  [(40.6920,-73.9870),(40.6650,-73.9620),(40.6400,-73.9600),(40.6200,-73.9550)],
-  [(40.7140,-74.0330),(40.7300,-74.0500),(40.7450,-74.0600),(40.7650,-74.0450),(40.7900,-74.0200),(40.8200,-73.9950)],
-  [(40.7400,-73.9500),(40.7550,-73.9200),(40.7650,-73.8900),(40.7600,-73.8500)]]
-_LAT0, _LON0 = 40.758, -73.985; _KX = math.cos(math.radians(_LAT0)) * 111320; _KY = 110540
+ROADS_LL = CITY['roads']   # strade disegnate a mano (lat, lon); spente di default
+_LAT0, _LON0 = CITY['lat0'], CITY['lon0']; _KX = math.cos(math.radians(_LAT0)) * 111320; _KY = 110540
 from shapely.geometry import LineString
 _rg = unary_union([LineString([((lo - _LON0) * _KX, (la - _LAT0) * _KY) for la, lo in r]).buffer(5, cap_style=1) for r in ROADS_LL])
 if not lgeom.is_empty: _rg = _rg.intersection(lgeom)
@@ -396,7 +396,8 @@ if parks:
     _pit = []
     for r in parks:
         c_ = Polygon(r).centroid; py_ = urban_year(c_.x, c_.y) if (urban_year and hist) else 0
-        if -900 < c_.x < 1700 and 900 < c_.y < 5300: py_ = max(py_, 1858)   # Central Park
+        for x0_, y0_, x1_, y1_, yr_ in CITY['parks']:   # parchi storici con anno noto (NYC: Central Park 1858)
+            if x0_ < c_.x < x1_ and y0_ < c_.y < y1_: py_ = max(py_, yr_)
         _pit.append(([tuple(v) for v in r], py_))
     PO = chunked('parks', _pit, 0.25, mat('grass', srgb('#5d7a3a'), 1.0), 'appear')
     tm = mat('tree', srgb('#3d5c2a'), 0.9)

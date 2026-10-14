@@ -74,8 +74,8 @@ def split(poly, cell=14.0):
         yy += d
     return out or [poly]
 
-if __name__ == '__main__':
-    blds = json.load(open(f'{DATA}/buildings.json')); rnd = random.Random(11); out = []; mod = 0
+def build(DATA, urban_year, era_height=era_height, seed=11):
+    blds = json.load(open(f'{DATA}/buildings.json')); rnd = random.Random(seed); out = []
     for b in blds:
         try: p = Polygon(b['r'])
         except Exception: continue
@@ -86,7 +86,7 @@ if __name__ == '__main__':
             born = u + rnd.uniform(0, 12); died = b['y'] - rnd.uniform(0.3, 2.0)
             if died - born < 8: continue
             ring = [[round(x, 2), round(yv, 2)] for x, yv in list(q.exterior.coords)[:-1]]
-            # seconda generazione: le case di legno pre-1830 sostituite da brownstone/tenement prima dell'edificio attuale
+            # seconda generazione: le case pre-1830 sostituite da edifici dell'800 prima dell'edificio attuale
             if born < 1830 and died > 1885:
                 swap = rnd.uniform(max(born + 25, 1835), 1875)
                 out.append({'r': ring, 'h': round(era_height(born, rnd), 1), 'y': int(born), 'd': round(swap - 0.5, 1)})
@@ -95,3 +95,6 @@ if __name__ == '__main__':
                 out.append({'r': ring, 'h': round(era_height(born, rnd), 1), 'y': int(born), 'd': round(died, 1)})
     json.dump(out, open(f'{DATA}/hist.json', 'w'))
     print(f'[hist] {len(out)} predecessori da {len(blds)} edifici attuali', flush=True)
+
+if __name__ == '__main__':
+    build(DATA, urban_year)

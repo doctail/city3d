@@ -1,0 +1,15 @@
+{
+ "name": "madrid",
+ "_doc": "Madrid. Origine locale: Puerta del Sol. Dati: Catasto INSPIRE BU (comune 28900).",
+ "lat0": 40.4169, "lon0": -3.7035,
+ "grid_deg": 0,
+ "hist": "hist_madrid",
+ "core_box": [-11000, -11000, 11000, 11000],
+ "forest_box": [-9000, -9000, 9000, 9000],
+ "parks": [],
+ "roads": [],
+ "radius_m": 12000,
+ "land_half_m": 30000,
+ "catastro_zip": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/28/28900-MADRID/A.ES.SDGC.BU.28900.zip",
+ "outer": {"centers": [[40.4169, -3.7035]], "curve": [[0, 1500], [3, 1900], [6, 1960], [12, 1985]], "max": 2000}
+}
