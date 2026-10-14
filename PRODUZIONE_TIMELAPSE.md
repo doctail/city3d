@@ -28,6 +28,7 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 - Nessun keyframe su materiali o datablock: qualsiasi animazione costringe Cycles a risincronizzare tutta la scena (13–18 s). Crescita solo con scala degli oggetti, sparizione spostandoli a z −5000, alberi "cotti" in mesh.
 - La foschia è un'emissione: va esclusa dal campionamento delle luci (`emission_sampling = NONE`), altrimenti picchi da 12 s.
 - Camera bassa (400–450 m, 40 mm) dal 1929 in poi per far leggere l'altezza dei grattacieli; cielo sfumato con nuvole.
+- Città basse (Madrid): camera "da drone" che parte stretta e si allarga con la città (raggio = 0,95 × raggio storico + 900 m, inclinazione 20–22°), sempre sul lato SUD: guardando verso sud si va controsole e la città diventa marrone scuro. Poi volo basso lungo l'asse moderno fino ai grattacieli.
 
 ## Stato
 - **New York** (primo video): render completato il 14 ott 2026 (RTX 5080, 2 h 46 min, ~1,1 $). Montaggio fatto: grafiche trasparenti `nyc_overlay.webm` + `monta_nyc.bat` (Fabio unisce sul suo PC al file a qualità piena). Copertina finale, metadati (`metadata_nyc.md`) e 3 Shorts consegnati. Codice montaggio in `montaggio/` (hud.jsx, nyc_overlay.jsx, nyc_shorts.jsx) su GitHub. Musica: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library), 5:27.
