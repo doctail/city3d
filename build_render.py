@@ -536,6 +536,12 @@ if DEV in ('OPTIX', 'CUDA'):
     for d in pr.devices: d.use = d.type == DEV
     sc.cycles.device = 'GPU'; log('GPU', DEV, [d.name for d in pr.devices if d.use])
 else: log('CPU')
+DN = opt('--denoiser', 1, 'auto')   # auto: OptiX su GPU OptiX (si avvia in fretta), altrimenti OIDN; none: niente denoiser
+if DN == 'none': sc.cycles.use_denoising = False
+else:
+    try: sc.cycles.denoiser = 'OPTIX' if (DN == 'optix' or (DN == 'auto' and DEV == 'OPTIX')) else 'OPENIMAGEDENOISE'
+    except Exception as e_: log('denoiser', e_)
+log('denoiser', sc.cycles.denoiser if sc.cycles.use_denoising else 'nessuno')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
 EXT = opt('--ext', 1, 'jpg')   # jpg 95: ~0,7 MB a 1080p (png ~3-8 MB: 7839 fotogrammi riempiono il disco)

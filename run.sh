@@ -36,6 +36,13 @@ if [ "$MODE" = "preview" ]; then
   ffmpeg -loglevel error -y -framerate 4 -pattern_type glob -i 'out/prev/*.png' -c:v libx264 -crf 20 -pix_fmt yuv420p out/preview.mp4
   ls -lh out/preview.mp4; step "FINITO"; echo "Scarica city3d/out/preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
+if [ "$MODE" = "profile" ]; then
+  step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
+  for V in "--denoiser optix" "--denoiser oidn" "--denoiser none" "--denoiser optix --samples 2" "--denoiser optix --res 960 540"; do
+    rm -rf /tmp/prof; echo "--- variante: $V"
+    $PY build_render.py -- data /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule schedule_nyc.json 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
+  done; step "FINITO profilo: manda lo screenshot"; exit 0
+fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
