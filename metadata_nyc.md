@@ -1,9 +1,8 @@
 # New York — metadati YouTube (Year Built, video 1)
 
-## Titolo (scegline uno; A/B con "Test & Compare" se disponibile)
-1. Watch New York Grow for 400 Years — Built from 145,000 Real Buildings
-2. New York, 1609 → 2026: Every Building in Its Real Year (3D Timelapse)
-3. How New York Grew From Forest to Skyline (3D Timelapse, 1609–2026)
+## Titolo (scelto)
+**Watch New York Grow for 400 Years — Every Real Building, 1609–2026 (No AI)**
+Alternativa per il test A/B: New York 1609 → 2026: 145,000 Real Buildings in 3D (No AI)
 
 ## Descrizione
 From a forested island in 1609 to the skyline of 2026 — watch New York City grow in 3D, one real building at a time.
@@ -41,5 +40,6 @@ new york history, new york timelapse, nyc history, manhattan history, new york 3
 - Schermata finale: ultimi 20 s (il finale del render è una ripresa ampia, adatto).
 
 ## Note
-- I capitoli valgono per il render così com'è. Se nel montaggio aggiungo un titolo in testa, sposto tutti i tempi della stessa durata prima della pubblicazione.
-- Il video NON mostra le Torri Gemelle: i dati contengono solo gli edifici esistenti oggi e i loro predecessori; le Torri non ci sono. Se vogliamo un cartello "September 11, 2001", va deciso con Fabio (sobrio, senza immagini).
+- I capitoli valgono per il video finale (il titolo è sovrapposto ai primi 5 secondi, non aggiunto in testa).
+- Il video NON mostra le Torri Gemelle (i dati contengono solo gli edifici di oggi e i loro predecessori). C'è un cartello sobrio "September 11, 2001" (approvato da Fabio).
+- Copertina: copertina_nyc_finale.jpg (fotogramma reale al secondo 310, formato della nicchia).
