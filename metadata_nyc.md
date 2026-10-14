@@ -43,3 +43,9 @@ new york history, new york timelapse, nyc history, manhattan history, new york 3
 - I capitoli valgono per il video finale (il titolo è sovrapposto ai primi 5 secondi, non aggiunto in testa).
 - Il video NON mostra le Torri Gemelle (i dati contengono solo gli edifici di oggi e i loro predecessori). C'è un cartello sobrio "September 11, 2001" (approvato da Fabio).
 - Copertina: copertina_nyc_finale.jpg (fotogramma reale al secondo 310, formato della nicchia).
+
+## Shorts (pubblicarne uno ogni 2 giorni dopo il video lungo; nel Short collegare il video lungo con "Video correlato")
+1. nyc_short1.mp4 — **400 Years of New York in 44 Seconds (Every Real Building) #shorts** — tutto il video accelerato 7x
+2. nyc_short2.mp4 — **Watch Manhattan's Skyline Rise, 1929 → 2026 #shorts** — la parte dei grattacieli
+3. nyc_short3.mp4 — **How New York Began: 1609 → 1700 #shorts** — New Amsterdam che nasce
+Descrizione breve per tutti: "New York grows in 3D, one real building at a time. Full video on the channel. #newyork #timelapse #history"

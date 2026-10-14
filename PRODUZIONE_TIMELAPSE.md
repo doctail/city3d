@@ -30,7 +30,7 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 - Camera bassa (400–450 m, 40 mm) dal 1929 in poi per far leggere l'altezza dei grattacieli; cielo sfumato con nuvole.
 
 ## Stato
-- **New York** (primo video): render completo lanciato il 14 ott 2026 su RTX 5080. In attesa dell'mp4 per il montaggio. Musica: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library), 5:27.
+- **New York** (primo video): render completato il 14 ott 2026 (RTX 5080, 2 h 46 min, ~1,1 $). Montaggio fatto: grafiche trasparenti `nyc_overlay.webm` + `monta_nyc.bat` (Fabio unisce sul suo PC al file a qualità piena). Copertina finale, metadati (`metadata_nyc.md`) e 3 Shorts consegnati. Codice montaggio in `montaggio/` (hud.jsx, nyc_overlay.jsx, nyc_shorts.jsx) su GitHub. Musica: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library), 5:27.
 - Difetti noti accettati: New Jersey senza edifici (solo tessuto urbano disegnato); leggera macchiatura del denoiser sulle facciate a vetri; edifici pre-1900 ricostruiti in modo illustrativo.
 - Piano deciso con Fabio (14 ott 2026): 2 video a settimana per 8 settimane + 3 Shorts per video (li taglio io dal video finale; dalla seconda città clip verticali renderizzate sul pod). Città raggruppate per fonte dati (Spagna = catasto, Olanda = BAG). Verifica alla settimana 8: almeno un video sopra 10.000 visualizzazioni oppure 300 iscritti, altrimenti si ripensa il formato.
 - Seconda città: **Madrid** (catasto spagnolo). "(No AI)" nel titolo.
