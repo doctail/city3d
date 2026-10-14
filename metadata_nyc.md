@@ -5,7 +5,7 @@
 Alternativa per il test A/B: New York 1609 → 2026: 145,000 Real Buildings in 3D (No AI)
 
 ## Descrizione
-From a forested island in 1609 to the skyline of 2026 — watch New York City grow in 3D, one real building at a time.
+New York City 3D timelapse: watch Manhattan and the five boroughs grow from 1609 to 2026, with every real building appearing in the year it was built. The history of New York, from New Amsterdam to today's skyline.
 
 Every modern building appears in the year it was actually built, using the city's own open data (145,000+ footprints with height and construction year). Neighborhoods that were later demolished are reconstructed from historical maps, so you can watch the wooden town of New Amsterdam give way to brownstones, tenements and towers.
 
@@ -28,7 +28,7 @@ Data: NYC Open Data (Building Footprints, Borough Boundaries, Parks Properties);
 Music: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library).
 Rendered in Blender.
 
-#NewYork #Timelapse #History
+#NewYork #Manhattan #Timelapse
 
 ## Tag
 new york history, new york timelapse, nyc history, manhattan history, new york 3d timelapse, nyc growth, new amsterdam, manhattan skyline evolution, history of manhattan, new york city evolution, city timelapse, 3d timelapse, urban history, nyc 1609 to today, how new york grew, year built
