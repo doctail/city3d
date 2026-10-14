@@ -2,8 +2,7 @@
 
 ## Nome e handle
 - **Nome:** Year Built
-- **Handle:** @YearBuiltCities (prima scelta) · alternative: @YearBuiltTimelapse, @YearBuiltHQ
-- Verificare la disponibilità dell'handle in fase di creazione.
+- **Handle:** @YearBuiltCities (registrato da Fabio il 14 ott 2026)
 
 ## Descrizione del canale (EN, da incollare)
 Watch the world's great cities grow, one real building at a time.
