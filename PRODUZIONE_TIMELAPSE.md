@@ -32,7 +32,8 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 ## Stato
 - **New York** (primo video): render completo lanciato il 14 ott 2026 su RTX 5080. In attesa dell'mp4 per il montaggio. Musica: "The Shining in Dubai" — Unicorn Heads (YouTube Audio Library), 5:27.
 - Difetti noti accettati: New Jersey senza edifici (solo tessuto urbano disegnato); leggera macchiatura del denoiser sulle facciate a vetri; edifici pre-1900 ricostruiti in modo illustrativo.
-- Prossima città: da scegliere tra Barcellona, Chicago, Amsterdam (vedi sotto).
+- Piano deciso con Fabio (14 ott 2026): 2 video a settimana per 8 settimane + 3 Shorts per video (li taglio io dal video finale; dalla seconda città clip verticali renderizzate sul pod). Città raggruppate per fonte dati (Spagna = catasto, Olanda = BAG). Verifica alla settimana 8: almeno un video sopra 10.000 visualizzazioni oppure 300 iscritti, altrimenti si ripensa il formato.
+- Seconda città: **Madrid** (catasto spagnolo). "(No AI)" nel titolo.
 
 ## Concorrenza (aggiornare prima di ogni città)
 - Già fatte da altri (ott 2026): Roma, Berlino, Londra (CityEons); Parigi (virale gen 2026); Manhattan 1600–2026 (CITY 3D TIMELAPSE, virale ago 2026); Las Vegas (Cornerstone); Budapest (Urbis Anno); Firenze (Tree The City); Gerusalemme (Urbavision); Praga (Latos Charts).
