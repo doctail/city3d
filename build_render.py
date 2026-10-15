@@ -36,7 +36,7 @@ def mat(name, col=None, rough=0.9, attr=None, haze=True):
         n = m.node_tree.nodes.new('ShaderNodeAttribute'); n.attribute_name = attr; m.node_tree.links.new(n.outputs['Color'], b.inputs['Base Color'])
     else: b.inputs['Base Color'].default_value = (*col, 1)
     return hazeify(m) if haze else m
-HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, '32000'))
+HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, str(CITY.get('haze_k', 32000))))   # piu' alto = meno foschia
 def hazeify(m):
     nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
     cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
@@ -89,8 +89,9 @@ def land_mat(mode='fields'):
     vo = N.new('ShaderNodeTexVoronoi'); vo.distance = 'CHEBYCHEV'; vo.inputs['Scale'].default_value = 0.006; L(tc.outputs['Object'], vo.inputs['Vector'])
     fields = N.new('ShaderNodeValToRGB'); L(vo.outputs['Color'] if 'Color' in vo.outputs else vo.outputs[1], fields.inputs[0])
     cr = fields.color_ramp; cr.interpolation = 'CONSTANT'
-    cr.elements[0].color = (*srgb('#6a7f45'), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb('#8f8f5c'), 1)
-    for pos_, colh in [(0.2, '#7c8a4f'), (0.4, '#5f7840'), (0.6, '#9a9465')]:
+    FC = CITY.get('field_colors', ['#6a7f45', '#7c8a4f', '#5f7840', '#9a9465', '#8f8f5c'])   # 5 toni dei campi (config citta')
+    cr.elements[0].color = (*srgb(FC[0]), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb(FC[4]), 1)
+    for pos_, colh in [(0.2, FC[1]), (0.4, FC[2]), (0.6, FC[3])]:
         e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
     fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.70; fk.inputs['From Max'].default_value = 0.74
@@ -346,6 +347,21 @@ lo_ = obj('land_tmp', bm, land_mat())
 _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
 LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
+# bacini portuali scavati dopo l'inizio del video (DATA/harbours.json [{"r", "y"}]): terra verde fino all'anno di scavo, poi acqua
+if os.path.exists(f'{DATA}/harbours.json'):
+    _hb = json.load(open(f'{DATA}/harbours.json'))
+    _hit = []
+    for h_ in _hb:
+        try: q_ = Polygon(h_['r']).buffer(0)
+        except Exception: continue
+        bh_ = bmesh.new()
+        try: bh_.faces.new([bh_.verts.new((x, y, 0)) for x, y in list(q_.exterior.coords)[:-1]])
+        except ValueError: bh_.free(); continue
+        bmesh.ops.triangulate(bh_, faces=bh_.faces); _ht = bpy.data.meshes.new('htmp'); bh_.to_mesh(_ht); bh_.free()
+        for p_ in _ht.polygons: _hit.append(([tuple(_ht.vertices[i].co[:2]) for i in p_.vertices], h_['y']))
+        bpy.data.meshes.remove(_ht)
+    HARB = chunked('harbour', _hit, 0.0, mat('hfield', srgb(CITY.get('field_colors', ['#6a7f45'])[0]), 1.0), 'vanish')
+    log('bacini portuali', len(_hb), 'in', len(HARB), 'blocchi')
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
 FB = list(map(float, opt('--forest-box', 4, [str(v) for v in CITY['forest_box']])))

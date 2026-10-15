@@ -1,6 +1,6 @@
 {
  "name": "rotterdam",
- "_doc": "Rotterdam. Origine locale: Laurenskerk (x est, y nord, metri). Dati: 3DBAG lod13 (BAG bouwjaar + altezze da AHN), acqua e parchi da OSM (Geofabrik). Storia: hist_rotterdam.py.",
+ "_doc": "Rotterdam. Origine locale: Stadhuis sulla Coolsingel (x est, y nord, metri); Laurenskerk ~(536, 22). Dati: 3DBAG lod13 (BAG bouwjaar + altezze da AHN), acqua e parchi da OSM (Geofabrik). Storia: hist_rotterdam.py.",
  "lat0": 51.9221,
  "lon0": 4.4795,
  "radius_m": 9000,
@@ -24,17 +24,17 @@
  "_forest": "niente foresta: attorno a Rotterdam polder e prati (campi verdi della terra 'fields'); il Kralingse Bos e' un parco del 1935",
  "parks": [
   [
-   -2500,
-   -2050,
-   -1350,
-   -1300,
+   -1400,
+   -2250,
+   -450,
+   -1550,
    1852
   ],
   [
-   2300,
-   800,
-   5200,
-   4300,
+   1500,
+   300,
+   4200,
+   3000,
    1935
   ]
  ],
@@ -72,5 +72,14 @@
  "park_trees": 0.006,
  "river_width": {
   "Nieuwe Maas": 400
- }
+ },
+ "field_colors": [
+  "#5f8a3e",
+  "#6f9446",
+  "#557d38",
+  "#7a9a4c",
+  "#668c40"
+ ],
+ "_field_colors": "polder olandesi: prati verdi, non campi aridi come Madrid",
+ "haze_k": 55000
 }

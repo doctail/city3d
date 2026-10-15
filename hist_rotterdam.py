@@ -10,7 +10,8 @@ from shapely.geometry import Polygon, Point
 from shapely.prepared import prep
 from hist_nyc import split
 
-LAT0, LON0 = 51.9221, 4.4795   # Laurenskerk = (0, 0), metri: x verso est, y verso nord
+LAT0, LON0 = 51.9221, 4.4795   # origine (0, 0) = Stadhuis sulla Coolsingel; Laurenskerk ~(536, 22). Metri: x est, y nord.
+# Punti storici convertiti da latitudine/longitudine (15 ott 2026), non stimati a occhio.
 BOMB_D = 1940.37               # 14 maggio 1940
 
 def interp(v, pts):
@@ -21,26 +22,45 @@ def interp(v, pts):
 
 # (centro x, y in metri; curva distanza km -> anno; vale anche a sud del fiume?)
 TOWNS = [
-    ((0, 0),        [(0, 1290), (1.0, 1855), (1.7, 1868), (2.4, 1885), (3.3, 1905),
+    ((500, -100),   [(0, 1290), (1.0, 1855), (1.7, 1868), (2.4, 1885), (3.3, 1905),
                      (4.3, 1925), (5.5, 1950), (7.5, 1968), (10, 1990)], False),
-    ((-5600, -650), [(0, 1300), (0.35, 1450), (0.6, 1650), (0.9, 1860), (2.2, 1915), (3.5, 1950)], False),   # Schiedam
-    ((-3350, -1650), [(0, 1400), (0.3, 1620), (0.8, 1875), (1.5, 1900)], False),                # Delfshaven
-    ((-4000, 2200), [(0, 1500), (0.35, 1720), (1.0, 1930), (2.0, 1960)], False),                # Overschie
-    ((-1000, -4000), [(0, 1500), (0.35, 1720), (1.0, 1905), (2.0, 1930)], True),                # Charlois
-    ((1500, -1900), [(0, 1872), (1.0, 1893), (2.0, 1908), (3.5, 1925), (5.0, 1950), (7, 1970)], True),  # Feijenoord / Kop van Zuid
+    ((-5530, -560), [(0, 1300), (0.35, 1450), (0.6, 1650), (0.9, 1860), (2.2, 1915), (3.5, 1950)], False),   # Schiedam
+    ((-2260, -1720), [(0, 1400), (0.3, 1620), (0.8, 1875), (1.5, 1900)], False),                # Delfshaven
+    ((-3710, 2370), [(0, 1500), (0.35, 1720), (1.0, 1930), (2.0, 1960)], False),                # Overschie
+    ((-310, -3880), [(0, 1500), (0.35, 1720), (1.0, 1905), (2.0, 1930)], True),                # Charlois
+    ((1300, -2200), [(0, 1872), (1.0, 1893), (2.0, 1908), (3.5, 1925), (5.0, 1950), (7, 1970)], True),  # Feijenoord / Kop van Zuid
 ]
-# Linea mediana della Nieuwe Maas (dalla mappa OSM): a sud di questa linea niente citta' prima del 1870
-RIVER = [(-12000, -2950), (-7500, -2700), (-5000, -2600), (-3000, -2300), (-1500, -1800), (0, -1300), (1000, -1400),
-         (2500, -1100), (3500, -1550), (5000, -1500), (6500, -1300), (7500, -1100), (9000, -700), (12000, 0)]
-def south(x, y): return y < interp(x, RIVER)
+# Riva sud: la Maas divide la terra (land.json da OSM) in masse separate; "sud" = la massa che contiene Charlois.
+# Niente citta' a sud prima del 1870 (salvo il villaggio di Charlois).
+import os
+_SOUTH = None
+def _south_poly():
+    global _SOUTH
+    if _SOUTH is None:
+        _SOUTH = False; cand = []
+        if '--' in sys.argv: cand.append(sys.argv[sys.argv.index('--') + 1])
+        cand += [a_ for a_ in sys.argv[1:2] if not a_.startswith('-')] + [os.environ.get('CITY_DATA', ''), 'data_rotterdam']
+        for d in cand:
+            f = os.path.join(d, 'land.json') if d else ''
+            if f and os.path.exists(f):
+                ref = Point(-310, -3880)
+                for r in json.load(open(f)):
+                    q = Polygon(r['ext'], r.get('holes', [])).buffer(0)
+                    if q.contains(ref): _SOUTH = prep(q); break
+                break
+        if not _SOUTH: print('[hist_rotterdam] land.json non trovato: riva sud approssimata', flush=True)
+    return _SOUTH
+def south(x, y):
+    sp = _south_poly()
+    return sp.contains(Point(x, y)) if sp else y < -2000
 
 # Il "triangolo" storico di Rotterdam (Coolsingel a ovest, Goudsesingel a nord-est, Maas a sud): la citta' ne resta
 # dentro fino al Waterproject (1854). A nord della Hoogstraat la citta' medievale; a sud la Waterstad (1590-1640).
-TRI = prep(Polygon([(-760, -980), (-720, 620), (-480, 700), (880, -40), (1000, -460), (300, -1020)]))
+TRI = prep(Polygon([(80, -1000), (-50, -300), (-290, 300), (1240, -290), (1300, -720), (700, -1050)]))   # Leuvehaven, Coolsingel, Hofplein, Oostpoort, Oude Haven, Boompjes
 def tri_year(x, y):
-    if y > -160 + 0.12 * x:   # a nord della Hoogstraat
-        return interp(math.hypot(x - 100, y + 50) / 1000.0, [(0, 1290), (0.35, 1350), (0.6, 1420), (0.9, 1480)])
-    return interp(math.hypot(x + 150, y + 450) / 1000.0, [(0, 1595), (0.5, 1625), (0.9, 1650)])
+    if y > -120 - 0.08 * (x - 500):   # a nord della Hoogstraat (passa davanti alla Laurenskerk)
+        return interp(math.hypot(x - 560, y + 60) / 1000.0, [(0, 1290), (0.35, 1350), (0.6, 1420), (0.9, 1480)])
+    return interp(math.hypot(x - 450, y + 600) / 1000.0, [(0, 1595), (0.4, 1625), (0.8, 1650)])
 
 def urban_year(x, y):
     s = south(x, y); best = 9999
@@ -55,8 +75,7 @@ def urban_year(x, y):
 
 # Zona distrutta il 14 maggio 1940 (centro storico: dalla Coolsingel all'Oostplein, dall'Hofplein e dalla stazione
 # Delftse Poort fino ai Boompjes e alla Waterstad). Contorno approssimato dalle mappe dei danni.
-BOMB = prep(Polygon([(-1050, -800), (-1150, 250), (-1100, 1050), (-550, 1100), (0, 800), (600, 600), (1250, 350),
-                     (1350, -250), (900, -700), (200, -950), (-550, -1000)]))
+BOMB = prep(Polygon([(-620, 710), (35, 820), (1065, 490), (1440, -120), (1130, -785), (380, -950), (-380, -895), (-650, -230)]))   # ~3 km2
 def bombed(x, y): return BOMB.contains(Point(x, y))
 
 def era_height(u, rnd):

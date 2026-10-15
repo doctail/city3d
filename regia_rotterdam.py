@@ -2,7 +2,8 @@
 # Misure della traccia (15 ott 2026): calo 3:27-3:31, quasi silenzio 3:32-3:36 (-45 dB), ripresa piano 3:37-3:56,
 # crescendo finale da 3:57. Il 14 maggio 1940 cade nel calo; il centro vuoto nel silenzio; la ricostruzione nella ripresa.
 # Camera sempre a SUD guardando verso nord (il sole viene da sud: controsole la citta' diventa marrone scuro).
-# Origine: Laurenskerk (0, 0). La Nieuwe Maas passa ~1,3 km a sud: e' il primo piano naturale.
+# Origine (0, 0) = Stadhuis sulla Coolsingel; Laurenskerk ~(536, 22). La Nieuwe Maas passa ~1,7-2,2 km a sud: primo piano naturale.
+# Le ancore centrate sul centro storico sono spostate di DX verso est (sulla Laurenskerk e sulla zona bombardata).
 import json, math
 
 DUR = 326.6
@@ -35,6 +36,10 @@ A = [
     (312,   (-1900, -3300, 420), (50, -1000, 130), 40),  # skyline sul fiume
     (318,   (-2100, -4200, 700), (0, -800, 80), 38),
     (DUR,   (-2600, -6800, 1700), (0, -500, 0), 35)]     # ritorno largo per il finale
+
+DX = 500
+A = [(t, (p[0] + DX, p[1], p[2]), (q[0] + DX, q[1], q[2]), mm) if (5.5 <= t <= 65 or 192 <= t <= 236) else (t, p, q, mm)
+     for t, p, q, mm in A]
 
 def cr(p0, p1, p2, p3, u):   # Catmull-Rom per un movimento continuo (le chiavi Bezier di Blender rallentano su ogni chiave)
     return 0.5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u * u + (-p0 + 3 * p1 - 3 * p2 + p3) * u ** 3)
