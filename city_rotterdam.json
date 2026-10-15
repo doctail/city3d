@@ -81,5 +81,26 @@
   "#668c40"
  ],
  "_field_colors": "polder olandesi: prati verdi, non campi aridi come Madrid",
- "haze_k": 55000
+ "haze_k": 55000,
+ "shorts": [
+  [
+   1,
+   133,
+   7839,
+   7
+  ],
+  [
+   2,
+   4700,
+   5900,
+   1
+  ],
+  [
+   3,
+   133,
+   4600,
+   4
+  ]
+ ],
+ "_shorts": "1: tutta la storia (46 s); 2: 1910-1966, bombardamento e ricostruzione a velocita reale (50 s); 3: dal 1340 al 1910 (46 s). [n, primo, ultimo, passo] in fotogrammi del video lungo"
 }

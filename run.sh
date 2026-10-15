@@ -60,7 +60,9 @@ fi
 if [ "$MODE" = "shorts" ]; then
   step "SHORTS verticali 1080x1920 (3 tratti, fotogrammi saltati = accelerazione)"
   # tratto: primo ultimo passo  (in fotogrammi del video lungo, 24 fps)
-  for S in "1 133 7839 7" "2 5593 7839 2" "3 133 2400 2"; do set -- $S
+  SH=$($PY -c "import json,sys;c=json.load(open('city_$CITY.json')) if '$CITY'!='nyc' else {};print(';'.join(' '.join(map(str,x)) for x in c.get('shorts',[[1,133,7839,7],[2,5593,7839,2],[3,133,2400,2]])))")
+  IFS=';' read -ra SHS <<< "$SH"
+  for S in "${SHS[@]}"; do set -- $S
     mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
     $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   done
