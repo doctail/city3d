@@ -74,6 +74,7 @@ for gi in range(pf.num_row_groups):
         y = int(y) if y is not None and not (isinstance(y, float) and math.isnan(y)) else 0
         if y < 1000 or y > 2026: y = 0; noyear += 1
         h = 0.0 if h is None or math.isnan(h) else float(h)
+        if h > CFG.get('max_h', 250): continue   # spuntoni di antenne/errori (Rotterdam: 316 m su 17 m2)
         out.append({'r': ring, 'h': round(h, 1), 'y': y})
     if gi % 20 == 0: log(f'gruppo {gi}/{pf.num_row_groups}: lette {seen} righe, tenute {len(out)}')
 log('parti di edificio:', len(out), '| senza anno:', noyear)
