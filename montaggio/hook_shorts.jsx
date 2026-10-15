@@ -11,16 +11,16 @@ const W = 1920 * (1920 / 1080);   // video orizzontale scalato a 1920 di altezza
 
 // hook: sorgente dell'apertura; main: sorgente dello short; year(f): anno al fotogramma f dello short
 const DEF = {
-  NYC3H: {city: 'NEW YORK', from: 1609, top: 'HOW NEW YORK BEGAN', sub: '1609 → 1700', n: Math.round(43 * FPS),
+  NYC3H: {city: 'NEW YORK', from: 1609, top: 'HOW NEW YORK BEGAN', sub: '1609 → 1825', n: 720,
     hook: {src: 'nyc_light.mp4', crop: 0.62, start: Math.round(314 * FPS), rate: 1},
-    main: {src: 'nyc_light.mp4', crop: 0.5, start: Math.round(5.5 * FPS), rate: 2.2},
-    year: (f) => YNYC[String(Math.max(1, Math.min(7839, Math.round(5.5 * FPS + f * 2.2) + 1)))] ?? 2026},
+    main: {src: 'nyc_light.mp4', crop: 0.5, start: Math.round(5.5 * FPS), rate: 5},
+    year: (f) => YNYC[String(Math.max(1, Math.min(7839, Math.round(5.5 * FPS + f * 5) + 1)))] ?? 2026},
   M1H: {city: 'MADRID', from: 1480, top: '500 YEARS OF MADRID', sub: 'EVERY REAL BUILDING', n: 1101,
     hook: {src: 'mshort2.mp4', start: 975, rate: 1}, main: {src: 'mshort1.mp4', start: 0, rate: 1},
     year: (f) => YMAD[String(Math.min(7839, 133 + f * 7))] ?? 2026},
-  M3H: {city: 'MADRID', from: 1480, top: 'HOW MADRID BEGAN', sub: '1480 → 1700', n: 1134,
-    hook: {src: 'mshort2.mp4', start: 975, rate: 1}, main: {src: 'mshort3.mp4', start: 0, rate: 1},
-    year: (f) => YMAD[String(Math.min(7839, 133 + f * 2))] ?? 2026},
+  M3H: {city: 'MADRID', from: 1480, top: 'HOW MADRID BEGAN', sub: '1480 → 1700', n: 567,
+    hook: {src: 'mshort2.mp4', start: 975, rate: 1}, main: {src: 'mshort3.mp4', start: 0, rate: 2},
+    year: (f) => YMAD[String(Math.min(7839, 133 + f * 4))] ?? 2026},
 };
 
 const Clip = ({s}) => s.crop != null
