@@ -5,5 +5,6 @@
  "lon0": 4.4795,
  "radius_m": 9000,
  "land_half_m": 20000,
- "min_area_m2": 12
+ "min_area_m2": 12,
+ "osm_pbf": "https://download.geofabrik.de/europe/netherlands/zuid-holland-latest.osm.pbf"
 }
