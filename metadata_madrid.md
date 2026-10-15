@@ -42,4 +42,10 @@ evolution of madrid, madrid history, history of madrid, madrid timelapse, city e
 
 ## Note
 - Le schede "Siege of Madrid" (1936) e "11 March 2004" sono in stile sobrio (barra grigia), come l'11 settembre per New York.
-- Copertina: prima/dopo (nucleo antico | Cuatro Torres), nome MADRID enorme, bandiera spagnola. Da fare quando arriva il video.
+- Copertina: copertina_madrid.jpg (prima/dopo: centro storico 1616 | Cuatro Torres, bandiera spagnola).
+
+## Shorts (uno ogni 2 giorni dopo il video lungo; collegare il video lungo come "Video correlato")
+1. madrid_short1.mp4 — **500 Years of Madrid in 46 Seconds (Every Real Building) #shorts** — tutto il video accelerato
+2. madrid_short2.mp4 — **Madrid Reaches for the Sky, 1931 → 2026 #shorts** — Castellana e Cuatro Torres
+3. madrid_short3.mp4 — **How Madrid Began: 1480 → 1700 #shorts** — la capitale degli Asburgo
+Descrizione breve per tutti: "Madrid grows in 3D, one real building at a time. Full video on the channel. #madrid #cityevolution #timelapse"
