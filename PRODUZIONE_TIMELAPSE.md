@@ -73,3 +73,8 @@ Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git 
 - **Prossima città**: da scegliere (piano: Spagna = catasto, Olanda = BAG; controllare prima la concorrenza su YouTube). Usare lo schema titolo "Evolution of <City> in 3D | N Years, Every Real Building (No AI)".
 - **Miglioramenti tecnici da fare per la prossima città**: meno foschia nel render (città grigia a metà video); stima tempi realistica = 1,9 s/fotogramma, non 1,1 (la parte centrale è la più lenta); inquadratura dedicata alla copertina con il monumento simbolo in primo piano; niente secondi vuoti all'inizio.
 - vidIQ: 20 crediti al giorno; ricerca parole chiave già fatta (sezione sopra).
+
+### Calendario di pubblicazione (deciso da Fabio il 15 ott 2026)
+- Video lunghi: mercoledì e domenica alle 16:00 ora italiana (10:00 New York).
+- Shorts: i 3 giorni successivi al video lungo, alle 17:00. Nota: gli Shorts del video della domenica cadono lun-mar-mer, quindi il mercoledì escono insieme al video lungo nuovo.
+- Madrid: domenica 18 ott 16:00; Shorts lun 19, mar 20, mer 21 alle 17:00.
