@@ -1,5 +1,5 @@
 {
- "_doc": "Regia Madrid (stessa durata della traccia di New York, 5:27; da riallineare sulla musica scelta). t = secondi, y = anno. cam: [t, [pos], [target], mm], origine Puerta del Sol. v3: arco da drone sul lato sud (al sole, ovest-est-sud) che si allarga con la citta (raggio dalla curva storica di hist_madrid), poi Castellana e Cuatro Torres. Raggio = 0,95 x raggio storico + 900 m, inclinazione 20-22 gradi.",
+ "_doc": "Regia Madrid (stessa durata della traccia di New York, 5:27; da riallineare sulla musica scelta). t = secondi, y = anno. cam: [t, [pos], [target], mm], origine Puerta del Sol. v3: arco da drone sul lato sud (al sole, ovest-est-sud) che si allarga con la citta (raggio dalla curva storica di hist_madrid), poi Castellana e Cuatro Torres. Raggio = 0,95 x raggio storico + 900 m, inclinazione 20-22 gradi. Anno iniziale 1480 (prima del 1480 il nucleo e' vuoto: 6 s di campi nell'anteprima).",
  "duration": 326.6,
  "lens": 35,
  "years": [
@@ -13,7 +13,7 @@
   ],
   [
    5.5,
-   1450
+   1480
   ],
   [
    30,
