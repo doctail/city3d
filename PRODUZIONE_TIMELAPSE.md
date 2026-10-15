@@ -88,3 +88,8 @@ Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git 
 - Video lunghi: mercoledì e domenica alle 16:00 ora italiana (10:00 New York).
 - Shorts: i 3 giorni successivi al video lungo, alle 17:00. Nota: gli Shorts del video della domenica cadono lun-mar-mer, quindi il mercoledì escono insieme al video lungo nuovo.
 - Madrid: domenica 18 ott 16:00; Shorts lun 19, mar 20, mer 21 alle 17:00.
+
+### Shorts: apertura dal presente (15 ott 2026)
+- Primo Short di New York (dal 1609, foresta): 904 visualizzazioni in 4,5 h, ma solo il 40,1% "ha continuato a guardare". Ipotesi: il primo secondo è vuoto.
+- Rifatti con 1,5 s di apertura sulla città di oggi ("<CITY> TODAY / NOW WATCH IT GROW FROM <anno>") e poi lo short dal passato: `nyc_short3_v2.mp4`, `madrid_short1_v2.mp4`, `madrid_short3_v2.mp4` (codice `montaggio/hook_shorts.jsx`). Regola per le prossime città: ogni Short che parte dal passato apre con 1,5 s del presente.
+- Verifica: confrontare "Ha continuato a guardare" dello Short 2 di New York (parte dal 1929, città già piena) e dei v2 con il 40% del primo.
