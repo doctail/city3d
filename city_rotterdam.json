@@ -1,10 +1,76 @@
 {
  "name": "rotterdam",
- "_doc": "Rotterdam. Origine locale: Laurenskerk. Dati: 3DBAG lod13 (BAG bouwjaar + altezze da AHN). Regia, parchi, curva storica: da completare.",
+ "_doc": "Rotterdam. Origine locale: Laurenskerk (x est, y nord, metri). Dati: 3DBAG lod13 (BAG bouwjaar + altezze da AHN), acqua e parchi da OSM (Geofabrik). Storia: hist_rotterdam.py.",
  "lat0": 51.9221,
  "lon0": 4.4795,
  "radius_m": 9000,
  "land_half_m": 20000,
  "min_area_m2": 12,
- "osm_pbf": "https://download.geofabrik.de/europe/netherlands/zuid-holland-latest.osm.pbf"
+ "osm_pbf": "https://download.geofabrik.de/europe/netherlands/zuid-holland-latest.osm.pbf",
+ "grid_deg": 0,
+ "hist": "hist_rotterdam",
+ "core_box": [
+  -9000,
+  -9000,
+  9000,
+  9000
+ ],
+ "forest_box": [
+  0,
+  0,
+  1,
+  1
+ ],
+ "_forest": "niente foresta: attorno a Rotterdam polder e prati (campi verdi della terra 'fields'); il Kralingse Bos e' un parco del 1935",
+ "parks": [
+  [
+   -2500,
+   -2050,
+   -1350,
+   -1300,
+   1852
+  ],
+  [
+   2300,
+   800,
+   5200,
+   4300,
+   1935
+  ]
+ ],
+ "_parks": "Het Park (1852, sotto l'Euromast); Kralingse Bos attorno al Kralingse Plas (1935)",
+ "roads": [],
+ "outer": {
+  "centers": [
+   [
+    51.9221,
+    4.4795
+   ]
+  ],
+  "curve": [
+   [
+    0,
+    1300
+   ],
+   [
+    2,
+    1860
+   ],
+   [
+    5,
+    1930
+   ],
+   [
+    9,
+    1970
+   ]
+  ],
+  "max": 1990
+ },
+ "land_from_buildings": true,
+ "block_trees": 0.0003,
+ "park_trees": 0.006,
+ "river_width": {
+  "Nieuwe Maas": 400
+ }
 }

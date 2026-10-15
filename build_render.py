@@ -586,7 +586,8 @@ def setvis(o_, hidden):
     if VISSET.get(o_.name) != hidden:
         o_.location.z = -5000.0 if hidden else 0.0; VISSET[o_.name] = hidden
 done = 0
-for f in range(F0, F1 + 1, sc.frame_step):
+_ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
+for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     path = os.path.join(OUT, f'{f:04d}.{EXT}')
     if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:04d}.jpg'), os.path.join(OUT, f'{f:04d}.png'))): continue
     t_ = time.time(); sc.frame_set(f); y_ = YF[f]
