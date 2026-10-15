@@ -38,7 +38,11 @@ DEV=$($PY gputest.py | tee /dev/stderr | grep DEVICE= | cut -d= -f2)
 echo "uso: $DEV"
 [ "$DEV" = "CPU" ] && { echo "NESSUNA GPU FUNZIONANTE: mi fermo. Manda lo screenshot."; exit 1; }
 
-MODE=${1:-test}
+MODE=${1:-}
+if [ -z "$MODE" ]; then
+  echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | profile   (test = vecchia prova solo New York)"; exit 1
+fi
+if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test vale solo per New York: usa preview"; exit 1; fi
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev
