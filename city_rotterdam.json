@@ -1,0 +1,9 @@
+{
+ "name": "rotterdam",
+ "_doc": "Rotterdam. Origine locale: Laurenskerk. Dati: 3DBAG lod13 (BAG bouwjaar + altezze da AHN). Regia, parchi, curva storica: da completare.",
+ "lat0": 51.9221,
+ "lon0": 4.4795,
+ "radius_m": 9000,
+ "land_half_m": 20000,
+ "min_area_m2": 12
+}
