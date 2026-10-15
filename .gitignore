@@ -1,3 +1,5 @@
 data/
 out/
 __pycache__/
+data_*/
+!data_*_src/
