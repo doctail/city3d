@@ -1,0 +1,10 @@
+[out:json][timeout:240];
+(
+  way["natural"="water"](51.84,4.34,52.00,4.62);
+  relation["natural"="water"](51.84,4.34,52.00,4.62);
+  way["waterway"="riverbank"](51.84,4.34,52.00,4.62);
+  way["waterway"~"^(river|canal)$"](51.84,4.34,52.00,4.62);
+  way["leisure"="park"](51.84,4.34,52.00,4.62);
+  relation["leisure"="park"](51.84,4.34,52.00,4.62);
+);
+out geom;

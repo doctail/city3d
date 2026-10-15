@@ -19,6 +19,12 @@ if feats is None:   # formato Overpass "out geom"
             co = [(p['lon'], p['lat']) for p in e['geometry']]
             geom = {'type': 'Polygon', 'coordinates': [co]} if co[0] == co[-1] and len(co) > 3 else {'type': 'LineString', 'coordinates': co}
             feats.append({'geometry': geom, 'properties': e.get('tags', {})})
+        elif e.get('type') == 'relation' and e.get('members'):   # multipoligoni (es. Nieuwe Maas): ricuci i pezzi "outer"
+            from shapely.ops import polygonize, unary_union as _uu
+            ls = [LineString([(p['lon'], p['lat']) for p in m['geometry']]) for m in e['members']
+                  if m.get('type') == 'way' and m.get('role', 'outer') in ('outer', '') and len(m.get('geometry') or []) > 1]
+            polys = list(polygonize(_uu(ls))) if ls else []
+            if polys: feats.append({'geometry': _uu(polys).__geo_interface__, 'properties': e.get('tags', {})})
 parks, water = [], []
 RIVW = CFG.get('river_width', {})   # larghezza (m) dei fiumi disegnati solo come linea
 for f in feats:
@@ -28,8 +34,9 @@ for f in feats:
     except Exception: continue
     if p.get('leisure') == 'park' and s.geom_type in ('Polygon', 'MultiPolygon') and s.area > 3000: parks.append(s.buffer(0))
     elif p.get('natural') == 'water' and s.geom_type in ('Polygon', 'MultiPolygon') and s.area > 2500: water.append(s.buffer(0))
-    elif p.get('waterway') == 'river' and s.geom_type == 'LineString':
-        w = RIVW.get(p.get('name', ''), 22); water.append(s.buffer(w / 2, cap_style=2))
+    elif p.get('waterway') == 'riverbank' and s.geom_type in ('Polygon', 'MultiPolygon') and s.area > 2500: water.append(s.buffer(0))
+    elif p.get('waterway') in ('river', 'canal') and s.geom_type == 'LineString':
+        w = RIVW.get(p.get('name', ''), 22 if p.get('waterway') == 'river' else 10); water.append(s.buffer(w / 2, cap_style=2))
 L = CFG.get('land_half_m', 30000)
 land = box(-L, -L, L, L)
 if water: land = land.difference(unary_union(water).buffer(1))
