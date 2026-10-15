@@ -33,7 +33,10 @@ def flag_us(d, x, y, w, h):
         for c in range(5):
             cx = x + w * 0.42 * (c + 0.5) / 5; cy = y + h * 7 / 13 * (r + 0.5) / 4; d.ellipse([cx - 1.6, cy - 1.6, cx + 1.6, cy + 1.6], fill='white')
     d.rectangle([x, y, x + w, y + h], outline=DARK, width=2)
-FLAGS = {'us': flag_us}
+def flag_es(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=(170, 21, 27)); d.rectangle([x, y + h / 4, x + w, y + h * 3 / 4], fill=(241, 191, 0))
+    d.rectangle([x, y, x + w, y + h], outline=DARK, width=2)
+FLAGS = {'us': flag_us, 'es': flag_es}
 
 img = prep(AFTER)
 if BEFORE:
