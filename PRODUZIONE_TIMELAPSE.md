@@ -56,3 +56,20 @@ Secondo progetto dentro "carta animata": timelapse 3D di città che crescono, se
 - Punteggi titolo vidIQ: "Watch New York Grow for 400 Years — Every Real Building, 1609–2026 (No AI)" 91; "Evolution of New York City in 3D | 400 Years, Every Real Building (No AI)" 96; Madrid "Evolution of Madrid in 3D | 500 Years, Every Real Building (No AI)" 90.
 - Schema titolo da qui in avanti: **Evolution of <City> in 3D | N Years, Every Real Building (No AI)**. Tag di base: city evolution 3d, 3d city evolution, city evolution timelapse, evolution of <city>, <city> history, history of <city>, <city> timelapse, 3d timelapse, historical reconstruction.
 - Primi dati New York (circa 4 ore): 1.100 impressioni, CTR 1,3% (basso), 30 visualizzazioni, durata media 1:02 su 5:27 (19%). Campione troppo piccolo per giudicare.
+
+## RIPARTENZA IN UNA NUOVA CHAT (aggiornato 15 ott 2026, 16:00)
+Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git clone https://github.com/doctail/city3d`) e in questo progetto.
+- Montaggio (Remotion): creare una cartella, copiarci `montaggio/package.json`, `npm install`, mettere i .jsx di `montaggio/` in `src/` e i `years_*.json` in `public/`. Browser locale: `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`, `--concurrency=2`. Rendering a pezzi (≤10 min per chiamata).
+- Copertine: `thumb_city.py` (font Anton/Oswald: `npm pack @fontsource/anton@5 @fontsource/oswald@5` in /tmp/claude-0/fonts). Bandiere: us, es.
+- I video di Fabio (full/light) NON sono su GitHub: se servono, li ricarica lui in chat.
+
+### Stato al 15 ott 2026
+- **New York**: pubblicato il 14 ott. Dopo ~22 h: 3.200 impressioni, CTR 2,5%, 161 visualizzazioni, durata media 1:07 su 5:27 (20%). Curva di fidelizzazione non ancora disponibile.
+  - **Venerdì 16 ott sera** (48 h): cambiare insieme titolo → "Evolution of New York City in 3D | 400 Years, Every Real Building (No AI)" e copertina → `copertina_nyc_v2.jpg` (prima/dopo 1658|2026). Annotare CTR e impressioni al momento del cambio.
+  - **Domenica 18 ott**: confrontare CTR 48 h prima/dopo (miglioramento vero solo se > 3%). Se compare la curva di fidelizzazione e il calo è tra 0:06 e 0:30 (foresta vuota), valutare il taglio con l'editor di YouTube Studio.
+  - Descrizione: togliere la vecchia frase "From a forested island…" rimasta, hashtag → #NewYork #Manhattan #Timelapse.
+- **Madrid**: render completato (RTX 5080, 1,88 s/fotogramma, ~4,1 h). Consegnati: `madrid_overlay.webm`, `monta_madrid.bat` (con leggero contrasto), `copertina_madrid.jpg`, 3 Shorts con titolo/anno/musica, `metadata_madrid.md`. Fabio deve unire sul PC (bat), controllare 2:30–4:30 (parte un po' piatta) e pubblicare.
+  - Costo pod Madrid ≈ 2,4 $ (sopra il tetto di 2 €): gli Shorts verticali nativi costano ~0,7 $. Per le prossime città decidere prima se farli nativi o ritagliati (gratis).
+- **Prossima città**: da scegliere (piano: Spagna = catasto, Olanda = BAG; controllare prima la concorrenza su YouTube). Usare lo schema titolo "Evolution of <City> in 3D | N Years, Every Real Building (No AI)".
+- **Miglioramenti tecnici da fare per la prossima città**: meno foschia nel render (città grigia a metà video); stima tempi realistica = 1,9 s/fotogramma, non 1,1 (la parte centrale è la più lenta); inquadratura dedicata alla copertina con il monumento simbolo in primo piano; niente secondi vuoti all'inizio.
+- vidIQ: 20 crediti al giorno; ricerca parole chiave già fatta (sezione sopra).
