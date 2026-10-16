@@ -65,10 +65,12 @@ def tri_year(x, y):
 def urban_year(x, y):
     s = south(x, y); best = 9999
     if not s and TRI.contains(Point(x, y)): best = tri_year(x, y)
-    for (cx, cy), curve, ok_south in TOWNS:
+    for i, ((cx, cy), curve, ok_south) in enumerate(TOWNS):
         if s and not ok_south: continue
-        v = interp(math.hypot(x - cx, y - cy) / 1000.0, curve)
-        if (cx, cy) == (0, 0): v = max(v, 1855)   # fuori dal triangolo: campagna fino al 1855
+        d = math.hypot(x - cx, y - cy) / 1000.0
+        if d > curve[-1][0] + 0.5: continue        # oltre la curva: questo nucleo non arriva (prima tutto il mondo diventava citta')
+        v = interp(d, curve)
+        if i == 0: v = max(v, 1855)                # Rotterdam fuori dal triangolo: campagna fino al Waterproject (1855)
         best = min(best, v)
     wob = 8 * math.sin(x / 170.0) + 6 * math.sin(y / 230.0 + x / 410.0)
     return best + wob

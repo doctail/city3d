@@ -240,6 +240,8 @@ def _lerp(v, pts):
 def year_at(f):
     if SCHED: return _lerp((f - 1) / FPS, SCHED['years'])
     t = (f - F0) / max(1, F1 - F0); return Y0 + (Y1 - Y0) * (t ** 0.8)
+if '--year' in a:   # copertine: anno fisso per tutti i fotogrammi (con --cam e --only)
+    _YFIX = float(opt('--year')); year_at = lambda f: _YFIX
 YEAR_NODES = []
 def key_years():
     return
@@ -265,6 +267,8 @@ def chunked(name, items, z, m, kind, binw=3.0):
             except ValueError: pass
         if not len(bm_.faces): bm_.free(); continue
         bmesh.ops.triangulate(bm_, faces=bm_.faces)
+        bm_.normal_update(); _down = [f_ for f_ in bm_.faces if f_.normal.z < 0]   # anelli in senso orario: normale verso il basso = macchia nera
+        if _down: bmesh.ops.reverse_faces(bm_, faces=_down)
         o_ = obj(f'{name}_{k_}', bm_, m); objs.append(o_)
         VIS.append((o_, kind, k_ * binw if k_ != 99999 else 99999))
     return objs
@@ -360,7 +364,8 @@ if os.path.exists(f'{DATA}/harbours.json'):
         bmesh.ops.triangulate(bh_, faces=bh_.faces); _ht = bpy.data.meshes.new('htmp'); bh_.to_mesh(_ht); bh_.free()
         for p_ in _ht.polygons: _hit.append(([tuple(_ht.vertices[i].co[:2]) for i in p_.vertices], h_['y']))
         bpy.data.meshes.remove(_ht)
-    HARB = chunked('harbour', _hit, 0.0, mat('hfield', srgb(CITY.get('field_colors', ['#6a7f45'])[0]), 1.0), 'vanish')
+    # z 0,03: dove la terra chiusa (buffer 45 m) copre i bacini stretti, due piani coincidenti davano macchie nere
+    HARB = chunked('harbour', _hit, 0.03, mat('hfield', srgb(CITY.get('field_colors', ['#6a7f45'])[0]), 1.0), 'vanish')
     log('bacini portuali', len(_hb), 'in', len(HARB), 'blocchi')
 # copia delle celle vicine (zona citta') come base dei boschi: attributo per vertice = anno di urbanizzazione
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
@@ -467,7 +472,8 @@ for o_ in list(bpy.data.objects):
 log('alberi cotti:', nb, 'vertici')
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
-bm.faces.new([bm.verts.new(v) for v in [(-s, -s, -2), (s, -s, -2), (s, s, -2), (-s, s, -2)]])
+WZ = float(CITY.get('water_z', -2))   # canali stretti: l'acqua riflette il sotto della terra (macchie nere) se e' troppo bassa
+bm.faces.new([bm.verts.new(v) for v in [(-s, -s, WZ), (s, -s, WZ), (s, s, WZ), (-s, s, WZ)]])
 wm = mat('water', srgb('#24363c'), 0.08, haze=False); nt = wm.node_tree
 nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
 bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])

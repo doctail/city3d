@@ -38,9 +38,22 @@ DEV=$($PY gputest.py | tee /dev/stderr | grep DEVICE= | cut -d= -f2)
 echo "uso: $DEV"
 [ "$DEV" = "CPU" ] && { echo "NESSUNA GPU FUNZIONANTE: mi fermo. Manda lo screenshot."; exit 1; }
 
+cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080, 32 campioni, ~3 min
+  CV=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover');print(' '.join(map(str,c['cam'])),c.get('lens',40),' '.join(map(str,c['years']))) if c else print('')")
+  [ -z "$CV" ] && { echo "nessuna camera 'cover' in city_$CITY.json"; return; }
+  set -- $CV; CAM="$1 $2 $3 $4 $5 $6"; LENS=$7; shift 7
+  for Y in "$@"; do
+    rm -rf out/cover_$Y
+    $PY build_render.py -- $D out/cover_$Y --frames 1 7839 --only 7633 --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|rror"
+    cp out/cover_$Y/7633.jpg out/${CITY}_cover_$Y.jpg
+  done; ls -lh out/${CITY}_cover_*.jpg
+}
+light(){   # versione leggera da caricare in chat (~55 MB): 960x540, bitrate fisso
+  ffmpeg -loglevel error -y -i "$1" -vf scale=960:-2 -c:v libx264 -preset fast -b:v 1300k -maxrate 1400k -bufsize 2800k -pix_fmt yuv420p -an "$2"; ls -lh "$2"
+}
 MODE=${1:-}
 if [ -z "$MODE" ]; then
-  echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | profile   (test = vecchia prova solo New York)"; exit 1
+  echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | cover | profile   (test = vecchia prova solo New York)"; exit 1
 fi
 if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test vale solo per New York: usa preview"; exit 1; fi
 if [ "$MODE" = "preview" ]; then
@@ -57,6 +70,7 @@ if [ "$MODE" = "profile" ]; then
     $PY build_render.py -- $D /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
   done; step "FINITO profilo: manda lo screenshot"; exit 0
 fi
+if [ "$MODE" = "cover" ]; then step "COPERTINA"; cover; step "FINITO: scarica out/${CITY}_cover_*.jpg"; exit 0; fi
 if [ "$MODE" = "shorts" ]; then
   step "SHORTS verticali 1080x1920 (3 tratti, fotogrammi saltati = accelerazione)"
   # tratto: primo ultimo passo  (in fotogrammi del video lungo, 24 fps)
@@ -67,6 +81,7 @@ if [ "$MODE" = "shorts" ]; then
     $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   done
   for n in 1 2 3; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
+  for n in 1 2 3; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
   ls -lh out/${CITY}_short*.mp4
   step "FINITO shorts: scarica out/${CITY}_short1.mp4, _short2.mp4, _short3.mp4"; exit 0
 fi
@@ -78,7 +93,10 @@ if [ "$MODE" = "full" ]; then
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
   ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   cp out/full/years.json out/years.json
-  ls -lh out/${CITY}_full.mp4; step "FINITO"; echo "Scarica city3d/out/${CITY}_full.mp4 e years.json, poi TERMINA il Pod."; exit 0
+  ls -lh out/${CITY}_full.mp4
+  step "5b/5 versione leggera per la chat"; light out/${CITY}_full.mp4 out/${CITY}_light.mp4
+  step "5c/5 copertina"; cover
+  step "FINITO"; echo "Scarica da city3d/out: ${CITY}_full.mp4 (per te), ${CITY}_light.mp4 + years.json + ${CITY}_cover_*.jpg (da caricare in chat)."; exit 0
 fi
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
