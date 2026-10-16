@@ -292,7 +292,7 @@ def nj_year(x, y):
 pl = prep(lgeom); bm = bmesh.new(); uyl = []
 bmm = bmesh.new(); muy = []
 try:
-    _shore = lgeom.boundary.buffer(170); _shp = prep(_shore)
+    _shore = lgeom.boundary.buffer(170) if CITY.get('marsh', True) else None; _shp = prep(_shore) if _shore is not None else None   # marsh=false: niente fascia di palude sulle rive (Rotterdam: sembrava lastricato)
 except Exception: _shore = None
 from shapely.geometry import box as sbox
 core = sbox(*CITY['core_box'])          # zona citta': celle fini; fuori celle grandi (campagna lontana)

@@ -4,7 +4,7 @@
  "lat0": 51.9221,
  "lon0": 4.4795,
  "radius_m": 9000,
- "land_half_m": 20000,
+ "land_half_m": 60000,
  "min_area_m2": 12,
  "osm_pbf": "https://download.geofabrik.de/europe/netherlands/zuid-holland-latest.osm.pbf",
  "grid_deg": 0,
@@ -102,5 +102,7 @@
    7
   ]
  ],
- "_shorts": "Regola di ritmo (Fabio, 15 ott): 25-35 s, >=5 anni/s, qualcosa che cambia ogni 1-2 s; l'apertura di 1,5 s sul presente si aggiunge al montaggio (hook_shorts.jsx). 1: tutta la storia 1340-2026 (29 s); 2: 1925-2026 con il 14 maggio 1940 (24 s, il centro sparisce in ~2 s); 3: 1340-1905 (27 s). [n, primo, ultimo, passo] in fotogrammi del video lungo"
+ "_shorts": "Regola di ritmo (Fabio, 15 ott): 25-35 s, >=5 anni/s, qualcosa che cambia ogni 1-2 s; l'apertura di 1,5 s sul presente si aggiunge al montaggio (hook_shorts.jsx). 1: tutta la storia 1340-2026 (29 s); 2: 1925-2026 con il 14 maggio 1940 (24 s, il centro sparisce in ~2 s); 3: 1340-1905 (27 s). [n, primo, ultimo, passo] in fotogrammi del video lungo",
+ "marsh": false,
+ "_land_half_m": "60 km: con 20 km la camera bassa del finale vedeva il bordo del mondo (striscia chiara all'orizzonte)"
 }

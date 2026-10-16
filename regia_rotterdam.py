@@ -20,9 +20,9 @@ YEARS = [
 # ancore camera: (t, posizione, bersaglio, obiettivo mm). Inclinazione ~20-22 gradi come Madrid.
 A = [
     (0,     (-1600, -8200, 2600), (0, -400, 0), 35),     # oggi, largo dal sud
-    (5.5,   (-700, -3000, 1050), (0, -100, 0), 35),      # stretto sul triangolo medievale
-    (30,    (-800, -3000, 1080), (-50, -80, 0), 35),
-    (65,    (-1300, -3300, 1250), (-200, -150, 0), 35),  # Waterstad
+    (5.5,   (-650, -2000, 700), (50, -350, 0), 35),      # stretto sul triangolo medievale (1,7 km: riempie il quadro)
+    (30,    (-700, -2080, 740), (20, -330, 0), 35),
+    (65,    (-1050, -2500, 920), (-150, -380, 0), 35),   # Waterstad
     (100,   (-2300, -4300, 1600), (-900, -250, 0), 35),  # si apre verso Delfshaven
     (135,   (-3600, -5600, 2100), (-2300, -400, 0), 35), # Schiedam e Delfshaven nel quadro
     (165,   (-1900, -6400, 2350), (-900, -300, 0), 35),  # le due rive, i porti nuovi
