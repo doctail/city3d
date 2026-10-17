@@ -113,3 +113,9 @@ Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git 
 - Fabio trova lenti anche i lunghi (New York e, in parte, Madrid: stessa durata 5:27, stessa scansione del tempo). I dati di New York però dicono che il problema dimostrato è l'INIZIO (crollo nei primi 30 s); dopo, la curva è piatta.
 - Regola per le prossime città (Rotterdam compresa): a metà video almeno un evento visibile ogni 20-30 s (cartello, cambio di camera, zona che esplode, grattacielo che sale in primo piano); evitare tratti di 1-2 minuti di crescita uniforme e grigia (Madrid 2:30-4:30).
 - Verifica: confrontare la curva di Madrid con quella di New York nel tratto 2:30-4:30. Se Madrid scende lì, il ritmo centrale va rivisto anche nella durata.
+
+### Shorts: risultato del confronto (17 ott 2026)
+- Short 1 New York (parte dal 1609, foresta): 40,1% "ha continuato a guardare", 1.600 visualizzazioni in 42 h, curva: crollo nei primi 10 s poi piatta ~30-38%.
+- Short 2 New York (parte dal 1929, città già piena): 39,3%, 1.100 in 17 h. => L'apertura vuota NON era l'unica causa: l'ipotesi "apertura sul presente" NON è confermata, trattarla come da verificare.
+- Ipotesi rimaste: (a) ritaglio dal video orizzontale = immagine morbida e lontana, edifici-puntini sul telefono; (b) nessun soggetto nel primo secondo; (c) 40% come livello base di questo tipo di immagine.
+- Prossimi test già in calendario: Short 3 v2 New York (apertura + 5x + 31 s, ancora ritagliato); Shorts Madrid (verticali NATIVI, camera vicina). Se anche Madrid resta ~40%: provare Shorts con inquadratura bassa tra gli edifici / grattacielo che sale in primo piano, renderizzata apposta.
