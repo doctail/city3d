@@ -119,3 +119,25 @@ Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git 
 - Short 2 New York (parte dal 1929, città già piena): 39,3%, 1.100 in 17 h. => L'apertura vuota NON era l'unica causa: l'ipotesi "apertura sul presente" NON è confermata, trattarla come da verificare.
 - Ipotesi rimaste: (a) ritaglio dal video orizzontale = immagine morbida e lontana, edifici-puntini sul telefono; (b) nessun soggetto nel primo secondo; (c) 40% come livello base di questo tipo di immagine.
 - Prossimi test già in calendario: Short 3 v2 New York (apertura + 5x + 31 s, ancora ritagliato); Shorts Madrid (verticali NATIVI, camera vicina). Se anche Madrid resta ~40%: provare Shorts con inquadratura bassa tra gli edifici / grattacielo che sale in primo piano, renderizzata apposta.
+
+### Analisi di 3 concorrenti (17 ott 2026, video caricati da Fabio, misure con ffmpeg/OCR)
+Video: Latos Charts "AMSTERDAM - 3D Timelapse" (11:57, stesso formato nostro), Timelapse Professor "The Entire History Of Rome - 3D Timelapse (NO AI)" (10:56), Restored Timeline "Evolution of CHICAGO | Fixed-Camera" (12:15, AI).
+
+| | Amsterdam | Roma | Chicago (AI) | New York | Madrid |
+|---|---|---|---|---|---|
+| Durata | 11:57 | 10:56 | 12:15 | 5:27 | 5:27 |
+| Movimento visivo (diff. media ogni 0,5 s) | 21,7 | 18,2 | 11,2 | **2,7** | 8,8 |
+| Saturazione colori (0-255) | 159 | 175 | 66 | **57** | **49** |
+| Schede evento | ~38, una ogni ~19 s, 3 nei primi 20 s | una ogni ~15-20 s | anno grande + barra | 13, una ogni ~25 s | 15 |
+| Primi 30 s | battuta scritta a 0:10 ("IT'S A SWAMP"), diga e villaggio entro 0:15, camera bassa | **gancio narrato** (voce umana): "la città più grande del mondo... poi se ne andarono tutti e le mucche entrarono nella piazza" + titolo a 0:16 | scena che cambia ogni ~5 s (stagioni, animali, luce) | foresta vuota fino a 0:30 | villaggio dal secondo 6 |
+| Audio | musica + effetti sonori sugli eventi (raffiche a banda larga: fuoco, battaglie, campane) | voce nei primi ~45 s, poi musica | musica + ambienti che cambiano ogni ~10 s | solo musica | solo musica |
+| Altro | stemma + nome dell'epoca, contatore abitanti, battaglie animate (navi, soldati, aerei), testi brevi e spiritosi | ritratti dei sovrani, monumenti etichettati (Pantheon, Fontana di Trevi), "Part 1/2..." | barra di avanzamento in alto | HUD anno/epoca/popolazione | idem |
+
+Conclusioni (in ordine di resa/costo):
+1. **Colori**: i nostri render sono slavati (saturazione ~1/3 dei concorrenti 3D): erba verde viva, acqua blu, tetti arancio, meno foschia. Costo basso (materiali + grading).
+2. **Più eventi e più brevi**: una scheda ogni 15-20 s, titolo di 2-3 parole + una riga spiritosa; 2-3 eventi nei primi 20 s.
+3. **Monumenti riconoscibili ed etichettati** quando compaiono (etichetta che punta al monumento). Richiede modelli o almeno sagome dei 5-10 monumenti simbolo della città.
+4. **Effetti sonori sugli eventi** (fuoco, battaglia, campane, sirene) sotto la musica. Costo basso (montaggio).
+5. **Gancio nei primi 15 s** con un contrasto narrativo (Roma: "la città più grande del mondo... poi le mucche"). Senza voce: in testo grande.
+6. Camera più bassa e obliqua sul punto dove succede l'evento (Amsterdam, Roma).
+La durata di 10-12 minuti arriva DOPO: loro la riempiono con 38+ eventi; con i nostri 13-15 un video più lungo sarebbe più vuoto.
