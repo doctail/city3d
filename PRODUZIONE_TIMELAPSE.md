@@ -141,3 +141,9 @@ Conclusioni (in ordine di resa/costo):
 5. **Gancio nei primi 15 s** con un contrasto narrativo (Roma: "la città più grande del mondo... poi le mucche"). Senza voce: in testo grande.
 6. Camera più bassa e obliqua sul punto dove succede l'evento (Amsterdam, Roma).
 La durata di 10-12 minuti arriva DOPO: loro la riempiono con 38+ eventi; con i nostri 13-15 un video più lungo sarebbe più vuoto.
+
+### Rotterdam: cosa cambia dopo l'analisi dei concorrenti (17 ott 2026, prima del render)
+- **Ritmo**: la regia toglie il "tratto lungo e uniforme". Prima: 1340-1870 in 160 s e 1870-1938 in 40 s. Ora: 1340-1650 in 50 s (triangolo, poi Waterstad), **1650-1850 in 15 s** (la citta' resta nelle mura per due secoli), **1850-1938 in 134 s** (Waterproject, porti, la citta' esplode con la camera larga). Il 1940 resta agganciato alla musica (3:27). Shorts ricalcolati (26-30 s).
+- **Colori**: misurati sui fotogrammi di prova, saturazione 50-61 (concorrenti 159-175). Provate in locale 3 varianti di render: meno foschia + AgX contrasto molto alto (peggio, slavato) e trasformazione Standard (bruciato, verde fluo). **Si corregge al montaggio, non nel render**: saturazione x1,7 e contrasto x1,06 (ffmpeg `eq=saturation=1.7:contrast=1.06`) -> ~100, piu' vivo senza diventare finto. Vale anche per copertina e Shorts. `build_render.py` ora accetta `view_transform`, `look`, `exposure` nella config citta' (default invariati).
+- Eventi ogni 15-20 s, monumenti etichettati, effetti sonori, gancio scritto nei primi 15 s: tutto al montaggio, non serve rifare il render. Candidati Rotterdam: 1340 diritti di citta', 1572 sacco spagnolo, 1602 VOC, Waterstad, 1866-72 Nieuwe Waterweg, 1898 Witte Huis (primo grattacielo d'Europa, e' nei dati BAG), porti 1905-1930, 14 maggio 1940, 1953 Lijnbaan, 1960 Euromast, 1984 case cubiche, 1996 Erasmusbrug, 2013 De Rotterdam, 2014 Markthal, 2022 Zalmhaven.
+

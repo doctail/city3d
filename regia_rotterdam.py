@@ -9,8 +9,10 @@ import json, math
 DUR = 326.6
 YEARS = [
     (0, 2026), (2.0, 2026), (5.5, 1340),          # riavvolgimento: 1340 diritti di citta', il triangolo c'e' gia'
-    (30, 1450), (65, 1600), (100, 1700),           # Waterstad 1590-1640
-    (135, 1800), (165, 1870), (192, 1905),         # Waterproject, porti della riva sud dal 1870
+    (22, 1450), (40, 1590), (55, 1650),           # triangolo nord, poi la Waterstad (1590-1640)
+    (70, 1850),                                    # 1650-1850 la citta' resta nelle mura: 200 anni in 15 s (regola di ritmo, 17 ott)
+    (85, 1870), (105, 1890), (125, 1905),          # Waterproject, porti della riva sud: la citta' esplode, camera larga
+    (150, 1920), (175, 1930), (200, 1937),
     (204, 1938), (207, 1940.0),                    # si rallenta verso il 1940
     (211, 1940.42),                                # 3:27-3:31: il 14 maggio (1940.37) cade qui, il centro sparisce
     (217, 1940.6),                                 # 3:31-3:37 silenzio sul centro vuoto
@@ -21,8 +23,8 @@ YEARS = [
 A = [
     (0,     (-1600, -8200, 2600), (0, -400, 0), 35),     # oggi, largo dal sud
     (5.5,   (-650, -2000, 700), (50, -350, 0), 35),      # stretto sul triangolo medievale (1,7 km: riempie il quadro)
-    (30,    (-700, -2080, 740), (20, -330, 0), 35),
-    (65,    (-1050, -2500, 920), (-150, -380, 0), 35),   # Waterstad
+    (25,    (-700, -2080, 740), (20, -330, 0), 35),
+    (50,    (-1050, -2500, 920), (-150, -380, 0), 35),   # Waterstad
     (100,   (-2300, -4300, 1600), (-900, -250, 0), 35),  # si apre verso Delfshaven
     (135,   (-3600, -5600, 2100), (-2300, -400, 0), 35), # Schiedam e Delfshaven nel quadro
     (165,   (-1900, -6400, 2350), (-900, -300, 0), 35),  # le due rive, i porti nuovi
@@ -38,7 +40,7 @@ A = [
     (DUR,   (-2600, -6800, 1700), (0, -500, 0), 35)]     # ritorno largo per il finale
 
 DX = 500
-A = [(t, (p[0] + DX, p[1], p[2]), (q[0] + DX, q[1], q[2]), mm) if (5.5 <= t <= 65 or 192 <= t <= 236) else (t, p, q, mm)
+A = [(t, (p[0] + DX, p[1], p[2]), (q[0] + DX, q[1], q[2]), mm) if (5.5 <= t <= 50 or 192 <= t <= 236) else (t, p, q, mm)
      for t, p, q, mm in A]
 
 def cr(p0, p1, p2, p3, u):   # Catmull-Rom per un movimento continuo (le chiavi Bezier di Blender rallentano su ogni chiave)

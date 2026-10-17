@@ -576,7 +576,8 @@ else:
     except Exception as e_: log('denoiser', e_)
 log('denoiser', sc.cycles.denoiser if sc.cycles.use_denoising else 'nessuno')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
-sc.view_settings.view_transform = 'AgX'; sc.view_settings.look = 'AgX - Punchy'; sc.view_settings.exposure = -0.4
+sc.view_settings.view_transform = CITY.get('view_transform', 'AgX'); sc.view_settings.look = CITY.get('look', 'AgX - Punchy'); sc.view_settings.exposure = float(CITY.get('exposure', -0.4))
+# saturazione: si aggiunge al montaggio (ffmpeg eq=saturation), non qui
 EXT = opt('--ext', 1, 'jpg')   # jpg 95: ~0,7 MB a 1080p (png ~3-8 MB: 7839 fotogrammi riempiono il disco)
 _is = sc.render.image_settings; _is.file_format = 'JPEG' if EXT == 'jpg' else 'PNG'; _is.color_mode = 'RGB'
 if EXT == 'jpg': _is.quality = 95
