@@ -108,3 +108,8 @@ Il sandbox di una nuova chat è vuoto: tutto ciò che serve sta su GitHub (`git 
 ### Idea titoli da provare (vidIQ, 16 ott 2026)
 - vidIQ ha proposto per New York titoli in stile diverso: "Every Building in NYC Appears the Year It Was Built" (97), "I Rebuilt 400 Years of New York City in 3D (No AI)" (96). Lo stile in prima persona / "ogni edificio nel suo anno" potrebbe rendere meglio in home e consigliati; "Evolution of…" aiuta la ricerca. Da provare su UNA città futura come confronto (non su New York, già cambiato il 16 ott).
 - Previsione vidIQ per New York: ~750 visualizzazioni a 14 giorni. Il "28,8× il percorso tipico" non ha significato con un solo video sul canale. Il consiglio "pubblica di lunedì" è generico: calendario invariato.
+
+### Ritmo dei video lunghi (17 ott 2026)
+- Fabio trova lenti anche i lunghi (New York e, in parte, Madrid: stessa durata 5:27, stessa scansione del tempo). I dati di New York però dicono che il problema dimostrato è l'INIZIO (crollo nei primi 30 s); dopo, la curva è piatta.
+- Regola per le prossime città (Rotterdam compresa): a metà video almeno un evento visibile ogni 20-30 s (cartello, cambio di camera, zona che esplode, grattacielo che sale in primo piano); evitare tratti di 1-2 minuti di crescita uniforme e grigia (Madrid 2:30-4:30).
+- Verifica: confrontare la curva di Madrid con quella di New York nel tratto 2:30-4:30. Se Madrid scende lì, il ritmo centrale va rivisto anche nella durata.
