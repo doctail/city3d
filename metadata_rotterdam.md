@@ -55,7 +55,7 @@ Uno al giorno dopo il video lungo, alle 17:00, nell'ordine **B, A, C**: B è il 
 ### 1. B — rotterdam_shortB_finale.mp4 (versione con audio corretto, −15 LUFS)
 **Titolo:** Where Did Rotterdam's Center Go? #shorts
 **Descrizione:**
-14 May 1940: in a single afternoon, the historic center of Rotterdam disappeared. This is every real building, before and after, and the city that rebuilt itself from scratch.
+14 May 1940: in a single afternoon, the historic center of Rotterdam disappeared. Watch the city before and after, and how it rebuilt itself from scratch.
 Full 3D story on the channel.
 #rotterdam #history #ww2 #cityevolution #timelapse
 
