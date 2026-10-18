@@ -158,6 +158,7 @@ Gli Shorts attuali (anche quelli nativi di Madrid) usano la STESSA camera e gli 
 Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - **Short A (controllo)**: il veloce di tutta la città, come Madrid Short 1.
 - **Short B (evento)**: SOLO il 14 maggio 1940. Camera bassa e vicina sul centro (Coolsingel / Laurenskerk), ferma o in lenta rotazione, regia propria (NON la camera del lungo). Struttura 20-30 s: scritta-domanda nel primo secondo ("Where did Rotterdam's center go?") → centro intatto 1938 → scompare (1940) → vuoto → rinasce 1946-1960 → rimando al video lungo. Circa 500-700 fotogrammi.
-- Pubblicarli a un giorno di distanza. Se B batte A di 10+ punti su "ha continuato a guardare", gli Shorts "su un evento" diventano la regola per tutte le città.
+- **Short C (evento)**: "Manhattan on the Maas": Kop van Zuid / Wilhelminapier 1990→2026 (Ponte Erasmus 1996, De Rotterdam 2013 e le altre torri). Camera bassa sul fiume, torri che salgono una dopo l'altra. Domanda iniziale tipo "How did Rotterdam get a skyline?". 20-30 s. (Alternativa se le torri sono poche nei dati: i bacini portuali scavati, terra che diventa acqua, da harbours.json.)
+- Ordine di uscita: A, B, C a un giorno di distanza. Con due Shorts "evento" contro uno di controllo il confronto è più solido. Se B e C battono A di 10+ punti su "ha continuato a guardare", gli Shorts "su un evento" diventano la regola per tutte le città.
 - NON usare l'apertura sul presente (peggiorativa su New York: 27,7%).
 - Regola per scegliere gli eventi: solo momenti in cui gli EDIFICI cambiano davanti alla camera (torri che salgono, quartieri che appaiono o scompaiono). Eventi che il render non mostra (incendi, assedi) non funzionano come Short.
