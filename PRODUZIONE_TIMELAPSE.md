@@ -202,3 +202,14 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - **Contatori**: "BUILDINGS STANDING" in alto a destra (reali + ricostruiti per anno, `buildings_rotterdam.json`: 295 nel 1340, 189.365 nel 1939, 268.466 nel 2026); "HOMES DESTROYED" 0 -> 24.978 nella scheda del 14 maggio.
 - years.json del pod identico a years_rotterdam.json (calcolato dalla regia).
 
+
+### Rotterdam: tempi del pod (18 ott 2026, RTX 5080 Community 0,39 $/h)
+- Lungo: 7.839 fotogrammi a 1,69 s = 3,75 h (13.518 s con mp4, light e avvio).
+- Shorts verticali: **A** (camera del lungo, bin 4) 701 fotogrammi a 1,77 s = 22 min; **B** (camera propria, bin 2) 624 a **3,59 s** = 38 min; **C** (camera propria, bin 1) 648 a circa 4-5 s = circa 50 min (stima).
+- Totale circa 5,7-6 h, cioè circa 2,2-2,3 $: **di nuovo sopra il tetto di 2 €**, come per Madrid. Gli Shorts nativi costano circa 0,8 $, cioè il 35% del pod per 75 secondi di video.
+- Causa probabile [Likely]: i bin per anno più fini (`--bin 2` per B, `--bin 1` per C) moltiplicano gli oggetti-chunk, e Blender li ricalcola a ogni fotogramma. In più la camera bassa e vicina vede più geometria. Non è la risoluzione: 1080×1920 ha gli stessi pixel di 1920×1080.
+- **Regole per la prossima città**:
+  1. Shorts con il bin del lungo (4), salvo che servano anni veramente fini: per B il 1940 è un salto secco, quindi bin 4 bastava.
+  2. Fare un profilo di 20 fotogrammi di ogni Short prima del lancio completo.
+  3. Mettere nel conto 3,5-5 s a fotogramma per gli Shorts con camera propria.
+  4. Se il budget è stretto, fare gli Shorts di controllo (tipo A) ritagliati dal lungo, che sono gratis, e nativi solo quelli "su un evento".
