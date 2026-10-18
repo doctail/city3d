@@ -89,7 +89,7 @@ print(';'.join(' '.join(map(str,(x+['-','-'])[:6])) for x in L))")
     $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   done
   for n in $NAMES; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
-  for n in $NAMES; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
+  [ "${SHORTS_LIGHT:-1}" = "1" ] && for n in $NAMES; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
   ls -lh out/${CITY}_short*.mp4
   step "FINITO shorts: scarica out/${CITY}_short*.mp4 (i _light sono per la chat)"; exit 0
 fi
@@ -103,7 +103,7 @@ if [ "$MODE" = "full" ]; then
   cp out/full/years.json out/years.json
   ls -lh out/${CITY}_full.mp4
   step "5b/5 versione leggera per la chat"; light out/${CITY}_full.mp4 out/${CITY}_light.mp4
-  step "5c/5 copertina"; cover
+  [ "${NOCOVER:-0}" = "1" ] || { step "5c/5 copertina"; cover; }
   step "FINITO"; echo "Scarica da city3d/out: ${CITY}_full.mp4 (per te), ${CITY}_light.mp4 + years.json + ${CITY}_cover_*.jpg (da caricare in chat)."; exit 0
 fi
 step "4/5 render 240 fotogrammi 1920x1080"
