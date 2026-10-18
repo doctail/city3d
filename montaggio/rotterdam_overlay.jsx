@@ -12,6 +12,8 @@ import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/900.css';
 import YEARS from '../public/years_rotterdam.json';
 import LABELS from '../public/labels_rotterdam.json';
+import BOMB from '../public/bomb_rotterdam.json';
+import BLD from '../public/buildings_rotterdam.json';
 
 const FPS = 24, N = 7839, INK = '#F6F1E7', ACC = '#E8B04A', GREY = '#cfd3d6', SH = '0 2px 14px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.7)';
 const yearAt = (f) => YEARS[String(Math.min(N, f + 1))] ?? 2026;
@@ -81,6 +83,37 @@ const Labels = ({s, f}) => { const on = [];
   for (const e of EXTRA) if (s >= e[0] && s < e[1]) e[2].forEach((n) => on.push([n, Math.min(1, (s - e[0]) / 0.5, (e[1] - s) / 0.5), e[3]]));
   return <>{on.map(([n, k, t], i) => <Label key={n} name={n} f={f} k={k} tag={t} i={i} />)}</>; };
 
+// contatore "edifici in piedi" (reali + ricostruiti) per anno, interpolato
+const bldAt = (y) => { const i = Math.max(0, Math.min(BLD.n.length - 2, Math.floor(y) - BLD.Y0)); const u = Math.max(0, Math.min(1, y - BLD.Y0 - i)); return Math.round(BLD.n[i] + (BLD.n[i + 1] - BLD.n[i]) * u); };
+const Counter = ({y}) => (<div style={{position: 'absolute', right: 80, top: 78, textAlign: 'right'}}>
+  <div style={{font: '700 18px Montserrat', letterSpacing: 4, color: 'rgba(246,241,231,0.75)', textShadow: SH}}>BUILDINGS STANDING</div>
+  <div style={{font: '900 54px Montserrat', color: INK, textShadow: SH, fontVariantNumeric: 'tabular-nums'}}>{bldAt(y).toLocaleString('en-US')}</div></div>);
+
+// 14 maggio 1940: bagliore e fumo sulla zona distrutta (contorno e punti proiettati con la camera del render: bomb_rotterdam.json)
+const T_FIRE = [206.8, 207.6, 210.6, 213.6], T_SMOKE = [207.4, 208.6, 215.5, 219.0];
+const nz = (a) => 0.5 + 0.25 * Math.sin(a * 1.7) + 0.15 * Math.sin(a * 4.3 + 1.1) + 0.1 * Math.sin(a * 9.1 + 2.3);
+const Fire = ({s, f}) => { const kf = ramp(s, T_FIRE), ks = ramp(s, T_SMOKE); if (kf <= 0 && ks <= 0) return null;
+  const i = f - BOMB.F0; const P = (n) => BOMB.lm[n] && BOMB.lm[n].p[i]; if (!P('B0')) return null;
+  const poly = [0, 1, 2, 3, 4, 5, 6, 7].map((k) => P('B' + k)).filter((p) => p && p[2] > 0).map((p) => `${p[0]},${p[1]}`).join(' ');
+  const S = [...Array(10).keys()].map((k) => P('S' + k)).filter((p) => p && p[2] > 0);
+  const puffs = [];
+  S.forEach((p, k) => { for (let j = 0; j < 6; j++) { const born = T_SMOKE[0] + j * 0.9 + (k % 3) * 0.3; const age = s - born; if (age < 0) continue;
+    const life = age / 7; if (life > 1) continue; const r = 26 + age * 22; puffs.push(<circle key={k * 10 + j} cx={p[0] + age * (10 + k % 4 * 3)} cy={p[1] - age * 34 - 10} r={r} fill={`rgba(${48 + j * 6},${44 + j * 5},${42 + j * 4},${0.55 * (1 - life) * ks})`} />); } });
+  return (<AbsoluteFill><svg width={1920} height={1080} style={{position: 'absolute'}}>
+    <defs><filter id="bl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="16" /></filter>
+      <filter id="bs" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" /></filter>
+      <radialGradient id="hot"><stop offset="0" stopColor="rgb(255,236,170)" /><stop offset="0.4" stopColor="rgb(255,140,40)" /><stop offset="1" stopColor="rgba(255,90,20,0)" /></radialGradient></defs>
+    {kf > 0 && <g filter="url(#bl)" opacity={kf * (0.26 + 0.14 * nz(s * 6))}><polygon points={poly} fill="rgb(255,96,24)" /></g>}
+    {kf > 0 && S.map((p, k) => <circle key={k} cx={p[0]} cy={p[1] - 6} r={36 + 22 * nz(s * 7 + k)} fill="url(#hot)" opacity={kf * (0.6 + 0.4 * nz(s * 11 + k * 3))} />)}
+    <g filter="url(#bs)">{puffs}</g>
+  </svg></AbsoluteFill>); };
+
+// case distrutte, nella scheda del 14 maggio (dato storico: 24.978 abitazioni)
+const Homes = ({s}) => { if (s < 207.6 || s > 219.5) return null; const u = Math.max(0, Math.min(1, (s - 207.8) / 3.2)); const n = Math.round(24978 * (1 - Math.pow(1 - u, 3)));
+  return (<div style={{position: 'absolute', left: 108, top: 330, opacity: Math.min(1, (s - 207.6) / 0.5, (219.5 - s) / 0.5)}}>
+    <div style={{font: '700 20px Montserrat', letterSpacing: 4, color: GREY, textShadow: SH}}>HOMES DESTROYED</div>
+    <div style={{font: '900 64px Montserrat', color: INK, textShadow: SH, fontVariantNumeric: 'tabular-nums'}}>{n.toLocaleString('en-US')}</div></div>); };
+
 const Title = ({k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, background: `radial-gradient(ellipse at center, rgba(10,10,12,${0.45 * k}), rgba(10,10,12,0) 65%)`}}>
   <div style={{font: '700 26px Montserrat', letterSpacing: 10, color: ACC, textShadow: SH}}>EVERY BUILDING IN ITS REAL YEAR</div>
   <div style={{font: '900 200px Montserrat', color: INK, textShadow: SH, letterSpacing: 6, lineHeight: 1.05, transform: `scale(${0.96 + 0.04 * k})`}}>ROTTERDAM</div>
@@ -100,7 +133,8 @@ export const Overlay = ({bg = false}) => {
   return (<AbsoluteFill>
     {bg && <OffthreadVideo src={staticFile('rotterdam_light.mp4')} />}
     {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Hud year={y} city={ROTTERDAM} /></AbsoluteFill>}
-    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Labels s={s} f={f + 1} /><Card s={s} /></AbsoluteFill>}
+    <Fire s={s} f={f + 1} />
+    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Labels s={s} f={f + 1} /><Card s={s} /><Homes s={s} /><Counter y={y} /></AbsoluteFill>}
     <Hook s={s} />
     {kt > 0 && <Title k={kt} />}
     {ke > 0 && <End k={ke} />}
