@@ -177,3 +177,11 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - `montaggio/rotterdam_shorts.jsx`: overlay trasparenti 1080x1920 per A/B/C (domanda dal primo fotogramma, anno grande, rimando finale "FULL STORY ON OUR CHANNEL"; in C etichette su Maastoren e De Rotterdam).
 - `thumb_city.py`: aggiunta bandiera olandese (`--flag nl`). `metadata_rotterdam.md` pronto (titolo, descrizione con capitoli, tag, Shorts).
 
+
+## Scansione onde (18 ott 2026, vidIQ ~35 crediti) — scelta della città dopo Rotterdam
+- "city evolution" 35.600 ricerche/mese, **+65% in 30 giorni**; invece "city evolution timelapse" -29%, "fixed camera timelapse" -24%, "ai timelapse" -38%. Lettura [Likely]: la domanda per l'argomento cresce, quella per il formato AI a camera fissa cala. Vantaggio per noi (3D, dati veri, No AI).
+- Video che sfondano nell'ultimo mese: Kuala Lumpur (Epoch, AI) 162K; Pripyat (EraLapse) 82K; Hong Kong 77K; Wellington 65K; San Pietroburgo 60K; Tenochtitlan (Timelapse Professor, 3D No AI, 3.290 iscritti) 27,6K in ~9 giorni.
+- **Attenzione**: "3D Timelapse – New York (1600–2026)" (canale polacco con 1.150 iscritti, 3D, non AI) ha 96K in 3 settimane. Il nostro New York è a ~390. L'argomento funziona, quindi il nostro problema è copertina/titolo/primi secondi, non la città.
+- Candidati: **Chicago** — "evolution of chicago" 4.600/mese, "chicago timelapse" 5.100 (concorrenza 16), "history of chicago" 12.400. Unico video di crescita: Restored Timeline (AI) **3,5 milioni**. Nessuna versione 3D con dati veri. Pubblico USA, incendio del 1871 come evento forte. Dati: footprints comunali con year_built (da verificare: molti zero?). **Barcellona** — "barcelona evolution" 5.400 con concorrenza 7, stessa pipeline di Madrid (catasto), ma Epoch l'ha già fatta. **Amsterdam** — 5.100 con concorrenza 10, stessa pipeline di Rotterdam (BAG), ma c'è Latos (3D forte).
+- Raccomandazione: **Chicago** dopo Rotterdam (domanda dimostrata da 3,5M e nessun concorrente con dati veri); Barcellona come riserva veloce se i dati di Chicago non reggono.
+- Scansione automatica ogni lunedì mattina (attività programmata): outliers del mese + ricerca parole chiave sulle città candidate, rapporto breve.
