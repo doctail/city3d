@@ -170,3 +170,10 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - **A** (controllo): tutta la storia con la camera del lungo, passo 11 (29 s).
 - `run.sh shorts` ora legge [nome, primo, ultimo, passo, regia?, bin?]: con la regia propria lo Short usa la sua camera. Uscite: `rotterdam_shortA.mp4`, `_shortB`, `_shortC` (+ `_light`).
 
+### Rotterdam: montaggio preparato durante il render (18 ott 2026)
+- `montaggio/rotterdam_overlay.jsx`: titolo nel riavvolgimento (0-5 s), **gancio scritto** 5,8-15 s ("EUROPE'S BIGGEST PORT / started as a dam on a muddy stream." poi "IN 1940 IT LOST ITS HEART / in a single afternoon. Watch what came back."), **22 schede a tempo** (una ogni ~15 s, titolo 2-3 parole + una riga; 14 maggio 1940 sobria), **etichette sui monumenti** calcolate con la stessa camera del render (`labels_cam.py` + `landmarks_rotterdam.json`: Witte Huis, City Hall, Laurenskerk, Euromast, Cube Houses, Delftse Poort, Maastoren, De Rotterdam, Zalmhaven, Van Nelle); nel silenzio dopo il bombardamento: "City Hall · survived", "Laurenskerk · survived". HUD con dati di Rotterdam in `cities.js`. Anni dal `schedule_rotterdam.json` (`years_rotterdam.json` uguale a quello del pod).
+- **Effetti sonori sintetici** (`montaggio/sfx_rotterdam.py`): campane 0:16, sirena di nave 1:27, sirena antiaerea 3:19 ed esplosioni lontane nel calo 3:27-3:31, sotto la musica (+0,3/+2,6 dB di media nei tratti). Audio pronto: `rotterdam_audio.m4a` (con effetti) e `rotterdam_audio_solo_musica.m4a`.
+- `monta_rotterdam.bat`: full + overlay + audio, saturazione 1,7 e contrasto 1,06. `monta_rotterdam_shorts.bat`: 3 Shorts + loro overlay + musica (A dal 4:00, B dal 3:20 così il silenzio cade sul centro vuoto, C dal 3:57).
+- `montaggio/rotterdam_shorts.jsx`: overlay trasparenti 1080x1920 per A/B/C (domanda dal primo fotogramma, anno grande, rimando finale "FULL STORY ON OUR CHANNEL"; in C etichette su Maastoren e De Rotterdam).
+- `thumb_city.py`: aggiunta bandiera olandese (`--flag nl`). `metadata_rotterdam.md` pronto (titolo, descrizione con capitoli, tag, Shorts).
+

@@ -49,3 +49,13 @@ export const MADRID = {
     [2008, 2014, 'Cuatro Torres', 'Four skyscrapers rise on Real Madrid\'s old training ground. The tallest are about 250 meters high.'],
   ],
 };
+
+// Rotterdam (comune). Prima del 1795 stime storiche approssimative (1622: ~19.500); dal 1795 censimenti e CBS.
+// Le schede evento di Rotterdam sono a TEMPO (secondi del video), in rotterdam_overlay.jsx: EVENTS qui resta vuoto.
+export const ROTTERDAM = {
+  Y0: 1340, Y1: 2026, POPMAX: 1e6, TICKS: [1400, 1500, 1600, 1700, 1800, 1900, 2000],
+  popLabel: () => 'CITY OF ROTTERDAM',
+  POP: [[1340, 2000], [1400, 3000], [1514, 5500], [1600, 13000], [1622, 19500], [1650, 30000], [1700, 45000], [1795, 53200], [1830, 72300], [1850, 90000], [1869, 116200], [1880, 148100], [1900, 318500], [1910, 417900], [1920, 510000], [1930, 587000], [1939, 620000], [1941, 598000], [1950, 680000], [1965, 731000], [1984, 555000], [2000, 593000], [2010, 610000], [2020, 651000], [2026, 680000]],
+  ERAS: [[1340, 'Town on the Rotte', '#9C8B5E'], [1572, 'Dutch Revolt', '#B8473A'], [1590, 'Golden Age', '#C9A227'], [1700, 'Quiet Centuries', '#7A8B6E'], [1850, 'Port City', '#3E9AA0'], [1940, 'War & Ruins', '#6E6E6E'], [1946, 'Rebuilding', '#4F7FB8'], [1985, 'Manhattan on the Maas', '#D96C8A']],
+  EVENTS: [],
+};

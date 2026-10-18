@@ -36,7 +36,9 @@ def flag_us(d, x, y, w, h):
 def flag_es(d, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=(170, 21, 27)); d.rectangle([x, y + h / 4, x + w, y + h * 3 / 4], fill=(241, 191, 0))
     d.rectangle([x, y, x + w, y + h], outline=DARK, width=2)
-FLAGS = {'us': flag_us, 'es': flag_es}
+def flag_nl(d, x, y, w, h):
+    for i, c in enumerate([(174, 28, 40), (255, 255, 255), (33, 70, 139)]): d.rectangle([x, y + i * h / 3, x + w, y + (i + 1) * h / 3], fill=c)
+FLAGS = {'us': flag_us, 'es': flag_es, 'nl': flag_nl}
 
 img = prep(AFTER)
 if BEFORE:
