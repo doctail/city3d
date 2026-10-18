@@ -152,3 +152,12 @@ La durata di 10-12 minuti arriva DOPO: loro la riempiono con 38+ eventi; con i n
 - Short 3 v2 New York (apertura "NEW YORK TODAY" + skyline 1,5 s, poi foresta 1609, 5x, 31 s): **27,7%** "ha continuato a guardare" dopo ~4,5 h (circa 460 nel feed). Peggio di Short 1 (40,1%) e Short 2 (39,3%).
 - Ipotesi: mostrare subito il risultato toglie curiosità + stacco deludente su foresta + blocco di testo grande su immagine ritagliata/morbida. L'apertura sul presente è quindi PEGGIORATIVA su New York; resta in verifica su Madrid (lun Short 1 v2 con apertura, mar Short 2 senza, mer Short 3 v2 con apertura; tutti verticali nativi).
 - Per ora gli Shorts portano pochi iscritti (2-3 in tutto); il video lungo ne ha portati 3 con 340 visualizzazioni. Priorità ai video lunghi (colori, eventi), non inseguire gli Shorts.
+
+### PROPOSTA PER LA CHAT DI ROTTERDAM: Shorts "su un evento" (18 ott 2026, OK di Fabio)
+Gli Shorts attuali (anche quelli nativi di Madrid) usano la STESSA camera e gli stessi anni del video lungo, solo in verticale e accelerati. I due Shorts di New York stanno a ~40% "ha continuato a guardare" sia partendo dal vuoto sia dalla città piena: il problema probabile è che non succede NIENTE DI PRECISO, non l'anno di partenza.
+Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
+- **Short A (controllo)**: il veloce di tutta la città, come Madrid Short 1.
+- **Short B (evento)**: SOLO il 14 maggio 1940. Camera bassa e vicina sul centro (Coolsingel / Laurenskerk), ferma o in lenta rotazione, regia propria (NON la camera del lungo). Struttura 20-30 s: scritta-domanda nel primo secondo ("Where did Rotterdam's center go?") → centro intatto 1938 → scompare (1940) → vuoto → rinasce 1946-1960 → rimando al video lungo. Circa 500-700 fotogrammi.
+- Pubblicarli a un giorno di distanza. Se B batte A di 10+ punti su "ha continuato a guardare", gli Shorts "su un evento" diventano la regola per tutte le città.
+- NON usare l'apertura sul presente (peggiorativa su New York: 27,7%).
+- Regola per scegliere gli eventi: solo momenti in cui gli EDIFICI cambiano davanti alla camera (torri che salgono, quartieri che appaiono o scompaiono). Eventi che il render non mostra (incendi, assedi) non funzionano come Short.
