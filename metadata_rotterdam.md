@@ -49,9 +49,32 @@ evolution of rotterdam, rotterdam history, history of rotterdam, rotterdam timel
 - Il ponte Erasmus NON è nel modello (niente ponti): non citarlo nella descrizione né nelle schede.
 - Copertina: copertina_rotterdam.jpg (prima/dopo 1700 | 2026, stessa camera bassa sul fiume, bandiera olandese).
 
-## Shorts — test "su un evento" (uno al giorno dopo il video lungo, nell'ordine A, B, C; collegare il video lungo come "Video correlato")
-1. rotterdam_shortA_finale.mp4 — **686 Years of Rotterdam in 29 Seconds (Every Real Building) #shorts** — controllo: tutta la storia con la camera del lungo
-2. rotterdam_shortB_finale.mp4 — **Where Did Rotterdam's Center Go? #shorts** — solo il 14 maggio 1940, camera propria
-3. rotterdam_shortC_finale.mp4 — **How Rotterdam Got a Skyline #shorts** — torri del Kop van Zuid 1990-2026, camera propria
-Descrizione breve per tutti: "Rotterdam in 3D, one real building at a time. Full video on the channel. #rotterdam #cityevolution #timelapse"
-Misura dopo 48 h: "ha continuato a guardare" di A contro B e C. Se B e C battono A di 10+ punti, gli Shorts "su un evento" diventano la regola.
+## Shorts — test "su un evento"
+Uno al giorno dopo il video lungo, alle 17:00, nell'ordine **B, A, C**: B è il più forte, quindi esce per primo. Il test confronta la percentuale di "ha continuato a guardare", che dipende poco dal giorno di uscita. Su ognuno collegare il video lungo come "Video correlato".
+
+### 1. B — rotterdam_shortB_finale.mp4 (versione con audio corretto, −15 LUFS)
+**Titolo:** Where Did Rotterdam's Center Go? #shorts
+**Descrizione:**
+14 May 1940: in a single afternoon, the historic center of Rotterdam disappeared. This is every real building, before and after, and the city that rebuilt itself from scratch.
+Full 3D story on the channel.
+#rotterdam #history #ww2 #cityevolution #timelapse
+
+### 2. A — rotterdam_shortA_finale.mp4
+**Titolo:** 686 Years of Rotterdam in 29 Seconds (Every Real Building) #shorts
+**Descrizione:**
+From a dam on a muddy stream in 1340 to Europe's biggest port: Rotterdam in 3D, one real building at a time, each appearing in the year it was built.
+Full video on the channel.
+#rotterdam #cityevolution #timelapse #3d
+
+### 3. C — rotterdam_shortC_finale.mp4
+**Titolo:** How Rotterdam Got a Skyline #shorts
+**Descrizione:**
+In 1990 the old docks of the Kop van Zuid were almost empty. Today they're "Manhattan on the Maas". Every real tower, rising in the year it was built.
+Full video on the channel.
+#rotterdam #skyline #architecture #cityevolution #timelapse
+
+**Tag comuni agli Shorts:** rotterdam, rotterdam history, city evolution, 3d timelapse, netherlands, year built
+
+**Credito obbligatorio** (anche negli Shorts, in fondo alla descrizione): Data: 3DBAG (CC BY 4.0), © OpenStreetMap contributors (ODbL). Music: Unicorn Heads.
+
+**Misura dopo 48 h:** "ha continuato a guardare" di A contro B e C. Se B e C battono A di 10+ punti, gli Shorts "su un evento" diventano la regola. Previsione: C è il più debole, perché nei primi 7-8 s cambia poco.
