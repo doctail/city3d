@@ -84,25 +84,29 @@
  "haze_k": 55000,
  "shorts": [
   [
-   1,
+   "A",
    133,
    7839,
    11
   ],
   [
-   2,
-   3901,
-   7633,
-   6
+   "B",
+   1,
+   624,
+   1,
+   "schedule_rotterdam_shortB.json",
+   2
   ],
   [
-   3,
-   133,
-   3001,
-   4
+   "C",
+   1,
+   648,
+   1,
+   "schedule_rotterdam_shortC.json",
+   1
   ]
  ],
- "_shorts": "Regola di ritmo (Fabio, 15 ott): 25-35 s, >=5 anni/s, qualcosa che cambia ogni 1-2 s; apertura di 1,5 s sul presente al montaggio (hook_shorts.jsx). Regia del 17 ott: 1: tutta la storia 1340-2026 (29 s); 2: 1925-2026 con il 14 maggio 1940 (26 s, il centro sparisce in ~2 s); 3: 1340-1905 (30 s). [n, primo, ultimo, passo] in fotogrammi del video lungo",
+ "_shorts": "Test Shorts 'su un evento' (proposta 18 ott, OK di Fabio). A = controllo: tutta la storia con la camera del lungo (29 s). B = solo il 14 maggio 1940, camera propria bassa sul centro (26 s). C = 'Manhattan on the Maas', torri di Kop van Zuid 1990-2026, camera sul fiume (27 s). Regie in regia_rotterdam_shorts.py. Niente apertura sul presente. Formato: [nome, primo, ultimo, passo, regia?, bin?]",
  "marsh": false,
  "_land_half_m": "60 km: con 20 km la camera bassa del finale vedeva il bordo del mondo (striscia chiara all'orizzonte)",
  "water_z": -0.25,

@@ -72,18 +72,26 @@ if [ "$MODE" = "profile" ]; then
 fi
 if [ "$MODE" = "cover" ]; then step "COPERTINA"; cover; step "FINITO: scarica out/${CITY}_cover_*.jpg"; exit 0; fi
 if [ "$MODE" = "shorts" ]; then
-  step "SHORTS verticali 1080x1920 (3 tratti, fotogrammi saltati = accelerazione)"
-  # tratto: primo ultimo passo  (in fotogrammi del video lungo, 24 fps)
-  SH=$($PY -c "import json,sys;c=json.load(open('city_$CITY.json')) if '$CITY'!='nyc' else {};print(';'.join(' '.join(map(str,x)) for x in c.get('shorts',[[1,133,7839,7],[2,5593,7839,2],[3,133,2400,2]])))")
-  IFS=';' read -ra SHS <<< "$SH"
-  for S in "${SHS[@]}"; do set -- $S
+  step "SHORTS verticali 1080x1920"
+  # voci in city_<citta>.json -> "shorts": [nome, primo, ultimo, passo, regia?, bin?]
+  #   senza regia: tratto del video lungo (stessa camera, fotogrammi saltati = accelerazione)
+  #   con regia: Short con camera e anni propri (schedule_<citta>_short<nome>.json), fotogrammi 1..N
+  SH=$($PY -c "
+import json
+c=json.load(open('city_$CITY.json')) if '$CITY'!='nyc' else {}
+L=c.get('shorts',[[1,133,7839,7],[2,5593,7839,2],[3,133,2400,2]])
+print(';'.join(' '.join(map(str,(x+['-','-'])[:6])) for x in L))")
+  IFS=';' read -ra SHS <<< "$SH"; NAMES=""
+  for S in "${SHS[@]}"; do set -- $S; NAMES="$NAMES $1"
+    SS=$SCHED; [ "$5" != "-" ] && SS=$5; BN=""; [ "$6" != "-" ] && BN="--bin $6"
     mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
-    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+    echo "--- short $1: fotogrammi $2-$3 passo $4, regia $SS $BN"
+    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   done
-  for n in 1 2 3; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
-  for n in 1 2 3; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
+  for n in $NAMES; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
+  for n in $NAMES; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
   ls -lh out/${CITY}_short*.mp4
-  step "FINITO shorts: scarica out/${CITY}_short1.mp4, _short2.mp4, _short3.mp4"; exit 0
+  step "FINITO shorts: scarica out/${CITY}_short*.mp4 (i _light sono per la chat)"; exit 0
 fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"

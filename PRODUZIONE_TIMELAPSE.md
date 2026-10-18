@@ -162,3 +162,11 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - Ordine di uscita: A, B, C a un giorno di distanza. Con due Shorts "evento" contro uno di controllo il confronto è più solido. Se B e C battono A di 10+ punti su "ha continuato a guardare", gli Shorts "su un evento" diventano la regola per tutte le città.
 - NON usare l'apertura sul presente (peggiorativa su New York: 27,7%).
 - Regola per scegliere gli eventi: solo momenti in cui gli EDIFICI cambiano davanti alla camera (torri che salgono, quartieri che appaiono o scompaiono). Eventi che il render non mostra (incendi, assedi) non funzionano come Short.
+
+### Rotterdam: Shorts A/B/C pronti (18 ott 2026, chat di Rotterdam)
+- `regia_rotterdam_shorts.py` -> `schedule_rotterdam_shortB.json` (26 s, 624 fot.) e `schedule_rotterdam_shortC.json` (27 s, 648 fot.). Provati in locale (CPU, verticale 360x640).
+- **B** (14 maggio 1940): camera propria a 1,9 km dal centro, 750 m di quota, rotazione lenta -8/+4 gradi. Anni: 1936-1939,9 (0-6 s, domanda scritta nel primo secondo) -> scompare 7-9,5 s -> vuoto fino a 13 s -> rinasce 1945-1962 (13,5-24 s) -> fermo 2 s. `--bin 2` (i quartieri ricostruiti compaiono ogni ~1,3 s).
+- **C** ("Manhattan on the Maas"): camera sull'acqua a ovest di Wilhelminapier, da 1,7 a 1,4 km, obiettivo 50 mm, torri al centro del verticale con i riflessi sotto. 1988-2026 in 22 s (~1,6 anni/s: piu' lento della regola dei 5 anni/s, ma ogni 2-4 s sale una torre). `--bin 1`. Torri nei dati: 1997, 2000 (122 m), 2005 (140 m), 2010 (158 m), 2011 Maastoren (165 m), 2013 De Rotterdam (152 m), 2017. Il ponte Erasmus NON c'e' (niente ponti nel modello): non nominarlo nelle scritte. Zalmhaven (2022, 203 m) resta fuori quadro.
+- **A** (controllo): tutta la storia con la camera del lungo, passo 11 (29 s).
+- `run.sh shorts` ora legge [nome, primo, ultimo, passo, regia?, bin?]: con la regia propria lo Short usa la sua camera. Uscite: `rotterdam_shortA.mp4`, `_shortB`, `_shortC` (+ `_light`).
+
