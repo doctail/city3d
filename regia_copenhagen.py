@@ -57,6 +57,8 @@ SOSTE = [
     (1886.5, 1891.6, 4.0, 'The great dome (1894)', ('Marble Church', 260, 20, 235, 255, 35)),
     (1893.5, 1905.5, 5.0, 'City Hall (1892-1905)', ('City Hall', 330, 22, 195, 225, 35)),
     (1917.5, 1928.5, 5.0, 'Christiansborg III and its tower (1907-28)', ('Christiansborg tower', 420, 20, 190, 225, 35)),
+    (1929.0, 1934.5, 5.0, 'Grundtvig Church (1921-40)', ('Grundtvig Church', 300, 18, 215, 245, 35)),
+    (1958.2, 1960.4, 4.5, "SAS Royal, the city's first skyscraper (1960)", ('SAS Royal Hotel', 330, 20, 200, 235, 35)),
     (1995.8, 2000.6, 5.0, 'The Øresund Bridge (2000)', ('Oresund Bridge', 5200, 14, 250, 265, 35)),
     (2000.8, 2004.6, 4.0, 'The Opera House (2005)', ('Opera House', 520, 20, 215, 240, 35)),
     (2004.8, 2008.3, 4.0, 'Royal Playhouse (2008)', ('Royal Playhouse', 360, 20, 200, 230, 35)),

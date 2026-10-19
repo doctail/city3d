@@ -1,4 +1,4 @@
-Durata 8:31.5  fotogrammi 12276  inquadrature 51  stacco medio ogni 10.0 s
+Durata 8:31.5  fotogrammi 12276  inquadrature 52  stacco medio ogni 9.8 s
 
 SOSTE (video -> anni):
   0:09.5-0:15.5  1167.0->1169.0  Absalon builds his castle (1167)
@@ -16,15 +16,17 @@ SOSTE (video -> anni):
   4:08.0-4:22.0  1807.7->1808.0  BRITISH BOMBARDMENT (1807)
   4:22.4-4:27.4  1809.5->1820.0  Christiansborg rises again
   4:37.5-4:41.5  1842.8->1845.0  Tivoli opens (1843)
-  5:07.5-5:11.5  1876.5->1883.5  Marble Church rebuilt (1874)
-  5:13.0-5:16.5  1884.7->1885.0  Christiansborg burns again (1884)
-  5:18.4-5:22.4  1886.5->1891.6  The great dome (1894)
-  5:24.8-5:29.8  1893.5->1905.5  City Hall (1892-1905)
-  5:53.8-5:58.8  1917.5->1928.5  Christiansborg III and its tower (1907-28)
-  7:15.4-7:20.4  1995.8->2000.6  The Øresund Bridge (2000)
-  7:20.5-7:24.5  2000.8->2004.6  The Opera House (2005)
-  7:24.7-7:28.7  2004.8->2008.3  Royal Playhouse (2008)
-  7:32.1-7:37.1  2013.3->2019.3  CopenHill (2019)
+  5:12.3-5:16.3  1876.5->1883.5  Marble Church rebuilt (1874)
+  5:18.1-5:21.6  1884.7->1885.0  Christiansborg burns again (1884)
+  5:23.9-5:27.9  1886.5->1891.6  The great dome (1894)
+  5:30.8-5:35.8  1893.5->1905.5  City Hall (1892-1905)
+  5:59.8-6:04.8  1917.5->1928.5  Christiansborg III and its tower (1907-28)
+  6:05.8-6:10.8  1929.0->1934.5  Grundtvig Church (1921-40)
+  6:44.6-6:49.1  1958.2->1960.4  SAS Royal, the city's first skyscraper (1960)
+  7:15.7-7:20.7  1995.8->2000.6  The Øresund Bridge (2000)
+  7:20.8-7:24.8  2000.8->2004.6  The Opera House (2005)
+  7:24.9-7:28.9  2004.8->2008.3  Royal Playhouse (2008)
+  7:32.3-7:37.3  2013.3->2019.3  CopenHill (2019)
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -37,12 +39,12 @@ ANNO OGNI 30 s:
   3:30   1743.2  (2.50 anni/s)
   4:00   1795.5  (0.07 anni/s)
   4:30   1826.2  (2.15 anni/s)
-  5:00   1869.7  (0.91 anni/s)
-  5:30   1905.6  (0.50 anni/s)
-  6:00   1929.1  (0.50 anni/s)
+  5:00   1867.3  (0.79 anni/s)
+  5:30   1893.0  (0.66 anni/s)
+  6:00   1918.0  (2.20 anni/s)
   6:30   1944.7  (0.62 anni/s)
-  7:00   1972.4  (1.20 anni/s)
-  7:30   2010.2  (1.46 anni/s)
+  7:00   1971.4  (1.22 anni/s)
+  7:30   2009.9  (1.51 anni/s)
   8:00   2026.0  (0.00 anni/s)
   8:30   2026.0  (0.00 anni/s)
 

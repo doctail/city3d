@@ -77,17 +77,20 @@ def city_mat():
     L(c2.outputs[2], b.inputs['Base Color'])
     if NIGHT:   # finestre accese a caso (una per cella finestra), toni caldi; vetrate dei grattacieli piu' rade
         cu = mm('FLOOR', mm('DIVIDE', u, 3.1)); cz = mm('FLOOR', mm('DIVIDE', sp.outputs['Z'], 3.6))
-        cv = N.new('ShaderNodeCombineXYZ'); L(cu, cv.inputs[0]); L(cz, cv.inputs[1]); L(mm('MULTIPLY', sp.outputs['X'], 0.013), cv.inputs[2])
-        wn = N.new('ShaderNodeTexWhiteNoise'); wn.noise_dimensions = '3D'; L(cv.outputs[0], wn.inputs['Vector'])
-        lit = mm('GREATER_THAN', wn.outputs['Value'], ST.get('night_off', 0.42))
-        gl_lit = mm('MULTIPLY', mm('MULTIPLY', glass, None, mm('GREATER_THAN', wn.outputs['Value'], 0.62)), None, mm('MULTIPLY', mz, None, mu))
+        # caso per finestra: fract(sin(a*12.99 + b*78.23 + c*37.72) * 43758.55) (il White Noise di Blender con coordinate intere
+        # dava quasi sempre valori alti: tutte le finestre accese)
+        hx = mm('ADD', mm('ADD', mm('MULTIPLY', cu, 12.9898), None, mm('MULTIPLY', cz, 78.233)), None, mm('MULTIPLY', mm('FLOOR', mm('DIVIDE', sp.outputs['X'], 23.0)), 37.719))
+        hv = mm('FRACT', mm('MULTIPLY', mm('SINE', mm('MODULO', hx, 6283.1853)), 43758.5453))
+        wn = type('o', (), {'outputs': {'Value': hv}})()
+        lit = mm('GREATER_THAN', hv, ST.get('night_off', 0.42))
+        gl_lit = mm('MULTIPLY', mm('MULTIPLY', glass, None, mm('GREATER_THAN', hv, 0.62)), None, mm('MULTIPLY', mz, None, mu))
         em_k = mm('ADD', mm('MULTIPLY', wmask, None, lit), None, gl_lit)
-        wc_ = N.new('ShaderNodeMix'); wc_.data_type = 'RGBA'; L(wn.outputs['Value'], wc_.inputs['Factor'])
-        wc_.inputs[6].default_value = (1.0, 0.62, 0.30, 1); wc_.inputs[7].default_value = (1.0, 0.86, 0.62, 1)
+        wc_ = N.new('ShaderNodeMix'); wc_.data_type = 'RGBA'; L(hv, wc_.inputs['Factor'])
+        wc_.inputs[6].default_value = (1.0, 0.42, 0.12, 1); wc_.inputs[7].default_value = (1.0, 0.70, 0.35, 1)
         L(wc_.outputs[2], b.inputs['Emission Color']); L(mm('MULTIPLY', em_k, ST.get('night_win', 6.0)), b.inputs['Emission Strength'])
-    rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = 0.12
+    rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = (0.95 if NIGHT else 0.12)   # di notte niente riflessi: le finestre spente restano scure
     L(rg.outputs[0], b.inputs['Roughness'])
-    mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = 0.35; L(mt.outputs[0], b.inputs['Metallic'])
+    mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = (0.0 if NIGHT else 0.35); L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
 def land_mat(mode='fields'):
     m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']

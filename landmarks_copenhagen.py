@@ -234,6 +234,32 @@ for off in (-245, 245):   # due piloni, ognuno con due gambe
           z0=0, z1=204, c='#c9c9c3', a=0.05, y=1998.0)
 lab('Øresund Bridge', mid[0], mid[1], 204, 2000)
 
+# ---------- 15. Grundtvigs Kirke (1921-40): facciata a canne d'organo di 49 m ----------
+gk = fp('w25523430'); gkc = gk.centroid; clear.append(ring(gk.buffer(3)))
+gax = mrr_axis(gk); gn = math.hypot(*gax); gux, guy = gax[0] / gn, gax[1] / gn
+if gux > 0: gux, guy = -gux, -guy                    # verso ovest: la facciata e' sul lato ovest
+YB = '#e3cf98'
+P(name='Grundtvig Church', t='prism', r=ring(gk), z0=0, z1=4, c=YB, a=0.05, y=1929.3)
+P(name='Grundtvig Church', t='prism', r=ring(gk.buffer(-1)), z0=4, z1=22, c=YB, a=0.05, y=1931.5)
+P(name='Grundtvig Church', t='hip', r=ring(gk.buffer(-1)), z0=22, z1=22, rh=13, c='#b9a77c', a=0.05, y=1933.0)
+fx, fy = gkc.x + gux * (gn / 2 - 6), gkc.y + guy * (gn / 2 - 6)
+for k in range(-6, 7):   # canne d'organo: lame verticali a gradoni, la centrale piu' alta
+    hh = 49 - abs(k) * 3.4; ox, oy = fx + (-guy) * k * 2.3, fy + gux * k * 2.3
+    P(name='Grundtvig Church', t='prism', r=ring(Polygon([(ox - gux * 5 - guy * 1.0, oy - guy * 5 + gux * 1.0), (ox + gux * 5 - guy * 1.0, oy + guy * 5 + gux * 1.0),
+                                                           (ox + gux * 5 + guy * 1.0, oy + guy * 5 - gux * 1.0), (ox - gux * 5 + guy * 1.0, oy - guy * 5 - gux * 1.0)]), 0.05),
+      z0=0, z1=hh, c=YB, a=0.05, y=1929.6 + 0.12 * (6 - abs(k)))
+lab('Grundtvig Church', fx, fy, 49, 1940)
+
+# ---------- 16. SAS Royal Hotel (1958-60): il primo grattacielo di Copenaghen, 69,6 m ----------
+sr = fp('w229215455'); src = sr.centroid; clear.append(ring(sr.buffer(2)))
+sax = mrr_axis(sr); sn = math.hypot(*sax); sux, suy = sax[0] / sn, sax[1] / sn
+P(name='SAS Royal Hotel', t='prism', r=ring(sr), z0=0, z1=10, c='#7fa59c', a=0.5, y=1958.4)
+slab = Polygon([(src.x - sux * 29 - suy * 8.5, src.y - suy * 29 + sux * 8.5), (src.x + sux * 29 - suy * 8.5, src.y + suy * 29 + sux * 8.5),
+                (src.x + sux * 29 + suy * 8.5, src.y + suy * 29 - sux * 8.5), (src.x - sux * 29 + suy * 8.5, src.y - suy * 29 - sux * 8.5)])
+P(name='SAS Royal Hotel', t='prism', r=ring(slab, 0.05), z0=10, z1=40, c='#6f9c95', a=0.5, y=1959.0)
+P(name='SAS Royal Hotel', t='prism', r=ring(slab, 0.05), z0=40, z1=69.6, c='#6f9c95', a=0.5, y=1959.7)
+lab('SAS Royal Hotel', src.x, src.y, 70, 1960)
+
 # ---------- etichette senza modello ----------
 lab('The Little Mermaid', *L(55.6929, 12.5993), 2, 1913)
 json.dump({'parts': parts, 'clear': clear, 'labels': labels, 'harbours': harbours, 'fires': fires,
