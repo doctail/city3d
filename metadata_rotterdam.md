@@ -1,7 +1,8 @@
 # Rotterdam — metadati YouTube (Year Built, video 3)
 
 ## Titolo
-**Evolution of Rotterdam in 3D | 686 Years, Every Real Building (No AI)**
+**EVOLUTION OF ROTTERDAM | 3D City Timelapse (1340–NOW) | No AI**
+(19 ott 2026: formato dei vincitori della nicchia, città in maiuscolo + "3D City Timelapse" + "(inizio–NOW)"; prima era Evolution of Rotterdam in 3D | 686 Years, Every Real Building (No AI). Copertina con NOW: thumb_now.py)
 (schema del 14 ott 2026. Alternativa da provare su una città futura, stile suggerito da vidIQ: "Every Building in Rotterdam Appears the Year It Was Built". Attenzione: il video AI di Epoch Timelapse si chiama "Evolution of Rotterdam", quindi in ricerca siamo accanto a lui: è un vantaggio, il pubblico c'è.)
 
 ## Descrizione

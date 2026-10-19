@@ -1,7 +1,8 @@
 # New York — metadati YouTube (Year Built, video 1)
 
 ## Titolo (scelto)
-**Watch New York Grow for 400 Years — Every Real Building, 1609–2026 (No AI)**
+**EVOLUTION OF NEW YORK | 3D City Timelapse (1609–NOW) | No AI**
+(19 ott 2026: formato dei vincitori della nicchia, città in maiuscolo + "3D City Timelapse" + "(inizio–NOW)"; prima era Watch New York Grow for 400 Years — Every Real Building, 1609–2026 (No AI). Copertina con NOW: thumb_now.py)
 Alternativa per il test A/B: New York 1609 → 2026: 145,000 Real Buildings in 3D (No AI)
 
 ## Descrizione

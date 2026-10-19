@@ -1,7 +1,8 @@
 # Madrid — metadati YouTube (Year Built, video 2)
 
 ## Titolo
-**Evolution of Madrid in 3D | 500 Years, Every Real Building (No AI)**
+**EVOLUTION OF MADRID | 3D City Timelapse (1480–NOW) | No AI**
+(19 ott 2026: formato dei vincitori della nicchia, città in maiuscolo + "3D City Timelapse" + "(inizio–NOW)"; prima era Evolution of Madrid in 3D | 500 Years, Every Real Building (No AI). Copertina con NOW: thumb_now.py)
 (punteggio vidIQ 90; schema deciso il 14 ott 2026: "Evolution of <City> in 3D | N Years, Every Real Building (No AI)")
 
 ## Descrizione
