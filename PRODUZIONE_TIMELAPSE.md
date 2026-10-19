@@ -228,3 +228,13 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - Latos Charts (101K iscritti): Lisbona 29 set, Barcellona 1 ott, Amsterdam 4 ott → ogni 2-3 giorni, 9-12 minuti.
 - Epoch Timelapse (AI): ogni 2-3 giorni. Meridian, TIME TALES, Everything's OK: anche uno al giorno, ma con poche visualizzazioni.
 - Lezioni: (1) la velocità non è ciò che separa vincitori e perdenti (i cloni giornalieri restano a centinaia); (2) gli Shorts non servono per esplodere; (3) i vincitori durano 8-10 minuti (noi 5:27); (4) "siamo in ritardo" non regge: Cornerstone è nato 12 giorni prima del nostro New York e ha fatto 1 milione sulla stessa città.
+
+## Analisi Cornerstone "EVOLUTION OF NEW YORK | 3D CITY TIMELAPSE (1609–NOW)" — 1,03M in 8 giorni (19 ott 2026)
+- Misure: movimento **16,2** (nostro NYC 2,7: 6 volte), saturazione 88 (nostro 57), contrasto 37,5, audio -21,8 LUFS, 8:12.
+- **NON è fotorealistico**: stile low-poly "giocattolo" tipo Cities Skylines. Prato verde acceso, tetti rosso mattone per la città antica, grigio chiaro/bianco per il moderno, acqua turchese, pochissima foschia. Leggibilità > realismo. [Likely] costa MENO del nostro Cycles (sembra Eevee o comunque pochi campioni).
+- Apertura: nero → 0:03 New York 2026 dall'alto con "2026" grande → 0:06 "1974 · BEFORE ALL THIS" (riavvolge passando per gli anni) → 0:09 titolo "NEW YORK · 3D TIMELAPSE · 1609 TO NOW" → 0:12 già 1609 con la Half Moon di Hudson. A 0:19 camera VICINA su Fort Amsterdam che si costruisce.
+- Camera: vicina all'inizio, poi si allarga con la città; molte posizioni diverse; inquadrature dall'alto inclinato.
+- HUD minimale: anno grande in serif al centro in alto + epoca sotto ("NEW AMSTERDAM", "COLONIAL NEW YORK", "THE EMPIRE CITY", "THE SUPERTALL AGE"), popolazione in alto a destra, didascalia evento piccola in basso.
+- Monumenti: Fort Amsterdam, Crystal Palace 1853, Central Park, Statua della Libertà 1885, ponti, Empire State, Torri Gemelle, 2002 Tribute in Light DI NOTTE, supertall; finale 2026 di notte.
+- Titolo: "(1609–NOW)" invece di 2026.
+- **Conclusione**: "alzare la qualità" NON significa render più costosi ma: colori netti e saturi per epoca, niente foschia, camera vicina e in movimento, monumenti, notte. Per Copenaghen valutare Eevee/stile semplificato invece di Cycles.

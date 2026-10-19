@@ -22,6 +22,13 @@ Leggi PRIMA: `PRODUZIONE_TIMELAPSE.md` (regole di Fabio, flusso, sezioni del 18-
 5. Camera sempre in movimento, alternando alto/basso/vicino (regola drone di Madrid solo per i tratti larghi).
 6. Stima tempi: misurare con `run.sh profile` PRIMA del full; con notte e fuoco +10-20% rispetto a ~1,9 s/fotogramma.
 
+## Stile (da Cornerstone, 1M su New York — vedi analisi in PRODUZIONE_TIMELAPSE.md)
+- Leggibilità prima del realismo: prato verde acceso, tetti rosso mattone per gli edifici antichi (pre-1900), grigio chiaro/bianco per i moderni, acqua turchese, **foschia quasi zero**. Saturazione già alta nel render (~90), non solo al montaggio.
+- Valutare **Eevee** (o Cycles a pochissimi campioni) in stile semplificato: più leggibile e più economico. Fare una prova di 3 fotogrammi Cycles vs Eevee prima di decidere.
+- Apertura: Copenaghen 2026 dall'alto con "2026" → riavvolgimento veloce con anni che scorrono → titolo "COPENHAGEN · 3D TIMELAPSE · 1167 TO NOW" → entro 0:12 si è nel 1167 con camera vicina sul castello di Absalon.
+- HUD: anno grande in alto al centro + nome dell'epoca sotto; popolazione in alto a destra; didascalia evento piccola in basso.
+- Titolo con **NOW**: "EVOLUTION OF COPENHAGEN | 3D CITY TIMELAPSE (1167–NOW)" o variante "Every Real Building"; copertina "1167 → NOW".
+
 ## Al MONTAGGIO (tutto quello già fatto per Rotterdam)
 Saturazione x1,7 + contrasto x1,06; schede evento ogni 15-20 s; effetti sonori (fuoco, cannoni 1807, cantiere, campane); gancio scritto nei primi 15 s (es. "IN 1807 THE BRITISH FIRED 14,000 ROCKETS AT THIS CITY" — verificare il numero); etichette dei monumenti agganciate alla posizione 3D; contatore popolazione; scheda sobria per tragedie (1711 peste, 1945 Shellhus).
 
