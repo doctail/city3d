@@ -34,7 +34,7 @@
   "#55a039"
  ],
  "park_trees": 0.01,
- "block_trees": 0.0012,
+ "block_trees": 0.0006,
  "view_transform": "Standard",
  "look": "None",
  "exposure": -2.0,
@@ -107,8 +107,14 @@
   "water": "#1d6f7c",
   "water_rough": 0.12,
   "sky_light": 0.35,
-  "sun_energy": 5.0
+  "sun_energy": 5.0,
+  "night_off": 0.72,
+  "night_win": 2.2,
+  "moon": 0.08,
+  "night_street": 0.6,
+  "night_sky": 0.01
  },
  "hist": "hist_copenhagen",
- "land_from_buildings": true
+ "land_from_buildings": true,
+ "dur_min": 0.003
 }

@@ -2,7 +2,7 @@
 # Uso: python build_render.py -- DATA_DIR OUT_DIR [--frames A B] [--res W H] [--samples N] [--gpu] [--fps F] [--years Y0 Y1]
 import bpy, bmesh, math, json, sys, os, time, random
 from mathutils import Vector
-from shapely.geometry import Polygon
+from shapely.geometry import Polygon, Point
 from shapely.ops import unary_union
 
 a = sys.argv[sys.argv.index('--') + 1:]
@@ -19,6 +19,7 @@ def opt(name, n=1, default=None):
 F0, F1 = map(int, opt('--frames', 2, ['1', '240'])); RW, RH = map(int, opt('--res', 2, ['1920', '1080']))
 SAMPLES = int(opt('--samples', 1, '32')); FPS = int(opt('--fps', 1, '24')); GPU = '--gpu' in a
 Y0, Y1 = map(float, opt('--years', 2, ['1700', '2026']))
+NIGHT = '--night' in a   # passata notturna separata (materiali fissi: niente risincronizzazione), dissolvenza al montaggio
 os.makedirs(OUT, exist_ok=True); t0 = time.time()
 def log(*x): print('[build]', *x, f'({time.time()-t0:.0f}s)', flush=True)
 
@@ -74,6 +75,16 @@ def city_mat():
     c1 = N.new('ShaderNodeMix'); c1.data_type = 'RGBA'; L(wmask, c1.inputs['Factor']); L(ca.outputs['Color'], c1.inputs[6]); c1.inputs[7].default_value = (*srgb(ST.get('window', '#121418')), 1)
     c2 = N.new('ShaderNodeMix'); c2.data_type = 'RGBA'; L(mm('MULTIPLY', band, None, glass), c2.inputs['Factor']); L(c1.outputs[2], c2.inputs[6]); c2.inputs[7].default_value = (0.55, 0.57, 0.58, 1)
     L(c2.outputs[2], b.inputs['Base Color'])
+    if NIGHT:   # finestre accese a caso (una per cella finestra), toni caldi; vetrate dei grattacieli piu' rade
+        cu = mm('FLOOR', mm('DIVIDE', u, 3.1)); cz = mm('FLOOR', mm('DIVIDE', sp.outputs['Z'], 3.6))
+        cv = N.new('ShaderNodeCombineXYZ'); L(cu, cv.inputs[0]); L(cz, cv.inputs[1]); L(mm('MULTIPLY', sp.outputs['X'], 0.013), cv.inputs[2])
+        wn = N.new('ShaderNodeTexWhiteNoise'); wn.noise_dimensions = '3D'; L(cv.outputs[0], wn.inputs['Vector'])
+        lit = mm('GREATER_THAN', wn.outputs['Value'], ST.get('night_off', 0.42))
+        gl_lit = mm('MULTIPLY', mm('MULTIPLY', glass, None, mm('GREATER_THAN', wn.outputs['Value'], 0.62)), None, mm('MULTIPLY', mz, None, mu))
+        em_k = mm('ADD', mm('MULTIPLY', wmask, None, lit), None, gl_lit)
+        wc_ = N.new('ShaderNodeMix'); wc_.data_type = 'RGBA'; L(wn.outputs['Value'], wc_.inputs['Factor'])
+        wc_.inputs[6].default_value = (1.0, 0.62, 0.30, 1); wc_.inputs[7].default_value = (1.0, 0.86, 0.62, 1)
+        L(wc_.outputs[2], b.inputs['Emission Color']); L(mm('MULTIPLY', em_k, ST.get('night_win', 6.0)), b.inputs['Emission Strength'])
     rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = 0.12
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = 0.35; L(mt.outputs[0], b.inputs['Metallic'])
@@ -286,6 +297,14 @@ def chunked(name, items, z, m, kind, binw=3.0):
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
 if land: lgeom = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land if len(r) >= 1]).buffer(45, join_style=2).buffer(-45, join_style=2)   # chiude le fessure tra contee
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
+RECLAIM = json.load(open(f'{DATA}/reclaim.json')) if os.path.exists(f'{DATA}/reclaim.json') else []
+_rec_items = []
+for rc_ in RECLAIM:
+    q_ = lgeom.intersection(Polygon(rc_['r']).buffer(0))
+    if q_.is_empty: continue
+    lgeom = lgeom.difference(Polygon(rc_['r']).buffer(0))
+    for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
+        if isinstance(g_, Polygon) and g_.area > 50: _rec_items.append((list(g_.simplify(2).exterior.coords)[:-1], rc_['y']))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     urban_year = __import__(CITY['hist']).urban_year
@@ -361,6 +380,83 @@ lo_ = obj('land_tmp', bm, land_mat())
 _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
 LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
+if _rec_items: REC = chunked('reclaim', _rec_items, 0.01, mat('reclaim', srgb(ST.get('reclaim', '#b9b09c')), 0.95), 'appear', binw=1.0); log('terra di riporto', len(_rec_items))
+# strade (DATA/roads.json [{"r", "y"}]): nastri chiari sul suolo, sotto gli isolati
+if os.path.exists(f'{DATA}/roads.json'):
+    _rd = json.load(open(f'{DATA}/roads.json'))
+    if '--crop' in a: _rd = [r_ for r_ in _rd if cx0 < r_['r'][0][0] < cx1 and cy0 < r_['r'][0][1] < cy1]
+    _sm = mat('street', srgb(ST.get('street', '#e3dac6')), 0.95)
+    if NIGHT:
+        _sb = _sm.node_tree.nodes['Principled BSDF']; _sb.inputs['Emission Color'].default_value = (1.0, 0.62, 0.32, 1); _sb.inputs['Emission Strength'].default_value = ST.get('night_street', 0.25)
+    chunked('streets', [(r_['r'], r_['y']) for r_ in _rd if not r_.get('rail')], 0.10, _sm, 'appear')
+    chunked('rails', [(r_['r'], r_['y']) for r_ in _rd if r_.get('rail')], 0.10, mat('rail', srgb(ST.get('rail', '#8a8378')), 0.9), 'appear')
+    log('strade', len(_rd))
+# ponti (DATA/bridges.json [{"r", "y"}]): impalcato rialzato sull'acqua, fianchi scuri
+def slabs(name, items, z0, z1, m_top, m_side, binw=2.0):
+    groups = {}
+    for ring, yv in items: groups.setdefault(int(yv // binw), []).append(ring)
+    for k_, rings in sorted(groups.items()):
+        bm_ = bmesh.new()
+        for r_ in rings:
+            try:
+                pg = Polygon(r_)
+                if not pg.is_valid or pg.area < 5: continue
+                rr = list(pg.exterior.coords)[:-1]
+                if not pg.exterior.is_ccw: rr = rr[::-1]
+                vb = [bm_.verts.new((x, y, z0)) for x, y in rr]; vt = [bm_.verts.new((x, y, z1)) for x, y in rr]
+                f_ = bm_.faces.new(vt); f_.material_index = 0
+                for i in range(len(rr)):
+                    j = (i + 1) % len(rr); f_ = bm_.faces.new((vb[i], vb[j], vt[j], vt[i])); f_.material_index = 1
+            except (ValueError, Exception): pass
+        if not len(bm_.faces): bm_.free(); continue
+        o_ = obj(f'{name}_{k_}', bm_, m_top); o_.data.materials.append(m_side)
+        VIS.append((o_, 'appear', k_ * binw))
+if os.path.exists(f'{DATA}/bridges.json'):
+    _br = json.load(open(f'{DATA}/bridges.json'))
+    if '--crop' in a: _br = [r_ for r_ in _br if cx0 < r_['r'][0][0] < cx1 and cy0 < r_['r'][0][1] < cy1]
+    slabs('bridge', [(r_['r'], r_['y']) for r_ in _br], 1.6, 3.4, mat('bdeck', srgb(ST.get('bridge_deck', '#d9d4c8')), 0.9), mat('bside', srgb(ST.get('bridge_side', '#5d5850')), 0.9))
+    log('ponti', len(_br))
+# incendi (DATA/fires.json): bagliore a terra, fiamme, fumo; ognuno visibile solo nella sua finestra di anni
+if os.path.exists(f'{DATA}/fires.json'):
+    _fr = json.load(open(f'{DATA}/fires.json')); frnd = random.Random(7)
+    for fi_ in _fr: fi_.setdefault('smoke', 16)
+    def emat(name, col, k):
+        m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+        for n_ in list(N_):
+            if n_.type != 'OUTPUT_MATERIAL': N_.remove(n_)
+        e_ = N_.new('ShaderNodeEmission'); e_.inputs['Color'].default_value = (*col, 1); e_.inputs['Strength'].default_value = k
+        nt_.links.new(e_.outputs[0], N_['Material Output'].inputs['Surface']); return m_
+    m_glow = emat('fire_glow', (1.0, 0.32, 0.06), 4.0); m_flame = emat('fire_flame', (1.0, 0.55, 0.12), 12.0)
+    m_smoke = mat('smoke', srgb(ST.get('smoke', '#8a837c')), 1.0); _pb = m_smoke.node_tree.nodes['Principled BSDF']; _pb.inputs['Alpha'].default_value = ST.get('smoke_alpha', 0.7)
+    try: m_smoke.surface_render_method = 'BLENDED'
+    except Exception: pass
+    for fi_ in _fr:
+        pg = Polygon(fi_['poly']); y0_, y1_ = fi_['y'], fi_['y1']
+        bm_ = bmesh.new()
+        try: bm_.faces.new([bm_.verts.new((x, y, 0.6)) for x, y in list(pg.exterior.coords)[:-1]])
+        except ValueError: pass
+        bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'glow_{int(y0_)}', bm_, m_glow); VIS.append((o_, 'window', (y0_ - 0.0004, y1_ + 0.10)))
+        x0_, yy0_, x1_, yy1_ = pg.bounds
+        def rpts(n):
+            out_ = []
+            while len(out_) < n:
+                pt = (frnd.uniform(x0_, x1_), frnd.uniform(yy0_, yy1_))
+                if pg.contains(Point(*pt)): out_.append(pt)
+            return out_
+        bm_ = bmesh.new()
+        for (px, py) in rpts(int(fi_.get('flames', 70))):
+            r_ = frnd.uniform(5, 11); h_ = frnd.uniform(14, 34)
+            bmesh.ops.create_cone(bm_, cap_ends=True, segments=6, radius1=r_, radius2=0.5, depth=h_, matrix=__import__('mathutils').Matrix.Translation((px, py, 8 + h_ / 2)))
+        o_ = obj(f'flames_{int(y0_)}', bm_, m_flame); VIS.append((o_, 'window', (y0_, y1_ + 0.03)))
+        bm_ = bmesh.new()
+        for (px, py) in rpts(int(fi_.get('smoke', 26))):
+            dx, dy = frnd.uniform(0.3, 0.6), frnd.uniform(-0.2, 0.2)   # il vento spinge il fumo
+            for k2 in range(4):
+                z_ = 75 + k2 * 60; rr_ = frnd.uniform(18, 30) * (1 + 0.45 * k2)
+                bmesh.ops.create_icosphere(bm_, subdivisions=2, radius=rr_, matrix=__import__('mathutils').Matrix.Translation((px + dx * z_, py + dy * z_, z_)))
+        for f_ in bm_.faces: f_.smooth = True
+        o_ = obj(f'smoke_{int(y0_)}', bm_, m_smoke); VIS.append((o_, 'window', (y0_ + 0.0006, y1_ + 0.22)))
+    log('incendi', len(_fr))
 # bacini portuali scavati dopo l'inizio del video (DATA/harbours.json [{"r", "y"}]): terra verde fino all'anno di scavo, poi acqua
 if os.path.exists(f'{DATA}/harbours.json'):
     _hb = json.load(open(f'{DATA}/harbours.json'))
@@ -531,10 +627,13 @@ def sky_grad():
     cmul2 = WN.new('ShaderNodeMath'); cmul2.operation = 'MULTIPLY'; WL(cmul.outputs[0], cmul2.inputs[0]); cmul2.inputs[1].default_value = 0.9
     cl = WN.new('ShaderNodeMix'); cl.data_type = 'RGBA'; WL(cmul2.outputs[0], cl.inputs['Factor']); WL(ad.outputs[2], cl.inputs[6]); cl.inputs[7].default_value = (1.25, 1.05, 0.90, 1)
     WL(cl.outputs[2], bg2.inputs['Color'])
-if '--flat-sky' not in a: sky_grad()
+if '--flat-sky' not in a and not NIGHT: sky_grad()
+if NIGHT:
+    bg.inputs['Strength'].default_value = ST.get('night_sky', 0.02); bg2.inputs['Color'].default_value = (*srgb(ST.get('night_sky_col', '#0b1426')), 1); bg2.inputs['Strength'].default_value = 1.0
 lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader'); WL(lp.outputs['Is Camera Ray'], mxw.inputs[0]); WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
 WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
 sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4); sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
+if NIGHT: sun.energy = ST.get('moon', 0.35); sun.color = (0.55, 0.65, 1.0)
 so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
 cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
@@ -556,7 +655,7 @@ for f, p, t in CAMKEYS:
 
 # ---------- visibilita' per fotogramma: solo cio' che cambia viene ricalcolato ----------
 def _dur(f):
-    q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS); return max(0.4, min(25.0, rate * 0.6))
+    q = max(1, FPS // 4); rate = abs(year_at(f + q) - year_at(max(1, f - q))) / (2 * q / FPS); return max(float(CITY.get('dur_min', 0.4)), min(25.0, rate * 0.6))
 YF = {f: year_at(f) for f in range(F0, F1 + 1)}; DF = {f: _dur(f) for f in range(F0, F1 + 1)}
 def growth(ch, f):
     y_, d_ = YF[f], DF[f]
@@ -629,7 +728,7 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     for ch in CHUNKS:
         g_ = growth(ch, f); setvis(ch['obj'], g_ < 0.002)
         if g_ >= 0.002 and abs(ch['obj'].scale.z - g_) > 1e-4: ch['obj'].scale.z = g_
-    for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr))
+    for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr) if kind == 'vanish' else not (thr[0] <= y_ < thr[1]))
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
 n = max(1, done); log(f'FATTO {done} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')

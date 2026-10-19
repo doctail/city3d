@@ -65,15 +65,20 @@ def _amager():
                 break
     return _AMAGER
 def amager(x, y):
+    if not (x > 200 and y < -800): return False        # Amager e' a sud-est del porto; la terra e' attaccata alla Selandia (Kalvebod)
     a_ = _amager()
-    return a_.contains(Point(x, y)) if a_ else (x > 900 and y < -1100)
+    return a_.contains(Point(x, y)) if a_ else True
 
 def urban_year(x, y):
     p = Point(x, y)
     if WALL.contains(p): best = zone_year(x, y)
     else:
-        if amager(x, y): best = interp(math.hypot(x - 1500, y + 900) / 1000, AMAGER_FRONT)
-        else: best = interp(WALL_P.exterior.distance(p) / 1000, MAIN_FRONT)   # fuori dalle mura: niente citta' prima del 1852
+        if amager(x, y):
+            da = math.hypot(x - 1500, y + 900) / 1000
+            best = interp(da, AMAGER_FRONT) if da <= AMAGER_FRONT[-1][0] else 9999
+        else:
+            dd = WALL_P.exterior.distance(p) / 1000
+            best = interp(dd, MAIN_FRONT) if dd <= MAIN_FRONT[-1][0] else 9999   # oltre l'ultimo punto: campagna (orizzonte verde)
         for (cx, cy), cv in VILLAGES:
             d = math.hypot(x - cx, y - cy) / 1000
             if d <= cv[-1][0]: best = min(best, interp(d, cv))
