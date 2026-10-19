@@ -213,7 +213,10 @@ lab('CopenHill', chc.x, chc.y, 90, 2019)
 
 # ---------- 14. Ponte dell'Oeresund (1995-2000): strallato, piloni di 204 m; Peberholm ----------
 # [Guessing] coordinate del tratto strallato: da verificare su una mappa prima dell'inquadratura dedicata
-A = L(55.5790, 12.7700); B = L(55.5648, 12.9050); mid = ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2)
+# inizio: punta est di Peberholm (isola artificiale nei dati di terra); fine: costa svedese a Lernacken (vedi fetch_dk.py)
+_peb = [Polygon(q['ext']).buffer(0) for q in land if 9000 < Polygon(q['ext']).centroid.x < 14000 and -10500 < Polygon(q['ext']).centroid.y < -7000 and Polygon(q['ext']).area > 5e5]
+A = max(_peb[0].exterior.coords, key=lambda c: c[0]) if _peb else L(55.5790, 12.7700)
+B = (21150.0, -12300.0); mid = ((A[0] + B[0]) / 2, (A[1] + B[1]) / 2)
 dx, dy = B[0] - A[0], B[1] - A[1]; dn = math.hypot(dx, dy); ux4, uy4 = dx / dn, dy / dn
 def along(s): return (A[0] + ux4 * s, A[1] + uy4 * s)
 def deck_z(s):   # sale a 57 m al centro del tratto strallato
