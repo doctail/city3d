@@ -238,3 +238,8 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - Monumenti: Fort Amsterdam, Crystal Palace 1853, Central Park, Statua della Libertà 1885, ponti, Empire State, Torri Gemelle, 2002 Tribute in Light DI NOTTE, supertall; finale 2026 di notte.
 - Titolo: "(1609–NOW)" invece di 2026.
 - **Conclusione**: "alzare la qualità" NON significa render più costosi ma: colori netti e saturi per epoca, niente foschia, camera vicina e in movimento, monumenti, notte. Per Copenaghen valutare Eevee/stile semplificato invece di Cycles.
+
+## Leva esterna: Reddit (19 ott 2026)
+- Madrid fermo a 4 visualizzazioni / 5 impressioni dopo 27 h. Post su r/Madrid (spagnolo, tipo Text, flair Historia, primo commento con fonti) approvato dai moderatori: dopo ~2 h 12 upvote → Madrid 66 visualizzazioni in 48 h: Esterna 33, Altre funzioni YouTube 20, **Video consigliati 7** (primo traffico dai suggeriti), Ricerca 3.
+- Prossimi: r/spain (inglese) il giorno dopo; per ogni nuova città post su r/<città> all'uscita, poi r/<paese>. Testi pronti nella chat del 19 ott; traduzioni titoli/descrizioni in `traduzioni.md`.
+- Da verificare: durata media del traffico "Esterna" e se i "Video consigliati" crescono nei giorni dopo.
