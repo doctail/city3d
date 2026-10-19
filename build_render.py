@@ -71,7 +71,7 @@ def city_mat():
     al = ca.outputs['Alpha']; glass = mm('MULTIPLY', mm('GREATER_THAN', al, 0.25), None, mm('LESS_THAN', al, 0.75))
     band = mm('MULTIPLY', mm('LESS_THAN', fz, 0.18), None, wall)  # marcapiano sui grattacieli
     one_minus_g = M('SUBTRACT'); one_minus_g.inputs[0].default_value = 1.0; L(glass, one_minus_g.inputs[1])
-    wmask = mm('MULTIPLY', win, None, one_minus_g.outputs[0])
+    wmask = mm('MULTIPLY', mm('MULTIPLY', win, None, one_minus_g.outputs[0]), None, mm('GREATER_THAN', al, 0.1))
     c1 = N.new('ShaderNodeMix'); c1.data_type = 'RGBA'; L(wmask, c1.inputs['Factor']); L(ca.outputs['Color'], c1.inputs[6]); c1.inputs[7].default_value = (*srgb(ST.get('window', '#121418')), 1)
     c2 = N.new('ShaderNodeMix'); c2.data_type = 'RGBA'; L(mm('MULTIPLY', band, None, glass), c2.inputs['Factor']); L(c1.outputs[2], c2.inputs[6]); c2.inputs[7].default_value = (0.55, 0.57, 0.58, 1)
     L(c2.outputs[2], b.inputs['Base Color'])
@@ -143,6 +143,13 @@ blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
 hist = json.load(open(f'{DATA}/hist.json')) if os.path.exists(f'{DATA}/hist.json') else []
 for hb in hist: hb['old'] = True
 log('predecessori storici', len(hist)); blds = blds + hist
+LM = json.load(open(f'{DATA}/landmarks.json')) if os.path.exists(f'{DATA}/landmarks.json') else None
+if LM:   # monumenti modellati: gli edifici (veri e storici) dentro le loro impronte spariscono
+    from shapely.prepared import prep as _prep
+    _clr = _prep(unary_union([Polygon(r_).buffer(0) for r_ in LM['clear']]))
+    _n0 = len(blds)
+    blds = [b_ for b_ in blds if not _clr.contains(Point(sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r'])))]
+    log('monumenti:', len(LM['parts']), 'parti; tolti', _n0 - len(blds), 'edifici nelle impronte')
 if '--crop' in a:   # prove locali con poca memoria: solo gli edifici dentro un rettangolo (metri)
     cx0, cy0, cx1, cy1 = map(float, opt('--crop', 4)); blds = [b_ for b_ in blds if cx0 < b_['r'][0][0] < cx1 and cy0 < b_['r'][0][1] < cy1]
     hist = [h_ for h_ in hist if cx0 < h_['r'][0][0] < cx1 and cy0 < h_['r'][0][1] < cy1]; log('ritaglio', len(blds))
@@ -163,7 +170,7 @@ def add_bld(bm, col, vyear, vdie, b):
     old = b.get('old', False)
     if not old: polys.append(poly)
     h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999)
-    gl = h > ST.get('glass_h', 90) and y > 1955
+    gl = h > ST.get('glass_h', 90) and y > 1955 and poly.area > ST.get('glass_min_area', 0)   # ciminiere e antenne: niente vetro
     pal = GLASS if gl else MID if h > 35 else LOW
     rpal = ROOF
     if ST.get('era_split'):   # stile leggibile: prima dell'anno di taglio muri caldi e tetti in coppi, dopo muri chiari e tetti grigi
@@ -295,7 +302,7 @@ def chunked(name, items, z, m, kind, binw=3.0):
     return objs
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
-if land: lgeom = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land if len(r) >= 1]).buffer(45, join_style=2).buffer(-45, join_style=2)   # chiude le fessure tra contee
+if land: lgeom = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land if len(r) >= 1]).buffer(CITY.get('land_close', 45), join_style=2).buffer(-CITY.get('land_close', 45), join_style=2)   # chiude le fessure tra contee (Copenaghen: 1 m, i canali sono stretti)
 else: lgeom = unary_union([p.buffer(75, join_style=2) for p in polys]).buffer(-62, join_style=2)
 RECLAIM = json.load(open(f'{DATA}/reclaim.json')) if os.path.exists(f'{DATA}/reclaim.json') else []
 _rec_items = []
@@ -417,8 +424,9 @@ if os.path.exists(f'{DATA}/bridges.json'):
     slabs('bridge', [(r_['r'], r_['y']) for r_ in _br], 1.6, 3.4, mat('bdeck', srgb(ST.get('bridge_deck', '#d9d4c8')), 0.9), mat('bside', srgb(ST.get('bridge_side', '#5d5850')), 0.9))
     log('ponti', len(_br))
 # incendi (DATA/fires.json): bagliore a terra, fiamme, fumo; ognuno visibile solo nella sua finestra di anni
-if os.path.exists(f'{DATA}/fires.json'):
-    _fr = json.load(open(f'{DATA}/fires.json')); frnd = random.Random(7)
+if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
+    _fr = json.load(open(f'{DATA}/fires.json')) if os.path.exists(f'{DATA}/fires.json') else []; frnd = random.Random(7)
+    _fr += (LM or {}).get('fires', [])
     for fi_ in _fr: fi_.setdefault('smoke', 16)
     def emat(name, col, k):
         m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
@@ -458,8 +466,8 @@ if os.path.exists(f'{DATA}/fires.json'):
         o_ = obj(f'smoke_{int(y0_)}', bm_, m_smoke); VIS.append((o_, 'window', (y0_ + 0.0006, y1_ + 0.22)))
     log('incendi', len(_fr))
 # bacini portuali scavati dopo l'inizio del video (DATA/harbours.json [{"r", "y"}]): terra verde fino all'anno di scavo, poi acqua
-if os.path.exists(f'{DATA}/harbours.json'):
-    _hb = json.load(open(f'{DATA}/harbours.json'))
+if os.path.exists(f'{DATA}/harbours.json') or (LM and LM.get('harbours')):
+    _hb = (json.load(open(f'{DATA}/harbours.json')) if os.path.exists(f'{DATA}/harbours.json') else []) + ((LM or {}).get('harbours') or [])
     _hit = []
     for h_ in _hb:
         try: q_ = Polygon(h_['r']).buffer(0)
@@ -546,10 +554,10 @@ if parks:
     dp = TN.new('GeometryNodeDistributePointsOnFaces'); dp.inputs['Density'].default_value = float(opt('--parkdens', 1, str(CITY.get('park_trees', 0.012)))); TL(i_.outputs[0], dp.inputs['Mesh'])
     oi = TN.new('GeometryNodeObjectInfo'); oi.inputs['Object'].default_value = tree
     rv = TN.new('FunctionNodeRandomValue'); rv.data_type = 'FLOAT'
-    fl = [x for x in rv.inputs if x.type == 'VALUE' and x.name in ('Min', 'Max')]; fl[0].default_value = 3.5; fl[1].default_value = 6.5
+    fl = [x for x in rv.inputs if x.type == 'VALUE' and x.name in ('Min', 'Max')]; fl[0].default_value = CITY.get('tree_scale', [3.5, 6.5])[0]; fl[1].default_value = CITY.get('tree_scale', [3.5, 6.5])[1]
     rvo = [x for x in rv.outputs if x.type == 'VALUE'][0]
     ip = TN.new('GeometryNodeInstanceOnPoints'); TL(dp.outputs['Points'], ip.inputs['Points']); TL(oi.outputs['Geometry'], ip.inputs['Instance']); TL(rvo, ip.inputs['Scale'])
-    tr_ = TN.new('GeometryNodeTranslateInstances'); tr_.inputs['Translation'].default_value = (0, 0, 4); TL(ip.outputs[0], tr_.inputs['Instances'])
+    tr_ = TN.new('GeometryNodeTranslateInstances'); tr_.inputs['Translation'].default_value = (0, 0, CITY.get('tree_lift', 4)); TL(ip.outputs[0], tr_.inputs['Instances'])
     jg = TN.new('GeometryNodeJoinGeometry'); TL(tr_.outputs[0], jg.inputs[0]); TL(i_.outputs[0], jg.inputs[0])
     rz_ = TN.new('GeometryNodeRealizeInstances'); TL(jg.outputs[0], rz_.inputs[0]); TL(rz_.outputs[0], o_.inputs[0])
     for o_ in PO: o_.modifiers.new('trees', 'NODES').node_group = tg_
@@ -588,6 +596,97 @@ nt.links.new(bp.outputs['Normal'], nt.nodes['Principled BSDF'].inputs['Normal'])
 obj('water', bm, hazeify(wm))
 log('terra', len(land), 'poligoni')
 
+# ---------- monumenti: parti che crescono dalla loro base, ognuna col suo anno ----------
+PARTS = []
+def _lmesh(pt):
+    bm_ = bmesh.new(); col_ = bm_.loops.layers.color.new('col'); t_ = pt['t']
+    zb = pt.get('zbase', pt.get('z0', 0.0))
+    cc = (*srgb(pt['c']), pt.get('a', 1.0)); ct = (*srgb(pt.get('top', pt['c'])), 0.0)
+    def face(vs, c_):
+        try:
+            f_ = bm_.faces.new(vs)
+            for l_ in f_.loops: l_[col_] = c_
+        except ValueError: pass
+    def V(x, y, z): return bm_.verts.new((x, y, z - zb))
+    def ring_ccw(r_):
+        pg = Polygon(r_); rr = list(pg.exterior.coords)[:-1]
+        return rr if pg.exterior.is_ccw else rr[::-1]
+    def tube(rings_):   # anelli successivi (stesso numero di punti) uniti da quadrilateri
+        for ra, rb in zip(rings_, rings_[1:]):
+            n_ = len(ra)
+            for i in range(n_): face((ra[i], ra[(i + 1) % n_], rb[(i + 1) % n_], rb[i]), cc)
+    if t_ == 'prism':
+        rr = ring_ccw(pt['r']); vb = [V(x, y, pt['z0']) for x, y in rr]; vt = [V(x, y, pt['z1']) for x, y in rr]
+        face(vt, ct if 'top' in pt else (*cc[:3], 0.0)); tube([vb, vt])
+    elif t_ == 'wedge':
+        rr = ring_ccw(pt['r']); ax_, ay_ = pt['ax']; n_ = math.hypot(ax_, ay_); ax_, ay_ = ax_ / n_, ay_ / n_
+        ss = [x * ax_ + y * ay_ for x, y in rr]; s0, s1 = min(ss), max(ss)
+        vb = [V(x, y, pt['z0']) for x, y in rr]
+        vt = [V(x, y, pt['za'] + (pt['zb'] - pt['za']) * (sv - s0) / (s1 - s0)) for (x, y), sv in zip(rr, ss)]
+        face(vt, ct); tube([vb, vt])
+    elif t_ == 'hip':
+        mrr = Polygon(pt['r']).minimum_rotated_rectangle; c4 = list(mrr.exterior.coords)[:4]
+        e1 = (c4[1][0] - c4[0][0], c4[1][1] - c4[0][1]); e2 = (c4[2][0] - c4[1][0], c4[2][1] - c4[1][1])
+        if math.hypot(*e1) < math.hypot(*e2): c4 = c4[1:] + c4[:1]; e1, e2 = e2, e1
+        Lw = math.hypot(*e1); Ww = math.hypot(*e2); u_ = (e1[0] / Lw, e1[1] / Lw); inset = min(Ww / 2, Lw / 2 - 0.1)
+        cx_ = sum(p_[0] for p_ in c4) / 4; cy_ = sum(p_[1] for p_ in c4) / 4; z0_ = pt['z0']; zr = z0_ + pt['rh']
+        r1 = V(cx_ - u_[0] * (Lw / 2 - inset), cy_ - u_[1] * (Lw / 2 - inset), zr); r2 = V(cx_ + u_[0] * (Lw / 2 - inset), cy_ + u_[1] * (Lw / 2 - inset), zr)
+        if not Polygon(c4).exterior.is_ccw: c4 = c4[::-1]
+        vc = [V(x, y, z0_) for x, y in c4]
+        # assegna ogni lato al vertice del colmo piu' vicino: due trapezi e due triangoli
+        def near(v_): return r1 if (v_.co.x - r1.co.x) ** 2 + (v_.co.y - r1.co.y) ** 2 < (v_.co.x - r2.co.x) ** 2 + (v_.co.y - r2.co.y) ** 2 else r2
+        for i in range(4):
+            a_, b_ = vc[i], vc[(i + 1) % 4]; na, nb = near(a_), near(b_)
+            face((a_, b_, nb) if na is nb else (a_, b_, nb, na), cc)
+    elif t_ in ('cyl', 'cone'):
+        seg = int(pt.get('seg', 12)); r0 = pt.get('rad', pt.get('r0')); r1 = pt.get('rad', pt.get('r1'))
+        ra = [V(pt['cx'] + r0 * math.cos(2 * math.pi * i / seg), pt['cy'] + r0 * math.sin(2 * math.pi * i / seg), pt['z0']) for i in range(seg)]
+        rb = [V(pt['cx'] + r1 * math.cos(2 * math.pi * i / seg), pt['cy'] + r1 * math.sin(2 * math.pi * i / seg), pt['z1']) for i in range(seg)]
+        tube([ra, rb]); face(rb, (*cc[:3], 0.0))
+    elif t_ == 'dome':
+        seg = 20; rings_ = []
+        for k in range(7):
+            th = (math.pi / 2) * k / 6; rr_ = pt['rad'] * math.cos(th) + 1e-3; zz = pt['z0'] + pt['hz'] * math.sin(th)
+            rings_.append([V(pt['cx'] + rr_ * math.cos(2 * math.pi * i / seg), pt['cy'] + rr_ * math.sin(2 * math.pi * i / seg), zz) for i in range(seg)])
+        tube(rings_)
+    elif t_ == 'helix':
+        n_s = int(pt.get('n_strands', 1)); steps = 90; w2 = pt['w'] / 2
+        for sd in range(n_s):
+            rings_ = []
+            for k in range(steps + 1):
+                u_ = k / steps; ang = 2 * math.pi * pt['turns'] * u_ + 2 * math.pi * sd / n_s
+                rr_ = pt['r0'] + (pt['r1'] - pt['r0']) * u_; zz = pt['z0'] + (pt['z1'] - pt['z0']) * u_
+                cxk, cyk = pt['cx'] + rr_ * math.cos(ang), pt['cy'] + rr_ * math.sin(ang)
+                rx, ry = math.cos(ang), math.sin(ang); tx_, ty_ = -ry, rx
+                rings_.append([V(cxk - rx * w2, cyk - ry * w2, zz - w2), V(cxk + rx * w2, cyk + ry * w2, zz - w2),
+                               V(cxk + rx * w2, cyk + ry * w2, zz + w2), V(cxk - rx * w2, cyk - ry * w2, zz + w2)])
+            tube(rings_)
+    bm_.normal_update()
+    o_ = obj(f"lm_{pt['name']}_{len(PARTS)}", bm_, CM); o_.data.color_attributes.active_color_name = 'col'
+    o_.location.z = zb; o_.scale.z = 0.0
+    return o_, zb
+if LM:
+    _lp = LM['parts']
+    if '--crop' in a: _lp = [p_ for p_ in _lp if cx0 < (p_['r'][0][0] if 'r' in p_ else p_['cx']) < cx1 and cy0 < (p_['r'][0][1] if 'r' in p_ else p_['cy']) < cy1]
+    for pt in _lp:
+        o_, zb = _lmesh(pt)
+        PARTS.append({'obj': o_, 'z0': zb, 'b0': pt['y'], 'b1': pt['y'], 'd0': pt.get('d'), 'd1': pt.get('d')})
+    log('monumenti costruiti:', len(PARTS), 'parti')
+    if NIGHT and LM.get('lights'):   # lampadine di Tivoli: solo di notte
+        _lc = [(1.0, 0.85, 0.55), (1.0, 0.25, 0.20), (0.35, 1.0, 0.45), (0.45, 0.65, 1.0)]
+        _lmats = []
+        for i_, c_ in enumerate(_lc):
+            m_ = bpy.data.materials.new(f'bulb{i_}'); m_.use_nodes = True; N_ = m_.node_tree.nodes
+            for n_ in list(N_):
+                if n_.type != 'OUTPUT_MATERIAL': N_.remove(n_)
+            e_ = N_.new('ShaderNodeEmission'); e_.inputs['Color'].default_value = (*c_, 1); e_.inputs['Strength'].default_value = ST.get('bulb', 18.0)
+            m_.node_tree.links.new(e_.outputs[0], N_['Material Output'].inputs['Surface']); _lmats.append(m_)
+        for i_ in range(4):
+            bm_ = bmesh.new()
+            for x_, y_, z_, k_ in LM['lights']:
+                if k_ == i_: bmesh.ops.create_cube(bm_, size=0.9, matrix=__import__('mathutils').Matrix.Translation((x_, y_, z_)))
+            o_ = obj(f'bulbs{i_}', bm_, _lmats[i_]); VIS.append((o_, 'appear', LM.get('lights_year', 1843)))
+    json.dump(LM.get('labels', []), open(f'{OUT}/labels.json', 'w'))
 # ---------- luce, cielo, camera ----------
 w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
@@ -728,6 +827,10 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     for ch in CHUNKS:
         g_ = growth(ch, f); setvis(ch['obj'], g_ < 0.002)
         if g_ >= 0.002 and abs(ch['obj'].scale.z - g_) > 1e-4: ch['obj'].scale.z = g_
+    for pt in PARTS:
+        g_ = growth(pt, f); o_ = pt['obj']; hid = g_ < 0.002
+        if VISSET.get(o_.name) != hid: o_.location.z = -5000.0 if hid else pt['z0']; VISSET[o_.name] = hid
+        if not hid and abs(o_.scale.z - g_) > 1e-4: o_.scale.z = g_
     for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr) if kind == 'vanish' else not (thr[0] <= y_ < thr[1]))
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)

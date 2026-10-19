@@ -4,7 +4,7 @@
 # Uso: python fetch_dk_roads.py RAW_DIR DATA_DIR city_copenhagen.json
 import json, math, sys, os
 import numpy as np, geopandas as gpd, shapely
-from shapely.geometry import Polygon, LineString, MultiLineString
+from shapely.geometry import Polygon, LineString, MultiLineString, Point
 from shapely.ops import unary_union
 from shapely.prepared import prep
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -78,14 +78,42 @@ for g, hw, rw, br, mm, nm, bn in zip(r.geometry, r.highway, r.railway, r.bridge,
     if hw not in STREET and not israil: continue
     y = urban_year(c.x, c.y) + 2
     if israil: y = max(y, 1847)
-    poly = g.buffer(w / 2, cap_style=2, join_style=2).intersection(LG)
-    for q in (poly.geoms if hasattr(poly, 'geoms') else [poly]):
-        if isinstance(q, Polygon) and q.area > 20:
-            roads.append({'r': [[round(x, 1), round(yv, 1)] for x, yv in list(q.simplify(0.8).exterior.coords)[:-1]], 'y': int(y), 'rail': int(israil)})
+    # un quadrilatero (convesso) per segmento, allungato di mezza larghezza per chiudere le giunzioni: i nastri lunghi e curvi
+    # davano poligoni concavi triangolati male da Blender (strisce nere)
+    cs = list(g.simplify(1.0).coords)
+    for (x0, y0), (x1, y1) in zip(cs, cs[1:]):
+        dl = math.hypot(x1 - x0, y1 - y0)
+        if dl < 1: continue
+        ux, uy = (x1 - x0) / dl, (y1 - y0) / dl; e = w / 2; nx, ny = -uy * e, ux * e
+        ax_, ay_ = x0 - ux * e * 0.5, y0 - uy * e * 0.5; bx_, by_ = x1 + ux * e * 0.5, y1 + uy * e * 0.5
+        q = [(ax_ + nx, ay_ + ny), (ax_ - nx, ay_ - ny), (bx_ - nx, by_ - ny), (bx_ + nx, by_ + ny)]
+        if not LP.contains(Point((x0 + x1) / 2, (y0 + y1) / 2)): continue
+        roads.append({'r': [[round(x, 1), round(yv, 1)] for x, yv in q], 'y': int(y), 'rail': int(israil)})
 for name, a_, b_, w, y in EXTRA:
     ln = LineString([((a_[1] - LON0) * KX, (a_[0] - LAT0) * KY), ((b_[1] - LON0) * KX, (b_[0] - LAT0) * KY)])
     q = ln.buffer(w / 2, cap_style=2)
     bridges.append({'r': [[round(x, 1), round(yv, 1)] for x, yv in list(q.exterior.coords)[:-1]], 'y': y, 'name': name, 'w': w, 'rail': 0})
+# unione per anno e triangolazione vincolata: niente facce sovrapposte sullo stesso piano (si facevano ombra: macchie nere)
+from collections import defaultdict
+grp = defaultdict(list)
+for r_ in roads: grp[(r_['y'], r_['rail'])].append(Polygon(r_['r']))
+roads = []; done_ = Polygon()
+for (y_, rl), ps in sorted(grp.items()):          # in ordine di anno: ogni gruppo esclude l'area gia' coperta (niente sovrapposizioni)
+    u = unary_union(ps).simplify(0.3).difference(done_); done_ = done_.union(u)
+    for q in (u.geoms if hasattr(u, 'geoms') else [u]):
+        if not isinstance(q, Polygon) or q.area < 5: continue
+        for t in shapely.constrained_delaunay_triangles(q).geoms:
+            if t.area > 0.05: roads.append({'r': [[round(x, 2), round(yv, 2)] for x, yv in list(t.exterior.coords)[:-1]], 'y': int(y_), 'rail': rl})
+# ponti: stessa cura (pezzi dello stesso ponte sovrapposti sullo stesso piano)
+bg = defaultdict(list)
+for b_ in bridges: bg[(b_['y'], b_['name'])].append(Polygon(b_['r']).buffer(0))
+bridges = []; done_ = Polygon()
+for (y_, nm_), ps in sorted(bg.items(), key=lambda kv: kv[0][0]):
+    u = unary_union(ps).difference(done_); done_ = done_.union(u)
+    for q in (u.geoms if hasattr(u, 'geoms') else [u]):
+        if isinstance(q, Polygon) and q.area > 8:
+            q = q.simplify(0.3)
+            bridges.append({'r': [[round(x, 1), round(yv, 1)] for x, yv in list(q.exterior.coords)[:-1]], 'y': int(y_), 'name': nm_})
 json.dump(roads, open(f'{DATA}/roads.json', 'w')); json.dump(bridges, open(f'{DATA}/bridges.json', 'w'))
 log('strade', len(roads), '| ponti sull\'acqua', len(bridges))
 named = {}
