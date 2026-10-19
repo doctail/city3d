@@ -19,7 +19,12 @@ Leggi PRIMA: `PRODUZIONE_TIMELAPSE.md` (regole di Fabio, flusso, sezioni del 18-
 2. **Monumenti modellati** (anche semplici: volumi + tetto/guglia riconoscibile) e **camera che va vicino quando salgono**, ogni 15-30 s: Rundetårn, Børsen (guglia a draghi), Rosenborg, Christiansborg, Marmorkirken (cupola), Amalienborg, Vor Frelsers Kirke (guglia a spirale), Rådhus, Tivoli, Den Lille Havfrue, Operaen, Det Kongelige Teater (Skuespilhuset), Øresundsbron, CopenHill/Amager Bakke.
 3. **Fuoco**: incendi 1728 e 1795, bombardamento 1807. Fiamme/bagliore nel render (emissione + fumo volumetrico leggero o sprite), edifici che spariscono (`d=<anno>` in build_render) e ricostruzione.
 4. **Finale notturno** negli ultimi 30-40 s: cielo scuro, finestre con emissione casuale, Tivoli illuminato. La copertina "2026" va fatta di notte.
-5. Camera sempre in movimento, alternando alto/basso/vicino (regola drone di Madrid solo per i tratti larghi).
+5. **MOVIMENTO: obiettivo misurato ≥ 12** (Cornerstone 16,2; canale polacco 9,4; Madrid 8,8; nostro NYC 2,7). Si misura sull'anteprima con `python3 tools/movimento.py <anteprima.mp4> out.json` (media "change mean"). Se l'anteprima sta sotto 12, si rifà la regia PRIMA del render completo. Come si alza:
+   - camera più vicina agli edifici (la parallasse vicina vale più di qualsiasi rotazione lontana);
+   - chiavi camera più fitte: un cambio di direzione/altezza ogni 6-10 s, mai più di 15 s di camera quasi ferma;
+   - stacchi netti tra inquadrature diverse a ogni capitolo/monumento (Cornerstone cambia punto di vista ogni 15-20 s);
+   - meno tempo per anno nei tratti uniformi (la città deve crescere a vista d'occhio);
+   - eventi che cambiano molti pixel: fuoco, notte, acqua che diventa terra, demolizioni.
 6. Stima tempi: misurare con `run.sh profile` PRIMA del full; con notte e fuoco +10-20% rispetto a ~1,9 s/fotogramma.
 
 ## Stile (da Cornerstone, 1M su New York — vedi analisi in PRODUZIONE_TIMELAPSE.md)
