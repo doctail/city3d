@@ -1,0 +1,11 @@
+{
+ "name": "copenhagen",
+ "_doc": "Copenaghen. Origine locale: Raadhuspladsen (x est, y nord, metri). Dati: BBR INSPIRE (punti con anno, piani, altezza) + impronte OSM (Geofabrik), acqua/costa/parchi da OSM. Storia: hist_copenhagen.py (da scrivere).",
+ "lat0": 55.6761,
+ "lon0": 12.5683,
+ "radius_m": 9000,
+ "land_half_m": 60000,
+ "min_area_m2": 12,
+ "osm_pbf": "https://download.geofabrik.de/europe/denmark-latest.osm.pbf",
+ "bbr_zip": "https://ftp.sdfe.dk/main.html?download&weblink=2c950b3aadfeedc3b136df8525234819&realfilename=DK%5FINSPIRE%5FBBR%2Ezip"
+}
