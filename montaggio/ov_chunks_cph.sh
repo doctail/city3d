@@ -8,5 +8,6 @@ for a in $(seq 0 800 $((N - 1))); do b=$((a+799)); [ $b -gt $((N - 1)) ] && b=$(
   npx remotion render src/copenhagen_overlay.jsx CopenhagenOverlay $f --frames=$a-$b --codec=vp9 --image-format=png --pixel-format=yuva420p --concurrency=2 --browser-executable=$B --log=error && echo ok > $f.ok
   echo "pezzo $a-$b fatto $(date +%H:%M)"
 done
-ls $O/p_*.webm | sed "s/^/file '/;s/$/'/" > $O/list.txt
-ffmpeg -loglevel error -y -f concat -safe 0 -i $O/list.txt -c copy ${OVOUT:-copenhagen_overlay.webm} && echo FATTO
+OUT=$(realpath -m ${OVOUT:-copenhagen_overlay.webm}); cd $O
+ls p_*.webm | sed "s/^/file '/;s/$/'/" > list.txt
+ffmpeg -loglevel error -y -f concat -safe 0 -i list.txt -c copy $OUT && echo FATTO
