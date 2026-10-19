@@ -44,7 +44,15 @@ Leggi PRIMA: `PRODUZIONE_TIMELAPSE.md` (regole di Fabio, flusso, sezioni del 18-
 ## Al MONTAGGIO (tutto quello già fatto per Rotterdam)
 Saturazione x1,7 + contrasto x1,06; schede evento ogni 15-20 s; effetti sonori (fuoco, cannoni 1807, cantiere, campane); gancio scritto nei primi 15 s (es. "IN 1807 THE BRITISH FIRED 14,000 ROCKETS AT THIS CITY" — verificare il numero); etichette dei monumenti agganciate alla posizione 3D; contatore popolazione; scheda sobria per tragedie (1711 peste, 1945 Shellhus).
 
-## Dati (DA VERIFICARE — prima cosa da fare)
+## Dati — verifica del 19 ott 2026
+- **Fonte scelta: export INSPIRE del BBR su Dataforsyningen**, NON il Datafordeler. Due file, tutta la Danimarca (niente filtro per zona, file grandi):
+  - "INSPIRE – BBR bygninger og boliger" (dataforsyningen.dk/data/3829): PUNTI in GeoPackage con anno di costruzione (`dateofcons` / `dateOfConstruction_dateOfEvent_anyPoint`), piani fuori terra, altezza, id BBR. Anno 1000 = sconosciuto; anni tondi (1800, 1850) spesso stimati.
+  - "INSPIRE – Bygninger" (dataforsyningen.dk/data/2677): IMPRONTE in GML, senza anno. Unione spaziale punto→impronta (alcuni punti cadono fuori dall'impronta: tolleranza 5-10 m).
+- Account: secondo la wiki OSM il GeoPackage BBR si scarica senza utente; da verificare dal browser di Fabio (la sandbox non raggiunge né Dataforsyningen né Geofabrik). Se chiede il login: utente GRATUITO Dataforsyningen, credenziali come variabili d'ambiente sul pod, mai in chat.
+- Datafordeler da evitare: in modernizzazione, servizi vecchi (REST, Webbruger, Filudtræk) chiusi il 15 gen 2027, il nuovo richiede chiave API/OAuth.
+- Download: sul pod CPU (`data_dk.sh`, da scrivere sul modello di `data_nl.sh`), insieme a Geofabrik Danimarca per acqua e parchi.
+
+## Dati (piano originale)
 - **Anno di costruzione per edificio**: BBR (Bygnings- og Boligregistret), campo `opførelsesår` / `byg026Opførelsesår`, via Datafordeler (datafordeler.dk). Probabilmente serve un utente gratuito (servizi "web user"/token) oppure il download dal pod. In alternativa: open data del Comune di Copenaghen (opendata.dk / kk.dk) se ha un layer edifici con anno.
 - **Impronte e altezze**: GeoDanmark (bygninger) via Dataforsyningen (token gratuito) oppure OSM; altezze da DHM (modello di elevazione) o numero di piani BBR (`byg054AntalEtager`).
 - Acqua, parchi, porto: OSM (Geofabrik Danimarca + `osm_pbf.py`, come per Rotterdam).
