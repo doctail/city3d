@@ -59,3 +59,14 @@ export const ROTTERDAM = {
   ERAS: [[1340, 'Town on the Rotte', '#9C8B5E'], [1572, 'Dutch Revolt', '#B8473A'], [1590, 'Golden Age', '#C9A227'], [1700, 'Quiet Centuries', '#7A8B6E'], [1850, 'Port City', '#3E9AA0'], [1940, 'War & Ruins', '#6E6E6E'], [1946, 'Rebuilding', '#4F7FB8'], [1985, 'Manhattan on the Maas', '#D96C8A']],
   EVENTS: [],
 };
+
+// Copenaghen (comune). Prima del 1769 stime storiche (1728: ~70.000 secondo la voce sull'incendio); 1769 82.086,
+// 1801 ~101.000, 1840 120.819, 1870 202.327, 1901 ~400.000 (comune), picco ~768.000 nel 1950, ~467.000 nel 1990, ~670.000 oggi.
+// Le schede di Copenaghen sono a TEMPO (secondi del video), in copenhagen_overlay.jsx: EVENTS qui resta vuoto.
+export const COPENHAGEN = {
+  Y0: 1167, Y1: 2026, POPMAX: 1e6, TICKS: [1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],
+  popLabel: () => 'CITY OF COPENHAGEN',
+  POP: [[1167, 300], [1254, 2000], [1370, 4000], [1443, 6000], [1500, 10000], [1600, 20000], [1650, 30000], [1700, 60000], [1711, 65000], [1712, 45000], [1728, 70000], [1769, 82086], [1801, 101000], [1840, 120819], [1860, 155000], [1870, 202327], [1890, 312000], [1901, 400000], [1921, 561000], [1940, 700000], [1950, 768000], [1960, 721000], [1970, 623000], [1980, 492000], [1990, 467000], [2000, 495000], [2010, 540000], [2020, 633000], [2026, 670000]],
+  ERAS: [[1167, "Absalon's Harbor", '#9C8B5E'], [1443, 'Royal Capital', '#B8473A'], [1588, 'Christian IV', '#C9A227'], [1660, 'Absolute Monarchy', '#7A5C8E'], [1728, 'Fire & Rebuilding', '#D9652B'], [1807, 'War & Recovery', '#6E6E6E'], [1852, 'Beyond the Walls', '#3E9AA0'], [1940, 'Occupation', '#5C5C5C'], [1945, 'Welfare City', '#4F7FB8'], [1990, 'Harbor City', '#D96C8A']],
+  EVENTS: [],
+};
