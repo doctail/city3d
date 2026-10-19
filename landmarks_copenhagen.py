@@ -50,10 +50,10 @@ P(name='Copenhagen Castle', t='hip', r=ring(inner), z0=16, z1=16, rh=8, c=BRICK2
 P(name='Copenhagen Castle', t='cyl', cx=inner.centroid.x + 25, cy=inner.centroid.y, rad=6, z0=0, z1=34, seg=10, c=SAND, a=0.05, y=1380, d=1731.3)
 P(name='Copenhagen Castle', t='cone', cx=inner.centroid.x + 25, cy=inner.centroid.y, r0=6.5, r1=0.3, z0=34, z1=58, seg=10, c=COPPER, a=0.05, y=1590, d=1731.3)   # Blaataarn
 cb_body = cb.buffer(-3)
-for gen, (y0, d) in enumerate([(1733, 1794.15), (1803, 1884.75)]):   # Christiansborg I (barocco) e II (classicista)
+for gen, (y0, d) in enumerate([(1733, 1794.15), (1810, 1884.75)]):   # Christiansborg I (barocco) e II (classicista)
     col = SAND if gen == 0 else '#e0ddd2'
     P(name=f'Christiansborg {gen + 1}', t='prism', r=ring(cb_body.buffer(-2)), z0=0, z1=4, c=col, a=0.05, y=y0, d=d)
-    P(name=f'Christiansborg {gen + 1}', t='prism', r=ring(cb_body.buffer(-2)), z0=4, z1=24, c=col, a=1, y=y0 + 4, d=d)
+    P(name=f'Christiansborg {gen + 1}', t='prism', r=ring(cb_body.buffer(-2)), z0=4, z1=24, c=col, a=1, y=y0 + 3, d=d)
     P(name=f'Christiansborg {gen + 1}', t='prism', r=ring(cb_body.buffer(-5)), z0=24, z1=30, c=COPPER if gen == 0 else '#6a6d6a', a=0.05, top=COPPER if gen == 0 else '#6a6d6a', y=y0 + 9, d=d)
 P(name='Christiansborg', t='prism', r=ring(cb_body), z0=0, z1=5, c='#b8b2a6', a=0.05, y=1907)
 P(name='Christiansborg', t='prism', r=ring(cb_body), z0=5, z1=27, c='#b8b2a6', a=1, y=1912)
@@ -93,8 +93,8 @@ P(name='Rosenborg', t='prism', r=ring(ro), z0=3, z1=16, c=BRICK, a=1, y=1607.0)
 P(name='Rosenborg', t='hip', r=ring(ro), z0=16, z1=16, rh=9, c=COPPER, a=0.05, y=1610.0)
 for k, (off, hh, sp) in enumerate([(-0.5, 30, 52), (0.0, 22, 34), (0.5, 24, 36)]):   # torre principale e torrette con guglie
     L_ = n_ * off; cx_, cy_ = roc.x + ux * L_ + (-uy) * 9, roc.y + uy * L_ + ux * 9
-    P(name='Rosenborg tower', t='prism', r=ring(box(cx_ - 3.5, cy_ - 3.5, cx_ + 3.5, cy_ + 3.5)), z0=0, z1=hh, c=BRICK, a=1, y=1613 + 3 * k)
-    P(name='Rosenborg tower', t='cone', cx=cx_, cy=cy_, r0=3.6, r1=0.2, z0=hh, z1=sp, seg=8, c=COPPER, a=0.05, y=1616 + 3 * k)
+    P(name='Rosenborg tower', t='prism', r=ring(box(cx_ - 3.5, cy_ - 3.5, cx_ + 3.5, cy_ + 3.5)), z0=0, z1=hh, c=BRICK, a=1, y=1608.5 + 1.5 * k)
+    P(name='Rosenborg tower', t='cone', cx=cx_, cy=cy_, r0=3.6, r1=0.2, z0=hh, z1=sp, seg=8, c=COPPER, a=0.05, y=1610.0 + 1.5 * k)
 lab('Rosenborg Castle', roc.x, roc.y, 52, 1624)
 
 # ---------- 5. Marmorkirken: iniziata 1749, ferma (rovina) dal 1770, cupola finita 1894 ----------
@@ -105,8 +105,8 @@ P(name='Marble Church', t='cyl', cx=mkc.x, cy=mkc.y, rad=R_, z0=4, z1=13, seg=28
 P(name='Marble Church', t='cyl', cx=mkc.x, cy=mkc.y, rad=R_, z0=13, z1=30, seg=28, c='#dcd9cf', a=1, y=1877.0)
 P(name='Marble Church', t='cyl', cx=mkc.x, cy=mkc.y, rad=R_ * 0.68, z0=30, z1=40, seg=24, c='#dcd9cf', a=1, y=1882.0)
 P(name='Marble Church', t='dome', cx=mkc.x, cy=mkc.y, rad=R_ * 0.68, z0=40, hz=24, c=COPPER, a=0.05, y=1887.0)
-P(name='Marble Church', t='cyl', cx=mkc.x, cy=mkc.y, rad=3.2, z0=63, z1=71, seg=10, c=COPPER, a=0.05, y=1891.0)
-P(name='Marble Church', t='cone', cx=mkc.x, cy=mkc.y, r0=1.6, r1=0.1, z0=71, z1=77, seg=8, c=GOLD, a=0.05, y=1893.0)
+P(name='Marble Church', t='cyl', cx=mkc.x, cy=mkc.y, rad=3.2, z0=63, z1=71, seg=10, c=COPPER, a=0.05, y=1889.5)
+P(name='Marble Church', t='cone', cx=mkc.x, cy=mkc.y, r0=1.6, r1=0.1, z0=71, z1=77, seg=8, c=GOLD, a=0.05, y=1891.0)
 lab('Marble Church', mkc.x, mkc.y, 77, 1894)
 
 # ---------- 6. Amalienborg (1750-1760): quattro palazzi uguali attorno alla piazza ottagonale ----------
@@ -114,9 +114,9 @@ pal = ['w106105298', 'w106105466', 'w25524645', 'w106228713']   # Christian VII 
 cs = []
 for k, o in enumerate(pal):
     g = fp(o); clear.append(ring(g.buffer(2))); cs.append(g.centroid)
-    P(name='Amalienborg', t='prism', r=ring(g), z0=0, z1=3, c=SAND, a=0.05, y=1750 + 2 * k)
-    P(name='Amalienborg', t='prism', r=ring(g), z0=3, z1=17, c='#d4c4a0', a=1, y=1751 + 2 * k)
-    P(name='Amalienborg', t='hip', r=ring(g), z0=17, z1=17, rh=8, c='#55625c', a=0.05, y=1752.5 + 2 * k)
+    P(name='Amalienborg', t='prism', r=ring(g), z0=0, z1=3, c=SAND, a=0.05, y=1752.6 + 1.6 * k)
+    P(name='Amalienborg', t='prism', r=ring(g), z0=3, z1=17, c='#d4c4a0', a=1, y=1753.3 + 1.6 * k)
+    P(name='Amalienborg', t='hip', r=ring(g), z0=17, z1=17, rh=8, c='#55625c', a=0.05, y=1754.0 + 1.6 * k)
 ax_, ay_ = sum(c.x for c in cs) / 4, sum(c.y for c in cs) / 4
 P(name='Amalienborg statue', t='prism', r=ring(box(ax_ - 2.5, ay_ - 4.5, ax_ + 2.5, ay_ + 4.5)), z0=0, z1=6, c=STONE, a=0.05, y=1768)
 P(name='Amalienborg statue', t='prism', r=ring(box(ax_ - 1.2, ay_ - 2.5, ax_ + 1.2, ay_ + 2.5)), z0=6, z1=11, c='#4f7f6c', a=0.05, y=1771)

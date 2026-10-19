@@ -1,0 +1,49 @@
+Durata 8:31.5  fotogrammi 12276  inquadrature 51  stacco medio ogni 10.0 s
+
+SOSTE (video -> anni):
+  0:09.5-0:15.5  1167.0->1169.0  Absalon builds his castle (1167)
+  1:01.5-1:06.5  1369.3->1381.0  Hanseatic League razes the castle (1369)
+  1:43.1-1:48.1  1606.0->1612.5  Rosenborg Castle (1606)
+  1:49.4-1:55.4  1618.8->1625.6  Børsen and its dragon spire (1619-25)
+  1:59.0-2:04.0  1636.8->1642.6  The Round Tower (1637-42)
+  2:26.2-2:31.2  1670.8->1683.0  Nyhavn is dug (1671-73)
+  3:04.0-3:14.0  1728.8->1729.0  GREAT FIRE OF 1728
+  3:26.9-3:30.9  1735.5->1745.5  Christiansborg I (1733-45)
+  3:35.0-3:39.5  1749.3->1752.3  Our Saviour's spiral spire (1749-52)
+  3:39.5-3:45.5  1752.3->1760.5  Frederiksstaden: Amalienborg (1750-60)
+  3:54.8-3:58.3  1794.1->1794.4  Christiansborg burns (1794)
+  3:58.8-4:02.8  1795.4->1795.7  FIRE OF 1795
+  4:08.0-4:22.0  1807.7->1808.0  BRITISH BOMBARDMENT (1807)
+  4:22.4-4:27.4  1809.5->1820.0  Christiansborg rises again
+  4:37.5-4:41.5  1842.8->1845.0  Tivoli opens (1843)
+  5:07.5-5:11.5  1876.5->1883.5  Marble Church rebuilt (1874)
+  5:13.0-5:16.5  1884.7->1885.0  Christiansborg burns again (1884)
+  5:18.4-5:22.4  1886.5->1891.6  The great dome (1894)
+  5:24.8-5:29.8  1893.5->1905.5  City Hall (1892-1905)
+  5:53.8-5:58.8  1917.5->1928.5  Christiansborg III and its tower (1907-28)
+  7:15.4-7:20.4  1995.8->2000.6  The Øresund Bridge (2000)
+  7:20.5-7:24.5  2000.8->2004.6  The Opera House (2005)
+  7:24.7-7:28.7  2004.8->2008.3  Royal Playhouse (2008)
+  7:32.1-7:37.1  2013.3->2019.3  CopenHill (2019)
+
+ANNO OGNI 30 s:
+  0:00   2026.0  (0.00 anni/s)
+  0:30   1253.5  (3.67 anni/s)
+  1:00   1360.2  (4.91 anni/s)
+  1:30   1511.6  (8.00 anni/s)
+  2:00   1638.0  (1.16 anni/s)
+  2:30   1680.2  (2.44 anni/s)
+  3:00   1726.7  (0.57 anni/s)
+  3:30   1743.2  (2.50 anni/s)
+  4:00   1795.5  (0.07 anni/s)
+  4:30   1826.2  (2.15 anni/s)
+  5:00   1869.7  (0.91 anni/s)
+  5:30   1905.6  (0.50 anni/s)
+  6:00   1929.1  (0.50 anni/s)
+  6:30   1944.7  (0.62 anni/s)
+  7:00   1972.4  (1.20 anni/s)
+  7:30   2010.2  (1.46 anni/s)
+  8:00   2026.0  (0.00 anni/s)
+  8:30   2026.0  (0.00 anni/s)
+
+Velocita fuori dalle soste: mediana 1.20 anni/s, max 8.0 anni/s
