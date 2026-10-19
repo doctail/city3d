@@ -130,7 +130,9 @@ log('facce costa', len(faces), 'terra', sum(1 for v in vote if v > 0))
 Lh = CFG.get('land_half_m', 60000)
 outside = box(-Lh, -Lh, Lh, Lh).difference(W)
 west = box(-Lh, -Lh, cb[0] + 3000, Lh)   # [Likely] a ovest della finestra solo terra
-sweden = box(26500, -Lh, Lh, Lh)
+# costa svedese approssimata da punti noti (Skanoer, Klagshamn, Lernacken dove arriva il ponte, Limhamn, Malmoe, Lomma, Barsebaeck, Landskrona)
+sweden = Polygon([(17100, -Lh), (17100, -28300), (20800, -17300), (21100, -12300), (22300, -10600), (25200, -8400), (25500, -6750),
+                  (31500, -670), (22050, 8200), (16400, 21400), (16400, Lh), (Lh, Lh), (Lh, -Lh)])
 land = unary_union([land_in, outside.intersection(unary_union([west, sweden]))])
 # laghi, canali, fiumi interni
 water = []
