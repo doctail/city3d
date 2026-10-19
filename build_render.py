@@ -811,6 +811,8 @@ if DEV in ('OPTIX', 'CUDA'):
     pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV; pr.get_devices()
     for d in pr.devices: d.use = d.type == DEV
     sc.cycles.device = 'GPU'; log('GPU', DEV, [d.name for d in pr.devices if d.use])
+    if not any(d.use and d.type == DEV for d in pr.devices):   # 19 ott 2026: la GPU del pod non rispondeva e Blender ripiegava in silenzio sul processore (8 s/fotogramma)
+        print('[build] ERRORE: nessuna GPU ' + DEV + ' disponibile. Mi fermo invece di renderizzare col processore. Termina il pod e aprine un altro.', flush=True); sys.exit(3)
 else: log('CPU')
 DN = opt('--denoiser', 1, 'auto')   # auto: OptiX su GPU OptiX (si avvia in fretta), altrimenti OIDN; none: niente denoiser
 if DN == 'none': sc.cycles.use_denoising = False
