@@ -7,5 +7,108 @@
  "land_half_m": 60000,
  "min_area_m2": 12,
  "osm_pbf": "https://download.geofabrik.de/europe/denmark-latest.osm.pbf",
- "bbr_zip": "https://ftp.sdfe.dk/main.html?download&weblink=2c950b3aadfeedc3b136df8525234819&realfilename=DK%5FINSPIRE%5FBBR%2Ezip"
+ "bbr_zip": "https://ftp.sdfe.dk/main.html?download&weblink=2c950b3aadfeedc3b136df8525234819&realfilename=DK%5FINSPIRE%5FBBR%2Ezip",
+ "core_box": [
+  -9000,
+  -9000,
+  9000,
+  9000
+ ],
+ "forest_box": [
+  0,
+  0,
+  1,
+  1
+ ],
+ "parks": [],
+ "roads": [],
+ "grid_deg": 0,
+ "marsh": false,
+ "haze_k": 1000000000.0,
+ "water_z": -1.5,
+ "field_colors": [
+  "#4e9a34",
+  "#5aa53c",
+  "#468f2f",
+  "#63a944",
+  "#55a039"
+ ],
+ "park_trees": 0.01,
+ "block_trees": 0.0012,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -2.0,
+ "style": {
+  "haze": [
+   0.8,
+   0.88,
+   0.96
+  ],
+  "era_split": 1900,
+  "pitched_until": 1930,
+  "pitched_max_area": 500,
+  "wall_old": [
+   "#d9a441",
+   "#e3b85c",
+   "#c9653f",
+   "#b8452f",
+   "#e8c58a",
+   "#d98a54",
+   "#a8432f",
+   "#efd9a8"
+  ],
+  "roof_old": [
+   "#b5482e",
+   "#a63f28",
+   "#c25a3a",
+   "#9c3a26",
+   "#b9512f"
+  ],
+  "wall_new": [
+   "#c9c9c4",
+   "#bdbeba",
+   "#b2b4b1",
+   "#d2d0c9",
+   "#aeafac"
+  ],
+  "wall_anc": [
+   "#cfc8bc",
+   "#bdb6aa",
+   "#c9c2b4"
+  ],
+  "roof_new": [
+   "#7d7f82",
+   "#929496",
+   "#6f7174",
+   "#a3a4a3"
+  ],
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 60,
+  "window": "#2a3a4a",
+  "urban": [
+   "#d6cbb2",
+   "#cfc4aa",
+   "#dbd1b9",
+   "#c9bea4",
+   "#d3c8ae",
+   "#ccc1a7"
+  ],
+  "urban_dark": "#e8dfcb",
+  "urban_green": "#7fb04e",
+  "hedge": "#2f6a25",
+  "blocks": "#8f8778",
+  "grass": "#76b84a",
+  "tree": "#3f8a35",
+  "forest_base": "#5d9c3f",
+  "water": "#1d6f7c",
+  "water_rough": 0.12,
+  "sky_light": 0.35,
+  "sun_energy": 5.0
+ },
+ "hist": "hist_copenhagen",
+ "land_from_buildings": true
 }

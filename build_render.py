@@ -36,7 +36,8 @@ def mat(name, col=None, rough=0.9, attr=None, haze=True):
         n = m.node_tree.nodes.new('ShaderNodeAttribute'); n.attribute_name = attr; m.node_tree.links.new(n.outputs['Color'], b.inputs['Base Color'])
     else: b.inputs['Base Color'].default_value = (*col, 1)
     return hazeify(m) if haze else m
-HAZE = (0.70, 0.77, 0.86); HAZE_K = float(opt('--haze', 1, str(CITY.get('haze_k', 32000))))   # piu' alto = meno foschia
+ST = CITY.get('style', {})   # colori per citta' (Copenaghen: stile leggibile); senza chiave = come prima
+HAZE = tuple(ST.get('haze', (0.70, 0.77, 0.86))); HAZE_K = float(opt('--haze', 1, str(CITY.get('haze_k', 32000))))   # piu' alto = meno foschia
 def hazeify(m):
     nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
     cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
@@ -70,7 +71,7 @@ def city_mat():
     band = mm('MULTIPLY', mm('LESS_THAN', fz, 0.18), None, wall)  # marcapiano sui grattacieli
     one_minus_g = M('SUBTRACT'); one_minus_g.inputs[0].default_value = 1.0; L(glass, one_minus_g.inputs[1])
     wmask = mm('MULTIPLY', win, None, one_minus_g.outputs[0])
-    c1 = N.new('ShaderNodeMix'); c1.data_type = 'RGBA'; L(wmask, c1.inputs['Factor']); L(ca.outputs['Color'], c1.inputs[6]); c1.inputs[7].default_value = (0.07, 0.08, 0.10, 1)
+    c1 = N.new('ShaderNodeMix'); c1.data_type = 'RGBA'; L(wmask, c1.inputs['Factor']); L(ca.outputs['Color'], c1.inputs[6]); c1.inputs[7].default_value = (*srgb(ST.get('window', '#121418')), 1)
     c2 = N.new('ShaderNodeMix'); c2.data_type = 'RGBA'; L(mm('MULTIPLY', band, None, glass), c2.inputs['Factor']); L(c1.outputs[2], c2.inputs[6]); c2.inputs[7].default_value = (0.55, 0.57, 0.58, 1)
     L(c2.outputs[2], b.inputs['Base Color'])
     rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = 0.12
@@ -95,7 +96,7 @@ def land_mat(mode='fields'):
         e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
     fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.70; fk.inputs['From Max'].default_value = 0.74
-    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb('#33492a'), 1)
+    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb(ST.get('hedge', '#33492a')), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     # tessuto urbano visto dall'alto: tetti a celle piccole (toni spenti), strade dritte parallele alla griglia di Manhattan,
@@ -103,8 +104,9 @@ def land_mat(mode='fields'):
     vr = N.new('ShaderNodeVectorRotate'); vr.rotation_type = 'Z_AXIS'; vr.inputs['Angle'].default_value = math.radians(CITY['grid_deg']); L(tc.outputs['Object'], vr.inputs['Vector'])
     rv = N.new('ShaderNodeTexVoronoi'); rv.inputs['Scale'].default_value = 0.045; rv.inputs['Randomness'].default_value = 0.85; L(vr.outputs[0], rv.inputs['Vector'])
     rr = N.new('ShaderNodeValToRGB'); L(rv.outputs['Color'], rr.inputs[0]); rcr = rr.color_ramp; rcr.interpolation = 'CONSTANT'
-    rcr.elements[0].color = (*srgb('#6e655c'), 1); rcr.elements[1].position = 0.84; rcr.elements[1].color = (*srgb('#6b5148'), 1)
-    for p_, c_ in [(0.17, '#7d7064'), (0.34, '#5d5853'), (0.5, '#857565'), (0.67, '#77706a')]:
+    UC = ST.get('urban', ['#6e655c', '#7d7064', '#5d5853', '#857565', '#77706a', '#6b5148'])
+    rcr.elements[0].color = (*srgb(UC[0]), 1); rcr.elements[1].position = 0.84; rcr.elements[1].color = (*srgb(UC[5]), 1)
+    for p_, c_ in zip([0.17, 0.34, 0.5, 0.67], UC[1:5]):
         e_ = rcr.elements.new(p_); e_.color = (*srgb(c_), 1)
     bk = N.new('ShaderNodeTexBrick'); L(vr.outputs[0], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.0105; bk.offset = 0.0
     bk.inputs['Color1'].default_value = (1, 1, 1, 1); bk.inputs['Color2'].default_value = (1, 1, 1, 1); bk.inputs['Mortar'].default_value = (0.42, 0.42, 0.42, 1)
@@ -112,9 +114,9 @@ def land_mat(mode='fields'):
     sm = N.new('ShaderNodeMix'); sm.data_type = 'RGBA'; sm.blend_type = 'MULTIPLY'; sm.inputs['Factor'].default_value = 1.0; L(rr.outputs[0], sm.inputs[6]); L(bk.outputs['Color'], sm.inputs[7])
     gn = N.new('ShaderNodeTexNoise'); gn.inputs['Scale'].default_value = 0.03; gn.inputs['Detail'].default_value = 3; L(tc.outputs['Object'], gn.inputs['Vector'])
     gk = N.new('ShaderNodeMapRange'); L(gn.outputs['Fac'], gk.inputs['Value']); gk.inputs['From Min'].default_value = 0.6; gk.inputs['From Max'].default_value = 0.66; gk.inputs['To Max'].default_value = 0.7
-    gm = N.new('ShaderNodeMix'); gm.data_type = 'RGBA'; L(gk.outputs[0], gm.inputs['Factor']); L(sm.outputs[2], gm.inputs[6]); gm.inputs[7].default_value = (*srgb('#4d5b3c'), 1)
+    gm = N.new('ShaderNodeMix'); gm.data_type = 'RGBA'; L(gk.outputs[0], gm.inputs['Factor']); L(sm.outputs[2], gm.inputs[6]); gm.inputs[7].default_value = (*srgb(ST.get('urban_green', '#4d5b3c')), 1)
     dn = N.new('ShaderNodeTexNoise'); dn.inputs['Scale'].default_value = 0.0025; dn.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], dn.inputs['Vector'])
-    dr = N.new('ShaderNodeValToRGB'); L(dn.outputs['Fac'], dr.inputs[0]); dr.color_ramp.elements[0].position = 0.3; dr.color_ramp.elements[0].color = (*srgb('#a8a49c'), 1)
+    dr = N.new('ShaderNodeValToRGB'); L(dn.outputs['Fac'], dr.inputs[0]); dr.color_ramp.elements[0].position = 0.3; dr.color_ramp.elements[0].color = (*srgb(ST.get('urban_dark', '#a8a49c')), 1)
     dr.color_ramp.elements[1].position = 0.7; dr.color_ramp.elements[1].color = (*srgb('#ece0d2'), 1)
     um = N.new('ShaderNodeMix'); um.data_type = 'RGBA'; um.blend_type = 'MULTIPLY'; um.inputs['Factor'].default_value = 1.0
     L(gm.outputs[2], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
@@ -133,12 +135,12 @@ log('predecessori storici', len(hist)); blds = blds + hist
 if '--crop' in a:   # prove locali con poca memoria: solo gli edifici dentro un rettangolo (metri)
     cx0, cy0, cx1, cy1 = map(float, opt('--crop', 4)); blds = [b_ for b_ in blds if cx0 < b_['r'][0][0] < cx1 and cy0 < b_['r'][0][1] < cy1]
     hist = [h_ for h_ in hist if cx0 < h_['r'][0][0] < cx1 and cy0 < h_['r'][0][1] < cy1]; log('ritaglio', len(blds))
-OLDROOF = ['#7a4a35', '#6b4a3a', '#8a5a40', '#5e4636', '#94664a']
+OLDROOF = ST.get('old_roof', ['#7a4a35', '#6b4a3a', '#8a5a40', '#5e4636', '#94664a'])
 rnd = random.Random(3)
-LOW = ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f74', '#d8c7a4', '#a04a38', '#8a5236']
-MID = ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
-GLASS = ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
-ROOF = ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
+LOW = ST.get('low') or ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '#6b4434', '#c79f74', '#d8c7a4', '#a04a38', '#8a5236']
+MID = ST.get('mid') or ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
+GLASS = ST.get('glass') or ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
+ROOF = ST.get('roof') or ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
 BIN = float(opt('--bin', 1, '4'))
 CHUNKS = []; polys = []
 def add_bld(bm, col, vyear, vdie, b):
@@ -150,13 +152,21 @@ def add_bld(bm, col, vyear, vdie, b):
     old = b.get('old', False)
     if not old: polys.append(poly)
     h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999)
-    gl = h > 90 and y > 1955
+    gl = h > ST.get('glass_h', 90) and y > 1955
     pal = GLASS if gl else MID if h > 35 else LOW
-    wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(ROOF)); wa = 0.5 if gl else 1.0
+    rpal = ROOF
+    if ST.get('era_split'):   # stile leggibile: prima dell'anno di taglio muri caldi e tetti in coppi, dopo muri chiari e tetti grigi
+        es = ST['era_split']; old_ = y < es
+        if b.get('lm'): pal, rpal = [b['wall']], [b['roof']]
+        elif gl: rpal = ST.get('roof_new', ROOF)
+        elif old_: pal, rpal = ST['wall_old'], ST['roof_old']
+        else: pal, rpal = (ST.get('wall_anc', ST['wall_new']) if b.get('k') == 'anc' else ST['wall_new']), ST['roof_new']
+    wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
     vb = [bm.verts.new((x, yy, 0)) for x, yy in ring]; vt = [bm.verts.new((x, yy, h)) for x, yy in ring]
     vyear += [y] * (2 * len(ring)); vdie += [dd] * (2 * len(ring))
-    if old and y < 1840:   # case antiche: tetto a falde (piramide sul centroide)
-        rc2 = srgb(rnd.choice(OLDROOF)); cx, cy = poly.centroid.x, poly.centroid.y
+    pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
+    if pitched:   # case antiche: tetto a falde (piramide sul centroide)
+        rc2 = srgb(rnd.choice(ST['roof_old'] if ST.get('era_split') else OLDROOF)); cx, cy = poly.centroid.x, poly.centroid.y
         ap = bm.verts.new((cx, cy, h + min(6.0, math.sqrt(poly.area) * 0.45))); vyear.append(y); vdie.append(dd)
         for i in range(len(ring)):
             try:
@@ -375,7 +385,7 @@ for p_, u_ in zip(lo_.data.polygons, uyl):
     cx_, cy_ = p_.center.x, p_.center.y
     if not (FB[0] < cx_ < FB[2] and FB[1] < cy_ < FB[3]) or p_.area > 20000: continue
     _fit.append(([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_))
-FOREST = chunked('forest', _fit, 0.0, mat('fbase', srgb('#4f7136'), 1.0), 'vanish')
+FOREST = chunked('forest', _fit, 0.0, mat('fbase', srgb(ST.get('forest_base', '#4f7136')), 1.0), 'vanish')
 log('boschi', len(_fit), 'celle in', len(FOREST), 'blocchi')
 bpy.data.objects.remove(lo_, do_unlink=True)
 ROADS_LL = CITY['roads']   # strade disegnate a mano (lat, lon); spente di default
@@ -403,7 +413,7 @@ _bit = []
 for r in blocks:
     by = urban_year(*Polygon(r).centroid.coords[0]) if (urban_year and hist) else 0
     _bit.append((r, by))
-BO = chunked('blocks', _bit, 0.12, mat('blocks', srgb('#b4ab9c'), 0.9), 'appear')
+BO = chunked('blocks', _bit, 0.12, mat('blocks', srgb(ST.get('blocks', '#b4ab9c')), 0.9), 'appear')
 # isolati non ancora urbanizzati: spostati sotto terra (indici stabili, cosi' gli alberi non saltano)
 hg = bpy.data.node_groups.new('hide', 'GeometryNodeTree')
 hg.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); hg.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
@@ -430,8 +440,8 @@ if parks:
         for x0_, y0_, x1_, y1_, yr_ in CITY['parks']:   # parchi storici con anno noto (NYC: Central Park 1858)
             if x0_ < c_.x < x1_ and y0_ < c_.y < y1_: py_ = max(py_, yr_)
         _pit.append(([tuple(v) for v in r], py_))
-    PO = chunked('parks', _pit, 0.25, mat('grass', srgb('#5d7a3a'), 1.0), 'appear')
-    tm = mat('tree', srgb('#3d5c2a'), 0.9)
+    PO = chunked('parks', _pit, 0.25, mat('grass', srgb(ST.get('grass', '#5d7a3a')), 1.0), 'appear')
+    tm = mat('tree', srgb(ST.get('tree', '#3d5c2a')), 0.9)
     bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
     tree.scale = (1, 1, 1.2); tree.hide_render = True; tree.hide_viewport = True
     tg_ = bpy.data.node_groups.new('trees', 'GeometryNodeTree')
@@ -474,7 +484,7 @@ log('alberi cotti:', nb, 'vertici')
 bm = bmesh.new(); s = 400000
 WZ = float(CITY.get('water_z', -2))   # canali stretti: l'acqua riflette il sotto della terra (macchie nere) se e' troppo bassa
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, WZ), (s, -s, WZ), (s, s, WZ), (-s, s, WZ)]])
-wm = mat('water', srgb('#24363c'), 0.08, haze=False); nt = wm.node_tree
+wm = mat('water', srgb(ST.get('water', '#24363c')), ST.get('water_rough', 0.08), haze=False); nt = wm.node_tree
 nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
 bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
 mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
@@ -489,7 +499,7 @@ try: sky.sky_type = 'NISHITA'
 except Exception: pass
 SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
-WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 0.35
+WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = ST.get('sky_light', 0.35)
 bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
 # cielo visto dalla camera: sfumato (foschia all'orizzonte -> azzurro in alto), alone caldo verso il sole, nuvole sottili
 def sky_grad():
@@ -524,7 +534,7 @@ def sky_grad():
 if '--flat-sky' not in a: sky_grad()
 lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader'); WL(lp.outputs['Is Camera Ray'], mxw.inputs[0]); WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
 WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
-sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = 4.4; sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
+sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4); sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
 so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
 cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
