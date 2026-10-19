@@ -222,3 +222,9 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - Modello da studiare: **Cornerstone Timelapse** (3.640 iscritti): Las Vegas 739K in 12 giorni (4.276/ora), Chicago 99K. Las Vegas = demolizioni/implosioni + Strip di notte.
 - Regola nuova: (1) la città si sceglie con youtube_search degli ultimi 45 giorni, il giorno prima del render; (2) di nuovo il giorno prima della pubblicazione; (3) se nel frattempo esce un concorrente forte sulla stessa città, si valuta di anticipare o cambiare titolo/copertina per distinguersi.
 - **DECISO 19 ott (Fabio)**: Rotterdam esce giovedì 22 come previsto (non slitta). **Quarta città: COPENAGHEN**, libera in 3D, budget pod fino a 4,5 €, uscita obiettivo martedì 27 ott, primo video col modello completo (monumenti, fuoco 1728/1795/1807, notte). Piano completo per la nuova chat: **`PROSSIMA_COPENAGHEN.md`**.
+
+## Ritmo dei concorrenti (19 ott 2026)
+- **Cornerstone Timelapse** (canale nato il 2 ott, 3.640 iscritti): Chicago 2 ott (100K), Las Vegas 7 ott (739K), **New York 11 ott (1,03 MILIONI in 8 giorni, 16.390/ora)**, Los Angeles 15 ott (123K). Un video lungo ogni 4-5 giorni, **8-9 minuti**, **ZERO Shorts**. Titoli tutti uguali: "EVOLUTION OF <CITY> | 3D CITY TIMELAPSE (<anno>–NOW)".
+- Latos Charts (101K iscritti): Lisbona 29 set, Barcellona 1 ott, Amsterdam 4 ott → ogni 2-3 giorni, 9-12 minuti.
+- Epoch Timelapse (AI): ogni 2-3 giorni. Meridian, TIME TALES, Everything's OK: anche uno al giorno, ma con poche visualizzazioni.
+- Lezioni: (1) la velocità non è ciò che separa vincitori e perdenti (i cloni giornalieri restano a centinaia); (2) gli Shorts non servono per esplodere; (3) i vincitori durano 8-10 minuti (noi 5:27); (4) "siamo in ritardo" non regge: Cornerstone è nato 12 giorni prima del nostro New York e ha fatto 1 milione sulla stessa città.

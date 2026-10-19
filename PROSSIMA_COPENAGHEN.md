@@ -10,7 +10,8 @@ Leggi PRIMA: `PRODUZIONE_TIMELAPSE.md` (regole di Fabio, flusso, sezioni del 18-
 ## Decisioni
 - Budget pod per questo video: **fino a 4,5 €** (Fabio, 19 ott). Sempre OK esplicito di Fabio prima di aprire un pod.
 - Calendario obiettivo: dati e regia 19-21 ott → render 22-23 ott → montaggio → **uscita martedì 27 ott** (Rotterdam esce giovedì 22 ott).
-- **2 Shorts** (non 3), come deciso per le città dopo Rotterdam. Usare i risultati del test A/B/C di Rotterdam quando arrivano.
+- **Durata 8-9 minuti** (i vincitori della nicchia stanno a 8-10; noi eravamo a 5:27): più eventi e più monumenti, non crescita rallentata.
+- Shorts: al massimo 2, e solo se non tolgono tempo al video lungo (Cornerstone fa 1 milione senza Shorts). Usare i risultati del test A/B/C di Rotterdam quando arrivano.
 - Primo video con il **modello completo** (vedi sotto). Non è più sufficiente "ogni edificio reale": i dati veri non ci distinguono dai cloni, lo spettacolo sì.
 
 ## Il modello completo (cose che vanno nel RENDER)
