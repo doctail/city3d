@@ -152,9 +152,11 @@ cx = np.array([sum(p[0] for p in o['r']) / len(o['r']) for o in B + H]); cy = np
 by = np.array([o['y'] for o in B + H]); bd = np.array([o.get('d', 9999) for o in B + H])
 def extent(y):
     m = (by <= y) & (bd > y)
-    if m.sum() < 30: return (700.0, 0.0), 500.0
+    if m.sum() < 30: return (735.0, 0.0), 120.0   # quasi niente: stretti sul castello
     mx, my = np.median(cx[m]), np.median(cy[m]); r = np.percentile(np.hypot(cx[m] - mx, cy[m] - my), 85)
-    return (float(mx), float(my)), float(max(450.0, r))
+    if r < 400:   # primi secoli: nel quadro sia il villaggio sia il castello di Absalon (735, 0)
+        d_ = math.hypot(mx - 735, my); mx, my = (mx + 735) / 2, my / 2; r = max(r, d_ / 2 + 60)
+    return (float(mx), float(my)), float(max(140.0, r))   # citta' piccola = camera vicina (anteprima: castello minuscolo a 0:20)
 
 # ---------- inquadrature ----------
 def campos(tx, ty, tz, d, el, az):
@@ -179,7 +181,7 @@ for (t0, t1, s) in SOSTA_T:
         for k in range(n_sub):
             a_, b_ = gap0 + (gap1 - gap0) * k / n_sub, gap0 + (gap1 - gap0) * (k + 1) / n_sub
             (mx, my), r = extent(year_at(b_)); alt += 1
-            d = 1.0 * r + 450; el = 30 if alt % 2 else 22; az0 = (165, 200, 230, 185)[alt % 4]
+            d = 1.0 * r + (450 if r > 700 else 180); el = 30 if alt % 2 else 22; az0 = (165, 200, 230, 185)[alt % 4]
             SHOTS.append((a_, b_, (mx, my, 0), d * 1.25, d * 0.70, el + 4, el - 4, az0, az0 + (38 if alt % 2 else -38), 35))
     name, d, el, az0, az1, mm = s[4]
     tgt, h = target_of(name)
