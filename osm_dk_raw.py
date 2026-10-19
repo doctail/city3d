@@ -13,7 +13,8 @@ BB = box(LON0 - DLO, LAT0 - DLA, LON0 + DLO, LAT0 + DLA)
 WKB = osmium.geom.WKBFactory()
 BKEYS = ('building', 'building:levels', 'building:part', 'height', 'roof:shape', 'roof:levels', 'start_date', 'construction_date',
          'name', 'historic', 'amenity', 'tourism', 'man_made', 'leisure', 'ref:bygningsnr', 'osak:identifier', 'wikidata')
-blds, env = [], []
+blds, env, roads = [], [], []
+RKEYS = ('highway', 'railway', 'bridge', 'bridge:structure', 'bridge:name', 'layer', 'name', 'lanes', 'width', 'start_date', 'man_made', 'tunnel')
 
 def env_area(t):
     return (t.get('natural') in ('water', 'wetland') or t.get('waterway') == 'riverbank' or t.get('landuse') in ('basin', 'reservoir', 'forest', 'grass', 'cemetery')
@@ -35,6 +36,15 @@ class H(osmium.SimpleHandler):
             env.append({'type': 'Feature', 'properties': p, 'geometry': mapping(g.intersection(BB))})
     def way(self, w):
         t = w.tags
+        if (t.get('highway') or t.get('railway') in ('rail', 'light_rail', 'subway')) and t.get('tunnel') != 'yes' \
+                and t.get('highway') not in ('footway', 'path', 'steps', 'corridor', 'elevator', 'bus_stop', 'platform', 'proposed', 'construction') \
+                or (t.get('man_made') == 'bridge'):
+            try: g = shapely.wkb.loads(WKB.create_linestring(w), hex=True)
+            except Exception: g = None
+            if g is not None and g.intersects(BB):
+                p = {k: t.get(k) for k in RKEYS if t.get(k)}; p['osm'] = 'w' + str(w.id)
+                roads.append({'type': 'Feature', 'properties': p, 'geometry': mapping(g)})
+            if not t.get('natural'): return
         if t.get('natural') != 'coastline' and t.get('waterway') not in ('river', 'canal'): return
         try: g = shapely.wkb.loads(WKB.create_linestring(w), hex=True)
         except Exception: return
@@ -45,6 +55,8 @@ class H(osmium.SimpleHandler):
 H().apply_file(SRC, locations=True, idx='flex_mem')
 json.dump({'type': 'FeatureCollection', 'features': blds}, open(PRE + '_buildings.geojson', 'w'))
 json.dump({'type': 'FeatureCollection', 'features': env}, open(PRE + '_env.geojson', 'w'))
+json.dump({'type': 'FeatureCollection', 'features': roads}, open(PRE + '_roads.geojson', 'w'))
+print('[osm_dk_raw] strade:', len(roads), '| ponti:', sum(1 for f in roads if f['properties'].get('bridge') or f['properties'].get('man_made') == 'bridge'), flush=True)
 n = {}
 for f in env:
     p = f['properties']; k = p.get('natural') or p.get('leisure') or p.get('landuse') or p.get('waterway'); n[k] = n.get(k, 0) + 1

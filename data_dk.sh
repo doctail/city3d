@@ -3,6 +3,7 @@
 #   - BBR INSPIRE (DK_INSPIRE_BBR.zip, ~800 MB, Dataforsyningen, senza account)
 #   - estratto OSM della Danimarca (Geofabrik, ~450 MB)
 # ritaglia Copenaghen e crea /workspace/dati_<citta>.tgz GREZZO da scaricare da Jupyter e caricare in chat. Poi TERMINARE il pod.
+# Solo strade/ponti/edifici OSM (senza BBR, ~5 min):  ONLY_OSM=1 CITY=copenhagen bash city3d/data_dk.sh
 # Uso:  cd /workspace && git clone https://github.com/doctail/city3d && CITY=copenhagen bash city3d/data_dk.sh
 set -e
 CITY=${CITY:-copenhagen}
@@ -21,16 +22,16 @@ BBR=/workspace/DK_INSPIRE_BBR.zip; PBF=/workspace/$(basename $PBF_URL)
 OUT=/workspace/raw_$CITY; mkdir -p $OUT
 
 # i due download in parallelo
-[ -s $BBR ] || ( echo "scarico BBR"; curl -fL --retry 3 -A "Mozilla/5.0 city3d" -o $BBR.part "$BBR_URL" && mv $BBR.part $BBR ) &
+[ -n "$ONLY_OSM" ] || [ -s $BBR ] || ( echo "scarico BBR"; curl -fL --retry 3 -A "Mozilla/5.0 city3d" -o $BBR.part "$BBR_URL" && mv $BBR.part $BBR ) &
 [ -s $PBF ] || ( echo "scarico OSM"; curl -fL --retry 3 -o $PBF.part "$PBF_URL" && mv $PBF.part $PBF ) &
 wait
-ls -lh $BBR $PBF
+ls -lh $PBF
 # controllo: se il server ha restituito una pagina HTML invece dello zip, fermati e dillo
-if ! unzip -tq $BBR >/dev/null 2>&1; then
+if [ -z "$ONLY_OSM" ] && ! unzip -tq $BBR >/dev/null 2>&1; then
   echo "ERRORE: $BBR non e' uno zip valido. Primi byte:"; head -c 400 $BBR; echo; exit 1
 fi
 
-$PY fetch_dk_raw.py $BBR city_$CITY.json $OUT/bbr.geojson
+[ -n "$ONLY_OSM" ] || $PY fetch_dk_raw.py $BBR city_$CITY.json $OUT/bbr.geojson
 $PY osm_dk_raw.py $PBF city_$CITY.json $OUT/osm
 cp city_$CITY.json $OUT/
 tar czf /workspace/dati_$CITY.tgz -C /workspace raw_$CITY
