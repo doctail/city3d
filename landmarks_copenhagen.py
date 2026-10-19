@@ -44,11 +44,11 @@ ab = Point(*L(55.6765, 12.5797))   # Slotsholmen, rovine sotto il palazzo di ogg
 P(name='Absalon castle', t='cyl', cx=ab.x, cy=ab.y, rad=34, z0=0, z1=7, seg=14, c=STONE, a=0.05, y=1167.0, d=1369.5)
 P(name='Absalon castle', t='prism', r=ring(box(ab.x - 6, ab.y - 6, ab.x + 6, ab.y + 6)), z0=0, z1=22, c=STONE, a=0.05, y=1168.0, d=1369.5)
 P(name='Absalon castle', t='cone', cx=ab.x, cy=ab.y, r0=8.5, r1=0.5, z0=22, z1=30, seg=4, c=BRICK2, a=0.05, y=1168.5, d=1369.5)
-inner = affinity.scale(cb, 0.55, 0.55)
-P(name='Copenhagen Castle', t='prism', r=ring(inner), z0=0, z1=16, c=SAND, a=1, y=1376, d=1731.3)
+inner = affinity.scale(cb.minimum_rotated_rectangle, 0.38, 0.30)   # castello compatto (prima 55% di Christiansborg: lastra grigia enorme)
+P(name='Copenhagen Castle', t='prism', r=ring(inner), z0=0, z1=16, c='#c9b48c', a=1, y=1376, d=1731.3)
 P(name='Copenhagen Castle', t='hip', r=ring(inner), z0=16, z1=16, rh=8, c=BRICK2, a=0.05, y=1378, d=1731.3)
-P(name='Copenhagen Castle', t='cyl', cx=inner.centroid.x + 25, cy=inner.centroid.y, rad=6, z0=0, z1=34, seg=10, c=SAND, a=0.05, y=1380, d=1731.3)
-P(name='Copenhagen Castle', t='cone', cx=inner.centroid.x + 25, cy=inner.centroid.y, r0=6.5, r1=0.3, z0=34, z1=58, seg=10, c=COPPER, a=0.05, y=1590, d=1731.3)   # Blaataarn
+P(name='Copenhagen Castle', t='cyl', cx=inner.centroid.x + 14, cy=inner.centroid.y, rad=6, z0=0, z1=34, seg=10, c=SAND, a=0.05, y=1380, d=1731.3)
+P(name='Copenhagen Castle', t='cone', cx=inner.centroid.x + 14, cy=inner.centroid.y, r0=6.5, r1=0.3, z0=34, z1=58, seg=10, c=COPPER, a=0.05, y=1590, d=1731.3)   # Blaataarn
 cb_body = cb.buffer(-3)
 for gen, (y0, d) in enumerate([(1733, 1794.15), (1810, 1884.75)]):   # Christiansborg I (barocco) e II (classicista)
     col = SAND if gen == 0 else '#e0ddd2'
@@ -161,6 +161,12 @@ for k in range(4):   # pagoda (1900): quattro piani con tetti rossi
     s_ = 6.5 - 1.2 * k
     P(name='Tivoli pagoda', t='prism', r=ring(box(px_ - s_ * 0.7, py_ - s_ * 0.7, px_ + s_ * 0.7, py_ + s_ * 0.7)), z0=4.5 * k, z1=4.5 * k + 3.2, c='#e8d9b0', a=0.05, y=1900.0 + 0.3 * k)
     P(name='Tivoli pagoda', t='cone', cx=px_, cy=py_, r0=s_, r1=s_ * 0.45, z0=4.5 * k + 3.2, z1=4.5 * k + 4.5, seg=4, c='#c0392b', a=0.05, y=1900.2 + 0.3 * k)
+for k in range(10):   # Tivoli del 1843: bazar e padiglioni colorati attorno al lago, sala concerti
+    ang = 2 * math.pi * k / 10; bx_, by_ = tv_c.x - 10 + 75 * math.cos(ang), tv_c.y - 5 + 55 * math.sin(ang)
+    P(name='Tivoli 1843', t='prism', r=ring(box(bx_ - 6, by_ - 4, bx_ + 6, by_ + 4)), z0=0, z1=5, c=['#e8c34a', '#d9534f', '#5bc0de', '#f0ad4e', '#ffffff'][k % 5], a=0.05, y=1843.1 + 0.08 * k)
+    P(name='Tivoli 1843', t='cone', cx=bx_, cy=by_, r0=6.5, r1=0.4, z0=5, z1=8.5, seg=6, c=['#c0392b', '#2e8b57'][k % 2], a=0.05, y=1843.3 + 0.08 * k)
+P(name='Tivoli 1843', t='prism', r=ring(box(tv_c.x + 30, tv_c.y - 120, tv_c.x + 75, tv_c.y - 95)), z0=0, z1=11, c='#efe2c2', a=1, y=1843.6)
+P(name='Tivoli 1843', t='hip', r=ring(box(tv_c.x + 30, tv_c.y - 120, tv_c.x + 75, tv_c.y - 95)), z0=11, z1=11, rh=5, c='#2e8b57', a=0.05, y=1844.0)
 nb = fp('w27169240'); nbc = nb.centroid
 for dx_, dy_ in ((-18, -8), (18, -8), (0, 10)):   # cupole moresche del Nimb (1909)
     P(name='Nimb', t='dome', cx=nbc.x + dx_, cy=nbc.y + dy_, rad=3.2, z0=17, hz=5.5, c='#ece4d4', a=0.05, y=1909.0)

@@ -31,6 +31,11 @@ else
   if [ "$CITY" = "madrid" ]; then [ -s $D/buildings.json ] || $PY fetch_es.py $D city_$CITY.json $(ls /workspace/*.zip 2>/dev/null | head -1); fi
   $PY hist_$CITY.py $D
 fi
+NF=$($PY -c "import json;print(int(json.load(open('$SCHED'))['duration']*24))" 2>/dev/null || echo 7839)
+NT=$($PY -c "import json;d=json.load(open('$SCHED'));print(int(d['night_t']*24)+1 if 'night_t' in d else 0)" 2>/dev/null || echo 0)
+SCHED_N=${SCHED%.json}_night.json
+PAT=%04d; [ "$NF" -gt 9999 ] && PAT=%05d
+echo "fotogrammi $NF, notte dal fotogramma $NT, nomi $PAT"
 step "3b/5 prova GPU"
 nvidia-smi --query-gpu=name,driver_version,compute_mode --format=csv,noheader || true
 echo "caps=$NVIDIA_DRIVER_CAPABILITIES"
@@ -44,8 +49,8 @@ cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080
   set -- $CV; CAM="$1 $2 $3 $4 $5 $6"; LENS=$7; shift 7
   for Y in "$@"; do
     rm -rf out/cover_$Y
-    $PY build_render.py -- $D out/cover_$Y --frames 1 7839 --only 7633 --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|rror"
-    cp out/cover_$Y/7633.jpg out/${CITY}_cover_$Y.jpg
+    $PY build_render.py -- $D out/cover_$Y --frames 1 $NF --only $(( NF - 200 )) --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|rror"
+    cp out/cover_$Y/$(printf $PAT $(( NF - 200 ))).jpg out/${CITY}_cover_$Y.jpg
   done; ls -lh out/${CITY}_cover_*.jpg
 }
 light(){   # versione leggera da caricare in chat (~55 MB): 960x540, bitrate fisso
@@ -59,16 +64,27 @@ if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test va
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev
-  $PY build_render.py -- $D out/prev --frames 1 7839 --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT - 1 ))
+  $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  if [ "$NT" -gt 0 ]; then   # notte: stessa numerazione, passata separata (materiali notturni fissi)
+    F0N=$(( ( (NT - 1 + 11) / 12 ) * 12 + 1 ))
+    $PY build_render.py -- $D out/prev --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+  fi
   ffmpeg -loglevel error -y -framerate 2 -pattern_type glob -i 'out/prev/*.jpg' -c:v libx264 -crf 20 -pix_fmt yuv420p out/${CITY}_preview.mp4
-  ls -lh out/${CITY}_preview.mp4; step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
+  ls -lh out/${CITY}_preview.mp4
+  [ -f tools/movimento.py ] && $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; [ -f tools/movimento.py ] && $PY tools/movimento.py out/${CITY}_preview.mp4 out/${CITY}_movimento.json 2>&1 | tail -5
+  step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
 if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
   for V in "--denoiser optix" "--denoiser oidn" "--denoiser none" "--denoiser optix --samples 2" "--denoiser optix --res 960 540"; do
     rm -rf /tmp/prof; echo "--- variante: $V"
-    $PY build_render.py -- $D /tmp/prof $V --frames 3000 3011 --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
-  done; step "FINITO profilo: manda lo screenshot"; exit 0
+    PF=$(( NF * 7 / 10 )); $PY build_render.py -- $D /tmp/prof $V --frames $PF $(( PF + 11 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
+  done
+  if [ "$NT" -gt 0 ]; then rm -rf /tmp/prof; echo "--- notte (optix)"
+    $PY build_render.py -- $D /tmp/prof --night --denoiser optix --frames $(( NT + 200 )) $(( NT + 211 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "fotogramma|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}'
+  fi
+  step "FINITO profilo: manda lo screenshot"; exit 0
 fi
 if [ "$MODE" = "cover" ]; then step "COPERTINA"; cover; step "FINITO: scarica out/${CITY}_cover_*.jpg"; exit 0; fi
 if [ "$MODE" = "shorts" ]; then
@@ -94,12 +110,22 @@ print(';'.join(' '.join(map(str,(x+['-','-'])[:6])) for x in L))")
   step "FINITO shorts: scarica out/${CITY}_short*.mp4 (i _light sono per la chat)"; exit 0
 fi
 if [ "$MODE" = "full" ]; then
-  step "4/5 render VIDEO COMPLETO (7839 fotogrammi, riprende da dove si e' fermato)"
+  step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
-  $PY build_render.py -- $D out/full --frames 1 7839 --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 23 ))
+  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  if [ "$NT" -gt 0 ]; then
+    step "4b/5 NOTTE (fotogrammi $NT-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
+    $PY build_render.py -- $D out/night --night --frames $NT $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  fi
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
-  ffmpeg -loglevel error -y -framerate 24 -i out/full/%04d.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+  if [ "$NT" -gt 0 ]; then   # giorno 1..NT+23 e notte NT..NF: dissolvenza di 1 s a partire dal fotogramma NT
+    ffmpeg -loglevel error -y -framerate 24 -start_number 1 -i out/full/$PAT.jpg -framerate 24 -start_number $NT -i out/night/$PAT.jpg \
+      -filter_complex "[0:v][1:v]xfade=transition=fade:duration=1:offset=$(python3 -c "print(($NT-1)/24)")[v]" -map "[v]" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+  else
+    ffmpeg -loglevel error -y -framerate 24 -i out/full/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+  fi
   cp out/full/years.json out/years.json
   ls -lh out/${CITY}_full.mp4
   step "5b/5 versione leggera per la chat"; light out/${CITY}_full.mp4 out/${CITY}_light.mp4

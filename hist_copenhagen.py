@@ -88,9 +88,9 @@ def urban_year(x, y):
 # ---------- incendi ----------
 # anni frazionari = giorno dell'evento. Contorni approssimati dalle mappe storiche dei danni.
 FIRES = [
-    {'name': 'Great Fire of 1728', 'y': 1728.80, 'y1': 1728.81, 'houses': 1670,
+    {'name': 'Great Fire of 1728', 'y': 1728.80, 'y1': 1728.81, 'houses': 1670, 'origin': (120, 120),   # [Guessing] vicino a Vesterport (Lille Sankt Clemens Straede)
      'poly': [(40, 0), (60, 350), (180, 800), (330, 780), (520, 620), (600, 420), (540, 230), (380, 100), (200, 30)]},
-    {'name': 'Fire of 1795', 'y': 1795.43, 'y1': 1795.44, 'houses': 940,
+    {'name': 'Fire of 1795', 'y': 1795.43, 'y1': 1795.44, 'houses': 940, 'origin': (930, 170),   # Gammelholm (deposito di legname della marina)
      'poly': [(250, 80), (330, 330), (560, 420), (800, 360), (950, 250), (900, 80), (650, 40), (450, 40)]},
     {'name': 'Bombardment of 1807', 'y': 1807.67, 'y1': 1807.68, 'houses': 300,
      'poly': [(120, 300), (170, 800), (400, 900), (560, 700), (520, 450), (330, 300)]},
@@ -129,7 +129,12 @@ def build(DATA, seed=11):
             start = u + rnd.uniform(0, 12)
             for f_ in fires:
                 if f_['y'] - start > 2:
-                    out.append({'r': ring, 'h': round(era_height(start, rnd), 1), 'y': round(start, 1), 'd': round(f_['y'] + rnd.uniform(0, 0.008), 3)})
+                    # l'incendio si propaga dall'origine (le case spariscono a ondata, ~0,12 anni = ~4,5 s nella sosta); 1807 = bombe ovunque
+                    if 'origin' in f_:
+                        dmax = max(math.hypot(px - f_['origin'][0], py - f_['origin'][1]) for px, py in f_['poly'])
+                        fr = math.hypot(c.x - f_['origin'][0], c.y - f_['origin'][1]) / dmax
+                    else: fr = rnd.random()
+                    out.append({'r': ring, 'h': round(era_height(start, rnd), 1), 'y': round(start, 1), 'd': round(f_['y'] + 0.115 * fr + rnd.uniform(0, 0.006), 4)})
                     burned[f_['name']] += 1
                 start = f_['y'] + rnd.uniform(0.6, 9)    # ricostruzione accelerata dopo l'incendio
             died = b['y'] - rnd.uniform(0.3, 2.0)

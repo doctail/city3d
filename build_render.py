@@ -163,7 +163,7 @@ MID = ST.get('mid') or ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '
 GLASS = ST.get('glass') or ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ST.get('roof') or ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
 BIN = float(opt('--bin', 1, '4'))
-CHUNKS = []; polys = []
+CHUNKS = []; polys = []; polys_y = []
 def add_bld(bm, col, vyear, vdie, b):
     ring = [tuple(p) for p in b['r']]
     try: poly = Polygon(ring)
@@ -171,7 +171,7 @@ def add_bld(bm, col, vyear, vdie, b):
     if not poly.is_valid or poly.area < 6: return
     if not poly.exterior.is_ccw: ring = ring[::-1]
     old = b.get('old', False)
-    if not old: polys.append(poly)
+    if not old: polys.append(poly); polys_y.append(b['y'])
     h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999)
     gl = h > ST.get('glass_h', 90) and y > 1955 and poly.area > ST.get('glass_min_area', 0)   # ciminiere e antenne: niente vetro
     pal = GLASS if gl else MID if h > 35 else LOW
@@ -430,7 +430,7 @@ if os.path.exists(f'{DATA}/bridges.json'):
 if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
     _fr = json.load(open(f'{DATA}/fires.json')) if os.path.exists(f'{DATA}/fires.json') else []; frnd = random.Random(7)
     _fr += (LM or {}).get('fires', [])
-    for fi_ in _fr: fi_.setdefault('smoke', 16)
+    for fi_ in _fr: fi_['smoke'] = min(int(fi_.get('smoke', 9)), 9)   # poche colonne: con 16-26 sembravano palline sparse
     def emat(name, col, k):
         m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
         for n_ in list(N_):
@@ -438,7 +438,7 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
         e_ = N_.new('ShaderNodeEmission'); e_.inputs['Color'].default_value = (*col, 1); e_.inputs['Strength'].default_value = k
         nt_.links.new(e_.outputs[0], N_['Material Output'].inputs['Surface']); return m_
     m_glow = emat('fire_glow', (1.0, 0.32, 0.06), 4.0); m_flame = emat('fire_flame', (1.0, 0.55, 0.12), 12.0)
-    m_smoke = mat('smoke', srgb(ST.get('smoke', '#8a837c')), 1.0); _pb = m_smoke.node_tree.nodes['Principled BSDF']; _pb.inputs['Alpha'].default_value = ST.get('smoke_alpha', 0.7)
+    m_smoke = mat('smoke', srgb(ST.get('smoke', '#5f5954')), 1.0); _pb = m_smoke.node_tree.nodes['Principled BSDF']; _pb.inputs['Alpha'].default_value = ST.get('smoke_alpha', 0.7)
     try: m_smoke.surface_render_method = 'BLENDED'
     except Exception: pass
     for fi_ in _fr:
@@ -446,7 +446,7 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
         bm_ = bmesh.new()
         try: bm_.faces.new([bm_.verts.new((x, y, 0.6)) for x, y in list(pg.exterior.coords)[:-1]])
         except ValueError: pass
-        bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'glow_{int(y0_)}', bm_, m_glow); VIS.append((o_, 'window', (y0_ - 0.0004, y1_ + 0.10)))
+        bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'glow_{int(y0_)}', bm_, m_glow); VIS.append((o_, 'window', (y0_ - 0.0004, y1_ + 0.15)))
         x0_, yy0_, x1_, yy1_ = pg.bounds
         def rpts(n):
             out_ = []
@@ -458,15 +458,15 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
         for (px, py) in rpts(int(fi_.get('flames', 70))):
             r_ = frnd.uniform(5, 11); h_ = frnd.uniform(14, 34)
             bmesh.ops.create_cone(bm_, cap_ends=True, segments=6, radius1=r_, radius2=0.5, depth=h_, matrix=__import__('mathutils').Matrix.Translation((px, py, 8 + h_ / 2)))
-        o_ = obj(f'flames_{int(y0_)}', bm_, m_flame); VIS.append((o_, 'window', (y0_, y1_ + 0.03)))
+        o_ = obj(f'flames_{int(y0_)}', bm_, m_flame); VIS.append((o_, 'window', (y0_, y1_ + 0.125)))
         bm_ = bmesh.new()
         for (px, py) in rpts(int(fi_.get('smoke', 26))):
             dx, dy = frnd.uniform(0.3, 0.6), frnd.uniform(-0.2, 0.2)   # il vento spinge il fumo
             for k2 in range(4):
-                z_ = 75 + k2 * 60; rr_ = frnd.uniform(18, 30) * (1 + 0.45 * k2)
+                z_ = 55 + k2 * 38; rr_ = frnd.uniform(6, 11) * (1 + 0.45 * k2)   # meta' di prima: coprivano mezza inquadratura
                 bmesh.ops.create_icosphere(bm_, subdivisions=2, radius=rr_, matrix=__import__('mathutils').Matrix.Translation((px + dx * z_, py + dy * z_, z_)))
         for f_ in bm_.faces: f_.smooth = True
-        o_ = obj(f'smoke_{int(y0_)}', bm_, m_smoke); VIS.append((o_, 'window', (y0_ + 0.0006, y1_ + 0.22)))
+        o_ = obj(f'smoke_{int(y0_)}', bm_, m_smoke); VIS.append((o_, 'window', (y0_ + 0.004, y1_ + 0.25)))
     log('incendi', len(_fr))
 # bacini portuali scavati dopo l'inizio del video (DATA/harbours.json [{"r", "y"}]): terra verde fino all'anno di scavo, poi acqua
 if os.path.exists(f'{DATA}/harbours.json') or (LM and LM.get('harbours')):
@@ -517,8 +517,13 @@ for p in polys:
     c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
 for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
 _bit = []
+from shapely.strtree import STRtree as _STR
+_ptree = _STR(polys)
 for r in blocks:
     by = urban_year(*Polygon(r).centroid.coords[0]) if (urban_year and hist) else 0
+    if CITY.get('blocks_by_building'):   # l'isolato compare col suo edificio vero piu' vecchio (non con la zona: lastre grigie nel medioevo)
+        _ii = _ptree.query(Polygon(r))
+        if len(_ii): by = max(by, min(polys_y[i_] for i_ in _ii))
     _bit.append((r, by))
 BO = chunked('blocks', _bit, 0.12, mat('blocks', srgb(ST.get('blocks', '#b4ab9c')), 0.9), 'appear')
 # isolati non ancora urbanizzati: spostati sotto terra (indici stabili, cosi' gli alberi non saltano)
@@ -819,11 +824,12 @@ def setvis(o_, hidden):
     # niente hide_render (cambia la scena per Cycles e la ricostruisce): gli oggetti nascosti scendono sotto terra
     if VISSET.get(o_.name) != hidden:
         o_.location.z = -5000.0 if hidden else 0.0; VISSET[o_.name] = hidden
+NW = 5 if F1 > 9999 else 4   # oltre 9999 fotogrammi: nomi a 5 cifre (con 4 l'ordine alfabetico mescolava i fotogrammi)
 done = 0
 _ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
 for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
-    path = os.path.join(OUT, f'{f:04d}.{EXT}')
-    if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:04d}.jpg'), os.path.join(OUT, f'{f:04d}.png'))): continue
+    path = os.path.join(OUT, f'{f:0{NW}d}.{EXT}')
+    if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:0{NW}d}.jpg'), os.path.join(OUT, f'{f:0{NW}d}.png'))): continue
     t_ = time.time(); sc.frame_set(f); y_ = YF[f]
     _l = lens_at(f)
     if abs(cam.lens - _l) > 1e-3: cam.lens = _l

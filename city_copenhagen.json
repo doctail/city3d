@@ -125,5 +125,6 @@
   3.2
  ],
  "tree_lift": 2.5,
- "land_close": 1
+ "land_close": 1,
+ "blocks_by_building": true
 }
