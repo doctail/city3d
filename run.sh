@@ -71,10 +71,10 @@ if [ "$MODE" = "preview" ]; then
     $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   fi
   PV=out/prev
-  if [ "$NT" -gt 0 ]; then $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; $PY dusk.py out/prev out/prevn out/prevmix $NT $NF 12; PV=out/prevmix; fi
+  if [ "$NT" -gt 0 ]; then uv pip install -q -p $PY opencv-python-headless numpy; $PY dusk.py out/prev out/prevn out/prevmix $NT $NF 12; PV=out/prevmix; fi
   ffmpeg -loglevel error -y -framerate 2 -pattern_type glob -i "$PV/*.jpg" -c:v libx264 -crf 20 -pix_fmt yuv420p out/${CITY}_preview.mp4
   ls -lh out/${CITY}_preview.mp4
-  [ -f tools/movimento.py ] && $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; [ -f tools/movimento.py ] && $PY tools/movimento.py out/${CITY}_preview.mp4 out/${CITY}_movimento.json 2>&1 | tail -5
+  [ -f tools/movimento.py ] && uv pip install -q -p $PY opencv-python-headless numpy; [ -f tools/movimento.py ] && $PY tools/movimento.py out/${CITY}_preview.mp4 out/${CITY}_movimento.json 2>&1 | tail -5
   step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
 if [ "$MODE" = "profile" ]; then
@@ -123,7 +123,7 @@ if [ "$MODE" = "full" ]; then
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
   if [ "$NT" -gt 0 ]; then   # tramonto (5 s) + crepuscolo in dissolvenza (5 s) dal fotogramma NT, poi notte: dusk.py
-    $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; rm -rf out/mix; $PY dusk.py out/full out/night out/mix $NT $NF
+    uv pip install -q -p $PY opencv-python-headless numpy; rm -rf out/mix; $PY dusk.py out/full out/night out/mix $NT $NF
     ffmpeg -loglevel error -y -framerate 24 -i out/mix/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   else
     ffmpeg -loglevel error -y -framerate 24 -i out/full/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
