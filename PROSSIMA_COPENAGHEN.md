@@ -27,6 +27,13 @@ Leggi PRIMA: `PRODUZIONE_TIMELAPSE.md` (regole di Fabio, flusso, sezioni del 18-
    - eventi che cambiano molti pixel: fuoco, notte, acqua che diventa terra, demolizioni.
 6. Stima tempi: misurare con `run.sh profile` PRIMA del full; con notte e fuoco +10-20% rispetto a ~1,9 s/fotogramma.
 
+## Velocità del tempo (anni per secondo) — regola automatica
+- Non a mano: la regia calcola la curva anno→secondo dai dati. Per ogni anno conta gli edifici nuovi (e demoliti) DENTRO l'inquadratura del momento; il tempo scorre in modo che **gli edifici nuovi al secondo restino circa costanti**: veloce dove succede poco (es. 1660-1720, città chiusa nelle mura), più lento dove la città esplode (1852-1900 quartieri dei ponti, anni '60).
+- Limiti: mai più di ~8 anni/s (si perde la lettura) e mai meno di ~0,5 anni/s fuori dalle soste; niente tratti più lunghi di 30 s senza un evento.
+- **Soste sui monumenti**: per ogni monumento della lista, 4-6 s quasi fermi (0,2-0,5 anni/s) sugli anni di costruzione, con camera vicina; il monumento cresce **a fasi** (fondazioni → corpo → tetto/guglia/cupola) anche se nella realtà ci ha messo anni (Marmorkirken 1749-1894: base, rovina ferma, poi la cupola). Stesso schema per gli incendi: rallentare sull'evento, poi accelerare sulla ricostruzione.
+- Musica: le soste e gli eventi si agganciano ai cambi della traccia (come il 1940 di Rotterdam); se la curva automatica e la musica litigano, vince la musica, spostando le soste di 1-2 s.
+- Controllo: grafico anni/secondo + elenco soste stampato dalla regia prima dell'anteprima, da mostrare a Fabio.
+
 ## Stile (da Cornerstone, 1M su New York — vedi analisi in PRODUZIONE_TIMELAPSE.md)
 - Leggibilità prima del realismo: prato verde acceso, tetti rosso mattone per gli edifici antichi (pre-1900), grigio chiaro/bianco per i moderni, acqua turchese, **foschia quasi zero**. Saturazione già alta nel render (~90), non solo al montaggio.
 - Valutare **Eevee** (o Cycles a pochissimi campioni) in stile semplificato: più leggibile e più economico. Fare una prova di 3 fotogrammi Cycles vs Eevee prima di decidere.
