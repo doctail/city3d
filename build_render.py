@@ -19,6 +19,8 @@ def opt(name, n=1, default=None):
 F0, F1 = map(int, opt('--frames', 2, ['1', '240'])); RW, RH = map(int, opt('--res', 2, ['1920', '1080']))
 SAMPLES = int(opt('--samples', 1, '32')); FPS = int(opt('--fps', 1, '24')); GPU = '--gpu' in a
 Y0, Y1 = map(float, opt('--years', 2, ['1700', '2026']))
+LIGHT = opt('--light', 1, 'night' if '--night' in a else 'day')   # day | sunset | twilight | night: passate di luce separate, fuse al montaggio
+if LIGHT in ('night', 'twilight') and '--night' not in a: a.append('--night')
 NIGHT = '--night' in a   # passata notturna separata (materiali fissi: niente risincronizzazione), dissolvenza al montaggio
 os.makedirs(OUT, exist_ok=True); t0 = time.time()
 def log(*x): print('[build]', *x, f'({time.time()-t0:.0f}s)', flush=True)
@@ -79,13 +81,20 @@ def city_mat():
         cu = mm('FLOOR', mm('DIVIDE', u, 3.1)); cz = mm('FLOOR', mm('DIVIDE', sp.outputs['Z'], 3.6))
         # caso per finestra: fract(sin(a*12.99 + b*78.23 + c*37.72) * 43758.55) (il White Noise di Blender con coordinate intere
         # dava quasi sempre valori alti: tutte le finestre accese)
-        hx = mm('ADD', mm('ADD', mm('MULTIPLY', cu, 12.9898), None, mm('MULTIPLY', cz, 78.233)), None, mm('MULTIPLY', mm('FLOOR', mm('DIVIDE', sp.outputs['X'], 23.0)), 37.719))
-        hv = mm('FRACT', mm('MULTIPLY', mm('SINE', mm('MODULO', hx, 6283.1853)), 43758.5453))
-        wn = type('o', (), {'outputs': {'Value': hv}})()
-        lit = mm('GREATER_THAN', hv, ST.get('night_off', 0.42))
-        gl_lit = mm('MULTIPLY', mm('MULTIPLY', glass, None, mm('GREATER_THAN', hv, 0.62)), None, mm('MULTIPLY', mz, None, mu))
+        def H_(a_, b_, c_=None):   # caso deterministico da 2-3 numeri interi
+            v_ = mm('ADD', mm('MULTIPLY', a_, 12.9898), None, mm('MULTIPLY', b_, 78.233))
+            if c_ is not None: v_ = mm('ADD', v_, None, mm('MULTIPLY', c_, 37.719))
+            return mm('FRACT', mm('MULTIPLY', mm('SINE', mm('MODULO', v_, 6283.1853)), 43758.5453))
+        # luci raggruppate come nella realta': palazzo (cella di 30 m) acceso o quasi spento, poi il piano, poi la finestra
+        bx_ = mm('FLOOR', mm('DIVIDE', sp.outputs['X'], 30.0)); by_ = mm('FLOOR', mm('DIVIDE', sp.outputs['Y'], 30.0))
+        hb = H_(bx_, by_); hf = H_(bx_, by_, cz); hv = H_(cu, cz, bx_)
+        on_b = mm('GREATER_THAN', hb, ST.get('night_bld_off', 0.35))           # 35% dei palazzi spenti
+        on_f = mm('GREATER_THAN', hf, ST.get('night_floor_off', 0.45))         # piani accesi a blocchi
+        on_w = mm('GREATER_THAN', hv, ST.get('night_win_off', 0.22))           # nel piano acceso quasi tutte le finestre
+        lit = mm('MULTIPLY', mm('MULTIPLY', on_b, None, on_f), None, on_w)
+        gl_lit = mm('MULTIPLY', mm('MULTIPLY', glass, None, mm('MULTIPLY', on_f, None, on_b)), None, mm('MULTIPLY', mz, None, mu))
         em_k = mm('ADD', mm('MULTIPLY', wmask, None, lit), None, gl_lit)
-        wc_ = N.new('ShaderNodeMix'); wc_.data_type = 'RGBA'; L(hv, wc_.inputs['Factor'])
+        wc_ = N.new('ShaderNodeMix'); wc_.data_type = 'RGBA'; L(hf, wc_.inputs['Factor'])
         wc_.inputs[6].default_value = (1.0, 0.42, 0.12, 1); wc_.inputs[7].default_value = (1.0, 0.70, 0.35, 1)
         L(wc_.outputs[2], b.inputs['Emission Color']); L(mm('MULTIPLY', em_k, ST.get('night_win', 6.0)), b.inputs['Emission Strength'])
     rg = N.new('ShaderNodeMapRange'); L(mm('MAXIMUM', wmask, None, glass), rg.inputs['Value']); rg.inputs['To Min'].default_value = 0.85; rg.inputs['To Max'].default_value = (0.95 if NIGHT else 0.12)   # di notte niente riflessi: le finestre spente restano scure
@@ -597,10 +606,16 @@ bm = bmesh.new(); s = 400000
 WZ = float(CITY.get('water_z', -2))   # canali stretti: l'acqua riflette il sotto della terra (macchie nere) se e' troppo bassa
 bm.faces.new([bm.verts.new(v) for v in [(-s, -s, WZ), (s, -s, WZ), (s, s, WZ), (-s, s, WZ)]])
 wm = mat('water', srgb(ST.get('water', '#24363c')), ST.get('water_rough', 0.08), haze=False); nt = wm.node_tree
-nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.08; nz.inputs['Detail'].default_value = 6
-bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = 0.08; nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
+nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = ST.get('wave_scale', 0.08); nz.inputs['Detail'].default_value = 6
+bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = ST.get('wave_strength', 0.08); nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
 mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
 nt.links.new(bp.outputs['Normal'], nt.nodes['Principled BSDF'].inputs['Normal'])
+if ST.get('water2'):   # due toni d'acqua a chiazze grandi (correnti, fondali): l'acqua non e' piu' una tinta piatta
+    _wn = nt.nodes.new('ShaderNodeTexNoise'); _wn.inputs['Scale'].default_value = 0.0012; _wn.inputs['Detail'].default_value = 3; nt.links.new(tc.outputs['Object'], _wn.inputs['Vector'])
+    _wr = nt.nodes.new('ShaderNodeValToRGB'); nt.links.new(_wn.outputs['Fac'], _wr.inputs[0])
+    _wr.color_ramp.elements[0].position = 0.35; _wr.color_ramp.elements[0].color = (*srgb(ST['water']), 1)
+    _wr.color_ramp.elements[1].position = 0.7; _wr.color_ramp.elements[1].color = (*srgb(ST['water2']), 1)
+    nt.links.new(_wr.outputs[0], nt.nodes['Principled BSDF'].inputs['Base Color'])
 obj('water', bm, hazeify(wm))
 log('terra', len(land), 'poligoni')
 
@@ -700,7 +715,9 @@ w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
 try: sky.sky_type = 'NISHITA'
 except Exception: pass
-SUNEL = float(opt('--sun', 1, '17')); sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
+SUNEL = float(opt('--sun', 1, '17'))
+if LIGHT == 'sunset': SUNEL = ST.get('sunset_el', 3.0)   # sole basso: ombre lunghe, luce arancio
+_dummy = 0; sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
 WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = ST.get('sky_light', 0.35)
 bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
@@ -709,9 +726,11 @@ def sky_grad():
     tc_ = WN.new('ShaderNodeTexCoord'); nd = WN.new('ShaderNodeVectorMath'); nd.operation = 'NORMALIZE'; WL(tc_.outputs['Generated'], nd.inputs[0])
     sp = WN.new('ShaderNodeSeparateXYZ'); WL(nd.outputs[0], sp.inputs[0])
     rp = WN.new('ShaderNodeValToRGB'); WL(sp.outputs['Z'], rp.inputs[0]); cr_ = rp.color_ramp; cr_.interpolation = 'EASE'
-    cr_.elements[0].position = 0.0; cr_.elements[0].color = (*HAZE, 1)
-    cr_.elements[1].position = 0.5; cr_.elements[1].color = (0.08, 0.20, 0.52, 1)
-    for p_, c_ in [(0.035, (0.86, 0.78, 0.70)), (0.10, (0.50, 0.62, 0.84)), (0.25, (0.20, 0.36, 0.70))]:
+    _SK = {'sunset': [(1.0, 0.55, 0.28), (0.12, 0.14, 0.32), (1.0, 0.62, 0.38), (0.78, 0.52, 0.55), (0.32, 0.30, 0.52)]}.get(LIGHT,
+           [HAZE, (0.08, 0.20, 0.52), (0.86, 0.78, 0.70), (0.50, 0.62, 0.84), (0.20, 0.36, 0.70)])
+    cr_.elements[0].position = 0.0; cr_.elements[0].color = (*_SK[0], 1)
+    cr_.elements[1].position = 0.5; cr_.elements[1].color = (*_SK[1], 1)
+    for p_, c_ in [(0.035, _SK[2]), (0.10, _SK[3]), (0.25, _SK[4])]:
         e_ = cr_.elements.new(p_); e_.color = (*c_, 1)
     a_, c2 = math.radians(90 - SUNEL), math.radians(230)
     sv = (math.sin(a_) * math.sin(c2), -math.sin(a_) * math.cos(c2), math.cos(a_))
@@ -737,10 +756,18 @@ def sky_grad():
 if '--flat-sky' not in a and not NIGHT: sky_grad()
 if NIGHT:
     bg.inputs['Strength'].default_value = ST.get('night_sky', 0.02); bg2.inputs['Color'].default_value = (*srgb(ST.get('night_sky_col', '#0b1426')), 1); bg2.inputs['Strength'].default_value = 1.0
-lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader'); WL(lp.outputs['Is Camera Ray'], mxw.inputs[0]); WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
+    if LIGHT == 'twilight':   # crepuscolo: cielo blu profondo ancora luminoso, luci gia' accese
+        bg.inputs['Strength'].default_value = ST.get('twilight_sky', 0.12); bg2.inputs['Color'].default_value = (*srgb(ST.get('twilight_sky_col', '#2c3e6b')), 1)
+lp = WN.new('ShaderNodeLightPath'); mxw = WN.new('ShaderNodeMixShader')
+if ST.get('sky_in_reflections'):   # l'acqua e i vetri riflettono il cielo sfumato con le nuvole (prima: cielo piatto, acqua spenta)
+    _cg = WN.new('ShaderNodeMath'); _cg.operation = 'MAXIMUM'; WL(lp.outputs['Is Camera Ray'], _cg.inputs[0]); WL(lp.outputs['Is Glossy Ray'], _cg.inputs[1]); WL(_cg.outputs[0], mxw.inputs[0])
+else: WL(lp.outputs['Is Camera Ray'], mxw.inputs[0])
+WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
 WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
 sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4); sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
 if NIGHT: sun.energy = ST.get('moon', 0.35); sun.color = (0.55, 0.65, 1.0)
+if LIGHT == 'twilight': sun.energy = ST.get('twilight_sun', 0.6); sun.color = (0.62, 0.62, 0.95)
+if LIGHT == 'sunset': sun.energy = ST.get('sunset_sun', 4.2); sun.color = (1.0, 0.52, 0.24)
 so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
 cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
@@ -793,6 +820,7 @@ else:
 log('denoiser', sc.cycles.denoiser if sc.cycles.use_denoising else 'nessuno')
 sc.render.resolution_x = RW; sc.render.resolution_y = RH
 sc.view_settings.view_transform = CITY.get('view_transform', 'AgX'); sc.view_settings.look = CITY.get('look', 'AgX - Punchy'); sc.view_settings.exposure = float(CITY.get('exposure', -0.4))
+sc.view_settings.exposure += float(ST.get('exp_' + LIGHT, 0.0))   # compensazione per passata di luce
 # saturazione: si aggiunge al montaggio (ffmpeg eq=saturation), non qui
 EXT = opt('--ext', 1, 'jpg')   # jpg 95: ~0,7 MB a 1080p (png ~3-8 MB: 7839 fotogrammi riempiono il disco)
 _is = sc.render.image_settings; _is.file_format = 'JPEG' if EXT == 'jpg' else 'PNG'; _is.color_mode = 'RGB'

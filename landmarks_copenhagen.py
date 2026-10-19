@@ -173,12 +173,25 @@ for dx_, dy_ in ((-18, -8), (18, -8), (0, 10)):   # cupole moresche del Nimb (19
 P(name='Tivoli roller coaster', t='cone', cx=tv_c.x + 55, cy=tv_c.y - 70, r0=24, r1=10, z0=0, z1=18, seg=7, c='#8b7d6b', a=0.05, y=1914.0)
 P(name='Tivoli Star Flyer', t='cyl', cx=tv_c.x + 70, cy=tv_c.y + 40, rad=1.4, z0=0, z1=80, seg=8, c='#d9dde2', a=0.05, y=2006.0)
 lab('Tivoli Gardens', tv_c.x, tv_c.y, 30, 1843)
-rng = np.random.default_rng(3)
-for k in range(900):   # lampadine di Tivoli: solo nella passata notturna (vedi build_render, "lights")
-    while True:
-        x_, y_ = rng.uniform(*tv_area.bounds[0::2]), rng.uniform(*tv_area.bounds[1::2])
-        if tv_area.contains(Point(x_, y_)): break
-    lights.append([round(x_, 1), round(y_, 1), round(float(rng.uniform(3, 9)), 1), int(rng.integers(0, 4))])
+# lampadine di Tivoli (solo di notte): FILARI ordinati come quelli veri, non punti sparsi
+# colore: 0 caldo, 1 rosso, 2 verde, 3 blu. Ogni filare ha un solo colore (o alterna caldo/colore).
+def string(pts, step, z, col, alt=None):
+    ln = LineString(pts); n = max(2, int(ln.length / step))
+    for i in range(n + 1):
+        p_ = ln.interpolate(i / n, normalized=True)
+        lights.append([round(p_.x, 1), round(p_.y, 1), z, (alt if (alt is not None and i % 2) else col)])
+lx, ly = tv_c.x - 10, tv_c.y - 5
+lake = [(lx + 55 * math.cos(2 * math.pi * k / 40), ly + 35 * math.sin(2 * math.pi * k / 40)) for k in range(41)]
+string(lake, 3.0, 2.0, 0)                                                     # riva del lago, luci calde basse
+string([(lx + 75 * math.cos(2 * math.pi * k / 48), ly + 55 * math.sin(2 * math.pi * k / 48)) for k in range(49)], 3.5, 6.0, 0, 1)   # viale ad anello
+for ang in range(0, 360, 45):                                                 # viali radiali verso i padiglioni
+    a_ = math.radians(ang); string([(lx + 58 * math.cos(a_), ly + 38 * math.sin(a_)), (lx + 130 * math.cos(a_), ly + 100 * math.sin(a_))], 4.0, 5.0, [2, 3, 0, 1][ang // 45 % 4])
+bnd = list(tv_area.exterior.coords); string(bnd, 5.0, 4.0, 0)                 # perimetro del giardino
+for k in range(4):                                                            # contorno della pagoda, piano per piano
+    s_ = 6.5 - 1.2 * k
+    string([(px_ - s_, py_ - s_), (px_ + s_, py_ - s_), (px_ + s_, py_ + s_), (px_ - s_, py_ + s_), (px_ - s_, py_ - s_)], 1.6, 4.5 * k + 3.4, 0)
+for dx_, dy_ in ((-18, -8), (18, -8), (0, 10)):                               # cupole del Nimb illuminate
+    string([(nbc.x + dx_ + 3.4 * math.cos(2 * math.pi * k / 16), nbc.y + dy_ + 3.4 * math.sin(2 * math.pi * k / 16)) for k in range(17)], 1.4, 17.3, 0)
 lights_year = 1843
 
 # ---------- 10. Raadhus (1892-1905) e torre di 105,6 m ----------

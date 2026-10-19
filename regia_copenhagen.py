@@ -179,11 +179,11 @@ for (t0, t1, s) in SOSTA_T:
         for k in range(n_sub):
             a_, b_ = gap0 + (gap1 - gap0) * k / n_sub, gap0 + (gap1 - gap0) * (k + 1) / n_sub
             (mx, my), r = extent(year_at(b_)); alt += 1
-            d = 1.25 * r + 650; el = 30 if alt % 2 else 22; az0 = (165, 200, 230, 185)[alt % 4]
-            SHOTS.append((a_, b_, (mx, my, 0), d * 1.08, d * 0.92, el, el - 3, az0, az0 + (14 if alt % 2 else -14), 35))
+            d = 1.0 * r + 450; el = 30 if alt % 2 else 22; az0 = (165, 200, 230, 185)[alt % 4]
+            SHOTS.append((a_, b_, (mx, my, 0), d * 1.25, d * 0.70, el + 4, el - 4, az0, az0 + (38 if alt % 2 else -38), 35))
     name, d, el, az0, az1, mm = s[4]
     tgt, h = target_of(name)
-    SHOTS.append((t0, t1, tgt, d * 1.15, d * 0.85, el + 3, el, az0, az1, mm))
+    SHOTS.append((t0, t1, tgt, d * 1.25, d * 0.75, el + 4, el, az0 - 6, az1 + 6, mm))
     prev_end = t1
 # dopo l'ultima sosta: tratto largo fino alla notte, poi tre inquadrature notturne
 if NIGHT_T - prev_end > 3:
@@ -191,11 +191,12 @@ if NIGHT_T - prev_end > 3:
     for k in range(n_sub):
         a_, b_ = prev_end + (NIGHT_T - prev_end) * k / n_sub, prev_end + (NIGHT_T - prev_end) * (k + 1) / n_sub
         (mx, my), r = extent(2026); alt += 1
-        d = 1.0 * r + 900; el = (24, 18, 30)[alt % 3]; az0 = (175, 215, 240)[alt % 3]
-        SHOTS.append((a_, b_, (mx * 0.5 + 900, my * 0.5 + 200, 0), d * 1.05, d * 0.9, el, el - 2, az0, az0 + 18, 35))
-NIGHT_SHOTS = [(NIGHT_T, NIGHT_T + 17, target_of('Tivoli')[0], 520, 380, 22, 18, 200, 235, 35),
-               (NIGHT_T + 17, NIGHT_T + 34, (1500, 420, 10), 900, 650, 16, 13, 140, 170, 35),      # Nyhavn, Opera, porto
-               (NIGHT_T + 34, DUR, (700, 200, 0), 4200, 5600, 24, 30, 205, 220, 35)]                # ultima: la citta' intera si allontana
+        d = 0.8 * r + 700; el = (24, 18, 30)[alt % 3]; az0 = (175, 215, 240)[alt % 3]
+        SHOTS.append((a_, b_, (mx * 0.5 + 900, my * 0.5 + 200, 0), d * 1.2, d * 0.75, el + 3, el - 3, az0, az0 + 36, 35))
+# notte: la prima inquadratura (Tivoli) ospita il tramonto (dusk.py: 0-5 s tramonto, 5-10 s crepuscolo): orbita lenta e ampia
+NIGHT_SHOTS = [(NIGHT_T, NIGHT_T + 19, target_of('Tivoli')[0], 640, 330, 26, 17, 185, 250, 35),
+               (NIGHT_T + 19, NIGHT_T + 35, (1500, 420, 10), 1000, 520, 18, 12, 120, 185, 35),     # Nyhavn, Opera, porto
+               (NIGHT_T + 35, DUR, (700, 200, 0), 3000, 6200, 22, 32, 190, 235, 35)]                # ultima: la citta' intera si allontana
 SHOTS += NIGHT_SHOTS
 SHOTS.sort(key=lambda s: s[0])
 

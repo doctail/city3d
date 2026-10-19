@@ -63,14 +63,16 @@ fi
 if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test vale solo per New York: usa preview"; exit 1; fi
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
-  rm -rf out/prev
-  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT - 1 ))
+  rm -rf out/prev out/prevn out/prevmix
+  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))
   $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   if [ "$NT" -gt 0 ]; then   # notte: stessa numerazione, passata separata (materiali notturni fissi)
-    F0N=$(( ( (NT - 1 + 11) / 12 ) * 12 + 1 ))
-    $PY build_render.py -- $D out/prev --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+    F0N=$(( ( (NT + 120 - 1 + 11) / 12 ) * 12 + 1 ))
+    $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
   fi
-  ffmpeg -loglevel error -y -framerate 2 -pattern_type glob -i 'out/prev/*.jpg' -c:v libx264 -crf 20 -pix_fmt yuv420p out/${CITY}_preview.mp4
+  PV=out/prev
+  if [ "$NT" -gt 0 ]; then $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; $PY dusk.py out/prev out/prevn out/prevmix $NT $NF 12; PV=out/prevmix; fi
+  ffmpeg -loglevel error -y -framerate 2 -pattern_type glob -i "$PV/*.jpg" -c:v libx264 -crf 20 -pix_fmt yuv420p out/${CITY}_preview.mp4
   ls -lh out/${CITY}_preview.mp4
   [ -f tools/movimento.py ] && $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; [ -f tools/movimento.py ] && $PY tools/movimento.py out/${CITY}_preview.mp4 out/${CITY}_movimento.json 2>&1 | tail -5
   step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
@@ -112,17 +114,17 @@ fi
 if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
-  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 23 ))
+  LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))   # giorno fino a 10 s dopo l'inizio della notte (tramonto)
   $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   if [ "$NT" -gt 0 ]; then
-    step "4b/5 NOTTE (fotogrammi $NT-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
-    $PY build_render.py -- $D out/night --night --frames $NT $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+    step "4b/5 NOTTE (fotogrammi $(( NT + 120 ))-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
+    $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
   fi
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
-  if [ "$NT" -gt 0 ]; then   # giorno 1..NT+23 e notte NT..NF: dissolvenza di 1 s a partire dal fotogramma NT
-    ffmpeg -loglevel error -y -framerate 24 -start_number 1 -i out/full/$PAT.jpg -framerate 24 -start_number $NT -i out/night/$PAT.jpg \
-      -filter_complex "[0:v][1:v]xfade=transition=fade:duration=1:offset=$(python3 -c "print(($NT-1)/24)")[v]" -map "[v]" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+  if [ "$NT" -gt 0 ]; then   # tramonto (5 s) + crepuscolo in dissolvenza (5 s) dal fotogramma NT, poi notte: dusk.py
+    $PY -m pip install -q opencv-python-headless numpy 2>/dev/null; rm -rf out/mix; $PY dusk.py out/full out/night out/mix $NT $NF
+    ffmpeg -loglevel error -y -framerate 24 -i out/mix/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   else
     ffmpeg -loglevel error -y -framerate 24 -i out/full/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   fi
