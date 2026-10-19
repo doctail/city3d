@@ -26,7 +26,7 @@ No narration. Just the city.
 04:08 1807 — British bombardment
 04:37 1843 — Tivoli Gardens
 04:45 1852 — The walls come down
-05:12 1874 — The Marble Church
+05:12 1877 — The Marble Church
 05:30 1905 — City Hall
 05:59 1928 — Christiansborg's tower
 06:22 1940 — Occupation
