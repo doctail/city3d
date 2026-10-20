@@ -59,3 +59,29 @@ evolution of copenhagen, copenhagen history, history of copenhagen, copenhagen t
 - Opera: completata nel 2004, inaugurata a gennaio 2005 (la scheda dice 2005).
 - La Sirenetta e' solo un'etichetta (troppo piccola per il modello).
 - Il ponte dell'Oresund e' approssimato (tratto strallato tra Peberholm e Lernacken).
+
+## Shorts — test "su un evento" (render nativi 1080x1920, 20 ott 2026)
+Uno al giorno dopo il video lungo, alle 17:00: **mer 28 B, gio 29 A, ven 30 C**. Su ognuno collegare il video lungo come "Video correlato". Montaggio: `monta_copenhagen_shorts.bat` (clip del pod + grafiche .webm + audio .m4a con effetti, -14 LUFS).
+
+### 1. B — copenhagen_shortB_finale.mp4 (26 s)
+**Titolo:** What Happened to Copenhagen in 1728? #shorts
+**Descrizione:**
+20 October 1728: a fire starts near the western gate and burns for three days. About 1,600 buildings are lost, more than a quarter of the city. Watch it burn and rise again, in 3D.
+Full story on the channel.
+#copenhagen #history #denmark #cityevolution #timelapse
+
+### 2. A — copenhagen_shortA_finale.mp4 (28 s)
+**Titolo:** 859 Years of Copenhagen in 28 Seconds (Every Real Building) #shorts
+**Descrizione:**
+From Bishop Absalon's castle in 1167 to the city of today: Copenhagen in 3D, one real building at a time, each appearing in the year it was built.
+Full video on the channel.
+#copenhagen #denmark #cityevolution #timelapse #3d
+
+### 3. C — copenhagen_shortC_finale.mp4 (28 s)
+**Titolo:** This Palace Burned Down Twice #shorts
+**Descrizione:**
+Christiansborg, the seat of Denmark's parliament, is the third palace on the same island. The first burned in 1794, the second in 1884. Watch all three rise in 3D.
+Full story on the channel.
+#copenhagen #christiansborg #history #denmark #timelapse
+
+- Da misurare come per Rotterdam: "ha continuato a guardare" di B e C contro A. Nota: B e C mostrano fuochi veri nel render (a Rotterdam no): se battono A, conferma la regola "Shorts su un evento".
