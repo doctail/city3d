@@ -137,5 +137,32 @@
  ],
  "tree_lift": 2.5,
  "land_close": 1,
- "blocks_by_building": true
+ "blocks_by_building": true,
+ "shorts": [
+  [
+   "A",
+   1,
+   672,
+   1,
+   "schedule_copenhagen_shortA.json",
+   2
+  ],
+  [
+   "B",
+   1,
+   624,
+   1,
+   "schedule_copenhagen_shortB.json",
+   2
+  ],
+  [
+   "C",
+   1,
+   672,
+   1,
+   "schedule_copenhagen_shortC.json",
+   2
+  ]
+ ],
+ "_shorts": "Shorts 20 ott 2026: tutti con regia propria (regia_copenhagen_shorts.py). A = controllo, tutta la storia 1167-2026 (28 s). B = incendio del 1728 (26 s). C = Christiansborg brucia due volte (28 s). Formato: [nome, primo, ultimo, passo, regia?, bin?]"
 }
