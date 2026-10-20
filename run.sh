@@ -65,10 +65,10 @@ if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev out/prevn out/prevmix
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))
-  $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
   if [ "$NT" -gt 0 ]; then   # notte: stessa numerazione, passata separata (materiali notturni fissi)
     F0N=$(( ( (NT + 120 - 1 + 11) / 12 ) * 12 + 1 ))
-    $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+    $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror|RRORE"
   fi
   PV=out/prev
   if [ "$NT" -gt 0 ]; then uv pip install -q -p $PY opencv-python-headless numpy; $PY dusk.py out/prev out/prevn out/prevmix $NT $NF 12; PV=out/prevmix; fi
@@ -104,7 +104,8 @@ print(';'.join(' '.join(map(str,(x+['-','-'])[:6])) for x in L))")
     SS=$SCHED; [ "$5" != "-" ] && SS=$5; BN=""; [ "$6" != "-" ] && BN="--bin $6"
     mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
     echo "--- short $1: fotogrammi $2-$3 passo $4, regia $SS $BN"
-    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror"
+    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror|RRORE"
+    [ "$(ls out/short$1/*.jpg 2>/dev/null | wc -l)" -gt 0 ] || { echo "ERRORE: lo short $1 non ha fotogrammi (GPU?). Mi fermo."; exit 1; }
   done
   for n in $NAMES; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
   [ "${SHORTS_LIGHT:-1}" = "1" ] && for n in $NAMES; do ffmpeg -loglevel error -y -i out/${CITY}_short$n.mp4 -c:v libx264 -preset fast -b:v 4000k -maxrate 4500k -bufsize 9000k -pix_fmt yuv420p out/${CITY}_short${n}_light.mp4; done   # ~15 MB l'uno, per la chat
@@ -115,10 +116,10 @@ if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))   # giorno fino a 10 s dopo l'inizio della notte (tramonto)
-  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
   if [ "$NT" -gt 0 ]; then
     step "4b/5 NOTTE (fotogrammi $(( NT + 120 ))-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
-    $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+    $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
   fi
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
@@ -136,7 +137,7 @@ if [ "$MODE" = "full" ]; then
 fi
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
-$PY build_render.py -- $D out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror"
+$PY build_render.py -- $D out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
 
 step "5/5 video"
 ffmpeg -loglevel error -y -framerate 24 -i out/frames/%04d.png -c:v libx264 -crf 17 -pix_fmt yuv420p out/test_nyc.mp4
