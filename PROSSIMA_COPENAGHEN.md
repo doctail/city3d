@@ -83,3 +83,7 @@ Saturazione x1,7 + contrasto x1,06; schede evento ogni 15-20 s; effetti sonori (
 
 ## Crediti vidIQ
 Al 19 ott restano ~50 crediti, ricarica il 27 ott. La scansione automatica di lunedì 26 ne usa fino a 45: in questa chat usarne il meno possibile (solo i due ricontrolli youtube_search, 5 crediti l'uno).
+
+
+## Controllo storico (feedback utenti Madrid, 20 ott)
+Prima dell'anteprima: cercare dall'alto 'corridoi vuoti' con la forma di strade moderne negli anni prima della loro apertura (a Madrid si vedeva la Gran Vía prima del 1910). Le zone sventrate o ricostruite dopo incendi devono avere edifici predecessori fino all'anno dell'evento. Vedi PRODUZIONE_TIMELAPSE.md, sezione 'Feedback dal pubblico'.
