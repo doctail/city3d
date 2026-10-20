@@ -397,5 +397,225 @@ Quale città costruiamo dopo? Scrivetelo nei commenti.
 Dati: 3DBAG (TU Delft, CC BY 4.0), basato su BAG (Kadaster) e AHN. Acqua e parchi © contributori di OpenStreetMap (ODbL). Gli edifici scomparsi (compreso il centro distrutto nel 1940) sono ricostruzioni illustrative. Musica: "The Shining in Dubai" — Unicorn Heads. Realizzato con Blender.
 
 ---------------------------------------------------------------
+# COPENAGHEN
+---------------------------------------------------------------
+
+## Danese
+KØBENHAVNS UDVIKLING | 3D-timelapse af byen (1167–NU) | Uden AI
+
+3D-timelapse af København: se byen vokse fra biskop Absalons borg i 1167 til i dag, hvor hver rigtig bygning dukker op i det år, den blev bygget.
+
+131.938 bygninger fra Bygnings- og Boligregistret (BBR), hver i sit rigtige opførelsesår, plus den by, der ikke længere findes: middelalderbyen inden for voldene, den store brand i 1728, branden i 1795, englændernes bombardement i 1807, Christiansborg, der brænder og rejser sig tre gange, brokvartererne efter voldene, og nutidens havneby, helt frem til en nat over Tivoli.
+
+Ingen speak. Kun byen.
+
+00:00 København i dag
+00:09 1167 — Absalons borg
+00:30 1254 — En rigtig by
+01:01 1369 — Borgen ødelægges
+01:18 1443 — Danmarks hovedstad
+01:43 1606 — Christian IV bygger
+02:13 1659 — Stormen på København
+02:26 1671 — Nyhavn
+02:48 1711 — Pesten
+03:04 1728 — Den store brand
+03:34 1749 — Frederiksstaden
+03:55 1794 — To brande mere
+04:08 1807 — Englændernes bombardement
+04:37 1843 — Tivoli
+04:45 1852 — Voldene falder
+05:12 1877 — Marmorkirken
+05:30 1905 — Rådhuset
+05:59 1928 — Christiansborgs tårn
+06:22 1940 — Besættelsen
+06:44 1960 — Det første højhus
+07:15 2000 — Øresundsbroen
+07:32 2019 — CopenHill
+07:40 København om natten
+
+Hvilken by skal vi bygge næste gang? Skriv det i kommentarerne.
+Data: Bygnings- og Boligregistret BBR (Klimadatastyrelsen / Dataforsyningen). Bygningsomrids, gader, vand og parker © OpenStreetMap-bidragydere (ODbL). Befolkning: folketællinger fra 1769, tidligere tal er skøn. Forsvundne bygninger og vartegnene er illustrative rekonstruktioner. Musik: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Lydeffekter: egne. Lavet i Blender.
+
+## Spagnolo
+EVOLUCIÓN DE COPENHAGUE | Timelapse 3D de la ciudad (1167–HOY) | Sin IA
+
+Timelapse 3D de Copenhague: la evolución de Copenhague desde el castillo del obispo Absalón en 1167 hasta la ciudad de hoy, con cada edificio real apareciendo en su año de construcción.
+
+131.938 edificios del registro danés de edificios (BBR), cada uno en su año real de construcción, más la ciudad que ya no existe: la ciudad medieval dentro de sus murallas, el Gran Incendio de 1728, el incendio de 1795, el bombardeo británico de 1807, el palacio de Christiansborg ardiendo y renaciendo tres veces, los barrios nuevos tras la caída de las murallas y la ciudad portuaria de hoy, hasta una noche sobre el Tívoli.
+
+Sin narración. Solo la ciudad.
+
+00:00 Copenhague hoy
+00:09 1167 — El castillo de Absalón
+00:30 1254 — Una ciudad de verdad
+01:01 1369 — El castillo destruido
+01:18 1443 — Capital de Dinamarca
+01:43 1606 — Cristián IV construye
+02:13 1659 — El asalto sueco
+02:26 1671 — Nyhavn
+02:48 1711 — La peste
+03:04 1728 — El Gran Incendio
+03:34 1749 — Frederiksstaden
+03:55 1794 — Dos incendios más
+04:08 1807 — El bombardeo británico
+04:37 1843 — Los Jardines de Tívoli
+04:45 1852 — Caen las murallas
+05:12 1877 — La Iglesia de Mármol
+05:30 1905 — El Ayuntamiento
+05:59 1928 — La torre de Christiansborg
+06:22 1940 — La ocupación
+06:44 1960 — El primer rascacielos
+07:15 2000 — El puente de Øresund
+07:32 2019 — CopenHill
+07:40 Copenhague de noche
+
+¿Qué ciudad construimos después? Dínoslo en los comentarios.
+Datos: registro de edificios BBR (Klimadatastyrelsen / Dataforsyningen, datos abiertos daneses). Plantas, calles, agua y parques © colaboradores de OpenStreetMap (ODbL). Población: censos desde 1769; antes, estimaciones. Los edificios desaparecidos y los monumentos son reconstrucciones ilustrativas. Música: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Efectos de sonido: originales. Hecho en Blender.
+
+## Portoghese (Brasile)
+EVOLUÇÃO DE COPENHAGUE | Timelapse 3D da cidade (1167–HOJE) | Sem IA
+
+Timelapse 3D de Copenhague: a evolução de Copenhague desde o castelo do bispo Absalão em 1167 até a cidade de hoje, com cada prédio real aparecendo no ano em que foi construído.
+
+131.938 prédios do cadastro dinamarquês de edificações (BBR), cada um no seu ano real de construção, mais a cidade que não existe mais: a cidade medieval dentro das muralhas, o Grande Incêndio de 1728, o incêndio de 1795, o bombardeio britânico de 1807, o palácio de Christiansborg queimando e renascendo três vezes, os bairros novos depois da queda das muralhas e a cidade portuária de hoje, até uma noite sobre o Tivoli.
+
+Sem narração. Só a cidade.
+
+00:00 Copenhague hoje
+00:09 1167 — O castelo de Absalão
+00:30 1254 — Uma cidade de verdade
+01:01 1369 — O castelo destruído
+01:18 1443 — Capital da Dinamarca
+01:43 1606 — Cristiano IV constrói
+02:13 1659 — O ataque sueco
+02:26 1671 — Nyhavn
+02:48 1711 — A peste
+03:04 1728 — O Grande Incêndio
+03:34 1749 — Frederiksstaden
+03:55 1794 — Mais dois incêndios
+04:08 1807 — O bombardeio britânico
+04:37 1843 — Os Jardins de Tivoli
+04:45 1852 — As muralhas caem
+05:12 1877 — A Igreja de Mármore
+05:30 1905 — A Prefeitura
+05:59 1928 — A torre de Christiansborg
+06:22 1940 — A ocupação
+06:44 1960 — O primeiro arranha-céu
+07:15 2000 — A Ponte de Øresund
+07:32 2019 — CopenHill
+07:40 Copenhague à noite
+
+Qual cidade construímos depois? Conta pra gente nos comentários.
+Dados: cadastro de edificações BBR (Klimadatastyrelsen / Dataforsyningen, dados abertos dinamarqueses). Plantas, ruas, água e parques © colaboradores do OpenStreetMap (ODbL). População: censos desde 1769; antes, estimativas. Prédios desaparecidos e monumentos são reconstruções ilustrativas. Música: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Efeitos sonoros: originais. Feito no Blender.
+
+## Tedesco
+ENTWICKLUNG VON KOPENHAGEN | 3D-Zeitraffer der Stadt (1167–HEUTE) | Ohne KI
+
+3D-Zeitraffer von Kopenhagen: die Entwicklung Kopenhagens von Bischof Absalons Burg im Jahr 1167 bis zur Stadt von heute, jedes echte Gebäude erscheint in seinem Baujahr.
+
+131.938 Gebäude aus dem dänischen Gebäuderegister (BBR), jedes in seinem echten Baujahr, dazu die Stadt, die es nicht mehr gibt: die mittelalterliche Stadt innerhalb der Wälle, der Große Brand von 1728, der Brand von 1795, das britische Bombardement von 1807, Schloss Christiansborg, das dreimal brennt und wieder aufersteht, die Brückenviertel nach dem Fall der Wälle und die Hafenstadt von heute, bis zu einer Nacht über dem Tivoli.
+
+Keine Erzählstimme. Nur die Stadt.
+
+00:00 Kopenhagen heute
+00:09 1167 — Absalons Burg
+00:30 1254 — Eine echte Stadt
+01:01 1369 — Die Burg wird zerstört
+01:18 1443 — Hauptstadt Dänemarks
+01:43 1606 — Christian IV. baut
+02:13 1659 — Der schwedische Sturm
+02:26 1671 — Nyhavn
+02:48 1711 — Die Pest
+03:04 1728 — Der Große Brand
+03:34 1749 — Frederiksstaden
+03:55 1794 — Zwei weitere Brände
+04:08 1807 — Das britische Bombardement
+04:37 1843 — Tivoli
+04:45 1852 — Die Wälle fallen
+05:12 1877 — Die Marmorkirche
+05:30 1905 — Das Rathaus
+05:59 1928 — Der Turm von Christiansborg
+06:22 1940 — Die Besatzung
+06:44 1960 — Das erste Hochhaus
+07:15 2000 — Die Öresundbrücke
+07:32 2019 — CopenHill
+07:40 Kopenhagen bei Nacht
+
+Welche Stadt bauen wir als Nächstes? Schreibt es in die Kommentare.
+Daten: Gebäuderegister BBR (Klimadatastyrelsen / Dataforsyningen, dänische offene Daten). Grundrisse, Straßen, Wasser und Parks © OpenStreetMap-Mitwirkende (ODbL). Bevölkerung: Volkszählungen ab 1769, frühere Zahlen sind Schätzungen. Verschwundene Gebäude und die Wahrzeichen sind illustrative Rekonstruktionen. Musik: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Soundeffekte: eigene. Erstellt mit Blender.
+
+## Francese
+ÉVOLUTION DE COPENHAGUE | Timelapse 3D de la ville (1167–AUJOURD'HUI) | Sans IA
+
+Timelapse 3D de Copenhague : l'évolution de Copenhague, du château de l'évêque Absalon en 1167 à la ville d'aujourd'hui, chaque bâtiment réel apparaissant l'année de sa construction.
+
+131 938 bâtiments du registre danois des bâtiments (BBR), chacun à sa vraie date de construction, plus la ville qui n'existe plus : la ville médiévale dans ses remparts, le Grand Incendie de 1728, l'incendie de 1795, le bombardement britannique de 1807, le palais de Christiansborg qui brûle et renaît trois fois, les quartiers des ponts après la chute des remparts et la ville portuaire d'aujourd'hui, jusqu'à une nuit sur Tivoli.
+
+Sans narration. Juste la ville.
+
+00:00 Copenhague aujourd'hui
+00:09 1167 — Le château d'Absalon
+00:30 1254 — Une vraie ville
+01:01 1369 — Le château détruit
+01:18 1443 — Capitale du Danemark
+01:43 1606 — Christian IV bâtit
+02:13 1659 — L'assaut suédois
+02:26 1671 — Nyhavn
+02:48 1711 — La peste
+03:04 1728 — Le Grand Incendie
+03:34 1749 — Frederiksstaden
+03:55 1794 — Deux autres incendies
+04:08 1807 — Le bombardement britannique
+04:37 1843 — Les jardins de Tivoli
+04:45 1852 — Les remparts tombent
+05:12 1877 — L'église de Marbre
+05:30 1905 — L'hôtel de ville
+05:59 1928 — La tour de Christiansborg
+06:22 1940 — L'occupation
+06:44 1960 — Le premier gratte-ciel
+07:15 2000 — Le pont de l'Øresund
+07:32 2019 — CopenHill
+07:40 Copenhague la nuit
+
+Quelle ville construire ensuite ? Dites-le-nous en commentaire.
+Données : registre des bâtiments BBR (Klimadatastyrelsen / Dataforsyningen, données ouvertes danoises). Emprises, rues, eau et parcs © contributeurs d'OpenStreetMap (ODbL). Population : recensements depuis 1769 ; avant, estimations. Les bâtiments disparus et les monuments sont des reconstitutions illustratives. Musique : "Waking to Reality" — Unicorn Heads ; "Monument" — TrackTribe. Effets sonores : originaux. Réalisé avec Blender.
+
+## Italiano
+EVOLUZIONE DI COPENAGHEN | Timelapse 3D della città (1167–OGGI) | Senza IA
+
+Timelapse 3D di Copenaghen: l'evoluzione di Copenaghen dal castello del vescovo Absalon nel 1167 alla città di oggi, con ogni edificio reale che compare nell'anno in cui è stato costruito.
+
+131.938 edifici dal registro danese degli edifici (BBR), ognuno nel suo vero anno di costruzione, più la città che non c'è più: la città medievale dentro le mura, il Grande Incendio del 1728, l'incendio del 1795, il bombardamento inglese del 1807, il palazzo di Christiansborg che brucia e rinasce tre volte, i quartieri dei ponti dopo la caduta delle mura e la città portuale di oggi, fino a una notte sopra il Tivoli.
+
+Senza narrazione. Solo la città.
+
+00:00 Copenaghen oggi
+00:09 1167 — Il castello di Absalon
+00:30 1254 — Una vera città
+01:01 1369 — Il castello distrutto
+01:18 1443 — Capitale della Danimarca
+01:43 1606 — Cristiano IV costruisce
+02:13 1659 — L'assalto svedese
+02:26 1671 — Nyhavn
+02:48 1711 — La peste
+03:04 1728 — Il Grande Incendio
+03:34 1749 — Frederiksstaden
+03:55 1794 — Altri due incendi
+04:08 1807 — Il bombardamento inglese
+04:37 1843 — I Giardini di Tivoli
+04:45 1852 — Cadono le mura
+05:12 1877 — La Chiesa di Marmo
+05:30 1905 — Il Municipio
+05:59 1928 — La torre di Christiansborg
+06:22 1940 — L'occupazione
+06:44 1960 — Il primo grattacielo
+07:15 2000 — Il ponte dell'Øresund
+07:32 2019 — CopenHill
+07:40 Copenaghen di notte
+
+Quale città costruiamo dopo? Scrivetelo nei commenti.
+Dati: registro degli edifici BBR (Klimadatastyrelsen / Dataforsyningen, dati aperti danesi). Sagome, strade, acqua e parchi © contributori di OpenStreetMap (ODbL). Popolazione: censimenti dal 1769; prima, stime. Gli edifici scomparsi e i monumenti sono ricostruzioni illustrative. Musica: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Effetti sonori: originali. Realizzato con Blender.
+
+---------------------------------------------------------------
 ## Regola per le prossime città
 Ogni video: stesse 5 lingue (es, pt-BR, de, fr, it) + lingua della città, preparate PRIMA della pubblicazione. Copenaghen: danese + le 5.
