@@ -1,9 +1,144 @@
 {
  "name": "sevilla",
- "_doc": "Siviglia. Origine locale: Giralda. Dati: Catasto INSPIRE BU (codice catastale 41900, solo comune di Sevilla).",
+ "_doc": "Siviglia. Origine locale: Giralda (x est, y nord, metri). Dati: Catasto INSPIRE BU 41900, OSM (acqua, parchi, mura, ponti, distretti). Storia: hist_sevilla.py; acqua a fasi: water_sevilla.py; fonti: PROSSIMA_SIVIGLIA.md.",
  "lat0": 37.386194,
  "lon0": -5.992417,
- "grid_deg": 0,
  "radius_m": 16000,
- "land_half_m": 30000
+ "land_half_m": 40000,
+ "min_area_m2": 12,
+ "core_box": [
+  -6000,
+  -11000,
+  15500,
+  8000
+ ],
+ "forest_box": [
+  0,
+  0,
+  1,
+  1
+ ],
+ "parks": [],
+ "roads": [],
+ "grid_deg": 0,
+ "marsh": false,
+ "haze_k": 1000000000.0,
+ "water_z": -1.5,
+ "field_colors": [
+  "#a9a24f",
+  "#9a9a45",
+  "#b7ab5c",
+  "#8f9440",
+  "#a39b4e"
+ ],
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -2.0,
+ "style": {
+  "haze": [
+   0.8,
+   0.88,
+   0.96
+  ],
+  "era_split": 1940,
+  "pitched_until": 1930,
+  "pitched_max_area": 500,
+  "wall_old": [
+   "#f2ead8",
+   "#efe3c4",
+   "#e8cf8a",
+   "#d9a441",
+   "#f4f0e6",
+   "#c9653f",
+   "#e6d3a3",
+   "#ead9b0"
+  ],
+  "roof_old": [
+   "#b5532e",
+   "#a8482b",
+   "#c0613a",
+   "#9f4a2c",
+   "#b85a36"
+  ],
+  "wall_new": [
+   "#f3efe6",
+   "#ece4d2",
+   "#e9dcc0",
+   "#f6f3ec",
+   "#e2d6bd",
+   "#d8c9a8",
+   "#efe8da"
+  ],
+  "wall_anc": [
+   "#cfc8bc",
+   "#bdb6aa",
+   "#c9c2b4"
+  ],
+  "roof_new": [
+   "#d8d4cc",
+   "#cfc9be",
+   "#bfb6a6",
+   "#c96a45",
+   "#e2ddd3"
+  ],
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 60,
+  "window": "#2a3a4a",
+  "urban": [
+   "#d6cbb2",
+   "#cfc4aa",
+   "#dbd1b9",
+   "#c9bea4",
+   "#d3c8ae",
+   "#ccc1a7"
+  ],
+  "urban_dark": "#e8dfcb",
+  "urban_green": "#7fb04e",
+  "hedge": "#2f6a25",
+  "blocks": "#8f8778",
+  "grass": "#76b84a",
+  "tree": "#3f8a35",
+  "forest_base": "#5d9c3f",
+  "water": "#0f6c7c",
+  "water_rough": 0.02,
+  "sky_light": 0.35,
+  "sun_energy": 5.0,
+  "night_off": 0.82,
+  "night_win": 4.5,
+  "moon": 0.05,
+  "night_street": 0.9,
+  "night_sky": 0.01,
+  "bridge_side": "#a39d92",
+  "glass_min_area": 400,
+  "bulb": 14.0,
+  "sky_in_reflections": true,
+  "wave_scale": 0.025,
+  "wave_strength": 0.55,
+  "water2": "#2a9fae",
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "reclaim": "#c9b993",
+  "park_ground": "#6a9a3e"
+ },
+ "hist": "hist_sevilla",
+ "land_from_buildings": true,
+ "dur_min": 0.003,
+ "tree_scale": [
+  1.8,
+  3.2
+ ],
+ "tree_lift": 2.5,
+ "land_close": 15,
+ "blocks_by_building": true
 }

@@ -324,6 +324,17 @@ for rc_ in RECLAIM:
     lgeom = lgeom.difference(Polygon(rc_['r']).buffer(0))
     for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
         if isinstance(g_, Polygon) and g_.area > 50: _rec_items.append((list(g_.simplify(2).exterior.coords)[:-1], rc_['y']))
+# terra a fasi (DATA/landphases.json [{"r", "from", "to", "c": field|urban|park}]): lastra di terra visibile solo negli anni
+# [from, to); fuori dalla finestra si vede l'acqua sotto. Serve dove l'acqua va e viene (Siviglia: Tablada 1926, Chapina 1950-92)
+_PH = json.load(open(f'{DATA}/landphases.json')) if os.path.exists(f'{DATA}/landphases.json') else []
+_ph_items = {}
+for ph_ in _PH:
+    q_ = Polygon(ph_['r']).buffer(0)
+    if q_.is_empty: continue
+    lgeom = lgeom.difference(q_)
+    for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
+        if isinstance(g_, Polygon) and g_.area > 50:
+            _ph_items.setdefault((ph_['from'], ph_['to'], ph_.get('c', 'field')), []).append(list(g_.simplify(2).exterior.coords)[:-1])
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     urban_year = __import__(CITY['hist']).urban_year
@@ -399,6 +410,21 @@ lo_ = obj('land_tmp', bm, land_mat())
 _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
 LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
+if _ph_items:
+    _phm = {'field': mat('ph_field', srgb(CITY.get('field_colors', ['#6a7f45'])[0]), 1.0),
+            'urban': mat('ph_urban', srgb(ST.get('reclaim', '#b9b09c')), 0.95),
+            'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0)}
+    for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
+        bm_ = bmesh.new()
+        for r_ in rings_:
+            try: bm_.faces.new([bm_.verts.new((x, y, 0.04)) for x, y in r_])
+            except ValueError: pass
+        if not len(bm_.faces): bm_.free(); continue
+        bmesh.ops.triangulate(bm_, faces=bm_.faces); bm_.normal_update()
+        _down = [f2 for f2 in bm_.faces if f2.normal.z < 0]
+        if _down: bmesh.ops.reverse_faces(bm_, faces=_down)
+        o_ = obj(f'phase_{i_}', bm_, _phm.get(c_, _phm['field'])); VIS.append((o_, 'window', (f_, t_)))
+    log('terra a fasi', sum(len(v) for v in _ph_items.values()), 'poligoni in', len(_ph_items), 'finestre')
 if _rec_items: REC = chunked('reclaim', _rec_items, 0.01, mat('reclaim', srgb(ST.get('reclaim', '#b9b09c')), 0.95), 'appear', binw=1.0); log('terra di riporto', len(_rec_items))
 # strade (DATA/roads.json [{"r", "y"}]): nastri chiari sul suolo, sotto gli isolati
 if os.path.exists(f'{DATA}/roads.json'):
