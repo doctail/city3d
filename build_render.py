@@ -334,7 +334,7 @@ for ph_ in _PH:
     lgeom = lgeom.difference(q_)
     for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
         if isinstance(g_, Polygon) and g_.area > 50:
-            _ph_items.setdefault((ph_['from'], ph_['to'], ph_.get('c', 'field')), []).append(list(g_.simplify(2).exterior.coords)[:-1])
+            _ph_items.setdefault((ph_['from'], ph_['to'], ph_.get('c', 'field')), []).append(list(g_.buffer(1.5, join_style=2).exterior.coords)[:-1])   # 1,5 m oltre il buco nella terra: niente crepe da cui si vede l'acqua sotto
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     urban_year = __import__(CITY['hist']).urban_year
@@ -417,7 +417,7 @@ if _ph_items:
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()
         for r_ in rings_:
-            try: bm_.faces.new([bm_.verts.new((x, y, 0.04)) for x, y in r_])
+            try: bm_.faces.new([bm_.verts.new((x, y, 0.02)) for x, y in r_])   # 2 cm: sopra la terra solo nella fascia di 1,5 m di sovrapposizione
             except ValueError: pass
         if not len(bm_.faces): bm_.free(); continue
         bmesh.ops.triangulate(bm_, faces=bm_.faces); bm_.normal_update()
