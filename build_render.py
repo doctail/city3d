@@ -411,8 +411,8 @@ _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, 
 LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
 if _ph_items:
-    _phm = {'field': mat('ph_field', srgb(CITY.get('field_colors', ['#6a7f45'])[0]), 1.0),
-            'urban': mat('ph_urban', srgb(ST.get('reclaim', '#b9b09c')), 0.95),
+    # stessi materiali della terra di base (campi a toppe, tessuto urbano): una tinta piatta si vedeva come striscia dritta
+    _phm = {'field': land_mat('fields'), 'urban': land_mat('urban'),
             'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0)}
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()
