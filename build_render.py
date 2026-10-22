@@ -123,9 +123,32 @@ def land_mat(mode='fields'):
     cr.elements[0].color = (*srgb(FC[0]), 1); cr.elements[1].position = 0.8; cr.elements[1].color = (*srgb(FC[4]), 1)
     for pos_, colh in [(0.2, FC[1]), (0.4, FC[2]), (0.6, FC[3])]:
         e_ = cr.elements.new(pos_); e_.color = (*srgb(colh), 1)
+    fcol_ = fields.outputs[0]
+    if CITY.get('fields_style') == 'parcels':
+        # dettaglio dentro gli appezzamenti (visti dall'aereo): file di coltura con orientamento casuale per appezzamento,
+        # variazione di tono, una parte a uliveto (puntinato). Una tinta piatta per campo = effetto "Minecraft".
+        sp_ = N.new('ShaderNodeSeparateColor'); L(vo.outputs['Color'], sp_.inputs[0])
+        an_ = N.new('ShaderNodeMath'); an_.operation = 'MULTIPLY'; an_.inputs[1].default_value = math.pi; L(sp_.outputs[0], an_.inputs[0])
+        vr_ = N.new('ShaderNodeVectorRotate'); vr_.rotation_type = 'Z_AXIS'; L(tc.outputs['Object'], vr_.inputs['Vector']); L(an_.outputs[0], vr_.inputs['Angle'])
+        wv_ = N.new('ShaderNodeTexWave'); wv_.wave_type = 'BANDS'; wv_.bands_direction = 'X'; wv_.inputs['Scale'].default_value = CITY.get('row_scale', 0.03)
+        L(vr_.outputs['Vector'], wv_.inputs['Vector'])
+        rw_ = N.new('ShaderNodeMapRange'); L(wv_.outputs['Fac'], rw_.inputs['Value']); rw_.inputs['To Min'].default_value = 0.94; rw_.inputs['To Max'].default_value = 1.04
+        tn_ = N.new('ShaderNodeTexNoise'); tn_.inputs['Scale'].default_value = 0.012; tn_.inputs['Detail'].default_value = 3; L(tc.outputs['Object'], tn_.inputs['Vector'])
+        tr_ = N.new('ShaderNodeMapRange'); L(tn_.outputs['Fac'], tr_.inputs['Value']); tr_.inputs['From Min'].default_value = 0.3; tr_.inputs['From Max'].default_value = 0.7; tr_.inputs['To Min'].default_value = 0.93; tr_.inputs['To Max'].default_value = 1.06
+        m1_ = N.new('ShaderNodeMath'); m1_.operation = 'MULTIPLY'; L(rw_.outputs[0], m1_.inputs[0]); L(tr_.outputs[0], m1_.inputs[1])
+        cm_ = N.new('ShaderNodeMix'); cm_.data_type = 'RGBA'; cm_.blend_type = 'MULTIPLY'; cm_.inputs['Factor'].default_value = 1.0
+        L(fields.outputs[0], cm_.inputs[6]); L(m1_.outputs[0], cm_.inputs[7])
+        # uliveto: terra chiara con chiome scure a griglia irregolare (~7 m), sul 20% degli appezzamenti
+        ov_ = N.new('ShaderNodeTexVoronoi'); ov_.inputs['Scale'].default_value = 0.14; ov_.inputs['Randomness'].default_value = 0.35; L(vr_.outputs['Vector'], ov_.inputs['Vector'])
+        od_ = N.new('ShaderNodeMapRange'); L(ov_.outputs['Distance'], od_.inputs['Value']); od_.inputs['From Min'].default_value = CITY.get('olive_r0', 0.36); od_.inputs['From Max'].default_value = CITY.get('olive_r1', 0.44)
+        oc_ = N.new('ShaderNodeMix'); oc_.data_type = 'RGBA'; L(od_.outputs[0], oc_.inputs['Factor'])
+        oc_.inputs[6].default_value = (*srgb(ST.get('olive_tree', '#56602f')), 1); oc_.inputs[7].default_value = (*srgb(ST.get('olive_soil', '#b8a272')), 1)
+        os_ = N.new('ShaderNodeMath'); os_.operation = 'LESS_THAN'; os_.inputs[1].default_value = CITY.get('olive_share', 0.2); L(sp_.outputs[1], os_.inputs[0])
+        om_ = N.new('ShaderNodeMix'); om_.data_type = 'RGBA'; L(os_.outputs[0], om_.inputs['Factor']); L(cm_.outputs[2], om_.inputs[6]); L(oc_.outputs[2], om_.inputs[7])
+        fcol_ = om_.outputs[2]
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
     fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.70; fk.inputs['From Max'].default_value = 0.74
-    L(fk.outputs[0], fm_.inputs['Factor']); L(fields.outputs[0], fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb(ST.get('hedge', '#33492a')), 1)
+    L(fk.outputs[0], fm_.inputs['Factor']); L(fcol_, fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb(ST.get('hedge', '#33492a')), 1)
     fields = type('o', (), {'outputs': [fm_.outputs[2]]})()
     mx = N.new('ShaderNodeMix'); mx.data_type = 'RGBA'; L(k.outputs[0], mx.inputs['Factor']); L(fields.outputs[0], mx.inputs[6]); mx.inputs[7].default_value = (*srgb('#3e3d3c'), 1)
     # tessuto urbano visto dall'alto: tetti a celle piccole (toni spenti), strade dritte parallele alla griglia di Manhattan,

@@ -25,11 +25,11 @@
  "haze_k": 1000000000.0,
  "water_z": -1.5,
  "field_colors": [
-  "#a9a24f",
-  "#9a9a45",
-  "#b7ab5c",
-  "#8f9440",
-  "#a39b4e"
+  "#c2ad74",
+  "#a88a5a",
+  "#b9a878",
+  "#8a8f4c",
+  "#b29c6a"
  ],
  "park_trees": 0.02,
  "block_trees": 0.0008,
@@ -100,7 +100,7 @@
   ],
   "urban_dark": "#d9d2c4",
   "urban_green": "#7fb04e",
-  "hedge": "#2f6a25",
+  "hedge": "#5d6238",
   "blocks": "#8f8778",
   "grass": "#76b84a",
   "tree": "#3f8a35",
@@ -129,7 +129,9 @@
   "twilight_sky_col": "#1f2f5a",
   "exp_twilight": 0.0,
   "reclaim": "#c9b993",
-  "park_ground": "#6a9a3e"
+  "park_ground": "#6a9a3e",
+  "olive_soil": "#a8916a",
+  "olive_tree": "#4e5730"
  },
  "hist": "hist_sevilla",
  "land_from_buildings": true,
@@ -144,5 +146,6 @@
  "skip_canals": true,
  "fields_style": "parcels",
  "urban_ground": "footprints",
- "urban_grid": false
+ "urban_grid": false,
+ "row_scale": 0.012
 }
