@@ -16,14 +16,16 @@ S = json.load(open(os.path.join(HERE, 'data_sevilla_src', 'water_src.json')))
 PH = [('codo', 1950, 9999, 'urban'), ('laguna', 1574, 9999, 'park'), ('tablada', -9999, 1926, 'field'),
       ('west_triana', -9999, 1948, 'field'), ('west_cartuja', -9999, 1975, 'field'), ('chapina', 1950, 1992, 'urban'),
       # collegamento Chapina -> canale ovest (foto aerea IGN 1956): acqua 1948-1990, terra prima e dopo (riempito per l'Expo)
-      ('conn_1948', -9999, 1948, 'field'), ('conn_1948', 1990, 9999, 'urban')]
+      ('conn_1948', -9999, 1948, 'field'), ('conn_1948', 1990, 9999, 'urban'),
+      # corso antico a nord (foto IGN 1956 e 1973-86): fiume fino alla Corta de la Cartuja (1975), poi terra
+      ('north_old', 1975, 9999, 'field')]
 out = []
 for k, f, t, c in PH:
     for r in S[k]: out.append({'r': r, 'from': f, 'to': t, 'c': c, 'name': k})
 json.dump(out, open(f'{DATA}/landphases.json', 'w'))
 
 # acqua storica che oggi e' terra: va tolta dalla terra di base (la lastra a fasi la copre solo dopo la bonifica)
-wet_then = unary_union([Polygon(r).buffer(0) for k in ('codo', 'laguna', 'osm_gap', 'conn_1948') for r in S[k]])   # osm_gap: tratto di darsena senza acqua in OSM
+wet_then = unary_union([Polygon(r).buffer(0) for k in ('codo', 'laguna', 'osm_gap', 'conn_1948', 'north_old') for r in S[k]])   # osm_gap: tratto di darsena senza acqua in OSM
 land = json.load(open(f'{DATA}/land.json')); new = []
 for r in land:
     g = (Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0).difference(wet_then)
@@ -34,7 +36,7 @@ json.dump(new, open(f'{DATA}/land.json', 'w'))
 
 # niente edifici sull'acqua: finestre in cui ogni area e' ACQUA (complemento delle finestre di terra in PH)
 WATER = {'codo': [(-9999, 1950)], 'laguna': [(-9999, 1574)], 'tablada': [(1926, 9999)], 'west_triana': [(1948, 9999)],
-         'west_cartuja': [(1975, 9999)], 'chapina': [(-9999, 1950), (1992, 9999)], 'conn_1948': [(1948, 1990)]}
+         'west_cartuja': [(1975, 9999)], 'chapina': [(-9999, 1950), (1992, 9999)], 'conn_1948': [(1948, 1990)], 'north_old': [(-9999, 1975)]}
 zones = [(prep(Polygon(r).buffer(0)), WATER[k]) for k in WATER for r in S[k]]
 def fix(items, is_hist):
     keep = []; moved = 0

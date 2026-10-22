@@ -366,6 +366,7 @@ def cells(bounds, CELL, skip_core):
         while xx < x1:
             c = sbox(xx, yy, xx + CELL, yy + CELL)
             if skip_core and c.intersects(core): c = c.difference(core)   # niente sovrapposizioni con le celle fini (era una riga scura)
+            if not skip_core: c = c.intersection(core)   # l'ultima fila di celle fini sbordava oltre core_box (lato non multiplo di 120 m): riga scura (Siviglia, y 8000-8080)
             if not c.is_empty and c.area > 1 and pl.intersects(c):
                 q = c if pl.contains(c) else lgeom.intersection(c)
                 uy = urban_year(xx + CELL / 2, yy + CELL / 2) if (urban_year and hist) else 0

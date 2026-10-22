@@ -140,5 +140,6 @@
  ],
  "tree_lift": 2.5,
  "land_close": 15,
- "blocks_by_building": true
+ "blocks_by_building": true,
+ "skip_canals": true
 }

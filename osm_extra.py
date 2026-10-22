@@ -36,6 +36,7 @@ for f in feats:
     elif p.get('natural') == 'water' and s.geom_type in ('Polygon', 'MultiPolygon') and s.area > 2500: water.append(s.buffer(0))
     elif p.get('waterway') == 'riverbank' and s.geom_type in ('Polygon', 'MultiPolygon') and s.area > 2500: water.append(s.buffer(0))
     elif p.get('waterway') in ('river', 'canal') and s.geom_type == 'LineString':
+        if p.get('waterway') == 'canal' and CFG.get('skip_canals'): continue   # Siviglia: canali d'irrigazione del '900 = righe nere dall'anno zero
         w = RIVW.get(p.get('name', ''), 22 if p.get('waterway') == 'river' else 10); water.append(s.buffer(w / 2, cap_style=2))
 L = CFG.get('land_half_m', 30000)
 land = box(-L, -L, L, L)
