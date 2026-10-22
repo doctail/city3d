@@ -127,8 +127,12 @@ def get(name, i=0, flip=False):
     g = OUTL[name][i]; return g, frame(g, flip)
 
 # ---------------- i ponti ----------------
-# Puente de barcas (1171-1852) [V]: 13 barche con tavolato, dove oggi c'e' il ponte di Triana [L posizione]
+# Puente de barcas (1171-1852) [V]: 13 barche con tavolato, accanto al ponte di Triana [L posizione]. Spostato 40 m a monte
+# (nord): dal 1845 il ponte di ferro si costruisce mentre quello di barche e' ancora in uso, non possono stare nello stesso posto.
 g, (c, ax, L, W) = get('Puente de Isabel II')
+c_tri = c; nx_, ny_ = -ax[1], ax[0]
+if ny_ < 0: nx_, ny_ = -nx_, -ny_
+c = (c[0] + nx_ * 40, c[1] + ny_ * 40)
 wet = wet_interval(c, ax, L); n = 13
 for i in range(n):
     s = wet[0] + 8 + (wet[1] - wet[0] - 16) * i / (n - 1); x, yy = c[0] + ax[0] * s, c[1] + ax[1] * s
@@ -138,8 +142,23 @@ beam('Pontoon bridge', pa, pb, 5.5, 0.4, '#a07a4f', 1000, 1852.1)
 labels.append({'name': 'Pontoon Bridge (1171)', 'x': round(c[0], 1), 'y': round(c[1], 1), 'z': 3, 'from': 1248, 'to': 1852})
 
 # Puente de Isabel II / Triana (1845-1852) [V]: 3 archi in ghisa, pile di pietra, 149 m
+c = c_tri
+n_before = len(parts)
 z, pt, wet, piers = bridge('Triana Bridge', c, ax, L, W, 6.5, 1852, spans=3, col='#cfc9bb', pier_col=STONE, rail=IRON)
 arches_below('Triana Bridge', pt, z, wet, piers, W, 1852, IRON, ribs=5)
+# cantiere graduale 1845 -> 1852 (scheda di Fabio): pile e spalle 1845-1848, archi di ghisa 1848-1851, impalcato e
+# parapetti 1851-1852; dentro ogni fase i pezzi compaiono lungo l'asse del ponte. Travi: crescono dalla loro quota.
+def _s(p_): return (p_['cx'] - c[0]) * ax[0] + (p_['cy'] - c[1]) * ax[1] if 'cx' in p_ else \
+    (sum(v[0] for v in p_['r']) / len(p_['r']) - c[0]) * ax[0] + (sum(v[1] for v in p_['r']) / len(p_['r']) - c[1]) * ax[1]
+_tp = parts[n_before:]
+def _arch(p_): return p_['t'] == 'beam' and p_['c'] == IRON and not (p_['w'] == 0.35 and p_['h'] == 1.2)   # ringhiere: stesso ferro
+for grp, (t0, t1) in ((lambda p_: p_['t'] == 'prism', (1845.0, 1848.0)), (_arch, (1848.0, 1851.0)),
+                      (lambda p_: not (p_['t'] == 'prism' or _arch(p_)), (1851.0, 1852.0))):
+    sel = sorted([p_ for p_ in _tp if grp(p_)], key=_s)
+    for i, p_ in enumerate(sel):
+        p_['y'] = round(t0 + (t1 - t0) * i / max(1, len(sel) - 1), 2)
+        if p_['t'] == 'beam': p_['zbase'] = min(p_['p0'][2], p_['p1'][2])
+print('[ponti] Triana: cantiere 1845-1852 su', len(_tp), 'parti; ponte di barche 40 m a monte', flush=True)
 labels.append({'name': 'Triana Bridge', 'x': round(c[0], 1), 'y': round(c[1], 1), 'z': 8, 'from': 1852})
 
 # Puente de San Telmo (1931) [V]: archi laterali in cemento; tratto centrale levatoio fino al 1964-65
@@ -151,14 +170,14 @@ arches_below('San Telmo Bridge', pt, z, wet, piers, W, 1931, '#cbc5b8', ribs=3, 
 g, (c, ax, L, W) = get('Puente de los Remedios')
 bridge('Los Remedios Bridge', c, ax, L, W, 7.5, 1968, spans=3)
 
-# Puente de las Delicias (1991) [L: le fonti dicono 1990 o 1992]: levatoio, quattro torrette di manovra
+# Puente de las Delicias (1990, decisione di Fabio 22 ott; le fonti dicono 1990 o 1992): levatoio, quattro torrette di manovra
 g, (c, ax, L, W) = get('Puente de las Delicias')
 W = min(W, 24.0)   # 37 m misurati sull'acqua = tratto levatoio; le rampe sono piu' strette (sbordava sugli edifici del porto)
-z, pt, wet, piers = bridge('Delicias Bridge', c, ax, L, W, 6.0, 1991, spans=3)
+z, pt, wet, piers = bridge('Delicias Bridge', c, ax, L, W, 6.0, 1990, spans=3)
 mid = (wet[0] + wet[1]) / 2
 for ds in (-28, 28):
     for off in (-W / 2 - 2, W / 2 + 2):
-        x, yy, zt = pt(mid + ds, off); boxp('Delicias Bridge', x, yy, ax, 6, 5, WZ - 1, zt + 12, CONC, 1991)
+        x, yy, zt = pt(mid + ds, off); boxp('Delicias Bridge', x, yy, ax, 6, 5, WZ - 1, zt + 12, CONC, 1990)
 
 # Puente del Cristo de la Expiracion / Cachorro (1991) [V]: due archi d'acciaio ribassati, 130 m, sul letto asciutto di Chapina
 g, (c, ax, L, W) = get('Puente del Cristo de la Expiración')
@@ -166,9 +185,9 @@ z, pt, wet, piers = bridge('Cachorro Bridge', c, ax, L, W, 7.0, 1991, spans=1)
 sm = (wet[0] + wet[1]) / 2
 for off in (-W / 2 + 1, W / 2 - 1): arch_above('Cachorro Bridge', pt, sm - 65, sm + 65, off, 14, 1991, WHITE)
 
-# Pasarela de la Cartuja (1992) [L]: passerella pedonale
+# Pasarela de la Cartuja (1991, decisione di Fabio 22 ott): passerella pedonale
 g, (c, ax, L, W) = get('Pasarela de la Cartuja')
-bridge('Cartuja Footbridge', c, ax, L, min(W, 10), 6.0, 1992, spans=3, thick=1.2)
+bridge('Cartuja Footbridge', c, ax, L, min(W, 10), 6.0, 1991, spans=3, thick=1.2)
 
 # Puente de la Barqueta (1992) [V]: arco sospeso centrale (piano di mezzeria) che a ogni estremo si apre in due gambe
 g, (c, ax, L, W) = get('Puente de la Barqueta')

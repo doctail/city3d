@@ -85,11 +85,29 @@ def era_height(u, rnd):
 
 # edifici scomparsi in spazi oggi vuoti (anello in m locali, anno di comparsa, anno di demolizione) [V date, L contorni]
 _PN = L(37.38915, -5.99585); _EN = L(37.39318, -5.99178)
-LOST = [  # Plaza Nueva: Casa Grande de San Francisco (1270-1840)
-          (box(_PN[0] - 45, _PN[1] - 60, _PN[0] + 45, _PN[1] + 60), 1270, 1840.5, 13.0, 'convento San Francisco'),
-          # Plaza de la Encarnacion: case fino al decreto del 1810, mercato 1842-1973
-          (box(_EN[0] - 75, _EN[1] - 35, _EN[0] + 75, _EN[1] + 35), 1248, 1810.6, 9.0, 'isolato Encarnacion'),
-          (box(_EN[0] - 60, _EN[1] - 28, _EN[0] + 60, _EN[1] + 28), 1842, 1973.5, 7.0, 'mercato Encarnacion')]
+# Plaza Nueva: convento di San Francisco 1270-1840 (repo, confermato da Fabio 22 ott); la piazza si urbanizza 1848 -> 1857
+#  (PLAZAS: lastricato a strisce, scritto in landmarks.json come parti). Encarnacion: convento demolito nel 1811
+#  (scheda), mercato 1842 (repo) - 1973 (repo).
+LOST = [(box(_PN[0] - 45, _PN[1] - 60, _PN[0] + 45, _PN[1] + 60), 1270, 1840.5, 13.0, 'convento San Francisco'),
+        (box(_EN[0] - 75, _EN[1] - 35, _EN[0] + 75, _EN[1] + 35), 1248, 1811.5, 9.0, 'isolato Encarnacion'),
+        (box(_EN[0] - 60, _EN[1] - 28, _EN[0] + 60, _EN[1] + 28), 1842, 1973.5, 7.0, 'mercato Encarnacion')]
+# piazze nuove: (rettangolo, anno inizio, anno fine, strisce, colore). Lastricato 0-0,3 m (quota libera, sopra isolati 0,12 e parchi 0,25)
+PLAZAS = [(box(_PN[0] - 45, _PN[1] - 60, _PN[0] + 45, _PN[1] + 60), 1848, 1857, 6, '#d6ccb6', 'Plaza Nueva')]
+
+def plazas(DATA):
+    path = f'{DATA}/landmarks.json'
+    LM = json.load(open(path)) if os.path.exists(path) else {'parts': [], 'labels': [], 'clear': []}
+    LM['parts'] = [p for p in LM['parts'] if not p.get('plaza')]
+    for poly, y0, y1, n, col, name in PLAZAS:
+        x0, ya, x1, yb = poly.bounds
+        for i in range(n):
+            r = [[x0 + (x1 - x0) * i / n, ya], [x0 + (x1 - x0) * (i + 1) / n, ya], [x0 + (x1 - x0) * (i + 1) / n, yb], [x0 + (x1 - x0) * i / n, yb]]
+            LM['parts'].append({'name': name, 't': 'prism', 'r': [[round(v, 2) for v in q] for q in r], 'z0': 0.0, 'z1': 0.3,
+                                'c': col, 'a': 0.05, 'y': round(y0 + (y1 - y0) * i / max(1, n - 1), 2), 'plaza': 1,
+                                'cx': round(sum(q[0] for q in r) / 4, 2), 'cy': round(sum(q[1] for q in r) / 4, 2)})
+    LM.setdefault('labels', []); LM.setdefault('clear', [])
+    json.dump(LM, open(path, 'w'))
+    print(f'[hist_sevilla] piazze: {len(PLAZAS)}', flush=True)
 
 def fix_years(DATA, seed=21):
     blds = json.load(open(f'{DATA}/buildings.json')); rnd = random.Random(seed); n = 0
@@ -102,6 +120,22 @@ def fix_years(DATA, seed=21):
         if b['y'] > u: b['y'] = int(u); n += 1
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
     print(f'[hist_sevilla] anni corretti nelle zone storiche: {n} edifici', flush=True)
+
+# edifici simbolo con l'anno del Catasto sbagliato (= ultima riforma), date della scheda di Fabio:
+# (lat, lon, raggio m, area minima m2, anno inizio, anno fine o None, nome). Con anno fine il palazzo cresce lento
+# per tutto il cantiere (build_render: 'y1').
+ICON_YEARS = [(37.39176, -5.97535, 200, 20000, 1991, None, 'Santa Justa'),
+              (37.37722, -5.98694, 250, 10000, 1914, 1929, 'Plaza de Espana'),
+              (37.39318, -5.99178, 80, 3000, 2005, 2011, 'Metropol Parasol (base)')]
+def fix_icons(DATA):
+    blds = json.load(open(f'{DATA}/buildings.json'))
+    for la, lo, rad, amin, yr, y1, name in ICON_YEARS:
+        x, y = L(la, lo)
+        for b in blds:
+            if math.hypot(b['r'][0][0] - x, b['r'][0][1] - y) < rad and Polygon(b['r']).area > amin:
+                print(f'[hist_sevilla] {name}: {b["y"]} -> {yr}' + (f'-{y1}' if y1 else ''), flush=True); b['y'] = yr
+                if y1: b['y1'] = y1
+    json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
 
 def lost(DATA):
     hist = json.load(open(f'{DATA}/hist.json')); rnd = random.Random(3)
@@ -117,5 +151,7 @@ if __name__ == '__main__':
     from hist_nyc import build
     if not os.path.exists(f'{DATA}/years_fixed.ok'):
         fix_years(DATA); open(f'{DATA}/years_fixed.ok', 'w').write('ok')
+    fix_icons(DATA)
     build(DATA, pred_year, era_height=era_height)
     lost(DATA)
+    plazas(DATA)

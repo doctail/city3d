@@ -12,7 +12,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 step "2/5 Blender (bpy) in Python 3.13"
 pip install -q uv
 [ -x /workspace/bl/bin/python ] || uv venv -q -p 3.13 /workspace/bl
-uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests pyshp pyproj
+uv pip install -q -p /workspace/bl/bin/python bpy==5.2.2 shapely requests pyshp pyproj scipy
 PY=/workspace/bl/bin/python
 
 cd /workspace/city3d
@@ -30,6 +30,14 @@ else
   if [ -d data_${CITY}_src ]; then for g in data_${CITY}_src/*.gz; do b=$(basename $g .gz); [ -s $D/$b ] || gunzip -c $g > $D/$b; done; echo ok > $D/land_v3.ok; fi   # dati gia' preparati in chat
   if [ "$CITY" = "madrid" ]; then [ -s $D/buildings.json ] || $PY fetch_es.py $D city_$CITY.json $(ls /workspace/*.zip 2>/dev/null | head -1); fi
   $PY hist_$CITY.py $D
+  if [ "$CITY" = "sevilla" ] && [ ! -f $D/post_sevilla.ok ]; then   # una volta sola: acqua a fasi e ponti modificano i dati in place
+    $PY osm_extra.py $D city_sevilla.json $D/osm_export.geojson
+    $PY water_sevilla.py $D
+    $PY bridges_sevilla.py $D city_sevilla.json $D/osm_export.geojson
+    $PY dem_sevilla.py $D city_sevilla.json $D/osm_export.geojson
+    $PY tools/check_water.py $D city_sevilla.json 1248,1574,1926,1948,1950,1982,1990,1992,2026 830,9000 -4470,-10000
+    echo ok > $D/post_sevilla.ok
+  fi
 fi
 NF=$($PY -c "import json;print(int(json.load(open('$SCHED'))['duration']*24))" 2>/dev/null || echo 7839)
 NT=$($PY -c "import json;d=json.load(open('$SCHED'));print(int(d['night_t']*24)+1 if 'night_t' in d else 0)" 2>/dev/null || echo 0)

@@ -185,6 +185,23 @@ blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
 hist = json.load(open(f'{DATA}/hist.json')) if os.path.exists(f'{DATA}/hist.json') else []
 for hb in hist: hb['old'] = True
 log('predecessori storici', len(hist)); blds = blds + hist
+# rilievo (DATA/dem.npz: D = spostamento verticale in metri su griglia x0, y0, cell), caricato prima degli edifici
+dem_at = None
+if os.path.exists(f'{DATA}/dem.npz'):
+    import numpy as _np
+    _dz = _np.load(f'{DATA}/dem.npz'); _D = _dz['D'].astype(_np.float64); _gx0, _gy0, _gc = float(_dz['x0']), float(_dz['y0']), float(_dz['cell'])
+    def dem_at(xa, ya):
+        fx = _np.clip((_np.asarray(xa) - _gx0) / _gc, 0, _D.shape[1] - 1.001); fy = _np.clip((_np.asarray(ya) - _gy0) / _gc, 0, _D.shape[0] - 1.001)
+        ix = fx.astype(int); iy = fy.astype(int); tx = fx - ix; ty = fy - iy
+        return (_D[iy, ix] * (1 - tx) * (1 - ty) + _D[iy, ix + 1] * tx * (1 - ty) + _D[iy + 1, ix] * (1 - tx) * ty + _D[iy + 1, ix + 1] * tx * ty)
+    # ogni edificio sale RIGIDO del minimo del rilievo sotto i suoi vertici (tetto piano resta piano, mai sospeso a monte).
+    # Crescita = scala in z dell'oggetto: la scala deve partire dalla base, quindi gli edifici sono raggruppati anche per
+    # fascia di quota (3 m) e l'oggetto sta alla quota della fascia (errore durante la crescita < 3 m * (1 - g)).
+    DEM_BAND = 3.0
+    for b_ in blds:
+        b_['_z'] = float(min(dem_at([p_[0] for p_ in b_['r']], [p_[1] for p_ in b_['r']])))
+        b_['_band'] = DEM_BAND * math.floor(b_['_z'] / DEM_BAND)
+    log('rilievo sotto gli edifici: max %.0f m' % max([b_['_z'] for b_ in blds] or [0]))
 LM = json.load(open(f'{DATA}/landmarks.json')) if os.path.exists(f'{DATA}/landmarks.json') else None
 if LM:   # monumenti modellati: gli edifici (veri e storici) dentro le loro impronte spariscono
     from shapely.prepared import prep as _prep
@@ -222,7 +239,9 @@ def add_bld(bm, col, vyear, vdie, b):
         elif old_: pal, rpal = ST['wall_old'], ST['roof_old']
         else: pal, rpal = (ST.get('wall_anc', ST['wall_new']) if b.get('k') == 'anc' else ST['wall_new']), ST['roof_new']
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
-    vb = [bm.verts.new((x, yy, 0)) for x, yy in ring]; vt = [bm.verts.new((x, yy, h)) for x, yy in ring]
+    z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
+    vb = [bm.verts.new((x, yy, z0_ - (1.0 if dem_at else 0.0))) for x, yy in ring]   # con rilievo: muri 1 m sotto il suolo (pendii)
+    vt = [bm.verts.new((x, yy, z0_ + h)) for x, yy in ring]; h = h + z0_
     vyear += [y] * (2 * len(ring)); vdie += [dd] * (2 * len(ring))
     pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
     if pitched:   # case antiche: tetto a falde (piramide sul centroide)
@@ -244,17 +263,20 @@ def add_bld(bm, col, vyear, vdie, b):
             f = bm.faces.new((vb[i], vb[j], vt[j], vt[i]))
             for l in f.loops: l[col] = (*wc, wa)
         except ValueError: pass
-CM = city_mat()
+CM = city_mat(); ZBASE = {}
 def ckey(b_):
-    dd_ = b_.get('d', 99999); return (int(b_['y'] // BIN), int(dd_ // BIN) if dd_ < 9000 else 99999)
+    # 'y1': cantiere lungo (es. Plaza de Espana 1914-1929): blocco a parte, cresce da y a y1 invece che nella durata standard
+    dd_ = b_.get('d', 99999); y1_ = b_.get('y1', 0)
+    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), int(dd_ // BIN) if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_))
 blds.sort(key=ckey)
 cur = None; nv = 0
 def flush(cur):
     k_, bm_, col_, vy_, vd_ = cur
     if not len(bm_.faces): bm_.free(); return 0
-    o_ = obj(f'city_{k_[0]}_{k_[1]}', bm_, CM); m_ = o_.data; m_.color_attributes.active_color_name = 'col'
+    o_ = obj(f'city_{k_[0]}_{k_[1]}_{k_[2]}_{k_[3]}', bm_, CM); m_ = o_.data; m_.color_attributes.active_color_name = 'col'
+    o_.location.z = float(k_[2]); ZBASE[o_.name] = float(k_[2])   # fascia di quota: la scala in z parte da qui
     m_.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', vy_); m_.attributes.new('yd', 'FLOAT', 'POINT').data.foreach_set('value', vd_)
-    CHUNKS.append({'obj': o_, 'b0': k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'd0': (k_[1] * BIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * BIN if k_[1] != 99999 else None)})
+    CHUNKS.append({'obj': o_, 'b0': k_[0] if k_[3] else k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'span': (k_[3] - k_[0]) if k_[3] else None, 'd0': (k_[1] * BIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * BIN if k_[1] != 99999 else None)})
     return len(m_.vertices)
 for b in blds:
     k_ = ckey(b)
@@ -441,7 +463,9 @@ if len(bmm.faces):
 else: bmm.free()
 lo_ = obj('land_tmp', bm, land_mat())
 _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
-LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
+LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish')
+# con il suolo dalle impronte le celle non diventano mai citta': la copia urbana sarebbe sempre nascosta (memoria doppia)
+LAND_U = [] if UG_FOOT else chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
 if UG_FOOT:
     # suolo urbano che segue la forma vera della citta': fascia di ~20 m attorno agli edifici, unita per decennio
@@ -805,6 +829,49 @@ if LM:
                 if k_ == i_: bmesh.ops.create_cube(bm_, size=0.9, matrix=__import__('mathutils').Matrix.Translation((x_, y_, z_)))
             o_ = obj(f'bulbs{i_}', bm_, _lmats[i_]); VIS.append((o_, 'appear', LM.get('lights_year', 1843)))
     json.dump(LM.get('labels', []), open(f'{OUT}/labels.json', 'w'))
+# ---------- rilievo (DATA/dem.npz: D = spostamento verticale in metri, griglia x0, y0, cell) ----------
+# Dopo la costruzione: il suolo (terra, strade, parchi...) sale vertice per vertice di D(x, y). L'acqua resta piatta (il DEM
+# e' gia' a zero vicino a ogni acqua). Edifici: gia' alzati rigidi alla costruzione (blocco "edifici"). Monumenti: rigidi
+# del minimo sotto la parte, spostando la base della scala (crescono dal suolo, non da z = 0).
+if dem_at:
+    _done_me = set(); _nv = 0
+    for pt in PARTS:
+        o_ = pt['obj']; me_ = o_.data; _done_me.add(me_.name); n_ = len(me_.vertices)
+        if not n_: continue
+        co_ = _np.empty(n_ * 3); me_.vertices.foreach_get('co', co_); co_ = co_.reshape(-1, 3)
+        dc_ = float(dem_at(co_[:, 0], co_[:, 1]).min()); pt['z0'] += dc_; o_.location.z += dc_
+    for o_ in bpy.data.objects:
+        # fuori: acqua, edifici (gia' alzati), modelli istanziati (albero: e' un prototipo all'origine, non un oggetto in scena)
+        if o_.type != 'MESH' or o_.hide_render or o_.name.startswith('water') or o_.name.startswith('city_') or o_.data.name in _done_me: continue
+        me_ = o_.data; _done_me.add(me_.name)
+        # suddivisione: le celle di terra sono quadrati da 120 m (1500 m fuori dal core) e le strade strisce lunghe; spostando
+        # solo i loro vertici le colline diventavano sfaccettature piane con spigoli netti. Si tagliano a meta' i lati piu'
+        # lunghi di DEM_EDGE dove c'e' rilievo, finche' non ce ne sono piu'. Il taglio dipende solo dai due estremi del lato:
+        # due facce che condividono un lato lo tagliano uguale (niente fessure).
+        for _it in range(8):
+            ne_ = len(me_.edges)
+            if not ne_: break
+            ev_ = _np.empty(ne_ * 2, dtype=_np.int64); me_.edges.foreach_get('vertices', ev_); ev_ = ev_.reshape(-1, 2)
+            vc_ = _np.empty(len(me_.vertices) * 3); me_.vertices.foreach_get('co', vc_); vc_ = vc_.reshape(-1, 3)
+            pa_, pb_ = vc_[ev_[:, 0], :2], vc_[ev_[:, 1], :2]; ln_ = _np.hypot(*(pb_ - pa_).T)
+            cand_ = ln_ > CITY.get('dem_edge_len', 45.0)
+            if not cand_.any(): break
+            pa_, pb_ = pa_[cand_] + [o_.location.x, o_.location.y], pb_[cand_] + [o_.location.x, o_.location.y]
+            dm_ = _np.maximum.reduce([dem_at(pa_[:, 0], pa_[:, 1]), dem_at(pb_[:, 0], pb_[:, 1]), dem_at((pa_[:, 0] + pb_[:, 0]) / 2, (pa_[:, 1] + pb_[:, 1]) / 2)])
+            sel_ = _np.flatnonzero(cand_)[dm_ > 0.2]
+            if not len(sel_): break
+            bs_ = bmesh.new(); bs_.from_mesh(me_); bs_.edges.ensure_lookup_table()
+            bmesh.ops.subdivide_edges(bs_, edges=[bs_.edges[i] for i in sel_], cuts=1, use_grid_fill=True)
+            bmesh.ops.triangulate(bs_, faces=bs_.faces); bs_.to_mesh(me_); bs_.free()
+        n_ = len(me_.vertices)
+        if not n_: continue
+        co_ = _np.empty(n_ * 3); me_.vertices.foreach_get('co', co_); co_ = co_.reshape(-1, 3)
+        co_[:, 2] += dem_at(co_[:, 0] + o_.location.x, co_[:, 1] + o_.location.y)
+        me_.vertices.foreach_set('co', co_.ravel()); me_.update(); _nv += n_
+    if LM and LM.get('labels'):
+        _lb = [dict(l_, z=round(l_['z'] + float(dem_at(l_['x'], l_['y'])), 1)) for l_ in LM['labels']]
+        json.dump(_lb, open(f'{OUT}/labels.json', 'w'))
+    log('rilievo applicato:', _nv, 'vertici, massimo %.0f m' % _D.max())
 # ---------- luce, cielo, camera ----------
 w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
@@ -888,7 +955,7 @@ def _dur(f):
 YF = {f: year_at(f) for f in range(F0, F1 + 1)}; DF = {f: _dur(f) for f in range(F0, F1 + 1)}
 def growth(ch, f):
     y_, d_ = YF[f], DF[f]
-    t = (y_ - ch['b0']) / d_
+    t = (y_ - ch['b0']) / (ch.get('span') or d_)
     if t <= 0: return 0.0
     g = 1.0 if t >= 1 else t + 0.18 * math.sin(math.pi * t)
     if ch['d0'] is not None:
@@ -948,7 +1015,7 @@ VISSET = {}
 def setvis(o_, hidden):
     # niente hide_render (cambia la scena per Cycles e la ricostruisce): gli oggetti nascosti scendono sotto terra
     if VISSET.get(o_.name) != hidden:
-        o_.location.z = -5000.0 if hidden else 0.0; VISSET[o_.name] = hidden
+        o_.location.z = -5000.0 if hidden else ZBASE.get(o_.name, 0.0); VISSET[o_.name] = hidden
 NW = 5 if F1 > 9999 else 4   # oltre 9999 fotogrammi: nomi a 5 cifre (con 4 l'ordine alfabetico mescolava i fotogrammi)
 done = 0
 _ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
