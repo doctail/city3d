@@ -91,14 +91,14 @@
   "glass_h": 60,
   "window": "#2a3a4a",
   "urban": [
-   "#d6cbb2",
-   "#cfc4aa",
-   "#dbd1b9",
-   "#c9bea4",
-   "#d3c8ae",
-   "#ccc1a7"
+   "#d3c9b6",
+   "#cbc0ab",
+   "#d8cfbe",
+   "#c6baa4",
+   "#d0c5b0",
+   "#bfb39d"
   ],
-  "urban_dark": "#e8dfcb",
+  "urban_dark": "#d9d2c4",
   "urban_green": "#7fb04e",
   "hedge": "#2f6a25",
   "blocks": "#8f8778",
@@ -141,5 +141,8 @@
  "tree_lift": 2.5,
  "land_close": 15,
  "blocks_by_building": true,
- "skip_canals": true
+ "skip_canals": true,
+ "fields_style": "parcels",
+ "urban_ground": "footprints",
+ "urban_grid": false
 }

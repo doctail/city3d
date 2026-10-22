@@ -111,6 +111,12 @@ def land_mat(mode='fields'):
     nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.004; nz.inputs['Detail'].default_value = 3
     tc = N.new('ShaderNodeTexCoord'); L(tc.outputs['Object'], nz.inputs['Vector'])
     vo = N.new('ShaderNodeTexVoronoi'); vo.distance = 'CHEBYCHEV'; vo.inputs['Scale'].default_value = 0.006; L(tc.outputs['Object'], vo.inputs['Vector'])
+    if CITY.get('fields_style') == 'parcels':   # appezzamenti irregolari (Siviglia): niente toppe quadrate "Minecraft"
+        vo.distance = 'EUCLIDEAN'; vo.inputs['Scale'].default_value = CITY.get('parcel_scale', 0.0045)
+        dn_ = N.new('ShaderNodeTexNoise'); dn_.inputs['Scale'].default_value = 0.0025; dn_.inputs['Detail'].default_value = 2; L(tc.outputs['Object'], dn_.inputs['Vector'])
+        sc_ = N.new('ShaderNodeVectorMath'); sc_.operation = 'SCALE'; sc_.inputs['Scale'].default_value = CITY.get('parcel_warp', 90.0); L(dn_.outputs['Color'], sc_.inputs[0])
+        ad_ = N.new('ShaderNodeVectorMath'); ad_.operation = 'ADD'; L(tc.outputs['Object'], ad_.inputs[0]); L(sc_.outputs['Vector'], ad_.inputs[1])
+        L(ad_.outputs['Vector'], vo.inputs['Vector'])
     fields = N.new('ShaderNodeValToRGB'); L(vo.outputs['Color'] if 'Color' in vo.outputs else vo.outputs[1], fields.inputs[0])
     cr = fields.color_ramp; cr.interpolation = 'CONSTANT'
     FC = CITY.get('field_colors', ['#6a7f45', '#7c8a4f', '#5f7840', '#9a9465', '#8f8f5c'])   # 5 toni dei campi (config citta')
@@ -133,6 +139,7 @@ def land_mat(mode='fields'):
         e_ = rcr.elements.new(p_); e_.color = (*srgb(c_), 1)
     bk = N.new('ShaderNodeTexBrick'); L(vr.outputs[0], bk.inputs['Vector']); bk.inputs['Scale'].default_value = 0.0105; bk.offset = 0.0
     bk.inputs['Color1'].default_value = (1, 1, 1, 1); bk.inputs['Color2'].default_value = (1, 1, 1, 1); bk.inputs['Mortar'].default_value = (0.42, 0.42, 0.42, 1)
+    if CITY.get('urban_grid', True) is False: bk.inputs['Mortar'].default_value = (1, 1, 1, 1)   # niente finta griglia di strade (sembrava un pavimento a piastrelle)
     bk.inputs['Mortar Size'].default_value = 0.03; bk.inputs['Mortar Smooth'].default_value = 0.3; bk.inputs['Brick Width'].default_value = 0.85; bk.inputs['Row Height'].default_value = 2.4
     sm = N.new('ShaderNodeMix'); sm.data_type = 'RGBA'; sm.blend_type = 'MULTIPLY'; sm.inputs['Factor'].default_value = 1.0; L(rr.outputs[0], sm.inputs[6]); L(bk.outputs['Color'], sm.inputs[7])
     gn = N.new('ShaderNodeTexNoise'); gn.inputs['Scale'].default_value = 0.03; gn.inputs['Detail'].default_value = 3; L(tc.outputs['Object'], gn.inputs['Vector'])
@@ -395,6 +402,8 @@ if CITY.get('land_from_buildings'):
         if b_['y'] < CELLMIN.get(k_, 99999): CELLMIN[k_] = b_['y'] - 2
 cells(core.bounds, 120.0, False)
 cells(lgeom.bounds, 1500.0, True)
+UG_FOOT = CITY.get('urban_ground') == 'footprints'
+if UG_FOOT: uyl = [99999] * len(uyl)   # le celle restano sempre campi: il suolo urbano lo fanno le impronte (sotto)
 MARSH = None
 if len(bmm.faces):
     mm_ = bpy.data.materials.new('marsh'); mm_.use_nodes = True; mn = mm_.node_tree.nodes; ml = mm_.node_tree.links.new; mb = mn['Principled BSDF']
@@ -411,6 +420,31 @@ lo_ = obj('land_tmp', bm, land_mat())
 _lit = [([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_) for p_, u_ in zip(lo_.data.polygons, uyl)]
 LAND_F = chunked('land_f', _lit, 0.0, land_mat('fields'), 'vanish'); LAND_U = chunked('land_u', _lit, 0.0, land_mat('urban'), 'appear')
 log('terra in', len(LAND_F) + len(LAND_U), 'blocchi')
+if UG_FOOT:
+    # suolo urbano che segue la forma vera della citta': fascia di ~20 m attorno agli edifici, unita per decennio
+    # (al posto dei quadrati da 120 m che comparivano interi: effetto "Minecraft"). Triangolazione vincolata: cortili e buchi restano.
+    import shapely as _sh
+    from collections import defaultdict as _dd
+    _UGR, _UGC = CITY.get('urban_buffer', 18.0), CITY.get('urban_close', 22.0)
+    _grp = _dd(list)
+    for b_ in blds:
+        try: q_ = Polygon(b_['r'])
+        except Exception: continue
+        if q_.area < 8: continue
+        _grp[int(b_['y'] // 10 * 10)].append(q_.buffer(_UGR, quad_segs=2))
+    _land_all = unary_union([lgeom] + [Polygon(ph_['r']).buffer(0) for ph_ in _PH]) if _PH else lgeom
+    _cum = Polygon(); _ugi = 0; _ug_items = []
+    for k_ in sorted(_grp):
+        u_ = unary_union(_grp[k_]).buffer(_UGC, quad_segs=2).buffer(-_UGC, quad_segs=2)
+        new_ = u_.difference(_cum).intersection(_land_all).simplify(1.5); _cum = _cum.union(u_)
+        if new_.is_empty: continue
+        for t_ in _sh.constrained_delaunay_triangles(new_).geoms:
+            if t_.area > 0.5: _ug_items.append((list(t_.exterior.coords)[:-1], float(k_))); _ugi += 1
+    # quota 0,05: libera (0 terreno, 0,01-0,03 fasi/riporti, 0,08 palude, 0,10 strade, 0,12 isolati, 0,25 parchi).
+    # A 0,12 era complanare con gli isolati: i raggi d'ombra colpivano l'altra superficie = macchie nere.
+    UG = chunked('urban_g', _ug_items, 0.05, mat('ugdbg', srgb('#ff00ff'), 0.9) if os.environ.get('UGDEBUG') else land_mat('urban'), 'appear', binw=10.0)
+    for o_ in UG: o_.visible_shadow = False   # suolo piatto: non fa ombra a niente
+    log('suolo urbano dalle impronte:', _ugi, 'triangoli in', len(UG), 'decenni')
 if _ph_items:
     # stessi materiali della terra di base (campi a toppe, tessuto urbano): una tinta piatta si vedeva come striscia dritta
     _phm = {'field': land_mat('fields'), 'urban': land_mat('urban'),
@@ -699,6 +733,17 @@ def _lmesh(pt):
             th = (math.pi / 2) * k / 6; rr_ = pt['rad'] * math.cos(th) + 1e-3; zz = pt['z0'] + pt['hz'] * math.sin(th)
             rings_.append([V(pt['cx'] + rr_ * math.cos(2 * math.pi * i / seg), pt['cy'] + rr_ * math.sin(2 * math.pi * i / seg), zz) for i in range(seg)])
         tube(rings_)
+    elif t_ == 'beam':   # trave a sezione rettangolare tra due punti 3D (archi a segmenti, stralli, piloni inclinati); w orizzontale, h verticale
+        p0 = pt['p0']; p1 = pt['p1']; dx_, dy_, dz_ = p1[0] - p0[0], p1[1] - p0[1], p1[2] - p0[2]
+        ln = math.sqrt(dx_ * dx_ + dy_ * dy_ + dz_ * dz_) or 1e-6; d_ = (dx_ / ln, dy_ / ln, dz_ / ln)
+        hx, hy = -d_[1], d_[0]; hn = math.hypot(hx, hy)
+        u_ = (hx / hn, hy / hn, 0.0) if hn > 1e-6 else (1.0, 0.0, 0.0)          # orizzontale, perpendicolare alla trave
+        v_ = (d_[1] * u_[2] - d_[2] * u_[1], d_[2] * u_[0] - d_[0] * u_[2], d_[0] * u_[1] - d_[1] * u_[0])   # d x u
+        if v_[2] < 0: v_ = (-v_[0], -v_[1], -v_[2])
+        w2, h2 = pt['w'] / 2, pt['h'] / 2
+        def rect(p_): return [V(p_[0] + su * w2 * u_[0] + sv * h2 * v_[0], p_[1] + su * w2 * u_[1] + sv * h2 * v_[1], p_[2] + su * w2 * u_[2] + sv * h2 * v_[2])
+                              for su, sv in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+        ra, rb = rect(p0), rect(p1); tube([ra, rb]); face(ra[::-1], cc); face(rb, cc)
     elif t_ == 'helix':
         n_s = int(pt.get('n_strands', 1)); steps = 90; w2 = pt['w'] / 2
         for sd in range(n_s):
@@ -898,6 +943,12 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
         if VISSET.get(o_.name) != hid: o_.location.z = -5000.0 if hid else pt['z0']; VISSET[o_.name] = hid
         if not hid and abs(o_.scale.z - g_) > 1e-4: o_.scale.z = g_
     for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr) if kind == 'vanish' else not (thr[0] <= y_ < thr[1]))
+    if os.environ.get('PROBE'):   # diagnosi: raggio verticale nei punti "x,y;x,y": quale oggetto si colpisce
+        bpy.context.view_layer.update(); _dg = bpy.context.evaluated_depsgraph_get()
+        for _p in os.environ['PROBE'].split(';'):
+            _x, _y = map(float, _p.split(','))
+            _h = sc.ray_cast(_dg, (_x, _y, 600.0), (0.0, 0.0, -1.0))
+            log('PROBE', _p, '->', _h[4].name if _h[0] else 'niente', 'z=%.2f' % _h[1].z if _h[0] else '', 'normale', tuple(round(v, 2) for v in _h[2]) if _h[0] else '')
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
 n = max(1, done); log(f'FATTO {done} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')
