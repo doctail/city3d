@@ -1,0 +1,9 @@
+{
+ "name": "sevilla",
+ "_doc": "Siviglia. Origine locale: Giralda. Dati: Catasto INSPIRE BU (codice catastale 41900, solo comune di Sevilla).",
+ "lat0": 37.386194,
+ "lon0": -5.992417,
+ "grid_deg": 0,
+ "radius_m": 16000,
+ "land_half_m": 30000
+}

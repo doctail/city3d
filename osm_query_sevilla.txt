@@ -1,0 +1,17 @@
+[out:json][timeout:300];
+(
+  way["natural"="water"](37.30,-6.07,37.47,-5.82);
+  relation["natural"="water"](37.30,-6.07,37.47,-5.82);
+  way["waterway"="riverbank"](37.30,-6.07,37.47,-5.82);
+  way["waterway"~"^(river|canal|stream)$"](37.30,-6.07,37.47,-5.82);
+  way["leisure"="park"](37.30,-6.07,37.47,-5.82);
+  relation["leisure"="park"](37.30,-6.07,37.47,-5.82);
+  way["barrier"="city_wall"](37.36,-6.01,37.41,-5.97);
+  way["historic"="citywalls"](37.36,-6.01,37.41,-5.97);
+  way["man_made"="bridge"](37.30,-6.07,37.47,-5.82);
+  way["bridge"]["highway"](37.30,-6.07,37.47,-5.82);
+  way["bridge"]["railway"](37.30,-6.07,37.47,-5.82);
+  relation["boundary"="administrative"]["admin_level"="8"]["name"="Sevilla"];
+  relation["boundary"="administrative"]["admin_level"="9"](37.30,-6.07,37.47,-5.82);
+);
+out geom;
