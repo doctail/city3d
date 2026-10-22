@@ -147,5 +147,6 @@
  "fields_style": "parcels",
  "urban_ground": "footprints",
  "urban_grid": false,
- "row_scale": 0.012
+ "row_scale": 0.012,
+ "tree_mesh": "octa"
 }

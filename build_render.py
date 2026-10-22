@@ -23,7 +23,10 @@ LIGHT = opt('--light', 1, 'night' if '--night' in a else 'day')   # day | sunset
 if LIGHT in ('night', 'twilight') and '--night' not in a: a.append('--night')
 NIGHT = '--night' in a   # passata notturna separata (materiali fissi: niente risincronizzazione), dissolvenza al montaggio
 os.makedirs(OUT, exist_ok=True); t0 = time.time()
-def log(*x): print('[build]', *x, f'({time.time()-t0:.0f}s)', flush=True)
+def _rss():
+    try: return int(open('/proc/self/status').read().split('VmRSS:')[1].split()[0]) // 1024
+    except Exception: return -1
+def log(*x): print('[build]', *x, f'({time.time()-t0:.0f}s, {_rss()} MB)', flush=True)
 
 def srgb(h):
     c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
@@ -671,7 +674,12 @@ if parks:
         _pit.append(([tuple(v) for v in r], py_))
     PO = chunked('parks', _pit, 0.25, mat('grass', srgb(ST.get('grass', '#5d7a3a')), 1.0), 'appear')
     tm = mat('tree', srgb(ST.get('tree', '#3d5c2a')), 0.9)
-    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
+    if CITY.get('tree_mesh') == 'octa':   # memoria: 6 vertici e 8 facce invece di 12 e 20 (Siviglia: 260.000 alberi nei parchi)
+        _tm = bpy.data.meshes.new('tree'); _tm.from_pydata([(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)], [],
+            [(0, 2, 4), (2, 1, 4), (1, 3, 4), (3, 0, 4), (2, 0, 5), (1, 2, 5), (3, 1, 5), (0, 3, 5)])
+        _tm.shade_smooth(); tree = bpy.data.objects.new('tree', _tm); sc.collection.objects.link(tree); tree.data.materials.append(tm)
+    else:
+        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=1); tree = bpy.context.object; tree.name = 'tree'; tree.data.materials.append(tm)
     tree.scale = (1, 1, 1.2); tree.hide_render = True; tree.hide_viewport = True
     tg_ = bpy.data.node_groups.new('trees', 'GeometryNodeTree')
     tg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); tg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
@@ -702,13 +710,6 @@ if TREES and FOREST:
 if TREES:
     t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = float(CITY.get('block_trees', 0.0018))
     for o_ in BO: o_.modifiers.new('trees', 'NODES').node_group = t2
-# alberi "cotti" in geometria statica: spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
-_dg = bpy.context.evaluated_depsgraph_get(); nb = 0
-for o_ in list(bpy.data.objects):
-    if o_.type == 'MESH' and any(m_.name == 'trees' for m_ in o_.modifiers):
-        me_ = bpy.data.meshes.new_from_object(o_.evaluated_get(_dg), preserve_all_data_layers=True, depsgraph=_dg)
-        o_.modifiers.clear(); old_me = o_.data; o_.data = me_; bpy.data.meshes.remove(old_me); nb += len(me_.vertices)
-log('alberi cotti:', nb, 'vertici')
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 WZ = float(CITY.get('water_z', -2))   # canali stretti: l'acqua riflette il sotto della terra (macchie nere) se e' troppo bassa
@@ -857,8 +858,15 @@ if dem_at:
             cand_ = ln_ > CITY.get('dem_edge_len', 45.0)
             if not cand_.any(): break
             pa_, pb_ = pa_[cand_] + [o_.location.x, o_.location.y], pb_[cand_] + [o_.location.x, o_.location.y]
-            dm_ = _np.maximum.reduce([dem_at(pa_[:, 0], pa_[:, 1]), dem_at(pb_[:, 0], pb_[:, 1]), dem_at((pa_[:, 0] + pb_[:, 0]) / 2, (pa_[:, 1] + pb_[:, 1]) / 2)])
-            sel_ = _np.flatnonzero(cand_)[dm_ > 0.2]
+            # memoria: si taglia solo dove il lato dritto si stacca dal rilievo (errore a 1/4, 1/2, 3/4 > dem_tol), oppure
+            # dove c'e' rilievo e il lato e' molto lungo (dem_edge_max: limita l'errore dentro i triangoli grandi).
+            # Pendii regolari e piana a quota costante restano con pochi vertici.
+            da_, db_ = dem_at(pa_[:, 0], pa_[:, 1]), dem_at(pb_[:, 0], pb_[:, 1]); err_ = _np.zeros(len(da_)); dm_ = _np.maximum(da_, db_)
+            for t_ in (0.25, 0.5, 0.75):
+                dq_ = dem_at(pa_[:, 0] + (pb_[:, 0] - pa_[:, 0]) * t_, pa_[:, 1] + (pb_[:, 1] - pa_[:, 1]) * t_)
+                err_ = _np.maximum(err_, _np.abs(dq_ - (da_ + (db_ - da_) * t_))); dm_ = _np.maximum(dm_, dq_)
+            need_ = (err_ > CITY.get('dem_tol', 0.5)) | ((dm_ > 0.2) & (ln_[cand_] > CITY.get('dem_edge_max', 240.0)))
+            sel_ = _np.flatnonzero(cand_)[need_]
             if not len(sel_): break
             bs_ = bmesh.new(); bs_.from_mesh(me_); bs_.edges.ensure_lookup_table()
             bmesh.ops.subdivide_edges(bs_, edges=[bs_.edges[i] for i in sel_], cuts=1, use_grid_fill=True)
@@ -872,6 +880,14 @@ if dem_at:
         _lb = [dict(l_, z=round(l_['z'] + float(dem_at(l_['x'], l_['y'])), 1)) for l_ in LM['labels']]
         json.dump(_lb, open(f'{OUT}/labels.json', 'w'))
     log('rilievo applicato:', _nv, 'vertici, massimo %.0f m' % _D.max())
+# alberi "cotti" in geometria statica (DOPO il rilievo: gli alberi nascono gia' sul suolo spostato, niente 3,5 milioni
+# di vertici da spostare, e nessuna copia del depsgraph raddoppiata dalle modifiche al suolo): spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
+_dg = bpy.context.evaluated_depsgraph_get(); nb = 0
+for o_ in list(bpy.data.objects):
+    if o_.type == 'MESH' and any(m_.name == 'trees' for m_ in o_.modifiers):
+        me_ = bpy.data.meshes.new_from_object(o_.evaluated_get(_dg), preserve_all_data_layers=True, depsgraph=_dg)
+        o_.modifiers.clear(); old_me = o_.data; o_.data = me_; bpy.data.meshes.remove(old_me); nb += len(me_.vertices)
+log('alberi cotti:', nb, 'vertici')
 # ---------- luce, cielo, camera ----------
 w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
@@ -964,6 +980,15 @@ def growth(ch, f):
         if k > 0: g *= (1 - k)
     return g
 log('blocchi:', len(CHUNKS), 'città,', len(VIS), 'statici')
+# memoria: i dati Python della costruzione (edifici, predecessori, geometrie shapely) non servono piu' durante i fotogrammi
+import gc
+for _n in ('blds', 'hist', 'polys', 'polys_y', 'land', 'lgeom', '_lit', '_ug_items', '_pit', 'parks', 'blocks', 'RECLAIM', '_PH',
+           '_ph_items', '_rec_items', 'CELLMIN', 'uyl', 'muy', '_mit', '_grp', '_cum', '_land_all', '_shore', '_shp', 'pl'):
+    globals().pop(_n, None)
+gc.collect()
+try: __import__('ctypes').CDLL('libc.so.6').malloc_trim(0)   # restituisce al sistema la memoria liberata
+except Exception: pass
+log('dati di costruzione liberati')
 sc.render.engine = 'CYCLES'; sc.cycles.samples = SAMPLES; sc.cycles.use_denoising = True; sc.cycles.max_bounces = 3
 sc.cycles.diffuse_bounces = 2; sc.cycles.glossy_bounces = 1; sc.cycles.transmission_bounces = 0; sc.cycles.volume_bounces = 0
 sc.cycles.transparent_max_bounces = 2; sc.cycles.caustics_reflective = False; sc.cycles.caustics_refractive = False

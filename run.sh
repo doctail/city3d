@@ -85,6 +85,19 @@ if [ "$MODE" = "preview" ]; then
   [ -f tools/movimento.py ] && uv pip install -q -p $PY opencv-python-headless numpy; [ -f tools/movimento.py ] && $PY tools/movimento.py out/${CITY}_preview.mp4 out/${CITY}_movimento.json 2>&1 | tail -5
   step "FINITO"; echo "Scarica city3d/out/${CITY}_preview.mp4. NON terminare il Pod: se va bene lanciamo il completo."; exit 0
 fi
+if [ "$MODE" = "memtest" ]; then   # solo misura: RAM, VRAM e secondi/fotogramma sul fotogramma piu' pesante (non serve la regia)
+  # 2026 (tutti gli edifici), vista larga obliqua su citta' + Aljarafe, 1920x1080, 8 campioni, OptiX; 12 fotogrammi uguali
+  MT_CAM=${MT_CAM:-"3500 -6500 2200 -300 500 0"}; MT_YEAR=${MT_YEAR:-2026}
+  step "MEMTEST $CITY: anno $MT_YEAR, camera $MT_CAM"
+  rm -rf /tmp/mt; ( nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -lms 1000 > /tmp/mt_vram.txt 2>/dev/null & echo $! > /tmp/mt_smi.pid )
+  $PY build_render.py -- $D /tmp/mt --frames 1 12 --year $MT_YEAR --cam $MT_CAM --lens 24 --res 1920 1080 --samples 8 --denoiser optix --device $DEV $CARGS > /tmp/mt.log 2>&1 &
+  P=$!; PK=0; while kill -0 $P 2>/dev/null; do R=$(ps -o rss= -p $P 2>/dev/null || echo 0); [ "${R:-0}" -gt "$PK" ] && PK=$R; sleep 2; done
+  kill $(cat /tmp/mt_smi.pid) 2>/dev/null
+  grep -E "rilievo applicato|alberi cotti|FATTO|rror" /tmp/mt.log
+  grep fotogramma /tmp/mt.log | awk '{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "secondi/fotogramma (senza i primi 2): %.2f\n", s/k}'
+  echo "picco RAM: $((PK/1024)) MB   picco VRAM: $(sort -n /tmp/mt_vram.txt | tail -1) MB"
+  step "FINITO memtest: manda lo screenshot e TERMINA il pod"; exit 0
+fi
 if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
   for V in "--denoiser optix" "--denoiser oidn" "--denoiser none" "--denoiser optix --samples 2" "--denoiser optix --res 960 540"; do

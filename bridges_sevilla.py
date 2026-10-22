@@ -146,19 +146,11 @@ c = c_tri
 n_before = len(parts)
 z, pt, wet, piers = bridge('Triana Bridge', c, ax, L, W, 6.5, 1852, spans=3, col='#cfc9bb', pier_col=STONE, rail=IRON)
 arches_below('Triana Bridge', pt, z, wet, piers, W, 1852, IRON, ribs=5)
-# cantiere graduale 1845 -> 1852 (scheda di Fabio): pile e spalle 1845-1848, archi di ghisa 1848-1851, impalcato e
-# parapetti 1851-1852; dentro ogni fase i pezzi compaiono lungo l'asse del ponte. Travi: crescono dalla loro quota.
-def _s(p_): return (p_['cx'] - c[0]) * ax[0] + (p_['cy'] - c[1]) * ax[1] if 'cx' in p_ else \
-    (sum(v[0] for v in p_['r']) / len(p_['r']) - c[0]) * ax[0] + (sum(v[1] for v in p_['r']) / len(p_['r']) - c[1]) * ax[1]
+# Regola di Fabio (22 ott): a stadi solo i landmark con almeno 3 fasi datate (qui no): comparsa unica nel 1845, inizio
+# lavori. Il ponte di barche resta fino al 1852 (inaugurazione del ponte di ferro), 40 m a monte.
 _tp = parts[n_before:]
-def _arch(p_): return p_['t'] == 'beam' and p_['c'] == IRON and not (p_['w'] == 0.35 and p_['h'] == 1.2)   # ringhiere: stesso ferro
-for grp, (t0, t1) in ((lambda p_: p_['t'] == 'prism', (1845.0, 1848.0)), (_arch, (1848.0, 1851.0)),
-                      (lambda p_: not (p_['t'] == 'prism' or _arch(p_)), (1851.0, 1852.0))):
-    sel = sorted([p_ for p_ in _tp if grp(p_)], key=_s)
-    for i, p_ in enumerate(sel):
-        p_['y'] = round(t0 + (t1 - t0) * i / max(1, len(sel) - 1), 2)
-        if p_['t'] == 'beam': p_['zbase'] = min(p_['p0'][2], p_['p1'][2])
-print('[ponti] Triana: cantiere 1845-1852 su', len(_tp), 'parti; ponte di barche 40 m a monte', flush=True)
+for p_ in _tp: p_['y'] = 1845
+print('[ponti] Triana: comparsa 1845 su', len(_tp), 'parti; ponte di barche 40 m a monte fino al 1852', flush=True)
 labels.append({'name': 'Triana Bridge', 'x': round(c[0], 1), 'y': round(c[1], 1), 'z': 8, 'from': 1852})
 
 # Puente de San Telmo (1931) [V]: archi laterali in cemento; tratto centrale levatoio fino al 1964-65
