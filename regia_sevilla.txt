@@ -1,73 +1,70 @@
-Durata 5:26.6  fotogrammi 7839  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 41
-Quota camera sopra il suolo: min 330 m, max 1000 m, mediana 629 m
-Velocita camera: mediana 52 m/s, max 284 m/s; rotazione sguardo mediana 1.1 gradi/s
-Prima fase di crescita vera (anno > 1300): 21.8 s
+Durata 5:26.6  fotogrammi 7839  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 51
+Quota camera sopra il suolo: min 330 m, max 1000 m, mediana 528 m
+Velocita camera: mediana 78 m/s, max 284 m/s; rotazione sguardo mediana 2.2 gradi/s
+Prima fase di crescita vera (anno > 1300): 21.6 s
 
 SOSTE (video -> anni):
   0:09.5-0:16.5  1248->1250  Seville under Castile (1248)
-  0:33.1-0:38.1  1430->1437  The Great Mosque gives way to the Cathedral (1434)
-  0:53.3-0:57.8  1564->1571  The Giralda gets its Renaissance belfry (1568)
-  1:24.5-1:29.5  1758->1790  The Maestranza bullring rises (1761-1785)
-  1:45.3-1:49.8  1843->1854  Isabel II Bridge replaces the boat bridge (1845-1852)
-  2:26.0-2:31.5  1912->1930  Plaza de España for the 1929 Expo (1914-1929)
-  3:40.0-3:45.0  1973->1983  The river is moved west: Corta de la Cartuja (1975-1982)
+  0:31.3-0:36.3  1430->1437  The Great Mosque gives way to the Cathedral (1434)
+  0:50.6-0:55.1  1564->1571  The Giralda gets its Renaissance belfry (1568)
+  1:20.3-1:25.3  1758->1790  The Maestranza bullring rises (1761-1785)
+  1:39.9-1:44.4  1843->1852  Isabel II Bridge replaces the boat bridge (1845-1852)
+  2:01.3-2:06.3  1858->1874  The walls come down (1858-1873)
+  2:28.5-2:34.0  1912->1930  Plaza de España for the 1929 Expo (1914-1929)
+  3:02.1-3:07.6  1952->1966  A new district: Los Remedios
+  3:32.7-3:37.7  1975->1983  The river is moved west: Corta de la Cartuja (1975-1982)
+  3:59.0-4:04.5  1991->1993  Expo 92
+  4:40.6-4:45.6  2013->2019  A skyline at last
 
-CARTELLI (video):
-  0:09.5  Seville under Castile (1248)
-  0:12.7  Ferdinand III enters Seville (23 Nov 1248)
-  0:16.7  Ferdinand III dies in Seville (1252)
-  0:26.6  Earthquake topples the Giralda's golden spheres (1356)
-  0:30.5  A cross and bell crown the Giralda (c. 1400)
-  0:33.1  The Great Mosque gives way to the Cathedral (1434)
-  0:42.1  Castile's first Inquisition tribunal sits in Triana Castle (1481)
-  0:45.0  Casa de Contratación: Seville controls the trade with the Americas (1503)
-  0:47.4  Magellan's fleet sails from Seville (1519)
-  0:53.3  The Giralda gets its Renaissance belfry (1568)
-  0:58.4  The Feria lagoon is drained (1574-1578)
-  0:59.2  Alameda de Hércules opens (1578)
-  1:05.5  Seville nears 120,000 people (c. 1600)
-  1:13.0  The Great Plague of 1649
-  1:20.7  The Casa de Contratación moves to Cádiz (1717)
-  1:21.9  Royal Tobacco Factory begun (1728)
-  1:24.3  Lisbon earthquake shakes Seville (1755)
-  1:24.5  The Maestranza bullring rises (1761-1785)
-  1:24.8  Torre del Oro gets its upper lantern (1760)
-  1:31.2  French troops occupy Seville (1810-1812)
-  1:31.2  Encarnación convent demolished (1811)
-  1:35.3  Disentailment empties the convents (1836)
-  1:45.3  Isabel II Bridge replaces the boat bridge (1845-1852)
-  1:47.4  Plaza Nueva is laid out (1848-1857)
-  1:55.8  The medieval walls come down (1858-1873)
-  2:21.5  The Maestranza is completed (1881)
-  2:25.6  Alfonso XIII Canal is dug (1909-1926)
-  2:26.0  Plaza de España for the 1929 Expo (1914-1929)
-  2:31.3  Ibero-American Exposition opens (9 May 1929)
-  2:39.9  Spanish Civil War (1936-1939)
-  2:55.3  Chapina arm is closed (1948-1950)
-  3:17.8  Tamarguillo flood (25 Nov 1961)
-  3:40.0  The river is moved west: Corta de la Cartuja (1975-1982)
-  4:01.0  Santa Justa station opens (1991)
-  4:03.0  Expo 92 · 20 April – 12 October 1992
-  4:29.0  Metropol Parasol (2005-2011)
-  pausa massima tra due cartelli: 26.0 s (dopo Expo 92 · 20 April – 12 October 1992)
+DIDASCALIE: 28, distanza 10.0-13.9 s, a schermo 8.0-8.0 s, spostamento max 8.0 s; Subscribe a 165 s
+  0:12.7  23 Nov 1248  Ferdinand III takes Seville
+  0:25.6  1356         Earthquake
+  0:35.6  c. 1400      A Christian crown
+  0:45.6  1481         The Inquisition arrives
+  0:55.6  1568         A new top for the Giralda
+  1:05.6  c. 1600      Peak of the Golden Age
+  1:18.2  1728         Royal Tobacco Factory
+  1:30.2  1836         Disentailment
+  1:42.3  1848–1857    Plaza Nueva
+  1:52.3  23 Feb 1852  Isabel II Bridge opens
+  2:02.3  1858–1873    The walls come down
+  2:12.3  1877         134,000 people
+  2:22.3  1900         148,000 people
+  2:33.8  9 May 1929   Ibero-American Exposition
+  2:46.6  1940         312,000 people
+  2:56.6  1948–1950    Chapina is closed
+  3:06.6  1950s        Los Remedios
+  3:18.8  1970         548,000 people
+  3:32.7  1975–1982    Corta de la Cartuja
+  3:42.7  1981         654,000 people
+  3:52.7  1987–1992    Expo works
+  4:02.7  2 May 1991   Santa Justa station
+  4:13.0  1997         Isla Mágica
+  4:23.0  2001         684,000 people
+  4:33.0  2005–2011    Metropol Parasol
+  4:43.0  2011         Las Setas open
+  4:53.0  2025         Seville today
+  5:06.6  1248 → 2026  800 years of Seville
+
+2:30-4:45: tratto piu lungo sopra 800 m = 0.0 s (limite 20 s)
 
 ANNO OGNI 20 s:
   0:00   2026.0  (0.00 anni/s)
-  0:20   1281.9  (8.34 anni/s)
-  0:40   1458.3  (11.32 anni/s)
-  1:00   1580.9  (3.58 anni/s)
-  1:20   1710.6  (10.53 anni/s)
-  1:40   1839.4  (0.69 anni/s)
-  2:00   1860.9  (0.67 anni/s)
-  2:20   1875.0  (1.26 anni/s)
-  2:40   1936.6  (0.82 anni/s)
-  3:00   1951.0  (0.63 anni/s)
-  3:20   1963.0  (0.50 anni/s)
-  3:40   1973.0  (1.12 anni/s)
-  4:00   1990.5  (0.50 anni/s)
-  4:20   2000.5  (0.50 anni/s)
-  4:40   2012.1  (1.04 anni/s)
+  0:20   1283.0  (9.02 anni/s)
+  0:40   1482.6  (6.37 anni/s)
+  1:00   1590.5  (3.37 anni/s)
+  1:20   1753.4  (14.09 anni/s)
+  1:40   1843.2  (1.71 anni/s)
+  2:00   1857.1  (0.67 anni/s)
+  2:20   1898.4  (0.95 anni/s)
+  2:40   1934.9  (0.94 anni/s)
+  3:00   1950.5  (0.69 anni/s)
+  3:20   1970.4  (0.36 anni/s)
+  3:40   1983.9  (0.38 anni/s)
+  4:00   1991.4  (0.36 anni/s)
+  4:20   2001.2  (0.53 anni/s)
+  4:40   2012.5  (0.87 anni/s)
   5:00   2026.0  (0.00 anni/s)
   5:20   2026.0  (0.00 anni/s)
 
-Velocita del tempo fuori dalle soste: mediana 0.69 anni/s, max 11.9 anni/s
+Velocita del tempo fuori dalle soste: mediana 0.86 anni/s, max 15.8 anni/s

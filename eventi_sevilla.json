@@ -1,218 +1,297 @@
-[
 {
-"t": 9.5,
-"year": 1248.0,
-"text": "Seville under Castile (1248)",
-"sosta": true
+"soste": [
+{
+"t_in": 9.5,
+"t_out": 16.5,
+"title": "Seville under Castile (1248)",
+"sub": ""
 },
 {
-"t": 12.65,
-"year": 1248.9,
-"text": "Ferdinand III enters Seville (23 Nov 1248)",
-"sosta": false
+"t_in": 31.35,
+"t_out": 36.35,
+"title": "The Great Mosque gives way to the Cathedral (1434)",
+"sub": ""
 },
 {
-"t": 16.74,
-"year": 1252.0,
-"text": "Ferdinand III dies in Seville (1252)",
-"sosta": false
+"t_in": 50.57,
+"t_out": 55.07,
+"title": "The Giralda gets its Renaissance belfry (1568)",
+"sub": ""
 },
 {
-"t": 26.63,
-"year": 1356.0,
-"text": "Earthquake topples the Giralda's golden spheres (1356)",
-"sosta": false
+"t_in": 80.33,
+"t_out": 85.33,
+"title": "The Maestranza bullring rises (1761-1785)",
+"sub": ""
 },
 {
-"t": 30.51,
-"year": 1400.0,
-"text": "A cross and bell crown the Giralda (c. 1400)",
-"sosta": false
+"t_in": 99.89,
+"t_out": 104.39,
+"title": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+"sub": ""
 },
 {
-"t": 33.14,
-"year": 1430.0,
-"text": "The Great Mosque gives way to the Cathedral (1434)",
-"sosta": true
+"t_in": 121.35,
+"t_out": 126.35,
+"title": "The walls come down (1858-1873)",
+"sub": ""
 },
 {
-"t": 42.08,
-"year": 1481.0,
-"text": "Castile's first Inquisition tribunal sits in Triana Castle (1481)",
-"sosta": false
+"t_in": 148.47,
+"t_out": 153.97,
+"title": "Plaza de España for the 1929 Expo (1914-1929)",
+"sub": ""
 },
 {
-"t": 44.98,
-"year": 1503.0,
-"text": "Casa de Contratación: Seville controls the trade with the Americas (1503)",
-"sosta": false
+"t_in": 182.13,
+"t_out": 187.63,
+"title": "A new district: Los Remedios",
+"sub": ""
 },
 {
-"t": 47.35,
-"year": 1519.6,
-"text": "Magellan's fleet sails from Seville (1519)",
-"sosta": false
+"t_in": 212.73,
+"t_out": 217.73,
+"title": "The river is moved west: Corta de la Cartuja (1975-1982)",
+"sub": ""
 },
 {
-"t": 53.29,
-"year": 1564.0,
-"text": "The Giralda gets its Renaissance belfry (1568)",
-"sosta": true
+"t_in": 238.99,
+"t_out": 244.49,
+"title": "Expo 92",
+"sub": "20 April – 12 October 1992"
 },
 {
-"t": 58.36,
-"year": 1574.0,
-"text": "The Feria lagoon is drained (1574-1578)",
-"sosta": false
-},
-{
-"t": 59.24,
-"year": 1578.0,
-"text": "Alameda de Hércules opens (1578)",
-"sosta": false
-},
-{
-"t": 65.47,
-"year": 1600.0,
-"text": "Seville nears 120,000 people (c. 1600)",
-"sosta": false
-},
-{
-"t": 73.05,
-"year": 1649.0,
-"text": "The Great Plague of 1649",
-"sosta": false
-},
-{
-"t": 80.72,
-"year": 1717.0,
-"text": "The Casa de Contratación moves to Cádiz (1717)",
-"sosta": false
-},
-{
-"t": 81.88,
-"year": 1728.0,
-"text": "Royal Tobacco Factory begun (1728)",
-"sosta": false
-},
-{
-"t": 84.3,
-"year": 1755.9,
-"text": "Lisbon earthquake shakes Seville (1755)",
-"sosta": false
-},
-{
-"t": 84.48,
-"year": 1758.0,
-"text": "The Maestranza bullring rises (1761-1785)",
-"sosta": true
-},
-{
-"t": 84.79,
-"year": 1760.0,
-"text": "Torre del Oro gets its upper lantern (1760)",
-"sosta": false
-},
-{
-"t": 91.18,
-"year": 1810.1,
-"text": "French troops occupy Seville (1810-1812)",
-"sosta": false
-},
-{
-"t": 91.25,
-"year": 1811.0,
-"text": "Encarnación convent demolished (1811)",
-"sosta": false
-},
-{
-"t": 95.28,
-"year": 1836.0,
-"text": "Disentailment empties the convents (1836)",
-"sosta": false
-},
-{
-"t": 105.35,
-"year": 1843.0,
-"text": "Isabel II Bridge replaces the boat bridge (1845-1852)",
-"sosta": true
-},
-{
-"t": 107.39,
-"year": 1848.0,
-"text": "Plaza Nueva is laid out (1848-1857)",
-"sosta": false
-},
-{
-"t": 115.75,
-"year": 1858.0,
-"text": "The medieval walls come down (1858-1873)",
-"sosta": false
-},
-{
-"t": 141.51,
-"year": 1881.0,
-"text": "The Maestranza is completed (1881)",
-"sosta": false
-},
-{
-"t": 145.64,
-"year": 1909.0,
-"text": "Alfonso XIII Canal is dug (1909-1926)",
-"sosta": false
-},
-{
-"t": 146.03,
-"year": 1912.0,
-"text": "Plaza de España for the 1929 Expo (1914-1929)",
-"sosta": true
-},
-{
-"t": 151.33,
-"year": 1929.35,
-"text": "Ibero-American Exposition opens (9 May 1929)",
-"sosta": false
-},
-{
-"t": 159.93,
-"year": 1936.5,
-"text": "Spanish Civil War (1936-1939)",
-"sosta": false
-},
-{
-"t": 175.26,
-"year": 1948.0,
-"text": "Chapina arm is closed (1948-1950)",
-"sosta": false
-},
-{
-"t": 197.84,
-"year": 1961.9,
-"text": "Tamarguillo flood (25 Nov 1961)",
-"sosta": false
-},
-{
-"t": 220.04,
-"year": 1973.0,
-"text": "The river is moved west: Corta de la Cartuja (1975-1982)",
-"sosta": true
-},
-{
-"t": 241.04,
-"year": 1991.0,
-"text": "Santa Justa station opens (1991)",
-"sosta": false
-},
-{
-"t": 243.04,
-"year": 1992.0,
-"text": "Expo 92 · 20 April – 12 October 1992",
-"sosta": false
-},
-{
-"t": 269.0,
-"year": 2005.0,
-"text": "Metropol Parasol (2005-2011)",
-"sosta": false
+"t_in": 280.63,
+"t_out": 285.63,
+"title": "A skyline at last",
+"sub": ""
 }
-]
+],
+"didascalie": [
+{
+"t_in": 12.65,
+"date": "23 Nov 1248",
+"title": "Ferdinand III takes Seville",
+"line": "After a 15-month siege the Almohad city surrenders to Castile.",
+"shift_s": 0.0,
+"t_out": 20.65
+},
+{
+"t_in": 25.64,
+"date": "1356",
+"title": "Earthquake",
+"line": "The Giralda's four golden spheres fall.",
+"shift_s": 0.0,
+"t_out": 33.64
+},
+{
+"t_in": 35.64,
+"date": "c. 1400",
+"title": "A Christian crown",
+"line": "A cross and a bell replace the minaret top.",
+"shift_s": 6.6,
+"t_out": 43.64
+},
+{
+"t_in": 45.64,
+"date": "1481",
+"title": "The Inquisition arrives",
+"line": "Its first Castilian tribunal sits in Triana Castle.",
+"shift_s": 5.9,
+"t_out": 53.64
+},
+{
+"t_in": 55.64,
+"date": "1568",
+"title": "A new top for the Giralda",
+"line": "Hernán Ruiz adds the Renaissance belfry: ~100 m.",
+"shift_s": 2.5,
+"t_out": 63.64
+},
+{
+"t_in": 65.64,
+"date": "c. 1600",
+"title": "Peak of the Golden Age",
+"line": "About 120,000 people: one of Europe's largest cities.",
+"shift_s": 3.2,
+"t_out": 73.64
+},
+{
+"t_in": 78.19,
+"date": "1728",
+"title": "Royal Tobacco Factory",
+"line": "Work starts on one of the largest industrial buildings in Europe.",
+"shift_s": 0.0,
+"t_out": 86.19
+},
+{
+"t_in": 90.18,
+"date": "1836",
+"title": "Disentailment",
+"line": "Church property is sold off; convents are emptied.",
+"shift_s": 0.0,
+"t_out": 98.18
+},
+{
+"t_in": 102.26,
+"date": "1848–1857",
+"title": "Plaza Nueva",
+"line": "The San Francisco convent is replaced by a square.",
+"shift_s": 0.0,
+"t_out": 110.26
+},
+{
+"t_in": 112.26,
+"date": "23 Feb 1852",
+"title": "Isabel II Bridge opens",
+"line": "The first fixed bridge to Triana ends 600 years of boats.",
+"shift_s": 8.0,
+"t_out": 120.26
+},
+{
+"t_in": 122.26,
+"date": "1858–1873",
+"title": "The walls come down",
+"line": "Gates and walls give way to boulevards; Macarena survives.",
+"shift_s": 0.9,
+"t_out": 130.26
+},
+{
+"t_in": 132.26,
+"date": "1877",
+"title": "134,000 people",
+"line": "The city finally grows beyond its medieval size.",
+"shift_s": 2.1,
+"t_out": 140.26
+},
+{
+"t_in": 142.26,
+"date": "1900",
+"title": "148,000 people",
+"line": "The first districts grow outside the old walls.",
+"shift_s": 0.6,
+"t_out": 150.26
+},
+{
+"t_in": 153.77,
+"date": "9 May 1929",
+"title": "Ibero-American Exposition",
+"line": "Plaza de España and María Luisa Park open.",
+"shift_s": 0.0,
+"t_out": 161.77
+},
+{
+"t_in": 166.55,
+"date": "1940",
+"title": "312,000 people",
+"line": "The city doubles in twenty years.",
+"shift_s": 0.0,
+"t_out": 174.55
+},
+{
+"t_in": 176.55,
+"date": "1948–1950",
+"title": "Chapina is closed",
+"line": "The old river arm is dammed; the city side becomes a dock.",
+"shift_s": 0.2,
+"t_out": 184.55
+},
+{
+"t_in": 186.55,
+"date": "1950s",
+"title": "Los Remedios",
+"line": "A new district rises on the old Tablada fields.",
+"shift_s": 3.2,
+"t_out": 194.55
+},
+{
+"t_in": 198.79,
+"date": "1970",
+"title": "548,000 people",
+"line": "High-rise blocks spread east and south.",
+"shift_s": 0.0,
+"t_out": 206.79
+},
+{
+"t_in": 212.73,
+"date": "1975–1982",
+"title": "Corta de la Cartuja",
+"line": "The river is diverted west of La Cartuja against floods.",
+"shift_s": 0.0,
+"t_out": 220.73
+},
+{
+"t_in": 222.73,
+"date": "1981",
+"title": "654,000 people",
+"line": "Thirty years of record growth.",
+"shift_s": 6.2,
+"t_out": 230.73
+},
+{
+"t_in": 232.73,
+"date": "1987–1992",
+"title": "Expo works",
+"line": "New bridges and the Cartuja site take shape.",
+"shift_s": 4.4,
+"t_out": 240.73
+},
+{
+"t_in": 242.73,
+"date": "2 May 1991",
+"title": "Santa Justa station",
+"line": "The new railway station opens.",
+"shift_s": 2.8,
+"t_out": 250.73
+},
+{
+"t_in": 253.03,
+"date": "1997",
+"title": "Isla Mágica",
+"line": "A theme park opens on the old Expo grounds.",
+"shift_s": 0.0,
+"t_out": 261.03
+},
+{
+"t_in": 263.03,
+"date": "2001",
+"title": "684,000 people",
+"line": "Growth moves to the suburbs.",
+"shift_s": 3.4,
+"t_out": 271.03
+},
+{
+"t_in": 273.03,
+"date": "2005–2011",
+"title": "Metropol Parasol",
+"line": "A wooden canopy over the Encarnación square.",
+"shift_s": 5.8,
+"t_out": 281.03
+},
+{
+"t_in": 283.03,
+"date": "2011",
+"title": "Las Setas open",
+"line": "The \"mushrooms\" become a city symbol.",
+"shift_s": 4.9,
+"t_out": 291.03
+},
+{
+"t_in": 293.03,
+"date": "2025",
+"title": "Seville today",
+"line": "~690,000 people.",
+"shift_s": 2.8,
+"t_out": 301.03
+},
+{
+"t_in": 306.62,
+"date": "1248 → 2026",
+"title": "800 years of Seville",
+"line": "From Almohad city to Expo 92.",
+"shift_s": 0.0,
+"t_out": 314.62
+}
+],
+"subscribe_t": 165.0
+}

@@ -237,6 +237,19 @@ def icons(DATA):
             seg_ = _WL([pa, pb]).buffer(1.6, cap_style=2)
             part(name='City walls', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(seg_.exterior.coords)[:-1]], z0=0.0, z1=9.0, c=TAP, top=TAP, y=1100, **dw)
             part(name='City walls', t='prism', r=_sq(pa[0], pa[1], 4.0, ux, uy), z0=0.0, z1=13.0, c=TOW, top=TOW, y=1100, **dw)
+            if dw:   # al posto del muro demolito la ronda: nastro di strada chiara largo 18 m (Fabio, 23 ott), quota 0,11 (libera)
+                rd_ = _WL([pa, pb]).buffer(9.0, cap_style=2)
+                part(name='Ronda', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(rd_.exterior.coords)[:-1]], z0=0.0, z1=0.11, c='#d8d0bf', top='#d8d0bf', y=dw['d'])
+    # --- Metropol Parasol (cantiere 2005-2011, keyframe della scheda): la base del Catasto compare nel 2005, il parasole nel
+    #     2011. Misure [L]: ~150 x 70 m, alto ~26 m, sei "funghi". Posizione e orientamento [L]: il rettangolo 150 x 70 che
+    #     non tocca edifici attorno alla base (asse nord-sud, centro 10-40 m a sud della base: 12 m2 di sovrapposizione).
+    mpx, mpy = 56.0, 762.0; WOOD = '#e3cf9e'
+    for k_, (s_, o_) in enumerate(((-55, 12), (-33, -12), (-11, 12), (11, -12), (33, 12), (55, -12))):
+        cxm, cym = mpx + o_, mpy + s_
+        part(name='Metropol Parasol', t='cyl', cx=cxm, cy=cym, rad=4.5, z0=0.0, z1=21.0, seg=10, c=WOOD, y=2010.5)
+        cap_ = [[round(cxm + 17 * math.cos(2 * math.pi * j / 14), 2), round(cym + 14 * math.sin(2 * math.pi * j / 14), 2)] for j in range(14)]
+        part(name='Metropol Parasol', t='prism', r=cap_, z0=21.0, z1=26.0, c=WOOD, top=WOOD, y=2010.5)
+    LM['labels'].append({'name': 'Metropol Parasol', 'x': mpx, 'y': mpy, 'z': 32, 'from': 2011, 'icon': 1})
     for b_ in blds:   # il tratto della Macarena del Catasto (anno 1023, bianco, 16,5 m) lascia il posto alle mura modellate
         if b_.get('y') == 1023 and b_.get('h', 0) > 15:
             cx_, cy_ = sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r'])
@@ -348,6 +361,9 @@ def fix_icons(DATA):
     print(f'[hist_sevilla] Cattedrale: {cat["y"]} -> {CATHEDRAL[0]}, {cat["h"]} m -> {CATHEDRAL[1]} m', flush=True)
     cat['r'] = [[round(x, 2), round(y, 2)] for x, y in list(g.exterior.coords)[:-1]]; cat['y'], cat['h'] = CATHEDRAL
     cat['lm'] = True; cat['wall'] = '#d9cba9'; cat['roof'] = '#bfb293'   # pietra, non la tavolozza casuale delle case
+    # Torre Sevilla: nel Catasto 121,9 m (piani x 3,1 m); altezza vera ~180 m [L, Wikipedia]; anno del repo 2015 (scheda: NON VERIFICATO)
+    for b in blds:
+        if b['y'] == 2015 and b['h'] > 100: print(f'[hist_sevilla] Torre Sevilla: {b["h"]} m -> 180 m', flush=True); b['h'] = 180.0
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
 
 def expo(DATA):
