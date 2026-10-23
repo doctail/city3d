@@ -1598,14 +1598,14 @@
     },
     {
       "ID": "E035",
-      "Elemento": "Musée du Louvre — aile nord (aile Richelieu) le long de la rue de Rivoli, phase du Nouveau Louvre",
-      "Da (anno)": 1852,
-      "A (anno)": 1863,
+      "Elemento": "Musée du Louvre — aile Rohan le long de la rue de Rivoli, phase de Napoléon Ier",
+      "Da (anno)": 1806,
+      "A (anno)": 1811,
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf ; https://www.louvre.fr/decouvrir/le-palais/lumiere-sur-la-sculpture",
-      "Note": "Le Louvre date le programme du Nouveau Louvre de «1852-1863» et précise que les bâtiments le long de la rue de Rivoli prolongent ceux élevés sous Napoléon Ier et Louis XVIII. Le Louvre précise aussi que l’aile Richelieu, aile nord bordant la rue de Rivoli, fut bâtie sous Napoléon III. L’ancienne datation 1659-1664 est supprimée."
+      "Fonte": "https://www.tuileries.org/page_id_dessein/ ; https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
+      "Note": "La source historique sur le Grand Dessein indique : «de 1806 à 1811 de l’aile Rohan, le long de la nouvelle Rue de Rivoli». Le Louvre confirme qu’une aile supplémentaire est construite au nord le long de la rue de Rivoli sous Napoléon Bonaparte. À distinguer du Nouveau Louvre de Napoléon III (E038)."
     },
     {
       "ID": "E036",
@@ -1631,14 +1631,14 @@
     },
     {
       "ID": "E038",
-      "Elemento": "Musée du Louvre — Nouveau Louvre de Napoléon III : liaison Louvre–Tuileries et Cour Napoléon",
+      "Elemento": "Musée du Louvre — Nouveau Louvre de Napoléon III : liaison Louvre–Tuileries",
       "Da (anno)": 1852,
-      "A (anno)": 1857,
+      "A (anno)": 1863,
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
-      "Note": "La source officielle date le programme du «Nouveau Louvre et le musée Napoléon III» de 1852-1863 et précise : «La cour Napoléon [...] est achevée en 1857». Cette ligne isole la liaison et la cour achevée en 1857; le programme architectural plus large se poursuit jusqu’en 1863."
+      "Note": "La source officielle date le programme du «Nouveau Louvre et le musée Napoléon III» de 1852-1863 et indique qu’il achève la liaison Louvre-Tuileries côté nord. La Cour Napoléon au cœur de cet ensemble est achevée en 1857."
     }
   ],
   "F": [
@@ -2081,14 +2081,14 @@
     },
     {
       "ID": "G034",
-      "Elemento": "Passerelle Léopold-Sédar-Senghor — construction",
+      "Elemento": "Passerelle Léopold-Sédar-Senghor — passerelle actuelle sur le site du pont Solférino",
       "Da (anno)": 1997,
       "A (anno)": 1999,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+L%C3%A9opold-S%C3%A9dar-Senghor ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Passerelle actuelle remplaçant l’ancien pont Solférino; dates à confirmer."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+L%C3%A9opold-S%C3%A9dar-Senghor ; https://www.afgc.asso.fr/history-heritage/passerelle-leopold-sedar-senghor-a-paris/",
+      "Note": "La fiche donne : «Date de construction : 1997-1999». Les phases du pont Solférino de 1861 et de la passerelle provisoire de 1961-1992 sont enregistrées séparément."
     },
     {
       "ID": "G035",
@@ -2375,6 +2375,39 @@
       "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Saint-Michel ; https://www.paris.fr/webdocs/rives-de-seine/revivre",
       "Note": "Première phase de franchissement médiéval retenue comme hypothèse de travail; année à confirmer dans la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G064",
+      "Elemento": "Pont Saint-Charles — primo attraversamento sul sito (pont de l’Hôtel-Dieu)",
+      "Da (anno)": 1651,
+      "A (anno)": 1651,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Saint-Charles ; https://fr.wikipedia.org/wiki/Pont_Saint-Charles_%28Paris%29",
+      "Note": "La chronologie du pont Saint-Charles est incertaine : certaines sources donnent une mise en service en 1606, d’autres situent la construction du second pont en 1646-1651. L’année 1651 est conservée comme hypothèse à faible fiabilité."
+    },
+    {
+      "ID": "G065",
+      "Elemento": "Passerelle Solférino — premier pont sur le site, prédécesseur de la passerelle Senghor",
+      "Da (anno)": 1858,
+      "A (anno)": 1861,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Solf%C3%A9rino ; https://www.afgc.asso.fr/history-heritage/passerelle-leopold-sedar-senghor-a-paris/",
+      "Note": "La fiche historique indique que les piles et culées sont achevées le 1er mai 1859, puis que le pont est ouvert à la circulation en 1861; cette phase précède la passerelle provisoire de 1961 et la passerelle actuelle de 1997-1999."
+    },
+    {
+      "ID": "G066",
+      "Elemento": "Passerelle Solférino — passerelle provisoire après démolition du pont de 1861",
+      "Da (anno)": 1961,
+      "A (anno)": 1992,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Solf%C3%A9rino ; https://www.afgc.asso.fr/history-heritage/passerelle-leopold-sedar-senghor-a-paris/",
+      "Note": "La fiche indique : «En 1961, on installa une passerelle en acier, piétonne et “provisoire”», démolie en 1992."
     }
   ]
 }
