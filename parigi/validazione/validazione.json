@@ -18,7 +18,7 @@
     },
     {
       "elemento": "Ponts médiévaux",
-      "stato": "Pont Notre-Dame, Petit-Pont e Grand-Pont (successivamente Pont au Change) hanno antecedenti medievali; struttura esatta del 1190 non va confusa con le ricostruzioni successive."
+      "stato": "En 1190, retenir le Grand-Pont (sur le site du futur Pont au Change) et le Petit-Pont. Le Pont Notre-Dame maçonné avec ses rangées de maisons est une phase du début du XVIe siècle (1510–1512), pas un ouvrage à placer dans l’état initial."
     },
     {
       "elemento": "Enceinte de Philippe Auguste",
@@ -41,7 +41,7 @@
       "A (anno)": 1655,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/veue-et-perspective-de-l-isle-nostre-dame-et-de-la-porte-st-bernard-sic",
       "Note": "Intervento autorizzato nel 1614; completamento convenzionale verso il 1655."
     },
@@ -93,12 +93,12 @@
       "ID": "A006",
       "Elemento": "Canal Saint-Martin: avvio dei lavori",
       "Da (anno)": 1802,
-      "A (anno)": 1802,
-      "Uso nel modello": "BRUSCO",
+      "A (anno)": 1822,
+      "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
-      "Note": "La fonte riporta: «Les travaux débutent le 23 septembre 1802»."
+      "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492",
+      "Note": "La source donne la phrase complète : «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard.» 1802 est le début du creusement; le canal est inauguré en décembre 1825 (ligne A007)."
     },
     {
       "ID": "A007",
@@ -108,8 +108,8 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/tmp-canaux-7834",
-      "Note": "La fonte riporta: «le canal Saint-Martin en 1825»."
+      "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492",
+      "Note": "La Ville de Paris indique une inauguration en décembre 1825, distincte de la fin du creusement en 1822."
     },
     {
       "ID": "A009",
@@ -129,7 +129,7 @@
       "A (anno)": 1910,
       "Uso nel modello": "TEMPORANEO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/la-crue-de-1910-189",
       "Note": "Evento temporaneo documentato; la fonte titola «La crue de 1910». L’intervallo del livello di piena non va prolungato oltre l’evento."
     },
@@ -140,7 +140,7 @@
       "A (anno)": 1808,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
       "Note": "Bacino parte del sistema dei canali; anno puntuale da confermare su fonte primaria dedicata."
     },
@@ -162,7 +162,7 @@
       "A (anno)": 1862,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
       "Note": "Copertura parziale per realizzare il boulevard; il modello dovrebbe distinguere tratto coperto e tratto a cielo aperto."
     },
@@ -173,7 +173,7 @@
       "A (anno)": 1907,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
       "Note": "Copertura parziale del tratto urbano; non rappresenta la scomparsa dell’intero canale."
     },
@@ -237,13 +237,13 @@
     {
       "ID": "B005",
       "Elemento": "Enceinte de Louis XIII: costruzione",
-      "Da (anno)": 1630,
-      "A (anno)": 1670,
+      "Da (anno)": 1566,
+      "A (anno)": 1643,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
-      "Note": "La fonte colloca la fortificazione nel ciclo delle cinte del XVI–XVII secolo; gli estremi sono convenzionali."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/limites-et-enceintes-successives-de-paris",
+      "Note": "Le plan des enceintes porte «enceinte de Charles IX à Louis XIII...1560-1643»; la Ville de Paris date le lancement du front de 1566."
     },
     {
       "ID": "B006",
@@ -251,10 +251,10 @@
       "Da (anno)": 1670,
       "A (anno)": 1700,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
-      "Note": "La demolizione lascia spazio ai grands boulevards; l’intervento è progressivo."
+      "Note": "La Ville de Paris indique que les deux enceintes les plus tardives sont rasées sous Louis XIV pour laisser place aux grands boulevards; 1670 est le début documenté de cette phase, 1700 borne opérationnelle."
     },
     {
       "ID": "B007",
@@ -274,7 +274,7 @@
       "A (anno)": 1860,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
       "Note": "Demolizione progressiva nel contesto dell’espansione urbana e della costruzione della cinta di Thiers; anno puntuale operativo indicativo."
     },
@@ -318,9 +318,31 @@
       "A (anno)": 1973,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_p%C3%A9riph%C3%A9rique_de_Paris",
       "Note": "Anno di apertura convenzionale dell’anello stradale."
+    },
+    {
+      "ID": "B013",
+      "Elemento": "Enceinte de Philippe Auguste — rive droite : démantèlement progressif",
+      "Da (anno)": 1500,
+      "A (anno)": 1700,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "Démantèlement progressif lié à la croissance urbaine; la Ville de Paris confirme la succession des enceintes mais ne donne pas de dates uniformes pour toute la rive droite. Bornes indicatives."
+    },
+    {
+      "ID": "B014",
+      "Elemento": "Enceinte de Philippe Auguste — rive gauche : démantèlement progressif",
+      "Da (anno)": 1500,
+      "A (anno)": 1800,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/enceinte-de-philippe-auguste-rive-gauche-ndeg37-vue-d-une-tour-de-l",
+      "Note": "Des vestiges de rive gauche subsistent au XIXe siècle; Paris Musées date une tour «Démolie en 1849». Intervalle global indicatif, sans prétendre dater chaque tronçon."
     }
   ],
   "C": [
@@ -330,10 +352,10 @@
       "Da (anno)": 1802,
       "A (anno)": 1835,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Rue_de_Rivoli",
-      "Note": "Realizzazione in più fasi; non confondere il primo tracciato con il prolungamento haussmanniano."
+      "Fonte": "https://cdn.paris.fr/paris/2020/02/26/2036630923f689f0c704a7d9522c82a9.pdf",
+      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon."
     },
     {
       "ID": "C002",
@@ -341,10 +363,10 @@
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Rue_de_Rivoli",
-      "Note": "Prolungamento nel quadro delle trasformazioni del Secondo Impero."
+      "Fonte": "https://cdn.paris.fr/paris/2020/02/26/2036630923f689f0c704a7d9522c82a9.pdf",
+      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon."
     },
     {
       "ID": "C003",
@@ -352,10 +374,10 @@
       "Da (anno)": 1854,
       "A (anno)": 1858,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_de_S%C3%A9bastopol",
-      "Note": "Asse principale da modellare separatamente."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/inauguration-du-boulevard-de-sebastopol-le-5-avril-1858-en-presence-de-l",
+      "Note": "Paris Musées / Musée Carnavalet indique : «Ce boulevard a été inauguré le 5 avril 1858»; l’inauguration de 1858 est attestée, le démarrage du chantier en 1854 reste une borne de phase."
     },
     {
       "ID": "C004",
@@ -364,7 +386,7 @@
       "A (anno)": 1870,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Saint-Germain",
       "Note": "Realizzazione in fasi; usare come asse graduale."
     },
@@ -375,7 +397,7 @@
       "A (anno)": 1853,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_de_Strasbourg",
       "Note": "Asse connesso alla Gare de l’Est."
     },
@@ -386,7 +408,7 @@
       "A (anno)": 1879,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Avenue_de_l%27Op%C3%A9ra",
       "Note": "Taglio urbano con demolizioni e allineamenti progressivi."
     },
@@ -397,7 +419,7 @@
       "A (anno)": 1926,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Haussmann",
       "Note": "Asse realizzato in fasi, completato dopo il Secondo Impero."
     },
@@ -408,7 +430,7 @@
       "A (anno)": 1862,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Voltaire",
       "Note": "Asse radiale orientale."
     },
@@ -419,7 +441,7 @@
       "A (anno)": 1870,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/%C3%8Ele_de_la_Cit%C3%A9",
       "Note": "Interventi con demolizioni estese; non ricostruire la trasformazione come evento istantaneo."
     },
@@ -430,7 +452,7 @@
       "A (anno)": 1865,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Rue_des_%C3%89coles",
       "Note": "Taglio sulla rive gauche."
     },
@@ -441,7 +463,7 @@
       "A (anno)": 1860,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_Charles-de-Gaulle",
       "Note": "La piazza e i viali si sviluppano in fasi; il nome attuale OSM è Place Charles-de-Gaulle."
     },
@@ -452,7 +474,7 @@
       "A (anno)": 1836,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_de_la_Concorde",
       "Note": "La forma e gli arredi cambiano in più fasi."
     },
@@ -462,10 +484,10 @@
       "Da (anno)": 1605,
       "A (anno)": 1612,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Place_des_Vosges",
-      "Note": "Prima della data iniziale del timelapse: includere solo nello stato iniziale del 1190? No: non esisteva nel 1190, quindi qui come trasformazione storica post-1190."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/lieux/square-louis-xiii-36",
+      "Note": "La Ville de Paris indique : «C’est en 1605 que la place prit le nom de “place Royale”» et «La place Royale ne fut achevée qu’en 1612». Place postérieure à 1190, donc absente de l’état initial."
     },
     {
       "ID": "C015",
@@ -474,7 +496,7 @@
       "A (anno)": 1720,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_Vend%C3%B4me",
       "Note": "Piazza sviluppata in più fasi."
     },
@@ -485,7 +507,7 @@
       "A (anno)": 1870,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
       "Note": "Fase dei padiglioni ottocenteschi."
     },
@@ -496,7 +518,7 @@
       "A (anno)": 1973,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
       "Note": "Demolizione e trasferimento del mercato."
     },
@@ -507,7 +529,7 @@
       "A (anno)": 1870,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/%C3%8Ele_de_la_Cit%C3%A9",
       "Note": "Riorganizzazione con nuove strade, edifici pubblici e demolizioni."
     },
@@ -518,7 +540,7 @@
       "A (anno)": 1862,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Richard-Lenoir",
       "Note": "Collegare alla copertura del canale, senza cancellare il canale sottostante."
     },
@@ -529,7 +551,7 @@
       "A (anno)": 1883,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_de_la_R%C3%A9publique",
       "Note": "Trasformazione in fasi, inclusa la denominazione storica successiva."
     }
@@ -545,7 +567,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D002",
@@ -557,7 +580,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D003",
@@ -569,7 +593,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.persee.fr/doc/crai_0065-0536_1966_num_110_4_12047",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D004",
@@ -581,7 +606,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D005",
@@ -593,7 +619,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D006",
@@ -605,7 +632,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D007",
@@ -617,7 +645,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1456?pageId=T1_88",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D008",
@@ -629,7 +658,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1456?pageId=T1_88",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D009",
@@ -641,7 +671,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D010",
@@ -653,7 +684,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D011",
@@ -665,7 +697,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D012",
@@ -677,7 +710,8 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1-2_6853",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D013",
@@ -689,463 +723,502 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1-2_6853",
-      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+      "Note": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale.",
+      "Stima": "sì"
     },
     {
       "ID": "D014",
       "Da (anno)": 1801,
       "A (anno)": 1801,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~547756",
+      "Valore HUD": 547756,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1801 547,756». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1801 547,756». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D015",
       "Da (anno)": 1807,
       "A (anno)": 1807,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~580609",
+      "Valore HUD": 580609,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1807 580,609». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1807 580,609». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D016",
       "Da (anno)": 1811,
       "A (anno)": 1811,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~622636",
+      "Valore HUD": 622636,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1811 622,636». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1811 622,636». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D017",
       "Da (anno)": 1817,
       "A (anno)": 1817,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~713966",
+      "Valore HUD": 713966,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1817 713,966». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1817 713,966». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D018",
       "Da (anno)": 1831,
       "A (anno)": 1831,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~785862",
+      "Valore HUD": 785862,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1831 785,862». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1831 785,862». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D019",
       "Da (anno)": 1836,
       "A (anno)": 1836,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~909126",
+      "Valore HUD": 909126,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1836 909,126». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1836 909,126». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D020",
       "Da (anno)": 1841,
       "A (anno)": 1841,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~935261",
+      "Valore HUD": 935261,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1841 935,261». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1841 935,261». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D021",
       "Da (anno)": 1846,
       "A (anno)": 1846,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1053897",
+      "Valore HUD": 1053897,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1846 1,053,897». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1846 1,053,897». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D022",
       "Da (anno)": 1851,
       "A (anno)": 1851,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1053262",
+      "Valore HUD": 1053262,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1851 1,053,262». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1851 1,053,262». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D023",
       "Da (anno)": 1856,
       "A (anno)": 1856,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1174346",
+      "Valore HUD": 1174346,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1856 1,174,346». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1856 1,174,346». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D024",
       "Da (anno)": 1861,
       "A (anno)": 1861,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1696141",
+      "Valore HUD": 1696141,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1861 1,696,141». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1861 1,696,141». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D025",
       "Da (anno)": 1866,
       "A (anno)": 1866,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1825274",
+      "Valore HUD": 1825274,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1866 1,825,274». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1866 1,825,274». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D026",
       "Da (anno)": 1872,
       "A (anno)": 1872,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1851792",
+      "Valore HUD": 1851792,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1872 1,851,792». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1872 1,851,792». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D027",
       "Da (anno)": 1876,
       "A (anno)": 1876,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~1988806",
+      "Valore HUD": 1988806,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1876 1,988,806». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1876 1,988,806». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D028",
       "Da (anno)": 1881,
       "A (anno)": 1881,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2269023",
+      "Valore HUD": 2269023,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1881 2,269,023». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1881 2,269,023». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D029",
       "Da (anno)": 1886,
       "A (anno)": 1886,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2344550",
+      "Valore HUD": 2344550,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1886 2,344,550». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1886 2,344,550». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D030",
       "Da (anno)": 1891,
       "A (anno)": 1891,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2447957",
+      "Valore HUD": 2447957,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1891 2,447,957». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1891 2,447,957». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D031",
       "Da (anno)": 1896,
       "A (anno)": 1896,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2536834",
+      "Valore HUD": 2536834,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1896 2,536,834». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1896 2,536,834». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D032",
       "Da (anno)": 1901,
       "A (anno)": 1901,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2714068",
+      "Valore HUD": 2714068,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1901 2,714,068». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1901 2,714,068». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D033",
       "Da (anno)": 1906,
       "A (anno)": 1906,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2763393",
+      "Valore HUD": 2763393,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1906 2,763,393». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1906 2,763,393». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D034",
       "Da (anno)": 1911,
       "A (anno)": 1911,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2888110",
+      "Valore HUD": 2888110,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1911 2,888,110». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1911 2,888,110». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D035",
       "Da (anno)": 1921,
       "A (anno)": 1921,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2906472",
+      "Valore HUD": 2906472,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1921 2,906,472». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1921 2,906,472». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D036",
       "Da (anno)": 1926,
       "A (anno)": 1926,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2871429",
+      "Valore HUD": 2871429,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1926 2,871,429». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1926 2,871,429». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D037",
       "Da (anno)": 1931,
       "A (anno)": 1931,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2891020",
+      "Valore HUD": 2891020,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1931 2,891,020». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1931 2,891,020». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D038",
       "Da (anno)": 1936,
       "A (anno)": 1936,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2829746",
+      "Valore HUD": 2829746,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1936 2,829,746». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1936 2,829,746». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D039",
       "Da (anno)": 1946,
       "A (anno)": 1946,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2725374",
+      "Valore HUD": 2725374,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1946 2,725,374». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1946 2,725,374». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D040",
       "Da (anno)": 1954,
       "A (anno)": 1954,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2850189",
+      "Valore HUD": 2850189,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1954 2,850,189». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1954 2,850,189». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D041",
       "Da (anno)": 1962,
       "A (anno)": 1962,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2790091",
+      "Valore HUD": 2790091,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1962 2,790,091». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1962 2,790,091». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D042",
       "Da (anno)": 1968,
       "A (anno)": 1968,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2590771",
+      "Valore HUD": 2590771,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1968 2,590,771». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1968 2,590,771». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D043",
       "Da (anno)": 1975,
       "A (anno)": 1975,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2299830",
+      "Valore HUD": 2299830,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1975 2,299,830». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1975 2,299,830». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D044",
       "Da (anno)": 1982,
       "A (anno)": 1982,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2176243",
+      "Valore HUD": 2176243,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1982 2,176,243». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1982 2,176,243». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D045",
       "Da (anno)": 1990,
       "A (anno)": 1990,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2152423",
+      "Valore HUD": 2152423,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1990 2,152,423». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1990 2,152,423». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D046",
       "Da (anno)": 1999,
       "A (anno)": 1999,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2125246",
+      "Valore HUD": 2125246,
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "La fonte riporta: «1999 2,125,246». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «1999 2,125,246». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D047",
       "Da (anno)": 2006,
       "A (anno)": 2006,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2181371",
+      "Valore HUD": 2181371,
       "Definizione": "Population municipale / population de référence",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "La fonte riporta: «2006 2,181,371». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «2006 2,181,371». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D048",
       "Da (anno)": 2011,
       "A (anno)": 2011,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2249975",
+      "Valore HUD": 2249975,
       "Definizione": "Population municipale / population de référence",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "La fonte riporta: «2011 2,249,975». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «2011 2,249,975». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D049",
       "Da (anno)": 2016,
       "A (anno)": 2016,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2190327",
+      "Valore HUD": 2190327,
       "Definizione": "Population municipale / population de référence",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "La fonte riporta: «2016 2,190,327». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «2016 2,190,327». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D050",
       "Da (anno)": 2021,
       "A (anno)": 2021,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2133111",
+      "Valore HUD": 2133111,
       "Definizione": "Population municipale / population de référence",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "La fonte riporta: «2021 2,133,111». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «2021 2,133,111». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     },
     {
       "ID": "D051",
       "Da (anno)": 2025,
       "A (anno)": 2025,
       "Uso nel modello": "BRUSCO",
-      "Valore HUD": "~2065560",
+      "Valore HUD": 2065560,
       "Definizione": "Population municipale / population de référence",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "La fonte riporta: «2025 2,065,560». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+      "Note": "La fonte riporta: «2025 2,065,560». Valore di serie storica o censimento; le definizioni possono variare tra millésimes.",
+      "Stima": "no"
     }
   ],
   "E": [
@@ -1162,25 +1235,25 @@
     },
     {
       "ID": "E002",
-      "Elemento": "Musée du Louvre — trasformazione in palais royal",
+      "Elemento": "Musée du Louvre — aile Lescot et lancement de la Cour Carrée",
       "Da (anno)": 1546,
-      "A (anno)": 1790,
+      "A (anno)": 1555,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.louvre.fr/decouvrir/le-palais/histoire-du-palais",
-      "Note": "Trasformazioni successive; verificare ogni ala prima dell’animazione."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
+      "Note": "Le Louvre indique : «En 1546 [...] le roi commande une nouvelle aile»; l’aile Lescot est «terminée entre 1553 et 1555»."
     },
     {
       "ID": "E003",
-      "Elemento": "Musée du Louvre — Grand Louvre e ingresso contemporaneo",
-      "Da (anno)": 1983,
-      "A (anno)": 1989,
+      "Elemento": "Musée du Louvre — Cour Carrée : agrandissement classique",
+      "Da (anno)": 1546,
+      "A (anno)": 1670,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.louvre.fr/decouvrir/le-palais/la-pyramide-du-louvre",
-      "Note": "Intervento contemporaneo con apertura della piramide nel 1989."
+      "Fonte": "https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
+      "Note": "La source officielle précise que l’agrandissement devient la Cour Carrée et qu’il est réalisé par les successeurs d’Henri IV; 1670 est une borne de modélisation du grand chantier classique."
     },
     {
       "ID": "E004",
@@ -1210,10 +1283,10 @@
       "Da (anno)": 1670,
       "A (anno)": 1676,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/H%C3%B4tel_des_Invalides",
-      "Note": "Complesso edificato in più fasi; distinguere chiesa, dôme e ampliamenti."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.carnavalet.paris.fr/sites/default/files/2020-03/Exe%20DP%20couleurs%20du%20ciel.pdf",
+      "Note": "La source donne «1677-1699 Construction de l’église du dôme des Invalides»; la phase du dôme est isolée en E036."
     },
     {
       "ID": "E007",
@@ -1222,7 +1295,7 @@
       "A (anno)": 1791,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Panth%C3%A9on_(Paris)",
       "Note": "La forma e la funzione cambiano durante la Rivoluzione."
     },
@@ -1233,7 +1306,7 @@
       "A (anno)": 1914,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre",
       "Note": "Fase edilizia lunga; completamento e consacrazione non coincidono con l’inizio."
     },
@@ -1244,7 +1317,7 @@
       "A (anno)": 1875,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Palais_Garnier",
       "Note": "Costruzione e apertura al pubblico."
     },
@@ -1266,7 +1339,7 @@
       "A (anno)": 1790,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Bastille_(Paris)",
       "Note": "Distruzione dopo la prise de la Bastille; la piazza resta come spazio urbano."
     },
@@ -1276,10 +1349,10 @@
       "Da (anno)": 1605,
       "A (anno)": 1612,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Place_des_Vosges",
-      "Note": "La piazza non esisteva nel 1190; formazione successiva."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/lieux/square-louis-xiii-36",
+      "Note": "La Ville de Paris indique : «La place Royale ne fut achevée qu’en 1612»."
     },
     {
       "ID": "E013",
@@ -1288,7 +1361,7 @@
       "A (anno)": 1720,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_Vend%C3%B4me",
       "Note": "Impianto e completamento delle facciate in più fasi."
     },
@@ -1299,7 +1372,7 @@
       "A (anno)": 1836,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Place_de_la_Concorde",
       "Note": "La configurazione cambia tra monarchia, rivoluzione e XIX secolo."
     },
@@ -1309,10 +1382,10 @@
       "Da (anno)": 1971,
       "A (anno)": 1977,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://www.centrepompidou.fr/fr/le-centre-pompidou/histoire-du-centre-pompidou",
-      "Note": "Edificio inaugurato nel 1977."
+      "Note": "La notice officielle retrace l’histoire du Centre Pompidou, ouvert en 1977."
     },
     {
       "ID": "E016",
@@ -1321,20 +1394,20 @@
       "A (anno)": 1973,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Tour_Montparnasse",
       "Note": "Costruzione e completamento dell’edificio."
     },
     {
       "ID": "E017",
-      "Elemento": "Pyramide du Louvre",
+      "Elemento": "Musée du Louvre — Pyramide du Louvre",
       "Da (anno)": 1985,
       "A (anno)": 1989,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
       "Fonte": "https://www.louvre.fr/decouvrir/le-palais/la-pyramide-du-louvre",
-      "Note": "Elemento distinto dal palazzo; apertura nel 1989."
+      "Note": "Phase contemporaine distincte du palais historique; ouverture au public en 1989."
     },
     {
       "ID": "E018",
@@ -1342,10 +1415,10 @@
       "Da (anno)": 1897,
       "A (anno)": 1900,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://www.grandpalais.fr/fr/histoire-du-grand-palais",
-      "Note": "Edificio realizzato per l’Esposizione universale del 1900."
+      "Note": "Notice officielle du Grand Palais; phase de construction pour l’Exposition universelle de 1900."
     },
     {
       "ID": "E019",
@@ -1375,21 +1448,21 @@
       "Da (anno)": 1190,
       "A (anno)": 1345,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
-      "Note": "La fonte riporta la costruzione «de 1163 au milieu du XIVe siècle»; l’anno finale 1345 è una convenzione numerica per lo script, non una data precisa attestata."
+      "Note": "La Ville de Paris indique une construction «de 1163 au milieu du XIVe siècle»; 1345 est une borne de modélisation, non une date exacte attestée."
     },
     {
       "ID": "E022",
       "Elemento": "Cathédrale Notre-Dame de Paris — flèche de Viollet-le-Duc",
-      "Da (anno)": 1844,
+      "Da (anno)": 1859,
       "A (anno)": 1859,
-      "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
       "Fonte": "https://ws-paris-v4.paris.fr/pages/l-histoire-en-images-de-la-fleche-de-notre-dame-6716",
-      "Note": "Fase della flèche ottocentesca, distinta dalla struttura medievale."
+      "Note": "La Ville de Paris précise : «La flèche est inaugurée le 15 août 1859». Cette phase de flèche est distincte de la restauration générale engagée après le concours de 1842."
     },
     {
       "ID": "E023",
@@ -1419,10 +1492,10 @@
       "Da (anno)": 1533,
       "A (anno)": 1628,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
+      "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
-      "Note": "La fonte riporta la posa della prima pietra il «15 juillet 1533»; l’anno finale è una convenzione per la fase rinascimentale."
+      "Note": "La Ville de Paris indique la pose de la première pierre le «15 juillet 1533»; la borne 1628 reste une convention de phase."
     },
     {
       "ID": "E026",
@@ -1430,10 +1503,10 @@
       "Da (anno)": 1871,
       "A (anno)": 1871,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
       "Fonte": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
-      "Note": "Edificio rinascimentale incendiato durante la Comune; ricostruzione successiva."
+      "Note": "L’Hôtel de Ville Renaissance est incendié en 1871 pendant la Commune."
     },
     {
       "ID": "E027",
@@ -1442,7 +1515,7 @@
       "A (anno)": 1882,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/H%C3%B4tel_de_ville_de_Paris",
       "Note": "Ricostruzione successiva all’incendio del 1871."
     },
@@ -1453,7 +1526,7 @@
       "A (anno)": 1248,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Sainte-Chapelle",
       "Note": "Costruzione della cappella palatina."
     },
@@ -1463,10 +1536,10 @@
       "Da (anno)": 1578,
       "A (anno)": 1607,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Pont_Neuf",
-      "Note": "Costruzione in più fasi; ponte ancora presente nel modello."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique la pose de la première pierre le «31 mai 1578»; la nomenclature officielle donne la construction entre 1578 et 1607."
     },
     {
       "ID": "E030",
@@ -1475,7 +1548,7 @@
       "A (anno)": 1809,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Arc_de_triomphe_du_Carrousel",
       "Note": "Arco associato al complesso del palais des Tuileries."
     },
@@ -1486,7 +1559,7 @@
       "A (anno)": 1864,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Gare_du_Nord",
       "Note": "Fase della stazione ottocentesca."
     },
@@ -1497,36 +1570,67 @@
       "A (anno)": 1900,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Gare_de_Lyon",
       "Note": "Stazione ricostruita per l’Esposizione universale del 1900."
+    },
+    {
+      "ID": "E033",
+      "Elemento": "Musée du Louvre — Grande Galerie / liaison avec les Tuileries",
+      "Da (anno)": 1595,
+      "A (anno)": 1610,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+      "Note": "Le Louvre indique : «Travaux de la Grande Galerie» et «construite entre 1595 et 1610»; elle relie le Louvre au château des Tuileries."
+    },
+    {
+      "ID": "E034",
+      "Elemento": "Musée du Louvre — Colonnade de Perrault",
+      "Da (anno)": 1667,
+      "A (anno)": 1674,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+      "Note": "Phase de la colonnade classique de la façade orientale; bornes de chantier à confirmer dans la notice architecturale détaillée."
+    },
+    {
+      "ID": "E035",
+      "Elemento": "Musée du Louvre — aile nord le long de la rue de Rivoli",
+      "Da (anno)": 1659,
+      "A (anno)": 1664,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+      "Note": "Aile nord du Louvre classique; phase à vérifier dans une notice architecturale dédiée avant animation."
+    },
+    {
+      "ID": "E036",
+      "Elemento": "Dôme des Invalides — construction de la coupole",
+      "Da (anno)": 1677,
+      "A (anno)": 1706,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.carnavalet.paris.fr/sites/default/files/2020-03/Exe%20DP%20couleurs%20du%20ciel.pdf",
+      "Note": "La source donne «1677-1699 Construction de l’église du dôme des Invalides» et «1706 Achèvement du décor des Invalides»."
+    },
+    {
+      "ID": "E037",
+      "Elemento": "Grand Châtelet — démolition",
+      "Da (anno)": 1802,
+      "A (anno)": 1810,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://parcoursrevolution.paris.fr/fr/points-interet/54-le-grand-chatelet-geole-de-l-ancien-regime",
+      "Note": "La Ville de Paris indique : «Elle ne commence qu’en 1802, pour s’achever en 1810» à propos de la démolition du Grand Châtelet."
     }
   ],
   "F": [
-    {
-      "ID": "F001",
-      "Da (anno)": 1789,
-      "A (anno)": 1789,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Révolution française",
-      "Changement urbain": "Changement de régime et d’usages symboliques de l’espace public; ne pas inventer de géométrie urbaine sans événement matériel précis.",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://parcoursrevolution.paris.fr/fr/quartiers/12-le-quartier-de-la-place-de-la-concorde",
-      "Note": "Cartel d’événement, sans changement géométrique générique."
-    },
-    {
-      "ID": "F002",
-      "Da (anno)": 1848,
-      "A (anno)": 1848,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Révolution de février 1848",
-      "Changement urbain": "Changement de régime et mobilisation de l’espace public; aucun changement permanent de géométrie à inférer sans fait matériel spécifique.",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/R%C3%A9volution_fran%C3%A7aise_de_1848",
-      "Note": "Cartel historique seulement."
-    },
     {
       "ID": "F003",
       "Da (anno)": 1900,
@@ -1585,43 +1689,7 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/la-crue-de-1910-189",
-      "Note": "Ne pas conserver la hauteur de crue après la phase temporaire."
-    },
-    {
-      "ID": "F008",
-      "Da (anno)": 1944,
-      "A (anno)": 1944,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Libération de Paris",
-      "Changement urbain": "Événement politique et militaire; aucune géométrie permanente à ajouter sans fait matériel identifié.",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/la-liberation-de-paris-une-semaine-de-combats-23745",
-      "Note": "Cartel historique seulement."
-    },
-    {
-      "ID": "F009",
-      "Da (anno)": 1968,
-      "A (anno)": 1968,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Mai 1968 à Paris",
-      "Changement urbain": "Manifestations et occupations de l’espace public; aucun changement permanent de géométrie à inférer automatiquement.",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Mai_68",
-      "Note": "Cartel historique seulement."
-    },
-    {
-      "ID": "F010",
-      "Da (anno)": 2000,
-      "A (anno)": 2000,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Changement de millénaire",
-      "Changement urbain": "Cartel chronologique; aucun changement de géométrie urbaine associé.",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/",
-      "Note": "Événement de narration, non géométrique."
+      "Note": "Crue temporaire; restituer le niveau normal après l’événement."
     },
     {
       "ID": "F011",
@@ -1634,6 +1702,448 @@
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/paris-2024-les-jeux-olympiques-et-paralympiques-231",
       "Note": "N’inclure que les installations documentées et temporaires."
+    }
+  ],
+  "G": [
+    {
+      "ID": "G001",
+      "Elemento": "Grand-Pont (futur Pont au Change) — franchissement médiéval",
+      "Da (anno)": 900,
+      "A (anno)": 1190,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris cite le «Pont Saint-Michel – Pont au Change (bâti au 9e siècle)»; distinguer ce franchissement historique du pont actuel."
+    },
+    {
+      "ID": "G002",
+      "Elemento": "Petit-Pont — franchissement médiéval",
+      "Da (anno)": 100,
+      "A (anno)": 1190,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris indique que la première version du Petit-Pont date de l’époque gallo-romaine; 100 est une borne numérique de modélisation."
+    },
+    {
+      "ID": "G003",
+      "Elemento": "Pont Notre-Dame — pont avec maisons",
+      "Da (anno)": 1510,
+      "A (anno)": 1512,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
+      "Note": "La Ville de Paris date de «1510-1512» les deux rangées de maisons du pont Notre-Dame; cette phase est postérieure à 1190."
+    },
+    {
+      "ID": "G004",
+      "Elemento": "Pont Notre-Dame — reconstruction en pierre",
+      "Da (anno)": 1854,
+      "A (anno)": 1854,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/paris-vers-1855-essai-de-reconstitution",
+      "Note": "Paris Musées décrit le pont Notre-Dame «reconstruit en pierre depuis 1854»."
+    },
+    {
+      "ID": "G005",
+      "Elemento": "Pont au Change — reconstruction",
+      "Da (anno)": 1647,
+      "A (anno)": 1647,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris indique une reconstruction en 1647 puis en 1860."
+    },
+    {
+      "ID": "G006",
+      "Elemento": "Pont au Change — reconstruction actuelle",
+      "Da (anno)": 1856,
+      "A (anno)": 1860,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=quai+de+l%27Horloge",
+      "Note": "La nomenclature officielle indique : «Il a été reconstruit de 1856 à 1860»."
+    },
+    {
+      "ID": "G007",
+      "Elemento": "Pont Neuf — construction",
+      "Da (anno)": 1578,
+      "A (anno)": 1607,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris date la première pierre du «31 mai 1578»; la nomenclature donne 1578–1607."
+    },
+    {
+      "ID": "G008",
+      "Elemento": "Pont Royal — construction",
+      "Da (anno)": 1685,
+      "A (anno)": 1689,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
+      "Note": "La Ville de Paris indique que le Pont Royal fut terminé en 1689; début de chantier à confirmer."
+    },
+    {
+      "ID": "G009",
+      "Elemento": "Pont Marie — construction",
+      "Da (anno)": 1614,
+      "A (anno)": 1635,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://a06-v7.apps.paris.fr/a06/jsp/site/Portal.jsp?fq=seance_string%3ANOVEMBRE+1998&id_document=15915&items_per_page=20&page=ods-solr.display_document&query=&sort_name=&sort_order=&terms=",
+      "Note": "La Ville de Paris indique que Christophe Marie le construisit «de 1614 à 1635»."
+    },
+    {
+      "ID": "G010",
+      "Elemento": "Pont Saint-Michel — reconstruction",
+      "Da (anno)": 1857,
+      "A (anno)": 1860,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris indique une reconstruction en 1860; 1857 est la borne de chantier retenue."
+    },
+    {
+      "ID": "G011",
+      "Elemento": "Pont des Arts — premier pont",
+      "Da (anno)": 1802,
+      "A (anno)": 1804,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Premier pont métallique de la capitale; date exacte de mise en service à confirmer."
+    },
+    {
+      "ID": "G012",
+      "Elemento": "Pont des Arts — reconstruction contemporaine",
+      "Da (anno)": 1981,
+      "A (anno)": 1984,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Reconstruction moderne; dates opérationnelles à vérifier dans une notice dédiée."
+    },
+    {
+      "ID": "G013",
+      "Elemento": "Pont de la Concorde — construction",
+      "Da (anno)": 1787,
+      "A (anno)": 1791,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique : «Le pont de la Concorde a été bâti entre 1787 et 1791»."
+    },
+    {
+      "ID": "G014",
+      "Elemento": "Pont Alexandre III — construction",
+      "Da (anno)": 1896,
+      "A (anno)": 1900,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris date la première pierre du «7 octobre 1896» et rattache le pont à l’Exposition universelle de 1900."
+    },
+    {
+      "ID": "G015",
+      "Elemento": "Pont Bir-Hakeim — pont métallique à deux niveaux",
+      "Da (anno)": 1903,
+      "A (anno)": 1905,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris décrit l’ouvrage métallique à deux niveaux; années exactes à valider."
+    },
+    {
+      "ID": "G016",
+      "Elemento": "Pont d’Iéna — construction",
+      "Da (anno)": 1808,
+      "A (anno)": 1814,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Phase napoléonienne; dates à valider par une fiche dédiée."
+    },
+    {
+      "ID": "G017",
+      "Elemento": "Pont de l’Alma — premier ouvrage",
+      "Da (anno)": 1854,
+      "A (anno)": 1856,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique que le pont fut érigé pour l’Exposition universelle de 1855."
+    },
+    {
+      "ID": "G018",
+      "Elemento": "Pont de l’Alma — reconstruction",
+      "Da (anno)": 1970,
+      "A (anno)": 1974,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Reconstruction du pont actuel; années indicatives à confirmer."
+    },
+    {
+      "ID": "G019",
+      "Elemento": "Pont Mirabeau — construction",
+      "Da (anno)": 1893,
+      "A (anno)": 1896,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique qu’il fut construit à la toute fin du XIXe siècle."
+    },
+    {
+      "ID": "G020",
+      "Elemento": "Pont Aval — ouverture",
+      "Da (anno)": 1968,
+      "A (anno)": 1968,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique : «Inauguré en 1968»."
+    },
+    {
+      "ID": "G021",
+      "Elemento": "Pont Charles-de-Gaulle — construction",
+      "Da (anno)": 1993,
+      "A (anno)": 1996,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique : «Réalisé entre 1993 et 1996»."
+    },
+    {
+      "ID": "G022",
+      "Elemento": "Passerelle Simone-de-Beauvoir — construction",
+      "Da (anno)": 2004,
+      "A (anno)": 2006,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "La Ville de Paris indique qu’elle fut «inaugurée en 2006»."
+    },
+    {
+      "ID": "G023",
+      "Elemento": "Pont Amont — mise en service",
+      "Da (anno)": 1969,
+      "A (anno)": 1969,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date opérationnelle à vérifier dans la notice technique du boulevard périphérique."
+    },
+    {
+      "ID": "G024",
+      "Elemento": "Pont National — pont actuel",
+      "Da (anno)": 1944,
+      "A (anno)": 1944,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date de la phase actuelle à confirmer par une notice dédiée."
+    },
+    {
+      "ID": "G025",
+      "Elemento": "Pont de Tolbiac — pont actuel",
+      "Da (anno)": 1882,
+      "A (anno)": 1882,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date à vérifier par une notice patrimoniale dédiée."
+    },
+    {
+      "ID": "G026",
+      "Elemento": "Pont de Bercy — élargissement",
+      "Da (anno)": 1904,
+      "A (anno)": 1904,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "L’élargissement et la partie métro doivent être séparés des phases précédentes; date à vérifier."
+    },
+    {
+      "ID": "G027",
+      "Elemento": "Pont du Garigliano — construction",
+      "Da (anno)": 1963,
+      "A (anno)": 1966,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date de construction à vérifier par une fiche dédiée."
+    },
+    {
+      "ID": "G028",
+      "Elemento": "Pont de Sully — construction",
+      "Da (anno)": 1874,
+      "A (anno)": 1876,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date indicative de construction; notice dédiée nécessaire."
+    },
+    {
+      "ID": "G029",
+      "Elemento": "Pont-au-Double — reconstruction",
+      "Da (anno)": 1847,
+      "A (anno)": 1847,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "media",
+      "Fonte": "https://cdn.paris.fr/paris/2021/06/07/15fb64de05682b94795a452ff4e0d74e.pdf",
+      "Note": "Le document historique indique une reconstruction en 1709 puis en 1847."
+    },
+    {
+      "ID": "G030",
+      "Elemento": "Pont Saint-Charles — disparition",
+      "Da (anno)": 1850,
+      "A (anno)": 1870,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://cdn.paris.fr/paris/2021/06/07/15fb64de05682b94795a452ff4e0d74e.pdf",
+      "Note": "Le document indique que le pont Saint-Charles subsiste jusqu’à la seconde moitié du XIXe siècle; intervalle indicatif."
+    },
+    {
+      "ID": "G031",
+      "Elemento": "Pont de la Tournelle — pont actuel",
+      "Da (anno)": 1928,
+      "A (anno)": 1930,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Reconstruction moderne distincte des franchissements antérieurs; dates à confirmer."
+    },
+    {
+      "ID": "G032",
+      "Elemento": "Pont Louis-Philippe — pont actuel",
+      "Da (anno)": 1860,
+      "A (anno)": 1862,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Dates de construction à confirmer par une notice dédiée."
+    },
+    {
+      "ID": "G033",
+      "Elemento": "Pont d’Arcole — pont actuel",
+      "Da (anno)": 1854,
+      "A (anno)": 1856,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date indicative de reconstruction du pont actuel; source dédiée à compléter."
+    },
+    {
+      "ID": "G034",
+      "Elemento": "Pont du Carrousel — pont actuel",
+      "Da (anno)": 1935,
+      "A (anno)": 1939,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Dates de construction à confirmer par une fiche patrimoniale dédiée."
+    },
+    {
+      "ID": "G035",
+      "Elemento": "Pont des Invalides — construction",
+      "Da (anno)": 1824,
+      "A (anno)": 1829,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Chronologie de construction à valider avec une fiche dédiée."
+    },
+    {
+      "ID": "G036",
+      "Elemento": "Passerelle Léopold-Sédar-Senghor — construction",
+      "Da (anno)": 1997,
+      "A (anno)": 1999,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Passerelle actuelle remplaçant l’ancien pont Solférino; dates à confirmer."
+    },
+    {
+      "ID": "G037",
+      "Elemento": "Pont de Grenelle — pont actuel",
+      "Da (anno)": 1966,
+      "A (anno)": 1968,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Date de construction à vérifier par une fiche dédiée."
+    },
+    {
+      "ID": "G038",
+      "Elemento": "Pont Rouelle — construction",
+      "Da (anno)": 1900,
+      "A (anno)": 1900,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Ouvrage ferroviaire; date de phase à vérifier."
+    },
+    {
+      "ID": "G039",
+      "Elemento": "Pont du Petit-Pont — reconstruction",
+      "Da (anno)": 1852,
+      "A (anno)": 1853,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Dates de reconstruction du pont actuel à vérifier."
+    },
+    {
+      "ID": "G040",
+      "Elemento": "Pont de la Tournelle — phase historique antérieure",
+      "Da (anno)": 1656,
+      "A (anno)": 1656,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Phase antérieure du franchissement, à vérifier dans une fiche dédiée."
     }
   ]
 }
