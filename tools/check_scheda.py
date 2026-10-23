@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Controllo automatico di una scheda di validazione storica (formato regia, 23 ott 2026).
 Uso: python3 -I tools/check_scheda.py <cartella con validazione.json e CSV>
+Esempio: python3 -I tools/check_scheda.py parigi/validazione
+Non modificare questo file senza accordo della regia: se un controllo sembra sbagliato, segnalalo.
 Stampa un riepilogo e i problemi; esce con codice 1 se ci sono problemi di formato.
 """
 import csv, glob, json, os, re, sys, collections
@@ -18,6 +20,10 @@ for s, rows in J.items():
     if s == '0':
         continue
     visti = collections.Counter()
+    ids = collections.Counter(r.get('ID') for r in rows)
+    for k, n in ids.items():
+        if n > 1:
+            prob.append((s, k, 'ID duplicato'))
     for r in rows:
         i = r.get('ID', '?')
         da, a = str(r.get('Da (anno)', '')), str(r.get('A (anno)', ''))
@@ -42,6 +48,10 @@ for s, rows in J.items():
             prob.append((s, i, 'DA MEMORIA non bassa', af))
         if tipo == 'CONFLITTO' and af == 'alta':
             prob.append((s, i, 'CONFLITTO con affidabilità alta'))
+        if not da and not a and af not in ('n/d', ''):
+            prob.append((s, i, 'date vuote ma affidabilità non n/d', af))
+        if s == 'D' and r.get('Stima', 'no') not in ('sì', 'no'):
+            prob.append((s, i, 'Stima diversa da sì/no', r.get('Stima')))
         if tipo == 'BLOCCO' and not re.search('[«"“]', note):
             prob.append((s, i, 'BLOCCO TECNICO senza citazione tra virgolette'))
         if s == 'D' and not str(r.get('Valore HUD', '')).isdigit():
