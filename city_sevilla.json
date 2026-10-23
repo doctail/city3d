@@ -22,54 +22,56 @@
  "roads": [],
  "grid_deg": 0,
  "marsh": false,
- "haze_k": 14000.0,
+ "haze_k": 22000.0,
  "water_z": -1.5,
  "field_colors": [
-  "#c2ad74",
-  "#a88a5a",
-  "#b9a878",
-  "#8a8f4c",
-  "#b29c6a"
+  "#6f7650",
+  "#7a7f55",
+  "#8d8a66",
+  "#6a7250",
+  "#958d6c"
  ],
  "park_trees": 0.02,
  "block_trees": 0.0008,
- "view_transform": "Standard",
- "look": "None",
- "exposure": -2.0,
+ "view_transform": "AgX",
+ "look": "AgX - Punchy",
+ "exposure": -0.5,
  "style": {
   "haze": [
+   0.78,
    0.8,
-   0.88,
-   0.96
+   0.8
   ],
   "era_split": 1940,
   "pitched_until": 1930,
   "pitched_max_area": 500,
   "wall_old": [
-   "#f2ead8",
-   "#efe3c4",
-   "#e8cf8a",
-   "#d9a441",
-   "#f4f0e6",
-   "#c9653f",
-   "#e6d3a3",
-   "#ead9b0"
+   "#ece6d8",
+   "#e8dfcc",
+   "#f1ece2",
+   "#e4dac4",
+   "#d2ad5f",
+   "#c99c5e",
+   "#bd8459",
+   "#ad6c4f",
+   "#dccfb0"
   ],
   "roof_old": [
-   "#b5532e",
-   "#a8482b",
-   "#c0613a",
-   "#9f4a2c",
-   "#b85a36"
+   "#9a5d47",
+   "#8d5946",
+   "#a26a50",
+   "#86604f",
+   "#946049",
+   "#7f5a4c"
   ],
   "wall_new": [
-   "#f3efe6",
-   "#ece4d2",
-   "#e9dcc0",
-   "#f6f3ec",
-   "#e2d6bd",
-   "#d8c9a8",
-   "#efe8da"
+   "#eeeae1",
+   "#e7e0d1",
+   "#ddd3bf",
+   "#f2efe8",
+   "#d6c6a4",
+   "#cdb48a",
+   "#e3dccd"
   ],
   "wall_anc": [
    "#cfc8bc",
@@ -77,11 +79,11 @@
    "#c9c2b4"
   ],
   "roof_new": [
-   "#d8d4cc",
-   "#cfc9be",
-   "#bfb6a6",
-   "#c96a45",
-   "#e2ddd3"
+   "#a9a49b",
+   "#9b968d",
+   "#b3aca0",
+   "#94604b",
+   "#8a8379"
   ],
   "glass": [
    "#7fb2d0",
@@ -91,24 +93,24 @@
   "glass_h": 60,
   "window": "#2a3a4a",
   "urban": [
-   "#d3c9b6",
-   "#cbc0ab",
-   "#d8cfbe",
-   "#c6baa4",
-   "#d0c5b0",
-   "#bfb39d"
+   "#bdb09a",
+   "#b4a690",
+   "#c3b7a2",
+   "#ad9f88",
+   "#b8ab95",
+   "#a89a83"
   ],
-  "urban_dark": "#d9d2c4",
+  "urban_dark": "#c4b8a4",
   "urban_green": "#7fb04e",
   "hedge": "#5d6238",
   "blocks": "#8f8778",
-  "grass": "#76b84a",
-  "tree": "#3f8a35",
+  "grass": "#5d7a3a",
+  "tree": "#3b5a2c",
   "forest_base": "#5d9c3f",
-  "water": "#0f6c7c",
-  "water_rough": 0.02,
+  "water": "#2f4249",
+  "water_rough": 0.05,
   "sky_light": 0.35,
-  "sun_energy": 5.0,
+  "sun_energy": 4.2,
   "night_off": 0.72,
   "night_win": 9.0,
   "moon": 0.05,
@@ -119,8 +121,8 @@
   "bulb": 45.0,
   "sky_in_reflections": true,
   "wave_scale": 0.025,
-  "wave_strength": 0.55,
-  "water2": "#2a9fae",
+  "wave_strength": 0.05,
+  "water2": "#3b4d50",
   "sunset_el": 4.0,
   "sunset_sun": 9.0,
   "exp_sunset": 0.35,
@@ -129,10 +131,19 @@
   "twilight_sky_col": "#1f2f5a",
   "exp_twilight": 0.0,
   "reclaim": "#c9b993",
-  "park_ground": "#6a9a3e",
+  "park_ground": "#5c763a",
   "olive_soil": "#a8916a",
   "olive_tree": "#4e5730",
-  "bulb_size": 2.6
+  "bulb_size": 2.6,
+  "nat": {
+   "vega1": "#5f7038",
+   "vega2": "#76803f",
+   "dry": "#a8955f",
+   "olive": "#46512a",
+   "olive_soil": "#9c8556",
+   "marsh1": "#6f7f58",
+   "marsh2": "#4f6448"
+  }
  },
  "hist": "hist_sevilla",
  "land_from_buildings": true,
@@ -145,25 +156,25 @@
  "land_close": 15,
  "blocks_by_building": true,
  "skip_canals": true,
- "fields_style": "parcels",
+ "fields_style": "natural",
  "urban_ground": "footprints",
  "urban_grid": false,
  "row_scale": 0.012,
  "tree_mesh": "octa",
  "haze_start": 4000.0,
  "far_flat": [
-  3000,
-  12000,
-  0.75
+  6000,
+  16000,
+  0.6
  ],
  "cover": {
   "cam": [
-   -560,
-   -1500,
-   60,
-   -330,
-   300,
-   30
+   250,
+   3450,
+   35,
+   -60,
+   2900,
+   55
   ],
   "lens": 35,
   "years": [
@@ -173,5 +184,6 @@
   "night_years": [
    2026
   ]
- }
+ },
+ "sun_el": 12
 }

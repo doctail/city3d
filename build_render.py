@@ -108,6 +108,42 @@ def city_mat():
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = (0.0 if NIGHT else 0.35); L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
+def natural_land(N, L, tc, vo):
+    """Paesaggio naturale invece dei poligoni (Siviglia, 23 ott): vega verde poco satura nella piana, chiazze secche,
+    uliveti sui rilievi (quota dal DEM: z del suolo), marismas a sud; rumore a tre scale per rompere le campiture.
+    Gli appezzamenti restano solo come leggera variazione di tono (+-6%)."""
+    G = ST.get('nat', {})
+    def col(h): return (*srgb(h), 1)
+    def noise(sc_, det=3):
+        n_ = N.new('ShaderNodeTexNoise'); n_.inputs['Scale'].default_value = sc_; n_.inputs['Detail'].default_value = det; L(tc.outputs['Object'], n_.inputs['Vector']); return n_
+    def mix(fac, a_, b_):
+        m_ = N.new('ShaderNodeMix'); m_.data_type = 'RGBA'; L(fac, m_.inputs['Factor'])
+        (L(a_, m_.inputs[6]) if not isinstance(a_, tuple) else m_.inputs[6].__setattr__('default_value', a_))
+        (L(b_, m_.inputs[7]) if not isinstance(b_, tuple) else m_.inputs[7].__setattr__('default_value', b_))
+        return m_.outputs[2]
+    def rng(src, a0, a1, b0=0.0, b1=1.0):
+        r_ = N.new('ShaderNodeMapRange'); L(src, r_.inputs['Value']); r_.inputs['From Min'].default_value = a0; r_.inputs['From Max'].default_value = a1
+        r_.inputs['To Min'].default_value = b0; r_.inputs['To Max'].default_value = b1; return r_.outputs[0]
+    n1, n2, n3 = noise(0.0007, 4), noise(0.0035, 4), noise(0.03, 3)
+    vega = mix(rng(n2.outputs['Fac'], 0.35, 0.65), col(G.get('vega1', '#68734a')), col(G.get('vega2', '#7c8152')))
+    land = mix(rng(n1.outputs['Fac'], 0.5, 0.62, 0.0, 0.55), vega, col(G.get('dry', '#a29875')))         # chiazze secche / stoppie
+    pos = N.new('ShaderNodeSeparateXYZ'); L(tc.outputs['Object'], pos.inputs[0])
+    # uliveti sui rilievi: terra chiara con chiome scure a griglia irregolare
+    ov = N.new('ShaderNodeTexVoronoi'); ov.inputs['Scale'].default_value = 0.13; ov.inputs['Randomness'].default_value = 0.45; L(tc.outputs['Object'], ov.inputs['Vector'])
+    olive = mix(rng(ov.outputs['Distance'], 0.30, 0.42), col(G.get('olive', '#4d5431')), col(G.get('olive_soil', '#a68f68')))
+    hill = rng(pos.outputs['Z'], 6.0, 30.0)
+    hn = N.new('ShaderNodeMath'); hn.operation = 'MULTIPLY'; L(hill, hn.inputs[0]); L(rng(n2.outputs['Fac'], 0.3, 0.55, 0.55, 1.0), hn.inputs[1])
+    land = mix(hn.outputs[0], land, olive)
+    # marismas a sud: verde-grigio umido con chiazze piu' scure
+    marsh = mix(rng(n2.outputs['Fac'], 0.45, 0.6), col(G.get('marsh1', '#76806a')), col(G.get('marsh2', '#59665a')))
+    land = mix(rng(pos.outputs['Y'], G.get('marsh_y0', -6500.0), G.get('marsh_y1', -9500.0)), land, marsh)
+    # traccia degli appezzamenti appena visibile (+-6%) e grana fine
+    sp_ = N.new('ShaderNodeSeparateColor'); L(vo.outputs['Color'], sp_.inputs[0])
+    pm = N.new('ShaderNodeMath'); pm.operation = 'MULTIPLY_ADD'; L(sp_.outputs[0], pm.inputs[0]); pm.inputs[1].default_value = 0.12; pm.inputs[2].default_value = 0.94
+    gm = N.new('ShaderNodeMath'); gm.operation = 'MULTIPLY'; L(pm.outputs[0], gm.inputs[0]); L(rng(n3.outputs['Fac'], 0.3, 0.7, 0.9, 1.07), gm.inputs[1])
+    mm = N.new('ShaderNodeMix'); mm.data_type = 'RGBA'; mm.blend_type = 'MULTIPLY'; mm.inputs['Factor'].default_value = 1.0
+    L(land, mm.inputs[6]); L(gm.outputs[0], mm.inputs[7])
+    return mm.outputs[2]
 def land_mat(mode='fields'):
     m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
     b.inputs['Roughness'].default_value = 0.95
@@ -153,6 +189,8 @@ def land_mat(mode='fields'):
         os_ = N.new('ShaderNodeMath'); os_.operation = 'LESS_THAN'; os_.inputs[1].default_value = CITY.get('olive_share', 0.2); L(sp_.outputs[1], os_.inputs[0])
         om_ = N.new('ShaderNodeMix'); om_.data_type = 'RGBA'; L(os_.outputs[0], om_.inputs['Factor']); L(cm_.outputs[2], om_.inputs[6]); L(oc_.outputs[2], om_.inputs[7])
         fcol_ = om_.outputs[2]
+    if CITY.get('fields_style') == 'natural' and mode == 'fields':
+        fcol_ = natural_land(N, L, tc, vo)
     fm_ = N.new('ShaderNodeMix'); fm_.data_type = 'RGBA'
     fk = N.new('ShaderNodeMapRange'); L(nz.outputs['Fac'], fk.inputs['Value']); fk.inputs['From Min'].default_value = 0.70; fk.inputs['From Max'].default_value = 0.74
     L(fk.outputs[0], fm_.inputs['Factor']); L(fcol_, fm_.inputs[6]); fm_.inputs[7].default_value = (*srgb(ST.get('hedge', '#33492a')), 1)
@@ -906,7 +944,7 @@ w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 sky = w.node_tree.nodes.new('ShaderNodeTexSky')
 try: sky.sky_type = 'NISHITA'
 except Exception: pass
-SUNEL = float(opt('--sun', 1, '17'))
+SUNEL = float(opt('--sun', 1, str(CITY.get('sun_el', 17))))
 if LIGHT == 'sunset': SUNEL = ST.get('sunset_el', 3.0)   # sole basso: ombre lunghe, luce arancio
 _dummy = 0; sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']

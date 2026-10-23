@@ -28,7 +28,8 @@ PH = [('codo', 1950, 9999, 'urban'),
       ('chapina', 1950, 1991.9, 'urban'),
       # collegamento Chapina -> canale ovest (foto aerea IGN 1956): acqua 1948-1990, terra prima e dopo (riempito per l'Expo)
       ('conn_1948', -9999, 1948, 'field'), ('conn_1948', 1990, 9999, 'urban'),
-      ('north_old', 1987, 9999, 'field')]
+      ('north_old', 1987, 9999, 'field'),
+      ('lago_expo', -9999, 1992, 'field')]   # Lago de Espana dell'Expo 92: acqua dal 1992
 def strips(ring, g):
     """[(anello, anno)]: strisce perpendicolari all'asse lungo, anni dalle estremita' verso il centro."""
     _, t0, t1 = g; q = Polygon(ring).buffer(0); m = q.minimum_rotated_rectangle; c4 = list(m.exterior.coords)[:4]
@@ -68,7 +69,7 @@ json.dump(new, open(f'{DATA}/land.json', 'w'))
 # niente edifici sull'acqua: finestre in cui ogni area e' ACQUA (complemento delle finestre di terra in PH)
 # (inizio dei lavori: le case sul tracciato spariscono quando si comincia a scavare)
 WATER = {'codo': [(-9999, 1950)], 'laguna': [(-9999, 1574)], 'tablada': [(1909, 9999)], 'west_triana': [(1949, 9999)],
-         'west_cartuja': [(1982, 9999)], 'chapina': [(-9999, 1950), (1991.9, 9999)], 'conn_1948': [(1948, 1990)], 'north_old': [(-9999, 1987)]}
+         'west_cartuja': [(1982, 9999)], 'chapina': [(-9999, 1950), (1991.9, 9999)], 'conn_1948': [(1948, 1990)], 'north_old': [(-9999, 1987)], 'lago_expo': [(1992, 9999)]}
 zones = [(prep(Polygon(r).buffer(0)), WATER[k]) for k in WATER for r in S[k]]
 def fix(items, is_hist):
     keep = []; moved = 0

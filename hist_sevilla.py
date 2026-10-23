@@ -171,6 +171,24 @@ def icons(DATA):
     part(name='Giralda', t='prism', r=_sq(gx, gy, 0.9, ux, uy), z0=96.0, z1=100.0, c='#4e4a45', y=1568)   # Giraldillo
     clear.append(_sq(gx, gy, 7.5, ux, uy))
     LM['labels'].append({'name': 'Giralda', 'x': gx, 'y': gy, 'z': 102, 'from': 1248, 'icon': 1})
+    # --- Moschea almohade (aljama, 1172-1182) fino al 1434: sala di preghiera bassa (~11 m) sull'impronta della Cattedrale e
+    #     cortile aperto (sahn = attuale Patio de los Naranjos, parte nord dell'impronta) con portici bassi; la Giralda
+    #     resta attaccata all'angolo. Nel 1434 lascia il posto alla Cattedrale (comparsa unica, Catasto). Prima del 1434 sul
+    #     sito non ci sono case: i predecessori generati dentro l'impronta vengono tolti (decisione di Fabio, 23 ott).
+    cat = max([b for b in blds if math.hypot(b['r'][0][0], b['r'][0][1]) < 150 and Polygon(b['r']).area > 10000], key=lambda b: Polygon(b['r']).area)
+    cpoly = Polygon(cat['r']).buffer(0)
+    hall = cpoly.intersection(box(-400, -400, 400, 5)); patio = cpoly.intersection(box(-400, 5, 400, 400))
+    for g_ in getattr(hall, 'geoms', [hall]):
+        if g_.geom_type == 'Polygon' and g_.area > 50:
+            part(name='Mosque', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(g_.exterior.coords)[:-1]], z0=0.0, z1=11.0, c='#d9c39b', top='#b5794f', y=1100, d=1434)
+    court = patio.buffer(-8, join_style=2)
+    for r_ in _ring_wedges(patio, court, n=20):
+        part(name='Mosque', t='prism', r=r_, z0=0.0, z1=7.0, c='#d9c39b', top='#b5794f', y=1100, d=1434)
+    hist = json.load(open(f'{DATA}/hist.json')); n0 = len(hist)
+    hist = [h for h in hist if not cpoly.contains(Polygon(h['r']).centroid)]
+    json.dump(hist, open(f'{DATA}/hist.json', 'w'))
+    LM['labels'].append({'name': 'Great Mosque', 'x': round(cpoly.centroid.x, 1), 'y': round(cpoly.centroid.y, 1), 'z': 14, 'from': 1248, 'to': 1434, 'icon': 1})
+    print(f'[hist_sevilla] moschea 1100-1434; tolti {n0 - len(hist)} predecessori dal sito della Cattedrale', flush=True)
     # --- Torre del Oro (37.38242, -5.99623): dodecagono; primo corpo 1220-21 e secondo corpo (XIV sec.) in una comparsa unica;
     #     il cilindro superiore del 1760 compare nel 1760 (eccezione alla regola: con la comparsa unica la lanterna del 1760
     #     sarebbe nell'apertura del 1248). Misure [L]: diametro ~15 m, altezza totale ~36 m.
@@ -183,8 +201,10 @@ def icons(DATA):
     part(name='Torre del Oro', t='dome', cx=tx_, cy=ty_, rad=2.6, z0=33.0, hz=3.4, c='#c9a24a', y=1760)
     clear.append(dodec(8.5))
     LM['labels'].append({'name': 'Torre del Oro', 'x': round(tx_, 1), 'y': round(ty_, 1), 'z': 38, 'from': 1248, 'icon': 1})
-    # --- navi nel porto dell'Arenal (1248 -> 1850 [L]): sagome semplici (scafo, castello di poppa, 2 alberi, vele) sulla
-    #     meta' est del fiume tra la Torre del Oro e il ponte di barche, lungo il fiume. 1248: flotta di Ramon Bonifaz.
+    # --- navi nel porto dell'Arenal (decisione di Fabio, 23 ott): poche (4) dal 1248, porto pieno (14) dal 1503 al 1717
+    #     (Casa de Contratacion a Siviglia), poi di nuovo 4. Sagome leggibili: scafo scuro di legno ~29 m con prua a punta,
+    #     castello di poppa e di prua, 3 alberi (trinchetto, maestro, mezzana) con vele chiare; parallele alla riva dell'Arenal,
+    #     alcune ruotate. Posizioni sulla riva est del fiume tra la Torre del Oro e il ponte di barche [L].
     import gzip
     from shapely.geometry import shape as _shape, LineString as _LS
     from shapely.ops import unary_union as _uu
@@ -193,23 +213,45 @@ def icons(DATA):
         from shapely.ops import transform as _tr
         return _tr(lambda x, y, z=None: ((x - LON0) * KX, (y - LAT0) * KY), g)
     W = _uu([_loc(_shape(f['geometry'])).buffer(0) for f in F if f['properties'].get('natural') == 'water' or f['properties'].get('waterway') == 'riverbank'])
-    WZ = -1.5; ships = 0
-    for k, yy in enumerate(range(-760, -40, 72)):
+    WZ = -1.5; bank = []
+    for yy in range(-780, -20, 20):
         seg = _LS([(-1400, yy), (100, yy)]).intersection(W)
-        segs = [q for q in getattr(seg, 'geoms', [seg]) if q.length > 60 and q.bounds[2] > -700]
-        if not segs: continue
-        q = max(segs, key=lambda g_: g_.bounds[2]); x0_, x1_ = q.bounds[0], q.bounds[2]
-        cx_ = x1_ - 22 - (k % 2) * 26; cy_ = yy + (k % 3) * 9; sc_ = 1.0 - 0.15 * (k % 2)
-        hull = [[cx_ - 3.5 * sc_, cy_ - 11 * sc_], [cx_ + 3.5 * sc_, cy_ - 11 * sc_], [cx_ + 3.5 * sc_, cy_ + 8 * sc_], [cx_, cy_ + 13 * sc_], [cx_ - 3.5 * sc_, cy_ + 8 * sc_]]
-        part(name='Ship', t='prism', r=[[round(a_, 2), round(b_, 2)] for a_, b_ in hull], z0=WZ - 1.0, z1=WZ + 2.6, c='#5b4129', top='#8a6a45', y=1240, d=1850)
-        part(name='Ship', t='prism', r=[[round(cx_ - 3.2 * sc_, 2), round(cy_ - 10.5 * sc_, 2)], [round(cx_ + 3.2 * sc_, 2), round(cy_ - 10.5 * sc_, 2)], [round(cx_ + 3.2 * sc_, 2), round(cy_ - 5 * sc_, 2)], [round(cx_ - 3.2 * sc_, 2), round(cy_ - 5 * sc_, 2)]],
-             z0=WZ + 2.6, z1=WZ + 5.0, c='#6b4c30', y=1240, d=1850)
-        for my_, h_, sw_ in ((cy_ + 2 * sc_, 19 * sc_, 9 * sc_), (cy_ - 6 * sc_, 14 * sc_, 7 * sc_)):
-            part(name='Ship', t='cyl', cx=round(cx_, 2), cy=round(my_, 2), rad=0.3, z0=WZ + 2.6, z1=WZ + 2.6 + h_, seg=6, c='#3d2c1c', y=1240, d=1850)
-            part(name='Ship', t='beam', p0=[round(cx_, 2), round(my_ + 0.6, 2), round(WZ + 6, 2)], p1=[round(cx_, 2), round(my_ + 0.6, 2), round(WZ + 2.6 + h_ - 1.5, 2)],
-                 w=round(sw_, 2), h=0.25, c='#ece4cf', y=1240, d=1850, zbase=round(WZ + 6, 2))
+        segs = [q for q in getattr(seg, 'geoms', [seg]) if q.length > 60 and q.bounds[2] > -800]
+        if segs: bank.append((max(segs, key=lambda g_: g_.bounds[2]).bounds[2], yy))
+    def ship(cx, cy, ux, uy, y0, d0, s=1.0):
+        vx, vy = -uy, ux
+        def P(u, v): return [round(cx + (u * ux + v * vx) * s, 2), round(cy + (u * uy + v * vy) * s, 2)]
+        def box_(u0, u1, v0, v1): return [P(u0, v0), P(u1, v0), P(u1, v1), P(u0, v1)]
+        kw = dict(y=y0) if d0 is None else dict(y=y0, d=d0)
+        hull = [P(-13, -3.4), P(6, -4.0), P(11, -2.6), P(15, 0), P(11, 2.6), P(6, 4.0), P(-13, 3.4), P(-14.5, 0)]
+        part(name='Ship', t='prism', r=hull, z0=WZ - 1.0, z1=WZ + 3.8 * s, c='#3e2a1b', top='#6e5236', **kw)
+        part(name='Ship', t='prism', r=box_(-13.5, -6, -3.2, 3.2), z0=WZ + 3.8 * s, z1=WZ + 7.2 * s, c='#4a3322', top='#6e5236', **kw)
+        part(name='Ship', t='prism', r=box_(7, 11, -2.6, 2.6), z0=WZ + 3.8 * s, z1=WZ + 6.0 * s, c='#4a3322', top='#6e5236', **kw)
+        for mu, mh, sw, tw in ((6.0, 20, 10, 7), (-1.0, 25, 12, 8), (-8.5, 16, 6, 0)):
+            mx_, my_ = P(mu, 0)
+            part(name='Ship', t='cyl', cx=mx_, cy=my_, rad=0.35 * s, z0=WZ + 3.8 * s, z1=WZ + (3.8 + mh) * s, seg=6, c='#2f2116', **kw)
+            # vele quadre con i pennoni bracciati di ~30 gradi: leggibili sia di fianco sia di prua
+            def sail(w_):
+                th = math.radians(30); out_ = []
+                for du, dv in ((-0.2, -w_ / 2), (0.2, -w_ / 2), (0.2, w_ / 2), (-0.2, w_ / 2)):
+                    out_.append(P(mu + 0.6 + du * math.cos(th) - dv * math.sin(th), du * math.sin(th) + dv * math.cos(th)))
+                return out_
+            part(name='Ship', t='prism', r=sail(sw), z0=WZ + 7.5 * s, z1=WZ + (7.5 + mh * 0.45) * s, c='#e9dfc6', top='#e9dfc6', **kw)
+            if tw: part(name='Ship', t='prism', r=sail(tw), z0=WZ + (8.5 + mh * 0.45) * s, z1=WZ + (3.8 + mh - 1.2) * s, c='#e9dfc6', top='#e9dfc6', **kw)
+    slots = []
+    for i in range(1, len(bank) - 1, max(1, len(bank) // 15)):
+        (xa, ya), (xb, yb) = bank[i - 1], bank[i + 1]; dx, dy = xb - xa, yb - ya; n_ = math.hypot(dx, dy); ux, uy = dx / n_, dy / n_
+        slots.append((bank[i][0], bank[i][1], ux, uy))
+    slots = slots[:14]; ships = 0
+    for k, (bx, by, ux, uy) in enumerate(slots):
+        lane = k % 2; vx, vy = uy, -ux                       # verso il centro del fiume (la riva est e' a destra della corrente)
+        if vx > 0: vx, vy = -vx, -vy
+        cx_, cy_ = bx + vx * (16 + 26 * lane), by + vy * (16 + 26 * lane)
+        rot = math.radians((-18, 0, 12, 0, -8, 22, 0)[k % 7]); rx, ry = ux * math.cos(rot) - uy * math.sin(rot), ux * math.sin(rot) + uy * math.cos(rot)
+        base = k in (1, 5, 9, 12)                             # 4 navi sempre; le altre 10 solo 1503-1717
+        ship(cx_, cy_, rx, ry, 1240 if base else 1503, None if base else 1717, 1.0 - 0.12 * (k % 3 == 2))
         ships += 1
-    print(f'[hist_sevilla] navi nel porto: {ships}', flush=True)
+    print(f'[hist_sevilla] navi nel porto: {ships} (4 sempre, {ships - 4} dal 1503 al 1717)', flush=True)
     LM['clear_other'] = clear
     LM.setdefault('clear', [])
     LM['clear'] = [c for c in LM['clear'] if c not in LM.get('clear_other_prev', [])] + clear
@@ -241,6 +283,8 @@ ICON_YEARS = [(37.39176, -5.97535, 200, 20000, 1991, None, 'Santa Justa'),
 # Cattedrale: comparsa unica 1434 (scheda). Il Catasto la da' come un blocco unico alto 63 m (rilievo 1940) che inglobava
 # la Giralda: altezza riportata alla navata [L ~40 m] e impronta della Giralda tolta.
 CATHEDRAL = (1434, 40.0)
+# recinto dell'Expo 92 sulla Cartuja (rettangolo tra la darsena e la Corta, dal ponte del Cachorro al viadotto dell'Alamillo) [L]
+EXPO_SITE = box(-1650, 1250, -350, 2950)
 def fix_icons(DATA):
     blds = json.load(open(f'{DATA}/buildings.json'))
     for la, lo, rad, amin, yr, y1, name in ICON_YEARS:
@@ -249,6 +293,12 @@ def fix_icons(DATA):
             if math.hypot(b['r'][0][0] - x, b['r'][0][1] - y) < rad and Polygon(b['r']).area > amin:
                 print(f'[hist_sevilla] {name}: {b["y"]} -> {yr}' + (f'-{y1}' if y1 else ''), flush=True); b['y'] = yr
                 if y1: b['y1'] = y1
+    # Expo 92 (decisione di Fabio, 23 ott): gli edifici del recinto con anno del Catasto 1993-2000 sono padiglioni rimasti
+    # (riconvertiti dopo l'Expo): tornano al 1992.
+    nx_ = 0
+    for b in blds:
+        if 1993 <= b['y'] <= 2000 and EXPO_SITE.contains(Polygon(b['r']).centroid): b['y'] = 1992; nx_ += 1
+    print(f'[hist_sevilla] Expo 92: {nx_} edifici del recinto riportati al 1992', flush=True)
     cat = max([b for b in blds if math.hypot(b['r'][0][0], b['r'][0][1]) < 150 and Polygon(b['r']).area > 10000],
               key=lambda b: Polygon(b['r']).area)
     g = Polygon(cat["r"]).buffer(0).difference(Polygon(_sq(GIRALDA[0], GIRALDA[1], 7.3, *GIRALDA[2])))
@@ -257,6 +307,35 @@ def fix_icons(DATA):
     cat['r'] = [[round(x, 2), round(y, 2)] for x, y in list(g.exterior.coords)[:-1]]; cat['y'], cat['h'] = CATHEDRAL
     cat['lm'] = True; cat['wall'] = '#d9cba9'; cat['roof'] = '#bfb293'   # pietra, non la tavolozza casuale delle case
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
+
+def expo(DATA, n=9):
+    """Padiglioni demoliti dell'Expo 92: blocchi semplici dal 1991.5 al 1993, sui lotti oggi vuoti del recinto (lontani da
+    edifici di oggi e dall'acqua). Posizioni e misure [Guessing]: la pianta del recinto non e' stata georeferenziata."""
+    from shapely.strtree import STRtree
+    blds = json.load(open(f'{DATA}/buildings.json')); hist = json.load(open(f'{DATA}/hist.json'))
+    hist = [h for h in hist if h.get('name') != 'pabellon Expo 92']
+    G = [Polygon(b['r']).buffer(0) for b in blds if EXPO_SITE.buffer(200).contains(Polygon(b['r']).centroid)]
+    tree = STRtree(G)
+    WS = json.load(open(os.path.join(HERE, 'data_sevilla_src', 'water_src.json')))
+    wet = Polygon(WS['lago_expo'][0]).buffer(40)
+    x0, y0, x1, y1 = EXPO_SITE.bounds; cand = []
+    for xx in range(int(x0) + 120, int(x1) - 120, 40):
+        for yy in range(int(y0) + 80, int(y1) - 80, 40):
+            p = Point(xx, yy).buffer(45)
+            if wet.intersects(p) or any(G[i].intersects(p) for i in tree.query(p)): continue
+            cand.append((xx, yy))
+    pick = []
+    if cand:
+        pick.append(cand[len(cand) // 2])
+        while len(pick) < n and len(pick) < len(cand):
+            pick.append(max(cand, key=lambda c: min(math.hypot(c[0] - q[0], c[1] - q[1]) for q in pick)))
+    rnd = random.Random(92)
+    for xx, yy in pick:
+        w, l = rnd.uniform(30, 45), rnd.uniform(40, 70)
+        hist.append({'r': [[xx - l / 2, yy - w / 2], [xx + l / 2, yy - w / 2], [xx + l / 2, yy + w / 2], [xx - l / 2, yy + w / 2]],
+                     'h': round(rnd.uniform(12, 22), 1), 'y': 1991.5, 'd': 1993, 'name': 'pabellon Expo 92'})
+    json.dump(hist, open(f'{DATA}/hist.json', 'w'))
+    print(f'[hist_sevilla] Expo 92: {len(pick)} padiglioni demoliti (1991.5-1993) su {len(cand)} lotti liberi', flush=True)
 
 def lost(DATA):
     hist = json.load(open(f'{DATA}/hist.json')); rnd = random.Random(3)
@@ -275,4 +354,5 @@ if __name__ == '__main__':
     fix_icons(DATA)
     build(DATA, pred_year, era_height=era_height)
     lost(DATA)
+    expo(DATA)
     icons(DATA)
