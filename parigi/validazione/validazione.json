@@ -158,24 +158,24 @@
     {
       "ID": "A013",
       "Elemento": "Canal Saint-Martin: copertura parziale sul boulevard Richard-Lenoir",
-      "Da (anno)": 1862,
+      "Da (anno)": 1860,
       "A (anno)": 1862,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
-      "Note": "Copertura parziale per realizzare il boulevard; il modello dovrebbe distinguere tratto coperto e tratto a cielo aperto."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+      "Note": "La mairie du 10e indique : «C’est entre 1860 et 1862 que le préfet Haussmann décida de couvrir le canal au moyen d’une voûte [...] afin de créer le boulevard Richard-Lenoir»."
     },
     {
       "ID": "A014",
       "Elemento": "Canal Saint-Martin: copertura del tratto tra République e Bastille",
-      "Da (anno)": 1907,
-      "A (anno)": 1907,
+      "Da (anno)": 1906,
+      "A (anno)": 1906,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
-      "Note": "Copertura parziale del tratto urbano; non rappresenta la scomparsa dell’intero canale."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+      "Note": "La mairie du 10e indique : «Une idée reprise en 1906, avec la voûte du Temple [...] afin de donner le jour au boulevard Jules Ferry»."
     },
     {
       "ID": "A015",
@@ -405,12 +405,12 @@
       "ID": "C006",
       "Elemento": "Avenue de l’Opéra: apertura",
       "Da (anno)": 1864,
-      "A (anno)": 1879,
+      "A (anno)": 1876,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Avenue_de_l%27Op%C3%A9ra",
-      "Note": "Taglio urbano con demolizioni e allineamenti progressivi."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/en/node/160698",
+      "Note": "La notice de Paris Musées indique : «le percement de l’avenue à partir de 1864 (achevé en 1876)»; ouverture et achèvement du percement sont distingués."
     },
     {
       "ID": "C007",
@@ -418,10 +418,10 @@
       "Da (anno)": 1857,
       "A (anno)": 1926,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Haussmann",
-      "Note": "Asse realizzato in fasi, completato dopo il Secondo Impero."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/le-percement-du-boulevard-haussmann-en-1926",
+      "Note": "Paris Musées documente explicitement «Le percement du boulevard Haussmann en 1926»; cette phase terminale complète les travaux antérieurs."
     },
     {
       "ID": "C008",
@@ -429,10 +429,10 @@
       "Da (anno)": 1857,
       "A (anno)": 1862,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Voltaire",
-      "Note": "Asse radiale orientale."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/architecture-ephemere-ceremonie-d-inauguration-du-boulevard-du-prince",
+      "Note": "La notice de Paris Musées identifie le boulevard Voltaire sous son ancien nom «boulevard du Prince-Eugène» et date son inauguration de 1862."
     },
     {
       "ID": "C009",
@@ -464,8 +464,8 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Place_Charles-de-Gaulle",
-      "Note": "La piazza e i viali si sviluppano in fasi; il nome attuale OSM è Place Charles-de-Gaulle."
+      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Note": "Le nom cartographique courant est Place Charles-de-Gaulle; la géométrie radiale et son développement nécessitent encore une notice d’urbanisme spécifique."
     },
     {
       "ID": "C013",
@@ -539,10 +539,10 @@
       "Da (anno)": 1862,
       "A (anno)": 1862,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Richard-Lenoir",
-      "Note": "Collegare alla copertura del canale, senza cancellare il canale sottostante."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+      "Note": "La mairie du 10e indique : «C’est entre 1860 et 1862 que le préfet Haussmann décida de couvrir le canal au moyen d’une voûte [...] afin de créer le boulevard Richard-Lenoir»."
     },
     {
       "ID": "C020",
@@ -1639,7 +1639,7 @@
       "Evento": "Ouverture du premier tronçon du métro de Paris",
       "Changement urbain": "Apparition d’un nouveau réseau de transport souterrain; ne pas représenter les tunnels comme bâtiments de surface.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.ratp.fr/decouvrir/coulisses/histoire",
       "Note": "Événement d’infrastructure, distinct des bâtiments et espaces enregistrés en A–E."
     },
@@ -1651,7 +1651,7 @@
       "Evento": "Lancement des grands travaux haussmanniens",
       "Changement urbain": "Début d’un programme coordonné d’axes, d’alignements, de réseaux et de démolitions; les axes sont individualisés dans C.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Transformations_de_Paris_sous_le_second_Empire",
       "Note": "Cartel de contexte; ne remplace pas les lignes séparées pour chaque axe."
     },
@@ -1663,7 +1663,7 @@
       "Evento": "Commune de Paris et destructions",
       "Changement urbain": "Incendies de bâtiments publics majeurs; événement à utiliser comme cartel et à relier aux lignes de phase des bâtiments concernés.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/palais-des-tuileries-incendie",
       "Note": "Pour les formes bâties, utiliser les phases dédiées de E."
     },
@@ -1675,7 +1675,7 @@
       "Evento": "Exposition universelle de 1900",
       "Changement urbain": "Mise en service et visibilité de nouveaux équipements et infrastructures; les phases des bâtiments sont décrites séparément en E.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Exposition_universelle_de_1900",
       "Note": "Cartel de contexte urbain, distinct de la seule construction du Grand Palais."
     },
@@ -1687,7 +1687,7 @@
       "Evento": "Crue de la Seine de 1910",
       "Changement urbain": "Montée temporaire de l’eau sur les quais et dans les quartiers bas; retour au niveau ordinaire après la crue.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/la-crue-de-1910-189",
       "Note": "Crue temporaire; restituer le niveau normal après l’événement."
     },
@@ -1699,7 +1699,7 @@
       "Evento": "Jeux olympiques et paralympiques de Paris 2024",
       "Changement urbain": "Installations sportives, zones de circulation et aménagements temporaires; les retirer après l’événement.",
       "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/paris-2024-les-jeux-olympiques-et-paralympiques-231",
       "Note": "N’inclure que les installations documentées et temporaires."
     }
@@ -1707,28 +1707,6 @@
   "G": [
     {
       "ID": "G001",
-      "Elemento": "Grand-Pont (futur Pont au Change) — franchissement médiéval",
-      "Da (anno)": 900,
-      "A (anno)": 1190,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris cite le «Pont Saint-Michel – Pont au Change (bâti au 9e siècle)»; distinguer ce franchissement historique du pont actuel."
-    },
-    {
-      "ID": "G002",
-      "Elemento": "Petit-Pont — franchissement médiéval",
-      "Da (anno)": 100,
-      "A (anno)": 1190,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris indique que la première version du Petit-Pont date de l’époque gallo-romaine; 100 est une borne numérique de modélisation."
-    },
-    {
-      "ID": "G003",
       "Elemento": "Pont Notre-Dame — pont avec maisons",
       "Da (anno)": 1510,
       "A (anno)": 1512,
@@ -1739,7 +1717,7 @@
       "Note": "La Ville de Paris date de «1510-1512» les deux rangées de maisons du pont Notre-Dame; cette phase est postérieure à 1190."
     },
     {
-      "ID": "G004",
+      "ID": "G002",
       "Elemento": "Pont Notre-Dame — reconstruction en pierre",
       "Da (anno)": 1854,
       "A (anno)": 1854,
@@ -1750,7 +1728,7 @@
       "Note": "Paris Musées décrit le pont Notre-Dame «reconstruit en pierre depuis 1854»."
     },
     {
-      "ID": "G005",
+      "ID": "G003",
       "Elemento": "Pont au Change — reconstruction",
       "Da (anno)": 1647,
       "A (anno)": 1647,
@@ -1761,7 +1739,7 @@
       "Note": "La Ville de Paris indique une reconstruction en 1647 puis en 1860."
     },
     {
-      "ID": "G006",
+      "ID": "G004",
       "Elemento": "Pont au Change — reconstruction actuelle",
       "Da (anno)": 1856,
       "A (anno)": 1860,
@@ -1772,7 +1750,7 @@
       "Note": "La nomenclature officielle indique : «Il a été reconstruit de 1856 à 1860»."
     },
     {
-      "ID": "G007",
+      "ID": "G005",
       "Elemento": "Pont Neuf — construction",
       "Da (anno)": 1578,
       "A (anno)": 1607,
@@ -1783,7 +1761,7 @@
       "Note": "La Ville de Paris date la première pierre du «31 mai 1578»; la nomenclature donne 1578–1607."
     },
     {
-      "ID": "G008",
+      "ID": "G006",
       "Elemento": "Pont Royal — construction",
       "Da (anno)": 1685,
       "A (anno)": 1689,
@@ -1794,7 +1772,7 @@
       "Note": "La Ville de Paris indique que le Pont Royal fut terminé en 1689; début de chantier à confirmer."
     },
     {
-      "ID": "G009",
+      "ID": "G007",
       "Elemento": "Pont Marie — construction",
       "Da (anno)": 1614,
       "A (anno)": 1635,
@@ -1805,7 +1783,7 @@
       "Note": "La Ville de Paris indique que Christophe Marie le construisit «de 1614 à 1635»."
     },
     {
-      "ID": "G010",
+      "ID": "G008",
       "Elemento": "Pont Saint-Michel — reconstruction",
       "Da (anno)": 1857,
       "A (anno)": 1860,
@@ -1816,7 +1794,7 @@
       "Note": "La Ville de Paris indique une reconstruction en 1860; 1857 est la borne de chantier retenue."
     },
     {
-      "ID": "G011",
+      "ID": "G009",
       "Elemento": "Pont des Arts — premier pont",
       "Da (anno)": 1802,
       "A (anno)": 1804,
@@ -1827,7 +1805,7 @@
       "Note": "Premier pont métallique de la capitale; date exacte de mise en service à confirmer."
     },
     {
-      "ID": "G012",
+      "ID": "G010",
       "Elemento": "Pont des Arts — reconstruction contemporaine",
       "Da (anno)": 1981,
       "A (anno)": 1984,
@@ -1838,7 +1816,7 @@
       "Note": "Reconstruction moderne; dates opérationnelles à vérifier dans une notice dédiée."
     },
     {
-      "ID": "G013",
+      "ID": "G011",
       "Elemento": "Pont de la Concorde — construction",
       "Da (anno)": 1787,
       "A (anno)": 1791,
@@ -1849,7 +1827,7 @@
       "Note": "La Ville de Paris indique : «Le pont de la Concorde a été bâti entre 1787 et 1791»."
     },
     {
-      "ID": "G014",
+      "ID": "G012",
       "Elemento": "Pont Alexandre III — construction",
       "Da (anno)": 1896,
       "A (anno)": 1900,
@@ -1860,7 +1838,7 @@
       "Note": "La Ville de Paris date la première pierre du «7 octobre 1896» et rattache le pont à l’Exposition universelle de 1900."
     },
     {
-      "ID": "G015",
+      "ID": "G013",
       "Elemento": "Pont Bir-Hakeim — pont métallique à deux niveaux",
       "Da (anno)": 1903,
       "A (anno)": 1905,
@@ -1871,7 +1849,7 @@
       "Note": "La Ville de Paris décrit l’ouvrage métallique à deux niveaux; années exactes à valider."
     },
     {
-      "ID": "G016",
+      "ID": "G014",
       "Elemento": "Pont d’Iéna — construction",
       "Da (anno)": 1808,
       "A (anno)": 1814,
@@ -1882,7 +1860,7 @@
       "Note": "Phase napoléonienne; dates à valider par une fiche dédiée."
     },
     {
-      "ID": "G017",
+      "ID": "G015",
       "Elemento": "Pont de l’Alma — premier ouvrage",
       "Da (anno)": 1854,
       "A (anno)": 1856,
@@ -1893,7 +1871,7 @@
       "Note": "La Ville de Paris indique que le pont fut érigé pour l’Exposition universelle de 1855."
     },
     {
-      "ID": "G018",
+      "ID": "G016",
       "Elemento": "Pont de l’Alma — reconstruction",
       "Da (anno)": 1970,
       "A (anno)": 1974,
@@ -1904,7 +1882,7 @@
       "Note": "Reconstruction du pont actuel; années indicatives à confirmer."
     },
     {
-      "ID": "G019",
+      "ID": "G017",
       "Elemento": "Pont Mirabeau — construction",
       "Da (anno)": 1893,
       "A (anno)": 1896,
@@ -1915,7 +1893,7 @@
       "Note": "La Ville de Paris indique qu’il fut construit à la toute fin du XIXe siècle."
     },
     {
-      "ID": "G020",
+      "ID": "G018",
       "Elemento": "Pont Aval — ouverture",
       "Da (anno)": 1968,
       "A (anno)": 1968,
@@ -1926,7 +1904,7 @@
       "Note": "La Ville de Paris indique : «Inauguré en 1968»."
     },
     {
-      "ID": "G021",
+      "ID": "G019",
       "Elemento": "Pont Charles-de-Gaulle — construction",
       "Da (anno)": 1993,
       "A (anno)": 1996,
@@ -1937,7 +1915,7 @@
       "Note": "La Ville de Paris indique : «Réalisé entre 1993 et 1996»."
     },
     {
-      "ID": "G022",
+      "ID": "G020",
       "Elemento": "Passerelle Simone-de-Beauvoir — construction",
       "Da (anno)": 2004,
       "A (anno)": 2006,
@@ -1948,7 +1926,7 @@
       "Note": "La Ville de Paris indique qu’elle fut «inaugurée en 2006»."
     },
     {
-      "ID": "G023",
+      "ID": "G021",
       "Elemento": "Pont Amont — mise en service",
       "Da (anno)": 1969,
       "A (anno)": 1969,
@@ -1959,7 +1937,7 @@
       "Note": "Date opérationnelle à vérifier dans la notice technique du boulevard périphérique."
     },
     {
-      "ID": "G024",
+      "ID": "G022",
       "Elemento": "Pont National — pont actuel",
       "Da (anno)": 1944,
       "A (anno)": 1944,
@@ -1970,7 +1948,7 @@
       "Note": "Date de la phase actuelle à confirmer par une notice dédiée."
     },
     {
-      "ID": "G025",
+      "ID": "G023",
       "Elemento": "Pont de Tolbiac — pont actuel",
       "Da (anno)": 1882,
       "A (anno)": 1882,
@@ -1981,7 +1959,7 @@
       "Note": "Date à vérifier par une notice patrimoniale dédiée."
     },
     {
-      "ID": "G026",
+      "ID": "G024",
       "Elemento": "Pont de Bercy — élargissement",
       "Da (anno)": 1904,
       "A (anno)": 1904,
@@ -1992,7 +1970,7 @@
       "Note": "L’élargissement et la partie métro doivent être séparés des phases précédentes; date à vérifier."
     },
     {
-      "ID": "G027",
+      "ID": "G025",
       "Elemento": "Pont du Garigliano — construction",
       "Da (anno)": 1963,
       "A (anno)": 1966,
@@ -2003,7 +1981,7 @@
       "Note": "Date de construction à vérifier par une fiche dédiée."
     },
     {
-      "ID": "G028",
+      "ID": "G026",
       "Elemento": "Pont de Sully — construction",
       "Da (anno)": 1874,
       "A (anno)": 1876,
@@ -2014,7 +1992,7 @@
       "Note": "Date indicative de construction; notice dédiée nécessaire."
     },
     {
-      "ID": "G029",
+      "ID": "G027",
       "Elemento": "Pont-au-Double — reconstruction",
       "Da (anno)": 1847,
       "A (anno)": 1847,
@@ -2025,7 +2003,7 @@
       "Note": "Le document historique indique une reconstruction en 1709 puis en 1847."
     },
     {
-      "ID": "G030",
+      "ID": "G028",
       "Elemento": "Pont Saint-Charles — disparition",
       "Da (anno)": 1850,
       "A (anno)": 1870,
@@ -2036,7 +2014,7 @@
       "Note": "Le document indique que le pont Saint-Charles subsiste jusqu’à la seconde moitié du XIXe siècle; intervalle indicatif."
     },
     {
-      "ID": "G031",
+      "ID": "G029",
       "Elemento": "Pont de la Tournelle — pont actuel",
       "Da (anno)": 1928,
       "A (anno)": 1930,
@@ -2047,7 +2025,7 @@
       "Note": "Reconstruction moderne distincte des franchissements antérieurs; dates à confirmer."
     },
     {
-      "ID": "G032",
+      "ID": "G030",
       "Elemento": "Pont Louis-Philippe — pont actuel",
       "Da (anno)": 1860,
       "A (anno)": 1862,
@@ -2058,7 +2036,7 @@
       "Note": "Dates de construction à confirmer par une notice dédiée."
     },
     {
-      "ID": "G033",
+      "ID": "G031",
       "Elemento": "Pont d’Arcole — pont actuel",
       "Da (anno)": 1854,
       "A (anno)": 1856,
@@ -2069,7 +2047,7 @@
       "Note": "Date indicative de reconstruction du pont actuel; source dédiée à compléter."
     },
     {
-      "ID": "G034",
+      "ID": "G032",
       "Elemento": "Pont du Carrousel — pont actuel",
       "Da (anno)": 1935,
       "A (anno)": 1939,
@@ -2080,7 +2058,7 @@
       "Note": "Dates de construction à confirmer par une fiche patrimoniale dédiée."
     },
     {
-      "ID": "G035",
+      "ID": "G033",
       "Elemento": "Pont des Invalides — construction",
       "Da (anno)": 1824,
       "A (anno)": 1829,
@@ -2091,7 +2069,7 @@
       "Note": "Chronologie de construction à valider avec une fiche dédiée."
     },
     {
-      "ID": "G036",
+      "ID": "G034",
       "Elemento": "Passerelle Léopold-Sédar-Senghor — construction",
       "Da (anno)": 1997,
       "A (anno)": 1999,
@@ -2102,7 +2080,7 @@
       "Note": "Passerelle actuelle remplaçant l’ancien pont Solférino; dates à confirmer."
     },
     {
-      "ID": "G037",
+      "ID": "G035",
       "Elemento": "Pont de Grenelle — pont actuel",
       "Da (anno)": 1966,
       "A (anno)": 1968,
@@ -2113,7 +2091,7 @@
       "Note": "Date de construction à vérifier par une fiche dédiée."
     },
     {
-      "ID": "G038",
+      "ID": "G036",
       "Elemento": "Pont Rouelle — construction",
       "Da (anno)": 1900,
       "A (anno)": 1900,
@@ -2124,7 +2102,7 @@
       "Note": "Ouvrage ferroviaire; date de phase à vérifier."
     },
     {
-      "ID": "G039",
+      "ID": "G037",
       "Elemento": "Pont du Petit-Pont — reconstruction",
       "Da (anno)": 1852,
       "A (anno)": 1853,
@@ -2135,7 +2113,7 @@
       "Note": "Dates de reconstruction du pont actuel à vérifier."
     },
     {
-      "ID": "G040",
+      "ID": "G038",
       "Elemento": "Pont de la Tournelle — phase historique antérieure",
       "Da (anno)": 1656,
       "A (anno)": 1656,
