@@ -16,25 +16,25 @@ Repository: https://github.com/doctail/city3d
 Branch di lavoro predefinito: main.
 
 Cartella della scheda:
-- \`parigi/validazione/SCHEDA_VALIDAZIONE.md\`
-- \`parigi/validazione/validazione.json\`
-- \`parigi/validazione/A_acqua.csv\`
-- \`parigi/validazione/B_mura_confini.csv\`
-- \`parigi/validazione/C_piazze_strade.csv\`
-- \`parigi/validazione/E_icone_monumenti.csv\`
-- \`parigi/validazione/G_ponti_senna.csv\`
+- `parigi/validazione/SCHEDA_VALIDAZIONE.md`
+- `parigi/validazione/validazione.json`
+- `parigi/validazione/A_acqua.csv`
+- `parigi/validazione/B_mura_confini.csv`
+- `parigi/validazione/C_piazze_strade.csv`
+- `parigi/validazione/E_icone_monumenti.csv`
+- `parigi/validazione/G_ponti_senna.csv`
 
 Questo master prompt si trova in:
-- \`parigi/validazione/MEGA_MASTER_PROMPT_PARIGI.md\`
+- `parigi/validazione/MEGA_MASTER_PROMPT_PARIGI.md`
 
-Non modificare né sovrascrivere file fuori da \`parigi/validazione/\`, salvo richiesta esplicita o necessità documentata. Non modificare la cartella preesistente \`parigi/\` per intero: lavora soltanto sui file pertinenti.
+Non modificare né sovrascrivere file fuori da `parigi/validazione/`, salvo richiesta esplicita o necessità documentata. Non modificare la cartella preesistente `parigi/` per intero: lavora soltanto sui file pertinenti.
 
 Prima di intervenire:
 1. Leggi questo master prompt.
-2. Recupera dal branch remoto \`main\` i file attuali; non basarti su vecchie copie o su risposte precedenti.
+2. Recupera dal branch remoto `main` i file attuali; non basarti su vecchie copie o su risposte precedenti.
 3. Leggi la scheda Markdown e il JSON completi, più i CSV delle sezioni interessate.
 4. Controlla lo stato del repository e gli SHA correnti prima di aggiornare file.
-5. Individua eventuali script di validazione presenti in \`tools/\`.
+5. Individua eventuali script di validazione presenti in `tools/`.
 
 ### Procedura GitHub obbligatoria
 - Usa gli strumenti GitHub effettivamente disponibili nella sessione.
@@ -50,7 +50,7 @@ Prima di intervenire:
 
 ## 2. SCOPO STORICO E PERIMETRO TEMPORALE
 
-La scheda copre l'evoluzione urbana dal 1190 a oggi. Tutto ciò che esisteva prima del 1190 va descritto esclusivamente nella sezione \`0\`, come stato iniziale. Non inserire in A–G eventi o fasi con anno anteriore al 1190: se un ponte, un attraversamento o una struttura ha origini antiche, lo stato pre-1190 va descritto nella sezione 0; le fasi successive, le ricostruzioni e le trasformazioni databili restano nelle sezioni tematiche.
+La scheda copre l'evoluzione urbana dal 1190 a oggi. Tutto ciò che esisteva prima del 1190 va descritto esclusivamente nella sezione `0`, come stato iniziale. Non inserire in A–G eventi o fasi con anno anteriore al 1190: se un ponte, un attraversamento o una struttura ha origini antiche, lo stato pre-1190 va descritto nella sezione 0; le fasi successive, le ricostruzioni e le trasformazioni databili restano nelle sezioni tematiche.
 
 Distinguere sempre:
 - origine del sito o del primo attraversamento;
@@ -66,7 +66,7 @@ Non usare la data di inaugurazione come se fosse automaticamente l'anno d'inizio
 
 ## 3. SEZIONI DEL DATASET
 
-Il JSON usa le chiavi \`"0"\`, \`"A"\`, \`"B"\`, \`"C"\`, \`"D"\`, \`"E"\`, \`"F"\`, \`"G"\`.
+Il JSON usa le chiavi `"0"`, `"A"`, `"B"`, `"C"`, `"D"`, `"E"`, `"F"`, `"G"`.
 
 ### Sezione 0 — Stato iniziale nel 1190
 Elenca gli elementi principali già esistenti nel 1190: isole, tessuto urbano, confini, edifici o infrastrutture pertinenti e attraversamenti già presenti. Nessun elemento che nasce dopo il 1190 deve essere descritto come già esistente. In particolare:
@@ -75,7 +75,7 @@ Elenca gli elementi principali già esistenti nel 1190: isole, tessuto urbano, c
 - non rappresentare il Pont Notre-Dame con case del 1510–1512 come struttura già esistente nel 1190;
 - non proiettare nel 1190 ponti moderni, piazze regolari o assi stradali aperti in epoche successive.
 
-La sezione 0 è descrittiva e usa oggetti con campi come \`elemento\` e \`stato\`, non lo schema cronologico A–G.
+La sezione 0 è descrittiva e usa oggetti con campi come `elemento` e `stato`, non lo schema cronologico A–G.
 
 ### A — Acqua e trasformazioni idrauliche
 Include isole, unificazione di isolotti, rive, canali, bacini, coperture di canali e trasformazioni del corso d'acqua che modificano l'urbanistica. Non confondere la data del progetto, l'avvio dei lavori, lo scavo, il completamento e l'inaugurazione.
@@ -84,7 +84,7 @@ Caso obbligatorio: Canal Saint-Martin.
 - Una fonte della Ville de Paris dice: «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard».
 - La mairie du 10e riporta la posa della prima pietra il 3 maggio 1822.
 - La Ville de Paris indica l'inaugurazione da parte di Charles X il 4 novembre 1825.
-- Se la divergenza riguarda fasi diverse, descrivile con precisione. Se fonti usano la stessa etichetta per date incompatibili, usa \`CONFLITTO\` e cita entrambe. Non eliminare il conflitto solo per rendere la tabella più semplice.
+- Se la divergenza riguarda fasi diverse, descrivile con precisione. Se fonti usano la stessa etichetta per date incompatibili, usa `CONFLITTO` e cita entrambe. Non eliminare il conflitto solo per rendere la tabella più semplice.
 
 ### B — Mura, cinte e confini urbani
 Registra costruzione, ampliamento, sostituzione e demolizione delle cinte come fasi separate, quando le date sono distinte. Non usare una sola riga per fondere costruzione e demolizione.
@@ -99,19 +99,19 @@ Regola per il modello: se l'apertura di una strada o piazza ha richiesto demoliz
 
 ### D — Popolazione / HUD
 Ogni riga deve avere:
-- \`ID\`
-- \`Da (anno)\`
-- \`A (anno)\`
-- \`Uso nel modello\`
-- \`Valore HUD\` numerico intero, senza tilde o testo
-- \`Definizione\`
-- \`Motivo\`
-- \`Affidabilità\`
-- \`Fonte\`
-- \`Note\`
-- \`Stima\`, valorizzata solo con \`sì\` o \`no\`.
+- `ID`
+- `Da (anno)`
+- `A (anno)`
+- `Uso nel modello`
+- `Valore HUD` numerico intero, senza tilde o testo
+- `Definizione`
+- `Motivo`
+- `Affidabilità`
+- `Fonte`
+- `Note`
+- `Stima`, valorizzata solo con `sì` o `no`.
 
-Per i valori pre-1801 ricostruiti o stimati, \`Stima = sì\`. Per valori basati su conteggi/censimenti documentati, \`Stima = no\`, salvo che la fonte indichi chiaramente una stima. Non scrivere \`~25000\` o simili in \`Valore HUD\`: inserisci \`25000\` e spiega l'incertezza nelle Note. Il perimetro della popolazione e quello del modello devono essere esplicitati: comune storico, città murata e comune attuale non sono intercambiabili.
+Per i valori pre-1801 ricostruiti o stimati, `Stima = sì`. Per valori basati su conteggi/censimenti documentati, `Stima = no`, salvo che la fonte indichi chiaramente una stima. Non scrivere `~25000` o simili in `Valore HUD`: inserisci `25000` e spiega l'incertezza nelle Note. Il perimetro della popolazione e quello del modello devono essere esplicitati: comune storico, città murata e comune attuale non sono intercambiabili.
 
 ### E — Icone e monumenti
 Una riga per monumento o fase costruttiva significativa. Per edifici complessi, suddividi in fasi quando cambia la geometria visibile del modello: nucleo medievale, ala, facciata, cupola, guglia, demolizione, ricostruzione, ampliamento. Non fondere restauri generali e costruzione/rifacimento di elementi specifici.
@@ -147,7 +147,7 @@ Per la prima fase sul sito:
 - non confondere un traghetto con un ponte: se il traghetto è un predecessore documentato, descrivilo come fase antecedente, non come ponte;
 - se il primo attraversamento è medievale o antico e precede il 1190, descrivilo nella sezione 0, non aggiungere in G una riga con anno pre-1190;
 - se il primo attraversamento è successivo al 1190, aggiungilo in G anche se il ponte attuale è molto più recente;
-- quando la data esatta è ignota, non inventarla: usa \`DA MEMORIA\`, affidabilità \`bassa\`, e spiega la lacuna nelle Note.
+- quando la data esatta è ignota, non inventarla: usa `DA MEMORIA`, affidabilità `bassa`, e spiega la lacuna nelle Note.
 
 Per ogni ponte, cerca la scheda individuale nella Nomenclature des voies della Ville de Paris / Paris Data. La ricerca va eseguita per il nome esatto del ponte, non soltanto per una pagina generica che elenca i ponti. Puoi usare altre fonti istituzionali (Ville de Paris, AFGC, archivi, monumenti storici) come corroborazione, ma conserva la Nomenclature come riferimento prioritario richiesto.
 
@@ -171,37 +171,37 @@ Controlla l'eventuale presenza di altre righe/ID già assegnati prima di aggiung
 ## 4. SCHEMA DELLE RIGHE A–G
 
 Campi comuni per A, B, C, E, G:
-- \`ID\`: identificatore stabile e univoco, prefisso della sezione + numero a tre cifre (es. A001, G001).
-- \`Elemento\`: nome breve, specifico e descrittivo; per G deve chiarire la fase, ad esempio «Pont X — primo attraversamento sul sito» oppure «Pont X — ricostruzione in pietra».
-- \`Da (anno)\`: anno intero o vuoto.
-- \`A (anno)\`: anno intero o vuoto.
-- \`Uso nel modello\`: uno dei valori ammessi sotto.
-- \`Motivo\`: uno dei valori ammessi sotto.
-- \`Affidabilità\`: alta, media, bassa oppure n/d quando le date sono vuote.
-- \`Fonte\`: URL diretti alle fonti effettivamente consultate. Se ci sono fonti in conflitto, includile entrambe.
-- \`Note\`: breve spiegazione storica e, quando richiesto, citazione letterale della fonte.
+- `ID`: identificatore stabile e univoco, prefisso della sezione + numero a tre cifre (es. A001, G001).
+- `Elemento`: nome breve, specifico e descrittivo; per G deve chiarire la fase, ad esempio «Pont X — primo attraversamento sul sito» oppure «Pont X — ricostruzione in pietra».
+- `Da (anno)`: anno intero o vuoto.
+- `A (anno)`: anno intero o vuoto.
+- `Uso nel modello`: uno dei valori ammessi sotto.
+- `Motivo`: uno dei valori ammessi sotto.
+- `Affidabilità`: alta, media, bassa oppure n/d quando le date sono vuote.
+- `Fonte`: URL diretti alle fonti effettivamente consultate. Se ci sono fonti in conflitto, includile entrambe.
+- `Note`: breve spiegazione storica e, quando richiesto, citazione letterale della fonte.
 
 ### Valori ammessi
-\`Uso nel modello\`:
-- \`BRUSCO\`: la geometria cambia in un singolo anno; Da = A.
-- \`GRADUALE\`: costruzione, trasformazione o demolizione sviluppata in più anni.
-- \`TEMPORANEO\`: struttura temporanea o provvisoria, con durata limitata.
-- \`NESSUNO\`: il fatto non produce una modifica geometrica visibile nel modello. In questo caso Da/A devono essere vuoti.
+`Uso nel modello`:
+- `BRUSCO`: la geometria cambia in un singolo anno; Da = A.
+- `GRADUALE`: costruzione, trasformazione o demolizione sviluppata in più anni.
+- `TEMPORANEO`: struttura temporanea o provvisoria, con durata limitata.
+- `NESSUNO`: il fatto non produce una modifica geometrica visibile nel modello. In questo caso Da/A devono essere vuoti.
 
-\`Motivo\`:
-- \`BLOCCO TECNICO\`: data o fase sostenuta da una citazione esatta e verificabile della fonte. Inserisci la frase letterale tra « » nel campo Note; la frase deve realmente sostenere la data/fase della riga.
-- \`DA MEMORIA\`: informazione provvisoria, non supportata da una citazione esatta sufficiente. Affidabilità deve essere sempre \`bassa\`, senza eccezioni.
-- \`CONFLITTO\`: fonti affidabili forniscono date incompatibili per la stessa fase o usano cronologie inconciliabili. Includi entrambe le fonti e cita le due formulazioni; Affidabilità non può essere \`alta\`.
-- \`ASSENTE\`: informazione cercata ma non reperita dopo aver consultato almeno due fonti alternative pertinenti. Documenta nelle Note quali fonti sono state controllate e che cosa non è stato trovato.
+`Motivo`:
+- `BLOCCO TECNICO`: data o fase sostenuta da una citazione esatta e verificabile della fonte. Inserisci la frase letterale tra « » nel campo Note; la frase deve realmente sostenere la data/fase della riga.
+- `DA MEMORIA`: informazione provvisoria, non supportata da una citazione esatta sufficiente. Affidabilità deve essere sempre `bassa`, senza eccezioni.
+- `CONFLITTO`: fonti affidabili forniscono date incompatibili per la stessa fase o usano cronologie inconciliabili. Includi entrambe le fonti e cita le due formulazioni; Affidabilità non può essere `alta`.
+- `ASSENTE`: informazione cercata ma non reperita dopo aver consultato almeno due fonti alternative pertinenti. Documenta nelle Note quali fonti sono state controllate e che cosa non è stato trovato.
 
 ### Date e affidabilità
 - Da/A possono contenere solo anni interi oppure stringa vuota/null secondo il formato già usato nel JSON. Mai testi come «circa», «inizio XIX secolo», «dal Medioevo» o intervalli testuali nelle celle data.
-- Se \`Uso nel modello = BRUSCO\`, Da deve essere uguale ad A.
-- Se \`Uso nel modello = NESSUNO\`, Da e A devono essere vuoti.
-- Se le date sono vuote, Affidabilità deve essere \`n/d\`.
-- Non usare \`BLOCCO TECNICO\` soltanto perché un URL è presente. La nota deve contenere una citazione letterale della fonte che sostiene esattamente la data o la fase.
+- Se `Uso nel modello = BRUSCO`, Da deve essere uguale ad A.
+- Se `Uso nel modello = NESSUNO`, Da e A devono essere vuoti.
+- Se le date sono vuote, Affidabilità deve essere `n/d`.
+- Non usare `BLOCCO TECNICO` soltanto perché un URL è presente. La nota deve contenere una citazione letterale della fonte che sostiene esattamente la data o la fase.
 - Non trasformare un'incertezza in una data precisa solo per soddisfare lo schema.
-- Una data approssimata può essere registrata come ipotesi solo con \`DA MEMORIA\`, affidabilità \`bassa\`, e spiegazione dell'incertezza.
+- Una data approssimata può essere registrata come ipotesi solo con `DA MEMORIA`, affidabilità `bassa`, e spiegazione dell'incertezza.
 - Se la fonte documenta una data di apertura/inaugurazione ma non l'inizio dei lavori, scrivi la fase corretta nel campo Elemento e non attribuire alla fonte una data diversa.
 
 ## 5. RICERCA DELLE FONTI
@@ -223,22 +223,22 @@ Regole:
 - Se due fonti descrivono fasi differenti (es. avvio progetto, posa prima pietra, inaugurazione), non chiamarle conflitto prima di aver verificato che parlino della stessa cosa.
 - Se il conflitto permane, non risolverlo per intuizione: registra entrambe le versioni.
 - Non promuovere automaticamente tutte le righe a BLOCCO TECNICO solo perché sono state cercate online.
-- Le righe \`DA MEMORIA\` già presenti devono rimanere tali finché non vengono verificate; non è necessario riaprire tutte le righe non coinvolte in una richiesta mirata.
+- Le righe `DA MEMORIA` già presenti devono rimanere tali finché non vengono verificate; non è necessario riaprire tutte le righe non coinvolte in una richiesta mirata.
 
 ## 6. OUTPUT OBBLIGATORI
 
 Mantieni sincronizzati:
-1. \`SCHEDA_VALIDAZIONE.md\`: scheda leggibile, tutte le sezioni e tabelle aggiornate.
-2. \`validazione.json\`: fonte strutturata completa con chiavi 0,A,B,C,D,E,F,G.
+1. `SCHEDA_VALIDAZIONE.md`: scheda leggibile, tutte le sezioni e tabelle aggiornate.
+2. `validazione.json`: fonte strutturata completa con chiavi 0,A,B,C,D,E,F,G.
 3. CSV delle sezioni A, B, C, E, G.
 
 Non è richiesto un CSV separato per D o F, salvo richiesta esplicita. La sezione 0 resta nel JSON e nel Markdown.
 
 Regole Markdown:
-- Inserisci una riga vuota prima di ogni heading di sezione \`##\`.
+- Inserisci una riga vuota prima di ogni heading di sezione `##`.
 - Le tabelle devono avere lo stesso contenuto del JSON per la sezione corrispondente.
 - Ogni riga deve avere lo stesso numero di separatori di colonna.
-- Escape dei caratteri \`|\` nei contenuti delle celle.
+- Escape dei caratteri `|` nei contenuti delle celle.
 - Non eliminare le sezioni non coinvolte in un aggiornamento.
 - Le intestazioni e le spiegazioni metodologiche devono rimanere coerenti con lo schema.
 
@@ -261,43 +261,29 @@ Regole CSV:
 8. Aggiorna le tabelle corrispondenti in Markdown, mantenendo tutte le sezioni e il testo metodologico.
 9. Controlla ID duplicati, intervalli temporali, valori ammessi, citazioni, affidabilità, numero di colonne, sincronizzazione JSON/CSV/Markdown.
 10. Esegui il validatore obbligatorio riportato nella sezione 8.
-11. Se il controllo segnala problemi, correggili e ripeti dal punto 9. Non consegnare finché il contatore \`PROBLEMI\` non è 0.
+11. Se il controllo segnala problemi, correggili e ripeti dal punto 9. Non consegnare finché il contatore `PROBLEMI` non è 0.
 12. Recupera nuovamente da GitHub tutti i file modificati per verificare che il commit remoto contenga i contenuti finali.
 13. Solo dopo la verifica remota, consegna i link e un riepilogo sintetico delle modifiche, dei controlli e degli eventuali limiti storici residui.
 
 ## 8. VALIDAZIONE BLOCCANTE — OBBLIGATORIA
 
-Prima di consegnare, esegui \`tools/check_scheda.py\` sulla tua cartella e incolla l'output completo nella risposta finale.
+Prima di consegnare, esegui il validatore sulla cartella di validazione e incolla l'output completo nella risposta finale.
 
-Comando richiesto:
-\`\`\`bash
-python3 tools/check_scheda.py
-\`\`\`
+Comando obbligatorio:
+```bash
+python3 -I tools/check_scheda.py parigi/validazione
+```
 
-Se il validatore accetta o richiede un percorso esplicito, esegui il comando sul percorso locale della cartella di lavoro che contiene \`parigi/validazione/\`; non eseguire il controllo su una copia obsoleta.
-
-**Non consegnare finché \`PROBLEMI\` non è 0.** Se \`PROBLEMI\` è maggiore di 0:
-- leggi ogni errore;
-- correggi la causa nei file sorgente;
-- rigenera i file derivati;
-- riesegui il comando;
-- ripeti fino a \`PROBLEMI: 0\`.
+**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI: 0`.
 
 Non dichiarare il controllo superato senza avere realmente eseguito il comando e riportato il suo output. Non inventare l'output.
 
-Se \`tools/check_scheda.py\` non esiste nella cartella locale o nel repository:
-1. non fingere che il comando sia stato eseguito;
-2. crea prima un validatore effettivo in \`tools/check_scheda.py\` che controlli almeno tutte le regole definite in questo prompt: struttura JSON, ID univoci, valori ammessi, date intere o vuote, BRUSCO con Da=A, NESSUNO con date vuote, DA MEMORIA sempre bassa, CONFLITTO mai alta, date vuote con n/d, D con HUD intero e Stima sì/no, citazioni per BLOCCO TECNICO, integrità CSV, sincronizzazione delle righe fra JSON/CSV/Markdown e intestazioni Markdown;
-3. prova il validatore su una copia di test o su dati noti, correggi eventuali falsi positivi;
-4. committa lo script su GitHub, se la richiesta comprende aggiornamenti del repository;
-5. esegui il comando reale sulla cartella di lavoro e incolla l'output.
-Se non è possibile creare/eseguire il validatore nel runtime disponibile, fermati e segnala il blocco: non consegnare il dataset come completo.
+tools/check_scheda.py esiste ed è gestito dalla regia. Non modificarlo né sostituirlo. Se un controllo ti sembra sbagliato, segnalalo nella consegna.
 
-Formato dell'output del validatore: deve includere almeno una riga finale esplicita come \`PROBLEMI: 0\` oppure \`PROBLEMI: N\`. La stringa deve derivare dal conteggio reale degli errori, non essere stampata sempre a zero.
-
+Formato della consegna: incolla l'output reale completo del validatore. La riga finale deve mostrare il conteggio reale dei problemi.
 ## 9. CONTROLLI STORICI SPECIFICI DA NON PERDERE
 
-- Canal Saint-Martin: distinguere 1802 (avvio dei lavori secondo la Ville de Paris), posa della prima pietra nel 1822 e inaugurazione nel 1825. Registrare \`CONFLITTO\` solo se le fonti sono realmente incompatibili sulla medesima fase.
+- Canal Saint-Martin: distinguere 1802 (avvio dei lavori secondo la Ville de Paris), posa della prima pietra il 3 maggio 1822 e inaugurazione il 4 novembre 1825. Per il modello: acqua del canale GRADUALE dal 1822 al 1825 (prima pietra 3 maggio 1822, inaugurazione 4 novembre 1825); il 1802 resta solo come nota. Registrare `CONFLITTO` solo se le fonti sono realmente incompatibili sulla medesima fase.
 - Louvre: E035 ala Rohan lungo rue de Rivoli, 1806–1811 (Napoleone I); E038 Nouveau Louvre / collegamento Louvre–Tuileries, programma 1852–1863 (Napoleone III), Cour Napoléon completata nel 1857.
 - Notre-Dame: la guglia di Viollet-le-Duc (inaugurata nel 1859) è una fase distinta dal restauro generale.
 - Enceinte de Louis XIII / Fossés Jaunes: separare costruzione e demolizione.
@@ -317,7 +303,7 @@ Formato dell'output del validatore: deve includere almeno una riga finale esplic
 - Non trasformare una stima in un dato certo.
 - Non confondere un'ipotesi con una fonte.
 - Non dichiarare «validato storicamente» quando hai verificato soltanto la struttura.
-- Non cancellare \`DA MEMORIA\` solo per ridurre il numero di righe incerte; deve restare marcato fino a una verifica reale.
+- Non cancellare `DA MEMORIA` solo per ridurre il numero di righe incerte; deve restare marcato fino a una verifica reale.
 - Se una fonte manca, usa lo stato previsto dallo schema e spiega cosa è stato cercato.
 - Quando l'utente fornisce correzioni o nuove fonti, integrale e aggiorna esplicitamente la valutazione.
 - Se una correzione modifica una data, controlla le fasi collegate e le righe che potrebbero diventare incoerenti.
@@ -331,7 +317,7 @@ La risposta finale deve essere breve e concreta e includere:
 1. link GitHub verificati ai file modificati;
 2. elenco sintetico delle fasi o correzioni effettuate;
 3. esito dei controlli di sincronizzazione e qualità;
-4. output completo di \`python3 tools/check_scheda.py\`, con \`PROBLEMI: 0\`;
+4. output completo di `python3 tools/check_scheda.py`, con `PROBLEMI: 0`;
 5. eventuali limiti storici residui, senza dichiarare completa una verifica non eseguita.
 
-Se \`PROBLEMI\` non è 0, oppure il validatore non è stato realmente eseguito, NON consegnare come lavoro completato. Spiega il blocco e continua a correggere.
+Se `PROBLEMI` non è 0, oppure il validatore non è stato realmente eseguito, NON consegnare come lavoro completato. Spiega il blocco e continua a correggere.
