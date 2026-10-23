@@ -746,6 +746,19 @@ for r in blocks:
         if len(_ii): by = max(by, min(polys_y[i_] for i_ in _ii))
     _bit.append((r, by))
 BO = chunked('blocks', _bit, 0.12, mat('blocks', srgb(ST.get('blocks', '#b4ab9c')), 0.9), 'appear')
+def night_glow(m_, base, peak, scale=0.035):
+    """di notte il suolo urbano e gli isolati fanno la luce dei lampioni: bagliore arancio (sodio) di fondo + punti piu' forti
+    ogni ~1/scale m (Siviglia, Fabio 23 ott: "mancano tutte le luci stradali")"""
+    N_ = m_.node_tree.nodes; L_ = m_.node_tree.links.new; b_ = [n for n in N_ if n.bl_idname == 'ShaderNodeBsdfPrincipled'][0]
+    tc_ = N_.new('ShaderNodeTexCoord'); vo_ = N_.new('ShaderNodeTexVoronoi'); vo_.inputs['Scale'].default_value = scale; L_(tc_.outputs['Object'], vo_.inputs['Vector'])
+    mr_ = N_.new('ShaderNodeMapRange'); L_(vo_.outputs['Distance'], mr_.inputs['Value']); mr_.inputs['From Min'].default_value = 0.0; mr_.inputs['From Max'].default_value = 0.16
+    mr_.inputs['To Min'].default_value = peak; mr_.inputs['To Max'].default_value = base
+    b_.inputs['Emission Color'].default_value = (*srgb(ST.get('night_lamp', '#ffa955')), 1); L_(mr_.outputs[0], b_.inputs['Emission Strength'])
+if NIGHT and ST.get('night_ground'):
+    night_glow(BO[0].active_material, _ng_b := ST['night_ground'][2], _ng_b * 4) if BO else None
+    _ng = ST['night_ground']
+    for _o in UG if UG_FOOT else []:
+        if _o.active_material and not _o.active_material.get('_glow'): night_glow(_o.active_material, _ng[0], _ng[1]); _o.active_material['_glow'] = 1
 # isolati non ancora urbanizzati: spostati sotto terra (indici stabili, cosi' gli alberi non saltano)
 hg = bpy.data.node_groups.new('hide', 'GeometryNodeTree')
 hg.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); hg.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
@@ -1007,7 +1020,7 @@ if LM:
     for pt in _lp:
         o_, zb = _lmesh(pt)
         if pt.get('noshadow') or (pt['t'] == 'beam' and pt['w'] < 0.6 and pt['h'] < 0.6): o_.visible_shadow = False   # stralli e tiranti: le ombre lunghe col sole basso disegnavano triangoli neri sui campi
-        PARTS.append({'obj': o_, 'z0': zb, 'b0': pt['y'], 'b1': pt['y'], 'd0': pt.get('d'), 'd1': pt.get('d')})
+        PARTS.append({'obj': o_, 'z0': zb, 'zg': zb, 'b0': pt['y'], 'b1': pt['y'], 'd0': pt.get('d'), 'd1': pt.get('d')})
     log('monumenti costruiti:', len(PARTS), 'parti')
     if NIGHT and LM.get('lights'):   # lampadine di Tivoli: solo di notte
         _lc = [(1.0, 0.85, 0.55), (1.0, 0.25, 0.20), (0.35, 1.0, 0.45), (0.45, 0.65, 1.0)]
@@ -1074,6 +1087,26 @@ if dem_at:
         _lb = [dict(l_, z=round(l_['z'] + float(dem_at(l_['x'], l_['y'])), 1)) for l_ in LM['labels']]
         json.dump(_lb, open(f'{OUT}/labels.json', 'w'))
     log('rilievo applicato:', _nv, 'vertici, massimo %.0f m' % _D.max())
+# parti dei monumenti unite per (anno, fine, quota di base, ombra): sulla GPU ogni oggetto che cambia in un fotogramma costa
+# ~12 ms (misurato sulla 5080, 23 ott); Siviglia 2.887 parti -> ~137 oggetti. Lo spostamento del rilievo di ogni parte entra
+# nella geometria (relativo alla parte piu' bassa del gruppo), cosi' la base della crescita resta quella del gruppo.
+if CITY.get('merge_parts') and PARTS:
+    from mathutils import Matrix as _Mx
+    _grp = {}
+    for pt in PARTS: _grp.setdefault((pt['b0'], pt['d0'], round(pt.get('zg', 0.0), 1), pt['obj'].visible_shadow), []).append(pt)
+    _newp = []
+    for _k, _ps in _grp.items():
+        if len(_ps) == 1: _newp.append(_ps[0]); continue
+        _z = min(p_['z0'] for p_ in _ps); _bm = bmesh.new()
+        for p_ in _ps:
+            _me = p_['obj'].data; _off = p_['z0'] - _z
+            if abs(_off) > 1e-6: _me.transform(_Mx.Translation((0, 0, _off)))
+            _bm.from_mesh(_me)
+        _o = obj(f"lm_{_ps[0]['obj'].name.split('_')[1]}_g{len(_newp)}", _bm, CM); _o.data.color_attributes.active_color_name = 'col'
+        _o.location.z = _z; _o.scale.z = 0.0; _o.visible_shadow = _k[3]
+        for p_ in _ps: _me = p_['obj'].data; bpy.data.objects.remove(p_['obj'], do_unlink=True); bpy.data.meshes.remove(_me)
+        _newp.append({'obj': _o, 'z0': _z, 'b0': _k[0], 'b1': _k[0], 'd0': _k[1], 'd1': _k[1]})
+    log('monumenti uniti:', len(PARTS), '->', len(_newp), 'oggetti'); PARTS = _newp
 # alberi "cotti" in geometria statica (DOPO il rilievo: gli alberi nascono gia' sul suolo spostato, niente 3,5 milioni
 # di vertici da spostare, e nessuna copia del depsgraph raddoppiata dalle modifiche al suolo): spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
 _dg = bpy.context.evaluated_depsgraph_get(); nb = 0
@@ -1237,28 +1270,46 @@ def setvis(o_, hidden):
         o_.location.z = -5000.0 if hidden else ZBASE.get(o_.name, 0.0); VISSET[o_.name] = hidden
 STOP_AVG = float(opt('--stop-avg', 1, '0')); STOP_N = int(opt('--stop-every', 1, '500')); _FT = []
 NW = 5 if F1 > 9999 else 4   # oltre 9999 fotogrammi: nomi a 5 cifre (con 4 l'ordine alfabetico mescolava i fotogrammi)
-done = 0
+done = 0; _DIAG_PREV = {}; _DIAG_N = []
+# fotogramma "di stato" (cosa si vede): nel riavvolgimento (anni che scendono) la scena si aggiorna ogni RH fotogrammi e con
+# 'grow_step' la crescita ogni GS fotogrammi: sulla GPU ogni oggetto che cambia costa ~12 ms (5080, 23 ott). Camera sempre fluida.
+_RH = int(CITY.get('rewind_hold', 1)); _GS = int(CITY.get('grow_step', 1))
+def _fv(f):
+    if _RH > 1 and f - 1 in YF and YF[f] < YF[f - 1] - 1e-6: q_ = f - ((f - 1) % _RH)
+    elif _GS > 1: q_ = f - ((f - 1) % _GS)
+    else: q_ = f
+    return q_ if q_ in YF else f
 _ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
 for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     path = os.path.join(OUT, f'{f:0{NW}d}.{EXT}')
     if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:0{NW}d}.jpg'), os.path.join(OUT, f'{f:0{NW}d}.png'))): continue
-    t_ = time.time(); sc.frame_set(f); y_ = YF[f]
+    t_ = time.time(); sc.frame_set(f); fv = _fv(f); y_ = YF[fv]
     _l = lens_at(f)
     if abs(cam.lens - _l) > 1e-3: cam.lens = _l
     for ch in CHUNKS:
-        g_ = growth(ch, f); setvis(ch['obj'], g_ < 0.002)
+        g_ = growth(ch, fv); setvis(ch['obj'], g_ < 0.002)
         if g_ >= 0.002 and abs(ch['obj'].scale.z - g_) > 1e-4: ch['obj'].scale.z = g_
     for pt in PARTS:
-        g_ = growth(pt, f); o_ = pt['obj']; hid = g_ < 0.002
+        g_ = growth(pt, fv); o_ = pt['obj']; hid = g_ < 0.002
         if VISSET.get(o_.name) != hid: o_.location.z = -5000.0 if hid else pt['z0']; VISSET[o_.name] = hid
         if not hid and abs(o_.scale.z - g_) > 1e-4: o_.scale.z = g_
     for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr) if kind == 'vanish' else not (thr[0] <= y_ < thr[1]))
+    if os.environ.get('DIAG'):   # diagnosi: oggetti cambiati (posizione o scala) dal fotogramma precedente, per tipo, con i vertici
+        _st = {}
+        for _o in sc.objects:
+            if _o.type not in ('MESH',): continue
+            _k = (round(_o.location.z, 3), round(_o.scale.z, 4))
+            if _DIAG_PREV.get(_o.name) != _k:
+                _t = _o.name.split('_')[0]; _nv = len(_o.data.vertices); _c = _st.setdefault(_t, [0, 0]); _c[0] += 1; _c[1] += _nv
+            _DIAG_PREV[_o.name] = _k
+        _DIAG_N.append((f, sum(v[0] for v in _st.values()))); log('DIAG', f, ' '.join(f'{k}:{v[0]}/{v[1] // 1000}k' for k, v in sorted(_st.items(), key=lambda kv: -kv[1][1])[:8]))
     if os.environ.get('PROBE'):   # diagnosi: raggio verticale nei punti "x,y;x,y": quale oggetto si colpisce
         bpy.context.view_layer.update(); _dg = bpy.context.evaluated_depsgraph_get()
         for _p in os.environ['PROBE'].split(';'):
             _x, _y = map(float, _p.split(','))
             _h = sc.ray_cast(_dg, (_x, _y, 600.0), (0.0, 0.0, -1.0))
             log('PROBE', _p, '->', _h[4].name if _h[0] else 'niente', 'z=%.2f' % _h[1].z if _h[0] else '', 'normale', tuple(round(v, 2) for v in _h[2]) if _h[0] else '')
+    if os.environ.get('DIAG_ONLY'): done += 1; continue   # diagnosi: solo conteggio, niente render
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
     # regola di stop (Fabio, 23 ott): ogni N fotogrammi, se la media degli ultimi N supera la soglia, ci si ferma
@@ -1266,4 +1317,5 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     if STOP_AVG and len(_FT) % STOP_N == 0:
         _m = sum(_FT[-STOP_N:]) / STOP_N; print(f'[build] media ultimi {STOP_N} fotogrammi: {_m:.2f} s', flush=True)
         if _m > STOP_AVG: print(f'[build] STOP: media {_m:.2f} s > {STOP_AVG} s/fotogramma (fotogramma {f}). Render interrotto.', flush=True); sys.exit(3)
+if os.environ.get('DIAG'): json.dump(_DIAG_N, open(os.path.join(OUT, 'diag.json'), 'w'))
 n = max(1, done); log(f'FATTO {done} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')

@@ -115,10 +115,10 @@
   "night_win": 9.0,
   "moon": 0.05,
   "night_street": 0.9,
-  "night_sky": 0.01,
+  "night_sky": 0.03,
   "bridge_side": "#a39d92",
   "glass_min_area": 400,
-  "bulb": 45.0,
+  "bulb": 8.0,
   "sky_in_reflections": true,
   "wave_scale": 0.025,
   "wave_strength": 0.05,
@@ -134,7 +134,7 @@
   "park_ground": "#5c763a",
   "olive_soil": "#a8916a",
   "olive_tree": "#4e5730",
-  "bulb_size": 2.6,
+  "bulb_size": 1.6,
   "nat": {
    "vega1": "#5f7038",
    "vega2": "#76803f",
@@ -150,7 +150,13 @@
     "#8f7a52"
    ]
   },
-  "urban_phase": "#aaa396"
+  "urban_phase": "#aaa396",
+  "night_ground": [
+   0.6,
+   6.0,
+   0.25
+  ],
+  "night_lamp": "#ffa955"
  },
  "hist": "hist_sevilla",
  "land_from_buildings": true,
@@ -218,5 +224,7 @@
    ],
    1989
   ]
- ]
+ ],
+ "merge_parts": true,
+ "rewind_hold": 4
 }

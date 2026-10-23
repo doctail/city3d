@@ -302,10 +302,10 @@ def icons(DATA):
         if vx > 0: vx, vy = -vx, -vy
         cx_, cy_ = bx + vx * (16 + 26 * lane), by + vy * (16 + 26 * lane)
         rot = math.radians((-18, 0, 12, 0, -8, 22, 0)[k % 7]); rx, ry = ux * math.cos(rot) - uy * math.sin(rot), ux * math.sin(rot) + uy * math.cos(rot)
-        base = k in (1, 5, 9, 12)                             # 4 navi sempre; le altre 10 solo 1503-1717
-        ship(cx_, cy_, rx, ry, 1240 if base else 1503, None if base else 1717, 1.0 - 0.12 * (k % 3 == 2))
+        base = k in (1, 5, 9, 12)                             # 4 navi dal 1240 al 1850 (velieri: niente caravelle nel Novecento, una stava sul ponte di San Telmo 1931); le altre 10 solo 1503-1717
+        ship(cx_, cy_, rx, ry, 1240 if base else 1503, 1850 if base else 1717, 1.0 - 0.12 * (k % 3 == 2))
         ships += 1
-    print(f'[hist_sevilla] navi nel porto: {ships} (4 sempre, {ships - 4} dal 1503 al 1717)', flush=True)
+    print(f'[hist_sevilla] navi nel porto: {ships} (4 dal 1240 al 1850, {ships - 4} dal 1503 al 1717)', flush=True)
     LM['clear_other'] = clear
     LM.setdefault('clear', [])
     LM['clear'] = [c for c in LM['clear'] if c not in LM.get('clear_other_prev', [])] + clear
