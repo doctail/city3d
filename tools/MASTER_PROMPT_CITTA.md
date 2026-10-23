@@ -254,13 +254,13 @@ Comando obbligatorio:
 python3 -I tools/check_scheda.py <citta>/validazione
 ```
 
-**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI: 0`.
+**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI 0`.
 
 Non dichiarare il controllo superato senza avere realmente eseguito il comando e riportato il suo output. Non inventare l'output.
 
 tools/check_scheda.py esiste ed è gestito dalla regia. Non modificarlo né sostituirlo. Se un controllo ti sembra sbagliato, segnalalo nella consegna.
 
-Formato della consegna: incolla l'output reale completo del validatore. La riga finale deve mostrare il conteggio reale dei problemi.
+Formato della consegna: incolla l'output reale completo del validatore, rispettando il formato effettivamente prodotto dallo script (riga `PROBLEMI N`).
 
 ## 9. CONTROLLI STORICI SPECIFICI DA NON PERDERE
 
@@ -288,7 +288,7 @@ La risposta finale deve essere breve e concreta e includere:
 1. link GitHub verificati ai file modificati;
 2. elenco sintetico delle fasi o correzioni effettuate;
 3. esito dei controlli di sincronizzazione e qualità;
-4. output completo del comando di validazione realmente eseguito, con `PROBLEMI: 0`;
+4. output completo del comando di validazione realmente eseguito, con `PROBLEMI 0`;
 5. eventuali limiti storici residui, senza dichiarare completa una verifica non eseguita.
 
 Se `PROBLEMI` non è 0, oppure il validatore non è stato realmente eseguito, NON consegnare come lavoro completato. Spiega il blocco e continua a correggere.
