@@ -1,0 +1,562 @@
+{
+  "0": [
+    {
+      "elemento": "Île de la Cité",
+      "stato": "Isola urbana già insediata; nucleo della città medievale."
+    },
+    {
+      "elemento": "Île Saint-Louis",
+      "stato": "Non ancora formata come isola urbanizzata unitaria; i due isolotti storici sono distinti."
+    },
+    {
+      "elemento": "Île Louviers",
+      "stato": "Isola separata dalla rive droite da un braccio della Senna."
+    },
+    {
+      "elemento": "Senna e bracci",
+      "stato": "Corso principale e bracci attivi; geometria da ricostruire da cartografia storica."
+    },
+    {
+      "elemento": "Ponts médiévaux",
+      "stato": "Pont Notre-Dame, Petit-Pont e Grand-Pont (successivamente Pont au Change) hanno antecedenti medievali; struttura esatta del 1190 non va confusa con le ricostruzioni successive."
+    },
+    {
+      "elemento": "Enceinte de Philippe Auguste",
+      "stato": "Cinta in costruzione nel periodo iniziale del timelapse; solo le parti già esistenti nel 1190 appartengono allo stato iniziale."
+    },
+    {
+      "elemento": "Chiese e abbazie",
+      "stato": "Notre-Dame in costruzione; Saint-Germain-des-Prés, Saint-Martin-des-Champs e Sainte-Geneviève sono istituzioni preesistenti, con edifici e fasi architettoniche differenti."
+    },
+    {
+      "elemento": "Borghi fuori le mura",
+      "stato": "Insediamenti suburbani presso Saint-Germain, Saint-Marcel, Saint-Martin-des-Champs e lungo gli assi d’accesso; rappresentazione approssimata senza una carta georeferenziata."
+    }
+  ],
+  "A": [
+    {
+      "ID": "A001",
+      "Elemento": "Île Saint-Louis: unificazione degli isolotti Notre-Dame e aux Vaches",
+      "Da (anno)": 1614,
+      "A (anno)": 1655,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/veue-et-perspective-de-l-isle-nostre-dame-et-de-la-porte-st-bernard-sic",
+      "Note": "Intervento autorizzato nel 1614; completamento convenzionale verso il 1655."
+    },
+    {
+      "ID": "A002",
+      "Elemento": "Île Louviers: riempimento del braccio del Mail e unione alla riva destra",
+      "Da (anno)": 1843,
+      "A (anno)": 1843,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/l-ile-louviers-et-la-pointe-de-l-ile-saint-louis-vues-du-port-saint-paul",
+      "Note": "La fonte riporta: «En 1843, par comblement du petit bras du “Mail”, l'île Louviers fut rattachée à la rive droite de Paris»."
+    },
+    {
+      "ID": "A003",
+      "Elemento": "Canal de l’Ourcq: apertura del primo tratto navigabile fino a La Villette",
+      "Da (anno)": 1813,
+      "A (anno)": 1813,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+      "Note": "La fonte riporta: «Le canal de l’Ourcq est inauguré le 15 août 1813»."
+    },
+    {
+      "ID": "A004",
+      "Elemento": "Canal de l’Ourcq: apertura del tratto Mareuil–Parigi",
+      "Da (anno)": 1822,
+      "A (anno)": 1822,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+      "Note": "La fonte riporta: «la portion du canal de l’Ourcq entre Mareuil (Oise) et Paris ouvre en 1822»."
+    },
+    {
+      "ID": "A005",
+      "Elemento": "Canal Saint-Denis: completamento e apertura",
+      "Da (anno)": 1821,
+      "A (anno)": 1821,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/tmp-canaux-7834",
+      "Note": "La fonte riporta: «Le canal Saint-Denis est achevé en 1821»."
+    },
+    {
+      "ID": "A006",
+      "Elemento": "Canal Saint-Martin: avvio dei lavori",
+      "Da (anno)": 1802,
+      "A (anno)": 1802,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+      "Note": "La fonte riporta: «Les travaux débutent le 23 septembre 1802»."
+    },
+    {
+      "ID": "A007",
+      "Elemento": "Canal Saint-Martin: completamento e apertura",
+      "Da (anno)": 1825,
+      "A (anno)": 1825,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/tmp-canaux-7834",
+      "Note": "La fonte riporta: «le canal Saint-Martin en 1825»."
+    },
+    {
+      "ID": "A008",
+      "Elemento": "Île Louviers: braccio fluviale sostituito dal boulevard Morland",
+      "Da (anno)": 1843,
+      "A (anno)": 1843,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/le-pont-de-la-tournelle-l-ile-saint-louis-l-ile-louviers",
+      "Note": "La fonte riporta che il braccio «fut comblé en 1843» e che occupava il sito dell’attuale boulevard Morland."
+    },
+    {
+      "ID": "A009",
+      "Elemento": "Bièvre: copertura progressiva nel territorio parigino",
+      "Da (anno)": 1912,
+      "A (anno)": 1930,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://fr.wikipedia.org/wiki/Bi%C3%A8vre_(affluent_de_la_Seine)",
+      "Note": "Intervallo indicativo della copertura urbana; da verificare tratto per tratto prima di animare come evento uniforme."
+    },
+    {
+      "ID": "A010",
+      "Elemento": "Senna: inondazione del 1910",
+      "Da (anno)": 1910,
+      "A (anno)": 1910,
+      "Uso nel modello": "TEMPORANEO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/la-crue-de-1910-189",
+      "Note": "Evento temporaneo: non lasciare il livello dell’acqua alterato dopo la fase di piena."
+    },
+    {
+      "ID": "A011",
+      "Elemento": "Bassin de la Villette: realizzazione del bacino",
+      "Da (anno)": 1808,
+      "A (anno)": 1808,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+      "Note": "Bacino parte del sistema dei canali; anno puntuale da confermare su fonte primaria dedicata."
+    },
+    {
+      "ID": "A012",
+      "Elemento": "Bassin de l’Arsenal: bacino portuale sul Canal Saint-Martin",
+      "Da (anno)": 1806,
+      "A (anno)": 1806,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/tmp-canaux-7834",
+      "Note": "Data indicativa associata al progetto del canale; verificare la fase esatta di realizzazione."
+    },
+    {
+      "ID": "A013",
+      "Elemento": "Canal Saint-Martin: copertura parziale sul boulevard Richard-Lenoir",
+      "Da (anno)": 1862,
+      "A (anno)": 1862,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
+      "Note": "Copertura parziale per realizzare il boulevard; il modello dovrebbe distinguere tratto coperto e tratto a cielo aperto."
+    },
+    {
+      "ID": "A014",
+      "Elemento": "Canal Saint-Martin: copertura del tratto tra République e Bastille",
+      "Da (anno)": 1907,
+      "A (anno)": 1907,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Canal_Saint-Martin",
+      "Note": "Copertura parziale del tratto urbano; non rappresenta la scomparsa dell’intero canale."
+    },
+    {
+      "ID": "A015",
+      "Elemento": "Quais della Senna: consolidamento e trasformazione delle rive urbane",
+      "Da (anno)": 1800,
+      "A (anno)": 1900,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/les-berges-de-seine-2414",
+      "Note": "Processo lungo e disomogeneo: usare come evoluzione per segmenti, non come unico evento simultaneo."
+    }
+  ],
+  "B": [
+    {
+      "ID": "B001",
+      "Elemento": "Enceinte de Philippe Auguste — rive droite: costruzione",
+      "Da (anno)": 1190,
+      "A (anno)": 1210,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/sur-la-piste-de-l-enceinte-medievale-philippe-auguste-rive-droite-episode-1-2-20729",
+      "Note": "La fonte riporta: «Entre 1190 et 1210»."
+    },
+    {
+      "ID": "B002",
+      "Elemento": "Enceinte de Philippe Auguste — rive gauche: costruzione",
+      "Da (anno)": 1190,
+      "A (anno)": 1215,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/sur-la-piste-de-l-enceinte-medievale-philippe-auguste-rive-gauche-episode-2-2-21081",
+      "Note": "La fonte riporta: «construite entre 1190 et 1215»; la riva sinistra va distinta dalla destra."
+    },
+    {
+      "ID": "B003",
+      "Elemento": "Enceinte de Charles V: costruzione",
+      "Da (anno)": 1356,
+      "A (anno)": 1383,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte riporta: «Entre 1356 et 1383»."
+    },
+    {
+      "ID": "B004",
+      "Elemento": "Enceinte de Charles V: dismissione e demolizione progressiva",
+      "Da (anno)": 1670,
+      "A (anno)": 1700,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte conferma che le due cinte più tarde furono rase sotto Luigi XIV; intervallo operativo approssimativo."
+    },
+    {
+      "ID": "B005",
+      "Elemento": "Enceinte de Louis XIII: costruzione",
+      "Da (anno)": 1630,
+      "A (anno)": 1670,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte colloca la fortificazione nel ciclo delle cinte del XVI–XVII secolo; gli estremi sono convenzionali."
+    },
+    {
+      "ID": "B006",
+      "Elemento": "Enceinte de Louis XIII: demolizione",
+      "Da (anno)": 1670,
+      "A (anno)": 1700,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La demolizione lascia spazio ai grands boulevards; l’intervento è progressivo."
+    },
+    {
+      "ID": "B007",
+      "Elemento": "Mur des Fermiers généraux: costruzione",
+      "Da (anno)": 1784,
+      "A (anno)": 1791,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte riporta: «La construction du mur des Fermiers généraux s’étend de 1784 à 1790»; il museo cittadino documenta 1784–1791."
+    },
+    {
+      "ID": "B008",
+      "Elemento": "Mur des Fermiers généraux: demolizione",
+      "Da (anno)": 1860,
+      "A (anno)": 1860,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte riporta che fu quasi interamente demolito nel contesto della costruzione della cinta di Thiers."
+    },
+    {
+      "ID": "B009",
+      "Elemento": "Enceinte de Thiers: costruzione",
+      "Da (anno)": 1841,
+      "A (anno)": 1844,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte riporta: «Construite entre 1841 et 1844»."
+    },
+    {
+      "ID": "B010",
+      "Elemento": "Enceinte de Thiers: demolizione",
+      "Da (anno)": 1919,
+      "A (anno)": 1929,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+      "Note": "La fonte riporta che fu distrutta «dans les années 1920»; intervallo reso in anni interi per il modello."
+    },
+    {
+      "ID": "B011",
+      "Elemento": "Annessione dei comuni suburbani e passaggio da 12 a 20 arrondissement",
+      "Da (anno)": 1860,
+      "A (anno)": 1860,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.observatoire-des-territoires.gouv.fr/kiosque/2021-2022-rapport-cahier-1-demo-chap-01-04-levolution-demographique-de-la-ville-de-paris",
+      "Note": "La fonte riporta che nel 1860 i limiti furono ampliati e gli arrondissement passarono da 12 a 20."
+    },
+    {
+      "ID": "B012",
+      "Elemento": "Boulevard périphérique: apertura al traffico",
+      "Da (anno)": 1973,
+      "A (anno)": 1973,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_p%C3%A9riph%C3%A9rique_de_Paris",
+      "Note": "Anno di apertura convenzionale dell’anello stradale."
+    }
+  ],
+  "C": [
+    {
+      "ID": "C001",
+      "Elemento": "Rue de Rivoli: primo asse urbano",
+      "Da (anno)": 1802,
+      "A (anno)": 1835,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Rue_de_Rivoli",
+      "Note": "Realizzazione in più fasi; non confondere il primo tracciato con il prolungamento haussmanniano."
+    },
+    {
+      "ID": "C002",
+      "Elemento": "Rue de Rivoli: prolungamento verso est",
+      "Da (anno)": 1854,
+      "A (anno)": 1856,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Rue_de_Rivoli",
+      "Note": "Prolungamento nel quadro delle trasformazioni del Secondo Impero."
+    },
+    {
+      "ID": "C003",
+      "Elemento": "Boulevard de Sébastopol: apertura",
+      "Da (anno)": 1854,
+      "A (anno)": 1858,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_de_S%C3%A9bastopol",
+      "Note": "Asse principale da modellare separatamente."
+    },
+    {
+      "ID": "C004",
+      "Elemento": "Boulevard Saint-Germain: apertura",
+      "Da (anno)": 1850,
+      "A (anno)": 1870,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Saint-Germain",
+      "Note": "Realizzazione in fasi; usare come asse graduale."
+    },
+    {
+      "ID": "C005",
+      "Elemento": "Boulevard de Strasbourg: apertura",
+      "Da (anno)": 1852,
+      "A (anno)": 1853,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_de_Strasbourg",
+      "Note": "Asse connesso alla Gare de l’Est."
+    },
+    {
+      "ID": "C006",
+      "Elemento": "Avenue de l’Opéra: apertura",
+      "Da (anno)": 1864,
+      "A (anno)": 1879,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Avenue_de_l%27Op%C3%A9ra",
+      "Note": "Taglio urbano con demolizioni e allineamenti progressivi."
+    },
+    {
+      "ID": "C007",
+      "Elemento": "Boulevard Haussmann: apertura e completamento",
+      "Da (anno)": 1857,
+      "A (anno)": 1926,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Haussmann",
+      "Note": "Asse realizzato in fasi, completato dopo il Secondo Impero."
+    },
+    {
+      "ID": "C008",
+      "Elemento": "Boulevard Voltaire: apertura",
+      "Da (anno)": 1857,
+      "A (anno)": 1862,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Voltaire",
+      "Note": "Asse radiale orientale."
+    },
+    {
+      "ID": "C009",
+      "Elemento": "Boulevard du Palais e riorganizzazione dell’Île de la Cité",
+      "Da (anno)": 1850,
+      "A (anno)": 1870,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/%C3%8Ele_de_la_Cit%C3%A9",
+      "Note": "Interventi con demolizioni estese; non ricostruire la trasformazione come evento istantaneo."
+    },
+    {
+      "ID": "C010",
+      "Elemento": "Rue des Écoles: apertura",
+      "Da (anno)": 1855,
+      "A (anno)": 1865,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Rue_des_%C3%89coles",
+      "Note": "Taglio sulla rive gauche."
+    },
+    {
+      "ID": "C011",
+      "Elemento": "Avenue de l’Opéra: demolizioni e apertura del cono visivo",
+      "Da (anno)": 1864,
+      "A (anno)": 1879,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Avenue_de_l%27Op%C3%A9ra",
+      "Note": "Riga separata solo per l’asse; non duplicare l’evento nella sezione E."
+    },
+    {
+      "ID": "C012",
+      "Elemento": "Place de l’Étoile: configurazione radiale",
+      "Da (anno)": 1806,
+      "A (anno)": 1860,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Place_Charles-de-Gaulle",
+      "Note": "La piazza e i viali si sviluppano in fasi; il nome attuale OSM è Place Charles-de-Gaulle."
+    },
+    {
+      "ID": "C013",
+      "Elemento": "Place de la Concorde: sistemazione della piazza",
+      "Da (anno)": 1755,
+      "A (anno)": 1836,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Place_de_la_Concorde",
+      "Note": "La forma e gli arredi cambiano in più fasi."
+    },
+    {
+      "ID": "C014",
+      "Elemento": "Place des Vosges: realizzazione e impianto",
+      "Da (anno)": 1605,
+      "A (anno)": 1612,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Place_des_Vosges",
+      "Note": "Prima della data iniziale del timelapse: includere solo nello stato iniziale del 1190? No: non esisteva nel 1190, quindi qui come trasformazione storica post-1190."
+    },
+    {
+      "ID": "C015",
+      "Elemento": "Place Vendôme: impianto urbano",
+      "Da (anno)": 1686,
+      "A (anno)": 1720,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Place_Vend%C3%B4me",
+      "Note": "Piazza sviluppata in più fasi."
+    },
+    {
+      "ID": "C016",
+      "Elemento": "Les Halles: mercato centrale, costruzione dei pavillons Baltard",
+      "Da (anno)": 1852,
+      "A (anno)": 1870,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
+      "Note": "Fase dei padiglioni ottocenteschi."
+    },
+    {
+      "ID": "C017",
+      "Elemento": "Les Halles: demolizione dei pavillons Baltard",
+      "Da (anno)": 1971,
+      "A (anno)": 1973,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
+      "Note": "Demolizione e trasferimento del mercato."
+    },
+    {
+      "ID": "C018",
+      "Elemento": "Île de la Cité: demolizioni e riassetto urbano",
+      "Da (anno)": 1853,
+      "A (anno)": 1870,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/%C3%8Ele_de_la_Cit%C3%A9",
+      "Note": "Riorganizzazione con nuove strade, edifici pubblici e demolizioni."
+    },
+    {
+      "ID": "C019",
+      "Elemento": "Boulevard Richard-Lenoir: realizzazione sopra il canal Saint-Martin coperto",
+      "Da (anno)": 1862,
+      "A (anno)": 1862,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Boulevard_Richard-Lenoir",
+      "Note": "Collegare alla copertura del canale, senza cancellare il canale sottostante."
+    },
+    {
+      "ID": "C020",
+      "Elemento": "Place de la République: configurazione e ampliamento",
+      "Da (anno)": 1854,
+      "A (anno)": 1883,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Place_de_la_R%C3%A9publique",
+      "Note": "Trasformazione in fasi, inclusa la denominazione storica successiva."
+    }
+  ],
+  "D": [],
+  "E": [],
+  "F": []
+}
