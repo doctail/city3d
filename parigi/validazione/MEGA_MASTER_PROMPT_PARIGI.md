@@ -274,7 +274,7 @@ Comando obbligatorio:
 python3 -I tools/check_scheda.py parigi/validazione
 ```
 
-**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI: 0`.
+**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI 0`.
 
 Non dichiarare il controllo superato senza avere realmente eseguito il comando e riportato il suo output. Non inventare l'output.
 
@@ -317,7 +317,7 @@ La risposta finale deve essere breve e concreta e includere:
 1. link GitHub verificati ai file modificati;
 2. elenco sintetico delle fasi o correzioni effettuate;
 3. esito dei controlli di sincronizzazione e qualità;
-4. output completo di `python3 tools/check_scheda.py`, con `PROBLEMI: 0`;
+4. output completo di `python3 tools/check_scheda.py`, con `PROBLEMI 0`;
 5. eventuali limiti storici residui, senza dichiarare completa una verifica non eseguita.
 
 Se `PROBLEMI` non è 0, oppure il validatore non è stato realmente eseguito, NON consegnare come lavoro completato. Spiega il blocco e continua a correggere.
