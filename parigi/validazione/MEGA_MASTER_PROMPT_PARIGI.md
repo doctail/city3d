@@ -280,7 +280,8 @@ Non dichiarare il controllo superato senza avere realmente eseguito il comando e
 
 tools/check_scheda.py esiste ed è gestito dalla regia. Non modificarlo né sostituirlo. Se un controllo ti sembra sbagliato, segnalalo nella consegna.
 
-Formato della consegna: incolla l'output reale completo del validatore. La riga finale deve mostrare il conteggio reale dei problemi.
+Formato della consegna: incolla l'output reale completo del validatore, rispettando il formato prodotto dallo script (`PROBLEMI N`).
+
 ## 9. CONTROLLI STORICI SPECIFICI DA NON PERDERE
 
 - Canal Saint-Martin: distinguere 1802 (avvio dei lavori secondo la Ville de Paris), posa della prima pietra il 3 maggio 1822 e inaugurazione il 4 novembre 1825. Per il modello: acqua del canale GRADUALE dal 1822 al 1825 (prima pietra 3 maggio 1822, inaugurazione 4 novembre 1825); il 1802 resta solo come nota. Registrare `CONFLITTO` solo se le fonti sono realmente incompatibili sulla medesima fase.
