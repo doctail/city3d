@@ -22,7 +22,7 @@
  "roads": [],
  "grid_deg": 0,
  "marsh": false,
- "haze_k": 1000000000.0,
+ "haze_k": 14000.0,
  "water_z": -1.5,
  "field_colors": [
   "#c2ad74",
@@ -109,14 +109,14 @@
   "water_rough": 0.02,
   "sky_light": 0.35,
   "sun_energy": 5.0,
-  "night_off": 0.82,
-  "night_win": 4.5,
+  "night_off": 0.72,
+  "night_win": 9.0,
   "moon": 0.05,
   "night_street": 0.9,
   "night_sky": 0.01,
   "bridge_side": "#a39d92",
   "glass_min_area": 400,
-  "bulb": 14.0,
+  "bulb": 45.0,
   "sky_in_reflections": true,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
@@ -131,7 +131,8 @@
   "reclaim": "#c9b993",
   "park_ground": "#6a9a3e",
   "olive_soil": "#a8916a",
-  "olive_tree": "#4e5730"
+  "olive_tree": "#4e5730",
+  "bulb_size": 2.6
  },
  "hist": "hist_sevilla",
  "land_from_buildings": true,
@@ -148,5 +149,29 @@
  "urban_ground": "footprints",
  "urban_grid": false,
  "row_scale": 0.012,
- "tree_mesh": "octa"
+ "tree_mesh": "octa",
+ "haze_start": 4000.0,
+ "far_flat": [
+  3000,
+  12000,
+  0.75
+ ],
+ "cover": {
+  "cam": [
+   -560,
+   -1500,
+   60,
+   -330,
+   300,
+   30
+  ],
+  "lens": 35,
+  "years": [
+   1248,
+   2026
+  ],
+  "night_years": [
+   2026
+  ]
+ }
 }

@@ -124,6 +124,7 @@ def icons(DATA):
     clear = []
     def part(**k):
         k.setdefault('a', 0.05); k['icon'] = 1
+        if 'p0' in k: k['cx'] = round((k['p0'][0] + k['p1'][0]) / 2, 2); k['cy'] = round((k['p0'][1] + k['p1'][1]) / 2, 2)
         if 'r' in k: k['cx'] = round(sum(q[0] for q in k['r']) / len(k['r']), 2); k['cy'] = round(sum(q[1] for q in k['r']) / len(k['r']), 2)
         LM['parts'].append(k)
     # piazze nuove (lastricato a strisce)
@@ -170,6 +171,45 @@ def icons(DATA):
     part(name='Giralda', t='prism', r=_sq(gx, gy, 0.9, ux, uy), z0=96.0, z1=100.0, c='#4e4a45', y=1568)   # Giraldillo
     clear.append(_sq(gx, gy, 7.5, ux, uy))
     LM['labels'].append({'name': 'Giralda', 'x': gx, 'y': gy, 'z': 102, 'from': 1248, 'icon': 1})
+    # --- Torre del Oro (37.38242, -5.99623): dodecagono; primo corpo 1220-21 e secondo corpo (XIV sec.) in una comparsa unica;
+    #     il cilindro superiore del 1760 compare nel 1760 (eccezione alla regola: con la comparsa unica la lanterna del 1760
+    #     sarebbe nell'apertura del 1248). Misure [L]: diametro ~15 m, altezza totale ~36 m.
+    tx_, ty_ = L(37.38242, -5.99623)
+    def dodec(r, rot=0.0): return [[round(tx_ + r * math.cos(rot + 2 * math.pi * k / 12), 2), round(ty_ + r * math.sin(rot + 2 * math.pi * k / 12), 2)] for k in range(12)]
+    GOLD = '#d8b77a'
+    part(name='Torre del Oro', t='prism', r=dodec(7.4), z0=0.0, z1=16.5, c=GOLD, y=1220)
+    part(name='Torre del Oro', t='prism', r=dodec(4.5), z0=16.5, z1=25.0, c=GOLD, y=1220)
+    part(name='Torre del Oro', t='cyl', cx=tx_, cy=ty_, rad=2.6, z0=25.0, z1=33.0, seg=16, c='#e3c98f', y=1760)
+    part(name='Torre del Oro', t='dome', cx=tx_, cy=ty_, rad=2.6, z0=33.0, hz=3.4, c='#c9a24a', y=1760)
+    clear.append(dodec(8.5))
+    LM['labels'].append({'name': 'Torre del Oro', 'x': round(tx_, 1), 'y': round(ty_, 1), 'z': 38, 'from': 1248, 'icon': 1})
+    # --- navi nel porto dell'Arenal (1248 -> 1850 [L]): sagome semplici (scafo, castello di poppa, 2 alberi, vele) sulla
+    #     meta' est del fiume tra la Torre del Oro e il ponte di barche, lungo il fiume. 1248: flotta di Ramon Bonifaz.
+    import gzip
+    from shapely.geometry import shape as _shape, LineString as _LS
+    from shapely.ops import unary_union as _uu
+    F = json.load(gzip.open(os.path.join(HERE, 'data_sevilla_src', 'osm_export.geojson.gz')))['features']
+    def _loc(g):
+        from shapely.ops import transform as _tr
+        return _tr(lambda x, y, z=None: ((x - LON0) * KX, (y - LAT0) * KY), g)
+    W = _uu([_loc(_shape(f['geometry'])).buffer(0) for f in F if f['properties'].get('natural') == 'water' or f['properties'].get('waterway') == 'riverbank'])
+    WZ = -1.5; ships = 0
+    for k, yy in enumerate(range(-760, -40, 72)):
+        seg = _LS([(-1400, yy), (100, yy)]).intersection(W)
+        segs = [q for q in getattr(seg, 'geoms', [seg]) if q.length > 60 and q.bounds[2] > -700]
+        if not segs: continue
+        q = max(segs, key=lambda g_: g_.bounds[2]); x0_, x1_ = q.bounds[0], q.bounds[2]
+        cx_ = x1_ - 22 - (k % 2) * 26; cy_ = yy + (k % 3) * 9; sc_ = 1.0 - 0.15 * (k % 2)
+        hull = [[cx_ - 3.5 * sc_, cy_ - 11 * sc_], [cx_ + 3.5 * sc_, cy_ - 11 * sc_], [cx_ + 3.5 * sc_, cy_ + 8 * sc_], [cx_, cy_ + 13 * sc_], [cx_ - 3.5 * sc_, cy_ + 8 * sc_]]
+        part(name='Ship', t='prism', r=[[round(a_, 2), round(b_, 2)] for a_, b_ in hull], z0=WZ - 1.0, z1=WZ + 2.6, c='#5b4129', top='#8a6a45', y=1240, d=1850)
+        part(name='Ship', t='prism', r=[[round(cx_ - 3.2 * sc_, 2), round(cy_ - 10.5 * sc_, 2)], [round(cx_ + 3.2 * sc_, 2), round(cy_ - 10.5 * sc_, 2)], [round(cx_ + 3.2 * sc_, 2), round(cy_ - 5 * sc_, 2)], [round(cx_ - 3.2 * sc_, 2), round(cy_ - 5 * sc_, 2)]],
+             z0=WZ + 2.6, z1=WZ + 5.0, c='#6b4c30', y=1240, d=1850)
+        for my_, h_, sw_ in ((cy_ + 2 * sc_, 19 * sc_, 9 * sc_), (cy_ - 6 * sc_, 14 * sc_, 7 * sc_)):
+            part(name='Ship', t='cyl', cx=round(cx_, 2), cy=round(my_, 2), rad=0.3, z0=WZ + 2.6, z1=WZ + 2.6 + h_, seg=6, c='#3d2c1c', y=1240, d=1850)
+            part(name='Ship', t='beam', p0=[round(cx_, 2), round(my_ + 0.6, 2), round(WZ + 6, 2)], p1=[round(cx_, 2), round(my_ + 0.6, 2), round(WZ + 2.6 + h_ - 1.5, 2)],
+                 w=round(sw_, 2), h=0.25, c='#ece4cf', y=1240, d=1850, zbase=round(WZ + 6, 2))
+        ships += 1
+    print(f'[hist_sevilla] navi nel porto: {ships}', flush=True)
     LM['clear_other'] = clear
     LM.setdefault('clear', [])
     LM['clear'] = [c for c in LM['clear'] if c not in LM.get('clear_other_prev', [])] + clear

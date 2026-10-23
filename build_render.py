@@ -47,9 +47,13 @@ HAZE = tuple(ST.get('haze', (0.70, 0.77, 0.86))); HAZE_K = float(opt('--haze', 1
 def hazeify(m):
     nt = m.node_tree; N = nt.nodes; L = nt.links.new; outn = N['Material Output']; sh = outn.inputs['Surface'].links[0].from_socket
     cd = N.new('ShaderNodeCameraData'); e1 = N.new('ShaderNodeMath'); e1.operation = 'DIVIDE'; e1.inputs[1].default_value = -HAZE_K
-    L(cd.outputs['View Distance'], e1.inputs[0]); ex = N.new('ShaderNodeMath'); ex.operation = 'EXPONENT'; L(e1.outputs[0], ex.inputs[0])
+    if CITY.get('haze_start'):   # foschia solo oltre una distanza (Siviglia: 4 km): la citta' vicina resta nitida
+        hs_ = N.new('ShaderNodeMath'); hs_.operation = 'SUBTRACT'; hs_.inputs[1].default_value = float(CITY['haze_start']); L(cd.outputs['View Distance'], hs_.inputs[0])
+        hm_ = N.new('ShaderNodeMath'); hm_.operation = 'MAXIMUM'; hm_.inputs[1].default_value = 0.0; L(hs_.outputs[0], hm_.inputs[0]); L(hm_.outputs[0], e1.inputs[0])
+    else: L(cd.outputs['View Distance'], e1.inputs[0])
+    ex = N.new('ShaderNodeMath'); ex.operation = 'EXPONENT'; L(e1.outputs[0], ex.inputs[0])
     f = N.new('ShaderNodeMath'); f.operation = 'SUBTRACT'; f.inputs[0].default_value = 1.0; L(ex.outputs[0], f.inputs[1])
-    em = N.new('ShaderNodeEmission'); em.inputs['Color'].default_value = (*HAZE, 1); em.inputs['Strength'].default_value = 1.0
+    em = N.new('ShaderNodeEmission'); em.inputs['Color'].default_value = (*(srgb(ST.get('night_haze', '#0d1626')) if NIGHT else HAZE), 1); em.inputs['Strength'].default_value = 1.0
     mx = N.new('ShaderNodeMixShader'); L(f.outputs[0], mx.inputs[0]); L(sh, mx.inputs[1]); L(em.outputs[0], mx.inputs[2]); L(mx.outputs[0], outn.inputs['Surface'])
     return m
 def city_mat():
@@ -177,7 +181,15 @@ def land_mat(mode='fields'):
     um = N.new('ShaderNodeMix'); um.data_type = 'RGBA'; um.blend_type = 'MULTIPLY'; um.inputs['Factor'].default_value = 1.0
     L(gm.outputs[2], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
     L(um.outputs[2], mx.inputs[7])
-    L(fields.outputs[0] if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
+    fout_ = fields.outputs[0]
+    if mode == 'fields' and CITY.get('far_flat'):   # campi lontani: i poligoni sfumano verso un tono medio (non sembrano cartone)
+        f0_, f1_, fk_ = CITY['far_flat']; cdf_ = N.new('ShaderNodeCameraData')
+        ffr_ = N.new('ShaderNodeMapRange'); L(cdf_.outputs['View Distance'], ffr_.inputs['Value'])
+        ffr_.inputs['From Min'].default_value = f0_; ffr_.inputs['From Max'].default_value = f1_; ffr_.inputs['To Max'].default_value = fk_
+        _fl = [srgb(c_) for c_ in FC]; _mean = tuple(sum(c_[i] for c_ in _fl) / len(_fl) for i in range(3))
+        ffm_ = N.new('ShaderNodeMix'); ffm_.data_type = 'RGBA'; L(ffr_.outputs[0], ffm_.inputs['Factor']); L(fout_, ffm_.inputs[6]); ffm_.inputs[7].default_value = (*_mean, 1)
+        fout_ = ffm_.outputs[2]
+    L(fout_ if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
 def obj(name, bm, m):
@@ -813,6 +825,7 @@ if LM:
     if '--crop' in a: _lp = [p_ for p_ in _lp if cx0 < (p_['r'][0][0] if 'r' in p_ else p_['cx']) < cx1 and cy0 < (p_['r'][0][1] if 'r' in p_ else p_['cy']) < cy1]
     for pt in _lp:
         o_, zb = _lmesh(pt)
+        if pt.get('noshadow') or (pt['t'] == 'beam' and pt['w'] < 0.6 and pt['h'] < 0.6): o_.visible_shadow = False   # stralli e tiranti: le ombre lunghe col sole basso disegnavano triangoli neri sui campi
         PARTS.append({'obj': o_, 'z0': zb, 'b0': pt['y'], 'b1': pt['y'], 'd0': pt.get('d'), 'd1': pt.get('d')})
     log('monumenti costruiti:', len(PARTS), 'parti')
     if NIGHT and LM.get('lights'):   # lampadine di Tivoli: solo di notte
@@ -827,7 +840,7 @@ if LM:
         for i_ in range(4):
             bm_ = bmesh.new()
             for x_, y_, z_, k_ in LM['lights']:
-                if k_ == i_: bmesh.ops.create_cube(bm_, size=0.9, matrix=__import__('mathutils').Matrix.Translation((x_, y_, z_)))
+                if k_ == i_: bmesh.ops.create_cube(bm_, size=ST.get('bulb_size', 0.9), matrix=__import__('mathutils').Matrix.Translation((x_, y_, z_)))
             o_ = obj(f'bulbs{i_}', bm_, _lmats[i_]); VIS.append((o_, 'appear', LM.get('lights_year', 1843)))
     json.dump(LM.get('labels', []), open(f'{OUT}/labels.json', 'w'))
 # ---------- rilievo (DATA/dem.npz: D = spostamento verticale in metri, griglia x0, y0, cell) ----------

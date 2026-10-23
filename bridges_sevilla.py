@@ -229,6 +229,11 @@ for s_p in (sm - 132.5, sm + 132.5):
             for off in (-12.5, 12.5):
                 ax_, ay_, _ = pt(s_p, off); dx_, dy_, dz_ = pt(s_d, off)
                 beam('Centenario Bridge', (ax_, ay_, zt), (dx_, dy_, dz_ + 0.5), 0.4, 0.4, WHITE, 1991)
+for p_ in parts:   # impalcato a 45 m visto da lontano: l'asfalto scuro + l'ombra disegnavano un contorno nero "a fil di ferro"
+    if p_['name'] == 'Centenario Bridge' and p_['c'] == ASPH: p_['c'] = '#a8a39a'
+    # l'impalcato a 45 m col sole basso proietta una striscia d'ombra lunga ~150 m: da lontano impalcato + ombra sembravano un
+    # contorno nero chiuso. Niente ombra per impalcato, parapetti e stralli (restano le ombre di piloni e pile).
+    if p_['name'] == 'Centenario Bridge' and p_['t'] == 'beam' and (p_['w'] > 10 or p_['w'] < 0.6): p_['noshadow'] = 1
 labels.append({'name': 'Centenario Bridge', 'x': round(c[0], 1), 'y': round(c[1], 1), 'z': 105, 'from': 1991})
 
 # Ponti a trave sul canale ovest: Rey Juan Carlos I (1981, OSM start_date) [L], Reina Sofia (1991) [V], Patrocinio (1982) [L]
@@ -267,5 +272,15 @@ _bc = [[[round(x, 1), round(y, 1)] for x, y in list(g.buffer(2).exterior.coords)
                   'Puente del Cristo de la Expiración', 'Pasarela de la Cartuja', 'Puente de la Barqueta', 'Puente del Alamillo',
                   'Puente del Centenario', 'Puente Rey Juan Carlos I', 'Puente Reina Sofía', 'Puente del Patrocinio') for g in OUTL[nm]]
 LM['clear'] = LM.get('clear_other', []) + _bc   # clear_other: impronte dei monumenti (script delle icone); i ponti si rigenerano ogni volta
+# luci notturne (finale di notte): lampadine lungo travi, stralli, archi e piloni di Alamillo, Barqueta e passerella della
+# Cartuja (decisione di Fabio, 23 ott). Colore 0 = bianco caldo. Il render le accende solo nella passata notturna.
+_lights = []
+for p_ in parts:
+    if p_['name'] not in ('Alamillo Bridge', 'Barqueta Bridge', 'Cartuja Footbridge') or p_['t'] != 'beam': continue
+    a_, b_ = p_['p0'], p_['p1']; n_ = max(1, int(math.dist(a_, b_) // 9))
+    for i in range(n_ + 1):
+        t = i / n_; _lights.append([round(a_[k] + (b_[k] - a_[k]) * t, 2) for k in range(3)] + [0])
+LM['lights'] = _lights; LM['lights_year'] = 1991
 json.dump(LM, open(path, 'w'))
+print(f'[ponti] luci notturne: {len(_lights)}')
 print(f'[ponti] {len(parts)} parti, {len(set(p["name"] for p in parts))} ponti')
