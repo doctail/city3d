@@ -97,6 +97,8 @@ if [ "$MODE" = "memtest" ]; then   # solo misura: RAM, VRAM e secondi/fotogramma
   kill $(cat /tmp/mt_smi.pid) 2>/dev/null
   grep -E "rilievo applicato|alberi cotti|FATTO|rror" /tmp/mt.log
   grep fotogramma /tmp/mt.log | awk '{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "secondi/fotogramma (senza i primi 2): %.2f\n", s/k}'
+  # stima del render completo: tempo da fermo x 1,7 (nel video vero la scena cambia a ogni fotogramma: Rotterdam/Madrid)
+  grep fotogramma /tmp/mt.log | awk -v nf=${MT_FRAMES:-7839} -v pr=${PRICE:-0.39} -v cap=${CAP:-3} '{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k){v=s/k*1.7; h=v*nf/3600; c=h*pr; printf "STIMA %d fotogrammi: ~%.2f s/fotogramma, %.1f ore, $%.2f (tetto $%s) -> %s\n", nf, v, h, c, cap, (c>cap?"SOPRA IL TETTO: FERMARSI":"sotto il tetto")}}'
   echo "picco RAM: $((PK/1024)) MB   picco VRAM: $(sort -n /tmp/mt_vram.txt | tail -1) MB"
   step "FINITO memtest: manda lo screenshot e TERMINA il pod"; exit 0
 fi
@@ -139,7 +141,7 @@ if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))   # giorno fino a 10 s dopo l'inizio della notte (tramonto)
-  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
+  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS ${STOP_AVG:+--stop-avg $STOP_AVG --stop-every ${STOP_EVERY:-500}} 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
   if [ "$NT" -gt 0 ]; then
     step "4b/5 NOTTE (fotogrammi $(( NT + 120 ))-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
     $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"

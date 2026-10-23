@@ -184,6 +184,21 @@ def icons(DATA):
     court = patio.buffer(-8, join_style=2)
     for r_ in _ring_wedges(patio, court, n=20):
         part(name='Mosque', t='prism', r=r_, z0=0.0, z1=7.0, c='#d9c39b', top='#b5794f', y=1100, d=1434)
+    # cortile (sahn, oggi Patio de los Naranjos): pavimento chiaro e file di aranci ogni ~7 m
+    for g_ in getattr(court, 'geoms', [court]):
+        if g_.geom_type != 'Polygon' or g_.area < 100: continue
+        part(name='Mosque', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(g_.exterior.coords)[:-1]], z0=0.0, z1=0.35, c='#ddd3bf', top='#ddd3bf', y=1100, d=1434)
+        inner = g_.buffer(-3.5); x0_, y0_, x1_, y1_ = inner.bounds; nt_ = 0
+        yy = y0_ + 3
+        while yy < y1_:
+            xx = x0_ + 3
+            while xx < x1_:
+                if inner.contains(Point(xx, yy)):
+                    part(name='Mosque', t='cyl', cx=round(xx, 2), cy=round(yy, 2), rad=0.25, z0=0.35, z1=2.2, seg=5, c='#5a4632', y=1100, d=1434)
+                    part(name='Mosque', t='dome', cx=round(xx, 2), cy=round(yy, 2), rad=2.3, z0=1.8, hz=3.0, c='#4d6a30', y=1100, d=1434); nt_ += 1
+                xx += 7.0
+            yy += 7.0
+        print(f'[hist_sevilla] cortile della moschea: {nt_} aranci', flush=True)
     hist = json.load(open(f'{DATA}/hist.json')); n0 = len(hist)
     hist = [h for h in hist if not cpoly.contains(Polygon(h['r']).centroid)]
     json.dump(hist, open(f'{DATA}/hist.json', 'w'))
@@ -201,6 +216,30 @@ def icons(DATA):
     part(name='Torre del Oro', t='dome', cx=tx_, cy=ty_, rad=2.6, z0=33.0, hz=3.4, c='#c9a24a', y=1760)
     clear.append(dodec(8.5))
     LM['labels'].append({'name': 'Torre del Oro', 'x': round(tx_, 1), 'y': round(ty_, 1), 'z': 38, 'from': 1248, 'icon': 1})
+    # --- mura almohadi (anello del 1248, walls_1248.json): cortina in tapial ~9 m e torri quadrate ~13 m ogni ~60 m [L];
+    #     demolizione graduale 1858-1873 lungo l'anello (keyframe della scheda). Restano: tratto della Macarena (al posto
+    #     dell'edificio del Catasto "1023", bianco e alto 16,5 m) e mura dell'Alcazar [V].
+    from shapely.geometry import LineString as _WL
+    ring_ = list(WALL_P.exterior.coords); tot_ = WALL_P.exterior.length; acc_ = 0.0
+    ax_, ay_ = L(37.38310, -5.99030)
+    def _keep(x, y): return (270 < x < 640 and y > 1530) or math.hypot(x - ax_, y - ay_) < 260
+    TAP, TOW = '#c3a77c', '#b99d72'
+    for (x0, y0), (x1, y1) in zip(ring_, ring_[1:]):
+        sl_ = math.hypot(x1 - x0, y1 - y0); n_ = max(1, round(sl_ / 60)); ux, uy = (x1 - x0) / sl_, (y1 - y0) / sl_
+        for k in range(n_):
+            ta, tb = k / n_, (k + 1) / n_
+            pa = (x0 + (x1 - x0) * ta, y0 + (y1 - y0) * ta); pb = (x0 + (x1 - x0) * tb, y0 + (y1 - y0) * tb)
+            mxp, myp = (pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2
+            dw = {} if _keep(mxp, myp) else {'d': round(1858 + 15 * (acc_ + sl_ * (ta + tb) / 2) / tot_, 2)}
+            seg_ = _WL([pa, pb]).buffer(1.6, cap_style=2)
+            part(name='City walls', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(seg_.exterior.coords)[:-1]], z0=0.0, z1=9.0, c=TAP, top=TAP, y=1100, **dw)
+            part(name='City walls', t='prism', r=_sq(pa[0], pa[1], 4.0, ux, uy), z0=0.0, z1=13.0, c=TOW, top=TOW, y=1100, **dw)
+        acc_ += sl_
+    for b_ in blds:   # il tratto della Macarena del Catasto (anno 1023, bianco, 16,5 m) lascia il posto alle mura modellate
+        if b_.get('y') == 1023 and b_.get('h', 0) > 15:
+            cx_, cy_ = sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r'])
+            clear.append(_sq(cx_, cy_, 3.0, 1.0, 0.0))
+    LM['labels'].append({'name': 'City walls', 'x': 455.0, 'y': 1700.0, 'z': 16, 'from': 1248, 'to': 1873, 'icon': 1})
     # --- navi nel porto dell'Arenal (decisione di Fabio, 23 ott): poche (4) dal 1248, porto pieno (14) dal 1503 al 1717
     #     (Casa de Contratacion a Siviglia), poi di nuovo 4. Sagome leggibili: scafo scuro di legno ~29 m con prua a punta,
     #     castello di poppa e di prua, 3 alberi (trinchetto, maestro, mezzana) con vele chiare; parallele alla riva dell'Arenal,
@@ -294,11 +333,12 @@ def fix_icons(DATA):
                 print(f'[hist_sevilla] {name}: {b["y"]} -> {yr}' + (f'-{y1}' if y1 else ''), flush=True); b['y'] = yr
                 if y1: b['y1'] = y1
     # Expo 92 (decisione di Fabio, 23 ott): gli edifici del recinto con anno del Catasto 1993-2000 sono padiglioni rimasti
-    # (riconvertiti dopo l'Expo): tornano al 1992.
+    # (riconvertiti dopo l'Expo): tornano al cantiere. Costruiti 1989-92 e finiti per l'apertura (20 aprile 1992) [V]:
+    # anno 1990, cosi' nel fotogramma 1992 sono gia' in piedi (con anno 1992 la crescita nel 1992 e' zero).
     nx_ = 0
     for b in blds:
-        if 1993 <= b['y'] <= 2000 and EXPO_SITE.contains(Polygon(b['r']).centroid): b['y'] = 1992; nx_ += 1
-    print(f'[hist_sevilla] Expo 92: {nx_} edifici del recinto riportati al 1992', flush=True)
+        if 1992 <= b['y'] <= 2000 and EXPO_SITE.contains(Polygon(b['r']).centroid): b['y'] = 1990; nx_ += 1
+    print(f'[hist_sevilla] Expo 92: {nx_} edifici del recinto riportati al 1990', flush=True)
     cat = max([b for b in blds if math.hypot(b['r'][0][0], b['r'][0][1]) < 150 and Polygon(b['r']).area > 10000],
               key=lambda b: Polygon(b['r']).area)
     g = Polygon(cat["r"]).buffer(0).difference(Polygon(_sq(GIRALDA[0], GIRALDA[1], 7.3, *GIRALDA[2])))
@@ -308,7 +348,7 @@ def fix_icons(DATA):
     cat['lm'] = True; cat['wall'] = '#d9cba9'; cat['roof'] = '#bfb293'   # pietra, non la tavolozza casuale delle case
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
 
-def expo(DATA, n=9):
+def expo(DATA, n=28):
     """Padiglioni demoliti dell'Expo 92: blocchi semplici dal 1991.5 al 1993, sui lotti oggi vuoti del recinto (lontani da
     edifici di oggi e dall'acqua). Posizioni e misure [Guessing]: la pianta del recinto non e' stata georeferenziata."""
     from shapely.strtree import STRtree
@@ -318,11 +358,14 @@ def expo(DATA, n=9):
     tree = STRtree(G)
     WS = json.load(open(os.path.join(HERE, 'data_sevilla_src', 'water_src.json')))
     wet = Polygon(WS['lago_expo'][0]).buffer(40)
+    from shapely.ops import unary_union as _uu2   # terra di oggi (= 1992 qui: darsena e canale nuovo gia' scavati): niente padiglioni nel fiume
+    dry = _uu2([Polygon(r['ext'], r.get('holes', [])).buffer(0) for r in json.load(open(f'{DATA}/land.json'))]).buffer(-30)
+    dry = prep(dry.intersection(EXPO_SITE))
     x0, y0, x1, y1 = EXPO_SITE.bounds; cand = []
     for xx in range(int(x0) + 120, int(x1) - 120, 40):
         for yy in range(int(y0) + 80, int(y1) - 80, 40):
-            p = Point(xx, yy).buffer(45)
-            if wet.intersects(p) or any(G[i].intersects(p) for i in tree.query(p)): continue
+            p = Point(xx, yy).buffer(60)
+            if not dry.contains(p) or wet.intersects(p) or any(G[i].intersects(p) for i in tree.query(p)): continue
             cand.append((xx, yy))
     pick = []
     if cand:
@@ -331,9 +374,10 @@ def expo(DATA, n=9):
             pick.append(max(cand, key=lambda c: min(math.hypot(c[0] - q[0], c[1] - q[1]) for q in pick)))
     rnd = random.Random(92)
     for xx, yy in pick:
-        w, l = rnd.uniform(30, 45), rnd.uniform(40, 70)
+        w, l = rnd.uniform(30, 65), rnd.uniform(40, 100)
+        wall, roof = rnd.choice([('#f1eee6', '#c9c4ba'), ('#e9e2cf', '#b9b2a4'), ('#d7c39a', '#a99a7c'), ('#c95f45', '#a9a39a'), ('#6f8fb0', '#d4d0c6'), ('#e3c25a', '#cfc9bd')])
         hist.append({'r': [[xx - l / 2, yy - w / 2], [xx + l / 2, yy - w / 2], [xx + l / 2, yy + w / 2], [xx - l / 2, yy + w / 2]],
-                     'h': round(rnd.uniform(12, 22), 1), 'y': 1991.5, 'd': 1993, 'name': 'pabellon Expo 92'})
+                     'h': round(rnd.uniform(12, 26), 1), 'y': 1991.5, 'd': 1993, 'name': 'pabellon Expo 92', 'lm': True, 'wall': wall, 'roof': roof})
     json.dump(hist, open(f'{DATA}/hist.json', 'w'))
     print(f'[hist_sevilla] Expo 92: {len(pick)} padiglioni demoliti (1991.5-1993) su {len(cand)} lotti liberi', flush=True)
 

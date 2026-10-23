@@ -21,6 +21,7 @@ S = json.load(open(os.path.join(HERE, 'data_sevilla_src', 'water_src.json')))
 #   San Jeronimo) acqua fino al 1987; tappo di Chapina terra 1950 -> 1991.9.
 # Restano come nel repo (non verificati): gomito delle Delicias 1950, collegamento Chapina-canale 1948-1990.
 PH = [('codo', 1950, 9999, 'urban'),
+      ('laguna', -9999, 1574, 'marsh'),   # acqua bassa e canneti, opaca (non uno specchio del cielo)
       ('laguna', ('g', 1574, 1578), 1578, 'field'), ('laguna', 1578, 9999, 'park'),
       ('tablada', -9999, ('g', 1909, 1926), 'field'),
       ('west_triana', -9999, 1949, 'field'),

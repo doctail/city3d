@@ -108,42 +108,76 @@ def city_mat():
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = (0.0 if NIGHT else 0.35); L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
+ZONE_IMG = None   # immagine delle distanze (R: dal fiume del 1248, G: dalle mura), creata dopo il caricamento della terra
 def natural_land(N, L, tc, vo):
-    """Paesaggio naturale invece dei poligoni (Siviglia, 23 ott): vega verde poco satura nella piana, chiazze secche,
-    uliveti sui rilievi (quota dal DEM: z del suolo), marismas a sud; rumore a tre scale per rompere le campiture.
-    Gli appezzamenti restano solo come leggera variazione di tono (+-6%)."""
+    """Paesaggio per zone (Siviglia, 23 ott): verde solo nella vega vicino al fiume e negli orti attorno alle mura; la
+    campina in ocra e dorato a chiazze (grano e stoppie); uliveti grigio-verdi sui rilievi (Aljarafe, Alcores, dal DEM);
+    marismas a sud. Rumore a tre scale per rompere le campiture; appezzamenti solo come lieve variazione di tono."""
     G = ST.get('nat', {})
     def col(h): return (*srgb(h), 1)
     def noise(sc_, det=3):
         n_ = N.new('ShaderNodeTexNoise'); n_.inputs['Scale'].default_value = sc_; n_.inputs['Detail'].default_value = det; L(tc.outputs['Object'], n_.inputs['Vector']); return n_
     def mix(fac, a_, b_):
         m_ = N.new('ShaderNodeMix'); m_.data_type = 'RGBA'; L(fac, m_.inputs['Factor'])
-        (L(a_, m_.inputs[6]) if not isinstance(a_, tuple) else m_.inputs[6].__setattr__('default_value', a_))
-        (L(b_, m_.inputs[7]) if not isinstance(b_, tuple) else m_.inputs[7].__setattr__('default_value', b_))
+        if isinstance(a_, tuple): m_.inputs[6].default_value = a_
+        else: L(a_, m_.inputs[6])
+        if isinstance(b_, tuple): m_.inputs[7].default_value = b_
+        else: L(b_, m_.inputs[7])
         return m_.outputs[2]
     def rng(src, a0, a1, b0=0.0, b1=1.0):
-        r_ = N.new('ShaderNodeMapRange'); L(src, r_.inputs['Value']); r_.inputs['From Min'].default_value = a0; r_.inputs['From Max'].default_value = a1
+        r_ = N.new('ShaderNodeMapRange'); r_.interpolation_type = 'SMOOTHSTEP'; L(src, r_.inputs['Value']); r_.inputs['From Min'].default_value = a0; r_.inputs['From Max'].default_value = a1
         r_.inputs['To Min'].default_value = b0; r_.inputs['To Max'].default_value = b1; return r_.outputs[0]
+    def add(a_, b_):
+        m_ = N.new('ShaderNodeMath'); m_.operation = 'ADD'; L(a_, m_.inputs[0]); L(b_, m_.inputs[1]); return m_.outputs[0]
+    def mx(a_, b_):
+        m_ = N.new('ShaderNodeMath'); m_.operation = 'MAXIMUM'; L(a_, m_.inputs[0]); L(b_, m_.inputs[1]); return m_.outputs[0]
     n1, n2, n3 = noise(0.0007, 4), noise(0.0035, 4), noise(0.03, 3)
-    vega = mix(rng(n2.outputs['Fac'], 0.35, 0.65), col(G.get('vega1', '#68734a')), col(G.get('vega2', '#7c8152')))
-    land = mix(rng(n1.outputs['Fac'], 0.5, 0.62, 0.0, 0.55), vega, col(G.get('dry', '#a29875')))         # chiazze secche / stoppie
     pos = N.new('ShaderNodeSeparateXYZ'); L(tc.outputs['Object'], pos.inputs[0])
-    # uliveti sui rilievi: terra chiara con chiome scure a griglia irregolare
+    # campina: grano maturo, stoppie, terra arata a chiazze (due scale di rumore)
+    cr_ = N.new('ShaderNodeValToRGB'); L(add(n2.outputs['Fac'], rng(n1.outputs['Fac'], 0.3, 0.7, -0.15, 0.15)), cr_.inputs[0]); ramp = cr_.color_ramp
+    GC = G.get('campina', ['#a88f57', '#bea366', '#c9b07a', '#b49b68', '#8f7a52'])
+    ramp.elements[0].position = 0.3; ramp.elements[0].color = col(GC[0]); ramp.elements[1].position = 0.75; ramp.elements[1].color = col(GC[-1])
+    for i_, c_ in enumerate(GC[1:-1]): e_ = ramp.elements.new(0.3 + 0.45 * (i_ + 1) / (len(GC) - 1)); e_.color = col(c_)
+    land = cr_.outputs[0]
+    # vega verde vicino al fiume del 1248 e orti attorno alle mura (immagine delle distanze), bordo mosso dal rumore
+    vega = mix(rng(n2.outputs['Fac'], 0.35, 0.65), col(G.get('vega1', '#5f7038')), col(G.get('vega2', '#76803f')))
+    if ZONE_IMG is not None:
+        x0_, y0_, x1_, y1_ = ZONE_BOX
+        vm_ = N.new('ShaderNodeMapping'); vm_.inputs['Location'].default_value = (-x0_ / (x1_ - x0_), -y0_ / (y1_ - y0_), 0); vm_.inputs['Scale'].default_value = (1 / (x1_ - x0_), 1 / (y1_ - y0_), 1)
+        L(tc.outputs['Object'], vm_.inputs['Vector'])
+        it_ = N.new('ShaderNodeTexImage'); it_.image = ZONE_IMG; it_.interpolation = 'Linear'; it_.extension = 'EXTEND'; L(vm_.outputs[0], it_.inputs['Vector'])
+        sp_ = N.new('ShaderNodeSeparateColor'); L(it_.outputs['Color'], sp_.inputs[0])
+        wob = rng(n2.outputs['Fac'], 0.2, 0.8, -0.12, 0.12)
+        gv = rng(add(sp_.outputs[0], wob), G.get('vega_d0', 0.12), G.get('vega_d1', 0.42), 1.0, 0.0)     # 0..3 km: verde fino a ~400 m, sfuma a ~1,3 km
+        go = rng(add(sp_.outputs[1], wob), 0.06, 0.28, 1.0, 0.0)                                          # orti: verdi fino a ~200-800 m dalle mura
+        land = mix(mx(gv, go), land, vega)
+    # uliveti grigio-verdi sui rilievi
     ov = N.new('ShaderNodeTexVoronoi'); ov.inputs['Scale'].default_value = 0.13; ov.inputs['Randomness'].default_value = 0.45; L(tc.outputs['Object'], ov.inputs['Vector'])
-    olive = mix(rng(ov.outputs['Distance'], 0.30, 0.42), col(G.get('olive', '#4d5431')), col(G.get('olive_soil', '#a68f68')))
-    hill = rng(pos.outputs['Z'], 6.0, 30.0)
-    hn = N.new('ShaderNodeMath'); hn.operation = 'MULTIPLY'; L(hill, hn.inputs[0]); L(rng(n2.outputs['Fac'], 0.3, 0.55, 0.55, 1.0), hn.inputs[1])
+    olive = mix(rng(ov.outputs['Distance'], 0.28, 0.42), col(G.get('olive', '#6a7157')), col(G.get('olive_soil', '#a89472')))
+    hn = N.new('ShaderNodeMath'); hn.operation = 'MULTIPLY'; L(rng(pos.outputs['Z'], 6.0, 26.0), hn.inputs[0]); L(rng(n2.outputs['Fac'], 0.25, 0.5, 0.6, 1.0), hn.inputs[1])
     land = mix(hn.outputs[0], land, olive)
-    # marismas a sud: verde-grigio umido con chiazze piu' scure
+    # marismas a sud
     marsh = mix(rng(n2.outputs['Fac'], 0.45, 0.6), col(G.get('marsh1', '#76806a')), col(G.get('marsh2', '#59665a')))
     land = mix(rng(pos.outputs['Y'], G.get('marsh_y0', -6500.0), G.get('marsh_y1', -9500.0)), land, marsh)
-    # traccia degli appezzamenti appena visibile (+-6%) e grana fine
-    sp_ = N.new('ShaderNodeSeparateColor'); L(vo.outputs['Color'], sp_.inputs[0])
-    pm = N.new('ShaderNodeMath'); pm.operation = 'MULTIPLY_ADD'; L(sp_.outputs[0], pm.inputs[0]); pm.inputs[1].default_value = 0.12; pm.inputs[2].default_value = 0.94
+    # traccia degli appezzamenti (+-6%) e grana fine
+    sv_ = N.new('ShaderNodeSeparateColor'); L(vo.outputs['Color'], sv_.inputs[0])
+    pm = N.new('ShaderNodeMath'); pm.operation = 'MULTIPLY_ADD'; L(sv_.outputs[0], pm.inputs[0]); pm.inputs[1].default_value = 0.12; pm.inputs[2].default_value = 0.94
     gm = N.new('ShaderNodeMath'); gm.operation = 'MULTIPLY'; L(pm.outputs[0], gm.inputs[0]); L(rng(n3.outputs['Fac'], 0.3, 0.7, 0.9, 1.07), gm.inputs[1])
     mm = N.new('ShaderNodeMix'); mm.data_type = 'RGBA'; mm.blend_type = 'MULTIPLY'; mm.inputs['Factor'].default_value = 1.0
     L(land, mm.inputs[6]); L(gm.outputs[0], mm.inputs[7])
     return mm.outputs[2]
+
+def marsh_mat():
+    """laguna d'acqua bassa (Alameda 1248-1574): fango e acqua torbida opachi con chiazze di canneto, niente riflessi"""
+    m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+    b.inputs['Roughness'].default_value = 0.7
+    tc = N.new('ShaderNodeTexCoord'); n_ = N.new('ShaderNodeTexNoise'); n_.inputs['Scale'].default_value = 0.035; n_.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], n_.inputs['Vector'])
+    r_ = N.new('ShaderNodeValToRGB'); L(n_.outputs['Fac'], r_.inputs[0]); cr = r_.color_ramp
+    cr.elements[0].position = 0.45; cr.elements[0].color = (*srgb(ST.get('lagoon_water', '#46524a')), 1)
+    cr.elements[1].position = 0.6; cr.elements[1].color = (*srgb(ST.get('lagoon_reed', '#77764a')), 1)
+    L(r_.outputs[0], b.inputs['Base Color'])
+    return hazeify(m)
+
 def land_mat(mode='fields'):
     m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
     b.inputs['Roughness'].default_value = 0.95
@@ -444,6 +478,22 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     urban_year = __import__(CITY['hist']).urban_year
 except Exception as e_: urban_year = None; print('[build] storia non disponibile:', e_, flush=True)
+# immagine delle distanze per il paesaggio (fields_style natural): R = distanza dal fiume del 1248, G = dalle mura (0-3 km)
+if CITY.get('fields_style') == 'natural':
+    import numpy as _zn
+    from scipy import ndimage as _znd
+    from shapely import contains_xy as _zcxy
+    ZONE_BOX = tuple(CITY['core_box']); _zc = 40.0
+    _zx = _zn.arange(ZONE_BOX[0], ZONE_BOX[2], _zc); _zy = _zn.arange(ZONE_BOX[1], ZONE_BOX[3], _zc); _gx, _gy = _zn.meshgrid(_zx, _zy)
+    _zl48 = unary_union([lgeom] + [Polygon(ph_['r']).buffer(0) for ph_ in _PH if ph_['from'] <= 1248 < ph_['to']]) if _PH else lgeom
+    _zwet = ~_zcxy(_zl48, _gx, _gy)
+    _zr = _znd.distance_transform_edt(~_zwet) * _zc
+    try: _zwp = __import__(CITY['hist']).WALL_P; _zg = _znd.distance_transform_edt(~_zcxy(_zwp, _gx, _gy)) * _zc
+    except Exception: _zg = _zn.full(_gx.shape, 3000.0)
+    _zpx = _zn.zeros((_gx.shape[0], _gx.shape[1], 4), dtype=_zn.float32); _zpx[..., 0] = _zn.clip(_zr / 3000, 0, 1); _zpx[..., 1] = _zn.clip(_zg / 3000, 0, 1); _zpx[..., 3] = 1
+    ZONE_IMG = bpy.data.images.new('zones', _gx.shape[1], _gx.shape[0], float_buffer=True); ZONE_IMG.colorspace_settings.name = 'Non-Color'
+    ZONE_IMG.pixels.foreach_set(_zpx.ravel()); ZONE_IMG.pack()
+    log('zone del paesaggio:', _gx.shape[1], 'x', _gx.shape[0], 'celle da 40 m')
 from shapely.prepared import prep
 # terra a celle di 120 m: ogni cella sa da che anno e' citta' (prima e' campagna verde, poi asfalto)
 BOR = None
@@ -548,7 +598,7 @@ if UG_FOOT:
 if _ph_items:
     # stessi materiali della terra di base (campi a toppe, tessuto urbano): una tinta piatta si vedeva come striscia dritta
     _phm = {'field': land_mat('fields'), 'urban': land_mat('urban'),
-            'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0)}
+            'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0), 'marsh': marsh_mat()}
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()
         for r_ in rings_:
@@ -807,34 +857,49 @@ if CITY.get('vegetation'):
     for ph_ in _PH:
         if ph_['from'] <= 1248 < ph_['to'] < 9000:
             mm_ = _cxy(Polygon(ph_['r']).buffer(0), X, Y); VY[mm_] = _vn.minimum(VY[mm_], ph_['to'])
+    for bx_, yv_ in CITY.get('veg_clear', []):   # cantieri senza edifici nelle celle (Expo 92: tutta l'isola sgombrata dal 1989)
+        mm_ = (X > bx_[0]) & (X < bx_[2]) & (Y > bx_[1]) & (Y < bx_[3]); VY[mm_] = _vn.minimum(VY[mm_], yv_)
     keep_ = VY > 1250; X, Y, SC, K, VY = X[keep_], Y[keep_], SC[keep_], K[keep_], VY[keep_]
-    # prototipo e materiale (tinta per istanza)
-    _pm = bpy.data.meshes.new('vegproto'); _bmp = bmesh.new(); bmesh.ops.create_icosphere(_bmp, subdivisions=2, radius=1.0); _bmp.to_mesh(_pm); _bmp.free(); _pm.shade_smooth()
-    _po = bpy.data.objects.new('vegproto', _pm); sc.collection.objects.link(_po); _po.hide_render = True; _po.hide_viewport = True; _po.scale = (1, 1, 0.85)
+    # tre forme di albero (tonda, pioppo stretto e alto, ombrello basso tipo pino/olivo), base della chioma a terra;
+    # scala, rotazione e tono casuali per albero; la forma si sceglie per zona (rive: piu' pioppi; vega: piu' ombrelli)
     _vm = bpy.data.materials.new('veg'); _vm.use_nodes = True; _VN = _vm.node_tree.nodes; _VL = _vm.node_tree.links.new; _vb = _VN['Principled BSDF']; _vb.inputs['Roughness'].default_value = 0.9
     _oi = _VN.new('ShaderNodeObjectInfo'); _vr_ = _VN.new('ShaderNodeValToRGB'); _VL(_oi.outputs['Random'], _vr_.inputs[0])
     _VCOL = _VC.get('colors', ['#34431f', '#465530', '#5a6334', '#3d4a28'])
     _vr_.color_ramp.elements[0].color = (*srgb(_VCOL[0]), 1); _vr_.color_ramp.elements[1].color = (*srgb(_VCOL[-1]), 1)
     for i_, c_ in enumerate(_VCOL[1:-1]): _e = _vr_.color_ramp.elements.new((i_ + 1) / (len(_VCOL) - 1)); _e.color = (*srgb(c_), 1)
-    _VL(_vr_.outputs[0], _vb.inputs['Base Color']); _po.data.materials.append(hazeify(_vm))
-    # nodi: istanza dell'albero su ogni punto, scala dall'attributo 'sc', chioma sollevata di 0,9 x scala, rotazione casuale
+    _VL(_vr_.outputs[0], _vb.inputs['Base Color']); _vm = hazeify(_vm)
+    _protos = []
+    for nm_, (sx_, sy_, sz_), sub_ in (('round', (1.0, 1.0, 0.85), 2), ('poplar', (0.55, 0.55, 1.9), 2), ('umbrella', (1.35, 1.35, 0.5), 2)):
+        _pm = bpy.data.meshes.new('veg_' + nm_); _bmp = bmesh.new(); bmesh.ops.create_icosphere(_bmp, subdivisions=sub_, radius=1.0)
+        for v_ in _bmp.verts: v_.co.x *= sx_; v_.co.y *= sy_; v_.co.z = v_.co.z * sz_ + sz_ * 0.95 + (0.9 if nm_ == 'umbrella' else 0.3)   # chioma sopra il suolo (ombrello: tronco piu' alto)
+        _bmp.to_mesh(_pm); _bmp.free(); _pm.shade_smooth(); _pm.materials.append(_vm)
+        _po = bpy.data.objects.new('vegproto_' + nm_, _pm); sc.collection.objects.link(_po); _po.hide_render = True; _po.hide_viewport = True; _protos.append(_po)
+    _PK = {0: [0.40, 0.48, 0.12], 1: [0.55, 0.12, 0.33], 2: [0.85, 0.0, 0.15]}   # probabilita' delle forme per tipo (riva, vega, orti)
+    KD = _vn.zeros(K.size)
+    for k_, p_ in _PK.items():
+        m_ = K == k_; KD[m_] = _rng.choice(3, size=int(m_.sum()), p=p_)
     vg_ = bpy.data.node_groups.new('veg', 'GeometryNodeTree')
     vg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); vg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
     GN_ = vg_.nodes; GL_ = vg_.links.new; gi_ = GN_.new('NodeGroupInput'); go_ = GN_.new('NodeGroupOutput')
     m2p = GN_.new('GeometryNodeMeshToPoints'); GL_(gi_.outputs[0], m2p.inputs['Mesh'])
+    g2i = GN_.new('GeometryNodeGeometryToInstance')
+    for po_ in _protos:
+        ob_ = GN_.new('GeometryNodeObjectInfo'); ob_.inputs['Object'].default_value = po_; GL_(ob_.outputs['Geometry'], g2i.inputs[0])
     na_ = GN_.new('GeometryNodeInputNamedAttribute'); na_.data_type = 'FLOAT'; na_.inputs['Name'].default_value = 'sc'
-    off_ = GN_.new('ShaderNodeCombineXYZ'); mu_ = GN_.new('ShaderNodeMath'); mu_.operation = 'MULTIPLY'; mu_.inputs[1].default_value = 0.9; GL_(na_.outputs['Attribute'], mu_.inputs[0]); GL_(mu_.outputs[0], off_.inputs['Z'])
-    sp_ = GN_.new('GeometryNodeSetPosition'); GL_(m2p.outputs[0], sp_.inputs['Geometry']); GL_(off_.outputs[0], sp_.inputs['Offset'])
-    ob_ = GN_.new('GeometryNodeObjectInfo'); ob_.inputs['Object'].default_value = _po
-    rr_ = GN_.new('FunctionNodeRandomValue'); rr_.data_type = 'FLOAT_VECTOR'; rr_.inputs['Max'].default_value = (0, 0, 6.283)
-    ip_ = GN_.new('GeometryNodeInstanceOnPoints'); GL_(sp_.outputs[0], ip_.inputs['Points']); GL_(ob_.outputs['Geometry'], ip_.inputs['Instance'])
-    GL_(na_.outputs['Attribute'], ip_.inputs['Scale']); GL_(rr_.outputs['Value'], ip_.inputs['Rotation']); GL_(ip_.outputs[0], go_.inputs[0])
+    nk_ = GN_.new('GeometryNodeInputNamedAttribute'); nk_.data_type = 'INT'; nk_.inputs['Name'].default_value = 'kd'
+    rs_ = GN_.new('FunctionNodeRandomValue'); rs_.data_type = 'FLOAT_VECTOR'; rs_.inputs['Min'].default_value = (0.85, 0.85, 0.8); rs_.inputs['Max'].default_value = (1.15, 1.15, 1.2); rs_.inputs['Seed'].default_value = 5
+    sv_ = GN_.new('ShaderNodeVectorMath'); sv_.operation = 'SCALE'; GL_(rs_.outputs['Value'], sv_.inputs[0]); GL_(na_.outputs['Attribute'], sv_.inputs['Scale'])
+    rr_ = GN_.new('FunctionNodeRandomValue'); rr_.data_type = 'FLOAT_VECTOR'; rr_.inputs['Max'].default_value = (0.08, 0.08, 6.283); rr_.inputs['Seed'].default_value = 9
+    ip_ = GN_.new('GeometryNodeInstanceOnPoints'); GL_(m2p.outputs[0], ip_.inputs['Points']); GL_(g2i.outputs[0], ip_.inputs['Instance'])
+    ip_.inputs['Pick Instance'].default_value = True; GL_(nk_.outputs['Attribute'], ip_.inputs['Instance Index'])
+    GL_(sv_.outputs['Vector'], ip_.inputs['Scale']); GL_(rr_.outputs['Value'], ip_.inputs['Rotation']); GL_(ip_.outputs[0], go_.inputs[0])
     _bins = {}
     for i_ in range(X.size): _bins.setdefault(int(VY[i_] // 4) if VY[i_] < 9000 else 99999, []).append(i_)
     for k_, idx_ in _bins.items():
         me_ = bpy.data.meshes.new(f'veg_{k_}'); ii_ = _vn.array(idx_)
         me_.vertices.add(len(ii_)); co_ = _vn.zeros((len(ii_), 3)); co_[:, 0] = X[ii_]; co_[:, 1] = Y[ii_]; me_.vertices.foreach_set('co', co_.ravel())
-        me_.attributes.new('sc', 'FLOAT', 'POINT').data.foreach_set('value', SC[ii_]); me_.update()
+        me_.attributes.new('sc', 'FLOAT', 'POINT').data.foreach_set('value', SC[ii_])
+        me_.attributes.new('kd', 'INT', 'POINT').data.foreach_set('value', KD[ii_].astype(int)); me_.update()
         o_ = bpy.data.objects.new(f'veg_{k_}', me_); sc.collection.objects.link(o_); o_.modifiers.new('veg', 'NODES').node_group = vg_
         VIS.append((o_, 'vanish', k_ * 4 if k_ != 99999 else 99999))
     log('vegetazione istanziata:', X.size, 'alberi (riva', int((K == 0).sum()), ', vega', int((K == 1).sum()), ', orti', int((K == 2).sum()), ') in', len(_bins), 'oggetti')
@@ -1170,6 +1235,7 @@ def setvis(o_, hidden):
     # niente hide_render (cambia la scena per Cycles e la ricostruisce): gli oggetti nascosti scendono sotto terra
     if VISSET.get(o_.name) != hidden:
         o_.location.z = -5000.0 if hidden else ZBASE.get(o_.name, 0.0); VISSET[o_.name] = hidden
+STOP_AVG = float(opt('--stop-avg', 1, '0')); STOP_N = int(opt('--stop-every', 1, '500')); _FT = []
 NW = 5 if F1 > 9999 else 4   # oltre 9999 fotogrammi: nomi a 5 cifre (con 4 l'ordine alfabetico mescolava i fotogrammi)
 done = 0
 _ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
@@ -1195,4 +1261,9 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
             log('PROBE', _p, '->', _h[4].name if _h[0] else 'niente', 'z=%.2f' % _h[1].z if _h[0] else '', 'normale', tuple(round(v, 2) for v in _h[2]) if _h[0] else '')
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
+    # regola di stop (Fabio, 23 ott): ogni N fotogrammi, se la media degli ultimi N supera la soglia, ci si ferma
+    _FT.append(time.time() - t_)
+    if STOP_AVG and len(_FT) % STOP_N == 0:
+        _m = sum(_FT[-STOP_N:]) / STOP_N; print(f'[build] media ultimi {STOP_N} fotogrammi: {_m:.2f} s', flush=True)
+        if _m > STOP_AVG: print(f'[build] STOP: media {_m:.2f} s > {STOP_AVG} s/fotogramma (fotogramma {f}). Render interrotto.', flush=True); sys.exit(3)
 n = max(1, done); log(f'FATTO {done} fotogrammi, {(time.time()-tr)/n:.2f}s a fotogramma')
