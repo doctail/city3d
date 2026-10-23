@@ -139,10 +139,10 @@
       "Da (anno)": 1910,
       "A (anno)": 1910,
       "Uso nel modello": "TEMPORANEO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/la-crue-de-1910-189",
-      "Note": "Evento temporaneo: non lasciare il livello dell’acqua alterato dopo la fase di piena."
+      "Note": "Evento temporaneo documentato; la fonte titola «La crue de 1910». L’intervallo del livello di piena non va prolungato oltre l’evento."
     },
     {
       "ID": "A011",
@@ -271,12 +271,12 @@
       "ID": "B007",
       "Elemento": "Mur des Fermiers généraux: costruzione",
       "Da (anno)": 1784,
-      "A (anno)": 1791,
+      "A (anno)": 1790,
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
-      "Note": "La fonte riporta: «La construction du mur des Fermiers généraux s’étend de 1784 à 1790»; il museo cittadino documenta 1784–1791."
+      "Note": "La fonte riporta: «La construction du mur des Fermiers généraux s’étend de 1784 à 1790»."
     },
     {
       "ID": "B008",
@@ -284,10 +284,10 @@
       "Da (anno)": 1860,
       "A (anno)": 1860,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
-      "Note": "La fonte riporta che fu quasi interamente demolito nel contesto della costruzione della cinta di Thiers."
+      "Note": "Demolizione progressiva nel contesto dell’espansione urbana e della costruzione della cinta di Thiers; anno puntuale operativo indicativo."
     },
     {
       "ID": "B009",
@@ -723,7 +723,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1801 547,756». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D015",
@@ -735,7 +735,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1807 580,609». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D016",
@@ -747,7 +747,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1811 622,636». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D017",
@@ -759,7 +759,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1817 713,966». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D018",
@@ -771,7 +771,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1831 785,862». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D019",
@@ -783,7 +783,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1836 909,126». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D020",
@@ -795,7 +795,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1841 935,261». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D021",
@@ -807,7 +807,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1846 1,053,897». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D022",
@@ -819,7 +819,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1851 1,053,262». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D023",
@@ -831,7 +831,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1856 1,174,346». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D024",
@@ -842,8 +842,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.bnsp.insee.fr/ark:/12148/bc6p06xrshm.pdf",
-      "Note": "Rupture de périmètre après l’annexion de 1860; la série n’est pas homogène avant/après."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1861 1,696,141». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D025",
@@ -854,8 +854,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.bnsp.insee.fr/ark:/12148/bc6p06xrshm.pdf",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1866 1,825,274». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D026",
@@ -866,8 +866,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.bnsp.insee.fr/ark:/12148/bc6p06xrshm.pdf",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1872 1,851,792». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D027",
@@ -878,8 +878,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.bnsp.insee.fr/ark:/12148/bc6p06xrshm.pdf",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1876 1,988,806». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D028",
@@ -890,8 +890,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.bnsp.insee.fr/ark:/12148/bc6p06xrshm.pdf",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1881 2,269,023». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D029",
@@ -903,7 +903,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1886 2,344,550». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D030",
@@ -915,7 +915,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1891 2,447,957». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D031",
@@ -927,7 +927,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1896 2,536,834». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D032",
@@ -939,7 +939,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1901 2,714,068». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D033",
@@ -951,7 +951,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1906 2,763,393». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D034",
@@ -963,7 +963,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1911 2,888,110». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D035",
@@ -975,7 +975,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1921 2,906,472». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D036",
@@ -987,7 +987,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1926 2,871,429». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D037",
@@ -999,7 +999,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1931 2,891,020». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D038",
@@ -1011,7 +1011,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1936 2,829,746». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D039",
@@ -1023,7 +1023,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
       "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «1946 2,725,374». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D040",
@@ -1034,8 +1034,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1954 2,850,189». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D041",
@@ -1046,8 +1046,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1962 2,790,091». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D042",
@@ -1058,8 +1058,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1968 2,590,771». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D043",
@@ -1070,8 +1070,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1975 2,299,830». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D044",
@@ -1082,8 +1082,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1982 2,176,243». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D045",
@@ -1094,8 +1094,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1990 2,152,423». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D046",
@@ -1106,8 +1106,8 @@
       "Definizione": "Population recensée ou série historique publiée",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.insee.fr/fr/information/2414405",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Fonte": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+      "Note": "La fonte riporta: «1999 2,125,246». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D047",
@@ -1119,7 +1119,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «2006 2,181,371». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D048",
@@ -1131,7 +1131,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «2011 2,249,975». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D049",
@@ -1143,7 +1143,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «2016 2,190,327». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D050",
@@ -1155,7 +1155,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "Valeur de recensement ou série historique; les concepts statistiques peuvent varier selon les millésimes."
+      "Note": "La fonte riporta: «2021 2,133,111». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     },
     {
       "ID": "D051",
@@ -1167,7 +1167,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.insee.fr/fr/statistiques/serie/001760155",
-      "Note": "Valeur INSEE provisoire/révisée selon la série; préfixe ~ conservé comme demandé."
+      "Note": "La fonte riporta: «2025 2,065,560». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
     }
   ],
   "E": [
@@ -1397,10 +1397,10 @@
       "Da (anno)": 1190,
       "A (anno)": 1345,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
+      "Motivo": "DA MEMORIA",
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
-      "Note": "La fonte riporta la costruzione «de 1163 au milieu du XIVe siècle»; la scheda parte dal 1190."
+      "Note": "La fonte riporta la costruzione «de 1163 au milieu du XIVe siècle»; l’anno finale 1345 è una convenzione numerica per lo script, non una data precisa attestata."
     },
     {
       "ID": "E022",
@@ -1444,7 +1444,7 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "media",
       "Fonte": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
-      "Note": "La fonte riporta la posa della prima pietra il «15 juillet 1533»; edificio rinascimentale."
+      "Note": "La fonte riporta la posa della prima pietra il «15 juillet 1533»; l’anno finale è una convenzione per la fase rinascimentale."
     },
     {
       "ID": "E026",
@@ -1571,7 +1571,7 @@
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
       "Fonte": "https://www.observatoire-des-territoires.gouv.fr/kiosque/2021-2022-rapport-cahier-1-demo-chap-01-04-levolution-demographique-de-la-ville-de-paris",
-      "Note": "La source indique l’annexion et le passage à 20 arrondissements."
+      "Note": "La fonte riporta l’annessione «en 1860» e il passaggio da «12» a «20» arrondissements."
     },
     {
       "ID": "F005",
