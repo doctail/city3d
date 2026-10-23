@@ -1,0 +1,218 @@
+[
+{
+"t": 9.5,
+"year": 1248.0,
+"text": "Seville under Castile (1248)",
+"sosta": true
+},
+{
+"t": 12.65,
+"year": 1248.9,
+"text": "Ferdinand III enters Seville (23 Nov 1248)",
+"sosta": false
+},
+{
+"t": 16.74,
+"year": 1252.0,
+"text": "Ferdinand III dies in Seville (1252)",
+"sosta": false
+},
+{
+"t": 26.63,
+"year": 1356.0,
+"text": "Earthquake topples the Giralda's golden spheres (1356)",
+"sosta": false
+},
+{
+"t": 30.51,
+"year": 1400.0,
+"text": "A cross and bell crown the Giralda (c. 1400)",
+"sosta": false
+},
+{
+"t": 33.14,
+"year": 1430.0,
+"text": "The Great Mosque gives way to the Cathedral (1434)",
+"sosta": true
+},
+{
+"t": 42.08,
+"year": 1481.0,
+"text": "Castile's first Inquisition tribunal sits in Triana Castle (1481)",
+"sosta": false
+},
+{
+"t": 44.98,
+"year": 1503.0,
+"text": "Casa de Contratación: Seville controls the trade with the Americas (1503)",
+"sosta": false
+},
+{
+"t": 47.35,
+"year": 1519.6,
+"text": "Magellan's fleet sails from Seville (1519)",
+"sosta": false
+},
+{
+"t": 53.29,
+"year": 1564.0,
+"text": "The Giralda gets its Renaissance belfry (1568)",
+"sosta": true
+},
+{
+"t": 58.36,
+"year": 1574.0,
+"text": "The Feria lagoon is drained (1574-1578)",
+"sosta": false
+},
+{
+"t": 59.24,
+"year": 1578.0,
+"text": "Alameda de Hércules opens (1578)",
+"sosta": false
+},
+{
+"t": 65.47,
+"year": 1600.0,
+"text": "Seville nears 120,000 people (c. 1600)",
+"sosta": false
+},
+{
+"t": 73.05,
+"year": 1649.0,
+"text": "The Great Plague of 1649",
+"sosta": false
+},
+{
+"t": 80.72,
+"year": 1717.0,
+"text": "The Casa de Contratación moves to Cádiz (1717)",
+"sosta": false
+},
+{
+"t": 81.88,
+"year": 1728.0,
+"text": "Royal Tobacco Factory begun (1728)",
+"sosta": false
+},
+{
+"t": 84.3,
+"year": 1755.9,
+"text": "Lisbon earthquake shakes Seville (1755)",
+"sosta": false
+},
+{
+"t": 84.48,
+"year": 1758.0,
+"text": "The Maestranza bullring rises (1761-1785)",
+"sosta": true
+},
+{
+"t": 84.79,
+"year": 1760.0,
+"text": "Torre del Oro gets its upper lantern (1760)",
+"sosta": false
+},
+{
+"t": 91.18,
+"year": 1810.1,
+"text": "French troops occupy Seville (1810-1812)",
+"sosta": false
+},
+{
+"t": 91.25,
+"year": 1811.0,
+"text": "Encarnación convent demolished (1811)",
+"sosta": false
+},
+{
+"t": 95.28,
+"year": 1836.0,
+"text": "Disentailment empties the convents (1836)",
+"sosta": false
+},
+{
+"t": 105.35,
+"year": 1843.0,
+"text": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+"sosta": true
+},
+{
+"t": 107.39,
+"year": 1848.0,
+"text": "Plaza Nueva is laid out (1848-1857)",
+"sosta": false
+},
+{
+"t": 115.75,
+"year": 1858.0,
+"text": "The medieval walls come down (1858-1873)",
+"sosta": false
+},
+{
+"t": 141.51,
+"year": 1881.0,
+"text": "The Maestranza is completed (1881)",
+"sosta": false
+},
+{
+"t": 145.64,
+"year": 1909.0,
+"text": "Alfonso XIII Canal is dug (1909-1926)",
+"sosta": false
+},
+{
+"t": 146.03,
+"year": 1912.0,
+"text": "Plaza de España for the 1929 Expo (1914-1929)",
+"sosta": true
+},
+{
+"t": 151.33,
+"year": 1929.35,
+"text": "Ibero-American Exposition opens (9 May 1929)",
+"sosta": false
+},
+{
+"t": 159.93,
+"year": 1936.5,
+"text": "Spanish Civil War (1936-1939)",
+"sosta": false
+},
+{
+"t": 175.26,
+"year": 1948.0,
+"text": "Chapina arm is closed (1948-1950)",
+"sosta": false
+},
+{
+"t": 197.84,
+"year": 1961.9,
+"text": "Tamarguillo flood (25 Nov 1961)",
+"sosta": false
+},
+{
+"t": 220.04,
+"year": 1973.0,
+"text": "The river is moved west: Corta de la Cartuja (1975-1982)",
+"sosta": true
+},
+{
+"t": 241.04,
+"year": 1991.0,
+"text": "Santa Justa station opens (1991)",
+"sosta": false
+},
+{
+"t": 243.04,
+"year": 1992.0,
+"text": "Expo 92 · 20 April – 12 October 1992",
+"sosta": false
+},
+{
+"t": 269.0,
+"year": 2005.0,
+"text": "Metropol Parasol (2005-2011)",
+"sosta": false
+}
+]

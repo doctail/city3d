@@ -217,10 +217,11 @@ def icons(DATA):
     clear.append(dodec(8.5))
     LM['labels'].append({'name': 'Torre del Oro', 'x': round(tx_, 1), 'y': round(ty_, 1), 'z': 38, 'from': 1248, 'icon': 1})
     # --- mura almohadi (anello del 1248, walls_1248.json): cortina in tapial ~9 m e torri quadrate ~13 m ogni ~60 m [L];
-    #     demolizione graduale 1858-1873 lungo l'anello (keyframe della scheda). Restano: tratto della Macarena (al posto
-    #     dell'edificio del Catasto "1023", bianco e alto 16,5 m) e mura dell'Alcazar [V].
+    #     demolizione 1858-1873 (keyframe della scheda) a tratti sparsi: tratti di 2-4 segmenti (~120-240 m), ognuno con un
+    #     anno a caso nell'intervallo, non in ordine lungo l'anello (decisione di Fabio, 23 ott 12:27). Restano: tratto della
+    #     Macarena (al posto dell'edificio del Catasto "1023", bianco e alto 16,5 m) e mura dell'Alcazar [V].
     from shapely.geometry import LineString as _WL
-    ring_ = list(WALL_P.exterior.coords); tot_ = WALL_P.exterior.length; acc_ = 0.0
+    ring_ = list(WALL_P.exterior.coords); _wr = random.Random(1858); _left = 0; _yd = 1858.0
     ax_, ay_ = L(37.38310, -5.99030)
     def _keep(x, y): return (270 < x < 640 and y > 1530) or math.hypot(x - ax_, y - ay_) < 260
     TAP, TOW = '#c3a77c', '#b99d72'
@@ -230,11 +231,12 @@ def icons(DATA):
             ta, tb = k / n_, (k + 1) / n_
             pa = (x0 + (x1 - x0) * ta, y0 + (y1 - y0) * ta); pb = (x0 + (x1 - x0) * tb, y0 + (y1 - y0) * tb)
             mxp, myp = (pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2
-            dw = {} if _keep(mxp, myp) else {'d': round(1858 + 15 * (acc_ + sl_ * (ta + tb) / 2) / tot_, 2)}
+            if _left <= 0: _left = _wr.randint(2, 4); _yd = round(_wr.uniform(1858, 1873), 2)
+            _left -= 1
+            dw = {} if _keep(mxp, myp) else {'d': _yd}
             seg_ = _WL([pa, pb]).buffer(1.6, cap_style=2)
             part(name='City walls', t='prism', r=[[round(x, 2), round(y, 2)] for x, y in list(seg_.exterior.coords)[:-1]], z0=0.0, z1=9.0, c=TAP, top=TAP, y=1100, **dw)
             part(name='City walls', t='prism', r=_sq(pa[0], pa[1], 4.0, ux, uy), z0=0.0, z1=13.0, c=TOW, top=TOW, y=1100, **dw)
-        acc_ += sl_
     for b_ in blds:   # il tratto della Macarena del Catasto (anno 1023, bianco, 16,5 m) lascia il posto alle mura modellate
         if b_.get('y') == 1023 and b_.get('h', 0) > 15:
             cx_, cy_ = sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r'])
@@ -348,38 +350,20 @@ def fix_icons(DATA):
     cat['lm'] = True; cat['wall'] = '#d9cba9'; cat['roof'] = '#bfb293'   # pietra, non la tavolozza casuale delle case
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
 
-def expo(DATA, n=28):
-    """Padiglioni demoliti dell'Expo 92: blocchi semplici dal 1991.5 al 1993, sui lotti oggi vuoti del recinto (lontani da
-    edifici di oggi e dall'acqua). Posizioni e misure [Guessing]: la pianta del recinto non e' stata georeferenziata."""
-    from shapely.strtree import STRtree
-    blds = json.load(open(f'{DATA}/buildings.json')); hist = json.load(open(f'{DATA}/hist.json'))
+def expo(DATA):
+    """Expo 92 (decisione di Fabio, 23 ott 12:27): niente padiglioni inventati. Nessuna pianta del recinto scaricabile
+    da qui (la sandbox non raggiunge Wikimedia/OSM): restano solo gli edifici sopravvissuti del Catasto (anno 1990),
+    in colori neutri (bianco e grigio chiaro), e il Lago de Espana (contorno OSM, natural=water/lake). Toglie i
+    padiglioni delle prove precedenti da hist.json."""
+    hist = json.load(open(f'{DATA}/hist.json')); n0 = len(hist)
     hist = [h for h in hist if h.get('name') != 'pabellon Expo 92']
-    G = [Polygon(b['r']).buffer(0) for b in blds if EXPO_SITE.buffer(200).contains(Polygon(b['r']).centroid)]
-    tree = STRtree(G)
-    WS = json.load(open(os.path.join(HERE, 'data_sevilla_src', 'water_src.json')))
-    wet = Polygon(WS['lago_expo'][0]).buffer(40)
-    from shapely.ops import unary_union as _uu2   # terra di oggi (= 1992 qui: darsena e canale nuovo gia' scavati): niente padiglioni nel fiume
-    dry = _uu2([Polygon(r['ext'], r.get('holes', [])).buffer(0) for r in json.load(open(f'{DATA}/land.json'))]).buffer(-30)
-    dry = prep(dry.intersection(EXPO_SITE))
-    x0, y0, x1, y1 = EXPO_SITE.bounds; cand = []
-    for xx in range(int(x0) + 120, int(x1) - 120, 40):
-        for yy in range(int(y0) + 80, int(y1) - 80, 40):
-            p = Point(xx, yy).buffer(60)
-            if not dry.contains(p) or wet.intersects(p) or any(G[i].intersects(p) for i in tree.query(p)): continue
-            cand.append((xx, yy))
-    pick = []
-    if cand:
-        pick.append(cand[len(cand) // 2])
-        while len(pick) < n and len(pick) < len(cand):
-            pick.append(max(cand, key=lambda c: min(math.hypot(c[0] - q[0], c[1] - q[1]) for q in pick)))
-    rnd = random.Random(92)
-    for xx, yy in pick:
-        w, l = rnd.uniform(30, 65), rnd.uniform(40, 100)
-        wall, roof = rnd.choice([('#f1eee6', '#c9c4ba'), ('#e9e2cf', '#b9b2a4'), ('#d7c39a', '#a99a7c'), ('#c95f45', '#a9a39a'), ('#6f8fb0', '#d4d0c6'), ('#e3c25a', '#cfc9bd')])
-        hist.append({'r': [[xx - l / 2, yy - w / 2], [xx + l / 2, yy - w / 2], [xx + l / 2, yy + w / 2], [xx - l / 2, yy + w / 2]],
-                     'h': round(rnd.uniform(12, 26), 1), 'y': 1991.5, 'd': 1993, 'name': 'pabellon Expo 92', 'lm': True, 'wall': wall, 'roof': roof})
     json.dump(hist, open(f'{DATA}/hist.json', 'w'))
-    print(f'[hist_sevilla] Expo 92: {len(pick)} padiglioni demoliti (1991.5-1993) su {len(cand)} lotti liberi', flush=True)
+    blds = json.load(open(f'{DATA}/buildings.json')); rnd = random.Random(92); nx_ = 0
+    for b in blds:
+        if b['y'] == 1990 and EXPO_SITE.contains(Polygon(b['r']).centroid):
+            b['lm'] = True; b['wall'], b['roof'] = rnd.choice([('#f2f0ea', '#dcdad5'), ('#e6e5e1', '#cfcdc8'), ('#ecebe6', '#d6d4cf')]); nx_ += 1
+    json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
+    print(f'[hist_sevilla] Expo 92: {nx_} edifici sopravvissuti in colori neutri; tolti {n0 - len(hist)} padiglioni inventati', flush=True)
 
 def lost(DATA):
     hist = json.load(open(f'{DATA}/hist.json')); rnd = random.Random(3)
