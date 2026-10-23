@@ -185,5 +185,20 @@
    2026
   ]
  },
- "sun_el": 12
+ "sun_el": 12,
+ "vegetation": {
+  "river_w": 70,
+  "river_step": 10,
+  "vega_r": 9000,
+  "vega_step": 24,
+  "vega_clump": 0.66,
+  "orchard_r": 700,
+  "orchard_step": 8,
+  "colors": [
+   "#33421f",
+   "#44532d",
+   "#566233",
+   "#3c4927"
+  ]
+ }
 }

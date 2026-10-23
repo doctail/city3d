@@ -760,6 +760,84 @@ if TREES and FOREST:
 if TREES:
     t2 = TREES.copy(); [n for n in t2.nodes if n.bl_idname == 'GeometryNodeDistributePointsOnFaces'][0].inputs['Density'].default_value = float(CITY.get('block_trees', 0.0018))
     for o_ in BO: o_.modifiers.new('trees', 'NODES').node_group = t2
+# ---------- vegetazione ISTANZIATA (Siviglia, 23 ott): boschi di riva lungo il fiume del 1248, alberi sparsi nella vega,
+# orti attorno alle mura. Istanze Geometry Nodes NON realizzate: Cycles tiene una sola copia dell'albero (memoria quasi zero).
+# Ogni albero sparisce quando la sua cella da 120 m si urbanizza (CELLMIN) o quando il suo terreno diventa acqua (canali).
+# Oggetti divisi per anno di sparizione (passo 4 anni): ognuno si sposta una volta sola nella vita del video.
+if CITY.get('vegetation'):
+    import numpy as _vn
+    from shapely import contains_xy as _cxy
+    _VC = CITY['vegetation']; _rng = _vn.random.default_rng(7)
+    _land48 = unary_union([lgeom] + [Polygon(ph_['r']).buffer(0) for ph_ in _PH if ph_['from'] <= 1248 < ph_['to']]) if _PH else lgeom
+    _box = sbox(*_VC.get('box', CITY['core_box']))
+    _l48 = _land48.intersection(_box)
+    def _smooth_noise(xs, ys, cell, seed):
+        g_ = _vn.random.default_rng(seed); x0_, y0_, x1_, y1_ = _box.bounds
+        nx_, ny_ = int((x1_ - x0_) / cell) + 2, int((y1_ - y0_) / cell) + 2; F_ = g_.random((ny_, nx_))
+        fx = (xs - x0_) / cell; fy = (ys - y0_) / cell; ix = _vn.clip(fx.astype(int), 0, nx_ - 2); iy = _vn.clip(fy.astype(int), 0, ny_ - 2); tx = fx - ix; ty = fy - iy
+        tx = tx * tx * (3 - 2 * tx); ty = ty * ty * (3 - 2 * ty)
+        return F_[iy, ix] * (1 - tx) * (1 - ty) + F_[iy, ix + 1] * tx * (1 - ty) + F_[iy + 1, ix] * (1 - tx) * ty + F_[iy + 1, ix + 1] * tx * ty
+    def _grid(geom, step, keep=1.0):
+        x0_, y0_, x1_, y1_ = geom.bounds
+        xs, ys = _vn.meshgrid(_vn.arange(x0_, x1_, step), _vn.arange(y0_, y1_, step)); xs = xs.ravel() + _rng.uniform(-step * .45, step * .45, xs.size); ys = ys.ravel() + _rng.uniform(-step * .45, step * .45, ys.size)
+        m_ = _cxy(geom, xs, ys) & (_rng.random(xs.size) < keep); return xs[m_], ys[m_]
+    _pts = []   # (x, y, scala, tipo)
+    # 1) boschi di riva: fascia 8-70 m dalla riva del fiume del 1248
+    _bnd = _l48.boundary
+    _band = _l48.intersection(_bnd.buffer(_VC.get('river_w', 70))).difference(_bnd.buffer(8))
+    xs, ys = _grid(_band, _VC.get('river_step', 10), 0.8); _pts.append((xs, ys, _rng.uniform(3.5, 6.5, xs.size), 0))
+    # 2) vega: alberi a gruppi (siepi, boschetti) e qualche albero isolato, entro un raggio dal centro
+    _vr = sbox(-_VC.get('vega_r', 9000), -_VC.get('vega_r', 9000), _VC.get('vega_r', 9000), _VC.get('vega_r', 9000)).intersection(_l48)
+    xs, ys = _grid(_vr, _VC.get('vega_step', 24))
+    nz_ = _smooth_noise(xs, ys, 180.0, 11); m_ = (nz_ > _VC.get('vega_clump', 0.66)) | (_rng.random(xs.size) < 0.015)
+    xs, ys = xs[m_], ys[m_]; _pts.append((xs, ys, _rng.uniform(3.0, 5.5, xs.size), 1))
+    # 3) orti attorno alle mura del 1248: anello fino a 700 m, a chiazze, filari fitti
+    try: _WP = __import__(CITY['hist']).WALL_P
+    except Exception: _WP = None
+    if _WP is not None:
+        _ring = _WP.buffer(_VC.get('orchard_r', 700)).difference(_WP.buffer(25)).intersection(_l48)
+        xs, ys = _grid(_ring, _VC.get('orchard_step', 8))
+        nz_ = _smooth_noise(xs, ys, 120.0, 23); m_ = nz_ > 0.5; xs, ys = xs[m_], ys[m_]; _pts.append((xs, ys, _rng.uniform(2.2, 3.4, xs.size), 2))
+    X = _vn.concatenate([p_[0] for p_ in _pts]); Y = _vn.concatenate([p_[1] for p_ in _pts]); SC = _vn.concatenate([p_[2] for p_ in _pts]); K = _vn.concatenate([_vn.full(p_[0].size, p_[3]) for p_ in _pts])
+    # anno di sparizione: cella urbanizzata (CELLMIN, 120 m) o terreno che diventa acqua (finestre di terra che finiscono)
+    VY = _vn.full(X.size, 99999.0)
+    if CELLMIN is not None:
+        kx = ((X - core.bounds[0]) // 120.0).astype(int); ky = ((Y - core.bounds[1]) // 120.0).astype(int)
+        VY = _vn.array([CELLMIN.get((int(a_), int(b_)), 99999) for a_, b_ in zip(kx, ky)], dtype=float)
+    for ph_ in _PH:
+        if ph_['from'] <= 1248 < ph_['to'] < 9000:
+            mm_ = _cxy(Polygon(ph_['r']).buffer(0), X, Y); VY[mm_] = _vn.minimum(VY[mm_], ph_['to'])
+    keep_ = VY > 1250; X, Y, SC, K, VY = X[keep_], Y[keep_], SC[keep_], K[keep_], VY[keep_]
+    # prototipo e materiale (tinta per istanza)
+    _pm = bpy.data.meshes.new('vegproto'); _bmp = bmesh.new(); bmesh.ops.create_icosphere(_bmp, subdivisions=2, radius=1.0); _bmp.to_mesh(_pm); _bmp.free(); _pm.shade_smooth()
+    _po = bpy.data.objects.new('vegproto', _pm); sc.collection.objects.link(_po); _po.hide_render = True; _po.hide_viewport = True; _po.scale = (1, 1, 0.85)
+    _vm = bpy.data.materials.new('veg'); _vm.use_nodes = True; _VN = _vm.node_tree.nodes; _VL = _vm.node_tree.links.new; _vb = _VN['Principled BSDF']; _vb.inputs['Roughness'].default_value = 0.9
+    _oi = _VN.new('ShaderNodeObjectInfo'); _vr_ = _VN.new('ShaderNodeValToRGB'); _VL(_oi.outputs['Random'], _vr_.inputs[0])
+    _VCOL = _VC.get('colors', ['#34431f', '#465530', '#5a6334', '#3d4a28'])
+    _vr_.color_ramp.elements[0].color = (*srgb(_VCOL[0]), 1); _vr_.color_ramp.elements[1].color = (*srgb(_VCOL[-1]), 1)
+    for i_, c_ in enumerate(_VCOL[1:-1]): _e = _vr_.color_ramp.elements.new((i_ + 1) / (len(_VCOL) - 1)); _e.color = (*srgb(c_), 1)
+    _VL(_vr_.outputs[0], _vb.inputs['Base Color']); _po.data.materials.append(hazeify(_vm))
+    # nodi: istanza dell'albero su ogni punto, scala dall'attributo 'sc', chioma sollevata di 0,9 x scala, rotazione casuale
+    vg_ = bpy.data.node_groups.new('veg', 'GeometryNodeTree')
+    vg_.interface.new_socket('Geometry', in_out='INPUT', socket_type='NodeSocketGeometry'); vg_.interface.new_socket('Geometry', in_out='OUTPUT', socket_type='NodeSocketGeometry')
+    GN_ = vg_.nodes; GL_ = vg_.links.new; gi_ = GN_.new('NodeGroupInput'); go_ = GN_.new('NodeGroupOutput')
+    m2p = GN_.new('GeometryNodeMeshToPoints'); GL_(gi_.outputs[0], m2p.inputs['Mesh'])
+    na_ = GN_.new('GeometryNodeInputNamedAttribute'); na_.data_type = 'FLOAT'; na_.inputs['Name'].default_value = 'sc'
+    off_ = GN_.new('ShaderNodeCombineXYZ'); mu_ = GN_.new('ShaderNodeMath'); mu_.operation = 'MULTIPLY'; mu_.inputs[1].default_value = 0.9; GL_(na_.outputs['Attribute'], mu_.inputs[0]); GL_(mu_.outputs[0], off_.inputs['Z'])
+    sp_ = GN_.new('GeometryNodeSetPosition'); GL_(m2p.outputs[0], sp_.inputs['Geometry']); GL_(off_.outputs[0], sp_.inputs['Offset'])
+    ob_ = GN_.new('GeometryNodeObjectInfo'); ob_.inputs['Object'].default_value = _po
+    rr_ = GN_.new('FunctionNodeRandomValue'); rr_.data_type = 'FLOAT_VECTOR'; rr_.inputs['Max'].default_value = (0, 0, 6.283)
+    ip_ = GN_.new('GeometryNodeInstanceOnPoints'); GL_(sp_.outputs[0], ip_.inputs['Points']); GL_(ob_.outputs['Geometry'], ip_.inputs['Instance'])
+    GL_(na_.outputs['Attribute'], ip_.inputs['Scale']); GL_(rr_.outputs['Value'], ip_.inputs['Rotation']); GL_(ip_.outputs[0], go_.inputs[0])
+    _bins = {}
+    for i_ in range(X.size): _bins.setdefault(int(VY[i_] // 4) if VY[i_] < 9000 else 99999, []).append(i_)
+    for k_, idx_ in _bins.items():
+        me_ = bpy.data.meshes.new(f'veg_{k_}'); ii_ = _vn.array(idx_)
+        me_.vertices.add(len(ii_)); co_ = _vn.zeros((len(ii_), 3)); co_[:, 0] = X[ii_]; co_[:, 1] = Y[ii_]; me_.vertices.foreach_set('co', co_.ravel())
+        me_.attributes.new('sc', 'FLOAT', 'POINT').data.foreach_set('value', SC[ii_]); me_.update()
+        o_ = bpy.data.objects.new(f'veg_{k_}', me_); sc.collection.objects.link(o_); o_.modifiers.new('veg', 'NODES').node_group = vg_
+        VIS.append((o_, 'vanish', k_ * 4 if k_ != 99999 else 99999))
+    log('vegetazione istanziata:', X.size, 'alberi (riva', int((K == 0).sum()), ', vega', int((K == 1).sum()), ', orti', int((K == 2).sum()), ') in', len(_bins), 'oggetti')
 # acqua: piccole onde in rilievo, riflessi
 bm = bmesh.new(); s = 400000
 WZ = float(CITY.get('water_z', -2))   # canali stretti: l'acqua riflette il sotto della terra (macchie nere) se e' troppo bassa
