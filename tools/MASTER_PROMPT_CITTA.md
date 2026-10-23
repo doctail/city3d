@@ -247,20 +247,19 @@ Regole CSV:
 
 ## 8. VALIDAZIONE BLOCCANTE — OBBLIGATORIA
 
-Prima di consegnare, esegui il validatore sulla cartella di validazione della città e incolla l'output completo nella risposta finale.
+Il validatore **non va eseguito nel proprio ambiente**. La validazione avviene automaticamente su GitHub tramite la GitHub Action «Controllo schede di validazione», che parte a ogni push nella cartella `<citta>/validazione/`.
 
-Comando obbligatorio:
-```bash
-python3 -I tools/check_scheda.py <citta>/validazione
-```
+Procedura obbligatoria dopo ogni push:
+1. Apri la scheda **Actions** del repository.
+2. Individua l'ultima esecuzione della workflow «Controllo schede di validazione» relativa al push appena effettuato.
+3. Apri l'esecuzione e verifica l'esito e il riepilogo.
+4. Se l'esito è rosso/fallito, leggi il riepilogo, correggi i problemi effettivamente segnalati nei file della città e fai un nuovo push.
+5. Ripeti il controllo dell'ultima esecuzione dopo ogni nuovo push.
+6. Consegna solo quando l'esecuzione relativa all'ultimo push è verde/superata.
 
-**Non consegnare finché `PROBLEMI` non è 0.** Se il controllo segnala problemi, leggi ogni errore, correggi la causa nei file sorgente, rigenera i file derivati e riesegui il comando fino a ottenere `PROBLEMI 0`.
+Non modificare né sostituire `tools/check_scheda.py`: esiste ed è gestito dalla regia. Se un controllo sembra sbagliato, non alterare il validatore; segnala il problema nella consegna.
 
-Non dichiarare il controllo superato senza avere realmente eseguito il comando e riportato il suo output. Non inventare l'output.
-
-tools/check_scheda.py esiste ed è gestito dalla regia. Non modificarlo né sostituirlo. Se un controllo ti sembra sbagliato, segnalalo nella consegna.
-
-Formato della consegna: incolla l'output reale completo del validatore, rispettando il formato effettivamente prodotto dallo script (riga `PROBLEMI N`).
+**La consegna deve includere il link diretto alla specifica esecuzione GitHub Actions** che conferma l'esito verde per l'ultimo push. Non basta il link generico alla pagina Actions e non dichiarare il controllo superato senza aver verificato l'esito reale. Se non riesci a trovare o leggere l'esecuzione, segnala il blocco e non consegnare il lavoro come completato.
 
 ## 9. CONTROLLI STORICI SPECIFICI DA NON PERDERE
 
