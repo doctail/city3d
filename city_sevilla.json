@@ -149,7 +149,8 @@
     "#b49b68",
     "#8f7a52"
    ]
-  }
+  },
+  "urban_phase": "#aaa396"
  },
  "hist": "hist_sevilla",
  "land_from_buildings": true,

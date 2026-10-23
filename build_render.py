@@ -597,7 +597,7 @@ if UG_FOOT:
     log('suolo urbano dalle impronte:', _ugi, 'triangoli in', len(UG), 'decenni')
 if _ph_items:
     # stessi materiali della terra di base (campi a toppe, tessuto urbano): una tinta piatta si vedeva come striscia dritta
-    _phm = {'field': land_mat('fields'), 'urban': land_mat('urban'),
+    _phm = {'field': land_mat('fields'), 'urban': (mat('ph_urban', srgb(ST['urban_phase']), 0.95) if ST.get('urban_phase') else land_mat('urban')),   # Siviglia: tinta unita (il mosaico a celle era per NYC)
             'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0), 'marsh': marsh_mat()}
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()

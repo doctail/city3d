@@ -363,7 +363,10 @@ def fix_icons(DATA):
     cat['lm'] = True; cat['wall'] = '#d9cba9'; cat['roof'] = '#bfb293'   # pietra, non la tavolozza casuale delle case
     # Torre Sevilla: nel Catasto 121,9 m (piani x 3,1 m); altezza vera ~180 m [L, Wikipedia]; anno del repo 2015 (scheda: NON VERIFICATO)
     for b in blds:
-        if b['y'] == 2015 and b['h'] > 100: print(f'[hist_sevilla] Torre Sevilla: {b["h"]} m -> 180 m', flush=True); b['h'] = 180.0
+        if b['y'] == 2015 and b['h'] > 100:   # nel Catasto e' un anello sottile (147 m2): impronta = inviluppo convesso (~45 x 22 m), cosi' vale la regola del vetro
+            hull_ = Polygon(b['r']).convex_hull
+            print(f'[hist_sevilla] Torre Sevilla: {b["h"]} m -> 180 m, impronta {Polygon(b["r"]).area:.0f} -> {hull_.area:.0f} m2', flush=True)
+            b['h'] = 180.0; b['r'] = [[round(x, 2), round(y, 2)] for x, y in list(hull_.exterior.coords)[:-1]]
     json.dump(blds, open(f'{DATA}/buildings.json', 'w'))
 
 def expo(DATA):
