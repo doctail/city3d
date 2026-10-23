@@ -1,70 +1,70 @@
 Durata 5:26.6  fotogrammi 7839  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 51
-Quota camera sopra il suolo: min 330 m, max 1000 m, mediana 528 m
-Velocita camera: mediana 78 m/s, max 284 m/s; rotazione sguardo mediana 2.2 gradi/s
-Prima fase di crescita vera (anno > 1300): 21.6 s
+Quota camera sopra il suolo: min 330 m, max 1000 m, mediana 518 m
+Velocita camera: mediana 78 m/s, max 284 m/s; rotazione sguardo mediana 1.9 gradi/s
+Prima fase di crescita vera (anno > 1300): 21.5 s
 
 SOSTE (video -> anni):
   0:09.5-0:16.5  1248->1250  Seville under Castile (1248)
-  0:31.3-0:36.3  1430->1437  The Great Mosque gives way to the Cathedral (1434)
-  0:50.6-0:55.1  1564->1571  The Giralda gets its Renaissance belfry (1568)
-  1:20.3-1:25.3  1758->1790  The Maestranza bullring rises (1761-1785)
-  1:39.9-1:44.4  1843->1852  Isabel II Bridge replaces the boat bridge (1845-1852)
-  2:01.3-2:06.3  1858->1874  The walls come down (1858-1873)
-  2:28.5-2:34.0  1912->1930  Plaza de España for the 1929 Expo (1914-1929)
-  3:02.1-3:07.6  1952->1966  A new district: Los Remedios
-  3:32.7-3:37.7  1975->1983  The river is moved west: Corta de la Cartuja (1975-1982)
-  3:59.0-4:04.5  1991->1993  Expo 92
-  4:40.6-4:45.6  2013->2019  A skyline at last
+  0:31.1-0:36.1  1430->1437  The Great Mosque gives way to the Cathedral (1434)
+  0:50.1-0:54.6  1564->1571  The Giralda gets its Renaissance belfry (1568)
+  1:19.4-1:24.4  1758->1790  The Maestranza bullring rises (1761-1785)
+  1:38.7-1:43.2  1843->1852  Isabel II Bridge replaces the boat bridge (1845-1852)
+  2:00.2-2:05.2  1858->1874  The walls come down (1858-1873)
+  2:27.3-2:32.8  1912->1930  Plaza de España for the 1929 Expo (1914-1929)
+  3:00.6-3:06.1  1952->1966  A new district: Los Remedios
+  3:19.2-3:24.2  1975->1983  The river is moved west: Corta de la Cartuja (1975-1982)
+  4:01.5-4:07.0  1991->1993  Expo 92
+  4:40.3-4:45.3  2014->2018  Torre Sevilla · 180 m · 2015
 
-DIDASCALIE: 28, distanza 10.0-13.9 s, a schermo 8.0-8.0 s, spostamento max 8.0 s; Subscribe a 165 s
+DIDASCALIE: 28, distanza 10.0-14.0 s, a schermo 8.0-8.0 s, spostamento max 7.1 s; Subscribe a 165 s
   0:12.7  23 Nov 1248  Ferdinand III takes Seville
-  0:25.6  1356         Earthquake
-  0:35.6  c. 1400      A Christian crown
-  0:45.6  1481         The Inquisition arrives
-  0:55.6  1568         A new top for the Giralda
-  1:05.6  c. 1600      Peak of the Golden Age
-  1:18.2  1728         Royal Tobacco Factory
-  1:30.2  1836         Disentailment
-  1:42.3  1848–1857    Plaza Nueva
-  1:52.3  23 Feb 1852  Isabel II Bridge opens
-  2:02.3  1858–1873    The walls come down
-  2:12.3  1877         134,000 people
-  2:22.3  1900         148,000 people
-  2:33.8  9 May 1929   Ibero-American Exposition
-  2:46.6  1940         312,000 people
-  2:56.6  1948–1950    Chapina is closed
-  3:06.6  1950s        Los Remedios
-  3:18.8  1970         548,000 people
-  3:32.7  1975–1982    Corta de la Cartuja
-  3:42.7  1981         654,000 people
-  3:52.7  1987–1992    Expo works
-  4:02.7  2 May 1991   Santa Justa station
-  4:13.0  1997         Isla Mágica
-  4:23.0  2001         684,000 people
-  4:33.0  2005–2011    Metropol Parasol
-  4:43.0  2011         Las Setas open
-  4:53.0  2025         Seville today
-  5:06.6  1248 → 2026  800 years of Seville
+  0:25.5  1356         Earthquake
+  0:39.5  1481         The Inquisition arrives
+  0:52.6  1568         A new top for the Giralda
+  1:02.6  c. 1600      Peak of the Golden Age
+  1:14.7  c. 1700      A shrinking city
+  1:26.3  1820         A market square
+  1:37.3  1842         100,000 people
+  1:47.3  1848–1857    Plaza Nueva
+  2:00.2  1858–1873    The walls come down
+  2:10.7  1881         Maestranza completed
+  2:20.7  1900         148,000 people
+  2:32.6  9 May 1929   Ibero-American Exposition
+  2:45.2  1940         312,000 people
+  2:55.2  1948–1950    Chapina is closed
+  3:05.2  1950s        Los Remedios
+  3:16.3  1973         Encarnación market demolished
+  3:26.3  1975–1982    Corta de la Cartuja
+  3:36.3  1980s        An empty riverbed
+  3:46.3  1987         Alamillo Bridge begun
+  3:56.3  1989         Expo works
+  4:06.3  2 May 1991   Santa Justa station
+  4:16.3  1997         Isla Mágica
+  4:26.3  2001         684,000 people
+  4:37.2  2011         Metropol Parasol
+  4:50.2  2025         Seville today
+  5:00.2  1992         Alamillo Bridge
+  5:10.6  1248 → 2026  800 years of Seville
 
 2:30-4:45: tratto piu lungo sopra 800 m = 0.0 s (limite 20 s)
 
 ANNO OGNI 20 s:
   0:00   2026.0  (0.00 anni/s)
-  0:20   1283.0  (9.02 anni/s)
-  0:40   1482.6  (6.37 anni/s)
-  1:00   1590.5  (3.37 anni/s)
-  1:20   1753.4  (14.09 anni/s)
-  1:40   1843.2  (1.71 anni/s)
-  2:00   1857.1  (0.67 anni/s)
-  2:20   1898.4  (0.95 anni/s)
-  2:40   1934.9  (0.94 anni/s)
-  3:00   1950.5  (0.69 anni/s)
-  3:20   1970.4  (0.36 anni/s)
-  3:40   1983.9  (0.38 anni/s)
-  4:00   1991.4  (0.36 anni/s)
-  4:20   2001.2  (0.53 anni/s)
-  4:40   2012.5  (0.87 anni/s)
+  0:20   1283.5  (9.35 anni/s)
+  0:40   1484.4  (6.20 anni/s)
+  1:00   1592.5  (3.38 anni/s)
+  1:20   1761.9  (6.40 anni/s)
+  1:40   1845.7  (2.11 anni/s)
+  2:00   1857.9  (1.01 anni/s)
+  2:20   1899.5  (0.96 anni/s)
+  2:40   1936.0  (0.89 anni/s)
+  3:00   1951.6  (0.69 anni/s)
+  3:20   1976.3  (1.60 anni/s)
+  3:40   1986.4  (0.21 anni/s)
+  4:00   1990.7  (0.21 anni/s)
+  4:20   2000.6  (0.59 anni/s)
+  4:40   2013.6  (1.13 anni/s)
   5:00   2026.0  (0.00 anni/s)
   5:20   2026.0  (0.00 anni/s)
 
-Velocita del tempo fuori dalle soste: mediana 0.86 anni/s, max 15.8 anni/s
+Velocita del tempo fuori dalle soste: mediana 0.88 anni/s, max 15.9 anni/s

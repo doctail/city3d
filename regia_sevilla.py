@@ -50,14 +50,14 @@ SOSTE = [
     (1858.0, 1874.0, 5.0, 'The walls come down (1858-1873)', (420, 1720, 0), 400, 196, 172),          # tratto della Macarena che resta
     (1912.0, 1930.0, 5.5, 'Plaza de España for the 1929 Expo (1914-1929)', (*PL_ESPANA, 10), 420, 238, 210),
     (1952.0, 1966.0, 5.5, 'A new district: Los Remedios', (-760, -1120, 0), 430, 222, 198),          # sul terreno di Tablada
-    (1975.0, 1983.0, 5.0, 'The river is moved west: Corta de la Cartuja (1975-1982)', (-1000, 1900, 0), 680, 206, 190),
+    (1975.0, 1983.0, 5.0, 'The river is moved west: Corta de la Cartuja (1975-1982)', (-700, 500, 0), 700, 182, 168, 15),   # canale nuovo e centro storico nello stesso campo (Fabio)
     (1991.0, 1993.0, 5.5, 'Expo 92', (-60, 2700, 20), 460, 142, 118),                               # Alamillo e Barqueta, Cartuja sullo sfondo
-    (2013.0, 2019.0, 5.0, 'A skyline at last', (-800, 660, 60), 480, 194, 182, 12),   # sguardo basso: Torre Sevilla e Metropol (1,7 km) nello stesso quadro                       # Metropol 2011 e Torre Sevilla
+    (2014.0, 2018.5, 5.0, 'Torre Sevilla · 180 m · 2015', (-1607, 565, 90), 420, 204, 178, 22),   # picchiata solo sulla torre (Fabio)
 ]
 STOP_SUB = {'Expo 92': '20 April – 12 October 1992'}
 SUBSCRIBE_T = 165.0
-CAPS_NIGHT = [(NIGHT_T + 4.0, '1992', 'Alamillo Bridge', "Calatrava's 142 m pylon holds the deck with no back stays."),
-              (NIGHT_T + 16.0, '1248 → 2026', '800 years of Seville', 'From Almohad city to Expo 92.')]   # pulsante Subscribe animato (Fabio: ~2:45)
+CAPS_NIGHT = [(NIGHT_T + 8.0, '1992', 'Alamillo Bridge', "Calatrava's 142 m pylon holds the deck with no back stays."),
+              (NIGHT_T + 20.0, '1248 → 2026', '800 years of Seville', 'From Almohad city to Expo 92.')]   # pulsante Subscribe animato (Fabio: ~2:45)
 # ---------- didascalie continue (separate dalle soste): (anno, data, titolo, una riga) — dalla scheda di validazione ----------
 #   una ogni 10-15 s per tutto il video, almeno 4 s a schermo; dove mancano eventi si usa la popolazione (scheda, sezione D)
 CAPS = [
@@ -105,15 +105,15 @@ CAPS = [
     (1975.0, '1975–1982', 'Corta de la Cartuja', 'The river is diverted west of La Cartuja against floods.'),
     (1981.0, '1981', '654,000 people', 'Thirty years of record growth.'),
     (1982.5, '1982', 'Capital of Andalusia', 'The new regional government sits in Seville.'),
-    (1987.0, '1987–1992', 'Expo works', 'New bridges and the Cartuja site take shape.'),
+    (1985.0, '1980s', 'An empty riverbed', 'The old Chapina arm lies dry, waiting for the Expo.'),
+    (1987.0, '1987', 'Alamillo Bridge begun', 'Works start on the first new bridge for the Expo.'),
+    (1989.0, '1989', 'Expo works', 'Barqueta Bridge and Santa Justa station are begun.'),
     (1991.33, '2 May 1991', 'Santa Justa station', 'The new railway station opens.'),
     (1992.3, '20 Apr 1992', 'Expo 92 opens', '20 April – 12 October 1992, on La Cartuja.'),
     (1992.3, 'Apr 1992', 'High-speed rail', 'The first AVE line links Seville to Madrid.'),
     (1997.5, '1997', 'Isla Mágica', 'A theme park opens on the old Expo grounds.'),
     (2001.0, '2001', '684,000 people', 'Growth moves to the suburbs.'),
-    (2005.0, '2005–2011', 'Metropol Parasol', 'A wooden canopy over the Encarnación square.'),
-    (2011.0, '2011', 'Las Setas open', 'The "mushrooms" become a city symbol.'),
-    (2015.0, '2015', 'Torre Sevilla', 'At ~180 m, the first skyscraper.'),
+    (2011.0, '2011', 'Metropol Parasol', '"Las Setas", a wooden canopy, opens over the Encarnación square.'),
     (2025.0, '2025', 'Seville today', '~690,000 people.'),
 ]
 
@@ -279,21 +279,24 @@ json.dump(dict(sched, years=[[0, 2026], [DUR, 2026]]), open('schedule_sevilla_ni
 soste_ev = [{'t_in': round(t0, 2), 't_out': round(t1, 2), 'title': s[3], 'sub': STOP_SUB.get(s[3], '')} for t0, t1, s in SOSTA_T]
 # didascalie: una ogni 10-15 s, almeno 4 s a schermo; si sceglie nel pool la piu' vicina al suo anno, spostandola al massimo 6 s
 pool = sorted([(t_of_year(y), d, ti, li) for y, d, ti, li in CAPS if t_of_year(y) is not None and t_of_year(y) < DUR - 6])
+def rate_at(t): return abs(year_at(t + 0.5) - year_at(t - 0.5))
+def maxlag(t): return 2.0 if rate_at(t) > 3.0 else 8.0
 caps = []; last = 10.5 - 10.0
 used = set()
 while True:
     lo_, hi_ = last + 10.0, last + 15.0
-    cand = [c for c in pool if c[2] not in used and lo_ - 10.0 <= c[0] <= hi_]
+    cand = [c for c in pool if c[2] not in used and lo_ - maxlag(c[0]) <= c[0] <= hi_]
     if not cand:
         nxt_ = [c for c in pool if c[2] not in used and c[0] > hi_]
         if not nxt_: break
         cand = [nxt_[0]]
     c = min(cand, key=lambda c: abs(max(c[0], lo_) - (lo_ + 2.0)))
     t_ = max(c[0], lo_ if caps else 10.5); used.add(c[2])
-    caps.append({'t_in': round(t_, 2), 'date': c[1], 'title': c[2], 'line': c[3], 'shift_s': round(t_ - c[0], 1)})
+    caps.append({'t_in': round(t_, 2), 'date': c[1], 'title': c[2], 'line': c[3], 'shift_s': round(t_ - c[0], 1), 'rate': round(rate_at(c[0]), 1)})
     last = t_
-for t_, d_, ti_, li_ in CAPS_NIGHT:
-    if t_ >= caps[-1]['t_in'] + 10: caps.append({'t_in': round(t_, 2), 'date': d_, 'title': ti_, 'line': li_, 'shift_s': 0.0})
+for t_, d_, ti_, li_ in CAPS_NIGHT:   # notte: anno fermo, una ogni 10-15 s dopo l'ultima
+    t_ = min(max(t_, caps[-1]['t_in'] + 10.0), caps[-1]['t_in'] + 13.0)
+    if t_ < DUR - 6: caps.append({'t_in': round(t_, 2), 'date': d_, 'title': ti_, 'line': li_, 'shift_s': 0.0, 'rate': 0.0})
 for i, c in enumerate(caps):
     c['t_out'] = round(min(caps[i + 1]['t_in'] - 0.5 if i + 1 < len(caps) else DUR, c['t_in'] + 8.0), 2)
 ev = {'soste': soste_ev, 'didascalie': caps, 'subscribe_t': SUBSCRIBE_T}
