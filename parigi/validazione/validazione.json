@@ -2364,6 +2364,17 @@
       "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
       "Note": "Date conventionnelle du premier franchissement retenue comme hypothèse; à vérifier sur la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G063",
+      "Elemento": "Pont Saint-Michel — primo attraversamento sul sito",
+      "Da (anno)": 1378,
+      "A (anno)": 1378,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Saint-Michel ; https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "Première phase de franchissement médiéval retenue comme hypothèse de travail; année à confirmer dans la fiche individuelle de la Nomenclature des voies."
     }
   ]
 }
