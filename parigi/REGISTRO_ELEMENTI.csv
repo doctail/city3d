@@ -1,0 +1,54 @@
+categoria,elemento,data_periodo,area,evidenza_e_rilevanza,fonte_id,stato_attuale,confidenza
+EDIFICI,Thermes de Cluny,I–III sec. d.C.,Quartiere latino,"Complesso termale romano, sopravvivenza parziale; relazione con topografia romana.",S05,Parzialmente superstite,alta
+EDIFICI,Arènes de Lutèce,I–II sec. d.C.,5e arrondissement,Anfiteatro romano; volume antico parzialmente conservato e riemerso nel tessuto moderno.,S05; S06,Parzialmente superstite,alta
+EDIFICI,Forum de Lutetia,Periodo romano,Montagne Sainte-Geneviève,Area del foro in corrispondenza della zona del Panthéon; ricostruzione archeologica.,S05,Non visibile integralmente,media
+EDIFICI,Aqueduc romain,Periodo romano,Verso Lutetia,Infrastruttura di approvvigionamento idrico romano; tracciato da ricostruire da dati archeologici.,S05,Tratti/strutture archeologiche,media
+EDIFICI,Théâtre antique,Periodo romano,Rive gauche,Edificio da ricostruzione archeologica della Lutetia romana.,S05,Scomparso/parzialmente noto,media
+EDIFICI,Notre-Dame de Paris,1163–XIII sec.; fasi successive,Île de la Cité,Costruzione medievale plurifase; restauro post-incendio 2019 e riapertura 2024 da rappresentare come fase moderna separata.,S34,"Esistente, restaurata",alta
+EDIFICI,Sainte-Chapelle,1248,Île de la Cité,Cappella palatina gotica; elemento del complesso reale medievale.,S33,Esistente,alta
+EDIFICI,Hôtel de Ville,Edificio medievale; ricostruito dopo 1871,4e arrondissement,Sede municipale; edificio precedente distrutto dagli incendi della Comune e ricostruito.,S25,Ricostruito,alta
+EDIFICI,Palais de Justice,Fasi medievali e ricostruzioni post-1871,Île de la Cité,Complesso pubblico con documentazione archivistica per le ricostruzioni successive al 1871.,S25,Fasi edilizie multiple,alta
+EDIFICI,Palais des Tuileries,XVI–XIX sec.; incendio 1871,Louvre/Tuileries,Palazzo bruciato nel 1871 e non ricostruito; footprint storico da includere nel layer degli edifici scomparsi.,S36,Demolito/scomparso,alta
+EDIFICI,Halles de Baltard,1850s–1870s; demolizione dal 1971,Les Halles,Padiglioni metallici demoliti dal 1971 per Forum des Halles/RER; documentazione fotografica disponibile.,S28; S29,"Demoliti, un padiglione ricollocato",alta
+EDIFICI,Pavillons de Ledoux — Barrière d'Enfer,1784–1790,Denfert-Rochereau,"Padiglioni dell'octroi superstiti, collegati al muro dei Fermiers généraux.",S14,Parzialmente superstiti,alta
+EDIFICI,Rotonde du Parc Monceau,1780s,Parc Monceau,"Padiglione della barriera fiscale, sopravvissuto alla demolizione del muro.",S14,Esistente,alta
+EDIFICI,Pavillons/Rotonde de la Villette,1780s,La Villette,Strutture dell'octroi superstiti legate alla cinta fiscale.,S14,Esistente,alta
+EDIFICI,Bastion n°1 de l'enceinte de Thiers,1841–1844,Porte de Bercy,Raro resto conservato delle fortificazioni esterne; iscrizione come monumento storico nel 1970.,S14,Residuo superstite,alta
+PONTI,Petit Pont,Epoca romana; ricostruzioni successive,Île de la Cité–rive gauche,Attraversamento storico; la cronologia del ponte attuale non coincide con quella dell'attraversamento antico.,S12,Ricostruito più volte,media
+PONTI,Grand Pont / Pont au Change,Medioevo; ricostruzione 1856–1860,Île de la Cité–rive droite,Asse storico di attraversamento; ponti medievali ospitavano case e attività commerciali.,S12; S13,Ricostruito,alta
+PONTI,Pont Neuf,1578–1607,Punta Île de la Cité,Ponte in pietra senza case; 233 m riportati nel database delle vie.,S12; S13,Esistente,alta
+PONTI,Pont Marie,XVII sec.,Île Saint-Louis,Ponte legato all'urbanizzazione dell'Île Saint-Louis.,S12,"Esistente, restauri",alta
+PONTI,Pont Saint-Michel,1387 prima versione; 1857 ponte attuale,Île de la Cité–rive gauche,"Sequenza di ponti in legno con case, poi pietra 1618–1624, infine struttura del 1857.",S13,Sostituito più volte,alta
+PONTI,Pont au Double,1883,Vicino a Notre-Dame,Ponte che collega la riva all'Île de la Cité; da verificare la sequenza di strutture precedenti.,S14,Esistente,media
+PONTI,Pont Alexandre III,1896–1900,Invalides–Champs-Élysées,Ponte monumentale realizzato in vista dell'Esposizione universale del 1900.,S12,Esistente,alta
+PONTI,Pont d'Iéna,1808–1814,Trocadéro–Tour Eiffel,Attraversamento monumentale legato al sistema degli assi verso il Champ-de-Mars.,S11; S12,Esistente,alta
+PONTI,Pont de Bir-Hakeim,1905 (struttura attuale),15e–16e,"Ponte a più livelli per traffico, pedoni e metropolitana.",S12,Esistente,alta
+IDROGRAFIA,Senna — alveo principale,Neolitico medio–oggi,Bercy–Grenelle e ansa urbana,"Tracciato principale simile all'attuale, con variazioni antiche; non appiattire rive storiche e argini moderni in un unico layer.",S08,"Attiva, fortemente artificializzata",media
+IDROGRAFIA,Braccio secondario sotto boulevard Saint-Germain,Periodo gallo-romano,Rive gauche,Antico ramo della Senna oggi scomparso sotto l'urbanizzazione; ricostruibile in forma interpretativa.,S08,Coperto/scomparso,media
+IDROGRAFIA,Antico ramo nord della Senna,Fasi antiche,Rive droite,Traccia approssimativamente coerente con grandi boulevard sulla riva destra e con il comportamento dell'alluvione del 1910.,S08; S27,Paleoalveo ipotizzato,media
+IDROGRAFIA,Bièvre,Antichità–1912 nel paesaggio urbano; coperture fino al 1935,13e e 5e,"Fiume di 36 km, circa 5 km nel territorio parigino; due rami in parti del tracciato dal XVII sec.; canalizzata e coperta progressivamente.",S09; S10,Coperta/scomparsa in superficie,alta
+IDROGRAFIA,Canal Saint-Martin,1802–1825,Nord-est parigino,"Canale artificiale, navigazione e approvvigionamento idrico; ponti fissi, girevoli e passerelle.",S26,Esistente,alta
+TOPOGRAFIA,Buttes-Chaumont,Prima: cave di gesso; 1864–1867: parco,19e arrondissement,Rimodellamento di un paesaggio di cava; parco di 25 ha inaugurato nel 1867.,S21,Topografia antropizzata,alta
+TOPOGRAFIA,Île de la Cité,Antichità–oggi,Centro storico,"Geometria dell'isola e delle rive mutata da ponti, banchine, opere fluviali e riempimenti; separare forma antica da riva moderna.",S08; S11,Trasformata,media
+TOPOGRAFIA,Pianura alluvionale della Senna,Preistoria–oggi,Aree basse lungo la Senna,Prati allagabili e zone paludose precedevano banchine e margini cementificati; l'urbanizzazione ha alterato la relazione col fiume.,S08,Trasformata,media
+MURA,Cinta romana/tardo-romana,I–IV sec.,Île de la Cité,Tratti e fondazioni conservati; materiali riutilizzati da monumenti precedenti.,S05; S09,Resti archeologici,alta
+MURA,Cinta di Philippe Auguste,1190–1209,Rive droite e rive gauche,"Circa 5,1 km e torri regolari; resti visibili in più punti del Marais.",S15,Resti parziali,alta
+MURA,Cinta di Charles V/Charles VI,1356–1383,Margine urbano medievale,Espansione della cinta sul lato orientale e settentrionale; il tracciato è leggibile nella trama dei boulevard.,S14,Demolita/incorporata nella trama,media
+MURA,Muro dei Fermiers généraux,1784–1790; demolizione 1860,Confine pre-Haussmann,Muro fiscale lungo 24 km con circa 50 barriere; quattro complessi sopravvissuti.,S14,In gran parte demolito,alta
+MURA,Enceinte de Thiers,1841–1844; demolizione 1919–1929,Margine di Parigi,"Circa 33 km, 94 bastioni; sedime in parte riusato da boulevard, verde e périphérique.",S14,"Demolita, traccia urbana persistente",alta
+VERDE,Parc Monceau,Rimodellato XIX sec.,8e arrondissement,Parco nel sistema del verde ottocentesco; include una rotonda dell'octroi preesistente.,S20; S14,Verde attuale con stratificazioni,alta
+VERDE,Bois de Boulogne,1855–1860 trasformazione paesaggistica,Ovest di Parigi,Bosco trasformato in parco paesaggistico; laghi e percorsi rimodellati.,S20,"Verde attuale, forma storicizzata",alta
+VERDE,Bois de Vincennes,1860–1865 trasformazione paesaggistica,Est di Parigi,Grande area verde nel sistema imperiale; va distinta la foresta preesistente dagli interventi paesaggistici.,S20,"Verde attuale, forma storicizzata",alta
+VERDE,Parc des Buttes-Chaumont,1864–1867,19e arrondissement,"Ex cava/terreno di scarto convertito in parco; trasformazione forte di altimetria, acqua e vegetazione.",S21,"Verde attuale, topografia artificiale",alta
+VERDE,Parc Montsouris,XIX sec.,14e arrondissement,Parco del sistema Alphand; lotti e paesaggio preesistenti da confrontare con mappe pre-1860.,S20,Verde attuale,alta
+VERDE,Squares haussmanniens,Dal 1854,Vari arrondissement,Rete di piccoli giardini di prossimità associata a boulevard e viali alberati.,S17; S20,"Molti esistenti, cronologia individuale da documentare",alta
+VERDE,Alberature stradali,XIX sec.–oggi,Boulevard e avenues,La Ville de Paris riporta crescita da 50.466 a 95.577 alberi sotto Haussmann; prevalenza successiva di platani e ippocastani; olmi ridotti dalla grafiosi.,S17,Layer storico aggregato + censimento attuale incompleto,alta
+VERDE,Inventario alberi comunali,Dataset contemporaneo,Parigi,"Include parte degli alberi di filari, giardini e attrezzature comunali; esclude privati, boschi e gruppi arborei; aggiornamento non in tempo reale.",S18,Copertura attuale parziale,alta
+VERDE,Spazi verdi e assimilati,Dataset contemporaneo,Parigi,"Dataset con 2.537 record nella pagina consultata, categorie miste: parchi, giardini, cimiteri, promenades, vegetazione stradale e altro.",S19,Copertura attuale categoriale,alta
+INFRASTRUTTURE,Métro ligne 1,1898–1900,Da Porte Maillot verso est,Prima linea inaugurata nel 1900; infrastruttura sotterranea che non appare nei soli modelli di edifici in superficie.,S30,"Attiva, evoluta",alta
+INFRASTRUTTURE,Petite Ceinture,XIX sec.; passeggeri quasi cessati 1934,Perimetro urbano,Ferrovia anulare; nel 1900 39 milioni di passeggeri secondo la Ville de Paris; riuso parziale per RER C nel 1988.,S31,Riusata/in parte dismessa,alta
+INFRASTRUTTURE,Boulevard périphérique,1956–1973,Confine amministrativo attuale,"35,04 km; in parte sul tracciato delle fortificazioni di Thiers.",S35,Attivo,alta
+TRASFORMAZIONI,Haussmannizzazione,1853–1870,Centro e assi radiali,"Nuove strade, allargamenti, demolizioni, nuove facciate e infrastrutture; stima comunale circa 25.000 case demolite in dieci anni.",S16,Trasformazione massiva,alta
+TRASFORMAZIONI,Parvis Notre-Dame,1877 configurazione moderna,Île de la Cité,Piazza rimodellata nell'ambito della ricostruzione/nuovo Hôtel-Dieu; la morfologia precedente va ricostruita da mappe e archeologia.,S33,Riallineata,alta
+TRASFORMAZIONI,Halles Baltard → Forum des Halles,Dal 1971,Les Halles,Demolizione dei padiglioni e sostituzione con un complesso urbano e infrastruttura RER.,S28; S29,Demolizione/sostituzione,alta
+TRASFORMAZIONI,Incendi della Comune,1871,Tuileries e vari edifici pubblici,"Distruzioni per incendio; alcuni edifici ricostruiti, altri scomparsi; distinguere edificio storico, ricostruzione e vuoto attuale.",S25; S36,Distruzione e ricostruzione,alta
