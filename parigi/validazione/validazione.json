@@ -112,17 +112,6 @@
       "Note": "La fonte riporta: «le canal Saint-Martin en 1825»."
     },
     {
-      "ID": "A008",
-      "Elemento": "Île Louviers: braccio fluviale sostituito dal boulevard Morland",
-      "Da (anno)": 1843,
-      "A (anno)": 1843,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/le-pont-de-la-tournelle-l-ile-saint-louis-l-ile-louviers",
-      "Note": "La fonte riporta che il braccio «fut comblé en 1843» e che occupava il sito dell’attuale boulevard Morland."
-    },
-    {
       "ID": "A009",
       "Elemento": "Bièvre: copertura progressiva nel territorio parigino",
       "Da (anno)": 1912,
@@ -444,17 +433,6 @@
       "Affidabilità": "media",
       "Fonte": "https://fr.wikipedia.org/wiki/Rue_des_%C3%89coles",
       "Note": "Taglio sulla rive gauche."
-    },
-    {
-      "ID": "C011",
-      "Elemento": "Avenue de l’Opéra: demolizioni e apertura del cono visivo",
-      "Da (anno)": 1864,
-      "A (anno)": 1879,
-      "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "media",
-      "Fonte": "https://fr.wikipedia.org/wiki/Avenue_de_l%27Op%C3%A9ra",
-      "Note": "Riga separata solo per l’asse; non duplicare l’evento nella sezione E."
     },
     {
       "ID": "C012",
@@ -1539,39 +1517,39 @@
     },
     {
       "ID": "F002",
-      "Da (anno)": 1802,
-      "A (anno)": 1802,
+      "Da (anno)": 1848,
+      "A (anno)": 1848,
       "Uso nel modello": "BRUSCO",
-      "Evento": "Lancement des canaux parisiens",
-      "Changement urbain": "Décision et lancement du système hydraulique et de navigation Ourcq–Saint-Martin–Saint-Denis.",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
-      "Note": "La fonte indica «Les travaux débutent le 23 septembre 1802»."
+      "Evento": "Révolution de février 1848",
+      "Changement urbain": "Changement de régime et mobilisation de l’espace public; aucun changement permanent de géométrie à inférer sans fait matériel spécifique.",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://fr.wikipedia.org/wiki/R%C3%A9volution_fran%C3%A7aise_de_1848",
+      "Note": "Cartel historique seulement."
     },
     {
       "ID": "F003",
-      "Da (anno)": 1843,
-      "A (anno)": 1843,
+      "Da (anno)": 1900,
+      "A (anno)": 1900,
       "Uso nel modello": "BRUSCO",
-      "Evento": "Rattachement de l’île Louviers",
-      "Changement urbain": "Comblement du bras du Mail; l’ancien bras devient le boulevard Morland.",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/l-ile-louviers-et-la-pointe-de-l-ile-saint-louis-vues-du-port-saint-paul",
-      "Note": "La source nomme explicitement 1843."
+      "Evento": "Ouverture du premier tronçon du métro de Paris",
+      "Changement urbain": "Apparition d’un nouveau réseau de transport souterrain; ne pas représenter les tunnels comme bâtiments de surface.",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://www.ratp.fr/decouvrir/coulisses/histoire",
+      "Note": "Événement d’infrastructure, distinct des bâtiments et espaces enregistrés en A–E."
     },
     {
       "ID": "F004",
-      "Da (anno)": 1860,
-      "A (anno)": 1860,
+      "Da (anno)": 1853,
+      "A (anno)": 1853,
       "Uso nel modello": "BRUSCO",
-      "Evento": "Annexion des communes suburbaines",
-      "Changement urbain": "Paris adopte les limites élargies et passe de 12 à 20 arrondissements.",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.observatoire-des-territoires.gouv.fr/kiosque/2021-2022-rapport-cahier-1-demo-chap-01-04-levolution-demographique-de-la-ville-de-paris",
-      "Note": "La fonte riporta l’annessione «en 1860» e il passaggio da «12» a «20» arrondissements."
+      "Evento": "Lancement des grands travaux haussmanniens",
+      "Changement urbain": "Début d’un programme coordonné d’axes, d’alignements, de réseaux et de démolitions; les axes sont individualisés dans C.",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Transformations_de_Paris_sous_le_second_Empire",
+      "Note": "Cartel de contexte; ne remplace pas les lignes séparées pour chaque axe."
     },
     {
       "ID": "F005",
@@ -1587,15 +1565,15 @@
     },
     {
       "ID": "F006",
-      "Da (anno)": 1889,
-      "A (anno)": 1889,
+      "Da (anno)": 1900,
+      "A (anno)": 1900,
       "Uso nel modello": "BRUSCO",
-      "Evento": "Exposition universelle de Paris",
-      "Changement urbain": "Événement international qui marque la capitale; ne pas créer de volume temporaire sans objet documenté.",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/souvenir-d-une-ascension-au-sommet-de-la-tour-eiffel-1889-0",
-      "Note": "La source indique l’inauguration de la Tour Eiffel le 6 mai 1889."
+      "Evento": "Exposition universelle de 1900",
+      "Changement urbain": "Mise en service et visibilité de nouveaux équipements et infrastructures; les phases des bâtiments sont décrites séparément en E.",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://fr.wikipedia.org/wiki/Exposition_universelle_de_1900",
+      "Note": "Cartel de contexte urbain, distinct de la seule construction du Grand Palais."
     },
     {
       "ID": "F007",
@@ -1649,13 +1627,13 @@
       "ID": "F011",
       "Da (anno)": 2024,
       "A (anno)": 2024,
-      "Uso nel modello": "BRUSCO",
-      "Evento": "Réouverture de Notre-Dame de Paris",
-      "Changement urbain": "Restauration rendant le monument de nouveau accessible; géométrie traitée dans E, sans dupliquer les phases.",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
-      "Note": "La source indique la réouverture officielle les 7 et 8 décembre 2024."
+      "Uso nel modello": "TEMPORANEO",
+      "Evento": "Jeux olympiques et paralympiques de Paris 2024",
+      "Changement urbain": "Installations sportives, zones de circulation et aménagements temporaires; les retirer après l’événement.",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "media",
+      "Fonte": "https://www.paris.fr/pages/paris-2024-les-jeux-olympiques-et-paralympiques-231",
+      "Note": "N’inclure que les installations documentées et temporaires."
     }
   ]
 }
