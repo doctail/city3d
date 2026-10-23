@@ -1,0 +1,44 @@
+periodo,data_intervallo,area,evento_o_trasformazione,stato_evidenza,fonte_id,confidenza
+preistoria,Neolitico medio,Senna,Alveo principale probabilmente vicino al corso moderno; variazioni presso Bercy e Grenelle; bracci secondari successivamente sepolti.,Ricostruzione geomorfologica,S08,media
+età del Ferro,prima della conquista romana,Île de la Cité / Hôtel-Dieu,"Muro in pietra e legno scoperto nel 2026, attribuzione preliminare a fortificazione gallica; datazione/funzione ancora da verificare.",Ritrovamento recente; interpretazione non definitiva,S07,media
+52 a.C.,tradizione storico-divulgativa,Île de la Cité e attraversamenti,Tradizione di Petit Pont e Grand Pont; le fasi materiali dei ponti antichi richiedono distinguere fonte divulgativa e prova archeologica.,Data tradizionale; non trattare come edificio superstite,S12,bassa
+I–III secolo d.C.,periodo gallo-romano,Lutetia / Rive gauche,"Sviluppo della città romana con foro, terme, anfiteatro, teatro, acquedotto e assi stradali; alcune strutture sopravvivono solo in parte o sono scomparse.",Archeologia e ricostruzione,S05; S06,alta
+I–III secolo d.C.,periodo gallo-romano,Senna e Île de la Cité,Riva romana e infrastrutture portuali; i livelli antichi si trovano sotto la città moderna.,Archeologia,S08,media
+IV secolo,circa 308–360,Île de la Cité,Costruzione della cinta tardo-romana; reimpiego di materiali da edifici precedenti; tratti conservati nella cripta archeologica.,Resti archeologici,S05,alta
+886–887,assedio vichingo,Cinta romana,Restauro/riutilizzo difensivo di tratti della cinta tardo-romana durante l'assedio.,Ricostruzione storica,S09,media
+1190–1209,regno di Philippe Auguste,Rive destra e sinistra,"Cinta di circa 5,1 km, alta circa 9 m secondo la fonte comunale, con torri a intervalli di circa 60 m.",Resti frammentari e ricostruzione del tracciato,S15,alta
+1356–1383,guerra dei Cent'anni,Perimetro urbano,Cinta di Charles V/Charles VI espande la protezione della città; tracce incorporate nei quartieri successivi.,Ricostruzione cartografica,S14,alta
+1566,guerre di religione,Parigi,Rafforzamento delle fortificazioni; successive cinte di Charles IX e Louis XIII.,Ricostruzione cartografica,S14,media
+1578–1607,regni di Henri III e Henri IV,Pont-Neuf,Costruzione del ponte in pietra senza abitazioni sul ponte; collega le due rive attraverso la punta dell'Île de la Cité.,Opera esistente; restauri successivi,S12; S13,alta
+1670–1674,Louis XIV,Grands Boulevards / Porte Saint-Denis / Porte Saint-Martin,Demolizione di parti delle fortificazioni medievali e creazione di passeggiate; porte monumentali costruite nel 1672 e 1674.,Cambio del bordo urbano,S14,alta
+1734–1739,XVIII secolo,Parigi intra-muros,"Plan de Turgot: rappresentazione prospettica dettagliata della città, utile come base visiva preindustriale.",Cartografia storica,S32,alta
+1784–1790,Ancien Régime,Muro dei Fermiers généraux,Muro fiscale di circa 24 km con una cinquantina di barriere; quattro gruppi di strutture principali sopravvivono in parte.,Tracciato da georeferenziare; molte strutture demolite,S14,alta
+1802–1825,Primo Ottocento,Canal Saint-Martin,Scavo iniziato nel 1802; inaugurazione nel dicembre 1825; rete idraulica artificiale per approvvigionamento e navigazione.,Infrastruttura ancora leggibile,S26,alta
+1808–1825,Primo Ottocento,Comuni poi annesse,"Catasto napoleonico delle comuni annesse, utile per edificato e lotti extra-muros prima del 1860.",Serie cartografica primaria,S01; S02,alta
+1810–1836,Primo Ottocento,Parigi pre-1860,Atlas Vasserot per isolati; piante a livello del suolo e informazioni di particella per ricostruire l'edificato.,Serie primaria; copertura da verificare foglio per foglio,S01; S04,alta
+1828,XIX secolo,Bièvre,Inizio dei lavori di canalizzazione e risanamento della Bièvre nel territorio urbano.,Corso d'acqua modificato,S09; S10,alta
+1830–1850,XIX secolo,Rive droite e comuni limitrofe,Aggiornamento Vasserot-Bellanger per la rive droite; catasti delle comuni annesse rivisti.,Serie cartografica primaria,S01,alta
+1841–1844,Monarchia di luglio,Margine di Parigi,Costruzione dell'enceinte de Thiers: circa 33 km e 94 bastioni secondo fonti comunali; fortificazione poi demolita.,Terrapieni e allineamenti in parte riusati,S14,alta
+1853–1870,Secondo Impero,Intera città,"Trasformazioni haussmanniane: circa 64 km di nuove strade e 25.000 case demolite in dieci anni secondo la fonte comunale; assi, fognature e allineamenti ridefiniscono il tessuto.",Demolizione e ricostruzione massiva,S16,alta
+1854,Secondo Impero,Sistema del verde,"Creazione del servizio Promenades et Plantations e programma di squares, parchi e viali alberati.",Cambio di copertura del suolo,S20; S17,alta
+1855–1860,Secondo Impero,Bois de Boulogne,Trasformazione del bosco in grande parco paesaggistico.,Trasformazione del verde,S20,alta
+1860,Secondo Impero,Confine amministrativo,Annessione di comuni limitrofe; passaggio da 12 a 20 arrondissement e ampliamento del perimetro di Parigi.,Cambio amministrativo e cartografico,S01,alta
+1860–1865,Secondo Impero,Bois de Vincennes,Trasformazione in parco e area ricreativa nel quadro del sistema del verde metropolitano.,Trasformazione del verde,S20,alta
+1864–1867,Secondo Impero,Buttes-Chaumont,Cava di gesso e terreno degradato trasformati in parco paesaggistico di 25 ha; inaugurazione 1 aprile 1867.,Profonda modifica di topografia e vegetazione,S21,alta
+1867,Secondo Impero,Alberi stradali e parchi,"Programma di alberature, squares e viali: totale alberi riportato dalla Ville de Paris cresce da 50.466 a 95.577 sotto Haussmann.",Serie storica aggregata,S17,alta
+1871,Comune di Parigi,"Tuileries, Hôtel de Ville, Palais de Justice e altri siti","Incendi e distruzioni; alcuni edifici pubblici ricostruiti, il palazzo delle Tuileries non ricostruito.",Edifici perduti e ricostruzioni,S25; S36,alta
+1877,Terzo Repubblica,Parvis Notre-Dame,Configurazione moderna del parvis legata ai lavori del nuovo Hôtel-Dieu; la piazza precedente aveva dimensioni e forma diverse.,Demolizione/riallineamento,S33,alta
+1878,Terza Repubblica,Trocadéro,Giardini e spazi paesaggistici legati all'Esposizione universale.,Trasformazione paesaggistica,S20,media
+1898–1900,Terza Repubblica,Metropolitana,Lavori iniziano il 4 ottobre 1898; linea 1 inaugurata nel luglio 1900; passeggeri dal 19 luglio.,Infrastruttura sotterranea,S30,alta
+1900,Esposizione universale,Senna,"Ponti, infrastrutture e allestimenti connessi all'Esposizione; Pont Alexandre III è uno degli elementi iconici del periodo.",Nuove infrastrutture e paesaggio,S12,alta
+1910,Terza Repubblica,Senna e aree basse,"Piena con livello di 8,62 m ad Austerlitz; documenta aree inondabili e possibili tracciati di paleoalvei.",Evento idrologico,S27; S08,alta
+1912,Primo Novecento,Bièvre,La Bièvre scompare dal paesaggio stradale parigino per copertura e canalizzazione; lavori esterni proseguono fino al 1935.,Fiume coperto,S09; S10,alta
+1919–1929,Dopoguerra,Ex enceinte de Thiers,"Demolizione della fortificazione; su parti del sedime vengono poi realizzati boulevard, attrezzature e spazi marginali.",Scomparsa di mura/terrapieni,S14,alta
+1934,Tra le guerre,Petite Ceinture,Sospensione in gran parte del servizio passeggeri; infrastruttura ferroviaria permane e viene riutilizzata in parte.,Cambio d'uso,S31,alta
+1937–2002,XX secolo,Parigi,Atlanti municipali e cartografia catastale/amministrativa disponibili per confronti a più date.,Serie cartografica,S02,alta
+1956–1973,Secondo Novecento,Periferico,"Costruzione del boulevard périphérique per 35,04 km, con tracciato che segue in parte la vecchia enceinte de Thiers.",Infrastruttura e barriera urbana,S35,alta
+1971,Secondo Novecento,Halles,Demolizione dei padiglioni Baltard per il progetto Forum des Halles e RER; uno dei padiglioni ricostruito a Nogent-sur-Marne.,Demolizione documentata fotograficamente,S28; S29,alta
+1980,Fine XX secolo,Verde urbano,"Istituzione del servizio municipale dedicato a parchi, giardini e spazi verdi nella forma amministrativa citata dalla Ville de Paris.",Governance del verde,S20,alta
+1988,Fine XX secolo,Petite Ceinture,Parte dell'infrastruttura viene riutilizzata per il RER C.,Riuso infrastrutturale,S31,alta
+2024,XXI secolo,Notre-Dame,Riapertura dopo l'incendio del 2019; la ricostruzione moderna va tenuta distinta dalla cronologia edilizia medievale.,Restauro e ricostruzione contemporanea,S34,alta
+2026,XXI secolo,Hôtel-Dieu / Île de la Cité,Scavo porta alla luce un muro di pietra e legno forse legato a una fortificazione gallica; interpretazione preliminare al 23 settembre 2026.,Scoperta archeologica da seguire,S07,media
