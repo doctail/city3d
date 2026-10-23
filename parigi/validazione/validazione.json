@@ -18,7 +18,7 @@
     },
     {
       "elemento": "Ponts médiévaux",
-      "stato": "En 1190, retenir le Grand-Pont (sur le site du futur Pont au Change) et le Petit-Pont. Le Pont Notre-Dame maçonné avec ses rangées de maisons est une phase du début du XVIe siècle (1510–1512), pas un ouvrage à placer dans l’état initial."
+      "stato": "En 1190, retenir le Grand-Pont (sur le site du futur Pont au Change) et le Petit-Pont, franchissement d’origine antique. Les autres ponts et reconstructions postérieurs sont datés dans la section G; le Pont Notre-Dame avec maisons est une phase du début du XVIe siècle (1510–1512), pas un ouvrage à placer dans l’état initial."
     },
     {
       "elemento": "Enceinte de Philippe Auguste",
@@ -95,10 +95,10 @@
       "Da (anno)": 1802,
       "A (anno)": 1822,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492",
-      "Note": "La source donne la phrase complète : «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard.» 1802 est le début du creusement; le canal est inauguré en décembre 1825 (ligne A007)."
+      "Motivo": "CONFLITTO",
+      "Affidabilità": "media",
+      "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492 ; https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+      "Note": "CONFLITTO tra cronologie istituzionali: la Ville de Paris scrive «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard»; la mairie du 10e indica «Le 3 mai 1822, la première pierre est posée». Il 19 maggio 1802 è anche la data della legge/progetto; inaugurazione nel 1825. Non assimilare automaticamente avvio del progetto e inizio effettivo del cantiere."
     },
     {
       "ID": "A007",
@@ -108,8 +108,8 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492",
-      "Note": "La Ville de Paris indique une inauguration en décembre 1825, distincte de la fin du creusement en 1822."
+      "Fonte": "https://www.paris.fr/pages/le-canal-saint-martin-fete-ses-200-ans-32285",
+      "Note": "La Ville de Paris indica: «Charles X inaugure le canal Saint-Martin, le 4 novembre 1825». È la data d’inaugurazione, distinta dalla posa della prima pietra nel 1822."
     },
     {
       "ID": "A009",
@@ -251,10 +251,10 @@
       "Da (anno)": 1670,
       "A (anno)": 1700,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
-      "Note": "La Ville de Paris indique que les deux enceintes les plus tardives sont rasées sous Louis XIV pour laisser place aux grands boulevards; 1670 est le début documenté de cette phase, 1700 borne opérationnelle."
+      "Note": "La Ville de Paris indique que les deux enceintes les plus tardives sont rasées sous Louis XIV pour laisser place aux grands boulevards; 1670 est le début documenté de cette phase, 1700 borne opérationnelle. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "B007",
@@ -306,10 +306,10 @@
       "Da (anno)": 1860,
       "A (anno)": 1860,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.observatoire-des-territoires.gouv.fr/kiosque/2021-2022-rapport-cahier-1-demo-chap-01-04-levolution-demographique-de-la-ville-de-paris",
-      "Note": "La fonte riporta che nel 1860 i limiti furono ampliati e gli arrondissement passarono da 12 a 20."
+      "Note": "La fonte riporta che nel 1860 i limiti furono ampliati e gli arrondissement passarono da 12 a 20. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "B012",
@@ -352,10 +352,10 @@
       "Da (anno)": 1802,
       "A (anno)": 1835,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://cdn.paris.fr/paris/2020/02/26/2036630923f689f0c704a7d9522c82a9.pdf",
-      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon."
+      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "C002",
@@ -363,10 +363,10 @@
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://cdn.paris.fr/paris/2020/02/26/2036630923f689f0c704a7d9522c82a9.pdf",
-      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon."
+      "Note": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "C003",
@@ -1250,10 +1250,10 @@
       "Da (anno)": 1546,
       "A (anno)": 1670,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
-      "Note": "La source officielle précise que l’agrandissement devient la Cour Carrée et qu’il est réalisé par les successeurs d’Henri IV; 1670 est une borne de modélisation du grand chantier classique."
+      "Note": "La source officielle précise que l’agrandissement devient la Cour Carrée et qu’il est réalisé par les successeurs d’Henri IV; 1670 est une borne de modélisation du grand chantier classique. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "E004",
@@ -1382,10 +1382,10 @@
       "Da (anno)": 1971,
       "A (anno)": 1977,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.centrepompidou.fr/fr/le-centre-pompidou/histoire-du-centre-pompidou",
-      "Note": "La notice officielle retrace l’histoire du Centre Pompidou, ouvert en 1977."
+      "Note": "La notice officielle retrace l’histoire du Centre Pompidou, ouvert en 1977. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "E016",
@@ -1404,10 +1404,10 @@
       "Da (anno)": 1985,
       "A (anno)": 1989,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.louvre.fr/decouvrir/le-palais/la-pyramide-du-louvre",
-      "Note": "Phase contemporaine distincte du palais historique; ouverture au public en 1989."
+      "Note": "Phase contemporaine distincte du palais historique; ouverture au public en 1989. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "E018",
@@ -1415,10 +1415,10 @@
       "Da (anno)": 1897,
       "A (anno)": 1900,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.grandpalais.fr/fr/histoire-du-grand-palais",
-      "Note": "Notice officielle du Grand Palais; phase de construction pour l’Exposition universelle de 1900."
+      "Note": "Notice officielle du Grand Palais; phase de construction pour l’Exposition universelle de 1900. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "E019",
@@ -1503,10 +1503,10 @@
       "Da (anno)": 1871,
       "A (anno)": 1871,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
-      "Note": "L’Hôtel de Ville Renaissance est incendié en 1871 pendant la Commune."
+      "Note": "L’Hôtel de Ville Renaissance est incendié en 1871 pendant la Commune. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "E027",
@@ -1591,21 +1591,21 @@
       "Da (anno)": 1667,
       "A (anno)": 1674,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
-      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
-      "Note": "Phase de la colonnade classique de la façade orientale; bornes de chantier à confirmer dans la notice architecturale détaillée."
-    },
-    {
-      "ID": "E035",
-      "Elemento": "Musée du Louvre — aile nord le long de la rue de Rivoli",
-      "Da (anno)": 1659,
-      "A (anno)": 1664,
-      "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
-      "Note": "Aile nord du Louvre classique; phase à vérifier dans une notice architecturale dédiée avant animation."
+      "Note": "Phase de la colonnade classique de la façade orientale; bornes de chantier à confirmer dans la notice architecturale détaillée. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+    },
+    {
+      "ID": "E035",
+      "Elemento": "Musée du Louvre — aile nord (aile Richelieu) le long de la rue de Rivoli, phase du Nouveau Louvre",
+      "Da (anno)": 1852,
+      "A (anno)": 1863,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf ; https://www.louvre.fr/decouvrir/le-palais/lumiere-sur-la-sculpture",
+      "Note": "Le Louvre date le programme du Nouveau Louvre de «1852-1863» et précise que les bâtiments le long de la rue de Rivoli prolongent ceux élevés sous Napoléon Ier et Louis XVIII. Le Louvre précise aussi que l’aile Richelieu, aile nord bordant la rue de Rivoli, fut bâtie sous Napoléon III. L’ancienne datation 1659-1664 est supprimée."
     },
     {
       "ID": "E036",
@@ -1628,6 +1628,17 @@
       "Affidabilità": "alta",
       "Fonte": "https://parcoursrevolution.paris.fr/fr/points-interet/54-le-grand-chatelet-geole-de-l-ancien-regime",
       "Note": "La Ville de Paris indique : «Elle ne commence qu’en 1802, pour s’achever en 1810» à propos de la démolition du Grand Châtelet."
+    },
+    {
+      "ID": "E038",
+      "Elemento": "Musée du Louvre — Nouveau Louvre de Napoléon III : liaison Louvre–Tuileries et Cour Napoléon",
+      "Da (anno)": 1852,
+      "A (anno)": 1857,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+      "Note": "La source officielle date le programme du «Nouveau Louvre et le musée Napoléon III» de 1852-1863 et précise : «La cour Napoléon [...] est achevée en 1857». Cette ligne isole la liaison et la cour achevée en 1857; le programme architectural plus large se poursuit jusqu’en 1863."
     }
   ],
   "F": [
@@ -1734,9 +1745,9 @@
       "A (anno)": 1647,
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Affidabilità": "alta",
       "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris indique une reconstruction en 1647 puis en 1860."
+      "Note": "La Ville de Paris riporta le ricostruzioni del pont au Change nel «1647» e nel «1860»; questa riga registra la fase del 1647, non il primo attraversamento sul sito."
     },
     {
       "ID": "G004",
@@ -1766,10 +1777,10 @@
       "Da (anno)": 1685,
       "A (anno)": 1689,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
-      "Note": "La Ville de Paris indique que le Pont Royal fut terminé en 1689; début de chantier à confirmer."
+      "Note": "La Ville de Paris indique que le Pont Royal fut terminé en 1689; début de chantier à confirmer. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "G007",
@@ -1788,10 +1799,10 @@
       "Da (anno)": 1857,
       "A (anno)": 1860,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris indique une reconstruction en 1860; 1857 est la borne de chantier retenue."
+      "Note": "La Ville de Paris indique une reconstruction en 1860; 1857 est la borne de chantier retenue. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "G009",
@@ -1865,10 +1876,10 @@
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "La Ville de Paris indique que le pont fut érigé pour l’Exposition universelle de 1855."
+      "Note": "La Ville de Paris indique que le pont fut érigé pour l’Exposition universelle de 1855. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "G016",
@@ -1887,10 +1898,10 @@
       "Da (anno)": 1893,
       "A (anno)": 1896,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "La Ville de Paris indique qu’il fut construit à la toute fin du XIXe siècle."
+      "Note": "La Ville de Paris indique qu’il fut construit à la toute fin du XIXe siècle. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
       "ID": "G018",
@@ -1938,14 +1949,14 @@
     },
     {
       "ID": "G022",
-      "Elemento": "Pont National — pont actuel",
-      "Da (anno)": 1944,
+      "Elemento": "Pont National — élargissement et doublage du pont existant",
+      "Da (anno)": 1936,
       "A (anno)": 1944,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Date de la phase actuelle à confirmer par une notice dédiée."
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
+      "Note": "La fiche historique indique : «En 1936, la décision est prise de le doubler côté amont» et l’ouvrage est «achevé en juillet 1944»."
     },
     {
       "ID": "G023",
@@ -1960,14 +1971,14 @@
     },
     {
       "ID": "G024",
-      "Elemento": "Pont de Bercy — élargissement",
+      "Elemento": "Pont de Bercy — élargissement et superposition du viaduc du métro",
       "Da (anno)": 1904,
       "A (anno)": 1904,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "L’élargissement et la partie métro doivent être séparés des phases précédentes; date à vérifier."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Note": "La fiche indique : «En 1904, le pont est élargi de 5,50 m pour permettre d’y superposer le viaduc du métropolitain»."
     },
     {
       "ID": "G025",
@@ -1998,9 +2009,9 @@
       "A (anno)": 1847,
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "media",
-      "Fonte": "https://cdn.paris.fr/paris/2021/06/07/15fb64de05682b94795a452ff4e0d74e.pdf",
-      "Note": "Le document historique indique une reconstruction en 1709 puis en 1847."
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Note": "La fiche historique indique : «Le pont actuel, à une seule arche, fut construit en 1883». Cette ligne conserve la reconstruction de 1847; le pont actuel de 1883 est enregistré séparément."
     },
     {
       "ID": "G028",
@@ -2026,47 +2037,47 @@
     },
     {
       "ID": "G030",
-      "Elemento": "Pont Louis-Philippe — pont actuel",
+      "Elemento": "Pont Louis-Philippe — remplacement du premier pont par le pont actuel",
       "Da (anno)": 1860,
       "A (anno)": 1862,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Dates de construction à confirmer par une notice dédiée."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
+      "Note": "La fiche indique que la démolition est décidée en 1860, que le nouveau pont est terminé à l’été 1861 et ouvert en avril 1862."
     },
     {
       "ID": "G031",
-      "Elemento": "Pont d’Arcole — pont actuel",
+      "Elemento": "Pont d’Arcole — remplacement de la passerelle par le pont métallique actuel",
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Date indicative de reconstruction du pont actuel; source dédiée à compléter."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-darcole-a-paris/",
+      "Note": "La fiche indique qu’en 1854 l’administration décide de remplacer la passerelle par un véritable pont; l’ouvrage métallique est réalisé après cette décision."
     },
     {
       "ID": "G032",
-      "Elemento": "Pont du Carrousel — pont actuel",
+      "Elemento": "Pont du Carrousel — reconstruction du pont actuel",
       "Da (anno)": 1935,
       "A (anno)": 1939,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Dates de construction à confirmer par une fiche patrimoniale dédiée."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
+      "Note": "La fiche historique date le pont actuel de «Juillet 1935 à juillet 1939»."
     },
     {
       "ID": "G033",
-      "Elemento": "Pont des Invalides — construction",
-      "Da (anno)": 1824,
-      "A (anno)": 1829,
+      "Elemento": "Pont des Invalides — construction du pont actuel en maçonnerie",
+      "Da (anno)": 1854,
+      "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Chronologie de construction à valider avec une fiche dédiée."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Note": "La fiche donne : «de 1854 à 1856, à la construction d’un nouveau pont, non plus suspendu mais en maçonnerie»."
     },
     {
       "ID": "G034",
@@ -2081,14 +2092,14 @@
     },
     {
       "ID": "G035",
-      "Elemento": "Pont de Grenelle — pont actuel",
+      "Elemento": "Pont de Grenelle — construction du pont actuel",
       "Da (anno)": 1966,
       "A (anno)": 1968,
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
-      "Note": "Date de construction à vérifier par une fiche dédiée."
+      "Note": "Phase du pont actuel; dates indicatives conservées comme hypothèse, faute de citation exacte dans la source associée."
     },
     {
       "ID": "G036",
@@ -2124,48 +2135,224 @@
       "Note": "Phase antérieure du franchissement, à vérifier dans une fiche dédiée."
     },
     {
-      "ID": "G058",
-      "Elemento": "Pont au Change — primo attraversamento sul sito (Grand-Pont médiéval)",
-      "Da (anno)": 900,
-      "A (anno)": 900,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "Le site est associé au Grand-Pont médiéval, antérieur aux reconstructions modernes; année conventionnelle pour le premier franchissement, à valider dans la fiche individuelle de la Nomenclature."
+      "ID": "G039",
+      "Elemento": "Pont National — primo attraversamento sul sito (pont Napoléon III)",
+      "Da (anno)": 1852,
+      "A (anno)": 1853,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
+      "Note": "La fiche historique indique : «Réalisé entre 1852 et 1853»; la phase d’élargissement/doublage de 1936-1944 reste distincte."
     },
     {
-      "ID": "G059",
-      "Elemento": "Pont Saint-Michel — primo attraversamento sul sito",
-      "Da (anno)": 900,
-      "A (anno)": 900,
+      "ID": "G040",
+      "Elemento": "Pont de Bercy — premier traversée sur le site (bac remplacé par le premier pont)",
+      "Da (anno)": 1832,
+      "A (anno)": 1832,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Note": "La fiche indique : «Avant 1832 la traversée de la Seine à la hauteur de Bercy s’effectuait avec un bac qui fut remplacé en 1832 par un pont suspendu»."
+    },
+    {
+      "ID": "G041",
+      "Elemento": "Pont de Bercy — remplacement du pont suspendu par un pont en maçonnerie",
+      "Da (anno)": 1864,
+      "A (anno)": 1864,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Note": "La fiche indique : «ce pont sera remplacé en 1864 par un ouvrage en maçonnerie»."
+    },
+    {
+      "ID": "G042",
+      "Elemento": "Pont du Carrousel — primo ponte sul sito",
+      "Da (anno)": 1831,
+      "A (anno)": 1834,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
+      "Note": "La fiche historique donne pour l’ancien pont : «Date de construction : 1831-1834»."
+    },
+    {
+      "ID": "G043",
+      "Elemento": "Pont d’Arcole — primo attraversamento sul sito (passerelle piétonne suspendue)",
+      "Da (anno)": 1828,
+      "A (anno)": 1828,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/le-pont-d-arcole-un-pont-qui-porte-le-poids-de-l-histoire-25107",
+      "Note": "La Ville de Paris indique : «Construite en 1828, une passerelle est ouverte à la circulation»."
+    },
+    {
+      "ID": "G044",
+      "Elemento": "Pont Louis-Philippe — premier pont sur le site (pont suspendu)",
+      "Da (anno)": 1833,
+      "A (anno)": 1833,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
+      "Note": "La fiche indique : «la première pierre est posée par Louis Philippe, le 29 juillet 1833»."
+    },
+    {
+      "ID": "G045",
+      "Elemento": "Pont de Grenelle — premier pont sur le site",
+      "Da (anno)": 1825,
+      "A (anno)": 1827,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/app/uploads/2023/06/HistoireAdminPontsParis_Prade-1982b.pdf",
+      "Note": "La fiche historique donne «fin 1825 — début des travaux» et «1er mai 1827 — ouverture à la circulation»."
+    },
+    {
+      "ID": "G046",
+      "Elemento": "Pont au Double — premier pont sur le site",
+      "Da (anno)": 1626,
+      "A (anno)": 1626,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Note": "La fiche historique identifie le premier ouvrage comme «Pont de 1626»."
+    },
+    {
+      "ID": "G047",
+      "Elemento": "Pont au Double — reconstruction du pont actuel à une arche",
+      "Da (anno)": 1883,
+      "A (anno)": 1883,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Note": "La fiche indique : «Le pont actuel, à une seule arche, fut construit en 1883»."
+    },
+    {
+      "ID": "G048",
+      "Elemento": "Pont des Invalides — premier pont construit sur le site (ouvrage non mis en service)",
+      "Da (anno)": 1826,
+      "A (anno)": 1826,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Note": "La fiche précise : «Un premier pont fut construit en 1826» puis indique qu’il dut être démoli avant sa mise en service."
+    },
+    {
+      "ID": "G049",
+      "Elemento": "Pont des Invalides — pont suspendu mis en service",
+      "Da (anno)": 1829,
+      "A (anno)": 1829,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Note": "La fiche indique : «Cet ouvrage est mis en service en 1829»; il est ensuite démoli avant la construction du pont actuel."
+    },
+    {
+      "ID": "G050",
+      "Elemento": "Pont d’Austerlitz — primo attraversamento sul sito",
+      "Da (anno)": 1802,
+      "A (anno)": 1807,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Année de première construction retenue pour le modèle; à vérifier sur la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G051",
+      "Elemento": "Pont d’Austerlitz — reconstruction en maçonnerie",
+      "Da (anno)": 1854,
+      "A (anno)": 1855,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Phase de reconstruction postérieure au premier pont; dates à confirmer par la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G052",
+      "Elemento": "Pont de l’Archevêché — premier traversamento sul site",
+      "Da (anno)": 1828,
+      "A (anno)": 1828,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-larcheveche-a-paris/",
+      "Note": "La fiche indique : «Construit d’avril à novembre 1828» et «Date de construction : 1828»."
+    },
+    {
+      "ID": "G053",
+      "Elemento": "Pont Saint-Louis — primo attraversamento sul sito",
+      "Da (anno)": 1634,
+      "A (anno)": 1634,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris rattache le franchissement à une origine médiévale; année conventionnelle à confirmer sur la fiche individuelle de la Nomenclature."
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Année du premier pont sur le site retenue comme hypothèse de travail; à confirmer sur la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G054",
+      "Elemento": "Pont Saint-Louis — pont métallique précédent le pont actuel",
+      "Da (anno)": 1861,
+      "A (anno)": 1861,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Phase de remplacement antérieure au pont actuel; date à confirmer par la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G055",
+      "Elemento": "Pont Saint-Louis — construction du pont actuel",
+      "Da (anno)": 1970,
+      "A (anno)": 1974,
+      "Uso nel modello": "GRADUALE",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Phase actuelle; dates à confirmer par la fiche individuelle de la Nomenclature des voies."
+    },
+    {
+      "ID": "G056",
+      "Elemento": "Passerelle Debilly — premier ouvrage sur le site pour l’Exposition universelle",
+      "Da (anno)": 1900,
+      "A (anno)": 1900,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
+      "Note": "La fiche indique : «Date de construction : 1900»."
+    },
+    {
+      "ID": "G057",
+      "Elemento": "Passerelle Debilly — déplacement et pérennisation de l’ouvrage",
+      "Da (anno)": 1906,
+      "A (anno)": 1906,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
+      "Note": "La fiche indique que la Ville la déplace en 1906 et qu’elle devient alors un ouvrage permanent."
     },
     {
       "ID": "G060",
-      "Elemento": "Pont Notre-Dame — primo attraversamento sul sito (franchissement médiéval)",
-      "Da (anno)": 886,
-      "A (anno)": 886,
+      "Elemento": "Pont Notre-Dame — primo attraversamento sul sito (pont en bois)",
+      "Da (anno)": 1413,
+      "A (anno)": 1413,
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "Franchissement antérieur au pont maçonné avec maisons de 1510-1512; année conventionnelle à confirmer dans la fiche individuelle de la Nomenclature."
-    },
-    {
-      "ID": "G061",
-      "Elemento": "Petit-Pont — primo attraversamento sul sito (origine antique)",
-      "Da (anno)": 0,
-      "A (anno)": 0,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "Le Petit-Pont est décrit comme un franchissement d’origine romaine; l’année 0 est un repère conventionnel pour l’état initial, pas une datation archéologique précise."
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Premier pont en bois sur ce site, avant le pont maçonné avec maisons de 1510-1512; année à vérifier dans la fiche individuelle de la Nomenclature des voies."
     },
     {
       "ID": "G062",
