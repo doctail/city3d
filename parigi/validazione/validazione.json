@@ -1751,7 +1751,7 @@
     },
     {
       "ID": "G005",
-      "Elemento": "Pont Neuf — construction",
+      "Elemento": "Pont Neuf — primo attraversamento sul sito (costruzione del ponte)",
       "Da (anno)": 1578,
       "A (anno)": 1607,
       "Uso nel modello": "GRADUALE",
@@ -1762,7 +1762,7 @@
     },
     {
       "ID": "G006",
-      "Elemento": "Pont Royal — construction",
+      "Elemento": "Pont Royal — primo attraversamento sul sito con ponte in pietra",
       "Da (anno)": 1685,
       "A (anno)": 1689,
       "Uso nel modello": "GRADUALE",
@@ -1773,7 +1773,7 @@
     },
     {
       "ID": "G007",
-      "Elemento": "Pont Marie — construction",
+      "Elemento": "Pont Marie — primo attraversamento sul sito (costruzione del ponte)",
       "Da (anno)": 1614,
       "A (anno)": 1635,
       "Uso nel modello": "GRADUALE",
@@ -1795,7 +1795,7 @@
     },
     {
       "ID": "G009",
-      "Elemento": "Pont des Arts — premier pont",
+      "Elemento": "Pont des Arts — primo attraversamento sul sito",
       "Da (anno)": 1802,
       "A (anno)": 1804,
       "Uso nel modello": "GRADUALE",
@@ -1817,7 +1817,7 @@
     },
     {
       "ID": "G011",
-      "Elemento": "Pont de la Concorde — construction",
+      "Elemento": "Pont de la Concorde — primo attraversamento sul sito",
       "Da (anno)": 1787,
       "A (anno)": 1791,
       "Uso nel modello": "GRADUALE",
@@ -1828,7 +1828,7 @@
     },
     {
       "ID": "G012",
-      "Elemento": "Pont Alexandre III — construction",
+      "Elemento": "Pont Alexandre III — primo attraversamento sul sito",
       "Da (anno)": 1896,
       "A (anno)": 1900,
       "Uso nel modello": "GRADUALE",
@@ -1839,7 +1839,7 @@
     },
     {
       "ID": "G013",
-      "Elemento": "Pont Bir-Hakeim — pont métallique à deux niveaux",
+      "Elemento": "Pont Bir-Hakeim — primo attraversamento sul sito con ponte metallico a due livelli",
       "Da (anno)": 1903,
       "A (anno)": 1905,
       "Uso nel modello": "GRADUALE",
@@ -1850,7 +1850,7 @@
     },
     {
       "ID": "G014",
-      "Elemento": "Pont d’Iéna — construction",
+      "Elemento": "Pont d’Iéna — primo attraversamento sul sito",
       "Da (anno)": 1808,
       "A (anno)": 1814,
       "Uso nel modello": "GRADUALE",
@@ -1861,7 +1861,7 @@
     },
     {
       "ID": "G015",
-      "Elemento": "Pont de l’Alma — premier ouvrage",
+      "Elemento": "Pont de l’Alma — primo attraversamento sul sito",
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
@@ -1883,7 +1883,7 @@
     },
     {
       "ID": "G017",
-      "Elemento": "Pont Mirabeau — construction",
+      "Elemento": "Pont Mirabeau — primo attraversamento sul sito",
       "Da (anno)": 1893,
       "A (anno)": 1896,
       "Uso nel modello": "GRADUALE",
@@ -1894,7 +1894,7 @@
     },
     {
       "ID": "G018",
-      "Elemento": "Pont Aval — ouverture",
+      "Elemento": "Pont Aval — primo attraversamento sul sito / ouverture",
       "Da (anno)": 1968,
       "A (anno)": 1968,
       "Uso nel modello": "BRUSCO",
@@ -1905,7 +1905,7 @@
     },
     {
       "ID": "G019",
-      "Elemento": "Pont Charles-de-Gaulle — construction",
+      "Elemento": "Pont Charles-de-Gaulle — primo attraversamento sul sito",
       "Da (anno)": 1993,
       "A (anno)": 1996,
       "Uso nel modello": "GRADUALE",
@@ -1916,7 +1916,7 @@
     },
     {
       "ID": "G020",
-      "Elemento": "Passerelle Simone-de-Beauvoir — construction",
+      "Elemento": "Passerelle Simone-de-Beauvoir — primo attraversamento sul sito",
       "Da (anno)": 2004,
       "A (anno)": 2006,
       "Uso nel modello": "GRADUALE",
@@ -1927,7 +1927,7 @@
     },
     {
       "ID": "G021",
-      "Elemento": "Pont Amont — mise en service",
+      "Elemento": "Pont Amont — primo attraversamento sul sito / mise en service",
       "Da (anno)": 1969,
       "A (anno)": 1969,
       "Uso nel modello": "BRUSCO",
@@ -1949,7 +1949,7 @@
     },
     {
       "ID": "G023",
-      "Elemento": "Pont de Tolbiac — pont actuel",
+      "Elemento": "Pont de Tolbiac — primo attraversamento sul sito",
       "Da (anno)": 1882,
       "A (anno)": 1882,
       "Uso nel modello": "BRUSCO",
@@ -1971,7 +1971,7 @@
     },
     {
       "ID": "G025",
-      "Elemento": "Pont du Garigliano — construction",
+      "Elemento": "Pont du Garigliano — primo attraversamento sul sito",
       "Da (anno)": 1963,
       "A (anno)": 1966,
       "Uso nel modello": "GRADUALE",
@@ -1982,7 +1982,7 @@
     },
     {
       "ID": "G026",
-      "Elemento": "Pont de Sully — construction",
+      "Elemento": "Pont de Sully — primo attraversamento sul sito",
       "Da (anno)": 1874,
       "A (anno)": 1876,
       "Uso nel modello": "GRADUALE",
@@ -2092,7 +2092,7 @@
     },
     {
       "ID": "G036",
-      "Elemento": "Pont Rouelle — construction",
+      "Elemento": "Pont Rouelle — primo attraversamento sul sito",
       "Da (anno)": 1900,
       "A (anno)": 1900,
       "Uso nel modello": "BRUSCO",
@@ -2103,7 +2103,7 @@
     },
     {
       "ID": "G037",
-      "Elemento": "Pont du Petit-Pont — reconstruction",
+      "Elemento": "Petit-Pont — reconstruction du pont actuel (le site est un franchissement antique)",
       "Da (anno)": 1852,
       "A (anno)": 1853,
       "Uso nel modello": "GRADUALE",
@@ -2122,6 +2122,61 @@
       "Affidabilità": "bassa",
       "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Phase antérieure du franchissement, à vérifier dans une fiche dédiée."
+    },
+    {
+      "ID": "G058",
+      "Elemento": "Pont au Change — primo attraversamento sul sito (Grand-Pont médiéval)",
+      "Da (anno)": 900,
+      "A (anno)": 900,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "Le site est associé au Grand-Pont médiéval, antérieur aux reconstructions modernes; année conventionnelle pour le premier franchissement, à valider dans la fiche individuelle de la Nomenclature."
+    },
+    {
+      "ID": "G059",
+      "Elemento": "Pont Saint-Michel — primo attraversamento sul sito",
+      "Da (anno)": 900,
+      "A (anno)": 900,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris rattache le franchissement à une origine médiévale; année conventionnelle à confirmer sur la fiche individuelle de la Nomenclature."
+    },
+    {
+      "ID": "G060",
+      "Elemento": "Pont Notre-Dame — primo attraversamento sul sito (franchissement médiéval)",
+      "Da (anno)": 886,
+      "A (anno)": 886,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "Franchissement antérieur au pont maçonné avec maisons de 1510-1512; année conventionnelle à confirmer dans la fiche individuelle de la Nomenclature."
+    },
+    {
+      "ID": "G061",
+      "Elemento": "Petit-Pont — primo attraversamento sul sito (origine antique)",
+      "Da (anno)": 0,
+      "A (anno)": 0,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "Le Petit-Pont est décrit comme un franchissement d’origine romaine; l’année 0 est un repère conventionnel pour l’état initial, pas une datation archéologique précise."
+    },
+    {
+      "ID": "G062",
+      "Elemento": "Pont de la Tournelle — primo attraversamento sul sito",
+      "Da (anno)": 1370,
+      "A (anno)": 1370,
+      "Uso nel modello": "BRUSCO",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+      "Note": "Date conventionnelle du premier franchissement retenue comme hypothèse; à vérifier sur la fiche individuelle de la Nomenclature des voies."
     }
   ]
 }
