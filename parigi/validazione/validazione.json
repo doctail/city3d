@@ -1724,7 +1724,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Notre-Dame ; https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
       "Note": "La Ville de Paris date de «1510-1512» les deux rangées de maisons du pont Notre-Dame; cette phase est postérieure à 1190."
     },
     {
@@ -1735,7 +1735,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "media",
-      "Fonte": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/paris-vers-1855-essai-de-reconstitution",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Notre-Dame ; https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/paris-vers-1855-essai-de-reconstitution",
       "Note": "Paris Musées décrit le pont Notre-Dame «reconstruit en pierre depuis 1854»."
     },
     {
@@ -1744,10 +1744,10 @@
       "Da (anno)": 1647,
       "A (anno)": 1647,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
-      "Note": "La Ville de Paris riporta le ricostruzioni del pont au Change nel «1647» e nel «1860»; questa riga registra la fase del 1647, non il primo attraversamento sul sito."
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+au+Change ; https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Note": "La Ville de Paris riporta le ricostruzioni del pont au Change nel «1647» e nel «1860»; questa riga registra la fase del 1647, non il primo attraversamento sul sito. La citation exacte de la date de cette phase n’est pas visible dans la source associée; date conservée comme hypothèse à faible fiabilité."
     },
     {
       "ID": "G004",
@@ -1768,7 +1768,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Neuf ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris date la première pierre du «31 mai 1578»; la nomenclature donne 1578–1607."
     },
     {
@@ -1779,7 +1779,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Royal ; https://www.paris.fr/pages/parhistoire-repond-a-vos-questions-sur-le-patrimoine-et-l-histoire-de-paris-3568",
       "Note": "La Ville de Paris indique que le Pont Royal fut terminé en 1689; début de chantier à confirmer. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
@@ -1790,7 +1790,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://a06-v7.apps.paris.fr/a06/jsp/site/Portal.jsp?fq=seance_string%3ANOVEMBRE+1998&id_document=15915&items_per_page=20&page=ods-solr.display_document&query=&sort_name=&sort_order=&terms=",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Marie ; https://a06-v7.apps.paris.fr/a06/jsp/site/Portal.jsp?fq=seance_string%3ANOVEMBRE+1998&id_document=15915&items_per_page=20&page=ods-solr.display_document&query=&sort_name=&sort_order=&terms=",
       "Note": "La Ville de Paris indique que Christophe Marie le construisit «de 1614 à 1635»."
     },
     {
@@ -1801,7 +1801,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/webdocs/rives-de-seine/revivre",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Saint-Michel ; https://www.paris.fr/webdocs/rives-de-seine/revivre",
       "Note": "La Ville de Paris indique une reconstruction en 1860; 1857 est la borne de chantier retenue. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
@@ -1812,7 +1812,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Arts ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Premier pont métallique de la capitale; date exacte de mise en service à confirmer."
     },
     {
@@ -1823,7 +1823,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Arts ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Reconstruction moderne; dates opérationnelles à vérifier dans une notice dédiée."
     },
     {
@@ -1834,7 +1834,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+la+Concorde ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique : «Le pont de la Concorde a été bâti entre 1787 et 1791»."
     },
     {
@@ -1845,7 +1845,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Alexandre+III ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris date la première pierre du «7 octobre 1896» et rattache le pont à l’Exposition universelle de 1900."
     },
     {
@@ -1856,7 +1856,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Bir-Hakeim ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris décrit l’ouvrage métallique à deux niveaux; années exactes à valider."
     },
     {
@@ -1867,7 +1867,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+d%E2%80%99I%C3%A9na ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Phase napoléonienne; dates à valider par une fiche dédiée."
     },
     {
@@ -1878,7 +1878,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+l%E2%80%99Alma ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique que le pont fut érigé pour l’Exposition universelle de 1855. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
@@ -1889,7 +1889,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+l%E2%80%99Alma ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Reconstruction du pont actuel; années indicatives à confirmer."
     },
     {
@@ -1900,7 +1900,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Mirabeau ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique qu’il fut construit à la toute fin du XIXe siècle. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
     },
     {
@@ -1911,7 +1911,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Aval ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique : «Inauguré en 1968»."
     },
     {
@@ -1922,7 +1922,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Charles-de-Gaulle ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique : «Réalisé entre 1993 et 1996»."
     },
     {
@@ -1933,7 +1933,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Simone-de-Beauvoir ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "La Ville de Paris indique qu’elle fut «inaugurée en 2006»."
     },
     {
@@ -1944,7 +1944,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Amont ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Date opérationnelle à vérifier dans la notice technique du boulevard périphérique."
     },
     {
@@ -1955,7 +1955,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+National ; https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
       "Note": "La fiche historique indique : «En 1936, la décision est prise de le doubler côté amont» et l’ouvrage est «achevé en juillet 1944»."
     },
     {
@@ -1966,7 +1966,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Tolbiac ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Date à vérifier par une notice patrimoniale dédiée."
     },
     {
@@ -1977,7 +1977,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Bercy ; https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
       "Note": "La fiche indique : «En 1904, le pont est élargi de 5,50 m pour permettre d’y superposer le viaduc du métropolitain»."
     },
     {
@@ -1988,7 +1988,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+du+Garigliano ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Date de construction à vérifier par une fiche dédiée."
     },
     {
@@ -1999,7 +1999,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Sully ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Date indicative de construction; notice dédiée nécessaire."
     },
     {
@@ -2008,10 +2008,10 @@
       "Da (anno)": 1847,
       "A (anno)": 1847,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
-      "Note": "La fiche historique indique : «Le pont actuel, à une seule arche, fut construit en 1883». Cette ligne conserve la reconstruction de 1847; le pont actuel de 1883 est enregistré séparément."
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont-au-Double ; https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Note": "La fiche historique indique : «Le pont actuel, à une seule arche, fut construit en 1883». Cette ligne conserve la reconstruction de 1847; le pont actuel de 1883 est enregistré séparément. La citation exacte de la date de cette phase n’est pas visible dans la source associée; date conservée comme hypothèse à faible fiabilité."
     },
     {
       "ID": "G028",
@@ -2021,7 +2021,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://cdn.paris.fr/paris/2021/06/07/15fb64de05682b94795a452ff4e0d74e.pdf",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Saint-Charles ; https://cdn.paris.fr/paris/2021/06/07/15fb64de05682b94795a452ff4e0d74e.pdf",
       "Note": "Le document indique que le pont Saint-Charles subsiste jusqu’à la seconde moitié du XIXe siècle; intervalle indicatif."
     },
     {
@@ -2032,7 +2032,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+la+Tournelle ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Reconstruction moderne distincte des franchissements antérieurs; dates à confirmer."
     },
     {
@@ -2043,7 +2043,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Louis-Philippe ; https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
       "Note": "La fiche indique que la démolition est décidée en 1860, que le nouveau pont est terminé à l’été 1861 et ouvert en avril 1862."
     },
     {
@@ -2054,7 +2054,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-darcole-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+d%E2%80%99Arcole ; https://www.afgc.asso.fr/history-heritage/pont-darcole-a-paris/",
       "Note": "La fiche indique qu’en 1854 l’administration décide de remplacer la passerelle par un véritable pont; l’ouvrage métallique est réalisé après cette décision."
     },
     {
@@ -2065,7 +2065,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+du+Carrousel ; https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
       "Note": "La fiche historique date le pont actuel de «Juillet 1935 à juillet 1939»."
     },
     {
@@ -2076,7 +2076,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Invalides ; https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
       "Note": "La fiche donne : «de 1854 à 1856, à la construction d’un nouveau pont, non plus suspendu mais en maçonnerie»."
     },
     {
@@ -2087,7 +2087,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+L%C3%A9opold-S%C3%A9dar-Senghor ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Passerelle actuelle remplaçant l’ancien pont Solférino; dates à confirmer."
     },
     {
@@ -2098,7 +2098,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Grenelle ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Phase du pont actuel; dates indicatives conservées comme hypothèse, faute de citation exacte dans la source associée."
     },
     {
@@ -2109,7 +2109,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Rouelle ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Ouvrage ferroviaire; date de phase à vérifier."
     },
     {
@@ -2120,7 +2120,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Petit-Pont ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Dates de reconstruction du pont actuel à vérifier."
     },
     {
@@ -2131,7 +2131,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
-      "Fonte": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+la+Tournelle ; https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
       "Note": "Phase antérieure du franchissement, à vérifier dans une fiche dédiée."
     },
     {
@@ -2142,7 +2142,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+National ; https://www.afgc.asso.fr/history-heritage/pont-national-a-paris/",
       "Note": "La fiche historique indique : «Réalisé entre 1852 et 1853»; la phase d’élargissement/doublage de 1936-1944 reste distincte."
     },
     {
@@ -2153,7 +2153,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Bercy ; https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
       "Note": "La fiche indique : «Avant 1832 la traversée de la Seine à la hauteur de Bercy s’effectuait avec un bac qui fut remplacé en 1832 par un pont suspendu»."
     },
     {
@@ -2164,7 +2164,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Bercy ; https://www.afgc.asso.fr/history-heritage/pont-de-bercy-a-paris/",
       "Note": "La fiche indique : «ce pont sera remplacé en 1864 par un ouvrage en maçonnerie»."
     },
     {
@@ -2175,7 +2175,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+du+Carrousel ; https://www.afgc.asso.fr/history-heritage/pont-du-carrousel-a-paris/",
       "Note": "La fiche historique donne pour l’ancien pont : «Date de construction : 1831-1834»."
     },
     {
@@ -2186,7 +2186,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.paris.fr/pages/le-pont-d-arcole-un-pont-qui-porte-le-poids-de-l-histoire-25107",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+d%E2%80%99Arcole ; https://www.paris.fr/pages/le-pont-d-arcole-un-pont-qui-porte-le-poids-de-l-histoire-25107",
       "Note": "La Ville de Paris indique : «Construite en 1828, une passerelle est ouverte à la circulation»."
     },
     {
@@ -2197,7 +2197,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Louis-Philippe ; https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
       "Note": "La fiche indique : «la première pierre est posée par Louis Philippe, le 29 juillet 1833»."
     },
     {
@@ -2208,7 +2208,7 @@
       "Uso nel modello": "GRADUALE",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/app/uploads/2023/06/HistoireAdminPontsParis_Prade-1982b.pdf",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Grenelle ; https://www.afgc.asso.fr/app/uploads/2023/06/HistoireAdminPontsParis_Prade-1982b.pdf",
       "Note": "La fiche historique donne «fin 1825 — début des travaux» et «1er mai 1827 — ouverture à la circulation»."
     },
     {
@@ -2219,7 +2219,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+au+Double ; https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
       "Note": "La fiche historique identifie le premier ouvrage comme «Pont de 1626»."
     },
     {
@@ -2230,7 +2230,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+au+Double ; https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
       "Note": "La fiche indique : «Le pont actuel, à une seule arche, fut construit en 1883»."
     },
     {
@@ -2241,7 +2241,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Invalides ; https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
       "Note": "La fiche précise : «Un premier pont fut construit en 1826» puis indique qu’il dut être démoli avant sa mise en service."
     },
     {
@@ -2252,7 +2252,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Invalides ; https://www.afgc.asso.fr/history-heritage/pont-des-invalides-a-paris/",
       "Note": "La fiche indique : «Cet ouvrage est mis en service en 1829»; il est ensuite démoli avant la construction du pont actuel."
     },
     {
@@ -2285,7 +2285,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/pont-de-larcheveche-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+l%E2%80%99Archev%C3%AAch%C3%A9 ; https://www.afgc.asso.fr/history-heritage/pont-de-larcheveche-a-paris/",
       "Note": "La fiche indique : «Construit d’avril à novembre 1828» et «Date de construction : 1828»."
     },
     {
@@ -2329,7 +2329,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Debilly ; https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
       "Note": "La fiche indique : «Date de construction : 1900»."
     },
     {
@@ -2340,7 +2340,7 @@
       "Uso nel modello": "BRUSCO",
       "Motivo": "BLOCCO TECNICO",
       "Affidabilità": "alta",
-      "Fonte": "https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
+      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Debilly ; https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
       "Note": "La fiche indique que la Ville la déplace en 1906 et qu’elle devient alors un ouvrage permanent."
     },
     {
