@@ -506,10 +506,10 @@
       "Da (anno)": 1852,
       "A (anno)": 1870,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
-      "Note": "Fase dei padiglioni ottocenteschi."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/en/node/172337",
+      "Note": "Paris Musées indique que les pavillons de fer, verre et fonte furent construits «de 1852 et 1870»."
     },
     {
       "ID": "C017",
@@ -517,10 +517,10 @@
       "Da (anno)": 1971,
       "A (anno)": 1973,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Les_Halles",
-      "Note": "Demolizione e trasferimento del mercato."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.parismuseescollections.paris.fr/en/node/172337",
+      "Note": "Paris Musées indique le transfert du marché à Rungis en 1969 puis «leur démolition en 1971-1973»."
     },
     {
       "ID": "C018",
@@ -1316,10 +1316,10 @@
       "Da (anno)": 1861,
       "A (anno)": 1875,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Palais_Garnier",
-      "Note": "Costruzione e apertura al pubblico."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://prod-v3.paris.fr/pages/l-opera-garnier-fete-ses-150-ans-feuilletez-son-album-photo-29886",
+      "Note": "La Ville de Paris indique : «La construction du Palais Garnier (1861 - 1875)» et l’inauguration du 5 janvier 1875."
     },
     {
       "ID": "E010",
@@ -1330,7 +1330,7 @@
       "Motivo": "DA MEMORIA",
       "Affidabilità": "bassa",
       "Fonte": "https://fr.wikipedia.org/wiki/Bastille_(Paris)",
-      "Note": "Rappresentare la fortezza come volume storico prima della demolizione."
+      "Note": "La forteresse médiévale est documentée, mais cette source ne donne pas une date de construction suffisamment précise pour convertir la phase en BLOCCO TECNICO."
     },
     {
       "ID": "E011",
@@ -1338,10 +1338,10 @@
       "Da (anno)": 1789,
       "A (anno)": 1790,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Bastille_(Paris)",
-      "Note": "Distruzione dopo la prise de la Bastille; la piazza resta come spazio urbano."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://parcoursrevolution.paris.fr/fr/quartiers/1-la-bastille",
+      "Note": "Le Parcours Révolution de la Ville de Paris indique «Fin du chantier de démolition de la Bastille» le 21 mai 1791."
     },
     {
       "ID": "E012",
@@ -1393,10 +1393,10 @@
       "Da (anno)": 1969,
       "A (anno)": 1973,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/Tour_Montparnasse",
-      "Note": "Costruzione e completamento dell’edificio."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/la-tour-montparnasse-fete-ses-50-ans-24034",
+      "Note": "La Ville de Paris précise : «Le chantier a duré quatre ans, de 1969 à 1973» et l’inauguration le 18 juin 1973."
     },
     {
       "ID": "E017",
@@ -1514,10 +1514,10 @@
       "Da (anno)": 1873,
       "A (anno)": 1882,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://fr.wikipedia.org/wiki/H%C3%B4tel_de_ville_de_Paris",
-      "Note": "Ricostruzione successiva all’incendio del 1871."
+      "Motivo": "BLOCCO TECNICO",
+      "Affidabilità": "alta",
+      "Fonte": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
+      "Note": "La Ville de Paris indique : «les travaux commencent. Ils s’achèveront en 1882» après la décision de reconstruire en 1873."
     },
     {
       "ID": "E028",
