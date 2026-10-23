@@ -85,7 +85,7 @@ for f in md:
                 prob.append(('md', n, 'riga di tabella con numero di | diverso'))
         else:
             cur = None
-        if '##' in l and not l.lstrip().startswith('#'):
+        if re.search(r'[^\s`#\\]##\s', l):
             prob.append(('md', n, 'titolo attaccato alla riga precedente'))
 
 tot = sum(conta.values())
