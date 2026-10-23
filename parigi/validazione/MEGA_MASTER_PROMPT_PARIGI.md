@@ -318,7 +318,7 @@ La risposta finale deve essere breve e concreta e includere:
 1. link GitHub verificati ai file modificati;
 2. elenco sintetico delle fasi o correzioni effettuate;
 3. esito dei controlli di sincronizzazione e qualità;
-4. output completo di `python3 tools/check_scheda.py`, con `PROBLEMI 0`;
+4. output completo di `python3 -I tools/check_scheda.py parigi/validazione`, con `PROBLEMI 0`;
 5. eventuali limiti storici residui, senza dichiarare completa una verifica non eseguita.
 
 Se `PROBLEMI` non è 0, oppure il validatore non è stato realmente eseguito, NON consegnare come lavoro completato. Spiega il blocco e continua a correggere.

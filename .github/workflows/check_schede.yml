@@ -1,0 +1,21 @@
+name: Controllo schede di validazione
+on:
+  push:
+    paths: ['*/validazione/**', 'tools/check_scheda.py']
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: check_scheda su ogni cartella validazione
+        run: |
+          esito=0
+          for d in */validazione; do
+            [ -f "$d/validazione.json" ] || continue
+            echo "## $d" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            python3 -I tools/check_scheda.py "$d" | tee -a "$GITHUB_STEP_SUMMARY" || esito=1
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          done
+          exit $esito
