@@ -91,14 +91,14 @@
     },
     {
       "ID": "A006",
-      "Elemento": "Canal Saint-Martin: avvio dei lavori",
-      "Da (anno)": 1802,
-      "A (anno)": 1822,
+      "Elemento": "Canal Saint-Martin: scavo e costruzione (cantiere effettivo)",
+      "Da (anno)": "1822",
+      "A (anno)": "1825",
       "Uso nel modello": "GRADUALE",
       "Motivo": "CONFLITTO",
       "Affidabilità": "media",
       "Fonte": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492 ; https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
-      "Note": "CONFLITTO tra cronologie istituzionali: la Ville de Paris scrive «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard»; la mairie du 10e indica «Le 3 mai 1822, la première pierre est posée». Il 19 maggio 1802 è anche la data della legge/progetto; inaugurazione nel 1825. Non assimilare automaticamente avvio del progetto e inizio effettivo del cantiere."
+      "Note": "Nel modello: GRADUALE 1822→1825 (prima pietra 3 maggio 1822, inaugurazione 4 novembre 1825, riga A007). Il 1802 resta solo come nota (legge/progetto). CONFLITTO tra cronologie istituzionali: la Ville de Paris scrive «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard»; la mairie du 10e indica «Le 3 mai 1822, la première pierre est posée». Il 19 maggio 1802 è anche la data della legge/progetto; inaugurazione nel 1825. Non assimilare automaticamente avvio del progetto e inizio effettivo del cantiere."
     },
     {
       "ID": "A007",
@@ -2003,17 +2003,6 @@
       "Note": "Date indicative de construction; notice dédiée nécessaire."
     },
     {
-      "ID": "G027",
-      "Elemento": "Pont-au-Double — reconstruction",
-      "Da (anno)": 1847,
-      "A (anno)": 1847,
-      "Uso nel modello": "BRUSCO",
-      "Motivo": "DA MEMORIA",
-      "Affidabilità": "bassa",
-      "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont-au-Double ; https://www.afgc.asso.fr/history-heritage/pont-au-double-a-paris/",
-      "Note": "La fiche historique indique : «Le pont actuel, à une seule arche, fut construit en 1883». Cette ligne conserve la reconstruction de 1847; le pont actuel de 1883 est enregistré séparément. La citation exacte de la date de cette phase n’est pas visible dans la source associée; date conservée comme hypothèse à faible fiabilité."
-    },
-    {
       "ID": "G028",
       "Elemento": "Pont Saint-Charles — disparition",
       "Da (anno)": 1850,
@@ -2041,10 +2030,10 @@
       "Da (anno)": 1860,
       "A (anno)": 1862,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Louis-Philippe ; https://www.afgc.asso.fr/history-heritage/pont-louis-philippe-a-paris/",
-      "Note": "La fiche indique que la démolition est décidée en 1860, que le nouveau pont est terminé à l’été 1861 et ouvert en avril 1862."
+      "Note": "La fiche indique que la démolition est décidée en 1860, que le nouveau pont est terminé à l’été 1861 et ouvert en avril 1862. Fonte indicata (AFGC) non raggiungibile in verifica del 26 ott 2026: citazione puntuale non trovata, declassata a DA MEMORIA."
     },
     {
       "ID": "G031",
@@ -2052,10 +2041,10 @@
       "Da (anno)": 1854,
       "A (anno)": 1856,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+d%E2%80%99Arcole ; https://www.afgc.asso.fr/history-heritage/pont-darcole-a-paris/",
-      "Note": "La fiche indique qu’en 1854 l’administration décide de remplacer la passerelle par un véritable pont; l’ouvrage métallique est réalisé après cette décision."
+      "Note": "La fiche indique qu’en 1854 l’administration décide de remplacer la passerelle par un véritable pont; l’ouvrage métallique est réalisé après cette décision. Fonte indicata (AFGC) non raggiungibile in verifica del 26 ott 2026: citazione puntuale non trovata, declassata a DA MEMORIA."
     },
     {
       "ID": "G032",
@@ -2338,10 +2327,10 @@
       "Da (anno)": 1906,
       "A (anno)": 1906,
       "Uso nel modello": "BRUSCO",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Debilly ; https://www.afgc.asso.fr/history-heritage/passerelle-debilly-a-paris/",
-      "Note": "La fiche indique que la Ville la déplace en 1906 et qu’elle devient alors un ouvrage permanent."
+      "Note": "La fiche indique que la Ville la déplace en 1906 et qu’elle devient alors un ouvrage permanent. Fonte indicata (AFGC) non raggiungibile in verifica del 26 ott 2026: citazione puntuale non trovata, declassata a DA MEMORIA."
     },
     {
       "ID": "G060",
@@ -2393,10 +2382,10 @@
       "Da (anno)": 1858,
       "A (anno)": 1861,
       "Uso nel modello": "GRADUALE",
-      "Motivo": "BLOCCO TECNICO",
-      "Affidabilità": "alta",
+      "Motivo": "DA MEMORIA",
+      "Affidabilità": "bassa",
       "Fonte": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Solf%C3%A9rino ; https://www.afgc.asso.fr/history-heritage/passerelle-leopold-sedar-senghor-a-paris/",
-      "Note": "La fiche historique indique que les piles et culées sont achevées le 1er mai 1859, puis que le pont est ouvert à la circulation en 1861; cette phase précède la passerelle provisoire de 1961 et la passerelle actuelle de 1997-1999."
+      "Note": "La fiche historique indique que les piles et culées sont achevées le 1er mai 1859, puis que le pont est ouvert à la circulation en 1861; cette phase précède la passerelle provisoire de 1961 et la passerelle actuelle de 1997-1999. Fonte indicata (AFGC) non raggiungibile in verifica del 26 ott 2026: citazione puntuale non trovata, declassata a DA MEMORIA."
     },
     {
       "ID": "G066",
