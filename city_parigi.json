@@ -1,0 +1,34 @@
+{
+ "name": "parigi",
+ "_doc": "Parigi (26 ott 2026, Fase 1). Centro = Notre-Dame. radius_m 8000 copre i 20 arrondissement (perimetro max ~7 km); La Defense (9,4 km a ovest-nord-ovest) entra come zona extra. clip_radius_m = ritaglio dei dati grezzi sul pod (largo, per decidere dopo).",
+ "lat0": 48.85297,
+ "lon0": 2.34993,
+ "radius_m": 8000,
+ "clip_radius_m": 11000,
+ "extra_zones": [
+  {
+   "name": "La Defense",
+   "lat": 48.8915,
+   "lon": 2.2385,
+   "r_m": 1700
+  }
+ ],
+ "land_half_m": 40000,
+ "min_area_m2": 12,
+ "max_h": 330,
+ "bdnb_deps": [
+  75,
+  92,
+  93,
+  94
+ ],
+ "bdnb_datasets": [
+  "base-de-donnees-nationale-des-batiments"
+ ],
+ "osm_pbf": "https://download.geofabrik.de/europe/france/ile-de-france-latest.osm.pbf",
+ "dem_tiles": [
+  "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N48_00_E002_00_DEM/Copernicus_DSM_COG_10_N48_00_E002_00_DEM.tif"
+ ],
+ "coverage_min": 0.7,
+ "hist": "hist_parigi"
+}
