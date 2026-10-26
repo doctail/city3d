@@ -12,27 +12,38 @@ import gzip, json, math, os, sys, collections
 MODE, CFG = sys.argv[1], json.load(open(sys.argv[2]))
 LAT0, LON0 = CFG['lat0'], CFG['lon0']
 R = CFG.get('clip_radius_m', CFG.get('radius_m', 9000))
-def log(*a): print('[fetch_fr]', *a, flush=True)
+def log(*a): print('[fetch_fr]', *a, file=sys.stderr, flush=True)   # stderr: stdout e' SOLO per gli URL
 
 if MODE == 'urls':
-    import requests
+    # Le estrazioni per dipartimento NON sono tra le risorse data.gouv (li' c'e' solo la Francia intera, 48 GB):
+    # stanno su https://bdnb.io/download/. Si leggono tutti i link della pagina (anche dentro script/JSON) e si tengono
+    # quelli che contengono il dipartimento e "gpkg"; per ogni dipartimento il piu' recente (ordine alfabetico = millesimo).
+    import re, requests
     deps = [str(d) for d in CFG['bdnb_deps']]
-    api = 'https://www.data.gouv.fr/api/1/datasets/'
-    res = []
-    for slug in CFG.get('bdnb_datasets', ['base-de-donnees-nationale-des-batiments']):
+    pages = CFG.get('bdnb_pages', ['https://bdnb.io/download/'])
+    links = set()
+    for p in pages:
         try:
-            j = requests.get(api + slug + '/', timeout=60).json(); res += j.get('resources', [])
-        except Exception as e: log('dataset', slug, 'non letto:', e)
-    if not res:   # ripiego: ricerca
-        j = requests.get(api, params={'q': 'BDNB open data', 'page_size': 10}, timeout=60).json()
-        for d in j.get('data', []): res += d.get('resources', [])
+            t = requests.get(p, timeout=60, headers={'User-Agent': 'Mozilla/5.0 city3d'}).text
+        except Exception as e:
+            log('pagina non letta:', p, e); continue
+        open('/workspace/bdnb_download_page.html', 'w').write(t)
+        for u in re.findall(r'https?://[^\s"\'<>()\\]+', t.replace('\\/', '/')): links.add(u.rstrip('.,;'))
+        for u in re.findall(r'(?:href|src)=["\']([^"\']+)', t):
+            if not u.startswith('http'): u = requests.compat.urljoin(p, u)
+            links.add(u)
+    log('link trovati nella pagina:', len(links))
+    out = []
     for d in deps:
-        c = [r for r in res if f'dep{d}' in (r.get('url', '') + r.get('title', '')).lower().replace('_', '')
-             and 'gpkg' in (r.get('url', '') + r.get('title', '') + r.get('format', '')).lower()]
-        c.sort(key=lambda r: r.get('last_modified') or '', reverse=True)
-        if not c: log('NESSUN GPKG per il dipartimento', d); continue
-        print(c[0]['url'])
-    sys.exit(0)
+        pat = re.compile(rf'(dep|departement|dpt)[_\-]?0?{d}(?!\d)', re.I)
+        c = sorted((u for u in links if pat.search(u) and 'gpkg' in u.lower()), key=lambda u: u.rsplit('/', 1)[-1])
+        if not c: log('NESSUN link GPKG per il dipartimento', d); continue
+        log(f'dip. {d}: {c[-1]}'); out.append(c[-1])
+    if len(out) < len(deps):
+        log('Pagina salvata in /workspace/bdnb_download_page.html. Link con "gpkg":',
+            *sorted(u for u in links if 'gpkg' in u.lower())[:20])
+        sys.exit(1)
+    print('\n'.join(out)); sys.exit(0)
 
 import numpy as np, pyogrio, shapely
 from pyproj import Transformer

@@ -5,6 +5,7 @@
 #   - DEM Copernicus GLO-30 (tile in dem_tiles)
 # Ritaglia e crea /workspace/dati_<citta>.tgz da scaricare da Jupyter e caricare in chat. Poi TERMINARE il pod.
 # Stampa SUBITO la copertura per arrondissement (anno valido / totale): se un arrondissement e' sotto il 70%, dirlo a Fabio.
+# Le estrazioni per dipartimento sono su https://bdnb.io/download/ (NON tra le risorse data.gouv).
 # Uso:  cd /workspace && git clone https://github.com/doctail/city3d && CITY=parigi bash city3d/data_fr.sh
 #       URL BDNB a mano (se l'API non li trova):  BDNB_URLS="url1 url2" CITY=parigi bash city3d/data_fr.sh
 set -e
@@ -20,11 +21,13 @@ $PY -m pip install -q $PKG 2>/dev/null || $PY -m pip install -q --break-system-p
 cfg() { $PY -c "import json;v=json.load(open('city_$CITY.json'))['$1'];print(' '.join(v) if isinstance(v,list) else v)"; }
 PBF_URL=$(cfg osm_pbf); PBF=/workspace/$(basename $PBF_URL)
 OUT=/workspace/raw_$CITY; mkdir -p $OUT /workspace/bdnb
-URLS=${BDNB_URLS:-$($PY fetch_fr_raw.py urls city_$CITY.json)}
+if [ -z "$BDNB_URLS" ]; then
+  URLS=$($PY fetch_fr_raw.py urls city_$CITY.json) || { echo "ERRORE: link BDNB non trovati su bdnb.io/download. Apri la pagina, copia i link GeoPackage dei dipartimenti e rilancia con BDNB_URLS=\"url1 url2 ...\""; exit 1; }
+else URLS=$BDNB_URLS; fi
 echo "BDNB:"; echo "$URLS"
-[ -z "$URLS" ] && { echo "ERRORE: nessun URL BDNB. Cercali su data.gouv.fr (BDNB, GeoPackage per dipartimento) e rilancia con BDNB_URLS=..."; exit 1; }
+for u in $URLS; do case "$u" in http*) ;; *) echo "ERRORE: URL non valido: $u"; exit 1;; esac; done
 
-get() { [ -s "$2" ] || { curl -fL --retry 3 -A "Mozilla/5.0 city3d" -o "$2.part" "$1" && mv "$2.part" "$2"; }; }
+get() { [ -s "$2" ] || { curl -fsSL --retry 3 -A "Mozilla/5.0 city3d" -o "$2.part" "$1" && mv "$2.part" "$2"; }; }
 get "$PBF_URL" $PBF &
 for u in $(cfg dem_tiles); do get "$u" $OUT/$(basename $u) & done
 for u in $URLS; do get "$u" /workspace/bdnb/$(basename "${u%%\?*}") & done
