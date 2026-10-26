@@ -12,7 +12,7 @@ const FPS = 24, T0 = 24, N = 732, F0 = T0 * FPS, INK = '#F6F1E7', ACC = '#E8B04A
 // sub: [inizio s, fine s, testo, colore]  (tempi dello Short)
 const SUB = [[1.5, 7.0, '1356 · EARTHQUAKE', ACC], [7.2, 12.4, '1434 · THE MOSQUE BECOMES A CATHEDRAL', ACC], [12.8, 25.6, 'EVERY BUILDING IN ITS REAL YEAR', INK], [26.1, 30.5, '1568 · THE GIRALDA GETS ITS BELFRY', ACC]];
 // etichette sui monumenti: stessa proiezione del lungo (1920x1080) ridotta nella finestra 16:9 (1080x608 a y=656)
-const LABS = [[1.9, 6.8, ['Giralda', 'Great Mosque']], [7.5, 12.1, ['Cathedral', 'Giralda']], [26.5, 30.5, ['Giralda', 'Cathedral']]];
+const LABS = [[1.9, 6.8, ['Giralda', 'Great Mosque']], [7.5, 12.1, ['Great Mosque', 'Cathedral', 'Giralda']], [26.5, 30.5, ['Giralda', 'Cathedral']]];
 const LAB_END = {'Great Mosque': 1434};
 const Label = ({name, f, k, i, year}) => { const L = LABELS.lm[name]; if (!L || year < L.y || year >= (LAB_END[name] ?? 9999)) return null; const p = L.p[f - LABELS.F0]; if (!p) return null;
   const x = p[0] * 0.5625, y = 656 + p[1] * 0.5625; if (p[2] <= 0 || x < 90 || x > 990 || y < 700 || y > 1250) return null; const up = (150 + 70 * i) * k;

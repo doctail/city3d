@@ -121,7 +121,7 @@ const End = ({k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent
 // etichette sui monumenti: posizione proiettata con la STESSA camera del render (labels_sevilla.json da labels_cam.py).
 // Finestre a tempo [inizio s, fine s, nomi]; ogni etichetta compare solo se il monumento esiste in quell'anno ed e' nel quadro.
 const LABS = [
-  [12.6, 16.5, ['Giralda', 'Great Mosque']], [25.9, 30.8, ['Giralda']], [31.5, 36.1, ['Cathedral', 'Giralda']], [50.5, 60.6, ['Giralda', 'Cathedral']],
+  [12.6, 16.5, ['Giralda', 'Great Mosque']], [25.9, 30.8, ['Giralda']], [31.5, 36.1, ['Great Mosque', 'Cathedral', 'Giralda']], [50.5, 60.6, ['Giralda', 'Cathedral']],
   [79.8, 84.4, ['Maestranza Bullring']], [86.7, 94.3, ['Encarnación']], [97.7, 105.3, ['Pontoon bridge', 'Isabel II Bridge']],
   [120.6, 128.2, ['Macarena walls']], [147.7, 160.6, ['Plaza de España', 'Real Alcázar']], [165.6, 173.2, ['Giralda', 'Torre del Oro', 'Maestranza Bullring']],
   [175.6, 193.2, ['Los Remedios']], [196.7, 204.3, ['Cartuja Island', 'Giralda', 'Encarnación']], [236.7, 247.0, ['Alamillo Bridge', 'Barqueta Bridge']],
@@ -133,11 +133,13 @@ const Label = ({name, f, k, i = 0, year, cap}) => { const L = LABELS.lm[name]; i
   const p = L.p[f - LABELS.F0]; if (!p) return null;
   const [x, y, z] = p; if (z <= 0 || x < 70 || x > 1850 || y < 260 || y > 900) return null;
   const up = (92 + 64 * i) * k;
-  if (cap && x - 160 < 840 && y - up - 52 < 360) return null;   // non sovrapporre la didascalia in alto a sinistra
+  // se il cartellino coprirebbe la didascalia in alto a sinistra, il filo va verso il basso; se anche sotto c'e' l'HUD, non si mostra
+  const down = cap && x - 110 < 800 && y - up - 52 < 330;
+  if (down && (y + up + 60 > 900 || (x - 110 < 620 && y + up + 60 > 760))) return null;
   return (<div style={{position: 'absolute', left: x, top: y, opacity: k}}>
     <div style={{position: 'absolute', left: -7, top: -7, width: 14, height: 14, borderRadius: 7, background: ACC, boxShadow: '0 0 0 3px rgba(0,0,0,0.45)'}} />
-    <div style={{position: 'absolute', left: -1.5, top: -up, width: 3, height: up, background: 'rgba(246,241,231,0.9)', boxShadow: '0 0 6px rgba(0,0,0,0.6)'}} />
-    <div style={{position: 'absolute', left: 0, top: -up - 52, transform: 'translateX(-50%)', whiteSpace: 'nowrap', padding: '8px 18px', borderRadius: 26, background: 'rgba(12,14,16,0.72)', font: '700 26px Montserrat', color: INK, letterSpacing: 1}}>{name}</div>
+    <div style={{position: 'absolute', left: -1.5, top: down ? 0 : -up, width: 3, height: up, background: 'rgba(246,241,231,0.9)', boxShadow: '0 0 6px rgba(0,0,0,0.6)'}} />
+    <div style={{position: 'absolute', left: 0, top: down ? up : -up - 52, transform: 'translateX(-50%)', whiteSpace: 'nowrap', padding: '8px 18px', borderRadius: 26, background: 'rgba(12,14,16,0.72)', font: '700 26px Montserrat', color: INK, letterSpacing: 1}}>{name}</div>
   </div>); };
 const Labels = ({s, f, year}) => { const on = new Map(); const cap = EV.didascalie.some((c) => s >= c.t_in - 0.3 && s < c.t_out + 0.3);
   for (const e of LABS) if (s >= e[0] && s < e[1]) e[2].forEach((n) => { if (!on.has(n)) on.set(n, Math.min(1, (s - e[0]) / 0.5, (e[1] - s) / 0.5)); });
