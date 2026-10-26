@@ -39,6 +39,10 @@ else
     echo ok > $D/post_sevilla.ok
   fi
 fi
+# strade obbligatorie (Siviglia, 26 ott 2026: video uscito senza strade). Senza DATA/roads.json il render si ferma.
+if [ "$CITY" != "nyc" ] && [ ! -s $D/roads.json ] && [ "${NOROADS:-0}" != "1" ]; then
+  echo "MANCANO LE STRADE: $D/roads.json non c'e'. Generale prima (come fetch_dk_roads.py per Copenaghen) e provale in locale. Solo con OK di Fabio: NOROADS=1."; exit 1
+fi
 NF=$($PY -c "import json;print(int(json.load(open('$SCHED'))['duration']*24))" 2>/dev/null || echo 7839)
 NT=$($PY -c "import json;d=json.load(open('$SCHED'));print(int(d['night_t']*24)+1 if 'night_t' in d else 0)" 2>/dev/null || echo 0)
 SCHED_N=${SCHED%.json}_night.json
