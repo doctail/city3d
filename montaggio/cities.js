@@ -70,3 +70,13 @@ export const COPENHAGEN = {
   ERAS: [[1167, "Absalon's Harbor", '#9C8B5E'], [1443, 'Royal Capital', '#B8473A'], [1588, 'Christian IV', '#C9A227'], [1660, 'Absolute Monarchy', '#7A5C8E'], [1728, 'Fire & Rebuilding', '#D9652B'], [1807, 'War & Recovery', '#6E6E6E'], [1852, 'Beyond the Walls', '#3E9AA0'], [1940, 'Occupation', '#5C5C5C'], [1945, 'Welfare City', '#4F7FB8'], [1990, 'Harbor City', '#D96C8A']],
   EVENTS: [],
 };
+
+// Siviglia (comune). Scheda di validazione storica, sezione D: 1248-1800 stime orientative (bassa/media affidabilita', da mostrare con "~");
+// dal 1842 INE (1842 di diritto; 1857-1991 di fatto; dal 2001 residenti). 2026: ordine di grandezza (~690.000, non e' nella scheda).
+export const SEVILLE = {
+  Y0: 1248, Y1: 2026, POPMAX: 1e6, TICKS: [1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000], EST_UNTIL: 1842,
+  popLabel: () => 'CITY OF SEVILLE',
+  POP: [[1248, 50000], [1300, 50000], [1400, 30000], [1500, 60000], [1600, 120000], [1700, 70000], [1800, 75000], [1842, 100498], [1857, 112529], [1860, 118298], [1877, 134318], [1887, 143182], [1897, 146205], [1900, 148315], [1910, 158287], [1920, 205529], [1930, 228729], [1940, 312123], [1950, 376627], [1960, 442300], [1970, 548072], [1981, 653833], [1991, 704857], [2001, 684633], [2011, 698042], [2021, 684340], [2026, 690000]],
+  ERAS: [[1248, 'Castilian Seville', '#9C8B5E'], [1503, 'Gateway to the Indies', '#C9A227'], [1717, 'Quiet Centuries', '#7A8B6E'], [1858, 'Beyond the Walls', '#3E9AA0'], [1936, 'Civil War', '#6E6E6E'], [1939, 'Dictatorship', '#6C8A9E'], [1975, 'Democracy', '#D96C8A'], [1992, 'After Expo 92', '#4F7FB8']],
+  EVENTS: [],
+};
