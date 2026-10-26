@@ -52,7 +52,17 @@ evolution of seville, seville history, history of seville, sevilla history, sevi
 - **Popolazione 2026**: "~690.000" è un ordine di grandezza, non è nella scheda (ultimo dato INE: 684.340 nel 2021).
 - **Alamillo di notte**: le luci del ponte sono bianche e molto forti (anche in copertina).
 
-## Short — "What Happened to Seville's Mosque?"
+## Short 1 (PRINCIPALE) — "778 Years of Seville in 30 Seconds"
+Tutto il video finale accelerato x11 (primi 319 s, senza cartello finale), 29 s, 9:16 con il 16:9 al centro su copia sfocata; parte nel 2026 di giorno e finisce nel 2026 di notte, quindi il loop riparte pulito. Fatto con ffmpeg da `sevilla_finale.mp4` (nessun render nuovo): `monta_sevilla_short_loop.bat` + `sevilla_short_loop.m4a` (Monument dal suo 0:25, -14 LUFS). File: `sevilla_short_loop_finale.mp4`.
+**Titolo:** 778 Years of Seville in 30 Seconds #shorts
+**Descrizione:**
+From the Almohad city conquered in 1248 to the Seville of today: every real building appears in the year it was built. 778 years in 30 seconds.
+Full 3D story on the channel.
+#seville #sevilla #cityevolution #timelapse #3d
+**Tag:** seville, sevilla, seville history, city evolution, 3d timelapse, spain, year built
+**Uscita:** il giorno dopo il video lungo, alle 17:00. Collegare il lungo come "Video correlato".
+
+## Short 2 — "What Happened to Seville's Mosque?" (2 giorni dopo lo Short 1)
 Tagliato dal video lungo (0:24-0:54,5: 1335 → 1570, circa 8 anni al secondo; terremoto 1356, moschea → cattedrale 1434, cupola/campanile della Giralda 1568). Il 16:9 sta al centro su una copia sfocata, domanda scritta dal primo fotogramma, anno grande sotto. File: `sevilla_short_finale.mp4` (da `monta_sevilla_short.bat`). Etichette Giralda, Great Mosque, Cathedral. Audio: lo stesso mix del lungo (0:24-0:54,5: Waking to Reality + terremoto, cantiere, campane), -14 LUFS.
 **Titolo:** What Happened to Seville's Mosque? #shorts
 **Descrizione:**
@@ -61,7 +71,7 @@ Full 3D story on the channel.
 #seville #history #cathedral #cityevolution #timelapse
 **Tag:** seville, seville history, giralda, seville cathedral, city evolution, 3d timelapse, spain, year built
 **Credito obbligatorio** (anche negli Shorts, in fondo alla descrizione): Data: Catastro (Spain), © OpenStreetMap contributors (ODbL), Copernicus DEM. Music: "Waking to Reality" — Unicorn Heads. Sound effects: original.
-**Collegare** il video lungo come "Video correlato". Uscita come da piano: i 3 giorni dopo il lungo, alle 17:00.
+**Collegare** il video lungo come "Video correlato". **Uscita:** 2 giorni dopo lo Short 1, alle 17:00.
 
 ## Traduzioni (titolo e descrizione)
 YouTube Studio → Contenuti → video → Sottotitoli → Aggiungi lingua → "Titolo e descrizione". Lingua del video: Inglese.
@@ -212,7 +222,14 @@ Niente voce narrante. Solo la città.
 Quale città costruiamo dopo? Scrivetelo nei commenti.
 Dati: Dirección General del Catastro (INSPIRE Buildings, catasto spagnolo). Acqua, ponti e parchi © contributori di OpenStreetMap (ODbL). Rilievo: Copernicus DEM GLO-30 (© DLR e.V. 2010-2014 e © Airbus Defence and Space GmbH 2014-2018, fornito nell'ambito di COPERNICUS da UE ed ESA). Popolazione: censimenti INE dal 1842; prima, stime. Gli edifici prima del ~1850, le mura, i corsi del fiume prima dei lavori del 1948-1982 e i monumenti sono ricostruzioni illustrative. Musica: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Effetti sonori: originali. Realizzato con Blender.
 
-## Short — titolo tradotto
+## Short — titoli tradotti
+Short 1:
+- es: 778 años de Sevilla en 30 segundos #shorts
+- pt-BR: 778 anos de Sevilha em 30 segundos #shorts
+- de: 778 Jahre Sevilla in 30 Sekunden #shorts
+- fr: 778 ans de Séville en 30 secondes #shorts
+- it: 778 anni di Siviglia in 30 secondi #shorts
+Short 2:
 - es: ¿Qué pasó con la mezquita de Sevilla? #shorts
 - pt-BR: O que aconteceu com a mesquita de Sevilha? #shorts
 - de: Was geschah mit der Moschee von Sevilla? #shorts

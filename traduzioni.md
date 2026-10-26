@@ -766,7 +766,14 @@ Niente voce narrante. Solo la città.
 Quale città costruiamo dopo? Scrivetelo nei commenti.
 Dati: Dirección General del Catastro (INSPIRE Buildings, catasto spagnolo). Acqua, ponti e parchi © contributori di OpenStreetMap (ODbL). Rilievo: Copernicus DEM GLO-30 (© DLR e.V. 2010-2014 e © Airbus Defence and Space GmbH 2014-2018, fornito nell'ambito di COPERNICUS da UE ed ESA). Popolazione: censimenti INE dal 1842; prima, stime. Gli edifici prima del ~1850, le mura, i corsi del fiume prima dei lavori del 1948-1982 e i monumenti sono ricostruzioni illustrative. Musica: "Waking to Reality" — Unicorn Heads; "Monument" — TrackTribe. Effetti sonori: originali. Realizzato con Blender.
 
-## Short — titolo tradotto
+## Short — titoli tradotti
+Short 1 (principale):
+- es: 778 años de Sevilla en 30 segundos #shorts
+- pt-BR: 778 anos de Sevilha em 30 segundos #shorts
+- de: 778 Jahre Sevilla in 30 Sekunden #shorts
+- fr: 778 ans de Séville en 30 secondes #shorts
+- it: 778 anni di Siviglia in 30 secondi #shorts
+Short 2:
 - es: ¿Qué pasó con la mezquita de Sevilla? #shorts
 - pt-BR: O que aconteceu com a mesquita de Sevilha? #shorts
 - de: Was geschah mit der Moschee von Sevilla? #shorts
