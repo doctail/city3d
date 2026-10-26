@@ -1,8 +1,8 @@
 @echo off
-rem Year Built - Siviglia: unisce video completo + grafiche + musica
-rem Metti in questa cartella: sevilla_full.mp4, sevilla_overlay.webm, musica.mp3 (The Shining in Dubai - Unicorn Heads, 5:27) e lancia questo file.
-rem Colori: saturazione x1,7 e contrasto x1,06 (analisi concorrenti, 17 ott 2026). Musica: parte da 0:00, dissolvenza finale dal secondo 322.
-ffmpeg -y -i sevilla_full.mp4 -c:v libvpx-vp9 -i sevilla_overlay.webm -i musica.mp3 -filter_complex "[0:v]eq=contrast=1.06:saturation=1.7[b];[b][1:v]overlay=format=auto,format=yuv420p[v];[2:a]afade=t=out:st=322:d=4.6[a]" -map "[v]" -map "[a]" -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -shortest -movflags +faststart sevilla_finale.mp4
+rem Year Built - Siviglia: unisce video completo + grafiche (etichette, didascalie, HUD) + audio (2 tracce + effetti sonori)
+rem Metti in questa cartella: sevilla_full.mp4, sevilla_overlay.webm, sevilla_audio.m4a e lancia questo file.
+rem Colori: il render e' gia' saturo (~111 misurato sul light): solo ritocco leggero come Copenaghen (1,08), NON x1,7.
+ffmpeg -y -i sevilla_full.mp4 -c:v libvpx-vp9 -i sevilla_overlay.webm -i sevilla_audio.m4a -filter_complex "[0:v]eq=contrast=1.03:saturation=1.08[b];[b][1:v]overlay=format=auto,format=yuv420p[v]" -map "[v]" -map 2:a -c:v libx264 -preset slow -crf 18 -c:a copy -shortest -movflags +faststart sevilla_finale.mp4
 echo.
 echo FATTO: sevilla_finale.mp4
 pause

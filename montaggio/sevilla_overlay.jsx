@@ -12,6 +12,7 @@ import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/900.css';
 import YEARS from '../public/years_sevilla.json';
 import EV from '../public/eventi_sevilla.json';
+import LABELS from '../public/labels_sevilla.json';
 import {SEVILLE as C} from './cities';
 
 const FPS = 24, N = 7839, INK = '#F6F1E7', ACC = '#E8B04A', SH = '0 2px 14px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.7)';
@@ -105,9 +106,9 @@ const Open = ({s}) => { const h = OPEN.find((x) => s >= x[0] && s < x[1]); if (!
   </AbsoluteFill>); };
 
 const Title = ({k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, background: `radial-gradient(ellipse at center, rgba(10,10,12,${0.45 * k}), rgba(10,10,12,0) 65%)`, paddingBottom: 90}}>
-  <div style={{font: '700 26px Montserrat', letterSpacing: 10, color: ACC, textShadow: SH}}>EVERY BUILDING IN ITS REAL YEAR</div>
+  <div style={{font: '700 26px Montserrat', letterSpacing: 10, color: ACC, textShadow: SH}}>3D TIMELAPSE · EVERY REAL BUILDING</div>
   <div style={{font: '900 200px Montserrat', color: INK, textShadow: SH, letterSpacing: 6, lineHeight: 1.05, transform: `scale(${0.96 + 0.04 * k})`}}>SEVILLE</div>
-  <div style={{display: 'flex', alignItems: 'center', gap: 26, font: '700 34px Montserrat', letterSpacing: 8, color: INK, textShadow: SH}}><span style={{width: 120, height: 2, background: ACC}} />1248 · 2026<span style={{width: 120, height: 2, background: ACC}} /></div>
+  <div style={{display: 'flex', alignItems: 'center', gap: 26, font: '700 34px Montserrat', letterSpacing: 8, color: INK, textShadow: SH}}><span style={{width: 120, height: 2, background: ACC}} />1248 TO NOW<span style={{width: 120, height: 2, background: ACC}} /></div>
 </AbsoluteFill>);
 
 const End = ({k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, background: `radial-gradient(ellipse at center, rgba(10,10,12,${0.55 * k}), rgba(10,10,12,0.15) 75%)`}}>
@@ -117,13 +118,38 @@ const End = ({k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent
   <div style={{position: 'absolute', bottom: 70, font: '900 30px Montserrat', letterSpacing: 10, color: INK, textShadow: SH, opacity: 0.85}}>YEAR BUILT</div>
 </AbsoluteFill>);
 
+// etichette sui monumenti: posizione proiettata con la STESSA camera del render (labels_sevilla.json da labels_cam.py).
+// Finestre a tempo [inizio s, fine s, nomi]; ogni etichetta compare solo se il monumento esiste in quell'anno ed e' nel quadro.
+const LABS = [
+  [12.6, 16.5, ['Giralda', 'Great Mosque']], [25.9, 30.8, ['Giralda']], [31.5, 36.1, ['Cathedral', 'Giralda']], [50.5, 60.6, ['Giralda', 'Cathedral']],
+  [79.8, 84.4, ['Maestranza Bullring']], [86.7, 94.3, ['Encarnación']], [97.7, 105.3, ['Pontoon bridge', 'Isabel II Bridge']],
+  [120.6, 128.2, ['Macarena walls']], [147.7, 160.6, ['Plaza de España', 'Real Alcázar']], [165.6, 173.2, ['Giralda', 'Torre del Oro', 'Maestranza Bullring']],
+  [175.6, 193.2, ['Los Remedios']], [196.7, 204.3, ['Cartuja Island', 'Giralda', 'Encarnación']], [236.7, 247.0, ['Alamillo Bridge', 'Barqueta Bridge']],
+  [256.7, 264.3, ['Santa Justa station']], [277.6, 285.3, ['Torre Sevilla']], [290.6, 298.2, ['Metropol Parasol', 'Barqueta Bridge']],
+  [300.6, 308.2, ['Isla Mágica', 'Cartuja Island', 'Alamillo Bridge']], [310.6, 318.6, ['Alamillo Bridge', 'Metropol Parasol']],
+];
+const LAB_END = {'Great Mosque': 1434, 'Pontoon bridge': 1852, 'Encarnación': 1973.5};
+const Label = ({name, f, k, i = 0, year, cap}) => { const L = LABELS.lm[name]; if (!L) return null; if (year < L.y || year >= (LAB_END[name] ?? 9999)) return null;
+  const p = L.p[f - LABELS.F0]; if (!p) return null;
+  const [x, y, z] = p; if (z <= 0 || x < 70 || x > 1850 || y < 260 || y > 900) return null;
+  const up = (92 + 64 * i) * k;
+  if (cap && x - 160 < 840 && y - up - 52 < 360) return null;   // non sovrapporre la didascalia in alto a sinistra
+  return (<div style={{position: 'absolute', left: x, top: y, opacity: k}}>
+    <div style={{position: 'absolute', left: -7, top: -7, width: 14, height: 14, borderRadius: 7, background: ACC, boxShadow: '0 0 0 3px rgba(0,0,0,0.45)'}} />
+    <div style={{position: 'absolute', left: -1.5, top: -up, width: 3, height: up, background: 'rgba(246,241,231,0.9)', boxShadow: '0 0 6px rgba(0,0,0,0.6)'}} />
+    <div style={{position: 'absolute', left: 0, top: -up - 52, transform: 'translateX(-50%)', whiteSpace: 'nowrap', padding: '8px 18px', borderRadius: 26, background: 'rgba(12,14,16,0.72)', font: '700 26px Montserrat', color: INK, letterSpacing: 1}}>{name}</div>
+  </div>); };
+const Labels = ({s, f, year}) => { const on = new Map(); const cap = EV.didascalie.some((c) => s >= c.t_in - 0.3 && s < c.t_out + 0.3);
+  for (const e of LABS) if (s >= e[0] && s < e[1]) e[2].forEach((n) => { if (!on.has(n)) on.set(n, Math.min(1, (s - e[0]) / 0.5, (e[1] - s) / 0.5)); });
+  return <>{[...on.entries()].map(([n, k], i) => <Label key={n} name={n} f={f} k={k} i={i} year={year} cap={cap} />)}</>; };
+
 export const Overlay = ({bg = false}) => {
   const f = useCurrentFrame(); const s = f / FPS; const y = yearAt(f);
   const kh = ramp(s, T_HUD), kt = ramp(s, T_TITLE), ks = ramp(s, T_SEPIA), ke = interpolate(s, T_END, [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (<AbsoluteFill>
     {bg && <OffthreadVideo src={staticFile('sevilla_light.mp4')} style={{width: 1920, height: 1080}} />}
     {ks > 0 && <AbsoluteFill style={{background: `rgba(120,82,38,${0.34 * ks})`}} />}
-    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Hud year={y} /><Cap s={s} /><Stop s={s} /><Subscribe s={s} /></AbsoluteFill>}
+    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Hud year={y} /><Labels s={s} f={f + 1} year={y} /><Cap s={s} /><Stop s={s} /><Subscribe s={s} /></AbsoluteFill>}
     <Open s={s} />
     {kt > 0 && <Title k={kt} />}
     {ke > 0 && <End k={ke} />}
