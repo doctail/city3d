@@ -1,0 +1,118 @@
+{
+  "historical_predecessors": 504,
+  "predecessors_by_zone": {
+    "ensanche_xix": 201,
+    "city_1356_extent": 216,
+    "muslim_core": 87
+  },
+  "wall_parts": 34,
+  "wall_groups": [
+    {
+      "name": "Muslim wall (schematic)",
+      "source": "mura_musulmane.geojson",
+      "segments": 34,
+      "from": 1238,
+      "to": 1356,
+      "confidence": "polygon supplied as Muslim wall; perimeter strip is a rendering approximation"
+    }
+  ],
+  "christian_wall_geometry": "not generated: supplied valencia_1356 polygon is a broad urban extent, not a verified wall line",
+  "historic_source_layers": [
+    {
+      "source": "circo_romano.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "edifici_musulmani.geojson",
+      "features": 10,
+      "geometry_types": {
+        "Point": 10
+      }
+    },
+    {
+      "source": "edifici_romani.geojson",
+      "features": 10,
+      "geometry_types": {
+        "Point": 10
+      }
+    },
+    {
+      "source": "ensanche_xix.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "juderia.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "moreria.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "mura_musulmane.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "mura_romane_138ac.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "mura_romane_20ac.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    },
+    {
+      "source": "porte_1391.geojson",
+      "features": 13,
+      "geometry_types": {
+        "Point": 13
+      }
+    },
+    {
+      "source": "strade_romane_138ac.geojson",
+      "features": 2,
+      "geometry_types": {
+        "LineString": 2
+      }
+    },
+    {
+      "source": "strade_romane_20ac.geojson",
+      "features": 2,
+      "geometry_types": {
+        "LineString": 2
+      }
+    },
+    {
+      "source": "valencia_1356.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      }
+    }
+  ],
+  "limits": [
+    "Historical polygon layers are treated as approximate urban extents, not precise surveyed wall centerlines; ensanche_xix is a 19th-century expansion envelope.",
+    "Predecessor footprints are schematic inset versions of present-day cadastral footprints, not measured historical parcels/buildings.",
+    "Roman layers are preserved for chronology and further modeling but not shown in the active 1238–2026 render window."
+  ]
+}
