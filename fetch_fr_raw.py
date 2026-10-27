@@ -54,6 +54,9 @@ Y2 = ('dpe_mix_arrete_annee_construction_dpe', 'rnc_l_annee_construction', 'dpe_
 LC = ('ffo_bat_nb_niveau', 'nb_niveau', 'nb_niveau_ffo')
 HC = ('bdtopo_bat_hauteur_mean', 'hauteur_mean', 'hauteur', 'hauteur_moyenne')
 ID = 'batiment_groupe_id'
+# colonne in piu' (vista compile, millesimo 2026-02-b): altezza massima (torri), monumento storico vicino, usi e materiali
+EXTRA = {'hmax': 'bdtopo_bat_max_hauteur', 'mer': 'merimee_nom_batiment_historique_plus_proche', 'merd': 'merimee_distance_batiment_historique_plus_proche',
+         'use': 'usage_principal_bdnb_open', 'use1': 'bdtopo_bat_l_usage_1', 'roof': 'ffo_bat_mat_toit_txt', 'wall': 'ffo_bat_mat_mur_txt', 'nlog': 'ffo_bat_nb_log'}
 
 def pick(cols, cand):
     for c in cand:
@@ -94,6 +97,7 @@ for path in SRC:
     keep = [c for c in (ID, 'code_commune_insee', 'libelle_commune_insee') if c in cols[geo]]
     keep += [c for c in (pick(cols[geo], YC), pick(cols[geo], LC), pick(cols[geo], HC)) if c]
     keep += [c for c in Y2 if c in cols[geo]]
+    keep += [c for c in EXTRA.values() if c in cols[geo]]
     if ID not in cols[geo]: ID = 'batiment_construction_id'
     g = pyogrio.read_dataframe(path, layer=geo, columns=keep, bbox=(CX - R, CY - R, CX + R, CY + R))
     c = shapely.centroid(g.geometry.values)
@@ -135,6 +139,7 @@ for path in SRC:
         geom = shapely.transform(geom, lambda xy: np.c_[to_ll.transform(xy[:, 0], xy[:, 1])])
         feats.append({'type': 'Feature', 'geometry': shapely.geometry.mapping(geom),
                       'properties': {'id': i, 'insee': r.get('code_commune_insee'), 'y': int(y) if y else None, 'src': src,
+                                     **{k: (None if blank(r.get(c)) else (round(float(r[c]), 1) if k in ('hmax', 'merd') else r[c])) for k, c in EXTRA.items() if c in r},
                                      'lev': int(lev) if lev is not None else None, 'h': round(h, 1) if h else None}})
 schema.close()
 with gzip.open(os.path.join(OUT, 'bdnb.geojson.gz'), 'wt') as f:
