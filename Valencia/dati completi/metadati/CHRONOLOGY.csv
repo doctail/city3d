@@ -1,0 +1,10 @@
+id,element,event,year,year_end,confidence,geometry_status,notes
+VAL-E001,Valentia foundation,foundation,-138,-138,high for conventional founding date,source fact only,"Roman source layer retained; not active in render timeline."
+VAL-E002,Destruction during Sertorian conflict,destruction/abandonment,-75,-75,high per municipal history,not digitised,"Do not infer demolition year for individual buildings."
+VAL-E003,Augustan re-establishment,re-establishment,-25,-25,moderate,not digitised,"Chronology milestone only."
+VAL-E004,Christian conquest of Balansiya,political transition,1238,1238,high,not a geometry event by itself,"Chosen active start for medieval-to-modern production scope; not the city's founding."
+VAL-E005,Late medieval wall construction begins,fortification construction,1356,1356,moderate-high,exact wall line not produced,"Municipal heritage summary; start of works, not necessarily completion."
+VAL-E006,Fortification strengthening along Turia frontage,fortification addition,1400,1400,approximate,exact geometry not produced,"Source gives approximate phase; tower-by-tower chronology still needed."
+VAL-E007,Tosca city plan,cartographic snapshot,1704,1704,high for map dating,map not georeferenced,"Target for later historical morphology calibration."
+VAL-E008,Final demolition of medieval walls,demolition,1865,1865,high,exact segment-by-segment demolition not digitised,"Surviving fragments must not be removed by a single citywide rule."
+VAL-E009,Turia diversion and park phases,water/land transformation,1957,1986,phase-level proxy,modern river/park footprints used as proxy,"Not a surveyed reconstruction of historic river banks."
