@@ -1,0 +1,53 @@
+name: Render Valencia smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Blender and Python dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender python3-shapely
+          blender --version
+          python3 -c "import shapely; print('Shapely', shapely.__version__)"
+
+      - name: Prepare renderer data
+        run: |
+          mkdir -p /tmp/valencia_data /tmp/valencia_render
+          cp "Valencia/dati completi/dati_generati/"* /tmp/valencia_data/
+          cp "Valencia/dati completi/config/city_valencia.json" /tmp/city_valencia.json
+          python3 - <<'PY'
+          import json
+          p = "/tmp/city_valencia.json"
+          d = json.load(open(p, encoding="utf-8"))
+          # Disable large optional layers for the first smoke test only if renderer supports them.
+          print("City:", d.get("name"), "center:", d.get("lat0"), d.get("lon0"))
+          print("Prepared data files:")
+          import os
+          for f in sorted(os.listdir("/tmp/valencia_data")):
+              print(f, os.path.getsize(os.path.join("/tmp/valencia_data", f)))
+          PY
+
+      - name: Render one low-resolution frame
+        run: |
+          blender -b -t 2 --python build_render.py -- /tmp/valencia_data /tmp/valencia_render --frames 1 1 --res 640 360 --samples 1 --city /tmp/city_valencia.json --years 2026 2026
+
+      - name: Upload render and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: valencia-blender-smoke-test
+          path: |
+            /tmp/valencia_render/
+          if-no-files-found: warn
+          retention-days: 7
