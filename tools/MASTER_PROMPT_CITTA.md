@@ -294,3 +294,46 @@ Se `PROBLEMI` non è 0, oppure il validatore non è stato realmente eseguito, NO
 
 ## 12. CASI SPECIFICI DELLA CITTÀ
 
+## 13. REGOLE OPERATIVE AGGIUNTIVE — DATI PER IL TIMELAPSE E GATE DI RENDERING
+
+Queste regole si applicano quando il lavoro storico alimenta il modello temporale 3D della città. La ricerca storica resta prioritaria: non dichiarare approvato un modello solo perché i dati sono stati preparati o la validazione statica è verde.
+
+### 13.1 Separazione fra fonti, dati preparati e configurazione
+- Mantieni distinti i file sorgente originali, i dati derivati/preparati, la configurazione della città, la schedule temporale, i metadati delle fonti e i report di audit.
+- Non collocare file generati nella cartella delle sorgenti originali. Non sovrascrivere gli archivi sorgente con derivati.
+- Documenta per ogni layer: origine, data/snapshot, trasformazioni applicate, conteggio in ingresso e in uscita, campi mancanti, imputazioni, CRS/coordinate e limiti noti.
+- Non inventare date di costruzione, altezze, confini storici o geometrie per rendere il modello visivamente completo. Ogni imputazione deve essere marcata e descritta.
+- Prima di spostare o rinominare file, individua tutti gli script e le configurazioni che li referenziano; aggiorna i riferimenti in modo coerente.
+
+### 13.2 Gate di preparazione e validazione statica
+Prima di avviare il renderer:
+1. Leggi la configurazione della città, la schedule e le istruzioni del renderer aggiornate dal repository.
+2. Verifica che tutti i file richiesti esistano esattamente nei percorsi attesi e che i nomi dei layer corrispondano a quelli letti dallo script.
+3. Controlla schemi, conteggi, geometrie non valide, copertura temporale, anni mancanti/imputati, trasformazioni coordinate, dimensioni e range del DEM.
+4. Verifica che i dati preparati corrispondano alla città e alla versione della configurazione selezionata.
+5. Riporta separatamente l'esito dei controlli statici e quello della revisione storica. Il passaggio dei controlli statici non prova che la scena sia corretta visivamente.
+
+### 13.3 Gate di rendering e verifica visiva
+- Non dichiarare un render riuscito prima di avere verificato l'esistenza e la leggibilità dei file immagine effettivamente prodotti dal renderer.
+- Un'immagine generata con strumenti illustrativi o generativi non è un render del progetto e non può sostituire un frame prodotto dal renderer 3D con i dati reali.
+- Prima di un render lungo, esegui uno smoke test limitato a uno o pochi frame, bassa risoluzione e campioni ridotti. Usa la configurazione e lo script reali del progetto.
+- Verifica separatamente che: Blender si avvii; le dipendenze siano disponibili; i dati vengano caricati; la scena venga costruita; il frame venga renderizzato; il file finale sia presente e non vuoto.
+- In caso di errore, leggi i log e correggi la causa specifica. Non cambiare casualmente impostazioni non correlate e non ripetere un job senza modifiche diagnostiche.
+- Se l'ambiente non può eseguire Blender, dichiaralo subito e non presentare immagini sostitutive come risultati del rendering. Valuta un runner cloud o la macchina dell'utente, esplicitando requisiti, costi e limiti.
+- Dopo uno smoke test riuscito, controlla realmente il frame: inquadratura, scala, orientamento, terreno, densità e distribuzione degli edifici, strade, acqua, edifici fuori epoca, artefatti, clipping, memoria e coerenza dell'anno. Un frame tecnicamente prodotto non equivale ad approvazione artistica o storica.
+- Non avviare il render completo finché i frame di prova non sono stati controllati e accettati.
+
+### 13.4 Workflow cloud e GitHub Actions
+- Ogni workflow di rendering deve essere isolato dalla workflow di validazione storica e non deve modificare file di produzione senza richiesta esplicita.
+- Imposta timeout per installazione dipendenze, preparazione dati e rendering; conserva i log anche in caso di fallimento.
+- Carica i frame generati come artifact e indica il link diretto alla specifica esecuzione e all'artifact. Non limitarti a un link generico alla pagina Actions.
+- Non lasciare job bloccati senza diagnosi: controlla lo stato dei singoli step e interrompi le esecuzioni che superano il limite operativo previsto.
+- Prima di usare opzioni specifiche di Blender (GPU, denoiser, motore di rendering), verifica che siano supportate dalla build e dall'hardware del runner. Se una funzione opzionale non è disponibile, disabilitala solo se non compromette lo scopo del test e registra la modifica.
+- Verifica sempre l'esito effettivo della workflow. Il file YAML presente nel repository non dimostra che il workflow sia stato eseguito con successo.
+
+### 13.5 Ricerca storica prima dell'effetto visivo
+- Per la cronologia urbana, privilegia fonti primarie e istituzionali e conserva citazioni verificabili per ogni fase.
+- Distingui fatti documentati, inferenze spaziali, proxy geometrici e dati ignoti. Etichetta chiaramente le geometrie schematiche e i layer proxy.
+- Non retroproiettare l'attuale forma urbana in epoche precedenti. Quando manca una geometria storica attendibile, descrivi il limite e non presentare la forma moderna come storicamente accertata.
+- La ricerca deve produrre un registro delle fonti e una cronologia con date/fasi sostenute da fonti; le assunzioni utili al renderer vanno separate dai fatti storici.
+
