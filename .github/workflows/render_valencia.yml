@@ -34,7 +34,7 @@ jobs:
           import json, os
           p = "/tmp/city_valencia.json"
           d = json.load(open(p, encoding="utf-8"))
-          print("City:", d.get("name"), "center:", d.get("lat0"), d.get("lon0))
+          print("City:", d.get("name"), "center:", d.get("lat0"), d.get("lon0"))
           print("Prepared data files:")
           for f in sorted(os.listdir("/tmp/valencia_data")):
               print(f, os.path.getsize(os.path.join("/tmp/valencia_data", f)))
