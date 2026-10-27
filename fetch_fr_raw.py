@@ -67,7 +67,15 @@ for path in SRC:
     cols = {l: list(pyogrio.read_info(path, layer=l)['fields']) for l in layers}
     for l in layers: schema.write(f'{os.path.basename(path)} | {l}: {", ".join(cols[l])}\n')
     def polys(l):
-        t = (pyogrio.read_info(path, layer=l).get('geometry_type') or '').lower()
+        # il tipo dichiarato puo' essere generico ("Unknown"/"Geometry"): si guarda il primo oggetto vero
+        info = pyogrio.read_info(path, layer=l)
+        if not info.get('geometry_type'): return False
+        try:
+            d = pyogrio.read_dataframe(path, layer=l, max_features=5)
+            t = ' '.join(str(x) for x in d.geometry.geom_type.dropna().unique()).lower()
+        except Exception as e:
+            log('  strato', l, 'non leggibile:', e); return False
+        log(f'  strato {l}: dichiarato {info.get("geometry_type")}, reale {t or "vuoto"}')
         return 'polygon' in t
     # strato degli edifici: prima la vista "compile" (millesimi 2025+: anno, livelli, altezza tutti li'), poi le altre
     pref = ('batiment_groupe_compile', 'batiment_groupe', 'batiment_construction')
