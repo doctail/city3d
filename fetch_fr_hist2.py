@@ -34,7 +34,7 @@ if not got.get('kk239hv5615'):   # ripiego: sito ALPAGE (Huma-Num)
         links = set(re.findall(r'href=["\']([^"\']+\.zip)', t, re.I))
         log('ALPAGE', p, 'zip trovati:', len(links), sorted(links)[:30])
         for u in links:
-            if re.search(r'bati|vasserot|ilot|voie|parcel', u, re.I):
+            if re.search(r'bati|vasserot|vass|ilot|voie|parcel|alpage|sig', u, re.I):
                 u = requests.compat.urljoin(p, u); try_get(u, f'{OUT}/vasserot/alpage__{os.path.basename(u)}', need_zip=True)
 # Merimee: risorse del dataset su data.gouv (il portale culture ha cambiato indirizzo)
 try:
