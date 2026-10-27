@@ -49,9 +49,10 @@ import numpy as np, pyogrio, shapely
 from pyproj import Transformer
 OUT = sys.argv[3]; SRC = sys.argv[4:]
 os.makedirs(OUT, exist_ok=True)
-YC = ('annee_construction', 'ffo_bat_annee_construction', 'annee_construction_ffo')
-LC = ('nb_niveau', 'ffo_bat_nb_niveau', 'nb_niveau_ffo')
-HC = ('hauteur_mean', 'bdtopo_bat_hauteur_mean', 'hauteur', 'hauteur_moyenne')
+YC = ('ffo_bat_annee_construction', 'annee_construction', 'annee_construction_ffo')
+Y2 = ('dpe_mix_arrete_annee_construction_dpe', 'rnc_l_annee_construction', 'dpe_ter_annee_construction_dpe', 'rpls_l_annee_construction')   # ripiego, segnato src
+LC = ('ffo_bat_nb_niveau', 'nb_niveau', 'nb_niveau_ffo')
+HC = ('bdtopo_bat_hauteur_mean', 'hauteur_mean', 'hauteur', 'hauteur_moyenne')
 ID = 'batiment_groupe_id'
 
 def pick(cols, cand):
@@ -65,17 +66,27 @@ for path in SRC:
     layers = [l[0] for l in pyogrio.list_layers(path)]
     cols = {l: list(pyogrio.read_info(path, layer=l)['fields']) for l in layers}
     for l in layers: schema.write(f'{os.path.basename(path)} | {l}: {", ".join(cols[l])}\n')
-    geo = next((l for l in layers if l == 'batiment_groupe'), None) or next((l for l in layers if 'batiment_groupe' in l and pyogrio.read_info(path, layer=l)['geometry_type']), None)
-    ffo = next((l for l in layers if 'ffo_bat' in l), None)
-    bdt = next((l for l in layers if 'bdtopo_bat' in l), None)
-    crs = pyogrio.read_info(path, layer=geo)['crs'] if geo else None
-    log(os.path.basename(path), '| geometria:', geo, crs, '| anno:', ffo, '| altezza:', bdt)
-    if not geo: log('ERRORE: nessuno strato con geometria; vedi schema.txt'); sys.exit(2)
+    def polys(l):
+        t = (pyogrio.read_info(path, layer=l).get('geometry_type') or '').lower()
+        return 'polygon' in t
+    # strato degli edifici: prima la vista "compile" (millesimi 2025+: anno, livelli, altezza tutti li'), poi le altre
+    pref = ('batiment_groupe_compile', 'batiment_groupe', 'batiment_construction')
+    geo = next((l for l in pref if l in layers and polys(l)), None) \
+        or next((l for l in layers if 'batiment' in l and not l.startswith('rel_') and polys(l)), None)
+    ffo = next((l for l in layers if l.endswith('ffo_bat')), None)
+    bdt = next((l for l in layers if l.endswith('bdtopo_bat') and not l.startswith('rel_')), None)
+    if not geo:
+        log(os.path.basename(path), '| nessuno strato di edifici (poligoni): saltato'); continue
+    crs = pyogrio.read_info(path, layer=geo)['crs']
+    log(os.path.basename(path), '| geometria:', geo, crs, pyogrio.read_info(path, layer=geo).get('geometry_type'),
+        '| anno:', pick(cols[geo], YC) or ffo, '| altezza:', pick(cols[geo], HC) or bdt)
     to_loc = Transformer.from_crs('EPSG:4326', crs, always_xy=True)
     to_ll = Transformer.from_crs(crs, 'EPSG:4326', always_xy=True)
     CX, CY = to_loc.transform(LON0, LAT0)
     keep = [c for c in (ID, 'code_commune_insee', 'libelle_commune_insee') if c in cols[geo]]
     keep += [c for c in (pick(cols[geo], YC), pick(cols[geo], LC), pick(cols[geo], HC)) if c]
+    keep += [c for c in Y2 if c in cols[geo]]
+    if ID not in cols[geo]: ID = 'batiment_construction_id'
     g = pyogrio.read_dataframe(path, layer=geo, columns=keep, bbox=(CX - R, CY - R, CX + R, CY + R))
     c = shapely.centroid(g.geometry.values)
     g = g[((shapely.get_x(c) - CX) ** 2 + (shapely.get_y(c) - CY) ** 2) < R * R]
@@ -104,9 +115,18 @@ for path in SRC:
                 v = float(v); return None if v != v else v
             except (TypeError, ValueError): return None
         y, lev, h = num(y), num(lev), num(h)
+        src = 'ffo' if y and 1000 <= y <= 2026 else None
+        if not src:   # ripiego: DPE / registro copropriete' / RPLS (anni dichiarati, a volte liste "1930,1931")
+            for c in Y2:
+                v = r.get(c)
+                if v is None: continue
+                import re as _re
+                m = _re.search(r'(1[0-9]{3}|20[0-2][0-9])', str(v))
+                if m: y = int(m.group(1)); src = c.split('_')[0]; break
+            else: y = None
         geom = shapely.transform(geom, lambda xy: np.c_[to_ll.transform(xy[:, 0], xy[:, 1])])
         feats.append({'type': 'Feature', 'geometry': shapely.geometry.mapping(geom),
-                      'properties': {'id': i, 'insee': r.get('code_commune_insee'), 'y': int(y) if y else None,
+                      'properties': {'id': i, 'insee': r.get('code_commune_insee'), 'y': int(y) if y else None, 'src': src,
                                      'lev': int(lev) if lev is not None else None, 'h': round(h, 1) if h else None}})
 schema.close()
 with gzip.open(os.path.join(OUT, 'bdnb.geojson.gz'), 'wt') as f:
@@ -114,19 +134,19 @@ with gzip.open(os.path.join(OUT, 'bdnb.geojson.gz'), 'wt') as f:
 
 # --- copertura: anno valido = 1000..2026 ---
 ok = lambda y: y is not None and 1000 <= y <= 2026
-per = collections.defaultdict(lambda: [0, 0])
+per = collections.defaultdict(lambda: [0, 0, 0])
 for f in feats:
-    p = f['properties']; k = str(p['insee'] or '?'); per[k][0] += 1; per[k][1] += ok(p['y'])
+    p = f['properties']; k = str(p['insee'] or '?'); per[k][0] += 1; per[k][1] += ok(p['y']); per[k][2] += p.get('src') == 'ffo'
 soglia = CFG.get('coverage_min', 0.70)
 with open(os.path.join(OUT, 'copertura.csv'), 'w') as f:
-    f.write('insee,zona,edifici,con_anno,quota,sotto_soglia\n')
+    f.write('insee,zona,edifici,con_anno,quota,solo_fichiers_fonciers,sotto_soglia\n')
     for k in sorted(per):
-        n, a = per[k]; z = f'{int(k) - 75100}e arr.' if k.startswith('751') and len(k) == 5 else 'fuori Parigi'
-        f.write(f'{k},{z},{n},{a},{a / n:.3f},{"SI" if a / n < soglia else ""}\n')
+        n, a, a1 = per[k]; z = f'{int(k) - 75100}e arr.' if k.startswith('751') and len(k) == 5 else 'fuori Parigi'
+        f.write(f'{k},{z},{n},{a},{a / n:.3f},{a1 / n:.3f},{"SI" if a / n < soglia else ""}\n')
 par = {k: v for k, v in per.items() if k.startswith('751')}
 log('arrondissement trovati:', len(par), '/ 20')
 for k in sorted(par):
-    n, a = par[k]; log(f'  {int(k) - 75100:2d}e: {a}/{n} = {a / n:.0%}' + ('   <-- SOTTO IL 70%' if a / n < soglia else ''))
+    n, a, a1 = par[k]; log(f'  {int(k) - 75100:2d}e: {a}/{n} = {a / n:.0%} (solo Fichiers fonciers {a1 / n:.0%})' + ('   <-- SOTTO IL 70%' if a / n < soglia else ''))
 # anni "sospetti": valori ripetuti in modo anomalo (anni di default dei Fichiers fonciers)
 ys = [f['properties']['y'] for f in feats if ok(f['properties']['y'])]
 cnt = collections.Counter(ys)
