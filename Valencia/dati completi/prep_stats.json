@@ -1,0 +1,661 @@
+{
+  "city": "Valencia",
+  "prepared_at_utc": "2026-10-27",
+  "center": {
+    "lat": 39.4753,
+    "lon": -0.3758,
+    "reference": "Cathedral / Plaza de la Virgen, approximate"
+  },
+  "radius_m": 12000,
+  "catastro": {
+    "source_file": "A.ES.SDGC.BU.46900.zip",
+    "municipal_code": "46900-VALENCIA as stated in official INSPIRE metadata",
+    "retained_buildings": 35145,
+    "renderer_buildings_total": 38241,
+    "catastro_buildings_retained": 35145,
+    "osm_supplement_buildings": 3096,
+    "osm_supplement_intersecting_not_added": 32144,
+    "osm_supplement_invalid_or_small_skipped": 603,
+    "rounded_building_geometry_repairs": 0,
+    "known_original_year": 35059,
+    "original_year_missing": 86,
+    "date_source_counts": {
+      "end": 35059,
+      "unknown": 86
+    },
+    "year_imputed_nearby_median": 86,
+    "year_unknown_fallback_2026": 0,
+    "height_from_floor_count": 35110,
+    "height_missing": 3131,
+    "year_min": 1250,
+    "year_max": 2026,
+    "year_median": 1962,
+    "period_counts": {
+      "1000-1499": 10,
+      "1500-1799": 81,
+      "1800-1849": 159,
+      "1850-1899": 1328,
+      "1900-1944": 10543,
+      "1945-1974": 12360,
+      "1975-1999": 6472,
+      "2000-2026": 4106
+    },
+    "height_known_ratio": 0.918124526032269,
+    "catastro_year_known_ratio": 0.9975529947360934,
+    "renderer_period_counts": {
+      "1000-1499": 10,
+      "1500-1799": 81,
+      "1800-1849": 159,
+      "1850-1899": 1332,
+      "1900-1944": 10558,
+      "1945-1974": 12385,
+      "1975-1999": 6495,
+      "2000-2026": 4125
+    }
+  },
+  "osm": {
+    "source_file": "valencia-261026-free.gpkg.zip",
+    "as_of": "2026-10-26T21:24:46Z",
+    "layers": {
+      "gis_osm_roads_free": 37638,
+      "gis_osm_railways_free": 848,
+      "gis_osm_waterways_free": 144,
+      "gis_osm_water_a_free": 268,
+      "gis_osm_landuse_a_free": 12097,
+      "gis_osm_buildings_a_free": 35843
+    },
+    "renderer_road_polygons": 13178,
+    "renderer_rail_polygons": 660,
+    "road_year_methods": {
+      "urban_grid_p10_estimate": 11676,
+      "19th_century_expansion_envelope": 597,
+      "1356_city_extent_inference": 536,
+      "historic_core_inference": 354,
+      "current_road_unknown_date": 15,
+      "railway_urban_grid_estimate": 658,
+      "unknown_railway_date": 2
+    },
+    "bridge_segments": 432,
+    "bridge_year_methods": {
+      "unknown_current_bridge": 391,
+      "documented_completion_year": 41
+    },
+    "water_geometries_before_union": 316,
+    "old_turia_bed_parts": 17,
+    "new_turia_channel_parts": 2,
+    "landphases_features": 13,
+    "park_year_records": 414,
+    "land_polygons": 4,
+    "parks_polygons": 414,
+    "osm_building_footprints_within_municipality_radius": 35843,
+    "osm_buildings_added_no_catastro_overlap": 3096,
+    "osm_buildings_intersecting_catastro_not_added": 32144,
+    "osm_buildings_invalid_or_small_skipped": 603
+  },
+  "historical_layers": [
+    {
+      "file": "circo_romano.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": null,
+            "Shape__Area": 6918.978103637695,
+            "Shape__Length": 392.90421029059803
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "edifici_musulmani.geojson",
+      "features": 10,
+      "geometry_types": {
+        "Point": 10
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Mezquita mayor",
+            "Epoca": "ciudad musulmana"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 3,
+            "Nombre": "Alcázar",
+            "Epoca": "ciudad musulmana"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 4,
+            "Nombre": "bab al-Sajar",
+            "Epoca": "ciudad musulmana"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 5,
+            "Nombre": "bab al-Warraq",
+            "Epoca": "ciudad musulmana"
+          },
+          "geometry_type": "Point"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "edifici_romani.geojson",
+      "features": 10,
+      "geometry_types": {
+        "Point": 10
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Almoina",
+            "Época": "Roma",
+            "Descripción": "Centro de la ciudad romana"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 3,
+            "Nombre": "Termas",
+            "Época": "Roma",
+            "Descripción": "Aunque la joya más sorprendente que puede contemplarse son las termas, donde se observa la bañera de agua caliente, la sala de agua templada, el banco donde se daban masajes con aceites y la zona de vestuarios, en una especie de balneario romano de la épo"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 4,
+            "Nombre": "Templo de Asklepedion",
+            "Época": "Roma",
+            "Descripción": null
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 5,
+            "Nombre": "Necrópolis",
+            "Época": "Roma",
+            "Descripción": null
+          },
+          "geometry_type": "Point"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "ensanche_xix.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": null,
+            "Shape__Area": 4132529.910812378,
+            "Shape__Length": 11716.440152038314
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "juderia.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Judería",
+            "Shape__Area": 100355.6346282959,
+            "Shape__Length": 1472.9138258238697
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "moreria.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Morería",
+            "Shape__Area": 60297.80403137207,
+            "Shape__Length": 1022.8591007588534
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "mura_musulmane.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Ciudad musulmana",
+            "Shape__Area": 822864.2140960693,
+            "Shape__Length": 3825.163657986982
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "mura_romane_138ac.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Ciudad romana 02",
+            "Shape__Area": 123640.02033996582,
+            "Shape__Length": 1410.1538039210275
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "mura_romane_20ac.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Ciudad romana 02",
+            "Shape__Area": 235875.18589782715,
+            "Shape__Length": 1854.3866381323537
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "porte_1391.geojson",
+      "features": 13,
+      "geometry_types": {
+        "Point": 13
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Portal de Russafa"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 2,
+            "Nombre": "Portal de San Vicente"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 3,
+            "Nombre": "Portal de Torrent"
+          },
+          "geometry_type": "Point"
+        },
+        {
+          "properties": {
+            "OBJECTID": 4,
+            "Nombre": "Portal de les Setze Claus"
+          },
+          "geometry_type": "Point"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "strade_romane_138ac.geojson",
+      "features": 2,
+      "geometry_types": {
+        "LineString": 2
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Cardo máximo",
+            "Shape__Length": 345.036512091742
+          },
+          "geometry_type": "LineString"
+        },
+        {
+          "properties": {
+            "OBJECTID": 2,
+            "Nombre": "Decumano máximo",
+            "Shape__Length": 408.181805474057
+          },
+          "geometry_type": "LineString"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "strade_romane_20ac.geojson",
+      "features": 2,
+      "geometry_types": {
+        "LineString": 2
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": "Cardo máximo",
+            "Shape__Length": 564.6075671217848
+          },
+          "geometry_type": "LineString"
+        },
+        {
+          "properties": {
+            "OBJECTID": 2,
+            "Nombre": "Decumano máximo",
+            "Shape__Length": 408.181805474057
+          },
+          "geometry_type": "LineString"
+        }
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "valencia_1356.geojson",
+      "features": 1,
+      "geometry_types": {
+        "Polygon": 1
+      },
+      "samples": [
+        {
+          "properties": {
+            "OBJECTID": 1,
+            "Nombre": null,
+            "Shape__Area": 2566383.1267547607,
+            "Shape__Length": 6072.30782113368
+          },
+          "geometry_type": "Polygon"
+        }
+      ],
+      "crs": "EPSG:4326"
+    }
+  ],
+  "invalid_or_too_small_inside_radius": 151,
+  "catastro_source_total": 36359,
+  "catastro_outside_radius": 1063,
+  "date_samples": [],
+  "catastro_raw_year_distribution": {
+    "1930": 1775,
+    "1920": 1317,
+    "1900": 1120,
+    "1970": 1016,
+    "1960": 1006,
+    "1940": 950,
+    "1965": 906,
+    "1950": 777,
+    "1971": 681,
+    "1966": 636,
+    "1910": 611,
+    "1975": 591,
+    "1945": 538,
+    "2000": 531,
+    "1969": 518,
+    "1925": 502,
+    "1964": 491,
+    "1990": 476,
+    "1972": 461,
+    "1980": 455,
+    "1995": 433,
+    "1968": 419,
+    "1977": 411,
+    "1890": 410,
+    "1967": 406,
+    "1962": 398,
+    "1958": 392,
+    "1963": 390,
+    "1974": 381,
+    "1973": 374,
+    "1976": 371,
+    "1955": 342,
+    "1961": 336,
+    "1978": 324,
+    "2004": 301,
+    "1957": 301,
+    "1956": 292,
+    "1928": 291,
+    "2006": 285,
+    "1998": 278,
+    "2008": 277,
+    "2007": 277,
+    "1915": 276,
+    "1935": 275,
+    "2002": 267,
+    "2005": 266,
+    "2003": 264,
+    "1926": 263,
+    "1997": 259,
+    "2001": 249,
+    "1979": 248,
+    "1985": 244,
+    "1999": 238,
+    "1959": 234,
+    "1932": 231,
+    "2010": 226,
+    "1996": 223,
+    "1994": 216,
+    "1993": 216,
+    "1880": 213,
+    "1954": 210,
+    "1982": 204,
+    "1927": 202,
+    "1992": 197,
+    "1923": 186,
+    "1924": 186,
+    "1952": 185,
+    "1922": 176,
+    "1929": 174,
+    "2009": 173,
+    "1942": 169,
+    "1981": 169,
+    "1984": 166,
+    "1889": 157,
+    "1934": 153,
+    "1850": 152,
+    "1983": 149,
+    "1953": 144,
+    "1948": 143,
+    "1931": 140,
+    "1943": 134,
+    "1949": 133,
+    "2011": 132,
+    "1988": 131,
+    "1991": 131,
+    "1918": 124,
+    "1986": 122,
+    "1936": 121,
+    "1987": 118,
+    "1921": 117,
+    "2012": 116,
+    "2021": 105,
+    "1989": 102,
+    "1933": 98,
+    "1946": 96,
+    "1870": 95,
+    "1941": 90,
+    "1860": 87,
+    "0": 86,
+    "1951": 82,
+    "2020": 80,
+    "2024": 79,
+    "1916": 78,
+    "1905": 75,
+    "2023": 74,
+    "1914": 73,
+    "1947": 72,
+    "1917": 72,
+    "1800": 71,
+    "2022": 70,
+    "1937": 70,
+    "1912": 69,
+    "1919": 67,
+    "2019": 58,
+    "1944": 57,
+    "2013": 55,
+    "1909": 54,
+    "2014": 46,
+    "1906": 45,
+    "2015": 42,
+    "2025": 41,
+    "1908": 38,
+    "2018": 35,
+    "1913": 35,
+    "1938": 32,
+    "1895": 31,
+    "2017": 30,
+    "2016": 26,
+    "1939": 25,
+    "1885": 25,
+    "1820": 23,
+    "1888": 23,
+    "1907": 22,
+    "1903": 20,
+    "1887": 20,
+    "1700": 17,
+    "1750": 17,
+    "1886": 15,
+    "1830": 15,
+    "1875": 14,
+    "1840": 13,
+    "1911": 13,
+    "1902": 9,
+    "1780": 8,
+    "1894": 8,
+    "1871": 7,
+    "1891": 6,
+    "1849": 6,
+    "1810": 6,
+    "1904": 5,
+    "1898": 5,
+    "1893": 5,
+    "1790": 5,
+    "1884": 4,
+    "1730": 4,
+    "1897": 4,
+    "1845": 4,
+    "1815": 4,
+    "1770": 4,
+    "1855": 4,
+    "1865": 4,
+    "1825": 4,
+    "1901": 3,
+    "1881": 3,
+    "1861": 3,
+    "1879": 3,
+    "1720": 3,
+    "1835": 3,
+    "1882": 3,
+    "1841": 2,
+    "1852": 2,
+    "1600": 2,
+    "1710": 2,
+    "1760": 2,
+    "1450": 2,
+    "1899": 2,
+    "1878": 2,
+    "1868": 2,
+    "1877": 2,
+    "1500": 2,
+    "1857": 2,
+    "1662": 2,
+    "1892": 1,
+    "2026": 1,
+    "1444": 1,
+    "1605": 1,
+    "1765": 1,
+    "1754": 1,
+    "1869": 1,
+    "1866": 1,
+    "1826": 1,
+    "1858": 1,
+    "1883": 1,
+    "1722": 1,
+    "1715": 1,
+    "1876": 1,
+    "1804": 1,
+    "1846": 1,
+    "1818": 1,
+    "1827": 1,
+    "1759": 1,
+    "1873": 1,
+    "1731": 1,
+    "1283": 1,
+    "1788": 1,
+    "1847": 1,
+    "1851": 1,
+    "1867": 1,
+    "1498": 1,
+    "1423": 1,
+    "1874": 1,
+    "1660": 1,
+    "1579": 1,
+    "1864": 1,
+    "1808": 1,
+    "1896": 1,
+    "1703": 1,
+    "1250": 1,
+    "1550": 1,
+    "1391": 1,
+    "1863": 1,
+    "1844": 1,
+    "1417": 1,
+    "1853": 1,
+    "1300": 1,
+    "1774": 1,
+    "1859": 1
+  },
+  "renderer_data_dir": "data/"
+}
