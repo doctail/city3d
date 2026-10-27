@@ -1,0 +1,48 @@
+{
+  "name": "valencia",
+  "_doc": "Valencia, Spain. Local origin near Catedral / Plaza de la Virgen. Catastro INSPIRE BU 46900, OSM Geofabrik regional snapshot, and supplied historical GIS layers. See STATUS_AND_LIMITS.md for inference/provenance and render caveats.",
+  "lat0": 39.4753,
+  "lon0": -0.3758,
+  "radius_m": 12000,
+  "land_half_m": 13000,
+  "min_area_m2": 12,
+  "grid_deg": 0,
+  "hist": "hist_valencia",
+  "land_from_buildings": true,
+  "catastro_zip": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/46/46900-VALENCIA/A.ES.SDGC.BU.46900.zip",
+  "_historical_note": "Active timeline 1238–2026 is medieval-to-modern scope, not city foundation. Roman-era sources are retained for research but excluded from the active sequence. Muslim-wall outline is schematic; valencia_1356 is a broad urban extent, not a verified wall line.",
+  "parks": [],
+  "roads": [],
+  "urban_grid": false,
+  "cover": {
+    "cam": [
+      250,
+      3450,
+      35,
+      -60,
+      2900,
+      55
+    ],
+    "lens": 35,
+    "years": [
+      1238,
+      2026
+    ],
+    "night_years": [
+      2026
+    ]
+  },
+  "core_box": [
+    -12000,
+    -12000,
+    12000,
+    12000
+  ],
+  "forest_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "merge_parts": true
+}
