@@ -3,7 +3,7 @@
 # titolo, autore, data, licenza, URL della pagina: e' il credito per la descrizione.
 # La sandbox della chat non raggiunge Commons: si lancia sul pod (CPU, 1-2 minuti).
 # Uso: python3 tools/fetch_archivio.py parigi /workspace/archivio_parigi
-import json, os, sys, re, urllib.parse, requests
+import json, os, sys, re, time, urllib.parse, requests
 CITY, OUT = sys.argv[1], sys.argv[2]; os.makedirs(OUT, exist_ok=True)
 LISTE = {
     'parigi': [
@@ -36,11 +36,17 @@ for key, title in LISTE[CITY]:
            'data': clean(md.get('DateTimeOriginal', {}).get('value'))[:80], 'pagina': ii.get('descriptionurl'), 'px': [ii.get('width'), ii.get('height')],
            'stato': 'scaricato' if pd else 'SALTATO (licenza non PD/CC0)'}
     if pd:
-        ext = os.path.splitext(ii['url'])[1].lower()
-        with requests.get(ii['url'], headers=H, timeout=180, stream=True) as d:
-            with open(os.path.join(OUT, key + ext), 'wb') as f:
-                for ch in d.iter_content(1 << 20): f.write(ch)
+        # 29 ott: Wikimedia rispondeva con una pagina d'errore (troppe richieste) salvata come immagine. Ora: estensione
+        # senza parametri, pausa tra i file, controllo che sia davvero un'immagine, 5 tentativi con attesa crescente
+        ext = os.path.splitext(urllib.parse.urlparse(ii['url']).path)[1].lower() or '.jpg'
+        for k_ in range(5):
+            time.sleep(4 + 10 * k_)
+            d = requests.get(ii['url'], headers=H, timeout=180)
+            if d.status_code == 200 and d.headers.get('content-type', '').startswith('image/'):
+                open(os.path.join(OUT, key + ext), 'wb').write(d.content); break
+            print('  riprovo', key, d.status_code, d.headers.get('content-type'))
+        else: row['stato'] = 'ERRORE download (Wikimedia ha rifiutato 5 volte)'
     print(f"{row['stato']:32s} {lic:22s} {key}")
-    res.append(row)
+    res.append(row); json.dump(res, open(os.path.join(OUT, 'licenze.json'), 'w'), ensure_ascii=False, indent=1)
 json.dump(res, open(os.path.join(OUT, 'licenze.json'), 'w'), ensure_ascii=False, indent=1)
 print('FATTO:', sum(r_['stato'] == 'scaricato' for r_ in res), 'immagini in', OUT)
