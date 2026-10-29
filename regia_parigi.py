@@ -46,8 +46,7 @@ SOSTE = [
     (1670.0, 1706.0, 6.0, 'Les Invalides and its golden dome (1670-1706)', (*INVAL, 40), 420, 196, 170),   # E006, E036
     (1784.0, 1791.0, 5.5, 'The Bastille falls (1789)', (*BASTILLE, 15), 400, 214, 188),   # E011, B007
     (1820.0, 1826.0, 5.0, 'Canal Saint-Martin is dug (1822-1825)', (*L(48.8705, 2.3655), 0), 430, 206, 182),   # A006/A007 (graduale 1822-1825)
-    (1852.0, 1870.9, 10.0, "Haussmann cuts through old Paris (1853-1870)", (-650, 1250, 10), 470, 196, 160),   # F004, C001-C008, E038, E009
-    (1871.2, 1871.6, 4.0, 'The Commune: Tuileries and Hôtel de Ville burn (1871)', (*TUIL, 20), 430, 214, 200),   # F005, E020
+    (1852.0, 1872.0, 13.0, "Haussmann cuts through old Paris (1853-1870)", (-900, 900, 10), 470, 200, 160),   # F004, C001-C008, E038, E009; dentro: la Comune (maggio 1871, F005/E020): un'unica sosta, prima il tempo tornava fermo 16 s sul 1871
     (1886.5, 1889.6, 6.0, 'The Eiffel Tower rises (1887-1889)', (*EIFFEL, 120), 520, 226, 196, 22),   # E004
     (1966.0, 1977.5, 6.0, 'Tour Montparnasse and Centre Pompidou (1969-1977)', (MONTP[0] + 300, MONTP[1] + 400, 60), 560, 212, 188),   # E016, E015
     (2018.9, 2024.95, 6.0, 'Notre-Dame: fire and rebirth (2019-2024)', (*ND, 40), 380, 232, 204),   # E023, E024
@@ -361,16 +360,24 @@ fr = abs(rate[(ts > 12) & (ts < NIGHT_T)])
 lines += ['', f'Velocita del tempo fuori dalle soste: mediana {np.median(fr):.2f} anni/s, max {fr.max():.1f} anni/s']
 # capitoli YouTube (descrizione): uno ogni 15-20 s, scelti tra i cartelli; preferiti quelli con un numero (fatto verificabile)
 import re as _re
-chap = [(0.0, 'Paris today')]; _c = sorted(caps + [{'t_in': e_['t_in'], 'date': e_['sub'] or '', 'title': e_['title'], 'line': ''} for e_ in soste_ev], key=lambda c: c['t_in'])
-while True:
-    lo, hi = chap[-1][0] + 12.5, chap[-1][0] + 21.0   # YouTube: >= 10 s; obiettivo 15-20
-    _prev = chap[-1][1].lower()
-    _ok = lambda c: not any(w_ in _prev for w_ in c['title'].lower().replace(':', ' ').split()[:2] if len(w_) > 3)   # niente doppioni (Comune: cartello + sosta)
-    cand = [c for c in _c if lo <= c['t_in'] <= hi and _ok(c)] or [c for c in _c if c['t_in'] > lo and _ok(c)][:1]
-    if not cand or cand[0]['t_in'] > NIGHT_T: break
-    c = max(cand, key=lambda c: (bool(_re.search(r'\d', c['title'] + c['line'])), -abs(c['t_in'] - (lo + 4.0))))
-    chap.append((c['t_in'], c['title'] if not c['date'] or c['date'] in c['title'] else f"{c['date']} – {c['title']}"))
-chap.append((NIGHT_T, 'Paris by night'))
+def _lab(c): return c['title'] if not c['date'] or c['date'] in c['title'] else f"{c['date']} – {c['title']}"
+# soste sempre capitoli (i momenti forti), poi si riempiono i buchi > 20 s con i cartelli (preferiti quelli con numeri),
+# distanza minima 12,5 s (YouTube vuole >= 10 s)
+chap = [(0.0, 'Paris today')] + [(e_['t_in'], e_['title']) for e_ in soste_ev] + [(NIGHT_T, 'Paris by night')]
+_pool = [c for c in caps if c['t_in'] < NIGHT_T - 12.5]; _dead = set()
+for _ in range(200):
+    chap.sort(); gaps = [(chap[k + 1][0] - chap[k][0], k) for k in range(len(chap) - 1) if round(chap[k][0], 2) not in _dead]
+    if not gaps: break
+    g, k = max(gaps)
+    if g <= 20.0: break
+    a_, b_ = chap[k][0] + 10.5, chap[k + 1][0] - 10.5
+    cand = [c for c in _pool if a_ <= c['t_in'] <= b_]
+    if not cand: _dead.add(round(chap[k][0], 2)); continue   # buco senza cartelli possibili: resta
+    mid = (chap[k][0] + chap[k + 1][0]) / 2 if g < 40 else chap[k][0] + 16.0
+    c = max(cand, key=lambda c: (bool(_re.search(r'\d', c['title'] + c['line'])), -abs(c['t_in'] - mid)))
+    chap.append((c['t_in'], _lab(c))); _pool.remove(c)
+chap = sorted((t_, ti) for t_, ti in chap if ti)
+
 _ct = [f'{int(t // 60)}:{int(t % 60):02d} {ti}' for t, ti in chap]
 open('capitoli_parigi.txt', 'w').write('\n'.join(_ct) + '\n')
 lines += ['', f'CAPITOLI ({len(chap)}, intervallo medio {np.mean(np.diff([t for t, _ in chap])):.1f} s, massimo {max(np.diff([t for t, _ in chap])):.1f} s):'] + ['  ' + x for x in _ct]
