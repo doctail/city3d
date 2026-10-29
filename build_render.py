@@ -1209,7 +1209,7 @@ if CITY.get('merge_parts') and PARTS:
     from mathutils import Matrix as _Mx
     _grp = {}
     for pt in PARTS: _grp.setdefault((pt['b0'], pt['d0'], round(pt.get('zg', 0.0), 1), pt['obj'].visible_shadow), []).append(pt)
-    _newp = []
+    _newp = []; _rm_o = []; _rm_m = []
     for _k, _ps in _grp.items():
         if len(_ps) == 1: _newp.append(_ps[0]); continue
         _z = min(p_['z0'] for p_ in _ps); _bm = bmesh.new()
@@ -1219,8 +1219,10 @@ if CITY.get('merge_parts') and PARTS:
             _bm.from_mesh(_me)
         _o = obj(f"lm_{_ps[0]['obj'].name.split('_')[1]}_g{len(_newp)}", _bm, CM); _o.data.color_attributes.active_color_name = 'col'
         _o.location.z = _z; _o.scale.z = 0.0; _o.visible_shadow = _k[3]
-        for p_ in _ps: _me = p_['obj'].data; bpy.data.objects.remove(p_['obj'], do_unlink=True); bpy.data.meshes.remove(_me)
+        for p_ in _ps: _rm_o.append(p_['obj']); _rm_m.append(p_['obj'].data)
         _newp.append({'obj': _o, 'z0': _z, 'b0': _k[0], 'b1': _k[0], 'd0': _k[1], 'd1': _k[1]})
+    # 29 ott: 10.009 remove() uno per uno costavano 27 minuti (ogni remove scorre tutto il file): una sola batch_remove
+    bpy.data.batch_remove(_rm_o); bpy.data.batch_remove(_rm_m)
     log('monumenti uniti:', len(PARTS), '->', len(_newp), 'oggetti'); PARTS = _newp
 # alberi "cotti" in geometria statica (DOPO il rilievo: gli alberi nascono gia' sul suolo spostato, niente 3,5 milioni
 # di vertici da spostare, e nessuna copia del depsgraph raddoppiata dalle modifiche al suolo): spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
