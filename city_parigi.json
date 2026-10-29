@@ -76,7 +76,6 @@
  "urban_grid": false,
  "row_scale": 0.012,
  "tree_mesh": "octa",
- "haze_start": 4000.0,
  "far_flat": [
   7000,
   16000,

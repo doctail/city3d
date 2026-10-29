@@ -11,7 +11,7 @@ import numpy as np
 from scipy.interpolate import PchipInterpolator
 
 DATA = sys.argv[1] if len(sys.argv) > 1 else 'data_parigi'
-FPS = 24; NFR = 13680; DUR = NFR / FPS          # 570 s = 9:30 (AGGIORNAMENTI_REGIA 29 ott: 9-10 min)
+FPS = 24; NFR = 9360; DUR = NFR / FPS           # 390 s = 6:30 (correzione regia 29 ott: durata dal contenuto, 5:30-7:00, tetto 4 $)
 NIGHT_T = DUR - 40.0
 LENS = 35
 LAT0, LON0 = 48.85297, 2.34993
@@ -54,7 +54,7 @@ SOSTE = [
 SOSTE = [s_ for s_ in SOSTE if s_[3] != '_skip_']
 STOP_SUB = {'The Bastille falls (1789)': '14 July 1789', 'The Commune: Tuileries and Hôtel de Ville burn (1871)': 'May 1871',
             'Notre-Dame: fire and rebirth (2019-2024)': '15 April 2019 – 7 December 2024'}
-SUBSCRIBE_T = 255.0
+SUBSCRIBE_T = round(DUR * 0.48, 1)   # a meta video (era 255 s su 8:30)
 CAPS_NIGHT = [(NIGHT_T + 9.0, '1889', 'Eiffel Tower', 'Built in 26 months for the World Fair; meant to stand 20 years.'),
               (NIGHT_T + 22.0, '1190 → 2026', '836 years of Paris', 'From an island city to 2 million people.')]
 # ---------- didascalie continue: (anno, data, titolo, una riga) — dalla scheda di validazione (ID) ----------
