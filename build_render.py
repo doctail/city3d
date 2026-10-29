@@ -328,9 +328,38 @@ def add_bld(bm, col, vyear, vdie, b):
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
     z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
     vb = [bm.verts.new((x, yy, z0_ - (1.0 if dem_at else 0.0))) for x, yy in ring]   # con rilievo: muri 1 m sotto il suolo (pendii)
+    pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
+    # mansarda (Parigi, style.mansard): tetto in zinco/ardesia (rf='z' dalla BDNB): muri fino a h - mh, poi falda ripida rientrata
+    if ST.get('mansard') and b.get('rf') == 'z' and not pitched and not gl and h > 11 and poly.area > 40 and len(ring) <= 40:
+        mh = min(5.5, 0.32 * h); ins = min(2.2, math.sqrt(poly.area) * 0.12); n_ = len(ring); inner = []
+        for i in range(n_):
+            (xa, ya_), (xb, yb), (xc, yc) = ring[i - 1], ring[i], ring[(i + 1) % n_]
+            e1 = (xb - xa, yb - ya_); e2 = (xc - xb, yc - yb); l1 = math.hypot(*e1) or 1e-6; l2 = math.hypot(*e2) or 1e-6
+            n1 = (-e1[1] / l1, e1[0] / l1); n2 = (-e2[1] / l2, e2[0] / l2)   # normali interne (anello antiorario)
+            bx_, by_ = n1[0] + n2[0], n1[1] + n2[1]; bl = math.hypot(bx_, by_)
+            if bl < 1e-3: bx_, by_, bl = n1[0], n1[1], 1.0
+            k_ = ins / max(0.35, (bx_ * n1[0] + by_ * n1[1]) / bl)
+            inner.append((xb + bx_ / bl * min(k_, 3 * ins), yb + by_ / bl * min(k_, 3 * ins)))
+        ip = Polygon(inner)
+        if ip.is_valid and ip.area > 0.25 * poly.area:
+            vm = [bm.verts.new((x, yy, z0_ + h - mh)) for x, yy in ring]
+            vt = [bm.verts.new((x, yy, z0_ + h)) for x, yy in inner]; h = h + z0_
+            vyear += [y] * (3 * n_); vdie += [dd] * (3 * n_)
+            rcm = srgb(rnd.choice(ST.get('mansard_roof', ['#7d848d', '#8a9099', '#6f767f', '#959ba2'])))
+            try:
+                f = bm.faces.new(vt)
+                for l in f.loops: l[col] = (*rcm, 0.0)
+            except ValueError: pass
+            for i in range(n_):
+                j = (i + 1) % n_
+                for quad, cc_ in (((vb[i], vb[j], vm[j], vm[i]), (*wc, wa)), ((vm[i], vm[j], vt[j], vt[i]), (*rcm, 0.0))):
+                    try:
+                        f = bm.faces.new(quad)
+                        for l in f.loops: l[col] = cc_
+                    except ValueError: pass
+            return
     vt = [bm.verts.new((x, yy, z0_ + h)) for x, yy in ring]; h = h + z0_
     vyear += [y] * (2 * len(ring)); vdie += [dd] * (2 * len(ring))
-    pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
     if pitched:   # case antiche: tetto a falde (piramide sul centroide)
         rc2 = srgb(rnd.choice(ST['roof_old'] if ST.get('era_split') else OLDROOF)); cx, cy = poly.centroid.x, poly.centroid.y
         ap = bm.verts.new((cx, cy, h + min(6.0, math.sqrt(poly.area) * 0.45))); vyear.append(y); vdie.append(dd)

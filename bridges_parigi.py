@@ -33,6 +33,13 @@ for f in F:
     if g.area < 150 or g.centroid.x ** 2 + g.centroid.y ** 2 > 9000 ** 2: continue
     if g.intersection(WATER).area / g.area < 0.25: continue
     OUTL.append((p.get('name') or p.get('bridge:name') or '', g))
+# ponti della scheda senza contorno man_made=bridge in OSM: contorno dalle linee stradali col tag bridge (larghezza 14 m)
+_have = {re.sub(r'[^a-z]', '', (n or '').lower()) for n, _ in OUTL}
+for _nm in ('Pont du Carrousel',):
+    if re.sub(r'[^a-z]', '', _nm.lower()) in _have: continue
+    _ls = [LineString(np.c_[(np.array(f['geometry']['coordinates'])[:, 0] - LON0) * KX, (np.array(f['geometry']['coordinates'])[:, 1] - LAT0) * KY])
+           for f in F if f['properties'].get('name') == _nm and f['properties'].get('bridge') and f['geometry']['type'] == 'LineString']
+    if _ls: OUTL.append((_nm, unary_union(_ls).buffer(7, cap_style=2).buffer(0)))
 log('contorni sopra l\'acqua:', len(OUTL))
 
 STONE, IRON, CONC, ASPH, RAIL, WOOD, GOLDS = '#d6cbb2', '#4d5859', '#cfcac0', '#6f6b66', '#3f4446', '#7a5a3a', '#b89a52'
@@ -130,7 +137,9 @@ def norm(n): return re.sub(r'[^a-z]', '', n.lower().replace('é', 'e').replace('
 # extra: houses=(anno, (dem0, dem1)) ; grad=(a0, a1) ; col
 B = {
  'pontneuf': [(1578, None, 'stone', 6, {'grad': (1578, 1607)})],                                      # G005/E029 (fonte)
- 'pontnotredame': [(1412.5, 1854, 'stone', 4, {'col': WOOD, 'houses': (1512, (1786, 1788))}),         # G060 (memoria: graduale 1412-1413), G001 case 1510-1512 (fonte)
+ 'pontnotredame': [(1379.0, 1412.5, 'foot', 3, {'col': WOOD}),                                       # CONFLITTO con G060: la Senna ALPAGE del 1380 e' gia' interrotta qui
+                                                                                                        #   ([Likely] le "Planches de Mibray", passerella di legno prima del ponte del 1413)
+                   (1412.5, 1854, 'stone', 4, {'col': WOOD, 'houses': (1512, (1786, 1788))}),         # G060 (memoria: graduale 1412-1413), G001 case 1510-1512 (fonte)
                    (1854, None, 'stone', 3, {})],                                                      # G002 (fonte)
  'pontauchange': [(1190, 1856, 'stone', 5, {'houses': (1647, (1786, 1788))}),                          # Grand-Pont medievale (stato 1190); G003 1647 (memoria)
                   (1856, None, 'stone', 3, {'grad': (1856, 1860)})],                                    # G004 (fonte)

@@ -224,6 +224,14 @@
    0.25
   ],
   "night_lamp": "#ffa955",
-  "street": "#d9d2c3"
+  "street": "#d9d2c3",
+  "mansard": true,
+  "mansard_roof": [
+   "#7d848d",
+   "#8a9099",
+   "#6f767f",
+   "#959ba2",
+   "#5f6670"
+  ]
  }
 }
