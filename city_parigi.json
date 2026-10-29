@@ -273,5 +273,14 @@
  "grow_step": 2,
  "urban_buffer_old": 5.0,
  "urban_old_until": 1800,
- "sun_rot": 140
+ "sun_rot": 140,
+ "look_lite": {
+  "vegetation": {
+   "river_step": 16,
+   "vega_step": 40,
+   "orchard_step": 14
+  },
+  "dem_tol": 1.5,
+  "dem_edge_max": 480.0
+ }
 }

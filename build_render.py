@@ -13,6 +13,13 @@ CITY = {'name': 'nyc', 'lat0': 40.758, 'lon0': -73.985, 'grid_deg': 29, 'hist': 
         'forest_box': [-7500, -9500, 5500, 9000], 'parks': [[-900, 900, 1700, 5300, 1858]], 'roads': [],
         'outer': {'centers': [[40.737, -74.030], [40.714, -74.034]], 'curve': [[0, 1835], [1.5, 1860], [3, 1885], [5, 1905], [8, 1925], [12, 1950], [20, 1965]], 'max': 1970}}
 if '--city' in a: CITY.update(_j.load(open(a[a.index('--city') + 1])))
+# look alternativo (Parigi 29 ott: "look semplificato" per il costo): LOOK=lite applica le chiavi di CITY['look_lite']
+# (i dizionari, es. vegetation, si fondono chiave per chiave)
+if _o.environ.get('LOOK') and CITY.get('look_' + _o.environ['LOOK']):
+    for _k, _v in CITY['look_' + _o.environ['LOOK']].items():
+        if isinstance(_v, dict) and isinstance(CITY.get(_k), dict): CITY[_k] = dict(CITY[_k], **_v)
+        else: CITY[_k] = _v
+    print('[build] look', _o.environ['LOOK'], sorted(CITY['look_' + _o.environ['LOOK']]), flush=True)
 def opt(name, n=1, default=None):
     if name in a: i = a.index(name); return a[i + 1:i + 1 + n] if n > 1 else a[i + 1]
     return default

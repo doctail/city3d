@@ -72,7 +72,7 @@ light(){   # versione leggera da caricare in chat (~55 MB): 960x540, bitrate fis
 }
 MODE=${1:-}
 if [ -z "$MODE" ]; then
-  echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | cover | profile   (test = vecchia prova solo New York)"; exit 1
+  echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | cover | profile | misura   (test = vecchia prova solo New York)"; exit 1
 fi
 if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test vale solo per New York: usa preview"; exit 1; fi
 # controllo del costo PRIMA di qualsiasi render (29 ott: preview di Parigi bloccato da 61.772 blocchi): si ferma da solo
@@ -112,6 +112,17 @@ if [ "$MODE" = "memtest" ]; then   # solo misura: RAM, VRAM e secondi/fotogramma
   grep fotogramma /tmp/mt.log | awk -v nf=${MT_FRAMES:-7839} -v pr=${PRICE:-0.39} -v cap=${CAP:-3} '{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k){v=s/k*1.7; h=v*nf/3600; c=h*pr; printf "STIMA %d fotogrammi: ~%.2f s/fotogramma, %.1f ore, $%.2f (tetto $%s) -> %s\n", nf, v, h, c, cap, (c>cap?"SOPRA IL TETTO: FERMARSI":"sotto il tetto")}}'
   echo "picco RAM: $((PK/1024)) MB   picco VRAM: $(sort -n /tmp/mt_vram.txt | tail -1) MB"
   step "FINITO memtest: manda lo screenshot e TERMINA il pod"; exit 0
+fi
+if [ "$MODE" = "misura" ]; then
+  # 29 ott (Parigi): costo vero del completo nei due look, 24 fotogrammi CONSECUTIVI nel tratto piu' pesante (sosta di Haussmann:
+  # crescita e demolizioni a ogni fotogramma), 1080p. Ogni look costruisce la scena una volta (~7-9 min), poi i fotogrammi.
+  F0M=$($PY -c "import json;s=json.load(open('$SCHED'));print(int(next((x[0] for x in s.get('soste',[]) if 'Haussmann' in x[4]), s['duration']*0.55)*24)+48)")
+  for LK in base lite; do
+    SM=8; [ "$LK" = "lite" ] && SM=6
+    step "MISURA look $LK: fotogrammi $F0M-$((F0M+23)), 1920x1080, $SM campioni"
+    rm -rf /tmp/mis; LOOK=$LK $PY build_render.py -- $D /tmp/mis --frames $F0M $((F0M+23)) --res 1920 1080 --samples $SM --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\] (look|monumenti uniti|render|fotogramma)|rror|RRORE" | awk '{print} /fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    MEDIA %s senza i primi 2: %.2f s/fotogramma\n", "'$LK'", s/k}'
+  done
+  step "FINITO misura: manda le due righe MEDIA (e lo schermo)"; exit 0
 fi
 if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
