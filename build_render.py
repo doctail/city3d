@@ -302,7 +302,6 @@ def land_mat(mode='fields'):
     L(gm.outputs[2], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
     L(um.outputs[2], mx.inputs[7])
     fout_ = fields.outputs[0]
-    if mode == 'fields' and FAR_IMG is not None: fout_ = far_land(N, L, tc, fout_, um.outputs[2], yv, b)
     if mode == 'fields' and CITY.get('far_flat'):   # campi lontani: i poligoni sfumano verso un tono medio (non sembrano cartone)
         f0_, f1_, fk_ = CITY['far_flat']; cdf_ = N.new('ShaderNodeCameraData')
         ffr_ = N.new('ShaderNodeMapRange'); L(cdf_.outputs['View Distance'], ffr_.inputs['Value'])
@@ -310,6 +309,8 @@ def land_mat(mode='fields'):
         _fl = [srgb(c_) for c_ in FC]; _mean = tuple(sum(c_[i] for c_ in _fl) / len(_fl) for i in range(3))
         ffm_ = N.new('ShaderNodeMix'); ffm_.data_type = 'RGBA'; L(ffr_.outputs[0], ffm_.inputs['Factor']); L(fout_, ffm_.inputs[6]); ffm_.inputs[7].default_value = (*_mean, 1)
         fout_ = ffm_.outputs[2]
+    # sfondo vero DOPO far_flat: far_flat appiattiva verso un tono medio proprio i colori lontani (boschi, banlieue) che servono
+    if mode == 'fields' and FAR_IMG is not None: fout_ = far_land(N, L, tc, fout_, um.outputs[2], yv, b)
     L(fout_ if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
