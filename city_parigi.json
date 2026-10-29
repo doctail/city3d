@@ -272,5 +272,6 @@
  "dbin": 8,
  "grow_step": 2,
  "urban_buffer_old": 5.0,
- "urban_old_until": 1800
+ "urban_old_until": 1800,
+ "sun_rot": 140
 }
