@@ -495,14 +495,18 @@ for rc_ in RECLAIM:
 # terra a fasi (DATA/landphases.json [{"r", "from", "to", "c": field|urban|park}]): lastra di terra visibile solo negli anni
 # [from, to); fuori dalla finestra si vede l'acqua sotto. Serve dove l'acqua va e viene (Siviglia: Tablada 1926, Chapina 1950-92)
 _PH = json.load(open(f'{DATA}/landphases.json')) if os.path.exists(f'{DATA}/landphases.json') else []
-_ph_items = {}
+_ph_items = {}; _ph_cut = []
 for ph_ in _PH:
     q_ = Polygon(ph_['r']).buffer(0)
     if q_.is_empty: continue
-    lgeom = lgeom.difference(q_)
+    _ph_cut.append(q_)
     for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
         if isinstance(g_, Polygon) and g_.area > 50:
             _ph_items.setdefault((ph_['from'], ph_['to'], ph_.get('c', 'field')), []).append(list(g_.buffer(1.5, join_style=2).exterior.coords)[:-1])   # 1,5 m oltre il buco nella terra: niente crepe da cui si vede l'acqua sotto
+if _ph_cut:   # un solo taglio (Parigi: centinaia di zone a fasi, i tagli in serie rendevano la terra invalida)
+    from shapely.validation import make_valid as _mv
+    lgeom = _mv(lgeom.difference(unary_union(_ph_cut)))
+    lgeom = unary_union([g_ for g_ in getattr(lgeom, 'geoms', [lgeom]) if g_.geom_type in ('Polygon', 'MultiPolygon')])
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     urban_year = __import__(CITY['hist']).urban_year
@@ -748,7 +752,7 @@ ROADS_LL = CITY['roads']   # strade disegnate a mano (lat, lon); spente di defau
 _LAT0, _LON0 = CITY['lat0'], CITY['lon0']; _KX = math.cos(math.radians(_LAT0)) * 111320; _KY = 110540
 from shapely.geometry import LineString
 _rg = unary_union([LineString([((lo - _LON0) * _KX, (la - _LAT0) * _KY) for la, lo in r]).buffer(5, cap_style=1) for r in ROADS_LL])
-if not lgeom.is_empty: _rg = _rg.intersection(lgeom)
+if not lgeom.is_empty: _rg = _rg.buffer(0).intersection(lgeom.buffer(0))
 bm = bmesh.new()
 for g_ in (_rg.geoms if hasattr(_rg, 'geoms') else [_rg]):
     if isinstance(g_, Polygon) and not g_.is_empty:
