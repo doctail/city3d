@@ -1,4 +1,4 @@
-# Regia di Parigi (27 ott 2026). Durata 8:30 = 12.240 fotogrammi (brief: 8:00-9:00). UN SOLO PIANO SEQUENZA (SPEC_CAMERA_DRONE):
+# Regia di Parigi (27 ott 2026; 29 ott: 9:30 = 13.680 fotogrammi, capitoli ogni 15-20 s). UN SOLO PIANO SEQUENZA (SPEC_CAMERA_DRONE):
 # obiettivo fisso 35 mm, la camera "zooma" muovendosi, quota 300-1.000 m sopra il suolo, mai a terra. Prime crescite entro 20 s
 # (1190: Notre-Dame, Louvre e mura di Filippo Augusto salgono subito), parte densa entro ~1:00 (il 1550). Soste SOLO dove gli
 # edifici cambiano davanti alla camera (regola della regia). Anni dalla scheda di validazione (ID nei commenti).
@@ -11,7 +11,7 @@ import numpy as np
 from scipy.interpolate import PchipInterpolator
 
 DATA = sys.argv[1] if len(sys.argv) > 1 else 'data_parigi'
-FPS = 24; NFR = 12240; DUR = NFR / FPS          # 510 s = 8:30
+FPS = 24; NFR = 13680; DUR = NFR / FPS          # 570 s = 9:30 (AGGIORNAMENTI_REGIA 29 ott: 9-10 min)
 NIGHT_T = DUR - 40.0
 LENS = 35
 LAT0, LON0 = 48.85297, 2.34993
@@ -336,6 +336,19 @@ lines += ['', f'2:30-4:45: tratto piu lungo sopra 800 m = {best_:.1f} s (limite 
 lines += ['', 'ANNO OGNI 20 s:'] + [f'  {int(t // 60)}:{int(t % 60):02d}  {year_at(t):7.1f}  ({abs(rate[int(t * 4)]):.2f} anni/s)' for t in range(0, int(DUR), 20)]
 fr = abs(rate[(ts > 12) & (ts < NIGHT_T)])
 lines += ['', f'Velocita del tempo fuori dalle soste: mediana {np.median(fr):.2f} anni/s, max {fr.max():.1f} anni/s']
+# capitoli YouTube (descrizione): uno ogni 15-20 s, scelti tra i cartelli; preferiti quelli con un numero (fatto verificabile)
+import re as _re
+chap = [(0.0, 'Paris today')]; _c = sorted(caps, key=lambda c: c['t_in'])
+while True:
+    lo, hi = chap[-1][0] + 15.0, chap[-1][0] + 20.0
+    cand = [c for c in _c if lo <= c['t_in'] <= hi] or [c for c in _c if c['t_in'] > lo][:1]
+    if not cand or cand[0]['t_in'] > NIGHT_T: break
+    c = max(cand, key=lambda c: (bool(_re.search(r'\d', c['title'] + c['line'])), -abs(c['t_in'] - (lo + 2.5))))
+    chap.append((c['t_in'], f"{c['date']} – {c['title']}"))
+chap.append((NIGHT_T, 'Paris by night'))
+_ct = [f'{int(t // 60)}:{int(t % 60):02d} {ti}' for t, ti in chap]
+open('capitoli_parigi.txt', 'w').write('\n'.join(_ct) + '\n')
+lines += ['', f'CAPITOLI ({len(chap)}, intervallo medio {np.mean(np.diff([t for t, _ in chap])):.1f} s, massimo {max(np.diff([t for t, _ in chap])):.1f} s):'] + ['  ' + x for x in _ct]
 open('regia_parigi.txt', 'w').write('\n'.join(lines)); print('\n'.join(lines))
 try:
     import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
