@@ -335,7 +335,7 @@ if os.path.exists(f'{DATA}/dem.npz'):
     # ogni edificio sale RIGIDO del minimo del rilievo sotto i suoi vertici (tetto piano resta piano, mai sospeso a monte).
     # Crescita = scala in z dell'oggetto: la scala deve partire dalla base, quindi gli edifici sono raggruppati anche per
     # fascia di quota (3 m) e l'oggetto sta alla quota della fascia (errore durante la crescita < 3 m * (1 - g)).
-    DEM_BAND = 3.0
+    DEM_BAND = float(CITY.get('dem_band', 3.0))   # Parigi 29 ott: 30 m (con 3 m e 182 m di rilievo: 61.000 blocchi, 7 h di soli cambi sul pod)
     for b_ in blds:
         b_['_z'] = float(min(dem_at([p_[0] for p_ in b_['r']], [p_[1] for p_ in b_['r']])))
         b_['_band'] = DEM_BAND * math.floor(b_['_z'] / DEM_BAND)
@@ -357,6 +357,7 @@ MID = ST.get('mid') or ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '
 GLASS = ST.get('glass') or ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ST.get('roof') or ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
 BIN = float(opt('--bin', 1, '4'))
+DBIN = float(CITY.get('dbin', BIN))   # demolizioni a gruppi di DBIN anni (Parigi: 8): meno oggetti che cambiano
 CHUNKS = []; polys = []; polys_y = []
 def add_bld(bm, col, vyear, vdie, b):
     ring = [tuple(p) for p in b['r']]
@@ -439,7 +440,7 @@ CM = city_mat(); ZBASE = {}
 def ckey(b_):
     # 'y1': cantiere lungo (es. Plaza de Espana 1914-1929): blocco a parte, cresce da y a y1 invece che nella durata standard
     dd_ = b_.get('d', 99999); y1_ = b_.get('y1', 0)
-    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), int(dd_ // BIN) if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_))
+    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), int(dd_ // DBIN) if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_))
 blds.sort(key=ckey)
 cur = None; nv = 0
 def flush(cur):
@@ -448,7 +449,7 @@ def flush(cur):
     o_ = obj(f'city_{k_[0]}_{k_[1]}_{k_[2]}_{k_[3]}', bm_, CM); m_ = o_.data; m_.color_attributes.active_color_name = 'col'
     o_.location.z = float(k_[2]); ZBASE[o_.name] = float(k_[2])   # fascia di quota: la scala in z parte da qui
     m_.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', vy_); m_.attributes.new('yd', 'FLOAT', 'POINT').data.foreach_set('value', vd_)
-    CHUNKS.append({'obj': o_, 'b0': k_[0] if k_[3] else k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'span': (k_[3] - k_[0]) if k_[3] else None, 'd0': (k_[1] * BIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * BIN if k_[1] != 99999 else None)})
+    CHUNKS.append({'obj': o_, 'b0': k_[0] if k_[3] else k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'span': (k_[3] - k_[0]) if k_[3] else None, 'd0': (k_[1] * DBIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * DBIN if k_[1] != 99999 else None)})
     return len(m_.vertices)
 for b in blds:
     k_ = ckey(b)
@@ -1224,8 +1225,10 @@ if CITY.get('merge_parts') and PARTS:
         for p_ in _ps: _rm_o.append(p_['obj']); _rm_m.append(p_['obj'].data)
         _newp.append({'obj': _o, 'z0': _z, 'b0': _k[0], 'b1': _k[0], 'd0': _k[1], 'd1': _k[1]})
     # 29 ott: 10.009 remove() uno per uno costavano 27 minuti (ogni remove scorre tutto il file): una sola batch_remove
+    log('monumenti: gruppi costruiti, rimozione di', len(_rm_o), 'parti')
     bpy.data.batch_remove(_rm_o); bpy.data.batch_remove(_rm_m)
     log('monumenti uniti:', len(PARTS), '->', len(_newp), 'oggetti'); PARTS = _newp
+    if os.environ.get('STOP_AFTER_MERGE'): log('STOP_AFTER_MERGE: fine prova'); sys.exit(0)
 # alberi "cotti" in geometria statica (DOPO il rilievo: gli alberi nascono gia' sul suolo spostato, niente 3,5 milioni
 # di vertici da spostare, e nessuna copia del depsgraph raddoppiata dalle modifiche al suolo): spostare un oggetto con istanze generate al volo costringe Cycles a rifare tutto
 _dg = bpy.context.evaluated_depsgraph_get(); nb = 0

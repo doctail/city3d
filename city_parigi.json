@@ -98,7 +98,7 @@
   ]
  },
  "merge_parts": true,
- "rewind_hold": 4,
+ "rewind_hold": 24,
  "dem_open_m": 270.0,
  "dem_exag": 1.6,
  "dem_flat": 3.0,
@@ -267,5 +267,8 @@
   "_nota": "sfondo vero oltre il modello: tools/fetch_far.py (pod) + tools/far_prep.py",
   "far_core_m2": 150000,
   "core_year": 1500
- }
+ },
+ "dem_band": 30.0,
+ "dbin": 8,
+ "grow_step": 2
 }
