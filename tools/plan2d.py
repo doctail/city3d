@@ -14,10 +14,10 @@ def load(D):
 
 def water_at(land, P, year, bb):
     W = box(*bb).difference(land)
-    for p in P:
-        q = Polygon(p['r']).buffer(0)
-        W = W.difference(q) if p['from'] <= year < p['to'] else W.union(q.intersection(box(*bb)))
-    return W
+    on = [Polygon(p['r']).buffer(0) for p in P if p['from'] <= year < p['to']]
+    off = [Polygon(p['r']).buffer(0) for p in P if not (p['from'] <= year < p['to'])]
+    # come build_render: una fase attiva e' terra sopra l'acqua; le zone a fasi non attive sono acqua
+    return W.union(unary_union(off).intersection(box(*bb))).difference(unary_union(on))
 
 def polys(g):
     out = []

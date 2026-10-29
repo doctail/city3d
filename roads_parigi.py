@@ -38,6 +38,11 @@ LG = unary_union([Polygon(q['ext'], q.get('holes', [])).buffer(0) for q in land]
 A = Alpage(os.path.join(RAW, 'alpage'), CFG)
 VIL = prep(unary_union(A.layer('Vasserot_1_Ilots').geometry.buffer(0).values).buffer(-2))   # isolati del 1830 (case, cortili, giardini)
 VV = unary_union(A.layer('Vasserot_1_Voies').geometry.values).buffer(6); VVp = prep(VV)       # vie del 1830 (+6 m)
+OUT91 = unary_union(A.layer('Ilots_1791').geometry.buffer(0).values).convex_hull.buffer(100); O91 = prep(OUT91)
+# fuori dalla Parigi del 1791 le vie di oggi che attraversano i villaggi comparivano come strisce bianche isolate nei campi (prova
+# 1600, 28 ott): le vie dei villaggi non entrano prima del XVIII secolo; le grandi strade (primary/secondary/trunk) dal 1700.
+# [Guessing] dichiarato: soglie di regia, non date per singola via.
+OUT_MAJOR, OUT_MINOR = 1700, 1780
 hist = json.load(open(f'{DATA}/hist.json'))
 hp = [Polygon(h_['r']).buffer(0) for h_ in hist]; hd = np.array([h_.get('d', 99999) for h_ in hist]); htree = STRtree(hp)
 sg, sy = H.street_years(RAW, shapely); stree = STRtree(sg)
@@ -84,6 +89,8 @@ for g, hw, rw, br, tn, nm in zip(r.geometry, r['highway'], r['railway'], r['brid
             y, how = cut_year(LineString([(x0, y0), (x1, y1)]), mid, name); cnt[how] += 1
         else:
             y = (u + 2) if u < 9000 else 1890; cnt['urban'] += 1
+            if not O91.contains(mid):
+                y = max(y, OUT_MAJOR if hw in ('primary', 'secondary', 'trunk') else OUT_MINOR + 20 * rnd.random())
         ux, uy = (x1 - x0) / dl, (y1 - y0) / dl; e = w / 2; nx, ny = -uy * e, ux * e
         ax_, ay_ = x0 - ux * e * 0.5, y0 - uy * e * 0.5; bx_, by_ = x1 + ux * e * 0.5, y1 + uy * e * 0.5
         q = [(ax_ + nx, ay_ + ny), (ax_ - nx, ay_ - ny), (bx_ - nx, by_ - ny), (bx_ + nx, by_ + ny)]

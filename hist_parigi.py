@@ -282,6 +282,7 @@ def build(DATA, RAW='raw_parigi', seed=11):
 
     # --- acqua a fasi ---
     stats['acqua'] = water_phases(DATA, A, shapely, nd)
+    stats['acqua_oggi'] = modern_waters(DATA, RAW)
     json.dump(stats, open(f'{DATA}/hist_stats.json', 'w'), indent=1)
     log(f'FATTO: {len(out)} predecessori, anni stimati alzati {bumped}')
 
@@ -367,6 +368,90 @@ def water_phases(DATA, A, shapely, nd):
     log('acqua a fasi:', len(out), 'zone;', sum(1 for i in info if i['fonte'].startswith('A')), 'con data della scheda')
     return info
 
+# acque di OGGI che non sono Senna o Marna (canali, laghi dei parchi, cave allagate): terra fino allo scavo.
+# Le epoche ALPAGE non le vedono (fuori dall'estensione delle carte o attaccate alla Senna). Date per nome:
+#   canali e bacini -> righe della scheda A (WATER_KEYS); laghi dei parchi -> Wikidata o DA MEMORIA (dichiarato, sempre GRADUALE);
+#   specchi senza nome staccati dal fiume -> [Guessing] 1900-1975 GRADUALE (cave e bacini del Novecento).
+MODERN_WATER = [  # (parola nel nome, da, a, fonte)
+    ('canal saint-martin', 1822, 1825, 'A007'), ('récollets', 1822, 1825, 'A007'), ('bassin des marais', 1822, 1825, 'A007'),
+    ('louis blanc', 1822, 1825, 'A007'), ('arsenal', 1806, 1811, 'A012'), ('villette', 1808, 1813, 'A011'),
+    ("ourcq", 1813, 1813, 'A003'), ('saint-denis', 1821, 1821, 'A005'), ('maltournée', 1821, 1821, 'A005'),
+    ('octogone', 1670, 1690, 'DA MEMORIA: parco di Sceaux, Le Notre'), ('grand canal', 1670, 1690, 'DA MEMORIA: parco di Sceaux, Le Notre'),
+    ('bassin ovale', 1670, 1690, 'DA MEMORIA: parco di Sceaux'), ('seignelay', 1670, 1690, 'DA MEMORIA: parco di Sceaux'),
+    ('grande cascade', 1660, 1670, 'DA MEMORIA: parco di Saint-Cloud'),
+    ('saint-maur', 1821, 1825, 'DA MEMORIA: canale di Saint-Maur 1821-1825'),
+    ('daumesnil', 1865, 1866, 'Wikidata Q (lac Daumesnil, 1865)'), ('minimes', 1857, 1858, 'Wikidata (lac des Minimes, 1857)'),
+    ('saint-mandé', 1858, 1866, 'DA MEMORIA: Bois de Vincennes, Alphand 1858-1866'), ('gravelle', 1858, 1866, 'DA MEMORIA: Bois de Vincennes, Alphand 1858-1866'),
+    ('lac inférieur', 1852, 1855, 'DA MEMORIA: Bois de Boulogne, Alphand 1852-1858'), ('lac supérieur', 1852, 1855, 'DA MEMORIA: Bois de Boulogne'),
+    ('saint-james', 1852, 1858, 'DA MEMORIA: Bois de Boulogne'), ('tir aux pigeons', 1852, 1858, 'DA MEMORIA: Bois de Boulogne'),
+    ('lac du réservoir', 1852, 1858, 'DA MEMORIA: Bois de Boulogne'), ('longchamp', 1852, 1858, 'DA MEMORIA: Bois de Boulogne'),
+    ('buttes-chaumont', 1864, 1867, 'DA MEMORIA: Parc des Buttes-Chaumont 1864-1867'), ('montsouris', 1869, 1878, 'DA MEMORIA: Parc Montsouris 1869-1878'),
+    ('saint-fargeau', 1859, 1862, 'Wikidata (lac de Saint-Fargeau, 1859)'), ('créteil', 1975, 1977, 'DA MEMORIA: lago di Créteil da cava, anni 70'),
+]
+def modern_waters(DATA, RAW):
+    import geopandas as gpd, gzip, shapely
+    from shapely.geometry import Polygon, box
+    land = json.load(open(f'{DATA}/land.json'))
+    L = shapely.union_all([Polygon(r['ext'], r.get('holes', [])).buffer(0) for r in land])
+    W_now = box(-9500, -9500, 9500, 9500).difference(L)
+    e = gpd.read_file(gzip.open(f'{RAW}/osm_env.geojson.gz'))
+    cl = e[e.geom_type.isin(['LineString', 'MultiLineString']) & (e['waterway'] == 'canal') & e['name'].notna()]
+    e = e[e.geom_type.isin(['Polygon', 'MultiPolygon'])]
+    e = e[(e['natural'] == 'water') | e['waterway'].isin(['canal', 'riverbank', 'dock']) | (e['landuse'] == 'basin')]
+    def loc(g): return shapely.transform(g, lambda a: np.c_[(a[:, 0] - LON0) * KX, (a[:, 1] - LAT0) * KY])
+    e = e.assign(geometry=[loc(g).buffer(0) for g in e.geometry])
+    nm = e['name'].fillna('').str.lower()
+    cl = [(n.lower(), loc(g)) for n, g in zip(cl['name'], cl.geometry)]
+    def canal_name(g):   # specchio senza nome attraversato da una linea di canale con nome (Ourcq, Saint-Denis, Saint-Martin)
+        best = max(((g.intersection(lg).length, n) for n, lg in cl), default=(0, ''))
+        return best[1] if best[0] > 50 else ''
+    nm = [n or canal_name(g) for n, g in zip(nm, e.geometry)]
+    river = shapely.union_all([g for n, g in zip(nm, e.geometry) if 'seine' in n or 'marne' in n]).buffer(25)
+    old = [Polygon(p['r']).buffer(0) for p in json.load(open(f'{DATA}/landphases.json')) if 'osm' not in p]
+    old = shapely.union_all(old) if old else Polygon()
+    out = []; info = []
+    for (name, g) in zip(nm, e.geometry):
+        if 'seine' in name or 'marne' in name: continue
+        g = g.intersection(W_now).difference(old)
+        if g.is_empty or g.area < 1500: continue
+        hit = next((m for m in MODERN_WATER if m[0] in name), None)
+        if name.startswith('voûte'):   # tratti del Canal Saint-Martin coperti: acqua solo tra scavo e copertura, poi terra (boulevard)
+            cov = {'richard lenoir': (1860, 1862, 'A013'), 'temple': (1906, 1907, 'A014')}
+            k_ = next((v for k2, v in cov.items() if k2 in name), None)
+            for q in (g.geoms if hasattr(g, 'geoms') else [g]):
+                if q.geom_type != 'Polygon' or q.area < 300: continue
+                r = [[round(x, 1), round(y, 1)] for x, y in list(q.exterior.coords)[:-1]]
+                if k_ is None: out.append({'r': r, 'from': -9999, 'to': 9999, 'c': 'urban', 'src': 'voute sotto la piazza: mai a cielo aperto', 'osm': 1}); continue
+                rr = random.Random(int(q.centroid.x)); out.append({'r': r, 'from': -9999, 'to': round(1822 + 3 * rr.random(), 1), 'c': 'field', 'src': 'A007', 'osm': 1})
+                out.append({'r': r, 'from': round(k_[0] + (k_[1] - k_[0]) * rr.random(), 1), 'to': 9999, 'c': 'urban', 'src': k_[2], 'osm': 1})
+            info.append({'nome': name, 'area_m2': round(g.area), 'anni': list(k_[:2]) if k_ else 'sempre terra', 'fonte': k_[2] if k_ else 'voute'}); continue
+        if hit: f0, f1, src = hit[1], hit[2], hit[3]
+        elif name.startswith(('étang', 'pièce d', 'mare')) and name: continue        # stagni antichi dei parchi: restano
+        elif g.intersects(river) and not name: continue                            # bracci e porti attaccati al fiume
+        else: f0, f1, src = 1900, 1975, '[Guessing] specchio senza data, 1900-1975 GRADUALE'
+        rr = random.Random(int(g.centroid.x * 7 + g.centroid.y))
+        for q in (g.geoms if hasattr(g, 'geoms') else [g]):
+            if q.geom_type != 'Polygon' or q.area < 300: continue
+            yc = round(f0 + (f1 - f0) * rr.random(), 1) if f1 > f0 else float(f0)
+            out.append({'r': [[round(x, 1), round(y, 1)] for x, y in list(q.exterior.coords)[:-1]], 'from': -9999, 'to': yc, 'c': 'field', 'src': src, 'osm': 1})
+        info.append({'nome': name or '-', 'area_m2': round(g.area), 'anni': [f0, f1], 'fonte': src})
+    # ritagli d'acqua di oggi rimasti fuori dai poligoni OSM (chiuse, raccordi, tratti senza poligono) attaccati a uno specchio a fasi:
+    # prendono le date dello specchio vicino (altrimenti nel 1700 resterebbero pezzi di canale)
+    from shapely.strtree import STRtree
+    rest = W_now.difference(shapely.union_all([old] + [Polygon(o['r']).buffer(0) for o in out]))
+    op = [Polygon(o['r']).buffer(0) if o['from'] == -9999 and o['to'] < 9999 else Polygon() for o in out]; tr = STRtree(op); n_rest = 0   # solo 'terra fino allo scavo' (no volte)
+    for q in (rest.geoms if hasattr(rest, 'geoms') else [rest]):
+        if q.geom_type != 'Polygon' or q.area < 20 or q.area > 200000 or q.intersects(river.buffer(-20)): continue
+        near = [i for i in tr.query(q.buffer(3)) if not op[i].is_empty and op[i].distance(q) < 3]
+        if not near: continue
+        i = max(near, key=lambda i: op[i].buffer(3).intersection(q).area)
+        out.append({**out[i], 'r': [[round(x, 1), round(y, 1)] for x, y in list(q.exterior.coords)[:-1]]}); n_rest += 1
+    log('ritagli attaccati agli specchi a fasi:', n_rest)
+    ph = [p for p in json.load(open(f'{DATA}/landphases.json')) if 'osm' not in p]
+    json.dump(ph + out, open(f'{DATA}/landphases.json', 'w'))
+    log('acque di oggi a fasi:', len(out), 'pezzi da', len(info), 'specchi')
+    return info
+
 # perimetro delle mura di Filippo Augusto (B001/B002) per il paesaggio di build_render (orti attorno alla citta'): DATA/wall_p.json
 def __getattr__(name):   # PEP 562: WALL_P letto pigramente dai dati preparati (sul pod non ci sono i dati grezzi ALPAGE)
     if name == 'WALL_P':
@@ -383,4 +468,7 @@ if __name__ == '__main__':
         need = [f for f in ('buildings.json', 'hist.json', 'urban_grid.npz', 'landphases.json', 'wall_p.json') if not os.path.exists(os.path.join(D_, f))]
         print('[hist_parigi] dati gia\' preparati' if not need else f'[hist_parigi] ERRORE: mancano {need} in {D_}', flush=True)
         sys.exit(1 if need else 0)
+    if '--acqua' in sys.argv:   # solo le acque di oggi (dopo build)
+        for i in modern_waters(D_, R_): print(i)
+        sys.exit(0)
     build(D_, R_)

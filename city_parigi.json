@@ -50,11 +50,11 @@
  "haze_k": 22000.0,
  "water_z": -3.0,
  "field_colors": [
-  "#7b8250",
-  "#8c8a5a",
-  "#a1965e",
-  "#6e7a4a",
-  "#878f5c"
+  "#677a43",
+  "#78854e",
+  "#8a8a58",
+  "#6e7c48",
+  "#848b5a"
  ],
  "park_trees": 0.02,
  "block_trees": 0.0008,
@@ -203,19 +203,22 @@
   "olive_tree": "#4e5730",
   "bulb_size": 1.6,
   "nat": {
-   "vega1": "#62723a",
-   "vega2": "#77823f",
-   "olive": "#6c7a52",
-   "olive_soil": "#9d9470",
-   "marsh1": "#6f7f58",
+   "vega1": "#556f39",
+   "vega2": "#6b8041",
+   "olive": "#4c5f35",
+   "olive_soil": "#77774f",
+   "marsh1": "#5f7050",
    "marsh2": "#4f6448",
+   "marsh_y0": -20000.0,
+   "marsh_y1": -21000.0,
    "campina": [
-    "#9a8c58",
-    "#ae9f66",
-    "#bba979",
-    "#a39466",
-    "#857a52"
-   ]
+    "#6c7944",
+    "#7d8550",
+    "#8e8c5a",
+    "#73804a",
+    "#9a9364"
+   ],
+   "_nota": "Ile-de-France estate: prati e grano misti (verde-oliva con chiazze bionde), vigne e boschi scuri sui rilievi; niente marismas"
   },
   "urban_phase": "#a9a294",
   "night_ground": [
