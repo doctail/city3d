@@ -5,3 +5,4 @@ data_*/
 !data_*_src/
 raw_parigi/
 city_*test.json
+city_*_sun*.json

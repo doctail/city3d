@@ -674,7 +674,9 @@ if UG_FOOT:
         try: q_ = Polygon(b_['r'])
         except Exception: continue
         if q_.area < 8: continue
-        _grp[int(b_['y'] // 10 * 10)].append(q_.buffer(_UGR, quad_segs=2))
+        # Parigi 29 ott: le case sparse dei villaggi prima del 1800 con 18 m di alone facevano chiazze grigie nei campi
+        _r_ = CITY.get('urban_buffer_old', _UGR) if b_['y'] < CITY.get('urban_old_until', 0) else _UGR
+        _grp[int(b_['y'] // 10 * 10)].append(q_.buffer(_r_, quad_segs=2))
     _land_all = unary_union([lgeom] + [Polygon(ph_['r']).buffer(0) for ph_ in _PH]) if _PH else lgeom
     _cum = Polygon(); _ugi = 0; _ug_items = []
     for k_ in sorted(_grp):
@@ -1247,7 +1249,7 @@ try: sky.sky_type = 'NISHITA'
 except Exception: pass
 SUNEL = float(opt('--sun', 1, str(CITY.get('sun_el', 17))))
 if LIGHT == 'sunset': SUNEL = ST.get('sunset_el', 3.0)   # sole basso: ombre lunghe, luce arancio
-_dummy = 0; sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(230)
+_dummy = 0; sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(float(CITY.get('sun_rot', 230)))   # Parigi 29 ott: luce di lato per il rilievo dei tetti
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
 WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = ST.get('sky_light', 0.35)
 bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
@@ -1298,7 +1300,7 @@ sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4);
 if NIGHT: sun.energy = ST.get('moon', 0.35); sun.color = (0.55, 0.65, 1.0)
 if LIGHT == 'twilight': sun.energy = ST.get('twilight_sun', 0.6); sun.color = (0.62, 0.62, 0.95)
 if LIGHT == 'sunset': sun.energy = ST.get('sunset_sun', 4.2); sun.color = (1.0, 0.52, 0.24)
-so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(230))
+so = bpy.data.objects.new('sun', sun); sc.collection.objects.link(so); so.rotation_euler = (math.radians(90 - SUNEL), 0, math.radians(float(CITY.get('sun_rot', 230))))
 cam = bpy.data.cameras.new('cam'); cam.lens = float(opt('--lens', 1, str(SCHED.get('lens', 30)) if SCHED else '30')); cam.clip_end = 200000
 co = bpy.data.objects.new('cam', cam); sc.collection.objects.link(co); sc.camera = co
 tg = bpy.data.objects.new('target', None); sc.collection.objects.link(tg)

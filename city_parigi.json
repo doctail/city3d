@@ -270,5 +270,7 @@
  },
  "dem_band": 30.0,
  "dbin": 8,
- "grow_step": 2
+ "grow_step": 2,
+ "urban_buffer_old": 5.0,
+ "urban_old_until": 1800
 }
