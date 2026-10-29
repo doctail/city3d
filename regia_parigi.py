@@ -46,7 +46,7 @@ SOSTE = [
     (1670.0, 1706.0, 6.0, 'Les Invalides and its golden dome (1670-1706)', (*INVAL, 40), 420, 196, 170),   # E006, E036
     (1784.0, 1791.0, 5.5, 'The Bastille falls (1789)', (*BASTILLE, 15), 400, 214, 188),   # E011, B007
     (1820.0, 1826.0, 5.0, 'Canal Saint-Martin is dug (1822-1825)', (*L(48.8705, 2.3655), 0), 430, 206, 182),   # A006/A007 (graduale 1822-1825)
-    (1852.0, 1872.0, 9.0, "Haussmann cuts through old Paris (1853-1870)", (-650, 1250, 10), 470, 196, 160),   # F004, C001-C008, E038, E009
+    (1852.0, 1870.9, 10.0, "Haussmann cuts through old Paris (1853-1870)", (-650, 1250, 10), 470, 196, 160),   # F004, C001-C008, E038, E009
     (1871.2, 1871.6, 4.0, 'The Commune: Tuileries and Hôtel de Ville burn (1871)', (*TUIL, 20), 430, 214, 200),   # F005, E020
     (1886.5, 1889.6, 6.0, 'The Eiffel Tower rises (1887-1889)', (*EIFFEL, 120), 520, 226, 196, 22),   # E004
     (1966.0, 1977.5, 6.0, 'Tour Montparnasse and Centre Pompidou (1969-1977)', (MONTP[0] + 300, MONTP[1] + 400, 60), 560, 212, 188),   # E016, E015
@@ -130,6 +130,29 @@ CAPS = [
     (2019.3, '15 Apr 2019', 'Notre-Dame burns', 'The spire and the roof are lost.'),                                # E023
     (2024.9, '7 Dec 2024', 'Notre-Dame reopens', 'The spire is back.'),                                             # E024
     (2025.0, '2025', 'Paris today', '2,065,560 people inside the city.'),                                           # D051
+    # 29 ott: capitoli ogni 15-20 s (AGGIORNAMENTI_REGIA): righe ad affidabilita' alta della scheda non ancora usate
+    (1630.0, '1566–1643', 'The Fossés Jaunes', 'A new rampart pushes the Right Bank west.'),                       # B005
+    (1635.0, '1614–1635', 'Pont Marie', 'Christophe Marie links Île Saint-Louis to the Right Bank.'),               # G007
+    (1626.0, '1626', 'Pont au Double', 'The first bridge on the site (1626).'),                                    # G046
+    (1791.0, '1787–1791', 'Pont de la Concorde', 'A new bridge to Place Louis XV.'),                               # G011
+    (1811.0, '1806–1811', 'The Rohan wing', 'The Louvre grows along the new Rue de Rivoli.'),                      # E035
+    (1821.0, '1821', 'Canal Saint-Denis', 'The canal is completed (1821).'),                             # A005
+    (1822.0, '1822', 'The Ourcq canal is complete', 'From Mareuil to Paris.'),                                     # A004
+    (1827.0, '1825–1827', 'Pont de Grenelle', 'The first bridge on the site opens on 1 May 1827.'),                # G045
+    (1828.0, '1828', 'Three new crossings', 'Arcole footbridge and Pont de l\'Archevêché.'),                       # G043, G052
+    (1833.0, '29 Jul 1833', 'Pont Louis-Philippe', 'The king lays the first stone.'),                              # G044
+    (1834.0, '1831–1834', 'Pont du Carrousel', 'A bridge straight into the Louvre.'),                              # G042
+    (1856.0, '1854–1856', 'Pont des Invalides', 'The suspension bridge is replaced in stone.'),                    # G033
+    (1859.6, '15 Aug 1859', 'A new spire for Notre-Dame', 'Viollet-le-Duc\'s spire is inaugurated.'),             # E022
+    (1860.5, '1856–1860', 'Pont au Change', 'Rebuilt as it stands today.'),                                        # G004
+    (1862.0, '1860–1862', 'The canal goes underground', 'Boulevard Richard-Lenoir is built on top.'),              # A013, C019
+    (1876.0, '1864–1876', 'Avenue de l\'Opéra', 'Cut straight from the Louvre to the Opéra.'),                    # C006
+    (1904.0, '1904', 'Pont de Bercy', 'Widened 5.5 m to carry the Métro.'),                                        # G024
+    (1906.5, '1906', 'Voûte du Temple', 'Another stretch of the canal is covered.'),                               # A014
+    (1926.0, '1857–1926', 'Boulevard Haussmann', 'Finished 69 years after it began.'),                             # C007
+    (1939.0, '1935–1939', 'A new Pont du Carrousel', 'The current bridge opens.'),                                 # G032
+    (1996.0, '1993–1996', 'Pont Charles-de-Gaulle', 'Built between 1993 and 1996.'),      # G019
+    (2006.0, '2006', 'Passerelle Simone-de-Beauvoir', 'Inaugurated in 2006.'),                                     # G020
 ]
 
 # ---------- attivita' per anno ----------
@@ -338,13 +361,15 @@ fr = abs(rate[(ts > 12) & (ts < NIGHT_T)])
 lines += ['', f'Velocita del tempo fuori dalle soste: mediana {np.median(fr):.2f} anni/s, max {fr.max():.1f} anni/s']
 # capitoli YouTube (descrizione): uno ogni 15-20 s, scelti tra i cartelli; preferiti quelli con un numero (fatto verificabile)
 import re as _re
-chap = [(0.0, 'Paris today')]; _c = sorted(caps, key=lambda c: c['t_in'])
+chap = [(0.0, 'Paris today')]; _c = sorted(caps + [{'t_in': e_['t_in'], 'date': e_['sub'] or '', 'title': e_['title'], 'line': ''} for e_ in soste_ev], key=lambda c: c['t_in'])
 while True:
-    lo, hi = chap[-1][0] + 15.0, chap[-1][0] + 20.0
-    cand = [c for c in _c if lo <= c['t_in'] <= hi] or [c for c in _c if c['t_in'] > lo][:1]
+    lo, hi = chap[-1][0] + 12.5, chap[-1][0] + 21.0   # YouTube: >= 10 s; obiettivo 15-20
+    _prev = chap[-1][1].lower()
+    _ok = lambda c: not any(w_ in _prev for w_ in c['title'].lower().replace(':', ' ').split()[:2] if len(w_) > 3)   # niente doppioni (Comune: cartello + sosta)
+    cand = [c for c in _c if lo <= c['t_in'] <= hi and _ok(c)] or [c for c in _c if c['t_in'] > lo and _ok(c)][:1]
     if not cand or cand[0]['t_in'] > NIGHT_T: break
-    c = max(cand, key=lambda c: (bool(_re.search(r'\d', c['title'] + c['line'])), -abs(c['t_in'] - (lo + 2.5))))
-    chap.append((c['t_in'], f"{c['date']} – {c['title']}"))
+    c = max(cand, key=lambda c: (bool(_re.search(r'\d', c['title'] + c['line'])), -abs(c['t_in'] - (lo + 4.0))))
+    chap.append((c['t_in'], c['title'] if not c['date'] or c['date'] in c['title'] else f"{c['date']} – {c['title']}"))
 chap.append((NIGHT_T, 'Paris by night'))
 _ct = [f'{int(t // 60)}:{int(t % 60):02d} {ti}' for t, ti in chap]
 open('capitoli_parigi.txt', 'w').write('\n'.join(_ct) + '\n')

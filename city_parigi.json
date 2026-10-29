@@ -265,6 +265,8 @@
  "far": {
   "r0": 10500.0,
   "blend": 3000.0,
-  "_nota": "sfondo vero oltre il modello: tools/fetch_far.py (pod) + tools/far_prep.py"
+  "_nota": "sfondo vero oltre il modello: tools/fetch_far.py (pod) + tools/far_prep.py",
+  "far_core_m2": 150000,
+  "core_year": 1500
  }
 }
