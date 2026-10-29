@@ -84,6 +84,7 @@ fi
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev out/prevn out/prevmix
+  [ "${PREVIEW_NIGHT:-0}" = "1" ] || NT=0   # 29 ott: la notte nell'anteprima ricostruisce la scena da capo (+7-20 min); di base no
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))
   $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
   if [ "$NT" -gt 0 ]; then   # notte: stessa numerazione, passata separata (materiali notturni fissi)
