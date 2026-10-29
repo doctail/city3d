@@ -1,0 +1,521 @@
+{
+ "0": [
+  {
+   "elemento": "Città murata di Balansiya",
+   "stato": "Cinta islamica già costruita (XI sec., fasi fino alle prime decadi del XIII); il Comune la descrive come «construida en el siglo XI bajo el reinado de Abd al-Aziz». Fonte: https://www.valencia.es/documents/20142/629631/1.18bis++RECINTO+MURALLA+ISLAMICA+BIC_firmado.pdf/2cd4fcfd-55d6-f3ad-3c57-13379a05ea1e"
+  },
+  {
+   "elemento": "Fiume Turia",
+   "stato": "Scorre nell'alveo storico a nord della città murata; alveo moderno (Plan Sur) e giardino NON esistono."
+  },
+  {
+   "elemento": "Attraversamenti al 1238",
+   "stato": "Solo ponti musulmani/predecessori: A-Warraq nel sito della Trinidad e Al-Qantara nel sito di Serranos (per Serranos la fonte avverte che non c'è prova che fosse di pietra). Nessun ponte di pietra attuale esiste."
+  },
+  {
+   "elemento": "Moschea maggiore",
+   "stato": "Sul suo sito sorgerà la Cattedrale («colocándose la primera piedra en el año 1262»); nel 1238 non c'è ancora la Cattedrale né il Miguelete."
+  },
+  {
+   "elemento": "Tessuto urbano",
+   "stato": "Solo l'interno della cinta islamica; nessun Ensanche, nessuna strada moderna (Colón, Gran Vía, Plaza del Ayuntamiento)."
+  }
+ ],
+ "A": [
+  {
+   "ID": "A001",
+   "Elemento": "Turia — Plan Sur: costruzione del nuovo alveo a sud",
+   "Da (anno)": 1964,
+   "A (anno)": 1969,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.iagua.es/noticias/espana/aguas-valencia/15/12/16/plan-sur-y-jardin-turia-protagonistas-hechos-agua-125-anos",
+   "Note": "Fonte unica interna incoerente sull'inizio lavori: indica 1964 e, in un altro passaggio, 1965; il nuovo alveo risulta finito nel 1969 (il testo parla di fine 1972 o 1973 per il programma completo). Citazione letterale non verificata riga per riga: da confermare con fonte della Confederación Hidrográfica del Júcar. Prima del 1964 l'alveo storico è pieno d'acqua."
+  },
+  {
+   "ID": "A002",
+   "Elemento": "Turia — alveo storico trasformato in Jardín del Turia",
+   "Da (anno)": 1980,
+   "A (anno)": 1987,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valenciabonita.es/2021/06/14/jardin-del-turia/",
+   "Note": "La fonte dà due versioni del primo tratto: «inaugurarse su primer tramo en 1986» e «los primeros tramos fueron inaugurados en junio de 1987». Lavori iniziati nel 1980: «Este año han empezado las obras para hacer del viejo cauce del Turia un jardín». Tra 1969 e 1980 l'alveo è un letto asciutto senza parco; il parco si estende per tratti dopo il 1987 (fine non indicata: il tratto Cabecera–Casa del Agua è riadattato nel 2007)."
+  }
+ ],
+ "B": [
+  {
+   "ID": "B001",
+   "Elemento": "Muralla cristiana — costruzione",
+   "Da (anno)": 1356,
+   "A (anno)": 1400,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/1.30+Muralla+Bajomedieval_firmado.pdf/692b554e-8ceb-f2fa-b00b-6e4de86341bc",
+   "Note": "Inizio documentato: la muralla fu «construido a partir de 1356» per ordine di Pietro IV, al posto della cerca islamica. Nessuna data di fine lavori nel testo («El texto no indica una fecha de finalización»): 1400 è solo il rinforzo successivo, usato come ipotesi di lavoro. Il poligono 1356 del pacchetto dati è un'estensione urbana, non la linea reale."
+  },
+  {
+   "ID": "B002",
+   "Elemento": "Muralla cristiana — rinforzo del fronte nord con torrioni",
+   "Da (anno)": 1400,
+   "A (anno)": 1400,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/1.30+Muralla+Bajomedieval_firmado.pdf/692b554e-8ceb-f2fa-b00b-6e4de86341bc ; https://www.valencia.es/documents/d/guest/8-cas-torres-de-serranos",
+   "Note": "La fonte riporta «se reforzó a partir del año 1400» (torrioni semicircolari presso le Torres de Serranos)."
+  },
+  {
+   "ID": "B003",
+   "Elemento": "Muralla cristiana — demolizione definitiva",
+   "Da (anno)": 1865,
+   "A (anno)": 1865,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/1.30+Muralla+Bajomedieval_firmado.pdf/692b554e-8ceb-f2fa-b00b-6e4de86341bc ; https://core.ac.uk/download/322903097.pdf",
+   "Note": "Il Comune indica «definitiva demolición en 1865»; secondo studio accademico il momento «propicia el derribo de las murallas en 1865». Restano le Torres de Quart, le Torres de Serranos e brevi tratti (Portal dels Jueus, IVAM): non applicare una regola unica a tutto il perimetro."
+  }
+ ],
+ "C": [
+  {
+   "ID": "C001",
+   "Elemento": "Ensanche — approvazione definitiva del piano",
+   "Da (anno)": 1887,
+   "A (anno)": 1887,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://core.ac.uk/download/322903097.pdf ; https://www.valencia.es/documents/20142/629631/1.09+CONJUNTO+HIST%D3RICO+CIUTAT+VELLA+BIC_firmado.pdf/c48f8652-f515-2f01-c19f-8d3e0c1900c8",
+   "Note": "Il piano fu elaborato nel 1884 (Calvo Tomás, Ferreres Soler, Arnau Miramón) e approvato nel 1887: «desde su aprobación, 1887». Le strade dell'Ensanche non esistono prima; ritmo di costruzione: circa 200 licenze per decennio nei primi cinquanta anni, circa 1.000 negli anni Venti."
+  },
+  {
+   "ID": "C002",
+   "Elemento": "Calle de Colón — apertura dopo la demolizione delle mura",
+   "Da (anno)": 1865,
+   "A (anno)": 1887,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://core.ac.uk/download/322903097.pdf",
+   "Note": "La fonte dice solo che la calle de Colón «se construye tras el derribo de las murallas»: nessun anno di apertura. Le date 1865–1887 sono un intervallo di lavoro (demolizione → approvazione Ensanche), da sostituire con fonte specifica."
+  },
+  {
+   "ID": "C003",
+   "Elemento": "Gran Vía del Marqués del Turia — apertura",
+   "Da (anno)": "",
+   "A (anno)": "",
+   "Uso nel modello": "NESSUNO",
+   "Motivo": "ASSENTE",
+   "Affidabilità": "n/d",
+   "Fonte": "https://core.ac.uk/download/322903097.pdf ; https://www.valencia.es/documents/20142/629631/1.09+CONJUNTO+HIST%D3RICO+CIUTAT+VELLA+BIC_firmado.pdf/c48f8652-f515-2f01-c19f-8d3e0c1900c8",
+   "Note": "CERCATO E NON TROVATO: la pagina del Comune (infociudad) non contiene il dato; lo studio accademico dice solo che la via è costruita su terreno di huerta, da calle Russafa verso il fiume, senza anno. NON usare questa riga come 'nessun cambiamento': la via esiste nel modello solo grazie al Catasto; serve fonte specifica."
+  },
+  {
+   "ID": "C004",
+   "Elemento": "Gran Vía de Fernando el Católico — apertura del tratto ritardato",
+   "Da (anno)": 1940,
+   "A (anno)": 1940,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://core.ac.uk/download/322903097.pdf",
+   "Note": "La fonte afferma che le espropriazioni ritardarono l'apertura del tratto fino al 1940 (nessuna citazione letterale verificata)."
+  },
+  {
+   "ID": "C005",
+   "Elemento": "Plaza del Ayuntamiento — demolizione del convento di San Francisco",
+   "Da (anno)": 1891,
+   "A (anno)": 1891,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://es.hispanopedia.com/wiki/Plaza_del_Ayuntamiento_(Valencia)",
+   "Note": "La fonte riporta: «su gran deterioro llevó a su demolición en 1891». Fonte secondaria (enciclopedia collaborativa): confermare con il Comune."
+  },
+  {
+   "ID": "C006",
+   "Elemento": "Plaza del Ayuntamiento — apertura verso nord (progetto Goerlich)",
+   "Da (anno)": 1927,
+   "A (anno)": 1933,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://es.hispanopedia.com/wiki/Plaza_del_Ayuntamiento_(Valencia)",
+   "Note": "La fonte indica lavori tra 1927 e 1933 sotto progetto di Javier Goerlich; nessuna citazione letterale verificata. Fonte secondaria."
+  }
+ ],
+ "E": [
+  {
+   "ID": "E001",
+   "Elemento": "Catedral de Valencia — costruzione sul sito della moschea maggiore",
+   "Da (anno)": 1262,
+   "A (anno)": 1262,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/es/-/infociudad-la-catedral",
+   "Note": "Il Comune riporta: «colocándose la primera piedra en el año 1262»; la costruzione «se prolongó durante varios siglos». Fine lavori del corpo principale non indicata: tenere il corpo gotico fermo dopo il 1262 e animare solo le fasi datate E002–E004."
+  },
+  {
+   "ID": "E002",
+   "Elemento": "Catedral de Valencia — El Miguelete (campanile)",
+   "Da (anno)": 1381,
+   "A (anno)": 1429,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/Miguelete_Tower ; https://www.valencia.es/es/-/infociudad-la-catedral",
+   "Note": "Fonte: «Construction of the tower began in 1381 and was completed in 1429». Il Comune dà solo «entre finales del siglo XIV y principios del XV». Il campanile era originariamente separato e fu unito alla cattedrale a fine XV sec. (anno non indicato)."
+  },
+  {
+   "ID": "E003",
+   "Elemento": "Catedral de Valencia — Miguelete: cella campanaria barocca",
+   "Da (anno)": 1660,
+   "A (anno)": 1736,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/Miguelete_Tower",
+   "Note": "La fonte riporta «an attachment built between 1660 and 1736»."
+  },
+  {
+   "ID": "E004",
+   "Elemento": "Catedral de Valencia — Puerta de los Hierros (portale barocco)",
+   "Da (anno)": 1703,
+   "A (anno)": 1741,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/es/-/infociudad-la-catedral",
+   "Note": "Il Comune riporta che la Puerta de los Hierros «fue alzada entre 1703 y 1741»."
+  },
+  {
+   "ID": "E005",
+   "Elemento": "Torres de Serranos",
+   "Da (anno)": 1392,
+   "A (anno)": 1398,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/documents/d/guest/8-cas-torres-de-serranos",
+   "Note": "Il Comune riporta: «fue construida entre 1392 y 1398» dal maestro cantero Pere Balaguer. Dopo il 1865 resta in piedi."
+  },
+  {
+   "ID": "E006",
+   "Elemento": "Torres de Quart",
+   "Da (anno)": 1441,
+   "A (anno)": 1460,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/1.34+TORRES+DE+QUART_firmado.pdf/fca347f1-c37b-b9b3-ae43-e50fc6b39a7d",
+   "Note": "Il Comune dà due versioni dell'inizio: «Su construcción comenzó en 1441» (scheda BIC) e «fue construida entre 1444 y 1460» (Guía de Arquitectura); la fine, 1460, coincide («Fueron concluidas en 1460»). Dopo il 1865 resta in piedi."
+  },
+  {
+   "ID": "E007",
+   "Elemento": "Lonja de la Seda",
+   "Da (anno)": 1482,
+   "A (anno)": 1533,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://whc.unesco.org/en/list/782",
+   "Note": "UNESCO scrive «Built between 1482 and 1533» e, nella sintesi, «Built from 1483 on»: scarto di un anno sull'inizio, nessuna spiegazione."
+  },
+  {
+   "ID": "E008",
+   "Elemento": "Estación del Norte",
+   "Da (anno)": 1906,
+   "A (anno)": 1917,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/3.04++ESTACION+DEL+NORTE_firmado.pdf/7352fe48-7254-7e00-2e8d-ae139ade0794 ; https://core.ac.uk/download/322903097.pdf",
+   "Note": "Il Comune: «Proyectada por el arquitecto valenciano Demetrio Ribes Marco, en 1906» e «La Estación fue inaugurada en Agosto de 1.917.»; la scheda tecnica riporta «FECHA DE CONSTRUCCION: 1906 / 1917». 1906 è l'anno del progetto, non dell'inizio dei lavori (non indicato)."
+  },
+  {
+   "ID": "E009",
+   "Elemento": "Mercado Central",
+   "Da (anno)": 1910,
+   "A (anno)": 1928,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://cultural.valencia.es/en/monument/central-market/",
+   "Note": "La stessa pagina dice «work on the Central Market began in 1910», «Designed in 1914» e «its completion was delayed until 1928»: progetto posteriore all'inizio, incoerenza interna non spiegata. Anno di inaugurazione non indicato."
+  },
+  {
+   "ID": "E010",
+   "Elemento": "Palacio de Comunicaciones (Correos)",
+   "Da (anno)": 1913,
+   "A (anno)": 1922,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://es.hispanopedia.com/wiki/Plaza_del_Ayuntamiento_(Valencia)",
+   "Note": "La fonte riporta «entre 1913 y 1922 se construyó el Palacio de Comunicaciones» (altra lista della stessa pagina: 1915–1922). Fonte secondaria."
+  },
+  {
+   "ID": "E011",
+   "Elemento": "Ciudad de las Artes y las Ciencias — L'Hemisfèric",
+   "Da (anno)": 1998,
+   "A (anno)": 1998,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "La fonte riporta: «The first building completed in 1998»."
+  },
+  {
+   "ID": "E012",
+   "Elemento": "Ciudad de las Artes y las Ciencias — Museu de les Ciències Príncipe Felipe",
+   "Da (anno)": 2000,
+   "A (anno)": 2000,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "Infobox: 2000; il testo è ambiguo (inaugurato prima, aperto al pubblico «twenty months later» da aprile 1998)."
+  },
+  {
+   "ID": "E013",
+   "Elemento": "Ciudad de las Artes y las Ciencias — L'Umbracle",
+   "Da (anno)": 2001,
+   "A (anno)": 2001,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "Anno preso dall'elenco della pagina, senza citazione puntuale."
+  },
+  {
+   "ID": "E014",
+   "Elemento": "Ciudad de las Artes y las Ciencias — L'Oceanogràfic",
+   "Da (anno)": 2002,
+   "A (anno)": 2002,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "Il corpo del testo dice «On 12 December 2002 was the opening of L'Oceanogràfic»; infobox ed elenco dicono 2003. Usare 2002 come data di apertura probabile; l'alternativa è 2003."
+  },
+  {
+   "ID": "E015",
+   "Elemento": "Ciudad de las Artes y las Ciencias — Palau de les Arts Reina Sofía",
+   "Da (anno)": 1997,
+   "A (anno)": 2005,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "«When construction started in 1997 on the Palau de les Arts»; inaugurato il 9 ottobre 2005 («was inaugurated on 9 October 2005», altro passaggio dice 8 ottobre)."
+  },
+  {
+   "ID": "E016",
+   "Elemento": "Ciudad de las Artes y las Ciencias — L'Àgora",
+   "Da (anno)": 2009,
+   "A (anno)": 2009,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "La fonte riporta: «The most recent building in the complex, L'Àgora, was opened in 2009»."
+  }
+ ],
+ "F": [
+  {
+   "ID": "F001",
+   "Da (anno)": "",
+   "A (anno)": "",
+   "Uso nel modello": "NESSUNO",
+   "Evento": "Piena del Turia del 1957",
+   "Changement urbain": "Evento che motiva il Plan Sur (A001); nessuna geometria propria, non applicare due volte.",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "n/d",
+   "Fonte": "https://www.iagua.es/noticias/espana/aguas-valencia/15/12/16/plan-sur-y-jardin-turia-protagonistas-hechos-agua-125-anos ; https://www.valenciabonita.es/2021/06/14/jardin-del-turia/",
+   "Note": "L'anno coincide ma il mese no: una fonte scrive «noviembre de 1957», l'altra «riada del 14 de octubre». Uso NESSUNO: l'effetto sta in A001. Da/A restano vuoti nel modello per rispettare la regola NESSUNO."
+  }
+ ],
+ "G": [
+  {
+   "ID": "G001",
+   "Elemento": "Puente de la Trinidad — ponte di pietra (ordine e costruzione)",
+   "Da (anno)": 1356,
+   "A (anno)": 1402,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "CONFLITTO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/1.55+PUENTE+TRINIDAD_firmado.pdf/b6283f42-852b-56b9-c847-f18aa0ff2164 ; https://www.visitvalencia.com/que-ver-valencia/jardines-del-turia/puentes",
+   "Note": "Scheda del Comune: «ordenó, en 1356 la construcción en piedra del puente de la Trinidad» e «siendo concluido en 1402 por la Fàbrica Vella de Murs i Valls». La pagina turistica visitvalencia indica invece «Puente de la Trinidad: 1407». Il sito aveva prima il ponte musulmano A-Warraq (sezione 0)."
+  },
+  {
+   "ID": "G002",
+   "Elemento": "Puente de Serranos — ponte di pietra (ordine)",
+   "Da (anno)": 1349,
+   "A (anno)": 1349,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "Note": "La fonte dice: «En 1349 [...] el Consell General ordenó que el puente fuera construido en piedra». È un ordine, non una data di fine lavori; sito precedente: Al-Qantara. Data di completamento non indicata."
+  },
+  {
+   "ID": "G003",
+   "Elemento": "Puente de Serranos — ricostruzione",
+   "Da (anno)": 1518,
+   "A (anno)": 1518,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "Note": "La fonte riporta: «dispuso el 22 de Junio de 1518 su reedificación tal y como es en nuestros días» (maestro Juan Bta. Corbera). Ordine di ricostruzione; fine lavori non indicata."
+  },
+  {
+   "ID": "G004",
+   "Elemento": "Puente del Mar — ponte di pietra (costruzione)",
+   "Da (anno)": 1592,
+   "A (anno)": 1596,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://victoryepes.blogs.upv.es/wp-content/uploads/2022/07/El-Puente-del-Mar-sobre-el-viejo-cauce-del-Turia-en-Valencia.pdf ; https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "Note": "Studio UPV: «El inicio oficial de las obras se fecha el 8 de mayo» 1592 e «cuya construcción finalizó el año 1596»; l'elenco del Comune dà «Mar (1592–1596)». Prima c'era una passerella di legno già anteriore al 1321, ripetutamente distrutta (sezione 0 / non datata con precisione)."
+  },
+  {
+   "ID": "G005",
+   "Elemento": "Puente del Real — primo ponte (quattro arcate)",
+   "Da (anno)": 1279,
+   "A (anno)": 1279,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f",
+   "Note": "La scheda riporta: «En 1279 se alzaba en este enclave un puente de cuatro arcadas que se llevó la riada de 1321.» L'anno indica che esisteva nel 1279, non quando fu costruito."
+  },
+  {
+   "ID": "G006",
+   "Elemento": "Puente del Real — distruzione del ponte a quattro arcate",
+   "Da (anno)": 1321,
+   "A (anno)": 1321,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f",
+   "Note": "La stessa frase dice «que se llevó la riada de 1321». Segue un ponte di legno non datato, danneggiato nel 1406, 1427 e 1517."
+  },
+  {
+   "ID": "G007",
+   "Elemento": "Puente del Real — distruzione per la piena del 1589",
+   "Da (anno)": 1589,
+   "A (anno)": 1589,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f",
+   "Note": "La scheda riporta: «Fue derruido por la riada de Octubre de 1589.»; un nuovo ponte iniziato nel 1590 fu distrutto da un'altra piena lo stesso anno (da non modellare)."
+  },
+  {
+   "ID": "G008",
+   "Elemento": "Puente del Real — ponte attuale",
+   "Da (anno)": 1594,
+   "A (anno)": 1599,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f ; https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "Note": "La scheda riporta «FECHA DE CONSTRUCCION: 1594-1599»; l'elenco del Comune dà «Real (1594–1599)»."
+  },
+  {
+   "ID": "G009",
+   "Elemento": "Puente del Real — allargamento dell'impalcato",
+   "Da (anno)": 1968,
+   "A (anno)": 1968,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f",
+   "Note": "La scheda riporta: «En 1968 se modifica el ancho del tablero de 10,4 a 27,5 metros»."
+  },
+  {
+   "ID": "G010",
+   "Elemento": "Puente de San José — primo attraversamento (passerella di legno)",
+   "Da (anno)": 1383,
+   "A (anno)": 1383,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "DA MEMORIA",
+   "Affidabilità": "bassa",
+   "Fonte": "https://victoryepes.blogs.upv.es/wp-content/uploads/2024/01/Puente-de-San-Jose.pdf",
+   "Note": "Prima menzione del 1383: una passerella chiamata «Palanca del Cremador»; non è provato che fosse costruita quell'anno. Crollata nel 1406; un tentativo in muratura fu demolito dalla piena del 1517."
+  },
+  {
+   "ID": "G011",
+   "Elemento": "Puente de San José — ponte di pietra a 13 arcate",
+   "Da (anno)": 1604,
+   "A (anno)": 1607,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "alta",
+   "Fonte": "https://victoryepes.blogs.upv.es/wp-content/uploads/2024/01/Puente-de-San-Jose.pdf ; https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "Note": "Studio UPV: «Las obras se iniciaron el 30 de julio de 1604» e «En 1607 las obras terminaron»; l'elenco del Comune dà «San José (1604–1607)». Il ponte non fu demolito nel 1906."
+  },
+  {
+   "ID": "G012",
+   "Elemento": "Puente de San José — allargamento con marciapiedi a sbalzo",
+   "Da (anno)": 1906,
+   "A (anno)": 1907,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://victoryepes.blogs.upv.es/wp-content/uploads/2024/01/Puente-de-San-Jose.pdf",
+   "Note": "Studio UPV: nell'ottobre 1906 le statue furono tolte per i lavori; «Las obras, concluidas en 1907, consistieron en hacer aceras voladizas»."
+  },
+  {
+   "ID": "G013",
+   "Elemento": "Puente de Aragón — primo attraversamento sul sito",
+   "Da (anno)": 1927,
+   "A (anno)": 1933,
+   "Uso nel modello": "GRADUALE",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://victoryepes.blogs.upv.es/wp-content/uploads/2022/07/El-Puente-de-Aragon-sobre-el-viejo-cauce-del-Turia-en-Valencia.pdf",
+   "Note": "La fonte riporta: «El acuerdo de construcción del nuevo puente se tomó el 19 de enero de 1927» e «La estructura se terminó de construir en 1933». 1927 è la data della delibera, non dell'inizio fisico dei lavori."
+  },
+  {
+   "ID": "G014",
+   "Elemento": "Puente de la Exposición — primo attraversamento sul sito",
+   "Da (anno)": "",
+   "A (anno)": "",
+   "Uso nel modello": "NESSUNO",
+   "Motivo": "ASSENTE",
+   "Affidabilità": "n/d",
+   "Fonte": "https://www.visitvalencia.com/que-ver-valencia/jardines-del-turia/puentes",
+   "Note": "CERCATO E NON TROVATO con fonte attendibile: visitvalencia lo lega all'Esposizione del 2000 senza data di costruzione e non lo data nell'elenco dei ponti. DA VERIFICARE con fonte comunale prima di usarlo: NON significa che non esista."
+  },
+  {
+   "ID": "G015",
+   "Elemento": "Puente de las Flores — apertura",
+   "Da (anno)": 2003,
+   "A (anno)": 2003,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://www.visitvalencia.com/que-ver-valencia/zona-jardin-turia-valencia/puente-flores",
+   "Note": "La pagina riporta: «El puente fue inaugurado en 2003». Fonte turistica: confermare con il Comune."
+  },
+  {
+   "ID": "G016",
+   "Elemento": "Pont de l'Assut de l'Or — apertura",
+   "Da (anno)": 2008,
+   "A (anno)": 2008,
+   "Uso nel modello": "BRUSCO",
+   "Motivo": "BLOCCO TECNICO",
+   "Affidabilità": "media",
+   "Fonte": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "Note": "La fonte elenca «Assut de l'Or Bridge (2008)» nella Ciudad de las Artes y las Ciencias."
+  }
+ ]
+}
