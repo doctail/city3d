@@ -45,17 +45,21 @@ def sample(paths, LON, LAT, crs_tf=None, nodata=0, resamp_mean=False):
             out[ok] = a[rows[ok] - r0, cols[ok] - c0]
     return out
 res = {'x0': -R, 'y0': R, 'R': R, 'lat0': LAT0, 'lon0': LON0}
-# 1) rilievo
+# 1) rilievo (SKIP_DEM=1: tile gia' in chat, si salta)
 tiles = []
+if os.environ.get('SKIP_DEM'): la1 = la0 - 1   # nessun ciclo
+res['D'] = np.zeros((1, 1), np.float32)
 for la in range(math.floor(la0), math.floor(la1) + 1):
     for lo in range(math.floor(lo0), math.floor(lo1) + 1):
         ns = f"{'N' if la >= 0 else 'S'}{abs(la):02d}"; ew = f"{'E' if lo >= 0 else 'W'}{abs(lo):03d}"
         n = f'Copernicus_DSM_COG_10_{ns}_00_{ew}_00_DEM'
         p = get(f'https://copernicus-dem-30m.s3.amazonaws.com/{n}/{n}.tif', os.path.join(TMP, n + '.tif'))
         if p: tiles.append(p)
-X, Y, LON, LAT = grid(90.0)
-res['D'] = sample(tiles, LON, LAT, nodata=0).astype(np.float32); res['D_cell'] = 90.0
-log('rilievo', res['D'].shape, 'min', res['D'].min(), 'max', res['D'].max())
+if tiles:
+    X, Y, LON, LAT = grid(90.0)
+    res['D'] = sample(tiles, LON, LAT, nodata=0).astype(np.float32); res['D_cell'] = 90.0
+    log('rilievo', res['D'].shape, 'min', res['D'].min(), 'max', res['D'].max())
+la1 = LAT0 + dlat
 # 2) copertura del suolo ESA WorldCover 2021 (tile 3x3 gradi, angolo SW multiplo di 3)
 wc = []
 for la in range(3 * math.floor(la0 / 3), 3 * math.floor(la1 / 3) + 1, 3):
