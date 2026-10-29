@@ -15,13 +15,23 @@ RAW, DATA = sys.argv[1], sys.argv[2]
 CFG = json.load(open(os.path.join(HERE, 'city_parigi.json')))
 LAT0, LON0 = CFG['lat0'], CFG['lon0']; KX = math.cos(math.radians(LAT0)) * 111320; KY = 110540
 FLAT, EXAG, TAPER = CFG.get('dem_flat', 3.0), CFG.get('dem_exag', 1.6), CFG.get('dem_taper', 100.0)
-C = 30.0; HALF = 12000
-t = tifffile.imread(f'{RAW}/Copernicus_DSM_COG_10_N48_00_E002_00_DEM.tif').astype(np.float64)   # 1 grado, nord in alto, pixel-is-point
-ny0, nx0 = t.shape
+import glob, re
+# sfondo vero (29 ott): fino a dem_half (40 km) se ci sono le tile vicine (tools/fetch_far.py le scarica in raw_<citta>/far_tmp);
+# senza, solo la tile del centro e 12 km come prima
+TILES = {}
+for f in glob.glob(f'{RAW}/**/Copernicus_DSM_COG_10_*_DEM.tif', recursive=True):
+    m = re.search(r'_([NS])(\d+)_00_([EW])(\d+)_00_DEM', f)
+    TILES[((1 if m[1] == 'N' else -1) * int(m[2]), (1 if m[3] == 'E' else -1) * int(m[4]))] = f
+HALF = CFG.get('dem_half', 40000) if len(TILES) > 1 else 12000
+C = 30.0 if HALF <= 12000 else CFG.get('dem_cell_far', 30.0)
 xs = np.arange(-HALF, HALF + 1, C); ys = np.arange(-HALF, HALF + 1, C); GX, GY = np.meshgrid(xs, ys)
 lon = LON0 + GX / KX; lat = LAT0 + GY / KY
-col = (lon - 2.0) * (nx0 - 1); row = (49.0 - lat) * (ny0 - 1)
-S = nd.map_coordinates(t, [row, col], order=1)
+S = np.zeros(GX.shape)
+for (la, lo), f in TILES.items():
+    t = tifffile.imread(f).astype(np.float64); ny0, nx0 = t.shape          # 1 grado, nord in alto, pixel-is-point
+    m = (lat >= la) & (lat < la + 1) & (lon >= lo) & (lon < lo + 1)
+    if m.any(): S[m] = nd.map_coordinates(t, [(la + 1 - lat[m]) * (ny0 - 1), (lon[m] - lo) * (nx0 - 1)], order=1)
+print(f'[dem] tile {len(TILES)}, semi-lato {HALF / 1000:.0f} km, cella {C:.0f} m', flush=True)
 # via edifici e alberi: apertura (minimo poi massimo) larga, poi lisciatura
 OPEN = CFG.get('dem_open_m', 270.0)
 G = nd.grey_opening(S, size=(int(OPEN / C), int(OPEN / C)))

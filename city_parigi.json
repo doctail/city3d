@@ -150,7 +150,7 @@
    "#737a83",
    "#969ca3",
    "#6a7179",
-   "#8a5e4c"
+   "#7a7f86"
   ],
   "glass": [
    "#7fb2d0",
@@ -227,7 +227,7 @@
    0.25
   ],
   "night_lamp": "#ffa955",
-  "street": "#d9d2c3",
+  "street": "#c9c1b0",
   "mansard": true,
   "mansard_roof": [
    "#7d848d",
@@ -237,7 +237,34 @@
    "#5f6670"
   ],
   "street_old_until": 1800,
-  "street_earth": "#9c916c"
+  "street_earth": "#9c916c",
+  "roof_rf": {
+   "z": [
+    "#7d848d",
+    "#8a9099",
+    "#6f767f",
+    "#959ba2",
+    "#5f6670",
+    "#848a90"
+   ],
+   "t": [
+    "#94654f",
+    "#8a5f4b",
+    "#9c6a52",
+    "#7f5a48"
+   ],
+   "b": [
+    "#a9a8a4",
+    "#b5b3ae",
+    "#9d9c98"
+   ]
+  },
+  "roof_rf_core": 4500
  },
- "blocks_by_decade": true
+ "blocks_by_decade": true,
+ "far": {
+  "r0": 10500.0,
+  "blend": 3000.0,
+  "_nota": "sfondo vero oltre il modello: tools/fetch_far.py (pod) + tools/far_prep.py"
+ }
 }

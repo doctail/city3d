@@ -44,6 +44,17 @@ OUT91 = unary_union(A.layer('Ilots_1791').geometry.buffer(0).values).convex_hull
 # [Guessing] dichiarato: soglie di regia, non date per singola via.
 OUT_MAJOR, OUT_MINOR = 1700, 1780
 hist = json.load(open(f'{DATA}/hist.json'))
+# vie legate alle case (prova 1850/1880, 29 ott): nei faubourg la zona risultava urbanizzata decenni prima delle case vere e le
+# vie comparivano come una griglia vuota. Una via di zona non compare prima della casa piu' vecchia entro 30 m (meno 3 anni).
+_bl = json.load(open(f'{DATA}/buildings.json'))
+_cx = np.array([np.mean([p[0] for p in o['r']]) for o in _bl + hist]); _cy = np.array([np.mean([p[1] for p in o['r']]) for o in _bl + hist])
+_by = np.array([o['y'] for o in _bl + hist], float); del _bl
+from scipy.spatial import cKDTree as _KD
+_kd = _KD(np.c_[_cx, _cy])
+def first_house(x0, y0, x1, y1):
+    ii = set()
+    for t in (0.0, 0.5, 1.0): ii.update(_kd.query_ball_point((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t), 30 + 0.5 * math.hypot(x1 - x0, y1 - y0) * (t == 0.5)))
+    return float(_by[list(ii)].min()) if ii else None
 hp = [Polygon(h_['r']).buffer(0) for h_ in hist]; hd = np.array([h_.get('d', 99999) for h_ in hist]); htree = STRtree(hp)
 sg, sy = H.street_years(RAW, shapely); stree = STRtree(sg)
 rnd = random.Random(5)
@@ -89,6 +100,8 @@ for g, hw, rw, br, tn, nm in zip(r.geometry, r['highway'], r['railway'], r['brid
             y, how = cut_year(LineString([(x0, y0), (x1, y1)]), mid, name); cnt[how] += 1
         else:
             y = (u + 2) if u < 9000 else 1890; cnt['urban'] += 1
+            fh = first_house(x0, y0, x1, y1)
+            if fh is not None and fh - 3 > y: y = fh - 3; cnt['casa'] = cnt.get('casa', 0) + 1
             if not O91.contains(mid):
                 y = max(y, OUT_MAJOR if hw in ('primary', 'secondary', 'trunk') else OUT_MINOR + 20 * rnd.random())
         ux, uy = (x1 - x0) / dl, (y1 - y0) / dl; e = w / 2; nx, ny = -uy * e, ux * e

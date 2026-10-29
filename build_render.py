@@ -108,6 +108,54 @@ def city_mat():
     L(rg.outputs[0], b.inputs['Roughness'])
     mt = N.new('ShaderNodeMapRange'); L(glass, mt.inputs['Value']); mt.inputs['To Min'].default_value = 0.0; mt.inputs['To Max'].default_value = (0.0 if NIGHT else 0.35); L(mt.outputs[0], b.inputs['Metallic'])
     return hazeify(m)
+FAR_IMG = None; FAR_BOX = None   # sfondo lontano vero (DATA/far.png da tools/far_prep.py): copertura del suolo e anno del costruito
+def far_land(N, L, tc, near_col, urban_col, yv, bsdf):
+    """Oltre far_r0 il suolo prende colore dalla copertura vera (ESA WorldCover) e il costruito compare dall'anno GHSL:
+    l'orizzonte di ogni citta' e' quello suo (boschi, banlieue, fiumi), non la stessa pianura verde per tutti."""
+    FS = CITY.get('far', {}); FCOL = FS.get('colors', {})
+    def col(h): return (*srgb(h), 1)
+    x0_, y0_, x1_, y1_ = FAR_BOX
+    mp_ = N.new('ShaderNodeMapping'); mp_.inputs['Location'].default_value = (-x0_ / (x1_ - x0_), -y0_ / (y1_ - y0_), 0); mp_.inputs['Scale'].default_value = (1 / (x1_ - x0_), 1 / (y1_ - y0_), 1)
+    L(tc.outputs['Object'], mp_.inputs['Vector'])
+    it_ = N.new('ShaderNodeTexImage'); it_.image = FAR_IMG; it_.interpolation = 'Closest'; it_.extension = 'EXTEND'; L(mp_.outputs[0], it_.inputs['Vector'])
+    sp_ = N.new('ShaderNodeSeparateColor'); L(it_.outputs['Color'], sp_.inputs[0])
+    def near(v, c_, tol=0.025):
+        d_ = N.new('ShaderNodeMath'); d_.operation = 'COMPARE'; L(v, d_.inputs[0]); d_.inputs[1].default_value = c_; d_.inputs[2].default_value = tol; return d_.outputs[0]
+    def mix(fac, a_, b_):
+        m_ = N.new('ShaderNodeMix'); m_.data_type = 'RGBA'
+        if isinstance(fac, float): m_.inputs['Factor'].default_value = fac
+        else: L(fac, m_.inputs['Factor'])
+        for slot, v_ in ((6, a_), (7, b_)):
+            if isinstance(v_, tuple): m_.inputs[slot].default_value = v_
+            else: L(v_, m_.inputs[slot])
+        return m_.outputs[2]
+    def math_(op, a_, b_):
+        m_ = N.new('ShaderNodeMath'); m_.operation = op
+        for i_, v_ in enumerate((a_, b_)):
+            if isinstance(v_, float): m_.inputs[i_].default_value = v_
+            else: L(v_, m_.inputs[i_])
+        return m_.outputs[0]
+    nz_ = N.new('ShaderNodeTexNoise'); nz_.inputs['Scale'].default_value = 0.004; nz_.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], nz_.inputs['Vector'])
+    R_ = sp_.outputs[0]; G_ = sp_.outputs[1]
+    c_ = near_col
+    for k_, key, dflt in ((1, 'tree', ['#2f4226', '#3c5230']), (2, 'shrub', ['#56603a', '#666b44']), (3, 'grass', ['#6f8248', '#7f8c52']),
+                          (6, 'bare', ['#a49a82', '#b3a98f']), (7, 'water', ['#3b4a52', '#3b4a52']), (8, 'wetland', ['#4e5f47', '#5d6b4c'])):
+        cc_ = FCOL.get(key, dflt); tone = mix(nz_.outputs['Fac'], col(cc_[0]), col(cc_[1]))
+        c_ = mix(near(R_, k_ * 16 / 255.0), c_, tone)
+    # costruito: dall'anno in G (1600 + G*430/254); prima resta campagna
+    yr_ = math_('ADD', math_('MULTIPLY', G_, 255.0 * 430.0 / 254.0), 1600.0)
+    on_ = math_('MULTIPLY', near(R_, 80 / 255.0), math_('MULTIPLY', math_('LESS_THAN', G_, 0.999), math_('GREATER_THAN', yv.outputs[0], yr_)))
+    c_ = mix(on_, c_, urban_col)
+    # peso: 0 dentro il modello (gli edifici veri), 1 oltre far_r0 + far_blend
+    ln_ = N.new('ShaderNodeVectorMath'); ln_.operation = 'LENGTH'; L(tc.outputs['Object'], ln_.inputs[0])
+    w_ = N.new('ShaderNodeMapRange'); w_.interpolation_type = 'SMOOTHSTEP'; L(ln_.outputs['Value'], w_.inputs['Value'])
+    w_.inputs['From Min'].default_value = FS.get('r0', 9000.0); w_.inputs['From Max'].default_value = FS.get('r0', 9000.0) + FS.get('blend', 2500.0)
+    if NIGHT:   # di notte la banlieue accesa all'orizzonte (luce di sodio), solo dove il costruito c'e' gia'
+        ln2_ = N.new('ShaderNodeTexVoronoi'); ln2_.inputs['Scale'].default_value = 0.02; L(tc.outputs['Object'], ln2_.inputs['Vector'])
+        pt_ = math_('LESS_THAN', ln2_.outputs['Distance'], 0.22)
+        em_ = math_('MULTIPLY', math_('MULTIPLY', on_, w_.outputs[0]), math_('ADD', math_('MULTIPLY', pt_, FS.get('night_peak', 3.0)), FS.get('night_base', 0.35)))
+        bsdf.inputs['Emission Color'].default_value = (1.0, 0.62, 0.32, 1); L(em_, bsdf.inputs['Emission Strength'])
+    return mix(w_.outputs[0], near_col, c_)
 ZONE_IMG = None   # immagine delle distanze (R: dal fiume del 1248, G: dalle mura), creata dopo il caricamento della terra
 def natural_land(N, L, tc, vo):
     """Paesaggio per zone (Siviglia, 23 ott): verde solo nella vega vicino al fiume e negli orti attorno alle mura; la
@@ -254,6 +302,7 @@ def land_mat(mode='fields'):
     L(gm.outputs[2], um.inputs[6]); L(dr.outputs[0], um.inputs[7])
     L(um.outputs[2], mx.inputs[7])
     fout_ = fields.outputs[0]
+    if mode == 'fields' and FAR_IMG is not None: fout_ = far_land(N, L, tc, fout_, um.outputs[2], yv, b)
     if mode == 'fields' and CITY.get('far_flat'):   # campi lontani: i poligoni sfumano verso un tono medio (non sembrano cartone)
         f0_, f1_, fk_ = CITY['far_flat']; cdf_ = N.new('ShaderNodeCameraData')
         ffr_ = N.new('ShaderNodeMapRange'); L(cdf_.outputs['View Distance'], ffr_.inputs['Value'])
@@ -325,12 +374,17 @@ def add_bld(bm, col, vyear, vdie, b):
         elif gl: rpal = ST.get('roof_new', ROOF)
         elif old_: pal, rpal = ST['wall_old'], ST['roof_old']
         else: pal, rpal = (ST.get('wall_anc', ST['wall_new']) if b.get('k') == 'anc' else ST['wall_new']), ST['roof_new']
+    if ST.get('roof_rf') and not gl and not b.get('lm') and not old:
+        # Parigi (prova mansarde 29 ott): coppi rossi dove la BDNB dice zinco/ardesia. Colore del tetto dal materiale vero
+        # (rf: z zinco/ardesia, t tegole, b terrazza); senza dato: zinco nel centro (raggio roof_rf_core), tavolozza normale fuori
+        _rf = b.get('rf') or ('z' if (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2 else None)
+        if _rf in ST['roof_rf']: rpal = ST['roof_rf'][_rf]
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
     z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
     vb = [bm.verts.new((x, yy, z0_ - (1.0 if dem_at else 0.0))) for x, yy in ring]   # con rilievo: muri 1 m sotto il suolo (pendii)
     pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
     # mansarda (Parigi, style.mansard): tetto in zinco/ardesia (rf='z' dalla BDNB): muri fino a h - mh, poi falda ripida rientrata
-    if ST.get('mansard') and b.get('rf') == 'z' and not pitched and not gl and h > 11 and poly.area > 40 and len(ring) <= 40:
+    if ST.get('mansard') and (b.get('rf') == 'z' or (ST.get('roof_rf') and not b.get('rf') and y < 1930 and (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2)) and not pitched and not gl and h > 11 and poly.area > 40 and len(ring) <= 40:
         mh = min(5.5, 0.32 * h); ins = min(2.2, math.sqrt(poly.area) * 0.12); n_ = len(ring); inner = []
         for i in range(n_):
             (xa, ya_), (xb, yb), (xc, yc) = ring[i - 1], ring[i], ring[(i + 1) % n_]
@@ -480,6 +534,9 @@ def chunked(name, items, z, m, kind, binw=3.0):
         o_ = obj(f'{name}_{k_}', bm_, m); objs.append(o_)
         VIS.append((o_, kind, k_ * binw if k_ != 99999 else 99999))
     return objs
+if os.path.exists(f'{DATA}/far.png') and CITY.get('far'):
+    FAR_IMG = bpy.data.images.load(f'{DATA}/far.png'); FAR_IMG.colorspace_settings.name = 'Non-Color'
+    FAR_BOX = json.load(open(f'{DATA}/far.json'))['box']; log('sfondo lontano vero', FAR_IMG.size[:], FAR_BOX)
 # ---------- terra e acqua ----------
 land = json.load(open(f'{DATA}/land.json')) if os.path.exists(f'{DATA}/land.json') else []
 if land: lgeom = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land if len(r) >= 1]).buffer(CITY.get('land_close', 45), join_style=2).buffer(-CITY.get('land_close', 45), join_style=2)   # chiude le fessure tra contee (Copenaghen: 1 m, i canali sono stretti)
@@ -1128,7 +1185,9 @@ if dem_at:
             for t_ in (0.25, 0.5, 0.75):
                 dq_ = dem_at(pa_[:, 0] + (pb_[:, 0] - pa_[:, 0]) * t_, pa_[:, 1] + (pb_[:, 1] - pa_[:, 1]) * t_)
                 err_ = _np.maximum(err_, _np.abs(dq_ - (da_ + (db_ - da_) * t_))); dm_ = _np.maximum(dm_, dq_)
-            need_ = (err_ > CITY.get('dem_tol', 0.5)) | ((dm_ > 0.2) & (ln_[cand_] > CITY.get('dem_edge_max', 240.0)))
+            # lontano (sfondo fino a 40 km) l'errore ammesso cresce con la distanza: oltre 10 km cresce: a 20 km 3 m, a 40 km 8 m (memoria)
+            dk_ = _np.maximum(1.0, _np.hypot((pa_[:, 0] + pb_[:, 0]) / 2, (pa_[:, 1] + pb_[:, 1]) / 2) / 2000.0 - 4.0)   # dentro 10 km come prima
+            need_ = (err_ > CITY.get('dem_tol', 0.5) * dk_) | ((dm_ > 0.2) & (ln_[cand_] > CITY.get('dem_edge_max', 240.0) * dk_))
             sel_ = _np.flatnonzero(cand_)[need_]
             if not len(sel_): break
             bs_ = bmesh.new(); bs_.from_mesh(me_); bs_.edges.ensure_lookup_table()
