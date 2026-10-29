@@ -651,7 +651,15 @@ if os.path.exists(f'{DATA}/roads.json'):
     _sm = mat('street', srgb(ST.get('street', '#e3dac6')), 0.95)
     if NIGHT:
         _sb = _sm.node_tree.nodes['Principled BSDF']; _sb.inputs['Emission Color'].default_value = (1.0, 0.62, 0.32, 1); _sb.inputs['Emission Strength'].default_value = ST.get('night_street', 0.25)
-    chunked('streets', [(r_['r'], r_['y']) for r_ in _rd if not r_.get('rail')], 0.10, _sm, 'appear')
+    _ou = ST.get('street_old_until')
+    if _ou:   # Parigi: le vie prima del lastricato sono terra battuta (strisce bianche nei campi del 1600, prova 29 ott);
+        # la stessa via si ricopre di pavimentazione chiara tra _ou e _ou+60 (GRADUALE per via, [Guessing] di stile)
+        _old = [r_ for r_ in _rd if not r_.get('rail') and r_['y'] < _ou]
+        chunked('streets_earth', [(r_['r'], r_['y']) for r_ in _old], 0.10, mat('street_earth', srgb(ST.get('street_earth', '#a3966f')), 0.97), 'appear')
+        chunked('streets', [(r_['r'], r_['y']) for r_ in _rd if not r_.get('rail') and r_['y'] >= _ou]
+                + [(r_['r'], _ou + 60 * random.Random(int(r_['r'][0][0] // 400) * 7919 + int(r_['r'][0][1] // 400)).random()) for r_ in _old], 0.12, _sm, 'appear')   # per quartiere di 400 m
+    else:
+        chunked('streets', [(r_['r'], r_['y']) for r_ in _rd if not r_.get('rail')], 0.10, _sm, 'appear')
     chunked('rails', [(r_['r'], r_['y']) for r_ in _rd if r_.get('rail')], 0.10, mat('rail', srgb(ST.get('rail', '#8a8378')), 0.9), 'appear')
     log('strade', len(_rd))
 # ponti (DATA/bridges.json [{"r", "y"}]): impalcato rialzato sull'acqua, fianchi scuri

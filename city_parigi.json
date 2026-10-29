@@ -235,6 +235,8 @@
    "#6f767f",
    "#959ba2",
    "#5f6670"
-  ]
+  ],
+  "street_old_until": 1800,
+  "street_earth": "#9c916c"
  }
 }
