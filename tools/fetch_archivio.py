@@ -22,12 +22,20 @@ LISTE = {
     ],
 }
 API = 'https://commons.wikimedia.org/w/api.php'
-H = {'User-Agent': 'city3d-archivio/1.0 (YouTube Year Built; contatto via GitHub doctail/city3d)'}
+H = {'User-Agent': 'city3d-archivio/1.1 (https://github.com/doctail/city3d; fabio.righini1@gmail.com) python-requests'}   # policy Wikimedia: UA con contatto
+W = 3000   # miniatura da 3000 px di lato: basta per 1080p/1440p e Wikimedia la serve dalla cache (gli originali danno 429 dai datacenter)
+def api(params):
+    for k_ in range(6):
+        r = requests.get(API, params=params, headers=H, timeout=60)
+        if r.status_code == 200 and r.headers.get('content-type', '').startswith('application/json'): return r.json()
+        print('  API', r.status_code, '- attendo', 30 * (k_ + 1), 's'); time.sleep(30 * (k_ + 1))
+    raise SystemExit('Wikimedia non risponde: riprova piu\' tardi')
 OK = re.compile(r'^(public domain|pd|cc0)', re.I)
 def clean(s): return re.sub(r'<[^>]+>', '', s or '').strip()
 res = []
 for key, title in LISTE[CITY]:
-    r = requests.get(API, params={'action': 'query', 'titles': title, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'format': 'json'}, headers=H, timeout=60).json()
+    if os.path.exists(os.path.join(OUT, key + '.jpg')) or os.path.exists(os.path.join(OUT, key + '.png')): print('gia\' presente', key); continue
+    r = api({'action': 'query', 'titles': title, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': W, 'format': 'json'})
     pg = next(iter(r['query']['pages'].values()))
     if 'imageinfo' not in pg: print('MANCA', title); res.append({'key': key, 'title': title, 'stato': 'non trovato'}); continue
     ii = pg['imageinfo'][0]; md = ii.get('extmetadata', {})
@@ -38,13 +46,14 @@ for key, title in LISTE[CITY]:
     if pd:
         # 29 ott: Wikimedia rispondeva con una pagina d'errore (troppe richieste) salvata come immagine. Ora: estensione
         # senza parametri, pausa tra i file, controllo che sia davvero un'immagine, 5 tentativi con attesa crescente
-        ext = os.path.splitext(urllib.parse.urlparse(ii['url']).path)[1].lower() or '.jpg'
+        src = ii.get('thumburl') or ii['url']
+        ext = os.path.splitext(urllib.parse.urlparse(src).path)[1].lower() or '.jpg'
         for k_ in range(5):
-            time.sleep(4 + 10 * k_)
-            d = requests.get(ii['url'], headers=H, timeout=180)
+            time.sleep(8 + 45 * k_)
+            d = requests.get(src, headers=H, timeout=180)
             if d.status_code == 200 and d.headers.get('content-type', '').startswith('image/'):
                 open(os.path.join(OUT, key + ext), 'wb').write(d.content); break
-            print('  riprovo', key, d.status_code, d.headers.get('content-type'))
+            print('  riprovo', key, d.status_code, d.headers.get('content-type'), '- attendo', 8 + 45 * (k_ + 1), 's')
         else: row['stato'] = 'ERRORE download (Wikimedia ha rifiutato 5 volte)'
     print(f"{row['stato']:32s} {lic:22s} {key}")
     res.append(row); json.dump(res, open(os.path.join(OUT, 'licenze.json'), 'w'), ensure_ascii=False, indent=1)
