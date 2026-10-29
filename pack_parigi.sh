@@ -5,9 +5,9 @@
 set -e
 cd "$(dirname "$0")"
 mkdir -p data_parigi_src
-for f in buildings.json hist.json roads.json landmarks.json landphases.json land.json parks.json wall_p.json urban_grid.npz dem.npz; do
+for f in buildings.json hist.json roads.json landmarks.json landphases.json land.json parks.json wall_p.json urban_grid.npz dem.npz far.png far.json; do
   [ -s data_parigi/$f ] || { echo "MANCA data_parigi/$f"; exit 1; }
-  gzip -9 -c data_parigi/$f > data_parigi_src/$f.gz
+  gzip -9 -c data_parigi/$f > data_parigi_src/$f.gz   # far.png/far.json: sfondo vero (tools/far_prep.py)
 done
 ls -lh data_parigi_src/
 du -sh data_parigi_src/
