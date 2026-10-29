@@ -20,6 +20,10 @@ def log(*a): print('[far]', *a, flush=True)
 def get(url, dst):
     if os.path.exists(dst) and os.path.getsize(dst) > 0: return dst
     log('scarico', url)
+    try:
+        return _get(url, dst)
+    except Exception as e: log('  ERRORE', e); return None
+def _get(url, dst):
     with requests.get(url, stream=True, timeout=120, headers={'User-Agent': 'city3d'}) as r:
         if r.status_code != 200: log('  ERRORE', r.status_code); return None
         with open(dst + '.part', 'wb') as f:
@@ -36,8 +40,10 @@ def sample(paths, LON, LAT, crs_tf=None, nodata=0, resamp_mean=False):
         with rasterio.open(p) as ds:
             if crs_tf is not None: xx, yy = crs_tf.transform(LON, LAT)
             else: xx, yy = LON, LAT
-            rows, cols = ds.index(xx.ravel(), yy.ravel())
-            rows = np.asarray(rows).reshape(LON.shape); cols = np.asarray(cols).reshape(LON.shape)
+            # trasformazione inversa a mano (ds.index vuole scalari nelle versioni nuove di rasterio)
+            t_ = ds.transform; det = t_.a * t_.e - t_.b * t_.d
+            dx_, dy_ = np.asarray(xx) - t_.c, np.asarray(yy) - t_.f
+            cols = np.floor((t_.e * dx_ - t_.b * dy_) / det).astype(np.int64); rows = np.floor((-t_.d * dx_ + t_.a * dy_) / det).astype(np.int64)
             ok = (rows >= 0) & (rows < ds.height) & (cols >= 0) & (cols < ds.width)
             if not ok.any(): continue
             r0, r1, c0, c1 = rows[ok].min(), rows[ok].max() + 1, cols[ok].min(), cols[ok].max() + 1
@@ -89,5 +95,7 @@ for ep in (1975, 1990, 2000, 2015, 2020):
     BY = np.where((BY == 9999) & (S >= 1500), ep, BY); res['BY_epochs'].append(ep)
     log('GHSL', ep, 'celle costruite', int((S >= 1500).sum()))
 res['BY'] = BY; res['BY_cell'] = 100.0
+if not os.environ.get('FAR_ALLOW_PARTIAL') and (not (res['LC'] > 0).any() or not res['BY_epochs']):
+    log('ERRORE: copertura o GHSL mancanti (download falliti sopra): niente npz'); sys.exit(1)
 np.savez_compressed(os.path.join(OUT, f'far_{name}.npz'), **res)
 log('FATTO', os.path.join(OUT, f'far_{name}.npz'), round(os.path.getsize(os.path.join(OUT, f'far_{name}.npz')) / 1e6, 1), 'MB')
