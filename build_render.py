@@ -315,8 +315,8 @@ def land_mat(mode='fields'):
     L(fout_ if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])
     return hazeify(m)
 LAND_YEAR = []
-def obj(name, bm, m):
-    me = bpy.data.meshes.new(name); bm.to_mesh(me); bm.free(); o = bpy.data.objects.new(name, me); sc.collection.objects.link(o); me.materials.append(m); return o
+def obj(name, bm, m, coll=None):
+    me = bpy.data.meshes.new(name); bm.to_mesh(me); bm.free(); o = bpy.data.objects.new(name, me); (coll or sc.collection).objects.link(o); me.materials.append(m); return o
 
 # ---------- edifici ----------
 blds = json.load(open(f'{DATA}/buildings.json')); log('edifici', len(blds))
@@ -1127,9 +1127,12 @@ def _lmesh(pt):
                                V(cxk + rx * w2, cyk + ry * w2, zz + w2), V(cxk - rx * w2, cyk - ry * w2, zz + w2)])
             tube(rings_)
     bm_.normal_update()
-    o_ = obj(f"lm_{pt['name']}_{len(PARTS)}", bm_, CM); o_.data.color_attributes.active_color_name = 'col'
+    o_ = obj(f"lm_{pt['name']}_{len(PARTS)}", bm_, CM, LMCOL); o_.data.color_attributes.active_color_name = 'col'
     o_.location.z = zb; o_.scale.z = 0.0
     return o_, zb
+# parti dei monumenti in una collezione a parte: dopo l'unione si stacca la collezione intera in un colpo (29 ott: rimuovere
+# 16.874 oggetti uno per uno, anche con batch_remove, costava 13 minuti sul pod)
+LMCOL = bpy.data.collections.new('lm_parts'); sc.collection.children.link(LMCOL)
 if LM:
     _lp = LM['parts']
     if '--crop' in a: _lp = [p_ for p_ in _lp if cx0 < (p_['r'][0][0] if 'r' in p_ else p_['cx']) < cx1 and cy0 < (p_['r'][0][1] if 'r' in p_ else p_['cy']) < cy1]
@@ -1214,7 +1217,7 @@ if CITY.get('merge_parts') and PARTS:
     for pt in PARTS: _grp.setdefault((pt['b0'], pt['d0'], round(pt.get('zg', 0.0), 1), pt['obj'].visible_shadow), []).append(pt)
     _newp = []; _rm_o = []; _rm_m = []
     for _k, _ps in _grp.items():
-        if len(_ps) == 1: _newp.append(_ps[0]); continue
+        if len(_ps) == 1: sc.collection.objects.link(_ps[0]['obj']); _newp.append(_ps[0]); continue   # resta in scena anche senza la collezione
         _z = min(p_['z0'] for p_ in _ps); _bm = bmesh.new()
         for p_ in _ps:
             _me = p_['obj'].data; _off = p_['z0'] - _z
@@ -1225,8 +1228,8 @@ if CITY.get('merge_parts') and PARTS:
         for p_ in _ps: _rm_o.append(p_['obj']); _rm_m.append(p_['obj'].data)
         _newp.append({'obj': _o, 'z0': _z, 'b0': _k[0], 'b1': _k[0], 'd0': _k[1], 'd1': _k[1]})
     # 29 ott: 10.009 remove() uno per uno costavano 27 minuti (ogni remove scorre tutto il file): una sola batch_remove
-    log('monumenti: gruppi costruiti, rimozione di', len(_rm_o), 'parti')
-    bpy.data.batch_remove(_rm_o); bpy.data.batch_remove(_rm_m)
+    sc.collection.children.unlink(LMCOL)   # le parti unite escono dalla scena (restano solo in memoria, non vengono rese)
+    log('monumenti: parti staccate dalla scena:', len(_rm_o))
     log('monumenti uniti:', len(PARTS), '->', len(_newp), 'oggetti'); PARTS = _newp
     if os.environ.get('STOP_AFTER_MERGE'): log('STOP_AFTER_MERGE: fine prova'); sys.exit(0)
 # alberi "cotti" in geometria statica (DOPO il rilievo: gli alberi nascono gia' sul suolo spostato, niente 3,5 milioni

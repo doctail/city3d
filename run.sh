@@ -75,6 +75,12 @@ if [ -z "$MODE" ]; then
   echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | cover | profile   (test = vecchia prova solo New York)"; exit 1
 fi
 if [ "$MODE" = "test" ] && [ "$CITY" != "nyc" ]; then echo "La modalita' test vale solo per New York: usa preview"; exit 1; fi
+# controllo del costo PRIMA di qualsiasi render (29 ott: preview di Parigi bloccato da 61.772 blocchi): si ferma da solo
+if [ "$CITY" != "nyc" ] && [ "$MODE" != "cover" ]; then
+  step "3c/5 controllo costo (oggetti che cambiano)"
+  python3 -c "import numpy" 2>/dev/null || pip install -q numpy
+  python3 tools/costo_cambi.py city_$CITY.json $D $SCHED || { echo "Render NON lanciato. Manda questa riga in chat."; exit 2; }
+fi
 if [ "$MODE" = "preview" ]; then
   step "4/5 ANTEPRIMA: 2 fotogrammi al secondo, 960x540, durata reale (~6-8 min)"
   rm -rf out/prev out/prevn out/prevmix
