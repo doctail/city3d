@@ -1,6 +1,6 @@
 {
  "name": "parigi",
- "_doc": "Parigi (26 ott 2026, Fase 1). Centro = Notre-Dame. radius_m 8000 copre i 20 arrondissement (perimetro max ~7 km); La Defense (9,4 km a ovest-nord-ovest) entra come zona extra. clip_radius_m = ritaglio dei dati grezzi sul pod (largo, per decidere dopo).",
+ "_doc": "Parigi (26 ott 2026, Fase 1). Centro = Notre-Dame. radius_m 8000 copre i 20 arrondissement (perimetro max ~7 km); La Defense (9,4 km a ovest-nord-ovest) entra come zona extra. clip_radius_m = ritaglio dei dati grezzi sul pod (largo, per decidere dopo). Render (27 ott 2026): stile Siviglia (STILE_VISIVO.md) con palette parigina: pietra calcarea crema, zinco e ardesia, tegole nei faubourg; Senna blu-grigio scuro; quai in pietra (landmarks); rilievo DSM ripulito (dem_parigi.py).",
  "lat0": 48.85297,
  "lon0": 2.34993,
  "radius_m": 8000,
@@ -30,5 +30,200 @@
   "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N48_00_E002_00_DEM/Copernicus_DSM_COG_10_N48_00_E002_00_DEM.tif"
  ],
  "coverage_min": 0.7,
- "hist": "hist_parigi"
+ "hist": "hist_parigi",
+ "core_box": [
+  -12000,
+  -12000,
+  12000,
+  12000
+ ],
+ "forest_box": [
+  0,
+  0,
+  1,
+  1
+ ],
+ "parks": [],
+ "roads": [],
+ "grid_deg": 0,
+ "marsh": false,
+ "haze_k": 22000.0,
+ "water_z": -3.0,
+ "field_colors": [
+  "#7b8250",
+  "#8c8a5a",
+  "#a1965e",
+  "#6e7a4a",
+  "#878f5c"
+ ],
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "view_transform": "AgX",
+ "look": "AgX - Punchy",
+ "exposure": -0.5,
+ "land_from_buildings": true,
+ "dur_min": 0.003,
+ "tree_scale": [
+  2.0,
+  3.6
+ ],
+ "tree_lift": 2.8,
+ "land_close": 6,
+ "blocks_by_building": true,
+ "skip_canals": true,
+ "fields_style": "natural",
+ "urban_ground": "footprints",
+ "urban_grid": false,
+ "row_scale": 0.012,
+ "tree_mesh": "octa",
+ "haze_start": 4000.0,
+ "far_flat": [
+  7000,
+  16000,
+  0.6
+ ],
+ "sun_el": 12,
+ "vegetation": {
+  "river_w": 60,
+  "river_step": 10,
+  "vega_r": 11000,
+  "vega_step": 24,
+  "vega_clump": 0.62,
+  "orchard_r": 900,
+  "orchard_step": 8,
+  "colors": [
+   "#34461f",
+   "#45552d",
+   "#57653a",
+   "#3c4b27"
+  ]
+ },
+ "merge_parts": true,
+ "rewind_hold": 4,
+ "dem_open_m": 270.0,
+ "dem_exag": 1.6,
+ "dem_flat": 3.0,
+ "style": {
+  "haze": [
+   0.78,
+   0.8,
+   0.8
+  ],
+  "era_split": 1850,
+  "pitched_until": 1850,
+  "pitched_max_area": 600,
+  "wall_old": [
+   "#e4dac4",
+   "#d9cdb1",
+   "#e9e1cf",
+   "#cdbf9f",
+   "#d4c6a6",
+   "#c8b896",
+   "#ddd0b5",
+   "#bfae8c"
+  ],
+  "roof_old": [
+   "#6a6f77",
+   "#767a80",
+   "#5f646b",
+   "#8a5f4b",
+   "#94654f",
+   "#70757c"
+  ],
+  "wall_new": [
+   "#e8dfca",
+   "#e2d7bf",
+   "#ece5d4",
+   "#ddd1b6",
+   "#d6c9ab",
+   "#efe9dc",
+   "#cfc3a6"
+  ],
+  "wall_anc": [
+   "#cfc8bc",
+   "#bdb6aa",
+   "#c9c2b4"
+  ],
+  "roof_new": [
+   "#7f868f",
+   "#8b9199",
+   "#737a83",
+   "#969ca3",
+   "#6a7179",
+   "#8a5e4c"
+  ],
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 70,
+  "window": "#2a3a4a",
+  "urban": [
+   "#b9b2a3",
+   "#b1a999",
+   "#beb7a8",
+   "#a9a191",
+   "#b5ad9d",
+   "#a59c8b"
+  ],
+  "urban_dark": "#c2baa9",
+  "urban_green": "#7fb04e",
+  "hedge": "#5d6238",
+  "blocks": "#8f8778",
+  "grass": "#5f7c3b",
+  "tree": "#3b5a2c",
+  "forest_base": "#5d9c3f",
+  "water": "#2c3d45",
+  "water_rough": 0.05,
+  "sky_light": 0.35,
+  "sun_energy": 4.2,
+  "night_off": 0.72,
+  "night_win": 9.0,
+  "moon": 0.05,
+  "night_street": 0.9,
+  "night_sky": 0.03,
+  "bridge_side": "#a39d92",
+  "glass_min_area": 400,
+  "bulb": 8.0,
+  "sky_in_reflections": true,
+  "wave_scale": 0.025,
+  "wave_strength": 0.05,
+  "water2": "#37494f",
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "reclaim": "#bdb39b",
+  "park_ground": "#5e7a3c",
+  "olive_soil": "#a8916a",
+  "olive_tree": "#4e5730",
+  "bulb_size": 1.6,
+  "nat": {
+   "vega1": "#62723a",
+   "vega2": "#77823f",
+   "olive": "#6c7a52",
+   "olive_soil": "#9d9470",
+   "marsh1": "#6f7f58",
+   "marsh2": "#4f6448",
+   "campina": [
+    "#9a8c58",
+    "#ae9f66",
+    "#bba979",
+    "#a39466",
+    "#857a52"
+   ]
+  },
+  "urban_phase": "#a9a294",
+  "night_ground": [
+   0.6,
+   6.0,
+   0.25
+  ],
+  "night_lamp": "#ffa955",
+  "street": "#d9d2c3"
+ }
 }

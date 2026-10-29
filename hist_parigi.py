@@ -201,6 +201,9 @@ def build(DATA, RAW='raw_parigi', seed=11):
     A = Alpage(os.path.join(RAW, 'alpage'), CFG)
     blds = json.load(open(f'{DATA}/buildings.json'))
     stats = {'epoche': build_grids(DATA, A, blds, shapely, nd)}
+    pa = shapely.union_all([g_.buffer(0) for g_, l_ in zip(A.layer('Enceintes').geometry.values, A.layer('Enceintes')['Libelle'].astype(str)) if l_ == 'Philippe-Auguste'])
+    wp = pa.convex_hull.buffer(-5).simplify(5)
+    json.dump([[round(x, 1), round(y, 1)] for x, y in list(wp.exterior.coords)[:-1]], open(f'{DATA}/wall_p.json', 'w'))
     rnd = random.Random(seed)
 
     # --- anni di oggi stimati e piu' vecchi della zona: alzati all'anno di urbanizzazione (niente case nei campi) ---
@@ -364,6 +367,20 @@ def water_phases(DATA, A, shapely, nd):
     log('acqua a fasi:', len(out), 'zone;', sum(1 for i in info if i['fonte'].startswith('A')), 'con data della scheda')
     return info
 
+# perimetro delle mura di Filippo Augusto (B001/B002) per il paesaggio di build_render (orti attorno alla citta'): DATA/wall_p.json
+def __getattr__(name):   # PEP 562: WALL_P letto pigramente dai dati preparati (sul pod non ci sono i dati grezzi ALPAGE)
+    if name == 'WALL_P':
+        from shapely.geometry import Polygon
+        f = os.path.join(os.path.dirname(_find_grid() or 'data_parigi/x'), 'wall_p.json')
+        return Polygon(json.load(open(f)))
+    raise AttributeError(name)
+
 if __name__ == '__main__':
     sys.path.insert(0, HERE)
-    build(sys.argv[1] if len(sys.argv) > 1 else 'data_parigi', sys.argv[2] if len(sys.argv) > 2 else 'raw_parigi')
+    D_ = sys.argv[1] if len(sys.argv) > 1 else 'data_parigi'; R_ = sys.argv[2] if len(sys.argv) > 2 else 'raw_parigi'
+    if not os.path.isdir(os.path.join(R_, 'alpage')):
+        # sul pod: i dati sono gia' preparati in chat (data_parigi_src); niente ricalcolo
+        need = [f for f in ('buildings.json', 'hist.json', 'urban_grid.npz', 'landphases.json', 'wall_p.json') if not os.path.exists(os.path.join(D_, f))]
+        print('[hist_parigi] dati gia\' preparati' if not need else f'[hist_parigi] ERRORE: mancano {need} in {D_}', flush=True)
+        sys.exit(1 if need else 0)
+    build(D_, R_)

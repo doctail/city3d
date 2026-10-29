@@ -29,6 +29,7 @@ STONE, STONE2, SLATE, ZINC, COPPER, GOLD, LEAD, BRONZE, WHITE, GLASS, BRICK = \
 WALLC, WALLC2 = '#bfb094', '#a99a7e'
 parts, clear, labels, fires = [], [], [], []
 def P(**k):
+    if k.get('t') == 'beam' and 'cx' not in k: k['cx'] = (k['p0'][0] + k['p1'][0]) / 2; k['cy'] = (k['p0'][1] + k['p1'][1]) / 2
     k = {kk: (round(v, 2) if isinstance(v, float) else v) for kk, v in k.items()}
     parts.append(k)
 def ring(g, simp=0.4):
@@ -464,6 +465,41 @@ if g is not None:
 # --- La Defense: Grande Arche (Wikidata 1989), dagli edifici di oggi solo etichetta ---
 g = fp('Grande Arche de la Défense', near=(-8354, 4377))
 if g is not None: lab('La Défense', g.centroid.x, g.centroid.y, 110, 1958)
+
+# =====================================================================================================
+# 4. QUAI in pietra lungo Senna e canali dentro Parigi (il render non disegna pareti tra terra e acqua)
+#    anno: quai ALPAGE 1312-1789 (DD1) se entro 40 m, altrimenti A015 (1800-1900 GRADUALE, memoria) lungo il fiume
+# =====================================================================================================
+WZ = CFG.get('water_z', -3.0)
+landj = json.load(open(f'{DATA}/land.json'))
+LG = unary_union([Polygon(r_['ext'], r_.get('holes', [])).buffer(0) for r_ in landj])
+WAT = box(-8500, -8500, 8500, 8500).difference(LG)
+big = unary_union([q for q in (WAT.geoms if hasattr(WAT, 'geoms') else [WAT]) if q.area > 30000])
+qa = A.layer('Quais_1312_1789')
+def _yr(v):
+    try: return float(v.year) if hasattr(v, 'year') else (float(v) if v == v and v else 1600.0)
+    except Exception: return 1600.0
+qlines = [(g_, _yr(dd)) for g_, dd in zip(qa.geometry.values, qa['DD1'])]
+from shapely.strtree import STRtree
+qtree = STRtree([g_ for g_, _ in qlines])
+nq = 0
+inside_paris = Point(0, 0).buffer(6800)
+for poly in (big.geoms if hasattr(big, 'geoms') else [big]):
+    for rg in [poly.exterior] + list(poly.interiors):
+        cs = list(rg.simplify(3).coords)
+        for (x0, y0), (x1, y1) in zip(cs, cs[1:]):
+            dl = math.hypot(x1 - x0, y1 - y0)
+            if dl < 4: continue
+            mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+            if not inside_paris.contains(Point(mx, my)): continue
+            nx, ny = -(y1 - y0) / dl, (x1 - x0) / dl
+            if not LG.contains(Point(mx + nx * 3, my + ny * 3)): nx, ny = -nx, -ny          # verso terra
+            q = [[x0, y0], [x1, y1], [x1 + nx * 2.0, y1 + ny * 2.0], [x0 + nx * 2.0, y0 + ny * 2.0]]
+            near = [qlines[i][1] for i in qtree.query(Point(mx, my).buffer(40))]
+            y_ = min(near) if near else 1800 + 100 * ((math.degrees(math.atan2(my, mx)) + 180) % 360) / 360
+            P(name='quay', t='prism', r=[[round(a_, 1), round(b_, 1)] for a_, b_ in q], z0=WZ - 0.6, z1=0.12, c='#cbbfa3', a=0.05, y=round(y_, 1))
+            nq += 1
+log('quai: segmenti', nq)
 
 json.dump({'parts': parts, 'clear': clear, 'labels': labels, 'fires': fires}, open(f'{DATA}/landmarks.json', 'w'))
 log(f'FATTO: {len(parts)} parti, {len(clear)} pezzi di impronta da sgombrare, {len(labels)} etichette, {len(fires)} incendi')

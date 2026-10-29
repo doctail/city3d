@@ -1,0 +1,433 @@
+{
+"soste": [
+{
+"t_in": 9.5,
+"t_out": 17.5,
+"title": "Philippe Augustus walls the city (1190-1215)",
+"sub": ""
+},
+{
+"t_in": 50.05,
+"t_out": 56.05,
+"title": "Charles V: a new wall and the Bastille (1356-1383)",
+"sub": ""
+},
+{
+"t_in": 91.61,
+"t_out": 98.11,
+"title": "Pont Neuf and the Grande Galerie (1578-1612)",
+"sub": ""
+},
+{
+"t_in": 125.27,
+"t_out": 131.27,
+"title": "Les Invalides and its golden dome (1670-1706)",
+"sub": ""
+},
+{
+"t_in": 193.93,
+"t_out": 199.43,
+"title": "The Bastille falls (1789)",
+"sub": "14 July 1789"
+},
+{
+"t_in": 243.22,
+"t_out": 248.22,
+"title": "Canal Saint-Martin is dug (1822-1825)",
+"sub": ""
+},
+{
+"t_in": 285.6,
+"t_out": 294.6,
+"title": "Haussmann cuts through old Paris (1853-1870)",
+"sub": ""
+},
+{
+"t_in": 310.38,
+"t_out": 314.38,
+"title": "The Commune: Tuileries and Hôtel de Ville burn (1871)",
+"sub": "May 1871"
+},
+{
+"t_in": 342.99,
+"t_out": 348.99,
+"title": "The Eiffel Tower rises (1887-1889)",
+"sub": ""
+},
+{
+"t_in": 417.26,
+"t_out": 423.26,
+"title": "Tour Montparnasse and Centre Pompidou (1969-1977)",
+"sub": ""
+},
+{
+"t_in": 462.99,
+"t_out": 468.99,
+"title": "Notre-Dame: fire and rebirth (2019-2024)",
+"sub": "15 April 2019 – 7 December 2024"
+}
+],
+"didascalie": [
+{
+"t_in": 13.34,
+"date": "1202",
+"title": "The Louvre fortress",
+"line": "A castle guards the wall where it meets the Seine.",
+"shift_s": 0.0,
+"rate": 3.1,
+"t_out": 21.34
+},
+{
+"t_in": 25.39,
+"date": "1248",
+"title": "Sainte-Chapelle",
+"line": "A royal chapel built to hold the Crown of Thorns.",
+"shift_s": 0.0,
+"rate": 6.6,
+"t_out": 33.39
+},
+{
+"t_in": 35.39,
+"date": "c. 1290",
+"title": "~120,000 people",
+"line": "Estimate; Paris is the biggest city in Western Europe.",
+"shift_s": 0.5,
+"rate": 4.2,
+"t_out": 43.39
+},
+{
+"t_in": 47.57,
+"date": "c. 1345",
+"title": "Notre-Dame completed",
+"line": "Almost two centuries after the first stone.",
+"shift_s": 0.0,
+"rate": 3.7,
+"t_out": 55.57
+},
+{
+"t_in": 60.76,
+"date": "1413",
+"title": "Pont Notre-Dame",
+"line": "A bridge lined with houses.",
+"shift_s": 0.0,
+"rate": 4.8,
+"t_out": 68.76
+},
+{
+"t_in": 74.93,
+"date": "c. 1490",
+"title": "Back to 200,000",
+"line": "The city recovers after the Hundred Years War (estimate).",
+"shift_s": 0.0,
+"rate": 6.3,
+"t_out": 82.93
+},
+{
+"t_in": 88.44,
+"date": "1564",
+"title": "The Tuileries Palace",
+"line": "Catherine de' Medici builds a palace west of the Louvre.",
+"shift_s": 0.0,
+"rate": 5.9,
+"t_out": 96.44
+},
+{
+"t_in": 98.44,
+"date": "1607",
+"title": "Pont Neuf opens",
+"line": "The first Paris bridge without houses on it.",
+"shift_s": 1.3,
+"rate": 5.2,
+"t_out": 106.44
+},
+{
+"t_in": 108.44,
+"date": "c. 1640",
+"title": "450,000 people",
+"line": "Estimate.",
+"shift_s": 3.1,
+"rate": 2.2,
+"t_out": 116.44
+},
+{
+"t_in": 118.44,
+"date": "1614–1655",
+"title": "Île Saint-Louis",
+"line": "Two islets are joined and built over.",
+"shift_s": 3.1,
+"rate": 1.6,
+"t_out": 126.44
+},
+{
+"t_in": 131.27,
+"date": "1706",
+"title": "The Invalides dome is gilded",
+"line": "Mansart's dome: 107 m.",
+"shift_s": 0.0,
+"rate": 3.7,
+"t_out": 139.27
+},
+{
+"t_in": 142.37,
+"date": "1686–1720",
+"title": "Place Vendôme",
+"line": "A royal square of matching façades.",
+"shift_s": 0.0,
+"rate": 1.3,
+"t_out": 150.37
+},
+{
+"t_in": 157.2,
+"date": "c. 1740",
+"title": "550,000 Parisians",
+"line": "Estimate.",
+"shift_s": 0.0,
+"rate": 1.3,
+"t_out": 165.2
+},
+{
+"t_in": 169.26,
+"date": "1755",
+"title": "Place Louis XV",
+"line": "Today Place de la Concorde.",
+"shift_s": 0.0,
+"rate": 1.3,
+"t_out": 177.26
+},
+{
+"t_in": 179.26,
+"date": "1758",
+"title": "Sainte-Geneviève",
+"line": "The church that will become the Panthéon.",
+"shift_s": 7.6,
+"rate": 1.2,
+"t_out": 187.26
+},
+{
+"t_in": 195.9,
+"date": "1786–1788",
+"title": "Houses cleared off the bridges",
+"line": "Pont Notre-Dame and Pont au Change lose their houses.",
+"shift_s": 0.0,
+"rate": 1.3,
+"t_out": 203.9
+},
+{
+"t_in": 205.9,
+"date": "1784–1790",
+"title": "The Farmers-General wall",
+"line": "A customs wall around the whole city.",
+"shift_s": 7.2,
+"rate": 1.3,
+"t_out": 213.9
+},
+{
+"t_in": 219.29,
+"date": "1802–1810",
+"title": "The Grand Châtelet is demolished",
+"line": "The medieval fortress at the heart of the Right Bank.",
+"shift_s": 0.0,
+"rate": 0.7,
+"t_out": 227.29
+},
+{
+"t_in": 231.47,
+"date": "15 Aug 1813",
+"title": "Canal de l'Ourcq",
+"line": "Fresh water reaches La Villette.",
+"shift_s": 0.0,
+"rate": 0.6,
+"t_out": 239.47
+},
+{
+"t_in": 247.39,
+"date": "1822–1825",
+"title": "Canal Saint-Martin",
+"line": "A canal brings water and barges into Paris.",
+"shift_s": 0.0,
+"rate": 1.2,
+"t_out": 255.39
+},
+{
+"t_in": 263.86,
+"date": "1836",
+"title": "The Arc is finished",
+"line": "Thirty years after the first stone.",
+"shift_s": 0.0,
+"rate": 0.6,
+"t_out": 271.86
+},
+{
+"t_in": 275.08,
+"date": "1846",
+"title": "Over 1 million",
+"line": "1,053,897 Parisians.",
+"shift_s": 0.0,
+"rate": 0.8,
+"t_out": 283.08
+},
+{
+"t_in": 287.85,
+"date": "1852–1870",
+"title": "Les Halles",
+"line": "Baltard's iron and glass market pavilions.",
+"shift_s": 0.0,
+"rate": 2.2,
+"t_out": 295.85
+},
+{
+"t_in": 297.85,
+"date": "1852–1863",
+"title": "The New Louvre",
+"line": "The Louvre finally joins the Tuileries.",
+"shift_s": 7.3,
+"rate": 2.2,
+"t_out": 305.85
+},
+{
+"t_in": 320.91,
+"date": "1875",
+"title": "Palais Garnier",
+"line": "The opera house opens.",
+"shift_s": 0.0,
+"rate": 0.5,
+"t_out": 328.91
+},
+{
+"t_in": 334.35,
+"date": "1882",
+"title": "A new Hôtel de Ville",
+"line": "Rebuilt on the same site.",
+"shift_s": 0.0,
+"rate": 0.5,
+"t_out": 342.35
+},
+{
+"t_in": 348.41,
+"date": "6 May 1889",
+"title": "Eiffel Tower opens",
+"line": "300 m: the tallest structure in the world.",
+"shift_s": 0.0,
+"rate": 0.5,
+"t_out": 356.41
+},
+{
+"t_in": 358.41,
+"date": "1896–1900",
+"title": "Pont Alexandre III",
+"line": "A single steel arch over the Seine.",
+"shift_s": 3.9,
+"rate": 1.3,
+"t_out": 366.41
+},
+{
+"t_in": 368.95,
+"date": "1914",
+"title": "Sacré-Cœur completed",
+"line": "Consecrated only in 1919, after the war.",
+"shift_s": 0.0,
+"rate": 1.2,
+"t_out": 376.95
+},
+{
+"t_in": 380.95,
+"date": "1919–1929",
+"title": "The Thiers wall is razed",
+"line": "Its belt becomes housing and, later, the Périphérique.",
+"shift_s": 0.0,
+"rate": 1.2,
+"t_out": 388.95
+},
+{
+"t_in": 394.54,
+"date": "1946",
+"title": "2,725,374 Parisians",
+"line": "The first census after the war.",
+"shift_s": 0.0,
+"rate": 1.2,
+"t_out": 402.54
+},
+{
+"t_in": 404.54,
+"date": "1954",
+"title": "2,850,189 Parisians",
+"line": "Census.",
+"shift_s": 3.6,
+"rate": 1.3,
+"t_out": 412.54
+},
+{
+"t_in": 418.3,
+"date": "1968",
+"title": "2,590,771 Parisians",
+"line": "Families leave for the suburbs.",
+"shift_s": 0.0,
+"rate": 1.9,
+"t_out": 426.3
+},
+{
+"t_in": 428.3,
+"date": "1973",
+"title": "Tour Montparnasse",
+"line": "210 m: a tower Paris will never repeat inside the city.",
+"shift_s": 7.4,
+"rate": 1.9,
+"t_out": 436.3
+},
+{
+"t_in": 438.3,
+"date": "1989",
+"title": "The Louvre Pyramid",
+"line": "And the Grande Arche at La Défense.",
+"shift_s": 4.0,
+"rate": 1.0,
+"t_out": 446.3
+},
+{
+"t_in": 448.3,
+"date": "1999",
+"title": "2,125,246 Parisians",
+"line": "The smallest population in a century.",
+"shift_s": 4.4,
+"rate": 1.0,
+"t_out": 456.3
+},
+{
+"t_in": 458.3,
+"date": "2011",
+"title": "2,249,975 Parisians",
+"line": "A brief rebound.",
+"shift_s": 2.9,
+"rate": 1.0,
+"t_out": 466.3
+},
+{
+"t_in": 469.04,
+"date": "2025",
+"title": "Paris today",
+"line": "2,065,560 people inside the city.",
+"shift_s": 0.0,
+"rate": 1.0,
+"t_out": 477.04
+},
+{
+"t_in": 479.04,
+"date": "1889",
+"title": "Eiffel Tower",
+"line": "Built in 26 months for the World Fair; meant to stand 20 years.",
+"shift_s": 0.0,
+"rate": 0.0,
+"t_out": 487.04
+},
+{
+"t_in": 492.0,
+"date": "1190 → 2026",
+"title": "836 years of Paris",
+"line": "From an island city to 2 million people.",
+"shift_s": 0.0,
+"rate": 0.0,
+"t_out": 500.0
+}
+],
+"subscribe_t": 255.0
+}
