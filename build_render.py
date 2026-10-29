@@ -155,6 +155,7 @@ def far_land(N, L, tc, near_col, urban_col, yv, bsdf):
         pt_ = math_('LESS_THAN', ln2_.outputs['Distance'], 0.22)
         em_ = math_('MULTIPLY', math_('MULTIPLY', on_, w_.outputs[0]), math_('ADD', math_('MULTIPLY', pt_, FS.get('night_peak', 3.0)), FS.get('night_base', 0.35)))
         bsdf.inputs['Emission Color'].default_value = (1.0, 0.62, 0.32, 1); L(em_, bsdf.inputs['Emission Strength'])
+    if os.environ.get('FARDEBUG'): return c_   # prova: solo lo sfondo vero ovunque
     return mix(w_.outputs[0], near_col, c_)
 ZONE_IMG = None   # immagine delle distanze (R: dal fiume del 1248, G: dalle mura), creata dopo il caricamento della terra
 def natural_land(N, L, tc, vo):
