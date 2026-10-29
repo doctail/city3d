@@ -774,13 +774,28 @@ def rings_of(g): return [list(p.exterior.coords)[:-1] for p in (g.geoms if hasat
 blocks = []
 CH = 600
 cells = {}
-for p in polys:
-    c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
-for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
 _bit = []
+if CITY.get('blocks_by_decade'):
+    # Parigi (prova 1780, 29 ott): l'isolato unito per celle di 600 m compariva col suo edificio piu' vecchio e diventava una
+    # lastra grigia con poche case sopra. Qui: unione per cella e per decennio dell'edificio, meno cio' che c'era gia'.
+    for p, y_ in zip(polys, polys_y):
+        c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), {}).setdefault(int(y_ // 10) * 10, []).append((p.buffer(5, join_style=2), y_))
+    for k, byd in cells.items():
+        done_ = Polygon()
+        for d_ in sorted(byd):
+            u_ = unary_union([g_ for g_, _ in byd[d_]]).simplify(1.0).difference(done_); done_ = done_.union(u_); y0_ = min(v_ for _, v_ in byd[d_])
+            for q_ in getattr(u_.buffer(0), 'geoms', [u_.buffer(0)]):
+                if q_.geom_type != 'Polygon' or q_.area < 4: continue
+                pcs = [q_] if not q_.interiors else [t_ for t_ in __import__('shapely').constrained_delaunay_triangles(q_).geoms]   # niente buchi: triangoli
+                for t_ in pcs:
+                    r = list(t_.exterior.coords)[:-1]; _bit.append((r, y0_)); blocks.append(r)
+else:
+  for p in polys:
+    c0 = p.centroid; cells.setdefault((int(c0.x // CH), int(c0.y // CH)), []).append(p.buffer(5, join_style=2))
+  for k, ps in cells.items(): blocks += rings_of(unary_union(ps).simplify(1.0))
 from shapely.strtree import STRtree as _STR
 _ptree = _STR(polys)
-for r in blocks:
+for r in ([] if CITY.get('blocks_by_decade') else blocks):
     by = urban_year(*Polygon(r).centroid.coords[0]) if (urban_year and hist) else 0
     if CITY.get('blocks_by_building'):   # l'isolato compare col suo edificio vero piu' vecchio (non con la zona: lastre grigie nel medioevo)
         _ii = _ptree.query(Polygon(r))

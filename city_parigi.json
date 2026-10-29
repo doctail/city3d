@@ -238,5 +238,6 @@
   ],
   "street_old_until": 1800,
   "street_earth": "#9c916c"
- }
+ },
+ "blocks_by_decade": true
 }
