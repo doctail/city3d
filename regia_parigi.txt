@@ -1,102 +1,100 @@
-Durata 6:30.0  fotogrammi 9360  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 50
-Quota camera sopra il suolo: min 336 m, max 749 m, mediana 565 m
-Velocita camera: mediana 94 m/s, max 351 m/s; rotazione sguardo mediana 1.5 gradi/s
-Prima crescita (anno 1215 raggiunto): 17.5 s; 1550 (citta densa): 59.4 s
+Durata 6:30.0  fotogrammi 9360  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 48
+Quota camera sopra il suolo: min 336 m, max 749 m, mediana 576 m
+Velocita camera: mediana 94 m/s, max 358 m/s; rotazione sguardo mediana 1.8 gradi/s
+Prima crescita (anno 1215 raggiunto): 17.5 s; 1550 (citta densa): 52.9 s
 
 SOSTE (video -> anni):
   0:09.5-0:17.5  1190->1215  Philippe Augustus walls the city (1190-1215)
-  0:34.1-0:40.1  1356->1383  Charles V: a new wall and the Bastille (1356-1383)
-  1:03.0-1:09.5  1578->1612  Pont Neuf and the Grande Galerie (1578-1612)
-  1:27.9-1:33.9  1670->1706  Les Invalides and its golden dome (1670-1706)
-  2:04.8-2:10.3  1784->1791  The Bastille falls (1789)
-  2:30.3-2:35.3  1820->1826  Canal Saint-Martin is dug (1822-1825)
-  2:58.7-3:11.7  1852->1872  Haussmann cuts through old Paris (1853-1870)
-  3:50.1-3:56.1  1886->1890  The Eiffel Tower rises (1887-1889)
-  4:59.9-5:05.9  1966->1978  Tour Montparnasse and Centre Pompidou (1969-1977)
-  5:43.1-5:49.1  2019->2025  Notre-Dame: fire and rebirth (2019-2024)
+  0:27.6-0:33.6  1356->1383  Charles V: a new wall and the Bastille (1356-1383)
+  0:56.6-1:03.1  1578->1612  Pont Neuf and the Grande Galerie (1578-1612)
+  1:28.3-1:34.3  1670->1706  Les Invalides and its golden dome (1670-1706)
+  2:15.6-2:21.1  1784->1791  The Bastille falls (1789)
+  2:55.1-3:00.1  1820->1826  Canal Saint-Martin is dug (1822-1825)
+  3:39.1-3:52.1  1852->1872  Haussmann cuts through old Paris (1853-1870)
+  4:30.4-4:36.4  1886->1890  The Eiffel Tower rises (1887-1889)
+  5:15.0-5:21.0  1966->1978  Tour Montparnasse and Centre Pompidou (1969-1977)
+  5:43.4-5:49.4  2019->2025  Notre-Dame: fire and rebirth (2019-2024)
 
-DIDASCALIE: 32, distanza 10.0-14.7 s, a schermo 8.0-8.0 s, spostamento max 7.4 s; Subscribe a 187 s
+DIDASCALIE: 33, distanza 10.0-14.7 s, a schermo 8.0-8.0 s, spostamento max 7.4 s; Subscribe a 187 s
   0:13.3  1202         The Louvre fortress
-  0:26.4  c. 1290      ~120,000 people
-  0:37.2  1370         The Bastille
-  0:51.9  c. 1490      Back to 200,000
-  1:01.9  1564         The Tuileries Palace
-  1:14.0  1614–1635    Pont Marie
-  1:24.0  1614–1655    Île Saint-Louis
-  1:34.0  1706         The Invalides dome is gilded
-  1:46.7  c. 1740      550,000 Parisians
-  1:56.7  1755         Place Louis XV
-  2:09.5  1784–1790    The Farmers-General wall
-  2:20.0  1806         Arc de Triomphe
-  2:32.0  1822         The Ourcq canal is complete
-  2:43.1  1831–1834    Pont du Carrousel
-  2:53.1  1843         Île Louviers disappears
-  3:05.2  1860–1862    The canal goes underground
-  3:15.2  May 1871     The Commune
-  3:25.2  1875         Palais Garnier
-  3:38.2  1882         A new Hôtel de Ville
-  3:48.2  1883         Tuileries demolished
-  4:01.3  1896–1900    Pont Alexandre III
-  4:14.8  1914         Sacré-Cœur completed
-  4:27.5  1931         2,891,020 Parisians
-  4:38.7  1946         2,725,374 Parisians
-  4:48.7  1954         2,850,189 Parisians
-  5:01.0  1968         2,590,771 Parisians
-  5:11.0  1973         Tour Montparnasse
-  5:22.5  1993–1996    Pont Charles-de-Gaulle
-  5:36.0  2011         2,249,975 Parisians
-  5:49.0  7 Dec 2024   Notre-Dame reopens
-  5:59.0  1889         Eiffel Tower
-  6:12.0  1190 → 2026  836 years of Paris
+  0:26.8  c. 1345      Notre-Dame completed
+  0:36.8  1413         Pont Notre-Dame
+  0:50.5  1533         A new Hôtel de Ville
+  1:02.1  1607         Pont Neuf opens
+  1:12.1  c. 1640      450,000 people
+  1:22.1  1614–1655    Île Saint-Louis
+  1:34.3  1706         The Invalides dome is gilded
+  1:44.3  1686–1720    Place Vendôme
+  1:54.3  c. 1740      550,000 Parisians
+  2:04.3  1755         Place Louis XV
+  2:17.6  1786–1788    Houses cleared off the bridges
+  2:27.6  1784–1790    The Farmers-General wall
+  2:37.7  1806         Arc de Triomphe
+  2:47.7  1806–1811    The Rohan wing
+  2:59.3  1822–1825    Canal Saint-Martin
+  3:11.3  29 Jul 1833  Pont Louis-Philippe
+  3:24.6  1843         Île Louviers disappears
+  3:34.6  1846         Over 1 million
+  3:46.2  1852–1863    The New Louvre
+  4:00.0  1875         Palais Garnier
+  4:10.0  1864–1876    Avenue de l'Opéra
+  4:21.2  1883         Tuileries demolished
+  4:35.9  6 May 1889   Eiffel Tower opens
+  4:47.7  1914         Sacré-Cœur completed
+  4:59.0  1935–1939    A new Pont du Carrousel
+  5:09.0  1946         2,725,374 Parisians
+  5:20.7  1977         Centre Pompidou
+  5:32.6  1999         2,125,246 Parisians
+  5:43.8  15 Apr 2019  Notre-Dame burns
+  5:53.8  7 Dec 2024   Notre-Dame reopens
+  6:03.8  1889         Eiffel Tower
+  6:13.8  1190 → 2026  836 years of Paris
 
 2:30-4:45: tratto piu lungo sopra 800 m = 0.0 s (limite 20 s)
 
 ANNO OGNI 20 s:
   0:00   2026.0  (0.00 anni/s)
-  0:20   1233.5  (8.65 anni/s)
-  0:40   1382.6  (5.70 anni/s)
-  1:00   1555.2  (8.37 anni/s)
-  1:20   1651.4  (2.34 anni/s)
-  1:40   1721.8  (2.75 anni/s)
-  2:00   1773.0  (2.60 anni/s)
-  2:20   1805.9  (1.48 anni/s)
-  2:40   1830.9  (1.05 anni/s)
-  3:00   1854.0  (1.54 anni/s)
-  3:20   1875.1  (0.38 anni/s)
-  3:40   1882.7  (0.38 anni/s)
-  4:00   1894.3  (1.34 anni/s)
-  4:20   1921.0  (1.34 anni/s)
-  4:40   1947.8  (1.34 anni/s)
-  5:00   1966.2  (1.46 anni/s)
-  5:20   1993.2  (1.11 anni/s)
-  5:40   2015.5  (1.11 anni/s)
+  0:20   1249.3  (18.04 anni/s)
+  0:40   1439.6  (8.31 anni/s)
+  1:00   1596.0  (5.23 anni/s)
+  1:20   1655.8  (1.78 anni/s)
+  1:40   1716.9  (1.89 anni/s)
+  2:00   1756.2  (1.92 anni/s)
+  2:20   1789.6  (1.27 anni/s)
+  2:40   1808.0  (0.86 anni/s)
+  3:00   1825.9  (1.05 anni/s)
+  3:20   1838.4  (0.74 anni/s)
+  3:40   1853.4  (1.54 anni/s)
+  4:00   1875.0  (0.38 anni/s)
+  4:20   1882.6  (0.38 anni/s)
+  4:40   1896.9  (2.22 anni/s)
+  5:00   1941.2  (2.21 anni/s)
+  5:20   1975.6  (1.92 anni/s)
+  5:40   2012.6  (1.85 anni/s)
   6:00   2026.0  (0.00 anni/s)
   6:20   2026.0  (0.00 anni/s)
 
-Velocita del tempo fuori dalle soste: mediana 1.34 anni/s, max 14.6 anni/s
+Velocita del tempo fuori dalle soste: mediana 1.72 anni/s, max 22.1 anni/s
 
-CAPITOLI (24, intervallo medio 15.2 s, massimo 25.5 s):
+CAPITOLI (21, intervallo medio 17.5 s, massimo 30.4 s):
   0:00 Paris today
   0:09 Philippe Augustus walls the city (1190-1215)
-  0:34 Charles V: a new wall and the Bastille (1356-1383)
-  0:51 c. 1490 – Back to 200,000
-  1:03 Pont Neuf and the Grande Galerie (1578-1612)
-  1:14 1614–1635 – Pont Marie
-  1:27 Les Invalides and its golden dome (1670-1706)
-  1:46 c. 1740 – 550,000 Parisians
-  2:04 The Bastille falls (1789)
-  2:30 Canal Saint-Martin is dug (1822-1825)
-  2:43 1831–1834 – Pont du Carrousel
-  2:58 Haussmann cuts through old Paris (1853-1870)
-  3:15 May 1871 – The Commune
-  3:38 1882 – A new Hôtel de Ville
-  3:50 The Eiffel Tower rises (1887-1889)
-  4:01 1896–1900 – Pont Alexandre III
-  4:14 1914 – Sacré-Cœur completed
-  4:27 1931 – 2,891,020 Parisians
-  4:48 1954 – 2,850,189 Parisians
-  4:59 Tour Montparnasse and Centre Pompidou (1969-1977)
-  5:10 1973 – Tour Montparnasse
-  5:22 1993–1996 – Pont Charles-de-Gaulle
+  0:27 Charles V: a new wall and the Bastille (1356-1383)
+  0:56 Pont Neuf and the Grande Galerie (1578-1612)
+  1:12 c. 1640 – 450,000 people
+  1:28 Les Invalides and its golden dome (1670-1706)
+  1:54 c. 1740 – 550,000 Parisians
+  2:15 The Bastille falls (1789)
+  2:37 1806 – Arc de Triomphe
+  2:55 Canal Saint-Martin is dug (1822-1825)
+  3:11 29 Jul 1833 – Pont Louis-Philippe
+  3:24 1843 – Île Louviers disappears
+  3:39 Haussmann cuts through old Paris (1853-1870)
+  4:00 1875 – Palais Garnier
+  4:30 The Eiffel Tower rises (1887-1889)
+  4:47 1914 – Sacré-Cœur completed
+  4:59 1935–1939 – A new Pont du Carrousel
+  5:15 Tour Montparnasse and Centre Pompidou (1969-1977)
+  5:32 1999 – 2,125,246 Parisians
   5:43 Notre-Dame: fire and rebirth (2019-2024)
   5:50 Paris by night

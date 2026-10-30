@@ -43,9 +43,9 @@ SOSTE = [
     (1190.0, 1215.0, 8.0, 'Philippe Augustus walls the city (1190-1215)', (ND[0] - 150, ND[1] + 200, 20), 420, 236, 206),   # B001/B002, E001, E021
     (1356.0, 1383.0, 6.0, 'Charles V: a new wall and the Bastille (1356-1383)', (BASTILLE[0] - 500, BASTILLE[1] + 300, 15), 480, 200, 172),   # B003, E010
     (1578.0, 1612.0, 6.5, 'Pont Neuf and the Grande Galerie (1578-1612)', (PONTNEUF[0] - 150, PONTNEUF[1] + 150, 10), 400, 222, 196),   # G005, E033, E012
-    (1670.0, 1706.0, 6.0, 'Les Invalides and its golden dome (1670-1706)', (*INVAL, 40), 420, 196, 170),   # E006, E036
+    (1670.0, 1706.0, 6.0, 'Les Invalides and its golden dome (1670-1706)', (*INVAL, 40), 480, 268, 248),   # E006, E036; 30 ott: camera da ovest, la citta' dietro (prima: campi vuoti)
     (1784.0, 1791.0, 5.5, 'The Bastille falls (1789)', (*BASTILLE, 15), 400, 214, 188),   # E011, B007
-    (1820.0, 1826.0, 5.0, 'Canal Saint-Martin is dug (1822-1825)', (*L(48.8705, 2.3655), 0), 430, 206, 182),   # A006/A007 (graduale 1822-1825)
+    (1820.0, 1826.0, 5.0, 'Canal Saint-Martin is dug (1822-1825)', (*L(48.8705, 2.3655), 0), 500, 40, 62),   # A006/A007 (graduale 1822-1825)   # 30 ott: camera da nord-est, la citta' dietro
     (1852.0, 1872.0, 13.0, "Haussmann cuts through old Paris (1853-1870)", (-900, 900, 10), 470, 200, 160),   # F004, C001-C008, E038, E009; dentro: la Comune (maggio 1871, F005/E020): un'unica sosta, prima il tempo tornava fermo 16 s sul 1871
     (1886.5, 1889.6, 6.0, 'The Eiffel Tower rises (1887-1889)', (*EIFFEL, 120), 520, 226, 196, 22),   # E004
     (1966.0, 1977.5, 6.0, 'Tour Montparnasse and Centre Pompidou (1969-1977)', (MONTP[0] + 300, MONTP[1] + 400, 60), 560, 212, 188),   # E016, E015
