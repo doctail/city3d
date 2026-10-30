@@ -1449,8 +1449,10 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
     # regola di stop (Fabio, 23 ott): ogni N fotogrammi, se la media degli ultimi N supera la soglia, ci si ferma
-    _FT.append(time.time() - t_)
-    if STOP_AVG and len(_FT) % STOP_N == 0:
+    # 30 ott: il riavvolgimento iniziale (salti da 60-200 s, una volta sola) entrava nella prima media e fermava il render
+    # al fotogramma 500. Ora i fotogrammi del riavvolgimento (anni che scendono) e il primo caricamento non contano.
+    if f > F0 and not (f - 1 in YF and YF[f] < YF[f - 1] - 1e-6) and (f - 2 not in YF or YF[f - 1] >= YF[f - 2] - 1e-6): _FT.append(time.time() - t_)
+    if STOP_AVG and _FT and len(_FT) % STOP_N == 0:
         _m = sum(_FT[-STOP_N:]) / STOP_N; print(f'[build] media ultimi {STOP_N} fotogrammi: {_m:.2f} s', flush=True)
         if _m > STOP_AVG: print(f'[build] STOP: media {_m:.2f} s > {STOP_AVG} s/fotogramma (fotogramma {f}). Render interrotto.', flush=True); sys.exit(3)
 if os.environ.get('DIAG'): json.dump(_DIAG_N, open(os.path.join(OUT, 'diag.json'), 'w'))
