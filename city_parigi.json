@@ -281,6 +281,8 @@
    "orchard_step": 14
   },
   "dem_tol": 1.5,
-  "dem_edge_max": 480.0
- }
+  "dem_edge_max": 480.0,
+  "samples": 6
+ },
+ "look_default": "lite"
 }

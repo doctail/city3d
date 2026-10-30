@@ -15,6 +15,7 @@ CITY = {'name': 'nyc', 'lat0': 40.758, 'lon0': -73.985, 'grid_deg': 29, 'hist': 
 if '--city' in a: CITY.update(_j.load(open(a[a.index('--city') + 1])))
 # look alternativo (Parigi 29 ott: "look semplificato" per il costo): LOOK=lite applica le chiavi di CITY['look_lite']
 # (i dizionari, es. vegetation, si fondono chiave per chiave)
+if not _o.environ.get('LOOK') and CITY.get('look_default'): _o.environ['LOOK'] = CITY['look_default']   # Parigi: lite deciso da Fabio (30 ott)
 if _o.environ.get('LOOK') and CITY.get('look_' + _o.environ['LOOK']):
     for _k, _v in CITY['look_' + _o.environ['LOOK']].items():
         if isinstance(_v, dict) and isinstance(CITY.get(_k), dict): CITY[_k] = dict(CITY[_k], **_v)
@@ -25,6 +26,7 @@ def opt(name, n=1, default=None):
     return default
 F0, F1 = map(int, opt('--frames', 2, ['1', '240'])); RW, RH = map(int, opt('--res', 2, ['1920', '1080']))
 SAMPLES = int(opt('--samples', 1, '32')); FPS = int(opt('--fps', 1, '24')); GPU = '--gpu' in a
+if CITY.get('samples') and '--year' not in a: SAMPLES = min(SAMPLES, int(CITY['samples']))   # look lite: 6 campioni (le copertine con --year restano piene)
 Y0, Y1 = map(float, opt('--years', 2, ['1700', '2026']))
 LIGHT = opt('--light', 1, 'night' if '--night' in a else 'day')   # day | sunset | twilight | night: passate di luce separate, fuse al montaggio
 if LIGHT in ('night', 'twilight') and '--night' not in a: a.append('--night')

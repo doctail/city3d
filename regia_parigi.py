@@ -250,8 +250,8 @@ def extent(y):
 WP = []
 # apertura: Parigi di oggi da 1.000 m a sud-ovest sopra la Senna (Eiffel e centro nello stesso quadro); nel riavvolgimento
 # scende verso l'Ile de la Cite del 1190
-WP.append((0.0, campos((-1200, 600, 0), 1000, 17, 228), (-1200, 600, 0)))
-WP.append((3.0, campos((-900, 450, 0), 950, 18, 230), (-900, 450, 0)))
+WP.append((0.0, campos((-1200, 600, 0), 560, 20, 228), (-1200, 600, 0)))   # 30 ott: apertura piu' bassa e vicina (da 1.000 m la citta' sembrava piatta)
+WP.append((3.0, campos((-900, 450, 0), 560, 21, 230), (-900, 450, 0)))
 WP.append((9.0, campos((ND[0] - 150, ND[1] + 200, 20), 470, 16, 236), (ND[0] - 150, ND[1] + 200, 20)))
 for t0, t1, s in SOSTA_T:
     tg, alt, a0, a1 = s[4], s[5], s[6], s[7]
@@ -284,7 +284,7 @@ for k, (a, b) in enumerate(gaps):
 WP.append((NIGHT_T, campos((ND[0] - 200, ND[1] + 150, 20), 520, 20, 230), [ND[0] - 200, ND[1] + 150, 20]))
 WP.append((NIGHT_T + 18, campos((EIFFEL[0] + 300, EIFFEL[1] + 200, 80), 560, 18, 220), [EIFFEL[0] + 300, EIFFEL[1] + 200, 80]))
 WP.append((NIGHT_T + 30, campos((-1800, 700, 0), 760, 19, 214), [-1800, 700, 0]))
-WP.append((DUR, campos((-600, 500, 0), 1000, 21, 210), [-600, 500, 0]))
+WP.append((DUR, campos((-600, 500, 0), 680, 22, 210), [-600, 500, 0]))   # finale notturno piu' basso
 WP.sort(key=lambda w: w[0])
 # punti troppo vicini nel tempo (< 1,2 s): si tiene il primo
 clean = []

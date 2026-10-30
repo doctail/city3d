@@ -1,6 +1,6 @@
 Durata 6:30.0  fotogrammi 9360  piano sequenza (0 stacchi)  obiettivo 35 mm  punti camera 50
-Quota camera sopra il suolo: min 336 m, max 973 m, mediana 570 m
-Velocita camera: mediana 94 m/s, max 380 m/s; rotazione sguardo mediana 1.5 gradi/s
+Quota camera sopra il suolo: min 336 m, max 749 m, mediana 565 m
+Velocita camera: mediana 94 m/s, max 351 m/s; rotazione sguardo mediana 1.5 gradi/s
 Prima crescita (anno 1215 raggiunto): 17.5 s; 1550 (citta densa): 59.4 s
 
 SOSTE (video -> anni):
