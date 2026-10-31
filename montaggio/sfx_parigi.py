@@ -106,8 +106,8 @@ place(city_hum(3.4), 0.0, 0.10)                                  # Parigi oggi
 place(whoosh(6.6), 3.0, 0.22)                                    # riavvolgimento 2026 -> 1190
 place(boom(3.0, 90), 9.3, 0.22)                                  # arrivo nel 1190
 at('Philippe Augustus', hammer(7), 1.5, 0.09, 'sosta'); at('Philippe Augustus', hammer(6), 4.2, 0.08, 'sosta')   # le mura
-t_ = T('Notre-Dame rises', 'cap'); peal(t_ + 0.4, gain=0.14) if t_ else None                                       # Notre-Dame
-at('Black Death', bell(5.0, 196.0), 0.3, 0.16, 'cap'); at('Black Death', bell(5.0, 196.0), 3.0, 0.12, 'cap')    # 1348: rintocchi lenti
+t_ = T('Notre-Dame rises', 'cap') or T('Notre-Dame completed', 'cap'); peal(t_ + 0.4, gain=0.14) if t_ else None                                       # Notre-Dame
+# at('Black Death', bell(5.0, 196.0), 0.3, 0.16, 'cap'); at('Black Death', bell(5.0, 196.0), 3.0, 0.12, 'cap')    # 1348: rintocchi lenti
 at('Charles V', hammer(7), 1.0, 0.09, 'sosta')
 at('Pont Neuf', hammer(6), 1.2, 0.08, 'sosta'); at('Pont Neuf', water(4.0), 0.5, 0.08, 'sosta')
 t_ = T('Les Invalides', 'sosta'); peal(t_ + 2.0, notes=(523.0, 440.0, 392.0), gain=0.10, rounds=1) if t_ else None
@@ -126,8 +126,8 @@ t_ = T('Eiffel Tower rises', 'sosta')                            # chiodatura de
 if t_:
     for d in (0.6, 2.2, 3.8): place(hammer(9, 0.28), t_ + d, 0.08)
 at('Eiffel Tower opens', firework(), 0.4, 0.12, 'cap'); at('Eiffel Tower opens', firework(), 1.3, 0.10, 'cap')
-at('World Fair', firework(), 0.4, 0.10, 'cap')
-at('great flood', water(7.0), 0.3, 0.16, 'cap')
+# at('World Fair', firework(), 0.4, 0.10, 'cap')
+# at('great flood', water(7.0), 0.3, 0.16, 'cap')
 # Montparnasse e Les Halles demolite (1966-1977): crolli e cantiere; COPRONO il cambio di traccia B -> A (CUT2)
 CUT2 = T('Tour Montparnasse and Centre Pompidou', 'sosta')
 for k, d in enumerate((-0.8, -0.2, 0.4, 1.3, 2.4)): place(crash(2.6), CUT2 + d, 0.26 - 0.03 * k)
