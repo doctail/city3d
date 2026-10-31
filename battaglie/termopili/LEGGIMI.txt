@@ -1,0 +1,7 @@
+TERMOPILI - Short 62,7 s (1 nov 2026)
+Lancio sul pod (GPU RTX, terminale web):
+  cd /workspace && (git -C city3d pull -q || git clone -q https://github.com/doctail/city3d) && nohup bash city3d/battaglie/termopili/run_termopili.sh > /workspace/termopili.log 2>&1 &
+Controllo: tail -n 5 /workspace/termopili.log      Uscita: /workspace/termopili_short.mp4 (1080x1920, voce Bill -16 LUFS, sottotitoli bruciati)
+Riprendibile: se si ferma, rilancia lo stesso comando e salta i fotogrammi gia' fatti. Se scrive "ERRORE: nessuna GPU", termina il pod e aprine un altro.
+Musica da aggiungere sotto. Sottotitoli a parte: audio/termopili_voce_62s.srt
+Dati: Copernicus DEM GLO-30 (c) DLR/ESA; Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0) -> mettere il credito in descrizione.
