@@ -68,19 +68,5 @@ Data: BDNB, ALPAGE (ODbL), © OpenStreetMap contributors (ODbL), Copernicus DEM.
 **Tag:** paris, paris history, city evolution, 3d timelapse, france, eiffel tower, year built
 **Uscita:** il giorno dopo il lungo, alle 17:00. Collegare il lungo come "Video correlato".
 
-## Traduzioni (YouTube Studio → Sottotitoli → Aggiungi lingua → "Titolo e descrizione")
-
-### Francese
-**Titre :** ÉVOLUTION DE PARIS | Timelapse 3D (1190–AUJOURD'HUI) | Sans IA
-**Description :**
-Timelapse 3D de Paris : de l'île fortifiée de Philippe Auguste en 1190 au Paris d'aujourd'hui, chaque bâtiment apparaît l'année de sa construction.
-
-239 538 bâtiments du Paris actuel avec leur année de construction (BDNB), et plus de 250 000 qui ont disparu, reconstitués à partir des plans anciens : l'enceinte médiévale, la Bastille, les maisons sur les ponts, la vieille île de la Cité, le palais des Tuileries, les rues percées par Haussmann, la tour Eiffel qui s'élève en 1889, l'incendie et la renaissance de Notre-Dame, et pour finir une nuit sur la ville.
-
-Pas de narration. Juste la ville.
-
-(capitoli: stessi tempi della versione inglese; i titoli dei capitoli restano in inglese)
-
-Quelle ville construire ensuite ? Dites-le-nous en commentaire.
-
-(crediti: copiare il blocco "Data / Archive images / Music" della versione inglese)
+## Traduzioni (YouTube Studio → Sottotitoli → Aggiungi lingua → "Titolo e descrizione"; lingua del video: Inglese)
+Testi completi nelle 5 lingue del canale (es, pt-BR, de, fr, it), titolo B e Short tradotti: in `traduzioni_parigi.md` e nella sezione PARIGI di `traduzioni.md`.
