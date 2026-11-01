@@ -1,0 +1,1368 @@
+{
+ "phrases": [
+  {
+   "start": 0.0,
+   "end": 1.184,
+   "text": "For a thousand years,"
+  },
+  {
+   "start": 1.443,
+   "end": 3.157,
+   "text": "no army broke these walls."
+  },
+  {
+   "start": 3.528,
+   "end": 7.252,
+   "text": "Then a twenty-one-year-old sultan brought a cannon nine meters long."
+  },
+  {
+   "start": 7.622,
+   "end": 8.431,
+   "text": "Constantinople,"
+  },
+  {
+   "start": 8.69,
+   "end": 9.615,
+   "text": "1453."
+  },
+  {
+   "start": 9.985,
+   "end": 11.318,
+   "text": "Water on three sides."
+  },
+  {
+   "start": 11.688,
+   "end": 12.259,
+   "text": "On the fourth,"
+  },
+  {
+   "start": 12.519,
+   "end": 13.678,
+   "text": "the Theodosian Walls:"
+  },
+  {
+   "start": 13.938,
+   "end": 14.301,
+   "text": "a moat,"
+  },
+  {
+   "start": 14.561,
+   "end": 15.205,
+   "text": "an outer wall,"
+  },
+  {
+   "start": 15.465,
+   "end": 17.41,
+   "text": "and an inner wall twelve meters high,"
+  },
+  {
+   "start": 17.669,
+   "end": 19.006,
+   "text": "with ninety-six towers."
+  },
+  {
+   "start": 19.377,
+   "end": 22.642,
+   "text": "Sultan Mehmed the Second came with around eighty thousand men."
+  },
+  {
+   "start": 23.012,
+   "end": 26.149,
+   "text": "Emperor Constantine the Eleventh had about seven thousand."
+  },
+  {
+   "start": 26.52,
+   "end": 28.107,
+   "text": "But Mehmed had Orban's cannon."
+  },
+  {
+   "start": 28.477,
+   "end": 30.397,
+   "text": "Its stone balls weighed half a ton."
+  },
+  {
+   "start": 30.768,
+   "end": 32.622,
+   "text": "It fired only a few times a day"
+  },
+  {
+   "start": 32.882,
+   "end": 34.896,
+   "text": "and every hit tore the wall open."
+  },
+  {
+   "start": 35.267,
+   "end": 35.771,
+   "text": "Each night,"
+  },
+  {
+   "start": 36.03,
+   "end": 37.579,
+   "text": "the defenders rebuilt the breach."
+  },
+  {
+   "start": 37.949,
+   "end": 40.094,
+   "text": "The harbor was sealed by a giant chain."
+  },
+  {
+   "start": 40.464,
+   "end": 42.261,
+   "text": "So Mehmed did the impossible."
+  },
+  {
+   "start": 42.631,
+   "end": 44.591,
+   "text": "He dragged seventy ships over a hill,"
+  },
+  {
+   "start": 44.85,
+   "end": 46.012,
+   "text": "on greased logs,"
+  },
+  {
+   "start": 46.271,
+   "end": 47.378,
+   "text": "into the Golden Horn."
+  },
+  {
+   "start": 47.749,
+   "end": 50.66,
+   "text": "Now the city was under attack from every side."
+  },
+  {
+   "start": 51.031,
+   "end": 52.02,
+   "text": "On May twenty-ninth,"
+  },
+  {
+   "start": 52.278,
+   "end": 53.582,
+   "text": "after fifty-three days,"
+  },
+  {
+   "start": 53.842,
+   "end": 55.037,
+   "text": "the wall finally broke."
+  },
+  {
+   "start": 55.407,
+   "end": 57.791,
+   "text": "Constantine was last seen fighting in the breach."
+  },
+  {
+   "start": 58.161,
+   "end": 61.427,
+   "text": "An empire that had lasted a thousand years fell to a cannon"
+  },
+  {
+   "start": 61.686,
+   "end": 63.441,
+   "text": "and a fleet that crossed a hill."
+  }
+ ],
+ "words": [
+  {
+   "w": "For",
+   "start": 0.0,
+   "end": 0.237
+  },
+  {
+   "w": "a",
+   "start": 0.237,
+   "end": 0.379
+  },
+  {
+   "w": "thousand",
+   "start": 0.379,
+   "end": 0.852
+  },
+  {
+   "w": "years,",
+   "start": 0.852,
+   "end": 1.184
+  },
+  {
+   "w": "no",
+   "start": 1.443,
+   "end": 1.664
+  },
+  {
+   "w": "army",
+   "start": 1.664,
+   "end": 1.996
+  },
+  {
+   "w": "broke",
+   "start": 1.996,
+   "end": 2.383
+  },
+  {
+   "w": "these",
+   "start": 2.383,
+   "end": 2.77
+  },
+  {
+   "w": "walls.",
+   "start": 2.77,
+   "end": 3.157
+  },
+  {
+   "w": "Then",
+   "start": 3.528,
+   "end": 3.826
+  },
+  {
+   "w": "a",
+   "start": 3.826,
+   "end": 3.975
+  },
+  {
+   "w": "twenty-one-year-old",
+   "start": 3.975,
+   "end": 4.869
+  },
+  {
+   "w": "sultan",
+   "start": 4.869,
+   "end": 5.266
+  },
+  {
+   "w": "brought",
+   "start": 5.266,
+   "end": 5.713
+  },
+  {
+   "w": "a",
+   "start": 5.713,
+   "end": 5.862
+  },
+  {
+   "w": "cannon",
+   "start": 5.862,
+   "end": 6.259
+  },
+  {
+   "w": "nine",
+   "start": 6.259,
+   "end": 6.557
+  },
+  {
+   "w": "meters",
+   "start": 6.557,
+   "end": 6.954
+  },
+  {
+   "w": "long.",
+   "start": 6.954,
+   "end": 7.252
+  },
+  {
+   "w": "Constantinople,",
+   "start": 7.622,
+   "end": 8.431
+  },
+  {
+   "w": "1453.",
+   "start": 8.69,
+   "end": 9.615
+  },
+  {
+   "w": "Water",
+   "start": 9.985,
+   "end": 10.358
+  },
+  {
+   "w": "on",
+   "start": 10.358,
+   "end": 10.572
+  },
+  {
+   "w": "three",
+   "start": 10.572,
+   "end": 10.945
+  },
+  {
+   "w": "sides.",
+   "start": 10.945,
+   "end": 11.318
+  },
+  {
+   "w": "On",
+   "start": 11.688,
+   "end": 11.822
+  },
+  {
+   "w": "the",
+   "start": 11.822,
+   "end": 11.99
+  },
+  {
+   "w": "fourth,",
+   "start": 11.99,
+   "end": 12.259
+  },
+  {
+   "w": "the",
+   "start": 12.519,
+   "end": 12.76
+  },
+  {
+   "w": "Theodosian",
+   "start": 12.76,
+   "end": 13.34
+  },
+  {
+   "w": "Walls:",
+   "start": 13.34,
+   "end": 13.678
+  },
+  {
+   "w": "a",
+   "start": 13.938,
+   "end": 14.059
+  },
+  {
+   "w": "moat,",
+   "start": 14.059,
+   "end": 14.301
+  },
+  {
+   "w": "an",
+   "start": 14.561,
+   "end": 14.713
+  },
+  {
+   "w": "outer",
+   "start": 14.713,
+   "end": 14.978
+  },
+  {
+   "w": "wall,",
+   "start": 14.978,
+   "end": 15.205
+  },
+  {
+   "w": "and",
+   "start": 15.465,
+   "end": 15.686
+  },
+  {
+   "w": "an",
+   "start": 15.686,
+   "end": 15.863
+  },
+  {
+   "w": "inner",
+   "start": 15.863,
+   "end": 16.172
+  },
+  {
+   "w": "wall",
+   "start": 16.172,
+   "end": 16.438
+  },
+  {
+   "w": "twelve",
+   "start": 16.438,
+   "end": 16.791
+  },
+  {
+   "w": "meters",
+   "start": 16.791,
+   "end": 17.145
+  },
+  {
+   "w": "high,",
+   "start": 17.145,
+   "end": 17.41
+  },
+  {
+   "w": "with",
+   "start": 17.669,
+   "end": 17.99
+  },
+  {
+   "w": "ninety-six",
+   "start": 17.99,
+   "end": 18.578
+  },
+  {
+   "w": "towers.",
+   "start": 18.578,
+   "end": 19.006
+  },
+  {
+   "w": "Sultan",
+   "start": 19.377,
+   "end": 19.74
+  },
+  {
+   "w": "Mehmed",
+   "start": 19.74,
+   "end": 20.103
+  },
+  {
+   "w": "the",
+   "start": 20.103,
+   "end": 20.329
+  },
+  {
+   "w": "Second",
+   "start": 20.329,
+   "end": 20.692
+  },
+  {
+   "w": "came",
+   "start": 20.692,
+   "end": 20.964
+  },
+  {
+   "w": "with",
+   "start": 20.964,
+   "end": 21.236
+  },
+  {
+   "w": "around",
+   "start": 21.236,
+   "end": 21.599
+  },
+  {
+   "w": "eighty",
+   "start": 21.599,
+   "end": 21.962
+  },
+  {
+   "w": "thousand",
+   "start": 21.962,
+   "end": 22.415
+  },
+  {
+   "w": "men.",
+   "start": 22.415,
+   "end": 22.642
+  },
+  {
+   "w": "Emperor",
+   "start": 23.012,
+   "end": 23.44
+  },
+  {
+   "w": "Constantine",
+   "start": 23.44,
+   "end": 24.058
+  },
+  {
+   "w": "the",
+   "start": 24.058,
+   "end": 24.295
+  },
+  {
+   "w": "Eleventh",
+   "start": 24.295,
+   "end": 24.771
+  },
+  {
+   "w": "had",
+   "start": 24.771,
+   "end": 25.008
+  },
+  {
+   "w": "about",
+   "start": 25.008,
+   "end": 25.341
+  },
+  {
+   "w": "seven",
+   "start": 25.341,
+   "end": 25.674
+  },
+  {
+   "w": "thousand.",
+   "start": 25.674,
+   "end": 26.149
+  },
+  {
+   "w": "But",
+   "start": 26.52,
+   "end": 26.753
+  },
+  {
+   "w": "Mehmed",
+   "start": 26.753,
+   "end": 27.127
+  },
+  {
+   "w": "had",
+   "start": 27.127,
+   "end": 27.36
+  },
+  {
+   "w": "Orban's",
+   "start": 27.36,
+   "end": 27.734
+  },
+  {
+   "w": "cannon.",
+   "start": 27.734,
+   "end": 28.107
+  },
+  {
+   "w": "Its",
+   "start": 28.477,
+   "end": 28.706
+  },
+  {
+   "w": "stone",
+   "start": 28.706,
+   "end": 29.026
+  },
+  {
+   "w": "balls",
+   "start": 29.026,
+   "end": 29.346
+  },
+  {
+   "w": "weighed",
+   "start": 29.346,
+   "end": 29.757
+  },
+  {
+   "w": "half",
+   "start": 29.757,
+   "end": 30.031
+  },
+  {
+   "w": "a",
+   "start": 30.031,
+   "end": 30.168
+  },
+  {
+   "w": "ton.",
+   "start": 30.168,
+   "end": 30.397
+  },
+  {
+   "w": "It",
+   "start": 30.768,
+   "end": 30.953
+  },
+  {
+   "w": "fired",
+   "start": 30.953,
+   "end": 31.278
+  },
+  {
+   "w": "only",
+   "start": 31.278,
+   "end": 31.556
+  },
+  {
+   "w": "a",
+   "start": 31.556,
+   "end": 31.695
+  },
+  {
+   "w": "few",
+   "start": 31.695,
+   "end": 31.927
+  },
+  {
+   "w": "times",
+   "start": 31.927,
+   "end": 32.251
+  },
+  {
+   "w": "a",
+   "start": 32.251,
+   "end": 32.39
+  },
+  {
+   "w": "day",
+   "start": 32.39,
+   "end": 32.622
+  },
+  {
+   "w": "and",
+   "start": 32.882,
+   "end": 33.134
+  },
+  {
+   "w": "every",
+   "start": 33.134,
+   "end": 33.486
+  },
+  {
+   "w": "hit",
+   "start": 33.486,
+   "end": 33.738
+  },
+  {
+   "w": "tore",
+   "start": 33.738,
+   "end": 34.04
+  },
+  {
+   "w": "the",
+   "start": 34.04,
+   "end": 34.292
+  },
+  {
+   "w": "wall",
+   "start": 34.292,
+   "end": 34.594
+  },
+  {
+   "w": "open.",
+   "start": 34.594,
+   "end": 34.896
+  },
+  {
+   "w": "Each",
+   "start": 35.267,
+   "end": 35.5
+  },
+  {
+   "w": "night,",
+   "start": 35.5,
+   "end": 35.771
+  },
+  {
+   "w": "the",
+   "start": 36.03,
+   "end": 36.234
+  },
+  {
+   "w": "defenders",
+   "start": 36.234,
+   "end": 36.682
+  },
+  {
+   "w": "rebuilt",
+   "start": 36.682,
+   "end": 37.049
+  },
+  {
+   "w": "the",
+   "start": 37.049,
+   "end": 37.253
+  },
+  {
+   "w": "breach.",
+   "start": 37.253,
+   "end": 37.579
+  },
+  {
+   "w": "The",
+   "start": 37.949,
+   "end": 38.177
+  },
+  {
+   "w": "harbor",
+   "start": 38.177,
+   "end": 38.542
+  },
+  {
+   "w": "was",
+   "start": 38.542,
+   "end": 38.77
+  },
+  {
+   "w": "sealed",
+   "start": 38.77,
+   "end": 39.136
+  },
+  {
+   "w": "by",
+   "start": 39.136,
+   "end": 39.318
+  },
+  {
+   "w": "a",
+   "start": 39.318,
+   "end": 39.455
+  },
+  {
+   "w": "giant",
+   "start": 39.455,
+   "end": 39.775
+  },
+  {
+   "w": "chain.",
+   "start": 39.775,
+   "end": 40.094
+  },
+  {
+   "w": "So",
+   "start": 40.464,
+   "end": 40.675
+  },
+  {
+   "w": "Mehmed",
+   "start": 40.675,
+   "end": 41.098
+  },
+  {
+   "w": "did",
+   "start": 41.098,
+   "end": 41.363
+  },
+  {
+   "w": "the",
+   "start": 41.363,
+   "end": 41.627
+  },
+  {
+   "w": "impossible.",
+   "start": 41.627,
+   "end": 42.261
+  },
+  {
+   "w": "He",
+   "start": 42.631,
+   "end": 42.809
+  },
+  {
+   "w": "dragged",
+   "start": 42.809,
+   "end": 43.21
+  },
+  {
+   "w": "seventy",
+   "start": 43.21,
+   "end": 43.611
+  },
+  {
+   "w": "ships",
+   "start": 43.611,
+   "end": 43.923
+  },
+  {
+   "w": "over",
+   "start": 43.923,
+   "end": 44.19
+  },
+  {
+   "w": "a",
+   "start": 44.19,
+   "end": 44.324
+  },
+  {
+   "w": "hill,",
+   "start": 44.324,
+   "end": 44.591
+  },
+  {
+   "w": "on",
+   "start": 44.85,
+   "end": 45.095
+  },
+  {
+   "w": "greased",
+   "start": 45.095,
+   "end": 45.645
+  },
+  {
+   "w": "logs,",
+   "start": 45.645,
+   "end": 46.012
+  },
+  {
+   "w": "into",
+   "start": 46.271,
+   "end": 46.537
+  },
+  {
+   "w": "the",
+   "start": 46.537,
+   "end": 46.758
+  },
+  {
+   "w": "Golden",
+   "start": 46.758,
+   "end": 47.112
+  },
+  {
+   "w": "Horn.",
+   "start": 47.112,
+   "end": 47.378
+  },
+  {
+   "w": "Now",
+   "start": 47.749,
+   "end": 48.014
+  },
+  {
+   "w": "the",
+   "start": 48.014,
+   "end": 48.278
+  },
+  {
+   "w": "city",
+   "start": 48.278,
+   "end": 48.596
+  },
+  {
+   "w": "was",
+   "start": 48.596,
+   "end": 48.86
+  },
+  {
+   "w": "under",
+   "start": 48.86,
+   "end": 49.231
+  },
+  {
+   "w": "attack",
+   "start": 49.231,
+   "end": 49.654
+  },
+  {
+   "w": "from",
+   "start": 49.654,
+   "end": 49.972
+  },
+  {
+   "w": "every",
+   "start": 49.972,
+   "end": 50.342
+  },
+  {
+   "w": "side.",
+   "start": 50.342,
+   "end": 50.66
+  },
+  {
+   "w": "On",
+   "start": 51.031,
+   "end": 51.211
+  },
+  {
+   "w": "May",
+   "start": 51.211,
+   "end": 51.436
+  },
+  {
+   "w": "twenty-ninth,",
+   "start": 51.436,
+   "end": 52.02
+  },
+  {
+   "w": "after",
+   "start": 52.278,
+   "end": 52.643
+  },
+  {
+   "w": "fifty-three",
+   "start": 52.643,
+   "end": 53.269
+  },
+  {
+   "w": "days,",
+   "start": 53.269,
+   "end": 53.582
+  },
+  {
+   "w": "the",
+   "start": 53.842,
+   "end": 54.063
+  },
+  {
+   "w": "wall",
+   "start": 54.063,
+   "end": 54.329
+  },
+  {
+   "w": "finally",
+   "start": 54.329,
+   "end": 54.727
+  },
+  {
+   "w": "broke.",
+   "start": 54.727,
+   "end": 55.037
+  },
+  {
+   "w": "Constantine",
+   "start": 55.407,
+   "end": 55.951
+  },
+  {
+   "w": "was",
+   "start": 55.951,
+   "end": 56.16
+  },
+  {
+   "w": "last",
+   "start": 56.16,
+   "end": 56.411
+  },
+  {
+   "w": "seen",
+   "start": 56.411,
+   "end": 56.662
+  },
+  {
+   "w": "fighting",
+   "start": 56.662,
+   "end": 57.08
+  },
+  {
+   "w": "in",
+   "start": 57.08,
+   "end": 57.247
+  },
+  {
+   "w": "the",
+   "start": 57.247,
+   "end": 57.456
+  },
+  {
+   "w": "breach.",
+   "start": 57.456,
+   "end": 57.791
+  },
+  {
+   "w": "An",
+   "start": 58.161,
+   "end": 58.342
+  },
+  {
+   "w": "empire",
+   "start": 58.342,
+   "end": 58.705
+  },
+  {
+   "w": "that",
+   "start": 58.705,
+   "end": 58.977
+  },
+  {
+   "w": "had",
+   "start": 58.977,
+   "end": 59.204
+  },
+  {
+   "w": "lasted",
+   "start": 59.204,
+   "end": 59.567
+  },
+  {
+   "w": "a",
+   "start": 59.567,
+   "end": 59.703
+  },
+  {
+   "w": "thousand",
+   "start": 59.703,
+   "end": 60.157
+  },
+  {
+   "w": "years",
+   "start": 60.157,
+   "end": 60.474
+  },
+  {
+   "w": "fell",
+   "start": 60.474,
+   "end": 60.747
+  },
+  {
+   "w": "to",
+   "start": 60.747,
+   "end": 60.928
+  },
+  {
+   "w": "a",
+   "start": 60.928,
+   "end": 61.064
+  },
+  {
+   "w": "cannon",
+   "start": 61.064,
+   "end": 61.427
+  },
+  {
+   "w": "and",
+   "start": 61.686,
+   "end": 61.911
+  },
+  {
+   "w": "a",
+   "start": 61.911,
+   "end": 62.046
+  },
+  {
+   "w": "fleet",
+   "start": 62.046,
+   "end": 62.361
+  },
+  {
+   "w": "that",
+   "start": 62.361,
+   "end": 62.631
+  },
+  {
+   "w": "crossed",
+   "start": 62.631,
+   "end": 63.036
+  },
+  {
+   "w": "a",
+   "start": 63.036,
+   "end": 63.171
+  },
+  {
+   "w": "hill.",
+   "start": 63.171,
+   "end": 63.441
+  }
+ ],
+ "captions": [
+  {
+   "text": "For a",
+   "start": 0.0,
+   "end": 0.379
+  },
+  {
+   "text": "thousand years,",
+   "start": 0.379,
+   "end": 1.443
+  },
+  {
+   "text": "no army broke",
+   "start": 1.443,
+   "end": 2.383
+  },
+  {
+   "text": "these walls.",
+   "start": 2.383,
+   "end": 3.507
+  },
+  {
+   "text": "Then a twenty-one-year-old",
+   "start": 3.528,
+   "end": 4.869
+  },
+  {
+   "text": "sultan brought a",
+   "start": 4.869,
+   "end": 5.862
+  },
+  {
+   "text": "cannon nine",
+   "start": 5.862,
+   "end": 6.557
+  },
+  {
+   "text": "meters long.",
+   "start": 6.557,
+   "end": 7.602
+  },
+  {
+   "text": "Constantinople,",
+   "start": 7.622,
+   "end": 8.69
+  },
+  {
+   "text": "1453.",
+   "start": 8.69,
+   "end": 9.965
+  },
+  {
+   "text": "Water on",
+   "start": 9.985,
+   "end": 10.572
+  },
+  {
+   "text": "three sides.",
+   "start": 10.572,
+   "end": 11.668
+  },
+  {
+   "text": "On the fourth,",
+   "start": 11.688,
+   "end": 12.519
+  },
+  {
+   "text": "the Theodosian Walls:",
+   "start": 12.519,
+   "end": 13.938
+  },
+  {
+   "text": "a moat,",
+   "start": 13.938,
+   "end": 14.561
+  },
+  {
+   "text": "an outer wall,",
+   "start": 14.561,
+   "end": 15.465
+  },
+  {
+   "text": "and an inner",
+   "start": 15.465,
+   "end": 16.172
+  },
+  {
+   "text": "wall twelve",
+   "start": 16.172,
+   "end": 16.791
+  },
+  {
+   "text": "meters high,",
+   "start": 16.791,
+   "end": 17.669
+  },
+  {
+   "text": "with ninety-six towers.",
+   "start": 17.669,
+   "end": 19.356
+  },
+  {
+   "text": "Sultan Mehmed the",
+   "start": 19.377,
+   "end": 20.329
+  },
+  {
+   "text": "Second came with",
+   "start": 20.329,
+   "end": 21.236
+  },
+  {
+   "text": "around eighty",
+   "start": 21.236,
+   "end": 21.962
+  },
+  {
+   "text": "thousand men.",
+   "start": 21.962,
+   "end": 22.992
+  },
+  {
+   "text": "Emperor Constantine the",
+   "start": 23.012,
+   "end": 24.295
+  },
+  {
+   "text": "Eleventh had about",
+   "start": 24.295,
+   "end": 25.341
+  },
+  {
+   "text": "seven thousand.",
+   "start": 25.341,
+   "end": 26.499
+  },
+  {
+   "text": "But Mehmed had",
+   "start": 26.52,
+   "end": 27.36
+  },
+  {
+   "text": "Orban's cannon.",
+   "start": 27.36,
+   "end": 28.457
+  },
+  {
+   "text": "Its stone balls",
+   "start": 28.477,
+   "end": 29.346
+  },
+  {
+   "text": "weighed half",
+   "start": 29.346,
+   "end": 30.031
+  },
+  {
+   "text": "a ton.",
+   "start": 30.031,
+   "end": 30.747
+  },
+  {
+   "text": "It fired only",
+   "start": 30.768,
+   "end": 31.556
+  },
+  {
+   "text": "a few times",
+   "start": 31.556,
+   "end": 32.251
+  },
+  {
+   "text": "a day",
+   "start": 32.251,
+   "end": 32.882
+  },
+  {
+   "text": "and every hit",
+   "start": 32.882,
+   "end": 33.738
+  },
+  {
+   "text": "tore the",
+   "start": 33.738,
+   "end": 34.292
+  },
+  {
+   "text": "wall open.",
+   "start": 34.292,
+   "end": 35.246
+  },
+  {
+   "text": "Each night,",
+   "start": 35.267,
+   "end": 36.03
+  },
+  {
+   "text": "the defenders rebuilt",
+   "start": 36.03,
+   "end": 37.049
+  },
+  {
+   "text": "the breach.",
+   "start": 37.049,
+   "end": 37.929
+  },
+  {
+   "text": "The harbor was",
+   "start": 37.949,
+   "end": 38.77
+  },
+  {
+   "text": "sealed by a",
+   "start": 38.77,
+   "end": 39.455
+  },
+  {
+   "text": "giant chain.",
+   "start": 39.455,
+   "end": 40.444
+  },
+  {
+   "text": "So Mehmed did",
+   "start": 40.464,
+   "end": 41.363
+  },
+  {
+   "text": "the impossible.",
+   "start": 41.363,
+   "end": 42.611
+  },
+  {
+   "text": "He dragged seventy",
+   "start": 42.631,
+   "end": 43.611
+  },
+  {
+   "text": "ships over",
+   "start": 43.611,
+   "end": 44.19
+  },
+  {
+   "text": "a hill,",
+   "start": 44.19,
+   "end": 44.85
+  },
+  {
+   "text": "on greased logs,",
+   "start": 44.85,
+   "end": 46.271
+  },
+  {
+   "text": "into the",
+   "start": 46.271,
+   "end": 46.758
+  },
+  {
+   "text": "Golden Horn.",
+   "start": 46.758,
+   "end": 47.728
+  },
+  {
+   "text": "Now the city",
+   "start": 47.749,
+   "end": 48.596
+  },
+  {
+   "text": "was under attack",
+   "start": 48.596,
+   "end": 49.654
+  },
+  {
+   "text": "from every side.",
+   "start": 49.654,
+   "end": 51.01
+  },
+  {
+   "text": "On May twenty-ninth,",
+   "start": 51.031,
+   "end": 52.278
+  },
+  {
+   "text": "after fifty-three days,",
+   "start": 52.278,
+   "end": 53.842
+  },
+  {
+   "text": "the wall",
+   "start": 53.842,
+   "end": 54.329
+  },
+  {
+   "text": "finally broke.",
+   "start": 54.329,
+   "end": 55.387
+  },
+  {
+   "text": "Constantine was last",
+   "start": 55.407,
+   "end": 56.411
+  },
+  {
+   "text": "seen fighting in",
+   "start": 56.411,
+   "end": 57.247
+  },
+  {
+   "text": "the breach.",
+   "start": 57.247,
+   "end": 58.141
+  },
+  {
+   "text": "An empire that",
+   "start": 58.161,
+   "end": 58.977
+  },
+  {
+   "text": "had lasted a",
+   "start": 58.977,
+   "end": 59.703
+  },
+  {
+   "text": "thousand years fell",
+   "start": 59.703,
+   "end": 60.747
+  },
+  {
+   "text": "to a cannon",
+   "start": 60.747,
+   "end": 61.686
+  },
+  {
+   "text": "and a fleet",
+   "start": 61.686,
+   "end": 62.361
+  },
+  {
+   "text": "that crossed",
+   "start": 62.361,
+   "end": 63.036
+  },
+  {
+   "text": "a hill.",
+   "start": 63.036,
+   "end": 64.241
+  }
+ ]
+}
