@@ -135,8 +135,8 @@
  "istat_basi": "https://www.istat.it/storage/cartografia/basi_territoriali/WGS_84_UTM/2011/R12_11_WGS84.zip",
  "istat_dati": "https://www.istat.it/storage/cartografia/variabili-censuarie/dati-cpa_2011.zip",
  "merge_parts": true,
- "dem_band": 30.0,
- "dbin": 10,
+ "dem_band": 60.0,
+ "dbin": 50,
  "forest_box": [
   -9000,
   -9000,
@@ -148,5 +148,6 @@
  "urban_buffer": 0.5,
  "urban_close": 0.5,
  "forest_from_cells": true,
- "urban_ground_skip_hist": true
+ "urban_ground_skip_hist": true,
+ "bin": 10
 }

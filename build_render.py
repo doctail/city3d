@@ -365,7 +365,7 @@ LOW = ST.get('low') or ['#9a3f2e', '#8c4632', '#a8553b', '#7d3b2c', '#b5654a', '
 MID = ST.get('mid') or ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '#bfae8c', '#cdb48c']
 GLASS = ST.get('glass') or ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ST.get('roof') or ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
-BIN = float(opt('--bin', 1, '4'))
+BIN = float(opt('--bin', 1, str(CITY.get('bin', 4))))   # Roma: 10 (2.800 anni: con 4 troppi blocchi)
 DBIN = float(CITY.get('dbin', BIN))   # demolizioni a gruppi di DBIN anni (Parigi: 8): meno oggetti che cambiano
 CHUNKS = []; polys = []; polys_y = []
 def add_bld(bm, col, vyear, vdie, b):
