@@ -1,12 +1,150 @@
 {
  "name": "roma",
  "_doc": "Roma dalla fondazione (stile Latos a blocchi + etichette). Origine locale: Piazza Venezia (x est, y nord, metri). Nessun catasto con anni: edifici moderni da OSM, epoche per zona (ISTAT 2011 sezioni) e citta' antica procedurale. Piano: PROSSIMA_ROMA.md (progetto).",
- "lat0": 41.8960,
+ "lat0": 41.896,
  "lon0": 12.4823,
  "radius_m": 9000,
  "land_half_m": 40000,
  "min_area_m2": 12,
  "osm_pbf": "https://download.geofabrik.de/europe/italy/centro-latest.osm.pbf",
+ "core_box": [
+  -9000,
+  -9000,
+  9000,
+  9000
+ ],
+ "grid_deg": 0,
+ "marsh": false,
+ "haze_k": 1000000000.0,
+ "water_z": -1.5,
+ "field_colors": [
+  "#5b7832",
+  "#5d7a33",
+  "#5a7731",
+  "#5e7b34",
+  "#5c7932"
+ ],
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -2.2,
+ "style": {
+  "haze": [
+   0.8,
+   0.88,
+   0.96
+  ],
+  "era_split": 1880,
+  "pitched_until": 1700,
+  "pitched_max_area": 400,
+  "wall_old": [
+   "#dcbf98",
+   "#d6b38a",
+   "#e2c8a4",
+   "#d0aa80",
+   "#dfc39c",
+   "#d4b088"
+  ],
+  "roof_old": [
+   "#c47a52",
+   "#bb6f49",
+   "#cc8660",
+   "#b56a45",
+   "#c27d58"
+  ],
+  "wall_new": [
+   "#dcc4a0",
+   "#d6b892",
+   "#e2ceae",
+   "#cfae86",
+   "#e6d6ba"
+  ],
+  "wall_anc": [
+   "#e0c29a",
+   "#d9b68c",
+   "#e5cca8",
+   "#d3ab82",
+   "#dec09a"
+  ],
+  "roof_new": [
+   "#c48460",
+   "#b8775a",
+   "#cc9070",
+   "#ab9c88",
+   "#bfae98"
+  ],
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 60,
+  "window": "#2a3a4a",
+  "urban": [
+   "#5b7832",
+   "#5d7a33",
+   "#5a7731",
+   "#5e7b34",
+   "#5c7932",
+   "#5b7832"
+  ],
+  "urban_dark": "#5b7832",
+  "urban_green": "#5d7a33",
+  "hedge": "#2f6a25",
+  "blocks": "#8f8778",
+  "grass": "#5c7932",
+  "tree": "#3c5f26",
+  "forest_base": "#5c7932",
+  "water": "#3d8fb0",
+  "water_rough": 0.02,
+  "sky_light": 0.35,
+  "sun_energy": 5.0,
+  "night_off": 0.82,
+  "night_win": 4.5,
+  "moon": 0.05,
+  "night_street": 0.9,
+  "night_sky": 0.01,
+  "bridge_side": "#a39d92",
+  "glass_min_area": 400,
+  "bulb": 14.0,
+  "sky_in_reflections": true,
+  "wave_scale": 0.025,
+  "wave_strength": 0.55,
+  "water2": "#5aa6c4",
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "street": "#c9b78f"
+ },
+ "hist": "hist_roma",
+ "land_from_buildings": true,
+ "dur_min": 0.003,
+ "tree_scale": [
+  1.8,
+  3.2
+ ],
+ "tree_lift": 2.5,
+ "land_close": 20,
+ "blocks_by_building": true,
  "istat_basi": "https://www.istat.it/storage/cartografia/basi_territoriali/WGS_84_UTM/2011/R12_11_WGS84.zip",
- "istat_dati": "https://www.istat.it/storage/cartografia/variabili-censuarie/dati-cpa_2011.zip"
+ "istat_dati": "https://www.istat.it/storage/cartografia/variabili-censuarie/dati-cpa_2011.zip",
+ "merge_parts": true,
+ "dem_band": 30.0,
+ "dbin": 10,
+ "forest_box": [
+  -9000,
+  -9000,
+  9000,
+  9000
+ ],
+ "sun_el": 24,
+ "urban_ground": "footprints",
+ "urban_buffer": 0.5,
+ "urban_close": 0.5,
+ "forest_from_cells": true
 }

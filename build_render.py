@@ -653,6 +653,7 @@ if CITY.get('land_from_buildings'):
 cells(core.bounds, 120.0, False)
 cells(lgeom.bounds, 1500.0, True)
 UG_FOOT = CITY.get('urban_ground') == 'footprints'
+_uyl_forest = list(uyl)   # Roma: i boschi spariscono dove arriva la citta' anche con il suolo dalle impronte
 if UG_FOOT: uyl = [99999] * len(uyl)   # le celle restano sempre campi: il suolo urbano lo fanno le impronte (sotto)
 MARSH = None
 if len(bmm.faces):
@@ -820,7 +821,7 @@ if os.path.exists(f'{DATA}/harbours.json') or (LM and LM.get('harbours')):
 # base dei boschi SOLO nella zona inquadrata (celle fini): fuori, decine di km di campagna = milioni di alberi inutili
 FB = list(map(float, opt('--forest-box', 4, [str(v) for v in CITY['forest_box']])))
 _fit = []
-for p_, u_ in zip(lo_.data.polygons, uyl):
+for p_, u_ in zip(lo_.data.polygons, _uyl_forest if CITY.get('forest_from_cells') else uyl):
     cx_, cy_ = p_.center.x, p_.center.y
     if not (FB[0] < cx_ < FB[2] and FB[1] < cy_ < FB[3]) or p_.area > 20000: continue
     _fit.append(([tuple(lo_.data.vertices[i].co[:2]) for i in p_.vertices], u_))
