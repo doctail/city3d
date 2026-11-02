@@ -1,0 +1,12 @@
+{
+ "name": "roma",
+ "_doc": "Roma dalla fondazione (stile Latos a blocchi + etichette). Origine locale: Piazza Venezia (x est, y nord, metri). Nessun catasto con anni: edifici moderni da OSM, epoche per zona (ISTAT 2011 sezioni) e citta' antica procedurale. Piano: PROSSIMA_ROMA.md (progetto).",
+ "lat0": 41.8960,
+ "lon0": 12.4823,
+ "radius_m": 9000,
+ "land_half_m": 40000,
+ "min_area_m2": 12,
+ "osm_pbf": "https://download.geofabrik.de/europe/italy/centro-latest.osm.pbf",
+ "istat_basi": "https://www.istat.it/storage/cartografia/basi_territoriali/WGS_84_UTM/2011/R12_11_WGS84.zip",
+ "istat_dati": "https://www.istat.it/storage/cartografia/variabili-censuarie/dati-cpa_2011.zip"
+}
