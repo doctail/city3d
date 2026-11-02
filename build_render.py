@@ -392,6 +392,7 @@ def add_bld(bm, col, vyear, vdie, b):
         _rf = b.get('rf') or ('z' if (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2 else None)
         if _rf in ST['roof_rf']: rpal = ST['roof_rf'][_rf]
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
+    if y < ST.get('no_windows_before', -99999): wa = 0.05   # Roma: case antiche e medievali senza finestre (stile Latos)
     z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
     vb = [bm.verts.new((x, yy, z0_ - (1.0 if dem_at else 0.0))) for x, yy in ring]   # con rilievo: muri 1 m sotto il suolo (pendii)
     pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
@@ -681,6 +682,7 @@ if UG_FOOT:
     _UGR, _UGC = CITY.get('urban_buffer', 18.0), CITY.get('urban_close', 22.0)
     _grp = _dd(list)
     for b_ in blds:
+        if CITY.get('urban_ground_skip_hist') and b_.get('old'): continue   # Roma: la citta' antica sparisce, il suo suolo restava come macchie nei campi
         try: q_ = Polygon(b_['r'])
         except Exception: continue
         if q_.area < 8: continue

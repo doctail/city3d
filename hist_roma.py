@@ -43,7 +43,7 @@ def ancient_year(x, y, rnd):
     # prima urbanizzazione antica (None = mai citta' antica)
     p = Point(x, y)
     dp = min(d_from(PALATINE, x, y), d_from(CAPITOL, x, y))
-    if dp < 450: return -753 + dp / 450 * 120 + rnd.uniform(0, 40)
+    if dp < 450: return -753 + dp / 450 * 70 + rnd.uniform(0, 12)
     if SER.contains(p): return -620 + min(dp, 1500) / 1500 * 300 + rnd.uniform(-30, 60)
     if AUR.contains(p):
         # Campo Marzio e Trastevere dalla tarda repubblica, il resto entro le mura Aureliane nel primo impero
@@ -58,7 +58,7 @@ def ancient_death(x, y, a, rnd):
     if not AUR.contains(p): return rnd.uniform(270, 460)           # sobborghi fuori le mura: abbandonati per primi
     dp = min(d_from(PALATINE, x, y), d_from(CAPITOL, x, y))
     # la citta' si svuota: sacco 410, guerra gotica 537-552, poi rovine e vigne (abitato disabitato)
-    return rnd.uniform(410, 560) + (1 - min(dp, 3000) / 3000) * rnd.uniform(0, 150)
+    return rnd.uniform(415, 545) + (1 - min(dp, 3000) / 3000) * rnd.uniform(0, 70)
 
 def pre1919_year(x, y, rnd):
     p = Point(x, y)
@@ -100,6 +100,16 @@ def build(DATA, seed=21):
                 if in_abitato(c.x, c.y) and b['y'] > d + 60:   # medievale/rinascimentale sullo stesso lotto fino all'edificio di oggi
                     m0 = d + rnd.uniform(0, 30)
                     out.append({'r': ring, 'h': round(era_height(m0, rnd), 1), 'y': round(m0, 1), 'd': round(b['y'] - 0.3, 1)})
+    # capanne di Romolo: Palatino, Campidoglio e valle del Foro non hanno edifici di oggi (area archeologica)
+    import math as _m
+    for cen, n, rad in ((PALATINE, 160, 260), (CAPITOL, 70, 160), (L(41.8960, 12.4895), 90, 300)):
+        for i in range(n):
+            a_ = rnd.uniform(0, 2 * _m.pi); r_ = rad * _m.sqrt(rnd.random()); x0 = cen[0] + r_ * _m.cos(a_); y0 = cen[1] + r_ * _m.sin(a_)
+            w, h_, an = rnd.uniform(7, 10), rnd.uniform(5, 7), rnd.uniform(0, _m.pi)
+            pts = [(-w / 2, -h_ / 2), (w / 2, -h_ / 2), (w / 2, h_ / 2), (-w / 2, h_ / 2)]
+            ring = [[round(x0 + px * _m.cos(an) - py * _m.sin(an), 2), round(y0 + px * _m.sin(an) + py * _m.cos(an), 2)] for px, py in pts]
+            y_ = -753 + (r_ / rad) * 28 + rnd.uniform(0, 8) + (40 if cen is not PALATINE else 0)
+            out.append({'r': ring, 'h': round(rnd.uniform(3.5, 5), 1), 'y': round(y_, 1), 'd': round(rnd.uniform(-480, -300), 1), 'k': 'anc'})
     json.dump(out, open(f'{DATA}/hist.json', 'w'))
     import collections
     cc = collections.Counter(int(h['y'] // 100 * 100) for h in out)

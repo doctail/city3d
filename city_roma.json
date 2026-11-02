@@ -119,7 +119,8 @@
   "twilight_sky": 0.05,
   "twilight_sky_col": "#1f2f5a",
   "exp_twilight": 0.0,
-  "street": "#c9b78f"
+  "street": "#c9b78f",
+  "no_windows_before": 1300
  },
  "hist": "hist_roma",
  "land_from_buildings": true,
@@ -146,5 +147,6 @@
  "urban_ground": "footprints",
  "urban_buffer": 0.5,
  "urban_close": 0.5,
- "forest_from_cells": true
+ "forest_from_cells": true,
+ "urban_ground_skip_hist": true
 }
