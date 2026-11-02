@@ -149,5 +149,20 @@
  "urban_close": 0.5,
  "forest_from_cells": true,
  "urban_ground_skip_hist": true,
- "bin": 10
+ "bin": 10,
+ "cover": {
+  "cam": [
+   -2200,
+   -3800,
+   1500,
+   300,
+   -600,
+   0
+  ],
+  "lens": 35,
+  "years": [
+   120,
+   2026
+  ]
+ }
 }

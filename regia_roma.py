@@ -38,8 +38,8 @@ SOSTE = [
     (-46.0, -26.0, 5.0, 'Caesar and Augustus rebuild Rome', ('Circus Maximus', 900, 26, 175, 205, 35)),
     (-13.5, -11.0, 3.0, 'Theatre of Marcellus (13 BC)', ('Theatre of Marcellus', 260, 24, 200, 228, 35)),
     (71.5, 80.5, 6.0, 'The Colosseum (AD 72-80)', ('Colosseum', 340, 26, 195, 230, 35)),
-    (112.5, 113.5, 3.0, "Trajan's Column (113)", ("Trajan's Column", 200, 20, 200, 225, 35)),
-    (117.5, 126.0, 5.0, 'The Pantheon (125)', ('Pantheon', 230, 24, 205, 235, 35)),
+    (112.5, 113.5, 3.0, "Trajan's Column (113)", ("Trajan's Column", 320, 34, 200, 225, 35)),
+    (117.5, 126.0, 5.0, 'The Pantheon (125)', ('Pantheon', 300, 34, 205, 235, 35)),
     (134.5, 138.0, 3.5, "Hadrian's Mausoleum (135)", ("Castel Sant'Angelo", 300, 24, 160, 190, 35)),
     (211.5, 216.5, 4.0, 'Baths of Caracalla (216)', ('Baths of Caracalla', 520, 26, 200, 228, 35)),
     (271.0, 276.0, 6.0, 'The Aurelian Walls (271)', ('walls', 4300, 32, 190, 212, 35)),
@@ -163,7 +163,7 @@ for (t0, t1, s) in SOSTA_T:
     # tratto largo prima della sosta (se c'e' tempo): la citta' intera di quell'anno, orbita lenta
     if t0 - prev_end > 3.0:
         gap0, gap1 = prev_end, t0
-        n_sub = max(1, int((gap1 - gap0) // 16))     # uno stacco ogni ~16 s
+        n_sub = max(1, int((gap1 - gap0) // 10))     # uno stacco ogni ~16 s
         for k in range(n_sub):
             a_, b_ = gap0 + (gap1 - gap0) * k / n_sub, gap0 + (gap1 - gap0) * (k + 1) / n_sub
             (mx, my), r = extent(year_at(b_)); alt += 1
