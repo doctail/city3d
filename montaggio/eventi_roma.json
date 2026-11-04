@@ -1,0 +1,315 @@
+{
+ "didascalie": [
+  {
+   "t_in": 18.88,
+   "t_out": 24.27,
+   "date": "616 BC",
+   "title": "The Etruscan kings",
+   "line": "They drain the marshes between the hills. The Forum is born.",
+   "sober": false
+  },
+  {
+   "t_in": 24.67,
+   "t_out": 29.27,
+   "date": "509 BC",
+   "title": "No more kings",
+   "line": "The last king is driven out. Rome becomes a republic.",
+   "sober": false
+  },
+  {
+   "t_in": 31.33,
+   "t_out": 35.93,
+   "date": "390 BC",
+   "title": "The Gauls sack Rome",
+   "line": "Only the Capitoline Hill holds out.",
+   "sober": false
+  },
+  {
+   "t_in": 42.12,
+   "t_out": 46.73,
+   "date": "312 BC",
+   "title": "The Appian Way",
+   "line": "The first great Roman road, and the first aqueduct.",
+   "sober": false
+  },
+  {
+   "t_in": 47.12,
+   "t_out": 51.73,
+   "date": "146 BC",
+   "title": "Carthage destroyed",
+   "line": "Rome now rules the Mediterranean.",
+   "sober": false
+  },
+  {
+   "t_in": 65.5,
+   "t_out": 70.1,
+   "date": "44 BC",
+   "title": "The Ides of March",
+   "line": "Julius Caesar is murdered in the Senate.",
+   "sober": false
+  },
+  {
+   "t_in": 71.0,
+   "t_out": 76.4,
+   "date": "27 BC",
+   "title": "Augustus, first emperor",
+   "line": "\"I found Rome a city of brick and left it a city of marble.\"",
+   "sober": false
+  },
+  {
+   "t_in": 84.62,
+   "t_out": 89.22,
+   "date": "AD 64",
+   "title": "The Great Fire",
+   "line": "Ten of the fourteen districts burn. Nero rebuilds.",
+   "sober": false
+  },
+  {
+   "t_in": 97.54,
+   "t_out": 102.14,
+   "date": "AD 117",
+   "title": "The empire at its largest",
+   "line": "From Scotland to Iraq, ruled from this city.",
+   "sober": false
+  },
+  {
+   "t_in": 111.42,
+   "t_out": 116.02,
+   "date": "AD 180",
+   "title": "A million people",
+   "line": "The largest city the world has ever seen.",
+   "sober": false
+  },
+  {
+   "t_in": 129.12,
+   "t_out": 133.72,
+   "date": "AD 330",
+   "title": "A new capital",
+   "line": "Constantine moves the emperor to Constantinople.",
+   "sober": false
+  },
+  {
+   "t_in": 138.71,
+   "t_out": 143.31,
+   "date": "AD 476",
+   "title": "The end of the Western Empire",
+   "line": "The last emperor in the West is deposed.",
+   "sober": false
+  },
+  {
+   "t_in": 150.88,
+   "t_out": 156.28,
+   "date": "AD 590",
+   "title": "Plague and floods",
+   "line": "Fewer than 50,000 people live inside walls built for a million.",
+   "sober": false
+  },
+  {
+   "t_in": 159.5,
+   "t_out": 164.1,
+   "date": "AD 800",
+   "title": "Charlemagne",
+   "line": "Crowned emperor in Old St Peter's on Christmas Day.",
+   "sober": false
+  },
+  {
+   "t_in": 171.67,
+   "t_out": 176.27,
+   "date": "1084",
+   "title": "The Normans",
+   "line": "Allies of the Pope burn much of the city.",
+   "sober": false
+  },
+  {
+   "t_in": 178.38,
+   "t_out": 182.97,
+   "date": "1309",
+   "title": "The Popes leave",
+   "line": "The papacy moves to Avignon. Rome falls to ~17,000 people.",
+   "sober": false
+  },
+  {
+   "t_in": 184.5,
+   "t_out": 189.1,
+   "date": "1377",
+   "title": "The Popes return",
+   "line": "Rome starts to grow again, around the Vatican.",
+   "sober": false
+  },
+  {
+   "t_in": 192.25,
+   "t_out": 196.85,
+   "date": "1527",
+   "title": "The Sack of Rome",
+   "line": "Charles V's unpaid troops loot the city for months.",
+   "sober": false
+  },
+  {
+   "t_in": 222.67,
+   "t_out": 227.27,
+   "date": "1762",
+   "title": "Trevi Fountain",
+   "line": "Finished after 30 years of work.",
+   "sober": false
+  },
+  {
+   "t_in": 227.67,
+   "t_out": 232.27,
+   "date": "1798",
+   "title": "Napoleon",
+   "line": "French troops arrive. The Pope is taken prisoner.",
+   "sober": false
+  },
+  {
+   "t_in": 244.08,
+   "t_out": 248.68,
+   "date": "1922",
+   "title": "March on Rome",
+   "line": "Mussolini takes power.",
+   "sober": false
+  },
+  {
+   "t_in": 249.08,
+   "t_out": 253.68,
+   "date": "1944",
+   "title": "Liberation",
+   "line": "Allied troops enter Rome on 4 June 1944.",
+   "sober": true
+  }
+ ],
+ "soste": [
+  {
+   "t_in": 8.0,
+   "t_out": 14.0,
+   "title": "Romulus founds Rome",
+   "sub": "753 BC"
+  },
+  {
+   "t_in": 21.49,
+   "t_out": 25.49,
+   "title": "Temple of Jupiter",
+   "sub": "509 BC"
+  },
+  {
+   "t_in": 31.87,
+   "t_out": 36.37,
+   "title": "The Servian Wall",
+   "sub": "378 BC"
+  },
+  {
+   "t_in": 38.32,
+   "t_out": 41.82,
+   "title": "Circus Maximus",
+   "sub": "329 BC"
+  },
+  {
+   "t_in": 65.0,
+   "t_out": 70.0,
+   "title": "Caesar and Augustus rebuild Rome",
+   "sub": ""
+  },
+  {
+   "t_in": 74.09,
+   "t_out": 77.09,
+   "title": "Theatre of Marcellus",
+   "sub": "13 BC"
+  },
+  {
+   "t_in": 84.89,
+   "t_out": 90.89,
+   "title": "The Colosseum",
+   "sub": "AD 72-80"
+  },
+  {
+   "t_in": 93.98,
+   "t_out": 96.98,
+   "title": "Trajan's Column",
+   "sub": "113"
+  },
+  {
+   "t_in": 97.61,
+   "t_out": 102.61,
+   "title": "The Pantheon",
+   "sub": "125"
+  },
+  {
+   "t_in": 103.79,
+   "t_out": 107.29,
+   "title": "Hadrian's Mausoleum",
+   "sub": "135"
+  },
+  {
+   "t_in": 112.71,
+   "t_out": 116.71,
+   "title": "Baths of Caracalla",
+   "sub": "216"
+  },
+  {
+   "t_in": 118.0,
+   "t_out": 124.0,
+   "title": "The Aurelian Walls",
+   "sub": "271"
+  },
+  {
+   "t_in": 125.1,
+   "t_out": 129.1,
+   "title": "Old St Peter's",
+   "sub": "326"
+  },
+  {
+   "t_in": 130.88,
+   "t_out": 134.88,
+   "title": "Alaric sacks Rome",
+   "sub": "410"
+  },
+  {
+   "t_in": 143.0,
+   "t_out": 150.0,
+   "title": "The aqueducts are cut",
+   "sub": "537"
+  },
+  {
+   "t_in": 179.47,
+   "t_out": 183.47,
+   "title": "Earthquake: the Colosseum falls",
+   "sub": "1349"
+  },
+  {
+   "t_in": 190.17,
+   "t_out": 194.17,
+   "title": "New St Peter's",
+   "sub": "1506"
+  },
+  {
+   "t_in": 196.62,
+   "t_out": 201.62,
+   "title": "Michelangelo's dome",
+   "sub": "1590"
+  },
+  {
+   "t_in": 206.0,
+   "t_out": 210.0,
+   "title": "Bernini's colonnade",
+   "sub": "1667"
+  },
+  {
+   "t_in": 234.0,
+   "t_out": 238.0,
+   "title": "Rome, capital of Italy",
+   "sub": "1871"
+  },
+  {
+   "t_in": 238.35,
+   "t_out": 243.35,
+   "title": "The Vittoriano",
+   "sub": "1885-1911"
+  },
+  {
+   "t_in": 249.72,
+   "t_out": 253.22,
+   "title": "Rome Olympics",
+   "sub": "1960"
+  }
+ ],
+ "subscribe_t": 96.0
+}

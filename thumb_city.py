@@ -45,7 +45,10 @@ def flag_dk(d, x, y, w, h):   # Dannebrog: rosso con croce bianca spostata verso
 def flag_fr(d, x, y, w, h):
     for i, c in enumerate([(0, 35, 149), (255, 255, 255), (237, 41, 57)]): d.rectangle([x + i * w / 3, y, x + (i + 1) * w / 3, y + h], fill=c)
     d.rectangle([x, y, x + w, y + h], outline=DARK, width=2)
-FLAGS = {'fr': flag_fr, 'us': flag_us, 'es': flag_es, 'nl': flag_nl, 'dk': flag_dk}
+def flag_it(d, x, y, w, h):
+    for i, c in enumerate([(0, 146, 70), (255, 255, 255), (206, 43, 55)]): d.rectangle([x + i * w / 3, y, x + (i + 1) * w / 3, y + h], fill=c)
+    d.rectangle([x, y, x + w, y + h], outline=DARK, width=2)
+FLAGS = {'it': flag_it, 'fr': flag_fr, 'us': flag_us, 'es': flag_es, 'nl': flag_nl, 'dk': flag_dk}
 
 img = prep(AFTER)
 if BEFORE:

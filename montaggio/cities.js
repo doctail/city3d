@@ -90,3 +90,19 @@ export const PARIS = {
   ERAS: [[1190, 'Capetian Paris', '#9C8B5E'], [1328, 'Valois Kings', '#7A8B6E'], [1589, 'Bourbon Kings', '#C9A227'], [1789, 'Revolution & Empire', '#B8473A'], [1815, 'Restoration', '#7A5C8E'], [1852, 'Haussmann', '#3E9AA0'], [1871, 'Belle Époque', '#D9A441'], [1914, 'World Wars', '#6E6E6E'], [1945, 'Postwar Paris', '#4F7FB8'], [1975, 'Modern Paris', '#D96C8A']],
   EVENTS: [],
 };
+
+// Roma (4 nov 2026). Popolazione: stime storiche (antichita' e medioevo, bassa affidabilita', mostrate con "~": ~1 milione
+// nel II secolo, ~30.000 nel VI-X secolo, ~17.000 durante Avignone); dal 1871 censimenti ISTAT del comune. Anni negativi = a.C.
+export const ROME = {
+  Y0: -753, Y1: 2026, POPMAX: 4e6, EST_UNTIL: 1871, TICKS: [-700, -500, -300, -100, 100, 300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900],
+  popLabel: () => 'CITY OF ROME',
+  POP: [[-753, 1000], [-700, 8000], [-600, 25000], [-500, 35000], [-400, 60000], [-300, 150000], [-200, 250000], [-100, 400000], [-27, 800000],
+        [100, 1000000], [200, 1000000], [300, 800000], [400, 500000], [450, 300000], [500, 100000], [550, 40000], [600, 30000], [800, 25000],
+        [1000, 30000], [1300, 30000], [1377, 17000], [1450, 40000], [1527, 55000], [1600, 100000], [1700, 135000], [1800, 153000], [1871, 212432],
+        [1901, 422411], [1921, 660235], [1936, 1150589], [1951, 1651754], [1961, 2188160], [1971, 2781993], [1981, 2840259], [2001, 2546804],
+        [2011, 2617175], [2026, 2750000]],
+  ERAS: [[-753, 'Roman Kingdom', '#9C8B5E'], [-509, 'Roman Republic', '#B8473A'], [-27, 'Roman Empire', '#C9A227'], [476, 'Early Middle Ages', '#6E6E6E'],
+         [1000, 'Papal Rome', '#7A5C8E'], [1420, 'Renaissance', '#3E9AA0'], [1600, 'Baroque Rome', '#D9A441'], [1871, 'Capital of Italy', '#4F7FB8'],
+         [1946, 'Italian Republic', '#D96C8A']],
+};
+export const yearLabel = (y) => { const v = Math.floor(y); return v < 0 ? `${-v} BC` : (v < 1000 ? `AD ${v}` : `${v}`); };
