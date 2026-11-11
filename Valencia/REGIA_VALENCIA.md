@@ -1,4 +1,7 @@
-# Regia di Valencia (bozza, 11 nov 2026)
+# Regia di Valencia (bozza, 11 nov 2026) — CITTÀ ESCLUSA
+
+> **11 nov 2026, vidIQ youtube_search "Valencia 3D timelapse" (ultimi 45 giorni, 5 crediti):** Mattia Maps, "Valencia: 2,000 Years in 12 Minutes | 3D Timelapse (138 BC–2025)", uscito il 3 nov 2026, **131.310 visualizzazioni**, più un suo Short da 2.411. Altri 5 video su Valencia in tre settimane (CityEpoch 21 ott, Cities Through Time, Forma Urbis, Evolución rápida, Atlas del Tiempo). Regola del canale: un video sopra 5K negli ultimi 45 giorni = città presa. **Valencia è fuori.** Regia e controllo storico restano qui come archivio (l'idea "fiume che si sposta" vale se Valencia si libera tra qualche mese).
+
 
 Sostituisce `schedule_valencia.json` (5:27, 12 punti camera, nessuna sosta): **non usarlo**.
 Formula: quella di Copenaghen (8:32, 33K views). Fonti storiche: `validazione/CONTROLLO_STORICO_CHIUSURA.md`.

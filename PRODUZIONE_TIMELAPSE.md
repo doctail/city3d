@@ -256,3 +256,9 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - **Regola**: le strade sono obbligatorie. Per ogni città: `roads.json` da OSM (highway, come `fetch_dk_roads.py`: nastri chiari sul suolo sotto gli isolati, anno = urbanizzazione della zona, strade aperte sventrando la città solo dall'anno di apertura) + ponti solo dove attraversano l'acqua. Di notte la luce dei lampioni segue le strade.
 - **Blocco nel codice**: `run.sh` ora si ferma con "MANCANO LE STRADE" se `DATA/roads.json` non c'è (scavalcabile solo con `NOROADS=1`, con OK di Fabio).
 - **Controllo prima dell'anteprima**: fotogramma dall'alto del centro in 3-4 anni chiave e di notte; le vie devono leggersi come nastri chiari (giorno) e file di luci (notte).
+
+## 11 nov 2026 — Valencia esclusa (vidIQ youtube_search, 5 crediti)
+- "Valencia 3D timelapse", ultimi 45 giorni: Mattia Maps 131K (3 nov), altri 5 canali su Valencia in 3 settimane. Città presa.
+- Nella stessa ricerca: Málaga (TimeLoop) 199K il 22 ott, Siviglia (Avenues of Time) 29 ott, Santiago de Compostela (Mattia Maps) 10 nov, Barcellona (DataShark), Roma (CityEons) 1,26M. **Le città spagnole sono sature.**
+- Lezione: la ricerca web gratuita non aveva trovato nulla. La verifica con vidIQ va fatta **prima** del lavoro sui dati, non il giorno prima del render (decisione di Fabio, 11 nov).
+- Musica decisa per il prossimo lungo con modello completo: "Waking to Reality" (Unicorn Heads) + "Monument" (TrackTribe), Audio Library di YouTube senza attribuzione: sono le stesse di Copenaghen, le ancore misurate in `regia_copenhagen.py` si riusano.
