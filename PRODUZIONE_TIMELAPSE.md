@@ -262,3 +262,8 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - Nella stessa ricerca: Málaga (TimeLoop) 199K il 22 ott, Siviglia (Avenues of Time) 29 ott, Santiago de Compostela (Mattia Maps) 10 nov, Barcellona (DataShark), Roma (CityEons) 1,26M. **Le città spagnole sono sature.**
 - Lezione: la ricerca web gratuita non aveva trovato nulla. La verifica con vidIQ va fatta **prima** del lavoro sui dati, non il giorno prima del render (decisione di Fabio, 11 nov).
 - Musica decisa per il prossimo lungo con modello completo: "Waking to Reality" (Unicorn Heads) + "Monument" (TrackTribe), Audio Library di YouTube senza attribuzione: sono le stesse di Copenaghen, le ancore misurate in `regia_copenhagen.py` si riusano.
+
+## 11 nov 2026 — Porto: verifica concorrenza (vidIQ youtube_search, 5 crediti)
+- "Porto 3D timelapse", ultimi 45 giorni: City In Layers "Porto - 3D Timelapse - 900 BC to 2026" (21 ott, 7:35, **1.971** views, canale da 332 iscritti) + Short 493; The Ages Built "History of Porto: 3D Timelapse [100 BC → Today]" (3 nov, 19:32, **2.484**, 708 iscritti). Nessuno sopra 5K → **Porto libera per la regola**, ma già fatta due volte.
+- Dalla stessa ricerca: **Salonicco presa** (Urbavision 52K, 7 nov). Prese anche Atene (211K), Praga (1,49M), Vienna (337K), Lisbona (857K), Madrid (216K, altro canale), Costantinopoli (1,12M), Rio (293K), Recife (69K), Napoli (Stratapolis 8,5K).
+- Dati: nessun dataset aperto trovato con l'anno di costruzione **per edificio** a Porto (Censos 2021/INE = agregati per sezione; BGE INE da verificare). Da chiudere prima di qualsiasi lavoro.
