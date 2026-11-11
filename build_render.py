@@ -104,7 +104,8 @@ def city_mat():
         # luci raggruppate come nella realta': palazzo (cella di 30 m) acceso o quasi spento, poi il piano, poi la finestra
         bx_ = mm('FLOOR', mm('DIVIDE', sp.outputs['X'], 30.0)); by_ = mm('FLOOR', mm('DIVIDE', sp.outputs['Y'], 30.0))
         hb = H_(bx_, by_); hf = H_(bx_, by_, cz); hv = H_(cu, cz, bx_)
-        on_b = mm('GREATER_THAN', hb, ST.get('night_bld_off', 0.35))           # 35% dei palazzi spenti
+        # kit (11 nov): style.night_off (nome usato nei json di Roma/Cph/Siviglia/Parigi) vale come alias di night_bld_off
+        on_b = mm('GREATER_THAN', hb, ST.get('night_bld_off', ST.get('night_off', 0.35)))   # 35% dei palazzi spenti
         on_f = mm('GREATER_THAN', hf, ST.get('night_floor_off', 0.45))         # piani accesi a blocchi
         on_w = mm('GREATER_THAN', hv, ST.get('night_win_off', 0.22))           # nel piano acceso quasi tutte le finestre
         lit = mm('MULTIPLY', mm('MULTIPLY', on_b, None, on_f), None, on_w)
@@ -1276,7 +1277,7 @@ def sky_grad():
     cr_.elements[1].position = 0.5; cr_.elements[1].color = (*_SK[1], 1)
     for p_, c_ in [(0.035, _SK[2]), (0.10, _SK[3]), (0.25, _SK[4])]:
         e_ = cr_.elements.new(p_); e_.color = (*c_, 1)
-    a_, c2 = math.radians(90 - SUNEL), math.radians(230)
+    a_, c2 = math.radians(90 - SUNEL), math.radians(float(CITY.get('sun_rot', 230)))   # kit (11 nov): bagliore del cielo dove sta il sole (prima 230 fisso)
     sv = (math.sin(a_) * math.sin(c2), -math.sin(a_) * math.cos(c2), math.cos(a_))
     dt = WN.new('ShaderNodeVectorMath'); dt.operation = 'DOT_PRODUCT'; WL(nd.outputs[0], dt.inputs[0]); dt.inputs[1].default_value = sv
     mx0 = WN.new('ShaderNodeMath'); mx0.operation = 'MAXIMUM'; WL(dt.outputs['Value'], mx0.inputs[0]); mx0.inputs[1].default_value = 0.0

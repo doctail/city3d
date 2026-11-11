@@ -6,7 +6,8 @@
 import json, math, sys
 import numpy as np
 CFG = json.load(open(sys.argv[1])); DATA = sys.argv[2]; S = json.load(open(sys.argv[3]))
-BIN = 4.0; DBIN = float(CFG.get('dbin', BIN)); BAND = float(CFG.get('dem_band', 3.0))
+BIN = float(CFG.get('bin', 4.0))   # kit (11 nov): bin dal city json come build_render (prima 4 fisso: Roma ha bin 10)
+DBIN = float(CFG.get('dbin', BIN)); BAND = float(CFG.get('dem_band', 3.0))
 RH = int(CFG.get('rewind_hold', 1)); GS = int(CFG.get('grow_step', 1)); DMIN = float(CFG.get('dur_min', 0.4))
 MS = float(CFG.get('ms_per_cambio', 12.0)); BUDGET = float(CFG.get('budget_cambi_h', 1.0))
 B = json.load(open(f'{DATA}/buildings.json'))

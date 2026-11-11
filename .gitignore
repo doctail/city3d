@@ -6,3 +6,6 @@ data_*/
 raw_parigi/
 city_*test.json
 city_*_sun*.json
+montaggio/node_modules/
+montaggio/public/
+montaggio/out/

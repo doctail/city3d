@@ -1,0 +1,749 @@
+{
+ "version": 1,
+ "_doc": "Story MINIMA di prova per il montaggio (Roma): solo city/regia/montaggio, presi da cities.js, sfx_roma.py e roma_overlay.jsx. Non e' la story completa del kit.",
+ "city": {
+  "slug": "roma",
+  "name": "Rome",
+  "country": "Italy",
+  "lat0": 41.8902,
+  "lon0": 12.4922,
+  "radius_m": 12000,
+  "start_year": -753,
+  "end_year": 2026,
+  "population": [
+   [
+    -753,
+    1000
+   ],
+   [
+    -700,
+    8000
+   ],
+   [
+    -600,
+    25000
+   ],
+   [
+    -500,
+    35000
+   ],
+   [
+    -400,
+    60000
+   ],
+   [
+    -300,
+    150000
+   ],
+   [
+    -200,
+    250000
+   ],
+   [
+    -100,
+    400000
+   ],
+   [
+    -27,
+    800000
+   ],
+   [
+    100,
+    1000000
+   ],
+   [
+    200,
+    1000000
+   ],
+   [
+    300,
+    800000
+   ],
+   [
+    400,
+    500000
+   ],
+   [
+    450,
+    300000
+   ],
+   [
+    500,
+    100000
+   ],
+   [
+    550,
+    40000
+   ],
+   [
+    600,
+    30000
+   ],
+   [
+    800,
+    25000
+   ],
+   [
+    1000,
+    30000
+   ],
+   [
+    1300,
+    30000
+   ],
+   [
+    1377,
+    17000
+   ],
+   [
+    1450,
+    40000
+   ],
+   [
+    1527,
+    55000
+   ],
+   [
+    1600,
+    100000
+   ],
+   [
+    1700,
+    135000
+   ],
+   [
+    1800,
+    153000
+   ],
+   [
+    1871,
+    212432
+   ],
+   [
+    1901,
+    422411
+   ],
+   [
+    1921,
+    660235
+   ],
+   [
+    1936,
+    1150589
+   ],
+   [
+    1951,
+    1651754
+   ],
+   [
+    1961,
+    2188160
+   ],
+   [
+    1971,
+    2781993
+   ],
+   [
+    1981,
+    2840259
+   ],
+   [
+    2001,
+    2546804
+   ],
+   [
+    2011,
+    2617175
+   ],
+   [
+    2026,
+    2750000
+   ]
+  ],
+  "eras": [
+   [
+    -753,
+    "Roman Kingdom",
+    "#9C8B5E"
+   ],
+   [
+    -509,
+    "Roman Republic",
+    "#B8473A"
+   ],
+   [
+    -27,
+    "Roman Empire",
+    "#C9A227"
+   ],
+   [
+    476,
+    "Early Middle Ages",
+    "#6E6E6E"
+   ],
+   [
+    1000,
+    "Papal Rome",
+    "#7A5C8E"
+   ],
+   [
+    1420,
+    "Renaissance",
+    "#3E9AA0"
+   ],
+   [
+    1600,
+    "Baroque Rome",
+    "#D9A441"
+   ],
+   [
+    1871,
+    "Capital of Italy",
+    "#4F7FB8"
+   ],
+   [
+    1946,
+    "Italian Republic",
+    "#D96C8A"
+   ]
+  ],
+  "ticks": [
+   -700,
+   -500,
+   -300,
+   -100,
+   100,
+   300,
+   500,
+   700,
+   900,
+   1100,
+   1300,
+   1500,
+   1700,
+   1900
+  ],
+  "est_until": 1871,
+  "pop_label": "CITY OF ROME"
+ },
+ "regia": {
+  "music": "waking_monument",
+  "duration": 272.0,
+  "night": false,
+  "open": {
+   "year": 2026,
+   "rewind_to": -753
+  },
+  "music_cuts": {
+   "b_start_sosta": "Alaric",
+   "a_return_sosta": "capital of Italy"
+  },
+  "soste": [
+   {
+    "y0": -753.0,
+    "y1": -735.0,
+    "dur": 6.0,
+    "caption": "Romulus founds Rome (753 BC)",
+    "target": "Romulus founds Rome",
+    "shot": "medium",
+    "fx": {
+     "fx": "hammer",
+     "dt": 4.0,
+     "gain": 0.06,
+     "n": 5,
+     "gap": 0.6
+    }
+   },
+   {
+    "y0": -509.0,
+    "y1": -504.0,
+    "dur": 4.0,
+    "caption": "Temple of Jupiter (509 BC)",
+    "target": "Temple of Jupiter",
+    "shot": "medium",
+    "fx": "hammer"
+   },
+   {
+    "y0": -378.0,
+    "y1": -372.0,
+    "dur": 4.5,
+    "caption": "The Servian Wall (378 BC)",
+    "target": "The Servian Wall",
+    "shot": "medium",
+    "fx": {
+     "fx": "hammer",
+     "n": 7,
+     "gain": 0.09
+    }
+   },
+   {
+    "y0": -329.0,
+    "y1": -322.0,
+    "dur": 3.5,
+    "caption": "Circus Maximus (329 BC)",
+    "target": "Circus Maximus",
+    "shot": "medium",
+    "fx": {
+     "fx": "crowd",
+     "gain": 0.12,
+     "dur": 3.5
+    }
+   },
+   {
+    "y0": -46.0,
+    "y1": -26.0,
+    "dur": 5.0,
+    "caption": "Caesar and Augustus rebuild Rome",
+    "target": "Caesar and Augustus rebuild Rome",
+    "shot": "medium",
+    "fx": {
+     "fx": "hammer",
+     "n": 8
+    }
+   },
+   {
+    "y0": -13.5,
+    "y1": -11.0,
+    "dur": 3.0,
+    "caption": "Theatre of Marcellus (13 BC)",
+    "target": "Theatre of Marcellus",
+    "shot": "medium"
+   },
+   {
+    "y0": 71.5,
+    "y1": 80.5,
+    "dur": 6.0,
+    "caption": "The Colosseum (AD 72-80)",
+    "target": "The Colosseum",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "hammer",
+      "n": 9,
+      "gap": 0.32,
+      "dt": 0.4,
+      "gain": 0.09
+     },
+     {
+      "fx": "crowd",
+      "dt": 3.6,
+      "gain": 0.16
+     }
+    ]
+   },
+   {
+    "y0": 112.5,
+    "y1": 113.5,
+    "dur": 3.0,
+    "caption": "Trajan's Column (113)",
+    "target": "Trajan's Column",
+    "shot": "medium"
+   },
+   {
+    "y0": 117.5,
+    "y1": 126.0,
+    "dur": 5.0,
+    "caption": "The Pantheon (125)",
+    "target": "The Pantheon",
+    "shot": "medium",
+    "fx": "hammer"
+   },
+   {
+    "y0": 134.5,
+    "y1": 138.0,
+    "dur": 3.5,
+    "caption": "Hadrian's Mausoleum (135)",
+    "target": "Hadrian's Mausoleum",
+    "shot": "medium"
+   },
+   {
+    "y0": 211.5,
+    "y1": 216.5,
+    "dur": 4.0,
+    "caption": "Baths of Caracalla (216)",
+    "target": "Baths of Caracalla",
+    "shot": "medium"
+   },
+   {
+    "y0": 271.0,
+    "y1": 276.0,
+    "dur": 6.0,
+    "caption": "The Aurelian Walls (271)",
+    "target": "The Aurelian Walls",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "hammer",
+      "n": 7,
+      "dt": 0.5
+     },
+     {
+      "fx": "hammer",
+      "n": 7,
+      "dt": 2.2
+     },
+     {
+      "fx": "hammer",
+      "n": 7,
+      "dt": 3.9
+     }
+    ]
+   },
+   {
+    "y0": 325.5,
+    "y1": 330.0,
+    "dur": 4.0,
+    "caption": "Old St Peter's (326)",
+    "target": "Old St Peter's",
+    "shot": "medium"
+   },
+   {
+    "y0": 410.0,
+    "y1": 410.8,
+    "dur": 4.0,
+    "caption": "Alaric sacks Rome (410)",
+    "target": "Alaric sacks Rome",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "battle",
+      "dt": -0.4,
+      "gain": 0.26
+     },
+     {
+      "fx": "crash",
+      "dt": 1.6,
+      "gain": 0.18
+     },
+     {
+      "fx": "boom",
+      "dt": -0.6,
+      "gain": 0.18,
+      "low": 70
+     }
+    ]
+   },
+   {
+    "y0": 537.0,
+    "y1": 560.0,
+    "dur": 7.0,
+    "caption": "The aqueducts are cut (537)",
+    "target": "The aqueducts are cut",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "water",
+      "dt": 0.2,
+      "gain": 0.1,
+      "dur": 3.0
+     },
+     {
+      "fx": "crash",
+      "dt": 2.0,
+      "gain": 0.1
+     },
+     {
+      "fx": "crash",
+      "dt": 3.6,
+      "gain": 0.08
+     },
+     {
+      "fx": "crash",
+      "dt": 5.2,
+      "gain": 0.06
+     }
+    ]
+   },
+   {
+    "y0": 1349.0,
+    "y1": 1349.6,
+    "dur": 4.0,
+    "caption": "Earthquake: the Colosseum falls (1349)",
+    "target": "Earthquake: the Colosseum falls",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "hammer",
+      "n": 9,
+      "gap": 0.32,
+      "dt": 0.4,
+      "gain": 0.09
+     },
+     {
+      "fx": "crowd",
+      "dt": 3.6,
+      "gain": 0.16
+     }
+    ]
+   },
+   {
+    "y0": 1505.5,
+    "y1": 1547.0,
+    "dur": 4.0,
+    "caption": "New St Peter's (1506)",
+    "target": "New St Peter's",
+    "shot": "medium",
+    "fx": {
+     "fx": "hammer",
+     "n": 8,
+     "dt": 0.6
+    }
+   },
+   {
+    "y0": 1584.5,
+    "y1": 1593.0,
+    "dur": 5.0,
+    "caption": "Michelangelo's dome (1590)",
+    "target": "Michelangelo's dome",
+    "shot": "medium",
+    "fx": {
+     "fx": "peal",
+     "dt": 2.4,
+     "gain": 0.14,
+     "rounds": 1
+    }
+   },
+   {
+    "y0": 1655.5,
+    "y1": 1667.0,
+    "dur": 4.0,
+    "caption": "Bernini's colonnade (1667)",
+    "target": "Bernini's colonnade",
+    "shot": "medium",
+    "fx": {
+     "fx": "peal",
+     "dt": 1.0,
+     "gain": 0.1,
+     "rounds": 1,
+     "notes": [
+      523,
+      440,
+      392
+     ]
+    }
+   },
+   {
+    "y0": 1870.6,
+    "y1": 1871.4,
+    "dur": 4.0,
+    "caption": "Rome, capital of Italy (1871)",
+    "target": "Rome, capital of Italy",
+    "shot": "medium",
+    "fx": [
+     {
+      "fx": "boom",
+      "dt": -0.9,
+      "gain": 0.28,
+      "low": 70
+     },
+     {
+      "fx": "boom",
+      "dt": -0.3,
+      "gain": 0.25,
+      "low": 85
+     },
+     {
+      "fx": "boom",
+      "dt": 0.3,
+      "gain": 0.22000000000000003,
+      "low": 100
+     },
+     {
+      "fx": "boom",
+      "dt": 1.0,
+      "gain": 0.19000000000000003,
+      "low": 115
+     },
+     {
+      "fx": "boom",
+      "dt": 1.9,
+      "gain": 0.16000000000000003,
+      "low": 130
+     }
+    ]
+   },
+   {
+    "y0": 1884.5,
+    "y1": 1911.0,
+    "dur": 5.0,
+    "caption": "The Vittoriano (1885-1911)",
+    "target": "The Vittoriano",
+    "shot": "medium",
+    "fx": {
+     "fx": "hammer",
+     "n": 7
+    }
+   },
+   {
+    "y0": 1952.5,
+    "y1": 1960.5,
+    "dur": 3.5,
+    "caption": "Rome Olympics (1960)",
+    "target": "Rome Olympics",
+    "shot": "medium",
+    "fx": {
+     "fx": "crowd",
+     "gain": 0.14,
+     "dt": 0.2,
+     "dur": 3.5
+    }
+   }
+  ]
+ },
+ "montaggio": {
+  "open": [
+   "ROME TODAY",
+   "2.75 million people",
+   "2,779 YEARS",
+   "from a village of huts to the Eternal City"
+  ],
+  "title": [
+   "ROME",
+   "753 BC TO NOW"
+  ],
+  "end": [
+   "ROME · 2,779 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "subscribe_t": 96.0,
+  "events": [
+   {
+    "y": -616,
+    "title": "The Etruscan kings",
+    "line": "They drain the marshes between the hills. The Forum is born."
+   },
+   {
+    "y": -509,
+    "title": "No more kings",
+    "line": "The last king is driven out. Rome becomes a republic."
+   },
+   {
+    "y": -390,
+    "title": "The Gauls sack Rome",
+    "line": "Only the Capitoline Hill holds out.",
+    "fx": {
+     "fx": "battle",
+     "dt": 0.2,
+     "gain": 0.2
+    }
+   },
+   {
+    "y": -312,
+    "title": "The Appian Way",
+    "line": "The first great Roman road, and the first aqueduct."
+   },
+   {
+    "y": -146,
+    "title": "Carthage destroyed",
+    "line": "Rome now rules the Mediterranean."
+   },
+   {
+    "y": -44,
+    "title": "The Ides of March",
+    "line": "Julius Caesar is murdered in the Senate."
+   },
+   {
+    "y": -27,
+    "title": "Augustus, first emperor",
+    "line": "\"I found Rome a city of brick and left it a city of marble.\""
+   },
+   {
+    "y": 64,
+    "title": "The Great Fire",
+    "line": "Ten of the fourteen districts burn. Nero rebuilds.",
+    "fx": {
+     "fx": "fire",
+     "dt": 0.2,
+     "gain": 0.2
+    }
+   },
+   {
+    "y": 117,
+    "title": "The empire at its largest",
+    "line": "From Scotland to Iraq, ruled from this city."
+   },
+   {
+    "y": 180,
+    "title": "A million people",
+    "line": "The largest city the world has ever seen."
+   },
+   {
+    "y": 330,
+    "title": "A new capital",
+    "line": "Constantine moves the emperor to Constantinople."
+   },
+   {
+    "y": 476,
+    "title": "The end of the Western Empire",
+    "line": "The last emperor in the West is deposed.",
+    "fx": {
+     "fx": "horn",
+     "dt": 0.2,
+     "gain": 0.12
+    }
+   },
+   {
+    "y": 590,
+    "title": "Plague and floods",
+    "line": "Fewer than 50,000 people live inside walls built for a million."
+   },
+   {
+    "y": 800,
+    "title": "Charlemagne",
+    "line": "Crowned emperor in Old St Peter's on Christmas Day."
+   },
+   {
+    "y": 1084,
+    "title": "The Normans",
+    "line": "Allies of the Pope burn much of the city."
+   },
+   {
+    "y": 1309,
+    "title": "The Popes leave",
+    "line": "The papacy moves to Avignon. Rome falls to ~17,000 people."
+   },
+   {
+    "y": 1377,
+    "title": "The Popes return",
+    "line": "Rome starts to grow again, around the Vatican."
+   },
+   {
+    "y": 1527,
+    "title": "The Sack of Rome",
+    "line": "Charles V's unpaid troops loot the city for months.",
+    "fx": {
+     "fx": "battle",
+     "dt": 0.2,
+     "gain": 0.2
+    }
+   },
+   {
+    "y": 1762,
+    "title": "Trevi Fountain",
+    "line": "Finished after 30 years of work."
+   },
+   {
+    "y": 1798,
+    "title": "Napoleon",
+    "line": "French troops arrive. The Pope is taken prisoner."
+   },
+   {
+    "y": 1922,
+    "title": "March on Rome",
+    "line": "Mussolini takes power."
+   },
+   {
+    "y": 1944,
+    "title": "Liberation",
+    "line": "Allied troops enter Rome on 4 June 1944.",
+    "sober": true,
+    "fx": {
+     "fx": "peal",
+     "dt": 0.3,
+     "gain": 0.13,
+     "rounds": 1
+    }
+   }
+  ]
+ }
+}

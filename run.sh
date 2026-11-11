@@ -29,7 +29,14 @@ else
   mkdir -p $D
   if [ -d data_${CITY}_src ]; then for g in data_${CITY}_src/*.gz; do b=$(basename $g .gz); [ -s $D/$b ] || gunzip -c $g > $D/$b; done; echo ok > $D/land_v3.ok; fi   # dati gia' preparati in chat
   if [ "$CITY" = "madrid" ]; then [ -s $D/buildings.json ] || $PY fetch_es.py $D city_$CITY.json $(ls /workspace/*.zip 2>/dev/null | head -1); fi
+  if [ -f cities/$CITY/story.json ]; then   # kit (11 nov): citta' con la scheda unica cities/<slug>/story.json
+    # DATA viene da data_<slug>_src (python -m kit pack); hist_<slug>.py e' lo stub generato dal kit (lo crea se manca)
+    [ -f hist_$CITY.py ] || $PY -m kit.hist_kit make-stub $CITY
+    [ -f city_$CITY.json ] || $PY -m kit.city_json $CITY
+    KIT_DATA=$D $PY hist_$CITY.py $D
+  else
   $PY hist_$CITY.py $D
+  fi
   if [ "$CITY" = "sevilla" ] && [ ! -f $D/post_sevilla.ok ]; then   # una volta sola: acqua a fasi e ponti modificano i dati in place
     $PY osm_extra.py $D city_sevilla.json $D/osm_export.geojson
     $PY water_sevilla.py $D
