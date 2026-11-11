@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "_note": "Story MINIMA di prova per kit/hist_kit.py (contorni approssimati, non per il video). La story vera e' cities/valencia/story.json.",
+  "city": {
+    "slug": "valencia", "name": "Valencia", "country": "Spain",
+    "lat0": 39.4753, "lon0": -0.3758, "radius_m": 12000,
+    "start_year": 1238, "end_year": 2026,
+    "data_dir": "data_valencia", "style_preset": "mediterranean"
+  },
+  "sources": {"T1": {"url": "https://en.wikipedia.org/wiki/Walls_of_Valencia", "title": "Walls of Valencia", "quote": "test fixture"}},
+  "history": {
+    "zones": [
+      {"name": "Muslim walled city", "ring": [[39.4790, -0.3790], [39.4788, -0.3740], [39.4770, -0.3712], [39.4735, -0.3712],
+        [39.4712, -0.3745], [39.4715, -0.3795], [39.4740, -0.3815], [39.4770, -0.3812]],
+       "born": [1150, 1200], "seed": null, "era_height": [6, 10], "src": ["T1"], "conf": "low"},
+      {"name": "Christian walled city", "ring": [[39.4805, -0.3805], [39.4795, -0.3758], [39.4790, -0.3700], [39.4745, -0.3668],
+        [39.4695, -0.3688], [39.4668, -0.3750], [39.4688, -0.3818], [39.4757, -0.3842], [39.4792, -0.3832]],
+       "born": [1238, 1450], "seed": [39.4757, -0.3752],
+       "era_height": [[1238, 6, 10], [1500, 8, 12], [1700, 10, 15]], "src": ["T1"], "conf": "low"}
+    ],
+    "walls": [
+      {"name": "Christian wall", "ring": [[39.4805, -0.3805], [39.4795, -0.3758], [39.4790, -0.3700], [39.4745, -0.3668],
+        [39.4695, -0.3688], [39.4668, -0.3750], [39.4688, -0.3818], [39.4757, -0.3842], [39.4792, -0.3832]],
+       "built": [1356, 1370], "demolished": [1865, 1868], "height": 10, "width": 4, "towers_every_m": 60,
+       "keep": [[39.4791, -0.3758, 35], [39.4757, -0.3838, 35]], "src": ["T1"], "conf": "low"}
+    ],
+    "gutting": [
+      {"name": "Plaza de la Reina", "ring": [[39.4753, -0.3762], [39.4752, -0.3748], [39.4740, -0.3747], [39.4741, -0.3762]],
+       "from": 1238, "until": 1962, "src": ["T1"], "conf": "low"},
+      {"name": "Avinguda de l'Oest", "ring": [[39.4738, -0.3800], [39.4733, -0.3796], [39.4700, -0.3779], [39.4702, -0.3786]],
+       "from": 1238, "until": 1945, "src": ["T1"], "conf": "low"}
+    ],
+    "lost": [
+      {"name": "Convent of San Francisco", "ring": [[39.4703, -0.3770], [39.4703, -0.3757], [39.4692, -0.3757], [39.4692, -0.3770]],
+       "from": 1239, "to": 1891, "h": 14, "src": ["T1"], "conf": "low"}
+    ],
+    "fires": [
+      {"name": "Siege of 1812", "ring": [[39.4720, -0.3720], [39.4720, -0.3690], [39.4700, -0.3690], [39.4700, -0.3720]],
+       "y": 1811.98, "y1": 1812.03, "destroy": true, "rebuild_years": 3, "flames": 40, "smoke": 6, "src": ["T1"], "conf": "low"}
+    ],
+    "water": [],
+    "bridges": [
+      {"name": "Pont de la Trinitat", "line": [[39.4785, -0.3727], [39.4796, -0.3727]], "w": 10, "y": 1407, "d": null, "src": ["T1"]},
+      {"name": "Pont de Serrans", "line": [[39.4793, -0.3759], [39.4806, -0.3759]], "w": 10, "y": 1518, "d": null, "src": ["T1"]}
+    ]
+  }
+}

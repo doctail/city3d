@@ -111,7 +111,9 @@ _CTX = {}
 
 def _story_file():
     p = os.environ.get('CITY3D_STORY')
-    if p: return p if os.path.isabs(p) else os.path.join(ROOT, p)
+    if p:
+        p = p if os.path.isabs(p) else os.path.join(ROOT, p)
+        if os.path.exists(p): return p
     av = sys.argv
     if '--city' in av and av.index('--city') + 1 < len(av):        # dentro Blender: city json di build_render
         cj = av[av.index('--city') + 1]
