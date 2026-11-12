@@ -26,3 +26,18 @@
 
 ## Caution [Likely]
 The same channel, with the same formula, made Santiago de Compostela: 275 views after 2 days (vidIQ search 11/11). The formula does not explain everything. Valencia (a big city, local pride, timing) counts as much as the format.
+
+## Metadata (vidIQ, 12/11) and comments (267, pasted by Fabio)
+- Valencia: 135,415 views, 1,477 likes, 267 comments, 228 VPH after 8 days, outlier 927x. Santiago: 738 views in 2 days (outlier 5x, engagement 3.9% vs 1.3%).
+- **Description**: one line of promise ("Since 1840 every building standing today appears in the year it was built"), "No AI imagery" plus an honest note ("Before 1840 … approximate reconstruction, labelled on screen"), the question for the comments, **21 chapters** with timestamps, and full sources and licences (Catastro, Copernicus, OSM, Copernicus EMS for the 2024 flood). Mixed EN+ES tags.
+- **Music**: public domain via Wikimedia Commons (Granados, Albéniz). Santiago: Kevin MacLeod plus a Galician alborada — local music on purpose.
+- **Comments** [Certain on the content]:
+  1. *Local pride*: the majority are Valencians in Spanish or Valencian ("mi ciudad", "me hiciste llorar", "soy valenciano"). They are the engine of the views.
+  2. *The building-by-building data is personal*: "I followed the building I live in and it appears in 1977, exactly the year it was built".
+  3. *"No AI"* praised again and again, explicitly against the AI videos.
+  4. *A community of correctors*: the Roman island in the Turia (5+ comments), the flag (Senyera 1377, the bars of Aragon), Valencian names (Serrans, l'Horta, Falles), the Andalusian music "wrong" for Valencia, the expulsion of 1238, missing monuments (Palau Reial, Alcázar), **modern roads visible in 1905** (Ronda Nord 2003: our r/Madrid rule).
+  5. *Requests for the language*: "it's missing in Castilian", "in Valencian too" — translated subtitles and titles count.
+  6. *Pinned comment as an engine*: asks for the next city (likes as votes), asks for corrections ("I'd rather fix it"), asks "what's missing from your neighbourhood?". He replies to EVERY comment.
+  7. *Requested cities*: Zaragoza, Granada, Murcia, Cartagena, Córdoba, Málaga, Alicante, Bilbao, Burgos, Tarragona, Cádiz, Bucharest. He will pick the next one by vote: a race.
+- Shorts: 5 spin-offs on a single curiosity with a question in the title ("Why is there a bat on Valencia's coat of arms?", "This lake was ten times bigger") — 0.7–2.8K.
+- The Plan Sur topic is big in itself: CienciaX "Cómo Valencia movió un río entero" 419K.
