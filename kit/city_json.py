@@ -19,11 +19,11 @@ HEX = re.compile(r'^#[0-9a-fA-F]{6}$')
 FPS = 24
 
 
-def _zone_extent(story, P):
+def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
     """Centro ed estensione (m) del centro storico: unione delle zone/mura della story; ripiego = 1500 m attorno all'origine."""
     pts = []
     H = story.get('history', {})
-    for k in ('zones', 'walls', 'gutting'):
+    for k in kinds:
         for z in H.get(k, []):
             for key in ('ring', 'line'):
                 if z.get(key): pts += P.ring(z[key])

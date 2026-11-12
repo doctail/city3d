@@ -485,7 +485,8 @@ def qa_shots(story, sc, D):
     """Inquadrature QA: dall'alto del centro storico in 4 anni chiave + 3 soste piu' lunghe."""
     c = story['city']; y0, y1 = float(c['start_year']), float(c['end_year']); P = geo.Proj.of(story)
     from .city_json import _zone_extent
-    cx, cy, e = _zone_extent(story, P)
+    H = story.get('history', {}) or {}
+    cx, cy, e = _zone_extent(story, P, ('walls',) if H.get('walls') else ('zones', 'walls', 'gutting'))   # centro = mura, se ci sono
     dem = 0.0
     try:
         z = np.load(os.path.join(D, 'dem.npz')); ix = int((cx - float(z['x0'])) / float(z['cell'])); iy = int((cy - float(z['y0'])) / float(z['cell']))
@@ -541,7 +542,7 @@ def render_frames(story, D, city_json, sc, qadir, R):
         for i, (s, f) in enumerate(ok):
             x, y = (i % cols) * W, (i // cols) * (Hh + 22)
             sheet.paste(Image.open(f).convert('RGB').resize((W, Hh)), (x, y + 22))
-            dr.text((x + 6, y + 5), f'{s["label"]}  ({s["year"]:.0f})', fill=(240, 240, 240))
+            dr.text((x + 6, y + 5), s['label'] if s['label'].startswith('alto') else f'{s["label"]}  [anno {s["year"]:.0f}]', fill=(240, 240, 240))
         cp = os.path.join(qadir, 'contact.jpg'); sheet.save(cp, quality=90); R.images.append(cp)
         R.add(S, PASS, 'foglio contatti', os.path.relpath(cp, geo.ROOT) + ': guardalo prima del pod (strade come nastri chiari, centro pieno)')
 
