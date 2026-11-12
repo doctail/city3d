@@ -1,5 +1,5 @@
 Valencia: regia automatica (kit/regia_kit.py)
-Durata 10:00.0  fotogrammi 14400  inquadrature 83  stacco medio ogni 7.2 s
+Durata 8:31.5  fotogrammi 12276  inquadrature 82  stacco medio ogni 6.2 s
 Musica: waking_monument  b_start 260.0  notte 460.5
 
 ANCORE (video -> anno):
@@ -13,101 +13,95 @@ SOSTE (video -> anni):
   0:18.9-0:25.9  1238.0->1238.0  Balansiya surrenders  [forza 0.0]
   0:26.0-0:33.0  1238.8->1238.8  The city empties  [forza 0.0]
   0:33.0-0:38.5  1239.0->1239.0  A new Valencia  [forza 0.0]
-  0:39.8-0:45.8  1261.0->1261.0  The Furs of Valencia  [forza 0.0]
-  0:45.9-0:50.9  1262.0->1270.0  The Cathedral rises on the Great Mosque (1262)  [forza 5.0, bell]
-  0:50.9-0:57.4  1262.0->1262.0  The Cathedral and the water court  [forza 0.0]
-  1:02.6-1:07.6  1348.0->1348.0  The Black Death  [forza 0.0]
-  1:08.1-1:16.1  1356.0->1370.0  A new, larger city wall (1356)  [forza 4.5, build]
-  1:16.2-1:23.2  1356.0->1356.0  A war, a bigger wall  [forza 0.0]
-  1:24.4-1:32.4  1377.0->1377.0  The Senyera coronada  [forza 0.0]
-  1:32.7-1:37.7  1381.0->1429.0  El Micalet bell tower (1381-1429)  [forza 5.0, bell]
-  1:37.7-1:42.7  1392.0->1398.0  Torres de Serrans (1392-98)  [forza 4.0, stone]
-  1:42.7-1:47.7  1398.0->1398.0  Torres de Serrans  [forza 0.0]
-  1:49.6-1:54.6  1429.0->1429.0  El Micalet  [forza 0.0]
-  1:55.3-1:59.8  1441.0->1460.0  Torres de Quart (1441-60)  [forza 4.0, stone]
-  1:59.8-2:04.8  1460.0->1460.0  Torres de Quart  [forza 0.0]
-  2:06.2-2:11.2  1483.0->1498.0  La Llotja de la Seda (1483)  [forza 4.0, stone]
-  2:11.2-2:17.2  1483.0->1483.0  La Llotja de la Seda  [forza 0.0]
-  2:18.3-2:24.3  1500.0->1500.0  The largest city of the Crown  [forza 0.0]
-  2:25.4-2:31.4  1518.0->1607.0  Stone bridges cross the Turia (1518-1607)  [forza 4.0, stone]
-  2:31.4-2:38.4  1519.0->1519.0  The Germania  [forza 0.0]
-  2:38.8-2:43.3  1526.0->1526.0  Forced conversions  [forza 0.0]
-  2:48.2-2:53.7  1607.0->1607.0  Stone bridges over the Turia  [forza 0.0]
-  2:53.8-3:01.8  1609.0->1609.0  The Moriscos are expelled  [forza 0.0]
-  3:05.4-3:11.4  1667.0->1667.0  The Basilica and the Falles  [forza 0.0]
-  3:13.5-3:17.5  1703.0->1741.0  The baroque Iron Gate (1703-41)  [forza 5.0, bell]
-  3:17.6-3:22.6  1706.1->1706.1  The English ride in  [forza 0.0]
-  3:22.6-3:29.6  1707.0->1707.0  The Furs are abolished  [forza 0.0]
-  3:32.7-3:37.7  1758.0->1758.0  A prosperous Bourbon city  [forza 0.0]
-  3:40.7-3:46.7  1808.0->1808.0  The city rises  [forza 0.0]
-  3:47.0-3:54.0  1812.0->1812.0  Siege of 1812 (1811-12)  [forza 4.2, cannon]
-  3:54.0-4:01.0  1812.0->1812.0  Suchet takes Valencia  [forza 0.0]
-  4:02.7-4:06.2  1840.0->1842.0  Plaza Redonda (1840)  [forza 4.0, stone]
-  4:06.6-4:10.6  1850.0->1859.0  The bullring (1850-59)  [forza 6.0, crowd]
-  4:11.0-4:19.0  1865.0->1868.0  THE WALLS COME DOWN (1865)  [forza 7.5, crash]
-  4:19.1-4:25.1  1865.1->1865.1  The walls come down  [forza 0.0]
-  4:25.3-4:30.3  1868.5->1868.5  The Citadel goes  [forza 0.0]
-  4:30.5-4:35.0  1873.0->1873.0  Capital of a canton  [forza 0.0]
-  4:35.3-4:40.3  1877.0->1877.0  Russafa joins the city  [forza 0.0]
-  4:40.9-4:45.9  1887.0->1900.0  The Ensanche (1887)  [forza 4.0, build]
-  4:45.9-4:49.4  1891.0->1892.0  A convent becomes the main square (1891)  [forza 7.0, crash]
-  4:49.7-4:54.7  1897.0->1897.0  The seaside towns join  [forza 0.0]
-  4:54.9-4:59.9  1900.0->1900.0  A city of 215,687  [forza 0.0]
-  5:00.3-5:04.8  1906.0->1917.0  North Station (1906-17)  [forza 4.0, train]
-  5:04.8-5:10.8  1909.0->1909.0  The Regional Exhibition  [forza 0.0]
-  5:10.8-5:14.8  1909.4->1910.0  Regional Exhibition (1909)  [forza 6.0, crowd]
-  5:15.1-5:19.6  1915.0->1928.0  Central Market (1915-28)  [forza 6.0, crowd]
-  5:19.7-5:23.2  1923.3->1923.5  Mestalla stadium (1923)  [forza 6.0, crowd]
-  5:23.6-5:27.6  1931.0->1933.0  City Hall square (1931-33)  [forza 4.0, build]
-  5:27.9-5:33.9  1936.8->1936.8  Capital of the Republic  [forza 0.0]
-  5:34.0-5:38.5  1939.2->1939.2  The war ends  [forza 0.0]
-  5:39.1-5:44.1  1950.0->1950.0  Half a million  [forza 0.0]
-  5:44.6-5:51.6  1957.8->1957.8  The Turia floods  [forza 0.0]
-  5:51.6-6:03.6  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
-  6:03.8-6:09.8  1961.0->1961.0  The Plan Sur  [forza 0.0]
-  6:09.9-6:14.4  1962.0->1962.0  A city of immigrants  [forza 0.0]
-  6:14.5-6:24.5  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
-  6:24.5-6:31.0  1970.0->1970.0  The river is moved  [forza 0.0]
-  6:31.0-6:35.5  1970.0->1970.0  Growing fast  [forza 0.0]
-  6:36.2-6:42.7  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
-  6:43.0-6:48.0  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
-  6:48.0-6:54.5  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
-  6:54.7-6:59.2  1989.0->1989.0  Calatrava arrives  [forza 0.0]
-  6:59.5-7:05.5  1995.0->2000.9  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
-  7:05.6-7:11.6  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
-  7:11.8-7:17.8  2001.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
-  7:17.8-7:21.8  2007.0->2008.0  America's Cup marina (2007)  [forza 4.0, sea]
-  7:21.9-7:26.4  2007.0->2007.0  The America's Cup  [forza 0.0]
+  0:40.0-0:46.0  1261.0->1261.0  The Furs of Valencia  [forza 0.0]
+  0:46.0-0:51.0  1262.0->1270.0  The Cathedral rises on the Great Mosque (1262)  [forza 5.0, bell]
+  0:51.1-0:57.6  1262.0->1262.0  The Cathedral and the water court  [forza 0.0]
+  1:03.3-1:08.3  1348.0->1348.0  The Black Death  [forza 0.0]
+  1:08.8-1:16.8  1356.0->1370.0  A new, larger city wall (1356)  [forza 4.5, build]
+  1:16.8-1:23.8  1356.0->1356.0  A war, a bigger wall  [forza 0.0]
+  1:25.2-1:33.2  1377.0->1377.0  The Senyera coronada  [forza 0.0]
+  1:33.5-1:38.5  1381.0->1429.0  El Micalet bell tower (1381-1429)  [forza 5.0, bell]
+  1:38.5-1:43.5  1392.0->1398.0  Torres de Serrans (1392-98)  [forza 4.0, stone]
+  1:43.5-1:48.5  1398.0->1398.0  Torres de Serrans  [forza 0.0]
+  1:50.6-1:55.6  1429.0->1429.0  El Micalet  [forza 0.0]
+  1:56.4-2:00.9  1441.0->1460.0  Torres de Quart (1441-60)  [forza 4.0, stone]
+  2:00.9-2:05.9  1460.0->1460.0  Torres de Quart  [forza 0.0]
+  2:07.4-2:12.4  1483.0->1498.0  La Llotja de la Seda (1483)  [forza 4.0, stone]
+  2:12.4-2:18.4  1483.0->1483.0  La Llotja de la Seda  [forza 0.0]
+  2:19.6-2:25.6  1500.0->1500.0  The largest city of the Crown  [forza 0.0]
+  2:26.8-2:32.8  1518.0->1607.0  Stone bridges cross the Turia (1518-1607)  [forza 4.0, stone]
+  2:32.8-2:39.8  1519.0->1519.0  The Germania  [forza 0.0]
+  2:40.3-2:44.8  1526.0->1526.0  Forced conversions  [forza 0.0]
+  2:50.1-2:55.6  1607.0->1607.0  Stone bridges over the Turia  [forza 0.0]
+  2:55.8-3:03.8  1609.0->1609.0  The Moriscos are expelled  [forza 0.0]
+  3:07.6-3:13.6  1667.0->1667.0  The Basilica and the Falles  [forza 0.0]
+  3:16.0-3:20.0  1703.0->1741.0  The baroque Iron Gate (1703-41)  [forza 5.0, bell]
+  3:20.0-3:25.0  1706.1->1706.1  The English ride in  [forza 0.0]
+  3:25.1-3:32.1  1707.0->1707.0  The Furs are abolished  [forza 0.0]
+  3:35.5-3:40.5  1758.0->1758.0  A prosperous Bourbon city  [forza 0.0]
+  3:43.8-3:49.8  1808.0->1808.0  The city rises  [forza 0.0]
+  3:50.0-3:57.0  1812.0->1812.0  Siege of 1812 (1811-12)  [forza 4.2, cannon]
+  3:57.0-4:04.0  1812.0->1812.0  Suchet takes Valencia  [forza 0.0]
+  4:05.9-4:09.4  1840.0->1842.0  Plaza Redonda (1840)  [forza 4.0, stone]
+  4:09.9-4:13.9  1850.0->1859.0  The bullring (1850-59)  [forza 6.0, crowd]
+  4:14.3-4:22.3  1865.0->1868.0  THE WALLS COME DOWN (1865)  [forza 7.5, crash]
+  4:22.4-4:28.4  1865.1->1865.1  The walls come down  [forza 0.0]
+  4:28.6-4:33.6  1868.5->1868.5  The Citadel goes  [forza 0.0]
+  4:33.9-4:38.4  1873.0->1873.0  Capital of a canton  [forza 0.0]
+  4:38.6-4:43.6  1877.0->1877.0  Russafa joins the city  [forza 0.0]
+  4:44.3-4:49.3  1887.0->1900.0  The Ensanche (1887)  [forza 4.0, build]
+  4:49.4-4:52.9  1891.0->1892.0  A convent becomes the main square (1891)  [forza 7.0, crash]
+  4:53.2-4:58.2  1897.0->1897.0  The seaside towns join  [forza 0.0]
+  4:58.4-5:03.4  1900.0->1900.0  A city of 215,687  [forza 0.0]
+  5:03.8-5:08.3  1906.0->1917.0  North Station (1906-17)  [forza 4.0, train]
+  5:08.3-5:14.3  1909.0->1909.0  The Regional Exhibition  [forza 0.0]
+  5:14.3-5:18.3  1909.4->1910.0  Regional Exhibition (1909)  [forza 6.0, crowd]
+  5:18.7-5:23.2  1915.0->1928.0  Central Market (1915-28)  [forza 6.0, crowd]
+  5:23.2-5:26.7  1923.3->1923.5  Mestalla stadium (1923)  [forza 6.0, crowd]
+  5:27.2-5:31.2  1931.0->1933.0  City Hall square (1931-33)  [forza 4.0, build]
+  5:31.5-5:37.5  1936.8->1936.8  Capital of the Republic  [forza 0.0]
+  5:37.6-5:42.1  1939.2->1939.2  The war ends  [forza 0.0]
+  5:42.8-5:47.8  1950.0->1950.0  Half a million  [forza 0.0]
+  5:48.4-5:55.4  1957.8->1957.8  The Turia floods  [forza 0.0]
+  5:55.4-6:07.4  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
+  6:07.6-6:13.6  1961.0->1961.0  The Plan Sur  [forza 0.0]
+  6:13.6-6:18.1  1962.0->1962.0  A city of immigrants  [forza 0.0]
+  6:18.3-6:28.3  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
+  6:28.3-6:34.8  1970.0->1970.0  The river is moved  [forza 0.0]
+  6:34.8-6:39.3  1970.0->1970.0  Growing fast  [forza 0.0]
+  6:40.1-6:46.6  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
+  6:46.8-6:51.8  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
+  6:51.9-6:58.4  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
+  6:58.6-7:03.1  1989.0->1989.0  Calatrava arrives  [forza 0.0]
+  7:03.5-7:09.5  1995.0->2000.9  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
+  7:09.5-7:15.5  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
+  7:15.7-7:21.7  2001.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
+  7:21.7-7:26.2  2007.0->2007.0  The America's Cup  [forza 0.0]
   7:27.4-7:35.4  2024.8->2024.8  DANA, 29 October 2024  [forza 0.0]
   7:35.4-7:40.4  2025.0->2025.0  Valencia today  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
   0:30   1238.8  (0.00 anni/s)
-  1:00   1304.5  (16.54 anni/s)
+  1:00   1298.7  (15.10 anni/s)
   1:30   1377.0  (0.00 anni/s)
-  2:00   1460.0  (0.51 anni/s)
-  2:30   1586.9  (14.83 anni/s)
+  2:00   1456.3  (4.22 anni/s)
+  2:30   1566.0  (14.83 anni/s)
   3:00   1609.0  (0.00 anni/s)
-  3:30   1713.2  (16.53 anni/s)
+  3:30   1707.0  (0.00 anni/s)
   4:00   1812.0  (0.00 anni/s)
   4:30   1868.5  (0.00 anni/s)
-  5:00   1901.7  (11.64 anni/s)
-  5:30   1936.8  (0.00 anni/s)
+  5:00   1900.0  (0.00 anni/s)
+  5:30   1932.4  (0.50 anni/s)
   6:00   1957.8  (0.00 anni/s)
   6:30   1970.0  (0.00 anni/s)
-  7:00   1995.4  (0.98 anni/s)
+  7:00   1989.0  (0.00 anni/s)
   7:30   2024.8  (0.00 anni/s)
   8:00   2023.1  (5.72 anni/s)
   8:30   2026.0  (0.00 anni/s)
-  9:00   2026.0  (0.00 anni/s)
-  9:30   2026.0  (0.00 anni/s)
 
-Velocita fuori dalle soste: mediana 16.53 anni/s, max 16.5 anni/s
-Soste: 71, 404 s (90% del giorno)
+Velocita fuori dalle soste: mediana 15.10 anni/s, max 15.1 anni/s
+Soste: 70, 400 s (89% del giorno)
 
 AVVISI:
-  - durata 600.0 oltre la musica (511.5 s)
-  - sosta senza bersaglio: Jaume I takes Valencia (1238) -> target 'Muslim walled city' non trovato (uso la citta' dell'anno)
-  - sosta senza bersaglio: A new, larger city wall (1356) -> target 'Christian expansion within the 1356 wall' non trovato (uso la citta' dell'anno)
-  - sosta senza bersaglio: THE WALLS COME DOWN (1865) -> target 'Christian expansion within the 1356 wall' non trovato (uso la citta' dell'anno)
+  nessuno

@@ -5199,7 +5199,7 @@
  ],
  "regia": {
   "music": "waking_monument",
-  "duration": 600,
+  "duration": 511.5,
   "night": true,
   "open": {
    "year": 2026,
@@ -5212,7 +5212,7 @@
     "y1": 1238.8,
     "dur": 6,
     "caption": "Jaume I takes Valencia (1238)",
-    "target": "Muslim walled city",
+    "target": "area:[39.4757,-0.3762,500]",
     "shot": "medium",
     "fx": "crowd",
     "src": [
@@ -5239,7 +5239,7 @@
     "y1": 1370,
     "dur": 8,
     "caption": "A new, larger city wall (1356)",
-    "target": "Christian expansion within the 1356 wall",
+    "target": "area:[39.4735,-0.3765,1100]",
     "shot": "top",
     "fx": "build",
     "src": [
@@ -5373,7 +5373,7 @@
     "y1": 1868,
     "dur": 8,
     "caption": "THE WALLS COME DOWN (1865)",
-    "target": "Christian expansion within the 1356 wall",
+    "target": "area:[39.4735,-0.3765,1100]",
     "shot": "top",
     "fx": "crash",
     "src": [
@@ -5546,20 +5546,6 @@
      "S17"
     ],
     "conf": "medium"
-   },
-   {
-    "y0": 2007,
-    "y1": 2008,
-    "dur": 4,
-    "caption": "America's Cup marina (2007)",
-    "target": "area:[39.4590,-0.3200,900]",
-    "shot": "wide",
-    "fx": "sea",
-    "src": [
-     "S37"
-    ],
-    "conf": "low",
-    "note": "ubicazione marina approssimata; fonte per la Coppa non letta"
    }
   ],
   "rmin": 0.5,
