@@ -27,8 +27,8 @@ _BASE_STYLE = {
     "sky_light": 0.35, "sun_energy": 5.0, "sky_in_reflections": True,
     "sunset_el": 4.0, "sunset_sun": 9.0, "exp_sunset": 0.35,
     "twilight_sun": 0.12, "twilight_sky": 0.05, "twilight_sky_col": "#1f2f5a", "exp_twilight": 0.0,
-    # notte: night_bld_off e' il nome letto dal codice; night_off resta per compatibilita' (alias, vedi build_render.py)
-    "night_bld_off": 0.82, "night_off": 0.82, "night_floor_off": 0.45, "night_win_off": 0.22,
+    # notte: night_bld_off e' il nome letto da build_render.py (night_off dei vecchi json non e' letto)
+    "night_bld_off": 0.82, "night_floor_off": 0.45, "night_win_off": 0.22,
     "night_win": 4.5, "night_street": 0.9, "night_sky": 0.01, "moon": 0.05,
     "night_ground": [0.6, 6.0, 0.25], "night_lamp": "#ffa955", "bulb": 14.0, "bulb_size": 1.6,
 }

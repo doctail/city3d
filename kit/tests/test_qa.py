@@ -112,7 +112,7 @@ class TestCityJson(unittest.TestCase):
             c = city_json.build_city(geo.load_story(sp))
             self.assertEqual(city_json.validate(c), [])
             for k in city_json.NYC_DEFAULT_KEYS: self.assertIn(k, c)
-            self.assertEqual(c['hist'], 'hist_qaville'); self.assertEqual(c['style']['night_off'], c['style']['night_bld_off'])
+            self.assertEqual(c['hist'], 'hist_qaville'); self.assertNotIn('night_off', c['style']); self.assertIn('night_bld_off', c['style'])
             del c['core_box']; c['style'].pop('wall_old')
             e = city_json.validate(c); self.assertTrue(any('core_box' in x for x in e)); self.assertTrue(any('wall_old' in x for x in e))
 

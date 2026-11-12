@@ -62,7 +62,9 @@ def build_city(story):
     for k in PASSTHROUGH:
         if k in c: cfg[k] = c[k]
     st = dict(style); st.update(c.get('style', {}))
-    st['night_off'] = st.get('night_bld_off', st.get('night_off'))   # alias tenuto allineato
+    if 'night_off' in st and 'night_bld_off' not in c.get('style', {}):   # chiave vecchia nella story: si traduce nel nome letto
+        st['night_bld_off'] = st.pop('night_off')
+    st.pop('night_off', None)
     cfg['style'] = st
     # copertina: obliqua da sud sul centro storico, anni di inizio e fine (notte sull'ultimo se la regia ha la notte)
     cx, cy, e = _zone_extent(story, P)

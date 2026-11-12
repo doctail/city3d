@@ -52,5 +52,5 @@ Mini città sintetica: fonti, densità con/senza predecessori, viale moderno vuo
 
 ## Correzioni fatte al codice esistente (11 nov 2026)
 - `tools/costo_cambi.py`: `bin` letto dal city json (prima 4 fisso: per Roma, bin 10, contava troppi oggetti).
-- `build_render.py`: `sky_grad` usa `sun_rot` (prima 230 fisso: a Parigi, sun_rot 140, il bagliore del cielo non era dove sta il sole); `style.night_off` vale come alias di `night_bld_off`. **Effetto sulle città vecchie se rifatte di notte**: Roma/Copenaghen (0,82) e Siviglia/Parigi (0,72) avranno più palazzi spenti del 35 % usato finora.
+- `build_render.py`: `sky_grad` usa `sun_rot` (prima 230 fisso: a Parigi, sun_rot 140, il bagliore del cielo non era dove sta il sole). Nessun alias `night_off`: le città vecchie restano al 35 % di palazzi spenti; il kit scrive direttamente `night_bld_off`.
 - `run.sh`: ramo kit per le città con `cities/<slug>/story.json` (le altre invariate).
