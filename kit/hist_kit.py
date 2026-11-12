@@ -21,6 +21,8 @@ from shapely.strtree import STRtree
 from .geo import ROOT, Proj, data_dir, load_story
 
 CELL = 120.0          # griglia di urban_year fuori dalle zone (stessa cella di CELLMIN in build_render)
+FCELL = 60.0          # griglia fine del primo edificio/predecessore vivo (regola: suolo urbano solo con le case)
+LANE_W = 12.0         # nastri stradali piu' stretti di cosi' nelle zone = vicoli antichi: compaiono con la zona
 COUNTRY = 9999.0      # campagna: mai citta'
 STAT_YEARS = (1500, 1800, 1900)
 
@@ -87,10 +89,26 @@ class Ctx:
             self.zones.append(dict(name=z.get('name', f'zone{i}'), poly=poly, pp=prep(poly), b0=float(b0), b1=float(b1),
                                    seed=seed, dmax=max(dmax, 1.0), eh=z.get('era_height')))
         self.zones.sort(key=lambda z: z['b0'])      # la piu' antica per prima: vale lei
-        self.wall_p = None
-        for w in H.get('walls', []) or []:
-            if w.get('ring'): self.wall_p = _poly(self.P.ring(w['ring'])); break
-        self._grid = None
+        # WALL_P = la cinta 'ring' piu' antica (built[0] minimo), non la prima elencata
+        rings = sorted((w for w in H.get('walls', []) or [] if w.get('ring')), key=lambda w: (w.get('built') or [9999])[0])
+        self.wall_p = _poly(self.P.ring(rings[0]['ring'])) if rings else None
+        self._grid = None     # 10o percentile per cella di 120 m
+        self._first = None    # primo anno di nascita per cella di 60 m
+
+    def first_near(self, x, y):
+        """Primo anno in cui c'e' un edificio (attuale o predecessore) entro ~60 m (celle 3x3 da 60 m); None se nessuno."""
+        ix, iy = int(x // FCELL), int(y // FCELL)
+        v = [self._first[k] for k in ((ix + a, iy + b) for a in (-1, 0, 1) for b in (-1, 0, 1)) if k in self._first]
+        return min(v) if v else None
+
+    def urban(self, x, y):
+        """Anno in cui il punto diventa citta': nella zona piu' antica = rampa nel punto, mai prima della prima casa
+        entro ~60 m (nessuna casa vicina = campagna); fuori dalle zone = 10o percentile della cella di 120 m."""
+        z = self.zone_at(x, y)
+        if z:
+            f = self.first_near(x, y)
+            return COUNTRY if f is None else max(self.ramp(z, x, y), f)
+        return float(self._grid.get((int(x // CELL), int(y // CELL)), COUNTRY))
 
     def zone_at(self, x, y):
         p = Point(x, y)
@@ -155,14 +173,13 @@ def urban_year(x, y):
     di 120 m (10o percentile, da urban_kit.json), altrimenti 9999 (campagna)."""
     c = _ctx()
     if c is None: return COUNTRY
-    z = c.zone_at(x, y)
-    if z: return c.ramp(z, x, y)
     if c._grid is None:
-        d = _data_for(c); c._grid = {}
+        d = _data_for(c); c._grid, c._first = {}, {}
         if d:
-            g = json.load(open(os.path.join(d, 'urban_kit.json')))
+            with open(os.path.join(d, 'urban_kit.json')) as f: g = json.load(f)
             c._grid = {tuple(map(int, k.split(','))): v for k, v in g['p'].items()}
-    return float(c._grid.get((int(x // CELL), int(y // CELL)), COUNTRY))
+            c._first = {tuple(map(int, k.split(','))): v for k, v in g.get('first', {}).items()}
+    return c.urban(x, y)
 
 
 def __getattr__(name):
@@ -231,10 +248,11 @@ def gutting_pass(ctx, blds, tree, rnd):
         ang = math.degrees(math.atan2(e[1][1] - e[0][1], e[1][0] - e[0][0]))
         n = 0
         for q in _lots(void, ang, G.centroid, rnd) if not void.is_empty else []:
-            born = f0 + rnd.uniform(0, 10) if f0 > ctx.start else min(f0, ctx.start - rnd.uniform(1, 6))
+            cc = q.centroid; z = ctx.zone_at(cc.x, cc.y)
+            f1 = max(f0, ctx.ramp(z, cc.x, cc.y)) if z else f0      # mai prima della zona che le contiene
+            born = f1 + rnd.uniform(0, 10) if f1 > ctx.start else min(f1, ctx.start - rnd.uniform(1, 6))
             died = until - rnd.uniform(0.2, 1.5)
             if died - born < 8: continue
-            cc = q.centroid; z = ctx.zone_at(cc.x, cc.y)
             out.append({'r': _ring_out(q), 'h': _height(z['eh'] if z else None, born, rnd), 'y': round(born, 2), 'd': round(died, 2),
                         'zone': g.get('name', 'gutting'), 'kit': 'gut'})
             n += 1
@@ -338,17 +356,29 @@ def _backup(D, name):
 
 
 def roads_pass(ctx, D):
+    """Strade: nei gutting compaiono a 'until'; nelle zone i vicoli (larghezza < LANE_W) compaiono con la zona
+    (max(rampa, prima casa vicina)) se l'anno attuale e' piu' tardo. I viali larghi non vengono anticipati."""
     G = [(prep(_poly(ctx.P.ring(g['ring']))), _poly(ctx.P.ring(g['ring'])), float(g['until'])) for g in ctx.H.get('gutting', []) or []]
-    if not G or not (os.path.exists(os.path.join(D, 'roads.json')) or os.path.exists(os.path.join(D, 'roads_orig.json'))): return 0
-    roads = _backup(D, 'roads'); n = 0
+    if not (G or ctx.zones) or not (os.path.exists(os.path.join(D, 'roads.json')) or os.path.exists(os.path.join(D, 'roads_orig.json'))):
+        return (0, 0)
+    roads = _backup(D, 'roads'); n = m = 0
     for r in roads:
         try: q = _poly(r['r'])
         except Exception: continue
+        if q.is_empty: continue
+        c = q.centroid; gut = False
         for gp, gpoly, until in G:
-            if r['y'] < until and (gp.contains(q.centroid) or (q.area > 0 and q.intersection(gpoly).area > 0.3 * q.area)):
-                r['y'] = until; n += 1
-    json.dump(roads, open(os.path.join(D, 'roads.json'), 'w'))
-    return n
+            if gp.contains(c) or (q.area > 0 and q.intersection(gpoly).area > 0.3 * q.area):
+                gut = True
+                if r['y'] < until: r['y'] = until; n += 1
+        if gut or r.get('rail') or q.length <= 0 or 2 * q.area / q.length >= LANE_W: continue
+        z = ctx.zone_at(c.x, c.y)
+        if not z: continue
+        f = ctx.first_near(c.x, c.y)
+        y = max(ctx.ramp(z, c.x, c.y), f if f is not None else z['b1'])
+        if y < r['y']: r['y'] = round(y, 1); m += 1
+    with open(os.path.join(D, 'roads.json'), 'w') as f: json.dump(roads, f)
+    return (n, m)
 
 
 def bridges_pass(ctx, D):
@@ -373,16 +403,48 @@ def bridges_pass(ctx, D):
 
 
 def _grid(blds, hist):
-    """10o percentile degli anni di nascita (attuali con anno originale + predecessori) per cella di 120 m."""
-    cells = collections.defaultdict(list)
+    """urban_kit.json: 'p' = 10o percentile degli anni di nascita per cella di 120 m; 'first' = primo anno per cella di 60 m
+    (attuali con l'anno originale prima dei fuochi + predecessori)."""
+    cells = collections.defaultdict(list); first = {}
     for b in list(blds) + list(hist):
         try: x, y = b['r'][0]
         except Exception: continue
-        cells[(int(x // CELL), int(y // CELL))].append(b.get('y_kit0', b['y']))
+        yb = min(b['y'], b.get('y_kit0', b['y']))
+        cells[(int(x // CELL), int(y // CELL))].append(yb)
+        k = (int(x // FCELL), int(y // FCELL)); first[k] = min(first.get(k, 99999), yb)
     out = {}
     for k, v in cells.items():
         v.sort(); out[f'{k[0]},{k[1]}'] = round(v[min(len(v) - 1, int(len(v) * 0.1))], 1)
-    return {'cell': CELL, 'p': out}
+    return {'cell': CELL, 'p': out, 'fcell': FCELL, 'first': {f'{a},{b}': round(v, 1) for (a, b), v in first.items()}}
+
+
+def _load_grid(ctx, g):
+    ctx._grid = {tuple(map(int, k.split(','))): v for k, v in g['p'].items()}
+    ctx._first = {tuple(map(int, k.split(','))): v for k, v in g['first'].items()}
+
+
+def landphases(ctx):
+    """history.water -> landphases. Le lastre 'urban' (suolo di citta') non possono precedere le case: tagliate a celle
+    di 120 m, ogni cella e' 'field' fino a urban_year (arrotondato al decennio) e 'urban' da li'; celle unite per anno."""
+    out = []
+    for w in ctx.H.get('water', []) or []:
+        a, b, c = w.get('from', -9999), w.get('to', 99999), w.get('c', 'field')
+        ring = ctx.P.ring(w['ring'])
+        if c != 'urban':
+            out.append({'r': ring, 'from': a, 'to': b, 'c': c, 'name': w.get('name', '')}); continue
+        poly = _poly(ring); x0, y0, x1, y1 = poly.bounds; by = collections.defaultdict(list)
+        for ix in range(int(x0 // CELL), int(x1 // CELL) + 1):
+            for iy in range(int(y0 // CELL), int(y1 // CELL) + 1):
+                q = poly.intersection(box(ix * CELL, iy * CELL, (ix + 1) * CELL, (iy + 1) * CELL))
+                if q.is_empty: continue
+                u = ctx.urban((ix + 0.5) * CELL, (iy + 0.5) * CELL)
+                by[max(a, math.ceil(u / 10) * 10) if u < COUNTRY else b].append(q)    # senza case vicine: campo per sempre
+        for u, qs in sorted(by.items()):
+            g = unary_union(qs)
+            for p_ in _polys(g):
+                if u > a: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': min(u, b), 'c': 'field', 'name': w.get('name', '')})
+                if u < b: out.append({'r': _ring_out(p_, 1), 'from': u, 'to': b, 'c': 'urban', 'name': w.get('name', '')})
+    return out
 
 
 # ---------------------------------------------------------------- pipeline
@@ -403,9 +465,10 @@ def build(story, D=None, seed=11, quiet=False):
     if any('y_kit0' in b for b in blds) or touched:
         json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w'))
     json.dump(hist, open(os.path.join(D, 'hist.json'), 'w'))
+    grid = _grid(good, hist); _load_grid(ctx, grid)
+    json.dump(grid, open(os.path.join(D, 'urban_kit.json'), 'w'))
     if H.get('water'):
-        ph = [{'r': ctx.P.ring(w['ring']), 'from': w.get('from', -9999), 'to': w.get('to', 99999), 'c': w.get('c', 'field'),
-               'name': w.get('name', '')} for w in H['water']]
+        ph = landphases(ctx)
         if os.path.exists(os.path.join(D, 'landphases.json')): _backup(D, 'landphases')
         json.dump(ph, open(os.path.join(D, 'landphases.json'), 'w'))
     if H.get('fires'):
@@ -420,7 +483,6 @@ def build(story, D=None, seed=11, quiet=False):
     nbr = bridges_pass(ctx, D)
     walls = walls_parts(ctx, random.Random(seed + 3))
     json.dump(walls, open(os.path.join(D, 'landmarks_walls.json'), 'w'))
-    json.dump(_grid(good, hist), open(os.path.join(D, 'urban_kit.json'), 'w'))
     # statistiche
     allb = blds + hist
     alive = {Y: sum(1 for b in allb if b['y'] <= Y < b.get('d', 99999)) for Y in (ctx.start,) + STAT_YEARS}
@@ -428,14 +490,14 @@ def build(story, D=None, seed=11, quiet=False):
           'by_century': dict(sorted(collections.Counter(int(h['y'] // 100 * 100) for h in hist).items())),
           'by_zone': dict(collections.Counter(h.get('zone', h.get('name', '?')) for h in hist)),
           'by_kind': dict(collections.Counter(h['kit'] for h in hist)),
-          'gutting_filled': filled, 'roads_moved': nroads, 'bridges_updated_added': list(nbr), 'fires_destroyed': burned,
+          'gutting_filled': filled, 'roads_gutting_lanes': list(nroads), 'landphases': len(ph) if H.get('water') else None, 'bridges_updated_added': list(nbr), 'fires_destroyed': burned,
           'wall_parts': len(walls), 'alive': {str(int(k)): v for k, v in alive.items()}}
     json.dump(st, open(os.path.join(D, 'hist_kit_stats.json'), 'w'), indent=1)
     if not quiet:
         print(f"[hist_kit] {story['city']['slug']}: {len(hist)} predecessori da {len(blds)} edifici attuali", flush=True)
         for k in ('by_century', 'by_zone', 'by_kind', 'gutting_filled', 'fires_destroyed'):
             print(f'[hist_kit] {k}: {st[k]}', flush=True)
-        print(f"[hist_kit] strade spostate {nroads}, ponti aggiornati/aggiunti {nbr}, parti mura {len(walls)}", flush=True)
+        print(f"[hist_kit] strade gutting/vicoli anticipati {nroads}, landphases {st['landphases']}, ponti aggiornati/aggiunti {nbr}, parti mura {len(walls)}", flush=True)
         print('[hist_kit] edifici vivi: ' + ', '.join(f'{k}: {v}' for k, v in st['alive'].items()), flush=True)
     return st
 

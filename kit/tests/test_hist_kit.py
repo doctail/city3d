@@ -40,7 +40,8 @@ def make_city(tmp):
             'lost': [{'name': 'Convent', 'ring': LL(rect(300, 100, 330, 130)), 'from': 1250, 'to': 1800, 'h': 14, 'src': ['S1']}],
             'fires': [{'name': 'Fire', 'ring': LL(rect(80, -60, 140, 60)), 'y': 1700, 'y1': 1700.05, 'destroy': True,
                        'origin': list(P.inv(80, 0)), 'src': ['S1']}],
-            'water': [{'name': 'Marsh', 'ring': LL(rect(500, 0, 700, 200)), 'from': -9999, 'to': 1600, 'c': 'field'}],
+            'water': [{'name': 'Marsh', 'ring': LL(rect(500, 0, 700, 200)), 'from': -9999, 'to': 1600, 'c': 'field'},
+                      {'name': 'Low centre', 'ring': LL(rect(240, -230, 480, 10)), 'from': -9999, 'to': 99999, 'c': 'urban'}],
             'bridges': [{'name': 'Old Bridge', 'line': LL([[600, -300], [600, -200]]), 'w': 10, 'y': 1500, 'd': None},
                         {'name': 'Unnamed match', 'line': LL([[800, -300], [800, -200]]), 'w': 10, 'y': 1600},
                         {'name': 'New Bridge', 'line': LL([[900, -300], [900, -200]]), 'w': 10, 'y': 1700}]}}
@@ -52,7 +53,9 @@ def make_city(tmp):
             {'r': sq(1000, 1000, 5), 'h': 10, 'y': 1900}]  # fuori: campagna fino al 1900
     blds += [{'r': sq(1000 + 12 * i, 1000, 4), 'h': 10, 'y': 1900 + i} for i in range(1, 5)]
     json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w'))
-    json.dump([{'r': rect(-150, -5, -90, 5), 'y': 1500, 'rail': 0}, {'r': rect(1000, -5, 1100, 5), 'y': 1500, 'rail': 0}],
+    json.dump([{'r': rect(-150, -5, -90, 5), 'y': 1500, 'rail': 0}, {'r': rect(1000, -5, 1100, 5), 'y': 1500, 'rail': 0},
+               {'r': rect(270, -15, 330, -9), 'y': 1960, 'rail': 0},       # vicolo (6 m) nella zona new: compare con la zona
+               {'r': rect(250, 20, 350, 44), 'y': 1960, 'rail': 0}],       # viale (24 m): resta al 1960
               open(os.path.join(D, 'roads.json'), 'w'))
     json.dump([{'r': rect(595, -300, 605, -200), 'y': 2026, 'name': 'Old Bridge'},
                {'r': rect(796, -300, 806, -200), 'y': 2026, 'name': ''},
@@ -102,8 +105,22 @@ class HistKit(unittest.TestCase):
         for h in g:
             q = Polygon(h['r']); self.assertTrue(G.buffer(0.1).contains(q)); self.assertLess(h['d'], 1900)
             self.assertLessEqual(h['y'], 1200)          # citta' gia' piena all'inizio
-        roads = ld(self.D, 'roads'); self.assertEqual([r['y'] for r in roads], [1900, 1500])
+        roads = ld(self.D, 'roads'); self.assertEqual([r['y'] for r in roads][:2], [1900, 1500])
         self.assertTrue(os.path.exists(os.path.join(self.D, 'roads_orig.json')))
+
+    def test_lanes_follow_zone_avenues_stay(self):
+        roads = ld(self.D, 'roads')
+        self.assertTrue(1300 <= roads[2]['y'] < 1400); self.assertEqual(roads[3]['y'], 1960)
+
+    def test_urban_slab_waits_for_houses(self):
+        ph = [p for p in ld(self.D, 'landphases') if p['name'] == 'Low centre']
+        urb = [p for p in ph if p['c'] == 'urban']; fld = [p for p in ph if p['c'] == 'field']
+        self.assertTrue(urb and fld)
+        self.assertTrue(all(p['from'] >= 1300 for p in urb))           # niente suolo urbano prima della zona new
+        cell = [p for p in ph if Polygon(p['r']).contains(Point(300, 0))]
+        self.assertEqual(sorted(p['c'] for p in cell), ['field', 'urban'])
+        empty = [p for p in ph if Polygon(p['r']).contains(Point(420, -200))]   # nessuna casa vicina: sempre campo
+        self.assertEqual([(p['c'], p['to']) for p in empty], [('field', 99999)])
 
     def test_lost(self):
         l = [h for h in self.hist if h['kit'] == 'lost']
@@ -147,7 +164,8 @@ class HistKit(unittest.TestCase):
         os.environ['CITY3D_STORY'] = self.sp; os.environ['CITY3D_DATA'] = self.D; HK.reset()
         try:
             self.assertEqual(HK.urban_year(-100, 0), 1100)
-            self.assertAlmostEqual(HK.urban_year(390, 0), 1300 + 50 * 390 / ((400 ** 2 + 200 ** 2) ** 0.5), places=3)
+            self.assertGreaterEqual(HK.urban_year(390, 0), 1300 + 50 * 390 / ((400 ** 2 + 200 ** 2) ** 0.5) - 1e-6)
+            self.assertEqual(HK.urban_year(350, -150), 9999)               # nella zona ma senza case vicine
             self.assertEqual(HK.urban_year(1010, 1000), 1900)
             self.assertEqual(HK.urban_year(5000, 5000), 9999)
             self.assertTrue(HK.WALL_P.contains(Point(0, 0)))
