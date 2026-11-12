@@ -267,3 +267,7 @@ Test da fare su Rotterdam (stesso costo pod degli Shorts attuali):
 - "Porto 3D timelapse", ultimi 45 giorni: City In Layers "Porto - 3D Timelapse - 900 BC to 2026" (21 ott, 7:35, **1.971** views, canale da 332 iscritti) + Short 493; The Ages Built "History of Porto: 3D Timelapse [100 BC → Today]" (3 nov, 19:32, **2.484**, 708 iscritti). Nessuno sopra 5K → **Porto libera per la regola**, ma già fatta due volte.
 - Dalla stessa ricerca: **Salonicco presa** (Urbavision 52K, 7 nov). Prese anche Atene (211K), Praga (1,49M), Vienna (337K), Lisbona (857K), Madrid (216K, altro canale), Costantinopoli (1,12M), Rio (293K), Recife (69K), Napoli (Stratapolis 8,5K).
 - Dati: nessun dataset aperto trovato con l'anno di costruzione **per edificio** a Porto (Censos 2021/INE = agregati per sezione; BGE INE da verificare). Da chiudere prima di qualsiasi lavoro.
+
+## 12 nov 2026: pod con GPU "vista ma rotta" (due pod RTX 5080 di fila, driver 580 / CUDA 13)
+- Sintomo: `nvidia-smi` mostra la scheda, ma Blender scrive "cuInit: Unknown error" e build_render si ferma ("nessuna GPU OPTIX disponibile"). Il vecchio gputest dava un falso OK, perché Cycles ripiegava in silenzio sul processore: corretto (commit 9501a68).
+- Prova decisiva, da lanciare PRIMA di clonare (2 s): `python3 -c "import ctypes;print('cuInit =',ctypes.CDLL('libcuda.so.1').cuInit(0))"` → 0 = ok; 999 = pod rotto: terminare e cambiare regione/host (Secure Cloud, template RunPod PyTorch). Indizio: in /dev c'era solo `nvidia1` (seconda GPU di un host multi-GPU).
