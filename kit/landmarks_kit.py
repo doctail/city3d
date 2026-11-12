@@ -492,7 +492,8 @@ def cathedral(ctx):
         for sgn in (-1, 1):   # contrafforti sul muro esterno delle navate (pilastro + pinnacolo) e finestre ogivali della navata alta
             sm = s1 if i == 0 else (s0 + s1) / 2
             seg_ = body.intersection(LineString([F.at(sm, 0), F.at(sm, sgn * (W + 20))]))
-            te = max((abs(F.u[0] * 0 + (px - F.cx) * F.v[0] + (py - F.cy) * F.v[1]) for px, py in getattr(seg_, 'coords', [])), default=W / 2)
+            _pts = [c_ for g_ in getattr(seg_, 'geoms', [seg_]) if not g_.is_empty and hasattr(g_, 'coords') for c_ in g_.coords]
+            te = max((abs((px - F.cx) * F.v[0] + (py - F.cy) * F.v[1]) for px, py in _pts), default=W / 2)
             pc = (sm, sgn * (te + 1.0))
             B.prism(F.rect(pc[0] - 1.0, pc[0] + 1.0, pc[1] - 1.4, pc[1] + 1.4), 0, ah + 3, c, A_STONE, 0.14 + 0.1 * i, 'nave', simp=0)
             px_, py_ = F.at(*pc); B.cone(px_, py_, 1.3, 0.1, ah + 3, ah + 7.5, c, A_STONE, 0.2 + 0.1 * i, 'nave', seg=4)
