@@ -23,7 +23,7 @@ _BASE_STYLE = {
     "park_ground": "#5f8a3e", "reclaim": "#c9b993", "urban_phase": "#b8ad98",
     "street": "#e3dac6", "rail": "#8a8378", "bridge_deck": "#b9b2a4", "bridge_side": "#a39d92",
     "smoke": "#3a3532", "smoke_alpha": 0.85,
-    "water": "#0f6c7c", "water2": "#2a9fae", "water_rough": 0.02, "wave_scale": 0.025, "wave_strength": 0.55,
+    "flood_water": "#946d3c", "water": "#0f6c7c", "water2": "#2a9fae", "water_rough": 0.02, "wave_scale": 0.025, "wave_strength": 0.55,
     "sky_light": 0.35, "sun_energy": 5.0, "sky_in_reflections": True,
     "sunset_el": 4.0, "sunset_sun": 9.0, "exp_sunset": 0.35,
     "twilight_sun": 0.12, "twilight_sky": 0.05, "twilight_sky_col": "#1f2f5a", "exp_twilight": 0.0,

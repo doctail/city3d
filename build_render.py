@@ -1069,6 +1069,30 @@ if ST.get('water2'):   # due toni d'acqua a chiazze grandi (correnti, fondali): 
     _wr.color_ramp.elements[1].position = 0.7; _wr.color_ramp.elements[1].color = (*srgb(ST['water2']), 1)
     nt.links.new(_wr.outputs[0], nt.nodes['Principled BSDF'].inputs['Base Color'])
 obj('water', bm, hazeify(wm))
+# piene (DATA/floods.json [{"r": ring, "y", "y1", "depth", "name"}], come fires.json): superficie d'acqua appoggiata sul DEM
+# (quota rilievo + depth) sopra il ring, visibile solo in [y, y1 + 0.02]; compare e sparisce di colpo (niente salita graduale).
+# Materiale = copia dell'acqua, color fango se esiste la chiave di stile 'flood_water'. Gli edifici restano e stanno nell'acqua.
+# Il nome inizia per 'water' cosi' il blocco rilievo qui sotto non la solleva una seconda volta (la quota DEM e' gia' nei vertici).
+if os.path.exists(f'{DATA}/floods.json'):
+    _fl = json.load(open(f'{DATA}/floods.json')); _fm = wm.copy(); _fp = _fm.node_tree.nodes['Principled BSDF']
+    if ST.get('flood_water'):
+        for l_ in list(_fp.inputs['Base Color'].links): _fm.node_tree.links.remove(l_)
+        _fp.inputs['Base Color'].default_value = (*srgb(ST['flood_water']), 1); _fp.inputs['Roughness'].default_value = 0.25
+    for fl_ in _fl:
+        pg_ = Polygon(fl_['r']).buffer(0); gx0_, gy0_, gx1_, gy1_ = pg_.bounds; cs_ = 30.0; nx_ = int((gx1_ - gx0_) / cs_) + 2; ny_ = int((gy1_ - gy0_) / cs_) + 2
+        def zf_(i, j):
+            x_, y_ = gx0_ + i * cs_, gy0_ + j * cs_
+            return float(dem_at(x_, y_)) + fl_['depth'] if dem_at else fl_['depth']
+        bf_ = bmesh.new(); vs_ = {}
+        def vf_(i, j):
+            if (i, j) not in vs_: vs_[(i, j)] = bf_.verts.new((gx0_ + i * cs_, gy0_ + j * cs_, zf_(i, j)))
+            return vs_[(i, j)]
+        for i in range(nx_):
+            for j in range(ny_):
+                if pg_.contains(Point(gx0_ + (i + .5) * cs_, gy0_ + (j + .5) * cs_)): bf_.faces.new([vf_(i, j), vf_(i + 1, j), vf_(i + 1, j + 1), vf_(i, j + 1)])
+        if bf_.faces:
+            o_ = obj('water_flood_' + str(int(fl_['y'])), bf_, hazeify(_fm)); VIS.append((o_, 'window', (fl_['y'] - 0.0004, fl_['y1'] + 0.02)))
+    log('piene', len(_fl))
 log('terra', len(land), 'poligoni')
 
 # ---------- monumenti: parti che crescono dalla loro base, ognuna col suo anno ----------

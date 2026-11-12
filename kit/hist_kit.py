@@ -1,5 +1,5 @@
 """Strato storico generico del kit: da cities/<slug>/story.json + DATA (buildings.json pronto) genera
-DATA/hist.json (predecessori), landphases.json (history.water), fires.json (history.fires), bridges.json
+DATA/hist.json (predecessori), landphases.json (history.water), fires.json (history.fires), floods.json (history.floods), bridges.json
 (history.bridges uniti a quelli esistenti), roads.json (strade dei gutting), landmarks_walls.json (mura come parti
 'prism') e urban_kit.json (griglia 120 m per urban_year).
 
@@ -510,6 +510,9 @@ def build(story, D=None, seed=11, quiet=False):
             if f.get('origin'): e['origin'] = list(ctx.P.L(*f['origin']))
             fj.append(e)
         json.dump(fj, open(os.path.join(D, 'fires.json'), 'w'))
+    if H.get('floods'):   # piene: acqua fangosa sul DEM, vedi build_render.py (DATA/floods.json)
+        json.dump([{'name': f.get('name', 'flood'), 'r': ctx.P.ring(f['ring']), 'y': f['y'], 'y1': f.get('y1', f['y'] + 0.02), 'depth': f.get('depth', 1.0)}
+                   for f in H['floods']], open(os.path.join(D, 'floods.json'), 'w'))
     nroads = roads_pass(ctx, D)
     nbr = bridges_pass(ctx, D)
     walls = walls_parts(ctx, random.Random(seed + 3))

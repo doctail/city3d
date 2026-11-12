@@ -118,6 +118,7 @@
   "bridge_side": "#a39d92",
   "smoke": "#3a3532",
   "smoke_alpha": 0.85,
+  "flood_water": "#946d3c",
   "water": "#3d8fb0",
   "water2": "#5aa6c4",
   "water_rough": 0.02,

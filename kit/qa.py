@@ -13,6 +13,8 @@ Uso:  python -m kit.qa <slug> [--render] [--story PATH] [--data DIR] [--city JSO
   f) --render: fotogrammi CPU locali (480x270, 4 campioni, niente denoiser) dall'alto del centro in 4 anni chiave e uno per
      ciascuna delle 3 soste piu' lunghe, UNA sola costruzione della scena (schedule QA a blocchi fermi + --only),
      foglio contatti cities/<slug>/qa/contact.jpg
+Deroghe: story["qa"]["accept"] = [{"check": "corridoi", "where": [lat, lon, w_m, h_m], "reason": "..."}]: un FAIL
+  del controllo (sottostringa del titolo) il cui punto cade nel "where" (raggio = max(w, h) m) diventa WARN con la ragione.
 Esce con 1 se c'e' almeno un FAIL.
 """
 import json, math, os, re, subprocess, sys, time
@@ -26,7 +28,7 @@ FPS = 24
 CELL = 4.0                       # m per cella del raster dei corridoi
 YEAR_KEYS = {  # campi-anno per tipo di voce della story (per la regola delle fonti)
     'zones': ('born',), 'walls': ('built', 'demolished'), 'gutting': ('from', 'until'), 'lost': ('from', 'to'),
-    'fires': ('y', 'y1'), 'water': ('from', 'to'), 'bridges': ('y', 'd')}
+    'fires': ('y', 'y1'), 'floods': ('y', 'y1'), 'water': ('from', 'to'), 'bridges': ('y', 'd')}
 CAPTION_RE = re.compile(r'^\S.*\S \((?=[^)]*\d)[^()]+\)$')
 
 
@@ -82,6 +84,17 @@ def _ring_arr(rings):
 def _poly(P, latlons):
     from shapely.geometry import Polygon
     return Polygon(P.ring(latlons)).buffer(0)
+
+
+def _waiver(story, check, la, lo):
+    """Ragione della deroga story.qa.accept che copre (check, lat, lon), o None."""
+    for w in ((story.get('qa') or {}).get('accept') or []):
+        if w.get('check', '') not in check: continue
+        wh = w.get('where')
+        if not wh: return w.get('reason', 'accepted')
+        dy = (la - wh[0]) * 111000; dx = (lo - wh[1]) * 111000 * math.cos(math.radians(wh[0]))
+        if math.hypot(dx, dy) <= max(wh[2:4] or [50]): return w.get('reason', 'accepted')
+    return None
 
 
 def _all_dates(item, kind):
@@ -403,6 +416,12 @@ def check_corridors(story, D, DD, R, qadir, objs):
             la, lo = P.inv(cx, cy)
             return f'#{i} {k["L"]:.0f}x{k["W"]:.0f} m a ({la:.5f},{lo:.5f})'
         n = 1
+        wv = []   # deroghe story.qa.accept: il corridoio resta in lista ma e' WARN con la ragione
+        for k in list(A_):
+            cx_ = x0 + (k['sl'][1].start + k['sl'][1].stop) / 2 * cell; cy_ = yb0 + (H_ - (k['sl'][0].start + k['sl'][0].stop) / 2) * cell
+            rs = _waiver(story, 'corridoi', *P.inv(cx_, cy_))
+            if rs: wv.append((k, rs)); A_.remove(k)
+        if wv: R.add(S, WARN, f'{Y:.0f}: {len(wv)} corridoi accettati (FAIL -> WARN)', '; '.join(f'{desc(k, 0)} — {rs}' for k, rs in wv))
         if A_:
             R.add(S, FAIL, f'{Y:.0f}: {len(A_)} corridoi con forma di strada moderna (niente case, niente nastro)', '; '.join(desc(k, n + i) for i, k in enumerate(A_[:6])) + f' — {os.path.basename(p)}')
             nfail += 1

@@ -1,54 +1,55 @@
-[build] edifici 38241 (1s, 456 MB)
-[build] predecessori storici 9367 (1s, 487 MB)
+[build] edifici 38240 (0s, 456 MB)
+[build] predecessori storici 9367 (1s, 488 MB)
 [build] rilievo sotto gli edifici: max 93 m (2s, 500 MB)
-[build] monumenti: 1664 parti; tolti 25 edifici nelle impronte (10s, 503 MB)
+[build] monumenti: 1664 parti; tolti 25 edifici nelle impronte (9s, 504 MB)
 /home/user/city3d/build_render.py:69: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
-[build] città in 1490 blocchi per anno, 1968169 vertici (15s, 707 MB)
+[build] città in 1490 blocchi per anno, 1967875 vertici (14s, 706 MB)
 /home/user/city3d/build_render.py:240: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
-[build] terra in 1 blocchi (22s, 868 MB)
-[build] suolo urbano dalle impronte: 132744 triangoli in 66 decenni (157s, 1238 MB)
+[build] terra in 1 blocchi (17s, 787 MB)
+[build] suolo urbano dalle impronte: 132646 triangoli in 66 decenni (142s, 1180 MB)
 /home/user/city3d/build_render.py:48: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
 /home/user/city3d/build_render.py:230: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
-[build] terra a fasi 1386 poligoni in 57 finestre (157s, 1238 MB)
-[build] strade 13838 (158s, 1259 MB)
-[build] ponti 433 (158s, 1259 MB)
+[build] terra a fasi 14 poligoni in 4 finestre (142s, 1180 MB)
+[build] strade 13838 (142s, 1202 MB)
+[build] ponti 433 (142s, 1202 MB)
 /home/user/city3d/build_render.py:777: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
-[build] incendi 1 (158s, 1260 MB)
-[build] boschi 0 celle in 0 blocchi (158s, 1260 MB)
-[build] isolati 5291 (164s, 1272 MB)
-[build] parchi 414 (165s, 1286 MB)
-[build] terra 4 poligoni (165s, 1286 MB)
-[build] monumenti costruiti: 1664 parti (165s, 1287 MB)
-[build] rilievo applicato: 1407766 vertici, massimo 168 m (188s, 1716 MB)
-[build] monumenti: parti staccate dalla scena: 1328 (188s, 1715 MB)
-[build] monumenti uniti: 1664 -> 731 oggetti (188s, 1715 MB)
-[build] alberi cotti: 1485687 vertici (189s, 1777 MB)
-/home/user/city3d/build_render.py:1265: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+[build] incendi 1 (142s, 1202 MB)
+[build] boschi 0 celle in 0 blocchi (142s, 1202 MB)
+[build] isolati 5295 (149s, 1215 MB)
+[build] parchi 414 (149s, 1228 MB)
+[build] piene 1 (149s, 1228 MB)
+[build] terra 4 poligoni (149s, 1228 MB)
+[build] monumenti costruiti: 1664 parti (150s, 1229 MB)
+[build] rilievo applicato: 1264246 vertici, massimo 168 m (168s, 1626 MB)
+[build] monumenti: parti staccate dalla scena: 1328 (168s, 1625 MB)
+[build] monumenti uniti: 1664 -> 731 oggetti (168s, 1625 MB)
+[build] alberi cotti: 1483405 vertici (169s, 1705 MB)
+/home/user/city3d/build_render.py:1289: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
   w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
-[build] blocchi: 1490 città, 445 statici (189s, 1777 MB)
-[build] dati di costruzione liberati (189s, 1454 MB)
-[build] CPU (189s, 1454 MB)
-[build] denoiser nessuno (189s, 1454 MB)
-[build] render 1 -> 128 480x270 4 campioni (189s, 1454 MB)
-03:12.502  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0009.jpg'
-[build] fotogramma 9: 2.9s (anno 1238)
-03:14.163  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0025.jpg'
-[build] fotogramma 25: 1.7s (anno 1338)
-03:16.131  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0041.jpg'
-[build] fotogramma 41: 2.0s (anno 1800)
-03:17.763  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0057.jpg'
-[build] fotogramma 57: 1.6s (anno 1900)
-03:19.570  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0073.jpg'
-[build] fotogramma 73: 1.8s (anno 2026)
-03:21.727  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0089.jpg'
-[build] fotogramma 89: 2.2s (anno 1363)
-03:23.653  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0105.jpg'
-[build] fotogramma 105: 1.9s (anno 1958)
-03:25.286  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0121.jpg'
-[build] fotogramma 121: 1.6s (anno 1967)
-[build] FATTO 8 fotogrammi, 1.96s a fotogramma (205s, 2562 MB)
+[build] blocchi: 1490 città, 393 statici (169s, 1705 MB)
+[build] dati di costruzione liberati (169s, 1402 MB)
+[build] CPU (170s, 1402 MB)
+[build] denoiser nessuno (170s, 1402 MB)
+[build] render 1 -> 128 480x270 4 campioni (170s, 1402 MB)
+02:52.855  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0009.jpg'
+[build] fotogramma 9: 3.0s (anno 1238)
+02:54.322  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0025.jpg'
+[build] fotogramma 25: 1.5s (anno 1338)
+02:55.948  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0041.jpg'
+[build] fotogramma 41: 1.6s (anno 1800)
+02:57.666  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0057.jpg'
+[build] fotogramma 57: 1.7s (anno 1900)
+02:59.314  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0073.jpg'
+[build] fotogramma 73: 1.6s (anno 2026)
+03:01.153  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0089.jpg'
+[build] fotogramma 89: 1.8s (anno 1363)
+03:02.848  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0105.jpg'
+[build] fotogramma 105: 1.7s (anno 1958)
+03:04.284  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0121.jpg'
+[build] fotogramma 121: 1.4s (anno 1967)
+[build] FATTO 8 fotogrammi, 1.80s a fotogramma (184s, 2557 MB)

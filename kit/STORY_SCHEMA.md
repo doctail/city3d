@@ -50,6 +50,9 @@ Anni: float, negativi = a.C. Ogni data storica porta `src` (id in `sources`) e `
     // nati prima di y dentro il ring e li fa rinascere dopo y1 (+ rebuild_years).
     "fires": [{"name": "Siege of 1812", "ring": [[…]], "y": 1811.98, "y1": 1812.03, "destroy": false,
                "flames": 40, "smoke": 6, "src": ["S6"]}],
+    // Piene: superficie d'acqua (fangosa se lo stile ha flood_water) a quota DEM + depth m sopra il ring, visibile
+    // solo in [y, y1 + 0.02]; gli edifici restano e stanno nell'acqua. Va usata al posto di "water" per il solo allagamento.
+    "floods": [{"name": "1957 flood", "ring": [[…]], "y": 1957.78, "y1": 1957.80, "depth": 1.5, "src": ["S28"], "conf": "low"}],
     // Acqua/terra che cambia: lastra di terra di tipo c visibile solo in [from, to). Fuori: acqua.
     "water": [{"name": "New Turia channel (field)", "ring": [[…]], "from": -9999, "to": 1964, "c": "field"}],
     // Ponti (impalcato) su linea [lat, lon]…, larghezza w, esistenti in [y, d).
@@ -63,6 +66,10 @@ Anni: float, negativi = a.C. Ogni data storica porta `src` (id in `sources`) e `
      "params": {"nave_h": 26, "tower_ref": "Micalet"},
      "phases": [{"y": 1262, "y1": 1300}], "label": true, "src": ["S9"], "conf": "high"}
   ],
+
+  // Deroghe QA: un FAIL del controllo "check" (sottostringa del titolo, es. "corridoi") il cui punto cade entro
+  // max(w, h) m da [lat, lon] diventa WARN e la ragione compare nel report. "where" facoltativo (senza: tutto il controllo).
+  "qa": {"accept": [{"check": "corridoi", "where": [39.4714, -0.3299, 120, 24], "reason": "modern street through ...; accepted"}]},
 
   "regia": {
     "music": "waking_monument",          // modello musicale in kit/music/<nome>.json (ancore misurate)
