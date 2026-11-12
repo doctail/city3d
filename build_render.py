@@ -711,6 +711,7 @@ if UG_FOOT:
 if _ph_items:
     # stessi materiali della terra di base (campi a toppe, tessuto urbano): una tinta piatta si vedeva come striscia dritta
     _phm = {'field': land_mat('fields'), 'urban': (mat('ph_urban', srgb(ST['urban_phase']), 0.95) if ST.get('urban_phase') else land_mat('urban')),   # Siviglia: tinta unita (il mosaico a celle era per NYC)
+            'site': mat('ph_site', srgb(ST.get('site_ground', '#a5774a')), 1.0),   # cantiere: terra nuda ocra
             'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0), 'marsh': marsh_mat()}
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()

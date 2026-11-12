@@ -317,6 +317,7 @@ def check_corridors(story, D, DD, R, qadir, objs):
     c = story['city']; y0, y1 = float(c['start_year']), float(c['end_year']); P = geo.Proj.of(story)
     H = story.get('history', {}) or {}; Z = H.get('zones', []) or []; G = H.get('gutting', []) or []
     zr = [(P.ring(z['ring']), float((z.get('born') or [y0])[0])) for z in Z if z.get('ring')]
+    zf = [(P.ring(z['ring']), float((z.get('born') or [y0])[-1])) for z in Z if z.get('ring')]   # zona completa (fine rampa)
     gr = [(P.ring(g['ring']), float(g.get('from', -9999)), float(g['until']), g.get('name', 'gutting')) for g in G if g.get('ring') and g.get('until')]
     if zr:
         pts = np.array([p for r, _ in zr for p in r] + [p for g in gr for p in g[0]])
@@ -364,7 +365,7 @@ def check_corridors(story, D, DD, R, qadir, objs):
         gb, gv = [], []
         for ring, gf, gu, gn in gr:
             if not (gf <= Y < gu): continue
-            gm = _mask([ring], shape, x0, yb0, cell) & ok_ground & center   # solo dove una zona e' gia' nata
+            gm = _mask([ring], shape, x0, yb0, cell) & ok_ground & _mask([r for r, b in zf if b <= Y], shape, x0, yb0, cell)   # solo dove una zona e' gia' nata per intero
             if not gm.any(): continue
             gin = ndimage.binary_erosion(gm, iterations=2)   # 8 m dal bordo: i nastri che sfiorano il ring non contano
             v_ = float((gin & vis & ~bld).sum()) * cell * cell

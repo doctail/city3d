@@ -445,27 +445,35 @@ def _load_grid(ctx, g):
     ctx._first = {tuple(map(int, k.split(','))): v for k, v in g['first'].items()}
 
 
-def landphases(ctx):
-    """history.water -> landphases. Le lastre 'urban' (suolo di citta') non possono precedere le case: tagliate a celle
-    di 120 m, ogni cella e' 'field' fino a urban_year (arrotondato al decennio) e 'urban' da li'; celle unite per anno."""
+def landphases(ctx, objs=()):
+    """history.water -> landphases. Le lastre 'urban' (suolo di citta') non possono precedere le case: la lastra diventa
+    'urban' solo sotto le impronte (alone ~10 m, chiuso a ~16 m) degli edifici nati fino a quel decennio, 'field' altrove.
+    Una lastra 'urban' (o 'site') senza case (< 2/ha) e' un cantiere: c 'site' (terra nuda ocra) per tutta la finestra."""
     out = []
+    cen = [(_poly(o['r']).centroid, o['y']) for o in objs if len(o.get('r', [])) >= 3] if objs else []
     for w in ctx.H.get('water', []) or []:
         a, b, c = w.get('from', -9999), w.get('to', 99999), w.get('c', 'field')
-        ring = ctx.P.ring(w['ring'])
-        if c != 'urban':
-            out.append({'r': ring, 'from': a, 'to': b, 'c': c, 'name': w.get('name', '')}); continue
-        poly = _poly(ring); x0, y0, x1, y1 = poly.bounds; by = collections.defaultdict(list)
-        for ix in range(int(x0 // CELL), int(x1 // CELL) + 1):
-            for iy in range(int(y0 // CELL), int(y1 // CELL) + 1):
-                q = poly.intersection(box(ix * CELL, iy * CELL, (ix + 1) * CELL, (iy + 1) * CELL))
-                if q.is_empty: continue
-                u = ctx.urban((ix + 0.5) * CELL, (iy + 0.5) * CELL)
-                by[max(a, math.ceil(u / 10) * 10) if u < COUNTRY else b].append(q)    # senza case vicine: campo per sempre
-        for u, qs in sorted(by.items()):
-            g = unary_union(qs)
-            for p_ in _polys(g):
-                if u > a: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': min(u, b), 'c': 'field', 'name': w.get('name', '')})
-                if u < b: out.append({'r': _ring_out(p_, 1), 'from': u, 'to': b, 'c': 'urban', 'name': w.get('name', '')})
+        ring = ctx.P.ring(w['ring']); nm = w.get('name', '')
+        if c not in ('urban', 'site'):
+            out.append({'r': ring, 'from': a, 'to': b, 'c': c, 'name': nm}); continue
+        poly = _poly(ring).buffer(0); x0, y0, x1, y1 = poly.bounds
+        ins = [(pt, y) for pt, y in cen if x0 <= pt.x <= x1 and y0 <= pt.y <= y1 and poly.contains(pt)]
+        if c == 'site' or len(ins) < 2.0 * poly.area / 1e4:
+            out.append({'r': ring, 'from': a, 'to': b, 'c': 'site', 'name': nm}); continue
+        by = collections.defaultdict(list)
+        for pt, y in ins: by[math.ceil(y / 10) * 10].append(pt.buffer(10, quad_segs=2))
+        cum = Polygon()
+        for u in sorted(by):
+            g = unary_union(by[u]).buffer(6, quad_segs=2).buffer(-6, quad_segs=2)
+            new = g.difference(cum).intersection(poly); cum = cum.union(g)
+            for p_ in _polys(new):
+                if p_.area < 20: continue
+                t = max(a, u)
+                if t > a: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': min(t, b), 'c': 'field', 'name': nm})
+                if t < b: out.append({'r': _ring_out(p_, 1), 'from': t, 'to': b, 'c': 'urban', 'name': nm})
+        rest = poly.difference(cum.buffer(0.5))
+        for p_ in _polys(rest):
+            if p_.area >= 20: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': b, 'c': 'field', 'name': nm})
     return out
 
 
@@ -491,7 +499,7 @@ def build(story, D=None, seed=11, quiet=False):
     grid = _grid(good, hist); _load_grid(ctx, grid)
     json.dump(grid, open(os.path.join(D, 'urban_kit.json'), 'w'))
     if H.get('water'):
-        ph = landphases(ctx)
+        ph = landphases(ctx, good + hist)
         if os.path.exists(os.path.join(D, 'landphases.json')): _backup(D, 'landphases')
         json.dump(ph, open(os.path.join(D, 'landphases.json'), 'w'))
     if H.get('fires'):

@@ -1,54 +1,10 @@
-[build] edifici 38241 (0s, 455 MB)
-[build] predecessori storici 9367 (1s, 487 MB)
-[build] rilievo sotto gli edifici: max 93 m (2s, 499 MB)
+[build] edifici 38241 (0s, 456 MB)
+[build] predecessori storici 9367 (0s, 487 MB)
+[build] rilievo sotto gli edifici: max 93 m (2s, 500 MB)
 [build] monumenti: 1664 parti; tolti 25 edifici nelle impronte (9s, 503 MB)
 /home/user/city3d/build_render.py:69: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
-[build] città in 1490 blocchi per anno, 1968169 vertici (14s, 706 MB)
+[build] città in 1490 blocchi per anno, 1968169 vertici (13s, 706 MB)
 /home/user/city3d/build_render.py:240: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
-[build] terra in 1 blocchi (17s, 787 MB)
-[build] suolo urbano dalle impronte: 132744 triangoli in 66 decenni (140s, 1180 MB)
-/home/user/city3d/build_render.py:48: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
-/home/user/city3d/build_render.py:230: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
-[build] terra a fasi 177 poligoni in 42 finestre (140s, 1180 MB)
-[build] strade 13838 (141s, 1202 MB)
-[build] ponti 433 (141s, 1202 MB)
-/home/user/city3d/build_render.py:776: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
-[build] incendi 1 (141s, 1202 MB)
-[build] boschi 0 celle in 0 blocchi (141s, 1202 MB)
-[build] isolati 5291 (147s, 1214 MB)
-[build] parchi 414 (148s, 1229 MB)
-[build] terra 4 poligoni (148s, 1230 MB)
-[build] monumenti costruiti: 1664 parti (148s, 1230 MB)
-[build] rilievo applicato: 1270957 vertici, massimo 168 m (168s, 1622 MB)
-[build] monumenti: parti staccate dalla scena: 1328 (168s, 1621 MB)
-[build] monumenti uniti: 1664 -> 731 oggetti (168s, 1621 MB)
-[build] alberi cotti: 1485687 vertici (169s, 1769 MB)
-/home/user/city3d/build_render.py:1264: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
-  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
-[build] blocchi: 1490 città, 430 statici (169s, 1769 MB)
-[build] dati di costruzione liberati (169s, 1407 MB)
-[build] CPU (169s, 1407 MB)
-[build] denoiser nessuno (169s, 1407 MB)
-[build] render 1 -> 128 480x270 4 campioni (169s, 1407 MB)
-02:52.913  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0009.jpg'
-[build] fotogramma 9: 3.4s (anno 1238)
-02:54.356  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0025.jpg'
-[build] fotogramma 25: 1.4s (anno 1338)
-02:55.961  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0041.jpg'
-[build] fotogramma 41: 1.6s (anno 1800)
-02:57.535  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0057.jpg'
-[build] fotogramma 57: 1.6s (anno 1900)
-02:59.146  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0073.jpg'
-[build] fotogramma 73: 1.6s (anno 2026)
-03:00.794  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0089.jpg'
-[build] fotogramma 89: 1.6s (anno 1363)
-03:02.297  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0105.jpg'
-[build] fotogramma 105: 1.5s (anno 1958)
-03:03.771  render           | Saved: '/home/user/city3d/cities/valencia/qa/frames/0121.jpg'
-[build] fotogramma 121: 1.5s (anno 1967)
-[build] FATTO 8 fotogrammi, 1.78s a fotogramma (183s, 2525 MB)
+[build] terra in 1 blocchi (19s, 868 MB)

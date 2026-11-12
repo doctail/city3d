@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
+Generato da `python -m kit.qa` il 2026-11-12 11:59. Esito complessivo: **FAIL**
 
 | Sezione | Esito |
 |---|---|
@@ -9,7 +9,6 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | FAIL |
 | e) Costo e schedule | PASS |
-| f) Fotogrammi locali | PASS |
 
 ## a) Story e fonti
 
@@ -44,21 +43,21 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 ## c) Densita' storica
 
 - **PASS** Muslim walled city nel 1238
-  - 1920 edifici vivi (53/ha, copertura 65%) contro 1068 (29/ha, copertura 79%) nel 2026: rapporto 1.80
+  - 1920 edifici vivi (53/ha, copertura 65%) contro 1054 (29/ha, copertura 76%) nel 2026: rapporto 1.82
 - **PASS** Muslim walled city nel 1500
-  - 1907 edifici vivi (53/ha, copertura 75%) contro 1068 (29/ha, copertura 79%) nel 2026: rapporto 1.79
+  - 1904 edifici vivi (53/ha, copertura 72%) contro 1054 (29/ha, copertura 76%) nel 2026: rapporto 1.81
 - **PASS** Muslim walled city nel 1800
-  - 1749 edifici vivi (48/ha, copertura 78%) contro 1068 (29/ha, copertura 79%) nel 2026: rapporto 1.64
+  - 1744 edifici vivi (48/ha, copertura 76%) contro 1054 (29/ha, copertura 76%) nel 2026: rapporto 1.65
 - **PASS** Boatella quarter (inside 1356 wall) nel 1500
-  - 1944 edifici vivi (48/ha, copertura 61%) contro 670 (17/ha, copertura 65%) nel 2026: rapporto 2.90
+  - 1944 edifici vivi (48/ha, copertura 61%) contro 668 (17/ha, copertura 62%) nel 2026: rapporto 2.91
 - **PASS** Boatella quarter (inside 1356 wall) nel 1800
-  - 1944 edifici vivi (48/ha, copertura 61%) contro 670 (17/ha, copertura 65%) nel 2026: rapporto 2.90
+  - 1944 edifici vivi (48/ha, copertura 61%) contro 668 (17/ha, copertura 62%) nel 2026: rapporto 2.91
 - **PASS** Christian expansion within the 1356 wall nel 1500
-  - 7128 edifici vivi (44/ha, copertura 58%) contro 3300 (20/ha, copertura 62%) nel 2026: rapporto 2.16
+  - 7123 edifici vivi (44/ha, copertura 57%) contro 3281 (20/ha, copertura 60%) nel 2026: rapporto 2.17
 - **PASS** Christian expansion within the 1356 wall nel 1800
-  - 6810 edifici vivi (42/ha, copertura 66%) contro 3300 (20/ha, copertura 62%) nel 2026: rapporto 2.06
+  - 6803 edifici vivi (42/ha, copertura 65%) contro 3281 (20/ha, copertura 60%) nel 2026: rapporto 2.07
 - **PASS** Quart suburb (arrabal de Quart) nel 1800
-  - 356 edifici vivi (37/ha, copertura 55%) contro 243 (25/ha, copertura 57%) nel 2026: rapporto 1.47
+  - 355 edifici vivi (37/ha, copertura 54%) contro 242 (25/ha, copertura 56%) nel 2026: rapporto 1.47
 - **PASS** Morvedre suburb (north of the Turia) nel 1800
   - 491 edifici vivi (32/ha, copertura 41%) contro 186 (12/ha, copertura 54%) nel 2026: rapporto 2.64
 - **PASS** Russafa village nel 1800
@@ -68,18 +67,12 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 
 ## d) Corridoi vuoti
 
-- **FAIL** 1238: nastri stradali prima dell'apertura
-  - Calle de la Paz: 256 m² di nastro visibile prima del 1872; Plaza del Ayuntamiento (Pescadores district): 176 m² di nastro visibile prima del 1907
-- **FAIL** 1238: gutting non riempiti
-  - Calle de la Paz: 42% vuoto (case predecessore mancanti); Plaza del Ayuntamiento (convent of San Francisco site): 100% vuoto (case predecessore mancanti); Plaza del Ayuntamiento (Pescadores district): 98% vuoto (case predecessore mancanti); Avenida del Oeste: 100% vuoto (case predecessore mancanti)
+- **PASS** 1238: nessun corridoio vuoto
+  - corridoi_1238.png
 - **WARN** 1338: 4 aree vuote allungate
   - #1 1212x126 m a (39.48675,-0.37460); #2 1608x324 m a (39.47061,-0.37378); #3 679x118 m a (39.47504,-0.38856); #4 153x32 m a (39.47104,-0.37339) — corridoi_1338.png
 - **WARN** 1338: 1 viali larghi gia' visibili (se aperti sventrando: gutting)
   - #5 304x52 m a (39.47179,-0.37353)
-- **FAIL** 1338: nastri stradali prima dell'apertura
-  - Calle de la Paz: 256 m² di nastro visibile prima del 1872; Plaza del Ayuntamiento (convent of San Francisco site): 176 m² di nastro visibile prima del 1891
-- **FAIL** 1338: gutting non riempiti
-  - Calle de la Paz: 42% vuoto (case predecessore mancanti); Plaza del Ayuntamiento (convent of San Francisco site): 61% vuoto (case predecessore mancanti)
 - **FAIL** 1800: 1 corridoi con forma di strada moderna (niente case, niente nastro)
   - #1 120x24 m a (39.47144,-0.32993) — corridoi_1800.png
 - **WARN** 1800: 3 aree vuote allungate
@@ -87,11 +80,11 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 - **WARN** 1800: 2 viali larghi gia' visibili (se aperti sventrando: gutting)
   - #5 582x20 m a (39.47602,-0.37122); #6 241x26 m a (39.46464,-0.32928)
 - **WARN** 1900: 3 aree vuote allungate
-  - #1 402x79 m a (39.47745,-0.37097); #2 363x84 m a (39.47461,-0.36778); #3 169x33 m a (39.46813,-0.37793) — corridoi_1900.png
+  - #1 402x80 m a (39.47745,-0.37097); #2 363x84 m a (39.47461,-0.36778); #3 169x33 m a (39.46813,-0.37793) — corridoi_1900.png
 - **WARN** 1900: 2 viali larghi gia' visibili (se aperti sventrando: gutting)
   - #4 552x24 m a (39.47602,-0.37122); #5 524x31 m a (39.46896,-0.37851)
 - **WARN** 1950: 4 aree vuote allungate
-  - #1 402x79 m a (39.47745,-0.37097); #2 404x86 m a (39.47450,-0.36766); #3 225x53 m a (39.47048,-0.37648); #4 169x33 m a (39.46813,-0.37793) — corridoi_1950.png
+  - #1 402x80 m a (39.47745,-0.37097); #2 404x86 m a (39.47450,-0.36766); #3 225x53 m a (39.47048,-0.37648); #4 169x33 m a (39.46813,-0.37793) — corridoi_1950.png
 
 ## e) Costo e schedule
 
@@ -105,13 +98,6 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 - **PASS** notte
   - night_t=460.5, schedule_valencia_night.json ok
 
-## f) Fotogrammi locali
-
-- **PASS** render locale: 8 fotogrammi in 185 s
-  - cities/valencia/qa/render.log
-- **PASS** foglio contatti
-  - cities/valencia/qa/contact.jpg: guardalo prima del pod (strade come nastri chiari, centro pieno)
-
 ## Immagini
 
 ![corridoi_1238.png](corridoi_1238.png)
@@ -119,4 +105,3 @@ Generato da `python -m kit.qa` il 2026-11-12 11:49. Esito complessivo: **FAIL**
 ![corridoi_1800.png](corridoi_1800.png)
 ![corridoi_1900.png](corridoi_1900.png)
 ![corridoi_1950.png](corridoi_1950.png)
-![contact.jpg](contact.jpg)
