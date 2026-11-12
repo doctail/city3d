@@ -4733,7 +4733,11 @@
     -0.3761
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "windows": false,
+    "c": "#b5653a",
+    "tier_c": "#c9a27a"
+   },
    "phases": [
     {
      "y": 1850,
@@ -5539,7 +5543,7 @@
     "y1": 2009,
     "dur": 6,
     "caption": "Oceanogràfic, Palau de les Arts, Àgora (2001-09)",
-    "target": "Oceanografic",
+    "target": "Palau de les Arts",
     "shot": "medium",
     "fx": "chime",
     "src": [
@@ -6282,10 +6286,6 @@
     "title": "The River Becomes a Garden"
    }
   ],
-  "recap": {
-   "seconds": 20,
-   "text": "788 years of Valencia, from one spot, in twenty seconds"
-  },
   "cta": "Which city should grow next? Tell me in the comments",
   "sources_card": {
    "seconds": 8,

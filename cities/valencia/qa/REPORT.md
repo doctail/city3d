@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-12 12:50. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-12 13:54. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -9,7 +9,6 @@ Generato da `python -m kit.qa` il 2026-11-12 12:50. Esito complessivo: **WARN**
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | PASS |
-| f) Fotogrammi locali | PASS |
 
 ## a) Story e fonti
 
@@ -89,9 +88,9 @@ Generato da `python -m kit.qa` il 2026-11-12 12:50. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (2 s)
-  - oggetti citta' 1539, cambi in tutto il video 105703, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.35 h (budget 1.0 h)
-- **PASS** 26 soste ben formate
+- **PASS** costo dei cambi (3 s)
+  - oggetti citta' 1539, cambi in tutto il video 67138, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.22 h (budget 1.0 h)
+- **PASS** 25 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
@@ -100,13 +99,6 @@ Generato da `python -m kit.qa` il 2026-11-12 12:50. Esito complessivo: **WARN**
 - **PASS** notte
   - night_t=460.5, schedule_valencia_night.json ok
 
-## f) Fotogrammi locali
-
-- **PASS** render locale: 8 fotogrammi in 185 s
-  - cities/valencia/qa/render.log
-- **PASS** foglio contatti
-  - cities/valencia/qa/contact.jpg: guardalo prima del pod (strade come nastri chiari, centro pieno)
-
 ## Immagini
 
 ![corridoi_1238.png](corridoi_1238.png)
@@ -114,4 +106,3 @@ Generato da `python -m kit.qa` il 2026-11-12 12:50. Esito complessivo: **WARN**
 ![corridoi_1800.png](corridoi_1800.png)
 ![corridoi_1900.png](corridoi_1900.png)
 ![corridoi_1950.png](corridoi_1950.png)
-![contact.jpg](contact.jpg)
