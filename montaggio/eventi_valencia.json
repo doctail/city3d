@@ -1,8 +1,8 @@
 {
  "didascalie": [
   {
-   "t_in": 190.5,
-   "t_out": 195.9,
+   "t_in": 190.54,
+   "t_out": 195.94,
    "date": "1609",
    "title": "Expulsion of the Moriscos",
    "line": "A royal decree expels the Moriscos of the Kingdom of Valencia",
@@ -17,8 +17,8 @@
    "sober": true
   },
   {
-   "t_in": 267.96,
-   "t_out": 272.56,
+   "t_in": 268.46,
+   "t_out": 273.06,
    "date": "1877",
    "title": "Russafa joins the city",
    "line": "The neighboring town of Russafa is annexed",
@@ -33,8 +33,8 @@
    "sober": false
   },
   {
-   "t_in": 354.0,
-   "t_out": 358.6,
+   "t_in": 354.08,
+   "t_out": 358.68,
    "date": "1936",
    "title": "Capital of the Republic",
    "line": "The Spanish government moves to Valencia in November",
@@ -61,26 +61,26 @@
    "sub": "1356"
   },
   {
-   "t_in": 82.51,
-   "t_out": 87.51,
+   "t_in": 83.8,
+   "t_out": 88.8,
    "title": "El Micalet bell tower",
    "sub": "1381-1429"
   },
   {
-   "t_in": 87.51,
-   "t_out": 92.51,
+   "t_in": 88.8,
+   "t_out": 93.8,
    "title": "Torres de Serranos",
    "sub": "1392-98"
   },
   {
-   "t_in": 128.57,
-   "t_out": 133.07,
+   "t_in": 134.17,
+   "t_out": 138.67,
    "title": "Torres de Quart",
    "sub": "1441-60"
   },
   {
-   "t_in": 156.13,
-   "t_out": 161.13,
+   "t_in": 156.56,
+   "t_out": 161.56,
    "title": "The Silk Exchange",
    "sub": "1483"
   },
@@ -97,20 +97,20 @@
    "sub": "1703-41"
   },
   {
-   "t_in": 232.5,
-   "t_out": 239.5,
+   "t_in": 232.01,
+   "t_out": 239.01,
    "title": "Siege of 1812",
    "sub": "1811-12"
   },
   {
-   "t_in": 244.48,
-   "t_out": 247.98,
+   "t_in": 243.82,
+   "t_out": 247.32,
    "title": "Plaza Redonda",
    "sub": "1840"
   },
   {
-   "t_in": 249.2,
-   "t_out": 253.2,
+   "t_in": 248.88,
+   "t_out": 252.88,
    "title": "The bullring",
    "sub": "1850-59"
   },
@@ -145,20 +145,20 @@
    "sub": "1909"
   },
   {
-   "t_in": 323.29,
-   "t_out": 327.79,
+   "t_in": 323.42,
+   "t_out": 327.92,
    "title": "Central Market",
    "sub": "1915-28"
   },
   {
-   "t_in": 327.79,
-   "t_out": 331.29,
+   "t_in": 327.92,
+   "t_out": 331.42,
    "title": "Mestalla stadium",
    "sub": "1923"
   },
   {
-   "t_in": 346.21,
-   "t_out": 350.21,
+   "t_in": 346.22,
+   "t_out": 350.22,
    "title": "City Hall square",
    "sub": "1931-33"
   },
@@ -169,35 +169,35 @@
    "sub": "1957"
   },
   {
-   "t_in": 408.66,
-   "t_out": 418.66,
+   "t_in": 408.83,
+   "t_out": 418.83,
    "title": "PLAN SUR: THE RIVER IS MOVED",
    "sub": "1964-69"
   },
   {
-   "t_in": 430.5,
-   "t_out": 435.5,
+   "t_in": 430.57,
+   "t_out": 435.57,
    "title": "The old riverbed becomes a park",
    "sub": "1986"
   },
   {
-   "t_in": 438.27,
-   "t_out": 444.27,
+   "t_in": 438.21,
+   "t_out": 444.21,
    "title": "City of Arts and Sciences",
    "sub": "1998-2000"
   },
   {
-   "t_in": 444.34,
-   "t_out": 450.34,
+   "t_in": 444.28,
+   "t_out": 450.28,
    "title": "Oceanografic, Palau de les Arts, Agora",
    "sub": "2001-09"
   },
   {
-   "t_in": 450.34,
-   "t_out": 454.34,
+   "t_in": 450.28,
+   "t_out": 454.28,
    "title": "America's Cup marina",
    "sub": "2007"
   }
  ],
- "subscribe_t": 93.0
+ "subscribe_t": 94.0
 }
