@@ -92,3 +92,43 @@ Anni: float, negativi = a.C. Ogni data storica porta `src` (id in `sources`) e `
 3. Nessun "corridoio vuoto": per gli anni chiave, le aree di strada moderna dentro il centro storico devono essere coperte da edifici o comparire solo dopo un `gutting.until`.
 4. `roads.json` presente; costo dei cambi entro budget; schedule coerente (soste ordinate, didascalie nel formato "Titolo (data)").
 5. Anteprima locale: fotogrammi CPU dall'alto e di sosta in `cities/<slug>/qa/`, da guardare prima del pod.
+
+## Pacing "story" e grafica documentaria (tutto OPZIONALE; senza queste chiavi l'output e' identico a prima)
+Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pesato dalla storia, HUD onesto, piano sequenza, recap, fonti.
+```jsonc
+{
+  "city": {
+    // punto popolazione con terzo elemento = fonte della stima, mostrata sotto il numero:
+    // "rough estimate" | "historical estimate" | "census" | "building registry"  (vale fino al punto successivo)
+    "population": [[1238, 15000, "rough estimate"], [1900, 213000, "census"], [2025, 841558, "building registry"]],
+    "polities": [{"y": 1238, "name": "Kingdom of Valencia · James I", "flag_colors": ["#fcdd09", "#da121a"]}],  // chip in basso a sinistra, strisce orizzontali
+    "data_reliable_from": 1840      // prima di questo anno: pillola "RECONSTRUCTION · APPROXIMATE"
+  },
+  "regia": {
+    "pacing": "story",              // default "buildings" (comportamento storico, Copenhagen invariata)
+    "camera": "continuous",         // default: stacchi come prima. "continuous" = un piano sequenza PCHIP sui bersagli di cartelli/soste
+    "duration": 150,                // il budget di tempo: la corsa tra i cartelli si ricava da qui
+    "open": {"story_lead": 3.4}     // pausa sul titolo prima del primo cartello (+2,8 s se c'e' il capitolo I)
+  },
+  "montaggio": {
+    "cards": [{"y": 1483, "title": "The Silk Exchange", "lines": ["1-2 righe"], "chapter": "titolo capitolo (facoltativo)",
+               "hold_s": 5, "src": ["S1"], "target": "Lonja de la Seda", "shot": "medium", "labels": ["nome monumento"]}],
+    "chapters": [{"y": 1238, "title": "Christian Valencia"}],   // numeri romani automatici (I, II, ...); come "chapter" sul cartello
+    "recap": {"seconds": 20, "text": "…"},    // ultimi N s da UN punto di vista alto e fisso, start_year -> end_year (prima di CTA e fonti)
+    "cta": "Which city should grow next? Tell me in the comments",
+    "sources_card": {"seconds": 8, "max": 14, "no_ai": "NO AI: every frame is rendered from open data"},  // default ON in pacing story
+    "label_years": true             // pillole monumenti "Nome · anno"
+  }
+}
+```
+- **Tempo.** Rewind fino a `start_year`, pausa, poi per ogni voce (cartello o sosta, ordinate per anno; le soste contano come cartelli) il contatore
+  **si ferma a 0,2 anni/s** per `hold_s` (soste: `dur`) e **corre** tra una voce e l'altra alla velocita' che fa stare tutto in `regia.duration`
+  (tetto 25 anni/s: se serve di piu', `regia.txt` avvisa). Niente ancore musicali; `night` e' false se non lo scrivi.
+- **Coda del video** (regia calcola, lo schedule la porta in `end_plan`): `recap` -> CTA (4,5 s) -> carta delle fonti (default 8 s); l'HUD esce prima della CTA.
+  La carta delle fonti elenca i `title` di `story.sources` + riga "NO AI" e sostituisce la schermata finale "WHICH CITY NEXT?".
+- **Grafica** (`kit_overlay.jsx`): cartello = riquadro scuro traslucido in alto a sinistra, "ANNO · Titolo" oro + 1-2 righe bianche (data nel formato di `yfmt`: `1238`, `AD 711`, `138 BC`);
+  capitolo = titolo centrale ("CHAPTER II" + titolo), mostrato nei 2,8 s prima del cartello che lo apre; chip polity in basso a sinistra sopra l'anno;
+  fonte popolazione sotto il numero; pillola ricostruzione in alto al centro. Dati in `eventi_<slug>.json` (`cards, chapters, recap, cta, sources_card`, da `kit/eventi_kit.py`)
+  e `kit_<slug>.json` (`city.POPSRC, POLITIES, RELIABLE_FROM`, da `montaggio/kit_city.py`). `labs_kit.py` mette l'etichetta del monumento durante i cartelli con `target`/`labels`.
+- Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
+- Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).

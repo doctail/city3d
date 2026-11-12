@@ -1,32 +1,161 @@
 {
-  "_doc": "Delta sulla story reale cities/valencia/story.json: pacing story, camera continua, 5 cartelli, 2 capitoli, 2 polity, recap, CTA, fonti. Usato da kit/tests/test_story_mode.py (dati: data_valencia).",
-  "city": {
-    "data_reliable_from": 1840,
-    "population": [[1238, 15000, "rough estimate"], [1500, 45000, "historical estimate"], [1609, 58000, "historical estimate"], [1900, 213000, "census"], [2025, 841558, "building registry"]],
-    "polities": [
-      {"y": 1238, "name": "Kingdom of Valencia · James I", "flag_colors": ["#fcdd09", "#da121a", "#fcdd09", "#da121a", "#fcdd09", "#da121a", "#fcdd09", "#da121a", "#fcdd09"]},
-      {"y": 1833, "name": "Spain · Province of Valencia", "flag_colors": ["#aa151b", "#f1bf00", "#aa151b"]}
+ "_doc": "Delta sulla story reale cities/valencia/story.json: pacing story, camera continua, 5 cartelli, 2 capitoli, 2 polity, recap, CTA, fonti. Usato da kit/tests/test_story_mode.py (dati: data_valencia).",
+ "city": {
+  "data_reliable_from": 1840,
+  "population": [
+   [
+    1238,
+    15000,
+    "rough estimate"
+   ],
+   [
+    1500,
+    45000,
+    "historical estimate"
+   ],
+   [
+    1609,
+    58000,
+    "historical estimate"
+   ],
+   [
+    1900,
+    213000,
+    "census"
+   ],
+   [
+    2025,
+    841558,
+    "building registry"
+   ]
+  ],
+  "polities": [
+   {
+    "y": 1238,
+    "name": "Kingdom of Valencia · James I",
+    "flag_colors": [
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09"
     ]
-  },
-  "regia": {
-    "pacing": "story", "night": false, "camera": "continuous", "music": null, "duration": 150,
-    "soste": [
-      {"y0": 1262, "dur": 5, "caption": "The Cathedral rises on the Great Mosque (1262)", "target": "Cathedral", "shot": "medium"},
-      {"y0": 1392, "dur": 5, "caption": "Torres de Serranos (1392-98)", "target": "Torres de Serranos", "shot": "close"}
+   },
+   {
+    "y": 1833,
+    "name": "Spain · Province of Valencia",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#aa151b"
     ]
-  },
-  "montaggio": {
-    "label_years": true,
-    "cards": [
-      {"y": 1238, "title": "James I takes Valencia", "lines": ["The Muslim city of Balansiya surrenders on 28 September.", "Good call: the plain is already full of orchards."], "src": ["S1"], "target": "Muslim walled city"},
-      {"y": 1483, "title": "The Silk Exchange", "lines": ["A trading hall for the silk that made the city rich."], "target": "Lonja de la Seda", "hold_s": 6, "src": ["S1"]},
-      {"y": 1609, "title": "The Moriscos are expelled", "lines": ["About a third of the kingdom's people are ordered to leave."], "src": ["S40"]},
-      {"y": 1957.78, "title": "The great flood", "lines": ["The Turia bursts its banks.", "The river will be moved."], "hold_s": 7, "src": ["S1"]},
-      {"y": 2024, "title": "DANA 2024", "lines": ["Remembered in silence."], "src": ["S1"]}
+   }
+  ]
+ },
+ "regia": {
+  "pacing": "story",
+  "night": false,
+  "camera": "continuous",
+  "music": null,
+  "duration": 150,
+  "soste": [
+   {
+    "y0": 1262,
+    "dur": 5,
+    "caption": "The Cathedral rises on the Great Mosque (1262)",
+    "target": "Cathedral",
+    "shot": "medium"
+   },
+   {
+    "y0": 1392,
+    "dur": 5,
+    "caption": "Torres de Serranos (1392-98)",
+    "target": "Torres de Serranos",
+    "shot": "close"
+   }
+  ]
+ },
+ "montaggio": {
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1238,
+    "title": "James I takes Valencia",
+    "lines": [
+     "The Muslim city of Balansiya surrenders on 28 September.",
+     "Good call: the plain is already full of orchards."
     ],
-    "chapters": [{"y": 1238, "title": "Christian Valencia"}, {"y": 1833, "title": "The modern city"}],
-    "recap": {"seconds": 20},
-    "cta": "Which city should grow next? Tell me in the comments",
-    "sources_card": {"seconds": 8}
-  }
+    "src": [
+     "S1"
+    ],
+    "target": "Muslim walled city"
+   },
+   {
+    "y": 1483,
+    "title": "The Silk Exchange",
+    "lines": [
+     "A trading hall for the silk that made the city rich."
+    ],
+    "target": "Lonja de la Seda",
+    "hold_s": 6,
+    "src": [
+     "S1"
+    ]
+   },
+   {
+    "y": 1609,
+    "title": "The Moriscos are expelled",
+    "lines": [
+     "About a third of the kingdom's people are ordered to leave."
+    ],
+    "src": [
+     "S40"
+    ]
+   },
+   {
+    "y": 1957.78,
+    "title": "The great flood",
+    "lines": [
+     "The Turia bursts its banks.",
+     "The river will be moved."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S1"
+    ]
+   },
+   {
+    "y": 2024,
+    "title": "DANA 2024",
+    "lines": [
+     "Remembered in silence."
+    ],
+    "src": [
+     "S1"
+    ]
+   }
+  ],
+  "chapters": [
+   {
+    "y": 1238,
+    "title": "Christian Valencia"
+   },
+   {
+    "y": 1833,
+    "title": "The modern city"
+   }
+  ],
+  "recap": {
+   "seconds": 20
+  },
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8
+  },
+  "events": []
+ }
 }

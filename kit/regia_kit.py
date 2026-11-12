@@ -560,7 +560,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         tail = [(end_t, 2026.0), (end_t + 0.04, y_start)] + [(end_t + 0.04 + (recap_s - 0.04) * k / 20, y_start + (2026.0 - y_start) * ease(k / 20))
                                                               for k in range(1, 21)] + [(DUR, 2026.0)]
     if story_mode:
-        YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, float(op.get('story_lead', 3.4)), warn)
+        chy = [float(c['y']) for c in (MO_.get('chapters') or [])] + [float(c['y']) for c in (MO_.get('cards') or []) if c.get('chapter')]
+        lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))   # +2,8 s: capitolo I
+        YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn)
     else:
         TL = Timeline(D, rmin, rmax, warn)
         YEARS, SOSTA_T = TL.build(FIXED, SOSTE, tail)
@@ -678,7 +680,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             wps.append((t0 + 0.3, (tg['x'], tg['y'], tg['z']), d * 1.1, el + 3, az0, 35))
             wps.append((t1 - 0.3, (tg['x'], tg['y'], tg['z']), d * 0.85, el, az0 + 18, 35))
         if story_mode and recap_s:
-            wps += [(end_t, recap_shot[2], d_rc, 52, az_def, 35), (DUR, recap_shot[2], d_rc, 52, az_def, 35)]
+            wps += [(end_t + 3.0, recap_shot[2], d_rc, 52, az_def, 35), (DUR, recap_shot[2], d_rc, 52, az_def, 35)]
         else:
             wps.append((DUR, ((m26x + fx_) / 2, (m26y + fy_) / 2, 0.0), max(6000.0, 1.3 * r26), 34, az_def + 20, 35))
         cam = continuous_cam(wps, DUR)

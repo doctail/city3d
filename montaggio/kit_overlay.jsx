@@ -32,7 +32,7 @@ const Chapter = ({e, k}) => (<AbsoluteFill style={{alignItems: 'center', justify
   <div style={{font: '700 30px Montserrat', letterSpacing: 14, color: ACC, textShadow: SH}}>CHAPTER {e.num}</div>
   <div style={{display: 'flex', alignItems: 'center', gap: 28, marginTop: 14, transform: `scale(${0.97 + 0.03 * k})`}}>
     <span style={{width: 110, height: 2, background: ACC}} />
-    <div style={{font: `900 ${fitSize(`${e.num} · ${e.title}`.toUpperCase(), 1500, 96, 6)}px Montserrat`, color: INK, textShadow: SH, letterSpacing: 6, whiteSpace: 'nowrap'}}>{e.num} · {e.title.toUpperCase()}</div>
+    <div style={{font: `900 ${fitSize(e.title.toUpperCase(), 1500, 110, 6)}px Montserrat`, color: INK, textShadow: SH, letterSpacing: 6, whiteSpace: 'nowrap'}}>{e.title.toUpperCase()}</div>
     <span style={{width: 110, height: 2, background: ACC}} />
   </div></AbsoluteFill>);
 
