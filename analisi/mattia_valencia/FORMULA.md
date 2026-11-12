@@ -1,0 +1,28 @@
+# Mattia Maps — "Valencia: 2,000 Years in 12 Minutes | 3D Timelapse (138 BC–2025)" (Lj8aYQ6DSl4)
+131K views in 8 days, a 12-day-old channel, first video. Analysed on 12/11/2026 from the full video (uploaded by Fabio), frames every 2 s plus audio. Details in note_A/B/C.md.
+
+## The formula (in order of weight [Likely])
+1. **A documentary in text, not labels.** About 70 cards in 11:46, one every 6–12 s: gold title "YEAR · Title" + 1–2 lines of context, often wry or first-person ("Good call"). 6 chapters with roman numerals ("I · ROMAN VALENTIA" … "VI · THE 20TH CENTURY TO TODAY").
+2. **Time weighted by story, not by buildings.** The counter freezes on each card (0–0.4 years/s, 1238 held for over 18 s, the 1957 flood 16 s) and sprints between them (12–25 years/s).
+3. **An honest, rich HUD.** Serif year top left; population "≈ N" with the source of the estimate (rough estimate / historical estimate / census / building registry); "RECONSTRUCTION · APPROXIMATE"; polity chip + flag ("Kingdom of Valencia · Ferdinand II"); era bar; compass; pill labels on monuments ("Silk Exchange · 1482"). Closing card with sources and "NO AI: every frame is rendered from open data".
+4. **Starts from nothing**: the empty plain in 150 BC, geography explained first (Turia, Albufera), first event at ~30 s. No present-day hook.
+5. **One continuous camera**, oblique 35–50°, glides and slow orbits, zooms from house scale to region scale in 3–5 s; few close-ups. Permanent golden-hour light, **no night**.
+6. **Restrained effects**: plague, sieges and expulsions are cards with the counter frozen; fire and smoke only twice. Pathos comes from silence (DANA 2024: 20 s with deliberate silence).
+7. **Ending**: 20-second recap from one fixed point ("2,160 years from one spot… in twenty seconds"), then "Which city should grow next? Tell me in the comments", then a first-person end card and the sources card.
+8. **Local music**: Spanish classical guitar (Granados/Albéniz) with birdsong, not epic stock music.
+9. **Everything included**: from the founding to 2025, including the DANA 2024 handled soberly.
+
+## Differences from our formula (Copenhagen)
+| | Mattia Valencia | Year Built (Copenhagen) |
+|---|---|---|
+| Captions | ~70 cards with context | ~26 "Title (date)" stops |
+| Time | frozen on story | weighted by number of new buildings |
+| Opening | empty landscape before the city | today → rewind |
+| Camera | one continuous shot | cuts every ~10 s |
+| Light | golden hour, no night | day + night ending |
+| Effects | almost none | fires and explosions |
+| Ending | recap + comment question | night |
+| Music | local, classical | Audio Library, epic |
+
+## Caution [Likely]
+The same channel, with the same formula, made Santiago de Compostela: 275 views after 2 days (vidIQ search 11/11). The formula does not explain everything. Valencia (a big city, local pride, timing) counts as much as the format.
