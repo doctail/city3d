@@ -76,21 +76,36 @@ LANDMARKS = [
     lm('Arches', 'modern_shell', (230, -470), shape='arches', l=120),
 ]
 
-# inquadrature: nome -> (camera, bersaglio, obiettivo, anno)
-SHOTS = [
-    ('towers', (-150, 150, 60), (-130, 240, 22), 32, 2026),
-    ('castle', (95, 170, 55), (55, 240, 12), 32, 2026),
-    ('churches', (-150, 20, 85), (-140, 120, 18), 30, 2026),
-    ('gates_palace', (100, 30, 70), (110, 120, 12), 30, 2026),
-    ('civic', (-110, -110, 110), (-110, 0, 10), 30, 2026),
-    ('arena_towers', (110, -110, 110), (130, 10, 30), 30, 2026),
-    ('river', (-60, -300, 75), (-120, -160, 5), 28, 2026),
-    ('park', (-120, -320, 45), (-120, -245, 6), 34, 2026),
-    ('modern', (40, -230, 160), (60, -400, 5), 28, 2026),
-    ('stadium', (-80, -280, 140), (-200, -390, 5), 30, 2026),
-    ('phases_1903', (-150, 20, 85), (-140, 120, 18), 30, 1903.5),
-    ('phases_1907', (-150, 20, 85), (-140, 120, 18), 30, 1907.0),
+# inquadrature: nome -> (centro, ampiezza da inquadrare in m, azimut della camera in gradi da est, elevazione, anno)
+VIEWS = [
+    ('towers_a', (-215, 240, 18), 105, -95, 22, 2026),
+    ('towers_b', (-75, 240, 18), 105, -95, 22, 2026),
+    ('castle', (70, 240, 10), 110, -70, 35, 2026),
+    ('cathedral', (-235, 112, 15), 115, -60, 32, 2026),
+    ('churches', (-85, 120, 10), 110, -100, 32, 2026),
+    ('gates', (60, 120, 10), 95, -95, 24, 2026),
+    ('palace', (175, 120, 10), 95, -60, 40, 2026),
+    ('civic', (-170, 0, 10), 190, -95, 38, 2026),
+    ('arena_sky', (115, 0, 20), 220, -110, 32, 2026),
+    ('river', (-120, -150, 5), 270, -60, 28, 2026),
+    ('park', (-125, -245, 5), 165, -95, 28, 2026),
+    ('modern', (110, -400, 5), 340, -80, 38, 2026),
+    ('stadium', (-200, -390, 5), 270, -100, 40, 2026),
+    ('phases_1903', (-235, 112, 15), 115, -60, 32, 1903.0),
+    ('phases_1906', (-235, 112, 15), 115, -60, 32, 1906.0),
+    ('phases_1909', (-235, 112, 15), 115, -60, 32, 1909.0),
 ]
+LENS = 35.0
+
+
+def shot(name, c, ext, az, el, yr):
+    hf = 2 * math.atan(18 / LENS); d = ext / 2 / math.tan(hf / 2) * 1.08
+    a, e = math.radians(az), math.radians(el)
+    p = (c[0] + d * math.cos(e) * math.cos(a), c[1] + d * math.cos(e) * math.sin(a), c[2] + d * math.sin(e))
+    return (name, tuple(round(v, 1) for v in p), c, LENS, yr)
+
+
+SHOTS = [shot(*v) for v in VIEWS]
 
 
 def make_data():

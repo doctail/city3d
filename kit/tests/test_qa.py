@@ -38,10 +38,10 @@ def make(tmp, fill_avenue=False, predecessors=True, gut_road=False, soste=None, 
     blds = [{'r': r, 'h': 12, 'y': 1950} for r in houses(4, AVE[0], 4, 580) + houses(AVE[1] + 4, 590, 4, 580)
             if not (96 < r[0][0] < 164 and 96 < r[0][1] < 164)]
     hist = [dict(b, y=1200, d=1950) for b in blds] if predecessors else []
-    hist += [{'r': r, 'h': 9, 'y': 1200, 'd': 1960} for r in houses(100, 168, 100, 168)]   # gutting riempito
+    hist += [{'r': r, 'h': 9, 'y': 1200, 'd': 1960} for r in houses(100, 168, 100, 168) if not (gut_road and r[0][0] == 124)]   # gutting riempito
     if fill_avenue: hist += [{'r': r, 'h': 9, 'y': 1200, 'd': 1910} for r in houses(AVE[0], AVE[1], 4, 580, s=13, gap=3)]
     roads = [{'r': rect(AVE[0], 0, AVE[1], 580), 'y': 1910, 'rail': 0}]
-    if gut_road: roads.append({'r': rect(110, 125, 150, 135), 'y': 1200, 'rail': 0})
+    if gut_road: roads.append({'r': rect(124, 100, 144, 168), 'y': 1200, 'rail': 0})   # nastro della piazza visibile dal 1200
     json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w')); json.dump(hist, open(os.path.join(D, 'hist.json'), 'w'))
     json.dump(roads, open(os.path.join(D, 'roads.json'), 'w')); json.dump([rect(-3000, -3000, 3000, 3000)], open(os.path.join(D, 'land.json'), 'w'))
     json.dump({'parts': [], 'clear': [], 'labels': []}, open(os.path.join(D, 'landmarks.json'), 'w'))
@@ -98,7 +98,7 @@ class TestQA(unittest.TestCase):
         json.dump(city_json.build_city(geo.load_story(sp)), open(cj, 'w'))
         R = qa.run(sp, only='e', city_json=cj, sched=sch)
         self.assertEqual(R.worst('e'), 'PASS', R.rows)
-        sp, D, sch = make(self.tmp, soste=[[50.0, 55.0, 1900, 1905, 'No date here'], [40.0, 45.0, 1800, 1801, 'Late (1800)']])
+        sp, D, sch = make(self.tmp, soste=[[52.0, 57.0, 1900, 1905, 'No date here'], [46.0, 51.0, 1800, 1801, 'Late (1800)']])
         R = qa.run(sp, only='e', city_json=cj, sched=sch)
         self.assertTrue(fails(R, 'e', 'didascalie')); self.assertTrue(fails(R, 'e', 'ordinate'))
         self.assertTrue([r for r in R.rows if r[2] == 'evento forte entro 45 s' and r[1] == 'WARN'])
