@@ -13,6 +13,8 @@ Scrive: montaggio/public/kit_<slug>.json + copie kit_<slug>_{years,eventi,labels
 Tutti i tempi di dissolvenza sono DERIVATI dallo schedule (riavvolgimento, prima sosta, durata): niente numeri a mano.
 Chiavi facoltative in story.city: pop_label, est_until, ticks, popmax. In story.montaggio: open (2 o 4 stringhe),
 title, end, end_sub, brand, title_kicker, tok_exclude, subscribe_t, label_area, sepia_rgb, short_tag, short_seconds.
+Chiavi facoltative del pacing "story" (kit/STORY_SCHEMA.md; se assenti l'output e' identico): city.polities, city.data_reliable_from,
+punti population con etichetta di fonte, montaggio.{cards, chapters, recap, cta, sources_card, label_years}.
 """
 import json, math, os, re, shutil, sys, argparse
 
@@ -58,8 +60,8 @@ if len(YEARS) != N: warn.append(f'years ha {len(YEARS)} fotogrammi, durata sched
 
 # ---- tempi chiave dallo schedule ----
 soste = S['soste']
-assert soste, 'schedule senza soste'
-rt = soste[0][0]                                    # arrivo del riavvolgimento = inizio della prima sosta
+assert soste or S.get('cards'), 'schedule senza soste'
+rt = S['title_t'] if 'title_t' in S else soste[0][0]                                    # arrivo del riavvolgimento = inizio della prima sosta
 rs = next((((int(f) - 1) / FPS) for f, y in sorted(YEARS.items(), key=lambda kv: int(kv[0])) if abs(y - Y1) > 1.0), 3.0)   # inizio riavvolgimento
 rs = round(rs, 1)
 T = {
@@ -72,8 +74,16 @@ T = {
     'sepia_rgb': mont.get('sepia_rgb', [120, 82, 38]),
 }
 
+# ---- fine video del pacing story: HUD fuori prima di CTA / fonti; la carta delle fonti sostituisce la schermata finale ----
+EP = S.get('end_plan') or {}
+if EP:
+    h_out = (EP.get('cta') or EP.get('sources') or [None])[0]
+    if h_out: T['hud'][2:] = [round(h_out - 0.9, 2), round(h_out, 2)]
+    if EP.get('sources'): T['end'] = [round(DUR + 10, 2), round(DUR + 11, 2)]
+
 # ---- dati citta' ----
-POP = city['population']
+POPSRC = [[p[0], p[2]] for p in city['population'] if len(p) > 2 and p[2]]
+POP = [[p[0], p[1]] for p in city['population']]
 mx = max(p for _, p in POP) * 1.1
 POPMAX = city.get('popmax') or next(c * 10 ** k for k in range(3, 10) for c in (1, 2, 4, 10) if c * 10 ** k >= mx)
 span = Y1 - Y0
@@ -83,8 +93,12 @@ else:
     TICKS = [y for y in range(math.ceil((Y0 + span * 0.03) / step) * step, int(Y1 - span * 0.015) + 1, step)]
 EST = city.get('est_until', Y0 if Y0 >= 1800 else 1800)
 if 'est_until' not in city: warn.append(f'city.est_until assente: uso {EST} (prima di quell\'anno la popolazione e\' mostrata con "~")')
+EXTRA_C = {}
+if POPSRC: EXTRA_C['POPSRC'] = POPSRC
+if city.get('polities'): EXTRA_C['POLITIES'] = sorted(([q['y'], q['name'], q.get('flag_colors') or []] for q in city['polities']), key=lambda q: q[0])
+if city.get('data_reliable_from') is not None: EXTRA_C['RELIABLE_FROM'] = city['data_reliable_from']
 C = {'Y0': Y0, 'Y1': Y1, 'POPMAX': POPMAX, 'EST_UNTIL': EST, 'TICKS': TICKS, 'popLabel': city.get('pop_label', f'CITY OF {name.upper()}'),
-     'POP': POP, 'ERAS': city['eras']}
+     'POP': POP, 'ERAS': city['eras'], **EXTRA_C}
 yrs_n = int(round(span)); NAME = name.upper()
 
 # ---- testi ----
@@ -129,6 +143,11 @@ if not os.path.exists(ev_p):
     json.dump({'didascalie': did, 'soste': sos, 'subscribe_t': sub_t}, open(ev_p, 'w'), ensure_ascii=False, indent=1)
     print(f'eventi_{slug}.json costruito da story.montaggio.events ({len(did)} didascalie)')
 EV = json.load(open(ev_p, encoding='utf-8'))
+EV_EXT = False
+sys.path.insert(0, ROOT)
+from kit.eventi_kit import story_extras
+_ext = story_extras(story, S, YEARS, rt + 3.4)
+if _ext: EV.update(_ext); EV_EXT = True
 for c in EV['soste']:
     if not c.get('sub'): warn.append(f'sosta senza data tra parentesi nel titolo: "{c["title"]}" (formato "Titolo (data)")')
 
@@ -138,14 +157,16 @@ files = {}
 for k in ('years', 'eventi', 'labels', 'labs'):
     src = os.path.join(HERE, f'{k}_{slug}.json')
     if os.path.exists(src):
-        files[k] = f'kit_{slug}_{k}.json'; shutil.copyfile(src, os.path.join(a.pub, files[k]))
+        files[k] = f'kit_{slug}_{k}.json'
+        if k == 'eventi' and EV_EXT: json.dump(EV, open(os.path.join(a.pub, files[k]), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        else: shutil.copyfile(src, os.path.join(a.pub, files[k]))
     else:
         files[k] = None; warn.append(f'{k}_{slug}.json assente: ' + ('nessuna etichetta sui monumenti (labels_cam.py + labs)' if k in ('labels', 'labs') else 'OBBLIGATORIO'))
 for k in ('years', 'eventi'):
     if not files[k]: sys.exit(f'ERRORE: manca {k}_{slug}.json')
 
 cfg = {'slug': slug, 'name': name, 'fps': FPS, 'n': N, 'duration': DUR, 'city': C, 't': T, 'text': text, 'tok_exclude': tok_ex,
-       'label_area': mont.get('label_area', [70, 1850, 230, 900]), 'short': short, 'files': files, 'preview_video': f'{slug}_light.mp4',
+       'label_area': mont.get('label_area', [70, 1850, 230, 900]), 'short': short, 'files': files, 'preview_video': f'{slug}_light.mp4', **({'label_years': True} if mont.get('label_years') else {}),
        'rewind': {'start': rs, 'arrive': rt}}
 json.dump(cfg, open(os.path.join(a.pub, f'kit_{slug}.json'), 'w'), ensure_ascii=False, indent=1)
 print(f'OK public/kit_{slug}.json: {N} fotogrammi ({DUR}s), riavvolgimento {rs}-{rt}s, titolo {T["title"][0]}s, HUD fino a {T["hud"][3]}s')

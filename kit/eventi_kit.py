@@ -4,6 +4,8 @@ Legge story (montaggio.events, montaggio.subscribe_t, regia.open.title_t, regia.
 per fotogramma: montaggio/years_<slug>.json se c'e' (dal render), altrimenti ricavati dallo schedule (year_at), cosi'
 il montaggio puo' partire PRIMA del render.
 Scrive montaggio/eventi_<slug>.json: {didascalie:[{t_in,t_out,date,title,line,sober}], soste:[{t_in,t_out,title,sub}], subscribe_t}
+Chiavi facoltative (pacing story, vedi STORY_SCHEMA.md; assenti = file identico a prima): cards[{t_in,t_out,date,title,lines,src}],
+chapters[{t_in,t_out,num,title}], recap{t_in,t_out,text}, cta{t_in,t_out,text}, sources_card{t_in,t_out,items,no_ai}.
 Uso: python kit/eventi_kit.py <slug | story.json> [--schedule F] [--years F] [--out F]
 """
 import json, os, re, sys
@@ -36,6 +38,64 @@ def yfmt(y):
 def split_caption(txt):
     m = re.match(r'(.*?)\s*\(([^)]*)\)\s*$', txt)
     return (m.group(1), m.group(2)) if m else (txt, '')
+
+
+def roman(n):
+    out = ''
+    for v, r in ((10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')):
+        while n >= v: out += r; n -= v
+    return out
+
+
+def story_extras(story, S, Y, after=9.5):
+    """Cartelli, capitoli, recap, CTA e fonti del montaggio "story". S = schedule, Y = {frame: anno}. {} se la story non usa le chiavi."""
+    MO = story.get('montaggio', {}) or {}
+    mc = sorted(MO.get('cards') or [], key=lambda c: c['y']); ch_in = list(MO.get('chapters') or [])
+    plan = S.get('end_plan') or {}
+    if not (mc or ch_in or plan.get('recap') or plan.get('cta') or plan.get('sources')): return {}
+    fr = sorted((int(k), v) for k, v in Y.items())
+
+    def t_of(year):
+        for f, y in fr:
+            t = (f - 1) / FPS
+            if t >= after and y >= year: return t
+        return None
+    out = {}; sc = S.get('cards') or []
+    cards = []   # (y, card)
+    for c in mc:
+        m = next((x for x in sc if x['title'] == c['title'] and abs(x['y'] - c['y']) < 1e-6), None)
+        if m: t0, t1 = m['t_in'], m['t_out']
+        else:
+            t0 = t_of(c['y'])
+            if t0 is None: continue
+            t1 = t0 + float(c.get('hold_s', 5.0))
+        if t1 > S['duration'] - 1: continue
+        cards.append((c['y'], {'t_in': round(t0, 2), 't_out': round(t1, 2), 'date': c.get('date') or yfmt(c['y']), 'title': c['title'],
+                               'lines': list(c.get('lines', []))[:2], 'sober': bool(c.get('sober', False))}))
+        if c.get('chapter'): ch_in.append({'y': c['y'], 'title': c['chapter']})
+    if cards: out['cards'] = [c for _, c in cards]
+    chs = []
+    for n, ch in enumerate(sorted(ch_in, key=lambda c: c['y']), 1):
+        nxt = next((c for y, c in cards if y >= ch['y']), None)
+        tc = nxt['t_in'] if nxt else t_of(ch['y'])
+        if tc is None: continue
+        prev = max([c['t_out'] for _, c in cards if c['t_out'] <= tc - 0.01] or [after])
+        a = min(max(tc - 2.8, prev), tc - 1.2)
+        chs.append({'t_in': round(a, 2), 't_out': round(tc if nxt else a + 2.8, 2), 'num': roman(n), 'title': ch['title']})
+    if chs: out['chapters'] = chs
+    rc = MO.get('recap')
+    if plan.get('recap'):
+        a, b = plan['recap']
+        txt = (rc.get('text') if isinstance(rc, dict) else None) or f"{int(round(story['city']['end_year'] - story['city']['start_year'])):,} years from one spot in {int(round(b - a))} seconds"
+        out['recap'] = {'t_in': a, 't_out': b, 'text': txt}
+    if plan.get('cta') and MO.get('cta'): out['cta'] = {'t_in': plan['cta'][0], 't_out': plan['cta'][1], 'text': MO['cta']}
+    if plan.get('sources'):
+        scd = MO.get('sources_card') if isinstance(MO.get('sources_card'), dict) else {}
+        items = [re.sub(r'\s+', ' ', v.get('title', k)).strip() for k, v in (story.get('sources') or {}).items()]
+        items = [(x if len(x) <= 78 else x[:75] + '...') for x in items][:int(scd.get('max', 14))]
+        out['sources_card'] = {'t_in': plan['sources'][0], 't_out': plan['sources'][1], 'items': scd.get('items') or items,
+                               'no_ai': scd.get('no_ai', 'NO AI: every frame is rendered from open data')}
+    return out
 
 
 def run(story, schedule=None, years=None, out=None, quiet=False):
@@ -76,6 +136,7 @@ def run(story, schedule=None, years=None, out=None, quiet=False):
         for t in np.arange(90.0, S['duration'] - 20, 0.5):
             if not any(a < t + 6 and b > t for a, b in busy): sub_t = float(t); break
     res = {'didascalie': did, 'soste': soste, 'subscribe_t': float(sub_t), '_years': ysrc}
+    res.update(story_extras(story, S, Y, after))
     out = out or os.path.join(ROOT, 'montaggio', f'eventi_{slug}.json')
     json.dump({k: v for k, v in res.items() if not k.startswith('_')}, open(out, 'w'), ensure_ascii=False, indent=1)
     if not quiet:

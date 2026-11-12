@@ -26,6 +26,14 @@ Ancore musicali (FIXED)
   Override: regia.anchors = [{"t": 184.0 | "drop" | "A:184" | "B:25", "year": 1852.0} oppure {"t": ..., "sosta":
   "<inizio della didascalia>"}]; regia.anchors_auto=false disattiva le automatiche.
 
+Pacing "story" (regia.pacing, default "buildings" = comportamento storico)
+  Il contatore SI FERMA su ogni cartello (story.montaggio.cards[{y,title,lines,hold_s=5,target?,shot?}], e le soste contano come
+  cartelli) a HOLD_RATE = 0,2 anni/s e CORRE tra un cartello e l'altro (tetto SPRINT_CAP = 25 anni/s). Niente ancore musicali,
+  night=false di default; dopo il titolo c'e' una pausa regia.open.story_lead (3,4 s). Il budget di tempo e' regia.duration.
+  regia.camera = "continuous": un solo piano sequenza (PCHIP) per i waypoint dei bersagli di cartelli/soste, senza stacchi.
+  montaggio.recap {seconds}: negli ultimi secondi (prima di CTA + fonti) un punto di vista alto fisso, anni start->end.
+  Lo schedule guadagna: cards[{t_in,t_out,y,title,lines,chapter,src}], title_t, end_plan{recap,cta,sources}, pacing.
+
 Output
   schedule_<slug>.json, schedule_<slug>_night.json (radice del repo, o --out), cities/<slug>/regia.txt e regia.png.
 
@@ -38,6 +46,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from kit.geo import ROOT, load_story, Proj, data_dir as story_data_dir   # noqa: E402
 
 FPS = 24
+HOLD_RATE = 0.2       # anni/s sui cartelli (pacing story)
+SPRINT_CAP = 25.0     # anni/s massimi tra i cartelli (pacing story)
 FX_FORCE = {'boom': 8, 'fire': 8, 'battle': 8, 'quake': 8, 'crash': 7, 'crowd': 6, 'firework': 6, 'rocket': 6, 'peal': 5,
             'bell': 5, 'horn': 5, 'water': 4, 'hammer': 4, 'whoosh': 4, 'ding': 3, 'click': 3, 'city_hum': 3}
 DISASTER_FX = {'boom', 'fire', 'battle', 'quake', 'crash'}
@@ -265,6 +275,71 @@ class Timeline:
         return YEARS, SOSTA_T
 
 
+def end_plan_of(story, story_mode):
+    """Secondi di recap / CTA / carta delle fonti in coda al video (pacing story). Stessa regola per regia_kit e kit_city."""
+    MO = story.get('montaggio', {}) or {}
+    rc = MO.get('recap'); recap = float(rc.get('seconds', 20) if isinstance(rc, dict) else (20 if rc else 0)) if rc else 0.0
+    cta = 4.5 if MO.get('cta') else 0.0
+    sc = MO.get('sources_card')
+    on = bool(sc) if sc is not None else story_mode
+    src = float(sc.get('seconds', 8.0) if isinstance(sc, dict) else 8.0) if on else 0.0
+    return recap, cta, src
+
+
+def build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn):
+    """Pacing story: rewind fino a y_start, pausa 'lead', poi per ogni voce (cartello o sosta, per anno) corsa + sosta a 0,2 anni/s.
+    Ritorna YEARS, SOSTA_T come Timeline.build. La velocita' di corsa e' ricavata dal tempo libero (tetto 25 anni/s, con avviso)."""
+    YEARS, SOSTA_T = [], []
+    for (ta, ya), (tb, yb) in zip(FIXED[:2], FIXED[1:3]):
+        for k in range(0, 21):
+            u = k / 20; YEARS.append((ta + (tb - ta) * u, ya + (yb - ya) * ease(u)))
+    t0 = title_t + lead; YEARS.append((t0, y_start))
+    items = []; cur = y_start
+    for s in SOSTE:
+        y0 = max(float(s['y0']), cur); y1 = max(y0 + (float(s['y1']) - float(s['y0'])), y0 + HOLD_RATE * s['dur'])   # anche le soste scorrono almeno a 0,2 anni/s
+        items.append((y0, y1, s)); cur = y1
+    hold_t = sum(s['dur'] for _, _, s in items)
+    free = end_t - t0 - hold_t
+    total = sum(max(0.0, y0 - c) for (y0, _, _), c in zip(items, [y_start] + [i[1] for i in items[:-1]])) + max(0.0, 2026.0 - cur)
+    if free <= 0.5:
+        warn(f'pacing story: i cartelli ({hold_t:.0f} s) riempiono il tempo ({end_t - t0:.0f} s): alza regia.duration o togli cartelli')
+        free = max(0.5, free)
+    rate = total / free
+    if rate > SPRINT_CAP * 1.001:
+        warn(f'pacing story: la corsa tra i cartelli servirebbe {rate:.1f} anni/s (tetto {SPRINT_CAP:g}): alza regia.duration o accorcia hold_s')
+    t = t0; cur = y_start
+    for y0, y1, s in items:
+        if y0 - cur > 1e-6:
+            dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
+        s['y0'], s['y1'] = y0, y1
+        SOSTA_T.append((t, t + s['dur'], s))
+        YEARS += [(t, y0), (t + s['dur'], y1)]; t += s['dur']; cur = y1
+    if 2026.0 - cur > 1e-6:
+        dt = (2026.0 - cur) / rate; YEARS += [(t, cur), (t + dt, 2026.0)]; t += dt
+    YEARS.append((max(t, end_t), 2026.0))
+    YEARS += tail
+    YEARS = sorted({round(float(a), 3): (round(float(a), 3), round(float(b), 4)) for a, b in YEARS}.values())
+    return YEARS, SOSTA_T
+
+
+def continuous_cam(wps, t_end, dt=0.25):
+    """Piano sequenza: waypoint (t, (tx,ty,tz), d, el, az, mm) -> chiavi camera [t, pos, tgt, mm] con PCHIP (come regia_sevilla.py)."""
+    from scipy.interpolate import PchipInterpolator
+    W = []
+    for w in sorted(wps, key=lambda w: w[0]):
+        if not W or w[0] > W[-1][0] + 0.2: W.append(w)
+    T = np.array([w[0] for w in W]); P, G, M = [], [], []
+    for _, tg, d, el, az, mm in W:
+        e, a = math.radians(el), math.radians(az)
+        P.append((tg[0] + d * math.cos(e) * math.sin(a), tg[1] + d * math.cos(e) * math.cos(a), tg[2] + d * math.sin(e)))
+        G.append(tuple(tg)); M.append(mm)
+    fp, fg, fm = PchipInterpolator(T, np.array(P), axis=0), PchipInterpolator(T, np.array(G), axis=0), PchipInterpolator(T, np.array(M))
+    out = []
+    for tt in list(np.arange(T[0], T[-1], dt)) + [T[-1]]:
+        out.append([round(float(tt), 3), [round(float(v), 1) for v in fp(tt)], [round(float(v), 1) for v in fg(tt)], round(float(fm(tt)), 1)])
+    return out
+
+
 def make_year_at(YEARS):
     T = np.array([a for a, _ in YEARS]); Y = np.array([b for _, b in YEARS])
 
@@ -376,7 +451,13 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     M = load_music(music or R.get('music'))
     if (music or R.get('music')) and M is None: warn(f"modello musicale {music or R.get('music')} non trovato")
     rmin, rmax = float(R.get('rmin', 0.5)), float(R.get('rmax', 8.0))
-    night = bool(R.get('night', True))
+    pacing = R.get('pacing', 'buildings'); story_mode = pacing == 'story'
+    if pacing not in ('buildings', 'story'): warn(f"regia.pacing sconosciuto: {pacing!r} (buildings|story)")
+    cont = R.get('camera') == 'continuous'
+    MO_ = story.get('montaggio', {}) or {}
+    recap_s, cta_s, src_s = end_plan_of(story, story_mode)
+    if recap_s and not story_mode: warn('montaggio.recap richiede regia.pacing="story": ignorato'); recap_s = 0.0
+    night = bool(R.get('night', False if story_mode else True))
     op = R.get('open', {}) or {}
     y_open = float(op.get('year', 2026)); y_start = float(op.get('rewind_to', city.get('start_year')))
     hold = float(op.get('hold', 3.0)); title_t = float(op.get('title_t', 9.5))
@@ -399,7 +480,10 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         night_t = float(R.get('night_t') or next((s['t'] for s in slots if s['role'] == 'night'), DUR - 50))
     else:
         night_t = None
-    end_t = night_t if night else DUR - float(R.get('end_hold', 8.0))
+    if story_mode:
+        end_t = (night_t if night else DUR - recap_s - float(R.get('end_hold', (cta_s + src_s) or 4.0)))
+    else:
+        end_t = night_t if night else DUR - float(R.get('end_hold', 8.0))
 
     # ---------- soste ----------
     SOSTE = []
@@ -413,9 +497,17 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             warn(f"sosta senza bersaglio: {s['caption']} -> target {s.get('target')!r} non trovato (uso la citta' dell'anno)")
         s['_tg'] = tg; s['_force'] = sosta_force(s); s['_dis'] = sosta_is_disaster(s)
         SOSTE.append(s)
+    if story_mode:
+        for i, c in enumerate(MO_.get('cards', []) or []):
+            y = float(c['y'])
+            if not (y_start <= y < 2026.0): warn(f"cartello fuori dagli anni del video, tolto: {c.get('title')} ({y})"); continue
+            h = float(c.get('hold_s', 5.0))
+            SOSTE.append({'y0': y, 'y1': y + HOLD_RATE * h, 'dur': h, 'caption': c['title'], '_i': 10000 + i, '_force': 0.0, '_dis': False,
+                          '_card': True, '_tg': D.target(c.get('target')) if c.get('target') else None, 'shot': c.get('shot', 'medium'),
+                          '_c': c})
     SOSTE.sort(key=lambda s: (s['y0'], s['_i']))
     for a, b in zip(SOSTE, SOSTE[1:]):
-        if b['y0'] < a['y1'] - 1e-6:
+        if b['y0'] < a['y1'] - 1e-6 and not story_mode:
             warn(f"soste sovrapposte negli anni: '{a['caption']}' ({a['y0']}-{a['y1']}) e '{b['caption']}' ({b['y0']}-{b['y1']})")
     focus = None
     for s in SOSTE:
@@ -423,7 +515,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
 
     # ---------- ancore ----------
     fixed, used_roles, anchor_log = [], set(), []
-    for a in R.get('anchors', []) or []:
+    for a in ([] if story_mode else (R.get('anchors', []) or [])):
         t = parse_t(a.get('t'), {'slots': slots}, b_start or DUR)
         if t is None: warn(f'ancora con tempo non valido: {a}'); continue
         if 'sosta' in a:
@@ -437,13 +529,13 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         if isinstance(a.get('t'), str): used_roles.add(a['t'])
         fixed.append((t, y)); anchor_log.append((t, y, a.get('t') if isinstance(a.get('t'), str) else 'manuale', lab))
     for s in SOSTE:
-        if s.get('role') and not s.get('_pinned'):
+        if s.get('role') and not s.get('_pinned') and not story_mode:
             t = parse_t(s['role'], {'slots': slots}, b_start or DUR)
             if t is None: warn(f"ruolo '{s['role']}' sconosciuto per '{s['caption']}'"); continue
             if s['role'] == 'climax' and b_start: t = climax_t(t, s['dur'], b_start)
             s['_pinned'] = True; used_roles.add(s['role']); fixed.append((t, s['y0']))
             anchor_log.append((t, s['y0'], s['role'], f"sosta '{s['caption']}'"))
-    if R.get('anchors_auto', True) and slots:
+    if R.get('anchors_auto', True) and slots and not story_mode:
         free_slots = [s for s in slots if s['role'] not in used_roles and s['role'] != 'night'
                       and title_t + 4 < s['t'] < end_t - 4 and all(abs(s['t'] - t) > 6 for t, _ in fixed)]
         cands = [s for s in SOSTE if s['y0'] > y_start + 1e-6]
@@ -464,8 +556,14 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     for (ta, ya), (tb, yb) in zip(FIXED[2:], FIXED[3:]):
         if yb < ya: warn(f'ancore non in ordine: {fmt_t(ta)} {ya} -> {fmt_t(tb)} {yb}')
     tail = [(end_t, 2026.0), (DUR, 2026.0)]
-    TL = Timeline(D, rmin, rmax, warn)
-    YEARS, SOSTA_T = TL.build(FIXED, SOSTE, tail)
+    if story_mode and recap_s:   # il recap riparte da y_start e rifa' tutti gli anni da un punto fisso
+        tail = [(end_t, 2026.0), (end_t + 0.04, y_start)] + [(end_t + 0.04 + (recap_s - 0.04) * k / 20, y_start + (2026.0 - y_start) * ease(k / 20))
+                                                              for k in range(1, 21)] + [(DUR, 2026.0)]
+    if story_mode:
+        YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, float(op.get('story_lead', 3.4)), warn)
+    else:
+        TL = Timeline(D, rmin, rmax, warn)
+        YEARS, SOSTA_T = TL.build(FIXED, SOSTE, tail)
     year_at = make_year_at(YEARS)
 
     # ---------- camera ----------
@@ -489,7 +587,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     open_end = SHOTS[-1][1]
     every = float(R.get('wide_every', 16.0))
     alt = 0; prev_end = open_end
-    for (t0, t1, s) in SOSTA_T:
+    for (t0, t1, s) in ([] if cont else SOSTA_T):
         if t0 < open_end: t0 = open_end
         if t1 <= t0 + 0.5: continue
         if t0 - prev_end > 3.0:
@@ -516,7 +614,10 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         mm = float(cam.get('mm', 35))
         SHOTS.append((t0, t1, (tg['x'], tg['y'], tg['z']), d * 1.25, d * 0.75, el + 4, el, az0 - 6, az1 + 6, mm))
         prev_end = t1
-    if night:
+    cam_end = end_t if (story_mode and recap_s) else DUR
+    if cont:
+        pass
+    elif night:
         if night_t - prev_end > 3:
             n_sub = max(1, int((night_t - prev_end) // 15))
             for k in range(n_sub):
@@ -545,17 +646,43 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             SHOTS.append((night_t, t_a, (best['x'], best['y'], best['z']), d1 * 2.0, d1, 26, 17, az_def - 20, az_def + 45, 35))
             SHOTS.append((t_a, t_b, (fx_, fy_, 10.0), 1000, 520, 18, 12, az_def - 85, az_def - 20, 35))
             SHOTS.append((t_b, DUR, ((m26x + fx_) / 2, (m26y + fy_) / 2, 0.0), 3000, max(6200, 1.3 * r26), 22, 32, az_def - 15, az_def + 30, 35))
-    elif DUR - prev_end > 3:
-        n_sub = max(1, int((DUR - prev_end) // 9))
+    elif cam_end - prev_end > 3:
+        n_sub = max(1, int((cam_end - prev_end) // 9))
         for k in range(n_sub):
-            a_, b_ = prev_end + (DUR - prev_end) * k / n_sub, prev_end + (DUR - prev_end) * (k + 1) / n_sub
+            a_, b_ = prev_end + (cam_end - prev_end) * k / n_sub, prev_end + (cam_end - prev_end) * (k + 1) / n_sub
             last = k == n_sub - 1; alt += 1
             d0 = 0.8 * r26 + 700
             SHOTS.append((a_, b_, ((m26x + fx_) / 2, (m26y + fy_) / 2, 0.0), d0 if not last else d0 * 1.2,
                           d0 * 0.75 if not last else max(6000, 1.3 * r26), 28, 22 if not last else 34, az_def - 5, az_def + 30, 35))
+    d_rc = max(5000.0, 1.8 * r26)
+    recap_shot = (end_t, DUR, (m26x, m26y, 0.0), d_rc, d_rc, 52, 52, az_def, az_def, 35)   # punto di vista alto e FISSO
+    if story_mode and recap_s and not cont: SHOTS.append(recap_shot)
     SHOTS.sort(key=lambda s: s[0])
     cam = []
-    for i, (t0, t1, tg, d0, d1, e0, e1, a0, a1, mm) in enumerate(SHOTS):
+    if cont:
+        wps = [(0.0, SHOTS[0][2], SHOTS[0][3], SHOTS[0][5], SHOTS[0][7], 35), (title_t + 0.5, (fx_, fy_, 10.0), 1800.0, 28, az_def + 9, 35)]
+        for j, (t0, t1, s) in enumerate(SOSTA_T):
+            if t1 <= title_t + 1.0: continue
+            tg = s['_tg']
+            if tg is None:
+                (mx, my), r = D.extent(s['y1'], focus); tg = {'x': mx, 'y': my, 'z': 0.0, 'h': 0.0, 'R': r}
+                d = 1.0 * r + (450 if r > 700 else 180); el = 30.0
+            else:
+                mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
+                d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
+                if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+            az0 = az_def - 20 + 20 * (j % 3)
+            if wps and t0 - wps[-1][0] > 2.5:   # durante la corsa la camera si apre sull'estensione della citta' di quell'anno
+                tm = (wps[-1][0] + t0) / 2; (mx, my), r = D.extent(year_at(tm), focus)
+                wps.append((tm, (mx, my, 0.0), 1.0 * r + 450 + 0.3 * d, 33, az0 - 12, 35))
+            wps.append((t0 + 0.3, (tg['x'], tg['y'], tg['z']), d * 1.1, el + 3, az0, 35))
+            wps.append((t1 - 0.3, (tg['x'], tg['y'], tg['z']), d * 0.85, el, az0 + 18, 35))
+        if story_mode and recap_s:
+            wps += [(end_t, recap_shot[2], d_rc, 52, az_def, 35), (DUR, recap_shot[2], d_rc, 52, az_def, 35)]
+        else:
+            wps.append((DUR, ((m26x + fx_) / 2, (m26y + fy_) / 2, 0.0), max(6000.0, 1.3 * r26), 34, az_def + 20, 35))
+        cam = continuous_cam(wps, DUR)
+    for i, (t0, t1, tg, d0, d1, e0, e1, a0, a1, mm) in enumerate([] if cont else SHOTS):
         n = max(2, int((t1 - t0) / 0.5))
         for k in range(n + 1):
             u = k / n; ue = ease(u) * 0.5 + u * 0.5
@@ -569,7 +696,14 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
              'duration': DUR, 'lens': 35, 'years': [[t, y] for t, y in YEARS], 'cam': cam}
     if night: sched['night_t'] = night_t
     if b_start is not None: sched['b_start'] = b_start
-    sched['soste'] = [[round(t0, 2), round(t1, 2), s['y0'], s['y1'], s['caption']] for t0, t1, s in SOSTA_T]
+    sched['soste'] = [[round(t0, 2), round(t1, 2), s['y0'], s['y1'], s['caption']] for t0, t1, s in SOSTA_T if not s.get('_card')]
+    if story_mode:
+        sched['pacing'] = 'story'; sched['title_t'] = title_t
+        sched['cards'] = [{'t_in': round(t0, 2), 't_out': round(t1, 2), 'y': s['_c']['y'], 'title': s['_c']['title'], 'lines': s['_c'].get('lines', []),
+                           'chapter': s['_c'].get('chapter'), 'src': s['_c'].get('src')} for t0, t1, s in SOSTA_T if s.get('_card')]
+        sched['end_plan'] = {'recap': [round(end_t, 2), round(end_t + recap_s, 2)] if recap_s else None,
+                             'cta': [round(DUR - src_s - cta_s, 2), round(DUR - src_s, 2)] if cta_s else None,
+                             'sources': [round(DUR - src_s, 2), DUR] if src_s else None}
 
     # ---------- controlli ----------
     ts = np.arange(0, DUR, 0.25); yv = np.array([year_at(t) for t in ts]); rate = np.gradient(yv, ts)
@@ -579,7 +713,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     for t, _ in FIXED: anch |= abs(ts - t) < 0.6
     free = (ts > title_t + 0.5) & (ts < end_t - 0.5) & ~in_stop & ~anch
     bad = free & ((np.abs(rate) > rmax * 1.08) | (np.abs(rate) < rmin * 0.9))
-    if bad.any():
+    if bad.any() and not story_mode:
         runs, start = [], None
         for i, b in enumerate(bad):
             if b and start is None: start = i
@@ -590,13 +724,14 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             m = (ts >= a_) & (ts <= b_)
             warn(f'velocita\' fuori limiti {fmt_t(a_)}-{fmt_t(b_)}: {np.abs(rate[m]).min():.2f}-{np.abs(rate[m]).max():.2f} anni/s (limiti {rmin}-{rmax})')
     strong = [(t0, s) for t0, t1, s in SOSTA_T if s['_force'] >= STRONG]
-    if not strong: warn('nessun evento forte (forza >= 6) tra le soste')
+    if story_mode: pass
+    elif not strong: warn('nessun evento forte (forza >= 6) tra le soste')
     elif strong[0][0] > 45: warn(f"primo evento forte dopo 45 s: '{strong[0][1]['caption']}' a {fmt_t(strong[0][0])}")
     for (a0, a1, sa), (b0, b1, sb) in zip(SOSTA_T, SOSTA_T[1:]):
         if b0 < a1 - 0.05: warn(f"soste sovrapposte nel video: '{sa['caption']}' e '{sb['caption']}' ({fmt_t(b0)} < {fmt_t(a1)})")
     day = end_t - title_t; tot = sum(t1 - t0 for t0, t1, _ in SOSTA_T)
-    if tot > 0.4 * day: warn(f'soste {tot:.0f} s = {100 * tot / day:.0f}% del giorno (> 40%)')
-    if b_start is not None and M:
+    if tot > 0.4 * day and not story_mode: warn(f'soste {tot:.0f} s = {100 * tot / day:.0f}% del giorno (> 40%)')
+    if b_start is not None and M and not story_mode:
         cover = [s for t0, t1, s in SOSTA_T if t0 <= b_start <= t1]
         if not cover: warn(f'nessuna sosta copre il cambio di traccia a {fmt_t(b_start)}')
 

@@ -118,6 +118,18 @@ def run(story, schedule=None, eventi=None, labels=None, data_dir=None, out=None,
                 best = min(pts, key=lambda n: math.hypot(pts[n]['x'] - c[0], pts[n]['y'] - c[1]), default=None)
                 if best and math.hypot(pts[best]['x'] - c[0], pts[best]['y'] - c[1]) < 250: names = [best]
         if names: wins.append([t0, t1, names])
+    # cartelli del pacing story (schedule.cards): stesse regole delle soste, bersaglio = card.target / card.labels
+    mcards = (story.get('montaggio', {}) or {}).get('cards') or []
+    for c in S.get('cards', []) or []:
+        mc = next((m for m in mcards if m['title'] == c['title'] and abs(m['y'] - c['y']) < 1e-6), {})
+        names = mc.get('labels')
+        if names is None:
+            tg = mc.get('target', ''); names = []
+            cc = ctr(tg) if isinstance(tg, str) and tg and not tg.startswith(('fire:', 'area:', 'xy:', 'water:')) else None
+            if cc:
+                best = min(pts, key=lambda n: math.hypot(pts[n]['x'] - cc[0], pts[n]['y'] - cc[1]), default=None)
+                if best and math.hypot(pts[best]['x'] - cc[0], pts[best]['y'] - cc[1]) < 250: names = [best]
+        if names: wins.append([c['t_in'], c['t_out'], names])
     fin = sorted(pts, key=lambda n: -pts[n]['z'])
     wins.append([round(DUR - 13, 2), round(DUR - 1.5, 2), fin[:8]])
     ok = []

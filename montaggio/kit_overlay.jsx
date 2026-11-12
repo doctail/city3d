@@ -14,6 +14,51 @@ const ramp = (s, [a, b, c, d]) => interpolate(s, [a, b, c, d], [0, 1, 1, 0], {ex
 const clampI = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const yearLabel = (y) => { const v = Math.floor(y); return v < 0 ? `${-v} BC` : (v < 1000 ? `AD ${v}` : `${v}`); };
 
+// ---- elementi opzionali del pacing "story" (cartelli, capitoli, polity, fonte popolazione, recap, CTA, fonti): tutto assente = nessun cambiamento ----
+const BOX = 'rgba(12,14,16,0.72)';
+const popLabelAt = (C, y) => { const P = C.POPSRC; if (!P) return null; let r = null; for (const [a, l] of P) if (a <= y) r = l; return r; };
+const polityAt = (C, y) => { const P = C.POLITIES; if (!P) return null; let r = null; for (const q of P) if (q[0] <= y) r = q; return r; };
+const win = (e, s, fade = 0.5) => (e && s >= e.t_in && s < e.t_out ? Math.min(1, (s - e.t_in) / fade, (e.t_out - s) / fade) : 0);
+const find = (list, s) => (list || []).find((e) => s >= e.t_in && s < e.t_out);
+
+// cartello: riquadro scuro traslucido, "ANNO · Titolo" oro, 1-2 righe bianche (alto a sinistra)
+const Card = ({e, k}) => (<div style={{position: 'absolute', left: 80, top: 78, width: 780, opacity: k, transform: `translateY(${(1 - k) * -14}px)`}}>
+  <div style={{padding: '22px 30px 24px', borderRadius: 16, background: BOX, borderLeft: `6px solid ${e.sober ? GREY : ACC}`, boxShadow: '0 6px 30px rgba(0,0,0,0.35)'}}>
+    <div style={{font: '900 40px Montserrat', color: e.sober ? GREY : ACC, textShadow: SH, lineHeight: 1.12}}>{e.date} <span style={{opacity: 0.8}}>·</span> {e.title}</div>
+    {e.lines.map((l, i) => <div key={i} style={{font: '500 29px Montserrat', color: INK, lineHeight: 1.34, marginTop: i ? 4 : 12}}>{l}</div>)}
+  </div></div>);
+
+const Chapter = ({e, k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, background: `radial-gradient(ellipse at center, rgba(10,10,12,${0.62 * k}), rgba(10,10,12,0.12) 78%)`, paddingBottom: 60}}>
+  <div style={{font: '700 30px Montserrat', letterSpacing: 14, color: ACC, textShadow: SH}}>CHAPTER {e.num}</div>
+  <div style={{display: 'flex', alignItems: 'center', gap: 28, marginTop: 14, transform: `scale(${0.97 + 0.03 * k})`}}>
+    <span style={{width: 110, height: 2, background: ACC}} />
+    <div style={{font: `900 ${fitSize(`${e.num} · ${e.title}`.toUpperCase(), 1500, 96, 6)}px Montserrat`, color: INK, textShadow: SH, letterSpacing: 6, whiteSpace: 'nowrap'}}>{e.num} · {e.title.toUpperCase()}</div>
+    <span style={{width: 110, height: 2, background: ACC}} />
+  </div></AbsoluteFill>);
+
+const PolityChip = ({C, year}) => { const q = polityAt(C, year); if (!q) return null; const cols = q[2] && q[2].length ? q[2] : ['#888'];
+  return (<div style={{position: 'absolute', left: 80, bottom: 300, display: 'inline-flex', alignItems: 'center', gap: 14, padding: '10px 22px 10px 12px', borderRadius: 10, background: BOX}}>
+    <div style={{width: 54, height: 36, borderRadius: 4, overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 0 0 2px rgba(255,255,255,0.35)'}}>{cols.map((c, i) => <div key={i} style={{flex: 1, background: c}} />)}</div>
+    <div style={{font: '700 24px Montserrat', letterSpacing: 2, color: INK}}>{q[1]}</div></div>); };
+
+const Reconstruction = ({C, year}) => (C.RELIABLE_FROM != null && year < C.RELIABLE_FROM ? (<div style={{position: 'absolute', left: 0, right: 0, top: 36, textAlign: 'center'}}>
+  <span style={{display: 'inline-block', padding: '8px 22px', borderRadius: 24, background: BOX, border: `1px solid ${ACC}`, font: '700 20px Montserrat', letterSpacing: 6, color: ACC}}>RECONSTRUCTION · APPROXIMATE</span></div>) : null);
+
+const Recap = ({e, k}) => (<div style={{position: 'absolute', left: 0, right: 0, top: 70, textAlign: 'center', opacity: k}}>
+  <div style={{display: 'inline-block', padding: '18px 44px', borderRadius: 16, background: BOX, borderBottom: `4px solid ${ACC}`}}>
+    <div style={{font: `900 ${fitSize(e.text.toUpperCase(), 1500, 50, 4)}px Montserrat`, color: ACC, textShadow: SH, letterSpacing: 4}}>{e.text.toUpperCase()}</div></div></div>);
+
+const Cta = ({e, k}) => (<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, background: `radial-gradient(ellipse at center, rgba(10,10,12,${0.6 * k}), rgba(10,10,12,0.15) 78%)`}}>
+  <div style={{font: `900 ${fitSize(e.text, 1700, 84, 3)}px Montserrat`, color: INK, textShadow: SH, textAlign: 'center', padding: '0 80px', lineHeight: 1.15, textWrap: 'balance'}}>{e.text}</div></AbsoluteFill>);
+
+const SourcesCard = ({e, k, brand}) => { const n = Math.ceil(e.items.length / 2), cols = [e.items.slice(0, n), e.items.slice(n)];
+  return (<AbsoluteFill style={{opacity: k, background: `rgba(10,10,12,${0.88 * k})`, alignItems: 'center', justifyContent: 'center'}}>
+    <div style={{font: '700 28px Montserrat', letterSpacing: 14, color: ACC}}>SOURCES</div>
+    <div style={{display: 'flex', gap: 60, margin: '30px 90px 0', alignItems: 'flex-start'}}>{cols.map((c, ci) => <div key={ci} style={{width: 790}}>{c.map((t, i) => <div key={i} style={{font: '500 22px Montserrat', color: INK, lineHeight: 1.42, opacity: 0.92, marginBottom: 6}}>· {t}</div>)}</div>)}</div>
+    <div style={{marginTop: 38, padding: '12px 34px', borderRadius: 14, border: `2px solid ${ACC}`, font: '900 30px Montserrat', letterSpacing: 4, color: ACC}}>{e.no_ai}</div>
+    <div style={{position: 'absolute', bottom: 56, font: '900 26px Montserrat', letterSpacing: 10, color: INK, opacity: 0.8}}>{brand}</div>
+  </AbsoluteFill>); };
+
 // ---- dati della citta' (tutto da cfg) ----
 const popAt = (C, y) => { const P = C.POP; for (let i = 1; i < P.length; i++) if (y <= P[i][0]) { const [a, pa] = P[i - 1], [b, pb] = P[i]; const t = (y - a) / (b - a); return Math.exp(Math.log(pa) + (Math.log(pb) - Math.log(pa)) * t); } return P[P.length - 1][1]; };
 const eraAt = (C, y) => [...C.ERAS].reverse().find((e) => y >= e[0]) || C.ERAS[0];
@@ -48,9 +93,12 @@ const Hud = ({C, year}) => { const era = eraAt(C, year); const p = popAt(C, year
     <div style={{position: 'absolute', right: 80, top: 78, textAlign: 'right'}}>
       <div style={{font: '700 18px Montserrat', letterSpacing: 4, color: 'rgba(246,241,231,0.75)', textShadow: SH}}>POPULATION <span style={{opacity: 0.7, letterSpacing: 2}}>· {C.popLabel}</span></div>
       <div style={{font: '900 52px Montserrat', color: ACC, textShadow: SH, fontVariantNumeric: 'tabular-nums', margin: '2px 0 10px'}}>{est ? '~' : ''}{fmtPop(p).toLocaleString('en-US')}</div>
+      {popLabelAt(C, year) ? <div style={{font: '700 17px Montserrat', letterSpacing: 4, color: 'rgba(246,241,231,0.75)', textShadow: SH, margin: '-6px 0 10px', textTransform: 'uppercase'}}>{popLabelAt(C, year)}</div> : null}
       <div style={{display: 'inline-block'}}><Spark C={C} year={year} /></div>
     </div>
     <Timeline C={C} year={year} />
+    <PolityChip C={C} year={year} />
+    <Reconstruction C={C} year={year} />
   </AbsoluteFill>); };
 
 // didascalie continue (alto a sinistra): [t_in, t_out, date, title, line]; sober = barra grigia (tragedie)
@@ -110,7 +158,7 @@ const End = ({text, k}) => (<AbsoluteFill style={{alignItems: 'center', justifyC
 
 // etichette sui monumenti: posizione proiettata con la STESSA camera del render (labels json da labels_cam.py).
 // Finestre a tempo [inizio s, fine s, nomi]; ogni etichetta compare solo se il monumento esiste in quell'anno ed e' nel quadro.
-const Label = ({LABELS, LAB_END, area, name, f, k, i = 0, year, cap}) => { const L = LABELS.lm[name]; if (!L) return null; if (year < L.y || year >= (LAB_END[name] ?? 9999)) return null;
+const Label = ({LABELS, LAB_END, area, name, f, k, i = 0, year, cap, cfg}) => { const L = LABELS.lm[name]; if (!L) return null; if (year < L.y || year >= (LAB_END[name] ?? 9999)) return null;
   const p = L.p[f - LABELS.F0]; if (!p) return null;
   const [x, y, z] = p; const [xa, xb, ya, yb] = area; if (z <= 0 || x < xa || x > xb || y < ya || y > yb) return null;
   const up = (92 + 64 * i) * k;
@@ -120,25 +168,29 @@ const Label = ({LABELS, LAB_END, area, name, f, k, i = 0, year, cap}) => { const
   return (<div style={{position: 'absolute', left: x, top: y, opacity: k}}>
     <div style={{position: 'absolute', left: -7, top: -7, width: 14, height: 14, borderRadius: 7, background: ACC, boxShadow: '0 0 0 3px rgba(0,0,0,0.45)'}} />
     <div style={{position: 'absolute', left: -1.5, top: down ? 0 : -up, width: 3, height: up, background: 'rgba(246,241,231,0.9)', boxShadow: '0 0 6px rgba(0,0,0,0.6)'}} />
-    <div style={{position: 'absolute', left: 0, top: down ? up : -up - 52, transform: 'translateX(-50%)', whiteSpace: 'nowrap', padding: '8px 18px', borderRadius: 26, background: 'rgba(12,14,16,0.72)', font: '700 26px Montserrat', color: INK, letterSpacing: 1}}>{name}</div>
+    <div style={{position: 'absolute', left: 0, top: down ? up : -up - 52, transform: 'translateX(-50%)', whiteSpace: 'nowrap', padding: '8px 18px', borderRadius: 26, background: 'rgba(12,14,16,0.72)', font: '700 26px Montserrat', color: INK, letterSpacing: 1}}>{name}{cfg.label_years && L.y > -9999 ? ` · ${Math.floor(L.y)}` : ''}</div>
   </div>); };
 const Labels = ({D, cfg, s, f, year}) => { const on = new Map(); if (s < cfg.t.labels_from || !D.labels || !D.labs) return null;
-  const cap = D.eventi.didascalie.some((c) => s >= c.t_in - 0.3 && s < c.t_out + 0.3);
+  const cap = D.eventi.didascalie.some((c) => s >= c.t_in - 0.3 && s < c.t_out + 0.3) || (D.eventi.cards || []).some((c) => s >= c.t_in - 0.3 && s < c.t_out + 0.3);
   for (const e of D.labs.labs) if (s >= e[0] && s < e[1]) e[2].forEach((n) => { if (!on.has(n)) on.set(n, Math.min(1, (s - e[0]) / 0.5, (e[1] - s) / 0.5)); });
-  return <>{[...on.entries()].map(([n, k], i) => <Label key={n} LABELS={D.labels} LAB_END={D.labs.end || {}} area={cfg.label_area} name={n} f={f} k={k} i={i} year={year} cap={cap} />)}</>; };
+  return <>{[...on.entries()].map(([n, k], i) => <Label key={n} LABELS={D.labels} LAB_END={D.labs.end || {}} area={cfg.label_area} name={n} f={f} k={k} i={i} year={year} cap={cap} cfg={cfg} />)}</>; };
 
 const yearAtF = (D, N) => (f) => D.years[String(Math.min(N, f + 1))] ?? 2026;
 
 export const Overlay = ({cfg, data: D, bg = false}) => {
   const f = useCurrentFrame(); const s = f / FPS; const y = yearAtF(D, cfg.n)(f); const T = cfg.t;
   const kh = ramp(s, T.hud), kt = ramp(s, T.title), ks = ramp(s, T.sepia), ke = interpolate(s, T.end, [0, 1], clampI);
+  const EVx = D.eventi, chap = find(EVx.chapters, s), kch = chap ? win(chap, s) : 0, card = find(EVx.cards, s);
+  const rc = find(EVx.recap && [EVx.recap], s), cta = find(EVx.cta && [EVx.cta], s), src = find(EVx.sources_card && [EVx.sources_card], s);
   return (<AbsoluteFill>
     {bg && <OffthreadVideo src={staticFile(cfg.preview_video)} style={{width: 1920, height: 1080}} />}
     {ks > 0 && <AbsoluteFill style={{background: `rgba(${T.sepia_rgb.join(',')},${0.34 * ks})`}} />}
-    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Hud C={cfg.city} year={y} /><Labels D={D} cfg={cfg} s={s} f={f + 1} year={y} /><Cap EV={D.eventi} s={s} /><Stop EV={D.eventi} cfg={cfg} s={s} /><Subscribe t0={cfg.t.subscribe ?? D.eventi.subscribe_t} s={s} /></AbsoluteFill>}
+    {kh > 0 && <AbsoluteFill style={{opacity: kh}}><Hud C={cfg.city} year={y} /><Labels D={D} cfg={cfg} s={s} f={f + 1} year={y} /><Cap EV={D.eventi} s={s} />{card && !chap && <Card e={card} k={win(card, s)} />}{rc && <Recap e={EVx.recap} k={win(EVx.recap, s, 0.8)} />}{chap && <Chapter e={chap} k={kch} />}<Stop EV={D.eventi} cfg={cfg} s={s} /><Subscribe t0={cfg.t.subscribe ?? D.eventi.subscribe_t} s={s} /></AbsoluteFill>}
     <Open open={cfg.text.open} s={s} />
     {kt > 0 && <Title text={cfg.text} k={kt} />}
     {ke > 0 && <End text={cfg.text} k={ke} />}
+    {cta && <Cta e={EVx.cta} k={win(EVx.cta, s, 0.7)} />}
+    {src && <SourcesCard e={EVx.sources_card} k={win(EVx.sources_card, s, 0.8)} brand={cfg.text.brand} />}
   </AbsoluteFill>);
 };
 
