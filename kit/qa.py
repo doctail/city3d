@@ -253,7 +253,8 @@ def check_density(story, DD, R, objs):
             if Y < born1: continue
             al = _alive(Y, OB, OD) & inz; n = int(al.sum()); cov = A[al].sum() / pz.area
             ratio = n / max(1, n_now)
-            st = PASS if ratio >= 0.6 and cov >= 0.25 else FAIL if ratio < 0.3 or cov < 0.12 else WARN
+            cr = cov / max(1e-6, a_now / pz.area)   # copertura relativa al 2026 (zone con molto vuoto anche oggi: porti, orti)
+            st = PASS if ratio >= 0.6 and cr >= 0.5 else FAIL if ratio < 0.3 or cr < 0.25 else WARN
             R.add(S, st, f'{z.get("name", "zona")} nel {Y:.0f}', f'{n} edifici vivi ({n / ha:.0f}/ha, copertura {cov:.0%}) contro {n_now} '
                   f'({n_now / ha:.0f}/ha, copertura {a_now / pz.area:.0%}) nel {y1:.0f}: rapporto {ratio:.2f}')
 
@@ -354,7 +355,8 @@ def check_corridors(story, D, DD, R, qadir, objs):
             if not (gf <= Y < gu): continue
             gm = _mask([ring], shape, x0, yb0, cell) & ok_ground
             if not gm.any(): continue
-            v_ = float((gm & vis & ~bld).sum()) * cell * cell
+            gin = ndimage.binary_erosion(gm, iterations=2)   # 8 m dal bordo: i nastri che sfiorano il ring non contano
+            v_ = float((gin & vis & ~bld).sum()) * cell * cell
             e_ = float((gm & ~bld & ~vis & ~parks).sum()) / gm.sum()
             if v_ > 60: gb.append(f'{gn}: {v_:.0f} m² di nastro visibile prima del {gu:.0f}')
             if e_ > 0.35: gv.append(f'{gn}: {e_:.0%} vuoto (case predecessore mancanti)')

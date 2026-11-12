@@ -1,0 +1,203 @@
+{
+ "didascalie": [
+  {
+   "t_in": 190.5,
+   "t_out": 195.9,
+   "date": "1609",
+   "title": "Expulsion of the Moriscos",
+   "line": "A royal decree expels the Moriscos of the Kingdom of Valencia",
+   "sober": true
+  },
+  {
+   "t_in": 215.46,
+   "t_out": 220.86,
+   "date": "1707",
+   "title": "End of the Valencian Fueros",
+   "line": "After the War of the Spanish Succession, Valencia's own laws are abolished",
+   "sober": true
+  },
+  {
+   "t_in": 267.96,
+   "t_out": 272.56,
+   "date": "1877",
+   "title": "Russafa joins the city",
+   "line": "The neighboring town of Russafa is annexed",
+   "sober": false
+  },
+  {
+   "t_in": 283.96,
+   "t_out": 288.56,
+   "date": "1897",
+   "title": "The seaside towns join",
+   "line": "El Grau, Cabanyal and Campanar are annexed",
+   "sober": false
+  },
+  {
+   "t_in": 354.0,
+   "t_out": 358.6,
+   "date": "1936",
+   "title": "Capital of the Republic",
+   "line": "The Spanish government moves to Valencia in November",
+   "sober": true
+  }
+ ],
+ "soste": [
+  {
+   "t_in": 9.5,
+   "t_out": 15.5,
+   "title": "James I takes Valencia",
+   "sub": "1238"
+  },
+  {
+   "t_in": 30.8,
+   "t_out": 35.8,
+   "title": "The Cathedral rises on the Great Mosque",
+   "sub": "1262"
+  },
+  {
+   "t_in": 53.8,
+   "t_out": 61.8,
+   "title": "A new, larger city wall",
+   "sub": "1356"
+  },
+  {
+   "t_in": 82.51,
+   "t_out": 87.51,
+   "title": "El Micalet bell tower",
+   "sub": "1381-1429"
+  },
+  {
+   "t_in": 87.51,
+   "t_out": 92.51,
+   "title": "Torres de Serranos",
+   "sub": "1392-98"
+  },
+  {
+   "t_in": 128.57,
+   "t_out": 133.07,
+   "title": "Torres de Quart",
+   "sub": "1441-60"
+  },
+  {
+   "t_in": 156.13,
+   "t_out": 161.13,
+   "title": "The Silk Exchange",
+   "sub": "1483"
+  },
+  {
+   "t_in": 184.1,
+   "t_out": 190.1,
+   "title": "Stone bridges cross the Turia",
+   "sub": "1518-1607"
+  },
+  {
+   "t_in": 215.0,
+   "t_out": 219.0,
+   "title": "The baroque Iron Gate",
+   "sub": "1703-41"
+  },
+  {
+   "t_in": 232.5,
+   "t_out": 239.5,
+   "title": "Siege of 1812",
+   "sub": "1811-12"
+  },
+  {
+   "t_in": 244.48,
+   "t_out": 247.98,
+   "title": "Plaza Redonda",
+   "sub": "1840"
+  },
+  {
+   "t_in": 249.2,
+   "t_out": 253.2,
+   "title": "The bullring",
+   "sub": "1850-59"
+  },
+  {
+   "t_in": 254.0,
+   "t_out": 262.0,
+   "title": "THE WALLS COME DOWN",
+   "sub": "1865"
+  },
+  {
+   "t_in": 280.1,
+   "t_out": 285.1,
+   "title": "The Ensanche",
+   "sub": "1887"
+  },
+  {
+   "t_in": 285.1,
+   "t_out": 288.6,
+   "title": "A convent becomes the main square",
+   "sub": "1891"
+  },
+  {
+   "t_in": 309.0,
+   "t_out": 313.5,
+   "title": "North Station",
+   "sub": "1906-17"
+  },
+  {
+   "t_in": 313.5,
+   "t_out": 317.5,
+   "title": "Regional Exhibition",
+   "sub": "1909"
+  },
+  {
+   "t_in": 323.29,
+   "t_out": 327.79,
+   "title": "Central Market",
+   "sub": "1915-28"
+  },
+  {
+   "t_in": 327.79,
+   "t_out": 331.29,
+   "title": "Mestalla stadium",
+   "sub": "1923"
+  },
+  {
+   "t_in": 346.21,
+   "t_out": 350.21,
+   "title": "City Hall square",
+   "sub": "1931-33"
+  },
+  {
+   "t_in": 391.2,
+   "t_out": 403.2,
+   "title": "THE GREAT FLOOD OF 1957",
+   "sub": "1957"
+  },
+  {
+   "t_in": 408.66,
+   "t_out": 418.66,
+   "title": "PLAN SUR: THE RIVER IS MOVED",
+   "sub": "1964-69"
+  },
+  {
+   "t_in": 430.5,
+   "t_out": 435.5,
+   "title": "The old riverbed becomes a park",
+   "sub": "1986"
+  },
+  {
+   "t_in": 438.27,
+   "t_out": 444.27,
+   "title": "City of Arts and Sciences",
+   "sub": "1998-2000"
+  },
+  {
+   "t_in": 444.34,
+   "t_out": 450.34,
+   "title": "Oceanografic, Palau de les Arts, Agora",
+   "sub": "2001-09"
+  },
+  {
+   "t_in": 450.34,
+   "t_out": 454.34,
+   "title": "America's Cup marina",
+   "sub": "2007"
+  }
+ ],
+ "subscribe_t": 93.0
+}

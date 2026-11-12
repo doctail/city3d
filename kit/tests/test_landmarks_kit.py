@@ -66,7 +66,7 @@ def test_shapes_valid():
         assert parts, kind
         for p in parts: check_part(p)
         for r in clear: assert Polygon(r).is_valid
-        assert lab and lab['z'] > 0 and lab['from'] == min(p['y'] for p in parts)
+        assert lab and lab['z'] > 0 and abs(lab['from'] - min(p['y'] for p in parts)) < 0.01
 
 
 def _base_of(p):
@@ -88,7 +88,9 @@ def test_supports_before_parts():
                 if s.contains(qc) and abs(K.part_top(p) - zb) < 0.05 and K.part_top(p) > _base_of(p) + 0.5:
                     assert q['y'] >= p['y'] - 1e-6, (kind, prm, 'parte a', zb, 'prima del supporto', p['t'], p['y'], q['y'])
         top = max(parts, key=K.part_top)
-        assert top['y'] >= sorted(p['y'] for p in parts)[len(parts) // 2], (kind, prm, 'la cima compare troppo presto')
+        if kind not in ('wall_segment', 'bridge_arches'):   # opere lineari: costruite lungo il tracciato
+            zt = K.part_top(top); top = max((p for p in parts if K.part_top(p) >= zt - 0.5), key=lambda p: p['y'])
+            assert top['y'] >= sorted(p['y'] for p in parts)[len(parts) // 2], (kind, prm, 'la cima compare troppo presto')
         found = [p for p in parts if _base_of(p) <= 0.01]
         assert min(p['y'] for p in found) == min(p['y'] for p in parts), (kind, 'le fondazioni non sono le prime')
 

@@ -46,6 +46,7 @@ STYLE_ROOF = {'mediterranean': {'roof': 'terracotta', 'dome': 'bluetile', 'spire
               'atlantic': {'roof': 'tile', 'dome': 'lead', 'spire': 'stone'}}
 DEFAULT_SPAN = 0.6       # anni di cantiere se una fase non ha y1 (le parti compaiono comunque in sequenza)
 FP_SEARCH_M = 30.0
+MAX_FP = {k: 22.0 for k in ('tower_square', 'tower', 'tower_round', 'bell_tower', 'campanile', 'lighthouse')}   # lato max dell'impronta usabile
 
 
 def col(x, default='stone'):
@@ -144,7 +145,9 @@ class Builder:
 
     def wedge(self, geom, z0, za, zb, ax, c, top, a=A_STONE, f=0.0, g='roof'):
         r = ring(geom, 0.05)
-        if r is None: return None
+        n = math.hypot(*ax)
+        if r is None or n < 1e-9: return None
+        ax = (ax[0] / n, ax[1] / n)
         return self._add(f, g, t='wedge', r=r, z0=_r2(z0), za=_r2(za), zb=_r2(zb), ax=[round(ax[0], 4), round(ax[1], 4)], c=col(c), top=col(top), a=a)
 
     def hip(self, geom, z0, rh, c, f=0.0, g='roof', a=A_STONE):
@@ -253,6 +256,9 @@ def _tower_top(B, F, x, y, w, z, top, c, rc, f, plan='square', g='roof', spire_h
     """Copertura di una torre: pyramid | spire | dome | onion | flat | crenel | lantern | cage."""
     sq = F.rect(x - w / 2, x + w / 2, y - w / 2, y + w / 2) if plan == 'square' else None
     wx, wy = F.at(x, y)
+    if top == 'pyramid' and sq is None:
+        B.cyl(wx, wy, w / 2 + 0.5, z, z + 0.8, 'stone', f=f - 0.03, g=g, seg=12); B.cone(wx, wy, w / 2 + 0.7, 0.2, z + 0.8, z + 0.8 + w * 0.8, rc, f=f, g=g, seg=12)
+        return z + 0.8 + w * 0.8
     if top == 'pyramid':
         B.prism(sq.buffer(0.5, join_style=2), z, z + 0.8, 'stone', f=f - 0.03, g=g); B.hip(sq.buffer(0.6, join_style=2), z + 0.8, w * 0.75, rc, f, g)
         return z + 0.8 + w * 0.75
@@ -360,7 +366,7 @@ def bell_tower(ctx):
     cupolino a cipolla) | romanesque (piramide bassa, bifore) | flat (terrazza merlata con celletta, tipo Micalet).
     plan: square | octagon."""
     B, F = Builder(ctx), ctx.F
-    style = ctx.g('style', 'gothic'); plan = ctx.g('plan', 'octagon' if style == 'flat' else 'square')
+    style = ctx.g('style', 'gothic'); plan = ctx.g('plan', 'octagon' if (style == 'flat' or ctx.g('octagonal')) else 'square')
     w = float(ctx.g('w', min(F.L, F.W) if ctx.fp is not None else (12.0 if style == 'flat' else 9.0)))
     h = float(ctx.g('h', {'gothic': 50.0, 'baroque': 42.0, 'romanesque': 32.0, 'flat': 51.0}.get(style, 45.0)))
     c = ctx.g('c', {'gothic': 'limestone', 'baroque': 'brick', 'romanesque': 'stone', 'flat': 'limestone'}.get(style, 'stone'))
@@ -456,8 +462,8 @@ def cathedral(ctx):
     if transept:
         ext = 0.0 if ctx.fp is not None else W * 0.18
         tw = nw
-        B.prism(F.rect(s_c - tw / 2, s_c + tw / 2, -W / 2 - ext, W / 2 + ext), 0, nh, c, A_WIN, 0.3, 'transept', simp=0)
-        B.gable(F, s_c - tw / 2 - 0.4, s_c + tw / 2 + 0.4, -W / 2 - ext, W / 2 + ext, nh, rh, c, rc, 0.4, 'roof', along='v')
+        B.prism(F.rect(s_c - tw / 2, s_c + tw / 2, -W / 2 - ext, W / 2 + ext), 0, nh, c, A_WIN, 0.12, 'transept', simp=0)
+        B.gable(F, s_c - tw / 2 - 0.4, s_c + tw / 2 + 0.4, -W / 2 - ext, W / 2 + ext, nh, rh, c, rc, 0.21, 'roof', along='v')
         cx_, cy_ = F.at(s_c, 0)
         if crossing == 'lantern':   # tiburio ottagonale finestrato
             r8 = nw * 0.5 / math.cos(math.pi / 8)
@@ -789,7 +795,7 @@ def bullring(ctx):
     n = int(ctx.g('n', 32)); wr = float(ctx.g('ring_w', 7.0))
     aA, aB = A * ra, Bb * ra
     B.prism(F.ell(0, 0, aA + 2, aB + 2, 32), 0, 0.25, ctx.g('arena_c', 'arena'), A_STONE, 0.0, 'found', simp=0)
-    B.sectors(F, A, Bb, A - wr, Bb - wr, 0, h, c, A_WIN, 0.1, 'ring', n, top=ctx.g('ring_top', ctx.roof()), fstep=0.25)
+    B.sectors(F, A, Bb, A - wr, Bb - wr, 0, h, c, A_WIN, 0.3, 'ring', n, top=ctx.g('ring_top', ctx.roof()), fstep=0.55)
     ri = [(A - wr, Bb - wr)]
     steps = int(ctx.g('tiers', 3))
     for k in range(steps):   # gradoni: piu' alti verso l'esterno
@@ -807,7 +813,8 @@ def stadium(ctx):
     """Stadio: tribune inclinate a settori (wedge radiali, basse verso il campo), anello esterno, pensilina (roof),
     campo verde rettangolare. a_out/b_out semiassi esterni."""
     B, F = Builder(ctx), ctx.F
-    A, Bb = float(ctx.g('a_out', 115.0)), float(ctx.g('b_out', 88.0)); h = float(ctx.g('h', 26.0))
+    A0, B0 = (F.L / 2, F.W / 2) if ctx.fp is not None else (115.0, 88.0)
+    A, Bb = float(ctx.g('a_out', A0)), float(ctx.g('b_out', B0)); h = float(ctx.g('h', 26.0))
     fa, fb = float(ctx.g('a_field', A * 0.58)), float(ctx.g('b_field', Bb * 0.5)); n = int(ctx.g('n', 32))
     sc_, wc = ctx.g('seat_c', 'seat'), ctx.g('c', 'concrete')
     B.prism(F.ell(0, 0, fa + 3, fb + 3, 32), 0, 0.2, 'grass', A_STONE, 0.0, 'found', simp=0)
@@ -966,8 +973,9 @@ def park_structure(ctx):
             B.beam(F.p3(-R * 0.45, sg * 3, 0), F.p3(0, sg * 1.2, zc), 1.2, 1.2, 'steel', A_STONE, 0.1, 'legs')
             B.beam(F.p3(R * 0.45, sg * 3, 0), F.p3(0, sg * 1.2, zc), 1.2, 1.2, 'steel', A_STONE, 0.15, 'legs')
         for i in range(n):
-            B.beam(pts[i], pts[(i + 1) % n], 0.9, 0.9, col(c, 'white'), A_STONE, 0.4 + 0.3 * i / n, 'rim')
-            if i % 2 == 0: B.beam(F.p3(0, 0, zc), pts[i], 0.3, 0.3, 'steel', A_STONE, 0.4 + 0.3 * i / n, 'rim', noshadow=True)
+            fz = 0.4 + 0.4 * (max(pts[i][2], pts[(i + 1) % n][2]) - (zc - R)) / (2 * R)   # il cerchio si chiude dall'alto
+            B.beam(pts[i], pts[(i + 1) % n], 0.9, 0.9, col(c, 'white'), A_STONE, fz, 'rim')
+            if i % 2 == 0: B.beam(F.p3(0, 0, zc), pts[i], 0.3, 0.3, 'steel', A_STONE, 0.4, 'rim', noshadow=True)
             if i % 2 == 0: B.prism(npoly(pts[i][0], pts[i][1], 1.3, 4, math.radians(F.ang) + math.pi / 4), pts[i][2] - 2.4, pts[i][2] - 0.6, ['red', 'ochre', 'bluetile', 'greentile'][i // 2 % 4], A_WIN, 0.85, 'cabins', simp=0)
     elif kind == 'pagoda':
         for k in range(4):
@@ -1182,6 +1190,7 @@ def build_landmark(lm, P=None, fps=None, style=None, others=None):
     line = None
     if lm.get('line_xy'): line = [tuple(map(float, p)) for p in lm['line_xy']]
     elif lm.get('line'): line = [L(p) for p in lm['line']]
+    elif prm.get('line'): line = [L(p) for p in prm['line']]   # alias: linea dentro params
     if lm.get('ring'): line = [L(p) for p in lm['ring']]; line = line + [line[0]]
     if x is None and line: c = LineString(line).interpolate(0.5, normalized=True); x, y = c.x, c.y
     if x is None: raise ValueError(f"{name}: manca 'at' (o 'line')")
@@ -1193,6 +1202,11 @@ def build_landmark(lm, P=None, fps=None, style=None, others=None):
     elif isinstance(fpspec, list) and len(fpspec) >= 3:
         fp = Polygon([L(p) for p in fpspec]).buffer(0)
     if fp is not None and fp.is_empty: fp = None
+    mx = float(prm.get('max_fp', MAX_FP.get(kind, 1e9)))
+    if fp is not None and min(frame_of(fp).L, frame_of(fp).W) > mx:   # torre su una particella grande: impronta ignorata
+        print(f"[landmarks_kit] {name}: impronta del catasto troppo larga per '{kind}' ({min(frame_of(fp).L, frame_of(fp).W):.0f} m > {mx:.0f}): "
+              f"uso 'at' e le misure dei params", file=sys.stderr)
+        fp = None; bh = None
     if fp is not None: F = frame_of(fp, prm.get('ang'), prm.get('flip', False))
     else: F = Frame(x, y, float(prm.get('ang', 0.0)) + (180 if prm.get('flip') else 0))
     if line and fp is None: F.L, F.W = LineString(line).length, None
@@ -1265,7 +1279,7 @@ def montage_labels(labels):
     m = {}
     for l in labels:
         if l.get('from') is None: continue
-        m[l['name']] = [l['x'], l['y'], l['z'], int(math.floor(l['from'])) if float(l['from']).is_integer() or True else l['from']]
+        m[l['name']] = [l['x'], l['y'], l['z'], int(math.floor(l['from']))]
     return m
 
 

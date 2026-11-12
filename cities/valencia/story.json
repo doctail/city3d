@@ -3983,7 +3983,8 @@
     "iron_gate": {
      "y": 1703,
      "y1": 1741
-    }
+    },
+    "facade_towers": 0
    },
    "phases": [
     {
@@ -4008,7 +4009,8 @@
    "footprint": "none",
    "params": {
     "h": 50,
-    "octagonal": true
+    "octagonal": true,
+    "style": "flat"
    },
    "phases": [
     {
@@ -4291,7 +4293,7 @@
   },
   {
    "name": "City Hall (Casa Consistorial)",
-   "kind": "tower_square",
+   "kind": "palace_courtyard",
    "at": [
     39.4698,
     -0.3772
@@ -4322,7 +4324,9 @@
     -0.35388
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "eye"
+   },
    "phases": [
     {
      "y": 1997.3,
@@ -4343,7 +4347,9 @@
     -0.3513
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "ribs"
+   },
    "phases": [
     {
      "y": 1998,
@@ -4365,7 +4371,9 @@
     -0.35417
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "arches"
+   },
    "phases": [
     {
      "y": 2000.5,
@@ -4387,7 +4395,9 @@
     -0.34718
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "dome"
+   },
    "phases": [
     {
      "y": 2001.5,
@@ -4409,7 +4419,9 @@
     -0.35591
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "helmet"
+   },
    "phases": [
     {
      "y": 1997.5,
@@ -4430,7 +4442,9 @@
     -0.34974
    ],
    "footprint": "auto",
-   "params": {},
+   "params": {
+    "shape": "dome"
+   },
    "phases": [
     {
      "y": 2008.5,
@@ -4453,16 +4467,6 @@
    ],
    "footprint": "none",
    "params": {
-    "line": [
-     [
-      39.47996,
-      -0.37565
-     ],
-     [
-      39.48132,
-      -0.37503
-     ]
-    ],
     "w": 20.3,
     "length_m": 159
    },
@@ -4476,7 +4480,17 @@
    "src": [
     "S9"
    ],
-   "conf": "medium"
+   "conf": "medium",
+   "line": [
+    [
+     39.47996,
+     -0.37565
+    ],
+    [
+     39.48132,
+     -0.37503
+    ]
+   ]
   },
   {
    "name": "Puente del Mar",
@@ -4487,16 +4501,6 @@
    ],
    "footprint": "none",
    "params": {
-    "line": [
-     [
-      39.47021,
-      -0.36464
-     ],
-     [
-      39.47032,
-      -0.3627
-     ]
-    ],
     "w": 15.5,
     "length_m": 167
    },
@@ -4511,7 +4515,17 @@
     "S10",
     "S9"
    ],
-   "conf": "high"
+   "conf": "high",
+   "line": [
+    [
+     39.47021,
+     -0.36464
+    ],
+    [
+     39.47032,
+     -0.3627
+    ]
+   ]
   },
   {
    "name": "Puente del Real",
@@ -4522,16 +4536,6 @@
    ],
    "footprint": "none",
    "params": {
-    "line": [
-     [
-      39.47576,
-      -0.36945
-     ],
-     [
-      39.47697,
-      -0.36819
-     ]
-    ],
     "w": 33.2,
     "length_m": 172
    },
@@ -4545,7 +4549,17 @@
    "src": [
     "S8"
    ],
-   "conf": "high"
+   "conf": "high",
+   "line": [
+    [
+     39.47576,
+     -0.36945
+    ],
+    [
+     39.47697,
+     -0.36819
+    ]
+   ]
   },
   {
    "name": "Puente de San Jose",
@@ -4556,16 +4570,6 @@
    ],
    "footprint": "none",
    "params": {
-    "line": [
-     [
-      39.48153,
-      -0.38023
-     ],
-     [
-      39.48283,
-      -0.3804
-     ]
-    ],
     "w": 12.3,
     "length_m": 145
    },
@@ -4580,7 +4584,17 @@
     "S11",
     "S9"
    ],
-   "conf": "high"
+   "conf": "high",
+   "line": [
+    [
+     39.48153,
+     -0.38023
+    ],
+    [
+     39.48283,
+     -0.3804
+    ]
+   ]
   },
   {
    "name": "Puente de la Trinidad",
@@ -4591,16 +4605,6 @@
    ],
    "footprint": "none",
    "params": {
-    "line": [
-     [
-      39.47959,
-      -0.37217
-     ],
-     [
-      39.47839,
-      -0.37314
-     ]
-    ],
     "w": 24.7,
     "length_m": 157
    },
@@ -4615,7 +4619,17 @@
     "S12"
    ],
    "conf": "medium",
-   "note": "ponte in pietra come landmark (non in history.bridges per non duplicare il impalcato)"
+   "note": "ponte in pietra come landmark (non in history.bridges per non duplicare il impalcato)",
+   "line": [
+    [
+     39.47959,
+     -0.37217
+    ],
+    [
+     39.47839,
+     -0.37314
+    ]
+   ]
   }
  ],
  "regia": {
