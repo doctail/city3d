@@ -271,6 +271,12 @@ def parse_t(v, music, b_start):
     except ValueError: return None
 
 
+def climax_t(t, dur, b_start):
+    """La sosta del climax inizia sulla sfumatura di A e finisce ~2 s dopo l'ingresso di B (copre il cambio)."""
+    if not b_start: return t
+    return min(b_start - 1.0, max(t - 3.0, b_start + 2.0 - dur))
+
+
 def find_sosta(SOSTE, key):
     k = str(key).lower()
     for s in SOSTE:
@@ -315,7 +321,7 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
                 if c.get('_pinned'): continue
                 tt = t
                 if slot['role'] == 'climax':   # il climax deve coprire il cambio di traccia
-                    tt = max(t - 3.0, min(t, b_start + 2.0 - c['dur'])) if b_start else t
+                    tt = climax_t(t, c['dur'], b_start)
                 if c['y0'] <= ya or tt <= ta: continue
                 aff = 0.8; f = c['_force']
                 if slot['prefer'] == 'disaster': aff = 1.0 if c['_dis'] else 0.3
@@ -406,7 +412,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             s = find_sosta(SOSTE, a['sosta'])
             if s is None: warn(f"ancora: sosta '{a['sosta']}' non trovata"); continue
             if isinstance(a.get('t'), str) and a['t'] == 'climax' and b_start:
-                t = max(t - 3.0, min(t, b_start + 2.0 - s['dur']))
+                t = climax_t(t, s['dur'], b_start)
             s['_pinned'] = True; y = s['y0']; lab = f"sosta '{s['caption']}'"
         else:
             y = float(a['year']); lab = a.get('note', 'anno')
@@ -416,7 +422,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         if s.get('role') and not s.get('_pinned'):
             t = parse_t(s['role'], {'slots': slots}, b_start or DUR)
             if t is None: warn(f"ruolo '{s['role']}' sconosciuto per '{s['caption']}'"); continue
-            if s['role'] == 'climax' and b_start: t = max(t - 3.0, min(t, b_start + 2.0 - s['dur']))
+            if s['role'] == 'climax' and b_start: t = climax_t(t, s['dur'], b_start)
             s['_pinned'] = True; used_roles.add(s['role']); fixed.append((t, s['y0']))
             anchor_log.append((t, s['y0'], s['role'], f"sosta '{s['caption']}'"))
     if R.get('anchors_auto', True) and slots:
