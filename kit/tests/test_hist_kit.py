@@ -60,6 +60,9 @@ def make_city(tmp):
     json.dump([{'r': rect(595, -300, 605, -200), 'y': 2026, 'name': 'Old Bridge'},
                {'r': rect(796, -300, 806, -200), 'y': 2026, 'name': ''},
                {'r': rect(2000, 0, 2010, 50), 'y': 1990, 'name': 'Other'}], open(os.path.join(D, 'bridges.json'), 'w'))
+    # monumento nato dopo l'inizio (clear a tempo, da kit/landmarks_kit.py) sul lotto del 1120
+    json.dump({'parts': [], 'labels': [], 'clear': [{'r': rect(-175, -175, -125, -125), 'y': 1180}, rect(5000, 5000, 5010, 5010)]},
+              open(os.path.join(D, 'landmarks.json'), 'w'))
     sp = os.path.join(tmp, 'story.json'); json.dump(story, open(sp, 'w'))
     return sp, D
 
@@ -91,7 +94,7 @@ class HistKit(unittest.TestCase):
         self.assertEqual(o[0]['zone'], 'old'); self.assertLessEqual(o[0]['y'], 1100)
 
     def test_no_predecessor_for_early_or_outside(self):
-        self.assertEqual(at(self.hist, -150, -150), [])
+        self.assertEqual([h for h in at(self.hist, -150, -150) if h['kit'] != 'clear'], [])
         self.assertEqual(at(self.hist, 1000, 1000), [])
 
     def test_large_footprint_split(self):
@@ -121,6 +124,11 @@ class HistKit(unittest.TestCase):
         self.assertEqual(sorted(p['c'] for p in cell), ['field', 'urban'])
         empty = [p for p in ph if Polygon(p['r']).contains(Point(420, -200))]   # nessuna casa vicina: sempre campo
         self.assertEqual([(p['c'], p['to']) for p in empty], [('field', 99999)])
+
+    def test_timed_clear_site_filled(self):
+        c = [h for h in self.hist if h['kit'] == 'clear']
+        self.assertGreater(len(c), 5); self.assertEqual(self.st['monument_sites_filled'], len(c))
+        self.assertTrue(all(h['y'] <= 1100 and 1179 < h['d'] < 1180 for h in c))
 
     def test_lost(self):
         l = [h for h in self.hist if h['kit'] == 'lost']

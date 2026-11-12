@@ -1242,8 +1242,9 @@ class Footprints:
         return g, (max(hs) if hs else None)
 
 
-def build_landmark(lm, P=None, fps=None, style=None, others=None):
-    """Un monumento della story -> (parts, clear_rings, label|None). P = geo.Proj; fps = Footprints."""
+def build_landmark(lm, P=None, fps=None, style=None, others=None, start=None):
+    """Un monumento della story -> (parts, clear_rings, label|None). P = geo.Proj; fps = Footprints.
+    start = city.start_year: se il monumento nasce dopo, il clear e' {"r", "y"} (le case restano fino a y)."""
     kind = lm.get('kind', 'generic_footprint')
     if kind not in PRESETS: raise ValueError(f"{lm.get('name')}: preset sconosciuto '{kind}' (vedi kit/presets_landmarks.md)")
     name = lm.get('name', kind); prm = dict(lm.get('params') or {})
@@ -1301,7 +1302,7 @@ def build_landmark(lm, P=None, fps=None, style=None, others=None):
             shp = [s for s in (part_shape(p) for p in parts) if s is not None and not s.is_empty]
             g = unary_union(shp).convex_hull.buffer(2.0) if shp else None
         r = ring(g, 0.3) if g is not None else None
-        if r: clear.append(r)
+        if r: clear.append({'r': r, 'y': round(y_first, 2)} if start is not None and y_first > start else r)
     label = None
     if lm.get('label', True):
         ys = [p['y'] for p in parts]; ds = [p['d'] for p in parts if 'd' in p]
@@ -1319,11 +1320,11 @@ def build_all(story, data=None):
     """story (dict) -> dict landmarks.json (senza mura). data = cartella DATA per le impronte 'auto'."""
     P = geo.Proj.of(story) if story.get('city', {}).get('lat0') is not None else None
     fps = Footprints(data)
-    style = story.get('city', {}).get('style_preset')
+    style = story.get('city', {}).get('style_preset'); start = story.get('city', {}).get('start_year')
     parts, clear, labels = [], [], []
     lms = story.get('landmarks') or []
     for lm in lms:
-        p, c, l = build_landmark(lm, P, fps, style, lms)
+        p, c, l = build_landmark(lm, P, fps, style, lms, start)
         parts += p; clear += c
         if l: labels.append(l)
     return {'parts': parts, 'clear': clear, 'labels': labels}

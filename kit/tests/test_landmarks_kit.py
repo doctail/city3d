@@ -177,8 +177,20 @@ def test_cli_build_idempotent():
     assert m['Micalet'][3] == 1381 and len(m['Micalet']) == 4 and m['Micalet'][2] > 50
 
 
+def test_timed_clear():
+    # monumento nato dopo city.start_year: clear {"r", "y"} (le case restano fino a y); prima o senza start: anello semplice
+    lm = {'name': 'C', 'kind': 'cathedral', 'xy': [0, 0], 'phases': [{'y': 1262, 'y1': 1300}]}
+    _, clear, _ = K.build_landmark(lm, start=1238)
+    assert len(clear) == 1 and clear[0]['y'] == 1262 and Polygon(clear[0]['r']).contains(Point(0, 0))
+    _, clear, _ = K.build_landmark(lm, start=1300)
+    assert isinstance(clear[0], list)
+    _, clear, _ = K.build_landmark(lm)
+    assert isinstance(clear[0], list)
+
+
 if __name__ == '__main__':
     n = 0
     for k, f in list(globals().items()):
         if k.startswith('test_') and callable(f): f(); n += 1; print('ok', k)
     print(n, 'test passati')
+

@@ -260,6 +260,28 @@ def gutting_pass(ctx, blds, tree, rnd):
     return out, filled
 
 
+def clear_pass(ctx, D, hist, rnd):
+    """Impronte dei monumenti con clear a tempo {"r", "y"} (landmarks.json, kit/landmarks_kit.py): prima del monumento
+    il sito e' tessuto della zona. Toglie i predecessori di zona con centroide dentro e riempie l'impronta di lotti nati
+    con la zona e morti a y (build_render toglie comunque tutto cio' che e' dentro da y)."""
+    f = os.path.join(D, 'landmarks.json')
+    if not os.path.exists(f): return hist, 0
+    with open(f) as fh: L = json.load(fh)
+    T = [c for c in (L.get('clear') or []) if isinstance(c, dict)] if isinstance(L, dict) else []
+    n = 0
+    for c in T:
+        R = _poly(c['r']); RP = prep(R); yc = float(c['y']); cc = R.centroid; z = ctx.zone_at(cc.x, cc.y)
+        if not z or z['b0'] >= yc - 8: continue
+        hist = [h for h in hist if not (h.get('kit') == 'zone' and RP.contains(_poly(h['r']).centroid))]
+        (x0, y0), (x1, y1) = list(R.minimum_rotated_rectangle.exterior.coords)[:2]; ang = math.degrees(math.atan2(y1 - y0, x1 - x0))
+        for q in _lots(R.buffer(-0.5), ang, cc, rnd):
+            born = _births(ctx, z, q.centroid.x, q.centroid.y, rnd); died = yc - rnd.uniform(0.1, 0.5)
+            if died - born < 8: continue
+            hist.append({'r': _ring_out(q), 'h': _height(z['eh'], born, rnd), 'y': round(born, 2), 'd': round(died, 2),
+                         'zone': z['name'], 'kit': 'clear'}); n += 1
+    return hist, n
+
+
 def lost_pass(ctx):
     out = []
     for l in ctx.H.get('lost', []) or []:
@@ -461,6 +483,7 @@ def build(story, D=None, seed=11, quiet=False):
     hist = zones_pass(ctx, good, random.Random(seed))
     gut, filled = gutting_pass(ctx, good, tree, random.Random(seed + 1))
     hist += gut + lost_pass(ctx)
+    hist, ncl = clear_pass(ctx, D, hist, random.Random(seed + 4))
     burned = fires_pass(ctx, good, hist, random.Random(seed + 2))
     if any('y_kit0' in b for b in blds) or touched:
         json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w'))
@@ -490,12 +513,12 @@ def build(story, D=None, seed=11, quiet=False):
           'by_century': dict(sorted(collections.Counter(int(h['y'] // 100 * 100) for h in hist).items())),
           'by_zone': dict(collections.Counter(h.get('zone', h.get('name', '?')) for h in hist)),
           'by_kind': dict(collections.Counter(h['kit'] for h in hist)),
-          'gutting_filled': filled, 'roads_gutting_lanes': list(nroads), 'landphases': len(ph) if H.get('water') else None, 'bridges_updated_added': list(nbr), 'fires_destroyed': burned,
+          'gutting_filled': filled, 'monument_sites_filled': ncl, 'roads_gutting_lanes': list(nroads), 'landphases': len(ph) if H.get('water') else None, 'bridges_updated_added': list(nbr), 'fires_destroyed': burned,
           'wall_parts': len(walls), 'alive': {str(int(k)): v for k, v in alive.items()}}
     json.dump(st, open(os.path.join(D, 'hist_kit_stats.json'), 'w'), indent=1)
     if not quiet:
         print(f"[hist_kit] {story['city']['slug']}: {len(hist)} predecessori da {len(blds)} edifici attuali", flush=True)
-        for k in ('by_century', 'by_zone', 'by_kind', 'gutting_filled', 'fires_destroyed'):
+        for k in ('by_century', 'by_zone', 'by_kind', 'gutting_filled', 'monument_sites_filled', 'fires_destroyed'):
             print(f'[hist_kit] {k}: {st[k]}', flush=True)
         print(f"[hist_kit] strade gutting/vicoli anticipati {nroads}, landphases {st['landphases']}, ponti aggiornati/aggiunti {nbr}, parti mura {len(walls)}", flush=True)
         print('[hist_kit] edifici vivi: ' + ', '.join(f'{k}: {v}' for k, v in st['alive'].items()), flush=True)

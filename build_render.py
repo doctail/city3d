@@ -352,9 +352,15 @@ if os.path.exists(f'{DATA}/dem.npz'):
 LM = json.load(open(f'{DATA}/landmarks.json')) if os.path.exists(f'{DATA}/landmarks.json') else None
 if LM:   # monumenti modellati: gli edifici (veri e storici) dentro le loro impronte spariscono
     from shapely.prepared import prep as _prep
-    _clr = _prep(unary_union([Polygon(r_).buffer(0) for r_ in LM['clear']]))
+    _clr = _prep(unary_union([Polygon(r_).buffer(0) for r_ in LM['clear'] if not isinstance(r_, dict)]))
     _n0 = len(blds)
     blds = [b_ for b_ in blds if not _clr.contains(Point(sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r'])))]
+    # clear a tempo {"r", "y"} (kit, 12 nov): gli edifici dentro restano fino all'anno del monumento (d = min(d, y)), poi via
+    for c_ in [c_ for c_ in LM['clear'] if isinstance(c_, dict)]:
+        _cp = _prep(Polygon(c_['r']).buffer(0))
+        for b_ in blds:
+            if _cp.contains(Point(sum(p_[0] for p_ in b_['r']) / len(b_['r']), sum(p_[1] for p_ in b_['r']) / len(b_['r']))): b_['d'] = min(b_.get('d', 99999), c_['y'])
+        blds = [b_ for b_ in blds if b_.get('d', 99999) > b_['y']]
     log('monumenti:', len(LM['parts']), 'parti; tolti', _n0 - len(blds), 'edifici nelle impronte')
 if '--crop' in a:   # prove locali con poca memoria: solo gli edifici dentro un rettangolo (metri)
     cx0, cy0, cx1, cy1 = map(float, opt('--crop', 4)); blds = [b_ for b_ in blds if cx0 < b_['r'][0][0] < cx1 and cy0 < b_['r'][0][1] < cy1]
