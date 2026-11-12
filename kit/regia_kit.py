@@ -303,6 +303,7 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
     tot_T = (t_end - t_start) - sum(c['dur'] for c in cands)
     tot_Y = (y_end - y_start) - sum(c['y1'] - c['y0'] for c in cands)
     glob_r = max(1e-3, tot_Y / max(1.0, tot_T))
+    fmax = max((c['_force'] for c in cands if not c.get('_pinned')), default=0.0)
     # elementi del cammino in ordine di tempo
     elems = [('fix', t, y, None) for t, y in fixed] + [('slot', s['t'], None, s) for s in slots]
     elems.sort(key=lambda e: e[1])
@@ -323,6 +324,7 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
                 if slot['role'] == 'climax':   # il climax deve coprire il cambio di traccia
                     tt = climax_t(t, c['dur'], b_start)
                 if c['y0'] <= ya or tt <= ta: continue
+                if slot['role'] == 'climax' and c['_force'] < fmax - 1.0: continue   # il climax e' l'evento piu' forte
                 aff = 0.8; f = c['_force']
                 if slot['prefer'] == 'disaster': aff = 1.0 if c['_dis'] else 0.3
                 elif slot['prefer'] == 'build':   # rinascita: un grande cantiere vale come un evento forte

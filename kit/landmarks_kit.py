@@ -451,7 +451,7 @@ def cathedral(ctx):
         if i < n - 1 or True:   # contrafforti/archi rampanti: lame basse ai lati
             for sgn in (-1, 1):
                 sm = (s0 + s1) / 2
-                B.beam(F.p3(sm, sgn * (nw / 2 + (W / 2 - nw / 2) * 0.8), ah), F.p3(sm, sgn * nw / 2, nh - 2), 1.0, 1.4, 'stone', A_STONE, 0.2 + 0.1 * i, 'nave')
+                B.beam(F.p3(sm, sgn * (nw / 2 + (W / 2 - nw / 2) * 0.85), ah + 0.5), F.p3(sm, sgn * (nw / 2 + 0.3), nh - 3), 1.6, 2.4, 'stone', A_STONE, 0.2 + 0.1 * i, 'nave')
     # transetto (bracci oltre la navata solo senza impronta)
     if transept:
         ext = 0.0 if ctx.fp is not None else W * 0.18
@@ -553,13 +553,13 @@ def gate_towers(ctx):
     for sg in (-1, 1):
         s = sg * (gap / 2 + r * 0.85)
         if tp == 'D':
-            g_ = F.rect(s - r, s + r, -dep / 2, 0).union(F.ngon(s, 0, r, 20))
+            g_ = F.rect(s - r, s + r, -dep / 2, dep / 2 - r * 0.2).union(F.ngon(s, dep / 2 - r * 0.2, r, 20))
         elif tp == 'round':
             g_ = F.ngon(s, dep * 0.12, r, 16)
         elif tp == 'square':
             g_ = F.rect(s - r, s + r, -dep / 2, dep / 2 + 2)
         else:
-            g_ = F.ngon(s, dep * 0.1, r, 6, rot=90).union(F.rect(s - r * 0.86, s + r * 0.86, -dep / 2, dep * 0.1))
+            g_ = F.ngon(s, dep / 2, r, 6, rot=90).union(F.rect(s - r * 0.86, s + r * 0.86, -dep / 2, dep / 2))
         shapes.append(g_)
         B.prism(g_.buffer(0.8, join_style=2), 0, 2.5, 'stone2', f=0.0, g='found')
         B.prism(g_, 2.5, h * 0.5, c, A_STONE, 0.15, 'towers')
@@ -878,7 +878,7 @@ def modern_shell(ctx):
             B.prism(F.ell(0, 0, L / 2 * k * 0.98, W / 2 * k * 0.98, 32), z0, z1, gc, A_GLASS, 0.2 + 0.08 * i, 'shell', simp=0, top=gc)
         for j in range(nr):   # costole bianche trasversali
             s = -L / 2 + L * (j + 0.5) / nr; k = math.sqrt(max(0.0, 1 - (2 * s / L) ** 2))
-            _arc_beams(B, F, s, W / 2 * k + 0.6, H * k + 0.6, 1.0, 1.4, wc, 0.7 + 0.15 * j / nr, 'ribs', k=8)
+            _arc_beams(B, F, s, W / 2 * k + 0.6, H * k + 0.6, 1.6, 1.8, wc, 0.7 + 0.15 * j / nr, 'ribs', k=8)
         _arc_beams(B, F, 0, L / 2 + 0.8, H + 1.2, 2.2, 1.4, wc, 0.9, 'ribs', k=10, along='u')
         B.dome(F.cx, F.cy, W * 0.14, H * 0.6, W * 0.16, 'white', f=0.95, g='ribs')
         return B

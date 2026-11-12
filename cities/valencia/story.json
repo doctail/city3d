@@ -1,0 +1,5056 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "valencia",
+  "name": "Valencia",
+  "country": "Spain",
+  "lat0": 39.4753,
+  "lon0": -0.3758,
+  "radius_m": 12000,
+  "start_year": 1238,
+  "end_year": 2026,
+  "title": "EVOLUTION OF VALENCIA | 3D City Timelapse (1238–NOW) | No AI",
+  "data_source": "catastro",
+  "data_dir": "data_valencia",
+  "style_preset": "mediterranean",
+  "population": [
+   [
+    1500,
+    45000
+   ],
+   [
+    1609,
+    58000
+   ],
+   [
+    2025,
+    841558
+   ]
+  ],
+  "pop_conf": [
+   "medium",
+   "medium",
+   "high"
+  ],
+  "pop_src": [
+   "S33",
+   "S34"
+  ],
+  "eras": [
+   [
+    1238,
+    "Kingdom of Valencia",
+    "#c9a24a"
+   ],
+   [
+    1707,
+    "Bourbon Valencia",
+    "#b5654a"
+   ],
+   [
+    1865,
+    "Modern city",
+    "#6aa0c8"
+   ],
+   [
+    1978,
+    "Democratic Spain",
+    "#7cb06a"
+   ]
+  ]
+ },
+ "sources": {
+  "S1": {
+   "url": "https://www.valencia.es/documents/20142/629631/1.30+Muralla+Bajomedieval_firmado.pdf/692b554e-8ceb-f2fa-b00b-6e4de86341bc",
+   "title": "Ajuntament de Valencia, Muralla bajomedieval (BIC)",
+   "quote": "construido a partir de 1356 ... definitiva demolición en 1865"
+  },
+  "S2": {
+   "url": "https://www.valencia.es/documents/20142/629631/1.18bis++RECINTO+MURALLA+ISLAMICA+BIC_firmado.pdf/2cd4fcfd-55d6-f3ad-3c57-13379a05ea1e",
+   "title": "Ajuntament de Valencia, Recinto muralla islamica (BIC)",
+   "quote": "construida en el siglo XI bajo el reinado de Abd al-Aziz"
+  },
+  "S3": {
+   "url": "https://www.valencia.es/documents/d/guest/8-cas-torres-de-serranos",
+   "title": "Ajuntament de Valencia, Torres de Serranos",
+   "quote": "fue construida entre 1392 y 1398"
+  },
+  "S4": {
+   "url": "https://www.valencia.es/documents/20142/629631/1.34+TORRES+DE+QUART_firmado.pdf/fca347f1-c37b-b9b3-ae43-e50fc6b39a7d",
+   "title": "Ajuntament de Valencia, Torres de Quart (BIC)",
+   "quote": "Fueron concluidas en 1460"
+  },
+  "S5": {
+   "url": "https://www.valencia.es/es/-/infociudad-la-catedral",
+   "title": "Ajuntament de Valencia, La Catedral",
+   "quote": "colocandose la primera piedra en el ano 1262; Puerta de los Hierros 1703-1741"
+  },
+  "S6": {
+   "url": "https://whc.unesco.org/en/list/782",
+   "title": "UNESCO, La Lonja de la Seda de Valencia",
+   "quote": "Built from 1483 on"
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Miguelete_Tower",
+   "title": "Wikipedia, Miguelete Tower",
+   "quote": "Construction of the tower began in 1381 and was completed in 1429"
+  },
+  "S8": {
+   "url": "https://www.valencia.es/documents/20142/629631/6.14%2BPUENTE%2BDEL%2BREAL_firmado.pdf/da8a4910-9547-c690-7ebe-d33b8df2bd8f",
+   "title": "Ajuntament de Valencia, Puente del Real",
+   "quote": "FECHA DE CONSTRUCCION: 1594-1599"
+  },
+  "S9": {
+   "url": "https://www.valencia.es/ayuntamiento/urbanismo2.nsf/0/CB19E5E0BEE2D4A7C1257FD800348566/$FILE/12-Puente%20de%20Serranos_firmado.pdf",
+   "title": "Ajuntament de Valencia, Puente de Serranos (e elenco ponti)",
+   "quote": "dispuso el 22 de Junio de 1518 su reedificacion; Mar 1592-1596; San Jose 1604-1607"
+  },
+  "S10": {
+   "url": "https://victoryepes.blogs.upv.es/wp-content/uploads/2022/07/El-Puente-del-Mar-sobre-el-viejo-cauce-del-Turia-en-Valencia.pdf",
+   "title": "UPV, El Puente del Mar",
+   "quote": "inicio oficial de las obras 8 de mayo 1592; finalizo 1596"
+  },
+  "S11": {
+   "url": "https://victoryepes.blogs.upv.es/wp-content/uploads/2024/01/Puente-de-San-Jose.pdf",
+   "title": "UPV, Puente de San Jose",
+   "quote": "obras iniciadas 30 julio 1604; terminadas 1607"
+  },
+  "S12": {
+   "url": "https://www.valencia.es/documents/20142/629631/1.55+PUENTE+TRINIDAD_firmado.pdf/b6283f42-852b-56b9-c847-f18aa0ff2164",
+   "title": "Ajuntament de Valencia, Puente de la Trinidad",
+   "quote": "ordeno en 1356 la construccion en piedra; concluido en 1402"
+  },
+  "S13": {
+   "url": "https://victoryepes.blogs.upv.es/wp-content/uploads/2022/07/El-Puente-de-Aragon-sobre-el-viejo-cauce-del-Turia-en-Valencia.pdf",
+   "title": "UPV, El Puente de Aragon",
+   "quote": "La estructura se termino de construir en 1933"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Bridge_of_the_Exposici%C3%B3n_Regional_Valenciana_1909",
+   "title": "Wikipedia, Exposicion bridge 1909",
+   "quote": "inaugurated on 22 May 1909"
+  },
+  "S15": {
+   "url": "https://www.archiseek.com/?p=18519",
+   "title": "Archiseek, Puente de la Exposicion (Calatrava)",
+   "quote": "Works began in 1991 ... completed in 1995"
+  },
+  "S16": {
+   "url": "https://www.visitvalencia.com/que-ver-valencia/zona-jardin-turia-valencia/puente-flores",
+   "title": "Visit Valencia, Puente de las Flores",
+   "quote": "El puente fue inaugurado en 2003"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/City_of_Arts_and_Sciences",
+   "title": "Wikipedia, City of Arts and Sciences",
+   "quote": "Hemisferic 1998; Palau de les Arts inaugurated 9 Oct 2005; Agora 2009; Assut de l'Or Bridge (2008)"
+  },
+  "S18": {
+   "url": "https://cultural.valencia.es/en/monument/central-market/",
+   "title": "Cultural Valencia, Central Market",
+   "quote": "completion was delayed until 1928"
+  },
+  "S19": {
+   "url": "https://www.valencia.es/documents/20142/629631/3.04++ESTACION+DEL+NORTE_firmado.pdf/7352fe48-7254-7e00-2e8d-ae139ade0794",
+   "title": "Ajuntament de Valencia, Estacion del Norte",
+   "quote": "La Estacion fue inaugurada en Agosto de 1917"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/Plaza_de_Toros_de_Valencia",
+   "title": "Wikipedia, Plaza de Toros de Valencia",
+   "quote": "Built 1850-1859; Opened June 22, 1859"
+  },
+  "S21": {
+   "url": "https://www.laliga.com/noticias/historia-mestalla-estadio-valencia-cf",
+   "title": "LaLiga, Historia de Mestalla",
+   "quote": "apertura 20 maggio 1923 con Valencia-Levante"
+  },
+  "S22": {
+   "url": "https://es.hispanopedia.com/wiki/Plaza_del_Ayuntamiento_(Valencia)",
+   "title": "Hispanopedia, Plaza del Ayuntamiento",
+   "quote": "su gran deterioro llevo a su demolicion en 1891; Palacio de Comunicaciones 1913-1922"
+  },
+  "S23": {
+   "url": "https://www.valencia.es/pensem-la/?p=606",
+   "title": "Ajuntament de Valencia, Pensem la plaça",
+   "quote": "toma su forma definitiva en 1933"
+  },
+  "S24": {
+   "url": "https://cultural.valencia.es/en/?p=143316",
+   "title": "Cultural Valencia, Plaza Redonda",
+   "quote": "inaugurated 1840 (Salvador Escrig)"
+  },
+  "S25": {
+   "url": "https://revistas.uva.es/index.php/ciudades/es/article/view/11530/7502",
+   "title": "Ciudades (UVa), riforma interna di Valencia; calle de la Paz",
+   "quote": "Calle de la Paz proposta 1866, progetto 1869, costruzione 1872-1902"
+  },
+  "S26": {
+   "url": "https://www.uv.es/arteweb/ARS%20LONGA_22/SANCHEZ_red.pdf",
+   "title": "Sanchez Munoz, Ars Longa 22, Avenida del Oeste",
+   "quote": "demolizioni dopo la Guerra Civil (anni esatti per tratto non letti)"
+  },
+  "S27": {
+   "url": "https://www.eldiario.es/comunitat-valenciana/territori-critic/plaza-reina-construccion_132_8558254.html",
+   "title": "eldiario.es, Plaza de la Reina",
+   "quote": "ultimo isolato demolito nel 1962"
+  },
+  "S28": {
+   "url": "https://maldita.es/clima/20241211/franco-desvio-turia-plan-sur-1957-salvar-vidas/",
+   "title": "Maldita.es, Plan Sur e piena del 1957",
+   "quote": "piena 13-14 ottobre 1957; Plan Sur approvato 1958"
+  },
+  "S29": {
+   "url": "https://www.eldebate.com/sociedad/sociedad-medio-ambiente/20241031/plan-sur-colosal-obra-franquismo-desvio-cauce-turia-valencia-no-inundara_240501.html",
+   "title": "El Debate, Plan Sur",
+   "quote": "el plan comenzo a realizarse en 1964; concluyeron el 22 de diciembre de 1969"
+  },
+  "S30": {
+   "url": "https://www.valencia.es/imaginaparcdesembocadura/es/?p=809",
+   "title": "Ajuntament de Valencia, Jardin del Turia",
+   "quote": "en 1986 se abrieron al publico los primeros tramos"
+  },
+  "S31": {
+   "url": "https://es.hispanopedia.com/wiki/Ciudadela_de_Valencia",
+   "title": "Hispanopedia, Ciudadela de Valencia",
+   "quote": "torreon demolido 1901; baluarte sul fiume fino al 1958"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Valencia_(1812)",
+   "title": "Wikipedia, Siege of Valencia (1812)",
+   "quote": "Suchet 26 dic 1811 - capitolazione 9 gen 1812"
+  },
+  "S33": {
+   "url": "https://core.ac.uk/download/71012194.pdf",
+   "title": "Ardit Lucas, popolazione di Valencia",
+   "quote": "40.000-50.000 abitanti intra-muros c.1500; 52.300-63.800 c.1609"
+  },
+  "S34": {
+   "url": "https://en.wikipedia.org/wiki/Valencia",
+   "title": "Wikipedia, Valencia",
+   "quote": "2025: 841.558 residenti"
+  },
+  "S35": {
+   "url": "https://www.eltemps.cat/documents/el-temps_2012_04_1453_0025_0027.pdf",
+   "title": "El Temps, annessioni dei comuni",
+   "quote": "Russafa 1877; Poblados Maritimos e Campanar 1897"
+  },
+  "S36": {
+   "url": "https://core.ac.uk/download/322903097.pdf",
+   "title": "Studio accademico su Ensanche e demolizione delle mura",
+   "quote": "propicia el derribo de las murallas en 1865"
+  },
+  "S37": {
+   "url": "https://nominatim.openstreetmap.org",
+   "title": "OpenStreetMap via Nominatim (geometrie ODbL)",
+   "quote": "poligoni e linee di barrios, piazze, strade, ponti, ruderi Muralla Arab"
+  },
+  "S38": {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/46/46900-VALENCIA/A.ES.SDGC.BU.46900.zip",
+   "title": "Catastro INSPIRE Buildings 46900",
+   "quote": "edifici con anno di costruzione"
+  },
+  "S39": {
+   "url": "https://en.wikipedia.org/wiki/Conquest_of_Valencia_(1238)",
+   "title": "Wikipedia, Conquest of Valencia",
+   "quote": "entrata trionfale di Giacomo I il 9 ottobre 1238"
+  },
+  "S40": {
+   "url": "https://en.wikipedia.org/wiki/Expulsion_of_the_Moriscos",
+   "title": "Wikipedia, Expulsion of the Moriscos",
+   "quote": "bando 1609 per il Regno di Valencia"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Valencia_Regional_Exhibition",
+   "title": "Wikipedia, Valencia Regional Exhibition",
+   "quote": "22 maggio-22 dicembre 1909, 16 ettari"
+  },
+  "S42": {
+   "url": "local:Valencia/validazione/CONTROLLO_STORICO_CHIUSURA.md",
+   "title": "Controllo storico di chiusura (11 nov 2026), sintesi interna",
+   "quote": "correzioni F001, A001, A002, C006, E009, G014"
+  },
+  "S43": {
+   "url": "https://www.valencia.es/documents/20142/629631/1.09+CONJUNTO+HIST%D3RICO+CIUTAT+VELLA+BIC_firmado.pdf/c48f8652-f515-2f01-c19f-8d3e0c1900c8",
+   "title": "Ajuntament de Valencia, Conjunto historico Ciutat Vella",
+   "quote": "Ensanche approvato nel 1887"
+  },
+  "S44": {
+   "url": "https://www.valenciabonita.es/2020/05/11/calles-curiosas-de-valencia/",
+   "title": "Valenciabonita, calles curiosas",
+   "quote": "calle de la Paz"
+  },
+  "S45": {
+   "url": "https://www.valenciabonita.es/2015/08/10/la-riada-del-57-valencia/",
+   "title": "Valenciabonita, la riada del 57",
+   "quote": "13-14 ottobre 1957"
+  }
+ },
+ "history": {
+  "zones": [
+   {
+    "name": "Muslim walled city",
+    "ring": [
+     [
+      39.4756,
+      -0.3799
+     ],
+     [
+      39.4765,
+      -0.37985
+     ],
+     [
+      39.4768,
+      -0.37935
+     ],
+     [
+      39.4777,
+      -0.3784
+     ],
+     [
+      39.47795,
+      -0.37805
+     ],
+     [
+      39.47822,
+      -0.3776
+     ],
+     [
+      39.47815,
+      -0.375
+     ],
+     [
+      39.4778,
+      -0.373
+     ],
+     [
+      39.477,
+      -0.3716
+     ],
+     [
+      39.47613,
+      -0.37137
+     ],
+     [
+      39.4748,
+      -0.3711
+     ],
+     [
+      39.4733,
+      -0.3719
+     ],
+     [
+      39.473,
+      -0.376
+     ],
+     [
+      39.4734,
+      -0.379
+     ],
+     [
+      39.4745,
+      -0.3799
+     ]
+    ],
+    "born": [
+     1238,
+     1238
+    ],
+    "seed": null,
+    "era_height": [
+     5,
+     9
+    ],
+    "src": [
+     "S2",
+     "S37"
+    ],
+    "conf": "low"
+   },
+   {
+    "name": "Boatella quarter (inside 1356 wall)",
+    "ring": [
+     [
+      39.4675,
+      -0.3815
+     ],
+     [
+      39.4678,
+      -0.3735
+     ],
+     [
+      39.4728,
+      -0.3735
+     ],
+     [
+      39.4732,
+      -0.379
+     ],
+     [
+      39.4725,
+      -0.3815
+     ]
+    ],
+    "born": [
+     1300,
+     1356
+    ],
+    "seed": [
+     39.4735,
+     -0.379
+    ],
+    "era_height": [
+     5,
+     9
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "low",
+    "note": "arrabal oggi dentro la cinta del 1356 (Ciutat Vella); poligono approssimato intorno a Mercat/Sant Vicent/Xativa"
+   },
+   {
+    "name": "Christian expansion within the 1356 wall",
+    "ring": [
+     [
+      39.47571,
+      -0.38416
+     ],
+     [
+      39.47377,
+      -0.38391
+     ],
+     [
+      39.47264,
+      -0.38399
+     ],
+     [
+      39.47192,
+      -0.38399
+     ],
+     [
+      39.47157,
+      -0.38392
+     ],
+     [
+      39.47064,
+      -0.38361
+     ],
+     [
+      39.4704,
+      -0.38342
+     ],
+     [
+      39.46872,
+      -0.38125
+     ],
+     [
+      39.46851,
+      -0.38076
+     ],
+     [
+      39.46825,
+      -0.38
+     ],
+     [
+      39.46813,
+      -0.37939
+     ],
+     [
+      39.46779,
+      -0.37809
+     ],
+     [
+      39.46774,
+      -0.37769
+     ],
+     [
+      39.46716,
+      -0.37545
+     ],
+     [
+      39.46712,
+      -0.37519
+     ],
+     [
+      39.46713,
+      -0.37504
+     ],
+     [
+      39.46716,
+      -0.37486
+     ],
+     [
+      39.46728,
+      -0.37466
+     ],
+     [
+      39.4696,
+      -0.37128
+     ],
+     [
+      39.4704,
+      -0.37028
+     ],
+     [
+      39.47128,
+      -0.36931
+     ],
+     [
+      39.47186,
+      -0.36873
+     ],
+     [
+      39.47212,
+      -0.36826
+     ],
+     [
+      39.47262,
+      -0.36698
+     ],
+     [
+      39.47309,
+      -0.36601
+     ],
+     [
+      39.47501,
+      -0.36753
+     ],
+     [
+      39.47644,
+      -0.36875
+     ],
+     [
+      39.47741,
+      -0.37007
+     ],
+     [
+      39.47792,
+      -0.37105
+     ],
+     [
+      39.47888,
+      -0.37249
+     ],
+     [
+      39.47917,
+      -0.37283
+     ],
+     [
+      39.47928,
+      -0.375
+     ],
+     [
+      39.47928,
+      -0.37617
+     ],
+     [
+      39.48021,
+      -0.37734
+     ],
+     [
+      39.48119,
+      -0.38018
+     ],
+     [
+      39.48109,
+      -0.38343
+     ],
+     [
+      39.48039,
+      -0.38294
+     ],
+     [
+      39.47841,
+      -0.38369
+     ],
+     [
+      39.47678,
+      -0.38402
+     ]
+    ],
+    "born": [
+     1300,
+     1400
+    ],
+    "seed": [
+     39.4764,
+     -0.3753
+    ],
+    "era_height": [
+     5,
+     10
+    ],
+    "src": [
+     "S1",
+     "S33"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Quart suburb (arrabal de Quart)",
+    "ring": [
+     [
+      39.4715,
+      -0.3935
+     ],
+     [
+      39.4795,
+      -0.3935
+     ],
+     [
+      39.4805,
+      -0.3845
+     ],
+     [
+      39.4757,
+      -0.3843
+     ],
+     [
+      39.472,
+      -0.384
+     ]
+    ],
+    "born": [
+     1300,
+     1600
+    ],
+    "seed": [
+     39.4759,
+     -0.3839
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S37",
+     "S33"
+    ],
+    "conf": "low"
+   },
+   {
+    "name": "Morvedre suburb (north of the Turia)",
+    "ring": [
+     [
+      39.4808,
+      -0.388
+     ],
+     [
+      39.4895,
+      -0.386
+     ],
+     [
+      39.49,
+      -0.372
+     ],
+     [
+      39.4815,
+      -0.3715
+     ],
+     [
+      39.481,
+      -0.376
+     ]
+    ],
+    "born": [
+     1300,
+     1600
+    ],
+    "seed": [
+     39.4793,
+     -0.3762
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S37",
+     "S33"
+    ],
+    "conf": "low"
+   },
+   {
+    "name": "Russafa village",
+    "ring": [
+     [
+      39.462,
+      -0.36731
+     ],
+     [
+      39.46332,
+      -0.36768
+     ],
+     [
+      39.46443,
+      -0.36874
+     ],
+     [
+      39.46518,
+      -0.37033
+     ],
+     [
+      39.46544,
+      -0.3722
+     ],
+     [
+      39.46518,
+      -0.37407
+     ],
+     [
+      39.46443,
+      -0.37566
+     ],
+     [
+      39.46332,
+      -0.37672
+     ],
+     [
+      39.462,
+      -0.37709
+     ],
+     [
+      39.46068,
+      -0.37672
+     ],
+     [
+      39.45957,
+      -0.37566
+     ],
+     [
+      39.45882,
+      -0.37407
+     ],
+     [
+      39.45856,
+      -0.3722
+     ],
+     [
+      39.45882,
+      -0.37033
+     ],
+     [
+      39.45957,
+      -0.36874
+     ],
+     [
+      39.46068,
+      -0.36768
+     ]
+    ],
+    "born": [
+     1300,
+     1600
+    ],
+    "seed": [
+     39.462,
+     -0.3722
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S37",
+     "S35"
+    ],
+    "conf": "low",
+    "note": "villaggio storico distinto, annesso 1877 (S35); poligono centrato sul Mercat de Russafa"
+   },
+   {
+    "name": "El Grau (Vilanova del Grau)",
+    "ring": [
+     [
+      39.4615,
+      -0.31608
+     ],
+     [
+      39.46268,
+      -0.31652
+     ],
+     [
+      39.46362,
+      -0.31774
+     ],
+     [
+      39.46415,
+      -0.31952
+     ],
+     [
+      39.46415,
+      -0.32148
+     ],
+     [
+      39.46362,
+      -0.32326
+     ],
+     [
+      39.46268,
+      -0.32448
+     ],
+     [
+      39.4615,
+      -0.32492
+     ],
+     [
+      39.46032,
+      -0.32448
+     ],
+     [
+      39.45938,
+      -0.32326
+     ],
+     [
+      39.45885,
+      -0.32148
+     ],
+     [
+      39.45885,
+      -0.31952
+     ],
+     [
+      39.45938,
+      -0.31774
+     ],
+     [
+      39.46032,
+      -0.31652
+     ]
+    ],
+    "born": [
+     1500,
+     1800
+    ],
+    "seed": [
+     39.462,
+     -0.32
+    ],
+    "era_height": [
+     4,
+     7
+    ],
+    "src": [
+     "S35"
+    ],
+    "conf": "low",
+    "note": "data di formazione non documentata (annesso 1897)"
+   },
+   {
+    "name": "Cabanyal-Canyamelar",
+    "ring": [
+     [
+      39.4685,
+      -0.3256
+     ],
+     [
+      39.47006,
+      -0.32609
+     ],
+     [
+      39.47138,
+      -0.32747
+     ],
+     [
+      39.47226,
+      -0.32955
+     ],
+     [
+      39.47257,
+      -0.332
+     ],
+     [
+      39.47226,
+      -0.33445
+     ],
+     [
+      39.47138,
+      -0.33653
+     ],
+     [
+      39.47006,
+      -0.33791
+     ],
+     [
+      39.4685,
+      -0.3384
+     ],
+     [
+      39.46694,
+      -0.33791
+     ],
+     [
+      39.46562,
+      -0.33653
+     ],
+     [
+      39.46474,
+      -0.33445
+     ],
+     [
+      39.46443,
+      -0.332
+     ],
+     [
+      39.46474,
+      -0.32955
+     ],
+     [
+      39.46562,
+      -0.32747
+     ],
+     [
+      39.46694,
+      -0.32609
+     ]
+    ],
+    "born": [
+     1750,
+     1837
+    ],
+    "seed": [
+     39.469,
+     -0.331
+    ],
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [
+     "S35"
+    ],
+    "conf": "low",
+    "note": "Poble Nou de la Mar comune autonomo dal 1837 (research B), annesso 1897; poligono approssimato"
+   }
+  ],
+  "walls": [
+   {
+    "name": "Christian wall (Pere IV)",
+    "ring": [
+     [
+      39.47571,
+      -0.38416
+     ],
+     [
+      39.47377,
+      -0.38391
+     ],
+     [
+      39.47264,
+      -0.38399
+     ],
+     [
+      39.47192,
+      -0.38399
+     ],
+     [
+      39.47157,
+      -0.38392
+     ],
+     [
+      39.47064,
+      -0.38361
+     ],
+     [
+      39.4704,
+      -0.38342
+     ],
+     [
+      39.46872,
+      -0.38125
+     ],
+     [
+      39.46851,
+      -0.38076
+     ],
+     [
+      39.46825,
+      -0.38
+     ],
+     [
+      39.46813,
+      -0.37939
+     ],
+     [
+      39.46779,
+      -0.37809
+     ],
+     [
+      39.46774,
+      -0.37769
+     ],
+     [
+      39.46716,
+      -0.37545
+     ],
+     [
+      39.46712,
+      -0.37519
+     ],
+     [
+      39.46713,
+      -0.37504
+     ],
+     [
+      39.46716,
+      -0.37486
+     ],
+     [
+      39.46728,
+      -0.37466
+     ],
+     [
+      39.4696,
+      -0.37128
+     ],
+     [
+      39.4704,
+      -0.37028
+     ],
+     [
+      39.47128,
+      -0.36931
+     ],
+     [
+      39.47186,
+      -0.36873
+     ],
+     [
+      39.47212,
+      -0.36826
+     ],
+     [
+      39.47262,
+      -0.36698
+     ],
+     [
+      39.47309,
+      -0.36601
+     ],
+     [
+      39.47501,
+      -0.36753
+     ],
+     [
+      39.47644,
+      -0.36875
+     ],
+     [
+      39.47741,
+      -0.37007
+     ],
+     [
+      39.47792,
+      -0.37105
+     ],
+     [
+      39.47888,
+      -0.37249
+     ],
+     [
+      39.47917,
+      -0.37283
+     ],
+     [
+      39.47928,
+      -0.375
+     ],
+     [
+      39.47928,
+      -0.37617
+     ],
+     [
+      39.48021,
+      -0.37734
+     ],
+     [
+      39.48119,
+      -0.38018
+     ],
+     [
+      39.48109,
+      -0.38343
+     ],
+     [
+      39.48039,
+      -0.38294
+     ],
+     [
+      39.47841,
+      -0.38369
+     ],
+     [
+      39.47678,
+      -0.38402
+     ]
+    ],
+    "built": [
+     1356,
+     1370
+    ],
+    "demolished": 1865,
+    "height": 10,
+    "width": 4,
+    "towers_every_m": 60,
+    "keep": [
+     [
+      39.47928,
+      -0.37617,
+      45
+     ],
+     [
+      39.4759,
+      -0.38393,
+      45
+     ]
+    ],
+    "src": [
+     "S1",
+     "S36",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "ring = confine OSM di Ciutat Vella (rel. 4231802) con il fronte nord corretto per passare dalle Torres de Serranos; coincide con le vie che hanno preso il posto delle mura (Guillem de Castro, Xativa, Colon). Fine lavori 1370 da altra fonte non letta; la scheda comunale non da data di fine."
+   },
+   {
+    "name": "Islamic wall",
+    "ring": [
+     [
+      39.4756,
+      -0.3799
+     ],
+     [
+      39.4765,
+      -0.37985
+     ],
+     [
+      39.4768,
+      -0.37935
+     ],
+     [
+      39.4777,
+      -0.3784
+     ],
+     [
+      39.47795,
+      -0.37805
+     ],
+     [
+      39.47822,
+      -0.3776
+     ],
+     [
+      39.47815,
+      -0.375
+     ],
+     [
+      39.4778,
+      -0.373
+     ],
+     [
+      39.477,
+      -0.3716
+     ],
+     [
+      39.47613,
+      -0.37137
+     ],
+     [
+      39.4748,
+      -0.3711
+     ],
+     [
+      39.4733,
+      -0.3719
+     ],
+     [
+      39.473,
+      -0.376
+     ],
+     [
+      39.4734,
+      -0.379
+     ],
+     [
+      39.4745,
+      -0.3799
+     ]
+    ],
+    "built": [
+     1238,
+     1238
+    ],
+    "demolished": 1400,
+    "height": 8,
+    "width": 3,
+    "towers_every_m": 45,
+    "keep": [],
+    "src": [
+     "S2",
+     "S37"
+    ],
+    "conf": "low",
+    "note": "7 ruderi OSM 'Muralla Arab' ancorano O, NO, N e E; lato sud disegnato lungo calles Comedies / Sant Vicent: stimato. Demolizione progressiva dopo il 1356: 1400 e' convenzione."
+   }
+  ],
+  "gutting": [
+   {
+    "name": "Plaza Redonda",
+    "ring": [
+     [
+      39.47361,
+      -0.37687
+     ],
+     [
+      39.47374,
+      -0.37678
+     ],
+     [
+      39.47379,
+      -0.37659
+     ],
+     [
+      39.47373,
+      -0.37641
+     ],
+     [
+      39.47358,
+      -0.37633
+     ],
+     [
+      39.47344,
+      -0.3764
+     ],
+     [
+      39.47337,
+      -0.3766
+     ],
+     [
+      39.47344,
+      -0.3768
+     ]
+    ],
+    "from": 1238,
+    "until": 1840,
+    "src": [
+     "S24",
+     "S37"
+    ],
+    "conf": "high"
+   },
+   {
+    "name": "Calle de la Paz",
+    "ring": [
+     [
+      39.47385,
+      -0.3752
+     ],
+     [
+      39.47293,
+      -0.37064
+     ],
+     [
+      39.47287,
+      -0.37054
+     ],
+     [
+      39.47278,
+      -0.37052
+     ],
+     [
+      39.4727,
+      -0.3706
+     ],
+     [
+      39.47269,
+      -0.37072
+     ],
+     [
+      39.4736,
+      -0.37525
+     ],
+     [
+      39.47365,
+      -0.37534
+     ],
+     [
+      39.47373,
+      -0.37537
+     ],
+     [
+      39.47381,
+      -0.37532
+     ]
+    ],
+    "from": 1238,
+    "until": 1872,
+    "src": [
+     "S25",
+     "S44",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "OSM ha due soli tratti 'Carrer de la Pau': il collegamento e' retto. Apertura 1872-1902 a tratti (nodo medio 1872)."
+   },
+   {
+    "name": "Plaza del Ayuntamiento (convent of San Francisco site)",
+    "ring": [
+     [
+      39.46986,
+      -0.37661
+     ],
+     [
+      39.47039,
+      -0.37659
+     ],
+     [
+      39.47045,
+      -0.37629
+     ],
+     [
+      39.47043,
+      -0.37587
+     ],
+     [
+      39.47027,
+      -0.37575
+     ],
+     [
+      39.46909,
+      -0.37537
+     ],
+     [
+      39.46905,
+      -0.37538
+     ],
+     [
+      39.46903,
+      -0.37543
+     ],
+     [
+      39.46902,
+      -0.37666
+     ],
+     [
+      39.46907,
+      -0.3771
+     ],
+     [
+      39.46911,
+      -0.37712
+     ],
+     [
+      39.46968,
+      -0.37708
+     ],
+     [
+      39.46972,
+      -0.37703
+     ],
+     [
+      39.46983,
+      -0.377
+     ],
+     [
+      39.46986,
+      -0.37695
+     ]
+    ],
+    "from": 1238,
+    "until": 1891,
+    "src": [
+     "S22",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Plaza del Ayuntamiento (Pescadores district)",
+    "ring": [
+     [
+      39.47173,
+      -0.37701
+     ],
+     [
+      39.47174,
+      -0.37709
+     ],
+     [
+      39.47179,
+      -0.3771
+     ],
+     [
+      39.47227,
+      -0.37675
+     ],
+     [
+      39.47229,
+      -0.37671
+     ],
+     [
+      39.47228,
+      -0.37663
+     ],
+     [
+      39.47225,
+      -0.3766
+     ],
+     [
+      39.47121,
+      -0.37639
+     ],
+     [
+      39.47042,
+      -0.37586
+     ],
+     [
+      39.47036,
+      -0.37588
+     ],
+     [
+      39.47036,
+      -0.37631
+     ],
+     [
+      39.47044,
+      -0.37633
+     ],
+     [
+      39.47067,
+      -0.37648
+     ],
+     [
+      39.47065,
+      -0.3766
+     ],
+     [
+      39.47039,
+      -0.37661
+     ],
+     [
+      39.47036,
+      -0.37664
+     ],
+     [
+      39.47035,
+      -0.37699
+     ],
+     [
+      39.47038,
+      -0.37703
+     ]
+    ],
+    "from": 1238,
+    "until": 1907,
+    "src": [
+     "S22",
+     "S37"
+    ],
+    "conf": "low",
+    "note": "divisione convento/Pescadores per latitudine: stima; fonte secondaria"
+   },
+   {
+    "name": "Avenida del Oeste",
+    "ring": [
+     [
+      39.47197,
+      -0.37951
+     ],
+     [
+      39.46902,
+      -0.37937
+     ],
+     [
+      39.46895,
+      -0.37939
+     ],
+     [
+      39.46889,
+      -0.37945
+     ],
+     [
+      39.46886,
+      -0.37952
+     ],
+     [
+      39.46885,
+      -0.37961
+     ],
+     [
+      39.4689,
+      -0.37976
+     ],
+     [
+      39.46895,
+      -0.37981
+     ],
+     [
+      39.46902,
+      -0.37983
+     ],
+     [
+      39.47191,
+      -0.37996
+     ],
+     [
+      39.47202,
+      -0.37991
+     ],
+     [
+      39.47208,
+      -0.3798
+     ],
+     [
+      39.47209,
+      -0.37971
+     ],
+     [
+      39.47207,
+      -0.37963
+     ],
+     [
+      39.47203,
+      -0.37955
+     ]
+    ],
+    "from": 1238,
+    "until": 1945,
+    "src": [
+     "S26",
+     "S37"
+    ],
+    "conf": "low",
+    "note": "anno stimato (demolizioni dopo il 1939); solo i due tratti OSM trovati, in mezzo retto"
+   },
+   {
+    "name": "Plaza de la Reina",
+    "ring": [
+     [
+      39.47392,
+      -0.37599
+     ],
+     [
+      39.47471,
+      -0.37588
+     ],
+     [
+      39.4753,
+      -0.37558
+     ],
+     [
+      39.47532,
+      -0.37554
+     ],
+     [
+      39.47528,
+      -0.37547
+     ],
+     [
+      39.4753,
+      -0.37537
+     ],
+     [
+      39.47508,
+      -0.37495
+     ],
+     [
+      39.47505,
+      -0.37492
+     ],
+     [
+      39.47437,
+      -0.37501
+     ],
+     [
+      39.47415,
+      -0.375
+     ],
+     [
+      39.47365,
+      -0.37518
+     ],
+     [
+      39.47362,
+      -0.37524
+     ],
+     [
+      39.47373,
+      -0.37581
+     ]
+    ],
+    "from": 1238,
+    "until": 1962,
+    "src": [
+     "S27",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "1962 = ultimo isolato demolito; parti dell'isolato davanti alla Cattedrale furono demolite gia' nell'800 (date non trovate)"
+   }
+  ],
+  "lost": [
+   {
+    "name": "Convent of San Francisco",
+    "ring": [
+     [
+      39.46983,
+      -0.37658
+     ],
+     [
+      39.47037,
+      -0.37658
+     ],
+     [
+      39.47037,
+      -0.37762
+     ],
+     [
+      39.46983,
+      -0.37762
+     ]
+    ],
+    "from": 1239,
+    "to": 1891,
+    "h": 14,
+    "src": [
+     "S22"
+    ],
+    "conf": "medium",
+    "note": "ubicazione e impronta stimate (sito della Plaza del Ayuntamiento)"
+   },
+   {
+    "name": "Ciudadela",
+    "ring": [
+     [
+      39.4725,
+      -0.36582
+     ],
+     [
+      39.47422,
+      -0.36767
+     ],
+     [
+      39.47356,
+      -0.37067
+     ],
+     [
+      39.47144,
+      -0.37067
+     ],
+     [
+      39.47078,
+      -0.36767
+     ]
+    ],
+    "from": 1715,
+    "to": 1901,
+    "h": 12,
+    "src": [
+     "S31"
+    ],
+    "conf": "low",
+    "note": "pentagono bastionato: data di inizio non verificata (anni 1710 dopo il 1707), ubicazione approssimata a est di Plaza Tetuan, torreon fino al 1901, baluardo sul fiume fino al 1958"
+   }
+  ],
+  "fires": [
+   {
+    "name": "Siege of 1812",
+    "ring": [
+     [
+      39.47,
+      -0.39
+     ],
+     [
+      39.4795,
+      -0.39
+     ],
+     [
+      39.48,
+      -0.383
+     ],
+     [
+      39.4705,
+      -0.383
+     ]
+    ],
+    "y": 1811.98,
+    "y1": 1812.03,
+    "destroy": false,
+    "flames": 0,
+    "smoke": 6,
+    "src": [
+     "S32"
+    ],
+    "conf": "medium",
+    "note": "solo fumo sul fronte ovest delle mura (Torres de Quart); danni per quartiere non trovati"
+   }
+  ],
+  "water": [
+   {
+    "name": "New Turia channel (field)",
+    "ring": [
+     [
+      39.42419,
+      -0.33445
+     ],
+     [
+      39.42423,
+      -0.33458
+     ],
+     [
+      39.42412,
+      -0.33464
+     ],
+     [
+      39.42757,
+      -0.34426
+     ],
+     [
+      39.43328,
+      -0.36064
+     ],
+     [
+      39.43385,
+      -0.36287
+     ],
+     [
+      39.43446,
+      -0.36846
+     ],
+     [
+      39.43646,
+      -0.38925
+     ],
+     [
+      39.43691,
+      -0.39182
+     ],
+     [
+      39.43727,
+      -0.39328
+     ],
+     [
+      39.43777,
+      -0.39488
+     ],
+     [
+      39.43822,
+      -0.39617
+     ],
+     [
+      39.43889,
+      -0.39781
+     ],
+     [
+      39.43984,
+      -0.39963
+     ],
+     [
+      39.44065,
+      -0.40092
+     ],
+     [
+      39.442,
+      -0.40267
+     ],
+     [
+      39.44373,
+      -0.4046
+     ],
+     [
+      39.44546,
+      -0.40616
+     ],
+     [
+      39.45864,
+      -0.41575
+     ],
+     [
+      39.46187,
+      -0.41838
+     ],
+     [
+      39.46302,
+      -0.41901
+     ],
+     [
+      39.4802,
+      -0.43174
+     ],
+     [
+      39.48041,
+      -0.43191
+     ],
+     [
+      39.48073,
+      -0.43245
+     ],
+     [
+      39.48121,
+      -0.43257
+     ],
+     [
+      39.48147,
+      -0.43093
+     ],
+     [
+      39.4816,
+      -0.43104
+     ],
+     [
+      39.48196,
+      -0.43069
+     ],
+     [
+      39.48165,
+      -0.43016
+     ],
+     [
+      39.46383,
+      -0.41693
+     ],
+     [
+      39.46272,
+      -0.41632
+     ],
+     [
+      39.45957,
+      -0.41376
+     ],
+     [
+      39.44642,
+      -0.40418
+     ],
+     [
+      39.44484,
+      -0.40276
+     ],
+     [
+      39.44322,
+      -0.40096
+     ],
+     [
+      39.44202,
+      -0.39939
+     ],
+     [
+      39.4413,
+      -0.39824
+     ],
+     [
+      39.44045,
+      -0.39661
+     ],
+     [
+      39.43985,
+      -0.39515
+     ],
+     [
+      39.43944,
+      -0.39397
+     ],
+     [
+      39.43898,
+      -0.39249
+     ],
+     [
+      39.43866,
+      -0.3912
+     ],
+     [
+      39.43824,
+      -0.38885
+     ],
+     [
+      39.43626,
+      -0.36817
+     ],
+     [
+      39.43562,
+      -0.36233
+     ],
+     [
+      39.43497,
+      -0.35979
+     ],
+     [
+      39.42921,
+      -0.34329
+     ],
+     [
+      39.42576,
+      -0.33366
+     ],
+     [
+      39.42494,
+      -0.33415
+     ]
+    ],
+    "from": -9999,
+    "to": 1964,
+    "c": "field",
+    "src": [
+     "S29",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "New Turia channel (construction site)",
+    "ring": [
+     [
+      39.42419,
+      -0.33445
+     ],
+     [
+      39.42423,
+      -0.33458
+     ],
+     [
+      39.42412,
+      -0.33464
+     ],
+     [
+      39.42757,
+      -0.34426
+     ],
+     [
+      39.43328,
+      -0.36064
+     ],
+     [
+      39.43385,
+      -0.36287
+     ],
+     [
+      39.43446,
+      -0.36846
+     ],
+     [
+      39.43646,
+      -0.38925
+     ],
+     [
+      39.43691,
+      -0.39182
+     ],
+     [
+      39.43727,
+      -0.39328
+     ],
+     [
+      39.43777,
+      -0.39488
+     ],
+     [
+      39.43822,
+      -0.39617
+     ],
+     [
+      39.43889,
+      -0.39781
+     ],
+     [
+      39.43984,
+      -0.39963
+     ],
+     [
+      39.44065,
+      -0.40092
+     ],
+     [
+      39.442,
+      -0.40267
+     ],
+     [
+      39.44373,
+      -0.4046
+     ],
+     [
+      39.44546,
+      -0.40616
+     ],
+     [
+      39.45864,
+      -0.41575
+     ],
+     [
+      39.46187,
+      -0.41838
+     ],
+     [
+      39.46302,
+      -0.41901
+     ],
+     [
+      39.4802,
+      -0.43174
+     ],
+     [
+      39.48041,
+      -0.43191
+     ],
+     [
+      39.48073,
+      -0.43245
+     ],
+     [
+      39.48121,
+      -0.43257
+     ],
+     [
+      39.48147,
+      -0.43093
+     ],
+     [
+      39.4816,
+      -0.43104
+     ],
+     [
+      39.48196,
+      -0.43069
+     ],
+     [
+      39.48165,
+      -0.43016
+     ],
+     [
+      39.46383,
+      -0.41693
+     ],
+     [
+      39.46272,
+      -0.41632
+     ],
+     [
+      39.45957,
+      -0.41376
+     ],
+     [
+      39.44642,
+      -0.40418
+     ],
+     [
+      39.44484,
+      -0.40276
+     ],
+     [
+      39.44322,
+      -0.40096
+     ],
+     [
+      39.44202,
+      -0.39939
+     ],
+     [
+      39.4413,
+      -0.39824
+     ],
+     [
+      39.44045,
+      -0.39661
+     ],
+     [
+      39.43985,
+      -0.39515
+     ],
+     [
+      39.43944,
+      -0.39397
+     ],
+     [
+      39.43898,
+      -0.39249
+     ],
+     [
+      39.43866,
+      -0.3912
+     ],
+     [
+      39.43824,
+      -0.38885
+     ],
+     [
+      39.43626,
+      -0.36817
+     ],
+     [
+      39.43562,
+      -0.36233
+     ],
+     [
+      39.43497,
+      -0.35979
+     ],
+     [
+      39.42921,
+      -0.34329
+     ],
+     [
+      39.42576,
+      -0.33366
+     ],
+     [
+      39.42494,
+      -0.33415
+     ]
+    ],
+    "from": 1964,
+    "to": 1969.97,
+    "c": "urban",
+    "src": [
+     "S29",
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "cantiere come 'urban' (terra nuda #b8ad98): 'field' qui sarebbe identico al campo; acqua dal 22 dic 1969"
+   },
+   {
+    "name": "Old Turia bed (dry) 1",
+    "ring": [
+     [
+      39.45567,
+      -0.34802
+     ],
+     [
+      39.45553,
+      -0.34748
+     ],
+     [
+      39.45519,
+      -0.3469
+     ],
+     [
+      39.45491,
+      -0.34624
+     ],
+     [
+      39.45458,
+      -0.34498
+     ],
+     [
+      39.45448,
+      -0.34362
+     ],
+     [
+      39.45461,
+      -0.34218
+     ],
+     [
+      39.45449,
+      -0.34214
+     ],
+     [
+      39.4545,
+      -0.34208
+     ],
+     [
+      39.45411,
+      -0.342
+     ],
+     [
+      39.45398,
+      -0.34275
+     ],
+     [
+      39.45385,
+      -0.34461
+     ],
+     [
+      39.45421,
+      -0.347
+     ],
+     [
+      39.45431,
+      -0.3473
+     ],
+     [
+      39.45441,
+      -0.34758
+     ],
+     [
+      39.45508,
+      -0.34848
+     ],
+     [
+      39.45497,
+      -0.34855
+     ],
+     [
+      39.45466,
+      -0.34824
+     ],
+     [
+      39.45446,
+      -0.34873
+     ],
+     [
+      39.45441,
+      -0.34869
+     ],
+     [
+      39.45442,
+      -0.3488
+     ],
+     [
+      39.45431,
+      -0.34889
+     ],
+     [
+      39.45496,
+      -0.34987
+     ],
+     [
+      39.45559,
+      -0.35002
+     ],
+     [
+      39.45703,
+      -0.35218
+     ],
+     [
+      39.45696,
+      -0.35255
+     ],
+     [
+      39.45701,
+      -0.35276
+     ],
+     [
+      39.45767,
+      -0.35374
+     ],
+     [
+      39.4582,
+      -0.35396
+     ],
+     [
+      39.4584,
+      -0.35465
+     ],
+     [
+      39.45889,
+      -0.35588
+     ],
+     [
+      39.45912,
+      -0.35628
+     ],
+     [
+      39.45939,
+      -0.35785
+     ],
+     [
+      39.45958,
+      -0.35846
+     ],
+     [
+      39.46136,
+      -0.35983
+     ],
+     [
+      39.46191,
+      -0.36016
+     ],
+     [
+      39.4614,
+      -0.35782
+     ],
+     [
+      39.461,
+      -0.35752
+     ],
+     [
+      39.46104,
+      -0.35745
+     ],
+     [
+      39.46098,
+      -0.35723
+     ],
+     [
+      39.46098,
+      -0.35691
+     ],
+     [
+      39.46043,
+      -0.35584
+     ],
+     [
+      39.4602,
+      -0.35516
+     ],
+     [
+      39.46,
+      -0.35429
+     ],
+     [
+      39.45963,
+      -0.35392
+     ],
+     [
+      39.45951,
+      -0.35347
+     ],
+     [
+      39.45955,
+      -0.3533
+     ],
+     [
+      39.45617,
+      -0.34842
+     ],
+     [
+      39.45595,
+      -0.34833
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 1",
+    "ring": [
+     [
+      39.45567,
+      -0.34802
+     ],
+     [
+      39.45553,
+      -0.34748
+     ],
+     [
+      39.45519,
+      -0.3469
+     ],
+     [
+      39.45491,
+      -0.34624
+     ],
+     [
+      39.45458,
+      -0.34498
+     ],
+     [
+      39.45448,
+      -0.34362
+     ],
+     [
+      39.45461,
+      -0.34218
+     ],
+     [
+      39.45449,
+      -0.34214
+     ],
+     [
+      39.4545,
+      -0.34208
+     ],
+     [
+      39.45411,
+      -0.342
+     ],
+     [
+      39.45398,
+      -0.34275
+     ],
+     [
+      39.45385,
+      -0.34461
+     ],
+     [
+      39.45421,
+      -0.347
+     ],
+     [
+      39.45431,
+      -0.3473
+     ],
+     [
+      39.45441,
+      -0.34758
+     ],
+     [
+      39.45508,
+      -0.34848
+     ],
+     [
+      39.45497,
+      -0.34855
+     ],
+     [
+      39.45466,
+      -0.34824
+     ],
+     [
+      39.45446,
+      -0.34873
+     ],
+     [
+      39.45441,
+      -0.34869
+     ],
+     [
+      39.45442,
+      -0.3488
+     ],
+     [
+      39.45431,
+      -0.34889
+     ],
+     [
+      39.45496,
+      -0.34987
+     ],
+     [
+      39.45559,
+      -0.35002
+     ],
+     [
+      39.45703,
+      -0.35218
+     ],
+     [
+      39.45696,
+      -0.35255
+     ],
+     [
+      39.45701,
+      -0.35276
+     ],
+     [
+      39.45767,
+      -0.35374
+     ],
+     [
+      39.4582,
+      -0.35396
+     ],
+     [
+      39.4584,
+      -0.35465
+     ],
+     [
+      39.45889,
+      -0.35588
+     ],
+     [
+      39.45912,
+      -0.35628
+     ],
+     [
+      39.45939,
+      -0.35785
+     ],
+     [
+      39.45958,
+      -0.35846
+     ],
+     [
+      39.46136,
+      -0.35983
+     ],
+     [
+      39.46191,
+      -0.36016
+     ],
+     [
+      39.4614,
+      -0.35782
+     ],
+     [
+      39.461,
+      -0.35752
+     ],
+     [
+      39.46104,
+      -0.35745
+     ],
+     [
+      39.46098,
+      -0.35723
+     ],
+     [
+      39.46098,
+      -0.35691
+     ],
+     [
+      39.46043,
+      -0.35584
+     ],
+     [
+      39.4602,
+      -0.35516
+     ],
+     [
+      39.46,
+      -0.35429
+     ],
+     [
+      39.45963,
+      -0.35392
+     ],
+     [
+      39.45951,
+      -0.35347
+     ],
+     [
+      39.45955,
+      -0.3533
+     ],
+     [
+      39.45617,
+      -0.34842
+     ],
+     [
+      39.45595,
+      -0.34833
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "Old Turia bed (dry) 2",
+    "ring": [
+     [
+      39.46309,
+      -0.36052
+     ],
+     [
+      39.46342,
+      -0.35912
+     ],
+     [
+      39.46337,
+      -0.3591
+     ],
+     [
+      39.46339,
+      -0.35892
+     ],
+     [
+      39.46167,
+      -0.35783
+     ],
+     [
+      39.46223,
+      -0.36033
+     ],
+     [
+      39.46302,
+      -0.36064
+     ],
+     [
+      39.46305,
+      -0.36051
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 2",
+    "ring": [
+     [
+      39.46309,
+      -0.36052
+     ],
+     [
+      39.46342,
+      -0.35912
+     ],
+     [
+      39.46337,
+      -0.3591
+     ],
+     [
+      39.46339,
+      -0.35892
+     ],
+     [
+      39.46167,
+      -0.35783
+     ],
+     [
+      39.46223,
+      -0.36033
+     ],
+     [
+      39.46302,
+      -0.36064
+     ],
+     [
+      39.46305,
+      -0.36051
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "Old Turia bed (dry) 3",
+    "ring": [
+     [
+      39.46868,
+      -0.36374
+     ],
+     [
+      39.46877,
+      -0.3618
+     ],
+     [
+      39.46698,
+      -0.36073
+     ],
+     [
+      39.46672,
+      -0.36096
+     ],
+     [
+      39.4664,
+      -0.36109
+     ],
+     [
+      39.46564,
+      -0.36071
+     ],
+     [
+      39.46544,
+      -0.36024
+     ],
+     [
+      39.46541,
+      -0.35997
+     ],
+     [
+      39.46381,
+      -0.35911
+     ],
+     [
+      39.46369,
+      -0.35923
+     ],
+     [
+      39.46336,
+      -0.36063
+     ],
+     [
+      39.46341,
+      -0.36064
+     ],
+     [
+      39.46338,
+      -0.36078
+     ],
+     [
+      39.46448,
+      -0.36122
+     ],
+     [
+      39.4645,
+      -0.36117
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 3",
+    "ring": [
+     [
+      39.46868,
+      -0.36374
+     ],
+     [
+      39.46877,
+      -0.3618
+     ],
+     [
+      39.46698,
+      -0.36073
+     ],
+     [
+      39.46672,
+      -0.36096
+     ],
+     [
+      39.4664,
+      -0.36109
+     ],
+     [
+      39.46564,
+      -0.36071
+     ],
+     [
+      39.46544,
+      -0.36024
+     ],
+     [
+      39.46541,
+      -0.35997
+     ],
+     [
+      39.46381,
+      -0.35911
+     ],
+     [
+      39.46369,
+      -0.35923
+     ],
+     [
+      39.46336,
+      -0.36063
+     ],
+     [
+      39.46341,
+      -0.36064
+     ],
+     [
+      39.46338,
+      -0.36078
+     ],
+     [
+      39.46448,
+      -0.36122
+     ],
+     [
+      39.4645,
+      -0.36117
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "Old Turia bed (dry) 4",
+    "ring": [
+     [
+      39.47065,
+      -0.36502
+     ],
+     [
+      39.47133,
+      -0.36349
+     ],
+     [
+      39.47045,
+      -0.36277
+     ],
+     [
+      39.46903,
+      -0.36196
+     ],
+     [
+      39.46895,
+      -0.36392
+     ],
+     [
+      39.46954,
+      -0.36431
+     ],
+     [
+      39.46956,
+      -0.36425
+     ],
+     [
+      39.47017,
+      -0.36459
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 4",
+    "ring": [
+     [
+      39.47065,
+      -0.36502
+     ],
+     [
+      39.47133,
+      -0.36349
+     ],
+     [
+      39.47045,
+      -0.36277
+     ],
+     [
+      39.46903,
+      -0.36196
+     ],
+     [
+      39.46895,
+      -0.36392
+     ],
+     [
+      39.46954,
+      -0.36431
+     ],
+     [
+      39.46956,
+      -0.36425
+     ],
+     [
+      39.47017,
+      -0.36459
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "Old Turia bed (dry) 5",
+    "ring": [
+     [
+      39.47245,
+      -0.36662
+     ],
+     [
+      39.47324,
+      -0.36503
+     ],
+     [
+      39.47151,
+      -0.36365
+     ],
+     [
+      39.47083,
+      -0.36519
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 5",
+    "ring": [
+     [
+      39.47245,
+      -0.36662
+     ],
+     [
+      39.47324,
+      -0.36503
+     ],
+     [
+      39.47151,
+      -0.36365
+     ],
+     [
+      39.47083,
+      -0.36519
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "Old Turia bed (dry) 6",
+    "ring": [
+     [
+      39.47443,
+      -0.4062
+     ],
+     [
+      39.4746,
+      -0.40486
+     ],
+     [
+      39.47606,
+      -0.39747
+     ],
+     [
+      39.47838,
+      -0.39218
+     ],
+     [
+      39.47958,
+      -0.38825
+     ],
+     [
+      39.48182,
+      -0.38352
+     ],
+     [
+      39.48225,
+      -0.3825
+     ],
+     [
+      39.48261,
+      -0.38142
+     ],
+     [
+      39.48284,
+      -0.38033
+     ],
+     [
+      39.48268,
+      -0.37774
+     ],
+     [
+      39.48261,
+      -0.37743
+     ],
+     [
+      39.48244,
+      -0.37694
+     ],
+     [
+      39.48155,
+      -0.37528
+     ],
+     [
+      39.48137,
+      -0.37515
+     ],
+     [
+      39.48132,
+      -0.37496
+     ],
+     [
+      39.48038,
+      -0.37361
+     ],
+     [
+      39.4797,
+      -0.37231
+     ],
+     [
+      39.47884,
+      -0.3714
+     ],
+     [
+      39.47849,
+      -0.37055
+     ],
+     [
+      39.47706,
+      -0.36836
+     ],
+     [
+      39.47709,
+      -0.36832
+     ],
+     [
+      39.47669,
+      -0.36796
+     ],
+     [
+      39.47674,
+      -0.36786
+     ],
+     [
+      39.47376,
+      -0.36546
+     ],
+     [
+      39.47299,
+      -0.36702
+     ],
+     [
+      39.4732,
+      -0.36719
+     ],
+     [
+      39.47318,
+      -0.36724
+     ],
+     [
+      39.47479,
+      -0.36851
+     ],
+     [
+      39.47555,
+      -0.36925
+     ],
+     [
+      39.47563,
+      -0.36927
+     ],
+     [
+      39.47661,
+      -0.37029
+     ],
+     [
+      39.47729,
+      -0.37132
+     ],
+     [
+      39.47954,
+      -0.37512
+     ],
+     [
+      39.47963,
+      -0.37504
+     ],
+     [
+      39.47995,
+      -0.37561
+     ],
+     [
+      39.48003,
+      -0.37607
+     ],
+     [
+      39.48087,
+      -0.37763
+     ],
+     [
+      39.48103,
+      -0.37805
+     ],
+     [
+      39.48136,
+      -0.3794
+     ],
+     [
+      39.4814,
+      -0.37938
+     ],
+     [
+      39.48154,
+      -0.38019
+     ],
+     [
+      39.48072,
+      -0.38261
+     ],
+     [
+      39.47941,
+      -0.38504
+     ],
+     [
+      39.47834,
+      -0.38749
+     ],
+     [
+      39.47842,
+      -0.38754
+     ],
+     [
+      39.47816,
+      -0.38813
+     ],
+     [
+      39.47721,
+      -0.39137
+     ],
+     [
+      39.47484,
+      -0.3967
+     ],
+     [
+      39.47333,
+      -0.40445
+     ],
+     [
+      39.47303,
+      -0.40701
+     ],
+     [
+      39.47344,
+      -0.40702
+     ],
+     [
+      39.47356,
+      -0.40712
+     ],
+     [
+      39.47383,
+      -0.40841
+     ],
+     [
+      39.474,
+      -0.40897
+     ],
+     [
+      39.47461,
+      -0.40996
+     ],
+     [
+      39.4749,
+      -0.41026
+     ],
+     [
+      39.47503,
+      -0.41021
+     ],
+     [
+      39.47561,
+      -0.41027
+     ],
+     [
+      39.47774,
+      -0.40963
+     ],
+     [
+      39.47921,
+      -0.41007
+     ],
+     [
+      39.48018,
+      -0.41027
+     ],
+     [
+      39.48093,
+      -0.41067
+     ],
+     [
+      39.48124,
+      -0.41057
+     ],
+     [
+      39.48151,
+      -0.41007
+     ],
+     [
+      39.48147,
+      -0.40996
+     ],
+     [
+      39.48017,
+      -0.40884
+     ],
+     [
+      39.47838,
+      -0.40846
+     ],
+     [
+      39.47839,
+      -0.40839
+     ],
+     [
+      39.4781,
+      -0.40833
+     ],
+     [
+      39.47813,
+      -0.40815
+     ],
+     [
+      39.47615,
+      -0.40751
+     ],
+     [
+      39.47608,
+      -0.40744
+     ],
+     [
+      39.47619,
+      -0.40663
+     ]
+    ],
+    "from": 1969.97,
+    "to": 1986,
+    "c": "field",
+    "src": [
+     "S29",
+     "S30",
+     "S37"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Jardi del Turia 6",
+    "ring": [
+     [
+      39.47443,
+      -0.4062
+     ],
+     [
+      39.4746,
+      -0.40486
+     ],
+     [
+      39.47606,
+      -0.39747
+     ],
+     [
+      39.47838,
+      -0.39218
+     ],
+     [
+      39.47958,
+      -0.38825
+     ],
+     [
+      39.48182,
+      -0.38352
+     ],
+     [
+      39.48225,
+      -0.3825
+     ],
+     [
+      39.48261,
+      -0.38142
+     ],
+     [
+      39.48284,
+      -0.38033
+     ],
+     [
+      39.48268,
+      -0.37774
+     ],
+     [
+      39.48261,
+      -0.37743
+     ],
+     [
+      39.48244,
+      -0.37694
+     ],
+     [
+      39.48155,
+      -0.37528
+     ],
+     [
+      39.48137,
+      -0.37515
+     ],
+     [
+      39.48132,
+      -0.37496
+     ],
+     [
+      39.48038,
+      -0.37361
+     ],
+     [
+      39.4797,
+      -0.37231
+     ],
+     [
+      39.47884,
+      -0.3714
+     ],
+     [
+      39.47849,
+      -0.37055
+     ],
+     [
+      39.47706,
+      -0.36836
+     ],
+     [
+      39.47709,
+      -0.36832
+     ],
+     [
+      39.47669,
+      -0.36796
+     ],
+     [
+      39.47674,
+      -0.36786
+     ],
+     [
+      39.47376,
+      -0.36546
+     ],
+     [
+      39.47299,
+      -0.36702
+     ],
+     [
+      39.4732,
+      -0.36719
+     ],
+     [
+      39.47318,
+      -0.36724
+     ],
+     [
+      39.47479,
+      -0.36851
+     ],
+     [
+      39.47555,
+      -0.36925
+     ],
+     [
+      39.47563,
+      -0.36927
+     ],
+     [
+      39.47661,
+      -0.37029
+     ],
+     [
+      39.47729,
+      -0.37132
+     ],
+     [
+      39.47954,
+      -0.37512
+     ],
+     [
+      39.47963,
+      -0.37504
+     ],
+     [
+      39.47995,
+      -0.37561
+     ],
+     [
+      39.48003,
+      -0.37607
+     ],
+     [
+      39.48087,
+      -0.37763
+     ],
+     [
+      39.48103,
+      -0.37805
+     ],
+     [
+      39.48136,
+      -0.3794
+     ],
+     [
+      39.4814,
+      -0.37938
+     ],
+     [
+      39.48154,
+      -0.38019
+     ],
+     [
+      39.48072,
+      -0.38261
+     ],
+     [
+      39.47941,
+      -0.38504
+     ],
+     [
+      39.47834,
+      -0.38749
+     ],
+     [
+      39.47842,
+      -0.38754
+     ],
+     [
+      39.47816,
+      -0.38813
+     ],
+     [
+      39.47721,
+      -0.39137
+     ],
+     [
+      39.47484,
+      -0.3967
+     ],
+     [
+      39.47333,
+      -0.40445
+     ],
+     [
+      39.47303,
+      -0.40701
+     ],
+     [
+      39.47344,
+      -0.40702
+     ],
+     [
+      39.47356,
+      -0.40712
+     ],
+     [
+      39.47383,
+      -0.40841
+     ],
+     [
+      39.474,
+      -0.40897
+     ],
+     [
+      39.47461,
+      -0.40996
+     ],
+     [
+      39.4749,
+      -0.41026
+     ],
+     [
+      39.47503,
+      -0.41021
+     ],
+     [
+      39.47561,
+      -0.41027
+     ],
+     [
+      39.47774,
+      -0.40963
+     ],
+     [
+      39.47921,
+      -0.41007
+     ],
+     [
+      39.48018,
+      -0.41027
+     ],
+     [
+      39.48093,
+      -0.41067
+     ],
+     [
+      39.48124,
+      -0.41057
+     ],
+     [
+      39.48151,
+      -0.41007
+     ],
+     [
+      39.48147,
+      -0.40996
+     ],
+     [
+      39.48017,
+      -0.40884
+     ],
+     [
+      39.47838,
+      -0.40846
+     ],
+     [
+      39.47839,
+      -0.40839
+     ],
+     [
+      39.4781,
+      -0.40833
+     ],
+     [
+      39.47813,
+      -0.40815
+     ],
+     [
+      39.47615,
+      -0.40751
+     ],
+     [
+      39.47608,
+      -0.40744
+     ],
+     [
+      39.47619,
+      -0.40663
+     ]
+    ],
+    "from": 1986,
+    "to": 99999,
+    "c": "park",
+    "src": [
+     "S30",
+     "S37"
+    ],
+    "conf": "medium",
+    "note": "parco aperto a tratti 1986-2000 circa: qui in blocco (ripiego accettato)"
+   },
+   {
+    "name": "1957 flood (low centre, slab removed)",
+    "ring": [
+     [
+      39.47571,
+      -0.38416
+     ],
+     [
+      39.47377,
+      -0.38391
+     ],
+     [
+      39.47192,
+      -0.38399
+     ],
+     [
+      39.47157,
+      -0.38392
+     ],
+     [
+      39.47064,
+      -0.38361
+     ],
+     [
+      39.4704,
+      -0.38342
+     ],
+     [
+      39.46872,
+      -0.38125
+     ],
+     [
+      39.46851,
+      -0.38076
+     ],
+     [
+      39.46825,
+      -0.38
+     ],
+     [
+      39.46813,
+      -0.37939
+     ],
+     [
+      39.46779,
+      -0.37809
+     ],
+     [
+      39.46774,
+      -0.37769
+     ],
+     [
+      39.46716,
+      -0.37545
+     ],
+     [
+      39.46713,
+      -0.37504
+     ],
+     [
+      39.46716,
+      -0.37486
+     ],
+     [
+      39.46728,
+      -0.37466
+     ],
+     [
+      39.4696,
+      -0.37128
+     ],
+     [
+      39.4704,
+      -0.37028
+     ],
+     [
+      39.47186,
+      -0.36873
+     ],
+     [
+      39.47212,
+      -0.36826
+     ],
+     [
+      39.47262,
+      -0.36698
+     ],
+     [
+      39.47309,
+      -0.36601
+     ],
+     [
+      39.47501,
+      -0.36753
+     ],
+     [
+      39.47644,
+      -0.36875
+     ],
+     [
+      39.47741,
+      -0.37007
+     ],
+     [
+      39.47792,
+      -0.37105
+     ],
+     [
+      39.47888,
+      -0.37249
+     ],
+     [
+      39.47917,
+      -0.37283
+     ],
+     [
+      39.48148,
+      -0.37678
+     ],
+     [
+      39.48158,
+      -0.37736
+     ],
+     [
+      39.48207,
+      -0.37926
+     ],
+     [
+      39.48214,
+      -0.38026
+     ],
+     [
+      39.48205,
+      -0.38087
+     ],
+     [
+      39.48183,
+      -0.38153
+     ],
+     [
+      39.48109,
+      -0.38343
+     ],
+     [
+      39.48039,
+      -0.38294
+     ],
+     [
+      39.47841,
+      -0.38369
+     ],
+     [
+      39.47678,
+      -0.38402
+     ]
+    ],
+    "from": -9999,
+    "to": 1957.78,
+    "c": "urban",
+    "src": [
+     "S28",
+     "S45",
+     "S42"
+    ],
+    "conf": "low",
+    "note": "EFFETTO DA PROVARE in locale: se l'acqua resta sotto il DEM serve un piano d'acqua dedicato"
+   },
+   {
+    "name": "1957 flood (low centre, slab back)",
+    "ring": [
+     [
+      39.47571,
+      -0.38416
+     ],
+     [
+      39.47377,
+      -0.38391
+     ],
+     [
+      39.47192,
+      -0.38399
+     ],
+     [
+      39.47157,
+      -0.38392
+     ],
+     [
+      39.47064,
+      -0.38361
+     ],
+     [
+      39.4704,
+      -0.38342
+     ],
+     [
+      39.46872,
+      -0.38125
+     ],
+     [
+      39.46851,
+      -0.38076
+     ],
+     [
+      39.46825,
+      -0.38
+     ],
+     [
+      39.46813,
+      -0.37939
+     ],
+     [
+      39.46779,
+      -0.37809
+     ],
+     [
+      39.46774,
+      -0.37769
+     ],
+     [
+      39.46716,
+      -0.37545
+     ],
+     [
+      39.46713,
+      -0.37504
+     ],
+     [
+      39.46716,
+      -0.37486
+     ],
+     [
+      39.46728,
+      -0.37466
+     ],
+     [
+      39.4696,
+      -0.37128
+     ],
+     [
+      39.4704,
+      -0.37028
+     ],
+     [
+      39.47186,
+      -0.36873
+     ],
+     [
+      39.47212,
+      -0.36826
+     ],
+     [
+      39.47262,
+      -0.36698
+     ],
+     [
+      39.47309,
+      -0.36601
+     ],
+     [
+      39.47501,
+      -0.36753
+     ],
+     [
+      39.47644,
+      -0.36875
+     ],
+     [
+      39.47741,
+      -0.37007
+     ],
+     [
+      39.47792,
+      -0.37105
+     ],
+     [
+      39.47888,
+      -0.37249
+     ],
+     [
+      39.47917,
+      -0.37283
+     ],
+     [
+      39.48148,
+      -0.37678
+     ],
+     [
+      39.48158,
+      -0.37736
+     ],
+     [
+      39.48207,
+      -0.37926
+     ],
+     [
+      39.48214,
+      -0.38026
+     ],
+     [
+      39.48205,
+      -0.38087
+     ],
+     [
+      39.48183,
+      -0.38153
+     ],
+     [
+      39.48109,
+      -0.38343
+     ],
+     [
+      39.48039,
+      -0.38294
+     ],
+     [
+      39.47841,
+      -0.38369
+     ],
+     [
+      39.47678,
+      -0.38402
+     ]
+    ],
+    "from": 1957.8,
+    "to": 99999,
+    "c": "urban",
+    "src": [
+     "S28",
+     "S45",
+     "S42"
+    ],
+    "conf": "low"
+   }
+  ],
+  "bridges": [
+   {
+    "name": "Puente de la Exposicion (1909)",
+    "line": [
+     [
+      39.47273,
+      -0.36681
+     ],
+     [
+      39.47349,
+      -0.36523
+     ]
+    ],
+    "w": 12,
+    "y": 1909.38,
+    "d": 1957.78,
+    "src": [
+     "S14",
+     "S28"
+    ],
+    "conf": "medium",
+    "note": "ponte in cemento del 1909 sul sito del ponte attuale (linea OSM del ponte di Calatrava): sito esatto non verificato; crolla nella piena del 13-14 ott 1957"
+   },
+   {
+    "name": "Puente de la Exposicion (Calatrava, La Peineta)",
+    "line": [
+     [
+      39.47273,
+      -0.36681
+     ],
+     [
+      39.47349,
+      -0.36523
+     ]
+    ],
+    "w": 20,
+    "y": 1995,
+    "d": null,
+    "src": [
+     "S15"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Puente de Aragon",
+    "line": [
+     [
+      39.4689,
+      -0.36181
+     ],
+     [
+      39.46881,
+      -0.36391
+     ]
+    ],
+    "w": 30,
+    "y": 1933,
+    "d": null,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Puente de las Flores",
+    "line": [
+     [
+      39.47142,
+      -0.36357
+     ],
+     [
+      39.47159,
+      -0.36319
+     ]
+    ],
+    "w": 24,
+    "y": 2003,
+    "d": null,
+    "src": [
+     "S16"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Pont de l'Assut de l'Or",
+    "line": [
+     [
+      39.45375,
+      -0.3512
+     ],
+     [
+      39.45579,
+      -0.34816
+     ]
+    ],
+    "w": 37.6,
+    "y": 2008,
+    "d": null,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
+   }
+  ]
+ },
+ "landmarks": [
+  {
+   "name": "Cathedral",
+   "kind": "cathedral",
+   "at": [
+    39.47557,
+    -0.37511
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 26,
+    "tower_ref": "Micalet",
+    "iron_gate": {
+     "y": 1703,
+     "y1": 1741
+    }
+   },
+   "phases": [
+    {
+     "y": 1262,
+     "y1": 1300
+    }
+   ],
+   "label": true,
+   "src": [
+    "S5"
+   ],
+   "conf": "high",
+   "note": "OSM way 135630267; Puerta de los Hierros 1703-1741 come fase del portale"
+  },
+  {
+   "name": "Micalet",
+   "kind": "bell_tower",
+   "at": [
+    39.47532,
+    -0.37562
+   ],
+   "footprint": "none",
+   "params": {
+    "h": 50,
+    "octagonal": true
+   },
+   "phases": [
+    {
+     "y": 1381,
+     "y1": 1429
+    }
+   ],
+   "label": true,
+   "src": [
+    "S7",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "stessa impronta catastale della Cattedrale: campanile modellato sopra, footprint non duplicato"
+  },
+  {
+   "name": "Basilica of the Virgin",
+   "kind": "church_dome",
+   "at": [
+    39.47623,
+    -0.37482
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1652,
+     "y1": 1667
+    }
+   ],
+   "label": false,
+   "src": [
+    "S37"
+   ],
+   "conf": "low",
+   "note": "date da memoria, non in sources: da verificare"
+  },
+  {
+   "name": "Torres de Serranos",
+   "kind": "gate_towers",
+   "at": [
+    39.47928,
+    -0.37617
+   ],
+   "footprint": "auto",
+   "params": {
+    "keep_after_wall": true
+   },
+   "phases": [
+    {
+     "y": 1392,
+     "y1": 1398
+    }
+   ],
+   "label": true,
+   "src": [
+    "S3"
+   ],
+   "conf": "high"
+  },
+  {
+   "name": "Torres de Quart",
+   "kind": "gate_towers",
+   "at": [
+    39.4759,
+    -0.38393
+   ],
+   "footprint": "auto",
+   "params": {
+    "keep_after_wall": true
+   },
+   "phases": [
+    {
+     "y": 1441,
+     "y1": 1460
+    }
+   ],
+   "label": true,
+   "src": [
+    "S4"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Lonja de la Seda",
+   "kind": "palace_courtyard",
+   "at": [
+    39.47443,
+    -0.37826
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1483,
+     "y1": 1498
+    }
+   ],
+   "label": true,
+   "src": [
+    "S6"
+   ],
+   "conf": "medium",
+   "note": "UNESCO 1482/1483-1533; sala principale aperta 1498"
+  },
+  {
+   "name": "Palau de la Generalitat",
+   "kind": "palace_courtyard",
+   "at": [
+    39.477,
+    -0.3745
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1421,
+     "y1": 1579
+    }
+   ],
+   "label": false,
+   "src": [
+    "S37"
+   ],
+   "conf": "low",
+   "note": "punto approssimato (Plaza de Manises); date non verificate"
+  },
+  {
+   "name": "Santa Catalina tower",
+   "kind": "tower_square",
+   "at": [
+    39.47412,
+    -0.3764
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1688,
+     "y1": 1705
+    }
+   ],
+   "label": false,
+   "src": [
+    "S37"
+   ],
+   "conf": "low",
+   "note": "date da memoria (campanile barocco)"
+  },
+  {
+   "name": "Plaza de Toros",
+   "kind": "bullring",
+   "at": [
+    39.46644,
+    -0.3761
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1850,
+     "y1": 1859
+    }
+   ],
+   "label": true,
+   "src": [
+    "S20"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Estacion del Norte",
+   "kind": "station",
+   "at": [
+    39.46613,
+    -0.37777
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1906,
+     "y1": 1917
+    }
+   ],
+   "label": true,
+   "src": [
+    "S19"
+   ],
+   "conf": "medium",
+   "note": "anno catastale dell'edificio al punto (2026/2020) non affidabile: il kit usa le fasi, non l'anno del catasto."
+  },
+  {
+   "name": "Mercado Central",
+   "kind": "hall_market",
+   "at": [
+    39.47349,
+    -0.37891
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1915,
+     "y1": 1928
+    }
+   ],
+   "label": true,
+   "src": [
+    "S18",
+    "S42"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Mercado de Colon",
+   "kind": "hall_market",
+   "at": [
+    39.46895,
+    -0.36836
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1914,
+     "y1": 1916
+    }
+   ],
+   "label": false,
+   "src": [
+    "S37"
+   ],
+   "conf": "low",
+   "note": "date da memoria"
+  },
+  {
+   "name": "Estadio de Mestalla",
+   "kind": "stadium",
+   "at": [
+    39.47453,
+    -0.35816
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1923.3,
+     "y1": 1923.5
+    }
+   ],
+   "label": true,
+   "src": [
+    "S21"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Palacio de Comunicaciones (Correos)",
+   "kind": "generic_footprint",
+   "at": [
+    39.46946,
+    -0.37551
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30
+   },
+   "phases": [
+    {
+     "y": 1913,
+     "y1": 1922
+    }
+   ],
+   "label": true,
+   "src": [
+    "S22"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "City Hall (Casa Consistorial)",
+   "kind": "tower_square",
+   "at": [
+    39.4698,
+    -0.3772
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 35
+   },
+   "phases": [
+    {
+     "y": 1906.5,
+     "y1": 1933
+    }
+   ],
+   "label": true,
+   "src": [
+    "S22",
+    "S23"
+   ],
+   "conf": "low",
+   "note": "prima pietra 30 giu 1906; assetto attuale 1965-67 non modellato"
+  },
+  {
+   "name": "Hemisferic",
+   "kind": "modern_shell",
+   "at": [
+    39.45668,
+    -0.35388
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1997.3,
+     "y1": 1998.3
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Museu de les Ciencies",
+   "kind": "modern_shell",
+   "at": [
+    39.45564,
+    -0.3513
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1998,
+     "y1": 2000.9
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17",
+    "S42"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Umbracle",
+   "kind": "modern_shell",
+   "at": [
+    39.4556,
+    -0.35417
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 2000.5,
+     "y1": 2001.5
+    }
+   ],
+   "label": false,
+   "src": [
+    "S17"
+   ],
+   "conf": "low",
+   "note": "2000 o 2001"
+  },
+  {
+   "name": "Oceanografic",
+   "kind": "modern_shell",
+   "at": [
+    39.45305,
+    -0.34718
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 2001.5,
+     "y1": 2002.95
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "low",
+   "note": "2002 (12 dic) o 2003 anno catastale dell'edificio al punto (2026/2020) non affidabile: il kit usa le fasi, non l'anno del catasto."
+  },
+  {
+   "name": "Palau de les Arts",
+   "kind": "modern_shell",
+   "at": [
+    39.45803,
+    -0.35591
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1997.5,
+     "y1": 2005.8
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Agora",
+   "kind": "modern_shell",
+   "at": [
+    39.45391,
+    -0.34974
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 2008.5,
+     "y1": 2009.5
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "medium",
+   "note": "anno catastale dell'edificio al punto (2026/2020) non affidabile: il kit usa le fasi, non l'anno del catasto."
+  },
+  {
+   "name": "Puente de Serranos (stone)",
+   "kind": "bridge_arches",
+   "at": [
+    39.48064,
+    -0.37534
+   ],
+   "footprint": "none",
+   "params": {
+    "line": [
+     [
+      39.47996,
+      -0.37565
+     ],
+     [
+      39.48132,
+      -0.37503
+     ]
+    ],
+    "w": 20.3,
+    "length_m": 159
+   },
+   "phases": [
+    {
+     "y": 1518,
+     "y1": 1521
+    }
+   ],
+   "label": true,
+   "src": [
+    "S9"
+   ],
+   "conf": "medium"
+  },
+  {
+   "name": "Puente del Mar",
+   "kind": "bridge_arches",
+   "at": [
+    39.47026,
+    -0.36367
+   ],
+   "footprint": "none",
+   "params": {
+    "line": [
+     [
+      39.47021,
+      -0.36464
+     ],
+     [
+      39.47032,
+      -0.3627
+     ]
+    ],
+    "w": 15.5,
+    "length_m": 167
+   },
+   "phases": [
+    {
+     "y": 1592,
+     "y1": 1596
+    }
+   ],
+   "label": true,
+   "src": [
+    "S10",
+    "S9"
+   ],
+   "conf": "high"
+  },
+  {
+   "name": "Puente del Real",
+   "kind": "bridge_arches",
+   "at": [
+    39.47637,
+    -0.36882
+   ],
+   "footprint": "none",
+   "params": {
+    "line": [
+     [
+      39.47576,
+      -0.36945
+     ],
+     [
+      39.47697,
+      -0.36819
+     ]
+    ],
+    "w": 33.2,
+    "length_m": 172
+   },
+   "phases": [
+    {
+     "y": 1594,
+     "y1": 1599
+    }
+   ],
+   "label": true,
+   "src": [
+    "S8"
+   ],
+   "conf": "high"
+  },
+  {
+   "name": "Puente de San Jose",
+   "kind": "bridge_arches",
+   "at": [
+    39.48218,
+    -0.38032
+   ],
+   "footprint": "none",
+   "params": {
+    "line": [
+     [
+      39.48153,
+      -0.38023
+     ],
+     [
+      39.48283,
+      -0.3804
+     ]
+    ],
+    "w": 12.3,
+    "length_m": 145
+   },
+   "phases": [
+    {
+     "y": 1604,
+     "y1": 1607
+    }
+   ],
+   "label": true,
+   "src": [
+    "S11",
+    "S9"
+   ],
+   "conf": "high"
+  },
+  {
+   "name": "Puente de la Trinidad",
+   "kind": "bridge_arches",
+   "at": [
+    39.47899,
+    -0.37266
+   ],
+   "footprint": "none",
+   "params": {
+    "line": [
+     [
+      39.47959,
+      -0.37217
+     ],
+     [
+      39.47839,
+      -0.37314
+     ]
+    ],
+    "w": 24.7,
+    "length_m": 157
+   },
+   "phases": [
+    {
+     "y": 1356,
+     "y1": 1402
+    }
+   ],
+   "label": true,
+   "src": [
+    "S12"
+   ],
+   "conf": "medium",
+   "note": "ponte in pietra come landmark (non in history.bridges per non duplicare il impalcato)"
+  }
+ ],
+ "regia": {
+  "music": "waking_monument",
+  "duration": 511.5,
+  "night": true,
+  "open": {
+   "year": 2026,
+   "rewind_to": 1238
+  },
+  "soste": [
+   {
+    "y0": 1238.0,
+    "y1": 1238.8,
+    "dur": 6,
+    "caption": "James I takes Valencia (1238)",
+    "target": "Muslim walled city",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S39",
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1262,
+    "y1": 1270,
+    "dur": 5,
+    "caption": "The Cathedral rises on the Great Mosque (1262)",
+    "target": "Cathedral",
+    "shot": "medium",
+    "fx": "bell",
+    "src": [
+     "S5"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1356,
+    "y1": 1370,
+    "dur": 8,
+    "caption": "A new, larger city wall (1356)",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "fx": "build",
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1381,
+    "y1": 1429,
+    "dur": 5,
+    "caption": "El Micalet bell tower (1381-1429)",
+    "target": "Micalet",
+    "shot": "close",
+    "fx": "bell",
+    "src": [
+     "S7"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1392,
+    "y1": 1398,
+    "dur": 5,
+    "caption": "Torres de Serranos (1392-98)",
+    "target": "Torres de Serranos",
+    "shot": "close",
+    "fx": "stone",
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1441,
+    "y1": 1460,
+    "dur": 4.5,
+    "caption": "Torres de Quart (1441-60)",
+    "target": "Torres de Quart",
+    "shot": "close",
+    "fx": "stone",
+    "src": [
+     "S4"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1483,
+    "y1": 1498,
+    "dur": 5,
+    "caption": "The Silk Exchange (1483)",
+    "target": "Lonja de la Seda",
+    "shot": "close",
+    "fx": "stone",
+    "src": [
+     "S6"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1518,
+    "y1": 1607,
+    "dur": 6,
+    "caption": "Stone bridges cross the Turia (1518-1607)",
+    "target": "area:[39.4770,-0.3700,900]",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S9",
+     "S10",
+     "S8",
+     "S11"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1703,
+    "y1": 1741,
+    "dur": 4,
+    "caption": "The baroque Iron Gate (1703-41)",
+    "target": "Cathedral",
+    "shot": "close",
+    "fx": "bell",
+    "src": [
+     "S5"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1811.98,
+    "y1": 1812.03,
+    "dur": 7,
+    "caption": "Siege of 1812 (1811-12)",
+    "target": "fire:Siege of 1812",
+    "shot": "wide",
+    "fx": "cannon",
+    "src": [
+     "S32"
+    ],
+    "conf": "medium",
+    "note": "solo fumo, nessun crollo; didascalia datata"
+   },
+   {
+    "y0": 1840,
+    "y1": 1842,
+    "dur": 3.5,
+    "caption": "Plaza Redonda (1840)",
+    "target": "area:[39.47358,-0.37660,200]",
+    "shot": "top",
+    "fx": "stone",
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1850,
+    "y1": 1859,
+    "dur": 4,
+    "caption": "The bullring (1850-59)",
+    "target": "Plaza de Toros",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S20"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1865,
+    "y1": 1868,
+    "dur": 8,
+    "caption": "THE WALLS COME DOWN (1865)",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "fx": "crash",
+    "src": [
+     "S1",
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1887,
+    "y1": 1900,
+    "dur": 5,
+    "caption": "The Ensanche (1887)",
+    "target": "area:[39.4680,-0.3700,1600]",
+    "shot": "top",
+    "fx": "build",
+    "src": [
+     "S43",
+     "S36"
+    ],
+    "conf": "high",
+    "note": "contiene la sosta 1891 (come in regia)"
+   },
+   {
+    "y0": 1891,
+    "y1": 1892,
+    "dur": 3.5,
+    "caption": "A convent becomes the main square (1891)",
+    "target": "area:[39.4703,-0.3769,280]",
+    "shot": "medium",
+    "fx": "crash",
+    "src": [
+     "S22"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1906,
+    "y1": 1917,
+    "dur": 4.5,
+    "caption": "North Station (1906-17)",
+    "target": "Estacion del Norte",
+    "shot": "medium",
+    "fx": "train",
+    "src": [
+     "S19"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1909.38,
+    "y1": 1909.98,
+    "dur": 4,
+    "caption": "Regional Exhibition (1909)",
+    "target": "area:[39.4735,-0.3670,600]",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S41",
+     "S14"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1915,
+    "y1": 1928,
+    "dur": 4.5,
+    "caption": "Central Market (1915-28)",
+    "target": "Mercado Central",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S18",
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1923.3,
+    "y1": 1923.5,
+    "dur": 3.5,
+    "caption": "Mestalla stadium (1923)",
+    "target": "Estadio de Mestalla",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S21"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1931,
+    "y1": 1933,
+    "dur": 4,
+    "caption": "City Hall square (1931-33)",
+    "target": "area:[39.4703,-0.3769,320]",
+    "shot": "medium",
+    "fx": "build",
+    "src": [
+     "S23",
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1957.78,
+    "y1": 1957.8,
+    "dur": 12,
+    "caption": "THE GREAT FLOOD OF 1957 (1957)",
+    "target": "area:[39.4760,-0.3730,1500]",
+    "shot": "top",
+    "fx": "water",
+    "src": [
+     "S28",
+     "S45",
+     "S42"
+    ],
+    "conf": "low",
+    "note": "effetto acqua da provare; ponte 1909 sparisce"
+   },
+   {
+    "y0": 1964,
+    "y1": 1969.97,
+    "dur": 10,
+    "caption": "PLAN SUR: THE RIVER IS MOVED (1964-69)",
+    "target": "area:[39.4650,-0.3650,6000]",
+    "shot": "wide",
+    "fx": "dig",
+    "src": [
+     "S29",
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1986,
+    "y1": 1990,
+    "dur": 5,
+    "caption": "The old riverbed becomes a park (1986)",
+    "target": "area:[39.4720,-0.3640,1800]",
+    "shot": "top",
+    "fx": "birds",
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1995,
+    "y1": 2000.9,
+    "dur": 6,
+    "caption": "City of Arts and Sciences (1998-2000)",
+    "target": "Hemisferic",
+    "shot": "medium",
+    "fx": "chime",
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 2001,
+    "y1": 2009,
+    "dur": 6,
+    "caption": "Oceanografic, Palau de les Arts, Agora (2001-09)",
+    "target": "Oceanografic",
+    "shot": "medium",
+    "fx": "chime",
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 2007,
+    "y1": 2008,
+    "dur": 4,
+    "caption": "America's Cup marina (2007)",
+    "target": "area:[39.4590,-0.3200,900]",
+    "shot": "wide",
+    "fx": "sea",
+    "src": [
+     "S37"
+    ],
+    "conf": "low",
+    "note": "ubicazione marina approssimata; fonte per la Coppa non letta"
+   }
+  ],
+  "rmin": 0.5,
+  "rmax": 8.0
+ },
+ "montaggio": {
+  "open": [
+   "VALENCIA TODAY",
+   "840,000 people"
+  ],
+  "title": [
+   "VALENCIA",
+   "1238 TO NOW"
+  ],
+  "end": [
+   "VALENCIA · 788 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "events": [
+   {
+    "y": 1609,
+    "title": "Expulsion of the Moriscos",
+    "line": "A royal decree expels the Moriscos of the Kingdom of Valencia",
+    "sober": true,
+    "src": [
+     "S40"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1707,
+    "title": "End of the Valencian Fueros",
+    "line": "After the War of the Spanish Succession, Valencia's own laws are abolished",
+    "sober": true,
+    "src": [
+     "S42"
+    ],
+    "conf": "low",
+    "note": "29 giu 1707 da memoria [Likely], non letto"
+   },
+   {
+    "y": 1877,
+    "title": "Russafa joins the city",
+    "line": "The neighboring town of Russafa is annexed",
+    "sober": false,
+    "src": [
+     "S35"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1897,
+    "title": "The seaside towns join",
+    "line": "El Grau, Cabanyal and Campanar are annexed",
+    "sober": false,
+    "src": [
+     "S35"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1936,
+    "title": "Capital of the Republic",
+    "line": "The Spanish government moves to Valencia in November",
+    "sober": true,
+    "src": [
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "fonte primaria non letta; fine ott 1937 incerta"
+   }
+  ]
+ }
+}

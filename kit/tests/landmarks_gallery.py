@@ -41,7 +41,7 @@ LANDMARKS = [
     lm('Castle', 'castle', (40, 240)),
     lm('Dome tower', 'tower_round', (110, 240), top='dome', belfry=True, c='brick'),
     # fila B: chiese e palazzi (y = 120)
-    lm('Cathedral', 'cathedral', (-215, 120), footprint='auto', tower_ref='Cathedral tower'),
+    lm('Cathedral', 'cathedral', (-215, 120), footprint='auto', tower_ref='Cathedral tower', facade_towers=0),
     lm('Cathedral tower', 'bell_tower', (-262, 92), style='flat'),
     lm('Church', 'church', (-120, 120)),
     lm('Domed church', 'church_dome', (-50, 120)),
@@ -74,6 +74,9 @@ LANDMARKS = [
     lm('Science museum', 'modern_shell', (40, -440), shape='ribs', l=180),
     lm('Opera', 'modern_shell', (230, -350), shape='helmet', ang=90),
     lm('Arches', 'modern_shell', (230, -470), shape='arches', l=120),
+    # fila E: cattedrale senza impronta, due torri e cupola
+    lm('Cathedral B', 'cathedral', (-180, -600), crossing='dome', tower_top='spire'),
+    lm('Round gate', 'gate_towers', (-60, -600), tower_plan='round', h=24),
 ]
 
 # inquadrature: nome -> (centro, ampiezza da inquadrare in m, azimut della camera in gradi da est, elevazione, anno)
@@ -83,19 +86,21 @@ VIEWS = [
     ('castle', (70, 240, 10), 110, -70, 35, 2026),
     ('cathedral', (-235, 112, 15), 115, -60, 32, 2026),
     ('churches', (-85, 120, 10), 110, -100, 32, 2026),
-    ('gates', (60, 120, 10), 95, -95, 24, 2026),
+    ('gates', (60, 120, 10), 95, 85, 24, 2026),
     ('palace', (175, 120, 10), 95, -60, 40, 2026),
     ('civic', (-170, 0, 10), 190, -95, 38, 2026),
     ('arena_sky', (115, 0, 20), 220, -110, 32, 2026),
     ('river', (-120, -150, 5), 270, -60, 28, 2026),
-    ('park', (-125, -245, 5), 165, -95, 28, 2026),
+    ('bridge', (0, -158, 4), 120, -20, 18, 2026),
+    ('cathedral_b', (-140, -600, 15), 170, -70, 30, 2026),
+    ('park', (-125, -245, 5), 165, 75, 32, 2026),
     ('modern', (110, -400, 5), 340, -80, 38, 2026),
     ('stadium', (-200, -390, 5), 270, -100, 40, 2026),
     ('phases_1903', (-235, 112, 15), 115, -60, 32, 1903.0),
     ('phases_1906', (-235, 112, 15), 115, -60, 32, 1906.0),
     ('phases_1909', (-235, 112, 15), 115, -60, 32, 1909.0),
 ]
-LENS = 35.0
+LENS = 50.0
 
 
 def shot(name, c, ext, az, el, yr):
