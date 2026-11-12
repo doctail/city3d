@@ -296,11 +296,13 @@ def build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn):
     t0 = title_t + lead; YEARS.append((t0, y_start))
     items = []; cur = y_start
     for s in SOSTE:
-        y0 = max(float(s['y0']), cur); y1 = max(y0 + (float(s['y1']) - float(s['y0'])), y0 + HOLD_RATE * s['dur'])   # anche le soste scorrono almeno a 0,2 anni/s
+        y0, y1 = float(s['y0']), float(s['y1'])   # anni ESATTI della storia (mai spostati); se una voce e' annidata in un'altra, taglio indietro
         items.append((y0, y1, s)); cur = y1
     hold_t = sum(s['dur'] for _, _, s in items)
-    free = end_t - t0 - hold_t
+    n_jump = sum(1 for (y0, _, _), c in zip(items, [y_start] + [i[1] for i in items[:-1]]) if c - y0 > 1e-6)
+    free = end_t - t0 - hold_t - 0.04 * n_jump
     total = sum(max(0.0, y0 - c) for (y0, _, _), c in zip(items, [y_start] + [i[1] for i in items[:-1]])) + max(0.0, 2026.0 - cur)
+    JUMP = 0.04   # taglio netto quando la voce successiva sta prima dell'anno corrente
     if free <= 0.5:
         warn(f'pacing story: i cartelli ({hold_t:.0f} s) riempiono il tempo ({end_t - t0:.0f} s): alza regia.duration o togli cartelli')
         free = max(0.5, free)
@@ -311,7 +313,8 @@ def build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn):
     for y0, y1, s in items:
         if y0 - cur > 1e-6:
             dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
-        s['y0'], s['y1'] = y0, y1
+        elif cur - y0 > 1e-6:
+            YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
         SOSTA_T.append((t, t + s['dur'], s))
         YEARS += [(t, y0), (t + s['dur'], y1)]; t += s['dur']; cur = y1
     if 2026.0 - cur > 1e-6:
@@ -502,7 +505,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             y = float(c['y'])
             if not (y_start <= y < 2026.0): warn(f"cartello fuori dagli anni del video, tolto: {c.get('title')} ({y})"); continue
             h = float(c.get('hold_s', 5.0))
-            SOSTE.append({'y0': y, 'y1': y + HOLD_RATE * h, 'dur': h, 'caption': c['title'], '_i': 10000 + i, '_force': 0.0, '_dis': False,
+            SOSTE.append({'y0': y, 'y1': y, 'dur': h, 'caption': c['title'], '_i': 10000 + i, '_force': 0.0, '_dis': False,
                           '_card': True, '_tg': D.target(c.get('target')) if c.get('target') else None, 'shot': c.get('shot', 'medium'),
                           '_c': c})
     SOSTE.sort(key=lambda s: (s['y0'], s['_i']))

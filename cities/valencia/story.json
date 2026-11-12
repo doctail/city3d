@@ -2827,13 +2827,13 @@
     ],
     "from": 1964,
     "to": 1969.97,
-    "c": "urban",
+    "c": "site",
     "src": [
      "S29",
      "S42"
     ],
     "conf": "medium",
-    "note": "cantiere come 'urban' (terra nuda #b8ad98): 'field' qui sarebbe identico al campo; acqua dal 22 dic 1969"
+    "note": "cantiere: 'site' = terra nuda ocra forzata (con 'urban' i pochi edifici catastali dentro l'anello frammentavano la fase); acqua dal 22 dic 1969 (base OSM)"
    },
    {
     "name": "Old Turia bed (dry) 1",
@@ -5664,7 +5664,7 @@
     "y1": 1969.97,
     "dur": 10,
     "caption": "PLAN SUR: THE RIVER IS MOVED (1964-69)",
-    "target": "area:[39.4509,-0.3874,5200]",
+    "target": "area:[39.4454,-0.3933,5200]",
     "shot": "wide",
     "fx": "dig",
     "src": [
@@ -6286,7 +6286,7 @@
      "S42"
     ],
     "conf": "medium",
-    "target": "area:[39.4509,-0.3874,5200]",
+    "target": "area:[39.4454,-0.3933,5200]",
     "shot": "wide",
     "note": "approval 22 Jul 1958, law 21 Dec 1961 from the internal control note; primary text not read"
    },
@@ -6317,7 +6317,7 @@
      "S50"
     ],
     "conf": "medium",
-    "target": "area:[39.4509,-0.3874,5200]",
+    "target": "area:[39.4454,-0.3933,5200]",
     "shot": "wide"
    },
    {

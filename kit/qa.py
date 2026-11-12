@@ -455,6 +455,21 @@ def check_schedule(story, D, R, city_json, sched_path):
     R.add(S, FAIL if bad else PASS, f'{len(so)} soste ben formate', '; '.join(bad))
     R.add(S, FAIL if order else PASS, 'soste ordinate e non sovrapposte', '; '.join(order[:5]))
     R.add(S, FAIL if caps else PASS, 'didascalie "Titolo (data)"', '; '.join(caps[:6]))
+    if (story.get('regia') or {}).get('pacing') == 'story':   # controllo duro: le soste cadono sugli anni della storia, i cartelli tengono il proprio anno
+        want = sorted((float(x['y0']), float(x.get('y1', x['y0'])), x.get('caption')) for x in (story.get('regia') or {}).get('soste', []) or []
+                      if Y[:, 1].min() <= float(x['y0']) < 2026.0)
+        got = sorted((float(s[2]), float(s[3]), s[4]) for s in so)
+        mm = []
+        if len(want) != len(got): mm.append(f'{len(got)} soste nello schedule, {len(want)} nella story')
+        for w, g in zip(want, got):
+            if abs(w[0] - g[0]) > 0.01 or abs(w[1] - g[1]) > 0.01: mm.append(f"{w[2]}: story {w[0]}-{w[1]}, schedule {g[0]}-{g[1]}")
+        for s in so:   # e la curva degli anni deve toccare davvero [y0, y1] all'inizio e alla fine della sosta
+            for tt_, yy_ in ((s[0] + 0.05, s[2]), (s[1] - 0.05, s[3])):
+                if abs(_year_at(tt_, Y) - yy_) > 0.01 + 0.02 * abs(s[3] - s[2]): mm.append(f"{s[4]}: curva anni {_year_at(tt_, Y):.2f} invece di {yy_}"); break
+        for c in sc.get('cards', []) or []:
+            for tt_ in (c['t_in'] + 0.05, c['t_out'] - 0.05):
+                if abs(_year_at(tt_, Y) - float(c['y'])) > 0.01: mm.append(f"cartello '{c['title']}': anno {_year_at(tt_, Y):.2f} invece di {c['y']}"); break
+        R.add(S, FAIL if mm else PASS, 'soste e cartelli sugli anni della story (0,01)', '; '.join(mm[:6]))
     if yrs: R.add(S, WARN, 'anni delle soste diversi da quelli della regia', '; '.join(yrs[:5]))
     # evento forte entro 45 s: prima sosta, oppure incendio / evento del montaggio dopo il riavvolgimento
     tmin = float(Y[int(np.argmin(Y[:, 1])), 0])

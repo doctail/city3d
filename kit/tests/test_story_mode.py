@@ -23,10 +23,11 @@ def test_story_pacing(out=None):
     S = json.load(open(os.path.join(out, 'schedule_valencia.json')))
     assert S['pacing'] == 'story' and len(S['cards']) == 5 and len(S['soste']) == 2 and abs(S['duration'] - 150) < 1e-6
     Y = np.array(S['years']); yr = lambda t: float(np.interp(t, Y[:, 0], Y[:, 1]))
-    # contatore a 0,2 anni/s su ogni cartello e soste, corsa <= 25 anni/s altrove
+    # il contatore si ferma sull'anno di ogni cartello e copre esattamente gli anni di ogni sosta; corsa <= 25 anni/s altrove
     for c in S['cards']:
-        rate = (yr(c['t_out'] - 0.1) - yr(c['t_in'] + 0.1)) / (c['t_out'] - c['t_in'] - 0.2)
-        assert abs(rate - 0.2) < 0.02, (c['title'], rate)
+        assert abs(yr(c['t_in'] + 0.1) - c['y']) < 0.01 and abs(yr(c['t_out'] - 0.1) - c['y']) < 0.01, (c['title'], c['y'])
+    for a, b, y0, y1, cap in S['soste']:
+        assert abs(yr(a + 0.05) - y0) < 0.01 + 0.02 * (y1 - y0) and abs(yr(b - 0.05) - y1) < 0.01 + 0.02 * (y1 - y0), cap
     ts = np.arange(0, S['duration'], 0.1); rt = np.gradient(np.array([yr(t) for t in ts]), ts)
     hold = np.zeros(len(ts), bool)
     for c in S['cards']: hold |= (ts > c['t_in'] - 0.25) & (ts < c['t_out'] + 0.25)
