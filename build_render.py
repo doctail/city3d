@@ -26,6 +26,13 @@ def opt(name, n=1, default=None):
     return default
 F0, F1 = map(int, opt('--frames', 2, ['1', '240'])); RW, RH = map(int, opt('--res', 2, ['1920', '1080']))
 SAMPLES = int(opt('--samples', 1, '32')); FPS = int(opt('--fps', 1, '24')); GPU = '--gpu' in a
+# 12 nov 2026: su due pod RTX 5080 (driver 580) cuInit falliva ("Unknown error") se la GPU veniva aperta solo DOPO la costruzione
+# della scena (~90 s di lavoro CPU), mentre gputest.py (processo fresco) passava. La GPU ora si apre subito, all'avvio.
+_DEV0 = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
+if _DEV0 in ('OPTIX', 'CUDA'):
+    _pr0 = bpy.context.preferences.addons['cycles'].preferences; _pr0.compute_device_type = _DEV0; _pr0.get_devices()
+    for _d0 in _pr0.devices: _d0.use = _d0.type == _DEV0
+    print('[build] GPU aperta all\'avvio:', _DEV0, [d.name for d in _pr0.devices if d.use], flush=True)
 if CITY.get('samples') and '--year' not in a: SAMPLES = min(SAMPLES, int(CITY['samples']))   # look lite: 6 campioni (le copertine con --year restano piene)
 Y0, Y1 = map(float, opt('--years', 2, ['1700', '2026']))
 LIGHT = opt('--light', 1, 'night' if '--night' in a else 'day')   # day | sunset | twilight | night: passate di luce separate, fuse al montaggio
@@ -1392,7 +1399,8 @@ sc.cycles.transparent_max_bounces = 2; sc.cycles.caustics_reflective = False; sc
 sc.cycles.use_adaptive_sampling = True; sc.cycles.adaptive_threshold = 0.05
 DEV = opt('--device', 1, 'OPTIX' if GPU else 'CPU')
 if DEV in ('OPTIX', 'CUDA'):
-    pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV; pr.get_devices()
+    pr = bpy.context.preferences.addons['cycles'].preferences; pr.compute_device_type = DEV
+    if not any(d.use and d.type == DEV for d in pr.devices): pr.get_devices()   # gia' aperta all'avvio: non si riapre
     for d in pr.devices: d.use = d.type == DEV
     sc.cycles.device = 'GPU'; log('GPU', DEV, [d.name for d in pr.devices if d.use])
     if not any(d.use and d.type == DEV for d in pr.devices):   # 19 ott 2026: la GPU del pod non rispondeva e Blender ripiegava in silenzio sul processore (8 s/fotogramma)
