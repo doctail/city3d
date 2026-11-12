@@ -13,7 +13,7 @@ bpy.ops.render.render(write_still=True); print("RENDER_OK")
 '''
 for dt in ('OPTIX', 'CUDA'):
     r = subprocess.run([sys.executable, '-c', CODE, dt], capture_output=True, text=True, timeout=600)
-    ok = 'RENDER_OK' in r.stdout and 'Failed' not in (r.stdout + r.stderr)
+    ok = 'RENDER_OK' in r.stdout and 'Failed' not in (r.stdout + r.stderr) and 'cuInit' not in (r.stdout + r.stderr)   # 12 nov: con cuInit rotto Cycles ripiega in silenzio sul processore e il test passava lo stesso
     print(f'[gputest] {dt}: {"OK" if ok else "FALLITO"}', flush=True)
     if not ok: print('\n'.join((r.stdout + r.stderr).strip().splitlines()[-4:]), flush=True)
     if ok: print(f'DEVICE={dt}'); break
