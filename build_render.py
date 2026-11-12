@@ -104,8 +104,7 @@ def city_mat():
         # luci raggruppate come nella realta': palazzo (cella di 30 m) acceso o quasi spento, poi il piano, poi la finestra
         bx_ = mm('FLOOR', mm('DIVIDE', sp.outputs['X'], 30.0)); by_ = mm('FLOOR', mm('DIVIDE', sp.outputs['Y'], 30.0))
         hb = H_(bx_, by_); hf = H_(bx_, by_, cz); hv = H_(cu, cz, bx_)
-        # kit (11 nov): style.night_off (nome usato nei json di Roma/Cph/Siviglia/Parigi) vale come alias di night_bld_off
-        on_b = mm('GREATER_THAN', hb, ST.get('night_bld_off', ST.get('night_off', 0.35)))   # 35% dei palazzi spenti
+        on_b = mm('GREATER_THAN', hb, ST.get('night_bld_off', 0.35))           # 35% dei palazzi spenti
         on_f = mm('GREATER_THAN', hf, ST.get('night_floor_off', 0.45))         # piani accesi a blocchi
         on_w = mm('GREATER_THAN', hv, ST.get('night_win_off', 0.22))           # nel piano acceso quasi tutte le finestre
         lit = mm('MULTIPLY', mm('MULTIPLY', on_b, None, on_f), None, on_w)
