@@ -1,0 +1,680 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "copenhagen",
+  "name": "Copenhagen",
+  "country": "Denmark",
+  "lat0": 55.6761,
+  "lon0": 12.5683,
+  "start_year": 1167,
+  "end_year": 2026,
+  "data_dir": "data_copenhagen"
+ },
+ "regia": {
+  "music": "waking_monument",
+  "duration": 511.5,
+  "night": true,
+  "b_start": 260.0,
+  "night_t": 460.5,
+  "open": {
+   "year": 2026,
+   "rewind_to": 1167,
+   "hold": 3.0,
+   "title_t": 9.5
+  },
+  "open_shots": [
+   [
+    0.0,
+    3.0,
+    [
+     900,
+     300,
+     0
+    ],
+    7800,
+    7200,
+    34,
+    32,
+    200,
+    206,
+    35
+   ],
+   [
+    3.0,
+    9.5,
+    [
+     760,
+     50,
+     0
+    ],
+    7200,
+    1500,
+    32,
+    26,
+    206,
+    214,
+    35
+   ],
+   [
+    9.5,
+    12.0,
+    [
+     735,
+     0,
+     10
+    ],
+    1500,
+    420,
+    26,
+    24,
+    214,
+    205,
+    35
+   ]
+  ],
+  "rmin": 0.5,
+  "rmax": 8.0,
+  "anchors_auto": false,
+  "anchors": [
+   {
+    "t": 184.0,
+    "sosta": "GREAT FIRE",
+    "note": "A 3:04 calo"
+   },
+   {
+    "t": 215.0,
+    "year": 1749.3,
+    "note": "A 3:35 ripresa: Frederiksstaden"
+   },
+   {
+    "t": 248.0,
+    "year": 1807.66,
+    "note": "A sfuma: bombardamento"
+   },
+   {
+    "t": "B:25.0",
+    "year": 1852.0,
+    "note": "B 0:25 cadono le mura"
+   },
+   {
+    "t": "B:122.25",
+    "year": 1940.25,
+    "note": "B 2:02 occupazione"
+   },
+   {
+    "t": "B:131.25",
+    "year": 1945.5,
+    "note": "B 2:11 liberazione"
+   }
+  ],
+  "night_shots": [
+   {
+    "target": "Tivoli",
+    "dur": 19,
+    "d": [
+     640,
+     330
+    ],
+    "el": [
+     26,
+     17
+    ],
+    "az": [
+     185,
+     250
+    ]
+   },
+   {
+    "target": "xy:[1500,420]",
+    "dur": 16,
+    "d": [
+     1000,
+     520
+    ],
+    "el": [
+     18,
+     12
+    ],
+    "az": [
+     120,
+     185
+    ]
+   },
+   {
+    "target": "xy:[700,200]",
+    "d": [
+     3000,
+     6200
+    ],
+    "el": [
+     22,
+     32
+    ],
+    "az": [
+     190,
+     235
+    ]
+   }
+  ],
+  "soste": [
+   {
+    "y0": 1167.0,
+    "y1": 1169.0,
+    "dur": 6.0,
+    "caption": "Absalon builds his castle (1167)",
+    "target": "Absalon castle",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 260,
+     "el": 24,
+     "az": [
+      205,
+      235
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1369.3,
+    "y1": 1381.0,
+    "dur": 5.0,
+    "caption": "Hanseatic League razes the castle (1369)",
+    "target": "Copenhagen Castle",
+    "shot": "medium",
+    "fx": "battle",
+    "cam": {
+     "d": 330,
+     "el": 26,
+     "az": [
+      190,
+      220
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1606.0,
+    "y1": 1612.5,
+    "dur": 5.0,
+    "caption": "Rosenborg Castle (1606)",
+    "target": "Rosenborg",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 260,
+     "el": 24,
+     "az": [
+      200,
+      235
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1618.8,
+    "y1": 1625.6,
+    "dur": 6.0,
+    "caption": "Børsen and its dragon spire (1619-25)",
+    "target": "Boersen",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 240,
+     "el": 22,
+     "az": [
+      150,
+      185
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1636.8,
+    "y1": 1642.6,
+    "dur": 5.0,
+    "caption": "The Round Tower (1637-42)",
+    "target": "Rundetaarn",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 200,
+     "el": 26,
+     "az": [
+      190,
+      225
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1670.8,
+    "y1": 1683.0,
+    "dur": 5.0,
+    "caption": "Nyhavn is dug (1671-73)",
+    "target": "Nyhavn",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 330,
+     "el": 24,
+     "az": [
+      120,
+      150
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1728.79,
+    "y1": 1729.05,
+    "dur": 10.0,
+    "caption": "GREAT FIRE OF 1728",
+    "target": "fire:Great Fire of 1728",
+    "shot": "medium",
+    "fx": "fire",
+    "cam": {
+     "d": 900,
+     "el": 30,
+     "az": [
+      185,
+      205
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1735.5,
+    "y1": 1745.5,
+    "dur": 4.0,
+    "caption": "Christiansborg I (1733-45)",
+    "target": "Christiansborg 1",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 380,
+     "el": 24,
+     "az": [
+      200,
+      225
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1749.3,
+    "y1": 1752.3,
+    "dur": 4.5,
+    "caption": "Our Saviour's spiral spire (1749-52)",
+    "target": "Our Saviour's spire",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 230,
+     "el": 18,
+     "az": [
+      205,
+      235
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1752.3,
+    "y1": 1760.5,
+    "dur": 6.0,
+    "caption": "Frederiksstaden: Amalienborg (1750-60)",
+    "target": "Amalienborg",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 420,
+     "el": 26,
+     "az": [
+      215,
+      245
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1794.14,
+    "y1": 1794.4,
+    "dur": 3.5,
+    "caption": "Christiansborg burns (1794)",
+    "target": "Christiansborg 1",
+    "shot": "medium",
+    "fx": "fire",
+    "cam": {
+     "d": 450,
+     "el": 26,
+     "az": [
+      200,
+      220
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1795.42,
+    "y1": 1795.7,
+    "dur": 4.0,
+    "caption": "FIRE OF 1795",
+    "target": "fire:Fire of 1795",
+    "shot": "medium",
+    "fx": "fire",
+    "cam": {
+     "d": 800,
+     "el": 30,
+     "az": [
+      190,
+      210
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1807.66,
+    "y1": 1807.95,
+    "dur": 14.0,
+    "caption": "BRITISH BOMBARDMENT (1807)",
+    "target": "fire:Bombardment of 1807",
+    "shot": "medium",
+    "fx": "boom",
+    "cam": {
+     "d": 1000,
+     "el": 30,
+     "az": [
+      180,
+      215
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1809.5,
+    "y1": 1820.0,
+    "dur": 5.0,
+    "caption": "Christiansborg rises again",
+    "target": "Christiansborg 2",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 420,
+     "el": 24,
+     "az": [
+      195,
+      225
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1842.8,
+    "y1": 1845.0,
+    "dur": 4.0,
+    "caption": "Tivoli opens (1843)",
+    "target": "Tivoli",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 330,
+     "el": 28,
+     "az": [
+      200,
+      230
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1876.5,
+    "y1": 1883.5,
+    "dur": 4.0,
+    "caption": "Marble Church rebuilt (1874)",
+    "target": "Marble Church",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 300,
+     "el": 22,
+     "az": [
+      205,
+      235
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1884.74,
+    "y1": 1885.0,
+    "dur": 3.5,
+    "caption": "Christiansborg burns again (1884)",
+    "target": "Christiansborg 2",
+    "shot": "medium",
+    "fx": "fire",
+    "cam": {
+     "d": 450,
+     "el": 26,
+     "az": [
+      200,
+      220
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1886.5,
+    "y1": 1891.6,
+    "dur": 4.0,
+    "caption": "The great dome (1894)",
+    "target": "Marble Church",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 260,
+     "el": 20,
+     "az": [
+      235,
+      255
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1893.5,
+    "y1": 1905.5,
+    "dur": 5.0,
+    "caption": "City Hall (1892-1905)",
+    "target": "City Hall",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 330,
+     "el": 22,
+     "az": [
+      195,
+      225
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1917.5,
+    "y1": 1928.5,
+    "dur": 5.0,
+    "caption": "Christiansborg III and its tower (1907-28)",
+    "target": "Christiansborg tower",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 420,
+     "el": 20,
+     "az": [
+      190,
+      225
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1929.0,
+    "y1": 1934.5,
+    "dur": 5.0,
+    "caption": "Grundtvig Church (1921-40)",
+    "target": "Grundtvig Church",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 300,
+     "el": 18,
+     "az": [
+      215,
+      245
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1958.2,
+    "y1": 1960.4,
+    "dur": 4.5,
+    "caption": "SAS Royal, the city's first skyscraper (1960)",
+    "target": "SAS Royal Hotel",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 330,
+     "el": 20,
+     "az": [
+      200,
+      235
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 1995.8,
+    "y1": 2000.6,
+    "dur": 5.0,
+    "caption": "The Øresund Bridge (2000)",
+    "target": "Oresund Bridge",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 5200,
+     "el": 14,
+     "az": [
+      250,
+      265
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 2000.8,
+    "y1": 2004.6,
+    "dur": 4.0,
+    "caption": "The Opera House (2005)",
+    "target": "Opera House",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 520,
+     "el": 20,
+     "az": [
+      215,
+      240
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 2004.8,
+    "y1": 2008.3,
+    "dur": 4.0,
+    "caption": "Royal Playhouse (2008)",
+    "target": "Royal Playhouse",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 360,
+     "el": 20,
+     "az": [
+      200,
+      230
+     ],
+     "mm": 35
+    }
+   },
+   {
+    "y0": 2013.3,
+    "y1": 2019.3,
+    "dur": 5.0,
+    "caption": "CopenHill (2019)",
+    "target": "CopenHill",
+    "shot": "medium",
+    "fx": "hammer",
+    "cam": {
+     "d": 520,
+     "el": 22,
+     "az": [
+      255,
+      285
+     ],
+     "mm": 35
+    }
+   }
+  ]
+ },
+ "montaggio": {
+  "open": [
+   "COPENHAGEN TODAY",
+   "1.4 million people"
+  ],
+  "title": [
+   "COPENHAGEN",
+   "1167 TO NOW"
+  ],
+  "end": [
+   "COPENHAGEN · 859 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "events": [
+   {
+    "y": 1443,
+    "title": "Capital of Denmark",
+    "line": "The king moves his court to Copenhagen."
+   },
+   {
+    "y": 1536,
+    "title": "The Reformation",
+    "line": "Denmark becomes Lutheran."
+   },
+   {
+    "y": 1659,
+    "title": "The Swedish siege",
+    "line": "The city holds out against Sweden."
+   },
+   {
+    "y": 1852,
+    "title": "The walls come down",
+    "line": "The city spills out over the old ramparts.",
+    "force": 6
+   },
+   {
+    "y": 1940.27,
+    "title": "German occupation",
+    "line": "9 April 1940.",
+    "sober": true,
+    "force": 6
+   },
+   {
+    "y": 1945.35,
+    "title": "Liberation",
+    "line": "5 May 1945.",
+    "sober": true
+   }
+  ]
+ }
+}

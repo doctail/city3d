@@ -461,20 +461,11 @@
     "caption": "Earthquake: the Colosseum falls (1349)",
     "target": "Earthquake: the Colosseum falls",
     "shot": "medium",
-    "fx": [
-     {
-      "fx": "hammer",
-      "n": 9,
-      "gap": 0.32,
-      "dt": 0.4,
-      "gain": 0.09
-     },
-     {
-      "fx": "crowd",
-      "dt": 3.6,
-      "gain": 0.16
-     }
-    ]
+    "fx": {
+     "fx": "quake",
+     "dt": 0.0,
+     "gain": 0.26
+    }
    },
    {
     "y0": 1505.5,

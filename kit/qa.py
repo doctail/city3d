@@ -356,7 +356,7 @@ def check_corridors(story, D, DD, R, qadir, objs):
             if not gm.any(): continue
             v_ = float((gm & vis & ~bld).sum()) * cell * cell
             e_ = float((gm & ~bld & ~vis & ~parks).sum()) / gm.sum()
-            if v_ > 150: gb.append(f'{gn}: {v_:.0f} m² di nastro visibile prima del {gu:.0f}')
+            if v_ > 60: gb.append(f'{gn}: {v_:.0f} m² di nastro visibile prima del {gu:.0f}')
             if e_ > 0.35: gv.append(f'{gn}: {e_:.0%} vuoto (case predecessore mancanti)')
         # viali larghi gia' visibili (solo informazione: se aperti sventrando, va dichiarato un gutting)
         void2 = center & ok_ground & ~bld & ~parks

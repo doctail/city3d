@@ -48,6 +48,7 @@ def build_city(story):
         '_generated_by': GEN_MARK,
         'lat0': float(c['lat0']), 'lon0': float(c['lon0']), 'radius_m': R,
         'hist': f'hist_{slug}',
+        'story': f'cities/{slug}/story.json',   # letto da kit/hist_kit.py dentro Blender (--city)
         # celle fini su tutto il raggio dati; niente base boschi (box nullo come Copenaghen/Siviglia/Parigi)
         'core_box': [-R, -R, R, R], 'forest_box': [0, 0, 1, 1],
         'parks': [], 'roads': [],

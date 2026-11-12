@@ -33,7 +33,7 @@ else
     # DATA viene da data_<slug>_src (python -m kit pack); hist_<slug>.py e' lo stub generato dal kit (lo crea se manca)
     [ -f hist_$CITY.py ] || $PY -m kit.hist_kit make-stub $CITY
     [ -f city_$CITY.json ] || $PY -m kit.city_json $CITY
-    KIT_DATA=$D $PY hist_$CITY.py $D
+    $PY hist_$CITY.py $D
   else
   $PY hist_$CITY.py $D
   fi

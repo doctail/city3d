@@ -317,12 +317,13 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
                 if slot['role'] == 'climax':   # il climax deve coprire il cambio di traccia
                     tt = max(t - 3.0, min(t, b_start + 2.0 - c['dur'])) if b_start else t
                 if c['y0'] <= ya or tt <= ta: continue
-                aff = 0.8
+                aff = 0.8; f = c['_force']
                 if slot['prefer'] == 'disaster': aff = 1.0 if c['_dis'] else 0.3
-                elif slot['prefer'] == 'build': aff = 1.0 if not c['_dis'] else 0.5
+                elif slot['prefer'] == 'build':   # rinascita: un grande cantiere vale come un evento forte
+                    aff = 1.0 if not c['_dis'] else 0.4; f = max(f, 6.0) if not c['_dis'] else f
                 if slot['role'] == 'climax' and b_start and tt + c['dur'] < b_start + 0.5: aff *= 0.4
-                gain = slot['weight'] * c['_force'] * aff
-                if c['_force'] < 4.5: gain *= 0.3
+                gain = slot['weight'] * f * aff
+                if f < 4.5: gain *= 0.3
                 pen = seg_ok(ta, ya, tt, c['y0'])
                 if pen <= -1e5: continue
                 v = sc + gain + pen
@@ -422,6 +423,14 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         free_slots = [s for s in slots if s['role'] not in used_roles and s['role'] != 'night'
                       and title_t + 4 < s['t'] < end_t - 4 and all(abs(s['t'] - t) > 6 for t, _ in fixed)]
         cands = [s for s in SOSTE if s['y0'] > y_start + 1e-6]
+        # eventi del montaggio con "force": ancore d'anno (nessuna sosta), es. le mura che cadono sulla salita di B
+        evc = []
+        for e in (story.get('montaggio', {}) or {}).get('events', []) or []:
+            if 'force' in e and y_start < float(e['y']) < 2026:
+                evc.append({'y0': float(e['y']), 'y1': float(e['y']), 'dur': 0.0, 'caption': 'evento: ' + e.get('title', ''),
+                            '_force': float(e['force']), '_event': True,
+                            '_dis': bool(e.get('sober')) or any(w in e.get('title', '') for w in DISASTER_WORDS)})
+        cands = sorted(cands + evc, key=lambda c: c['y0'])
         path = auto_anchors(free_slots, cands, sorted(fixed), title_t, y_start, end_t, 2026.0, rmin, rmax, b_start)
         for t, y, slot, s in path:
             fixed.append((t, y)); s['_pinned'] = True
