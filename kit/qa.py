@@ -218,12 +218,23 @@ def build_objs(DD):
     """Edifici + predecessori + parti di landmark con impronta, al netto di landmarks.clear (come build_render)."""
     B = DD.get('buildings') or []; H = DD.get('hist') or []; L = DD.get('landmarks') or {}
     objs = [(b['r'], b.get('y', 0), b.get('d', 99999)) for b in B + H if len(b.get('r', [])) >= 3]
-    if L.get('clear'):
+    cd = [c for c in (L.get('clear') or []) if isinstance(c, dict) and c.get('r')]
+    if cd:
+        try:
+            import shapely
+            from shapely.geometry import Polygon
+            _, C0 = _ring_arr([o[0] for o in objs])
+            for c in cd:
+                ins = shapely.contains_xy(Polygon(c['r']).buffer(0), C0[:, 0], C0[:, 1]); yc = float(c.get('y', 0))
+                objs = [(o[0], o[1], min(o[2], yc) if i else o[2]) for o, i in zip(objs, ins)]
+        except Exception as e:
+            print('[qa] clear a tempo ignorato:', e)
+    if any(not isinstance(c, dict) for c in (L.get('clear') or [])):
         try:
             from shapely.geometry import Polygon
             from shapely.ops import unary_union
             import shapely
-            cl = unary_union([Polygon(r).buffer(0) for r in L['clear'] if len(r) >= 3])
+            cl = unary_union([Polygon(r).buffer(0) for r in L['clear'] if not isinstance(r, dict) and len(r) >= 3])
             _, C = _ring_arr([o[0] for o in objs]); keep = ~shapely.contains_xy(cl, C[:, 0], C[:, 1])
             objs = [o for o, k in zip(objs, keep) if k]
         except Exception as e:
@@ -353,7 +364,7 @@ def check_corridors(story, D, DD, R, qadir, objs):
         gb, gv = [], []
         for ring, gf, gu, gn in gr:
             if not (gf <= Y < gu): continue
-            gm = _mask([ring], shape, x0, yb0, cell) & ok_ground
+            gm = _mask([ring], shape, x0, yb0, cell) & ok_ground & center   # solo dove una zona e' gia' nata
             if not gm.any(): continue
             gin = ndimage.binary_erosion(gm, iterations=2)   # 8 m dal bordo: i nastri che sfiorano il ring non contano
             v_ = float((gin & vis & ~bld).sum()) * cell * cell
