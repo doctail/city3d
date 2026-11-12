@@ -12,6 +12,9 @@ story.json: 8 zone, 2 mura, 6 gutting, 2 lost, 1 fire, 16 fasi water, 5 bridges,
 - Piena 1957: lastra "urban" sul perimetro di Ciutat Vella rimossa per 1957.78-1957.80. conf low, EFFETTO DA PROVARE (se l'acqua resta sotto il DEM serve un piano d'acqua dedicato).
 - Ponti: scelta mista. Pietra storici (Serranos, Mar, Real, San Jose, Trinidad) come `bridge_arches` nei landmarks (linea e larghezza nei params, ricavate dall'asse del poligono OSM); impalcati moderni in `history.bridges`: Exposicion 1909 (d 1957.78), Calatrava 1995, Aragon 1933, Flores 2003, Assut de l'Or 2008. Il sito esatto del ponte 1909 non e' verificato (usata la linea del ponte attuale). Nessun ponte e' in entrambe le liste.
 
+## Revisione zone suburbane (QA corridoi 1800)
+Le zone Quart, Morvedre, Russafa, El Grau e Cabanyal erano troppo larghe e coprivano la griglia moderna. Ora sono strisce strette lungo strade storiche OSM: Quart = calle de Quart (60 m), Morvedre = calle de Sagunt dal ponte di Serranos verso nord (60 m), Russafa = calle de Russafa (55 m) piu' nucleo r 90 m presso il Mercat de Russafa (la chiesa di San Valero non e' in OSM: posizione stimata), El Grau = nucleo r 170 m a Plaça de la Sal, Cabanyal = Carrer de la Barraca (90 m), nuova zona Canyamelar = Carrer del Progres (60 m). Tutte conf low. Boatella ed espansione 1356 restano: sono dentro la cinta, tessuto storico. Totale zone: 9.
+
 ## Landmarks
 - 26 totali; footprint "auto" dove un edificio catastale contiene il punto, "none" altrimenti (Generalitat, ponti). Micalet "none" (stessa impronta della Cattedrale). Gli anni catastali al punto di Estacion del Norte, Oceanografic, Agora (2020-26) non sono affidabili: contano le fasi.
 - Basilica, Generalitat, Santa Catalina, Mercado de Colon: date da memoria, conf low, senza fonte vera (`S37` segnaposto OSM). Verificare o togliere.

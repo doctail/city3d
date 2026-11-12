@@ -11,6 +11,8 @@ Bersagli di una sosta ("target")
   "<prefisso>"            parti di landmarks.json il cui nome inizia col prefisso (mediana dei centri, altezza max)
   "fire:<nome>"           incendio di fires.json / landmarks.fires / story.history.fires (centro del poligono)
   "area:[lat,lon,raggio]" un cerchio sulla mappa
+  "water:<nome>"          fase di story.history.water (anche senza prefisso, se nessun landmark ha quel nome): rettangolo che la contiene
+  (le inquadrature "wide" hanno un tetto: estensione del bersaglio + margine, al massimo WIDE_MAX = 3500 m)
   "xy:[x,y(,raggio)]"     punto in metri locali (estensione, utile per fixture e casi speciali)
 
 Sosta: {"y0","y1","dur","caption":"Titolo (data)","target","shot":"close|medium|wide|top","fx","force"?,"role"?,
@@ -44,6 +46,7 @@ DISASTER_WORDS = ('FIRE', 'BOMB', 'burns', 'siege', 'Siege', 'sack', 'Sack', 'ea
 SHOT = {   # moltiplicatore di distanza, elevazione (gradi)
     'close': (0.72, 20), 'medium': (1.0, 24), 'wide': (1.65, 30), 'top': (1.25, 62)}
 STRONG = 6.0          # forza minima di un "evento forte"
+WIDE_MAX = 3500.0     # m: distanza massima di un'inquadratura 'wide' (oltre, la citta' non si legge)
 
 
 def ease(u):
@@ -134,7 +137,20 @@ class Data:
             return {'x': x, 'y': y, 'z': 0.0, 'h': 0.0, 'R': r, 'kind': 'area', 'name': spec}
         if isinstance(spec, (list, tuple)) and len(spec) >= 2:     # [lat, lon, raggio]
             return self.target('area:' + json.dumps(list(spec)))
-        return self.lmc(spec)
+        if isinstance(spec, str) and spec.startswith('water:'):
+            return self.water(spec[6:].strip())
+        return self.lmc(spec) or (self.water(spec) if isinstance(spec, str) else None)
+
+    def water(self, name):
+        """Fase d'acqua/terra di story.history.water per nome (prefisso): centro e raggio dal rettangolo che la contiene."""
+        nm = name.lower()
+        ws = [w for w in (self.story.get('history', {}) or {}).get('water', []) or [] if w.get('ring')]
+        ws = [w for w in ws if w.get('name', '').lower().startswith(nm)] or [w for w in ws if nm in w.get('name', '').lower()]
+        if not ws: return None
+        P = np.array([q for w in ws for q in self.proj.ring(w['ring'])])
+        (x0, y0), (x1, y1) = P.min(0), P.max(0)
+        return {'x': float(x0 + x1) / 2, 'y': float(y0 + y1) / 2, 'z': 0.0, 'h': 0.0, 'R': float(math.hypot(x1 - x0, y1 - y0)) / 2,
+                'kind': 'water', 'name': ws[0].get('name', name)}
 
     def extent(self, y, focus=None):
         m = (self.by <= y) & (self.bd > y)
@@ -491,6 +507,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         cam = s.get('cam') or {}
         mul, el_def = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
         d = float(cam.get('d', mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))))
+        if s.get('shot') == 'wide' and 'd' not in cam:   # 12 nov (Valencia, Plan Sur): area di 6 km -> camera a 13 km, citta' illeggibile.
+            # tetto: estensione del bersaglio + margine, e al massimo WIDE_MAX all'inizio del carrello (d*1.25)
+            d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
         el = float(cam.get('el', el_def))
         az = cam.get('az', s.get('az', az_def))
         az0, az1 = (float(az[0]), float(az[1])) if isinstance(az, list) else (float(az), float(az) + 30.0)
