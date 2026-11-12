@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-12 11:59. Esito complessivo: **FAIL**
+Generato da `python -m kit.qa` il 2026-11-12 12:06. Esito complessivo: **FAIL**
 
 | Sezione | Esito |
 |---|---|
@@ -8,12 +8,12 @@ Generato da `python -m kit.qa` il 2026-11-12 11:59. Esito complessivo: **FAIL**
 | b) DATA | PASS |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | FAIL |
-| e) Costo e schedule | PASS |
+| e) Costo e schedule | WARN |
 
 ## a) Story e fonti
 
 - **PASS** chiavi city
-- **PASS** 45 fonti
+- **PASS** 56 fonti
 - **PASS** date con fonte
 - **WARN** date fuori dall'intervallo del video
   - history.water[3] Jardi del Turia 1: 99999; history.water[5] Jardi del Turia 2: 99999; history.water[7] Jardi del Turia 3: 99999; history.water[9] Jardi del Turia 4: 99999; history.water[11] Jardi del Turia 5: 99999; history.water[13] Jardi del Turia 6: 99999; history.water[15] 1957 flood (low centre, slab back): 99999
@@ -90,6 +90,8 @@ Generato da `python -m kit.qa` il 2026-11-12 11:59. Esito complessivo: **FAIL**
 
 - **PASS** costo dei cambi (3 s)
   - oggetti citta' 1539, cambi in tutto il video 56171, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.19 h (budget 1.0 h)
+- **WARN** durata diversa dalla story
+  - 511.5 contro 600
 - **PASS** 26 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"

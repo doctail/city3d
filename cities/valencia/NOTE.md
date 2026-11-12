@@ -1,6 +1,32 @@
-# Valencia (città di PROVA del kit, esclusa dalla produzione): scelte e incertezze
+# Valencia (PRODUZIONE, 12 nov 2026): scelte e incertezze
 
-story.json: 8 zone, 2 mura, 6 gutting, 2 lost, 1 fire, 16 fasi water, 5 bridges, 26 landmarks, 26 soste, 5 eventi, 45 fonti. JSON valido, ogni `src` esiste in `sources`.
+story.json (versione "production"): 9 zone, 2 mura, 6 gutting, 2 lost, 1 fire, 16 fasi water, 5 bridges, 26 landmarks, 26 soste, **45 cartelli**, 6 capitoli, 9 polity, 56 fonti. JSON valido; ogni `src` (anche dei cartelli e delle polity) esiste in `sources`. `kit.qa valencia` (senza --render): a PASS/WARN, b PASS, c PASS, d FAIL preesistente (1800, vedi sotto), e PASS salvo WARN durata (il `schedule_valencia.json` va rigenerato da regia: 511.5 -> 600).
+
+## Spina del video: il fiume
+Cartelli con il fiume come filo: acqua delle acequias e Tribunal de les Aigues (1262), ponti di pietra (1607), ponte del 1909 distrutto dalla piena (1909 -> 1957), piena 14 ott 1957 (almeno 81 morti), Plan Sur (1961 legge, 22 dic 1969 deviazione), Jardi del Turia (1986), Citta' delle Arti sul vecchio alveo (1998), DANA 2024. Anno di partenza resta 1238. Differenza da Mattia: lui parte dal 138 a.C. e segue la citta'; noi seguiamo il fiume e teniamo notte finale, stacchi di camera (nessun `camera: continuous`: scelta di differenziazione, da rivedere dopo l'anteprima) e soste.
+
+## Cartelli (montaggio.cards, 45)
+- Fonti: istituzionali dove c'erano (Ajuntament S1-S5, UNESCO S6), il resto Wikipedia ES/EN come supporto (S34, S46-S56). Nessuna data senza `src`; `conf` su ogni cartello.
+- Richiesti dal brief, tutti presenti: 1238 (due cartelli: resa 22 sett / ingresso 9 ott, e "la citta' si svuota" + ripopolamento col Llibre del Repartiment), 1377 Senyera coronada, Germania (singolare, 1519-23), 1609 Moriscos, 1707 Fueros, 1812 Suchet, 1865 mura, 1909 Esposizione, 1936-37 capitale, 1957, Plan Sur, 1986, Ciutat de les Arts, DANA 29 ott 2024.
+- Nomi valenciani: Torres de Serrans, Torres de Quart, l'Horta, Falles, Jaume I, La Llotja de la Seda, El Micalet, Ciutat de les Arts i les Ciencies, Xuquer; nome inglese una volta nella riga (Serranos Towers, Quart Towers, James I of Aragon, Silk Exchange, City of Arts and Sciences). Didascalie delle soste ritoccate: "Jaume I takes Valencia", "Torres de Serrans", "La Llotja de la Seda", "THE GREAT FLOOD (14 October 1957)", "Oceanografic, Palau de les Arts, Agora". Nei soste i `target` interni restano i nomi dei landmark.
+- DANA: sobrio, nessun `fx` d'acqua, nessuna frase sul Plan Sur ("non l'ha salvata", ne' il contrario; il ruolo e' dibattuto). Righe: inondazioni lampo nei paesi a sud della citta', piu' di 230 morti nella provincia (S51: 242 in Spagna, 234 provincia; cifra da riverificare al giorno dell'uscita, e' ancora un dato che sale/si assesta).
+- Correzioni emerse: resa 22 sett (firma) / 28 sett (bandiera sulle mura) / **9 ott** (ingresso del re), non "28 settembre" come nella nota precedente; la resa di Suchet e' "gennaio 1812" (8 o 9 gen secondo la fonte; non si scrive il giorno).
+- 1238, "50.000 musulmani": e' una sola cifra secondaria (Wikipedia Valencia); la capitolazione permetteva anche di restare. Cartello conf medium con nota.
+
+## Bandiera (polities)
+Barre d'Aragona (9 strisce oro/rosso) per 1238-1707; dal 1377 stessa bandiera ma nome "Senyera coronada" (la corona non e' disegnabile nel chip a strisce). Nota S56: la senyera coronada era la bandiera della *citta'*; che fosse anche del *regno* e' controverso, e' ufficiale per la Comunita' solo dal 1982 (con la fascia blu, non rappresentabile). 1707 stendardo borbonico bianco; 1843 rojigualda; 1931 rosso-giallo-viola; 1939 e 1978 rojigualda (stemma diverso, non visibile). Colori delle repubbliche e dei Borboni da verificare sulle fonti vessillologiche prima della pubblicazione (conf medium).
+
+## Popolazione (HUD)
+1238 20.000 (S34 "perhaps about 20,000", rough estimate, conf low); 1500 45.000 e 1609 58.000 (S33, historical estimate); 1787, 1857, 1900, 1950, 1981 censi INE (S55); 2025 841.558 (padron, label "census"). Attenzione: la serie INE non e' omogenea (annessioni 1877/1887, 1842 = 66.355 per confini diversi e omesso). Tra 1609 e 1787 l'HUD interpola. Il numero di Wikipedia ES per il 1900 e' 213.550 nel testo e 215.687 nella tabella INE: usato 215.687 (tabella).
+
+## 1238: il buco centrale (verifica)
+Rasterizzati gli edifici catastali (cella 3 m) dentro l'anello della cinta islamica: gli spazi vuoti sopra 1.500 m2 sono 7. Il "buco" nord-est della Cattedrale e' **Plaça de la Mare de Déu (6.462 m2, 123x99 m)**, adiacente alla **Plaça de l'Almoina (2.682 m2)**; piu' a sud-est Plaça de l'Arquebisbe (2.070 m2) e a nord-ovest Plaça de Manises (1.521 m2); a ovest l'area del Mercat (6.462 m2) e al centro la striscia di calle de la Paz (gia' in `gutting`). Identificati con Nominatim (reverse) e con le impronte catastali (Cattedrale 6.192 m2, y1250; Basilica 977 m2).
+- Plaça de l'Almoina era la piazza maggiore romana (foro), poi basilica visigota, moschea e, dopo il 1238, Plaça de la Fruita e Plaça de la Llenya = mercati all'aperto (S52); Plaça de la Mare de Déu e' erede del foro (S53). Quindi **erano spazi aperti nel 1238**: non aggiunto nessun gutting. Sul sito della Gran Moschea e della Basilica `hist.json` ha gia' predecessori vivi nel 1238 (Cattedrale fino al 1261.69, Basilica fino al 1651.69; lotto gia' costruito prima del 1652, S54), quindi li' non c'e' buco.
+- Dubbio aperto: Plaça de l'Arquebisbe e Plaça de Manises (3.600 m2 in tutto) probabilmente non erano piazze nel 1238, ma non ho trovato una fonte con l'anno di apertura; senza data non si puo' fare un `gutting` datato. Se l'anteprima li mostra come buchi, o si trova la fonte (Ajuntament / archivio) o li si riempie con una zona conf low e nota.
+- Il resto dei "corridoi" del QA (d) e' preesistente e fuori da questo incarico: FAIL a 1800 per un'area vuota 120x24 m a (39.47144, -0.32993) e vari WARN sul vecchio alveo/Albereda (Av. del Oeste, Plaza Tetuan): da guardare nell'anteprima.
+
+## Soste, tempo e coda
+Soste invariate (26, 148 s) salvo didascalie; cartelli 45 con hold 4.5-8 s; totale fermo ~404 s su 600; rewind, recap 20 s, CTA 4,5 s, fonti 8 s. Ordine a parita' di anno (1238.0 cartello+sosta, 1262, 1356, 1957.77): da controllare in `regia.txt` dopo la rigenerazione. `night: true` mantenuto (finale notturno); non so in che ordine il kit metta recap/CTA/notte: va verificato nella regia. Musica "waking_monument" (Unicorn Heads "Waking to Reality" + TrackTribe "Monument", YouTube Audio Library) invariata; con pacing story le ancore musicali non contano.
 
 ## Geometrie (Nominatim/OSM; Overpass non raggiungibile: reset di connessione)
 - Cinta cristiana 1356: confine OSM di Ciutat Vella (rel. 4231802) con il tratto nord corretto per passare da Torres de Serranos / calle Blanqueria. 161 ha. Keep: Serranos e Quart (raggio 45 m). conf medium.
@@ -21,10 +47,5 @@ Le zone Quart, Morvedre, Russafa, El Grau e Cabanyal erano troppo larghe e copri
 - Nessun `skyscraper`: non ho trovato una torre verificata per Valencia.
 - Ciudadela (lost): inizio 1715 NON verificato (Wikipedia non raggiungibile); solo "1710s" dalla ricerca; fine 1901 (torreon). Posizione approssimata a est di Plaza Tetuan. Convento di San Francisco: impronta stimata 90x60 m al centro della piazza.
 
-## Regia / montaggio
-- 26 soste da REGIA_VALENCIA.md, riordinate per y0 (la stazione 1906 precede l'Esposizione 1909; la sosta 1887-1900 contiene la 1891, come in regia). Target = landmark, zona o `area:[lat,lon,raggio]`. shot dedotto dalla distanza (close <=240 m, medium 260-600, wide 900-6000 con elev. bassa, top >=1400 m o dall'alto). I nomi `fx` sono segnaposto.
-- Eventi: 1609 (sober), 1707 Fueros (conf low, data da memoria), 1877 Russafa, 1897 annessioni, 1936 capitale della Repubblica (sober). DANA 2024 e bombardamenti 1937-39: esclusi come da controllo storico.
-- Popolazione: solo 1500 (45.000), 1609 (58.000, media di 52,3-63,8k) e 2025 (841.558). Nessun punto 1238/1800/1900/1950 con fonte: l'HUD interpola. `open` dice "840,000 people".
-
 ## Da fare prima del pod
-Anteprima CPU (1800, 1900, 1935, 1960, piena 1957, Plan Sur), controllo corridoi vuoti su Paz / Oeste / Reina, verifica dei punti marcati low.
+Anteprima CPU (1238 centro, 1800, 1900, 1935, 1960, piena 1957, Plan Sur), controllo corridoi su Paz / Oeste / Reina, verifica delle voci marcate low (Basilica, Generalitat, Santa Catalina, Mercado de Colon: date da memoria, `S37` segnaposto; Ciudadela 1715 non verificata; marina 2007), verifica bandiere, verifica cifra DANA.

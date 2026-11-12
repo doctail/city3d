@@ -15,26 +15,66 @@
   "style_preset": "mediterranean",
   "population": [
    [
+    1238,
+    20000,
+    "rough estimate"
+   ],
+   [
     1500,
-    45000
+    45000,
+    "historical estimate"
    ],
    [
     1609,
-    58000
+    58000,
+    "historical estimate"
+   ],
+   [
+    1787,
+    103918,
+    "census"
+   ],
+   [
+    1857,
+    106435,
+    "census"
+   ],
+   [
+    1900,
+    215687,
+    "census"
+   ],
+   [
+    1950,
+    503886,
+    "census"
+   ],
+   [
+    1981,
+    744748,
+    "census"
    ],
    [
     2025,
-    841558
+    841558,
+    "census"
    ]
   ],
   "pop_conf": [
+   "low",
    "medium",
    "medium",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high",
    "high"
   ],
   "pop_src": [
+   "S34",
    "S33",
-   "S34"
+   "S55"
   ],
   "eras": [
    [
@@ -57,6 +97,149 @@
     "Democratic Spain",
     "#7cb06a"
    ]
+  ],
+  "data_reliable_from": 1840,
+  "polities": [
+   {
+    "y": 1238,
+    "name": "Crown of Aragon · Kingdom of Valencia",
+    "flag_colors": [
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09"
+    ],
+    "src": [
+     "S39",
+     "S49"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1377,
+    "name": "Kingdom of Valencia · Senyera coronada",
+    "flag_colors": [
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09"
+    ],
+    "src": [
+     "S46"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1479,
+    "name": "Kingdom of Valencia · Ferdinand II",
+    "flag_colors": [
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09"
+    ],
+    "src": [
+     "S49"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1707,
+    "name": "Spain · Bourbon monarchy",
+    "flag_colors": [
+     "#f4f4f0"
+    ],
+    "src": [
+     "S48"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1843,
+    "name": "Kingdom of Spain",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#aa151b"
+    ],
+    "src": [
+     "S34"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1931,
+    "name": "Spain · Second Republic",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#6b2d86"
+    ],
+    "src": [
+     "S34"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1939,
+    "name": "Spain · Franco regime",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#aa151b"
+    ],
+    "src": [
+     "S34"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1978,
+    "name": "Spain · Democracy",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#aa151b"
+    ],
+    "src": [
+     "S34"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1982,
+    "name": "Valencian Community · Spain",
+    "flag_colors": [
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09",
+     "#da121a",
+     "#fcdd09"
+    ],
+    "src": [
+     "S56"
+    ],
+    "conf": "medium"
+   }
   ]
  },
  "sources": {
@@ -228,7 +411,7 @@
   "S34": {
    "url": "https://en.wikipedia.org/wiki/Valencia",
    "title": "Wikipedia, Valencia",
-   "quote": "2025: 841.558 residenti"
+   "quote": "Almohad-era population perhaps about 20,000; Moriscos about a third of the kingdom in 1609; walls demolition started 20 Feb 1865; Republican capital 6 Nov 1936-31 Oct 1937; October 1957 flood 81 deaths"
   },
   "S35": {
    "url": "https://www.eltemps.cat/documents/el-temps_2012_04_1453_0025_0027.pdf",
@@ -284,6 +467,61 @@
    "url": "https://www.valenciabonita.es/2015/08/10/la-riada-del-57-valencia/",
    "title": "Valenciabonita, la riada del 57",
    "quote": "13-14 ottobre 1957"
+  },
+  "S46": {
+   "url": "https://es.wikipedia.org/wiki/Escudo_de_Valencia",
+   "title": "Wikipedia ES, Escudo de Valencia",
+   "quote": "1377: Pere el Cerimoniós grants the city the right to use the royal arms and the crown, in recognition of its resistance in the War of the Two Peters (1356-1365)"
+  },
+  "S47": {
+   "url": "https://en.wikipedia.org/wiki/Revolt_of_the_Brotherhoods",
+   "title": "Wikipedia, Revolt of the Brotherhoods (Germania)",
+   "quote": "1519-1523, most fighting in 1521; the revolt was defeated"
+  },
+  "S48": {
+   "url": "https://en.wikipedia.org/wiki/Nueva_Planta_decrees",
+   "title": "Wikipedia, Nueva Planta decrees",
+   "quote": "The acts abolishing the charters were promulgated in 1707 in the kingdoms of Valencia and Aragon"
+  },
+  "S49": {
+   "url": "https://es.wikipedia.org/wiki/Reino_de_Valencia",
+   "title": "Wikipedia ES, Reino de Valencia",
+   "quote": "Fueros proclaimed in 1261; colonisation of the city and its huerta by Catalans and Aragonese"
+  },
+  "S50": {
+   "url": "https://es.wikipedia.org/wiki/Jard%C3%ADn_del_Turia",
+   "title": "Wikipedia ES, Jardin del Turia",
+   "quote": "Opened 1986; 136 ha, about 8.5 km; flood of 14 October 1957"
+  },
+  "S51": {
+   "url": "https://en.wikipedia.org/wiki/2024_Spanish_floods",
+   "title": "Wikipedia, 2024 Spanish floods",
+   "quote": "29 October 2024; at least 242 dead, 234 in the province of Valencia"
+  },
+  "S52": {
+   "url": "https://es.wikipedia.org/wiki/Plaza_de_la_Almoina",
+   "title": "Wikipedia ES, Plaza de la Almoina",
+   "quote": "Main square of the Roman city (forum); after 1238 the Plaza de la Fruita and Plaza de la Llenya markets"
+  },
+  "S53": {
+   "url": "https://es.wikipedia.org/wiki/Plaza_de_la_Virgen",
+   "title": "Wikipedia ES, Plaza de la Virgen",
+   "quote": "Heir of the Roman forum; Tribunal de les Aigues meets every Thursday at the Door of the Apostles; Falles flower offering 17-18 March"
+  },
+  "S54": {
+   "url": "https://es.wikipedia.org/wiki/Bas%C3%ADlica_de_la_Virgen_de_los_Desamparados",
+   "title": "Wikipedia ES, Basilica de la Virgen de los Desamparados",
+   "quote": "Construction begins 1652; plan adjusted to the lot"
+  },
+  "S55": {
+   "url": "https://es.wikipedia.org/wiki/Valencia",
+   "title": "Wikipedia ES, Valencia (INE census series)",
+   "quote": "Censuses 1787 103,918; 1857 106,435; 1900 215,687; 1950 503,886; 1981 744,748 (INE)"
+  },
+  "S56": {
+   "url": "https://es.wikipedia.org/wiki/Bandera_de_la_Comunidad_Valenciana",
+   "title": "Wikipedia ES, Bandera de la Comunidad Valenciana",
+   "quote": "Originally the flag of the city of Valencia; official flag of the Valencian Community since 1982"
   }
  },
  "history": {
@@ -5126,18 +5364,19 @@
  ],
  "regia": {
   "music": "waking_monument",
-  "duration": 511.5,
+  "duration": 600,
   "night": true,
   "open": {
    "year": 2026,
-   "rewind_to": 1238
+   "rewind_to": 1238,
+   "story_lead": 3.4
   },
   "soste": [
    {
     "y0": 1238.0,
     "y1": 1238.8,
     "dur": 6,
-    "caption": "James I takes Valencia (1238)",
+    "caption": "Jaume I takes Valencia (1238)",
     "target": "Muslim walled city",
     "shot": "medium",
     "fx": "crowd",
@@ -5190,7 +5429,7 @@
     "y0": 1392,
     "y1": 1398,
     "dur": 5,
-    "caption": "Torres de Serranos (1392-98)",
+    "caption": "Torres de Serrans (1392-98)",
     "target": "Torres de Serranos",
     "shot": "close",
     "fx": "stone",
@@ -5216,7 +5455,7 @@
     "y0": 1483,
     "y1": 1498,
     "dur": 5,
-    "caption": "The Silk Exchange (1483)",
+    "caption": "La Llotja de la Seda (1483)",
     "target": "Lonja de la Seda",
     "shot": "close",
     "fx": "stone",
@@ -5408,7 +5647,7 @@
     "y0": 1957.78,
     "y1": 1957.8,
     "dur": 12,
-    "caption": "THE GREAT FLOOD OF 1957 (1957)",
+    "caption": "THE GREAT FLOOD (14 October 1957)",
     "target": "area:[39.4760,-0.3730,1500]",
     "shot": "top",
     "fx": "water",
@@ -5464,7 +5703,7 @@
     "y0": 2001,
     "y1": 2009,
     "dur": 6,
-    "caption": "Oceanografic, Palau de les Arts, Agora (2001-09)",
+    "caption": "Oceanogràfic, Palau de les Arts, Àgora (2001-09)",
     "target": "Oceanografic",
     "shot": "medium",
     "fx": "chime",
@@ -5489,12 +5728,13 @@
    }
   ],
   "rmin": 0.5,
-  "rmax": 8.0
+  "rmax": 8.0,
+  "pacing": "story"
  },
  "montaggio": {
   "open": [
    "VALENCIA TODAY",
-   "840,000 people"
+   "841,558 people"
   ],
   "title": [
    "VALENCIA",
@@ -5504,59 +5744,733 @@
    "VALENCIA · 788 YEARS",
    "WHICH CITY NEXT?"
   ],
-  "events": [
+  "events": [],
+  "cards": [
+   {
+    "y": 1238.0,
+    "title": "Balansiya surrenders",
+    "lines": [
+     "The capitulation is signed on 22 September 1238. Jaume I (James I of Aragon) enters the city on 9 October.",
+     "That day is still the Valencian Community holiday."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S39"
+    ],
+    "conf": "high",
+    "target": "Muslim walled city",
+    "shot": "medium"
+   },
+   {
+    "y": 1238.85,
+    "title": "The city empties",
+    "lines": [
+     "Muslims who wish to leave may go south of the Xúquer (Júcar). One estimate says 50,000 do.",
+     "Houses are shared out to settlers from Aragon and Catalonia in the Llibre del Repartiment."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S39",
+     "S34"
+    ],
+    "conf": "medium",
+    "target": "Muslim walled city",
+    "shot": "top",
+    "note": "50,000 is a single secondary figure (Wikipedia Valencia); other sources let Muslims stay under Christian rule"
+   },
+   {
+    "y": 1239,
+    "title": "A new Valencia",
+    "lines": [
+     "Valencia's Jews receive a quarter of their own, walled in 1390.",
+     "The city refills with new neighbors, new laws and a new language: Catalan."
+    ],
+    "hold_s": 5.5,
+    "src": [
+     "S34",
+     "S39"
+    ],
+    "conf": "medium",
+    "target": "Muslim walled city",
+    "shot": "medium"
+   },
+   {
+    "y": 1261,
+    "title": "The Furs of Valencia",
+    "lines": [
+     "The laws proclaimed in 1261 give the kingdom its own legal order inside the Crown of Aragon.",
+     "Settlers also farm l'Horta, the irrigated garden watered by the Turia's canals."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S49"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4770,-0.3700,1800]",
+    "shot": "wide"
+   },
+   {
+    "y": 1262,
+    "title": "The Cathedral and the water court",
+    "lines": [
+     "The Great Mosque, made a church in 1238, gives way to the Cathedral.",
+     "At its Door of the Apostles, the Tribunal de les Aigües still meets every Thursday to settle irrigation disputes."
+    ],
+    "hold_s": 6.5,
+    "src": [
+     "S5",
+     "S53",
+     "S39"
+    ],
+    "conf": "high",
+    "target": "Cathedral",
+    "shot": "medium"
+   },
+   {
+    "y": 1348,
+    "title": "The Black Death",
+    "lines": [
+     "Plague decimates the population in 1348. Epidemics, wars and riots follow for years."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "sober": true
+   },
+   {
+    "y": 1356,
+    "title": "A war, a bigger wall",
+    "lines": [
+     "As the War of the Two Peters with Castile begins, Valencia raises a new wall around a city far larger than the Islamic one.",
+     "Only Torres de Serrans and Torres de Quart will survive."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S1",
+     "S46"
+    ],
+    "conf": "medium",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top"
+   },
+   {
+    "y": 1377,
+    "title": "The Senyera coronada",
+    "lines": [
+     "Peter IV rewards the city's resistance to Castile with the right to use the royal arms and the crown.",
+     "The four red bars on gold now wear a crown. Before 1377 the city used the bars without one."
+    ],
+    "hold_s": 8,
+    "src": [
+     "S46",
+     "S56"
+    ],
+    "conf": "medium",
+    "target": "Cathedral",
+    "shot": "medium",
+    "note": "ES Wikipedia (Escudo de Valencia); primary document not read"
+   },
+   {
+    "y": 1398,
+    "title": "Torres de Serrans",
+    "lines": [
+     "The Serranos Towers, finished in 1398, are the northern gate of the city, beside the Turia."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "target": "Torres de Serranos",
+    "shot": "close"
+   },
+   {
+    "y": 1429,
+    "title": "El Micalet",
+    "lines": [
+     "The Cathedral's bell tower, the Miguelete, takes almost fifty years to build, from 1381 to 1429."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S7"
+    ],
+    "conf": "medium",
+    "target": "Micalet",
+    "shot": "close"
+   },
+   {
+    "y": 1460,
+    "title": "Torres de Quart",
+    "lines": [
+     "The western gate, built from 1441 to 1460 (Quart Towers), is the other gate that will outlive the walls."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S4",
+     "S1"
+    ],
+    "conf": "medium",
+    "target": "Torres de Quart",
+    "shot": "close"
+   },
+   {
+    "y": 1483,
+    "title": "La Llotja de la Seda",
+    "lines": [
+     "The Silk Exchange: a trading hall for the silk that made the city rich.",
+     "Today it is a UNESCO World Heritage Site."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S6"
+    ],
+    "conf": "high",
+    "target": "Lonja de la Seda",
+    "shot": "medium"
+   },
+   {
+    "y": 1500,
+    "title": "The largest city of the Crown",
+    "lines": [
+     "In the 15th century Valencia becomes the most populous city of the Crown of Aragon.",
+     "Around 1500, about 45,000 people live behind the walls."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S34",
+     "S33"
+    ],
+    "conf": "medium",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top"
+   },
+   {
+    "y": 1519,
+    "title": "The Germania",
+    "lines": [
+     "Craft guilds, armed to protect the city during the plague of 1519, turn against the nobles and the government of Charles V.",
+     "Once defeated, the revolt leaves the nobility dependent on royal power."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S47"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "medium"
+   },
+   {
+    "y": 1526,
+    "title": "Forced conversions",
+    "lines": [
+     "Charles V orders the Muslim vassals of the kingdom to convert in 1526."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "sober": true
+   },
+   {
+    "y": 1607,
+    "title": "Stone bridges over the Turia",
+    "lines": [
+     "By 1607 stone bridges cross the river at Serrans, Mar, Real and Sant Josep, joining the older Trinitat."
+    ],
+    "hold_s": 5.5,
+    "src": [
+     "S9",
+     "S10",
+     "S8",
+     "S11",
+     "S12"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4770,-0.3700,900]",
+    "shot": "wide"
+   },
    {
     "y": 1609,
-    "title": "Expulsion of the Moriscos",
-    "line": "A royal decree expels the Moriscos of the Kingdom of Valencia",
-    "sober": true,
-    "src": [
-     "S40"
+    "title": "The Moriscos are expelled",
+    "lines": [
+     "Philip III decrees the expulsion on 9 April 1609. In the Kingdom of Valencia the Moriscos are about a third of the people.",
+     "In 1613 the city's exchange bank, the Taula de canvi, goes bankrupt."
     ],
-    "conf": "medium"
+    "hold_s": 8,
+    "src": [
+     "S40",
+     "S34"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "sober": true
+   },
+   {
+    "y": 1667,
+    "title": "The Basilica and the Falles",
+    "lines": [
+     "The Basilica of the Mare de Déu dels Desemparats, begun in 1652, stands on the east side of the old forum square.",
+     "Each March, during the Falles, falleros bring flowers to the Virgin here on the 17th and 18th."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S54",
+     "S53",
+     "S52"
+    ],
+    "conf": "medium",
+    "target": "Basilica of the Virgin",
+    "shot": "medium"
+   },
+   {
+    "y": 1706.07,
+    "title": "The English ride in",
+    "lines": [
+     "On 24 January 1706 English cavalry under the Earl of Peterborough enter Valencia.",
+     "The city sides with Charles of Austria, who promised to respect its laws."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "medium"
    },
    {
     "y": 1707,
-    "title": "End of the Valencian Fueros",
-    "line": "After the War of the Spanish Succession, Valencia's own laws are abolished",
-    "sober": true,
-    "src": [
-     "S42"
+    "title": "The Furs are abolished",
+    "lines": [
+     "After the Bourbon victory at Almansa on 25 April 1707, Philip V repeals the Furs, Valencia's own laws, as punishment.",
+     "The Nueva Planta decrees fold the kingdom into the Crown of Castile."
     ],
-    "conf": "low",
-    "note": "29 giu 1707 da memoria [Likely], non letto"
+    "hold_s": 7,
+    "src": [
+     "S34",
+     "S48"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "sober": true
+   },
+   {
+    "y": 1758,
+    "title": "A prosperous Bourbon city",
+    "lines": [
+     "From 1758 to 1802 Valencia enjoys a period of affluence under Charles III. Silk is its main industry.",
+     "The Palau de Justícia is one of its monuments."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34"
+    ],
+    "conf": "medium",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top",
+    "note": "1758 = start of the period cited by Wikipedia; no single event"
+   },
+   {
+    "y": 1808,
+    "title": "The city rises",
+    "lines": [
+     "On 23 May 1808 Valencians rise in arms against the French.",
+     "Marshal Moncey's 9,000 men fail twice to take the city, on 26-28 June."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "Torres de Quart",
+    "shot": "wide"
+   },
+   {
+    "y": 1812.03,
+    "title": "Suchet takes Valencia",
+    "lines": [
+     "After a siege that began on 3 November 1811, Marshal Suchet forces General Blake to surrender in January 1812.",
+     "Joseph Bonaparte moves his court here that summer. The French leave in July 1813."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S32",
+     "S34"
+    ],
+    "conf": "high",
+    "target": "fire:Siege of 1812",
+    "shot": "wide"
+   },
+   {
+    "y": 1865.14,
+    "title": "The walls come down",
+    "lines": [
+     "Demolition of the 1356 wall begins on 20 February 1865.",
+     "Only Torres de Serrans and Torres de Quart are left standing."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "high",
+    "target": "Christian expansion within the 1356 wall",
+    "shot": "top"
+   },
+   {
+    "y": 1868.5,
+    "title": "The Citadel goes",
+    "lines": [
+     "The demolition of the old citadel, east of the center, ends after the Glorious Revolution of 1868."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34",
+     "S31"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4725,-0.3658,400]",
+    "shot": "medium"
+   },
+   {
+    "y": 1873,
+    "title": "Capital of a canton",
+    "lines": [
+     "During the Cantonal rebellion of 1873, Valencia is the capital of the short-lived Valencian Canton."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high"
    },
    {
     "y": 1877,
     "title": "Russafa joins the city",
-    "line": "The neighboring town of Russafa is annexed",
-    "sober": false,
+    "lines": [
+     "Russafa, Patraix, Benimaclet and Beniferri are annexed.",
+     "The city grows past the walls that have just come down."
+    ],
+    "hold_s": 5,
     "src": [
+     "S55",
      "S35"
     ],
-    "conf": "medium"
+    "conf": "high",
+    "target": "Russafa village",
+    "shot": "medium"
    },
    {
     "y": 1897,
     "title": "The seaside towns join",
-    "line": "El Grau, Cabanyal and Campanar are annexed",
-    "sober": false,
+    "lines": [
+     "El Grau, Cabanyal and Campanar are annexed. The city now reaches the sea."
+    ],
+    "hold_s": 5,
     "src": [
      "S35"
+    ],
+    "conf": "medium",
+    "target": "El Grau (Vilanova del Grau)",
+    "shot": "wide"
+   },
+   {
+    "y": 1900,
+    "title": "A city of 215,687",
+    "lines": [
+     "The silk industry is gone, but Valencia exports wine and citrus.",
+     "The 1900 census counts 215,687 people."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34",
+     "S55"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1909,
+    "title": "The Regional Exhibition",
+    "lines": [
+     "From 22 May to 22 December 1909 a fair shows the progress of Valencian farming and industry.",
+     "A concrete bridge is built over the Turia for it. A flood will destroy it in 1957."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S41",
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[39.4735,-0.3670,600]",
+    "shot": "medium"
+   },
+   {
+    "y": 1936.85,
+    "title": "Capital of the Republic",
+    "lines": [
+     "On 6 November 1936 the Spanish Republican government moves to Valencia.",
+     "It stays until 31 October 1937."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "City Hall (Casa Consistorial)",
+    "shot": "medium",
+    "sober": true
+   },
+   {
+    "y": 1939.25,
+    "title": "The war ends",
+    "lines": [
+     "On 30 March 1939 Valencia surrenders and Nationalist troops enter the city."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1950,
+    "title": "Half a million",
+    "lines": [
+     "The 1950 census counts 503,886 people.",
+     "Seven years later the river will flood the city."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S55"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1957.77,
+    "title": "The Turia floods",
+    "lines": [
+     "On 14 October 1957 the river floods the city. At least 81 people die.",
+     "The 1909 Exposition bridge is destroyed."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S34",
+     "S41",
+     "S50"
+    ],
+    "conf": "high",
+    "target": "area:[39.4760,-0.3730,1500]",
+    "shot": "top",
+    "note": "S50 (ES Wikipedia) says about a hundred dead; we use the lower, firmer figure",
+    "sober": true
+   },
+   {
+    "y": 1961,
+    "title": "The Plan Sur",
+    "lines": [
+     "A 1961 law approves the Plan Sur: send the Turia around the city in a new channel to the south."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S28",
+     "S29",
+     "S42"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4620,-0.3750,3000]",
+    "shot": "wide",
+    "note": "approval 22 Jul 1958, law 21 Dec 1961 from the internal control note; primary text not read"
+   },
+   {
+    "y": 1962,
+    "title": "A city of immigrants",
+    "lines": [
+     "The economy recovers in the early 1960s and the city grows fast, with workers drawn by major urban projects."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S34",
+     "S55"
     ],
     "conf": "medium"
    },
    {
-    "y": 1936,
-    "title": "Capital of the Republic",
-    "line": "The Spanish government moves to Valencia in November",
-    "sober": true,
+    "y": 1969.97,
+    "title": "The river is moved",
+    "lines": [
+     "On 22 December 1969 the Turia is switched into its new channel, south of the city.",
+     "The old riverbed is left dry: almost nine kilometers through the center."
+    ],
+    "hold_s": 6.5,
     "src": [
-     "S42"
+     "S42",
+     "S28",
+     "S50"
     ],
     "conf": "medium",
-    "note": "fonte primaria non letta; fine ott 1937 incerta"
+    "target": "area:[39.4620,-0.3750,3000]",
+    "shot": "wide"
+   },
+   {
+    "y": 1970,
+    "title": "Growing fast",
+    "lines": [
+     "The 1970 census counts 648,003 people, almost 30 percent more than in 1960."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S55"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1982,
+    "title": "The Senyera becomes official",
+    "lines": [
+     "After a long dispute over identity, the 1982 Statute of Autonomy makes the Senyera coronada, with a blue stripe at the hoist, the flag of the Valencian Community.",
+     "It was the city's own flag before it was the region's."
+    ],
+    "hold_s": 6.5,
+    "src": [
+     "S56"
+    ],
+    "conf": "medium",
+    "target": "Cathedral",
+    "shot": "medium"
+   },
+   {
+    "y": 1986,
+    "title": "A garden in the riverbed",
+    "lines": [
+     "The first stretches of the Jardí del Túria open in 1986. Ricardo Bofill designs its central stretch.",
+     "Today the park covers 136 hectares along almost nine kilometers."
+    ],
+    "hold_s": 6.5,
+    "src": [
+     "S50"
+    ],
+    "conf": "high",
+    "target": "area:[39.4720,-0.3640,1800]",
+    "shot": "top"
+   },
+   {
+    "y": 1989,
+    "title": "Calatrava arrives",
+    "lines": [
+     "The Pont Nou d'Octubre, Santiago Calatrava's first bridge in Valencia, crosses the old riverbed in 1989."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S50"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4720,-0.3640,1800]",
+    "shot": "wide"
+   },
+   {
+    "y": 1998,
+    "title": "Ciutat de les Arts i les Ciències",
+    "lines": [
+     "The City of Arts and Sciences rises at the seaward end of the old riverbed. The Hemisfèric opens in 1998.",
+     "The Museu de les Ciències, Palau de les Arts and the Oceanogràfic follow."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium",
+    "target": "Hemisferic",
+    "shot": "medium"
+   },
+   {
+    "y": 2007,
+    "title": "The America's Cup",
+    "lines": [
+     "Valencia is the first European city to host the America's Cup, in 2007."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[39.4590,-0.3200,900]",
+    "shot": "wide"
+   },
+   {
+    "y": 2024.83,
+    "title": "DANA, 29 October 2024",
+    "lines": [
+     "Flash floods strike the towns south of the city. More than 230 people die in the province of Valencia.",
+     "We remember them."
+    ],
+    "hold_s": 8,
+    "src": [
+     "S51"
+    ],
+    "conf": "high",
+    "target": "area:[39.4350,-0.4000,6000]",
+    "shot": "top",
+    "note": "sober: no water, no music change claimed here; no statement on the Plan Sur's role",
+    "sober": true
+   },
+   {
+    "y": 2025,
+    "title": "Valencia today",
+    "lines": [
+     "841,558 people live here, in the third-largest city in Spain."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high"
    }
-  ]
+  ],
+  "chapters": [
+   {
+    "y": 1238,
+    "title": "Conquest and Settlement"
+   },
+   {
+    "y": 1356,
+    "title": "Walls, Silk and Gold"
+   },
+   {
+    "y": 1519,
+    "title": "Revolt, Exile and Decline"
+   },
+   {
+    "y": 1812,
+    "title": "The Walls Come Down"
+   },
+   {
+    "y": 1957,
+    "title": "The River Is Moved"
+   },
+   {
+    "y": 1986,
+    "title": "The River Becomes a Garden"
+   }
+  ],
+  "recap": {
+   "seconds": 20,
+   "text": "788 years of Valencia, from one spot, in twenty seconds"
+  },
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  },
+  "label_years": true
  }
 }
