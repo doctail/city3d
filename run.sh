@@ -181,13 +181,13 @@ if [ "$MODE" = "full" ]; then
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
   if [ "$NT" -gt 0 ]; then   # tramonto (5 s) + crepuscolo in dissolvenza (5 s) dal fotogramma NT, poi notte: dusk.py
     uv pip install -q -p $PY opencv-python-headless numpy; rm -rf out/mix; $PY dusk.py out/full out/night out/mix $NT $NF
-    ffmpeg -loglevel error -y -framerate 24 -i out/mix/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+    ffmpeg -loglevel error -y -framerate 24 -i out/mix/$PAT.jpg -c:v libx264 -preset ${PRESET:-medium} -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   else
-    ffmpeg -loglevel error -y -framerate 24 -i out/full/$PAT.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
+    ffmpeg -loglevel error -y -framerate 24 -i out/full/$PAT.jpg -c:v libx264 -preset ${PRESET:-medium} -crf 18 -pix_fmt yuv420p out/${CITY}_full.mp4
   fi
   cp out/full/years.json out/years.json
   ls -lh out/${CITY}_full.mp4
-  step "5b/5 versione leggera per la chat"; light out/${CITY}_full.mp4 out/${CITY}_light.mp4
+  [ "${LIGHT:-0}" = "1" ] && { step "5b/5 versione leggera per la chat"; light out/${CITY}_full.mp4 out/${CITY}_light.mp4; }   # 12 nov: solo su richiesta (LIGHT=1)
   [ "${NOCOVER:-0}" = "1" ] || { step "5c/5 copertina"; cover; }
   step "FINITO"; echo "Scarica da city3d/out: ${CITY}_full.mp4 (per te), ${CITY}_light.mp4 + years.json + ${CITY}_cover_*.jpg (da caricare in chat)."; exit 0
 fi

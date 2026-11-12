@@ -13,26 +13,26 @@ NO AI imagery. Every frame is rendered from open data: from the mid-19th century
 Which city should grow next? Tell me in the comments. And if a building or a monument is missing from your neighborhood, tell me that too: I would rather fix it.
 
 CHAPTERS
-{{t:0}} Valencia today
-{{t:1238.0}} I · Conquest and Settlement: Balansiya surrenders (1238)
-{{t:1238.85}} The city empties and refills
-{{t:1262}} The Cathedral and the water court
-{{t:1356}} II · Walls, Silk and Gold: a war, a bigger wall (1356)
-{{t:1377}} The Senyera coronada (1377)
-{{t:1398}} Torres de Serrans and Torres de Quart
-{{t:1483}} La Llotja de la Seda (1483)
-{{t:1519}} III · Revolt, Exile and Decline: the Germania (1519)
-{{t:1609}} The Moriscos are expelled (1609)
-{{t:1707}} The Furs are abolished (1707)
-{{t:1812}} IV · The Walls Come Down: Suchet takes Valencia (1812)
-{{t:1865.14}} The walls come down (1865)
-{{t:1909}} The Regional Exhibition (1909)
-{{t:1936.85}} Capital of the Republic (1936)
-{{t:1957}} V · The River Is Moved: the Turia floods (1957)
-{{t:1961}} The Plan Sur (1961-69)
-{{t:1986}} VI · The River Becomes a Garden: Jardí del Túria (1986)
-{{t:1998}} Ciutat de les Arts i les Ciències (1998)
-{{t:2024.83}} DANA, 29 October 2024
+0:00 Valencia today
+0:09 I · Conquest and Settlement: Balansiya surrenders (1238)
+0:26 The city empties and refills
+0:46 The Cathedral and the water court
+1:08 II · Walls, Silk and Gold: a war, a bigger wall (1356)
+1:25 The Senyera coronada (1377)
+1:35 Torres de Serrans and Torres de Quart
+2:07 La Llotja de la Seda (1483)
+2:26 III · Revolt, Exile and Decline: the Germania (1519)
+2:55 The Moriscos are expelled (1609)
+3:16 The Furs are abolished (1707)
+3:52 IV · The Walls Come Down: Suchet takes Valencia (1812)
+4:14 The walls come down (1865)
+5:05 The Regional Exhibition (1909)
+5:31 Capital of the Republic (1936)
+5:48 V · The River Is Moved: the Turia floods (1957)
+6:07 The Plan Sur (1961-69)
+6:46 VI · The River Becomes a Garden: Jardí del Túria (1986)
+7:06 Ciutat de les Arts i les Ciències (1998)
+7:27 DANA, 29 October 2024
 {{t:recap}} 788 years in 20 seconds, from one spot
 {{t:sources}} Sources
 
