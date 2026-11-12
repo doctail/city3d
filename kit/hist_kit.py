@@ -448,7 +448,7 @@ def _load_grid(ctx, g):
 def landphases(ctx, objs=()):
     """history.water -> landphases. Le lastre 'urban' (suolo di citta') non possono precedere le case: la lastra diventa
     'urban' solo sotto le impronte (alone ~10 m, chiuso a ~16 m) degli edifici nati fino a quel decennio, 'field' altrove.
-    Una lastra 'urban' (o 'site') senza case (< 2/ha) e' un cantiere: c 'site' (terra nuda ocra) per tutta la finestra."""
+    Una lastra 'urban' (o 'site') senza case (zero) e' un cantiere: c 'site' (terra nuda ocra) per tutta la finestra."""
     out = []
     cen = [(_poly(o['r']).centroid, o['y']) for o in objs if len(o.get('r', [])) >= 3] if objs else []
     for w in ctx.H.get('water', []) or []:
@@ -458,7 +458,7 @@ def landphases(ctx, objs=()):
             out.append({'r': ring, 'from': a, 'to': b, 'c': c, 'name': nm}); continue
         poly = _poly(ring).buffer(0); x0, y0, x1, y1 = poly.bounds
         ins = [(pt, y) for pt, y in cen if x0 <= pt.x <= x1 and y0 <= pt.y <= y1 and poly.contains(pt)]
-        if c == 'site' or len(ins) < 2.0 * poly.area / 1e4:
+        if c == 'site' or not ins:
             out.append({'r': ring, 'from': a, 'to': b, 'c': 'site', 'name': nm}); continue
         by = collections.defaultdict(list)
         for pt, y in ins: by[math.ceil(y / 10) * 10].append(pt.buffer(10, quad_segs=2))

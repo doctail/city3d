@@ -5664,7 +5664,7 @@
     "y1": 1969.97,
     "dur": 10,
     "caption": "PLAN SUR: THE RIVER IS MOVED (1964-69)",
-    "target": "area:[39.4620,-0.3750,3000]",
+    "target": "area:[39.4509,-0.3874,5200]",
     "shot": "wide",
     "fx": "dig",
     "src": [
@@ -6286,7 +6286,7 @@
      "S42"
     ],
     "conf": "medium",
-    "target": "area:[39.4620,-0.3750,3000]",
+    "target": "area:[39.4509,-0.3874,5200]",
     "shot": "wide",
     "note": "approval 22 Jul 1958, law 21 Dec 1961 from the internal control note; primary text not read"
    },
@@ -6317,7 +6317,7 @@
      "S50"
     ],
     "conf": "medium",
-    "target": "area:[39.4620,-0.3750,3000]",
+    "target": "area:[39.4509,-0.3874,5200]",
     "shot": "wide"
    },
    {
