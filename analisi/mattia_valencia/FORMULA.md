@@ -41,3 +41,10 @@ The same channel, with the same formula, made Santiago de Compostela: 275 views 
   7. *Requested cities*: Zaragoza, Granada, Murcia, Cartagena, Córdoba, Málaga, Alicante, Bilbao, Burgos, Tarragona, Cádiz, Bucharest. He will pick the next one by vote: a race.
 - Shorts: 5 spin-offs on a single curiosity with a question in the title ("Why is there a bat on Valencia's coat of arms?", "This lake was ten times bigger") — 0.7–2.8K.
 - The Plan Sur topic is big in itself: CienciaX "Cómo Valencia movió un río entero" 419K.
+
+## Related videos on the page (12/11, list pasted by Fabio) [Certain on the numbers]
+- **The niche is large and still open to small channels.** The City Clock, Belgrade 181K (818 subscribers). Mapnificent, Melbourne 74K in 2 days. nobodycareswhatiswrittenhere: Madrid 228K in 9 days, Buenos Aires 473K. TimeLoop: Málaga 203K, Rotterdam 121K, Bruges 129K, Delft 103K, Strasbourg 41K.
+- **A strong variant: "Fixed-Camera Timelapse"** (Timelapse Studio: Paris 2.7M, Rome 2.9M, New York 1.5M; Berlin 255K in 5 days, 15–24 min). Same format from Epoch Timelapse (Vatican, 30K in 4 days). One fixed viewpoint for the whole video.
+- **Same-city repeats work**: London (CityEons 743K, then City Ages 154), Seville (TimeLoop 4.4K in 16 hours after Avenues of Time), Melbourne (ChronoCity 125K and Mapnificent 74K two weeks apart).
+- **The Plan Sur as a topic**: CienciaX "Cómo Valencia movió un río entero" 419K.
+- Our Seville appears in the list with 138 views: proof that Year Built's old format (5:27) does not hold up next to them.
