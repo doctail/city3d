@@ -4,3 +4,7 @@
 [build] monumenti: 1571 parti; tolti 210 edifici nelle impronte (2s, 524 MB)
 /home/user/city3d/build_render.py:69: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 2112 blocchi per anno, 2137497 vertici (8s, 743 MB)
+/home/user/city3d/build_render.py:241: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (11s, 825 MB)

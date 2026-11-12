@@ -22,7 +22,7 @@ PH = [{'y': 1900, 'y1': 1910}]
 
 def lm(name, kind_, xy, **params):
     d = {'name': name, 'kind': kind_, 'xy': list(xy), 'phases': PH}
-    for k in ('footprint', 'line_xy', 'demolished'):
+    for k in ('footprint', 'line_xy', 'demolished', 'phases'):
         if k in params: d[k] = params.pop(k)
     d['params'] = params
     return d
@@ -44,10 +44,10 @@ LANDMARKS = [
     lm('Cathedral', 'cathedral', (-215, 120), footprint='auto', tower_ref='Cathedral tower', facade_towers=0),
     lm('Cathedral tower', 'bell_tower', (-262, 92), style='flat'),
     lm('Church', 'church', (-120, 120)),
-    lm('Domed church', 'church_dome', (-50, 120)),
+    lm('Domed church', 'church_dome', (-50, 120), phases=[{'y': 1600, 'y1': 1610}]),
     lm('Gate', 'gate_towers', (30, 120)),
     lm('Gate D', 'gate_towers', (90, 120), tower_plan='D', gap=10, h=26),
-    lm('Palace', 'palace_courtyard', (175, 120), corner_towers=True),
+    lm('Palace', 'palace_courtyard', (175, 120), corner_towers=True, phases=[{'y': 1550, 'y1': 1570}]),
     # fila C: (y = 0)
     lm('Market', 'hall_market', (-230, 0)),
     lm('Station', 'station', (-115, 0), l=90, w=70),

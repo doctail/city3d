@@ -134,6 +134,7 @@ class Builder:
         self.parts, self.ctx = [], ctx
 
     def _add(self, f, g, **k):
+        if k.get('a') == A_WIN and self.ctx is not None and not self.ctx.windows: k['a'] = A_STONE   # pietra: niente griglia di finestre
         k['_f'] = max(0.0, min(1.0, float(f))); k['_g'] = g; self.parts.append(k); return k
 
     def prism(self, geom, z0, z1, c, a=A_STONE, f=0.0, g='body', top=None, simp=0.15):
@@ -223,6 +224,7 @@ class Ctx:
     def __init__(self, name, F, p, fp=None, line=None, bh=None, style=None):
         self.name, self.F, self.p, self.fp, self.line, self.bh = name, F, dict(p or {}), fp, line, bh
         self.style = STYLE_ROOF.get(style or '', STYLE_ROOF['mediterranean'])
+        self.windows = True   # deciso da build_landmark (stone_default)
 
     def g(self, k, d=None):
         v = self.p.get(k)
@@ -241,6 +243,31 @@ class Ctx:
 
 # ================================================================== PRESET
 PRESETS = {}
+# preset in pietra: senza finestre "da ufficio" (a=0.05) salvo params.windows; palazzi/chiese a cupola/edifici dal 1800 con finestre
+STONE_KINDS = {'tower_square', 'tower', 'tower_round', 'bell_tower', 'campanile', 'cathedral', 'church', 'gate_towers', 'gate',
+               'castle', 'wall_segment', 'walls', 'bridge_arches', 'bridge'}
+STONE_BEFORE = {'palace_courtyard': 1800, 'palace': 1800, 'church_dome': 1800, 'central_church': 1800, 'bullring': 1800,
+                'arena': 1800, 'amphitheatre': 1800, 'generic_footprint': 1800, 'footprint': 1800, 'building': 1800}
+
+
+def openings(B, F, x, y, w, z0, z1, f, g='body', n=1, ow=None, c='dark', faces=4):
+    """Aperture scure (bifore, feritoie) sulle facce di una torre quadrata di lato w centrata in (x, y) del riferimento F."""
+    ow = ow or max(0.6, w * 0.16)
+    for k in range(faces):
+        a = math.pi / 2 * k; ds, dt = math.cos(a), math.sin(a)
+        for j in range(n):
+            o = (j - (n - 1) / 2) * w / max(n, 1) * 0.9
+            cs, ct = x + ds * (w / 2) - dt * o, y + dt * (w / 2) + ds * o
+            q = F.rect(cs - abs(ds) * 0.2 - abs(dt) * ow / 2, cs + abs(ds) * 0.2 + abs(dt) * ow / 2,
+                       ct - abs(dt) * 0.2 - abs(ds) * ow / 2, ct + abs(dt) * 0.2 + abs(ds) * ow / 2)
+            B.prism(q, z0, z1, c, A_STONE, f, g, simp=0)
+
+
+def openings_ring(B, x, y, r, z0, z1, f, g='body', n=4, ow=1.0, c='dark'):
+    """Aperture scure su una pianta circolare/ottagonale (raggio r), n direzioni."""
+    for k in range(n):
+        a = 2 * math.pi * (k + 0.5) / n
+        B.prism(npoly(x + r * math.cos(a), y + r * math.sin(a), ow / 2, 4, a + math.pi / 4), z0, z1, c, A_STONE, f, g, simp=0)
 
 
 def preset(name, *aliases):
@@ -319,7 +346,9 @@ def tower_square(ctx):
     B.prism(sq.buffer(0.7, join_style=2), 0, 2.5, 'stone2', f=0.0, g='found')
     zb = h * (0.8 if belfry else 1.0); n = 3
     for i in range(n): B.prism(sq, 2.5 + (zb - 2.5) * i / n, 2.5 + (zb - 2.5) * (i + 1) / n, c, A_STONE, 0.15 + 0.17 * i, 'body')
-    if belfry: B.prism(sq, zb, h, c, A_WIN, 0.68, 'belfry')
+    if belfry:
+        B.prism(sq, zb, h, c, A_WIN, 0.68, 'belfry')
+        if not ctx.windows: openings(B, F, 0, 0, w, zb + 1.2, h - 1.2, 0.7, 'belfry', n=2)
     _tower_top(B, F, 0, 0, w, h, top, c, rc, 0.88)
     return B
 
@@ -334,7 +363,9 @@ def tower_round(ctx):
     B.cyl(x, y, rad + 0.8, 0, 2.0, 'stone2', f=0.0, g='found', seg=seg)
     belfry = ctx.g('belfry', False); zb = h * (0.84 if belfry else 1.0)
     for i in range(3): B.cyl(x, y, rad, 2.0 + (zb - 2) * i / 3, 2.0 + (zb - 2) * (i + 1) / 3, c, A_STONE, 0.15 + 0.17 * i, 'body', seg)
-    if belfry: B.cyl(x, y, rad, zb, h, c, A_WIN, 0.68, 'belfry', seg)
+    if belfry:
+        B.cyl(x, y, rad, zb, h, c, A_WIN, 0.68, 'belfry', seg)
+        if not ctx.windows: openings_ring(B, x, y, rad, zb + 1, h - 1, 0.7, 'belfry', n=4, ow=rad * 0.35)
     if top == 'cone':
         B.cyl(x, y, rad + 0.5, h, h + 0.8, 'stone', f=0.82, g='roof', seg=seg)
         B.cone(x, y, rad + 0.7, 0.2, h + 0.8, h + 0.8 + rad * float(ctx.g('cone_k', 1.8)), rc, f=0.9, g='roof', seg=seg)
@@ -386,6 +417,7 @@ def bell_tower(ctx):
         stages = [(2.0, h * 0.55, w, A_STONE), (h * 0.55, h * 0.78, w * 0.86, A_WIN), (h * 0.78, h, w * 0.72, A_WIN)]
         for i, (z0, z1, ww, a) in enumerate(stages):
             shaft(z0, z1, ww, a, 0.12 + 0.22 * i); course(z1, ww, 0.2 + 0.22 * i)
+            if i >= 1 and not ctx.windows: openings(B, F, 0, 0, ww, z0 + 1.5, z1 - 1.2, 0.14 + 0.22 * i, n=1, ow=ww * 0.3)
             if i >= 1:   # vasi/pinnacoli agli angoli
                 for sx in (-1, 1):
                     for sy in (-1, 1):
@@ -398,6 +430,9 @@ def bell_tower(ctx):
         z0, z1 = 2.0 + (zb - 2) * i / n, 2.0 + (zb - 2) * (i + 1) / n
         shaft(z0, z1, w, A_STONE, 0.12 + 0.17 * i); course(z1, w, 0.13 + 0.17 * i)
     shaft(zb + 0.7, h, w, A_WIN, 0.66, 'belfry')
+    if not ctx.windows:
+        if plan == 'octagon': openings_ring(B, x, y, w / 2 + 0.1, zb + 2, h - 1.2, 0.68, 'belfry', n=8, ow=w * 0.16)
+        else: openings(B, F, 0, 0, w, zb + 2, h - 1.2, 0.68, 'belfry', n=2)
     if style == 'gothic':
         if plan == 'octagon':
             B.prism(npoly(x, y, (w / 2 + 0.6) / math.cos(math.pi / 8), 8), h, h + 0.8, 'stone', A_STONE, 0.8, 'roof', simp=0)
@@ -454,14 +489,24 @@ def cathedral(ctx):
         s0, s1 = edges[i + 1], edges[i]
         B.prism(F.rect(s0, s1, -nw / 2, nw / 2), ah - 0.5, nh, c, A_WIN, 0.16 + 0.1 * i, 'nave', simp=0)
         B.gable(F, s0, s1, -nw / 2 - 0.4, nw / 2 + 0.4, nh, rh, c, rc, 0.22 + 0.1 * i, 'roof')
-        if i < n - 1 or True:   # contrafforti/archi rampanti: lame basse ai lati
-            for sgn in (-1, 1):
-                sm = (s0 + s1) / 2
-                B.beam(F.p3(sm, sgn * (nw / 2 + (W / 2 - nw / 2) * 0.85), ah + 0.5), F.p3(sm, sgn * (nw / 2 + 0.3), nh - 3), 1.6, 2.4, 'stone', A_STONE, 0.2 + 0.1 * i, 'nave')
+        for sgn in (-1, 1):   # contrafforti sul muro esterno delle navate (pilastro + pinnacolo) e finestre ogivali della navata alta
+            sm = s1 if i == 0 else (s0 + s1) / 2
+            seg_ = body.intersection(LineString([F.at(sm, 0), F.at(sm, sgn * (W + 20))]))
+            te = max((abs(F.u[0] * 0 + (px - F.cx) * F.v[0] + (py - F.cy) * F.v[1]) for px, py in getattr(seg_, 'coords', [])), default=W / 2)
+            pc = (sm, sgn * (te + 1.0))
+            B.prism(F.rect(pc[0] - 1.0, pc[0] + 1.0, pc[1] - 1.4, pc[1] + 1.4), 0, ah + 3, c, A_STONE, 0.14 + 0.1 * i, 'nave', simp=0)
+            px_, py_ = F.at(*pc); B.cone(px_, py_, 1.3, 0.1, ah + 3, ah + 7.5, c, A_STONE, 0.2 + 0.1 * i, 'nave', seg=4)
+            if not ctx.windows:
+                wx_ = (s0 + s1) / 2
+                B.prism(F.rect(wx_ - 1.1, wx_ + 1.1, sgn * (nw / 2) - 0.2, sgn * (nw / 2) + 0.2), ah + 2, nh - 2.5, 'dark', A_STONE, 0.17 + 0.1 * i, 'nave', simp=0)
     # transetto (bracci oltre la navata solo senza impronta)
     if transept:
         ext = 0.0 if ctx.fp is not None else W * 0.18
         tw = nw
+        if not ctx.windows:   # rosoni dei bracci del transetto
+            for sg in (-1, 1):
+                te_ = sg * (W / 2 + ext); rr_ = nw * 0.14
+                B.prism(F.rect(s_c - rr_, s_c + rr_, te_ - 0.2 * sg - 0.01, te_ + 0.25 * sg), nh * 0.62 - rr_, nh * 0.62 + rr_, 'dark', A_STONE, 0.14, 'transept', simp=0)
         B.prism(F.rect(s_c - tw / 2, s_c + tw / 2, -W / 2 - ext, W / 2 + ext), 0, nh, c, A_WIN, 0.12, 'transept', simp=0)
         B.gable(F, s_c - tw / 2 - 0.4, s_c + tw / 2 + 0.4, -W / 2 - ext, W / 2 + ext, nh, rh, c, rc, 0.21, 'roof', along='v')
         cx_, cy_ = F.at(s_c, 0)
@@ -485,8 +530,9 @@ def cathedral(ctx):
     B.prism(F.rect(s_w, s_w + 3.0, -fwid, fwid), 0, nh, c, A_STONE, 0.6, 'facade', simp=0)
     B.wedge(F.rect(s_w, s_w + 3.0, -fwid, 0), nh, nh, fz, F.v, c, c, A_STONE, 0.64, 'facade')
     B.wedge(F.rect(s_w, s_w + 3.0, 0, fwid), nh, nh, fz, (-F.v[0], -F.v[1]), c, c, A_STONE, 0.64, 'facade')
-    rx, ry = F.at(s_w - 0.2, 0)
-    B.beam([rx, ry, nh * 0.62 - nw * 0.12], [rx, ry, nh * 0.62 + nw * 0.12], 0.1, nw * 0.24, 'dark', A_STONE, 0.66, 'facade')  # rosone
+    rr_ = nw * 0.14   # rosone e portale scuri, nel piano della facciata
+    B.prism(F.rect(s_w - 0.25, s_w + 0.2, -rr_, rr_), nh * 0.62 - rr_, nh * 0.62 + rr_, 'dark', A_STONE, 0.66, 'facade', simp=0)
+    B.prism(F.rect(s_w - 0.25, s_w + 0.2, -nw * 0.12, nw * 0.12), 0.01, nh * 0.32, 'dark', A_STONE, 0.66, 'facade', simp=0)
     # torri di facciata
     if ntow:
         tw_ = max(7.0, (W - nw) / 2 * 0.95); th = float(ctx.g('tower_h', nh * 1.7))
@@ -506,7 +552,8 @@ def church(ctx):
     p = dict(dict(transept=False, facade_towers=1, crossing='none', nave_h=16.0, aisle_h=9.0), **ctx.p)
     if ctx.fp is None: p.setdefault('l', 45.0); p.setdefault('w', 18.0)
     p.setdefault('nave_w', (p.get('w') or ctx.F.W or 18.0) * 0.55); p.setdefault('tower_h', 30.0); p.setdefault('slices', 2)
-    return cathedral(Ctx(ctx.name, ctx.F, p, ctx.fp, ctx.line, ctx.bh))
+    c2 = Ctx(ctx.name, ctx.F, p, ctx.fp, ctx.line, ctx.bh); c2.style, c2.windows = ctx.style, ctx.windows
+    return cathedral(c2)
 
 
 @preset('church_dome', 'central_church')
@@ -537,6 +584,7 @@ def church_dome(ctx):
         B.cone(x, y, R + 0.4, rd + 0.5, bh, bh + (R - rd) * 0.35, rc, f=0.4, g='roof', seg=n)
         z0 = bh + (R - rd) * 0.35
     B.cyl(x, y, rd, z0 - 1.0, z0 + dh, c, A_WIN, 0.55, 'drum', seg=20)
+    if not ctx.windows: openings_ring(B, x, y, rd + 0.05, z0 + dh * 0.25, z0 + dh * 0.8, 0.57, 'drum', n=8, ow=rd * 0.22)
     B.cyl(x, y, rd + 0.5, z0 + dh, z0 + dh + 0.8, 'stone', A_STONE, 0.6, 'drum', seg=20)
     B.dome(x, y, rd, z0 + dh + 0.8, hz, dc, f=0.72, g='dome')
     zt = z0 + dh + 0.8 + hz
@@ -572,6 +620,9 @@ def gate_towers(ctx):
         B.prism(g_, h * 0.5, h, c, A_STONE, 0.4, 'towers')
         B.prism(g_.buffer(0.6, join_style=2), h, h + 1.0, c, A_STONE, 0.75, 'top')
         if mer: B.merlons(g_.buffer(0.6, join_style=2), h + 1.0, c, f=0.9, maxn=22)
+        for zz in (h * 0.45, h * 0.75):   # feritoie verso fuori
+            ox, oy = F.at(s, (dep / 2 if tp in ('polygon', 'D') else dep * 0.12) + r * (0.8 if tp != 'D' else 0.8) - 0.1)
+            B.prism(npoly(ox, oy, 0.55, 4, math.radians(F.ang) + math.pi / 4), zz, zz + 3.0, 'dark', A_STONE, 0.45, 'towers', simp=0)
     # corpo centrale: due spalle + architrave sopra l'arco
     gi = gap / 2 + 0.1
     B.prism(F.rect(-gi, -aw / 2, -dep / 2, dep / 2), 0, bh, c, A_STONE, 0.3, 'body', simp=0)
@@ -694,6 +745,17 @@ def palace_courtyard(ctx):
         B.prism(q, 1.2, h, c, A_WIN, 0.15 + 0.12 * i, 'body')
         B.prism(q.buffer(0.4, join_style=2), h, h + 0.6, 'stone', A_STONE, 0.2 + 0.12 * i, 'body')
         for qq in _polys(q): B.hip(qq.buffer(0.4, join_style=2), h + 0.6, min(ww, 14) * 0.38, rc, 0.7 + 0.04 * i)
+    if not ctx.windows:   # palazzo antico: poche finestre scure al piano nobile (lati lunghi) invece della griglia
+        for sg in (-1, 1):
+            nwin = max(2, min(7, int(L / 9)))
+            for j in range(nwin):
+                sx_ = -L / 2 + L * (j + 0.5) / nwin
+                B.prism(F.rect(sx_ - 1.0, sx_ + 1.0, sg * W / 2 - 0.25, sg * W / 2 + 0.25), h * 0.5, h * 0.5 + 3.2, 'dark', A_STONE, 0.3, 'body', simp=0)
+        for sg in (-1, 1):
+            nwin = max(2, min(5, int(W / 9)))
+            for j in range(nwin):
+                tx_ = -W / 2 + W * (j + 0.5) / nwin
+                B.prism(F.rect(sg * L / 2 - 0.25, sg * L / 2 + 0.25, tx_ - 1.0, tx_ + 1.0), h * 0.5, h * 0.5 + 3.2, 'dark', A_STONE, 0.3, 'body', simp=0)
     pw = min(L * 0.22, 16.0)   # portale
     B.prism(F.rect(-pw / 2, pw / 2, -W / 2 - 1.2, -W / 2 + ww), 0, h + 4, ctx.g('portal_c', 'stone'), A_STONE, 0.6, 'portal', simp=0)
     B.gable(F, -pw / 2, pw / 2, -W / 2 - 1.2, -W / 2 + ww, h + 4, 2.6, ctx.g('portal_c', 'stone'), rc, 0.8, 'roof', along='v')
@@ -1052,6 +1114,7 @@ def castle(ctx):
             _tower_top(B, Frame(px, py, F.ang), 0, 0, 9, h + 5, ctx.g('tower_top', 'cone' if ctx.g('cones') else 'crenel'), c, rc, 0.7, plan='round', g='towers')
     kw = min(L, W) * 0.32; kh = float(ctx.g('keep_h', h * 2.6))
     B.prism(F.rect(-kw / 2, kw / 2, -kw / 2, kw / 2), 0, kh, c, A_STONE, 0.45, 'keep', simp=0)
+    openings(B, F, 0, 0, kw, kh * 0.6, kh * 0.6 + 3.5, 0.5, 'keep', n=2, ow=0.9)
     _tower_top(B, F, 0, 0, kw, kh, ctx.g('keep_top', 'crenel'), c, rc, 0.85, g='keep')
     return B
 
@@ -1218,6 +1281,10 @@ def build_landmark(lm, P=None, fps=None, style=None, others=None):
             ox, oy = (map(float, o['xy']) if o.get('xy') is not None else L(o['at']))
             prm['_tower_cut'] = Point(ox, oy).buffer(float(prm.get('tower_cut_r', 9.0)))
     ctx = Ctx(name, F, prm, fp, line, bh, style)
+    y_first = min(q['y'] for q in _phases(lm))
+    win = prm.get('windows')
+    if win is None: win = not (kind in STONE_KINDS or (kind in STONE_BEFORE and y_first < STONE_BEFORE[kind]))
+    ctx.windows = bool(win)
     B = PRESETS[kind](ctx)
     parts = assign_years(B.parts, lm)
     for p in parts: p['name'] = name
