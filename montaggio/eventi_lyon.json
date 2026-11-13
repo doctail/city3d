@@ -74,38 +74,32 @@
    "sub": "May 1856"
   },
   {
-   "t_in": 300.63,
-   "t_out": 306.63,
-   "title": "Rue Impériale cuts the Presqu'île",
-   "sub": "1850s"
-  },
-  {
-   "t_in": 319.79,
-   "t_out": 330.79,
+   "t_in": 315.71,
+   "t_out": 326.71,
    "title": "Basilica of Notre-Dame de Fourvière",
    "sub": "1872–84"
   },
   {
-   "t_in": 368.24,
-   "t_out": 385.24,
+   "t_in": 364.16,
+   "t_out": 381.16,
    "title": "The bridges are blown up",
    "sub": "Sept 1944"
   },
   {
-   "t_in": 426.42,
-   "t_out": 437.42,
+   "t_in": 422.35,
+   "t_out": 433.35,
    "title": "La Part-Dieu and its Crayon tower",
    "sub": "1977"
   },
   {
-   "t_in": 441.34,
-   "t_out": 446.34,
+   "t_in": 437.27,
+   "t_out": 442.27,
    "title": "Part-Dieu station opens",
    "sub": "1983"
   },
   {
-   "t_in": 503.3,
-   "t_out": 514.3,
+   "t_in": 499.23,
+   "t_out": 510.23,
    "title": "Musée des Confluences",
    "sub": "2014"
   }
@@ -403,8 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 319.79,
-   "t_out": 325.79,
+   "t_in": 315.71,
+   "t_out": 321.71,
    "date": "1872",
    "title": "A vow in stone",
    "lines": [
@@ -414,8 +408,8 @@
    "sober": false
   },
   {
-   "t_in": 325.79,
-   "t_out": 330.79,
+   "t_in": 321.71,
+   "t_out": 326.71,
    "date": "1884",
    "title": "The basilica stands",
    "lines": [
@@ -424,8 +418,8 @@
    "sober": false
   },
   {
-   "t_in": 368.24,
-   "t_out": 375.24,
+   "t_in": 364.16,
+   "t_out": 371.16,
    "date": "1944",
    "title": "The bridges fall",
    "lines": [
@@ -435,8 +429,8 @@
    "sober": true
   },
   {
-   "t_in": 375.24,
-   "t_out": 380.24,
+   "t_in": 371.16,
+   "t_out": 376.16,
    "date": "1944",
    "title": "Lyon is free",
    "lines": [
@@ -445,8 +439,8 @@
    "sober": true
   },
   {
-   "t_in": 380.24,
-   "t_out": 385.24,
+   "t_in": 376.16,
+   "t_out": 381.16,
    "date": "1946",
    "title": "Lafayette reopens",
    "lines": [
@@ -455,8 +449,8 @@
    "sober": false
   },
   {
-   "t_in": 387.55,
-   "t_out": 392.55,
+   "t_in": 383.47,
+   "t_out": 388.47,
    "date": "1952",
    "title": "Pont Pasteur reopens",
    "lines": [
@@ -465,8 +459,8 @@
    "sober": false
   },
   {
-   "t_in": 399.4,
-   "t_out": 405.4,
+   "t_in": 395.32,
+   "t_out": 401.32,
    "date": "1960",
    "title": "Barracks into business",
    "lines": [
@@ -476,8 +470,8 @@
    "sober": false
   },
   {
-   "t_in": 426.42,
-   "t_out": 431.42,
+   "t_in": 422.35,
+   "t_out": 427.35,
    "date": "1974",
    "title": "The metro",
    "lines": [
@@ -486,8 +480,8 @@
    "sober": false
   },
   {
-   "t_in": 431.42,
-   "t_out": 437.42,
+   "t_in": 427.35,
+   "t_out": 433.35,
    "date": "1975",
    "title": "Europe's biggest urban mall",
    "lines": [
@@ -497,8 +491,8 @@
    "sober": false
   },
   {
-   "t_in": 460.46,
-   "t_out": 465.46,
+   "t_in": 456.39,
+   "t_out": 461.39,
    "date": "1998",
    "title": "A world heritage hill",
    "lines": [
@@ -507,8 +501,8 @@
    "sober": false
   },
   {
-   "t_in": 503.3,
-   "t_out": 508.3,
+   "t_in": 499.23,
+   "t_out": 504.23,
    "date": "2014",
    "title": "Part-Dieu again",
    "lines": [
@@ -517,8 +511,8 @@
    "sober": false
   },
   {
-   "t_in": 508.3,
-   "t_out": 514.3,
+   "t_in": 504.23,
+   "t_out": 510.23,
    "date": "2014",
    "title": "Where two rivers meet",
    "lines": [
@@ -527,8 +521,8 @@
    "sober": false
   },
   {
-   "t_in": 522.0,
-   "t_out": 527.0,
+   "t_in": 517.92,
+   "t_out": 522.92,
    "date": "2023",
    "title": "Lyon today",
    "lines": [
@@ -563,26 +557,26 @@
    "title": "Floods and Boulevards"
   },
   {
-   "t_in": 365.44,
-   "t_out": 368.24,
+   "t_in": 361.36,
+   "t_out": 364.16,
    "num": "V",
    "title": "Bridges and Liberation"
   },
   {
-   "t_in": 396.6,
-   "t_out": 399.4,
+   "t_in": 392.52,
+   "t_out": 395.32,
    "num": "VI",
    "title": "Towers and Rivers"
   }
  ],
  "cta": {
-  "t_in": 610.5,
-  "t_out": 615.0,
+  "t_in": 606.5,
+  "t_out": 611.0,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 615.0,
-  "t_out": 623.0,
+  "t_in": 611.0,
+  "t_out": 619.0,
   "items": [
    "Wikipedia EN, Lugdunum",
    "Wikipedia EN, History of Lyon",

@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-13 15:16. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-13 15:24. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -81,11 +81,11 @@ Generato da `python -m kit.qa` il 2026-11-13 15:16. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (5 s)
-  - oggetti citta' 1706, cambi in tutto il video 45848, max in un fotogramma 309 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
+  - oggetti citta' 1706, cambi in tutto il video 45484, max in un fotogramma 309 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 193 m/s (limite 250), mediana 21
+  - 193 m/s (limite 250), mediana 22
 - **PASS** drone: accelerazione massima
-  - 115 m/s2 (limite 120), 99% 56
+  - 115 m/s2 (limite 120), 99% 54
 - **PASS** drone: jerk massimo
   - 165 m/s3 (limite 200), 99% 46
 - **PASS** drone: distanza minima da terreno e tetti
@@ -93,7 +93,7 @@ Generato da `python -m kit.qa` il 2026-11-13 15:16. Esito complessivo: **WARN**
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 18 tenute, 0 solo sorvolate; hover 168 s, volo 402 s; 
+  - 0 tolte, 17 tenute, 0 solo sorvolate; hover 162 s, volo 404 s; 
 - **PASS** drone: hover quasi fermo
   - v max in hover 6.8 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: esattezza anni
@@ -101,17 +101,17 @@ Generato da `python -m kit.qa` il 2026-11-13 15:16. Esito complessivo: **WARN**
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 42.8 s (460-503 s); 8 oltre 15 s: 56-96, 243-259, 277-301, 301-320, 326-368, 399-426
+  - vuoto massimo 42.8 s (456-499 s); 7 oltre 15 s: 56-96, 243-259, 277-316, 322-364, 395-422, 437-456
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 30.81 | 1:00 21.45 | 2:00  5.58 | 3:00  0.89 | 4:00  0.09 | 5:00  1.24 | 6:00  0.62 | 7:00  0.58 | 8:00  0.34 | 9:00  0.04 | 10:00  0.00
-- **PASS** 18 soste ben formate
+  - 0:00 30.81 | 1:00 21.45 | 2:00  5.58 | 3:00  0.89 | 4:00  0.21 | 5:00  1.22 | 6:00  0.55 | 7:00  0.57 | 8:00  0.32 | 9:00  0.03 | 10:00  0.00
+- **PASS** 17 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
   - primo a 12.9 s
 - **PASS** notte
-  - night_t=583.048908033696, schedule_lyon_night.json ok
+  - night_t=578.9753203096869, schedule_lyon_night.json ok
 
 ## Immagini
 

@@ -1361,20 +1361,6 @@
     "weight": "max"
    },
    {
-    "y0": 1857.2,
-    "y1": 1860,
-    "dur": 6,
-    "caption": "Rue Impériale cuts the Presqu'île (1850s)",
-    "target": "area:[45.7625,4.8355,600]",
-    "shot": "medium",
-    "fx": "dig",
-    "src": [
-     "S8",
-     "S16"
-    ],
-    "conf": "low"
-   },
-   {
     "y0": 1856.41,
     "y1": 1856.45,
     "dur": 6,
