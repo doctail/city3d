@@ -137,6 +137,26 @@ def fx_list(spec):
     return [{'fx': s} if isinstance(s, str) else dict(s) for s in spec]
 
 
+def music_playlist(DUR, LA, LB, fade_a, fade_b, times, b_offset=5.0, X=3.0, CLOSE=8.0, a_repeat_off=30.0):
+    """Musica per qualsiasi durata (fino a ~15 min): lista di segmenti (traccia, offset, t0, t1, fade_in, fade_out, gain) A, B, A, B...
+    Ogni traccia suona fino al suo calo naturale (fade_a / fade_b); i passaggi sono dissolvenze incrociate di X s, spostati sull'inizio di una sosta
+    entro 12 s se il segmento resta >= 60% della sua durata utile; l'ultimo segmento si taglia a DUR con dissolvenza di chiusura di CLOSE s.
+    La durata non viene mai forzata: se DUR e' piu' corta delle tracce si taglia, se e' piu' lunga si rientra su A."""
+    order = [('A', 0.0, fade_a, 1.0)] + ([('B', b_offset, fade_b, 0.62)] if LB else [])
+    segs = []; t = 0.0; i = 0
+    while True:
+        name, off0, fo, gain = order[i % len(order)]
+        off = off0 if (name == 'B' or i == 0) else a_repeat_off      # i rientri di A saltano l'intro
+        L = fo - off; end_nat = t + L
+        fin = 0.0 if i == 0 else X
+        if end_nat >= DUR - 15.0 or L <= 20.0:
+            segs.append((name, off, t, DUR, fin, CLOSE, gain)); return segs
+        tb = end_nat
+        cand = [t0 for t0 in times if abs(t0 - tb) <= 12.0 and t0 - t >= 0.6 * L and t0 <= end_nat]
+        if cand: tb = max(cand)
+        segs.append((name, off, t, tb + X, fin, X, gain)); t = tb; i += 1
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('slug'); ap.add_argument('--A', default=os.environ.get('KIT_MUSIC_A')); ap.add_argument('--B', default=os.environ.get('KIT_MUSIC_B'))
@@ -240,7 +260,8 @@ def main():
         if fo: g[-fo:] = np.minimum(g[-fo:], np.linspace(1, 0, fo) ** 1.4)
         mus[i0:i0 + n_] += s_ * (g * gain)[:, None]
     LA = len(A_) / SR; cut1 = cut2 = None
-    if B_ is not None and times:
+    AUTO = bool(S.get('duration_auto'))
+    if B_ is not None and times and not AUTO:
         cut1 = by_name(mc['b_start_sosta']) if mc.get('b_start_sosta') else (near(S['b_start']) if S.get('b_start') else near(FULL * 0.5))
         LB = len(B_) / SR; need = FULL - cut1 + a.b_offset
         if mc.get('a_return_sosta'): cut2 = by_name(mc['a_return_sosta'])
@@ -249,7 +270,15 @@ def main():
             cut2 = max(ok) if ok else None
         if cut2 is not None and cut2 - cut1 + 1.6 + a.b_offset > LB - 1.0: sys.exit(f'ERRORE: B troppo corta: servono {cut2 - cut1 + 1.6:.1f} s dopo {a.b_offset}s')
     FF_TXT = f'tagli musicali: A->B {cut1}, B->A {cut2}' if cut1 else 'musica: solo A'
-    if cut1 is None or cut1 >= DUR:
+    if AUTO:   # la durata viene dal ritmo della storia: la musica la segue (playlist con dissolvenze e chiusura)
+        mm = {}
+        mp_ = f"{ROOT}/kit/music/{story.get('regia', {}).get('music')}.json"
+        if os.path.exists(mp_): mm = json.load(open(mp_)).get('tracks', {})
+        fa = mm.get('A', {}).get('fade_out', LA - 27.0); fb = mm.get('B', {}).get('fade_out', (len(B_) / SR - 15.0) if B_ is not None else 0.0)
+        segs = music_playlist(DUR, LA, (len(B_) / SR) if B_ is not None else 0.0, fa, fb, [t0 for t0, _, _ in times if t0 is not None], a.b_offset)
+        for name, off, t0_, t1_, fi_, fo_, g_ in segs: seg(A_ if name == 'A' else B_, off, t0_, t1_, fi_, fo_, gain=g_)
+        FF_TXT = 'musica a playlist: ' + ' > '.join(f'{n}@{t0_:.0f}' for n, _, t0_, _, _, _, _ in segs) + f' (chiusura {segs[-1][5]:.0f} s)'
+    elif cut1 is None or cut1 >= DUR:
         seg(A_, 0.0, 0.0, DUR, 0.0, 3.0)
     else:
         seg(A_, 0.0, 0.0, cut1 + 0.6, 0.0, 1.4)

@@ -7,7 +7,7 @@ Prompt to paste at the start of a new chat:
 1. **yb-scout**: vidIQ search "<City> 3D timelapse" (5 credits) + open-data check (year per building).
    Saturation rule (12/11): best video under 5K = free; 5K–100K = go only with a clearly better product and a different angle; over 100K = proven demand, a test case.
 2. **Data**: Spain → `fetch_es.py` (Catastro); Denmark → `fetch_dk.py`; Netherlands → `fetch_nl.py`. Other countries: see `kit/ATLANTE_DATI.md` (the source and download host may have to be unlocked).
-3. **yb-historian** → `cities/<slug>/story.json` (sources, zones, walls, gutting, water/floods, monuments, ~45 cards, 25 soste, chapters, polities) + METADATA.md. The camera is the **drone** (`regia.camera: "drone"`, written by `kit init`; needs `pacing: "story"`): one continuous flight, no cuts; at each sosta it comes in fast and low, stops and hovers in front of the target, then flies on. Cards ride along and are never stops. The total time is fixed by the music, so if the flights do not fit, the lowest-`weight` soste become target-less cards (listed in `regia.txt`). Give the soste you care about a `weight`, and leave a pause between far-apart soste; see STORY_SCHEMA.md.
+3. **yb-historian** → `cities/<slug>/story.json` (sources, zones, walls, gutting, water/floods, monuments, ~45 cards, 25 soste, chapters, polities) + METADATA.md. The camera is the **drone** (`regia.camera: "drone"`, written by `kit init`; needs `pacing: "story"`): one continuous flight, no cuts; at each sosta it comes in fast and low, stops and hovers in front of the target, then flies on. Cards ride along and are never stops. The video's length comes from the story's rhythm (`regia.duration` absent or "auto"): every stop gets its flight and hover, cards ride along, quiet years run at the construction rhythm. Nothing is dropped unless you set a smaller `duration` or `max_duration`; then the lowest-`weight` soste become target-less cards, and a sosta with `weight: "max"` (the strongest moment) is never dropped. The music follows the duration (playlist with crossfades and a closing fade). See STORY_SCHEMA.md.
 4. **yb-modeler** → monuments checked by eye.
 5. `python -m kit build <slug>` and `python -m kit qa <slug> --render` (local, free) → **yb-qa** looks at contact.jpg and `qa/drone_path.png` (max speed/acceleration/jerk, clearance, 0 jumps, hover and flight time, kept/dropped soste).
 6. `python -m kit pack <slug>` + commit/push.
@@ -19,19 +19,13 @@ Prompt to paste at the start of a new chat:
 10. ★ Final merge on the owner's PC (the ffmpeg command in `montaggio/monta_kit.bat`), upload, pinned comment, Reddit.
 
 ## Lessons from Valencia (12/11)
-- `regia.duration` must match the music (two tracks = 511.5 s), or the video ends without music.
+- The duration is NOT a target: the story's rhythm decides (8:31 was only Copenhagen's two tracks). Music follows the duration.
 - Look at the preview before the full render: two previews caught 6 defects.
 - Floods: `history.floods` (muddy water draped on the terrain) is restrained; a caption explains it.
 - Use local names (Valencian, Catalan…) on monuments: viewers point it out.
 
 ## Camera "drone" (13/11/2026, default for new cities; owner's request: no jumpy cuts)
 - `regia.camera: "drone"` = one continuous flight (low, fast fly-in, arc around the monument, climb out). Fallback: `"cuts"` (old behaviour).
-- **A continuous flight cannot visit 44 places in 8 minutes.** On Valencia 16 of 44 stops were only flown over. For a new city: about 18 soste with a camera target, spread geographically (neighbouring monuments one after another), all other events as cards WITHOUT a target (they ride along with the flight). Check the QA WARN "soste solo sorvolate".
+- **Every sosta with a target is flown to and hovered over; the video simply gets as long as the rhythm needs** (Valencia: all 25 soste, about 12:50). Spread the soste geographically and put all other events in cards WITHOUT a target. Check the QA rhythm WARN (gaps over 15 s without a new card or sosta).
 - The motion has been checked only on 6 still frames, never on a video: judge it on the first preview on the pod (10 min) and send the split preview to the chat.
 - Known limits: the opening is only about 1 km from the first stop (250 m/s cap), the Plan Sur / cruise frames look almost straight down (about 2,900 m).
-
-## TODO first in the next chat (owner's request, 13/11/2026)
-- **Duration must come from the story, not from the music.** Today regia.duration (511.5 s) is inherited from Copenhagen's two tracks. Build: regia computes the natural duration (hover + flight + fast years in quiet periods); the music becomes a PLAYLIST of any length with automatic crossfades and a closing fade (kit/music/*.json measured per track by kit/music/analyze.py). Videos of 7 or 10+ minutes are fine: rhythm decides.
-- **Rhythm QA**: flag gaps (more than about 12-15 s without a new stimulus: a card, a sosta, a chapter) and plot years per second. Calibrate on the retention curve of Valencia at 48 h (YouTube Studio).
-- **Weights**: the city's strongest moment gets the highest `weight` on its sosta (Valencia: the Plan Sur) so the drone never drops it.
-- The owner must supply 2-3 extra tracks (YouTube Audio Library, no attribution) for videos longer than 8:30.

@@ -452,7 +452,7 @@ def drone_stay_of(s, D, focus):
     return dict(x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area', R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'])
 
 
-def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin):
+def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin, natural=False, rmin=0.5):
     """Pacing story per il drone. Ogni sosta con bersaglio e' una TAPPA: il drone arriva da fermo, resta in hover per tutta la finestra della sosta
     (anni y0 -> y1 esatti), riparte. I cartelli (e le soste scartate) NON sono tappe: scorrono durante i tratti di volo, anni fermi sull'anno
     del cartello. Tratto = max(t_leg_min, lunghezza / v_leg, cartelli + corsa degli anni); gli anni corrono fra le voci fino a rate_cap anni/s.
@@ -467,9 +467,13 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
     items = [(float(s['y0']), float(s['y1']), s) for s in SOSTE]
     for _, _, s in items: s.pop('_rider', None)
     for _, _, s in items: s['_stay'] = None if s.get('_card') else drone_stay_of(s, D, focus)
-    weight = lambda s: float(s['weight']) if 'weight' in s else float(s.get('_force', 0.0))
+    weight = lambda s: (1e9 if s['weight'] == 'max' else float(s['weight'])) if 'weight' in s else float(s.get('_force', 0.0))
     dropped = []
     JUMP = 0.04
+    # ritmo delle costruzioni: secondi per anno = pace * (attivita' + 3)^0.85 (come il pacing 'buildings'), con anni/s fra rmin e rate_cap
+    ys_ = np.arange(math.floor(y_start) - 1, 2029); sy = np.clip(dcfg['pace'] * (D.act_at(ys_) + 3.0) ** 0.85, 1.0 / dcfg['rate_cap'], 1.0 / max(rmin, 1e-3))
+    Cum = np.concatenate([[0.0], np.cumsum(sy)])[:-1]
+    def rt(ya, yb, rate): return (float(np.interp(yb, ys_, Cum)) - float(np.interp(ya, ys_, Cum))) if natural else (yb - ya) / rate
     is_stop = lambda s: s['_stay'] is not None and not s.get('_rider')
 
     def assign():
@@ -502,10 +506,10 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
                 geom = max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg)) / dcfg['v_leg']) * stretch
             cards_t = sum(r[2]['dur'] for r in rid); cur = cur0; runs = 0.0; jumps = 0
             for y0, y1, r in rid:
-                if y0 - cur > 1e-6: runs += (y0 - cur) / rate
+                if y0 - cur > 1e-6: runs += rt(cur, y0, rate)
                 elif cur - y0 > 1e-6: jumps += 1
                 cur = y1
-            if ytarget - cur > 1e-6: runs += (ytarget - cur) / rate
+            if ytarget - cur > 1e-6: runs += rt(cur, ytarget, rate)
             elif cur - ytarget > 1e-6: jumps += 1
             res.append((max(geom, cards_t + runs + JUMP * jumps), geom, cards_t, runs, rid, a, b, cur0, ytarget))
         return res
@@ -517,10 +521,10 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
             tl0 = t
             slack = max(0.0, tl - (tl0 - tl0) - (cards_t + runs + JUMP * sum(1 for y0_, y1_, r_ in rid if False)))
             for y0, y1, r in rid:
-                if y0 - cur > 1e-6: dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
+                if y0 - cur > 1e-6: dt = rt(cur, y0, rate); YEARS += [(t, cur), (t + dt, y0)]; t += dt
                 elif cur - y0 > 1e-6: YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
                 SOSTA_T.append((t, t + r['dur'], r)); YEARS += [(t, y0), (t + r['dur'], y1)]; t += r['dur']; cur = y1
-            if ytarget - cur > 1e-6: dt = (ytarget - cur) / rate + slack; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
+            if ytarget - cur > 1e-6: dt = rt(cur, ytarget, rate) + slack; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
             elif cur - ytarget > 1e-6: YEARS += [(t, cur), (t + JUMP, ytarget)]; t += JUMP
             cur = ytarget
             t = max(t, tl0 + tl)                                   # tempo minimo del volo (anni fermi se in avanzo)
@@ -533,36 +537,38 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
         return t, YEARS, SOSTA_T, hov, flight, A
 
     def total(rate, stretch): return emit(rate, stretch)[0] - t0
-    stretch = 1.0
-    import os
-    if os.environ.get('DRONE_DBG'): _e = emit(dcfg['rate_cap'], 1.0); print('DBG all kept: end', round(_e[0], 1), 'budget end', end_t, 'hover', round(_e[3]), 'flight', round(_e[4]))
-    while True:
-        if total(dcfg['rate_cap'], 1.0) <= budget: break
-        cand = [s for _, _, s in items if is_stop(s)]
-        if not cand: warn('pacing story (drone): neanche senza tappe i cartelli entrano nel tempo: alza regia.duration'); break
-        base = total(dcfg['rate_cap'], 1.0); sav = {}
-        for c_ in cand:
-            c_['_rider'] = True; sav[id(c_)] = base - total(dcfg['rate_cap'], 1.0); c_.pop('_rider')
-        d = min(cand, key=lambda s: ((weight(s) + 1.0) ** 2 / max(sav[id(s)], 0.2), s['dur'])); d['_rider'] = True; dropped.append(d)
-    lo, hi = 0.05, dcfg['rate_cap']
-    if total(lo, 1.0) < budget:                               # tempo in avanzo anche con gli anni lentissimi: voli piu' lenti
-        a_, b_ = 1.0, 30.0
-        for _ in range(50):
-            m = (a_ + b_) / 2
-            if total(lo, m) < budget: a_ = m
-            else: b_ = m
-        stretch = (a_ + b_) / 2; rate = lo
-    else:
-        for _ in range(60):
-            m = (lo * hi) ** 0.5
-            if total(m, 1.0) > budget: lo = m
-            else: hi = m
-        rate = hi
+    stretch = 1.0; rate = None
+    if not natural:
+        import os
+        if os.environ.get('DRONE_DBG'): _e = emit(dcfg['rate_cap'], 1.0); print('DBG all kept: end', round(_e[0], 1), 'budget end', end_t, 'hover', round(_e[3]), 'flight', round(_e[4]))
+        while True:
+            if total(dcfg['rate_cap'], 1.0) <= budget: break
+            cand = [s for _, _, s in items if is_stop(s) and s.get('weight') != 'max']
+            if not cand: warn('pacing story (drone): neanche senza tappe i cartelli entrano nel tempo: alza regia.duration'); break
+            base = total(dcfg['rate_cap'], 1.0); sav = {}
+            for c_ in cand:
+                c_['_rider'] = True; sav[id(c_)] = base - total(dcfg['rate_cap'], 1.0); c_.pop('_rider')
+            d = min(cand, key=lambda s: ((weight(s) + 1.0) ** 2 / max(sav[id(s)], 0.2), s['dur'])); d['_rider'] = True; dropped.append(d)
+        lo, hi = 0.05, dcfg['rate_cap']
+        if total(lo, 1.0) < budget:                               # tempo in avanzo anche con gli anni lentissimi: voli piu' lenti
+            a_, b_ = 1.0, 30.0
+            for _ in range(50):
+                m = (a_ + b_) / 2
+                if total(lo, m) < budget: a_ = m
+                else: b_ = m
+            stretch = (a_ + b_) / 2; rate = lo
+        else:
+            for _ in range(60):
+                m = (lo * hi) ** 0.5
+                if total(m, 1.0) > budget: lo = m
+                else: hi = m
+            rate = hi
     t, Y2, S2, hov, flight, A = emit(rate, stretch); YEARS += Y2; SOSTA_T += S2
-    YEARS.append((max(t, end_t), 2026.0)); YEARS += tail
+    end_eff = t if end_t > 1e8 else end_t
+    YEARS.append((max(t, end_eff), 2026.0)); YEARS += tail
     YEARS = sorted({round(float(a), 3): (round(float(a), 3), round(float(b), 4)) for a, b in YEARS}.values())
-    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s (soste {len(dropped)} tolte, rate {rate:.2f})')
-    info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, cards_on_hover=sum(len(v[1]) for v in A.values()), flight=flight, rate=rate, stretch=stretch)
+    if not natural and t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s (soste {len(dropped)} tolte, rate {rate:.2f})')
+    info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, cards_on_hover=sum(len(v[1]) for v in A.values()), flight=flight, rate=rate, stretch=stretch, t_end=t, natural=natural)
     SOSTA_T.sort(key=lambda x: (x[0], bool(x[2].get('_card'))))
     return YEARS, SOSTA_T, info
 
@@ -596,13 +602,15 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     y_open = float(op.get('year', 2026)); y_start = float(op.get('rewind_to', city.get('start_year')))
     hold = float(op.get('hold', 3.0)); title_t = float(op.get('title_t', 9.5))
     if title_t > 9.5: warn(f'titolo all\'anno di partenza a {title_t} s (> 9,5 s)')
-    b_start = R.get('b_start', M.get('b_start') if M else None)
+    dur_cfg = R.get('duration'); auto = dur_cfg in (None, 'auto', 0)
+    if auto and not drone: warn('regia.duration assente: obbligatoria senza camera "drone" (uso 300 s; la musica non decide la durata)'); auto = False; dur_cfg = 300.0
+    b_start = R.get('b_start', M.get('b_start') if (M and not auto) else None)
     dur_m = M.get('duration') if M else None
-    DUR = float(R.get('duration') or dur_m or 300.0)
-    if M and b_start is not None and 'b_start' not in R and dur_m and DUR < dur_m - 0.5:
+    DUR = 0.0 if auto else float(dur_cfg)       # auto: la durata e' il ritmo della storia (calcolata sotto); mai la durata della musica
+    if M and b_start is not None and 'b_start' not in R and dur_m and not auto and DUR < dur_m - 0.5:
         b_start = DUR - (dur_m - M['b_start'])     # durata piu' corta: si accorcia A, il finale di B resta intero
         warn(f'durata {DUR} < modello {dur_m}: b_start spostato a {b_start:.1f} (le ancore di A dopo {b_start - 12:.0f} s cadono)')
-    if M and dur_m and DUR > dur_m + 0.5: warn(f'durata {DUR} oltre la musica ({dur_m} s)')
+    if M and dur_m and not auto and DUR > dur_m + 0.5: warn(f'durata {DUR} oltre la musica ({dur_m} s): la musica continua con rientro e dissolvenze')
     shift = (b_start - M['b_start']) if (M and b_start is not None) else 0.0
     slots = []
     if M:
@@ -610,14 +618,12 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             t = s['t'] + (shift if s['t'] >= M['b_start'] - 15 else 0.0)
             if s['t'] < M['b_start'] - 15 and b_start is not None and t > b_start - 12: continue
             slots.append(dict(s, t=t))
-    if night:
-        night_t = float(R.get('night_t') or next((s['t'] for s in slots if s['role'] == 'night'), DUR - 50))
-    else:
-        night_t = None
-    if story_mode:
-        end_t = (night_t if night else DUR - recap_s - float(R.get('end_hold', (cta_s + src_s) or 4.0)))
-    else:
-        end_t = night_t if night else DUR - float(R.get('end_hold', 8.0))
+    def end_times():
+        nt = (float(R.get('night_t') or next((s['t'] for s in slots if s['role'] == 'night'), DUR - 50)) if night else None)
+        if story_mode: et = (nt if night else DUR - recap_s - float(R.get('end_hold', (cta_s + src_s) or 4.0)))
+        else: et = nt if night else DUR - float(R.get('end_hold', 8.0))
+        return nt, et
+    night_t, end_t = (None, None) if auto else end_times()
 
     # ---------- soste ----------
     SOSTE = []
@@ -647,6 +653,21 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     for s in SOSTE:
         if s['_tg'] is not None: focus = (s['_tg']['x'], s['_tg']['y']); break
 
+    if drone:
+        from kit import drone_kit as DK
+        dcfg = DK.cfg_of(R); (m26x, m26y), r26 = D.extent(2026.0); fx_, fy_ = focus if focus else (m26x, m26y); d_rc = max(5000.0, 1.8 * r26)
+        fin = dict(x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26) if recap_s else dict(x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26)
+        chy = [float(c['y']) for c in (MO_.get('chapters') or [])] + [float(c['y']) for c in (MO_.get('cards') or []) if c.get('chapter')]
+        lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))
+        hold_tail = float(R.get('end_hold', (cta_s + src_s) or 4.0)); max_dur = R.get('max_duration')
+        if auto:    # durata naturale: tutte le tappe (volo + hover), i cartelli che servono, le corse degli anni al ritmo delle costruzioni
+            _, _, ti = build_story_drone(SOSTE, [(0.0, y_open), (hold, y_open), (title_t, y_start)], title_t, y_start, 1e9, [], lead, warn, D, focus, dcfg, fin, natural=True, rmin=rmin)
+            end_t = ti['t_end']; night_hold = float(R.get('night_hold', 40.0)) if night else 0.0
+            DUR = round(end_t + night_hold + (recap_s or 0.0) + (0.0 if night else hold_tail), 1); night_t = end_t if night else None
+            natural_dur = DUR
+            if max_dur and DUR > float(max_dur):
+                DUR = float(max_dur); auto = False; night_t, end_t = end_times()
+                warn(f'durata naturale {natural_dur:.0f} s > max_duration {DUR:.0f} s: tolgo le soste a peso minimo')
     # ---------- ancore ----------
     fixed, used_roles, anchor_log = [], set(), []
     for a in ([] if story_mode else (R.get('anchors', []) or [])):
@@ -695,13 +716,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
                                                               for k in range(1, 21)] + [(DUR, 2026.0)]
     if story_mode:
         chy = [float(c['y']) for c in (MO_.get('chapters') or [])] + [float(c['y']) for c in (MO_.get('cards') or []) if c.get('chapter')]
-        lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))   # +2,8 s: capitolo I
+        if not drone: lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))   # +2,8 s: capitolo I
         if drone:
-            from kit import drone_kit as DK
-            dcfg = DK.cfg_of(R); (m26x, m26y), r26 = D.extent(2026.0); fx_, fy_ = focus if focus else (m26x, m26y); d_rc = max(5000.0, 1.8 * r26)
-            if recap_s: fin = dict(x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26)
-            else: fin = dict(x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26)
-            YEARS, SOSTA_T, tinfo = build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin)
+            YEARS, SOSTA_T, tinfo = build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin, natural=auto, rmin=rmin)
         else:
             YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn)
     else:
@@ -823,7 +840,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         drone_info = {'limits': {k: dcfg[k] for k in ('vmax', 'amax', 'jmax', 'clear')}, 'stats': {k: round(v, 2) for k, v in dst.items()},
                       'sigma': dinfo['sigma'], 'cuts': [],     # tagli dichiarati: nessuno (il riavvolgimento e' degli anni, la notte e' una passata di colore)
                       'dropped': [[round(y_, 1), n_] for n_, y_, w_ in tinfo['dropped']], 'hover_s': round(tinfo['hover'], 1), 'flight_s': round(tinfo['flight'], 1),
-                      'year_rate': round(tinfo['rate'], 2), 'stretch': round(tinfo['stretch'], 2),
+                      'year_rate': round(tinfo['rate'], 2) if tinfo['rate'] else None, 'natural': bool(tinfo['natural']), 'stretch': round(tinfo['stretch'], 2),
                       'stays': [[round(s_['t0'], 2), round(s_['t1'], 2), round(s_['x'], 1), round(s_['y'], 1), s_['name']] for s_ in stays],
                       'legs': [[round(l_['t_a'], 2), round(l_['t_b'], 2), round(l_['L']), round(l_['vpk'])] for l_ in dinfo['legs']]}
         if dst['vmax'] > dcfg['vmax'] * 1.02: warn(f"drone: velocita' massima {dst['vmax']:.0f} m/s oltre il limite {dcfg['vmax']:.0f}")
@@ -862,10 +879,11 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             cam.append([round(tt, 3), [round(v, 1) for v in p], [round(float(v), 1) for v in tg], mm])
     cam.sort(key=lambda c: c[0])
     name = city.get('name', slug)
-    sched = {'_doc': f'{name}, regia automatica (kit/regia_kit.py).' + (f" Musica {M['name']}, B da {b_start:.1f} s." if M else ''),
+    sched = {'_doc': f'{name}, regia automatica (kit/regia_kit.py).' + (f" Musica {M['name']}" + (f", B da {b_start:.1f} s." if b_start is not None else '.') if M else ''),
              'duration': DUR, 'lens': 35, 'years': [[t, y] for t, y in YEARS], 'cam': cam}
     if night: sched['night_t'] = night_t
     if drone: sched['camera'] = 'drone'; sched['drone'] = drone_info
+    if drone and tinfo['natural']: sched['duration_auto'] = True
     if b_start is not None: sched['b_start'] = b_start
     sched['soste'] = [[round(t0, 2), round(t1, 2), s['y0'], s['y1'], s['caption']] for t0, t1, s in SOSTA_T if not s.get('_card')]
     if story_mode:

@@ -25,7 +25,7 @@ from scipy.interpolate import PchipInterpolator
 
 FPS = 24
 DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s, m/s^2, m/s^3) e margine sopra terreno/tetti (m)
-                v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
+                v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9)
 
@@ -220,6 +220,8 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         zf = PchipInterpolator(nodes_s, nodes_z)
         sp, vpk = _speed_profile(max(tb - ta, 0.5), Lc, vprev, 0.0, ts[m] - ta)
         Pref[m, 0] = np.interp(sp, cs, C[:, 0]); Pref[m, 1] = np.interp(sp, cs, C[:, 1]); AGL[m] = zf(sp)
+        if a_E >= max(zA, zc) * 1.2 and a_E > a_X:      # arrivo su un hover ALTO (aree, citta'): salita dolce nel tempo, non a fine tratto
+            AGL[m] = a_X + (a_E - a_X) * _s5((ts[m] - ta) / max(tb - ta, 0.5))
         leg_info.append(dict(k=k, t_a=ta, t_b=tb, L=Lc, vpk=vpk))
         # hover con deriva
         m = (ts >= tb - 1e-9) & (ts < s['t1'] if k < n - 1 else ts <= DUR + 1e-9)

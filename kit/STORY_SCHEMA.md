@@ -142,7 +142,8 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
 **Chiave assente = `cuts`**: Copenhagen e lo schedule Valencia attuale non cambiano. Il drone richiede `regia.pacing: "story"` (altrimenti ripiega su `continuous` con un avviso).
 ```jsonc
 "regia": {"camera": "drone",
-          "soste": [{"y0": 1262, "y1": 1270, "dur": 5, "caption": "...", "target": "Cathedral", "weight": 9}],   // weight (0-10) facoltativo: peso nello scarto; senza, la forza dell'fx
+          "duration": "auto",    // o assente (default di `kit init`): la durata e' il RITMO della storia; un numero (s) la fissa; "max_duration": N la limita
+          "soste": [{"y0": 1262, "y1": 1270, "dur": 5, "caption": "...", "target": "Cathedral", "weight": "max"}],   // weight: 0-10 (peso nello scarto, default = forza dell'fx) o "max" = mai tolta
           "drone": {"vmax": 250, "amax": 120, "jmax": 200, "clear": 30,        // limiti (m/s, m/s2, m/s3) e margine su terreno/tetti (m)
                     "v_leg": 150, "t_leg_min": 3.5, "rate_cap": 30,            // velocita' media dei tratti (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci
                     "rho_max": 600, "open_dist": 2000, "open_alt": 900, "open_speed": 40}}   // raggio massimo di hover su aree/citta'; partenza
@@ -151,8 +152,12 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
   una deriva lentissima in un solo verso (<= 6 gradi di azimut e <= 6% di distanza su tutta la sosta; mai reset, mai gesto ripetuto). Poi riparte accelerando dolcemente verso la tappa successiva, con la prua verso di essa.
 - **Tappe e cartelli.** Ogni sosta con bersaglio e' una tappa (la finestra di hover = la finestra della sosta, anni y0 -> y1 ESATTI). I cartelli non sono mai tappe: scorrono durante i tratti di volo
   (anni fermi sull'anno del cartello) o, se cadono negli anni di una tappa, durante il suo hover (che si allunga fino a 2,2 x dur + 6 s; li' gli anni sono quelli della sosta, non quelli del cartello).
-- **Tempo.** Il totale e' fisso (`regia.duration`). Tratto = max(`t_leg_min`, lunghezza stimata / `v_leg`, cartelli + corsa degli anni); gli anni corrono fra le voci a una velocita' ricavata dal budget (tetto `rate_cap`),
-  e se il volo e' lungo e gli anni pochi il contatore "striscia". Se non entra tutto, si tolgono le soste a peso minimo (peso^2 / tempo risparmiato): diventano cartelli senza bersaglio (restano nello schedule, con
+- **Durata = ritmo (`regia.duration` assente o `"auto"`).** Nessun budget: la durata naturale e' la somma di TUTTE le tappe (volo + hover), dei cartelli che servono (tenuti nei voli) e delle corse degli anni fra le voci,
+  che seguono le costruzioni: secondi per anno = `pace` x (costruzioni + demolizioni dell'anno + 3)^0,85 (`drone.pace`, default 0,003), con anni/s fra `rmin` (0,5) e `rate_cap` (30). Dopo l'ultima voce: notte (`night_hold`, 40 s) o CTA/fonti.
+  La musica NON decide la durata (niente 511,5 s ereditati da Copenaghen): `sfx_kit.py` la segue (vedi sotto). Senza `duration` fuori dal drone: avviso e 300 s. Niente viene tolto per mancanza di tempo.
+- **Durata fissata** (`regia.duration` numerica) **o limite** (`regia.max_duration` piu' piccolo della naturale): solo allora si tolgono soste. `weight: "max"` = la sosta piu' forte, mai tolta (anche con budget troppo stretto).
+- **Tempo con budget.** Il totale e' fisso. Tratto = max(`t_leg_min`, lunghezza stimata / `v_leg`, cartelli + corsa degli anni); gli anni corrono fra le voci a una velocita' ricavata dal budget (tetto `rate_cap`),
+  e se il volo e' lungo e gli anni pochi il contatore "striscia". Se non entra tutto (solo con budget), si tolgono le soste a peso minimo (peso^2 / tempo risparmiato): diventano cartelli senza bersaglio (restano nello schedule, con
   anni esatti) e `regia.txt`/QA le elencano. NESSUNA tappa e' "solo sorvolata". Pause piu' lunghe fra soste lontane = piu' tappe tenute (ordine di grandezza: 1 s ogni 150 m di distanza).
 - **Volo.** Crociera a quota dipendente dallo zoom dell'epoca (0,35 x raggio della citta' dell'anno + 200 m, 250-1500 m); poi avvicinamento lungo e BASSO (quota 450-900 m -> 80-200 m, picco ~250 m/s)
   e arrivo da fermo. Posizione = riferimento (curve di Hermite, profilo di velocita' quintico) filtrato con gaussiana (sigma 0,7-1,2 s, C-infinito) fino a restare nei limiti; punto guardato = altra curva
@@ -160,7 +165,9 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
 - Lo schedule porta `camera: "drone"` e `drone: {limits, stats, stays: [t_arrivo, t_partenza, x, y, nome], legs, dropped, hover_s, flight_s, year_rate, cuts}`; il riavvolgimento e' una curva di ANNI e la notte
   una seconda passata di colore con la stessa camera: `cuts` e' vuoto. I cartelli durante un hover hanno `on_hover: true`.
 - **QA** (`kit/qa.py`, controllo e): velocita', accelerazione e jerk massimi, distanza minima da terreno e tetti, discontinuita' (target 0), soste tenute/tolte (nomi), tempo di hover e di volo, velocita' massima in hover,
-  una riga per tappa ("arriva t=, hover da-a, riparte t="); grafico `cities/<slug>/qa/drone_path.png`. **Esattezza degli anni**: soste = esatta sulla finestra di hover; cartelli fuori hover = esatta; cartelli durante un hover = no.
+  una riga per tappa ("arriva t=, hover da-a, riparte t="), RITMO (avviso se passano > 15 s fra due stimoli nuovi: cartello, sosta, capitolo; anni/s per minuto di video); grafico `cities/<slug>/qa/drone_path.png`. **Esattezza degli anni**: soste = esatta sulla finestra di hover; cartelli fuori hover = esatta; cartelli durante un hover = no.
 
+- **Musica a playlist** (`montaggio/sfx_kit.py`, quando lo schedule ha `duration_auto`): A, B, A, B... fino a 15 minuti circa; ogni traccia suona fino al suo calo naturale (`kit/music/<nome>.json`, `fade_out`), passaggi con dissolvenza incrociata di 3 s
+  spostati sull'inizio di una sosta entro 12 s quando possibile (mai forzando la durata), rientri di A dal secondo 30; piu' corta delle tracce: si taglia; sempre dissolvenza di chiusura di 8 s; loudnorm -14 LUFS.
 - Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
 - Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).

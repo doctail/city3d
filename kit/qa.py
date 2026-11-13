@@ -502,6 +502,20 @@ def check_drone(story, D, R, sc, qadir):
         R.add(S, WARN, 'drone: grafico non fatto', str(e))
 
 
+def check_rhythm(sc, R, Y, dur):
+    """Ritmo: avvisa se passano piu' di 15 s fra due stimoli nuovi (cartello, sosta, capitolo); stampa anni/s per ogni minuto di video."""
+    S = 'e'
+    st = sorted([float(s[0]) for s in sc.get('soste') or []] + [float(c['t_in']) for c in sc.get('cards') or []] + [float(sc.get('title_t', 0.0))])
+    st = [t for t in st if t <= dur - 8.0]; gaps = [(b - a, a, b) for a, b in zip(st, st[1:])]
+    g = max(gaps) if gaps else (0, 0, 0); long_ = [x for x in gaps if x[0] > 15.0]
+    R.add(S, WARN if long_ else PASS, 'ritmo: nessun vuoto > 15 s senza stimolo nuovo', f"vuoto massimo {g[0]:.1f} s ({g[1]:.0f}-{g[2]:.0f} s)" + (f"; {len(long_)} oltre 15 s: " + ', '.join(f"{a:.0f}-{b:.0f}" for _, a, b in long_[:6]) if long_ else ''))
+    rows = []
+    for m in range(int(math.ceil(dur / 60.0))):
+        a, b = m * 60.0, min(dur, (m + 1) * 60.0); rows.append(f"{m}:00 {abs(_year_at(b, Y) - _year_at(a, Y)) / max(b - a, 1e-6):5.2f}")
+    print('[qa] ritmo: anni/s per minuto di video: ' + ' | '.join(rows)); R.add(S, PASS, 'ritmo: anni/s per minuto', ' | '.join(rows))
+    return g[0]
+
+
 def check_schedule(story, D, R, city_json, sched_path, qadir=None):
     S = 'e'; c = story['city']; y0, y1 = float(c['start_year']), float(c['end_year'])
     if not os.path.exists(city_json): R.add(S, FAIL, f'{os.path.basename(city_json)} mancante', 'python -m kit.city_json <slug>')
@@ -515,7 +529,7 @@ def check_schedule(story, D, R, city_json, sched_path, qadir=None):
     dur = float(sc.get('duration', 0)); Y = np.array(sc.get('years', []), float)
     if Y.ndim != 2 or len(Y) < 2: R.add(S, FAIL, 'schedule senza years'); return sc
     want = (story.get('regia') or {}).get('duration')
-    if want and abs(float(want) - dur) > 0.5: R.add(S, WARN, 'durata diversa dalla story', f'{dur} contro {want}')
+    if want and want != 'auto' and abs(float(want) - dur) > 0.5: R.add(S, WARN, 'durata diversa dalla story', f'{dur} contro {want}')
     if np.any(np.diff(Y[:, 0]) < -1e-6): R.add(S, FAIL, 'years non ordinati nel tempo')
     if Y[:, 1].min() > y0 + 1: R.add(S, FAIL, 'la regia non arriva all\'anno di partenza', f'minimo {Y[:, 1].min():.0f} > {y0:.0f}')
     if abs(Y[-1, 1] - y1) > 1: R.add(S, WARN, 'la regia non finisce all\'anno finale', f'{Y[-1, 1]:.0f}')
@@ -525,6 +539,7 @@ def check_schedule(story, D, R, city_json, sched_path, qadir=None):
     elif sc.get('camera') == 'drone': check_drone(story, D, R, sc, qadir or os.path.join(story.get('_dir', '.'), 'qa'))
     so = sc.get('soste', []) or []
     if not so: R.add(S, WARN, 'nessuna sosta nello schedule'); return sc
+    if sc.get('pacing') == 'story': check_rhythm(sc, R, Y, dur)
     bad, order, caps, yrs = [], [], [], []
     for i, s in enumerate(so):
         if len(s) < 5: bad.append(str(i)); continue
