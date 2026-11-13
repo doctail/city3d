@@ -25,8 +25,8 @@ from scipy.interpolate import PchipInterpolator
 
 FPS = 24
 DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s, m/s^2, m/s^3) e margine sopra terreno/tetti (m)
-                v_leg=150.0, t_leg_min=2.5, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
-                open_dist=2000.0, open_alt=1400.0, open_speed=40.0,
+                v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
+                open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9)
 
 
@@ -174,7 +174,7 @@ def dims(s, cfg):
 def leg_est(a, b, f=1.0):
     """Lunghezza stimata (3D) del tratto fra due tappe (hover di a -> hover di b)."""
     dxy = max(60.0, math.hypot(b['x'] - a['x'], b['y'] - a['y']) - b['rho'])
-    return 1.1 * math.hypot(dxy, 1.6 * (b['alt'] - a['alt']))
+    return 1.5 * math.hypot(dxy, 1.6 * (b['alt'] - a['alt']))
 
 
 def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
@@ -212,9 +212,9 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         zc = float(cruise_fn(year_at(0.5 * (ta + tb)))); a_X = aprev
         zc_e = max(min(zc, max(a_X, a_E) + 0.30 * Lc), min(a_X, a_E))
         zA = float(np.clip(1.4 * zc, 450, 900)); zA_e = max(min(zA, a_E + 0.45 * app), a_E) if app > 0 else a_E
-        s2 = Lc - app; s1 = min(0.3 * max(s2, 0), 900.0)
+        s2 = Lc - app; s1 = max(min(0.3 * max(s2, 0), 900.0), abs(zc_e - a_X) / 0.5)   # pendenza max ~0,5: salita/discesa dolce
         nodes_s = [0.0]; nodes_z = [a_X]
-        if s2 - s1 > 40 and s1 > 40: nodes_s.append(s1); nodes_z.append(zc_e)
+        if s2 - s1 > 40 and s1 > 40 and s1 < s2: nodes_s.append(s1); nodes_z.append(zc_e)
         if app > 0: nodes_s.append(s2); nodes_z.append(max(zA_e, a_E))
         nodes_s.append(Lc); nodes_z.append(a_E)
         zf = PchipInterpolator(nodes_s, nodes_z)

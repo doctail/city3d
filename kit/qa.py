@@ -468,8 +468,17 @@ def check_drone(story, D, R, sc, qadir):
     row(j.max() <= lim['jmax'] * 1.05, 'jerk massimo', f"{j.max():.0f} m/s3 (limite {lim['jmax']:.0f}), 99% {np.percentile(j, 99):.0f}")
     row(clr.min() >= 0.8 * lim['clear'], 'distanza minima da terreno e tetti', f"{clr.min():.0f} m (soglia {0.8 * lim['clear']:.0f}); dal solo terreno {clr_g.min():.0f} m")
     row(len(bad) == 0 and gaps == 0, 'discontinuita\' (target 0, tagli dichiarati: %d)' % len(cuts), f"{len(bad)} salti" + (f" a {', '.join(f'{ts[i + 1]:.1f} s' for i in bad[:6])}" if bad else '') + (f", {gaps} buchi nelle chiavi" if gaps else ''))
-    dropped = meta.get('dropped') or []
-    R.add(S, WARN if dropped else PASS, 'drone: tappe sorvolate in crociera', f"{len(dropped)} su {len(meta.get('stays') or []) + len(dropped)}: " + '; '.join(f"{d[1][:26]} {d[0]:.0f} s" for d in dropped[:8]))
+    dropped = meta.get('dropped') or []; stays = [x for x in (meta.get('stays') or []) if x[4] != 'finale']
+    hov = float(meta.get('hover_s', 0)); fl = float(meta.get('flight_s', 0))
+    # hover: velocita' massima dentro ogni finestra (fermo, deriva minima)
+    mg = lambda x: min(1.5, 0.3 * (x[1] - x[0]))    # la gaussiana (sigma ~1 s) sfuma 1-1,5 s di arrivo/partenza dentro la finestra
+    hv = [float(v[(ts >= x[0] + mg(x)) & (ts <= x[1] - mg(x))].max()) if ((ts >= x[0] + mg(x)) & (ts <= x[1] - mg(x))).any() else 0.0 for x in stays]
+    print(f"[qa] drone: tappe tenute {len(stays)}, tolte {len(dropped)} (diventano cartelli senza bersaglio, NESSUNA solo sorvolata); hover {hov:.0f} s, volo {fl:.0f} s")
+    print('[qa] drone: tolte: ' + '; '.join(f"{d[1][:34]} ({d[0]:.0f})" for d in dropped)); print('[qa] drone: tenute: ' + '; '.join(x[4][:34] for x in stays))
+    for i, x in enumerate(stays): print(f"[qa] drone: {i:2d} arriva t={x[0]:6.1f} hover {x[0]:6.1f}-{x[1]:6.1f} ({x[1] - x[0]:4.1f} s, v max {hv[i]:4.1f} m/s) riparte t={x[1]:6.1f}  {x[4][:40]}")
+    R.add(S, WARN if dropped else PASS, 'drone: soste tolte per tempo', f"{len(dropped)} tolte, {len(stays)} tenute, 0 solo sorvolate; hover {hov:.0f} s, volo {fl:.0f} s; " + '; '.join(f"{d[1][:26]} ({d[0]:.0f})" for d in dropped[:10]))
+    R.add(S, PASS if (not hv or max(hv) <= 12.0) else FAIL, 'drone: hover quasi fermo', f"v max in hover {max(hv) if hv else 0:.1f} m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)")
+    R.add(S, PASS, 'drone: esattezza anni', "soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)")
     try:
         import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
         from matplotlib.collections import LineCollection
@@ -477,7 +486,7 @@ def check_drone(story, D, R, sc, qadir):
         fig = plt.figure(figsize=(13, 9), dpi=90); ax = fig.add_axes([0.05, 0.30, 0.62, 0.66]); ax2 = fig.add_axes([0.05, 0.05, 0.9, 0.18])
         seg = np.stack([P[:-1, :2], P[1:, :2]], 1); lc = LineCollection(seg, cmap='turbo', norm=plt.Normalize(0, lim['vmax'])); lc.set_array(v[:-1]); lc.set_linewidth(1.8)
         ax.add_collection(lc); ax.autoscale(); ax.set_aspect('equal'); ax.grid(alpha=0.3)
-        for i, (t0, td, x, y) in enumerate(meta.get('stays') or []):
+        for i, (t0, td, x, y, _n) in enumerate(meta.get('stays') or []):
             ax.plot([x], [y], 'o', ms=3, color='k'); ax.annotate(f'{i}', (x, y), fontsize=6, xytext=(3, 3), textcoords='offset points')
         ax.plot([P[0, 0]], [P[0, 1]], 's', color='green', ms=7); ax.plot([P[-1, 0]], [P[-1, 1]], 's', color='red', ms=7)
         cb = fig.colorbar(lc, ax=ax, fraction=0.035, pad=0.01); cb.set_label('velocita\' (m/s)')
@@ -486,7 +495,7 @@ def check_drone(story, D, R, sc, qadir):
         ax.set_xlabel('x (m)'); ax.set_ylabel('y (m)')
         ax2.plot(ts, v, color='#c0392b', lw=1, label='velocita\' (m/s)'); ax2.plot(ts, P[:, 2] - ground, color='#1f6f8b', lw=1, label='quota sul terreno (m)')
         ax2.plot(ts, clr, color='#27ae60', lw=0.8, label='distanza da terreno/tetti (m)'); ax2.set_yscale('symlog', linthresh=100); ax2.grid(alpha=0.3); ax2.legend(fontsize=7, ncol=3); ax2.set_xlabel('s')
-        for t0, td, x, y in (meta.get('stays') or []): ax2.axvspan(t0, min(td, ts[-1]), color='#f39c12', alpha=0.15)
+        for t0, td, x, y, _n in (meta.get('stays') or []): ax2.axvspan(t0, min(td, ts[-1]), color='#f39c12', alpha=0.15)
         fig.savefig(os.path.join(qadir, 'drone_path.png')); plt.close(fig)
         R.add(S, PASS, 'drone: grafico del percorso', 'qa/drone_path.png')
     except Exception as e:
@@ -541,6 +550,7 @@ def check_schedule(story, D, R, city_json, sched_path, qadir=None):
             for tt_, yy_ in ((s[0] + 0.05, s[2]), (s[1] - 0.05, s[3])):
                 if abs(_year_at(tt_, Y) - yy_) > 0.01 + 0.02 * abs(s[3] - s[2]): mm.append(f"{s[4]}: curva anni {_year_at(tt_, Y):.2f} invece di {yy_}"); break
         for c in sc.get('cards', []) or []:
+            if c.get('on_hover'): continue      # drone: il cartello scorre durante un hover, dove gli anni corrono y0 -> y1 della sosta: esattezza solo sull'hover
             for tt_ in (c['t_in'] + 0.05, c['t_out'] - 0.05):
                 if abs(_year_at(tt_, Y) - float(c['y'])) > 0.01: mm.append(f"cartello '{c['title']}': anno {_year_at(tt_, Y):.2f} invece di {c['y']}"); break
         R.add(S, FAIL if mm else PASS, 'soste e cartelli sugli anni della story (0,01)', '; '.join(mm[:6]))

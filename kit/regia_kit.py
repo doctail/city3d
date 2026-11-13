@@ -476,11 +476,12 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
         """Cartelli che cadono negli anni di una tappa (+-2) scorrono DURANTE il suo hover (uno dopo l'altro, hover allungato fino a 1,6 x dur + 4 s);
         gli altri, e le soste scartate, scorrono nei tratti di volo. Ritorna {id(tappa): (durata hover, [cartelli])}."""
         A = {}; used = set()
-        for y0, y1, s in items:
+        for k, (y0, y1, s) in enumerate(items):
             if not is_stop(s): continue
             cap = 2.2 * s['dur'] + 6.0; cum = 0.0; mine = []
-            for cy0, cy1, c in items:
-                if not c.get('_card') or id(c) in used or not (y0 - 2.0 <= cy0 <= y1 + 2.0): continue
+            for cy0, cy1, c in items[k + 1:]:           # cartelli DOPO la sosta (stessa data o poco oltre): scorrono durante il suo hover
+                if cy0 > y1 + 2.0: break
+                if not c.get('_card') or id(c) in used: continue
                 if cum + c['dur'] <= cap + 1e-6: mine.append((cum, c)); cum += c['dur']; used.add(id(c))
             A[id(s)] = (max(s['dur'], cum), mine)
         return A, used
@@ -533,11 +534,16 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
 
     def total(rate, stretch): return emit(rate, stretch)[0] - t0
     stretch = 1.0
+    import os
+    if os.environ.get('DRONE_DBG'): _e = emit(dcfg['rate_cap'], 1.0); print('DBG all kept: end', round(_e[0], 1), 'budget end', end_t, 'hover', round(_e[3]), 'flight', round(_e[4]))
     while True:
         if total(dcfg['rate_cap'], 1.0) <= budget: break
         cand = [s for _, _, s in items if is_stop(s)]
         if not cand: warn('pacing story (drone): neanche senza tappe i cartelli entrano nel tempo: alza regia.duration'); break
-        d = min(cand, key=lambda s: (weight(s), s['dur'])); d['_rider'] = True; dropped.append(d)
+        base = total(dcfg['rate_cap'], 1.0); sav = {}
+        for c_ in cand:
+            c_['_rider'] = True; sav[id(c_)] = base - total(dcfg['rate_cap'], 1.0); c_.pop('_rider')
+        d = min(cand, key=lambda s: ((weight(s) + 1.0) ** 2 / max(sav[id(s)], 0.2), s['dur'])); d['_rider'] = True; dropped.append(d)
     lo, hi = 0.05, dcfg['rate_cap']
     if total(lo, 1.0) < budget:                               # tempo in avanzo anche con gli anni lentissimi: voli piu' lenti
         a_, b_ = 1.0, 30.0
@@ -865,7 +871,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     if story_mode:
         sched['pacing'] = 'story'; sched['title_t'] = title_t
         sched['cards'] = [{'t_in': round(t0, 2), 't_out': round(t1, 2), 'y': s['_c']['y'], 'title': s['_c']['title'], 'lines': s['_c'].get('lines', []),
-                           'chapter': s['_c'].get('chapter'), 'src': s['_c'].get('src')} for t0, t1, s in SOSTA_T if s.get('_card')]
+                           'chapter': s['_c'].get('chapter'), 'src': s['_c'].get('src'), **({'on_hover': True} if s.get('_on_hover') else {})} for t0, t1, s in SOSTA_T if s.get('_card')]
         sched['end_plan'] = {'recap': [round(end_t, 2), round(end_t + recap_s, 2)] if recap_s else None,
                              'cta': [round(DUR - src_s - cta_s, 2), round(DUR - src_s, 2)] if cta_s else None,
                              'sources': [round(DUR - src_s, 2), DUR] if src_s else None}

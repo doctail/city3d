@@ -137,28 +137,30 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
   capitolo = titolo centrale ("CHAPTER II" + titolo), mostrato nei 2,8 s prima del cartello che lo apre; chip polity in basso a sinistra sopra l'anno;
   fonte popolazione sotto il numero; pillola ricostruzione in alto al centro. Dati in `eventi_<slug>.json` (`cards, chapters, recap, cta, sources_card`, da `kit/eventi_kit.py`)
   e `kit_<slug>.json` (`city.POPSRC, POLITIES, RELIABLE_FROM`, da `montaggio/kit_city.py`). `labs_kit.py` mette l'etichetta del monumento durante i cartelli con `target`/`labels`.
-## Camera "drone" (`regia.camera`): un solo volo continuo, nessuno stacco
+## Camera "drone" (`regia.camera`): un solo volo continuo, hover davanti ai bersagli, nessuno stacco
 `regia.camera`: `"drone"` (default dei NUOVI progetti: lo scrive `python -m kit init`) | `"cuts"` (stacchi, il comportamento storico) | `"continuous"` (piano sequenza PCHIP, invariato).
-**Chiave assente = `cuts`**: Copenhagen e lo schedule Valencia attuale non cambiano. Funziona con `pacing: "story"` e con `"buildings"`.
+**Chiave assente = `cuts`**: Copenhagen e lo schedule Valencia attuale non cambiano. Il drone richiede `regia.pacing: "story"` (altrimenti ripiega su `continuous` con un avviso).
 ```jsonc
 "regia": {"camera": "drone",
-          "drone": {"vmax": 250, "amax": 120, "jmax": 200, "clear": 30,   // limiti (m/s, m/s2, m/s3) e margine su terreno/tetti (m); tutti facoltativi
-                    "v_orbit": 30, "v_orbit_max": 45, "v_leg": 105, "v_avg_cap": 165,   // orbita (target, tetto); media dei tratti (desiderata, massima: oltre si toglie la tappa)
-                    "arc_min": 40, "arc_max": 90, "rho_max": 600,   // arco attorno al bersaglio (gradi); raggio massimo dell'orbita su aree/citta' (m)
-                    "open_dist": 2000, "open_alt": 1400, "open_speed": 40}}   // partenza (dopo `open_dist` m dalla prima tappa, a `open_alt` m sul terreno)
+          "soste": [{"y0": 1262, "y1": 1270, "dur": 5, "caption": "...", "target": "Cathedral", "weight": 9}],   // weight (0-10) facoltativo: peso nello scarto; senza, la forza dell'fx
+          "drone": {"vmax": 250, "amax": 120, "jmax": 200, "clear": 30,        // limiti (m/s, m/s2, m/s3) e margine su terreno/tetti (m)
+                    "v_leg": 150, "t_leg_min": 3.5, "rate_cap": 30,            // velocita' media dei tratti (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci
+                    "rho_max": 600, "open_dist": 2000, "open_alt": 900, "open_speed": 40}}   // raggio massimo di hover su aree/citta'; partenza
 ```
-- **Tappe.** Ogni sosta con bersaglio e ogni cartello con `target` e' una tappa, in ordine di tempo; i cartelli SENZA bersaglio non sono tappe (il drone e' in crociera, la didascalia resta).
-  Tappe consecutive sullo stesso luogo (centri vicini, stessa scala) si fondono in una permanenza (un solo avvicinamento, orbita piu' lunga). Ultima tappa: la citta' intera (o il punto fisso del `recap`).
-- **Volo.** Tra due tappe: crociera a quota che dipende dallo zoom dell'epoca (0,35 x raggio della citta' dell'anno + 200 m, 250-1500 m sul terreno); poi avvicinamento lungo e BASSO con prua nel verso di marcia
-  (quota 450-900 m -> 80-200 m sul bersaglio, fino a ~250 m/s), orbita di 40-90 gradi a 20-45 m/s (meno di 40 gradi se la sosta e' troppo breve per restare sotto 45 m/s), poi risale sul tratto successivo.
-  Aree e citta': stessa elevazione di vista di `continuous`, raggio orbita <= `rho_max`, quota fino a 3500 m.
-- **Tempo.** Le soste tengono le finestre ESATTE (il controllo story-pacing di `kit/qa.py` resta valido): il drone ARRIVA alla tappa all'inizio della sosta (`t0`) e riparte usando fino al 75% della sosta
-  precedente quando il tratto e' lungo. Se nemmeno cosi' un tratto sta sotto `v_avg_cap`, una programmazione dinamica toglie le tappe di peso minimo (sosta con bersaglio 10 > cartello con bersaglio 4): il drone le
-  SORVOLA (restano nello schedule, nella didascalia e nel conteggio di `regia.txt`/QA). Per tenerle: allunga la pausa fra due soste lontane (ordine di grandezza: 1 s ogni 150 m).
-- **Liscio.** Posizione = riferimento (orbite + curve di Hermite con profilo di velocita' quintico) filtrato con gaussiana (sigma 0,7 s, C-infinito) fino a restare nei limiti; punto guardato = altra curva
-  (bersaglio nei pesi lisciati, davanti lungo la rotta fra le tappe, 3 s di anticipo), roll zero. Mai sotto DEM + `clear` e mai dentro i tetti vivi in quell'anno (celle da 50 m).
-- Lo schedule porta `camera: "drone"` e `drone: {limits, stats, stays, dropped, cuts}`; il riavvolgimento e' una curva di ANNI (non un taglio di camera) e la notte e' una seconda passata di colore con la stessa camera: `cuts` e' vuoto.
-- **QA** (`kit/qa.py`, controllo e): velocita', accelerazione e jerk massimi, distanza minima da terreno e tetti, numero di discontinuita' (target 0), tappe sorvolate; grafico `cities/<slug>/qa/drone_path.png`.
+- **Hover, non archi.** A ogni tappa il drone decelera fino a fermarsi e STA in aria davanti al bersaglio (distanza dalla taglia del bersaglio, elevazione 20-35 gradi; aree e citta' 25-55), con al massimo
+  una deriva lentissima in un solo verso (<= 6 gradi di azimut e <= 6% di distanza su tutta la sosta; mai reset, mai gesto ripetuto). Poi riparte accelerando dolcemente verso la tappa successiva, con la prua verso di essa.
+- **Tappe e cartelli.** Ogni sosta con bersaglio e' una tappa (la finestra di hover = la finestra della sosta, anni y0 -> y1 ESATTI). I cartelli non sono mai tappe: scorrono durante i tratti di volo
+  (anni fermi sull'anno del cartello) o, se cadono negli anni di una tappa, durante il suo hover (che si allunga fino a 2,2 x dur + 6 s; li' gli anni sono quelli della sosta, non quelli del cartello).
+- **Tempo.** Il totale e' fisso (`regia.duration`). Tratto = max(`t_leg_min`, lunghezza stimata / `v_leg`, cartelli + corsa degli anni); gli anni corrono fra le voci a una velocita' ricavata dal budget (tetto `rate_cap`),
+  e se il volo e' lungo e gli anni pochi il contatore "striscia". Se non entra tutto, si tolgono le soste a peso minimo (peso^2 / tempo risparmiato): diventano cartelli senza bersaglio (restano nello schedule, con
+  anni esatti) e `regia.txt`/QA le elencano. NESSUNA tappa e' "solo sorvolata". Pause piu' lunghe fra soste lontane = piu' tappe tenute (ordine di grandezza: 1 s ogni 150 m di distanza).
+- **Volo.** Crociera a quota dipendente dallo zoom dell'epoca (0,35 x raggio della citta' dell'anno + 200 m, 250-1500 m); poi avvicinamento lungo e BASSO (quota 450-900 m -> 80-200 m, picco ~250 m/s)
+  e arrivo da fermo. Posizione = riferimento (curve di Hermite, profilo di velocita' quintico) filtrato con gaussiana (sigma 0,7-1,2 s, C-infinito) fino a restare nei limiti; punto guardato = altra curva
+  (bersaglio nei pesi lisciati, davanti lungo la rotta, 3 s di anticipo), roll zero. Mai sotto DEM + `clear` e mai dentro i tetti vivi in quell'anno (celle da 50 m).
+- Lo schedule porta `camera: "drone"` e `drone: {limits, stats, stays: [t_arrivo, t_partenza, x, y, nome], legs, dropped, hover_s, flight_s, year_rate, cuts}`; il riavvolgimento e' una curva di ANNI e la notte
+  una seconda passata di colore con la stessa camera: `cuts` e' vuoto. I cartelli durante un hover hanno `on_hover: true`.
+- **QA** (`kit/qa.py`, controllo e): velocita', accelerazione e jerk massimi, distanza minima da terreno e tetti, discontinuita' (target 0), soste tenute/tolte (nomi), tempo di hover e di volo, velocita' massima in hover,
+  una riga per tappa ("arriva t=, hover da-a, riparte t="); grafico `cities/<slug>/qa/drone_path.png`. **Esattezza degli anni**: soste = esatta sulla finestra di hover; cartelli fuori hover = esatta; cartelli durante un hover = no.
 
 - Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
 - Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).
