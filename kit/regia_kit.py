@@ -470,23 +470,35 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
     weight = lambda s: float(s['weight']) if 'weight' in s else float(s.get('_force', 0.0))
     dropped = []
     JUMP = 0.04
+    is_stop = lambda s: s['_stay'] is not None and not s.get('_rider')
 
-    def legs(rate, stretch):
-        """Per ogni tratto: (tempo, [voci scorrevoli], tappa di arrivo). Il tratto k porta alla tappa k (l'ultimo alla tappa finale)."""
-        stops = [(y0, y1, s) for y0, y1, s in items if s['_stay'] is not None and not s.get('_rider')]
+    def assign():
+        """Cartelli che cadono negli anni di una tappa (+-2) scorrono DURANTE il suo hover (uno dopo l'altro, hover allungato fino a 1,6 x dur + 4 s);
+        gli altri, e le soste scartate, scorrono nei tratti di volo. Ritorna {id(tappa): (durata hover, [cartelli])}."""
+        A = {}; used = set()
+        for y0, y1, s in items:
+            if not is_stop(s): continue
+            cap = 2.2 * s['dur'] + 6.0; cum = 0.0; mine = []
+            for cy0, cy1, c in items:
+                if not c.get('_card') or id(c) in used or not (y0 - 2.0 <= cy0 <= y1 + 2.0): continue
+                if cum + c['dur'] <= cap + 1e-6: mine.append((cum, c)); cum += c['dur']; used.add(id(c))
+            A[id(s)] = (max(s['dur'], cum), mine)
+        return A, used
+
+    def legs(rate, stretch, A, used):
+        """Tratti: (tempo, geom, cartelli_t, corsa, scorrevoli, da, a, anno_inizio, anno_fine). Il tratto k porta alla tappa k (l'ultimo alla finale)."""
         out = []; cur = y_start; riders = []; prev = None
         for y0, y1, s in items:
-            if s['_stay'] is not None and not s.get('_rider'):
-                out.append((prev, s, riders, cur, y0)); riders = []; prev = s; cur = y1
-            else: riders.append((y0, y1, s)); cur = max(cur, y1) if False else y1
+            if is_stop(s): out.append((prev, s, riders, cur, y0)); riders = []; prev = s; cur = y1
+            elif id(s) in used: continue
+            else: riders.append((y0, y1, s)); cur = y1
         out.append((prev, None, riders, cur, 2026.0))
         res = []
         for a, b, rid, cur0, ytarget in out:
-            if b is None and fin is None: geom = 0.0
-            else:
+            geom = 0.0
+            if a is not None:
                 tgt = fin if b is None else b['_stay']
-                geom = 0.0 if a is None else max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg)) / dcfg['v_leg']) * stretch
-                if a is None and b is not None: geom = 0.0
+                geom = max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg)) / dcfg['v_leg']) * stretch
             cards_t = sum(r[2]['dur'] for r in rid); cur = cur0; runs = 0.0; jumps = 0
             for y0, y1, r in rid:
                 if y0 - cur > 1e-6: runs += (y0 - cur) / rate
@@ -498,12 +510,12 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
         return res
 
     def total(rate, stretch):
-        L = legs(rate, stretch); stops = [s for _, _, s in items if s['_stay'] is not None and not s.get('_rider')]
-        return sum(l[0] for l in L) + sum(s['dur'] for s in stops)
+        A, used = assign(); L = legs(rate, stretch, A, used)
+        return sum(l[0] for l in L) + sum(A[id(s)][0] for _, _, s in items if is_stop(s))
     stretch = 1.0
     while True:
         if total(dcfg['rate_cap'], 1.0) <= budget: break
-        cand = [s for _, _, s in items if s['_stay'] is not None and not s.get('_rider')]
+        cand = [s for _, _, s in items if is_stop(s)]
         if not cand: warn('pacing story (drone): neanche senza tappe i cartelli entrano nel tempo: alza regia.duration'); break
         d = min(cand, key=lambda s: (weight(s), s['dur'])); d['_rider'] = True; dropped.append(d)
     lo, hi = 0.05, dcfg['rate_cap']
@@ -520,27 +532,30 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
             if total(m, 1.0) > budget: lo = m
             else: hi = m
         rate = hi
-    L = legs(rate, stretch)
+    A, used = assign(); L = legs(rate, stretch, A, used)
     t = t0; cur = y_start; hov = flight = 0.0
     for tl, geom, cards_t, runs, rid, a, b, cur0, ytarget in L:
         tl0 = t
-        scale = 1.0 if (cards_t + runs) >= geom or runs <= 0 else (geom - cards_t - JUMP * 0) / runs
+        slack = max(0.0, tl - (tl0 - tl0) - (cards_t + runs + JUMP * sum(1 for y0_, y1_, r_ in rid if False)))
         for y0, y1, r in rid:
-            if y0 - cur > 1e-6: dt = (y0 - cur) / rate * scale; YEARS += [(t, cur), (t + dt, y0)]; t += dt
+            if y0 - cur > 1e-6: dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
             elif cur - y0 > 1e-6: YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
             SOSTA_T.append((t, t + r['dur'], r)); YEARS += [(t, y0), (t + r['dur'], y1)]; t += r['dur']; cur = y1
-        if ytarget - cur > 1e-6 and (b is not None or True):
-            dt = (ytarget - cur) / rate * scale; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
+        if ytarget - cur > 1e-6: dt = (ytarget - cur) / rate + slack; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
         elif cur - ytarget > 1e-6: YEARS += [(t, cur), (t + JUMP, ytarget)]; t += JUMP
         cur = ytarget
         t = max(t, tl0 + tl)                                   # tempo minimo del volo (anni fermi se in avanzo)
         flight += t - tl0
         if b is not None:
-            SOSTA_T.append((t, t + b['dur'], b)); YEARS += [(t, b['y0']), (t + b['dur'], b['y1'])]; hov += b['dur']; t += b['dur']; cur = float(b['y1'])
+            hl, mine = A[id(b)]
+            SOSTA_T.append((t, t + hl, b)); YEARS += [(t, b['y0']), (t + hl, b['y1'])]
+            for off, c in mine: SOSTA_T.append((t + off, t + off + c['dur'], dict(c, _on_hover=True)))
+            hov += hl; t += hl; cur = float(b['y1'])
     YEARS.append((max(t, end_t), 2026.0)); YEARS += tail
     YEARS = sorted({round(float(a), 3): (round(float(a), 3), round(float(b), 4)) for a, b in YEARS}.values())
-    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s')
-    info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, flight=flight, rate=rate, stretch=stretch)
+    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s (modello {t0 + total(rate, stretch):.1f}, soste {len(dropped)} tolte, rate {rate:.2f})')
+    info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, cards_on_hover=sum(len(v[1]) for v in A.values()), flight=flight, rate=rate, stretch=stretch)
+    SOSTA_T.sort(key=lambda x: (x[0], bool(x[2].get('_card'))))
     return YEARS, SOSTA_T, info
 
 
@@ -562,7 +577,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     if pacing not in ('buildings', 'story'): warn(f"regia.pacing sconosciuto: {pacing!r} (buildings|story)")
     cam_mode = R.get('camera', 'cuts')      # assente = stacchi (comportamento storico); i nuovi progetti scrivono "drone" (kit init)
     if cam_mode not in ('cuts', 'continuous', 'drone'): warn(f"regia.camera sconosciuta: {cam_mode!r} (cuts|continuous|drone)"); cam_mode = 'cuts'
-    drone = cam_mode == 'drone'; cont = cam_mode in ('continuous', 'drone')
+    drone = cam_mode == 'drone'
+    if drone and R.get('pacing', 'buildings') != 'story': warn('regia.camera="drone" richiede regia.pacing="story": uso "continuous"'); cam_mode = 'continuous'; drone = False
+    cont = cam_mode in ('continuous', 'drone')
     MO_ = story.get('montaggio', {}) or {}
     recap_s, cta_s, src_s = end_plan_of(story, story_mode)
     if recap_s and not story_mode: warn('montaggio.recap richiede regia.pacing="story": ignorato'); recap_s = 0.0
@@ -671,7 +688,14 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     if story_mode:
         chy = [float(c['y']) for c in (MO_.get('chapters') or [])] + [float(c['y']) for c in (MO_.get('cards') or []) if c.get('chapter')]
         lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))   # +2,8 s: capitolo I
-        YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn)
+        if drone:
+            from kit import drone_kit as DK
+            dcfg = DK.cfg_of(R); (m26x, m26y), r26 = D.extent(2026.0); fx_, fy_ = focus if focus else (m26x, m26y); d_rc = max(5000.0, 1.8 * r26)
+            if recap_s: fin = dict(x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26)
+            else: fin = dict(x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26)
+            YEARS, SOSTA_T, tinfo = build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin)
+        else:
+            YEARS, SOSTA_T = build_story(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn)
     else:
         TL = Timeline(D, rmin, rmax, warn)
         YEARS, SOSTA_T = TL.build(FIXED, SOSTE, tail)
@@ -772,29 +796,28 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     cam = []; drone_info = None
     if drone:
         from kit import drone_kit as DK
-        dcfg = DK.cfg_of(R); dem = DK.load_dem(ddir); obst = DK.Obstacles(ddir, dem)
-        stays = drone_stays(SOSTA_T, D, focus, title_t)
-        fin_t = (end_t + 3.0) if (story_mode and recap_s) else min(stays[-1]['t1'] + 12.0, DUR - 12.0)
+        dem = DK.load_dem(ddir); obst = DK.Obstacles(ddir, dem)
+        stays = [dict(drone_stay_of(s_, D, focus), t0=t0_, t1=t1_, name=s_['caption']) for t0_, t1_, s_ in SOSTA_T if s_['_stay'] is not None and not s_.get('_rider')]
+        fin_t = end_t
         if story_mode and recap_s:
-            e_, a_ = math.radians(52.0), math.radians(az_def)
             fp = campos(m26x, m26y, 0.0, d_rc, 52.0, az_def)
-            stays.append(dict(t0=fin_t, t1=DUR, x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26, prio=9, static=(fp[0], fp[1], fp[2] - float(dem(fp[0], fp[1])))))
-        else:
-            stays.append(dict(t0=fin_t, t1=DUR, x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26, prio=9))
-        stays = merge_stays(stays)
+            stays.append(dict(fin, t0=fin_t, t1=DUR, name='finale', static=(fp[0], fp[1], fp[2] - float(dem(fp[0], fp[1])))))
+        else: stays.append(dict(fin, t0=fin_t, t1=DUR, name='finale'))
         yy = np.arange(float(y_start), 2027.0, 25.0); rr = np.array([D.extent(float(y_), focus)[1] for y_ in yy])
         cruise_fn = lambda y_: float(np.clip(0.35 * np.interp(y_, yy, rr) + 200.0, 250.0, 1500.0))   # zoom dell'epoca: bassa sulla citta' antica, alta su quella grande
         s0 = stays[0]; az_r = math.radians(az_def)
-        d0 = min(dcfg['open_dist'], 0.55 * dcfg['v_avg_cap'] * s0['t0'])
+        d0 = min(dcfg['open_dist'], 0.8 * dcfg['v_leg'] * s0['t0'])
         start = (s0['x'] + d0 * math.sin(az_r), s0['y'] + d0 * math.cos(az_r), dcfg['open_alt'], dcfg['open_speed'])
         ts_, P_, L_, dinfo = DK.fly(stays, DUR, year_at, dem, obst, cruise_fn, start, dcfg)
         cam = DK.cam_keys(ts_, P_, L_); stays = dinfo['stays']
-        if dinfo['dropped']: warn(f"drone: {len(dinfo['dropped'])} tappe sorvolate in crociera (bersaglio troppo lontano per il tempo): " + '; '.join(f"{x['name'][:28]} {fmt_t(x['t0'])}" for x in dinfo['dropped']))
+        if tinfo['dropped']: warn(f"drone: {len(tinfo['dropped'])} soste senza posto diventano cartelli (peso minimo): " + '; '.join(f"{n_[:30]} ({n_[1]:.0f})" if False else n_[0][:30] for n_ in tinfo['dropped']))
         dst = DK.stats_of(ts_, P_, L_, dem, obst, year_at)
         drone_info = {'limits': {k: dcfg[k] for k in ('vmax', 'amax', 'jmax', 'clear')}, 'stats': {k: round(v, 2) for k, v in dst.items()},
-                      'sigma': dinfo['sigma'], 'cuts': [], 'dropped': [[round(x['t0'], 2), x['name']] for x in dinfo['dropped']],     # tagli dichiarati: nessuno (il riavvolgimento e' degli anni, la notte e' una passata di colore)
-                      'stays': [[round(s_['t0'], 2), round(dinfo['t_dep'][i], 2), round(s_['x'], 1), round(s_['y'], 1)] for i, s_ in enumerate(stays)]}
-        warnings_extra = []
+                      'sigma': dinfo['sigma'], 'cuts': [],     # tagli dichiarati: nessuno (il riavvolgimento e' degli anni, la notte e' una passata di colore)
+                      'dropped': [[round(y_, 1), n_] for n_, y_, w_ in tinfo['dropped']], 'hover_s': round(tinfo['hover'], 1), 'flight_s': round(tinfo['flight'], 1),
+                      'year_rate': round(tinfo['rate'], 2), 'stretch': round(tinfo['stretch'], 2),
+                      'stays': [[round(s_['t0'], 2), round(s_['t1'], 2), round(s_['x'], 1), round(s_['y'], 1), s_['name']] for s_ in stays],
+                      'legs': [[round(l_['t_a'], 2), round(l_['t_b'], 2), round(l_['L']), round(l_['vpk'])] for l_ in dinfo['legs']]}
         if dst['vmax'] > dcfg['vmax'] * 1.02: warn(f"drone: velocita' massima {dst['vmax']:.0f} m/s oltre il limite {dcfg['vmax']:.0f}")
         if dst['amax'] > dcfg['amax']: warn(f"drone: accelerazione massima {dst['amax']:.0f} m/s2 oltre {dcfg['amax']:.0f}")
         if dst['jmax'] > dcfg['jmax']: warn(f"drone: jerk massimo {dst['jmax']:.0f} m/s3 oltre {dcfg['jmax']:.0f}")
@@ -868,7 +891,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     elif not strong: warn('nessun evento forte (forza >= 6) tra le soste')
     elif strong[0][0] > 45: warn(f"primo evento forte dopo 45 s: '{strong[0][1]['caption']}' a {fmt_t(strong[0][0])}")
     for (a0, a1, sa), (b0, b1, sb) in zip(SOSTA_T, SOSTA_T[1:]):
-        if b0 < a1 - 0.05: warn(f"soste sovrapposte nel video: '{sa['caption']}' e '{sb['caption']}' ({fmt_t(b0)} < {fmt_t(a1)})")
+        if b0 < a1 - 0.05 and not drone: warn(f"soste sovrapposte nel video: '{sa['caption']}' e '{sb['caption']}' ({fmt_t(b0)} < {fmt_t(a1)})")
     day = end_t - title_t; tot = sum(t1 - t0 for t0, t1, _ in SOSTA_T)
     if tot > 0.4 * day and not story_mode: warn(f'soste {tot:.0f} s = {100 * tot / day:.0f}% del giorno (> 40%)')
     if b_start is not None and M and not story_mode:
@@ -877,7 +900,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
 
     # ---------- testo e grafico ----------
     lines = [f'{name}: regia automatica (kit/regia_kit.py)',
-             (f"Camera drone: {len(stays)} tappe (da {len(SOSTA_T)} soste/cartelli), volo continuo, nessuno stacco; " + ', '.join(f'{k} {v}' for k, v in drone_info['stats'].items()) if drone else ''),
+             (f"Camera drone: {len(stays) - 1} tappe in hover ({drone_info['hover_s']} s) e voli ({drone_info['flight_s']} s), anni {drone_info['year_rate']}/s fra le voci, nessuno stacco; " + ', '.join(f'{k} {v}' for k, v in drone_info['stats'].items()) if drone else ''),
              f'Durata {int(DUR // 60)}:{DUR % 60:04.1f}  fotogrammi {int(round(DUR * FPS))}  inquadrature {len(SHOTS)}  stacco medio ogni {DUR / len(SHOTS):.1f} s',
              f"Musica: {M['name'] if M else '-'}  b_start {b_start}  notte {night_t}", '', 'ANCORE (video -> anno):']
     for t, y in FIXED:

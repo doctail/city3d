@@ -25,7 +25,7 @@ from scipy.interpolate import PchipInterpolator
 
 FPS = 24
 DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s, m/s^2, m/s^3) e margine sopra terreno/tetti (m)
-                v_leg=120.0, t_leg_min=3.0, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
+                v_leg=150.0, t_leg_min=2.5, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=1400.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9)
 
