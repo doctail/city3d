@@ -440,6 +440,38 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
 
 
 # ======================================================================================================== regia
+def drone_stays(SOSTA_T, D, focus, title_t):
+    """Soste/cartelli -> tappe del drone: posizione, dimensione, distanza e elevazione di vista (stessa formula della camera 'continuous')."""
+    out = []
+    for t0, t1, s in SOSTA_T:
+        if t1 <= title_t + 1.0: continue
+        tg = s['_tg']
+        if tg is None and s.get('_card'): continue    # cartello senza bersaglio: nessuna tappa, il drone e' in crociera (la didascalia resta)
+        if tg is None:
+            (mx, my), r = D.extent(s['y1'], focus)
+            out.append(dict(t0=t0, t1=t1, x=mx, y=my, tzo=0.0, d=1.0 * r + (450 if r > 700 else 180), el=30.0, kind='city', R=r, name=s['caption'], prio=2 if not s.get('_card') else 0))
+        else:
+            mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
+            d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
+            if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+            out.append(dict(t0=t0, t1=t1, x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area',
+                            R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'], prio=1 if s.get('_card') else 2))
+    return out
+
+
+def merge_stays(stays):
+    """Tappe consecutive sullo stesso luogo (centri vicini, stessa scala) = UNA permanenza: un solo avvicinamento e un'orbita piu' lunga."""
+    out = []
+    for s in stays:
+        if out and not s.get('static') and not out[-1].get('static'):
+            a = out[-1]; dist = math.hypot(s['x'] - a['x'], s['y'] - a['y']); ra, rb = max(a['R'], 40.0), max(s['R'], 40.0)
+            if dist < 0.5 * max(ra, rb) + 120.0 and max(ra, rb) / min(ra, rb) < 3.0:
+                a['t1'] = max(a['t1'], s['t1']); a['R'] = max(ra, rb); a['d'] = max(a['d'], s['d']); a['merged'] = a.get('merged', 1) + 1; a['prio'] = max(a.get('prio', 1), s.get('prio', 1))
+                continue
+        out.append(dict(s))
+    return out
+
+
 def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=False, write=True):
     if isinstance(story, str): story = load_story(story)
     city = story['city']; slug = city['slug']; R = story.get('regia', {}) or {}
@@ -456,7 +488,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     rmin, rmax = float(R.get('rmin', 0.5)), float(R.get('rmax', 8.0))
     pacing = R.get('pacing', 'buildings'); story_mode = pacing == 'story'
     if pacing not in ('buildings', 'story'): warn(f"regia.pacing sconosciuto: {pacing!r} (buildings|story)")
-    cont = R.get('camera') == 'continuous'
+    cam_mode = R.get('camera', 'cuts')      # assente = stacchi (comportamento storico); i nuovi progetti scrivono "drone" (kit init)
+    if cam_mode not in ('cuts', 'continuous', 'drone'): warn(f"regia.camera sconosciuta: {cam_mode!r} (cuts|continuous|drone)"); cam_mode = 'cuts'
+    drone = cam_mode == 'drone'; cont = cam_mode in ('continuous', 'drone')
     MO_ = story.get('montaggio', {}) or {}
     recap_s, cta_s, src_s = end_plan_of(story, story_mode)
     if recap_s and not story_mode: warn('montaggio.recap richiede regia.pacing="story": ignorato'); recap_s = 0.0
@@ -663,8 +697,36 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     recap_shot = (end_t, DUR, (m26x, m26y, 0.0), d_rc, d_rc, 52, 52, az_def, az_def, 35)   # punto di vista alto e FISSO
     if story_mode and recap_s and not cont: SHOTS.append(recap_shot)
     SHOTS.sort(key=lambda s: s[0])
-    cam = []
-    if cont:
+    cam = []; drone_info = None
+    if drone:
+        from kit import drone_kit as DK
+        dcfg = DK.cfg_of(R); dem = DK.load_dem(ddir); obst = DK.Obstacles(ddir, dem)
+        stays = drone_stays(SOSTA_T, D, focus, title_t)
+        fin_t = (end_t + 3.0) if (story_mode and recap_s) else min(stays[-1]['t1'] + 12.0, DUR - 12.0)
+        if story_mode and recap_s:
+            e_, a_ = math.radians(52.0), math.radians(az_def)
+            fp = campos(m26x, m26y, 0.0, d_rc, 52.0, az_def)
+            stays.append(dict(t0=fin_t, t1=DUR, x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26, prio=9, static=(fp[0], fp[1], fp[2] - float(dem(fp[0], fp[1])))))
+        else:
+            stays.append(dict(t0=fin_t, t1=DUR, x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26, prio=9))
+        stays = merge_stays(stays)
+        yy = np.arange(float(y_start), 2027.0, 25.0); rr = np.array([D.extent(float(y_), focus)[1] for y_ in yy])
+        cruise_fn = lambda y_: float(np.clip(0.35 * np.interp(y_, yy, rr) + 200.0, 250.0, 1500.0))   # zoom dell'epoca: bassa sulla citta' antica, alta su quella grande
+        s0 = stays[0]; az_r = math.radians(az_def)
+        d0 = min(dcfg['open_dist'], 0.55 * dcfg['v_avg_cap'] * s0['t0'])
+        start = (s0['x'] + d0 * math.sin(az_r), s0['y'] + d0 * math.cos(az_r), dcfg['open_alt'], dcfg['open_speed'])
+        ts_, P_, L_, dinfo = DK.fly(stays, DUR, year_at, dem, obst, cruise_fn, start, dcfg)
+        cam = DK.cam_keys(ts_, P_, L_); stays = dinfo['stays']
+        if dinfo['dropped']: warn(f"drone: {len(dinfo['dropped'])} tappe sorvolate in crociera (bersaglio troppo lontano per il tempo): " + '; '.join(f"{x['name'][:28]} {fmt_t(x['t0'])}" for x in dinfo['dropped']))
+        dst = DK.stats_of(ts_, P_, L_, dem, obst, year_at)
+        drone_info = {'limits': {k: dcfg[k] for k in ('vmax', 'amax', 'jmax', 'clear')}, 'stats': {k: round(v, 2) for k, v in dst.items()},
+                      'sigma': dinfo['sigma'], 'cuts': [], 'dropped': [[round(x['t0'], 2), x['name']] for x in dinfo['dropped']],     # tagli dichiarati: nessuno (il riavvolgimento e' degli anni, la notte e' una passata di colore)
+                      'stays': [[round(s_['t0'], 2), round(dinfo['t_dep'][i], 2), round(s_['x'], 1), round(s_['y'], 1)] for i, s_ in enumerate(stays)]}
+        warnings_extra = []
+        if dst['vmax'] > dcfg['vmax'] * 1.02: warn(f"drone: velocita' massima {dst['vmax']:.0f} m/s oltre il limite {dcfg['vmax']:.0f}")
+        if dst['amax'] > dcfg['amax']: warn(f"drone: accelerazione massima {dst['amax']:.0f} m/s2 oltre {dcfg['amax']:.0f}")
+        if dst['jmax'] > dcfg['jmax']: warn(f"drone: jerk massimo {dst['jmax']:.0f} m/s3 oltre {dcfg['jmax']:.0f}")
+    elif cont:
         wps = [(0.0, SHOTS[0][2], SHOTS[0][3], SHOTS[0][5], SHOTS[0][7], 35), (title_t + 0.5, (fx_, fy_, 10.0), 1800.0, 28, az_def + 9, 35)]
         for j, (t0, t1, s) in enumerate(SOSTA_T):
             if t1 <= title_t + 1.0: continue
@@ -700,6 +762,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     sched = {'_doc': f'{name}, regia automatica (kit/regia_kit.py).' + (f" Musica {M['name']}, B da {b_start:.1f} s." if M else ''),
              'duration': DUR, 'lens': 35, 'years': [[t, y] for t, y in YEARS], 'cam': cam}
     if night: sched['night_t'] = night_t
+    if drone: sched['camera'] = 'drone'; sched['drone'] = drone_info
     if b_start is not None: sched['b_start'] = b_start
     sched['soste'] = [[round(t0, 2), round(t1, 2), s['y0'], s['y1'], s['caption']] for t0, t1, s in SOSTA_T if not s.get('_card')]
     if story_mode:
@@ -742,6 +805,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
 
     # ---------- testo e grafico ----------
     lines = [f'{name}: regia automatica (kit/regia_kit.py)',
+             (f"Camera drone: {len(stays)} tappe (da {len(SOSTA_T)} soste/cartelli), volo continuo, nessuno stacco; " + ', '.join(f'{k} {v}' for k, v in drone_info['stats'].items()) if drone else ''),
              f'Durata {int(DUR // 60)}:{DUR % 60:04.1f}  fotogrammi {int(round(DUR * FPS))}  inquadrature {len(SHOTS)}  stacco medio ogni {DUR / len(SHOTS):.1f} s',
              f"Musica: {M['name'] if M else '-'}  b_start {b_start}  notte {night_t}", '', 'ANCORE (video -> anno):']
     for t, y in FIXED:

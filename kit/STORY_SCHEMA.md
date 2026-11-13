@@ -137,5 +137,28 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
   capitolo = titolo centrale ("CHAPTER II" + titolo), mostrato nei 2,8 s prima del cartello che lo apre; chip polity in basso a sinistra sopra l'anno;
   fonte popolazione sotto il numero; pillola ricostruzione in alto al centro. Dati in `eventi_<slug>.json` (`cards, chapters, recap, cta, sources_card`, da `kit/eventi_kit.py`)
   e `kit_<slug>.json` (`city.POPSRC, POLITIES, RELIABLE_FROM`, da `montaggio/kit_city.py`). `labs_kit.py` mette l'etichetta del monumento durante i cartelli con `target`/`labels`.
+## Camera "drone" (`regia.camera`): un solo volo continuo, nessuno stacco
+`regia.camera`: `"drone"` (default dei NUOVI progetti: lo scrive `python -m kit init`) | `"cuts"` (stacchi, il comportamento storico) | `"continuous"` (piano sequenza PCHIP, invariato).
+**Chiave assente = `cuts`**: Copenhagen e lo schedule Valencia attuale non cambiano. Funziona con `pacing: "story"` e con `"buildings"`.
+```jsonc
+"regia": {"camera": "drone",
+          "drone": {"vmax": 250, "amax": 120, "jmax": 200, "clear": 30,   // limiti (m/s, m/s2, m/s3) e margine su terreno/tetti (m); tutti facoltativi
+                    "v_orbit": 30, "v_orbit_max": 45, "v_leg": 105, "v_avg_cap": 165,   // orbita (target, tetto); media dei tratti (desiderata, massima: oltre si toglie la tappa)
+                    "arc_min": 40, "arc_max": 90, "rho_max": 600,   // arco attorno al bersaglio (gradi); raggio massimo dell'orbita su aree/citta' (m)
+                    "open_dist": 2000, "open_alt": 1400, "open_speed": 40}}   // partenza (dopo `open_dist` m dalla prima tappa, a `open_alt` m sul terreno)
+```
+- **Tappe.** Ogni sosta con bersaglio e ogni cartello con `target` e' una tappa, in ordine di tempo; i cartelli SENZA bersaglio non sono tappe (il drone e' in crociera, la didascalia resta).
+  Tappe consecutive sullo stesso luogo (centri vicini, stessa scala) si fondono in una permanenza (un solo avvicinamento, orbita piu' lunga). Ultima tappa: la citta' intera (o il punto fisso del `recap`).
+- **Volo.** Tra due tappe: crociera a quota che dipende dallo zoom dell'epoca (0,35 x raggio della citta' dell'anno + 200 m, 250-1500 m sul terreno); poi avvicinamento lungo e BASSO con prua nel verso di marcia
+  (quota 450-900 m -> 80-200 m sul bersaglio, fino a ~250 m/s), orbita di 40-90 gradi a 20-45 m/s (meno di 40 gradi se la sosta e' troppo breve per restare sotto 45 m/s), poi risale sul tratto successivo.
+  Aree e citta': stessa elevazione di vista di `continuous`, raggio orbita <= `rho_max`, quota fino a 3500 m.
+- **Tempo.** Le soste tengono le finestre ESATTE (il controllo story-pacing di `kit/qa.py` resta valido): il drone ARRIVA alla tappa all'inizio della sosta (`t0`) e riparte usando fino al 75% della sosta
+  precedente quando il tratto e' lungo. Se nemmeno cosi' un tratto sta sotto `v_avg_cap`, una programmazione dinamica toglie le tappe di peso minimo (sosta con bersaglio 10 > cartello con bersaglio 4): il drone le
+  SORVOLA (restano nello schedule, nella didascalia e nel conteggio di `regia.txt`/QA). Per tenerle: allunga la pausa fra due soste lontane (ordine di grandezza: 1 s ogni 150 m).
+- **Liscio.** Posizione = riferimento (orbite + curve di Hermite con profilo di velocita' quintico) filtrato con gaussiana (sigma 0,7 s, C-infinito) fino a restare nei limiti; punto guardato = altra curva
+  (bersaglio nei pesi lisciati, davanti lungo la rotta fra le tappe, 3 s di anticipo), roll zero. Mai sotto DEM + `clear` e mai dentro i tetti vivi in quell'anno (celle da 50 m).
+- Lo schedule porta `camera: "drone"` e `drone: {limits, stats, stays, dropped, cuts}`; il riavvolgimento e' una curva di ANNI (non un taglio di camera) e la notte e' una seconda passata di colore con la stessa camera: `cuts` e' vuoto.
+- **QA** (`kit/qa.py`, controllo e): velocita', accelerazione e jerk massimi, distanza minima da terreno e tetti, numero di discontinuita' (target 0), tappe sorvolate; grafico `cities/<slug>/qa/drone_path.png`.
+
 - Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
 - Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).

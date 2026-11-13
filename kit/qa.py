@@ -10,6 +10,8 @@ Uso:  python -m kit.qa <slug> [--render] [--story PATH] [--data DIR] [--city JSO
      aree vuote allungate (strade moderne senza case e senza nastro), nastri prima del gutting, gutting non riempiti.
      PNG 2D in cities/<slug>/qa/corridoi_<anno>.png
   e) costo dei cambi (tools/costo_cambi.py) e schedule (soste ordinate, didascalie "Titolo (data)", evento forte entro 45 s)
+  e2) camera drone (schedule con camera="drone"): velocita', accelerazione e jerk massimi, distanza minima da terreno e tetti, salti (target 0),
+     tappe sorvolate; stampa i numeri e disegna cities/<slug>/qa/drone_path.png (vista dall'alto, colore = velocita')
   f) --render: fotogrammi CPU locali (480x270, 4 campioni, niente denoiser) dall'alto del centro in 4 anni chiave e uno per
      ciascuna delle 3 soste piu' lunghe, UNA sola costruzione della scena (schedule QA a blocchi fermi + --only),
      foglio contatti cities/<slug>/qa/contact.jpg
@@ -439,7 +441,59 @@ def _year_at(t, Y):
     return float(np.interp(t, Y[:, 0], Y[:, 1]))
 
 
-def check_schedule(story, D, R, city_json, sched_path):
+def check_drone(story, D, R, sc, qadir):
+    """Camera drone: limiti cinematici, distanza da terreno/tetti, salti, grafico del percorso. Stampa i numeri."""
+    S = 'e'
+    from . import drone_kit as DK
+    cam = sc['cam']; ts = np.array([k[0] for k in cam], float); P = np.array([k[1] for k in cam], float); Lk = np.array([k[2] for k in cam], float)
+    dt = float(np.median(np.diff(ts)))
+    meta = sc.get('drone') or {}; lim = dict(DK.DEFAULTS); lim.update(meta.get('limits') or {})
+    v, a, j = DK.kin(P, dt)
+    dem = DK.load_dem(D); obst = DK.Obstacles(D, dem)
+    Y = np.array(sc['years'], float); yrs = np.interp(ts, Y[:, 0], Y[:, 1])
+    ground = dem(P[:, 0], P[:, 1]); roof = obst.top(P[:, 0], P[:, 1], yrs)
+    clr_g = P[:, 2] - ground; clr = P[:, 2] - np.maximum(ground, roof)
+    # salti: passo di posizione oltre 1,5 * vmax * dt, o rotazione dello sguardo oltre 20 gradi fra due chiavi, esclusi i tagli dichiarati
+    cuts = [float(c) for c in (meta.get('cuts') or [])]
+    step = np.linalg.norm(np.diff(P, axis=0), axis=1)
+    d1 = Lk[:-1] - P[:-1]; d2 = Lk[1:] - P[1:]
+    cosang = np.sum(d1 * d2, 1) / np.maximum(np.linalg.norm(d1, axis=1) * np.linalg.norm(d2, axis=1), 1e-9)
+    ang = np.degrees(np.arccos(np.clip(cosang, -1, 1)))
+    bad = np.where((step > 1.5 * lim['vmax'] * dt) | (ang > 20.0))[0]
+    bad = [i for i in bad if not any(abs(ts[i + 1] - c) < 0.2 for c in cuts)]
+    nk = np.diff(ts); gaps = int((nk > 0.2).sum())
+    row = lambda ok, title, det: (print(f'[qa] drone: {title}: {det}'), R.add(S, PASS if ok else FAIL, 'drone: ' + title, det))
+    row(v.max() <= lim['vmax'] * 1.05, 'velocita\' massima', f"{v.max():.0f} m/s (limite {lim['vmax']:.0f}), mediana {np.median(v):.0f}")
+    row(a.max() <= lim['amax'] * 1.05, 'accelerazione massima', f"{a.max():.0f} m/s2 (limite {lim['amax']:.0f}), 99% {np.percentile(a, 99):.0f}")
+    row(j.max() <= lim['jmax'] * 1.05, 'jerk massimo', f"{j.max():.0f} m/s3 (limite {lim['jmax']:.0f}), 99% {np.percentile(j, 99):.0f}")
+    row(clr.min() >= 0.8 * lim['clear'], 'distanza minima da terreno e tetti', f"{clr.min():.0f} m (soglia {0.8 * lim['clear']:.0f}); dal solo terreno {clr_g.min():.0f} m")
+    row(len(bad) == 0 and gaps == 0, 'discontinuita\' (target 0, tagli dichiarati: %d)' % len(cuts), f"{len(bad)} salti" + (f" a {', '.join(f'{ts[i + 1]:.1f} s' for i in bad[:6])}" if bad else '') + (f", {gaps} buchi nelle chiavi" if gaps else ''))
+    dropped = meta.get('dropped') or []
+    R.add(S, WARN if dropped else PASS, 'drone: tappe sorvolate in crociera', f"{len(dropped)} su {len(meta.get('stays') or []) + len(dropped)}: " + '; '.join(f"{d[1][:26]} {d[0]:.0f} s" for d in dropped[:8]))
+    try:
+        import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+        from matplotlib.collections import LineCollection
+        os.makedirs(qadir, exist_ok=True)
+        fig = plt.figure(figsize=(13, 9), dpi=90); ax = fig.add_axes([0.05, 0.30, 0.62, 0.66]); ax2 = fig.add_axes([0.05, 0.05, 0.9, 0.18])
+        seg = np.stack([P[:-1, :2], P[1:, :2]], 1); lc = LineCollection(seg, cmap='turbo', norm=plt.Normalize(0, lim['vmax'])); lc.set_array(v[:-1]); lc.set_linewidth(1.8)
+        ax.add_collection(lc); ax.autoscale(); ax.set_aspect('equal'); ax.grid(alpha=0.3)
+        for i, (t0, td, x, y) in enumerate(meta.get('stays') or []):
+            ax.plot([x], [y], 'o', ms=3, color='k'); ax.annotate(f'{i}', (x, y), fontsize=6, xytext=(3, 3), textcoords='offset points')
+        ax.plot([P[0, 0]], [P[0, 1]], 's', color='green', ms=7); ax.plot([P[-1, 0]], [P[-1, 1]], 's', color='red', ms=7)
+        cb = fig.colorbar(lc, ax=ax, fraction=0.035, pad=0.01); cb.set_label('velocita\' (m/s)')
+        ax.set_title(f"{story['city'].get('name', '')}: percorso del drone dall'alto (verde = inizio, rosso = fine, punti = tappe)\n"
+                     f"v max {v.max():.0f} m/s, a max {a.max():.0f} m/s2, jerk max {j.max():.0f} m/s3, distanza minima {clr.min():.0f} m, {len(bad)} salti", fontsize=9)
+        ax.set_xlabel('x (m)'); ax.set_ylabel('y (m)')
+        ax2.plot(ts, v, color='#c0392b', lw=1, label='velocita\' (m/s)'); ax2.plot(ts, P[:, 2] - ground, color='#1f6f8b', lw=1, label='quota sul terreno (m)')
+        ax2.plot(ts, clr, color='#27ae60', lw=0.8, label='distanza da terreno/tetti (m)'); ax2.set_yscale('symlog', linthresh=100); ax2.grid(alpha=0.3); ax2.legend(fontsize=7, ncol=3); ax2.set_xlabel('s')
+        for t0, td, x, y in (meta.get('stays') or []): ax2.axvspan(t0, min(td, ts[-1]), color='#f39c12', alpha=0.15)
+        fig.savefig(os.path.join(qadir, 'drone_path.png')); plt.close(fig)
+        R.add(S, PASS, 'drone: grafico del percorso', 'qa/drone_path.png')
+    except Exception as e:
+        R.add(S, WARN, 'drone: grafico non fatto', str(e))
+
+
+def check_schedule(story, D, R, city_json, sched_path, qadir=None):
     S = 'e'; c = story['city']; y0, y1 = float(c['start_year']), float(c['end_year'])
     if not os.path.exists(city_json): R.add(S, FAIL, f'{os.path.basename(city_json)} mancante', 'python -m kit.city_json <slug>')
     sc = _load(sched_path)
@@ -459,6 +513,7 @@ def check_schedule(story, D, R, city_json, sched_path):
     cam = sc.get('cam', [])
     if not cam: R.add(S, FAIL, 'schedule senza camera')
     elif cam[-1][0] > dur + 0.5 or any(len(k) < 3 for k in cam): R.add(S, FAIL, 'chiavi camera oltre la durata o malformate')
+    elif sc.get('camera') == 'drone': check_drone(story, D, R, sc, qadir or os.path.join(story.get('_dir', '.'), 'qa'))
     so = sc.get('soste', []) or []
     if not so: R.add(S, WARN, 'nessuna sosta nello schedule'); return sc
     bad, order, caps, yrs = [], [], [], []
@@ -609,7 +664,7 @@ def run(slug_or_story, data=None, render=False, only=None, city_json=None, sched
     if 'c' in only and objs: check_density(story, DD, R, objs)
     if 'd' in only and objs: check_corridors(story, D, DD, R, qadir, objs)
     city_json = city_json or os.path.join(geo.ROOT, f'city_{slug}.json'); sp = sched or os.path.join(geo.ROOT, f'schedule_{slug}.json')
-    sc = check_schedule(story, D, R, city_json, sp) if 'e' in only else _load(sp)
+    sc = check_schedule(story, D, R, city_json, sp, qadir) if 'e' in only else _load(sp)
     if render and os.path.exists(city_json): render_frames(story, D, city_json, sc, qadir, R)
     elif render: R.add('f', FAIL, 'render impossibile: manca il city json')
     rp = os.path.join(qadir, 'REPORT.md'); R.write(rp, slug)

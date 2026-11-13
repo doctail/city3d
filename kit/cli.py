@@ -43,7 +43,7 @@ MODEL = {
     "sources": {},
     "history": {"zones": [], "walls": [], "gutting": [], "lost": [], "fires": [], "water": [], "bridges": []},
     "landmarks": [],
-    "regia": {"music": "waking_monument", "duration": 300.0, "night": True, "open": {"year": 2026, "rewind_to": 1200},
+    "regia": {"camera": "drone", "music": "waking_monument", "duration": 300.0, "night": True, "open": {"year": 2026, "rewind_to": 1200},
               "soste": [], "rmin": 0.5, "rmax": 8.0},
     "montaggio": {"open": [], "title": [], "end": [], "events": []},
 }

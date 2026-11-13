@@ -7,9 +7,9 @@ Prompt to paste at the start of a new chat:
 1. **yb-scout**: vidIQ search "<City> 3D timelapse" (5 credits) + open-data check (year per building).
    Saturation rule (12/11): best video under 5K = free; 5K–100K = go only with a clearly better product and a different angle; over 100K = proven demand, a test case.
 2. **Data**: Spain → `fetch_es.py` (Catastro); Denmark → `fetch_dk.py`; Netherlands → `fetch_nl.py`. Other countries: see `kit/ATLANTE_DATI.md` (the source and download host may have to be unlocked).
-3. **yb-historian** → `cities/<slug>/story.json` (sources, zones, walls, gutting, water/floods, monuments, ~45 cards, 25 soste, chapters, polities) + METADATA.md.
+3. **yb-historian** → `cities/<slug>/story.json` (sources, zones, walls, gutting, water/floods, monuments, ~45 cards, 25 soste, chapters, polities) + METADATA.md. The camera is the **drone** (`regia.camera: "drone"`, written by `kit init`): one continuous flight, no cuts. Leave a pause between far-apart soste (about 1 s per 150 m), otherwise `regia.txt` lists the targets it can only fly over; see STORY_SCHEMA.md.
 4. **yb-modeler** → monuments checked by eye.
-5. `python -m kit build <slug>` and `python -m kit qa <slug> --render` (local, free) → **yb-qa** looks at contact.jpg.
+5. `python -m kit build <slug>` and `python -m kit qa <slug> --render` (local, free) → **yb-qa** looks at contact.jpg and `qa/drone_path.png` (max speed/acceleration/jerk, clearance, 0 jumps).
 6. `python -m kit pack <slug>` + commit/push.
 7. ★ **Pod**: **A40** (5080s gave cuInit 999 on 12/11). Before cloning: `python3 -c "import ctypes;print(ctypes.CDLL('libcuda.so.1').cuInit(0))"` must print 0.
    `cd /workspace && git clone -b claude/inspiring-turing-oy4h6k https://github.com/doctail/city3d && cd city3d && PREVIEW_NIGHT=1 CITY=<slug> bash run.sh preview`
@@ -23,3 +23,9 @@ Prompt to paste at the start of a new chat:
 - Look at the preview before the full render: two previews caught 6 defects.
 - Floods: `history.floods` (muddy water draped on the terrain) is restrained; a caption explains it.
 - Use local names (Valencian, Catalan…) on monuments: viewers point it out.
+
+## Camera "drone" (13/11/2026, default for new cities; owner's request: no jumpy cuts)
+- `regia.camera: "drone"` = one continuous flight (low, fast fly-in, arc around the monument, climb out). Fallback: `"cuts"` (old behaviour).
+- **A continuous flight cannot visit 44 places in 8 minutes.** On Valencia 16 of 44 stops were only flown over. For a new city: about 18 soste with a camera target, spread geographically (neighbouring monuments one after another), all other events as cards WITHOUT a target (they ride along with the flight). Check the QA WARN "soste solo sorvolate".
+- The motion has been checked only on 6 still frames, never on a video: judge it on the first preview on the pod (10 min) and send the split preview to the chat.
+- Known limits: the opening is only about 1 km from the first stop (250 m/s cap), the Plan Sur / cruise frames look almost straight down (about 2,900 m).
