@@ -103,3 +103,35 @@ Notes:
 - `api.os.uk` (chiave OS Data Hub necessaria per misurare).
 
 No USA rows were measured in this round. Their hosts are not on the unblocked list.
+
+## MISURE USA 13/11 (pomeriggio)
+
+Metodo: dati reali da API Socrata / ArcGIS REST / CKAN, query di conteggio e distribuzione sull'intera tabella (non campione), dove possibile join testato su campione. Overpass e Geofabrik NON usati (dichiarato morto dal proprietario): copertura OSM non misurata. Non misurato: alcune citta' per host bloccati (vedi DA SBLOCCARE).
+
+| Citta' | Dataset (fonte, host) | Campione | % con anno valido | Geometria | Voto | Evento storico |
+|---|---|---|---|---|---|---|
+| Pittsburgh | Allegheny County Property Assessments, YEARBLT per parcel, residenziale citta' (data.wprdc.org, CKAN datastore SQL) | 274.197 parcel residenziali, anno 2026, tutti | 87,0% (238.494). Anni validi 1601-2026: 100% dei non nulli. Distribuzione validi: <1800 = 5, 1800s = 10.134 (4,2%), 1900s = 218.349 (91,6%), 2000+ = 10.006 (4,2%). Minimo 1770 | Si': impronte edifici "Allegheny County Building Footprint Locations" (CSV datastore, campo PIN = PARID). Join testato: 220.157 PIN residenziali con impronta; 215.931 parcel con impronta E anno valido (78,8% del totale, 90,6% dei validi) | A [Certain] | 1845 Great Fire (centro): non misurato, anni 1831-1889 non letti |
+| Philadelphia | OPA_PROPERTIES_PUBLIC, year_built + flag year_built_estimate (services.arcgis.com, ArcGIS query) | 583.714 parcel, tutti | 92,6% con anno (540.318 validi). MA: 407.753 (70% del totale) hanno year_built_estimate = Y, cioe' stima. Anno NON stimato e valido: 132.303 (22,7% del totale). Zero/vuoto: 984 | Si': building_footprints (545.943 poligoni), join via parcel_id_num = pwd_parcel_id di opa_properties_public_pde. Test su 11.811 ID PWD: 11.806 con match (100%). Footprint sorgente 'LI' e' ~0,6%, non joinata | B [Certain] per i numeri, voto B perche' la misura reale e' 23% | 1793 yellow fever: non misurato. 1700s = 257 record totali (non separato stimato/reale) |
+| Baltimora (City) | SDAT Maryland Real Property Assessments, CAMA YEARBLT (opendata.maryland.gov, Socrata) | 241.670 record Baltimore City | 82,0% (198.277). 0000: 43.388 (18%). Ma PICCHI TONDI: 1900 = 18.454, 1910 = 4.217, 1920 = 41.265; vicini 1899 = 20, 1901 = 38, 1909 = 264, 1911 = 318. Round-decade = 63.936 = 32% dei validi. Valido al netto dei picchi: 134.341 (55,6% del totale). Pre-1800: 23 | Parziale: solo punto lat/long per record, nessuna impronta trovata su host sbloccati. Licenza: Public Domain (verificata) | B [Certain] per i conteggi, [Likely] che i picchi siano placeholder/imputazione | 1904 Great Baltimore Fire: 1903 = 202, 1904 = 509, 1905 = 949, 1906 = 607. Nessuna rottura netta a livello citta' [Likely] |
+| Portland (citta') | Taxlots regional, YEARBUILT (portlandmaps.com ArcGIS MapServer, Taxlots/0, campo stringa) | 249.430 taxlot con SITECITY = PORTLAND (su 607.091 regionali, COUNTY = M) | 89,7% (223.853). Vuoti/zero: 25.225 (10,1%). Pre-1800: 0. 1800s = 2.813 (1,3%), 1900s = 184.365 (82,4%), 2000+ = 36.675 (16,4%) | Si': poligoni taxlot nello stesso layer (Shape) | A [Certain] | Non misurato |
+| Minneapolis | Assessing Department Parcel Data 2025, YEARBUILT (services.arcgis.com, ArcGIS query) | 131.978 parcel, tutti | 88,0% (116.149). Null/0: 15.829 (12%). Pre-1800: 0. 1800s = 1.419 (1,2%), 1900s = 104.500 (90%), 2000+ = 10.230 (8,8%) | No nel layer (tabella, con X/Y e TAX_MAP_UFMT, nessun PID). Poligoni in Assessor_Parcels_2024 (City_Parcels, 128.756, PID) ma join X/Y non testato. Nessuna impronta | B [Likely] (geometria da joinare) | Non misurato |
+| Los Angeles | Parcels (data.lacity.org, qyra-qm2s, 883.677 poligoni). Assessor YearBuilt non trovato su host sbloccati | 883.677 parcel (senza anno) | 0% misurato: nessun campo anno nei dataset disponibili su data.lacity.org (Parcels, APN list, Assessor-Parcel-Universe e' di Cook County, non LA: scartato) | Si' (poligoni), senza anno | C [Certain] per quanto misurato | 1933 Long Beach earthquake: non misurato |
+| Washington DC | CAMA residenziale (maps2.dcgis.dc.gov) + Building Footprints 2023 (opendata.dc.gov, download via hub.arcgis.com) | non misurato | non misurato | footprint 2023 licenza CC BY 4.0 (verificata nei metadata); item count ~149k al 90% del job | n.m. (provvisorio B) | 1814 incendio di Washington: non misurato |
+| Denver | Assessor (denvergov.org reindirizza a opendata-geospatialdenver.hub.arcgis.com) | non misurato | non misurato | n.m. | n.m. (provvisorio C) | non misurato |
+
+Note di qualita':
+- Pittsburgh: CSV YEARBLT ha 87% di copertura, valori validi, ma e' PER PARCEL: lotti con piu' edifici hanno un solo anno. Il join PIN a impronte e' il punto forte.
+- Philadelphia: l'anno e' in larga parte stimato dall'OPA (75% dei non nulli). Per "anno reale" usare solo il sottoinsieme con flag vuoto (132.303). Il join impronte e' il migliore misurato (100%).
+- Baltimora: non usare i picchi 1900/1910/1920 come anno reale senza verifica. Sono 32% dei validi.
+- Anni indietro: Pittsburgh arriva al 1770 (5 record pre-1800); Baltimora 23 record pre-1800; Philadelphia ha 257 record nel 1700s (non separati reale/stimato); Minneapolis e Portland non hanno nulla prima del 1800. Nessuna citta' misurata da' stock 1700 significativo tranne Philadelphia (non separato) e Pittsburgh (5).
+- Licenze: Maryland Public Domain (verificata). Pittsburgh parcel CC0 (verificata, CKAN). Allegheny footprint: "not specified". DC footprint CC BY 4.0 (verificata). Philadelphia, Minneapolis, Portland, LA: licenza non dichiarata nei metadata letti, da verificare.
+
+Confidenza: [Certain] = numeri misurati da query sull'intera tabella. [Likely] = inferenza forte (placeholder Baltimora, geometria Minneapolis). [Guessing] = eventi storici, non misurati.
+
+DA SBLOCCARE (host bloccati o senza accesso, necessari per completare):
+- `maps2.dcgis.dc.gov` - DC CAMA residenziale (il dataset CAMA e' su questo host, non su opendata.dc.gov). Rifiutato dal proxy.
+- `hub.arcgis.com` - DC: il download dei footprint (opendata.dc.gov) reindirizza qui. Rifiutato dal proxy.
+- `opendata-geospatialdenver.hub.arcgis.com`, `services1.arcgis.com` - Denver: hub e servizi assessor. Rifiutati (000).
+- `data.lacounty.gov`, `assessor.lacounty.gov`, `portal.assessor.lacounty.gov` - LA County Assessor YearBuilt / EffectiveYearBuilt. Rifiutati (000).
+- `www.arcgis.com` - ricerca globale ArcGIS Online per assessor con anno. Rifiutato (000).
+- `overpass-api.de`, `download.geofabrik.de` - ancora morti (copertura OSM non misurata).
