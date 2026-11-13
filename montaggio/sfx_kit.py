@@ -112,13 +112,20 @@ def battle(dur=4.0):   # assalto: corni + fuoco + crolli
     c = crash(2.4); i = int(1.6 * SR); out[i:i + len(c)] += c * 0.4
     return out
 
+def cannon(dur=3.6):   # assedio: colpi sordi di cannone, distanti (attacco morbido)
+    out = np.zeros(int(dur * SR))
+    for k, t0 in enumerate((0.0, 1.1, 1.9, 3.0)):
+        b = boom(1.6, 150) * (1.0 - 0.15 * k); i = int(t0 * SR); m = min(len(b), len(out) - i)
+        if m > 0: out[i:i + m] += b[:m]
+    return out
+
 # ======== piazzamento generico ========
 FX = {   # nome: (funzione, dt di default dall'inizio della sosta, gain, parametri di default)
     'hammer': (hammer, 0.8, 0.08, {'n_hits': 6}), 'crowd': (crowd, 0.3, 0.14, {'dur': 4.0}), 'fire': (fire, 0.2, 0.20, {'dur': 6.0, 'intensity': 1.2}),
     'bell': (bell, 0.3, 0.16, {}), 'boom': (boom, 0.0, 0.22, {'dur': 3.0, 'low': 90}), 'water': (water, 0.2, 0.10, {'dur': 4.0}),
     'battle': (battle, 0.2, 0.22, {'dur': 4.0}), 'quake': (quake, 0.0, 0.26, {'dur': 5.0}), 'horn': (horn, 0.2, 0.12, {'dur': 3.0, 'f': 82.0}),
     'peal': (None, 1.0, 0.12, {}), 'crash': (crash, 0.3, 0.16, {}), 'firework': (firework, 0.3, 0.16, {}), 'rocket': (rocket, 0.0, 0.20, {}),
-    'alarm': (alarm_bells, 0.0, 0.13, {'dur': 6.0}), 'hum': (city_hum, 0.0, 0.08, {'dur': 6.0}), 'whoosh': (whoosh, 0.0, 0.22, {'dur': 3.0}),
+    'alarm': (alarm_bells, 0.0, 0.13, {'dur': 6.0}), 'hum': (city_hum, 0.0, 0.08, {'dur': 6.0}), 'whoosh': (whoosh, 0.0, 0.22, {'dur': 3.0}), 'cannon': (cannon, 0.3, 0.20, {}),
 }
 ALIAS = {'n': 'n_hits', 'hits': 'n_hits', 'gap': 'gap', 'intensity': 'intensity', 'freq': 'f0'}
 LOUD = {'battle', 'boom', 'quake', 'fire', 'crash', 'firework'}   # fx che coprono da soli un taglio musicale
@@ -134,7 +141,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('slug'); ap.add_argument('--A', default=os.environ.get('KIT_MUSIC_A')); ap.add_argument('--B', default=os.environ.get('KIT_MUSIC_B'))
     ap.add_argument('--story'); ap.add_argument('--schedule'); ap.add_argument('--eventi'); ap.add_argument('--out', default=os.path.join(ROOT, 'out'))
-    ap.add_argument('--test', type=float, help='solo i primi N secondi (prova)'); ap.add_argument('--b-offset', type=float, default=5.0, help='secondo di B da cui parte')
+    ap.add_argument('--test', type=float, help='solo i primi N secondi (prova)'); ap.add_argument('--fx-db', type=float, default=0.0, help='abbassa TUTTI gli effetti di N dB (es. 10)')
+    ap.add_argument('--main', help='regex sui titoli delle soste: solo quelle tengono i loro effetti; gli effetti legati alle didascalie/cartelli si tolgono')
+    ap.add_argument('--attack', type=float, default=0.0, help='attacco morbido (s) applicato a ogni effetto')
+    ap.add_argument('--b-offset', type=float, default=5.0, help='secondo di B da cui parte')
     a = ap.parse_args(); slug = a.slug
     if not a.A or not os.path.exists(a.A): sys.exit('ERRORE: serve --A traccia.mp3 (o KIT_MUSIC_A)')
     pick = lambda *ps: next((p for p in ps if p and os.path.exists(p)), None)
@@ -147,10 +157,13 @@ def main():
     rs = 3.0
     if years_p:
         Y = json.load(open(years_p)); rs = next((((int(f) - 1) / 24) for f, y in sorted(Y.items(), key=lambda kv: int(kv[0])) if abs(y - Y1) > 1.0), 3.0)
+    FXG = 10 ** (-a.fx_db / 20); MAIN = re.compile(a.main, re.I) if a.main else None
+    keep = lambda cap: MAIN is None or bool(MAIN.search(cap or ''))
     L = int((DUR + 3) * SR); fx = np.zeros(L); log = []
 
     def place(clip, t0, gain, peak=1.0):
-        c = norm(np.asarray(clip, float), peak) * gain; i = int(t0 * SR)
+        c = norm(np.asarray(clip, float), peak) * gain * FXG; i = int(t0 * SR)
+        if a.attack > 0: k_ = min(len(c), int(a.attack * SR)); c[:k_] *= np.linspace(0, 1, k_) ** 2
         if i < 0 or i >= L: return
         m = min(len(c), L - i); fx[i:i + m] += c[:m]
 
@@ -191,8 +204,8 @@ def main():
     sub_t = EV.get('subscribe_t')
     if sub_t is not None: place(click(), sub_t, 0.20); place(ding(), sub_t + 0.08, 0.08)
     for (t0, t1, cap), s_ in zip(times, sos_story):
-        if t0 is not None and s_.get('fx'): put(s_['fx'], t0, cap)
-    for e in story.get('montaggio', {}).get('events', []):
+        if t0 is not None and s_.get('fx') and keep(cap): put(s_['fx'], t0, cap)
+    for e in ([] if MAIN else story.get('montaggio', {}).get('events', [])):   # con --main niente effetti sui cartelli ordinari
         if not e.get('fx'): continue
         d = next((c for c in EV['didascalie'] if c['title'] == e['title']), None)
         if d: put(e['fx'], d['t_in'], 'didascalia ' + e['title'])
@@ -245,7 +258,7 @@ def main():
         if cut2 is not None and cut2 < DUR: seg(A_, max(0.0, LA - (FULL - cut2) - 0.5), cut2, DUR, 0.12, 3.0)
         for c_, name in ((cut1, 'A->B'), (cut2, 'B->A')):   # copertura del taglio: boom se la sosta non ha gia' un fx forte
             if c_ is None: continue
-            sp = next((s_ for (t0, _, _), s_ in zip(times, sos_story) if t0 == c_), {})
+            sp = next((s_ for (t0, _, cp_), s_ in zip(times, sos_story) if t0 == c_ and keep(cp_)), {})
             if not ({x['fx'] if isinstance(x, dict) else x for x in fx_list(sp.get('fx'))} & LOUD):
                 place(boom(3.0, 80), c_ - 0.6, 0.20); place(crash(2.6), c_ + 1.4, 0.14); log.append((round(c_, 1), 'copertura ' + name, ''))
     st = mus * 0.82 + np.stack([fx[:N_], fx[:N_]], 1)

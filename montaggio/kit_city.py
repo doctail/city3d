@@ -166,7 +166,7 @@ for k in ('years', 'eventi'):
     if not files[k]: sys.exit(f'ERRORE: manca {k}_{slug}.json')
 
 cfg = {'slug': slug, 'name': name, 'fps': FPS, 'n': N, 'duration': DUR, 'city': C, 't': T, 'text': text, 'tok_exclude': tok_ex,
-       'label_area': mont.get('label_area', [70, 1850, 230, 900]), 'short': short, 'files': files, 'preview_video': f'{slug}_light.mp4', **({'label_years': True} if mont.get('label_years') else {}),
+       'label_area': mont.get('label_area', [70, 1850, 230, 900]), 'short': short, 'files': files, 'preview_video': f'{slug}_light.mp4', **({'label_years': True} if mont.get('label_years') else {}), **({'style': 'mattia'} if mont.get('style') == 'mattia' else {}),
        'rewind': {'start': rs, 'arrive': rt}}
 json.dump(cfg, open(os.path.join(a.pub, f'kit_{slug}.json'), 'w'), ensure_ascii=False, indent=1)
 print(f'OK public/kit_{slug}.json: {N} fotogrammi ({DUR}s), riavvolgimento {rs}-{rt}s, titolo {T["title"][0]}s, HUD fino a {T["hud"][3]}s')
