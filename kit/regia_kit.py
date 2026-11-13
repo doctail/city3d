@@ -509,9 +509,29 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
             res.append((max(geom, cards_t + runs + JUMP * jumps), geom, cards_t, runs, rid, a, b, cur0, ytarget))
         return res
 
-    def total(rate, stretch):
+    def emit(rate, stretch):
         A, used = assign(); L = legs(rate, stretch, A, used)
-        return sum(l[0] for l in L) + sum(A[id(s)][0] for _, _, s in items if is_stop(s))
+        t = t0; cur = y_start; hov = flight = 0.0; YEARS = []; SOSTA_T = []
+        for tl, geom, cards_t, runs, rid, a, b, cur0, ytarget in L:
+            tl0 = t
+            slack = max(0.0, tl - (tl0 - tl0) - (cards_t + runs + JUMP * sum(1 for y0_, y1_, r_ in rid if False)))
+            for y0, y1, r in rid:
+                if y0 - cur > 1e-6: dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
+                elif cur - y0 > 1e-6: YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
+                SOSTA_T.append((t, t + r['dur'], r)); YEARS += [(t, y0), (t + r['dur'], y1)]; t += r['dur']; cur = y1
+            if ytarget - cur > 1e-6: dt = (ytarget - cur) / rate + slack; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
+            elif cur - ytarget > 1e-6: YEARS += [(t, cur), (t + JUMP, ytarget)]; t += JUMP
+            cur = ytarget
+            t = max(t, tl0 + tl)                                   # tempo minimo del volo (anni fermi se in avanzo)
+            flight += t - tl0
+            if b is not None:
+                hl, mine = A[id(b)]
+                SOSTA_T.append((t, t + hl, b)); YEARS += [(t, b['y0']), (t + hl, b['y1'])]
+                for off, c in mine: SOSTA_T.append((t + off, t + off + c['dur'], dict(c, _on_hover=True)))
+                hov += hl; t += hl; cur = float(b['y1'])
+        return t, YEARS, SOSTA_T, hov, flight, A
+
+    def total(rate, stretch): return emit(rate, stretch)[0] - t0
     stretch = 1.0
     while True:
         if total(dcfg['rate_cap'], 1.0) <= budget: break
@@ -532,28 +552,10 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
             if total(m, 1.0) > budget: lo = m
             else: hi = m
         rate = hi
-    A, used = assign(); L = legs(rate, stretch, A, used)
-    t = t0; cur = y_start; hov = flight = 0.0
-    for tl, geom, cards_t, runs, rid, a, b, cur0, ytarget in L:
-        tl0 = t
-        slack = max(0.0, tl - (tl0 - tl0) - (cards_t + runs + JUMP * sum(1 for y0_, y1_, r_ in rid if False)))
-        for y0, y1, r in rid:
-            if y0 - cur > 1e-6: dt = (y0 - cur) / rate; YEARS += [(t, cur), (t + dt, y0)]; t += dt
-            elif cur - y0 > 1e-6: YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
-            SOSTA_T.append((t, t + r['dur'], r)); YEARS += [(t, y0), (t + r['dur'], y1)]; t += r['dur']; cur = y1
-        if ytarget - cur > 1e-6: dt = (ytarget - cur) / rate + slack; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
-        elif cur - ytarget > 1e-6: YEARS += [(t, cur), (t + JUMP, ytarget)]; t += JUMP
-        cur = ytarget
-        t = max(t, tl0 + tl)                                   # tempo minimo del volo (anni fermi se in avanzo)
-        flight += t - tl0
-        if b is not None:
-            hl, mine = A[id(b)]
-            SOSTA_T.append((t, t + hl, b)); YEARS += [(t, b['y0']), (t + hl, b['y1'])]
-            for off, c in mine: SOSTA_T.append((t + off, t + off + c['dur'], dict(c, _on_hover=True)))
-            hov += hl; t += hl; cur = float(b['y1'])
+    t, Y2, S2, hov, flight, A = emit(rate, stretch); YEARS += Y2; SOSTA_T += S2
     YEARS.append((max(t, end_t), 2026.0)); YEARS += tail
     YEARS = sorted({round(float(a), 3): (round(float(a), 3), round(float(b), 4)) for a, b in YEARS}.values())
-    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s (modello {t0 + total(rate, stretch):.1f}, soste {len(dropped)} tolte, rate {rate:.2f})')
+    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s (soste {len(dropped)} tolte, rate {rate:.2f})')
     info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, cards_on_hover=sum(len(v[1]) for v in A.values()), flight=flight, rate=rate, stretch=stretch)
     SOSTA_T.sort(key=lambda x: (x[0], bool(x[2].get('_card'))))
     return YEARS, SOSTA_T, info
