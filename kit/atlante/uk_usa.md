@@ -83,3 +83,23 @@ Note: the 000 results may be an environment problem. The earlier note in ATLANTE
 ## Next step
 
 Run the Overpass coverage query (protocol, section 1 km2 in the centre of each city) and the host tests again once `overpass-api.de` is reachable. Then replace the NOT MEASURED columns and the provisional votes.
+
+## MISURE 13/11 (pomeriggio)
+
+Measured on real data where the host answered. Most UK rows could not be measured.
+
+| Citta' | Fonte | Campione | % con anno | Granularita' | Voto |
+|---|---|---|---|---|---|
+| Londra | colouring.london 301 verso city.africa.com (dominio terzo, NON seguito, NON usato); data.london.gov.uk CKAN 200 | nessun dataset per edificio con anno trovato nel CKAN | non misurabile | - | **C provvisorio** (A non confermato) |
+| Londra (OS) | api.os.uk 200, osdatahub.os.uk 200 | richiede chiave API, nessun file scaricato | non misurabile | - | non misurato [Guessing] |
+| Edimburgo, Manchester, altre UK | nessun estratto verificato | nessuno | non misurabile | - | **C** |
+
+Notes:
+- The Colouring London redirect goes to a third-party domain. It was not followed and should not be used as a data source until the owner confirms the site.
+- No Scottish or other city extract was reachable or verified.
+
+### DA SBLOCCARE
+- `colouring.london` (API o estratto building_attributes): oggi 301 verso dominio non ufficiale.
+- `api.os.uk` (chiave OS Data Hub necessaria per misurare).
+
+No USA rows were measured in this round. Their hosts are not on the unblocked list.

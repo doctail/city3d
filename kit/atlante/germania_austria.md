@@ -112,3 +112,27 @@ Host da aggiungere alla rete per completare la verifica (prima di tutto il primo
 - **Voto C:** Monaco, Francoforte, Stoccarda, Dresda, Lipsia, Norimberga, Brema, Hannover, Graz.
 - Il dato decisivo non e' la fonte ma l'accesso: quasi tutti gli host testati sono bloccati (solo Hamburg risponde). Il primo passo e' sbloccare `overpass-api.de` (misura OSM) e `ckan.open.nrw.de` + `www.wien.gv.at` (verifica campo).
 - Hamburg resta B (37% anno OSM, 25% in Altstadt), non rifatta.
+
+## MISURE 13/11 (pomeriggio)
+
+Misurato su dati reali dove l'host ha risposto. Hamburg non rifatta.
+
+| Citta' | Fonte | Campione | % con anno | Granularita' | Voto |
+|---|---|---|---|---|---|
+| Berlino | gdi.berlin.de, ALKIS Gebaeude WFS (`alkis_gebaeude:gebaeude`) | numberMatched 784.178 edifici; DescribeFeatureType + GetFeature count=200 | **0%** (nessun campo baujahr nello schema; "baujahr" assente nel campione) | nessuna. Attributi solo codici: funzione (gfk), piani (aog), tipo (bat), costruzione (baw) | **C** per anno per edificio. Umweltatlas (aggregato per blocco, non misurato qui) resta B |
+| Vienna | www.wien.gv.at (Bauperioden JSON, 200) | solo metadati (314 byte), nessun dataset per edificio scaricato | non misurabile | epoca (Bauperioden), solo se il dataset esiste | **B? non confermato** |
+| Vienna (data.gv.at) | data.gv.at 301 verso www.data.gv.at, che risponde 000 | ricerca CKAN non eseguita | non misurabile | - | - |
+| Stoccarda | opendata.stuttgart.de/dataset/alkis (200) | pagina dataset, rimando a opengeodata.lgl-bw.de | non misurabile (nessun file scaricato) | - | **C** |
+| Monaco (Baviera) | geodaten.bayern.de/opendata (200 ma pagina "Zugriff verweigert"); geoservices.bayern.de connect_rejected | nessuno | non misurabile | - | **C** |
+| Francoforte (Assia) | geoportal.hessen.de 301; endpoint WFS 000 | nessuno | non misurabile | - | **C** |
+| Hannover (Bassa Sassonia) | opendata.lgln.niedersachsen.de (200, pagina "Nutzerhinweis"; API CKAN 404) | nessuno | non misurabile | - | **C** |
+| Baviera, BW, Dresda, Stoccarda (LGL BW) | opendata.lgl-bw.de 302 (non seguito) | nessuno | non misurabile | - | **C** |
+
+Nota: le citta' con "B?" (Vienna, Colonia, Duesseldorf) restano non confermate. Nessuna citta' tedesca o austriaca e' salita di voto.
+
+### DA SBLOCCARE (per la prossima sessione)
+- `www.data.gv.at` (ricerca CKAN "baujahr", per trovare il dataset Vienna con anno per edificio): 000 sul percorso www.
+- `data.wien.gv.at` (WFS Vienna): 000.
+- `geoportal.hessen.de` (WFS ALKIS Assia): 000 sul percorso WFS.
+- `geoservices.bayern.de` (WFS ALKIS Baviera): connect_rejected.
+- Bayern: `geodaten.bayern.de/opendata` risponde con pagina di accesso negato, serve un percorso di download diverso.
