@@ -136,3 +136,25 @@ Nota: le citta' con "B?" (Vienna, Colonia, Duesseldorf) restano non confermate. 
 - `geoportal.hessen.de` (WFS ALKIS Assia): 000 sul percorso WFS.
 - `geoservices.bayern.de` (WFS ALKIS Baviera): connect_rejected.
 - Bayern: `geodaten.bayern.de/opendata` risponde con pagina di accesso negato, serve un percorso di download diverso.
+
+## MISURE 13/11 (sera)
+
+Esito sintetico: Vienna MISURATA su WFS open data del Comune (data.wien.gv.at). Baviera e Assia NON misurate: WFS non raggiungibili (403).
+
+| Citta' | Fonte | Campione | % con anno | Granularita' | Voto | DA SBLOCCARE |
+|---|---|---|---|---|---|---|
+| Vienna (centro, Innere Stadt, BEZ 01) | data.wien.gv.at WFS `ogdwien:GEBAEUDEINFOOGD` (GetFeature JSON, 200) | 58.248 punti edificio (BEZ 01: 1.514) | BAUJAHR esatto: 19,4% citta'; 87,5% Innere Stadt. Classe epoca (L_BAUJ): 94,5% citta' | punto per edificio, anno esatto + classi | A provvisorio (centro) | - |
+| Vienna (poligoni) | `ogdwien:BAUPERIODEDETAILOGD` (WFS, 200) | >400.000 poligoni (risposta capped a 400.000) ; campione 20.000 | 85,8% con classe (1848-1918, 1919-45, nach 1945 ecc.); 8,4% "Keine Angabe" | poligono, sola classe (NON anno) | B | - |
+| Berlino | gdi.berlin.de ALKIS WFS (misurato prima) | 784.178 edifici, count 200 | 0% (nessun campo anno) | - | C | - |
+| Baviera (Monaco) | geoservices.bayern.de: root 200 (redirect ldbv), /wms e percorsi WFS 403/404 | nessuno | non misurabile | - | C | geoservices.bayern.de: endpoint OGC 403 (accesso negato), nessun WFS trovato |
+| Assia (Francoforte) | geoportal.hessen.de: CONNECT tunnel 403 (prima 301) | nessuno | non misurabile | - | C | geoportal.hessen.de: connessione bloccata dal proxy |
+| Stoccarda, Hannover, Dresda | come da sezione precedente | nessuno | non misurabile | - | C | - |
+
+Vienna: il campo BAUJAHR e' presente ma coperto solo al 19,4% in citta'; la maggior parte delle zone periferiche ha 2-15%. Il centro (Innere Stadt) e' al 87,5%, quindi il voto A vale solo per il centro. Il dato per classi (BAUPERIODEDETAIL) copre quasi tutta la citta' ma non e' un anno. Il campione dei 20.000 poligoni non e' stratificato per distretto (prime 20.000 risposte del WFS).
+
+### Confidenza
+
+- [Certain] GEBAEUDEINFOOGD: 58.248 feature, BAUJAHR non nullo 11.280, misurato su download completo.
+- [Likely] Il layer contiene solo un sottoinsieme di edifici rispetto al parco reale di Vienna: il conteggio non e' un censimento totale. Il voto A e' per il centro.
+- [Certain] BAUPERIODEDETAILOGD: risposta WFS limitata a 400.000 feature, campione di 20.000.
+- [Certain] Baviera e Assia: nessun GetCapabilities leggibile. Non posso dire se esistono campi Baujahr.

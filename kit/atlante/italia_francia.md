@@ -195,3 +195,40 @@ Il voto B e' provvisorio: il campo esiste ed e' open, ma l'anno e' per gruppo di
 - `datafoncier.cerema.fr` - 000 (tunnel non aperto). Fichiers Fonciers per parcella, fonte primaria BDNB. [priorita' 2]
 - `api-portail.bdnb.io` - 000. Catalogo API BDNB. [priorita' 3]
 - Portali open data metropolitani: data.grandlyon.com, opendata.bordeaux-metropole.fr, data.nantesmetropole.fr, data.strasbourg.eu, opendata.lillemetropole.fr, data.toulouse-metropole.fr, data.nicecotedazur.org, data.montpellier3m.fr, data.marseille.fr - 403/000. Possibili dataset annee_construction locali. [priorita' 3]
+
+## MISURE 13/11 (sera)
+
+Esito sintetico: Francia MISURATA su BDNB open data (millesime 2026-02-b, CSV per dipartimento, streaming via range HTTP, nessun file salvato). Anno di costruzione in `batiment_groupe_ffo_bat.annee_construction` (fonte Fichiers Fonciers), NON in `batiment_groupe`. Granularita' = gruppo di edifici (batiment_groupe), non edificio. Italia: ISTAT 2021 sezioni verificato, NESSUNA epoca di costruzione.
+
+| Citta' | Fonte | Campione | % con anno | Granularita' | Voto | DA SBLOCCARE |
+|---|---|---|---|---|---|---|
+| Lione | BDNB 2026-02-b dep69, ffo_bat | 28.050 gruppi (codici 69381-69389, arrondissement; 69123 non usato da BDNB) | 82,2% comune; 92,2% entro 1 km da Hotel de Ville | gruppo di edifici | A (centro) | - |
+| Marsiglia | BDNB dep13 | 126.750 gruppi (13201-13216; 13055 non usato) | 67,9% comune; 82,4% entro 1 km da Vieux-Port | gruppo di edifici | B (comune) / A (centro) | - |
+| Bordeaux | BDNB dep33 | 65.419 gruppi (33063) | 77,3% comune; 86,1% entro 1 km | gruppo di edifici | A (centro) | - |
+| Tolosa | BDNB dep31 | 80.063 gruppi (31555) | 73,1% comune; 88,0% centro | gruppo di edifici | A (centro) | - |
+| Nantes | BDNB dep44 | 57.330 gruppi (44109) | 72,7% comune; 80,1% centro | gruppo di edifici | A (centro) | - |
+| Strasburgo | BDNB dep67 | 25.792 gruppi (67482) | 78,6% comune; 89,6% centro | gruppo di edifici | A (centro) | - |
+| Lille | BDNB dep59 | 52.356 gruppi (59350) | 76,5% comune; 81,9% centro | gruppo di edifici | A (centro) | - |
+| Nizza | BDNB dep06 | 32.501 gruppi (06088) | 73,5% comune; 87,1% centro | gruppo di edifici | A (centro) | - |
+| Montpellier | BDNB dep34 | 34.980 gruppi (34172) | 73,3% comune; 82,0% centro | gruppo di edifici | A (centro) | - |
+| Italia (14 capoluoghi metro, ISTAT 2021 sezioni subcomunali) | esploradati.istat.it, Comuni_2021.zip (xlsx per citta', 200 OK) | Milano e altri 13 file, tracciato TRACCIATO_2021 | 0% (solo E3 = edifici residenziali, nessuna classe di epoca) | - | C | - |
+| Italia 2011 (DICA_EDIFICI1) | esploradati.istat.it, zip 266 KB | edifici per uso e stato, nessuna dimensione epoca | 0% | - | C | - |
+
+Voto Francia: A per il centro (copertura >=70% entro 1 km) in tutte le citta' misurate; B per Marsiglia a livello comune (67,9%). Il voto A vale solo per gruppi di edifici e per l'anno FF, non per edificio. Copertura "centro" = cerchio di 1 km sul punto di riferimento approssimato (Hotel de Ville o piazza centrale), non un perimetro di centro storico ufficiale.
+
+Il campo BDNB annee_construction non e' nella tabella batiment_groupe: e' in batiment_groupe_ffo_bat. La geometria esiste (`geom_groupe`, WKT MultiPolygon in Lambert 93, e `batiment_construction` per edificio). Non serve join con BD TOPO per l'anno, solo per il livello edificio (rel_batiment_groupe_bdtopo_bat).
+
+Vienna: vedi file germania_austria.md.
+
+### Italia: ISTAT 2021 per sezione (verificato)
+
+- Comuni_2021.zip (esploradati.istat.it/databrowser/DWL/PERMPOP/SUBCOM/Comuni_2021.zip, 31,7 MB): 14 file xlsx, capoluoghi di citta' metropolitana (Torino, Venezia, Bari, Bologna, Cagliari, Catania, Firenze, Genova, Messina, Milano, Napoli, Palermo, Reggio Calabria, Roma). Variabile sull'edificio: solo E3 (edifici ad uso residenziale). Nessun E8-E16, nessuna classe di epoca [Certain, dal TRACCIATO_2021].
+- DICA_EDIFICI1 2011 (esploradati, 266 KB): numero di edifici per uso e stato d'uso, nessuna epoca [Certain].
+- Il 2011 con classi di epoca resta quello di dati-cpa_2011 gia' misurato a livello sezione (sopra).
+
+### Confidenza
+
+- [Certain] Tutti i conteggi Francia sono letti dai CSV BDNB 2026-02-b, dipartimenti 69, 13, 33, 31, 44, 67, 59, 06, 34.
+- [Certain] Codici Lione e Marsiglia: BDNB usa gli arrondissement, non il codice comune 69123 / 13055. Filtro applicato su 69381-69389 e 13201-13216.
+- [Likely] Il centro 1 km e' una proxy, non il centro storico ufficiale.
+- [Certain] ISTAT 2021 sezioni: nessuna epoca di costruzione.
