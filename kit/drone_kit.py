@@ -25,8 +25,7 @@ from scipy.interpolate import PchipInterpolator
 
 FPS = 24
 DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s, m/s^2, m/s^3) e margine sopra terreno/tetti (m)
-                v_orbit=30.0, v_orbit_max=45.0, v_leg=105.0, v_avg_cap=165.0,   # orbita (target, tetto); media di tratto desiderata e massima
-                arc_min=40.0, arc_max=90.0,                      # arco attorno al bersaglio (gradi)
+                v_leg=120.0, t_leg_min=3.0, rate_cap=30.0, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=1400.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9)
 
@@ -161,135 +160,56 @@ def _speed_profile(Tf, L, v0, v1, ts):
 
 
 # ----------------------------------------------------------------------------------------------------------- il volo
-CARVE = 0.75     # frazione massima della sosta precedente che il drone puo' usare per ripartire verso la successiva
+def dims(s, cfg):
+    """Posizione di hover davanti al bersaglio: distanza di vista d, elevazione 20-35 gradi (aree e citta': 25-55), raggio orizzontale rho e quota alt."""
+    el = math.radians(float(np.clip(s['el'], 20, 35) if s['kind'] == 'bld' else np.clip(s['el'], 25, 55))); d = float(s['d'])
+    if s['kind'] == 'bld':
+        alt = float(np.clip(d * math.sin(el), 80, 200)); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
+    else:
+        rho = min(d * math.cos(el), cfg.get('rho_max', 600.0)); alt = float(np.clip(math.sqrt(max(d * d - rho * rho, 1.0)), 150, 3500))
+    s['alt'], s['rho'] = alt, rho
+    return s
 
 
-def plan_orbits(stays, start_xy, holds, cfg):
-    """Per ogni tappa: punto di ingresso E (tangente alla prua), arco, punto di uscita X e prua d'uscita (scelti per puntare alla tappa dopo)."""
-    Xp = (start_xy[0], start_xy[1]); orbs = []; n = len(stays)
-    for k, s in enumerate(stays):
-        T = (s['x'], s['y']); din = _unit((T[0] - Xp[0], T[1] - Xp[1]))
-        hold = max(holds[k], 0.5)
-        nxt = (stays[k + 1]['x'], stays[k + 1]['y']) if k < n - 1 else None
-        if s.get('static'):
-            E = (s['static'][0], s['static'][1]); o = dict(E=E, X=E, th0=0.0, sgn=0, arc=0.0, v=0.0, tX=din, din=din)
-        else:
-            rho = s['rho']; arc_pref = float(np.clip(cfg['v_orbit'] * hold / rho, math.radians(cfg['arc_min']), math.radians(cfg['arc_max'])))
-            hi = min(math.radians(cfg['arc_max']), cfg['v_orbit_max'] * hold / rho); lo = min(math.radians(cfg['arc_min']), hi)
-            best = None
-            for sgn in (1, -1):
-                nvec = (din[1], -din[0]) if sgn == 1 else (-din[1], din[0])      # E = T + rho*n: tangente = din
-                for arc in (np.linspace(lo, hi, 6) if hi > lo + 1e-6 else [hi]):
-                    th0 = math.atan2(nvec[1], nvec[0]); th1 = th0 + sgn * arc
-                    X = (T[0] + rho * math.cos(th1), T[1] + rho * math.sin(th1))
-                    tX = _rot(din, sgn * arc)
-                    err = _angdiff(tX, _unit((nxt[0] - X[0], nxt[1] - X[1]))) if nxt else (0.0 if sgn == 1 else 0.1)
-                    err += 0.15 * abs(arc - min(max(arc_pref, lo), hi))
-                    if best is None or err < best[0]: best = (err, sgn, arc, th0, X, tX)
-            _, sgn, arc, th0, X, tX = best
-            E = (T[0] + rho * math.cos(th0), T[1] + rho * math.sin(th0))
-            o = dict(E=E, X=X, th0=th0, sgn=sgn, arc=arc, v=(rho * arc / hold), tX=tX, din=din)
-        orbs.append(o); Xp = o['X']
-    return orbs
-
-
-def _dp_select(stays, cfg):
-    """Sottoinsieme di tappe di peso massimo (sosta con bersaglio 10 > cartello con bersaglio 4 > cartello senza 1) tale che ogni tratto
-    fra tappe consecutive sia percorribile (lunghezza stimata / (pausa + CARVE * sosta precedente) <= v_avg_cap). L'ultima tappa resta sempre."""
-    n = len(stays); W = [1000.0 if x.get('prio', 1) >= 9 else {2: 10.0, 1: 4.0, 0: 1.0}.get(x.get('prio', 1), 4.0) + 0.05 * (x['t1'] - x['t0']) for x in stays]
-
-    def ok(a, b):
-        L = 1.1 * math.hypot(max(60.0, math.hypot(b['x'] - a['x'], b['y'] - a['y'])) + 0.35 * (a['rho'] + b['rho']), 1.6 * (_alt_of(b) - _alt_of(a, True)))
-        return L / max(0.5, (b['t0'] - a['t1']) + CARVE * (a['t1'] - a['t0'])) <= cfg['v_avg_cap']
-    dp = [W[j] for j in range(n)]; prv = [-1] * n
-    for j in range(n):
-        for i in range(j):
-            if ok(stays[i], stays[j]) and dp[i] + W[j] > dp[j]: dp[j] = dp[i] + W[j]; prv[j] = i
-    # catena migliore che termina nell'ultima tappa; le tappe prima della prima scelta sono tolte
-    j = n - 1; keep = []
-    while j >= 0: keep.append(j); j = prv[j]
-    return [stays[k] for k in reversed(keep)]
-
-
-def prune(stays, cfg, start_xy):
-    """Toglie le tappe che nessun volo credibile raggiunge: se il tratto verso una tappa richiederebbe una media > v_avg_cap anche usando
-    CARVE della sosta precedente, si toglie la tappa di priorita' minore (cartello senza bersaglio < cartello con bersaglio < sosta).
-    Le soste tolte restano nella story (tempi e didascalie invariati): il drone le sorvola in crociera. Ritorna (tappe, tolte)."""
-    st = _dp_select(stays, cfg); dropped = [x for x in stays if x not in st]
-    while True:
-        orbs = plan_orbits(st, start_xy, [x['t1'] - x['t0'] for x in st], cfg)
-        worst = None
-        for i in range(1, len(st)):
-            a, b = st[i - 1], st[i]
-            Tm = max(0.5, (b['t0'] - a['t1']) + CARVE * (a['t1'] - a['t0']))
-            req = _leg_len(a, orbs[i - 1], b, orbs[i]) / Tm
-            if req > cfg['v_avg_cap'] and (worst is None or req > worst[0]): worst = (req, i)
-        if worst is None: return st, dropped
-        i = worst[1]; a, b = st[i - 1], st[i]
-        cand = [x for x in (a, b) if x.get('prio', 1) < 9]
-        if not cand: return st, dropped
-        drop = min(cand, key=lambda x: (x.get('prio', 1), x['t1'] - x['t0'], -x['t0']))
-        st.remove(drop); dropped.append(drop)
-
-
-def _alt_of(s, exit_=False):
-    return float(s['static'][2]) if s.get('static') else s['alt'] * (1.12 if exit_ else 1.0)
-
-
-def _leg_len(a, oa, b, ob):
-    """Lunghezza stimata (3D) del tratto dall'uscita della tappa a all'ingresso della b."""
-    dxy = max(60.0, math.hypot(ob['E'][0] - oa['X'][0], ob['E'][1] - oa['X'][1])); dz = _alt_of(b) - _alt_of(a, True)
-    return 1.1 * math.hypot(dxy, 1.6 * dz)
-
-
-def timing(stays, orbs, start, DUR, cfg):
-    """t_dep[k] = istante in cui il drone lascia la tappa k; Tf[k] = durata del tratto che porta alla tappa k (Tf[0]: dall'inizio)."""
-    n = len(stays); t_dep = [0.0] * n; Tf = [0.0] * (n + 1); Tf[0] = stays[0]['t0']
-    for k in range(n):
-        if k == n - 1: t_dep[k] = max(DUR + 1.0, stays[k]['t0'] + 1.0); break
-        a, b = stays[k], stays[k + 1]
-        Lc = _leg_len(a, orbs[k], b, orbs[k + 1])
-        gap = b['t0'] - a['t1']; need = max(3.0, Lc / cfg['v_leg'])
-        Tk = min(max(gap, need), gap + CARVE * (a['t1'] - a['t0']), b['t0'] - a['t0'] - 2.0)
-        Tf[k + 1] = Tk; t_dep[k] = b['t0'] - Tk
-    return t_dep, Tf
+def leg_est(a, b, f=1.0):
+    """Lunghezza stimata (3D) del tratto fra due tappe (hover di a -> hover di b)."""
+    dxy = max(60.0, math.hypot(b['x'] - a['x'], b['y'] - a['y']) - b['rho'])
+    return 1.1 * math.hypot(dxy, 1.6 * (b['alt'] - a['alt']))
 
 
 def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
-    """stays: [{t0,t1,x,y,tzo,d,el,kind('bld'|'area'|'city'),static(opz.: (x,y,z assoluta)) }] in ordine di tempo.
-    start: (x, y, quota m sul terreno, velocita' iniziale) del drone a t=0. Ritorna (ts, P(N,3), L(N,3), info)."""
-    ts = np.arange(0.0, DUR + 1e-9, 1.0 / FPS)
-    # --- dimensioni dell'orbita
-    for s in stays:
-        el = math.radians(s['el']); d = float(s['d'])
-        if s['kind'] == 'bld':
-            alt = float(np.clip(d * math.sin(el), 80, 200)); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
-        else:   # aree e citta': stessa elevazione di vista, quota limitata (a 3500 m la citta' si legge ancora, oltre no)
-            rho = min(d * math.cos(el), cfg.get('rho_max', 600.0)); alt = float(np.clip(math.sqrt(max(d * d - rho * rho, 1.0)), 150, 3500))
-        s['alt'] = alt; s['rho'] = rho
-    stays, dropped = prune(stays, cfg, start[:2]); n = len(stays)
-    # --- tempi: il drone arriva a t0; riparte in tempo per arrivare a t0 del prossimo
-    orbs = plan_orbits(stays, start[:2], [st_['t1'] - st_['t0'] for st_ in stays], cfg)
-    t_dep, Tf = timing(stays, orbs, start, DUR, cfg)
-    # --- geometria: due passate (la durata dell'orbita dipende dal tratto, che dipende dall'orbita)
-    for _ in range(2):
-        orbs = plan_orbits(stays, start[:2], [(t_dep[k] - stays[k]['t0']) if k < n - 1 else (DUR - stays[k]['t0']) for k in range(n)], cfg)
-        t_dep, Tf = timing(stays, orbs, start, DUR, cfg)
-    orbs = plan_orbits(stays, start[:2], [(t_dep[k] - stays[k]['t0']) if k < n - 1 else (DUR - stays[k]['t0']) for k in range(n)], cfg)
-    # --- campiona il riferimento
-    Pref = np.zeros((len(ts), 3)); AGL = np.zeros(len(ts)); tdep_prev = 0.0; Xprev = (start[0], start[1]); tprev = None; vprev = start[3]; aprev = start[2]
-    yrs = np.array([year_at(t) for t in ts])
-    leg_info = []
+    """stays: [{t0,t1,x,y,tzo,d,el,kind('bld'|'area'|'city'), static(opz.: (x,y,quota m sul terreno))}] in ordine di tempo: [t0, t1] = HOVER
+    (drone fermo davanti al bersaglio, deriva minima in un solo verso); i tratti sono t1(k-1) -> t0(k), con partenza e arrivo da fermo.
+    start: (x, y, quota m sul terreno, velocita' iniziale) a t=0. Ritorna (ts, P(N,3), L(N,3), info)."""
+    ts = np.arange(0.0, DUR + 1e-9, 1.0 / FPS); n = len(stays)
+    for s in stays: dims(s, cfg)
+    # hover: H = T - rho * (prua verso il bersaglio), poi deriva lenta (<= 6 gradi e <= 6% di distanza sull'intera sosta, un solo verso)
+    Hs = []; Xp = (start[0], start[1])
     for k, s in enumerate(stays):
-        o = orbs[k]; ta, tb = tdep_prev, s['t0']
+        T = (s['x'], s['y']); din = _unit((T[0] - Xp[0], T[1] - Xp[1]))
+        if s.get('static'): H = (s['static'][0], s['static'][1]); din = _unit((T[0] - H[0], T[1] - H[1]))
+        else: H = (T[0] - s['rho'] * din[0], T[1] - s['rho'] * din[1])
+        s['_din'], s['_H'] = din, H; Xp = H
+    # --- campiona il riferimento
+    Pref = np.zeros((len(ts), 3)); AGL = np.zeros(len(ts)); yrs = np.array([year_at(t) for t in ts]); leg_info = []
+    Xprev = (start[0], start[1]); tprev = None; vprev = start[3]; aprev = start[2]; ta = 0.0
+    for k, s in enumerate(stays):
+        H, din = s['_H'], s['_din']; tb = s['t0']
+        nxt = stays[k + 1]['_H'] if k < n - 1 else None
+        hold = max(s['t1'] - s['t0'], 1e-3)
+        sgn = 1 if k % 2 == 0 else -1
+        dth = math.radians(min(6.0, 0.5 * hold)) * sgn; dr = 1.0 + min(0.06, 0.006 * hold)
+        th0 = math.atan2(H[1] - s['y'], H[0] - s['x']); rr = math.hypot(H[0] - s['x'], H[1] - s['y'])
+        Xexit = (s['x'] + rr * dr * math.cos(th0 + dth), s['y'] + rr * dr * math.sin(th0 + dth)) if not s.get('static') else H
+        tX = _unit((nxt[0] - Xexit[0], nxt[1] - Xexit[1])) if nxt else din
+        # tratto verso questo hover
         m = (ts >= ta - 1e-9) & (ts < tb)
-        Lcurve_start = Xprev
-        din = o['din']; tX0 = tprev if tprev is not None else din
-        chord = math.hypot(o['E'][0] - Xprev[0], o['E'][1] - Xprev[1])
+        chord = math.hypot(H[0] - Xprev[0], H[1] - Xprev[1])
         app = float(np.clip(0.45 * chord, 0, 1600)) if chord > 450 else 0.0
-        C, cs = _leg_curve(Xprev, tX0, o['E'], din, app); Lc = float(cs[-1])
-        zc = float(cruise_fn(year_at(0.5 * (ta + tb)))); a_E = s['alt'] if not s.get('static') else float(s['static'][2])
-        a_X = aprev
+        tX0 = tprev if tprev is not None else din
+        C, cs = _leg_curve(Xprev, tX0, H, din, app); Lc = float(cs[-1])
+        a_E = float(s['static'][2]) if s.get('static') else s['alt']
+        zc = float(cruise_fn(year_at(0.5 * (ta + tb)))); a_X = aprev
         zc_e = max(min(zc, max(a_X, a_E) + 0.30 * Lc), min(a_X, a_E))
         zA = float(np.clip(1.4 * zc, 450, 900)); zA_e = max(min(zA, a_E + 0.45 * app), a_E) if app > 0 else a_E
         s2 = Lc - app; s1 = min(0.3 * max(s2, 0), 900.0)
@@ -298,59 +218,49 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         if app > 0: nodes_s.append(s2); nodes_z.append(max(zA_e, a_E))
         nodes_s.append(Lc); nodes_z.append(a_E)
         zf = PchipInterpolator(nodes_s, nodes_z)
-        v_end = o['v'] if not s.get('static') else 0.0
-        sp, vpk = _speed_profile(max(tb - ta, 0.5), Lc, vprev, v_end, ts[m] - ta)
+        sp, vpk = _speed_profile(max(tb - ta, 0.5), Lc, vprev, 0.0, ts[m] - ta)
         Pref[m, 0] = np.interp(sp, cs, C[:, 0]); Pref[m, 1] = np.interp(sp, cs, C[:, 1]); AGL[m] = zf(sp)
-        leg_info.append(dict(k=k, t_a=ta, t_b=tb, L=Lc, app=app, vpk=vpk, v0=vprev, v1=v_end))
-        # orbita
-        te = t_dep[k] if k < n - 1 else DUR + 1.0
-        m = (ts >= tb - 1e-9) & (ts < te if k < n - 1 else ts <= DUR + 1e-9)
-        hold_k = (te - tb) if k < n - 1 else (DUR - tb)
-        u = np.clip((ts[m] - tb) / max(hold_k, 1e-6), 0.0, 1.0)
-        if s.get('static'):
-            Pref[m, 0], Pref[m, 1], AGL[m] = o['E'][0], o['E'][1], a_E
+        leg_info.append(dict(k=k, t_a=ta, t_b=tb, L=Lc, vpk=vpk))
+        # hover con deriva
+        m = (ts >= tb - 1e-9) & (ts < s['t1'] if k < n - 1 else ts <= DUR + 1e-9)
+        u = np.clip((ts[m] - tb) / hold, 0.0, 1.0)
+        if s.get('static'): Pref[m, 0], Pref[m, 1], AGL[m] = H[0], H[1], a_E
         else:
-            th = o['th0'] + o['sgn'] * o['arc'] * u
-            Pref[m, 0] = s['x'] + s['rho'] * np.cos(th); Pref[m, 1] = s['y'] + s['rho'] * np.sin(th)
-            AGL[m] = s['alt'] * (1.0 + 0.12 * smooth01(u))
-        Xprev, tprev, vprev = o['X'], o['tX'], v_end
-        aprev = s['alt'] * 1.12 if not s.get('static') else a_E
-        tdep_prev = t_dep[k] if k < n - 1 else DUR
-    # --- tratto 0 prima del primo ingresso: gia' incluso (ta = 0). Quota assoluta
+            th = th0 + dth * u; r_ = rr * (1.0 + (dr - 1.0) * u)
+            Pref[m, 0] = s['x'] + r_ * np.cos(th); Pref[m, 1] = s['y'] + r_ * np.sin(th); AGL[m] = a_E
+        Xprev, tprev, vprev, aprev, ta = Xexit, tX, 0.0, a_E, s['t1']
     Pref[:, 2] = AGL + dem(Pref[:, 0], Pref[:, 1])
     # --- filtro + limiti + sfondamenti
     best = None
-    for sig in (cfg['sigma'], 0.85, 1.0, 1.2):     # sigma piccolo: l'arrivo resta puntuale; i limiti si rispettano col progetto dei tempi (prune, CARVE)
+    for sig in (cfg['sigma'], 0.85, 1.0, 1.2):
         P = gsmooth(Pref, sig * FPS)
         for _ in range(14):
             fl = np.maximum(dem(P[:, 0], P[:, 1]), obst.top(P[:, 0], P[:, 1], yrs)) + cfg['clear']
             deficit = np.maximum(0.0, fl - P[:, 2])
             if deficit.max() < 0.5: break
             spread = gaussian_filter1d(maximum_filter1d(deficit, size=int(2.5 * FPS)), 1.0 * FPS, mode='nearest')
-            Pref[:, 2] += np.maximum(spread, deficit * 0.0) * 1.05 + 0.5 * (deficit > 0.5)
+            Pref[:, 2] += spread * 1.05 + 0.5 * (deficit > 0.5)
             P = gsmooth(Pref, sig * FPS)
         v, a, j = kin(P)
-        ok = v.max() <= cfg['vmax'] * 1.02 and a.max() <= cfg['amax'] and j.max() <= cfg['jmax']
-        score = max(a.max() / cfg['amax'], j.max() / cfg['jmax'])
+        score = max(a.max() / cfg['amax'], j.max() / cfg['jmax'], v.max() / cfg['vmax'])
         if best is None or score < best[0]: best = (score, sig, P)
-        if ok: best = (score, sig, P); break
+        if score <= 1.0: break
     _, sig, P = best
-    # --- punto guardato
+    # --- punto guardato: bersaglio durante hover (con rampe) e un punto in anticipo lungo la rotta altrove
     V = np.gradient(P, 1.0 / FPS, axis=0); hd = V[:, :2] / np.maximum(np.hypot(V[:, 0], V[:, 1]), 1e-6)[:, None]
     tau = int(cfg['lead_s'] * FPS); idx = np.clip(np.arange(len(ts)) + tau, 0, len(ts) - 1)
-    Q = P[idx].copy(); dq = Q[:, :2] - P[:, :2]; ln = np.hypot(dq[:, 0], dq[:, 1])
-    short = ln < 150.0; Q[short, :2] = P[short, :2] + hd[short] * 150.0
-    Q[:, 2] = dem(Q[:, 0], Q[:, 1])
+    Q = P[idx].copy(); ln = np.hypot(Q[:, 0] - P[:, 0], Q[:, 1] - P[:, 1]); short = ln < 150.0
+    Q[short, :2] = P[short, :2] + hd[short] * 150.0; Q[:, 2] = dem(Q[:, 0], Q[:, 1])
     W = np.zeros(len(ts)); LT = np.zeros((len(ts), 3))
     for k, s in enumerate(stays):
-        te = t_dep[k] if k < n - 1 else DUR + 5.0
-        r_in = min(3.5, 0.7 * Tf[k]); r_out = min(2.5, 0.6 * Tf[k + 1]) if k < n - 1 else 0.0
+        Tin = s['t0'] - (stays[k - 1]['t1'] if k else 0.0); Tout = (stays[k + 1]['t0'] - s['t1']) if k < n - 1 else 0.0
+        r_in = min(3.5, 0.7 * Tin); r_out = min(2.5, 0.6 * Tout)
+        te = s['t1'] if k < n - 1 else DUR + 5.0
         w = smooth01((ts - (s['t0'] - r_in)) / max(r_in, 1e-3)) * (1.0 - smooth01((ts - te) / max(r_out, 1e-3)))
-        tz = dem(s['x'], s['y']) + float(s.get('tzo', 0.0))
-        LT += w[:, None] * np.array([s['x'], s['y'], tz]); W += w
-    Wc = np.minimum(W, 1.0); L = LT / np.maximum(W, 1.0)[:, None] + (1.0 - Wc)[:, None] * Q
+        LT += w[:, None] * np.array([s['x'], s['y'], dem(s['x'], s['y']) + float(s.get('tzo', 0.0))]); W += w
+    L = LT / np.maximum(W, 1.0)[:, None] + (1.0 - np.minimum(W, 1.0))[:, None] * Q
     L = gsmooth(L, cfg['sigma_look'] * FPS)
-    info = dict(sigma=sig, stays=stays, dropped=dropped, legs=leg_info, t_dep=t_dep, Tf=Tf, orbits=[dict(sgn=o['sgn'], arc_deg=math.degrees(o['arc']), v=o['v']) for o in orbs])
+    info = dict(sigma=sig, legs=leg_info, stays=stays)
     return ts, P, L, info
 
 

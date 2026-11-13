@@ -440,36 +440,108 @@ def auto_anchors(slots, cands, fixed, t_start, y_start, t_end, y_end, rmin, rmax
 
 
 # ======================================================================================================== regia
-def drone_stays(SOSTA_T, D, focus, title_t):
-    """Soste/cartelli -> tappe del drone: posizione, dimensione, distanza e elevazione di vista (stessa formula della camera 'continuous')."""
-    out = []
-    for t0, t1, s in SOSTA_T:
-        if t1 <= title_t + 1.0: continue
-        tg = s['_tg']
-        if tg is None and s.get('_card'): continue    # cartello senza bersaglio: nessuna tappa, il drone e' in crociera (la didascalia resta)
-        if tg is None:
-            (mx, my), r = D.extent(s['y1'], focus)
-            out.append(dict(t0=t0, t1=t1, x=mx, y=my, tzo=0.0, d=1.0 * r + (450 if r > 700 else 180), el=30.0, kind='city', R=r, name=s['caption'], prio=2 if not s.get('_card') else 0))
-        else:
-            mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
-            d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
-            if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
-            out.append(dict(t0=t0, t1=t1, x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area',
-                            R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'], prio=1 if s.get('_card') else 2))
-    return out
+def drone_stay_of(s, D, focus):
+    """Voce (sosta) -> tappa del drone (posizione, dimensione, distanza ed elevazione di vista, stessa formula di 'continuous') o None."""
+    tg = s['_tg']
+    if tg is None:
+        (mx, my), r = D.extent(s['y1'], focus)
+        return dict(x=mx, y=my, tzo=0.0, d=1.0 * r + (450 if r > 700 else 180), el=30.0, kind='city', R=r, name=s['caption'])
+    mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
+    d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
+    if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+    return dict(x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area', R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'])
 
 
-def merge_stays(stays):
-    """Tappe consecutive sullo stesso luogo (centri vicini, stessa scala) = UNA permanenza: un solo avvicinamento e un'orbita piu' lunga."""
-    out = []
-    for s in stays:
-        if out and not s.get('static') and not out[-1].get('static'):
-            a = out[-1]; dist = math.hypot(s['x'] - a['x'], s['y'] - a['y']); ra, rb = max(a['R'], 40.0), max(s['R'], 40.0)
-            if dist < 0.5 * max(ra, rb) + 120.0 and max(ra, rb) / min(ra, rb) < 3.0:
-                a['t1'] = max(a['t1'], s['t1']); a['R'] = max(ra, rb); a['d'] = max(a['d'], s['d']); a['merged'] = a.get('merged', 1) + 1; a['prio'] = max(a.get('prio', 1), s.get('prio', 1))
-                continue
-        out.append(dict(s))
-    return out
+def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin):
+    """Pacing story per il drone. Ogni sosta con bersaglio e' una TAPPA: il drone arriva da fermo, resta in hover per tutta la finestra della sosta
+    (anni y0 -> y1 esatti), riparte. I cartelli (e le soste scartate) NON sono tappe: scorrono durante i tratti di volo, anni fermi sull'anno
+    del cartello. Tratto = max(t_leg_min, lunghezza / v_leg, cartelli + corsa degli anni); gli anni corrono fra le voci fino a rate_cap anni/s.
+    Se tutto non entra nel budget (end_t), si tolgono le soste di peso minimo (`weight` della sosta, altrimenti la forza dell'fx):
+    diventano cartelli senza bersaglio. Ritorna YEARS, SOSTA_T, info. `fin` = tappa finale (citta' intera) per la lunghezza dell'ultimo tratto."""
+    from kit import drone_kit as DK
+    YEARS, SOSTA_T = [], []
+    for (ta, ya), (tb, yb) in zip(FIXED[:2], FIXED[1:3]):
+        for k in range(0, 21):
+            u = k / 20; YEARS.append((ta + (tb - ta) * u, ya + (yb - ya) * ease(u)))
+    t0 = title_t + lead; YEARS.append((t0, y_start)); budget = end_t - t0
+    items = [(float(s['y0']), float(s['y1']), s) for s in SOSTE]
+    for _, _, s in items: s.pop('_rider', None)
+    for _, _, s in items: s['_stay'] = None if s.get('_card') else drone_stay_of(s, D, focus)
+    weight = lambda s: float(s['weight']) if 'weight' in s else float(s.get('_force', 0.0))
+    dropped = []
+    JUMP = 0.04
+
+    def legs(rate, stretch):
+        """Per ogni tratto: (tempo, [voci scorrevoli], tappa di arrivo). Il tratto k porta alla tappa k (l'ultimo alla tappa finale)."""
+        stops = [(y0, y1, s) for y0, y1, s in items if s['_stay'] is not None and not s.get('_rider')]
+        out = []; cur = y_start; riders = []; prev = None
+        for y0, y1, s in items:
+            if s['_stay'] is not None and not s.get('_rider'):
+                out.append((prev, s, riders, cur, y0)); riders = []; prev = s; cur = y1
+            else: riders.append((y0, y1, s)); cur = max(cur, y1) if False else y1
+        out.append((prev, None, riders, cur, 2026.0))
+        res = []
+        for a, b, rid, cur0, ytarget in out:
+            if b is None and fin is None: geom = 0.0
+            else:
+                tgt = fin if b is None else b['_stay']
+                geom = 0.0 if a is None else max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg)) / dcfg['v_leg']) * stretch
+                if a is None and b is not None: geom = 0.0
+            cards_t = sum(r[2]['dur'] for r in rid); cur = cur0; runs = 0.0; jumps = 0
+            for y0, y1, r in rid:
+                if y0 - cur > 1e-6: runs += (y0 - cur) / rate
+                elif cur - y0 > 1e-6: jumps += 1
+                cur = y1
+            if ytarget - cur > 1e-6: runs += (ytarget - cur) / rate
+            elif cur - ytarget > 1e-6: jumps += 1
+            res.append((max(geom, cards_t + runs + JUMP * jumps), geom, cards_t, runs, rid, a, b, cur0, ytarget))
+        return res
+
+    def total(rate, stretch):
+        L = legs(rate, stretch); stops = [s for _, _, s in items if s['_stay'] is not None and not s.get('_rider')]
+        return sum(l[0] for l in L) + sum(s['dur'] for s in stops)
+    stretch = 1.0
+    while True:
+        if total(dcfg['rate_cap'], 1.0) <= budget: break
+        cand = [s for _, _, s in items if s['_stay'] is not None and not s.get('_rider')]
+        if not cand: warn('pacing story (drone): neanche senza tappe i cartelli entrano nel tempo: alza regia.duration'); break
+        d = min(cand, key=lambda s: (weight(s), s['dur'])); d['_rider'] = True; dropped.append(d)
+    lo, hi = 0.05, dcfg['rate_cap']
+    if total(lo, 1.0) < budget:                               # tempo in avanzo anche con gli anni lentissimi: voli piu' lenti
+        a_, b_ = 1.0, 30.0
+        for _ in range(50):
+            m = (a_ + b_) / 2
+            if total(lo, m) < budget: a_ = m
+            else: b_ = m
+        stretch = (a_ + b_) / 2; rate = lo
+    else:
+        for _ in range(60):
+            m = (lo * hi) ** 0.5
+            if total(m, 1.0) > budget: lo = m
+            else: hi = m
+        rate = hi
+    L = legs(rate, stretch)
+    t = t0; cur = y_start; hov = flight = 0.0
+    for tl, geom, cards_t, runs, rid, a, b, cur0, ytarget in L:
+        tl0 = t
+        scale = 1.0 if (cards_t + runs) >= geom or runs <= 0 else (geom - cards_t - JUMP * 0) / runs
+        for y0, y1, r in rid:
+            if y0 - cur > 1e-6: dt = (y0 - cur) / rate * scale; YEARS += [(t, cur), (t + dt, y0)]; t += dt
+            elif cur - y0 > 1e-6: YEARS += [(t, cur), (t + JUMP, y0)]; t += JUMP
+            SOSTA_T.append((t, t + r['dur'], r)); YEARS += [(t, y0), (t + r['dur'], y1)]; t += r['dur']; cur = y1
+        if ytarget - cur > 1e-6 and (b is not None or True):
+            dt = (ytarget - cur) / rate * scale; YEARS += [(t, cur), (t + dt, ytarget)]; t += dt
+        elif cur - ytarget > 1e-6: YEARS += [(t, cur), (t + JUMP, ytarget)]; t += JUMP
+        cur = ytarget
+        t = max(t, tl0 + tl)                                   # tempo minimo del volo (anni fermi se in avanzo)
+        flight += t - tl0
+        if b is not None:
+            SOSTA_T.append((t, t + b['dur'], b)); YEARS += [(t, b['y0']), (t + b['dur'], b['y1'])]; hov += b['dur']; t += b['dur']; cur = float(b['y1'])
+    YEARS.append((max(t, end_t), 2026.0)); YEARS += tail
+    YEARS = sorted({round(float(a), 3): (round(float(a), 3), round(float(b), 4)) for a, b in YEARS}.values())
+    if t > end_t + 0.5: warn(f'pacing story (drone): la sequenza finisce a {t:.1f} s, oltre {end_t:.1f} s')
+    info = dict(dropped=[(s['caption'], s['y0'], weight(s)) for s in dropped], hover=hov, flight=flight, rate=rate, stretch=stretch)
+    return YEARS, SOSTA_T, info
 
 
 def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=False, write=True):
