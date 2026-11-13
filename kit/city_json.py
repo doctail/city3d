@@ -82,7 +82,8 @@ def build_city(story):
             nf = int(json.load(open(own))['duration'] * FPS)
             cfg['shorts'] = [['A', 1, nf, 1, f'schedule_{slug}_shortA.json', 2]]
         else:
-            nf = int(float(rg.get('duration', 300)) * FPS)
+            _d = rg.get('duration', 300)
+            nf = int((float(_d) if isinstance(_d, (int, float)) and _d else 300.0) * FPS)   # 'auto'/assente: il lungo accelerato a ~30 s parte da 300 s nominali
             cfg['shorts'] = [['A', 1, nf, max(1, math.ceil(nf / (30 * FPS)))]]
     cfg.update(c.get('city_overrides', {}))
     return cfg

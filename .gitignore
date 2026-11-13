@@ -9,3 +9,7 @@ city_*_sun*.json
 montaggio/node_modules/
 montaggio/public/
 montaggio/out/
+
+# Lione: mappe storiche Gallica/BnF (licenza da verificare) e overlay pesanti
+cities/lyon/mappe_raw/
+cities/lyon/mappe/overlay_*.png

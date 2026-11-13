@@ -1,0 +1,92 @@
+[
+ {
+  "name": "Rue de l'Impératrice (Rue Édouard-Herriot)",
+  "ring": [
+   [
+    45.76732,
+    4.83444
+   ],
+   [
+    45.76674,
+    4.83456
+   ],
+   [
+    45.7661,
+    4.83454
+   ],
+   [
+    45.75828,
+    4.83406
+   ],
+   [
+    45.758,
+    4.83397
+   ],
+   [
+    45.75805,
+    4.83367
+   ],
+   [
+    45.75829,
+    4.83375
+   ],
+   [
+    45.76611,
+    4.83423
+   ],
+   [
+    45.76672,
+    4.83425
+   ],
+   [
+    45.76729,
+    4.83414
+   ]
+  ],
+  "from": -43,
+  "until": 1860,
+  "src": [
+   "S21",
+   "S39"
+  ],
+  "conf": "medium",
+  "note": "until=1860 da infobox S21 (piano 1853); anello = asse BD TOPO/Grand Lyon (S39) bufferizzato +-12 m (strada 14.5 m); lunghezza asse 1028 m vs 1025 m in S21"
+ },
+ {
+  "name": "Rue du Président-Carnot",
+  "ring": [
+   [
+    45.76315,
+    4.83824
+   ],
+   [
+    45.76312,
+    4.838
+   ],
+   [
+    45.76106,
+    4.83639
+   ],
+   [
+    45.76118,
+    4.83607
+   ],
+   [
+    45.76326,
+    4.8377
+   ],
+   [
+    45.76339,
+    4.83813
+   ]
+  ],
+  "from": -43,
+  "until": 1890,
+  "src": [
+   "S22",
+   "S39"
+  ],
+  "conf": "medium",
+  "note": "until=1890 'a partire dal 1890' (S22); anello = asse S39 +-14 m (strada 18.5 m); lunghezza 289 m vs 285 m S22"
+ }
+]

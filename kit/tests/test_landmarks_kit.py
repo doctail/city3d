@@ -27,7 +27,7 @@ def variants():
     out += [('modern_shell', {'shape': s}) for s in ('ribs', 'helmet', 'arches', 'dome')]
     out += [('park_structure', {'kind': k}) for k in ('greenhouse', 'fountain', 'obelisk', 'statue', 'wheel', 'pagoda', 'pergola')]
     out += [('generic_footprint', {'roof': r}) for r in ('flat', 'parapet', 'gable', 'dome')]
-    out += [('bullring', {'style': 'roman'}), ('skyscraper', {'plan': 'round', 'crown': 'pyramid'}), ('palace_courtyard', {'corner_towers': True}),
+    out += [('theatre', {}), ('cathedral', {'rear_towers': True, 'tower_w': 11, 'crossing': 'none'}), ('bullring', {'style': 'roman'}), ('skyscraper', {'plan': 'round', 'crown': 'pyramid'}), ('palace_courtyard', {'corner_towers': True}),
             ('wall_segment', {'tower': 'round', 'tower_top': 'pyramid'}), ('castle', {'cones': True})]
     return out
 

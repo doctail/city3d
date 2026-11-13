@@ -246,7 +246,7 @@ PRESETS = {}
 # preset in pietra: senza finestre "da ufficio" (a=0.05) salvo params.windows; palazzi/chiese a cupola/edifici dal 1800 con finestre
 STONE_KINDS = {'tower_square', 'tower', 'tower_round', 'bell_tower', 'campanile', 'cathedral', 'church', 'gate_towers', 'gate',
                'castle', 'wall_segment', 'walls', 'bridge_arches', 'bridge'}
-STONE_BEFORE = {'palace_courtyard': 1800, 'palace': 1800, 'church_dome': 1800, 'central_church': 1800, 'bullring': 1800,
+STONE_BEFORE = {'theatre': 1800, 'theater': 1800, 'roman_theatre': 1800, 'palace_courtyard': 1800, 'palace': 1800, 'church_dome': 1800, 'central_church': 1800, 'bullring': 1800,
                 'arena': 1800, 'amphitheatre': 1800, 'generic_footprint': 1800, 'footprint': 1800, 'building': 1800}
 
 
@@ -536,14 +536,15 @@ def cathedral(ctx):
     B.prism(F.rect(s_w - 0.25, s_w + 0.2, -nw * 0.12, nw * 0.12), 0.01, nh * 0.32, 'dark', A_STONE, 0.66, 'facade', simp=0)
     # torri di facciata
     if ntow:
-        tw_ = max(7.0, (W - nw) / 2 * 0.95); th = float(ctx.g('tower_h', nh * 1.7))
-        ts = [(-1,), (1,)] if ntow == 2 else [(-1,)]
-        for (sg,) in ts:
+        tw_ = float(ctx.g('tower_w', max(7.0, (W - nw) / 2 * 0.95))); th = float(ctx.g('tower_h', nh * 1.7))
+        ts = [(-1, s_w + 0.2), (1, s_w + 0.2)] if ntow == 2 else [(-1, s_w + 0.2)]
+        if ctx.g('rear_towers', False): ts += [(-1, s_e - tw_ - 0.2), (1, s_e - tw_ - 0.2)]   # 4 torri angolari (es. Fourviere)
+        for (sg, s0_) in ts:
             tt = sg * (nw / 2 + tw_ / 2 + 0.5)
-            sq = F.rect(s_w + 0.2, s_w + 0.2 + tw_, tt - tw_ / 2, tt + tw_ / 2)
+            sq = F.rect(s0_, s0_ + tw_, tt - tw_ / 2, tt + tw_ / 2)
             B.prism(sq, 0, th * 0.55, c, A_STONE, 0.7, 'towers', simp=0)
             B.prism(sq, th * 0.55, th, c, A_WIN, 0.78, 'towers', simp=0)
-            _tower_top(B, F, s_w + 0.2 + tw_ / 2, tt, tw_, th, ctx.g('tower_top', 'spire' if ctx.style['spire'] != 'stone' else 'pyramid'), c, rc, 0.9)
+            _tower_top(B, F, s0_ + tw_ / 2, tt, tw_, th, ctx.g('tower_top', 'spire' if ctx.style['spire'] != 'stone' else 'pyramid'), c, rc, 0.9)
     return B
 
 
@@ -868,6 +869,28 @@ def bullring(ctx):
         B.sectors(F, o[0], o[1], inn[0], inn[1], 0, zt, tc, A_STONE, 0.45 + 0.1 * k, 'tiers', n, top=tc)
         ri.append(inn)
     B.sectors(F, aA + 2, aB + 2, aA + 1.2, aB + 1.2, 0, 1.6, ctx.g('barrier_c', 'red'), A_STONE, 0.8, 'barrier', 24)
+    return B
+
+
+@preset('theatre', 'theater', 'roman_theatre')
+def theatre(ctx):
+    """Teatro romano: cavea a semicerchio (gradoni + muro esterno ad arcate) verso -u, orchestra a semidisco, palco e
+    scaenae frons verso +u. r_out 54, h 16 (muro), arena_k 0.3 (orchestra/raggio), stage_h 12, tiers 4."""
+    B, F = Builder(ctx), ctx.F
+    R = float(ctx.g('r_out', 54.0)); h = float(ctx.g('h', 16.0)); ra = float(ctx.g('arena_k', 0.3)); n = int(ctx.g('n', 16))
+    c = ctx.g('c', 'limestone'); tc = ctx.g('tier_c', 'stone'); wr = float(ctx.g('ring_w', 5.0)); r0 = R * ra
+    keep = lambda t: math.cos(t) < 0
+    B.prism(F.ell(0, 0, r0 + 1, r0 + 1, 24, math.pi / 2, 3 * math.pi / 2), 0, 0.25, ctx.g('arena_c', 'arena'), A_STONE, 0.0, 'found', simp=0)
+    B.sectors(F, R, R, R - wr, R - wr, 0, h, c, A_WIN, 0.3, 'ring', n, keep=keep, top=ctx.roof(), fstep=0.5)
+    steps = int(ctx.g('tiers', 4)); ri = R - wr
+    for k in range(steps):   # gradoni: piu' alti verso l'esterno
+        inn = r0 + 1 + (R - wr - r0 - 1) * (1 - (k + 1) / steps)
+        zt = (h - 2) * (steps - k) / (steps + 0.6)
+        B.sectors(F, ri, ri, inn, inn, 0, zt, tc, A_STONE, 0.45 + 0.1 * k, 'tiers', n, keep=keep, top=tc)
+        ri = inn
+    sh = float(ctx.g('stage_h', 12.0)); sw = R * 0.92
+    B.prism(F.rect(0, 9, -sw, sw), 0, 1.6, 'stone2', A_STONE, 0.8, 'stage', simp=0)
+    B.prism(F.rect(9, 12, -sw, sw), 0, sh, c, A_WIN, 0.85, 'stage', simp=0)
     return B
 
 

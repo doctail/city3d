@@ -1,0 +1,311 @@
+{
+ "year": "1855",
+ "map": {
+  "map_src": "lyon 1855.png",
+  "title": "Plan topographique de la ville de Lyon et de ses environs (Rembielinski & Dignoscyo; legenda: Publie en 1847; file etichettato 1855)"
+ },
+ "map_file": "cities/lyon/mappe_raw/lyon 1855.png",
+ "crs_modern": "WGS84 (EPSG:4326) for GCP coordinates; fit in EPSG:2154",
+ "stats": {
+  "n_fit": 12,
+  "n_control": 4,
+  "n_rejected": 0,
+  "model": "affine",
+  "smoothing": 0,
+  "fit_residual_m": {
+   "n": 12,
+   "rmse": 30.062900174773777,
+   "mean": 27.10890013101663,
+   "max": 56.342318294390104,
+   "median": 26.392168808174585
+  },
+  "control_error_m": {
+   "n": 4,
+   "rmse": 39.56406187718177,
+   "mean": 28.26738137226467,
+   "max": 75.71153869560021,
+   "median": 15.207425958801586
+  },
+  "loo_all_m": {
+   "n": 16,
+   "rmse": 39.459591530885724,
+   "mean": 34.9176756617936,
+   "max": 76.64268049975156,
+   "median": 38.06400882625567
+  },
+  "m_per_px_u": 6.4276946416925895,
+  "m_per_px_v": 6.611035716770056,
+  "u_axis_bearing_deg": 0.37828272640800026,
+  "affine_note": "affine 6-param (rotation, anisotropic scale, shear, shift) in Lambert-93 (EPSG:2154); TPS/poly2 tested: not better on held-out points"
+ },
+ "control_points_note": "role=fit points define the model reported in fit_residual_m; role=control are held out of that fit and give control_error_m; the overlay/final model uses fit+control; role=rejected not used",
+ "neatline_px": [
+  [
+   85,
+   47
+  ],
+  [
+   1485,
+   47
+  ],
+  [
+   1485,
+   1018
+  ],
+  [
+   85,
+   1018
+  ]
+ ],
+ "coverage_wgs84": [
+  [
+   [
+    4.790574,
+    45.722256
+   ],
+   [
+    4.793966,
+    45.803254
+   ],
+   [
+    4.876613,
+    45.802848
+   ],
+   [
+    4.8731,
+    45.721853
+   ],
+   [
+    4.790574,
+    45.722256
+   ]
+  ]
+ ],
+ "points": [
+  {
+   "id": "BEL_C",
+   "role": "fit",
+   "desc": "Place Bellecour centroid",
+   "px": [
+    704,
+    520
+   ],
+   "lat": 45.7576,
+   "lon": 4.83201,
+   "err_in_final_model_m": 38.3,
+   "err_fit_only_model_m": 33.7,
+   "err_leave_one_out_m": 42.4
+  },
+  {
+   "id": "HDIEU",
+   "role": "fit",
+   "desc": "Hotel-Dieu complex centroid (OSM)",
+   "px": [
+    721,
+    574
+   ],
+   "lat": 45.7588,
+   "lon": 4.83649,
+   "err_in_final_model_m": 34.8,
+   "err_fit_only_model_m": 24.3,
+   "err_leave_one_out_m": 45.2
+  },
+  {
+   "id": "PSP_C",
+   "role": "fit",
+   "desc": "Palais Saint-Pierre centroid (OSM)",
+   "px": [
+    862,
+    533
+   ],
+   "lat": 45.76683,
+   "lon": 4.83362,
+   "err_in_final_model_m": 24.6,
+   "err_fit_only_model_m": 19.2,
+   "err_leave_one_out_m": 29.8
+  },
+  {
+   "id": "TERR_C",
+   "role": "fit",
+   "desc": "Place des Terreaux centroid (OSM)",
+   "px": [
+    875,
+    528
+   ],
+   "lat": 45.76751,
+   "lon": 4.83349,
+   "err_in_final_model_m": 29.6,
+   "err_fit_only_model_m": 26.5,
+   "err_leave_one_out_m": 37.7
+  },
+  {
+   "id": "STBONAV",
+   "role": "fit",
+   "desc": "Basilique Saint-Bonaventure (OSM)",
+   "px": [
+    799,
+    573
+   ],
+   "lat": 45.763053,
+   "lon": 4.8369635,
+   "err_in_final_model_m": 33.9,
+   "err_fit_only_model_m": 26.3,
+   "err_leave_one_out_m": 39.6
+  },
+  {
+   "id": "PJUST",
+   "role": "fit",
+   "desc": "Palais de Justice historique (24 colonnes) centroid (OSM)",
+   "px": [
+    769,
+    464
+   ],
+   "lat": 45.76189,
+   "lon": 4.82801,
+   "err_in_final_model_m": 35.1,
+   "err_fit_only_model_m": 31.4,
+   "err_leave_one_out_m": 44.3
+  },
+  {
+   "id": "STJEAN",
+   "role": "fit",
+   "desc": "Cathedrale Saint-Jean centroid (OSM)",
+   "px": [
+    753,
+    459
+   ],
+   "lat": 45.76072,
+   "lon": 4.82743,
+   "err_in_final_model_m": 15.5,
+   "err_fit_only_model_m": 11.0,
+   "err_leave_one_out_m": 19.7
+  },
+  {
+   "id": "AINAY",
+   "role": "fit",
+   "desc": "Basilique d'Ainay centroid (OSM)",
+   "px": [
+    630,
+    464
+   ],
+   "lat": 45.75366,
+   "lon": 4.82736,
+   "err_in_final_model_m": 4.3,
+   "err_fit_only_model_m": 4.0,
+   "err_leave_one_out_m": 5.7
+  },
+  {
+   "id": "CARNOT",
+   "role": "fit",
+   "desc": "Place Carnot centroid (OSM)",
+   "px": [
+    579,
+    468
+   ],
+   "lat": 45.75081,
+   "lon": 4.82781,
+   "err_in_final_model_m": 24.4,
+   "err_fit_only_model_m": 22.7,
+   "err_leave_one_out_m": 38.4
+  },
+  {
+   "id": "PONT_TILS",
+   "role": "fit",
+   "desc": "Pont Bonaparte (ex Tilsitt) midpoint (OSM way, Nominatim)",
+   "px": [
+    731.5,
+    483
+   ],
+   "lat": 45.75946,
+   "lon": 4.8287,
+   "err_in_final_model_m": 40.6,
+   "err_fit_only_model_m": 42.1,
+   "err_leave_one_out_m": 45.5
+  },
+  {
+   "id": "STNIZ",
+   "role": "control",
+   "desc": "Eglise Saint-Nizier centroid (OSM)",
+   "px": [
+    821,
+    536
+   ],
+   "lat": 45.76471,
+   "lon": 4.83372,
+   "err_in_final_model_m": 19.3,
+   "err_fit_only_model_m": 18.2,
+   "err_leave_one_out_m": 21.5
+  },
+  {
+   "id": "PONT_PALAIS",
+   "role": "control",
+   "desc": "Passerelle du Palais de Justice midpoint (OSM; site of old Pont du Palais)",
+   "px": [
+    766,
+    490
+   ],
+   "lat": 45.76145,
+   "lon": 4.83,
+   "err_in_final_model_m": 8.3,
+   "err_fit_only_model_m": 6.9,
+   "err_leave_one_out_m": 9.4
+  },
+  {
+   "id": "CELEST",
+   "role": "control",
+   "desc": "Theatre des Celestins centroid (OSM)",
+   "px": [
+    739,
+    509
+   ],
+   "lat": 45.75995,
+   "lon": 4.8313,
+   "err_in_final_model_m": 12.5,
+   "err_fit_only_model_m": 12.2,
+   "err_leave_one_out_m": 13.5
+  },
+  {
+   "id": "PONT_G_W",
+   "role": "fit",
+   "desc": "Pont de la Guillotière, west (Presquîle) abutment (OSM way segment, Nominatim)",
+   "px": [
+    692,
+    573
+   ],
+   "lat": 45.7571,
+   "lon": 4.837,
+   "err_in_final_model_m": 18.7,
+   "err_fit_only_model_m": 27.9,
+   "err_leave_one_out_m": 26.4
+  },
+  {
+   "id": "PONT_M_W",
+   "role": "fit",
+   "desc": "Pont Morand west abutment (OSM polygon W end)",
+   "px": [
+    884,
+    586
+   ],
+   "lat": 45.76869,
+   "lon": 4.83836,
+   "err_in_final_model_m": 47.1,
+   "err_fit_only_model_m": 56.3,
+   "err_leave_one_out_m": 62.9
+  },
+  {
+   "id": "PONT_L_W",
+   "role": "control",
+   "desc": "Pont Lafayette west abutment (kit bridges.json W end)",
+   "px": [
+    802,
+    584
+   ],
+   "lat": 45.76378,
+   "lon": 4.8387,
+   "err_in_final_model_m": 62.6,
+   "err_fit_only_model_m": 75.7,
+   "err_leave_one_out_m": 76.6
+  }
+ ],
+ "modern_coord_source": "OSM via nominatim.openstreetmap.org (polygon centroids/corners/bridge segments, fetched 2026-11-13) plus kit/bridges.json midpoints for Lafayette/Guillotiere bridges; no point comes from story.json unverified"
+}

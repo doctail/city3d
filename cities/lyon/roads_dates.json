@@ -1,0 +1,558 @@
+[
+ {
+  "name_regex": "(?i)^(Rue (de la )?R[ée]publique|Rue Imp[ée]riale|Rue de Lyon)$",
+  "year": 1856,
+  "year_end": null,
+  "src": [
+   "S17",
+   "S8"
+  ],
+  "conf": "medium",
+  "note": "Expropriation order 31 May 1854 (Vaisse plan 1853); 1856 is the owner's completion year, NOT confirmed in the pages read (S8 says only 'anni 1850'). Named Impériale 1862-71, de Lyon 1871-78, de la République from 13 Aug 1878. Works opened it progressively: likely open to traffic ~1856-1860s.",
+  "year_start": 1854
+ },
+ {
+  "name_regex": "(?i)Pr[ée]sident.?[ée]douard.?Herriot|Rue de l.Imp[ée]ratrice|Rue de l.H[ôo]tel.de.Ville",
+  "year": 1860,
+  "year_end": null,
+  "src": [
+   "S21"
+  ],
+  "conf": "medium",
+  "note": "Infobox 1860; plan 1853 (Vaisse). Rue de l'Impératrice, then de l'Hôtel-de-Ville after 1870, Herriot after 1957. Absorbed rue de l'Aumône, de Vandran, de la Sirène, de Clermont. 1,025 m x 14.5 m. BD TOPO form: 'Rue Président Edouard Herriot' (no accent)."
+ },
+ {
+  "name_regex": "(?i)Pr[ée]sident.?Carnot|Rue Centrale",
+  "year": 1890,
+  "year_end": null,
+  "src": [
+   "S22"
+  ],
+  "conf": "medium",
+  "note": "Cut 'à partir de 1890' (Grôlée redevelopment, Third Republic); named 24 Jul 1894 after Carnot's death. 285 m x 18.5 m, place de la République to pont Lafayette. S22 does NOT mention a 'Rue Centrale': owner's name unverified; no evidence found for 'Rue Centrale' in the pages read, kept in the regex only as a tolerance."
+ },
+ {
+  "name_regex": "(?i)^Cours Gambetta$",
+  "year": 1840,
+  "year_end": null,
+  "src": [
+   "S18"
+  ],
+  "conf": "medium",
+  "note": "Cours des Brosses created 1840 on land freed by burying arches of pont de la Guillotière (1815, 1833); extension to the railway completed 1870; renamed Gambetta 1876. Eastern part beyond Grange Blanche: 1870."
+ },
+ {
+  "name_regex": "(?i)^Cours Albert.Thomas$",
+  "year": 1880,
+  "year_end": null,
+  "src": [
+   "S18"
+  ],
+  "conf": "low",
+  "note": "Extension of Gambetta toward montée des Sablons (now av. Rockefeller) in the 1880s; became cours Albert-Thomas. Decade only."
+ },
+ {
+  "name_regex": "(?i)^Cours Lafayette$",
+  "year": 1830,
+  "year_end": null,
+  "src": [
+   "S23",
+   "S36"
+  ],
+  "conf": "medium",
+  "note": "'Vers 1830', in line with the pont Lafayette (first bridge 1826, renamed Lafayette 19 Sep 1830). No precise date."
+ },
+ {
+  "name_regex": "(?i)^Cours Vitton$",
+  "year": 1830,
+  "year_end": null,
+  "src": [
+   "S24"
+  ],
+  "conf": "low",
+  "note": "INFERRED: S24 gives no date, only that mayor Henri Vitton (mayor of La Guillotière 1822-30) 'contributed strongly'. Treat as 1822-1834 range.",
+  "year_range": [
+   1822,
+   1834
+  ]
+ },
+ {
+  "name_regex": "(?i)^Cours Franklin.Roosevelt$",
+  "year": null,
+  "year_end": null,
+  "src": [
+   "S25"
+  ],
+  "conf": "low",
+  "note": "No creation date in S25. Formerly cours Morand (west) and cours Trocadéro (east); renamed by deliberation 23 Apr 1945. Metro Foch 1978. Not datable from pages read: leave to the base model."
+ },
+ {
+  "name_regex": "(?i)^Cours Charlemagne$",
+  "year": 1832,
+  "year_end": null,
+  "src": [
+   "S26"
+  ],
+  "conf": "high",
+  "note": "Layout decided 1806, published 1826, built 1827-1832; named 16 Jul 1830 (confirmed 1837). ~1,700 m x 33 m, place des Archives to quai Perrache.",
+  "year_start": 1827
+ },
+ {
+  "name_regex": "(?i)^Avenue (du )?Mar[ée]chal.(de )?Saxe$|^Avenue de Saxe$",
+  "year": 1820,
+  "year_end": null,
+  "src": [
+   "S29"
+  ],
+  "conf": "medium",
+  "note": "'Depuis 1820 sous cette appellation', appears on the Plan Morand (the plan date is not given in S29). No earlier names listed."
+ },
+ {
+  "name_regex": "(?i)^Rue Garibaldi$",
+  "year": 1830,
+  "year_end": null,
+  "src": [
+   "S30"
+  ],
+  "conf": "low",
+  "note": "Opened under the Restoration (1814-1830) as rue Sainte-Élisabeth; renamed Garibaldi 7 Sep 1882. 3,850 m. Year is the upper bound of the range.",
+  "year_range": [
+   1814,
+   1830
+  ]
+ },
+ {
+  "name_regex": "(?i)^Avenue Berthelot$",
+  "year": 1856,
+  "year_end": null,
+  "src": [
+   "S27"
+  ],
+  "conf": "medium",
+  "note": "Created 1856 as avenue des Ponts / Ponts-Napoléon; 'Ponts du Midi' from 1871; Berthelot 25 Mar 1907. Infobox gives only 'second half of 19th century'. Eastern extension (Jean-Mermoz) 1939 rename."
+ },
+ {
+  "name_regex": "(?i)^Cours de la Libert[ée]$",
+  "year": 1823,
+  "year_end": null,
+  "src": [
+   "S31"
+  ],
+  "conf": "low",
+  "note": "Cours Bourbon is only ATTESTED from 1823 (creation date unknown, earlier). North: quai de Castellane 1855-77, quai des Brotteaux 1877-1931. Renamed Liberté 13 Aug 1878."
+ },
+ {
+  "name_regex": "(?i)^Tunnel (routier )?de la Croix.Rousse$",
+  "year": 1952,
+  "year_end": null,
+  "src": [
+   "S20"
+  ],
+  "conf": "high",
+  "note": "Road tube inaugurated by Herriot 19 Apr 1952 (infobox says 20 Apr); works 1939/1940-1952. Closed Nov 2012 for ~10 months of renovation."
+ },
+ {
+  "name_regex": "(?i)Croix.Rousse.*(modes? doux|cyclable|pi[ée]ton)",
+  "year": 2013,
+  "year_end": null,
+  "src": [
+   "S20"
+  ],
+  "conf": "high",
+  "note": "Separate 'modes doux' tube opened 5 Dec 2013 (bored 2010-2011). Not for cars."
+ },
+ {
+  "name_regex": "(?i)^Tunnel (routier )?de Fourvi[èe]re$",
+  "year": 1971,
+  "year_end": null,
+  "src": [
+   "S28"
+  ],
+  "conf": "high",
+  "note": "Opened 8 Dec 1971 (infobox); no construction start date in S28."
+ },
+ {
+  "name_regex": "(?i)^(Boulevard (P[ée]riph[ée]rique|Laurent.Bonnevay|de Ceinture)|Boulevard P[ée]riph[ée]rique (Nord|Laurent Bonnevay))$",
+  "year": 1960,
+  "year_end": null,
+  "src": [
+   "S34"
+  ],
+  "conf": "medium",
+  "note": "'Boulevard de Ceinture' (later Laurent-Bonnevay) inaugurated 1960; works from 1931, initial version finished 1958. Northern périphérique / TEO opened (unfinished) 1997; section dates otherwise not given in S34.",
+  "year_start": 1931
+ },
+ {
+  "name_regex": "(?i)^(Boulevard (P[ée]riph[ée]rique|TEO)|Trans.Est.Ouest).*Nord|^TEO$",
+  "year": 1997,
+  "year_end": null,
+  "src": [
+   "S34"
+  ],
+  "conf": "medium",
+  "note": "Northern section (TEO, Trans Est-Ouest) opened 1997, unfinished; last section of northern périphérique also 1997 per S34."
+ },
+ {
+  "name_regex": "(?i)^(Boulevard Vivier.Merle|Avenue Georges.Pompidou|Rue Servient|Rue du Docteur Bouchut)$",
+  "year": 1975,
+  "year_end": null,
+  "src": [
+   "S32",
+   "S38"
+  ],
+  "conf": "low",
+  "note": "AREA-LEVEL: Part-Dieu barracks (built 1844 land / 1851-63, S32/S38 disagree) on land sold 1957 (S32) or 1960 (S38); demolition ~1960-65 (S38); master plan 1962/63 (Delfante); library 1972, shopping centre 8 Sep 1975, tower 1972-77, station 1978-83. The 4 street names are from the historian's general knowledge, NOT verified in the pages read: confirm against OSM. Better handled as polygon than regex.",
+  "year_range": [
+   1963,
+   1983
+  ]
+ },
+ {
+  "name_regex": "(?i)^Rue Denuzi[èe]re$",
+  "year": 2002,
+  "year_end": null,
+  "src": [
+   "S33"
+  ],
+  "conf": "low",
+  "note": "AREA-LEVEL Confluence: first phase on the Saône side from 2002 (Denuzière district nearly finished); marché-gare land cleared 2009; tram T1 Perrache-Montrochet Sept 2005, Debourg Feb 2014; Musée des Confluences 20 Dec 2014. Streets of the 2nd phase not named in S33."
+ },
+ {
+  "name_regex": "(?i)^Quai Perrache$",
+  "year": 1776,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "medium",
+  "note": "Built 1771-1776 (Perrache's works). Rhône side.",
+  "year_start": 1771
+ },
+ {
+  "name_regex": "(?i)^Quai (de )?Saint.Antoine$",
+  "year": 1719,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "medium",
+  "note": "Upstream part built 1711-1719 (as quai de Villeroy). Saône.",
+  "year_start": 1711
+ },
+ {
+  "name_regex": "(?i)^Quai des C[ée]lestins$",
+  "year": 1719,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "'Development from 1719'; no completion date. Saône."
+ },
+ {
+  "name_regex": "(?i)^Quai (de )?Bondy$",
+  "year": 1814,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "medium",
+  "note": "Development 1810-1814 (ex rue de Flandre / rue de la Saulnerie). Saône.",
+  "year_start": 1810
+ },
+ {
+  "name_regex": "(?i)^Quai (de la )?P[êe]cherie$",
+  "year": 1828,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "'Development from 1828' (start only). Saône."
+ },
+ {
+  "name_regex": "(?i)^Quai Fulchiron$",
+  "year": 1861,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "Development 1840-1861 (or 1851 per the same page, internally inconsistent). Saône.",
+  "year_start": 1840
+ },
+ {
+  "name_regex": "(?i)^Quai Romain.Rolland$",
+  "year": 1540,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "'Development from 1540' (quai de la Baleine); medieval. Saône. Start only."
+ },
+ {
+  "name_regex": "(?i)^(Cours d.Herbouville|Quai (Andr[ée].Lassagne|Saint.Clair))$",
+  "year": 1819,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "Cours d'Herbouville 'since 1819' (chemin Rater, then chemin de Saint-Clair). Rhône."
+ },
+ {
+  "name_regex": "(?i)^Quai (Claude.Bernard|du Prince.Imp[ée]rial|de la Vitriolerie)$",
+  "year": 1870,
+  "year_end": null,
+  "src": [
+   "S19",
+   "S37"
+  ],
+  "conf": "low",
+  "note": "Dates are NAMES only: quai Claude-Bernard named by prefectoral decree 3 Jun 1878 (S19 says 'since 1878'); earlier quai du Prince-Impérial (Second Empire, 1852-70) and quai de la Vitriolerie. Build date unknown; the quay is likely contemporary with the Ponts Napoléon (1856, S27). Year is a guess in the range 1856-1870.",
+  "year_range": [
+   1856,
+   1870
+  ]
+ },
+ {
+  "name_regex": "(?i)^Quai (Charles.de.Gaulle|Achille.Lignon)$|^Digue de la T[êe]te.d.Or$",
+  "year": 1769,
+  "year_end": null,
+  "src": [
+   "S19",
+   "S29"
+  ],
+  "conf": "low",
+  "note": "S19: Tête-d'Or dyke developed 1759-1769; S29: dyke built after the 1856 flood (quai Achille-Lignon, now Charles-de-Gaulle). Sources disagree: possibly an 18th-century dyke reinforced after 1856. Year shown is the S19 value.",
+  "year_range": [
+   1759,
+   1869
+  ]
+ },
+ {
+  "name_regex": "(?i)^Quai Victor.Augagneur$|^Quai (de la Guillotière|Castellane|Joinville)$",
+  "year": 1855,
+  "year_end": null,
+  "src": [
+   "S19",
+   "S31"
+  ],
+  "conf": "low",
+  "note": "Rhône left-bank quai: S31 gives quai de Castellane 1855-77 (north of Liberté) as a name; the quay is therefore ~1855 or earlier. No creation date in S19."
+ },
+ {
+  "name_regex": "(?i)^Quai (Jules.Courmont|de l.H[ôo]pital)$|^Quai (du )?(Docteur|Dr).Gailleton$|^Quai (de la Charit[ée]|d.Angoul[êe]me)$",
+  "year": 1773,
+  "year_end": null,
+  "src": [
+   "S19"
+  ],
+  "conf": "low",
+  "note": "Rhône quays near the Hôtel-Dieu: quai de la Charité from 1773 (name), Gailleton named 1907, Jules-Courmont named 1917 (ex quai de l'Hôpital). Names only, not builds."
+ },
+ {
+  "name_regex": "(?i)^Pont Lafayette$",
+  "year": 1826,
+  "year_end": null,
+  "src": [
+   "S35",
+   "S36"
+  ],
+  "conf": "high",
+  "note": "Pont Charles-X 1826 (timber), swept away 1840 and 1856 and rebuilt, metal bridge 1890, centre arch blown up Sept 1944, reopened 1946."
+ },
+ {
+  "name_regex": "(?i)^Pont (Wilson|de l.H[ôo]tel.Dieu)$",
+  "year": 1839,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Hôtel-Dieu suspension bridge 1837-1839, demolished 1912; present bridge inaugurated 1918 (gap 1912-1918).",
+  "year_start": 1837
+ },
+ {
+  "name_regex": "(?i)^Pont Morand$",
+  "year": 1774,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Wooden bridge 1774, collapsed 1825; metal bridge 1890s, demolished 1974, present bridge 1976 (gaps)."
+ },
+ {
+  "name_regex": "(?i)^Pont (de la )?Guilloti[èe]re$",
+  "year": 1958,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "low",
+  "note": "Medieval bridge destroyed 1944, demolished from 1952; replacement 1958 (the old one existed from the Middle Ages, S35 gives no year). year = replacement."
+ },
+ {
+  "name_regex": "(?i)^Pont (Gallieni|du Midi)$",
+  "year": 1849,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Séguin bridge 1849, rebuilt 1891 (pont du Midi), destroyed 1944, demolished 1962-65, new one 1965."
+ },
+ {
+  "name_regex": "(?i)^Pont (Saint.Clair|Vaïsse|[ÉE]gyptien)$",
+  "year": 1846,
+  "year_end": 1953,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Pont égyptien 1846, swept away 1854, reopened 1856, renamed Vaïsse 1931, demolished 1953."
+ },
+ {
+  "name_regex": "(?i)^Pont (de l.Universit[ée])$",
+  "year": 1903,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "1903, damaged 1944, definitively reopened 1947."
+ },
+ {
+  "name_regex": "(?i)^Pont Winston.Churchill$",
+  "year": 1899,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "1899 (Fabrègues); right arch destroyed 1944, reopened 1946; present bridge Jan 1983."
+ },
+ {
+  "name_regex": "(?i)^Pont (Raymond.Poincar[ée])$",
+  "year": 1939,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "low",
+  "note": "Built from 1937, named 1939, destroyed 1940, reopened 1954, replaced by present structure 1989. Heavy gaps."
+ },
+ {
+  "name_regex": "(?i)^Pont (Pasteur)$",
+  "year": 1923,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Inaugurated 1923, destroyed 1944, present bridge 1952."
+ },
+ {
+  "name_regex": "(?i)^Pont (Maréchal|Mar[ée]chal).Juin$",
+  "year": 1973,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Opened 1973 (Pont du Change demolished 1974)."
+ },
+ {
+  "name_regex": "(?i)^Pont (du )?Change$",
+  "year": 1847,
+  "year_end": 1974,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "1847 (replacing 1070 bridge); demolished 1974."
+ },
+ {
+  "name_regex": "(?i)^Pont (de )?Lattre.de.Tassigny$",
+  "year": 1956,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Built 1956."
+ },
+ {
+  "name_regex": "(?i)^Pont (Clemenceau|Mouton)$",
+  "year": 1847,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Pont Mouton 1847, damaged 1944, demolished 1952; Pont Clemenceau 1952."
+ },
+ {
+  "name_regex": "(?i)^Pont (K[œo]enig|Serin)$",
+  "year": 1815,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Pont Serin 1815, blown up 14 Jul 1971; Pont Koenig 1971."
+ },
+ {
+  "name_regex": "(?i)^Pont (de la )?(La )?Feuill[ée]e$",
+  "year": 1831,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "First bridge 1831, present one 1949."
+ },
+ {
+  "name_regex": "(?i)^Pont Bonaparte$",
+  "year": 1642,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Wooden bridge 1634-1642, destroyed 1944, present bridge 1946-1950.",
+  "year_start": 1634
+ },
+ {
+  "name_regex": "(?i)^Pont (Kitchener.Marchand|Kitchener)$",
+  "year": 1828,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "low",
+  "note": "Wooden bridge ~1828, Séguin bridge 1849, present concrete bridge 1959."
+ },
+ {
+  "name_regex": "(?i)^Pont (Schuman|Robert Schuman)$",
+  "year": 2014,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "high",
+  "note": "Inaugurated 2014."
+ },
+ {
+  "name_regex": "(?i)^Pont de la Mulati[èe]re|^Ponts? de La Mulati[èe]re$",
+  "year": 1845,
+  "year_end": null,
+  "src": [
+   "S35"
+  ],
+  "conf": "medium",
+  "note": "Road bridge 1845, cantilever 1936, rebuilt 1966, widened by new bridge 1972."
+ }
+]

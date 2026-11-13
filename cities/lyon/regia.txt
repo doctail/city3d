@@ -1,0 +1,107 @@
+Lyon: regia automatica (kit/regia_kit.py)
+Camera drone: 22 tappe in hover (195.0 s) e voli (541.7 s), anni None/s fra le voci, nessuno stacco; vmax 209.72, amax 117.67, jmax 169.89, clear_min 30.47, clear_ground_min 80.0
+Durata 13:09.6  fotogrammi 18950  inquadrature 3  stacco medio ogni 263.2 s
+Musica: waking_monument  b_start None  notte 749.5690295360679
+
+ANCORE (video -> anno):
+   0:00.0   2026.00  
+   0:03.0   2026.00  
+   0:09.5    -43.00  
+  12:29.6   2026.00  
+
+SOSTE (video -> anni):
+  0:12.9-0:19.9  -43.0->-41.0  Lugdunum is founded (43 BC)  [forza 6.0, crowd]
+  0:12.9-0:19.9  -43.0->-43.0  A colony on the hill  [forza 0.0]
+  0:21.0-0:26.0  -20.0->-20.0  Water for the hill  [forza 0.0]
+  0:27.4-0:32.4  -16.0->-14.0  Theatre of Fourvière (16–14 BC)  [forza 4.0, stone]
+  0:32.5-0:37.5  -10.0->-10.0  An emperor is born  [forza 0.0]
+  0:45.7-0:50.7  17.0->19.5  Amphitheatre of the Three Gauls (AD 19)  [forza 4.0, stone]
+  0:56.0-1:02.0  176.5->177.5  The martyrs of Lugdunum (AD 177)  [forza 5.0, bell]
+  0:56.0-1:02.0  177.0->177.0  The martyrs  [forza 0.0]
+  1:35.6-1:41.6  1180.0->1195.0  Saint-Jean cathedral is begun (1180)  [forza 5.0, bell]
+  1:35.6-1:41.6  1180.0->1180.0  Saint-Jean rises  [forza 0.0]
+  1:43.2-1:48.2  1245.0->1245.0  A council in Lyon  [forza 0.0]
+  1:55.5-2:01.5  1461.0->1465.0  The fairs of Lyon (1461–83)  [forza 6.0, crowd]
+  1:55.5-2:01.5  1461.0->1461.0  Fairs and bankers  [forza 0.0]
+  2:03.9-2:09.9  1536.0->1536.0  Silk comes to Lyon  [forza 0.0]
+  2:12.4-2:17.4  1604.0->1604.0  A pasture becomes a square  [forza 0.0]
+  2:21.6-2:26.6  1708.0->1715.0  Place Bellecour, a royal square (1715)  [forza 4.0, chime]
+  2:21.6-2:26.6  1713.0->1713.0  The king in bronze  [forza 0.0]
+  2:33.8-2:51.8  1793.6->1793.8  The siege of Lyon (9 Aug–9 Oct 1793)  [forza 4.2, cannon]
+  2:33.8-2:39.8  1793.6->1793.6  Lyon against Paris  [forza 0.0]
+  2:39.8-2:45.8  1793.8->1793.8  The city surrenders  [forza 0.0]
+  2:45.8-2:51.8  1793.8->1793.8  Ville-Affranchie  [forza 0.0]
+  3:05.5-3:10.5  1793.8->1794.0  Bellecour loses its king (1793)  [forza 7.0, crash]
+  3:22.4-3:28.4  1801.0->1803.0  Jacquard's loom takes shape (1801)  [forza 4.0, hammer]
+  3:22.4-3:28.4  1801.0->1801.0  A mechanism for the loom  [forza 0.0]
+  3:31.0-3:36.0  1830.0->1830.0  A belt of forts  [forza 0.0]
+  3:36.4-3:49.4  1831.9->1831.9  The first canut revolt (Nov 1831)  [forza 6.0, crowd]
+  3:36.4-3:43.4  1831.9->1831.9  The canuts take the city  [forza 0.0]
+  3:43.4-3:49.4  1831.9->1831.9  The cost  [forza 0.0]
+  3:55.3-4:07.3  1834.3->1834.3  The canuts rise again (April 1834)  [forza 8.0, boom]
+  3:55.3-4:02.3  1834.3->1834.3  The bloody week  [forza 0.0]
+  4:02.3-4:07.3  1834.3->1834.3  A fort to watch the hill  [forza 0.0]
+  4:08.5-4:13.5  1843.0->1843.0  The first power loom  [forza 0.0]
+  4:46.4-4:58.4  1852.0->1853.0  Three towns join Lyon (1852)  [forza 4.0, chime]
+  4:46.4-4:52.4  1852.0->1852.0  Three towns join Lyon  [forza 0.0]
+  4:52.4-4:58.4  1853.0->1853.0  The city crosses the Rhône  [forza 0.0]
+  5:30.2-5:48.2  1855.0->1860.0  Rue Impériale cuts the Presqu'île (1850s)  [forza 4.0, dig]
+  5:30.2-5:37.2  1856.4->1856.4  The Rhône breaks out  [forza 0.0]
+  5:37.2-5:43.2  1856.4->1856.4  The emperor visits  [forza 0.0]
+  5:43.2-5:48.2  1857.0->1857.0  Under Fourvière  [forza 0.0]
+  6:11.4-6:17.4  1856.4->1856.5  The Rhône floods the left bank (May 1856)  [forza 4.0, water]
+  6:11.4-6:17.4  1857.1->1857.1  A street through the Presqu'île  [forza 0.0]
+  6:55.8-7:06.8  1872.0->1884.0  Basilica of Notre-Dame de Fourvière (1872–84)  [forza 5.0, bell]
+  6:55.8-7:01.8  1872.0->1872.0  A vow in stone  [forza 0.0]
+  7:01.8-7:06.8  1884.0->1884.0  The basilica stands  [forza 0.0]
+  7:44.2-8:01.2  1944.7->1944.7  The bridges are blown up (Sept 1944)  [forza 7.2, crash]
+  7:44.2-7:51.2  1944.7->1944.7  The bridges fall  [forza 0.0]
+  7:51.2-7:56.2  1944.7->1944.7  Lyon is free  [forza 0.0]
+  7:56.2-8:01.2  1946.0->1946.0  Lafayette reopens  [forza 0.0]
+  8:35.8-8:40.8  1944.7->1944.7  The Guillotière bridge falls (Sept 1944)  [forza 7.0, crash]
+  9:04.5-9:09.5  1952.0->1953.0  Pont Pasteur reopens (1952)  [forza 4.0, chime]
+  9:15.8-9:21.8  1960.0->1960.0  Barracks into business  [forza 0.0]
+  9:52.9-10:03.9  1972.0->1977.0  La Part-Dieu and its Crayon tower (1977)  [forza 4.0, build]
+  9:52.9-9:57.9  1974.0->1974.0  The metro  [forza 0.0]
+  9:57.9-10:03.9  1975.0->1975.0  Europe's biggest urban mall  [forza 0.0]
+  10:07.9-10:12.9  1981.0->1983.0  Part-Dieu station opens (1983)  [forza 4.0, train]
+  10:27.0-10:32.0  1998.0->1998.0  A world heritage hill  [forza 0.0]
+  11:09.8-11:20.8  2012.0->2015.0  Musée des Confluences (2014)  [forza 4.0, chime]
+  11:09.8-11:14.8  2014.0->2014.0  Part-Dieu again  [forza 0.0]
+  11:14.8-11:20.8  2015.0->2015.0  Where two rivers meet  [forza 0.0]
+  11:28.5-11:33.5  2023.0->2023.0  Lyon today  [forza 0.0]
+
+ANNO OGNI 30 s:
+  0:00   2026.0  (0.00 anni/s)
+  0:30    -14.9  (0.40 anni/s)
+  1:00    177.2  (0.17 anni/s)
+  1:30   1014.2  (29.85 anni/s)
+  2:00   1464.0  (0.67 anni/s)
+  2:30   1752.5  (10.91 anni/s)
+  3:00   1793.8  (0.00 anni/s)
+  3:30   1820.0  (10.40 anni/s)
+  4:00   1834.3  (0.00 anni/s)
+  4:30   1847.5  (0.27 anni/s)
+  5:00   1853.1  (0.06 anni/s)
+  5:30   1855.0  (0.07 anni/s)
+  6:00   1856.4  (0.00 anni/s)
+  6:30   1861.5  (0.41 anni/s)
+  7:00   1876.6  (1.09 anni/s)
+  7:30   1921.7  (1.62 anni/s)
+  8:00   1944.7  (0.00 anni/s)
+  8:30   1944.7  (0.00 anni/s)
+  9:00   1950.6  (0.31 anni/s)
+  9:30   1963.2  (0.39 anni/s)
+  10:00   1975.2  (0.45 anni/s)
+  10:30   1998.0  (0.00 anni/s)
+  11:00   2008.4  (0.37 anni/s)
+  11:30   2023.0  (0.00 anni/s)
+  12:00   2024.4  (0.05 anni/s)
+  12:30   2026.0  (0.00 anni/s)
+  13:00   2026.0  (0.00 anni/s)
+
+Velocita fuori dalle soste: mediana 0.37 anni/s, max 30.0 anni/s
+Soste: 60, 412 s (56% del giorno)
+
+AVVISI:
+  nessuno

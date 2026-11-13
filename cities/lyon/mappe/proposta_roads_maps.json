@@ -1,0 +1,672 @@
+{
+ "note": "PROPOSTA, non applicata. Poligoni in [lat,lon]. Il campo segments_with_current_y_contradicting_bound conta i segmenti di data_lyon/roads.json (baricentro dentro l'area, senza ferrovie) il cui y attuale contraddirebbe la proposta: serve solo come indicazione di impatto, non e un elenco di correzioni. Le aree NP* sono \"non prima\" per strade URBANE MODERNE: i chemins rurali disegnati sul foglio vanno esclusi prima di applicare. Date da legenda: la mappa \"1855\" porta Publie en 1847.",
+ "generated": "2026-11-13",
+ "confidence_counts": {
+  "low": 5,
+  "medium": 7,
+  "high": 2
+ },
+ "proposals": [
+  {
+   "id": "NP1_brotteaux_grid_east",
+   "geometry": {
+    "type": "area_minus_hole",
+    "coords_latlon": [
+     [
+      45.764434,
+      4.854173
+     ],
+     [
+      45.764434,
+      4.865119
+     ],
+     [
+      45.776646,
+      4.865119
+     ],
+     [
+      45.776646,
+      4.854173
+     ]
+    ],
+    "note": "minus the 1855 built-up polygons E1/E2/MIL"
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "low",
+   "note": "Brotteaux/Charpennes: sul foglio ci sono solo isolati sparsi e un reticolo di lotti/viali tratteggiati (progetto). Il tratteggio non prova che la strada non esistesse come chemin: low. Escludere i chemins gia disegnati (route di Strasbourg/Charpennes) prima di applicare.",
+   "roads_json_segments_in_area": 2258,
+   "segments_with_current_y_contradicting_bound": 115
+  },
+  {
+   "id": "NP2_brotteaux_north_tete_dor",
+   "geometry": {
+    "type": "area_minus_hole",
+    "coords_latlon": [
+     [
+      45.776646,
+      4.839363
+     ],
+     [
+      45.776646,
+      4.866407
+     ],
+     [
+      45.788407,
+      4.866407
+     ],
+     [
+      45.788407,
+      4.839363
+     ]
+    ],
+    "note": "minus the 1855 built-up polygons E1/E2/MIL"
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "Nord di Brotteaux verso Tete d'Or / lone Rhodano: campi, boschetti e bracci del fiume; solo chemins rurali e il tracciato del Rhone. Strade urbane moderne = non prima.",
+   "roads_json_segments_in_area": 3801,
+   "segments_with_current_y_contradicting_bound": 627
+  },
+  {
+   "id": "NP3_part_dieu_villette",
+   "geometry": {
+    "type": "area_minus_hole",
+    "coords_latlon": [
+     [
+      45.75403,
+      4.859968
+     ],
+     [
+      45.75403,
+      4.875421
+     ],
+     [
+      45.766695,
+      4.875421
+     ],
+     [
+      45.766695,
+      4.859968
+     ]
+    ],
+    "note": "minus the 1855 built-up polygons E1/E2/MIL"
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "La Part-Dieu / Villette: caserne e forte della Part-Dieu (poligono militare a parte) circondati da campi e grandi parcelle; nessun tessuto urbano. Reticolo moderno non prima.",
+   "roads_json_segments_in_area": 2670,
+   "segments_with_current_y_contradicting_bound": 110
+  },
+  {
+   "id": "NP4_gillotiere_east",
+   "geometry": {
+    "type": "area_minus_hole",
+    "coords_latlon": [
+     [
+      45.745888,
+      4.854817
+     ],
+     [
+      45.745888,
+      4.875421
+     ],
+     [
+      45.75584,
+      4.875421
+     ],
+     [
+      45.75584,
+      4.854817
+     ]
+    ],
+    "note": "minus the 1855 built-up polygons E1/E2/MIL"
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "Guillotiere est oltre la Grande-Rue: campi e chemins; il nastro costruito termina a x~1500 m.",
+   "roads_json_segments_in_area": 2494,
+   "segments_with_current_y_contradicting_bound": 38
+  },
+  {
+   "id": "NP5_montplaisir_lots",
+   "geometry": {
+    "type": "area_minus_hole",
+    "coords_latlon": [
+     [
+      45.735937,
+      4.854817
+     ],
+     [
+      45.735937,
+      4.875421
+     ],
+     [
+      45.745888,
+      4.875421
+     ],
+     [
+      45.745888,
+      4.854817
+     ]
+    ],
+    "note": "minus the 1855 built-up polygons E1/E2/MIL"
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "low",
+   "note": "Montplaisir: lottizzazioni disegnate (griglia di parcelle con viali puntinati). Alcune strade potrebbero esistere gia come chemins: low.",
+   "roads_json_segments_in_area": 2139,
+   "segments_with_current_y_contradicting_bound": 6
+  },
+  {
+   "id": "NP6_perrache_planned",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.74815,
+      4.820691
+     ],
+     [
+      45.74815,
+      4.830735
+     ],
+     [
+      45.744079,
+      4.827773
+     ],
+     [
+      45.740461,
+      4.822622
+     ],
+     [
+      45.740461,
+      4.819403
+     ],
+     [
+      45.744079,
+      4.817471
+     ],
+     [
+      45.746793,
+      4.817471
+     ]
+    ]
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845); 1852.JPEG",
+   "conf": "low",
+   "note": "Perrache: reticolo di isolati, caserme e ippodromo tracciati ma tessuto non continuo; la stazione non c'e ancora. Lettura incerta tra \"progettato\" ed \"esistente\": low.",
+   "roads_json_segments_in_area": 908,
+   "segments_with_current_y_contradicting_bound": 193
+  },
+  {
+   "id": "NP7_croix_rousse_east_caluire",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.78117,
+      4.832281
+     ],
+     [
+      45.78117,
+      4.84709
+     ],
+     [
+      45.788407,
+      4.84709
+     ],
+     [
+      45.788407,
+      4.832281
+     ]
+    ]
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "Altopiano a nord/est della Croix-Rousse (limite Caluire): campi e orti, solo Grande-Rue e chemins.",
+   "roads_json_segments_in_area": 1250,
+   "segments_with_current_y_contradicting_bound": 340
+  },
+  {
+   "id": "NP8_croix_rousse_west_gardens",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.771671,
+      4.811032
+     ],
+     [
+      45.771671,
+      4.822622
+     ],
+     [
+      45.786598,
+      4.822622
+     ],
+     [
+      45.786598,
+      4.811032
+     ]
+    ]
+   },
+   "year_bound": "non prima di 1847",
+   "year_bound_kind": "non prima di",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "Commune de la Croix-Rousse ovest: orti/vigne a lunghe parcelle (grid agricola), nessun tessuto urbano.",
+   "roads_json_segments_in_area": 2015,
+   "segments_with_current_y_contradicting_bound": 166
+  },
+  {
+   "id": "EX1_presquile_1735",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.771038,
+      4.828804
+     ],
+     [
+      45.768505,
+      4.829319
+     ],
+     [
+      45.766243,
+      4.830349
+     ],
+     [
+      45.764434,
+      4.831122
+     ],
+     [
+      45.762172,
+      4.83125
+     ],
+     [
+      45.760363,
+      4.830091
+     ],
+     [
+      45.759006,
+      4.829447
+     ],
+     [
+      45.757649,
+      4.827258
+     ],
+     [
+      45.75584,
+      4.825455
+     ],
+     [
+      45.75403,
+      4.824811
+     ],
+     [
+      45.752945,
+      4.826486
+     ],
+     [
+      45.752764,
+      4.829705
+     ],
+     [
+      45.753578,
+      4.832281
+     ],
+     [
+      45.754935,
+      4.834212
+     ],
+     [
+      45.75584,
+      4.836144
+     ],
+     [
+      45.757197,
+      4.837818
+     ],
+     [
+      45.759458,
+      4.838204
+     ],
+     [
+      45.762172,
+      4.838333
+     ],
+     [
+      45.764886,
+      4.838591
+     ],
+     [
+      45.7676,
+      4.838397
+     ],
+     [
+      45.769409,
+      4.838076
+     ],
+     [
+      45.771219,
+      4.837432
+     ],
+     [
+      45.771852,
+      4.8355
+     ],
+     [
+      45.771942,
+      4.832281
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1735",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1735,
+   "map_src": "1735.JPEG",
+   "conf": "medium",
+   "note": "Isolati e assi medievali/moderni della Presqu'ile (Terreaux-Bellecour-Ainay) disegnati nel 1735. ATTENZIONE: i grandi tagli ottocenteschi (rue de la Republique 1853-65, rue Edouard-Herriot, rue Carnot) NON ci sono nel 1735: applicare solo ai tratti che coincidono con una via disegnata sul foglio, non a tutta l'area. Distorsione del foglio 1735: errore di controllo ~47 m.",
+   "roads_json_segments_in_area": 3896,
+   "segments_with_current_y_contradicting_bound": 1735
+  },
+  {
+   "id": "EX2_vieux_lyon_1735",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.766695,
+      4.822622
+     ],
+     [
+      45.767057,
+      4.826486
+     ],
+     [
+      45.766243,
+      4.828804
+     ],
+     [
+      45.764434,
+      4.829834
+     ],
+     [
+      45.762624,
+      4.829963
+     ],
+     [
+      45.760363,
+      4.828804
+     ],
+     [
+      45.758554,
+      4.827773
+     ],
+     [
+      45.756744,
+      4.826228
+     ],
+     [
+      45.754935,
+      4.824554
+     ],
+     [
+      45.755116,
+      4.82288
+     ],
+     [
+      45.757649,
+      4.823266
+     ],
+     [
+      45.760363,
+      4.822622
+     ],
+     [
+      45.763077,
+      4.823266
+     ],
+     [
+      45.764886,
+      4.822622
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1735",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1735,
+   "map_src": "1735.JPEG",
+   "conf": "low",
+   "note": "Vieux-Lyon (Saint-Georges/Saint-Jean/Saint-Paul) e piede di Saint-Just: abitato lungo la Saona gia nel 1735; la collina e rada. Errore e distorsione maggiori sul lato destro Saona.",
+   "roads_json_segments_in_area": 1233,
+   "segments_with_current_y_contradicting_bound": 85
+  },
+  {
+   "id": "EX3_place_bellecour",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.75878,
+      4.83088
+     ],
+     [
+      45.75791,
+      4.83405
+     ],
+     [
+      45.75631,
+      4.83315
+     ],
+     [
+      45.75718,
+      4.82998
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1735",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1735,
+   "map_src": "1735.JPEG (spazio rettangolare con giardino); 1852/1855",
+   "conf": "high",
+   "note": "Place Bellecour: lo spazio rettangolare e disegnato nel 1735 nella stessa posizione (GCP). Cinta degli edifici sul bordo ancora in parte da leggere.",
+   "roads_json_segments_in_area": 30,
+   "segments_with_current_y_contradicting_bound": 7
+  },
+  {
+   "id": "EX4_pont_de_la_guillotiere",
+   "geometry": {
+    "type": "line",
+    "coords_latlon": [
+     [
+      45.75734,
+      4.83713
+     ],
+     [
+      45.75663,
+      4.83955
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1735",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1735,
+   "map_src": "1735.JPEG",
+   "conf": "high",
+   "note": "Il ponte della Guillotiere e disegnato nel 1735 con l'estremita ovest nel punto GCP. Sul foglio e lungo ~470 m e obliquo (il ponte attuale ~200 m): distorsione del foglio e/o rilievo schematico del Rodano largo.",
+   "roads_json_segments_in_area": null,
+   "segments_with_current_y_contradicting_bound": null
+  },
+  {
+   "id": "EX5_brotteaux_front_1847",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.776646,
+      4.839363
+     ],
+     [
+      45.776646,
+      4.842712
+     ],
+     [
+      45.773933,
+      4.84709
+     ],
+     [
+      45.758554,
+      4.84709
+     ],
+     [
+      45.756292,
+      4.841037
+     ],
+     [
+      45.762172,
+      4.838977
+     ],
+     [
+      45.7676,
+      4.838719
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1847",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "low",
+   "note": "Isolati lungo il fronte Rodano dei Brotteaux (Cours Morand/Bourbon, Place Louis XVI) costruiti nel 1847-1852. Tolleranza ~100 m: low sul perimetro.",
+   "roads_json_segments_in_area": 2134,
+   "segments_with_current_y_contradicting_bound": 1466
+  },
+  {
+   "id": "EX6_guillotiere_ribbon_1847",
+   "geometry": {
+    "type": "area",
+    "coords_latlon": [
+     [
+      45.755387,
+      4.839363
+     ],
+     [
+      45.756744,
+      4.841939
+     ],
+     [
+      45.757649,
+      4.84709
+     ],
+     [
+      45.75403,
+      4.849665
+     ],
+     [
+      45.752221,
+      4.852241
+     ],
+     [
+      45.750412,
+      4.854817
+     ],
+     [
+      45.747698,
+      4.854173
+     ],
+     [
+      45.745888,
+      4.851597
+     ],
+     [
+      45.746341,
+      4.849022
+     ],
+     [
+      45.747698,
+      4.846446
+     ],
+     [
+      45.749507,
+      4.843227
+     ],
+     [
+      45.751316,
+      4.841295
+     ],
+     [
+      45.752221,
+      4.840007
+     ],
+     [
+      45.75403,
+      4.839363
+     ]
+    ]
+   },
+   "year_bound": "esiste gia al 1847",
+   "year_bound_kind": "esiste gia al",
+   "year_bound_value": 1847,
+   "map_src": "lyon 1855.png (legenda: Publie en 1847); cross-check 1852.JPEG (stessa lastra del 1845)",
+   "conf": "medium",
+   "note": "Nastro costruito della Guillotiere lungo la Grande-Rue e l'asse per Vienne/Grenoble gia nel 1847: medium (il bordo e approssimato; gli assi trasversali minori vanno verificati sul foglio).",
+   "roads_json_segments_in_area": 1926,
+   "segments_with_current_y_contradicting_bound": 597
+  }
+ ],
+ "river_notes": [
+  {
+   "id": "RIV1",
+   "topic": "Saona 1735",
+   "text": "Sul foglio 1735 la Saona e un solo canale; sul lato Presqu'ile gli isolati arrivano al bordo acqua con una banchina continua disegnata, sul lato Vieux-Lyon le case sono a ridosso del fiume. Sono disegnati due ponti sulla Saona (uno pieno, uno tratteggiato): identificazione con i ponti storici NON verificata. Larghezza letta ~120-170 m (tolleranza georef 40-50 m): indicativa.",
+   "conf": "low"
+  },
+  {
+   "id": "RIV2",
+   "topic": "Rodano 1735 (larghezza, argini, isole)",
+   "text": "Nel 1735 la riva destra del Rodano (Presqu'ile) ha una banchina/quai disegnata; la riva sinistra e naturale (barre, vegetazione) senza argine. Il ponte della Guillotiere e lungo ~470 m sul foglio ed obliquo, ben piu dei ~200 m attuali: o il Rodano era molto piu largo qui, o il foglio distorce sul lato est (non separabile: nessun GCP a est del Rodano). Sono disegnate isole/barre sul lato sinistro a sud-est del ponte e un largo braccio a est. Larghezza: NON misurabile in modo affidabile.",
+   "conf": "low"
+  },
+  {
+   "id": "RIV3",
+   "topic": "Rodano 1847/1852",
+   "text": "Nel 1847/1852 la riva destra ha quai continui lungo la Presqu'ile; la sinistra (Brotteaux/Guillotiere) mostra un argine/viale lungo il fiume e isolati in arretrato, senza un fronte costruito continuo. Il canale e di ordine 200-260 m ai ponti Morand/Lafayette (sovrapponibile all'attuale entro la tolleranza di 20-80 m dei GCP ai ponti). Il foglio 1852 ritaglia la riva sinistra; usare il 1847.",
+   "conf": "low"
+  },
+  {
+   "id": "RIV4",
+   "topic": "Rodano a piu bracci",
+   "text": "Sul foglio 1847 a sud della Guillotiere (Isle Bechevelin / \"Ancien lit du Rhone\", circa x 0..600 m, y -2000..-2800 m locali) si vedono isole e un secondo braccio; a nord dei Brotteaux (zona Tete d'Or) il Rodano si divide in piu bracci attorno a isole boscate (x 700..1900, y 1000..2100). Nel 1735 sono disegnate isole/barre a est del ponte della Guillotiere. La story usa la riva attuale: in queste zone la riva storica puo differire di molte centinaia di metri.",
+   "conf": "medium"
+  },
+  {
+   "id": "RIV5",
+   "topic": "Cosa non e affidabile",
+   "text": "Nessuna larghezza e un rilievo: tolleranza di georeferenziazione 15-76 m (gcp_*.json); il 1735 distorce di piu verso est; il Rodano del 1735 non ha GCP sulla riva sinistra.",
+   "conf": "low"
+  }
+ ]
+}

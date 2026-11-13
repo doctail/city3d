@@ -1,0 +1,2144 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "lyon",
+  "name": "Lyon",
+  "country": "France",
+  "lat0": 45.7676,
+  "lon0": 4.8355,
+  "radius_m": 9000,
+  "start_year": -43,
+  "end_year": 2026,
+  "title": "EVOLUTION OF LYON | 3D City Timelapse (43 BC–NOW) | No AI",
+  "data_source": "custom",
+  "data_dir": "data_lyon",
+  "style_preset": "mediterranean",
+  "population": [
+   [
+    -43,
+    1000,
+    "rough estimate"
+   ],
+   [
+    150,
+    60000,
+    "rough estimate"
+   ],
+   [
+    1800,
+    88000,
+    "historical estimate"
+   ],
+   [
+    1804,
+    94000,
+    "census"
+   ],
+   [
+    1827,
+    150000,
+    "historical estimate"
+   ],
+   [
+    1852,
+    234531,
+    "census"
+   ],
+   [
+    1866,
+    300761,
+    "census"
+   ],
+   [
+    1946,
+    442000,
+    "census"
+   ],
+   [
+    1968,
+    527000,
+    "census"
+   ],
+   [
+    1990,
+    415500,
+    "census"
+   ],
+   [
+    2009,
+    479800,
+    "census"
+   ],
+   [
+    2023,
+    519127,
+    "census"
+   ]
+  ],
+  "pop_conf": [
+   "low",
+   "low",
+   "medium",
+   "high",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high"
+  ],
+  "pop_src": [
+   "S1",
+   "S2",
+   "S8",
+   "S15"
+  ],
+  "eras": [
+   [
+    -43,
+    "Roman Lugdunum",
+    "#c9a24a"
+   ],
+   [
+    1180,
+    "Medieval Lyon",
+    "#b5654a"
+   ],
+   [
+    1461,
+    "Fairs and silk",
+    "#6aa0c8"
+   ],
+   [
+    1852,
+    "Industrial Lyon",
+    "#7cb06a"
+   ],
+   [
+    1960,
+    "Modern metropolis",
+    "#c9c1b0"
+   ]
+  ],
+  "data_reliable_from": 1800,
+  "polities": [
+   {
+    "y": -43,
+    "name": "Roman Republic · Colony of Lugdunum",
+    "flag_colors": [
+     "#a50f15",
+     "#d4af37"
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -27,
+    "name": "Roman Empire · Capital of the Three Gauls",
+    "flag_colors": [
+     "#a50f15",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1793,
+    "name": "French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S4"
+    ],
+    "conf": "low"
+   }
+  ]
+ },
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/Lugdunum",
+   "title": "Wikipedia EN, Lugdunum",
+   "quote": "The Roman city was founded in 43 BC by Lucius Munatius Plancus."
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Lyon",
+   "title": "Wikipedia EN, History of Lyon",
+   "quote": "paraphrase: founded in 43 BC (date debated); theatre 16-14 BC; amphitheatre inaugurated 19 AD; four annual fairs under Louis XI (1461-83)"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Canut_revolts",
+   "title": "Wikipedia EN, Canut revolts",
+   "quote": "paraphrase: first revolt 22 Nov-3 Dec 1831 (Soult retakes the city); second revolt 9-15 April 1834, the 'Sanglante semaine'"
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Lyon",
+   "title": "Wikipedia EN, Siege of Lyon",
+   "quote": "paraphrase: the siege ran from 9 August to 9 October 1793; decree of 12 October, Ville-Affranchie"
+  },
+  "S5": {
+   "url": "https://fr.wikipedia.org/wiki/Inondation_de_1856_en_France",
+   "title": "Wikipedia FR, Inondation de 1856 en France",
+   "quote": "les dégâts sont très importants (Lyon, rive gauche); 18 morts à La Guillotière; Napoléon III à Lyon le 2 juin 1856"
+  },
+  "S6": {
+   "url": "https://fr.wikipedia.org/wiki/Liste_des_ponts_de_Lyon",
+   "title": "Wikipedia FR, Liste des ponts de Lyon",
+   "quote": "Pont Pasteur: totalement détruit par les Allemands le 2 septembre 1944; reopened 1952. Pont d'Ainay blown up 3 September 1944, never rebuilt. Pont Lafayette reopened 1946."
+  },
+  "S7": {
+   "url": "https://fr.wikipedia.org/wiki/Lib%C3%A9ration_de_Lyon",
+   "title": "Wikipedia FR, Libération de Lyon",
+   "quote": "Lyon est libérée le 3 septembre 1944 par l'armée américaine et les forces armées françaises"
+  },
+  "S8": {
+   "url": "https://en.wikipedia.org/wiki/Lyon_from_the_First_to_the_Second_Empire",
+   "title": "Wikipedia EN, Lyon from the First to the Second Empire",
+   "quote": "paraphrase: 1852 annexation of Vaise, La Croix-Rousse, La Guillotière; Rue Impériale completed in the 1850s; population 1852: 234,531"
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/Part-Dieu",
+   "title": "Wikipedia EN, Part-Dieu",
+   "quote": "Demolition of existing structures lasted five years. Tour Part-Dieu completed 1977 (164 m); shopping centre and Auditorium 1975; station 1983."
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/Basilica_of_Notre-Dame_de_Fourvi%C3%A8re",
+   "title": "Wikipedia EN, Basilica of Notre-Dame de Fourvière",
+   "quote": "built with private funds between 1872 and 1896 (work begun 1872, finished 1884)"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Lyon_Cathedral",
+   "title": "Wikipedia EN, Lyon Cathedral",
+   "quote": "Begun in 1180 on the ruins of a 6th-century church; hosted the First Council of Lyon."
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Mus%C3%A9e_des_Confluences",
+   "title": "Wikipedia EN, Musée des Confluences",
+   "quote": "The museum opened on 20 December 2014 at the southern tip of the Presqu'île."
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Place_Bellecour",
+   "title": "Wikipedia EN, Place Bellecour",
+   "quote": "paraphrase: 1604 Henry IV orders a former pasture bought; Louis XIV statue 1713, destroyed in 1793; Place Royale 1715"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Croix-Rousse",
+   "title": "Wikipedia EN, Croix-Rousse",
+   "quote": "The first, in October 1831, is often considered one of the earliest worker uprisings. (date differs from S3)"
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Lyon",
+   "title": "Wikipedia EN, Lyon",
+   "quote": "paraphrase: commune of Lyon 519,127 (2023 census)"
+  },
+  "S16": {
+   "url": "https://nominatim.openstreetmap.org/",
+   "title": "OpenStreetMap Nominatim (place coordinates)",
+   "quote": "Data © OpenStreetMap contributors, ODbL 1.0 (point and bridge-line coordinates of named places)"
+  },
+  "S21": {
+   "url": "https://fr.wikipedia.org/wiki/Rue_Édouard-Herriot",
+   "title": "fr.wikipedia, Rue Édouard-Herriot (Rue de l'Impératrice, opened c. 1860)",
+   "quote": "Lunghezza 1025 m; piano 1853; aperta intorno al 1860 (infobox)."
+  },
+  "S22": {
+   "url": "https://fr.wikipedia.org/wiki/Rue_du_Président-Carnot",
+   "title": "fr.wikipedia, Rue du Président-Carnot (from 1890)",
+   "quote": "Lunghezza 285 m; aperta a partire dal 1890."
+  },
+  "S39": {
+   "url": "https://data.grandlyon.com/geoserver/metropole-de-lyon/ows",
+   "title": "Métropole de Lyon WFS, adr_voie_lieu.adrlineairevoie (street axes)",
+   "quote": "Assi stradali georiferiti usati per i tracciati dei gutting (Licence Ouverte)."
+  }
+ },
+ "history": {
+  "zones": [
+   {
+    "name": "Roman Lugdunum on Fourvière",
+    "ring": [
+     [
+      45.7545,
+      4.819
+     ],
+     [
+      45.764,
+      4.82
+     ],
+     [
+      45.7655,
+      4.825
+     ],
+     [
+      45.7625,
+      4.8246
+     ],
+     [
+      45.757,
+      4.8238
+     ],
+     [
+      45.754,
+      4.8225
+     ]
+    ],
+    "born": [
+     -43,
+     -10
+    ],
+    "seed": [
+     45.7612,
+     4.8215
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "low",
+    "note": "poligono approssimato intorno alla collina di Fourvière; seed = zona basilica/teatro, coordinate non verificate"
+   },
+   {
+    "name": "Roman Condate and Three Gauls slope",
+    "ring": [
+     [
+      45.7685,
+      4.828
+     ],
+     [
+      45.7685,
+      4.8335
+     ],
+     [
+      45.7725,
+      4.8335
+     ],
+     [
+      45.7725,
+      4.828
+     ]
+    ],
+    "born": [
+     -30,
+     19
+    ],
+    "seed": [
+     45.7706,
+     4.8305
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "low",
+    "note": "area intorno all'Anfiteatro delle Tre Gallie (punto OSM); estensione stimata"
+   },
+   {
+    "name": "Saône valley (Vieux-Lyon)",
+    "ring": [
+     [
+      45.7545,
+      4.824
+     ],
+     [
+      45.762,
+      4.8248
+     ],
+     [
+      45.767,
+      4.8262
+     ],
+     [
+      45.7672,
+      4.8292
+     ],
+     [
+      45.76,
+      4.8288
+     ],
+     [
+      45.7548,
+      4.8282
+     ]
+    ],
+    "born": [
+     -20,
+     300
+    ],
+    "seed": [
+     45.7607,
+     4.8274
+    ],
+    "era_height": [
+     6,
+     12
+    ],
+    "src": [
+     "S1",
+     "S11"
+    ],
+    "conf": "low",
+    "note": "S1: nel tardo impero gran parte della popolazione viveva nella valle della Saône; poligono stimato"
+   },
+   {
+    "name": "Medieval Presqu'île",
+    "ring": [
+     [
+      45.753,
+      4.828
+     ],
+     [
+      45.758,
+      4.833
+     ],
+     [
+      45.7578,
+      4.8386
+     ],
+     [
+      45.7668,
+      4.8392
+     ],
+     [
+      45.7672,
+      4.8318
+     ],
+     [
+      45.76,
+      4.8292
+     ]
+    ],
+    "born": [
+     1000,
+     1500
+    ],
+    "seed": [
+     45.7644,
+     4.8331
+    ],
+    "era_height": [
+     8,
+     14
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low",
+    "note": "nucleo Ainay-Saint-Nizier-Terreaux; poligono e periodo di crescita stimati, nessuna fonte per l'estensione"
+   },
+   {
+    "name": "Croix-Rousse slopes and plateau",
+    "ring": [
+     [
+      45.7725,
+      4.828
+     ],
+     [
+      45.779,
+      4.828
+     ],
+     [
+      45.7792,
+      4.8352
+     ],
+     [
+      45.7728,
+      4.836
+     ]
+    ],
+    "born": [
+     1700,
+     1850
+    ],
+    "seed": [
+     45.7735,
+     4.832
+    ],
+    "era_height": [
+     12,
+     20
+    ],
+    "src": [
+     "S14",
+     "S8"
+    ],
+    "conf": "low",
+    "note": "S14: nel Settecento i laboratori della seta si spostano da Vieux-Lyon; poligono stimato"
+   },
+   {
+    "name": "Guillotière faubourg",
+    "ring": [
+     [
+      45.749,
+      4.8345
+     ],
+     [
+      45.749,
+      4.847
+     ],
+     [
+      45.759,
+      4.849
+     ],
+     [
+      45.7585,
+      4.84
+     ]
+    ],
+    "born": [
+     1250,
+     1800
+    ],
+    "seed": [
+     45.7554,
+     4.84
+    ],
+    "era_height": [
+     8,
+     14
+    ],
+    "src": [
+     "S8"
+    ],
+    "conf": "low",
+    "note": "faubourg a est del Rodano (annesso 1852, S8); date di nascita e poligono stimati"
+   },
+   {
+    "name": "Left-bank expansion (Brotteaux, Part-Dieu)",
+    "ring": [
+     [
+      45.76,
+      4.842
+     ],
+     [
+      45.78,
+      4.8435
+     ],
+     [
+      45.7805,
+      4.856
+     ],
+     [
+      45.761,
+      4.857
+     ]
+    ],
+    "born": [
+     1853,
+     1862
+    ],
+    "seed": [
+     45.766,
+     4.843
+    ],
+    "era_height": [
+     14,
+     20
+    ],
+    "src": [
+     "S8"
+    ],
+    "conf": "medium",
+    "note": "S8: due ondate di urbanizzazione sulla riva sinistra nel 1853 e nel 1862; poligono stimato"
+   }
+  ],
+  "walls": [],
+  "gutting": [
+   {
+    "name": "Rue Impériale (Rue de la République)",
+    "ring": [
+     [
+      45.75824,
+      4.83417
+     ],
+     [
+      45.76034,
+      4.83543
+     ],
+     [
+      45.76039,
+      4.83561
+     ],
+     [
+      45.76361,
+      4.83563
+     ],
+     [
+      45.76744,
+      4.83585
+     ],
+     [
+      45.76742,
+      4.83625
+     ],
+     [
+      45.76359,
+      4.83603
+     ],
+     [
+      45.76007,
+      4.83601
+     ],
+     [
+      45.76,
+      4.83569
+     ],
+     [
+      45.75802,
+      4.83451
+     ]
+    ],
+    "from": -43,
+    "until": 1857,
+    "src": [
+     "S8",
+     "S16"
+    ],
+    "conf": "low",
+    "note": "S8 dice solo 'anni 1850' (completamento); until=1857 e' una scelta; tracciato da OSM (S16)"
+   },
+   {
+    "name": "Rue de l'Impératrice (Rue Édouard-Herriot)",
+    "ring": [
+     [
+      45.76732,
+      4.83444
+     ],
+     [
+      45.76674,
+      4.83456
+     ],
+     [
+      45.7661,
+      4.83454
+     ],
+     [
+      45.75828,
+      4.83406
+     ],
+     [
+      45.758,
+      4.83397
+     ],
+     [
+      45.75805,
+      4.83367
+     ],
+     [
+      45.75829,
+      4.83375
+     ],
+     [
+      45.76611,
+      4.83423
+     ],
+     [
+      45.76672,
+      4.83425
+     ],
+     [
+      45.76729,
+      4.83414
+     ]
+    ],
+    "from": -43,
+    "until": 1860,
+    "src": [
+     "S21",
+     "S39"
+    ],
+    "conf": "medium",
+    "note": "until=1860 da infobox S21 (piano 1853); anello = asse BD TOPO/Grand Lyon (S39) bufferizzato +-12 m (strada 14.5 m); lunghezza asse 1028 m vs 1025 m in S21"
+   },
+   {
+    "name": "Rue du Président-Carnot",
+    "ring": [
+     [
+      45.76315,
+      4.83824
+     ],
+     [
+      45.76312,
+      4.838
+     ],
+     [
+      45.76106,
+      4.83639
+     ],
+     [
+      45.76118,
+      4.83607
+     ],
+     [
+      45.76326,
+      4.8377
+     ],
+     [
+      45.76339,
+      4.83813
+     ]
+    ],
+    "from": -43,
+    "until": 1890,
+    "src": [
+     "S22",
+     "S39"
+    ],
+    "conf": "medium",
+    "note": "until=1890 'a partire dal 1890' (S22); anello = asse S39 +-14 m (strada 18.5 m); lunghezza 289 m vs 285 m S22"
+   }
+  ],
+  "lost": [],
+  "fires": [
+   {
+    "name": "Siege of Lyon 1793",
+    "ring": [
+     [
+      45.757,
+      4.83
+     ],
+     [
+      45.757,
+      4.8385
+     ],
+     [
+      45.769,
+      4.8385
+     ],
+     [
+      45.769,
+      4.83
+     ]
+    ],
+    "y": 1793.6,
+    "y1": 1793.78,
+    "destroy": false,
+    "flames": 20,
+    "smoke": 6,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "date S4 (9 ago-9 ott); S4 non indica i quartieri colpiti: il poligono e' solo il centro della Presqu'ile, nessun edificio distrutto"
+   },
+   {
+    "name": "Canut revolt 1834 (Croix-Rousse)",
+    "ring": [
+     [
+      45.7735,
+      4.828
+     ],
+     [
+      45.7735,
+      4.835
+     ],
+     [
+      45.779,
+      4.835
+     ],
+     [
+      45.779,
+      4.828
+     ]
+    ],
+    "y": 1834.27,
+    "y1": 1834.3,
+    "destroy": false,
+    "flames": 0,
+    "smoke": 4,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "date S3 (9-15 aprile); luogo preciso dei bombardamenti (casa Brunet) non trovato: altopiano della Croix-Rousse"
+   },
+   {
+    "name": "Hotel-Dieu fire 1944",
+    "ring": [
+     [
+      45.7573,
+      4.8352
+     ],
+     [
+      45.7573,
+      4.8385
+     ],
+     [
+      45.76,
+      4.8385
+     ],
+     [
+      45.76,
+      4.8352
+     ]
+    ],
+    "y": 1944.67,
+    "y1": 1944.7,
+    "destroy": false,
+    "flames": 15,
+    "smoke": 4,
+    "src": [
+     "S7"
+    ],
+    "conf": "low",
+    "note": "S7: Hotel-Dieu in fiamme 'a seguito di tirs lors de la libération en septembre 1944'; giorno esatto non letto"
+   }
+  ],
+  "floods": [
+   {
+    "name": "1856 flood (left bank)",
+    "ring": [
+     [
+      45.747,
+      4.834
+     ],
+     [
+      45.757,
+      4.84
+     ],
+     [
+      45.764,
+      4.8412
+     ],
+     [
+      45.78,
+      4.843
+     ],
+     [
+      45.781,
+      4.862
+     ],
+     [
+      45.76,
+      4.864
+     ],
+     [
+      45.747,
+      4.858
+     ]
+    ],
+    "y": 1856.41,
+    "y1": 1856.45,
+    "depth": 1.2,
+    "src": [
+     "S5"
+    ],
+    "conf": "low",
+    "note": "S5: danni 'très importants' sulla riva sinistra; data della rottura dell'argine varia tra fonti (fine maggio-1 giugno); poligono e profondita' stimati"
+   }
+  ],
+  "water": [],
+  "bridges": [
+   {
+    "name": "Pont de la Guillotière (pre-1944)",
+    "line": [
+     [
+      45.75734,
+      4.83713
+     ],
+     [
+      45.75663,
+      4.83955
+     ]
+    ],
+    "w": 12,
+    "y": 1200,
+    "d": 1944.67,
+    "src": [
+     "S6",
+     "S16"
+    ],
+    "conf": "low",
+    "note": "S6: distrutto nella ritirata tedesca, settembre 1944; anno di origine e posizione spostata di 25 m sono segnaposto"
+   },
+   {
+    "name": "Pont de la Guillotière (rebuilt)",
+    "line": [
+     [
+      45.75711,
+      4.83713
+     ],
+     [
+      45.7564,
+      4.83955
+     ]
+    ],
+    "w": 12,
+    "y": 1954,
+    "d": null,
+    "src": [
+     "S16"
+    ],
+    "conf": "low",
+    "note": "anno di ricostruzione 1954 NON letto in fonte aperta (solo snippet di ricerca): da verificare"
+   },
+   {
+    "name": "Pont Pasteur (pre-1944)",
+    "line": [
+     [
+      45.7336,
+      4.8192
+     ],
+     [
+      45.7336,
+      4.8219
+     ]
+    ],
+    "w": 12,
+    "y": 1900,
+    "d": 1944.67,
+    "src": [
+     "S6"
+    ],
+    "conf": "low",
+    "note": "S6: distrutto il 2 settembre 1944; anno di origine segnaposto"
+   },
+   {
+    "name": "Pont Pasteur (rebuilt)",
+    "line": [
+     [
+      45.73337,
+      4.8192
+     ],
+     [
+      45.73337,
+      4.8219
+     ]
+    ],
+    "w": 12,
+    "y": 1952,
+    "d": null,
+    "src": [
+     "S6"
+    ],
+    "conf": "medium",
+    "note": "S6: riaperto nel 1952; geometria stimata dal punto OSM"
+   },
+   {
+    "name": "Pont Lafayette (pre-1944)",
+    "line": [
+     [
+      45.76375,
+      4.83867
+     ],
+     [
+      45.763780000000004,
+      4.84109
+     ]
+    ],
+    "w": 14,
+    "y": 1830,
+    "d": 1944.67,
+    "src": [
+     "S6"
+    ],
+    "conf": "low",
+    "note": "S6: arcata centrale distrutta nel settembre 1944; anno di origine segnaposto (ponte Charles-X, travolto da piene nel 1840 e 1856 secondo S6)"
+   },
+   {
+    "name": "Pont Lafayette (rebuilt)",
+    "line": [
+     [
+      45.76352,
+      4.83867
+     ],
+     [
+      45.76355,
+      4.84109
+     ]
+    ],
+    "w": 14,
+    "y": 1946,
+    "d": null,
+    "src": [
+     "S6",
+     "S16"
+    ],
+    "conf": "medium",
+    "note": "S6: riaperto nel 1946"
+   },
+   {
+    "name": "Pont d'Ainay",
+    "line": [
+     [
+      45.75453,
+      4.8248
+     ],
+     [
+      45.75453,
+      4.8262
+     ]
+    ],
+    "w": 10,
+    "y": 1830,
+    "d": 1944.675,
+    "src": [
+     "S6"
+    ],
+    "conf": "low",
+    "note": "S6: fatto saltare il 3 settembre 1944, mai ricostruito; anno di origine segnaposto; linea stimata dal punto OSM"
+   }
+  ]
+ },
+ "landmarks": [
+  {
+   "name": "Roman Theatre of Fourvière",
+   "kind": "theatre",
+   "at": [
+    45.7597,
+    4.8197
+   ],
+   "footprint": "none",
+   "params": {
+    "r_out": 54,
+    "h": 16,
+    "stage_h": 12,
+    "ang": 0
+   },
+   "phases": [
+    {
+     "y": -16,
+     "y1": -14
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2",
+    "S16"
+   ],
+   "conf": "low",
+   "note": "S2: aperto tra il 16 e il 14 a.C.; centro dal punto OSM del Théâtre gallo-romain (S16); semicerchio con palco (preset theatre), raggio e orientamento stimati",
+   "label_name": "Théâtre antique de Fourvière"
+  },
+  {
+   "name": "Amphitheatre of the Three Gauls",
+   "kind": "bullring",
+   "at": [
+    45.77067,
+    4.83052
+   ],
+   "footprint": "none",
+   "params": {
+    "style": "roman",
+    "plan": "ellipse",
+    "a_out": 65,
+    "b_out": 54,
+    "h": 18
+   },
+   "phases": [
+    {
+     "y": 17,
+     "y1": 19
+    }
+   ],
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S16"
+   ],
+   "conf": "medium",
+   "note": "S2: inaugurato nel 19 d.C.; punto OSM (S16); semiassi stimati",
+   "label_name": "Amphithéâtre des Trois Gaules"
+  },
+  {
+   "name": "Saint-Jean Cathedral",
+   "kind": "cathedral",
+   "at": [
+    45.76071,
+    4.82742
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 24,
+    "facade_towers": 0
+   },
+   "phases": [
+    {
+     "y": 1180,
+     "y1": 1476
+    }
+   ],
+   "label": true,
+   "src": [
+    "S11",
+    "S16"
+   ],
+   "conf": "medium",
+   "note": "S11: iniziata nel 1180, finita nel 1476 (infobox 1480)",
+   "label_name": "Cathédrale Saint-Jean-Baptiste"
+  },
+  {
+   "name": "Basilica of Fourvière",
+   "kind": "cathedral",
+   "at": [
+    45.76228,
+    4.82259
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 22,
+    "aisle_h": 14,
+    "nave_w": 26,
+    "transept": false,
+    "crossing": "none",
+    "facade_towers": 2,
+    "rear_towers": true,
+    "tower_w": 11,
+    "tower_h": 46,
+    "tower_top": "dome",
+    "roof_c": "slate"
+   },
+   "phases": [
+    {
+     "y": 1872,
+     "y1": 1884
+    }
+   ],
+   "label": true,
+   "src": [
+    "S10",
+    "S16"
+   ],
+   "conf": "high",
+   "note": "S10: lavori 1872-1884 (decorazioni fino al 1896); 4 torri angolari come la basilica reale, facciata e volumi semplificati",
+   "label_name": "Basilique Notre-Dame de Fourvière"
+  },
+  {
+   "name": "Tour Part-Dieu",
+   "kind": "skyscraper",
+   "at": [
+    45.76107,
+    4.85375
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 134,
+    "plan": "round",
+    "crown": "mast"
+   },
+   "phases": [
+    {
+     "y": 1974,
+     "y1": 1977
+    }
+   ],
+   "label": true,
+   "src": [
+    "S9",
+    "S16"
+   ],
+   "conf": "medium",
+   "note": "S9: completata nel 1977, 164 m totali (fusto cilindrico + punta a matita); anno di inizio lavori 1974 e' stimato"
+  },
+  {
+   "name": "Part-Dieu Station",
+   "kind": "station",
+   "at": [
+    45.76155,
+    4.85932
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1980,
+     "y1": 1983
+    }
+   ],
+   "label": false,
+   "src": [
+    "S9",
+    "S16"
+   ],
+   "conf": "low",
+   "note": "S9: aperta nel 1983; inizio lavori stimato; punto OSM generico (base-vie del cantiere)"
+  },
+  {
+   "name": "Musée des Confluences",
+   "kind": "generic_footprint",
+   "at": [
+    45.73268,
+    4.81816
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30,
+    "roof": "flat",
+    "c": "glass2",
+    "a": 0.5,
+    "roof_c": "steel"
+   },
+   "phases": [
+    {
+     "y": 2010,
+     "y1": 2014.97
+    }
+   ],
+   "label": true,
+   "src": [
+    "S12",
+    "S16"
+   ],
+   "conf": "low",
+   "note": "S12: aperto il 20 dic 2014; inizio lavori stimato; forma generica con vetro e tetto argento (la 'nuvola di cristallo' reale non ha preset): approssimato",
+   "label_name": "Musée des Confluences"
+  }
+ ],
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "night": true,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": -43,
+   "story_lead": 3.4
+  },
+  "soste": [
+   {
+    "y0": -43,
+    "y1": -41,
+    "dur": 6,
+    "caption": "Lugdunum is founded (43 BC)",
+    "target": "area:[45.7618,4.8210,450]",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": -16,
+    "y1": -14,
+    "dur": 5,
+    "caption": "Theatre of Fourvière (16–14 BC)",
+    "target": "Roman Theatre of Fourvière",
+    "shot": "close",
+    "fx": "stone",
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 17,
+    "y1": 19.5,
+    "dur": 5,
+    "caption": "Amphitheatre of the Three Gauls (AD 19)",
+    "target": "Amphitheatre of the Three Gauls",
+    "shot": "close",
+    "fx": "stone",
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 176.5,
+    "y1": 177.5,
+    "dur": 5,
+    "caption": "The martyrs of Lugdunum (AD 177)",
+    "target": "Amphitheatre of the Three Gauls",
+    "shot": "medium",
+    "fx": "bell",
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1180,
+    "y1": 1195,
+    "dur": 5,
+    "caption": "Saint-Jean cathedral is begun (1180)",
+    "target": "Saint-Jean Cathedral",
+    "shot": "medium",
+    "fx": "bell",
+    "src": [
+     "S11"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1461,
+    "y1": 1465,
+    "dur": 5,
+    "caption": "The fairs of Lyon (1461–83)",
+    "target": "area:[45.7650,4.8330,500]",
+    "shot": "top",
+    "fx": "crowd",
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1708,
+    "y1": 1715,
+    "dur": 5,
+    "caption": "Place Bellecour, a royal square (1715)",
+    "target": "area:[45.7577,4.8324,350]",
+    "shot": "top",
+    "fx": "chime",
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1793.6,
+    "y1": 1793.78,
+    "dur": 7,
+    "caption": "The siege of Lyon (9 Aug–9 Oct 1793)",
+    "target": "fire:Siege of Lyon 1793",
+    "shot": "wide",
+    "fx": "cannon",
+    "src": [
+     "S4"
+    ],
+    "conf": "high",
+    "weight": "max"
+   },
+   {
+    "y0": 1793.8,
+    "y1": 1793.95,
+    "dur": 5,
+    "caption": "Bellecour loses its king (1793)",
+    "target": "area:[45.7578,4.8322,300]",
+    "shot": "medium",
+    "fx": "crash",
+    "src": [
+     "S4",
+     "S13"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1801,
+    "y1": 1803,
+    "dur": 5,
+    "caption": "Jacquard's loom takes shape (1801)",
+    "target": "area:[45.7728,4.8315,500]",
+    "shot": "medium",
+    "fx": "hammer",
+    "src": [
+     "S8"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1831.89,
+    "y1": 1831.93,
+    "dur": 6,
+    "caption": "The first canut revolt (Nov 1831)",
+    "target": "area:[45.7745,4.8320,600]",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S3"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": 1834.27,
+    "y1": 1834.3,
+    "dur": 6,
+    "caption": "The canuts rise again (April 1834)",
+    "target": "fire:Canut revolt 1834 (Croix-Rousse)",
+    "shot": "medium",
+    "fx": "boom",
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "weight": "max"
+   },
+   {
+    "y0": 1852,
+    "y1": 1853,
+    "dur": 5,
+    "caption": "Three towns join Lyon (1852)",
+    "target": "area:[45.7676,4.8355,2500]",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S8"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1855,
+    "y1": 1860,
+    "dur": 6,
+    "caption": "Rue Impériale cuts the Presqu'île (1850s)",
+    "target": "area:[45.7625,4.8355,600]",
+    "shot": "medium",
+    "fx": "dig",
+    "src": [
+     "S8",
+     "S16"
+    ],
+    "conf": "low"
+   },
+   {
+    "y0": 1856.41,
+    "y1": 1856.45,
+    "dur": 6,
+    "caption": "The Rhône floods the left bank (May 1856)",
+    "target": "area:[45.7650,4.8500,1600]",
+    "shot": "wide",
+    "fx": "water",
+    "src": [
+     "S5"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": 1872,
+    "y1": 1884,
+    "dur": 6,
+    "caption": "Basilica of Notre-Dame de Fourvière (1872–84)",
+    "target": "Basilica of Fourvière",
+    "shot": "medium",
+    "fx": "bell",
+    "src": [
+     "S10"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1944.66,
+    "y1": 1944.7,
+    "dur": 7,
+    "caption": "The bridges are blown up (Sept 1944)",
+    "target": "area:[45.7600,4.8340,1400]",
+    "shot": "top",
+    "fx": "crash",
+    "src": [
+     "S6"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": 1944.7,
+    "y1": 1944.74,
+    "dur": 5,
+    "caption": "The Guillotière bridge falls (Sept 1944)",
+    "target": "area:[45.7557,4.8400,350]",
+    "shot": "medium",
+    "fx": "crash",
+    "src": [
+     "S6"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1952,
+    "y1": 1953,
+    "dur": 5,
+    "caption": "Pont Pasteur reopens (1952)",
+    "target": "area:[45.7334,4.8205,300]",
+    "shot": "medium",
+    "fx": "chime",
+    "src": [
+     "S6"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1972,
+    "y1": 1977,
+    "dur": 6,
+    "caption": "La Part-Dieu and its Crayon tower (1977)",
+    "target": "Tour Part-Dieu",
+    "shot": "medium",
+    "fx": "build",
+    "src": [
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1981,
+    "y1": 1983,
+    "dur": 5,
+    "caption": "Part-Dieu station opens (1983)",
+    "target": "area:[45.7615,4.8593,300]",
+    "shot": "medium",
+    "fx": "train",
+    "src": [
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 2012,
+    "y1": 2014.97,
+    "dur": 6,
+    "caption": "Musée des Confluences (2014)",
+    "target": "Musée des Confluences",
+    "shot": "medium",
+    "fx": "chime",
+    "src": [
+     "S12"
+    ],
+    "conf": "high"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "LYON TODAY",
+   "519,127 people"
+  ],
+  "title": [
+   "LYON",
+   "43 BC TO NOW"
+  ],
+  "end": [
+   "LYON · 2,068 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "events": [],
+  "cards": [
+   {
+    "y": -43,
+    "title": "A colony on the hill",
+    "lines": [
+     "Lucius Munatius Plancus, a former officer of Julius Caesar, is credited with founding the Roman colony of Lugdunum.",
+     "The date of 43 BC is traditional; scholars still debate it."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Roman Lugdunum on Fourvière"
+   },
+   {
+    "y": -20,
+    "title": "Water for the hill",
+    "lines": [
+     "The Monts d'Or aqueduct, completed around 20 BC, is the first of at least four that serve the city."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Roman Lugdunum on Fourvière"
+   },
+   {
+    "y": -10,
+    "title": "An emperor is born",
+    "lines": [
+     "Claudius is born in Lugdunum in 10 BC and returns often, especially during the conquest of Britain (AD 43–47)."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Roman Lugdunum on Fourvière"
+   },
+   {
+    "y": 177,
+    "title": "The martyrs",
+    "lines": [
+     "In AD 177 Christians die in the amphitheatre on the Croix-Rousse slope, among them Pothinus, the first bishop of Lyon.",
+     "Sources count about 40 to 48 victims."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Roman Condate and Three Gauls slope",
+    "sober": true
+   },
+   {
+    "y": 1180,
+    "title": "Saint-Jean rises",
+    "lines": [
+     "Work on the cathedral begins in 1180 on the ruins of a 6th-century church.",
+     "It will take almost three centuries."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S11"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Saint-Jean Cathedral"
+   },
+   {
+    "y": 1245,
+    "title": "A council in Lyon",
+    "lines": [
+     "Saint-Jean hosts the First Council of Lyon; a second council follows in 1274."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S11"
+    ],
+    "conf": "low",
+    "shot": "close",
+    "target": "Saint-Jean Cathedral",
+    "note": "S11 nomina i due concili ma la pagina letta non ne riporta l'anno: date da verificare"
+   },
+   {
+    "y": 1461,
+    "title": "Fairs and bankers",
+    "lines": [
+     "Under Louis XI (1461–83) four annual fairs are founded.",
+     "Florentine immigrants turn Lyon into a financial centre."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Medieval Presqu'île"
+   },
+   {
+    "y": 1536,
+    "title": "Silk comes to Lyon",
+    "lines": [
+     "Francis I grants weaving privileges that had been an Italian monopoly.",
+     "Silk will shape the city for the next three centuries."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2"
+    ],
+    "conf": "low",
+    "shot": "top",
+    "target": "Medieval Presqu'île",
+    "note": "S2 non riporta l'anno: 1536 da verificare"
+   },
+   {
+    "y": 1604,
+    "title": "A pasture becomes a square",
+    "lines": [
+     "Henry IV orders the city to buy a former pasture for a new public space.",
+     "A long lawsuit follows."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7577,4.8324,350]"
+   },
+   {
+    "y": 1713,
+    "title": "The king in bronze",
+    "lines": [
+     "The first statue of Louis XIV is made in 1713.",
+     "By 1715 the square is the Place Royale."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "area:[45.7577,4.8324,350]"
+   },
+   {
+    "y": 1793.6,
+    "title": "Lyon against Paris",
+    "lines": [
+     "Lyon sides with the Girondists against the National Convention.",
+     "From 9 August 1793 the Army of the Alps besieges the city."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S4",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "fire:Siege of Lyon 1793",
+    "sober": true
+   },
+   {
+    "y": 1793.78,
+    "title": "The city surrenders",
+    "lines": [
+     "On 9 October the civil authorities surrender at midday.",
+     "The royalist leader Précy has escaped at dawn through Vaise."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S4"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "area:[45.7650,4.8330,900]",
+    "sober": true
+   },
+   {
+    "y": 1793.84,
+    "title": "Ville-Affranchie",
+    "lines": [
+     "On 12 October the Convention decrees the demolition of the homes of the rich and renames the city.",
+     "Of 600 houses planned for demolition, only about fifty fall."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S4"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7650,4.8330,900]",
+    "sober": true
+   },
+   {
+    "y": 1801,
+    "title": "A mechanism for the loom",
+    "lines": [
+     "A prize for loom improvements leads to Jacquard's mechanism.",
+     "Lyon has 41 Jacquard looms in 1811 and 1,879 by 1820."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S8"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Croix-Rousse slopes and plateau"
+   },
+   {
+    "y": 1830,
+    "title": "A belt of forts",
+    "lines": [
+     "Work begins in 1830 on a ring of fortifications around the city.",
+     "Later it will also help to watch Croix-Rousse."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S8"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Left-bank expansion (Brotteaux, Part-Dieu)"
+   },
+   {
+    "y": 1831.89,
+    "title": "The canuts take the city",
+    "lines": [
+     "Falling silk prices have cut the weavers' wages.",
+     "On 22 November 1831 they seize Lyon; on 3 December Marshal Soult retakes it with 20,000 men."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S3"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Croix-Rousse slopes and plateau",
+    "sober": true,
+    "note": "S14 data la prima rivolta a ottobre 1831; S3 (22 nov-3 dic) e' piu' preciso"
+   },
+   {
+    "y": 1831.94,
+    "title": "The cost",
+    "lines": [
+     "The fighting leaves about 100 soldiers and 69 civilians dead.",
+     "The minimum price the weavers wanted is abolished afterwards."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S3"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Croix-Rousse slopes and plateau",
+    "sober": true
+   },
+   {
+    "y": 1834.27,
+    "title": "The bloody week",
+    "lines": [
+     "The second revolt starts on 9 April 1834. Barricades rise and the army bombards Croix-Rousse.",
+     "By 15 April the city is retaken."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "fire:Canut revolt 1834 (Croix-Rousse)",
+    "sober": true
+   },
+   {
+    "y": 1834.31,
+    "title": "A fort to watch the hill",
+    "lines": [
+     "Afterwards the government builds a fort to separate Croix-Rousse from the rest of Lyon."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Croix-Rousse slopes and plateau",
+    "note": "S3 non dà l'anno della costruzione"
+   },
+   {
+    "y": 1843,
+    "title": "The first power loom",
+    "lines": [
+     "The first power loom is installed in 1843.",
+     "By 1866 Lyon counts 30,000 looms, with 95,000 more in the countryside."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S8"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Croix-Rousse slopes and plateau"
+   },
+   {
+    "y": 1852,
+    "title": "Three towns join Lyon",
+    "lines": [
+     "Vaise, La Croix-Rousse and La Guillotière are annexed in 1852.",
+     "The city jumps to 234,531 people."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S8"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7676,4.8355,3500]"
+   },
+   {
+    "y": 1853,
+    "title": "The city crosses the Rhône",
+    "lines": [
+     "Two big waves of building, in 1853 and 1862, push the city east onto the left bank."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S8"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Left-bank expansion (Brotteaux, Part-Dieu)"
+   },
+   {
+    "y": 1856.41,
+    "title": "The Rhône breaks out",
+    "lines": [
+     "In late May 1856 the river floods the new left-bank districts.",
+     "In La Guillotière alone 18 people die."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S5"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[45.7650,4.8500,1600]",
+    "sober": true,
+    "note": "la data della rottura dell'argine varia tra fonti (29-30 maggio o 31 maggio-1 giugno), non verificata su fonte primaria"
+   },
+   {
+    "y": 1856.42,
+    "title": "The emperor visits",
+    "lines": [
+     "Napoleon III visits Lyon on 2 June 1856 and a decree grants the city 300,000 francs.",
+     "Édouard Baldus is sent to photograph the damage."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7650,4.8500,1600]"
+   },
+   {
+    "y": 1857,
+    "title": "Under Fourvière",
+    "lines": [
+     "A railway tunnel under Fourvière links the Paris line to the station at Perrache (1857)."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S8"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "area:[45.7485,4.8257,500]"
+   },
+   {
+    "y": 1857.1,
+    "title": "A street through the Presqu'île",
+    "lines": [
+     "Benoît Poncet completes the Rue Impériale in the 1850s, today's Rue de la République.",
+     "It cuts a straight line through the old streets."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S8"
+    ],
+    "conf": "low",
+    "shot": "top",
+    "target": "area:[45.7625,4.8355,600]",
+    "note": "S8 dice solo 'anni 1850'; anno esatto non verificato"
+   },
+   {
+    "y": 1872,
+    "title": "A vow in stone",
+    "lines": [
+     "After Lyon is spared in the war of 1870, the community commits to build a basilica on Fourvière.",
+     "Work starts in 1872, paid by private funds."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S10"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Basilica of Fourvière"
+   },
+   {
+    "y": 1884,
+    "title": "The basilica stands",
+    "lines": [
+     "The building is finished in 1884; decoration goes on until 1896."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S10"
+    ],
+    "conf": "medium",
+    "shot": "close",
+    "target": "Basilica of Fourvière"
+   },
+   {
+    "y": 1944.66,
+    "title": "The bridges fall",
+    "lines": [
+     "Between 1 and 3 September 1944 retreating German forces blow up bridges across the Saône and the Rhône.",
+     "The Pont d'Ainay is never rebuilt."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S6"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "area:[45.7600,4.8340,1400]",
+    "sober": true
+   },
+   {
+    "y": 1944.675,
+    "title": "Lyon is free",
+    "lines": [
+     "On 3 September 1944 US and French forces liberate the city."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S7"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "area:[45.7600,4.8340,1400]",
+    "sober": true
+   },
+   {
+    "y": 1946,
+    "title": "Lafayette reopens",
+    "lines": [
+     "The Pont Lafayette, its central arch destroyed in 1944, reopens in 1946."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S6"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "area:[45.7636,4.8399,300]"
+   },
+   {
+    "y": 1960,
+    "title": "Barracks into business",
+    "lines": [
+     "In 1960 the State sells the Part-Dieu barracks land.",
+     "Demolition of the old buildings lasts five years."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S9"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7610,4.8540,600]"
+   },
+   {
+    "y": 1974,
+    "title": "The metro",
+    "lines": [
+     "Line C opens in 1974; lines A and B follow in 1978."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7600,4.8400,1500]"
+   },
+   {
+    "y": 1975,
+    "title": "Europe's biggest urban mall",
+    "lines": [
+     "The Part-Dieu shopping centre and the Auditorium open in 1975.",
+     "At the time it is the largest urban mall in Europe."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S9"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "area:[45.7610,4.8540,600]"
+   },
+   {
+    "y": 1998,
+    "title": "A world heritage hill",
+    "lines": [
+     "Croix-Rousse is part of the area inscribed on the UNESCO World Heritage List in 1998."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S14"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Croix-Rousse slopes and plateau",
+    "note": "S14 parla di 'area'; il sito UNESCO e' piu' ampio: da verificare"
+   },
+   {
+    "y": 2014,
+    "title": "Part-Dieu again",
+    "lines": [
+     "In 2014 the Metropolis launches a renewal programme of about 2.5 billion euros."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S9"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7610,4.8540,600]"
+   },
+   {
+    "y": 2014.97,
+    "title": "Where two rivers meet",
+    "lines": [
+     "The Musée des Confluences opens on 20 December 2014 at the southern tip of the Presqu'île."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S12"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Musée des Confluences"
+   },
+   {
+    "y": 2023,
+    "title": "Lyon today",
+    "lines": [
+     "The commune of Lyon counts 519,127 people in the 2023 census."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S15"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7676,4.8355,3500]"
+   }
+  ],
+  "chapters": [
+   {
+    "y": -43,
+    "title": "Capital of the Gauls"
+   },
+   {
+    "y": 1180,
+    "title": "Cathedral, Fairs and Silk"
+   },
+   {
+    "y": 1793.6,
+    "title": "Siege and Revolt"
+   },
+   {
+    "y": 1852,
+    "title": "Floods and Boulevards"
+   },
+   {
+    "y": 1944.66,
+    "title": "Bridges and Liberation"
+   },
+   {
+    "y": 1960,
+    "title": "Towers and Rivers"
+   }
+  ],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  },
+  "label_years": true
+ },
+ "qa": {
+  "accept": []
+ }
+}

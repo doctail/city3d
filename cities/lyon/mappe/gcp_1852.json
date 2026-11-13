@@ -1,0 +1,297 @@
+{
+ "year": "1852",
+ "map": {
+  "map_src": "1852.JPEG",
+  "title": "Nouveau plan de la ville de Lyon (Boullieux/Hamoir; stessa lastra del 1845 ridatata 1852)"
+ },
+ "map_file": "cities/lyon/mappe_raw/1852.JPEG",
+ "crs_modern": "WGS84 (EPSG:4326) for GCP coordinates; fit in EPSG:2154",
+ "stats": {
+  "n_fit": 10,
+  "n_control": 5,
+  "n_rejected": 0,
+  "model": "affine",
+  "smoothing": 0,
+  "fit_residual_m": {
+   "n": 10,
+   "rmse": 15.10505786645977,
+   "mean": 13.03418976592504,
+   "max": 27.080970542344804,
+   "median": 12.733430452572087
+  },
+  "control_error_m": {
+   "n": 5,
+   "rmse": 14.221693154583717,
+   "mean": 13.30776696177266,
+   "max": 21.171560990033306,
+   "median": 13.84503067861902
+  },
+  "loo_all_m": {
+   "n": 15,
+   "rmse": 17.67189204631684,
+   "mean": 15.52659342155447,
+   "max": 30.372797289833137,
+   "median": 13.835498094953357
+  },
+  "m_per_px_u": 4.269568458742925,
+  "m_per_px_v": 4.291973762639548,
+  "u_axis_bearing_deg": 24.574582086018783,
+  "affine_note": "affine 6-param (rotation, anisotropic scale, shear, shift) in Lambert-93 (EPSG:2154); TPS/poly2 tested: not better on held-out points"
+ },
+ "control_points_note": "role=fit points define the model reported in fit_residual_m; role=control are held out of that fit and give control_error_m; the overlay/final model uses fit+control; role=rejected not used",
+ "neatline_px": [
+  [
+   77,
+   178
+  ],
+  [
+   1300,
+   178
+  ],
+  [
+   1300,
+   862
+  ],
+  [
+   77,
+   862
+  ]
+ ],
+ "coverage_wgs84": [
+  [
+   [
+    4.789338,
+    45.737945
+   ],
+   [
+    4.818663,
+    45.780249
+   ],
+   [
+    4.853309,
+    45.769709
+   ],
+   [
+    4.823963,
+    45.727415
+   ],
+   [
+    4.789338,
+    45.737945
+   ]
+  ]
+ ],
+ "points": [
+  {
+   "id": "BEL_C",
+   "role": "fit",
+   "desc": "Place Bellecour centroid",
+   "px": [
+    854,
+    657.5
+   ],
+   "lat": 45.7576,
+   "lon": 4.83201,
+   "err_in_final_model_m": 25.8,
+   "err_fit_only_model_m": 24.1,
+   "err_leave_one_out_m": 28.8
+  },
+  {
+   "id": "HDIEU",
+   "role": "fit",
+   "desc": "Hotel-Dieu complex centroid (OSM)",
+   "px": [
+    918,
+    709
+   ],
+   "lat": 45.7588,
+   "lon": 4.83649,
+   "err_in_final_model_m": 10.0,
+   "err_fit_only_model_m": 12.9,
+   "err_leave_one_out_m": 11.9
+  },
+  {
+   "id": "PSP_C",
+   "role": "fit",
+   "desc": "Palais Saint-Pierre centroid (OSM)",
+   "px": [
+    1088,
+    571
+   ],
+   "lat": 45.76683,
+   "lon": 4.83362,
+   "err_in_final_model_m": 11.3,
+   "err_fit_only_model_m": 14.6,
+   "err_leave_one_out_m": 13.8
+  },
+  {
+   "id": "STJEAN",
+   "role": "fit",
+   "desc": "Cathedrale Saint-Jean centroid (OSM)",
+   "px": [
+    895,
+    544
+   ],
+   "lat": 45.76072,
+   "lon": 4.82743,
+   "err_in_final_model_m": 13.5,
+   "err_fit_only_model_m": 12.6,
+   "err_leave_one_out_m": 15.8
+  },
+  {
+   "id": "PONT_G",
+   "role": "fit",
+   "desc": "Pont de la Guillotière midpoint (kit bridges.json; W abutment checked vs OSM 45.7571,4.8370)",
+   "px": [
+    885.5,
+    762
+   ],
+   "lat": 45.75698,
+   "lon": 4.83834,
+   "err_in_final_model_m": 7.9,
+   "err_fit_only_model_m": 7.8,
+   "err_leave_one_out_m": 11.4
+  },
+  {
+   "id": "PONT_M",
+   "role": "fit",
+   "desc": "Pont Morand midpoint (OSM polygon)",
+   "px": [
+    1170,
+    653
+   ],
+   "lat": 45.76862,
+   "lon": 4.83958,
+   "err_in_final_model_m": 20.6,
+   "err_fit_only_model_m": 15.5,
+   "err_leave_one_out_m": 29.1
+  },
+  {
+   "id": "PONT_TILS",
+   "role": "fit",
+   "desc": "Pont Bonaparte (ex Tilsitt) midpoint (OSM way, Nominatim)",
+   "px": [
+    876.5,
+    577
+   ],
+   "lat": 45.75946,
+   "lon": 4.8287,
+   "err_in_final_model_m": 0.9,
+   "err_fit_only_model_m": 0.4,
+   "err_leave_one_out_m": 1.0
+  },
+  {
+   "id": "STPAUL",
+   "role": "fit",
+   "desc": "Eglise Saint-Paul centroid (OSM)",
+   "px": [
+    1037,
+    469
+   ],
+   "lat": 45.76664,
+   "lon": 4.82708,
+   "err_in_final_model_m": 3.5,
+   "err_fit_only_model_m": 5.6,
+   "err_leave_one_out_m": 5.6
+  },
+  {
+   "id": "CARNOT",
+   "role": "fit",
+   "desc": "Place Carnot centroid (OSM)",
+   "px": [
+    665,
+    658
+   ],
+   "lat": 45.75081,
+   "lon": 4.82781,
+   "err_in_final_model_m": 10.8,
+   "err_fit_only_model_m": 9.8,
+   "err_leave_one_out_m": 16.4
+  },
+  {
+   "id": "STBONAV",
+   "role": "fit",
+   "desc": "Basilique Saint-Bonaventure (OSM)",
+   "px": [
+    1028,
+    673
+   ],
+   "lat": 45.763053,
+   "lon": 4.8369635,
+   "err_in_final_model_m": 26.2,
+   "err_fit_only_model_m": 27.1,
+   "err_leave_one_out_m": 30.4
+  },
+  {
+   "id": "STNIZ",
+   "role": "control",
+   "desc": "Eglise Saint-Nizier centroid (OSM)",
+   "px": [
+    1041,
+    596
+   ],
+   "lat": 45.76471,
+   "lon": 4.83372,
+   "err_in_final_model_m": 17.6,
+   "err_fit_only_model_m": 21.2,
+   "err_leave_one_out_m": 19.9
+  },
+  {
+   "id": "PONT_L",
+   "role": "control",
+   "desc": "Pont Lafayette midpoint (kit bridges.json)",
+   "px": [
+    1060,
+    709
+   ],
+   "lat": 45.76377,
+   "lon": 4.83987,
+   "err_in_final_model_m": 5.6,
+   "err_fit_only_model_m": 9.0,
+   "err_leave_one_out_m": 7.2
+  },
+  {
+   "id": "AINAY",
+   "role": "control",
+   "desc": "Basilique d'Ainay centroid (OSM)",
+   "px": [
+    729,
+    619
+   ],
+   "lat": 45.75366,
+   "lon": 4.82736,
+   "err_in_final_model_m": 7.1,
+   "err_fit_only_model_m": 6.9,
+   "err_leave_one_out_m": 9.2
+  },
+  {
+   "id": "PONT_PALAIS",
+   "role": "control",
+   "desc": "Passerelle du Palais de Justice midpoint (OSM; site of old Pont du Palais)",
+   "px": [
+    936,
+    574
+   ],
+   "lat": 45.76145,
+   "lon": 4.83,
+   "err_in_final_model_m": 12.2,
+   "err_fit_only_model_m": 13.8,
+   "err_leave_one_out_m": 13.5
+  },
+  {
+   "id": "STGEORGES",
+   "role": "control",
+   "desc": "Eglise Saint-Georges centroid (OSM)",
+   "px": [
+    807,
+    545
+   ],
+   "lat": 45.75768,
+   "lon": 4.8254,
+   "err_in_final_model_m": 15.1,
+   "err_fit_only_model_m": 15.5,
+   "err_leave_one_out_m": 18.9
+  }
+ ],
+ "modern_coord_source": "OSM via nominatim.openstreetmap.org (polygon centroids/corners/bridge segments, fetched 2026-11-13) plus kit/bridges.json midpoints for Lafayette/Guillotiere bridges; no point comes from story.json unverified"
+}

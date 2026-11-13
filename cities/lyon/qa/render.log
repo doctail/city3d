@@ -1,0 +1,51 @@
+[build] edifici 145881 (1s, 789 MB)
+[build] predecessori storici 12684 (1s, 815 MB)
+[build] rilievo sotto gli edifici: max 682 m (4s, 840 MB)
+[build] monumenti: 461 parti; tolti 8 edifici nelle impronte (10s, 842 MB)
+/home/user/doctail/city3d/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 1682 blocchi per anno, 3391435 vertici (19s, 1180 MB)
+/home/user/doctail/city3d/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (23s, 1253 MB)
+[build] suolo urbano dalle impronte: 603155 triangoli in 138 decenni (2052s, 3034 MB)
+/home/user/doctail/city3d/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+[build] strade 314062 (2056s, 3331 MB)
+[build] ponti 7 (2056s, 3331 MB)
+/home/user/doctail/city3d/build_render.py:784: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 3 (2056s, 3331 MB)
+[build] boschi 0 celle in 0 blocchi (2056s, 3331 MB)
+[build] isolati 38933 (2077s, 3520 MB)
+[build] piene 1 (2077s, 3521 MB)
+[build] terra 52 poligoni (2077s, 3521 MB)
+[build] monumenti costruiti: 461 parti (2077s, 3521 MB)
+[build] rilievo applicato: 3717973 vertici, massimo 1114 m (2099s, 3740 MB)
+[build] monumenti: parti staccate dalla scena: 350 (2099s, 3733 MB)
+[build] monumenti uniti: 461 -> 171 oggetti (2099s, 3733 MB)
+[build] alberi cotti: 0 vertici (2099s, 3736 MB)
+/home/user/doctail/city3d/build_render.py:1296: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 1682 città, 780 statici (2099s, 3736 MB)
+[build] dati di costruzione liberati (2100s, 2259 MB)
+[build] CPU (2100s, 2259 MB)
+[build] denoiser nessuno (2100s, 2259 MB)
+[build] render 1 -> 128 480x270 4 campioni (2100s, 2259 MB)
+35:03.374  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0009.jpg'
+[build] fotogramma 9: 3.0s (anno -43)
+35:05.193  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0025.jpg'
+[build] fotogramma 25: 1.8s (anno 57)
+35:07.049  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0041.jpg'
+[build] fotogramma 41: 1.9s (anno 1800)
+35:09.042  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0057.jpg'
+[build] fotogramma 57: 2.0s (anno 1900)
+35:11.144  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0073.jpg'
+[build] fotogramma 73: 2.1s (anno 2026)
+35:13.166  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0089.jpg'
+[build] fotogramma 89: 2.0s (anno 1794)
+35:14.981  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0105.jpg'
+[build] fotogramma 105: 1.8s (anno 1858)
+35:16.990  render           | Saved: '/home/user/doctail/city3d/cities/lyon/qa/frames/0121.jpg'
+[build] fotogramma 121: 2.0s (anno 1945)
+[build] FATTO 8 fotogrammi, 2.09s a fotogramma (2117s, 3770 MB)

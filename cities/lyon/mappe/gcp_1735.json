@@ -1,0 +1,259 @@
+{
+ "year": "1735",
+ "map": {
+  "map_src": "1735.JPEG",
+  "title": "Plan geometral de la ville de Lyon (Seraucourt/Gregoire, 1735 augmente et rectifie)"
+ },
+ "map_file": "cities/lyon/mappe_raw/1735.JPEG",
+ "crs_modern": "WGS84 (EPSG:4326) for GCP coordinates; fit in EPSG:2154",
+ "stats": {
+  "n_fit": 6,
+  "n_control": 4,
+  "n_rejected": 0,
+  "model": "affine",
+  "smoothing": 0,
+  "fit_residual_m": {
+   "n": 6,
+   "rmse": 11.621041152853568,
+   "mean": 10.244894924589298,
+   "max": 17.410478374576964,
+   "median": 8.774905540521093
+  },
+  "control_error_m": {
+   "n": 4,
+   "rmse": 46.945218904693,
+   "mean": 40.72033723359769,
+   "max": 79.6270088640763,
+   "median": 32.98460687326665
+  },
+  "loo_all_m": {
+   "n": 10,
+   "rmse": 36.12819212355233,
+   "mean": 31.482332084946925,
+   "max": 75.18376139692103,
+   "median": 28.939171943197856
+  },
+  "m_per_px_u": 4.067613507078531,
+  "m_per_px_v": 4.092682988047184,
+  "u_axis_bearing_deg": 357.64562619330263,
+  "affine_note": "affine 6-param (rotation, anisotropic scale, shear, shift) in Lambert-93 (EPSG:2154); TPS/poly2 tested: not better on held-out points"
+ },
+ "control_points_note": "role=fit points define the model reported in fit_residual_m; role=control are held out of that fit and give control_error_m; the overlay/final model uses fit+control; role=rejected not used",
+ "neatline_px": [
+  [
+   240,
+   250
+  ],
+  [
+   310,
+   250
+  ],
+  [
+   310,
+   75
+  ],
+  [
+   940,
+   75
+  ],
+  [
+   940,
+   185
+  ],
+  [
+   965,
+   185
+  ],
+  [
+   965,
+   780
+  ],
+  [
+   240,
+   780
+  ]
+ ],
+ "coverage_wgs84": [
+  [
+   [
+    4.815181,
+    45.749936
+   ],
+   [
+    4.815115,
+    45.7525
+   ],
+   [
+    4.805906,
+    45.752685
+   ],
+   [
+    4.805305,
+    45.775757
+   ],
+   [
+    4.811096,
+    45.775641
+   ],
+   [
+    4.811072,
+    45.776556
+   ],
+   [
+    4.842396,
+    45.775922
+   ],
+   [
+    4.84307,
+    45.749371
+   ],
+   [
+    4.815181,
+    45.749936
+   ]
+  ]
+ ],
+ "points": [
+  {
+   "id": "TERR_C",
+   "role": "fit",
+   "desc": "Place des Terreaux centroid (OSM)",
+   "px": [
+    731,
+    611
+   ],
+   "lat": 45.76751,
+   "lon": 4.83349,
+   "err_in_final_model_m": 17.9,
+   "err_fit_only_model_m": 7.1,
+   "err_leave_one_out_m": 28.9
+  },
+  {
+   "id": "PSP_C",
+   "role": "fit",
+   "desc": "Palais Saint-Pierre centroid (OSM)",
+   "px": [
+    714,
+    610
+   ],
+   "lat": 45.76683,
+   "lon": 4.83362,
+   "err_in_final_model_m": 10.3,
+   "err_fit_only_model_m": 8.9,
+   "err_leave_one_out_m": 15.2
+  },
+  {
+   "id": "STJEAN",
+   "role": "fit",
+   "desc": "Cathedrale Saint-Jean centroid (OSM)",
+   "px": [
+    543,
+    495
+   ],
+   "lat": 45.76072,
+   "lon": 4.82743,
+   "err_in_final_model_m": 28.5,
+   "err_fit_only_model_m": 2.1,
+   "err_leave_one_out_m": 37.0
+  },
+  {
+   "id": "HDIEU",
+   "role": "fit",
+   "desc": "Hotel-Dieu complex centroid (OSM)",
+   "px": [
+    488,
+    660
+   ],
+   "lat": 45.7588,
+   "lon": 4.83649,
+   "err_in_final_model_m": 24.4,
+   "err_fit_only_model_m": 17.4,
+   "err_leave_one_out_m": 33.3
+  },
+  {
+   "id": "PONT_G_W",
+   "role": "fit",
+   "desc": "Pont de la Guillotière, west (Presquîle) abutment (OSM way segment, Nominatim)",
+   "px": [
+    449,
+    665
+   ],
+   "lat": 45.7571,
+   "lon": 4.837,
+   "err_in_final_model_m": 14.7,
+   "err_fit_only_model_m": 17.3,
+   "err_leave_one_out_m": 23.5
+  },
+  {
+   "id": "STBONAV",
+   "role": "fit",
+   "desc": "Basilique Saint-Bonaventure (OSM)",
+   "px": [
+    607,
+    668
+   ],
+   "lat": 45.763053,
+   "lon": 4.8369635,
+   "err_in_final_model_m": 16.8,
+   "err_fit_only_model_m": 8.7,
+   "err_leave_one_out_m": 21.5
+  },
+  {
+   "id": "STNIZ",
+   "role": "control",
+   "desc": "Eglise Saint-Nizier centroid (OSM)",
+   "px": [
+    655,
+    604
+   ],
+   "lat": 45.76471,
+   "lon": 4.83372,
+   "err_in_final_model_m": 23.9,
+   "err_fit_only_model_m": 33.3,
+   "err_leave_one_out_m": 29.0
+  },
+  {
+   "id": "CELEST",
+   "role": "control",
+   "desc": "Theatre des Celestins centroid (OSM)",
+   "px": [
+    521,
+    561
+   ],
+   "lat": 45.75995,
+   "lon": 4.8313,
+   "err_in_final_model_m": 6.1,
+   "err_fit_only_model_m": 17.3,
+   "err_leave_one_out_m": 7.1
+  },
+  {
+   "id": "FOURV",
+   "role": "control",
+   "desc": "Basilique Notre-Dame de Fourviere centroid (OSM)",
+   "px": [
+    578,
+    391
+   ],
+   "lat": 45.76229,
+   "lon": 4.82256,
+   "err_in_final_model_m": 25.7,
+   "err_fit_only_model_m": 79.6,
+   "err_leave_one_out_m": 75.2
+  },
+  {
+   "id": "BEL_C",
+   "role": "control",
+   "desc": "Place Bellecour centroid",
+   "px": [
+    466,
+    578
+   ],
+   "lat": 45.7576,
+   "lon": 4.83201,
+   "err_in_final_model_m": 33.9,
+   "err_fit_only_model_m": 32.7,
+   "err_leave_one_out_m": 44.2
+  }
+ ],
+ "modern_coord_source": "OSM via nominatim.openstreetmap.org (polygon centroids/corners/bridge segments, fetched 2026-11-13) plus kit/bridges.json midpoints for Lafayette/Guillotiere bridges; no point comes from story.json unverified"
+}
