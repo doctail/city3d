@@ -119,3 +119,79 @@ Nota: `overpass.kumi.systems`, `openstreetmap.org` e `api.openstreetmap.org` son
 2. Verificare nome campo BDNB (`annee_construction`) e campo BD TOPO bati su dizionario reale.
 3. Verificare in ISTAT se le variabili 2021 per sezione includono epoca costruzione degli edifici (classi).
 4. Solo dopo: scegliere citta' per voto A/B.
+
+---
+
+## MISURE 13/11 (pomeriggio)
+
+Esito sintetico: Italia misurata a livello di sezione di censimento (dato 2011, classi di epoca, non per edificio). Francia NON misurata: il campione BDNB non e' scaricabile dal proxy (S3 403). Overpass/Geofabrik non usati (chiusi).
+
+### Verifiche di rete e licenza (misurate oggi)
+
+| Host / risorsa | Esito | Note |
+|---|---|---|
+| bdnb.io (pagine, /download/, /schema/latest/) | 200 | pagine di download e dizionario, nessun file dati |
+| open-data.s3.fr-par.scw.cloud (file BDNB France/dipartimenti, dizionario xlsx) | 403 | policy: "connect_rejected". Blocca TUTTI i file BDNB |
+| api.bdnb.io, api-portail.bdnb.io | 403 / 000 | API BDNB non raggiungibile |
+| files.data.gouv.fr, www.data.gouv.fr (API) | 200 | metadati dataset OK, ma i file BDNB sono su S3 |
+| gitlab.com (repo BDNB, wiki, api_columns.json) | 200 | documentazione campi e metodo, letta |
+| www.istat.it (pagine, nota informativa, nota metodologica, zip 2011) | 200 | scaricato zip 2011 (52 MB) |
+| esploradati.istat.it (zip sezioni 2021 e 2023) | 403 | file 2021/2023 per sezione NON scaricabili |
+| datafoncier.cerema.fr | 000 | non raggiunto (tunnel non aperto), non verificato oltre |
+| portali open data metropolitani (data.grandlyon.com, opendata.bordeaux-metropole.fr, data.nantesmetropole.fr, data.strasbourg.eu, opendata.lillemetropole.fr, data.toulouse-metropole.fr, data.nicecotedazur.org, data.montpellier3m.fr, data.marseille.fr) | 403 / 000 | nessun dataset per citta' raggiungibile |
+
+Licenze verificate: BDNB su data.gouv = "lov2" (Licence Ouverte 2.0) [Certain, da API data.gouv]. Documentazione metodologica BDNB (wiki GitLab) = CC BY-SA 4.0 [Certain]. ISTAT = CC BY 4.0 [Certain, pagina note legali].
+
+Campo BDNB verificato: `annee_construction` = "Annee de construction du batiment", livello open, tiles_open = x [Certain, da api_columns.json del repo GitLab]. Per il metodo: la fonte primaria dell'anno e' CEREMA Fichiers Fonciers (priorita' 1), poi RNC e RPLS, poi DPE [Certain, wiki "fiabilite_periode_construction"]. L'anno e' a livello batiment_groupe (unita' di parcella), non per geometria di edificio: per gruppi multi-edificio vale l'anno con la maggiore somma di superfici [Certain, wiki Changelog]. Quindi anche con dati scaricati la granularita' e' "per gruppo di edifici", non "per edificio".
+
+### Italia: ISTAT Censimento 2011, sezioni di censimento (dati scaricati, misura reale)
+
+Fonte: dati-cpa_2011.zip (www.istat.it/storage/cartografia/variabili-censuarie/), file "R*_indicatori_2011_sezioni.csv" (tutte le regioni), variabili E3 (edifici ad uso residenziale) ed E8-E16 (classi di epoca: prima del 1919 ... dopo il 2005). Somma delle classi = E3 nel 100% dei casi, quindi la partizione e' completa. Conteggio di edifici su comune intero, non sul centro storico.
+
+| Citta' | Fonte | Edifici (E3 residenziali) | % con anno | Voto | Note |
+|---|---|---|---|---|---|
+| Milano | ISTAT 2011 sezioni, classi E8-E16 | 42.980 (E1 totali 65.516) | 100% in classi, 0% per edificio | C | pre1919 12,4% / 1919-45 23,5% / 1946-60 27,7% / 1961-70 19,9% / 1971-80 8,6% / 1981-90 2,9% / 1991-2000 2,0% / 2001-05 1,5% / post2005 1,5%. Comune intero, centro non filtrato (geometrie sezioni non scaricate). 6.017 sezioni |
+| Torino | ISTAT 2011 sezioni | 36.158 (E1 63.764) | 100% in classi | C | pre1919 14,3% / 1919-45 20,8% / 1946-60 28,1% / 1961-70 20,8% / 1971-80 9,3% / 1981-90 3,0% / 1991-2000 1,9% / 2001-05 1,2% / post2005 0,6%. 3.713 sezioni |
+| Bologna | ISTAT 2011 sezioni | 22.149 (E1 29.368) | 100% in classi | C | pre1919 20,7% / 1919-45 21,4% / 1946-60 29,0% / 1961-70 14,5% / 1971-80 5,9% / 1981-90 2,7% / 1991-2000 2,9% / 2001-05 1,7% / post2005 1,2%. 2.260 sezioni |
+| Firenze | ISTAT 2011 sezioni | 31.070 (E1 46.281) | 100% in classi | C | pre1919 35,5% / 1919-45 28,9% / 1946-60 19,0% / 1961-70 10,2% / 1971-80 3,7% / 1981-90 1,1% / 1991-2000 0,7% / 2001-05 0,4% / post2005 0,5%. 2.070 sezioni |
+| Genova | ISTAT 2011 sezioni | 29.668 (E1 37.960) | 100% in classi | C | pre1919 43,4% / 1919-45 20,1% / 1946-60 18,9% / 1961-70 10,8% / 1971-80 4,0% / 1981-90 1,8% / 1991-2000 0,3% / 2001-05 0,2% / post2005 0,3%. 3.458 sezioni |
+| Venezia | ISTAT 2011 sezioni | 34.994 (E1 40.914) | 100% in classi | C | pre1919 26,6% / 1919-45 8,0% / 1946-60 23,1% / 1961-70 20,8% / 1971-80 9,2% / 1981-90 5,0% / 1991-2000 3,2% / 2001-05 2,1% / post2005 1,9%. 3.476 sezioni |
+| Palermo | ISTAT 2011 sezioni | 46.293 (E1 57.015) | 100% in classi | C | pre1919 11,9% / 1919-45 18,4% / 1946-60 17,1% / 1961-70 18,5% / 1971-80 15,6% / 1981-90 11,6% / 1991-2000 5,0% / 2001-05 1,4% / post2005 0,4%. 2.834 sezioni |
+| Bari | ISTAT 2011 sezioni | 23.252 (E1 28.041) | 100% in classi | C | pre1919 12,4% / 1919-45 18,9% / 1946-60 17,5% / 1961-70 22,7% / 1971-80 16,1% / 1981-90 6,6% / 1991-2000 3,7% / 2001-05 1,4% / post2005 0,6%. 1.451 sezioni |
+| Trieste | ISTAT 2011 sezioni | 22.638 (E1 27.244) | 100% in classi | C | pre1919 31,7% / 1919-45 14,6% / 1946-60 18,2% / 1961-70 14,9% / 1971-80 7,9% / 1981-90 4,6% / 1991-2000 3,5% / 2001-05 2,1% / post2005 2,4%. 908 sezioni |
+| Verona | ISTAT 2011 sezioni | 25.393 (E1 30.312) | 100% in classi | C | pre1919 18,6% / 1919-45 13,8% / 1946-60 19,5% / 1961-70 18,1% / 1971-80 11,1% / 1981-90 6,9% / 1991-2000 4,9% / 2001-05 3,5% / post2005 3,6%. 1.954 sezioni |
+
+ISTAT 2021/2023 per sezione: la nota informativa (9/06/2026) dichiara sezioni di censimento e aree subcomunali per regione e per capoluoghi di Citta' Metropolitana, ma le variabili diffuse sono popolazione, famiglie, automobili e "informazioni sulle abitazioni e gli altri tipi di alloggio". Le classi di epoca degli EDIFICI non sono citate [Likely: assenti]. I file 2021 sono su esploradati.istat.it, 403. Per questo, il dato 2021 per epoca NON e' misurato. Il 2011 e' l'ultimo anno con classi di epoca degli edifici a livello sezione, confermato dal tracciato.
+
+### Francia: BDNB annee_construction (NON misurata)
+
+| Citta' | Fonte | Edifici | % con anno | Voto | Note |
+|---|---|---|---|---|---|
+| Lione | BDNB annee_construction (da Fichiers Fonciers) | n.d. | n.d. | B (provv., non misurato) | file S3 403, nessun campione. Vieux-Lyon/Croix-Rousse non filtrabili |
+| Marsiglia | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Bordeaux | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Tolosa | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Nantes | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Strasburgo | idem | n.d. | n.d. | B (provv., non misurato) | idem. Neustadt 1871-1918 da verificare |
+| Lille | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Nizza | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+| Montpellier | idem | n.d. | n.d. | B (provv., non misurato) | idem |
+
+Il voto B e' provvisorio: il campo esiste ed e' open, ma l'anno e' per gruppo di edifici (non per edificio) e la copertura non e' misurata. Non posso dire se supera il 70%.
+
+### Confidenza
+
+- [Certain] Host S3 BDNB, data.gouv API, GitLab, ISTAT pagine e zip 2011: esiti misurati oggi.
+- [Certain] Campo annee_construction, fonte FF prioritaria, granularita' batiment_groupe, licenze lov2 / CC BY 4.0.
+- [Certain] Dati ISTAT 2011 per sezione, classi di epoca per comune: somme verificate (classi = E3 al 100%).
+- [Likely] ISTAT 2021/2023 senza classi di epoca degli edifici: dalla nota informativa, non dal file.
+- [Guessing] Copertura % del campo BDNB annee_construction per citta': non misurabile senza file.
+
+### DA SBLOCCARE
+
+- `open-data.s3.fr-par.scw.cloud` - 403 policy. Blocca TUTTI i file BDNB (csv/gpkg/pgdump France 40-52 GB, dipartimenti da estrarre, dizionario xlsx 243 KB). Sblocco prioritario: senza questo la Francia resta non misurata. [priorita' 1]
+- `api.bdnb.io` - 403. Alternativa API per campione (annee_construction per batiment_groupe su un comune). [priorita' 2]
+- `esploradati.istat.it` - 403. Zip sezioni 2021 (Dati_regionali_2021.zip) e 2023: serve per verificare se il 2021 ha classi di epoca degli edifici. [priorita' 1]
+- `datafoncier.cerema.fr` - 000 (tunnel non aperto). Fichiers Fonciers per parcella, fonte primaria BDNB. [priorita' 2]
+- `api-portail.bdnb.io` - 000. Catalogo API BDNB. [priorita' 3]
+- Portali open data metropolitani: data.grandlyon.com, opendata.bordeaux-metropole.fr, data.nantesmetropole.fr, data.strasbourg.eu, opendata.lillemetropole.fr, data.toulouse-metropole.fr, data.nicecotedazur.org, data.montpellier3m.fr, data.marseille.fr - 403/000. Possibili dataset annee_construction locali. [priorita' 3]
