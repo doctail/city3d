@@ -73,7 +73,7 @@ Anni: float, negativi = a.C. Ogni data storica porta `src` (id in `sources`) e `
 
   "regia": {
     "music": "waking_monument",          // modello musicale in kit/music/<nome>.json (ancore misurate)
-    "duration": 511.5, "night": true,
+    "duration": "auto", "night": true,
     "open": {"year": 2026, "rewind_to": 1238},
     // Soste: anni coperti, durata, didascalia "Titolo (data)", bersaglio = nome di un landmark o "fire:<nome>"
     // o "area:[lat,lon,raggio]"; shot = close | medium | wide | top; fx = suono del montaggio.
