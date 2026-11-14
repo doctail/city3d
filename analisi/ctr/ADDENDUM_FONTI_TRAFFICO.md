@@ -46,3 +46,15 @@ The screenshots were not labelled. Matched by summing the visible rows: first = 
 
 ## Proposed test on Valencia (the owner decides whether and how much)
 Valencia has no ads and 823 impressions: a small ad budget, with the criterion set BEFORE: if Home views do not start in the 48 h after, the ads only buy views and are not repeated.
+
+---
+# Copenhagen, first 24 hours (owner's screenshots, 14/11/2026) vs Valencia first 16 hours
+| | Copenhagen (24 h) | Valencia (16 h) |
+|---|---|---|
+| Impressions | 51,925 (Home/browse 45.1K = 87%, suggested 6.0K, search 529, channel pages 142, playlists 42) | 823 |
+| CTR | 6.8% (about 3,500 clicks) | 1.3% (about 11 clicks; 95% interval 0.7-2.4%) |
+- Copenhagen's CTR graph: a 25% spike in hour 1 (subscribers), 0 impressions in hours 2-3, then the impressions ramp from hour 4 and the CTR settles at 5-9%. The impressions come in two waves (hours 4-9: about 22K; hours 15-20: about 25K more): each wave is released when the previous one clicked well.
+- Valencia: a 35% spike in the first hours (subscribers), then one block of about 600 impressions at hour 6-7 with a CTR close to 0, then a plateau. The first non-subscriber test failed, so no second wave.
+- The difference is 5x and outside Valencia's interval: Valencia's CTR is NOT "normal for us" (NYC had 2.4-2.7%, Copenhagen 6.8%).
+- The titles are the same format ("EVOLUTION OF <CITY> | 3D City Timelapse (<year>-NOW)..."): the title does not separate them. Packaging difference: Copenhagen's thumbnail (analisi/ctr/thumbs/copenhagen_studio_page.png) has an orange band of flames and smoke on one half and a night city with lights on the other: high contrast, high saturation, one dramatic subject. Valencia's: calm green and red roofs, small city on the left half, low contrast.
+- Confounded with the topic and the competition (Copenhagen had no recent competitor; Valencia had 6): n = 2, so a hypothesis, not a rule. [Likely] for the thumbnail, [Guessing] for how much.

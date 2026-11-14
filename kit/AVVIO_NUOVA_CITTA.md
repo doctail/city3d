@@ -34,3 +34,8 @@ Prompt to paste at the start of a new chat:
 - The promise of the thumbnail/title must appear in the first 30-60 s (a cold open of the climax for 5-8 s, then the rewind). A question in the thumbnail is only allowed if the video answers it early.
 - Do not A/B test thumbnails under about 3,000 impressions per variant. Do not read a CTR under about 3,000 impressions.
 - Long-video thumbnail and Short thumbnail are different jobs: a single big number or a question belongs to a Short.
+
+## Hook frame (from Copenhagen's CTR of 6.8% vs Valencia's 1.3%, 14/11/2026; hypothesis, n=2)
+- Choose the city also for a dramatic, visible event (fire, bombardment, flood, quake) and decide the HOOK FRAME in the story before the render: one striking moment that goes on the thumbnail (one half) and in the cold open. Copenhagen's thumbnail: flames and smoke vs a night city with lights.
+- The hook frame must really be visible in the 3D render (Valencia's 1957 flood water was not): check it with a CPU frame before the pod.
+- Add a `thumbnail_hook` key to story.json: year, camera, what it shows.
