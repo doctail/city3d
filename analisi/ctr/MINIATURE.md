@@ -48,3 +48,10 @@ Tutte e quattro battono l'attuale in leggibilita' [Likely]; se battano anche in 
 ## 5. Test
 Se YouTube Studio offre "Test & compare" per il video Valencia: provare **A, C, B** (3 varianti; D di scorta). Serve un campione: con ~800 impressioni in 16 h il test avra' poco potere; il risultato si legge solo se YouTube distribuisce abbastanza impressioni (decine di migliaia = piu' affidabile) [Likely].
 Cosa NON si puo' sapere senza test reale: quale stile fa piu' CTR; se il problema e' la miniatura o il titolo/nicchia/canale nuovo (94 iscritti); se il 1.3% dipende dalle prime ore (picco ~35% poi quasi 0 = pochi iscritti, poi pubblico freddo); se le miniature di Mattia funzionano per lo stile o perche' sono Short. Valore di partenza: 823 impressioni, 1.3%, 103 views (CONTESTO), un solo video.
+
+## Owner's review (14/11/2026) and corrections
+- A ("WHY MOVE A RIVER?"): the question is answered only at about 5:48 of the video (the 1957 flood), so it promises something the viewer gets after 70% of the video. Dropped for the long video. It works as a Short where the answer comes within 20 s.
+- C ("1957 THE FLOOD"): a good Short thumbnail, not a long video one (same conclusion the lab reached on Mattia's vertical thumbnails).
+- B (RIVER / PARK): the saturated blue and green boxes look like a template and the heavy outline of "VALENCIA" looks cheap. Only the idea (river before, park after) is worth keeping.
+- The A/B/C test in Studio makes no sense with about 800 impressions: dropped. Thumbnails are compared only from about 3,000 impressions per variant, with equal windows.
+- NEW RULE: the promise of the thumbnail (and of the title) must be delivered within the first 30-60 s of the video (a cold open that shows the climax for a few seconds before the rewind), because NYC lost 63% of the viewers by 0:30.

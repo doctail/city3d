@@ -29,3 +29,8 @@ Prompt to paste at the start of a new chat:
 - **Every sosta with a target is flown to and hovered over; the video simply gets as long as the rhythm needs** (Valencia: all 25 soste, about 12:50). Spread the soste geographically and put all other events in cards WITHOUT a target. Check the QA rhythm WARN (gaps over 15 s without a new card or sosta).
 - The motion has been checked only on 6 still frames, never on a video: judge it on the first preview on the pod (10 min) and send the split preview to the chat.
 - Known limits: the opening is only about 1 km from the first stop (250 m/s cap), the Plan Sur / cruise frames look almost straight down (about 2,900 m).
+
+## Packaging rules (14/11/2026)
+- The promise of the thumbnail/title must appear in the first 30-60 s (a cold open of the climax for 5-8 s, then the rewind). A question in the thumbnail is only allowed if the video answers it early.
+- Do not A/B test thumbnails under about 3,000 impressions per variant. Do not read a CTR under about 3,000 impressions.
+- Long-video thumbnail and Short thumbnail are different jobs: a single big number or a question belongs to a Short.
