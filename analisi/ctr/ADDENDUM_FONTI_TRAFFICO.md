@@ -58,3 +58,7 @@ Valencia has no ads and 823 impressions: a small ad budget, with the criterion s
 - The difference is 5x and outside Valencia's interval: Valencia's CTR is NOT "normal for us" (NYC had 2.4-2.7%, Copenhagen 6.8%).
 - The titles are the same format ("EVOLUTION OF <CITY> | 3D City Timelapse (<year>-NOW)..."): the title does not separate them. Packaging difference: Copenhagen's thumbnail (analisi/ctr/thumbs/copenhagen_studio_page.png) has an orange band of flames and smoke on one half and a night city with lights on the other: high contrast, high saturation, one dramatic subject. Valencia's: calm green and red roofs, small city on the left half, low contrast.
 - Confounded with the topic and the competition (Copenhagen had no recent competitor; Valencia had 6): n = 2, so a hypothesis, not a rule. [Likely] for the thumbnail, [Guessing] for how much.
+
+---
+# Channel page is not an acquisition surface (owner's remark, 14/11/2026)
+Views from the channel page: Copenhagen 61 of 33K (0.18%), Rotterdam 32 of 9.7K (0.33%); playlists 21 and 6; end screens 4 and 22; the subscriptions feed 33 on Copenhagen. Almost nobody reaches the channel home, so trailer / playlists / banner fixes cannot move the numbers now (withdrawn from the priorities). The video is the only door. The metric that shows the leak: subscribers gained per 1,000 views (not yet measured).
