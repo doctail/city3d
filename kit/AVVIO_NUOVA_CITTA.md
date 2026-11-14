@@ -39,3 +39,10 @@ Prompt to paste at the start of a new chat:
 - Choose the city also for a dramatic, visible event (fire, bombardment, flood, quake) and decide the HOOK FRAME in the story before the render: one striking moment that goes on the thumbnail (one half) and in the cold open. Copenhagen's thumbnail: flames and smoke vs a night city with lights.
 - The hook frame must really be visible in the 3D render (Valencia's 1957 flood water was not): check it with a CPU frame before the pod.
 - Add a `thumbnail_hook` key to story.json: year, camera, what it shows.
+
+## Go / no-go gates (14/11/2026, thresholds provisional: recalibrate after 3 more videos)
+1. BEFORE any data work: free city (no relevant 3D timelapse above 5K views in 45 days, or a clearly different angle), per-building year data, AND a spectacular visible event (the hook frame). If one is missing, do not produce.
+2. BEFORE the story: a packaging check (30 min, free): thumbnail + title + hook frame rendered with one CPU frame, compared at 168 px in a feed mockup with the competitors (analisi/ctr/thumbs/feed_mockup.jpg). It must read in 1 second and its promise must be in the first 30-60 s of the video.
+3. AFTER publication, read ONLY at 24 h: healthy = more than 10K impressions and CTR >= 4% (Copenhagen: 51.9K, 6.8%); stalled = under 2K impressions or CTR under 2% (Valencia 16 h: 823, 1.3%). Stalled: ONE change at most (thumbnail), then move on; never more.
+4. Three stalled videos in a row: stop producing, review the selection (steps 1-2), do not make more videos.
+5. Frequency follows the gates, not the calendar: one video that passes beats two that do not. No ads as a lever: 15 EUR buys about 10,000 views of 30 s and did not trigger Home (Rotterdam).
