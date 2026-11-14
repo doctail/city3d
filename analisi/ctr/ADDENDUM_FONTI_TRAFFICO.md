@@ -1,3 +1,27 @@
+# CORRECTION 14/11/2026 (second owner message, with the watch-time charts)
+The owner says: Copenhagen's push happened right after publication and the ad campaign came AFTER it; Rotterdam's ads were its only engine; both campaigns cost 15 EUR. So:
+- My hypothesis below ("ads gave the first audience, then Home") is REFUTED by the order of events. Copenhagen was taken by the algorithm on its own (external only 259 views, so no big launch push either).
+- My sentence "the channel has no organic discovery by itself" is WRONG: Copenhagen proves the channel can get it. What decides it is the first hours of the video (packaging, retention) and the topic.
+- The proposal "test ads on Valencia to see if Home starts" is withdrawn: Rotterdam (ads only) never got Home (412 views), so there is no evidence that ads trigger it.
+
+## Watch time by source (owner's screenshots, hours) and seconds per view (computed = hours*3600/views)
+| Source | Copenhagen | s/view | Rotterdam | s/view |
+|---|---|---|---|---|
+| Browse (Home) | 406 h (69%) | 73 | 4.0 h (4%) | 35 |
+| YouTube ads | 86.7 h (15%) | 28 | 75.0 h (80%) | 31 |
+| Direct/unknown | 30.7 h | 186 | 5.0 h | 118 |
+| Suggested videos | 23.4 h | 191 | n/a | n/a |
+| External | 14.5 h | 202 | 5.5 h | 125 |
+| Search | n/a | n/a | 1.3 h | 74 |
+| Total | 584.3 h | 64 | 93.9 h | 35 |
+- Cost: 15 EUR each: 0.0013 EUR per view (Copenhagen) and 0.0017 (Rotterdam), about 0.17-0.20 EUR per watch hour. Ad views last about 30 s on average: they are 30-second views, not an audience.
+- The Home audience of Copenhagen watched 73 s per view (14% of 8:32); Rotterdam's Home audience 35 s (11% of 5:27): twice as long on the winner. Viewers from direct, suggested and external links watch about 3 minutes (37%).
+- [Likely] Copenhagen: free city + the first full-model video + 8:32 + the algorithm's first test went well. Valencia (busy city) at 16 h: 823 impressions, CTR 1.3%: not taken yet. A single data point: wait 48-72 h before concluding.
+
+## Still missing
+Copenhagen's impressions and CTR in the first 48 h, and its thumbnail and title, to compare the winner's packaging with Valencia's.
+
+---- (original addendum below, partly superseded) ----
 # Addendum 14/11/2026 — traffic sources of Rotterdam and Copenhagen (owner's screenshots)
 The screenshots were not labelled. Matched by summing the visible rows: first = about 9,680 views (Rotterdam 9,765 on 11/11), second = about 33,050 (Copenhagen 33,104). [Likely]
 
