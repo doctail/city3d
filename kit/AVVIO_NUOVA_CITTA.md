@@ -46,3 +46,6 @@ Prompt to paste at the start of a new chat:
 3. AFTER publication, read ONLY at 24 h: healthy = more than 10K impressions and CTR >= 4% (Copenhagen: 51.9K, 6.8%); stalled = under 2K impressions or CTR under 2% (Valencia 16 h: 823, 1.3%). Stalled: ONE change at most (thumbnail), then move on; never more.
 4. Three stalled videos in a row: stop producing, review the selection (steps 1-2), do not make more videos.
 5. Frequency follows the gates, not the calendar: one video that passes beats two that do not. No ads as a lever: 15 EUR buys about 10,000 views of 30 s and did not trigger Home (Rotterdam).
+
+## Distribution list per city (BEFORE publishing; owner's request 14/11/2026)
+Every city needs, ready at launch: 6-10 local communities (city and country subreddits, local-history Facebook groups, local blogs and outlets) with the admin-approval message, the post with the hook "find your building" as the first line, and a press note. Template: cities/valencia/DISTRIBUZIONE.md. External viewers watch about 3 minutes, so they are the right first audience for the algorithm.
