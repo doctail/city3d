@@ -27,7 +27,8 @@ FPS = 24
 DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s, m/s^2, m/s^3) e margine sopra terreno/tetti (m)
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
-                lead_s=3.0, sigma=0.7, sigma_look=0.9)
+                lead_s=3.0, sigma=0.7, sigma_look=0.9,
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -164,7 +165,7 @@ def dims(s, cfg):
     """Posizione di hover davanti al bersaglio: distanza di vista d, elevazione 20-35 gradi (aree e citta': 25-55), raggio orizzontale rho e quota alt."""
     el = math.radians(float(np.clip(s['el'], 20, 35) if s['kind'] == 'bld' else np.clip(s['el'], 25, 55))); d = float(s['d'])
     if s['kind'] == 'bld':
-        alt = float(np.clip(d * math.sin(el), 80, 200)); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
+        alt = float(np.clip(d * math.sin(el), 80, cfg.get('alt_max', 200.0))); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
     else:
         rho = min(d * math.cos(el), cfg.get('rho_max', 600.0)); alt = float(np.clip(math.sqrt(max(d * d - rho * rho, 1.0)), 150, 3500))
     s['alt'], s['rho'] = alt, rho

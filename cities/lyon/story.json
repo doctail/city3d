@@ -1250,8 +1250,8 @@
    },
    "phases": [
     {
-     "y": 2010,
-     "y1": 2014.97
+     "y": 2013.8,
+     "y1": 2014.3
     }
    ],
    "label": true,
@@ -1282,7 +1282,7 @@
     "dur": 6,
     "caption": "Lugdunum is founded (43 BC)",
     "target": "area:[45.7618,4.8210,450]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "crowd",
     "src": [
      "S1",
@@ -1323,7 +1323,7 @@
     "dur": 5,
     "caption": "The martyrs of Lugdunum (AD 177)",
     "target": "Amphitheatre of the Three Gauls",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "bell",
     "src": [
      "S1",
@@ -1337,7 +1337,7 @@
     "dur": 5,
     "caption": "Saint-Jean cathedral is begun (1180)",
     "target": "Saint-Jean Cathedral",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "bell",
     "src": [
      "S11"
@@ -1390,7 +1390,7 @@
     "dur": 5,
     "caption": "Jacquard's loom takes shape (1801)",
     "target": "area:[45.7728,4.8315,500]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "hammer",
     "src": [
      "S8"
@@ -1403,7 +1403,7 @@
     "dur": 6,
     "caption": "The first canut revolt (Nov 1831)",
     "target": "area:[45.7745,4.8320,600]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "crowd",
     "src": [
      "S3"
@@ -1417,7 +1417,7 @@
     "dur": 6,
     "caption": "The canuts rise again (April 1834)",
     "target": "fire:Canut revolt 1834 (Croix-Rousse)",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "boom",
     "src": [
      "S3"
@@ -1445,7 +1445,7 @@
     "dur": 6,
     "caption": "Basilica of Notre-Dame de Fourvière (1872–84)",
     "target": "area:[45.76228,4.82259,200]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "bell",
     "src": [
      "S10"
@@ -1472,7 +1472,7 @@
     "dur": 6,
     "caption": "La Part-Dieu and its Crayon tower (1977)",
     "target": "Tour Part-Dieu",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "build",
     "src": [
      "S9"
@@ -1485,7 +1485,7 @@
     "dur": 5,
     "caption": "Part-Dieu station opens (1983)",
     "target": "area:[45.7615,4.8593,300]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "train",
     "src": [
      "S9"
@@ -1493,12 +1493,12 @@
     "conf": "high"
    },
    {
-    "y0": 2012,
+    "y0": 2014.4,
     "y1": 2014.97,
     "dur": 6,
     "caption": "Musée des Confluences (2014)",
     "target": "area:[45.73268,4.81816,200]",
-    "shot": "medium",
+    "shot": "wide",
     "fx": "chime",
     "src": [
      "S12"
@@ -1508,7 +1508,15 @@
   ],
   "rmin": 1.0,
   "rmax": 8.0,
-  "night_hold": 15
+  "night_hold": 15,
+  "drone": {
+   "clear": 60,
+   "cruise_k": 0.6,
+   "cruise_min": 450,
+   "alt_max": 350,
+   "rho_max": 900
+  },
+  "lens": 30
  },
  "montaggio": {
   "style": "mattia",

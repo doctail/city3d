@@ -829,12 +829,12 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             stays.append(dict(fin, t0=fin_t, t1=DUR, name='finale', static=(fp[0], fp[1], fp[2] - float(dem(fp[0], fp[1])))))
         else: stays.append(dict(fin, t0=fin_t, t1=DUR, name='finale'))
         yy = np.arange(float(y_start), 2027.0, 25.0); rr = np.array([D.extent(float(y_), focus)[1] for y_ in yy])
-        cruise_fn = lambda y_: float(np.clip(0.35 * np.interp(y_, yy, rr) + 200.0, 250.0, 1500.0))   # zoom dell'epoca: bassa sulla citta' antica, alta su quella grande
+        cruise_fn = lambda y_: float(np.clip(dcfg['cruise_k'] * np.interp(y_, yy, rr) + 200.0, dcfg['cruise_min'], 1500.0))   # zoom dell'epoca: bassa sulla citta' antica, alta su quella grande
         s0 = stays[0]; az_r = math.radians(az_def)
         d0 = min(dcfg['open_dist'], 0.8 * dcfg['v_leg'] * s0['t0'])
         start = (s0['x'] + d0 * math.sin(az_r), s0['y'] + d0 * math.cos(az_r), dcfg['open_alt'], dcfg['open_speed'])
         ts_, P_, L_, dinfo = DK.fly(stays, DUR, year_at, dem, obst, cruise_fn, start, dcfg)
-        cam = DK.cam_keys(ts_, P_, L_); stays = dinfo['stays']
+        LENS_MM = float(R.get('lens', 35)); cam = DK.cam_keys(ts_, P_, L_, LENS_MM); stays = dinfo['stays']   # 15 nov: obiettivo configurabile (regia.lens, default 35 mm)
         if tinfo['dropped']: warn(f"drone: {len(tinfo['dropped'])} soste senza posto diventano cartelli (peso minimo): " + '; '.join(f"{n_[:30]} ({n_[1]:.0f})" if False else n_[0][:30] for n_ in tinfo['dropped']))
         dst = DK.stats_of(ts_, P_, L_, dem, obst, year_at)
         drone_info = {'limits': {k: dcfg[k] for k in ('vmax', 'amax', 'jmax', 'clear')}, 'stats': {k: round(v, 2) for k, v in dst.items()},
@@ -880,7 +880,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     cam.sort(key=lambda c: c[0])
     name = city.get('name', slug)
     sched = {'_doc': f'{name}, regia automatica (kit/regia_kit.py).' + (f" Musica {M['name']}" + (f", B da {b_start:.1f} s." if b_start is not None else '.') if M else ''),
-             'duration': DUR, 'lens': 35, 'years': [[t, y] for t, y in YEARS], 'cam': cam}
+             'duration': DUR, 'lens': (LENS_MM if drone else 35), 'years': [[t, y] for t, y in YEARS], 'cam': cam}
     if night: sched['night_t'] = night_t
     if drone: sched['camera'] = 'drone'; sched['drone'] = drone_info
     if drone and tinfo['natural']: sched['duration_auto'] = True
