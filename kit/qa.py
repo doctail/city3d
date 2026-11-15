@@ -210,8 +210,9 @@ def check_data(story, D, DD, R):
         y = np.array([b.get('y', np.nan) for b in B], float); d = np.array([b.get('d', 99999) for b in B], float)
         nan = int(np.isnan(y).sum()); fut = int((y > y1 + 1).sum()); old = int((y < y0).sum()); dly = int((d <= y).sum())
         bad = sum(1 for b in B if len(b.get('r', [])) < 3)
-        st = FAIL if (nan or fut > max(5, 0.001 * len(B)) or bad) else WARN if (fut or dly) else PASS
-        R.add(S, st, f'anni edifici ({len(B)})', f'senza anno {nan}, dopo {y1:.0f}: {fut}, prima di {y0:.0f} (compaiono all\'inizio): {old}, d<=y: {dly}, ring<3: {bad}')
+        zero = int((y == 0).sum()) if y0 < 0 else 0   # y=0 e' il segnaposto del dato mancante (BDNB): con start_year < 0 appare come anno 0 d.C. (Lione, 15 nov: 28% di palazzi moderni nel 177)
+        st = FAIL if (nan or zero > max(5, 0.002 * len(B)) or fut > max(5, 0.001 * len(B)) or bad) else WARN if (fut or dly or zero) else PASS
+        R.add(S, st, f'anni edifici ({len(B)})', f'senza anno {nan}, anno 0 (segnaposto): {zero}, dopo {y1:.0f}: {fut}, prima di {y0:.0f} (compaiono all\'inizio): {old}, d<=y: {dly}, ring<3: {bad}')
     if H:
         y = np.array([h.get('y', np.nan) for h in H], float); d = np.array([h.get('d', np.nan) for h in H], float)
         bad = int(np.isnan(y).sum() + np.isnan(d).sum()); inv = int((d < y).sum()); fut = int((y > y1 + 1).sum())

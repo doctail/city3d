@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-13 15:24. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-15 10:39. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -23,77 +23,77 @@ Generato da `python -m kit.qa` il 2026-11-13 15:24. Esito complessivo: **WARN**
 - **PASS** buildings.json
   - 145881 voci
 - **PASS** roads.json
-  - 314058 voci
+  - 314842 voci
 - **PASS** hist.json
-  - 12967 voci
+  - 14263 voci
 - **PASS** land.json
   - 52 voci
 - **PASS** landmarks.json
   - 362 voci
 - **PASS** dem.npz
 - **PASS** anni edifici (145881)
-  - senza anno 0, dopo 2026: 0, prima di -43 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **PASS** hist (12967 predecessori)
+  - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di -43 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
+- **PASS** hist (14263 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
-- **PASS** anni strade (314058 nastri)
-  - senza anno 0, dopo 2026: 0; visibili all'inizio 205, nel 1800 26442
+- **PASS** anni strade (314842 nastri)
+  - senza anno 0, dopo 2026: 0; visibili all'inizio 205, nel 1800 23234
 
 ## c) Densita' storica
 
 - **PASS** Roman Lugdunum on Fourvière nel 1500
-  - 545 edifici vivi (13/ha, copertura 17%) contro 270 (7/ha, copertura 20%) nel 2026: rapporto 2.02
+  - 688 edifici vivi (17/ha, copertura 17%) contro 270 (7/ha, copertura 20%) nel 2026: rapporto 2.55
 - **PASS** Roman Lugdunum on Fourvière nel 1800
-  - 513 edifici vivi (13/ha, copertura 17%) contro 270 (7/ha, copertura 20%) nel 2026: rapporto 1.90
+  - 604 edifici vivi (15/ha, copertura 17%) contro 270 (7/ha, copertura 20%) nel 2026: rapporto 2.24
 - **PASS** Roman Condate and Three Gauls slope nel 1500
-  - 662 edifici vivi (35/ha, copertura 50%) contro 523 (28/ha, copertura 53%) nel 2026: rapporto 1.27
+  - 708 edifici vivi (37/ha, copertura 49%) contro 523 (28/ha, copertura 53%) nel 2026: rapporto 1.35
 - **PASS** Roman Condate and Three Gauls slope nel 1800
-  - 651 edifici vivi (34/ha, copertura 51%) contro 523 (28/ha, copertura 53%) nel 2026: rapporto 1.24
+  - 664 edifici vivi (35/ha, copertura 51%) contro 523 (28/ha, copertura 53%) nel 2026: rapporto 1.27
 - **PASS** Saône valley (Vieux-Lyon) nel 1500
-  - 1109 edifici vivi (26/ha, copertura 40%) contro 689 (16/ha, copertura 42%) nel 2026: rapporto 1.61
+  - 1183 edifici vivi (28/ha, copertura 40%) contro 689 (16/ha, copertura 42%) nel 2026: rapporto 1.72
 - **PASS** Saône valley (Vieux-Lyon) nel 1800
-  - 929 edifici vivi (22/ha, copertura 41%) contro 689 (16/ha, copertura 42%) nel 2026: rapporto 1.35
+  - 980 edifici vivi (23/ha, copertura 41%) contro 689 (16/ha, copertura 42%) nel 2026: rapporto 1.42
 - **PASS** Medieval Presqu'île nel 1500
-  - 2729 edifici vivi (35/ha, copertura 47%) contro 968 (13/ha, copertura 46%) nel 2026: rapporto 2.82
+  - 2859 edifici vivi (37/ha, copertura 47%) contro 968 (13/ha, copertura 46%) nel 2026: rapporto 2.95
 - **PASS** Medieval Presqu'île nel 1800
-  - 2457 edifici vivi (32/ha, copertura 48%) contro 968 (13/ha, copertura 46%) nel 2026: rapporto 2.54
+  - 2574 edifici vivi (33/ha, copertura 47%) contro 968 (13/ha, copertura 46%) nel 2026: rapporto 2.66
 - **PASS** Guillotière faubourg nel 1800
-  - 2471 edifici vivi (28/ha, copertura 42%) contro 1239 (14/ha, copertura 44%) nel 2026: rapporto 1.99
+  - 2627 edifici vivi (29/ha, copertura 42%) contro 1239 (14/ha, copertura 44%) nel 2026: rapporto 2.12
 
 ## d) Corridoi vuoti
 
 - **PASS** -43: nessun corridoio vuoto
   - corridoi_-43.png
 - **WARN** 57: 3 aree vuote allungate
-  - #1 1189x178 m a (45.76101,4.82660); #2 347x36 m a (45.76033,4.82384); #3 287x63 m a (45.75796,4.82024) — corridoi_57.png
+  - #1 1189x187 m a (45.76101,4.82660); #2 347x36 m a (45.76033,4.82384); #3 288x62 m a (45.75796,4.82024) — corridoi_57.png
 - **WARN** 57: 1 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #4 381x22 m a (45.75758,4.82158)
+  - #4 377x22 m a (45.75758,4.82158)
 - **WARN** 1800: 12 aree vuote allungate
-  - #1 140x27 m a (45.77438,4.82969); #2 137x29 m a (45.77276,4.82961); #3 209x46 m a (45.76434,4.83154); #4 440x37 m a (45.76129,4.83072); #5 201x48 m a (45.76161,4.82521); #6 347x36 m a (45.76033,4.82384) — corridoi_1800.png
-- **WARN** 1800: 8 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #13 1085x51 m a (45.75376,4.83927); #14 967x45 m a (45.76235,4.83736); #15 561x40 m a (45.77498,4.83188); #16 381x22 m a (45.75758,4.82158); #17 313x31 m a (45.75779,4.83157)
-- **WARN** 1900: 28 aree vuote allungate
-  - #1 600x47 m a (45.77876,4.84919); #2 394x78 m a (45.77864,4.84653); #3 231x36 m a (45.77912,4.84478); #4 209x31 m a (45.77918,4.84424); #5 139x23 m a (45.77809,4.83103); #6 165x26 m a (45.77735,4.84344) — corridoi_1900.png
+  - #1 143x27 m a (45.77438,4.82971); #2 137x29 m a (45.77276,4.82961); #3 209x46 m a (45.76434,4.83154); #4 289x45 m a (45.76199,4.82564); #5 440x37 m a (45.76129,4.83072); #6 347x36 m a (45.76033,4.82384) — corridoi_1800.png
+- **WARN** 1800: 7 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #13 1085x51 m a (45.75376,4.83927); #14 967x45 m a (45.76235,4.83736); #15 562x40 m a (45.77498,4.83188); #16 376x22 m a (45.75758,4.82158); #17 313x31 m a (45.75779,4.83157)
+- **WARN** 1900: 29 aree vuote allungate
+  - #1 461x39 m a (45.77876,4.84756); #2 394x78 m a (45.77864,4.84653); #3 230x36 m a (45.77912,4.84478); #4 209x31 m a (45.77918,4.84424); #5 338x31 m a (45.77817,4.85070); #6 139x23 m a (45.77809,4.83103) — corridoi_1900.png
 - **WARN** 1900: 15 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #29 1278x41 m a (45.76651,4.84524); #30 1258x85 m a (45.77533,4.84986); #31 1100x50 m a (45.75379,4.83927); #32 955x47 m a (45.76235,4.83718); #33 817x58 m a (45.76461,4.85310)
-- **WARN** 1950: 29 aree vuote allungate
-  - #1 600x47 m a (45.77876,4.84919); #2 394x78 m a (45.77864,4.84653); #3 231x36 m a (45.77912,4.84478); #4 209x31 m a (45.77918,4.84424); #5 139x23 m a (45.77809,4.83103); #6 165x26 m a (45.77735,4.84344) — corridoi_1950.png
+  - #30 1278x41 m a (45.76651,4.84524); #31 1257x84 m a (45.77533,4.84986); #32 1100x50 m a (45.75379,4.83927); #33 955x47 m a (45.76235,4.83718); #34 817x58 m a (45.76461,4.85310)
+- **WARN** 1950: 30 aree vuote allungate
+  - #1 461x39 m a (45.77876,4.84756); #2 394x78 m a (45.77864,4.84653); #3 230x36 m a (45.77912,4.84478); #4 209x31 m a (45.77918,4.84424); #5 338x31 m a (45.77817,4.85070); #6 139x23 m a (45.77809,4.83103) — corridoi_1950.png
 
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (5 s)
-  - oggetti citta' 1706, cambi in tutto il video 45484, max in un fotogramma 309 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
+  - oggetti citta' 1729, cambi in tutto il video 46090, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 193 m/s (limite 250), mediana 22
+  - 192 m/s (limite 250), mediana 23
 - **PASS** drone: accelerazione massima
-  - 115 m/s2 (limite 120), 99% 54
+  - 115 m/s2 (limite 120), 99% 53
 - **PASS** drone: jerk massimo
-  - 165 m/s3 (limite 200), 99% 46
+  - 164 m/s3 (limite 200), 99% 45
 - **PASS** drone: distanza minima da terreno e tetti
-  - 30 m (soglia 24); dal solo terreno 80 m
+  - 39 m (soglia 24); dal solo terreno 80 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 17 tenute, 0 solo sorvolate; hover 162 s, volo 404 s; 
+  - 0 tolte, 17 tenute, 0 solo sorvolate; hover 162 s, volo 409 s; 
 - **PASS** drone: hover quasi fermo
   - v max in hover 6.8 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: esattezza anni
@@ -101,9 +101,9 @@ Generato da `python -m kit.qa` il 2026-11-13 15:24. Esito complessivo: **WARN**
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 42.8 s (456-499 s); 7 oltre 15 s: 56-96, 243-259, 277-316, 322-364, 395-422, 437-456
+  - vuoto massimo 43.0 s (323-366 s); 7 oltre 15 s: 56-96, 245-260, 279-317, 323-366, 400-426, 441-461
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 30.81 | 1:00 21.45 | 2:00  5.58 | 3:00  0.89 | 4:00  0.21 | 5:00  1.22 | 6:00  0.55 | 7:00  0.57 | 8:00  0.32 | 9:00  0.03 | 10:00  0.00
+  - 0:00 30.81 | 1:00 21.44 | 2:00  5.57 | 3:00  0.90 | 4:00  0.20 | 5:00  1.18 | 6:00  0.56 | 7:00  0.58 | 8:00  0.34 | 9:00  0.04 | 10:00  0.00
 - **PASS** 17 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
@@ -111,7 +111,7 @@ Generato da `python -m kit.qa` il 2026-11-13 15:24. Esito complessivo: **WARN**
 - **PASS** evento forte entro 45 s
   - primo a 12.9 s
 - **PASS** notte
-  - night_t=578.9753203096869, schedule_lyon_night.json ok
+  - night_t=583.6700678683027, schedule_lyon_night.json ok
 
 ## Immagini
 
