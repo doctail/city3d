@@ -504,6 +504,13 @@ def check_drone(story, D, R, sc, qadir):
         R.add(S, (WARN if acc else FAIL) if late else PASS, 'drone: monumenti visibili durante il loro hover', ('; '.join(late) if late else 'ogni monumento bersaglio ha il corpo costruito a meta\' hover') + (f"  [accettato: {acc[0].get('reason', '')}]" if (late and acc) else '  [Confluences: il corpo compariva a fine hover]'))
     except Exception as e:
         R.add(S, WARN, 'drone: controlli voli/monumenti non fatti', str(e))
+    # 15 nov (Lione, owner: "la camera e' sempre troppo vicina"): distanza mediana camera -> punto guardato, equivalente a 35 mm
+    try:
+        mm = float(np.median([k[3] for k in cam if len(k) > 3] or [35.0]))
+        dd = np.linalg.norm(P - Lk, axis=1); dmed = float(np.median(dd)) * 35.0 / mm
+        R.add(S, WARN if dmed < 1200.0 else PASS, 'drone: distanza della camera', f"mediana {dmed:.0f} m equivalenti a 35 mm (obiettivo {mm:.0f} mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200")
+    except Exception as e:
+        R.add(S, WARN, 'drone: distanza camera non calcolata', str(e))
     R.add(S, PASS, 'drone: esattezza anni', "soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)")
     try:
         import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt

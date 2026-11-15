@@ -56,6 +56,7 @@ DISASTER_WORDS = ('FIRE', 'BOMB', 'burns', 'siege', 'Siege', 'sack', 'Sack', 'ea
 SHOT = {   # moltiplicatore di distanza, elevazione (gradi)
     'close': (0.72, 20), 'medium': (1.0, 24), 'wide': (1.65, 30), 'top': (1.25, 62)}
 STRONG = 6.0          # forza minima di un "evento forte"
+WIDE_MIN = 600.0       # m: distanza minima del tetto delle inquadrature 'wide' (regia.wide_min, 15 nov: Lione, camera troppo vicina)
 WIDE_MAX = 3500.0     # m: distanza massima di un'inquadratura 'wide' (oltre, la citta' non si legge)
 
 
@@ -448,7 +449,7 @@ def drone_stay_of(s, D, focus):
         return dict(x=mx, y=my, tzo=0.0, d=1.0 * r + (450 if r > 700 else 180), el=30.0, kind='city', R=r, name=s['caption'])
     mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
     d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
-    if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+    if s.get('shot') == 'wide': d = min(d, max(WIDE_MIN, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
     return dict(x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area', R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'])
 
 
@@ -576,6 +577,7 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
 def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=False, write=True):
     if isinstance(story, str): story = load_story(story)
     city = story['city']; slug = city['slug']; R = story.get('regia', {}) or {}
+    global WIDE_MIN; WIDE_MIN = float(R.get('wide_min', 600.0))
     warnings = []
 
     def warn(m):
@@ -767,7 +769,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         d = float(cam.get('d', mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))))
         if s.get('shot') == 'wide' and 'd' not in cam:   # 12 nov (Valencia, Plan Sur): area di 6 km -> camera a 13 km, citta' illeggibile.
             # tetto: estensione del bersaglio + margine, e al massimo WIDE_MAX all'inizio del carrello (d*1.25)
-            d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+            d = min(d, max(WIDE_MIN, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
         el = float(cam.get('el', el_def))
         az = cam.get('az', s.get('az', az_def))
         az0, az1 = (float(az[0]), float(az[1])) if isinstance(az, list) else (float(az), float(az) + 30.0)
@@ -857,7 +859,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
             else:
                 mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
                 d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
-                if s.get('shot') == 'wide': d = min(d, max(600.0, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
+                if s.get('shot') == 'wide': d = min(d, max(WIDE_MIN, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
             az0 = az_def - 20 + 20 * (j % 3)
             if wps and t0 - wps[-1][0] > 2.5:   # durante la corsa la camera si apre sull'estensione della citta' di quell'anno
                 tm = (wps[-1][0] + t0) / 2; (mx, my), r = D.extent(year_at(tm), focus)
