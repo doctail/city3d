@@ -66,13 +66,13 @@ cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080
   CV=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover');print(' '.join(map(str,c['cam'])),c.get('lens',40),' '.join(map(str,c['years']))) if c else print('')")
   [ -z "$CV" ] && { echo "nessuna camera 'cover' in city_$CITY.json"; return; }
   set -- $CV; CAM="$1 $2 $3 $4 $5 $6"; LENS=$7; shift 7
-  for Y in "$@"; do
+  for Y in "$@"; do (   # 15 nov: un anno per processo, in parallelo (Lione: la scena costa ~30 min a processo, due in fila = 1 h)
     rm -rf out/cover_$Y
     # "night_years" in cover: quegli anni si fanno di notte (Siviglia: 2026 notturno)
     CN=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover',{});print('--light night' if $Y in c.get('night_years',[]) else '')")
     $PY build_render.py -- $D out/cover_$Y --frames 1 $NF --only $(( NF - 200 )) --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep -E "fotogramma|rror"
     cp out/cover_$Y/$(printf $PAT $(( NF - 200 ))).jpg out/${CITY}_cover_$Y.jpg
-  done; ls -lh out/${CITY}_cover_*.jpg
+  ) & done; wait; ls -lh out/${CITY}_cover_*.jpg
 }
 light(){   # versione leggera da caricare in chat (~55 MB): 960x540, bitrate fisso
   ffmpeg -loglevel error -y -i "$1" -vf scale=960:-2 -c:v libx264 -preset fast -b:v 1300k -maxrate 1400k -bufsize 2800k -pix_fmt yuv420p -an "$2"; ls -lh "$2"
