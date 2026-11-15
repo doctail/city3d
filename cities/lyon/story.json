@@ -2175,7 +2175,12 @@
   "label_years": true
  },
  "qa": {
-  "accept": []
+  "accept": [
+   {
+    "check": "monumenti visibili",
+    "reason": "Saint-Jean hover (1180-1195, 'cathedral is begun') shows the foundation only: the body appears at 1213.8. Accepted because the full render was already running (15/11); if the segment 96-102 s looks empty, set phases to y 1180 / y1 1190 and re-render frames ~2300-2500 only."
+   }
+  ]
  },
  "thumbnail_hook": {
   "year": 1793.7,

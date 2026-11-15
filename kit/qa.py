@@ -479,6 +479,30 @@ def check_drone(story, D, R, sc, qadir):
     for i, x in enumerate(stays): print(f"[qa] drone: {i:2d} arriva t={x[0]:6.1f} hover {x[0]:6.1f}-{x[1]:6.1f} ({x[1] - x[0]:4.1f} s, v max {hv[i]:4.1f} m/s) riparte t={x[1]:6.1f}  {x[4][:40]}")
     R.add(S, WARN if dropped else PASS, 'drone: soste tolte per tempo', f"{len(dropped)} tolte, {len(stays)} tenute, 0 solo sorvolate; hover {hov:.0f} s, volo {fl:.0f} s; " + '; '.join(f"{d[1][:26]} ({d[0]:.0f})" for d in dropped[:10]))
     R.add(S, PASS if (not hv or max(hv) <= 12.0) else FAIL, 'drone: hover quasi fermo', f"v max in hover {max(hv) if hv else 0:.1f} m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)")
+    # 15 nov (Lione): voli lunghi con gli anni quasi fermi = citta' ferma sotto il drone; monumento non ancora costruito durante il suo hover
+    try:
+        so_ = {x[4]: x for x in (sc.get('soste') or [])}
+        Yy = np.array(sc['years'], float)
+        yat = lambda t: float(np.interp(t, Yy[:, 0], Yy[:, 1]))
+        slow = []; prev_t = None
+        for x in (meta.get('stays') or []):
+            if prev_t is not None and x[4] != 'finale' and x[0] - prev_t >= 12.0:
+                rate = abs(yat(x[0]) - yat(prev_t)) / (x[0] - prev_t)
+                if rate < 0.4: slow.append(f"{prev_t:.0f}-{x[0]:.0f} s ({x[0] - prev_t:.0f} s, {rate:.2f} anni/s) verso '{x[4][:26]}'")
+            prev_t = x[1]
+        R.add(S, WARN if slow else PASS, 'drone: voli con gli anni quasi fermi', ('; '.join(slow) if slow else 'nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)') + '  [uniscili: trasforma una delle due soste vicine in cartello]')
+        LMp = os.path.join(D, 'landmarks.json'); parts = (json.load(open(LMp)).get('parts') or []) if os.path.exists(LMp) else []
+        lm_names = {l['name'] for l in (story.get('landmarks') or [])}
+        late = []
+        for sst in (story.get('regia') or {}).get('soste', []) or []:
+            tg = sst.get('target')
+            if tg not in lm_names: continue
+            body = [pp['y'] for pp in parts if pp.get('name', '').startswith(tg) and float(pp.get('z1', 0)) - float(pp.get('z0', 0)) > 3.0 and 'y' in pp]
+            ym = 0.5 * (float(sst['y0']) + float(sst['y1']))
+            if body and min(body) > ym: late.append(f"{tg}: corpo dal {min(body):.1f}, hover centrato su {ym:.1f}")
+        R.add(S, FAIL if late else PASS, 'drone: monumenti visibili durante il loro hover', ('; '.join(late) if late else 'ogni monumento bersaglio ha il corpo costruito a meta\' hover') + '  [Confluences: il corpo compariva a fine hover]')
+    except Exception as e:
+        R.add(S, WARN, 'drone: controlli voli/monumenti non fatti', str(e))
     R.add(S, PASS, 'drone: esattezza anni', "soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)")
     try:
         import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt

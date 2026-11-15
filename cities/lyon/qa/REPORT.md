@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-15 12:28. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-15 13:09. Esito complessivo: **FAIL**
 
 | Sezione | Esito |
 |---|---|
@@ -8,7 +8,7 @@ Generato da `python -m kit.qa` il 2026-11-15 12:28. Esito complessivo: **WARN**
 | b) DATA | PASS |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | WARN |
+| e) Costo e schedule | FAIL |
 
 ## a) Story e fonti
 
@@ -80,7 +80,7 @@ Generato da `python -m kit.qa` il 2026-11-15 12:28. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (6 s)
+- **PASS** costo dei cambi (5 s)
   - oggetti citta' 1729, cambi in tutto il video 44925, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 191 m/s (limite 250), mediana 21
@@ -96,6 +96,10 @@ Generato da `python -m kit.qa` il 2026-11-15 12:28. Esito complessivo: **WARN**
   - 0 tolte, 17 tenute, 0 solo sorvolate; hover 157 s, volo 380 s; 
 - **PASS** drone: hover quasi fermo
   - v max in hover 9.1 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+- **PASS** drone: voli con gli anni quasi fermi
+  - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
+- **FAIL** drone: monumenti visibili durante il loro hover
+  - Saint-Jean Cathedral: corpo dal 1213.8, hover centrato su 1187.5  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
