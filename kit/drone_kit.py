@@ -28,7 +28,7 @@ DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s,
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9,
-                cruise_k=0.35, cruise_min=250.0, alt_max=200.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -281,6 +281,28 @@ def stats_of(ts, P, L, dem, obst, year_at):
     ground = dem(P[:, 0], P[:, 1]); roof = obst.top(P[:, 0], P[:, 1], yrs)
     clr = P[:, 2] - np.maximum(ground, roof)
     return dict(vmax=float(v.max()), amax=float(a.max()), jmax=float(j.max()), clear_min=float(clr.min()), clear_ground_min=float((P[:, 2] - ground).min()))
+
+
+def limit_pitch(ts, P, L, pmax_deg, sigma_s=1.5):
+    """15 nov (Lione, owner: "quando e' bassa guarda in giu', come una ripresa satellitare molto bassa"): il punto guardato era a ~150 m dalla camera
+    in volo (3 s di anticipo a 20-60 m/s) con la camera a 650 m: inclinazione media 71 gradi, fino a 86. Qui la si limita a pmax_deg sotto l'orizzonte
+    allontanando il punto guardato in orizzontale lungo la stessa direzione (o lungo la velocita' dove e' troppo vicino); poi si liscia l'offset.
+    pmax_deg >= 89: disattivato (default)."""
+    if pmax_deg >= 89.0: return L
+    P = np.asarray(P, float); L = np.asarray(L, float).copy(); ts = np.asarray(ts, float)
+    v = L[:, :2] - P[:, :2]; hd = np.hypot(v[:, 0], v[:, 1]); dz = P[:, 2] - L[:, 2]
+    vel = np.gradient(P[:, :2], ts, axis=0); vel = gsmooth(vel, 1.0 * FPS); sp = np.hypot(vel[:, 0], vel[:, 1])
+    dirn = np.zeros_like(v); last = np.array([1.0, 0.0])
+    for i in range(len(v)):
+        if hd[i] > 30.0: last = v[i] / hd[i]
+        elif sp[i] > 5.0: last = vel[i] / sp[i]
+        dirn[i] = last
+    hreq = np.maximum(dz, 0.0) / math.tan(math.radians(max(5.0, pmax_deg - 3.0)))
+    need = hd < hreq
+    tgt = np.where(need[:, None], dirn * hreq[:, None], v)          # offset orizzontale desiderato (camera -> punto guardato)
+    off = gsmooth(tgt, sigma_s * FPS)
+    L[:, :2] = P[:, :2] + np.where((np.hypot(off[:, 0], off[:, 1]) < hd)[:, None], v, off)   # mai piu' vicino di prima
+    return L
 
 
 def cam_keys(ts, P, L, mm=35):

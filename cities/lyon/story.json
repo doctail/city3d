@@ -149,7 +149,55 @@
     "conf": "low"
    },
    {
-    "y": 1793,
+    "y": 461,
+    "name": "Kingdom of the Burgundians",
+    "flag_colors": [
+     "#8a1c1c",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 534,
+    "name": "Frankish Kingdom",
+    "flag_colors": [
+     "#1f3a93",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1032,
+    "name": "Kingdom of Burgundy · Holy Roman Empire",
+    "flag_colors": [
+     "#d4af37",
+     "#111111"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1312,
+    "name": "Kingdom of France",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1792,
     "name": "French Republic",
     "flag_colors": [
      "#0055a4",
@@ -157,9 +205,109 @@
      "#ef4135"
     ],
     "src": [
-     "S4"
+     "S2"
     ],
-    "conf": "low"
+    "conf": "medium"
+   },
+   {
+    "y": 1804,
+    "name": "First French Empire",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1814,
+    "name": "Kingdom of France · Restoration",
+    "flag_colors": [
+     "#ffffff",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1830,
+    "name": "July Monarchy",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1848,
+    "name": "Second Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1852,
+    "name": "Second French Empire",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1870,
+    "name": "Third Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1940,
+    "name": "Vichy France",
+    "flag_colors": [
+     "#444444",
+     "#a50f15"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1944,
+    "name": "French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
    }
   ],
   "cover": {

@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-15 17:55. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-15 18:01. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -80,7 +80,7 @@ Generato da `python -m kit.qa` il 2026-11-15 17:55. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (7 s)
+- **PASS** costo dei cambi (6 s)
   - oggetti citta' 1729, cambi in tutto il video 44925, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 191 m/s (limite 250), mediana 21

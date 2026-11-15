@@ -836,6 +836,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         d0 = min(dcfg['open_dist'], 0.8 * dcfg['v_leg'] * s0['t0'])
         start = (s0['x'] + d0 * math.sin(az_r), s0['y'] + d0 * math.cos(az_r), dcfg['open_alt'], dcfg['open_speed'])
         ts_, P_, L_, dinfo = DK.fly(stays, DUR, year_at, dem, obst, cruise_fn, start, dcfg)
+        L_ = DK.limit_pitch(ts_, P_, L_, dcfg['pitch_max'])
         LENS_MM = float(R.get('lens', 35)); cam = DK.cam_keys(ts_, P_, L_, LENS_MM); stays = dinfo['stays']   # 15 nov: obiettivo configurabile (regia.lens, default 35 mm)
         if tinfo['dropped']: warn(f"drone: {len(tinfo['dropped'])} soste senza posto diventano cartelli (peso minimo): " + '; '.join(f"{n_[:30]} ({n_[1]:.0f})" if False else n_[0][:30] for n_ in tinfo['dropped']))
         dst = DK.stats_of(ts_, P_, L_, dem, obst, year_at)
