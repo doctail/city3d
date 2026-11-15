@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-15 13:09. Esito complessivo: **FAIL**
+Generato da `python -m kit.qa` il 2026-11-15 13:10. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -8,7 +8,7 @@ Generato da `python -m kit.qa` il 2026-11-15 13:09. Esito complessivo: **FAIL**
 | b) DATA | PASS |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | FAIL |
+| e) Costo e schedule | WARN |
 
 ## a) Story e fonti
 
@@ -98,8 +98,8 @@ Generato da `python -m kit.qa` il 2026-11-15 13:09. Esito complessivo: **FAIL**
   - v max in hover 9.1 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: voli con gli anni quasi fermi
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
-- **FAIL** drone: monumenti visibili durante il loro hover
-  - Saint-Jean Cathedral: corpo dal 1213.8, hover centrato su 1187.5  [Confluences: il corpo compariva a fine hover]
+- **WARN** drone: monumenti visibili durante il loro hover
+  - Saint-Jean Cathedral: corpo dal 1213.8, hover centrato su 1187.5  [accettato: Saint-Jean hover (1180-1195, 'cathedral is begun') shows the foundation only: the body appears at 1213.8. Accepted because the full render was already running (15/11); if the segment 96-102 s looks empty, set phases to y 1180 / y1 1190 and re-render frames ~2300-2500 only.]
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso

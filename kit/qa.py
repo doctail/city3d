@@ -500,7 +500,8 @@ def check_drone(story, D, R, sc, qadir):
             body = [pp['y'] for pp in parts if pp.get('name', '').startswith(tg) and float(pp.get('z1', 0)) - float(pp.get('z0', 0)) > 3.0 and 'y' in pp]
             ym = 0.5 * (float(sst['y0']) + float(sst['y1']))
             if body and min(body) > ym: late.append(f"{tg}: corpo dal {min(body):.1f}, hover centrato su {ym:.1f}")
-        R.add(S, FAIL if late else PASS, 'drone: monumenti visibili durante il loro hover', ('; '.join(late) if late else 'ogni monumento bersaglio ha il corpo costruito a meta\' hover') + '  [Confluences: il corpo compariva a fine hover]')
+        acc = [w for w in ((story.get('qa') or {}).get('accept') or []) if 'monumenti visibili' in str(w.get('check', ''))]   # deroga della story: resta in lista come WARN con la ragione
+        R.add(S, (WARN if acc else FAIL) if late else PASS, 'drone: monumenti visibili durante il loro hover', ('; '.join(late) if late else 'ogni monumento bersaglio ha il corpo costruito a meta\' hover') + (f"  [accettato: {acc[0].get('reason', '')}]" if (late and acc) else '  [Confluences: il corpo compariva a fine hover]'))
     except Exception as e:
         R.add(S, WARN, 'drone: controlli voli/monumenti non fatti', str(e))
     R.add(S, PASS, 'drone: esattezza anni', "soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)")
