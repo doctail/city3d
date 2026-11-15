@@ -178,6 +178,53 @@
    ],
    "night_years": [
     2026
+   ],
+   "shots": [
+    {
+     "tag": "roman_a",
+     "year": 100,
+     "cam": [
+      -1300,
+      -1900,
+      750,
+      -800,
+      -350,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "Lugdunum: Fourvière theatre + Condate amphitheatre, from the south-east"
+    },
+    {
+     "tag": "roman_b",
+     "year": 100,
+     "cam": [
+      -250,
+      -900,
+      420,
+      -650,
+      -150,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "closer, between the theatre and the amphitheatre"
+    },
+    {
+     "tag": "now_day",
+     "year": 2026,
+     "cam": [
+      -415,
+      -4145,
+      1915,
+      194,
+      -141,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "same camera as the night cover, daylight"
+    }
    ]
   }
  },

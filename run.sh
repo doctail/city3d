@@ -65,6 +65,14 @@ echo "uso: $DEV"
 cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080, 32 campioni, ~3 min
   CV=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover');print(' '.join(map(str,c['cam'])),c.get('lens',40),' '.join(map(str,c['years']))) if c else print('')")
   [ -z "$CV" ] && { echo "nessuna camera 'cover' in city_$CITY.json"; return; }
+  SHOTS=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover',{});print('\n'.join(' '.join(str(v) for v in [s['tag'],s['year'],*s['cam'],s.get('lens',35),1 if s.get('night') else 0]) for s in c.get('shots',[])))")
+  if [ -n "$SHOTS" ]; then   # 15 nov: copertine con camera e anno propri (cover.shots), una per processo, in parallelo
+    while read TAG SY C1 C2 C3 C4 C5 C6 SL SN; do (
+      rm -rf out/cover_$TAG; CN=''; [ "$SN" = "1" ] && CN='--light night'
+      $PY build_render.py -- $D out/cover_$TAG --frames 1 $NF --only $(( NF - 200 )) --year $SY --cam $C1 $C2 $C3 $C4 $C5 $C6 --lens $SL --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep -E "fotogramma|rror"
+      cp out/cover_$TAG/$(printf $PAT $(( NF - 200 ))).jpg out/${CITY}_cover_$TAG.jpg
+    ) & done < <(echo "$SHOTS"); wait; ls -lh out/${CITY}_cover_*.jpg; return
+  fi
   set -- $CV; CAM="$1 $2 $3 $4 $5 $6"; LENS=$7; shift 7
   for Y in "$@"; do (   # 15 nov: un anno per processo, in parallelo (Lione: la scena costa ~30 min a processo, due in fila = 1 h)
     rm -rf out/cover_$Y
