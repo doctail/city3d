@@ -86,6 +86,7 @@ light(){   # versione leggera da caricare in chat (~55 MB): 960x540, bitrate fis
   ffmpeg -loglevel error -y -i "$1" -vf scale=960:-2 -c:v libx264 -preset fast -b:v 1300k -maxrate 1400k -bufsize 2800k -pix_fmt yuv420p -an "$2"; ls -lh "$2"
 }
 MODE=${1:-}
+echo "VERSIONE: $(git log -1 --oneline 2>/dev/null) | schedule_$CITY: $(python3 -c "import json;s=json.load(open('schedule_$CITY.json'));print(round(s['duration']),'s, lens',s.get('lens'))" 2>/dev/null || echo 'assente')"   # 15 nov: cosi' si vede subito se il pod ha il codice vecchio
 if [ -z "$MODE" ]; then
   echo "Manca la modalita'. Uso:  CITY=madrid bash run.sh preview | full | shorts | cover | profile | misura   (test = vecchia prova solo New York)"; exit 1
 fi
