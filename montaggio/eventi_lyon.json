@@ -74,32 +74,32 @@
    "sub": "May 1856"
   },
   {
-   "t_in": 316.95,
-   "t_out": 327.95,
+   "t_in": 314.73,
+   "t_out": 325.73,
    "title": "Basilica of Notre-Dame de Fourvière",
    "sub": "1872–84"
   },
   {
-   "t_in": 365.96,
-   "t_out": 382.96,
+   "t_in": 363.74,
+   "t_out": 380.74,
    "title": "The bridges are blown up",
    "sub": "Sept 1944"
   },
   {
-   "t_in": 425.88,
-   "t_out": 436.88,
+   "t_in": 423.66,
+   "t_out": 434.66,
    "title": "La Part-Dieu and its Crayon tower",
    "sub": "1977"
   },
   {
-   "t_in": 440.88,
-   "t_out": 445.88,
+   "t_in": 438.66,
+   "t_out": 443.66,
    "title": "Part-Dieu station opens",
    "sub": "1983"
   },
   {
-   "t_in": 503.73,
-   "t_out": 514.73,
+   "t_in": 499.8,
+   "t_out": 510.8,
    "title": "Musée des Confluences",
    "sub": "2014"
   }
@@ -397,8 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 316.95,
-   "t_out": 322.95,
+   "t_in": 314.73,
+   "t_out": 320.73,
    "date": "1872",
    "title": "A vow in stone",
    "lines": [
@@ -408,8 +408,8 @@
    "sober": false
   },
   {
-   "t_in": 322.95,
-   "t_out": 327.95,
+   "t_in": 320.73,
+   "t_out": 325.73,
    "date": "1884",
    "title": "The basilica stands",
    "lines": [
@@ -418,8 +418,8 @@
    "sober": false
   },
   {
-   "t_in": 365.96,
-   "t_out": 372.96,
+   "t_in": 363.74,
+   "t_out": 370.74,
    "date": "1944",
    "title": "The bridges fall",
    "lines": [
@@ -429,8 +429,8 @@
    "sober": true
   },
   {
-   "t_in": 372.96,
-   "t_out": 377.96,
+   "t_in": 370.74,
+   "t_out": 375.74,
    "date": "1944",
    "title": "Lyon is free",
    "lines": [
@@ -439,8 +439,8 @@
    "sober": true
   },
   {
-   "t_in": 377.96,
-   "t_out": 382.96,
+   "t_in": 375.74,
+   "t_out": 380.74,
    "date": "1946",
    "title": "Lafayette reopens",
    "lines": [
@@ -449,8 +449,8 @@
    "sober": false
   },
   {
-   "t_in": 387.01,
-   "t_out": 392.01,
+   "t_in": 384.79,
+   "t_out": 389.79,
    "date": "1952",
    "title": "Pont Pasteur reopens",
    "lines": [
@@ -459,8 +459,8 @@
    "sober": false
   },
   {
-   "t_in": 399.74,
-   "t_out": 405.74,
+   "t_in": 397.52,
+   "t_out": 403.52,
    "date": "1960",
    "title": "Barracks into business",
    "lines": [
@@ -470,8 +470,8 @@
    "sober": false
   },
   {
-   "t_in": 425.88,
-   "t_out": 430.88,
+   "t_in": 423.66,
+   "t_out": 428.66,
    "date": "1974",
    "title": "The metro",
    "lines": [
@@ -480,8 +480,8 @@
    "sober": false
   },
   {
-   "t_in": 430.88,
-   "t_out": 436.88,
+   "t_in": 428.66,
+   "t_out": 434.66,
    "date": "1975",
    "title": "Europe's biggest urban mall",
    "lines": [
@@ -491,8 +491,8 @@
    "sober": false
   },
   {
-   "t_in": 460.88,
-   "t_out": 465.88,
+   "t_in": 458.66,
+   "t_out": 463.66,
    "date": "1998",
    "title": "A world heritage hill",
    "lines": [
@@ -501,8 +501,8 @@
    "sober": false
   },
   {
-   "t_in": 503.73,
-   "t_out": 508.73,
+   "t_in": 499.8,
+   "t_out": 504.8,
    "date": "2014",
    "title": "Part-Dieu again",
    "lines": [
@@ -511,8 +511,8 @@
    "sober": false
   },
   {
-   "t_in": 508.73,
-   "t_out": 514.73,
+   "t_in": 504.8,
+   "t_out": 510.8,
    "date": "2014",
    "title": "Where two rivers meet",
    "lines": [
@@ -521,8 +521,8 @@
    "sober": false
   },
   {
-   "t_in": 522.62,
-   "t_out": 527.62,
+   "t_in": 518.69,
+   "t_out": 523.69,
    "date": "2023",
    "title": "Lyon today",
    "lines": [
@@ -557,26 +557,26 @@
    "title": "Floods and Boulevards"
   },
   {
-   "t_in": 363.16,
-   "t_out": 365.96,
+   "t_in": 360.94,
+   "t_out": 363.74,
    "num": "V",
    "title": "Bridges and Liberation"
   },
   {
-   "t_in": 396.94,
-   "t_out": 399.74,
+   "t_in": 394.72,
+   "t_out": 397.52,
    "num": "VI",
    "title": "Towers and Rivers"
   }
  ],
  "cta": {
-  "t_in": 611.2,
-  "t_out": 615.7,
+  "t_in": 581.1,
+  "t_out": 585.6,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 615.7,
-  "t_out": 623.7,
+  "t_in": 585.6,
+  "t_out": 593.6,
   "items": [
    "Wikipedia EN, Lugdunum",
    "Wikipedia EN, History of Lyon",

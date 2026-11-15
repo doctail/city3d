@@ -1,13 +1,13 @@
 Lyon: regia automatica (kit/regia_kit.py)
-Camera drone: 17 tappe in hover (162.0 s) e voli (408.8 s), anni None/s fra le voci, nessuno stacco; vmax 193.05, amax 116.4, jmax 168.43, clear_min 39.25, clear_ground_min 80.0
-Durata 10:23.7  fotogrammi 14969  inquadrature 3  stacco medio ogni 207.9 s
-Musica: waking_monument  b_start None  notte 583.6700678683027
+Camera drone: 17 tappe in hover (162.0 s) e voli (403.7 s), anni None/s fra le voci, nessuno stacco; vmax 193.05, amax 116.4, jmax 168.43, clear_min 42.57, clear_ground_min 80.0
+Durata 9:53.6  fotogrammi 14246  inquadrature 3  stacco medio ogni 197.9 s
+Musica: waking_monument  b_start None  notte 578.5891419723179
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5    -43.00  
-   9:43.7   2026.00  
+   9:38.6   2026.00  
 
 SOSTE (video -> anni):
   0:12.9-0:19.9  -43.0->-41.0  Lugdunum is founded (43 BC)  [forza 6.0, crowd]
@@ -49,24 +49,24 @@ SOSTE (video -> anni):
   4:27.3-4:33.3  1856.4->1856.4  The emperor visits  [forza 0.0]
   4:33.3-4:38.3  1857.0->1857.0  Under Fourvière  [forza 0.0]
   4:38.6-4:44.6  1857.1->1857.1  A street through the Presqu'île  [forza 0.0]
-  5:16.9-5:27.9  1872.0->1884.0  Basilica of Notre-Dame de Fourvière (1872–84)  [forza 5.0, bell]
-  5:16.9-5:22.9  1872.0->1872.0  A vow in stone  [forza 0.0]
-  5:22.9-5:27.9  1884.0->1884.0  The basilica stands  [forza 0.0]
-  6:06.0-6:23.0  1944.7->1944.7  The bridges are blown up (Sept 1944)  [forza 7.2, crash]
-  6:06.0-6:13.0  1944.7->1944.7  The bridges fall  [forza 0.0]
-  6:13.0-6:18.0  1944.7->1944.7  Lyon is free  [forza 0.0]
-  6:18.0-6:23.0  1946.0->1946.0  Lafayette reopens  [forza 0.0]
-  6:27.0-6:32.0  1952.0->1952.0  Pont Pasteur reopens  [forza 0.0]
-  6:39.7-6:45.7  1960.0->1960.0  Barracks into business  [forza 0.0]
-  7:05.9-7:16.9  1972.0->1977.0  La Part-Dieu and its Crayon tower (1977)  [forza 4.0, build]
-  7:05.9-7:10.9  1974.0->1974.0  The metro  [forza 0.0]
-  7:10.9-7:16.9  1975.0->1975.0  Europe's biggest urban mall  [forza 0.0]
-  7:20.9-7:25.9  1981.0->1983.0  Part-Dieu station opens (1983)  [forza 4.0, train]
-  7:40.9-7:45.9  1998.0->1998.0  A world heritage hill  [forza 0.0]
-  8:23.7-8:34.7  2012.0->2015.0  Musée des Confluences (2014)  [forza 4.0, chime]
-  8:23.7-8:28.7  2014.0->2014.0  Part-Dieu again  [forza 0.0]
-  8:28.7-8:34.7  2015.0->2015.0  Where two rivers meet  [forza 0.0]
-  8:42.6-8:47.6  2023.0->2023.0  Lyon today  [forza 0.0]
+  5:14.7-5:25.7  1872.0->1884.0  Basilica of Notre-Dame de Fourvière (1872–84)  [forza 5.0, bell]
+  5:14.7-5:20.7  1872.0->1872.0  A vow in stone  [forza 0.0]
+  5:20.7-5:25.7  1884.0->1884.0  The basilica stands  [forza 0.0]
+  6:03.7-6:20.7  1944.7->1944.7  The bridges are blown up (Sept 1944)  [forza 7.2, crash]
+  6:03.7-6:10.7  1944.7->1944.7  The bridges fall  [forza 0.0]
+  6:10.7-6:15.7  1944.7->1944.7  Lyon is free  [forza 0.0]
+  6:15.7-6:20.7  1946.0->1946.0  Lafayette reopens  [forza 0.0]
+  6:24.8-6:29.8  1952.0->1952.0  Pont Pasteur reopens  [forza 0.0]
+  6:37.5-6:43.5  1960.0->1960.0  Barracks into business  [forza 0.0]
+  7:03.7-7:14.7  1972.0->1977.0  La Part-Dieu and its Crayon tower (1977)  [forza 4.0, build]
+  7:03.7-7:08.7  1974.0->1974.0  The metro  [forza 0.0]
+  7:08.7-7:14.7  1975.0->1975.0  Europe's biggest urban mall  [forza 0.0]
+  7:18.7-7:23.7  1981.0->1983.0  Part-Dieu station opens (1983)  [forza 4.0, train]
+  7:38.7-7:43.7  1998.0->1998.0  A world heritage hill  [forza 0.0]
+  8:19.8-8:30.8  2012.0->2015.0  Musée des Confluences (2014)  [forza 4.0, chime]
+  8:19.8-8:24.8  2014.0->2014.0  Part-Dieu again  [forza 0.0]
+  8:24.8-8:30.8  2015.0->2015.0  Where two rivers meet  [forza 0.0]
+  8:38.7-8:43.7  2023.0->2023.0  Lyon today  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -79,17 +79,16 @@ ANNO OGNI 30 s:
   3:30   1832.1  (0.39 anni/s)
   4:00   1852.0  (0.00 anni/s)
   4:30   1856.4  (0.00 anni/s)
-  5:00   1864.2  (0.46 anni/s)
-  5:30   1887.3  (1.60 anni/s)
-  6:00   1935.1  (1.60 anni/s)
-  6:30   1952.0  (0.00 anni/s)
-  7:00   1968.5  (0.60 anni/s)
-  7:30   1987.1  (1.00 anni/s)
-  8:00   2003.2  (0.37 anni/s)
-  8:30   2013.7  (0.27 anni/s)
-  9:00   2023.7  (0.05 anni/s)
-  9:30   2025.3  (0.05 anni/s)
-  10:00   2026.0  (0.00 anni/s)
+  5:00   1864.7  (0.50 anni/s)
+  5:30   1890.8  (1.60 anni/s)
+  6:00   1938.7  (1.60 anni/s)
+  6:30   1952.2  (0.96 anni/s)
+  7:00   1969.8  (0.60 anni/s)
+  7:30   1989.3  (1.00 anni/s)
+  8:00   2004.3  (0.39 anni/s)
+  8:30   2014.8  (0.27 anni/s)
+  9:00   2023.9  (0.05 anni/s)
+  9:30   2025.5  (0.05 anni/s)
 
 Velocita fuori dalle soste: mediana 0.60 anni/s, max 30.0 anni/s
 Soste: 57, 389 s (68% del giorno)

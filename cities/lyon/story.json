@@ -161,7 +161,25 @@
     ],
     "conf": "low"
    }
-  ]
+  ],
+  "cover": {
+   "cam": [
+    -415,
+    -4145,
+    1915,
+    194,
+    -141,
+    0
+   ],
+   "lens": 35,
+   "years": [
+    1793.7,
+    2026
+   ],
+   "night_years": [
+    2026
+   ]
+  }
  },
  "sources": {
   "S1": {
@@ -1379,7 +1397,7 @@
     "y1": 1884,
     "dur": 6,
     "caption": "Basilica of Notre-Dame de Fourvière (1872–84)",
-    "target": "Basilica of Fourvière",
+    "target": "area:[45.76228,4.82259,200]",
     "shot": "medium",
     "fx": "bell",
     "src": [
@@ -1432,7 +1450,7 @@
     "y1": 2014.97,
     "dur": 6,
     "caption": "Musée des Confluences (2014)",
-    "target": "Musée des Confluences",
+    "target": "area:[45.73268,4.81816,200]",
     "shot": "medium",
     "fx": "chime",
     "src": [
@@ -1442,7 +1460,8 @@
    }
   ],
   "rmin": 1.0,
-  "rmax": 8.0
+  "rmax": 8.0,
+  "night_hold": 15
  },
  "montaggio": {
   "style": "mattia",
@@ -2102,5 +2121,14 @@
  },
  "qa": {
   "accept": []
+ },
+ "thumbnail_hook": {
+  "year": 1793.7,
+  "camera": "cover cam: oblique from the south over the Presqu'île (same camera for both halves)",
+  "shows": "LEFT: the siege of Lyon in 1793, flames and smoke over the dense city; RIGHT: the same view at night in 2026 with lights",
+  "src": [
+   "S4"
+  ],
+  "note": "fire flames 20, smoke 6 (story fires); check on a 1080p cover frame at 168 px before publishing; if the fire is too small, zoom with --lbox"
  }
 }
