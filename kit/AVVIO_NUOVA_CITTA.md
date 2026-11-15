@@ -40,6 +40,16 @@ Prompt to paste at the start of a new chat:
 - The hook frame must really be visible in the 3D render (Valencia's 1957 flood water was not): check it with a CPU frame before the pod.
 - Add a `thumbnail_hook` key to story.json: year, camera, what it shows.
 
+## Thumbnail layout (15/11/2026, from the 7 Valencia thumbnails: 131K winner vs 12-60 view flops; hypothesis)
+- Split screen, BOTH halves full of city: the left half must not be empty field (Valencia v1: a small red patch on green; the 131K winner had a dense Roman city). If the first year is a small town, zoom on it until it fills the half.
+- Thick white sans (Inter ExtraBold) for the city name, black outline; years in yellow with outline; the right label is a year or "NOW", never thin letter-spaced type. Saturation x1.4, contrast x1.2.
+- Generate with `python -m kit.thumb_kit <slug> --left A.jpg --right B.jpg --title NAME --ly YEAR --lbox x,y,w --rbox x,y,w` (CPU frames from the QA, free). Check at 168 px.
+- Honest limit: a near-clone of the winner's design got 59 views, so the thumbnail is necessary, not sufficient. The gate is per video (Mattia Maps, 331 subs: Valencia 131K, Santiago 738).
+
+## Reading retention (15/11/2026)
+- Do not read a retention curve under about 3,000 impressions: a few dozen viewers, many from Reddit/direct links, say nothing about the feed.
+- Valencia's first curve: plateau at 28% from 2:30 to 6:30 (the middle is fine), but 50% lost by 0:30. The first 30 s count in the first test too: cold open of the hook frame, no slow intro. Working only on clicks without the opening makes the first test worse.
+
 ## Go / no-go gates (14/11/2026, thresholds provisional: recalibrate after 3 more videos)
 1. BEFORE any data work: free city (no relevant 3D timelapse above 5K views in 45 days, or a clearly different angle), per-building year data, AND a spectacular visible event (the hook frame). If one is missing, do not produce.
 2. BEFORE the story: a packaging check (30 min, free): thumbnail + title + hook frame rendered with one CPU frame, compared at 168 px in a feed mockup with the competitors (analisi/ctr/thumbs/feed_mockup.jpg). It must read in 1 second and its promise must be in the first 30-60 s of the video.
