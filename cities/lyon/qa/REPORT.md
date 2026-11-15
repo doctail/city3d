@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-15 13:10. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-15 17:55. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -80,7 +80,7 @@ Generato da `python -m kit.qa` il 2026-11-15 13:10. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (5 s)
+- **PASS** costo dei cambi (7 s)
   - oggetti citta' 1729, cambi in tutto il video 44925, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 191 m/s (limite 250), mediana 21
@@ -100,6 +100,8 @@ Generato da `python -m kit.qa` il 2026-11-15 13:10. Esito complessivo: **WARN**
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **WARN** drone: monumenti visibili durante il loro hover
   - Saint-Jean Cathedral: corpo dal 1213.8, hover centrato su 1187.5  [accettato: Saint-Jean hover (1180-1195, 'cathedral is begun') shows the foundation only: the body appears at 1213.8. Accepted because the full render was already running (15/11); if the segment 96-102 s looks empty, set phases to y 1180 / y1 1190 and re-render frames ~2300-2500 only.]
+- **WARN** drone: distanza della camera
+  - mediana 930 m equivalenti a 35 mm (obiettivo 30 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
