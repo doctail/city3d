@@ -69,7 +69,7 @@ cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080
   if [ -n "$SHOTS" ]; then   # 15 nov: copertine con camera e anno propri (cover.shots), una per processo, in parallelo
     while read TAG SY C1 C2 C3 C4 C5 C6 SL SN; do (
       rm -rf out/cover_$TAG; CN=''; [ "$SN" = "1" ] && CN='--light night'
-      $PY build_render.py -- $D out/cover_$TAG --frames 1 $NF --only $(( NF - 200 )) --year $SY --cam $C1 $C2 $C3 $C4 $C5 $C6 --lens $SL --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep -E "fotogramma|rror"
+      $PY build_render.py -- $D out/cover_$TAG --frames 1 $NF --only $(( NF - 200 )) --year $SY --cam $C1 $C2 $C3 $C4 $C5 $C6 --lens $SL --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep --line-buffered -E "fotogramma|rror"
       cp out/cover_$TAG/$(printf $PAT $(( NF - 200 ))).jpg out/${CITY}_cover_$TAG.jpg
     ) & done < <(echo "$SHOTS"); wait; ls -lh out/${CITY}_cover_*.jpg; return
   fi
@@ -78,7 +78,7 @@ cover(){   # copertina: camera e anni da city_<citta>.json -> "cover"; 1920x1080
     rm -rf out/cover_$Y
     # "night_years" in cover: quegli anni si fanno di notte (Siviglia: 2026 notturno)
     CN=$($PY -c "import json;c=json.load(open('city_$CITY.json')).get('cover',{});print('--light night' if $Y in c.get('night_years',[]) else '')")
-    $PY build_render.py -- $D out/cover_$Y --frames 1 $NF --only $(( NF - 200 )) --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep -E "fotogramma|rror"
+    $PY build_render.py -- $D out/cover_$Y --frames 1 $NF --only $(( NF - 200 )) --year $Y --cam $CAM --lens $LENS --res 1920 1080 --samples 32 --device $DEV --schedule $SCHED $CARGS $CN 2>&1 | grep --line-buffered -E "fotogramma|rror"
     cp out/cover_$Y/$(printf $PAT $(( NF - 200 ))).jpg out/${CITY}_cover_$Y.jpg
   ) & done; wait; ls -lh out/${CITY}_cover_*.jpg
 }
@@ -102,10 +102,10 @@ if [ "$MODE" = "preview" ]; then
   rm -rf out/prev out/prevn out/prevmix
   [ "${PREVIEW_NIGHT:-0}" = "1" ] || NT=0   # 29 ott: la notte nell'anteprima ricostruisce la scena da capo (+7-20 min); di base no
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))
-  $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
+  $PY build_render.py -- $D out/prev --frames 1 $LASTD --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
   if [ "$NT" -gt 0 ]; then   # notte: stessa numerazione, passata separata (materiali notturni fissi)
     F0N=$(( ( (NT + 120 - 1 + 11) / 12 ) * 12 + 1 ))
-    $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror|RRORE"
+    $PY build_render.py -- $D out/prevn --night --frames $F0N $NF --step 12 --res 960 540 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep --line-buffered -E "FATTO|Error|Traceback|rror|RRORE"
   fi
   PV=out/prev
   if [ "$NT" -gt 0 ]; then uv pip install -q -p $PY opencv-python-headless numpy; $PY dusk.py out/prev out/prevn out/prevmix $NT $NF 12; PV=out/prevmix; fi
@@ -136,7 +136,7 @@ if [ "$MODE" = "misura" ]; then
   for LK in base lite; do
     SM=8; [ "$LK" = "lite" ] && SM=6
     step "MISURA look $LK: fotogrammi $F0M-$((F0M+23)), 1920x1080, $SM campioni"
-    rm -rf /tmp/mis; LOOK=$LK $PY build_render.py -- $D /tmp/mis --frames $F0M $((F0M+23)) --res 1920 1080 --samples $SM --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "\[build\] (look|monumenti uniti|render|fotogramma)|rror|RRORE" | awk '{print} /fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    MEDIA %s senza i primi 2: %.2f s/fotogramma\n", "'$LK'", s/k}'
+    rm -rf /tmp/mis; LOOK=$LK $PY build_render.py -- $D /tmp/mis --frames $F0M $((F0M+23)) --res 1920 1080 --samples $SM --device $DEV --schedule $SCHED $CARGS 2>&1 | grep --line-buffered -E "\[build\] (look|monumenti uniti|render|fotogramma)|rror|RRORE" | awk '{print} /fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    MEDIA %s senza i primi 2: %.2f s/fotogramma\n", "'$LK'", s/k}'
   done
   step "FINITO misura: manda le due righe MEDIA (e lo schermo)"; exit 0
 fi
@@ -144,10 +144,10 @@ if [ "$MODE" = "profile" ]; then
   step "PROFILO: 12 fotogrammi per variante (dove va il tempo per fotogramma)"
   for V in "--denoiser optix" "--denoiser oidn" "--denoiser none" "--denoiser optix --samples 2" "--denoiser optix --res 960 540"; do
     rm -rf /tmp/prof; echo "--- variante: $V"
-    PF=$(( NF * 7 / 10 )); $PY build_render.py -- $D /tmp/prof $V --frames $PF $(( PF + 11 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
+    PF=$(( NF * 7 / 10 )); $PY build_render.py -- $D /tmp/prof $V --frames $PF $(( PF + 11 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED $CARGS 2>&1 | grep --line-buffered -E "fotogramma|denoiser|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} !/fotogramma/{print} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}' 
   done
   if [ "$NT" -gt 0 ]; then rm -rf /tmp/prof; echo "--- notte (optix)"
-    $PY build_render.py -- $D /tmp/prof --night --denoiser optix --frames $(( NT + 200 )) $(( NT + 211 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "fotogramma|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}'
+    $PY build_render.py -- $D /tmp/prof --night --denoiser optix --frames $(( NT + 200 )) $(( NT + 211 )) --res 1920 1080 --samples 8 --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep --line-buffered -E "fotogramma|rror" | awk '/fotogramma/{n++; if(n>2){split($4,t,"s"); s+=t[1]; k++}} END{if(k) printf "    media senza i primi 2: %.2f s/fotogramma\n", s/k}'
   fi
   step "FINITO profilo: manda lo screenshot"; exit 0
 fi
@@ -167,7 +167,7 @@ print(';'.join(' '.join(map(str,(x+['-','-'])[:6])) for x in L))")
     SS=$SCHED; [ "$5" != "-" ] && SS=$5; BN=""; [ "$6" != "-" ] && BN="--bin $6"
     mkdir -p out/short$1; find out/short$1 -name "*.jpg" -size 0 -delete
     echo "--- short $1: fotogrammi $2-$3 passo $4, regia $SS $BN"
-    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep -E "FATTO|Error|Traceback|rror|RRORE"
+    $PY build_render.py -- $D out/short$1 --frames $2 $3 --step $4 --res 1080 1920 --samples ${SAMPLES:-8} --device $DEV --schedule $SS $BN $CARGS 2>&1 | grep --line-buffered -E "FATTO|Error|Traceback|rror|RRORE"
     [ "$(ls out/short$1/*.jpg 2>/dev/null | wc -l)" -gt 0 ] || { echo "ERRORE: lo short $1 non ha fotogrammi (GPU?). Mi fermo."; exit 1; }
   done
   for n in $NAMES; do ffmpeg -loglevel error -y -framerate 24 -pattern_type glob -i "out/short$n/*.jpg" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p out/${CITY}_short$n.mp4; done
@@ -179,12 +179,12 @@ if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))   # giorno fino a 10 s dopo l'inizio della notte (tramonto)
-  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS ${STOP_AVG:+--stop-avg $STOP_AVG --stop-every ${STOP_EVERY:-500}} 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
+  $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS ${STOP_AVG:+--stop-avg $STOP_AVG --stop-every ${STOP_EVERY:-500}} 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
   # 30 ott: se il giorno si e' fermato (STOP o errore) non si passa alla notte ne' al montaggio di un video incompleto
   ND=$(ls out/full/*.jpg 2>/dev/null | wc -l); [ "$ND" -lt "$LASTD" ] && { echo "GIORNO INCOMPLETO: $ND/$LASTD fotogrammi. Rilancia lo stesso comando (riprende da qui) e manda in chat la riga STOP."; exit 3; }
   if [ "$NT" -gt 0 ]; then
     step "4b/5 NOTTE (fotogrammi $(( NT + 120 ))-$NF)"; mkdir -p out/night; find out/night -name "*.jpg" -size 0 -delete
-    $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
+    $PY build_render.py -- $D out/night --night --frames $(( NT + 120 )) $NF --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED_N $CARGS 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
   fi
   step "5/5 video"
   bash pack.sh out/full   # eventuali png di vecchie partenze -> jpg
@@ -202,7 +202,7 @@ if [ "$MODE" = "full" ]; then
 fi
 step "4/5 render 240 fotogrammi 1920x1080"
 rm -rf out/frames
-$PY build_render.py -- $D out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep -E "\[build\]|Error|Traceback|rror|RRORE"
+$PY build_render.py -- $D out/frames --frames 1 240 --res 1920 1080 --samples 16 --device $DEV 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
 
 step "5/5 video"
 ffmpeg -loglevel error -y -framerate 24 -i out/frames/%04d.png -c:v libx264 -crf 17 -pix_fmt yuv420p out/test_nyc.mp4
