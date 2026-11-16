@@ -2320,7 +2320,13 @@
    "max": 14,
    "no_ai": "NO AI: every frame is rendered from open data"
   },
-  "label_years": true
+  "label_years": true,
+  "title_at": [
+   -5,
+   -4,
+   -3,
+   -2
+  ]
  },
  "qa": {
   "accept": [
