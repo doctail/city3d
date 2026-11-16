@@ -135,3 +135,6 @@ Result: a video that exists, but the session was far slower and more expensive t
 [ ] Overlay and audio produced locally; final merge command delivered.
 [ ] All of R7 delivered in one message.
 [ ] Notes updated (Nodum LESSONS, STATUS; this file) with measured numbers.
+
+### R12. Alignment (owner's order, 16/11/2026): everything merged to everything, always
+At every delivery and before closing (and at every stop) each repo touched (`doctail/city3d`, `doctail/athens-properties`) has the working branch merged into `main` (fast-forward or merge, push to `main`), and Nodum is updated with the same state as the chat: `STATUS Year Built`, `BACKLOG Year Built`, the city note, `LEDGER` if credits were spent, `LESSONS` if something was learned. Nothing stays only in the chat or only on a branch. If the Nodum MCP server is disconnected, use `kit/atlante/strumenti/nodum_mcp_curl.py` (the token is injected by the proxy). Before saying "done", check that `main` and Nodum contain what was said.
