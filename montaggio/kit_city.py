@@ -73,6 +73,9 @@ T = {
     'labels_from': round(rt + 3.4, 2),                                   # nessuna etichetta sopra il titolo
     'sepia_rgb': mont.get('sepia_rgb', [120, 82, 38]),
 }
+if mont.get('title_at'):   # 16 nov (Lione): con story_lead esplicito il capitolo I (rt+0.6) cade sul titolo (rt+0.2..rt+3.3): il titolo si sposta nel riavvolgimento
+    T['title'] = [float(x) for x in mont['title_at']]
+
 
 # ---- fine video del pacing story: HUD fuori prima di CTA / fonti; la carta delle fonti sostituisce la schermata finale ----
 EP = S.get('end_plan') or {}
