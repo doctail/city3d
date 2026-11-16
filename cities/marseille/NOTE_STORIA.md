@@ -107,15 +107,3 @@ Vuoti (per anni, build precedente): -48,3 -> 415 (aggiunti 100, 290); 1871,6 -> 
 
 ## 16/11/2026 - ANNULLATE le note sul cold open
 Per ordine del proprietario NESSUN cold open, mai (kit/AVVIO_NUOVA_CITTA.md R14). Le righe 'Cold open' qui sopra (finestre 450,12-459,12 s, hover 1943 come apertura) sono storiche e NON vanno usate: il video parte dal 600 a.C. e il Saint-Jean 1943 e' solo un capitolo (7:27). L'hover 1943 resta una normale sosta del volo.
-
-## Round 5 (16/11/2026): crescita e altezze delle zone
-Nota tecnica: `era_height` e' in METRI (non piani). Il valore 3-5 m dell'arcaica era gia' 1-2 piani: l'effetto "alto" viene dalla densita' dei lotti (57 edifici/ha, lotti 7,6 x 22 m del kit) e dal tetto rosso del preset 'mediterranean' (nessuna opzione per zona). Densita' e colore NON modificabili da story.
-Fonti: S1 (4 sec. a.C. ~50.000 abitanti), S23 (arcaica ~20 ha; mura fine V, IV, II sec.), S33 nuova (snippet: 2a meta' VI sec., cave d'argilla per mattoni di "mura e abitazioni, in rapida espansione"; abitato arcaico presso Saint-Laurent): nessuna fonte aperta dice come crebbe la citta' anno per anno.
-| zona | born | era_height (m) | fonte | conf |
-|---|---|---|---|---|
-| Archaic Massalia | [-600,-585] -> [-600,-480] | [3,5] -> [2,5,4] | S23, S33 | [Likely] 20 ha; crescita su ~120 anni [Guessing] (prudente) |
-| Hellenistic Massalia | [-400,-120] -> [-480,-120] | [4,7] -> [3,5,6] | S1, S23 | [Guessing]: 2-3 piani; insulae da 3-4 piani dal I sec. a.C. non modellate |
-| Saint-Victor | [420,1100] invariato | [4,8] invariato | S11 | [Likely] (abbazia 415, chiesa 1020-1040) |
-| Medieval | [900,1350] invariato | [5,10] invariato | S21, S26, S1 | [Likely] (gia' 450 anni, 2-3 piani) |
-| Louis XIV | [1666,1800] da [1666,1790] | [8,14] invariato | S24 | [Likely]: 1666 decisione, 1694 cinta; riempimento lento |
-Poligoni, seed, soste, cartelli: invariati. Effetto atteso: nel hover -600/-590 si vedono pochi edifici (solo ~8% della zona, quelli vicini al seed): colonia appena fondata.
