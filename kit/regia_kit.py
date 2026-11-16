@@ -85,6 +85,7 @@ class Data:
         B = json.load(open(os.path.join(ddir, 'buildings.json')))
         hp = os.path.join(ddir, 'hist.json')
         H = json.load(open(hp)) if os.path.exists(hp) else []
+        H = [o for o in H if o.get('kit') != 'block']   # blocks_pass (geometria da pianta storica): non contano come attivita', il ritmo della regia non cambia
         self.has_hist = os.path.exists(hp)
         y = np.array([o['y'] for o in B] + [o['y'] for o in H], float)
         d = np.array([9999.0] * len(B) + [o.get('d', 9999) for o in H], float)

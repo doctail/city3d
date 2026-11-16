@@ -282,6 +282,31 @@ def clear_pass(ctx, D, hist, rnd):
     return hist, n
 
 
+def blocks_pass(ctx, D, blds, hist, rnd):
+    """OPZIONALE (default invariato: senza DATA/hist_blocks.json non fa nulla). Predecessori con geometria da fonte esterna
+    (es. isolati di una pianta storica georeferenziata): DATA/hist_blocks.json = [{"name", "r": anello locale m, "born": [lo, hi, moda]
+    (triangolare), "h": [lo, hi] m, "d": anno di morte (un fuoco 'destroy' la anticipa), "avoid_at": anno a cui si tolgono le aree
+    gia' occupate da edifici/predecessori vivi}]. Gli isolati si lottizzano come split(). Marcati kit='block'."""
+    f = os.path.join(D, 'hist_blocks.json')
+    if not os.path.exists(f): return []
+    with open(f) as fh: spec = json.load(fh)
+    out = []
+    for e in spec:
+        at = float(e.get('avoid_at', e.get('d', 2026)) or 2026)
+        B = _poly(e['r']); bt = B.buffer(2)
+        occ = [_poly(b['r']).buffer(0.8) for b in blds if b['y'] <= at and bt.intersects(_poly(b['r'])) and len(b.get('r', [])) >= 3]
+        occ += [_poly(h['r']).buffer(0.8) for h in hist if h['y'] <= at < h.get('d', 99999) and bt.intersects(_poly(h['r']))]
+        void = B.difference(unary_union(occ)) if occ else B
+        lo, hi, mo = e.get('born', [1650, 1925, 1800]); hl, hh = e.get('h', [10.0, 16.0])
+        for part in _polys(void):
+            for q in (g for pp in _polys(part.buffer(-0.3)) for g in split(pp)):
+                if q.area < 25: continue
+                born = max(ctx.start + 1, rnd.triangular(lo, hi, mo))
+                out.append({'r': _ring_out(q), 'h': round(rnd.uniform(hl, hh), 1), 'y': round(born, 2), 'd': float(e.get('d', 99999)),
+                            'zone': e.get('name', 'blocks'), 'kit': 'block'})
+    return out
+
+
 def lost_pass(ctx):
     out = []
     for l in ctx.H.get('lost', []) or []:
@@ -312,6 +337,8 @@ def fires_pass(ctx, blds, hist, rnd):
             c = _poly(h['r']).centroid
             if not FP.contains(c): continue
             d0 = h.get('d', 99999); h['d'] = death(c.x, c.y); n += 1
+            h['dfine'] = 1
+            if h.get('kit') == 'block': continue     # isolati da pianta storica: muoiono nel fuoco, nessuna rinascita (le case nuove sono gli edifici attuali)
             r0 = reb + rnd.uniform(0, 4)
             if d0 - r0 >= 5:
                 hist.append(dict(h, y=round(r0, 2), d=d0, h=_height(None, r0, rnd, (h['h'] * 0.9, h['h'] * 1.15)), kit='fire'))
@@ -320,7 +347,7 @@ def fires_pass(ctx, blds, hist, rnd):
             try: c = _poly(b['r']).centroid
             except Exception: continue
             if not FP.contains(c): continue
-            hist.append({'r': b['r'], 'h': b['h'], 'y': b['y'], 'd': death(c.x, c.y), 'kit': 'fire'})
+            hist.append({'r': b['r'], 'h': b['h'], 'y': b['y'], 'd': death(c.x, c.y), 'kit': 'fire', 'dfine': 1})
             b.setdefault('y_kit0', b['y']); b['y'] = round(reb + rnd.uniform(0, 4), 2); n += 1
         burned[f.get('name', 'fire')] = n
     return burned
@@ -492,6 +519,7 @@ def build(story, D=None, seed=11, quiet=False):
     gut, filled = gutting_pass(ctx, good, tree, random.Random(seed + 1))
     hist += gut + lost_pass(ctx)
     hist, ncl = clear_pass(ctx, D, hist, random.Random(seed + 4))
+    hist += blocks_pass(ctx, D, good, hist, random.Random(seed + 5))
     burned = fires_pass(ctx, good, hist, random.Random(seed + 2))
     if any('y_kit0' in b for b in blds) or touched:
         json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w'))

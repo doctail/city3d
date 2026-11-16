@@ -1,6 +1,6 @@
 # QA marseille
 
-Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-16 10:59. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -25,7 +25,7 @@ Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
 - **PASS** roads.json
   - 177736 voci
 - **PASS** hist.json
-  - 9120 voci
+  - 9589 voci
 - **PASS** land.json
   - 134 voci
 - **PASS** landmarks.json
@@ -33,7 +33,7 @@ Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
 - **PASS** dem.npz
 - **PASS** anni edifici (154128)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di -600 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **PASS** hist (9120 predecessori)
+- **PASS** hist (9589 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
 - **PASS** anni strade (177736 nastri)
   - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 7735
@@ -43,11 +43,11 @@ Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
 - **PASS** Archaic Massalia (Saint-Laurent and Moulins hills) nel 1500
   - 1284 edifici vivi (57/ha, copertura 48%) contro 881 (39/ha, copertura 51%) nel 2026: rapporto 1.46
 - **PASS** Archaic Massalia (Saint-Laurent and Moulins hills) nel 1800
-  - 1300 edifici vivi (57/ha, copertura 50%) contro 881 (39/ha, copertura 51%) nel 2026: rapporto 1.48
+  - 1359 edifici vivi (60/ha, copertura 52%) contro 881 (39/ha, copertura 51%) nel 2026: rapporto 1.54
 - **PASS** Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills) nel 1500
   - 2594 edifici vivi (46/ha, copertura 44%) contro 1289 (23/ha, copertura 52%) nel 2026: rapporto 2.01
 - **PASS** Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills) nel 1800
-  - 2551 edifici vivi (45/ha, copertura 46%) contro 1289 (23/ha, copertura 52%) nel 2026: rapporto 1.98
+  - 2694 edifici vivi (48/ha, copertura 48%) contro 1289 (23/ha, copertura 52%) nel 2026: rapporto 2.09
 - **PASS** Saint-Victor and the south shore nel 1500
   - 1181 edifici vivi (34/ha, copertura 40%) contro 527 (15/ha, copertura 50%) nel 2026: rapporto 2.24
 - **PASS** Saint-Victor and the south shore nel 1800
@@ -55,7 +55,7 @@ Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
 - **PASS** Medieval Marseille (Ville haute and Ville basse) nel 1500
   - 3487 edifici vivi (40/ha, copertura 39%) contro 1748 (20/ha, copertura 45%) nel 2026: rapporto 1.99
 - **PASS** Medieval Marseille (Ville haute and Ville basse) nel 1800
-  - 3402 edifici vivi (39/ha, copertura 40%) contro 1748 (20/ha, copertura 45%) nel 2026: rapporto 1.95
+  - 3614 edifici vivi (41/ha, copertura 42%) contro 1748 (20/ha, copertura 45%) nel 2026: rapporto 2.07
 - **PASS** Louis XIV extension (1666-1700) nel 1800
   - 3466 edifici vivi (43/ha, copertura 53%) contro 2679 (33/ha, copertura 56%) nel 2026: rapporto 1.29
 
@@ -67,19 +67,19 @@ Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
   - corridoi_-500.png
 - **WARN** 1800: 6 aree vuote allungate
   - #1 217x49 m a (43.29936,5.36285); #2 133x16 m a (43.29860,5.37660); #3 206x24 m a (43.29820,5.38235); #4 329x18 m a (43.29603,5.37157); #5 179x39 m a (43.29518,5.37396); #6 168x29 m a (43.28969,5.36744) — corridoi_1800.png
-- **WARN** 1800: 3 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #7 1996x71 m a (43.29722,5.37314); #8 369x18 m a (43.28944,5.36347); #9 340x23 m a (43.29784,5.37453)
+- **WARN** 1800: 4 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #7 1556x69 m a (43.29722,5.37371); #8 492x42 m a (43.29838,5.36322); #9 369x18 m a (43.28944,5.36347); #10 340x23 m a (43.29784,5.37453)
 - **WARN** 1900: 8 aree vuote allungate
   - #1 290x64 m a (43.29970,5.36475); #2 217x49 m a (43.29936,5.36285); #3 133x16 m a (43.29860,5.37660); #4 206x24 m a (43.29820,5.38235); #5 329x18 m a (43.29603,5.37157); #6 138x26 m a (43.29577,5.38309) — corridoi_1900.png
-- **WARN** 1900: 4 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #9 1971x75 m a (43.29720,5.37322); #10 588x74 m a (43.30428,5.36665); #11 372x18 m a (43.28944,5.36347); #12 344x24 m a (43.29784,5.37458)
+- **WARN** 1900: 5 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #9 1540x73 m a (43.29720,5.37379); #10 588x74 m a (43.30428,5.36665); #11 492x42 m a (43.29838,5.36322); #12 372x18 m a (43.28944,5.36347); #13 344x24 m a (43.29784,5.37458)
 - **WARN** 1950: 9 aree vuote allungate
   - #1 290x64 m a (43.29970,5.36475); #2 217x49 m a (43.29936,5.36285); #3 133x16 m a (43.29860,5.37660); #4 206x24 m a (43.29820,5.38235); #5 222x53 m a (43.29670,5.36404); #6 329x18 m a (43.29603,5.37157) — corridoi_1950.png
 
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (6 s)
-  - oggetti citta' 1265, cambi in tutto il video 34393, max in un fotogramma 420 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
+  - oggetti citta' 1267, cambi in tutto il video 34447, max in un fotogramma 422 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 195 m/s (limite 250), mediana 8
 - **PASS** drone: accelerazione massima

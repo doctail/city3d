@@ -379,6 +379,7 @@ MID = ST.get('mid') or ['#d6c3a0', '#c9a77e', '#b5876a', '#e0d2b5', '#a9604a', '
 GLASS = ST.get('glass') or ['#4f7fa8', '#5c89b0', '#3f6d93', '#6f98b8', '#4a7798', '#7fa6c2']
 ROOF = ST.get('roof') or ['#6b6862', '#8a8478', '#5a5752', '#9c968a', '#6f7a5e', '#b3aca0', '#7d6f62']
 BIN = float(opt('--bin', 1, str(CITY.get('bin', 4))))   # Roma: 10 (2.800 anni: con 4 troppi blocchi)
+FINE_D = float(CITY.get('dbin_fine', 0.02))   # anni: larghezza del blocco di demolizione per gli oggetti 'dfine'
 DBIN = float(CITY.get('dbin', BIN))   # demolizioni a gruppi di DBIN anni (Parigi: 8): meno oggetti che cambiano
 CHUNKS = []; polys = []; polys_y = []
 def add_bld(bm, col, vyear, vdie, b):
@@ -463,7 +464,8 @@ CM = city_mat(); ZBASE = {}
 def ckey(b_):
     # 'y1': cantiere lungo (es. Plaza de Espana 1914-1929): blocco a parte, cresce da y a y1 invece che nella durata standard
     dd_ = b_.get('d', 99999); y1_ = b_.get('y1', 0)
-    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), int(dd_ // DBIN) if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_))
+    w_ = FINE_D if b_.get('dfine') else DBIN   # dfine (kit, fuochi 'destroy'): demolizione in blocchi stretti, il blocco scala da d0 (con dbin 50 spariva dal 1900)
+    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), (dd_ // w_) * w_ if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_), w_)
 blds.sort(key=ckey)
 cur = None; nv = 0
 def flush(cur):
@@ -472,7 +474,7 @@ def flush(cur):
     o_ = obj(f'city_{k_[0]}_{k_[1]}_{k_[2]}_{k_[3]}', bm_, CM); m_ = o_.data; m_.color_attributes.active_color_name = 'col'
     o_.location.z = float(k_[2]); ZBASE[o_.name] = float(k_[2])   # fascia di quota: la scala in z parte da qui
     m_.attributes.new('yb', 'FLOAT', 'POINT').data.foreach_set('value', vy_); m_.attributes.new('yd', 'FLOAT', 'POINT').data.foreach_set('value', vd_)
-    CHUNKS.append({'obj': o_, 'b0': k_[0] if k_[3] else k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'span': (k_[3] - k_[0]) if k_[3] else None, 'd0': (k_[1] * DBIN if k_[1] != 99999 else None), 'd1': ((k_[1] + 1) * DBIN if k_[1] != 99999 else None)})
+    CHUNKS.append({'obj': o_, 'b0': k_[0] if k_[3] else k_[0] * BIN, 'b1': (k_[0] + 1) * BIN, 'span': (k_[3] - k_[0]) if k_[3] else None, 'd0': (k_[1] if k_[1] != 99999 else None), 'd1': ((k_[1] + k_[4]) if k_[1] != 99999 else None)})
     return len(m_.vertices)
 for b in blds:
     k_ = ckey(b)

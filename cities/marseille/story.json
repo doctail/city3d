@@ -2514,7 +2514,7 @@
     "conf": "medium",
     "shot": "wide",
     "target": "area:[43.2967,5.3655,330]",
-    "note": "Counts vary by source: 1,400-1,500 buildings; 20,000-30,000 expelled. The pre-1943 houses shown in the render are approximated from the 1940 German plan (the 1940 block polygons are NOT used as geometry; the render covers ~2/3 of their area): say 'approximated from', never 'follows', in the description. Round 3: card moved before the hover (y 1943.02, 'condemned') so that the 9 s hover has no card text (cold open window clean)."
+    "note": "Counts vary by source: 1,400-1,500 buildings; 20,000-30,000 expelled. The pre-1943 houses shown in the render: about 60% of the footprint follows the 1940 German plan block outlines (45 blocks, BnF Gallica), extruded; the rest is generated fill; heights and construction dates are estimated (round 5, yb-modeler: hist_blocks.json). Say 'block outlines follow the plan, buildings are estimated', never 'follows the plan' without the reservation, in the description. Round 3: card moved before the hover (y 1943.02, 'condemned') so that the 9 s hover has no card text (cold open window clean)."
    },
    {
     "y": 1945.67,
@@ -2718,7 +2718,7 @@
     "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
     "Streets and place names: © OpenStreetMap contributors (ODbL)",
     "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
-    "Saint-Jean quarter before 1943: approximated from the 1940 German city plan, BnF Gallica (public domain)",
+    "Saint-Jean quarter before 1943: block outlines follow the 1940 German plan (BnF Gallica, public domain); heights, dates and gaps are estimated",
     "History: Wikipedia EN/FR (Marseille, Siege of Massilia, Marseille roundup,",
     "Hotel de Ville, Vieille Charite, Notre-Dame de la Garde, Cite radieuse, Euromediterranee)",
     "Population: Wikipedia, Marseille, census figures",
