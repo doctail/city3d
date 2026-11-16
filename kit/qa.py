@@ -665,11 +665,13 @@ def qa_shots(story, sc, D):
     return shots
 
 
-def render_frames(story, D, city_json, sc, qadir, R):
+def render_frames(story, D, city_json, sc, qadir, R, shots=None, sheet=True):
+    """shots: lista di inquadrature {label, year, pos, tgt, lens} (default: qa_shots); sheet=False: niente foglio contatti (lo fa il chiamante, es. kit gate).
+    Ritorna [(shot, percorso_jpg)] dei fotogrammi prodotti."""
     S = 'f'
     py = _bpy_python()
-    if not py: R.add(S, WARN, 'bpy non disponibile: niente fotogrammi', 'imposta KIT_BPY=/percorso/python-con-bpy'); return
-    shots = qa_shots(story, sc, D)
+    if not py: R.add(S, WARN, 'bpy non disponibile: niente fotogrammi', 'imposta KIT_BPY=/percorso/python-con-bpy'); return []
+    shots = shots if shots is not None else qa_shots(story, sc, D)
     HOLD = 16   # ogni inquadratura e' un blocco fermo di 16 fotogrammi: anno costante (crescita completa), camera esatta al centro
     years, cam, only = [], [], []
     for i, s in enumerate(shots):
@@ -694,7 +696,7 @@ def render_frames(story, D, city_json, sc, qadir, R):
         R.add(S, FAIL, f'render locale: {len(ok)}/{len(got)} fotogrammi (exit {p.returncode}, {time.time() - t:.0f} s)', ' | '.join(tail) + f' — log {os.path.relpath(log, geo.ROOT)}')
     else:
         R.add(S, PASS, f'render locale: {len(ok)} fotogrammi in {time.time() - t:.0f} s', os.path.relpath(log, geo.ROOT))
-    if ok:
+    if ok and sheet:
         from PIL import Image, ImageDraw
         cols = 3; rows = math.ceil(len(ok) / cols); W, Hh = 480, 270
         sheet = Image.new('RGB', (cols * W, rows * (Hh + 22)), (20, 20, 20)); dr = ImageDraw.Draw(sheet)
@@ -704,13 +706,14 @@ def render_frames(story, D, city_json, sc, qadir, R):
             dr.text((x + 6, y + 5), s['label'] if s['label'].startswith('alto') else f'{s["label"]}  [anno {s["year"]:.0f}]', fill=(240, 240, 240))
         cp = os.path.join(qadir, 'contact.jpg'); sheet.save(cp, quality=90); R.images.append(cp)
         R.add(S, PASS, 'foglio contatti', os.path.relpath(cp, geo.ROOT) + ': guardalo prima del pod (strade come nastri chiari, centro pieno)')
+    return ok
 
 
 # ---------------------------------------------------------------------------------------------------- main
-def run(slug_or_story, data=None, render=False, only=None, city_json=None, sched=None):
+def run(slug_or_story, data=None, render=False, only=None, city_json=None, sched=None, qadir=None):
     story = geo.load_story(slug_or_story)
     slug = story.get('city', {}).get('slug') or os.path.basename(story['_dir'])
-    qadir = os.path.join(story['_dir'], 'qa'); os.makedirs(qadir, exist_ok=True)
+    qadir = qadir or os.path.join(story['_dir'], 'qa'); os.makedirs(qadir, exist_ok=True)   # qadir: uscita altrove (kit gate --out), cosi' cities/<slug> resta in sola lettura
     R = Report(); only = set(only or 'abcdef')
     if 'a' in only: check_story(story, R)
     if R.worst('a') == FAIL and any(r[2] == 'chiavi city' and r[1] == FAIL for r in R.rows):
