@@ -578,20 +578,16 @@
   "t_in": 557.0,
   "t_out": 565.0,
   "items": [
-   "Wikipedia EN, Lugdunum",
-   "Wikipedia EN, History of Lyon",
-   "Wikipedia EN, Canut revolts",
-   "Wikipedia EN, Siege of Lyon",
-   "Wikipedia FR, Inondation de 1856 en France",
-   "Wikipedia FR, Liste des ponts de Lyon",
-   "Wikipedia FR, Libération de Lyon",
-   "Wikipedia EN, Lyon from the First to the Second Empire",
-   "Wikipedia EN, Part-Dieu",
-   "Wikipedia EN, Basilica of Notre-Dame de Fourvière",
-   "Wikipedia EN, Lyon Cathedral",
-   "Wikipedia EN, Musée des Confluences",
-   "Wikipedia EN, Place Bellecour",
-   "Wikipedia EN, Croix-Rousse"
+   "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
+   "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
+   "Streets and place names: © OpenStreetMap contributors (ODbL)",
+   "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
+   "Historical maps (extent checks): BnF Gallica, 1735, 1847, 1852",
+   "History: Wikipedia EN/FR (Lugdunum, History of Lyon, Canut revolts,",
+   "Siege of Lyon, 1856 flood, bridges of Lyon, Liberation of Lyon,",
+   "Part-Dieu, Fourvière, Musée des Confluences, Croix-Rousse)",
+   "Population: Wikipedia, History of Lyon, census figures",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
   ],
   "no_ai": "NO AI: every frame is rendered from open data"
  }
