@@ -1,13 +1,13 @@
 Marseille: regia automatica (kit/regia_kit.py)
-Camera drone: 15 tappe in hover (85.0 s) e voli (543.4 s), anni None/s fra le voci, nessuno stacco; vmax 153.44, amax 82.86, jmax 113.04, clear_min 464.47, clear_ground_min 499.5
-Durata 10:59.1  fotogrammi 15818  inquadrature 3  stacco medio ogni 219.7 s
-Musica: waking_monument  b_start None  notte 644.106640539748
+Camera drone: 15 tappe in hover (85.0 s) e voli (539.6 s), anni None/s fra le voci, nessuno stacco; vmax 196.45, amax 112.63, jmax 84.75, clear_min 463.85, clear_ground_min 499.31
+Durata 10:55.3  fotogrammi 15727  inquadrature 3  stacco medio ogni 218.4 s
+Musica: waking_monument  b_start None  notte 640.2867116770826
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   -600.00  
-  10:44.1   2026.00  
+  10:40.3   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:22.7  -600.0->-590.0  Greek sailors found Massalia (c. 600 BC)  [forza 6.0, crowd]
@@ -45,38 +45,38 @@ SOSTE (video -> anni):
   4:38.0-4:43.0  1848.1->1848.9  The railway reaches Saint-Charles (1848)  [forza 4.0, train]
   4:38.0-4:42.0  1849.0->1849.0  Water for a growing city  [forza 0.0]
   4:45.9-4:50.9  1858.0->1858.0  The Docks of the Joliette  [forza 0.0]
-  4:55.2-5:01.2  1862.5->1864.3  Rue Imperiale cuts through the old town (1862-64)  [forza 4.0, hammer]
-  5:04.7-5:10.7  1869.0->1869.0  Suez opens  [forza 0.0]
-  5:12.0-5:17.0  1870.8->1870.8  A street changes its name  [forza 0.0]
-  5:17.2-5:22.2  1871.0->1871.6  Notre-Dame de la Garde (1853-70)  [forza 5.0, bell]
-  5:25.3-5:29.3  1876.0->1876.0  Horse-drawn trams  [forza 0.0]
-  5:36.6-5:40.6  1884.0->1884.0  Cholera  [forza 0.0]
-  5:49.9-5:54.9  1893.2->1894.0  The new Cathedral (1852-93)  [forza 5.0, bell]
-  5:59.4-6:05.4  1899.0->1899.0  2,500 years  [forza 0.0]
-  6:08.5-6:12.5  1903.0->1903.0  Plague returns  [forza 0.0]
-  6:15.4-6:20.4  1906.0->1906.3  The Transporter Bridge (Dec 1905)  [forza 4.0, build]
-  6:15.4-6:20.4  1906.5->1906.5  The colonial exhibition  [forza 0.0]
-  6:34.0-6:38.0  1919.9->1919.9  The Grand Theatre burns  [forza 0.0]
-  6:40.6-6:45.6  1922.5->1922.5  An airport and a second exhibition  [forza 0.0]
-  6:57.9-7:03.9  1934.8->1934.8  Assassination on the quay  [forza 0.0]
-  7:06.6-7:10.6  1937.5->1937.5  A stadium for the city  [forza 0.0]
-  7:13.3-7:18.3  1940.6->1940.6  Vichy and the bombs  [forza 0.0]
-  7:20.0-7:24.0  1942.9->1942.9  German troops occupy the city  [forza 0.0]
-  7:24.1-7:30.1  1943.0->1943.0  The Saint-Jean quarter is condemned  [forza 0.0]
-  7:30.1-7:39.1  1943.0->1943.1  The Saint-Jean quarter is dynamited (Feb 1943)  [forza 8.8, boom]
-  7:41.1-7:46.1  1945.7->1945.7  Liberation and a fallen bridge  [forza 0.0]
-  7:49.2-7:56.2  1949.0->1949.0  Rebuilding the Old Port  [forza 0.0]
-  7:59.7-8:05.7  1952.8->1952.8  Le Corbusier's Radiant City  [forza 0.0]
-  8:08.0-8:14.0  1955.0->1956.5  Pouillon's new Old Port quarter (1949-56)  [forza 4.0, build]
-  8:19.9-8:24.9  1962.4->1962.4  The pieds-noirs  [forza 0.0]
-  8:29.4-8:33.4  1967.0->1967.0  A tunnel under the Old Port  [forza 0.0]
-  8:41.9-8:47.9  1977.0->1977.0  Metro and a shipping giant  [forza 0.0]
-  8:52.5-8:56.5  1983.0->1983.0  The TGV arrives  [forza 0.0]
-  9:07.6-9:14.6  1995.0->1995.0  Euromediterranee  [forza 0.0]
-  9:20.6-9:25.6  2001.0->2001.0  2,600 years  [forza 0.0]
-  9:31.6-9:37.6  2007.0->2007.0  Tramway and a bigger waterfront  [forza 0.0]
-  9:41.8-9:46.8  2011.7->2011.7  A tower for a shipping giant  [forza 0.0]
-  9:48.1-9:54.1  2013.5->2014.0  MuCEM and the Euromediterranee waterfront (2013)  [forza 4.0, chime]
+  4:53.0-4:59.0  1862.5->1864.3  Rue Imperiale cuts through the old town (1862-64)  [forza 4.0, hammer]
+  5:02.5-5:08.5  1869.0->1869.0  Suez opens  [forza 0.0]
+  5:09.8-5:14.8  1870.8->1870.8  A street changes its name  [forza 0.0]
+  5:15.0-5:20.0  1871.0->1871.6  Notre-Dame de la Garde (1853-70)  [forza 5.0, bell]
+  5:23.0-5:27.0  1876.0->1876.0  Horse-drawn trams  [forza 0.0]
+  5:34.4-5:38.4  1884.0->1884.0  Cholera  [forza 0.0]
+  5:47.7-5:52.7  1893.2->1894.0  The new Cathedral (1852-93)  [forza 5.0, bell]
+  5:57.2-6:03.2  1899.0->1899.0  2,500 years  [forza 0.0]
+  6:06.3-6:10.3  1903.0->1903.0  Plague returns  [forza 0.0]
+  6:13.2-6:18.2  1906.0->1906.3  The Transporter Bridge (Dec 1905)  [forza 4.0, build]
+  6:13.2-6:18.2  1906.5->1906.5  The colonial exhibition  [forza 0.0]
+  6:31.8-6:35.8  1919.9->1919.9  The Grand Theatre burns  [forza 0.0]
+  6:38.4-6:43.4  1922.5->1922.5  An airport and a second exhibition  [forza 0.0]
+  6:55.7-7:01.7  1934.8->1934.8  Assassination on the quay  [forza 0.0]
+  7:04.4-7:08.4  1937.5->1937.5  A stadium for the city  [forza 0.0]
+  7:11.1-7:16.1  1940.6->1940.6  Vichy and the bombs  [forza 0.0]
+  7:17.8-7:21.8  1942.9->1942.9  German troops occupy the city  [forza 0.0]
+  7:21.9-7:27.9  1943.0->1943.0  The Saint-Jean quarter is condemned  [forza 0.0]
+  7:27.9-7:36.9  1943.0->1943.1  The Saint-Jean quarter is dynamited (Feb 1943)  [forza 8.8, boom]
+  7:38.8-7:43.8  1945.7->1945.7  Liberation and a fallen bridge  [forza 0.0]
+  7:47.0-7:54.0  1949.0->1949.0  Rebuilding the Old Port  [forza 0.0]
+  7:57.5-8:03.5  1952.8->1952.8  Le Corbusier's Radiant City  [forza 0.0]
+  8:05.8-8:11.8  1955.0->1956.5  Pouillon's new Old Port quarter (1949-56)  [forza 4.0, build]
+  8:17.7-8:22.7  1962.4->1962.4  The pieds-noirs  [forza 0.0]
+  8:27.2-8:31.2  1967.0->1967.0  A tunnel under the Old Port  [forza 0.0]
+  8:39.7-8:45.7  1977.0->1977.0  Metro and a shipping giant  [forza 0.0]
+  8:50.3-8:54.3  1983.0->1983.0  The TGV arrives  [forza 0.0]
+  9:05.4-9:12.4  1995.0->1995.0  Euromediterranee  [forza 0.0]
+  9:18.4-9:23.4  2001.0->2001.0  2,600 years  [forza 0.0]
+  9:29.4-9:35.4  2007.0->2007.0  Tramway and a bigger waterfront  [forza 0.0]
+  9:39.5-9:44.5  2011.7->2011.7  A tower for a shipping giant  [forza 0.0]
+  9:45.9-9:51.9  2013.5->2014.0  MuCEM and the Euromediterranee waterfront (2013)  [forza 4.0, chime]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -89,21 +89,21 @@ ANNO OGNI 30 s:
   3:30   1660.0  (0.00 anni/s)
   4:00   1720.4  (0.00 anni/s)
   4:30   1836.6  (7.01 anni/s)
-  5:00   1863.9  (0.30 anni/s)
-  5:30   1876.8  (1.09 anni/s)
+  5:00   1865.6  (1.36 anni/s)
+  5:30   1879.2  (1.09 anni/s)
   6:00   1899.0  (0.00 anni/s)
-  6:30   1915.9  (1.00 anni/s)
+  6:30   1918.1  (1.00 anni/s)
   7:00   1934.8  (0.00 anni/s)
-  7:30   1943.0  (0.04 anni/s)
+  7:30   1943.1  (0.01 anni/s)
   8:00   1952.8  (0.00 anni/s)
   8:30   1967.0  (0.00 anni/s)
-  9:00   1986.8  (1.09 anni/s)
-  9:30   2005.4  (1.00 anni/s)
-  10:00   2015.4  (0.24 anni/s)
-  10:30   2022.6  (0.24 anni/s)
+  9:00   1989.1  (1.09 anni/s)
+  9:30   2007.0  (0.00 anni/s)
+  10:00   2016.0  (0.25 anni/s)
+  10:30   2023.4  (0.25 anni/s)
 
 Velocita fuori dalle soste: mediana 1.09 anni/s, max 30.0 anni/s
-Soste: 67, 363 s (57% del giorno)
+Soste: 67, 363 s (58% del giorno)
 
 AVVISI:
   nessuno

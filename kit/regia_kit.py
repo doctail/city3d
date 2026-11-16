@@ -450,7 +450,9 @@ def drone_stay_of(s, D, focus):
     mul, el = SHOT.get(s.get('shot', 'medium'), SHOT['medium'])
     d = mul * (180.0 + 1.3 * max(tg['R'], 0.6 * tg['h'], 40.0))
     if s.get('shot') == 'wide': d = min(d, max(WIDE_MIN, 1.15 * tg['R'] + 400.0), WIDE_MAX / 1.25)
-    return dict(x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area', R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'])
+    dfix = s.get('drone_d')   # 16 nov (Marsiglia): distanza di hover fissata per questa sosta (m), sopra drone.d_min
+    if dfix: d = float(dfix)
+    return dict(x=tg['x'], y=tg['y'], tzo=tg['z'], d=d, el=float(el), kind='bld' if tg['h'] > 0 else 'area', R=max(tg['R'], 0.6 * tg['h'], 40.0), name=s['caption'], dfix=bool(dfix))
 
 
 def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D, focus, dcfg, fin, natural=False, rmin=0.5):

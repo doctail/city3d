@@ -28,7 +28,7 @@ DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s,
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9,
-                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0, drift_vmax=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -164,7 +164,7 @@ def _speed_profile(Tf, L, v0, v1, ts):
 def dims(s, cfg):
     """Posizione di hover davanti al bersaglio: distanza di vista d, elevazione 20-35 gradi (aree e citta': 25-55), raggio orizzontale rho e quota alt."""
     el = math.radians(float(np.clip(s['el'], 20, 35) if s['kind'] == 'bld' else np.clip(s['el'], 25, 55))); d = float(s['d'])
-    d = max(d, float(cfg.get('d_min', 0.0))); s['d'] = d   # 16 nov (Marsiglia): drone.d_min = distanza minima di hover (m); la formula 'wide' dava ~400 m su monumenti piccoli (mediana camera 735 m)
+    d = d if s.get('dfix') else max(d, float(cfg.get('d_min', 0.0))); s['d'] = d   # 16 nov (Marsiglia): drone.d_min = distanza minima di hover (m); la formula 'wide' dava ~400 m su monumenti piccoli (mediana camera 735 m)
     if s['kind'] == 'bld':
         alt = float(np.clip(d * math.sin(el), 80, cfg.get('alt_max', 200.0))); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
     else:
@@ -202,6 +202,8 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         sgn = 1 if k % 2 == 0 else -1
         dth = math.radians(min(6.0, 0.5 * hold)) * sgn; dr = 1.0 + min(0.06, 0.006 * hold)
         th0 = math.atan2(H[1] - s['y'], H[0] - s['x']); rr = math.hypot(H[0] - s['x'], H[1] - s['y'])
+        if cfg.get('drift_vmax', 0.0) > 0:   # 16 nov (Marsiglia): hover lontani (rho ~1000 m) -> la deriva (6 gradi, 6%) superava 12 m/s; opt-in: limita la velocita' di deriva a drift_vmax m/s (default 0 = invariato)
+            kd = min(1.0, cfg['drift_vmax'] * hold / max(rr * math.hypot(dth, dr - 1.0), 1e-6)); dth *= kd; dr = 1.0 + (dr - 1.0) * kd
         Xexit = (s['x'] + rr * dr * math.cos(th0 + dth), s['y'] + rr * dr * math.sin(th0 + dth)) if not s.get('static') else H
         tX = _unit((nxt[0] - Xexit[0], nxt[1] - Xexit[1])) if nxt else din
         # tratto verso questo hover

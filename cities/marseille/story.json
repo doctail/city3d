@@ -1833,6 +1833,7 @@
     "dur": 9,
     "caption": "The Saint-Jean quarter is dynamited (Feb 1943)",
     "target": "fire:Saint-Jean quarter 1943",
+    "drone_d": 1000,
     "shot": "wide",
     "fx": "boom",
     "src": [
@@ -1878,9 +1879,11 @@
   "rmax": 8.0,
   "night_hold": 15,
   "drone": {
-   "pitch_max": 38,
+   "pitch_max": 30,
    "alt_max": 500,
-   "d_min": 1150
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
   },
   "lens": 32
  },

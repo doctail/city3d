@@ -1,6 +1,6 @@
 # QA marseille
 
-Generato da `python -m kit.qa` il 2026-11-16 09:36. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-16 10:09. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -79,35 +79,35 @@ Generato da `python -m kit.qa` il 2026-11-16 09:36. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (6 s)
-  - oggetti citta' 1265, cambi in tutto il video 34337, max in un fotogramma 420 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
+  - oggetti citta' 1265, cambi in tutto il video 34393, max in un fotogramma 420 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 152 m/s (limite 250), mediana 6
+  - 195 m/s (limite 250), mediana 8
 - **PASS** drone: accelerazione massima
-  - 81 m/s2 (limite 120), 99% 37
+  - 111 m/s2 (limite 120), 99% 63
 - **PASS** drone: jerk massimo
-  - 110 m/s3 (limite 200), 99% 27
+  - 83 m/s3 (limite 200), 99% 52
 - **PASS** drone: distanza minima da terreno e tetti
   - 464 m (soglia 24); dal solo terreno 499 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 15 tenute, 0 solo sorvolate; hover 85 s, volo 543 s; 
+  - 0 tolte, 15 tenute, 0 solo sorvolate; hover 85 s, volo 540 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 11.3 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+  - v max in hover 10.1 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: voli con gli anni quasi fermi
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1755 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1519 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **WARN** drone: grafico non fatto
   - No module named 'matplotlib'
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 18.6 s (375-394 s); 3 oltre 15 s: 375-394, 401-418, 533-548
+  - vuoto massimo 18.6 s (373-392 s); 3 oltre 15 s: 373-392, 398-416, 530-545
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 35.82 | 1:00 14.37 | 2:00 11.40 | 3:00  4.96 | 4:00  2.39 | 5:00  0.58 | 6:00  0.60 | 7:00  0.30 | 8:00  0.57 | 9:00  0.48 | 10:00  0.18
+  - 0:00 35.82 | 1:00 14.37 | 2:00 11.40 | 3:00  4.96 | 4:00  2.42 | 5:00  0.56 | 6:00  0.60 | 7:00  0.30 | 8:00  0.61 | 9:00  0.45 | 10:00  0.18
 - **PASS** 15 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
@@ -115,7 +115,7 @@ Generato da `python -m kit.qa` il 2026-11-16 09:36. Esito complessivo: **WARN**
 - **PASS** evento forte entro 45 s
   - primo a 15.7 s
 - **PASS** notte
-  - night_t=644.106640539748, schedule_marseille_night.json ok
+  - night_t=640.2867116770826, schedule_marseille_night.json ok
 
 ## Immagini
 
