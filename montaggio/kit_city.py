@@ -115,7 +115,7 @@ text = {
     'end_sub': mont.get('end_sub', 'Tell us in the comments'),
     'brand': mont.get('brand', 'YEAR BUILT'),
     'short_name': mont.get('short_name', NAME),
-    'short_tag': mont.get('short_tag', f'{yrs_n:,} YEARS IN 30 SECONDS'),
+    'short_tag': mont.get('short_tag', f'{yrs_n:,} YEARS IN {mont.get("short_seconds", 28)} SECONDS'),
 }
 sn = round(mont.get('short_seconds', 28) * FPS)
 short = {'n': sn, 'a': round(rt + 1.0, 2), 'b': round(DUR - 6.0, 2)}
