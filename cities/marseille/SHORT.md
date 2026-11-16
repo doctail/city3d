@@ -16,7 +16,7 @@ Intestazione automatica del Short: la story round 3 ha `montaggio.short_tag` = "
 
 ## Descrizione (EN)
 ```
-Marseille, from the Greek colony of Massalia around 600 BC to the CMA CGM tower and the MuCEM, in 28 seconds. Every building that stands today appears in the year recorded for its group of buildings in the French building database; the old city is a reconstruction, and so is the Saint-Jean quarter before it was dynamited in 1943 (block outlines follow the 1940 German plan, heights and dates are estimated).
+Marseille, from the Greek colony of Massalia around 600 BC to the CMA CGM tower and the MuCEM, in 28 seconds. Every building that stands today appears in the year recorded for its group of buildings in the French building database; the old city is a reconstruction, and so is the Saint-Jean quarter before it was dynamited in 1943 (about a third of its footprint follows the 1940 German plan; the rest, and all heights and dates, are estimated).
 
 NO AI imagery: every frame is rendered from open data.
 
@@ -33,7 +33,7 @@ Data: BDNB (CSTB), IGN BD TOPO, © OpenStreetMap contributors, Copernicus DEM GL
 ### fr
 Titre : 2 600 ANS DE MARSEILLE EN 28 SECONDES | Timelapse 3D | Sans IA #Shorts
 ```
-Marseille, de la colonie grecque de Massalia vers 600 av. J.-C. à la tour CMA CGM et au MuCEM, en 28 secondes. Chaque bâtiment actuel apparaît à l'année enregistrée pour son groupe de bâtiments dans la base nationale des bâtiments ; la vieille ville, et le quartier Saint-Jean avant son dynamitage en 1943, sont une reconstitution approximative.
+Marseille, de la colonie grecque de Massalia vers 600 av. J.-C. à la tour CMA CGM et au MuCEM, en 28 secondes. Chaque bâtiment actuel apparaît à l'année enregistrée pour son groupe de bâtiments dans la base nationale des bâtiments ; la vieille ville est une reconstitution, de même que le quartier Saint-Jean avant son dynamitage en 1943 (environ un tiers de son emprise suit le plan allemand de 1940 ; le reste, ainsi que hauteurs et dates, est estimé).
 
 SANS IA : chaque image est calculée à partir de données ouvertes.
 
@@ -48,7 +48,7 @@ Données : BDNB (CSTB), IGN BD TOPO, © contributeurs OpenStreetMap, Copernicus 
 ### it
 Titolo: 2.600 ANNI DI MARSIGLIA IN 28 SECONDI | Timelapse 3D | Senza IA #Shorts
 ```
-Marsiglia, dalla colonia greca di Massalia intorno al 600 a.C. alla torre CMA CGM e al MuCEM, in 28 secondi. Ogni edificio di oggi compare nell'anno registrato per il suo gruppo di edifici nella banca dati nazionale francese; la città vecchia, e il quartiere Saint-Jean prima che venisse fatto saltare nel 1943, sono una ricostruzione approssimativa.
+Marsiglia, dalla colonia greca di Massalia intorno al 600 a.C. alla torre CMA CGM e al MuCEM, in 28 secondi. Ogni edificio di oggi compare nell'anno registrato per il suo gruppo di edifici nella banca dati nazionale francese; la città vecchia è una ricostruzione, come il quartiere Saint-Jean prima che venisse fatto saltare nel 1943 (circa un terzo della sua impronta segue la pianta tedesca del 1940; il resto, e tutte le altezze e le date, è stimato).
 
 SENZA IA: ogni fotogramma è calcolato da dati aperti.
 
@@ -63,7 +63,7 @@ Dati: BDNB (CSTB), IGN BD TOPO, © contributori di OpenStreetMap, Copernicus DEM
 ### es
 Título: 2.600 AÑOS DE MARSELLA EN 28 SEGUNDOS | Timelapse 3D | Sin IA #Shorts
 ```
-Marsella, desde la colonia griega de Massalia hacia el 600 a. C. hasta la torre CMA CGM y el MuCEM, en 28 segundos. Cada edificio actual aparece en el año registrado para su grupo de edificios en la base de datos nacional francesa; la ciudad vieja, y el barrio de Saint-Jean antes de ser dinamitado en 1943, son una reconstrucción aproximada.
+Marsella, desde la colonia griega de Massalia hacia el 600 a. C. hasta la torre CMA CGM y el MuCEM, en 28 segundos. Cada edificio actual aparece en el año registrado para su grupo de edificios en la base de datos nacional francesa; la ciudad vieja es una reconstrucción, igual que el barrio de Saint-Jean antes de ser dinamitado en 1943 (cerca de un tercio de su huella sigue el plano alemán de 1940; el resto, y todas las alturas y fechas, es estimado).
 
 SIN IA: cada fotograma se genera con datos abiertos.
 
@@ -78,7 +78,7 @@ Datos: BDNB (CSTB), IGN BD TOPO, © colaboradores de OpenStreetMap, Copernicus D
 ### de
 Titel: 2.600 JAHRE MARSEILLE IN 28 SEKUNDEN | 3D-Zeitraffer | Ohne KI #Shorts
 ```
-Marseille, von der griechischen Kolonie Massalia um 600 v. Chr. bis zum CMA-CGM-Turm und zum MuCEM, in 28 Sekunden. Jedes heutige Gebäude erscheint in dem Jahr, das in der französischen Gebäudedatenbank für seine Gebäudegruppe eingetragen ist; die Altstadt und das Viertel Saint-Jean vor seiner Sprengung 1943 sind eine ungefähre Rekonstruktion.
+Marseille, von der griechischen Kolonie Massalia um 600 v. Chr. bis zum CMA-CGM-Turm und zum MuCEM, in 28 Sekunden. Jedes heutige Gebäude erscheint in dem Jahr, das in der französischen Gebäudedatenbank für seine Gebäudegruppe eingetragen ist; die Altstadt ist eine Rekonstruktion, ebenso das Viertel Saint-Jean vor seiner Sprengung 1943 (etwa ein Drittel seiner Grundfläche folgt dem deutschen Plan von 1940; der Rest und alle Höhen und Daten sind geschätzt).
 
 OHNE KI: Jedes Bild wird aus offenen Daten berechnet.
 
@@ -93,7 +93,7 @@ Daten: BDNB (CSTB), IGN BD TOPO, © OpenStreetMap-Mitwirkende, Copernicus DEM GL
 ### pt-BR
 Título: 2.600 ANOS DE MARSELHA EM 28 SEGUNDOS | Timelapse 3D | Sem IA #Shorts
 ```
-Marselha, da colônia grega de Massalia por volta de 600 a.C. à torre CMA CGM e ao MuCEM, em 28 segundos. Cada edifício de hoje aparece no ano registrado para o seu grupo de edifícios na base de dados nacional francesa; a cidade velha, e o bairro Saint-Jean antes de ser dinamitado em 1943, são uma reconstrução aproximada.
+Marselha, da colônia grega de Massalia por volta de 600 a.C. à torre CMA CGM e ao MuCEM, em 28 segundos. Cada edifício de hoje aparece no ano registrado para o seu grupo de edifícios na base de dados nacional francesa; a cidade velha é uma reconstrução, assim como o bairro Saint-Jean antes de ser dinamitado em 1943 (cerca de um terço de sua área segue a planta alemã de 1940; o resto, e todas as alturas e datas, é estimado).
 
 SEM IA: cada quadro é calculado a partir de dados abertos.
 

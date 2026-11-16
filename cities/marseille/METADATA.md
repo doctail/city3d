@@ -19,10 +19,10 @@ Candidato dal packaging check ('Marseille: The Old Port Quarter the Germans Dyna
 - 'The Germans dynamited' è sostenuto dalla story (S6/S7: genieri tedeschi, dal 1° febbraio 1943). Evitare numeri di morti/deportati (non nella story).
 
 ## Dichiarazioni obbligatorie (tutte nel testo di `CONSEGNA_YOUTUBE.md`)
-- Saint-Jean pre-1943 = ricostruzione: contorni degli isolati dalla pianta tedesca 1940 per ~60% dell'impronta, resto riempimento generato, altezze/date/vuoti stimati (Stadtplan von Marseille, Sonderausgabe 6.40, BnF Gallica, pubblico dominio). Testo allineato al round 4: contorni isolati seguono la pianta 1940 per ~60% dell'impronta, resto riempimento generato; altezze, date e vuoti stimati.
+- Saint-Jean pre-1943 = ricostruzione: circa un terzo dell'impronta (misurato da yb-qa a 1942,9: 30%, 866 edifici, 8,35 ha) segue la pianta tedesca 1940 (Stadtplan von Marseille, Sonderausgabe 6.40, BnF Gallica, pubblico dominio); il resto e tutte le altezze/date è stimato.
 - Dopoguerra: anni BDNB. Prima del 1800 (`data_reliable_from` 1800, round 3): ricostruzione dichiarata e scritta a schermo.
 - Fonti e licenze: BDNB (Licence Ouverte 2.0), OSM (ODbL), IGN BD TOPO, Copernicus DEM GLO-30, Gallica. DEM Copernicus GLO-30 (la sources_card della story round 3 è ora allineata).
-- Numeri nei testi: 2,625 anni (end card e `short_tag` della story round 3), 'about 1,500' edifici e 'about 20,000' persone (story, fonti S6/S7 con forchetta 1.400-1.500 in S8). Nessun altro numero senza fonte.
+- Numeri nei testi: 2,625 anni (end card e `short_tag` della story round 3), 'about 1,500' edifici (dato storico; il modello ne mostra circa 870) e 'about 20,000' persone (story, fonti S6/S7 con forchetta 1.400-1.500 in S8). Nessun altro numero senza fonte.
 
 ## Tag
 Vedi `CONSEGNA_YOUTUBE.md` (437 caratteri su 500).

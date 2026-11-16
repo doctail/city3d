@@ -1,6 +1,6 @@
 # QA marseille
 
-Generato da `python -m kit.qa` il 2026-11-16 10:59. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-16 11:48. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -78,7 +78,7 @@ Generato da `python -m kit.qa` il 2026-11-16 10:59. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (6 s)
+- **PASS** costo dei cambi (7 s)
   - oggetti citta' 1267, cambi in tutto il video 34447, max in un fotogramma 422 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 195 m/s (limite 250), mediana 8
