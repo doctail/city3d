@@ -1,0 +1,265 @@
+{
+ "year": "1940",
+ "map": {
+  "map_src": "Stadtplan_von_Marseille_-_btv1b532606289.jpg",
+  "title": "Stadtplan von Marseille, Sonderausgabe 6.40 (Nur fuer Dienstgebrauch), scala 1:10.000, Generalstab des Heeres 1940; Gallica btv1b532606289 / Wikimedia Commons, pubblico dominio"
+ },
+ "map_file": "cities/marseille/mappe_raw/Stadtplan_von_Marseille_-_btv1b532606289.jpg",
+ "crs_modern": "WGS84 (EPSG:4326) for GCP coordinates; fit in EPSG:2154. Map grid = Lambert Sud (NTF Paris, EPSG:27563), km labels X 844-851, Y 111-121",
+ "stats": {
+  "n_fit": 8,
+  "n_control": 5,
+  "n_rejected": 0,
+  "model": "affine",
+  "smoothing": 0,
+  "fit_residual_m": {
+   "n": 8,
+   "rmse": 1.1346805717910218,
+   "mean": 1.1,
+   "max": 1.5,
+   "median": 1.0
+  },
+  "control_error_m": {
+   "n": 5,
+   "rmse": 22.253179548100533,
+   "mean": 16.080000000000002,
+   "max": 45.3,
+   "median": 13.4
+  },
+  "loo_all_m": {
+   "n": 13,
+   "rmse": 15.030891267908643,
+   "mean": 11.061538461538463,
+   "max": 43.7,
+   "median": 8.9
+  },
+  "m_per_px_u": 0.8451438545851683,
+  "m_per_px_v": 0.853105346547561,
+  "u_axis_bearing_deg": 1.4944379815681532,
+  "affine_note": "affine 6-param in Lambert-93 (EPSG:2154); fit points are Lambert Sud grid intersections located at full resolution (fitted line positions, ~1-3 px), control points are monuments read by eye on full-res crops (+/-5-10 px). poly2 on same fit points: control median 12.5 m max 45.4 m (not better)."
+ },
+ "control_points_note": "role=fit points define the model reported in fit_residual_m; role=control are held out of that fit and give control_error_m; the overlay/final model uses fit+control",
+ "neatline_px": [
+  [
+   160,
+   455
+  ],
+  [
+   9391,
+   455
+  ],
+  [
+   9391,
+   12562
+  ],
+  [
+   160,
+   12562
+  ]
+ ],
+ "coverage_wgs84": [
+  [
+   [
+    43.34924,
+    5.336404
+   ],
+   [
+    43.348951,
+    5.432573
+   ],
+   [
+    43.25604,
+    5.431967
+   ],
+   [
+    43.256328,
+    5.335953
+   ]
+  ]
+ ],
+ "points": [
+  {
+   "id": "GRID_845_114",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=845 km Y=114 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    2054.0,
+    8760.4
+   ],
+   "lat": 43.2854692,
+   "lon": 5.3559352,
+   "err_fit_only_model_m": 0.9,
+   "err_leave_one_out_m": 14.3,
+   "err_in_final_model_m": 10.8
+  },
+  {
+   "id": "GRID_845_116",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=845 km Y=116 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    2135.6,
+    6417.2
+   ],
+   "lat": 43.3034595,
+   "lon": 5.3568388,
+   "err_fit_only_model_m": 1.0,
+   "err_leave_one_out_m": 12.5,
+   "err_in_final_model_m": 8.1
+  },
+  {
+   "id": "GRID_846_115",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=846 km Y=115 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    3281.6,
+    7626.8
+   ],
+   "lat": 43.2941337,
+   "lon": 5.3687016,
+   "err_fit_only_model_m": 0.7,
+   "err_leave_one_out_m": 7.2,
+   "err_in_final_model_m": 6.5
+  },
+  {
+   "id": "GRID_847_114",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=847 km Y=114 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    4426.2,
+    8835.8
+   ],
+   "lat": 43.2848066,
+   "lon": 5.3805607,
+   "err_fit_only_model_m": 0.9,
+   "err_leave_one_out_m": 8.9,
+   "err_in_final_model_m": 5.9
+  },
+  {
+   "id": "GRID_847_116",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=847 km Y=116 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    4508.4,
+    6491.0
+   ],
+   "lat": 43.3027967,
+   "lon": 5.3814717,
+   "err_fit_only_model_m": 1.5,
+   "err_leave_one_out_m": 2.5,
+   "err_in_final_model_m": 2.2
+  },
+  {
+   "id": "GRID_848_117",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=848 km Y=117 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    5734.6,
+    5357.4
+   ],
+   "lat": 43.3114583,
+   "lon": 5.3942454,
+   "err_fit_only_model_m": 1.5,
+   "err_leave_one_out_m": 1.7,
+   "err_in_final_model_m": 1.3
+  },
+  {
+   "id": "GRID_849_115",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=849 km Y=115 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    6835.4,
+    7738.3
+   ],
+   "lat": 43.2931336,
+   "lon": 5.4056447,
+   "err_fit_only_model_m": 1.0,
+   "err_leave_one_out_m": 6.0,
+   "err_in_final_model_m": 3.1
+  },
+  {
+   "id": "GRID_850_118",
+   "role": "fit",
+   "desc": "Lambert Sud (NTF Paris, EPSG:27563) grid intersection X=850 km Y=118 km; WGS84 via pyproj NTF->WGS84 3-param [Certain on paper, +/-~3 m datum]",
+   "px": [
+    8142.9,
+    4262.6
+   ],
+   "lat": 43.3197822,
+   "lon": 5.4193424,
+   "err_fit_only_model_m": 1.3,
+   "err_leave_one_out_m": 8.9,
+   "err_in_final_model_m": 3.7
+  },
+  {
+   "id": "MAJOR",
+   "role": "control",
+   "desc": "Cathedrale de la Major (Nouvelle Major) building centre; OSM relation centroid includes Vieille Major [Likely]",
+   "px": [
+    2921,
+    6875
+   ],
+   "lat": 43.2997902,
+   "lon": 5.3649382,
+   "err_fit_only_model_m": 14.3,
+   "err_leave_one_out_m": 14.0,
+   "err_in_final_model_m": 11.8
+  },
+  {
+   "id": "BOURSE",
+   "role": "control",
+   "desc": "Palais de la Bourse building centre (OSM way centroid) [Certain]",
+   "px": [
+    3924,
+    7368
+   ],
+   "lat": 43.2961481,
+   "lon": 5.3753975,
+   "err_fit_only_model_m": 6.2,
+   "err_leave_one_out_m": 10.5,
+   "err_in_final_model_m": 9.6
+  },
+  {
+   "id": "PORTE_AIX",
+   "role": "control",
+   "desc": "Arc de triomphe / Porte d'Aix, centre of Place Jules Guesde (OSM building centroid) [Certain]",
+   "px": [
+    3861,
+    6617
+   ],
+   "lat": 43.3018524,
+   "lon": 5.3747466,
+   "err_fit_only_model_m": 1.2,
+   "err_leave_one_out_m": 4.3,
+   "err_in_final_model_m": 3.9
+  },
+  {
+   "id": "OPERA",
+   "role": "control",
+   "desc": "Opera de Marseille building centre (OSM way centroid) [Certain]",
+   "px": [
+    3985,
+    7716
+   ],
+   "lat": 43.2933484,
+   "lon": 5.37588,
+   "err_fit_only_model_m": 13.4,
+   "err_leave_one_out_m": 9.3,
+   "err_in_final_model_m": 8.4
+  },
+  {
+   "id": "FORT_ST_NICOLAS",
+   "role": "control",
+   "desc": "Fort Saint-Nicolas centre of bastion (OSM tourism=attraction centroid; fort outline differs) [Likely]",
+   "px": [
+    2723,
+    8023
+   ],
+   "lat": 43.2910966,
+   "lon": 5.3623351,
+   "err_fit_only_model_m": 45.3,
+   "err_leave_one_out_m": 43.7,
+   "err_in_final_model_m": 37.5
+  }
+ ],
+ "modern_coord_source": "Grid points: exact Lambert Sud coordinates of the printed km grid converted with pyproj (NTF->WGS84 3-param). Monuments: OSM via nominatim.openstreetmap.org, way/relation centroids, fetched 2026-11-16. No point from story.json."
+}

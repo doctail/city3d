@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "marseille",
+  "name": "Marseille",
+  "country": "France",
+  "lat0": 43.2953,
+  "lon0": 5.3745,
+  "radius_m": 9000,
+  "start_year": 1200,
+  "end_year": 2026,
+  "title": "EVOLUTION OF <CITY> | 3D City Timelapse (<YEAR>–NOW) | No AI",
+  "data_source": "custom",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": [],
+  "data_dir": "data_marseille"
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [],
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "night": true,
+  "open": {
+   "year": 2026,
+   "rewind_to": 1200
+  },
+  "soste": [],
+  "rmin": 0.5,
+  "rmax": 8.0
+ },
+ "montaggio": {
+  "open": [],
+  "title": [],
+  "end": [],
+  "events": []
+ }
+}
