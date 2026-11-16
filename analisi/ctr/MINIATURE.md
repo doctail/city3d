@@ -55,3 +55,6 @@ Cosa NON si puo' sapere senza test reale: quale stile fa piu' CTR; se il problem
 - B (RIVER / PARK): the saturated blue and green boxes look like a template and the heavy outline of "VALENCIA" looks cheap. Only the idea (river before, park after) is worth keeping.
 - The A/B/C test in Studio makes no sense with about 800 impressions: dropped. Thumbnails are compared only from about 3,000 impressions per variant, with equal windows.
 - NEW RULE: the promise of the thumbnail (and of the title) must be delivered within the first 30-60 s of the video (a cold open that shows the climax for a few seconds before the rewind), because NYC lost 63% of the viewers by 0:30.
+
+## 16/11/2026 (owner, after Marseille): the cold-open rule above is CANCELLED
+"Nessun cold open mai." The video starts from its first year. The thumbnail is always "<first year> > NOW" (Lyon formula), the title the series formula; no dramatic hook in thumbnail, title or opening. See kit/AVVIO_NUOVA_CITTA.md R14.
