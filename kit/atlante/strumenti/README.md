@@ -18,3 +18,8 @@ Script scritti in sessione cloud, salvati qui cosi' non vanno persi. Percorsi `/
 - `nodum_mcp_curl.py`: client minimo verso `https://nodum.md/api/v1/mcp` (initialize + tools/call). Il token e' iniettato dal proxy, non va scritto nello script.
 - Il token `nodum_mcp_...` funziona SOLO su `/api/v1/mcp`. L'endpoint REST `/api/v1/vaults` risponde 401 anche con token valido: non usarlo per verificare.
 - Mai incollare token in chat.
+
+## Pittsburgh (16/11/2026)
+- `fetch_pgh.py RAW DATA [download|buildings|land|roads|dem|landmarks|all|flood [stage_ft]]`: WPRDC (footprints + assessments + county street centerlines + major rivers/hydrology areas) e USGS 3DEP 1 arc-second (suolo nudo, `prd-tnm.s3.amazonaws.com`; il DSM Copernicus include le torri e al centro sta ~20 m sopra il fiume). Niente OSM. Misure in `DATA/misure_pgh.json`.
+- Limiti misurati: anni veri solo per le particelle residenziali (CLASS R 98%, commerciale/pubblico/industriale 1-5%); il centro (<1 km dal Point) ha 2% di anni veri e blocchi fusi; altezze solo da STORIES (residenziale), altrimenti stimate dal valore catastale [Guessing]. Anni tondi (x10 48%) de-arrotondati sull'eccesso rispetto ai vicini (-> 10%).
+- `flood`: zona allagata da un livello al misuratore del Point (1936: 46 ft, zero del misuratore 692 ft, pool 710 ft) = celle del DEM sotto la quota e connesse ai fiumi -> `DATA/flood_rings.json` (anelli [lat, lon] per `history.floods`).

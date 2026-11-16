@@ -1,0 +1,30 @@
+Pittsburgh: regia automatica (kit/regia_kit.py)
+Camera drone: 2 tappe in hover (11.0 s) e voli (196.8 s), anni None/s fra le voci, nessuno stacco; vmax 117.92, amax 10.8, jmax 6.98, clear_min 643.93, clear_ground_min 694.12
+Durata 3:48.7  fotogrammi 5489  inquadrature 3  stacco medio ogni 76.2 s
+Musica: waking_monument  b_start None  notte None
+
+ANCORE (video -> anno):
+   0:00.0   2026.00  
+   0:03.0   2026.00  
+   0:09.5   1780.00  
+   3:40.7   2026.00  
+
+SOSTE (video -> anni):
+  1:49.3-1:55.3  1936.2->1936.2  St. Patrick's Day flood (1936)  [forza 4.0, water]
+  2:50.8-2:55.8  1990.0->1992.0  Downtown (1990)  [forza 6.0, crowd]
+
+ANNO OGNI 30 s:
+  0:00   2026.0  (0.00 anni/s)
+  0:30   1807.7  (1.62 anni/s)
+  1:00   1856.3  (1.62 anni/s)
+  1:30   1905.0  (1.62 anni/s)
+  2:00   1940.8  (0.97 anni/s)
+  2:30   1969.9  (0.97 anni/s)
+  3:00   1995.2  (0.76 anni/s)
+  3:30   2017.9  (0.76 anni/s)
+
+Velocita fuori dalle soste: mediana 0.97 anni/s, max 1.6 anni/s
+Soste: 2, 11 s (5% del giorno)
+
+AVVISI:
+  nessuno

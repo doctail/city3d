@@ -1,0 +1,26 @@
+{
+ "didascalie": [],
+ "soste": [
+  {
+   "t_in": 109.28,
+   "t_out": 115.28,
+   "title": "St. Patrick's Day flood",
+   "sub": "1936"
+  },
+  {
+   "t_in": 170.79,
+   "t_out": 175.79,
+   "title": "Downtown",
+   "sub": "1990"
+  }
+ ],
+ "subscribe_t": 90.0,
+ "sources_card": {
+  "t_in": 220.7,
+  "t_out": 228.7,
+  "items": [
+   "NWS/USACE Pittsburgh gauge (Point): flood stage 25 ft, 1936 crest 46.0 ft o..."
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
+}
