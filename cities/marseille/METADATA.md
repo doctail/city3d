@@ -13,7 +13,7 @@ EVOLUTION OF MARSEILLE | 3D City Timelapse (600 BC–NOW) | No AI
 - pt: EVOLUÇÃO DE MARSELHA | Timelapse 3D da cidade (600 a.C.–HOJE) | Sem IA
 
 ## Regole del proprietario
-- Il 1943 NON è un gancio da titolo né da miniatura: è un capitolo ('Saint-Jean quarter destroyed (1943)', 7:27) e una riga fattuale con la riserva approvata.
+- Il 1943 NON è un gancio da titolo né da miniatura: è un capitolo ('Saint-Jean quarter destroyed (1943)', 7:27) e una riga fattuale con la riserva approvata. Mai 'Panier' nei testi pubblici (il Panier fu in parte risparmiato).
 - Miniatura: '600 BC > NOW / MARSEILLE' (`COPERTINE.md`), un anno di partenza e NOW, nessuna bandiera.
 
 ## Dichiarazioni obbligatorie (tutte nel testo di `CONSEGNA_YOUTUBE.md`)
