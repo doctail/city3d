@@ -62,3 +62,34 @@ Fonti: `story.json` -> `sources` S1-S30 (URL e citazione). Pagine aperte con Web
 ## Validazione eseguita
 - `python -m kit qa marseille` (repo): sezione a PASS (chiavi, 30 fonti, date con fonte); b/e FAIL per dati non costruiti (roads, hist, landmarks, city json, schedule): attesi, `kit build` non lanciato. Nota: ha riscritto `cities/marseille/qa/REPORT.md` e i `corridoi_*.png`.
 - In scratch (copia con `hist_kit build`): sezione c tutta PASS (rapporto densita' storica 1,3-2,3 nelle zone); d WARN per aree vuote allungate (-500, 1800, 1900, 1950: i corridoi di 120-420 m vicino a (43,2985, 5,3683) e (43,2929, 5,3777) sono da guardare); nessun FAIL su gutting dopo il build.
+
+## Round 2 (16/11/2026)
+### Fonti nuove
+- S31 Inventaire general (snippet di ricerca; pop.culture.gouv.fr ed ehne.fr non raggiungibili): legge 5 ago 1844 per la Joliette, in uso dal 1847, completata nel 1853 [Likely]; legge 10 giu 1854 (Lazaret) e decreto 23 nov 1856 (Lazaret e Arenc); Arenc iniziato nov 1856, moli Lazaret/Arenc 1856-1864 [Likely]; bacino Napoleone 1859 [Likely]; Digue du Large "completata nel 1925" (non 1847) [Likely]; Bassin National: NESSUNA data trovata [non verificato, non usato].
+- S32 fr:Pont transbordeur de Marseille (aperta) [Certain]: tra i quais du Port e de Rive Neuve, impalcato 239 m, pilastri 86,6 m.
+- Timeline of Marseille (S2) per i nuovi cartelli: 1876 tram a cavalli, 1884 colera, 1899 2.500 anni + nascita OM, set 1903 peste bubbonica, 13 nov 1919 incendio Grand Theatre, 1922 aeroporto, 9 ott 1934 assassinio di Alessandro I [Certain]; 1967 tunnel del Vieux-Port, 1977 metro e CMA CGM, 1983 TGV, 2001 Parc du 26e Centenaire, 2007 tram [Certain]; c. 290 martirio di Vittore, I sec. diocesi/catacombe (S1) [Likely: tradizione].
+
+### Coordinate monumenti (story prima -> dopo, scarto da data_marseille/landmarks_osm.json)
+| Monumento | Prima | Dopo | Scarto |
+|---|---|---|---|
+| CMA CGM Tower | 43,3053 5,3637 | 43,31508 5,36582 | 1.094 m (errore mio) |
+| Fort Saint-Jean | 43,2951 5,3604 | 43,29545 5,36181 | 121 m (params l 150, w 100 da footprint OSM 15.093 m2) |
+| Hotel de Ville | 43,2961 5,3703 | 43,29653 5,36984 | 61 m |
+| Tour du Roi Renato | 43,2955 5,3611 | 43,29512 5,36166 | 58 m: nessun nodo OSM, ora ~40 m a sud del centro del forte [Guessing] |
+| Cite Radieuse | 43,2619 5,3964 | 43,26146 5,39628 | 50 m |
+| Vieille Charite | 43,3003 5,3678 | 43,30057 5,36827 | 48 m |
+| Gare Saint-Charles | 43,3031 5,3811 | 43,30323 5,38164 | 46 m |
+| Fort Saint-Nicolas | invariato | invariato | 17 m (params l 220, w 170 da footprint OSM 37.169 m2: prima 110 x 60) |
+| MuCEM 31 m, N.-D. de la Garde 26 m, Stade 18 m, Saint-Victor 2 m, Major 11 m | invariati | | < 40 m |
+- Transbordeur: ERRORE di round 1 (messo all'Hotel de Ville). Ora centrato sul nodo OSM (43,292385 5,364884), linea N-S di 239 m [orientamento Guessing]; la sosta usa `area:[43.2924,5.3649,260]`.
+- Controllo "a vista": non possibile nel sandbox (nessun render). Le impronte `auto` vanno guardate nel prossimo `qa --render`.
+
+### history.water: NON aggiunto, e perche'
+`history.water` (landphases) mostra una lastra di TERRA solo in [from, to): serve per terra che SPARISCE (Valencia, Turia). Il Lacydon di 600 a.C. (insenatura che penetrava fino alla Borsa/Jardin des Vestiges) e i bacini della Joliette/Arenc sono l'opposto: terra di OGGI che era mare. Il kit non ha una chiave story per questo; `build_render.py` (righe 570-577, 734) legge `DATA/reclaim.json` = `[{"r": anello in metri locali, "y": anno}]` (terra di riporto che compare nell'anno y, materiale 'reclaim'), ma nulla nel kit lo genera. Servono anelli della costa pre-1844 (carta 1840 o Etat-Major) che non ho: non ho inventato geometrie. Per yb-modeler: `reclaim.json` con (a) quai della Joliette y 1853 (in uso dal 1847), (b) moli Lazaret/Arenc y 1864 (1856-64), (c) Digue du Large (1844-1925, a tratti), (d) banchine del Vieux-Port; il Lacydon antico richiederebbe l'inverso (acqua), non supportato.
+
+### Strade (sezione d del REPORT)
+- Nastri Rue Imperiale prima del 1864: nel REPORT corrente non c'e' piu' FAIL dopo il build; ma il corridoio largo #10 (1900, 589 x 73 m a 43,30428 5,36665, strada con y 1851,4) era FUORI dall'anello di 28 m: l'anello e' stato spostato ~45 m a est (stesso `gutting`, `until` 1864,0). Da riverificare nel prossimo qa.
+- Viali larghi 1800 (#7 2055 x 68 m a 43,29722 5,37314: Quai/Canebiere, y strade ~ -250 = rampa di zona; #9 340 x 23 m; #8 369 x 18 m vicino a Fort Saint-Nicolas, y ~760) e 1900 (#11, #12 ripetizioni): NON sono sventramenti documentati in questa story (la Canebiere e' del XVII sec., esiste nel 1800): questione di `roads.json` (anni delle strade larghe), la gestisce yb-modeler. Non aggiunto nessun `gutting`.
+
+### Ritmo: cartelli aggiunti (14) per i vuoti >15 s
+Vuoti (per anni, build precedente): -48,3 -> 415 (aggiunti 100, 290); 1871,6 -> 1893,2 (1876, 1884); 1893,2 -> 1906,3 (1899, 1903); 1906,3 -> 1937,5 (1919,87, 1922,5, 1934,77); 1962,4 -> 1995 (1967, 1977, 1983); 1995 -> 2011,7 (2001, 2007). Cartelli totali 52. Nessuna sosta nuova (nessun rischio di contatore fermo). Dopo il prossimo build rivedere: (1) il vuoto 1906->1937 (3 cartelli, 4-6 s ciascuno), (2) se il Transbordeur (ora a 840 m dal vecchio punto) ha cambiato il volo 1893 -> 1906, (3) i tempi dei voli lunghi 1749 -> 1848 (Vieille Charite -> Stazione: 100 anni, nessun cartello nuovo in 1750-1843 oltre 1792 e 1793: se resta un vuoto, candidati verificati: 1789-1790 Marsiglia nel dipartimento Bouches-du-Rhone (S2), 1796 biblioteca pubblica, 1811 obelisco di Place Castellane, 1837 Porte d'Aix, tutti in S2).

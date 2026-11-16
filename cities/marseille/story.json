@@ -733,6 +733,16 @@
    "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
    "title": "Wikipedia EN, standard dates of French regimes (not re-fetched, from general knowledge)",
    "quote": "paraphrase: First Republic Sept 1792; Empire 1804; Restoration 1814; July Monarchy 1830; Second Republic 1848; Second Empire Dec 1852; Third Republic Sept 1870; Vichy 10 July 1940; GPRF 1944; Fourth Republic Oct 1946; Fifth Republic Oct 1958"
+  },
+  "S31": {
+   "url": "https://dossiersinventaire.maregionsud.fr/dossier/IA13005872",
+   "title": "Inventaire general du patrimoine, bassin de la Grande-Joliette and port works (web-search snippets only: pop.culture.gouv.fr and ehne.fr not reachable)",
+   "quote": "paraphrase from search snippets: law of 5 August 1844 orders the Joliette basin; infrastructure in use from 1847; Joliette completed as an auxiliary port in 1853; law of 10 June 1854 for the Lazaret basin; decree of 23 November 1856 for the Lazaret and Arenc basins; construction of the Arenc basin began in November 1856; Lazaret and Arenc moles built 1856-1864; Napoleon basin 1859; Digue du Large completed in 1925 (tourisme-marseille); no date found for the Bassin National"
+  },
+  "S32": {
+   "url": "https://fr.wikipedia.org/wiki/Pont_transbordeur_de_Marseille",
+   "title": "Wikipedia FR, Pont transbordeur de Marseille",
+   "quote": "paraphrase: links the quais du Port and de Rive Neuve; deck 239 m between two pylons, 52 m above the sea; pylons 86.60 m; built in 19 months, inaugurated 15 December 1905; north pylon fell 22 August 1944; rest collapsed 1 September 1945"
   }
  },
  "history": {
@@ -1096,19 +1106,19 @@
     "ring": [
      [
       43.30535,
-      5.36524
+      5.36594
      ],
      [
       43.30545,
-      5.36556
+      5.36626
      ],
      [
       43.2966,
-      5.37066
+      5.37096
      ],
      [
       43.2965,
-      5.37034
+      5.37064
      ]
     ],
     "from": -600,
@@ -1117,7 +1127,7 @@
      "S14"
     ],
     "conf": "medium",
-    "note": "Percement begun 1862, inaugurated 1864, 1,100 m, 935 houses destroyed (S14). Centerline from Place Villeneuve-Bargemon to Place de la Joliette is a hand estimate (+-60 m): replace with the OSM way of Rue de la Republique."
+    "note": "Percement begun 1862, inaugurated 1864, 1,100 m, 935 houses destroyed (S14). Round 2: centerline shifted ~45 m east at the Joliette end so that it passes through the wide corridor flagged by QA at (43.30428, 5.36665); still a 2-point estimate (+-40 m): replace with the OSM way of Rue de la Republique (Overpass not reachable from the sandbox)."
    }
   ],
   "lost": [],
@@ -1214,12 +1224,12 @@
     "name": "Transporter Bridge (Old Port)",
     "line": [
      [
-      43.29565,
-      5.3697
+      43.29346,
+      5.36488
      ],
      [
-      43.2937,
-      5.3697
+      43.29131,
+      5.36488
      ]
     ],
     "w": 10,
@@ -1229,7 +1239,7 @@
      "S19"
     ],
     "conf": "low",
-    "note": "Inaugurated 15 Dec 1905; blown up 22 Aug 1944 (north tower fell); rest collapsed 1 Sep 1945 (S19). Position across the Old Port near the Hotel de Ville is from memory (+-60 m)."
+    "note": "Inaugurated 15 Dec 1905; blown up 22 Aug 1944 (north tower fell); rest collapsed 1 Sep 1945 (S19). Round 2: centre moved to the OSM node 'Pont Transbordeur' (43.292385, 5.364884, data_marseille/landmarks_osm.json), which is near the harbour mouth, not at the Hotel de Ville as in round 1 (error). Span 239 m between the quais du Port and de Rive Neuve (fr:Pont transbordeur de Marseille, [Certain]); N-S orientation is [Guessing]."
    }
   ]
  },
@@ -1265,8 +1275,8 @@
    "name": "King Rene's Tower",
    "kind": "tower_square",
    "at": [
-    43.2955,
-    5.3611
+    43.29512,
+    5.36166
    ],
    "footprint": "none",
    "params": {
@@ -1293,13 +1303,13 @@
    "name": "Fort Saint-Jean",
    "kind": "castle",
    "at": [
-    43.2951,
-    5.3604
+    43.29545,
+    5.36181
    ],
    "footprint": "none",
    "params": {
-    "l": 130,
-    "w": 70,
+    "l": 150,
+    "w": 100,
     "h": 12,
     "keep_h": 16
    },
@@ -1327,8 +1337,8 @@
    ],
    "footprint": "none",
    "params": {
-    "l": 110,
-    "w": 60,
+    "l": 220,
+    "w": 170,
     "h": 12,
     "keep_h": 14
    },
@@ -1350,8 +1360,8 @@
    "name": "Hotel de Ville",
    "kind": "palace_courtyard",
    "at": [
-    43.2961,
-    5.3703
+    43.29653,
+    5.36984
    ],
    "footprint": "auto",
    "params": {
@@ -1378,8 +1388,8 @@
    "name": "La Vieille Charite",
    "kind": "palace_courtyard",
    "at": [
-    43.3003,
-    5.3678
+    43.30057,
+    5.36827
    ],
    "footprint": "auto",
    "params": {
@@ -1437,8 +1447,8 @@
    "name": "Gare Saint-Charles",
    "kind": "station",
    "at": [
-    43.3031,
-    5.3811
+    43.30323,
+    5.38164
    ],
    "footprint": "auto",
    "params": {
@@ -1520,8 +1530,8 @@
    "name": "Cite Radieuse",
    "kind": "generic_footprint",
    "at": [
-    43.2619,
-    5.3964
+    43.26146,
+    5.39628
    ],
    "footprint": "auto",
    "params": {
@@ -1549,8 +1559,8 @@
    "name": "CMA CGM Tower",
    "kind": "skyscraper",
    "at": [
-    43.3053,
-    5.3637
+    43.31508,
+    5.36582
    ],
    "footprint": "auto",
    "params": {
@@ -1780,7 +1790,7 @@
     "y1": 1906.3,
     "dur": 5,
     "caption": "The Transporter Bridge (Dec 1905)",
-    "target": "area:[43.2947,5.3697,260]",
+    "target": "area:[43.2924,5.3649,260]",
     "shot": "wide",
     "fx": "build",
     "src": [
@@ -1840,7 +1850,8 @@
   "rmax": 8.0,
   "night_hold": 15,
   "drone": {
-   "pitch_max": 38
+   "pitch_max": 38,
+   "alt_max": 800
   },
   "lens": 32
  },
@@ -1950,6 +1961,32 @@
     "shot": "wide",
     "target": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)",
     "chapter": "Under Rome"
+   },
+   {
+    "y": 100,
+    "title": "Christians in the Roman port",
+    "lines": [
+     "Christianity appears in Roman Massilia; catacombs above the harbor mark an early community."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 290,
+    "title": "The martyr Victor",
+    "lines": [
+     "Around 290 Victor is martyred in Marseille; the abbey of Saint-Victor will take his name."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
    },
    {
     "y": 415,
@@ -2233,11 +2270,13 @@
     "y": 1858,
     "title": "The Docks of the Joliette",
     "lines": [
-     "Giant warehouses rise from 1858; completion dates range from 1863 to 1866."
+     "Giant warehouses rise from 1858; completion dates range from 1863 to 1866.",
+     "The Arenc basin was begun in November 1856."
     ],
     "hold_s": 5,
     "src": [
-     "S25"
+     "S25",
+     "S31"
     ],
     "conf": "low",
     "shot": "wide",
@@ -2273,6 +2312,59 @@
     "target": "area:[43.3010,5.3678,330]"
    },
    {
+    "y": 1876,
+    "title": "Horse-drawn trams",
+    "lines": [
+     "Horse-drawn trams begin to run in 1876."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1884,
+    "title": "Cholera",
+    "lines": [
+     "A cholera epidemic strikes the city in 1884."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1899,
+    "title": "2,500 years",
+    "lines": [
+     "Marseille celebrates the 2,500th anniversary of its founding in 1899.",
+     "Olympique de Marseille is formed the same year."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1903,
+    "title": "Plague returns",
+    "lines": [
+     "Bubonic plague breaks out again in September 1903."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
     "y": 1906.5,
     "title": "The colonial exhibition",
     "lines": [
@@ -2284,6 +2376,46 @@
      "S1"
     ],
     "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1919.87,
+    "title": "The Grand Theatre burns",
+    "lines": [
+     "The Grand Theatre burns down on 13 November 1919."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1922.5,
+    "title": "An airport and a second exhibition",
+    "lines": [
+     "Marseille Provence Airport opens in 1922, the year of a second colonial exhibition."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1934.77,
+    "title": "Assassination on the quay",
+    "lines": [
+     "King Alexander I of Yugoslavia and French minister Louis Barthou are assassinated on 9 October 1934."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S1"
+    ],
+    "conf": "high",
     "shot": "wide"
    },
    {
@@ -2409,6 +2541,46 @@
     "shot": "wide"
    },
    {
+    "y": 1967,
+    "title": "A tunnel under the Old Port",
+    "lines": [
+     "The Old Port tunnel opens in 1967."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1977,
+    "title": "Metro and a shipping giant",
+    "lines": [
+     "The first metro line opens in 1977.",
+     "The shipping company CMA CGM is founded the same year."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1983,
+    "title": "The TGV arrives",
+    "lines": [
+     "The TGV Sud-Est begins serving Marseille in 1983."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
     "y": 1995,
     "title": "Euromediterranee",
     "lines": [
@@ -2423,6 +2595,34 @@
     "shot": "top",
     "target": "Joliette new quarter (1844-1870)",
     "chapter": "A New Waterfront"
+   },
+   {
+    "y": 2001,
+    "title": "2,600 years",
+    "lines": [
+     "The Parc du 26e Centenaire opens in 2001, marking 2,600 years since the founding."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 2007,
+    "title": "Tramway and a bigger waterfront",
+    "lines": [
+     "The first tramway line opens in 2007.",
+     "Euromediterranee adds 170 hectares to the north."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S16"
+    ],
+    "conf": "high",
+    "shot": "wide"
    },
    {
     "y": 2011.7,
