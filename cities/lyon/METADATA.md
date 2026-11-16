@@ -1,6 +1,6 @@
 # Lyon: METADATA (YouTube)
 
-Chapter times are placeholders `{{t:YEAR}}` (the second the counter reaches that year/card in the final render): derive them from `regia.txt` after rendering, never by hand. The first chapter must be 0:00, at least 3 chapters.
+Chapter times are placeholders ``{{t:YEAR}}`-style placeholders (now resolved)` (the second the counter reaches that year/card in the final render): derive them from `regia.txt` after rendering, never by hand. The first chapter must be 0:00, at least 3 chapters.
 
 ## Title (<= 100 characters)
 EVOLUTION OF LYON | 3D City Timelapse (43 BC–NOW) | No AI
@@ -8,34 +8,34 @@ EVOLUTION OF LYON | 3D City Timelapse (43 BC–NOW) | No AI
 ## Description (EN)
 Lyon was founded on a hill between two rivers, and it has been rebuilt, besieged, flooded and bombed ever since. Watch more than 2,000 years of Lyon grow, from the Roman colony of Lugdunum in 43 BC to the towers of Part-Dieu and the tip of the Confluence.
 
-NO AI imagery. Every frame is rendered from open data. Buildings that stand today appear in the period given for their group of buildings in the source data (not building by building), and earlier districts are an approximate reconstruction on the historical footprint. Dates in the captions come from the sources listed below; where a source is thin, the story says so.
+NO AI imagery. Every frame is rendered from open data. Buildings that stand today appear in the year recorded for their group of buildings in the French land and building registers (not building by building); about a quarter of the groups have no recorded year and are placed using their neighbors. Earlier districts, and every building that no longer exists, are an approximate reconstruction on the historical footprint, marked on screen as "RECONSTRUCTION · APPROXIMATE". Dates in the captions come from the sources listed below; where a source is thin, the story says so.
 
 Which city should grow next? Tell me in the comments. And if a building or a monument is missing from your neighborhood, tell me that too: I would rather fix it.
 
 CHAPTERS
-{{t:open}} Lyon today
-{{t:-43}} I · Capital of the Gauls: Lugdunum is founded (43 BC)
-{{t:177}} The martyrs of Lugdunum (AD 177)
-{{t:1180}} II · Cathedral, Fairs and Silk: Saint-Jean is begun (1180)
-{{t:1461}} The fairs of Lyon (1461)
-{{t:1708}} Place Bellecour (1715)
-{{t:1793.60}} III · Siege and Revolt: the siege of Lyon (1793)
-{{t:1801}} Jacquard's loom (1801)
-{{t:1831.89}} The canut revolts (1831 and 1834)
-{{t:1852}} IV · Floods and Boulevards: three towns join Lyon (1852)
-{{t:1856.41}} The Rhône floods the left bank (1856)
-{{t:1872}} Notre-Dame de Fourvière (1872–84)
-{{t:1944.66}} V · Bridges and Liberation: the bridges are blown up (1944)
-{{t:1960}} VI · Towers and Rivers: Part-Dieu (1960–77)
-{{t:2012}} Musée des Confluences (2014)
-{{t:recap}} 2,000 years in 20 seconds, from one spot
-{{t:sources}} Sources
+0:00 Lyon today
+0:10 I · Capital of the Gauls: Lugdunum is founded (43 BC)
+0:55 The martyrs of Lugdunum (AD 177)
+1:32 II · Cathedral, Fairs and Silk: Saint-Jean is begun (1180)
+1:55 The fairs of Lyon (1461)
+2:28 III · Siege and Revolt: the siege of Lyon (1793)
+2:56 Jacquard's loom (1801)
+3:11 The canut revolts (1831 and 1834)
+3:47 IV · Floods and Boulevards: three towns join Lyon (1852)
+4:09 The Rhône floods the left bank (1856)
+4:59 Notre-Dame de Fourvière (1872–84)
+5:45 V · Bridges and Liberation: the bridges are blown up (1944)
+6:19 VI · Towers and Rivers: Part-Dieu (1960–77)
+7:59 Musée des Confluences (2014)
+9:17 Sources
 
 SOURCES AND LICENSES
-- Buildings (year per group of buildings), terrain and elevation (DEM): data prepared in `data_lyon/` by the data agent. TO FILL IN once the sources and licenses are confirmed (expected: IGN / open data of the Métropole de Lyon).
-- Streets, rivers and bridges: BD TOPO (IGN, Licence Ouverte Etalab 2.0), and © OpenStreetMap contributors (ODbL) for coordinates of named places.
-- History: Wikipedia EN/FR (Lugdunum, History of Lyon, Canut revolts, Siege of Lyon, Inondation de 1856 en France, Liste des ponts de Lyon, Libération de Lyon, Lyon from the First to the Second Empire, Part-Dieu, Lyon Cathedral, Basilica of Notre-Dame de Fourvière, Musée des Confluences, Place Bellecour, Croix-Rousse, Lyon).
-- Music: same tracks as the other Year Built videos (confirm credits at publication).
+- Buildings: BDNB, Base de Données Nationale des Bâtiments (CSTB), with the construction year from the Fichiers fonciers (DGFiP), per group of buildings; heights from IGN BD TOPO. Licence Ouverte 2.0 (Etalab). Groups without a recorded year (about 28%) are estimated from their nearest neighbors.
+- Streets, rivers, railways and bridges: IGN BD TOPO (Licence Ouverte 2.0) and © OpenStreetMap contributors (ODbL). The opening year of most streets is an estimate from the surrounding buildings; the major boulevards and quays use dated sources.
+- Terrain and elevation: Terrain Tiles on AWS Open Data (Mapzen; NASA SRTM and other open elevation sources).
+- Historical maps used only to check the extent of the city before 1850 (not shown): Plan géométral de la ville de Lyon (1735), Nouveau plan de la ville de Lyon (1852) and the topographic plan of Lyon by Rembielinski (1847), Bibliothèque nationale de France, Gallica.
+- History: Wikipedia EN/FR (Lugdunum, History of Lyon, Canut revolts, Siege of Lyon, Inondation de 1856 en France, Liste des ponts de Lyon, Libération de Lyon, Lyon from the First to the Second Empire, Part-Dieu, Lyon Cathedral, Basilica of Notre-Dame de Fourvière, Musée des Confluences, Place Bellecour, Croix-Rousse, Rue Édouard-Herriot, Rue du Président-Carnot, Lyon). Population: figures and estimates from the same pages, shown with their type (estimate or census).
+- Music: "Waking to Reality" by Unicorn Heads and "Monument" by TrackTribe, both from the YouTube Audio Library.
 
 Rendered with an open-source 3D pipeline. Corrections are welcome in the comments.
 
