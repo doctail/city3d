@@ -24,7 +24,7 @@ def _prep(img, box, sat=1.4, con=1.2, bri=1.05):
     return ImageEnhance.Brightness(c).enhance(bri)
 
 
-def compose(left, right, title, ly, ry, lbox, rbox, out):
+def compose(left, right, title, ly, ry, lbox, rbox, out, ts=118, lx=215, rx=1065):
     L = _prep(Image.open(left).convert('RGB'), lbox)
     R = _prep(Image.open(right).convert('RGB'), rbox)
     base = Image.new('RGB', (W, H))
@@ -40,8 +40,8 @@ def compose(left, right, title, ly, ry, lbox, rbox, out):
     def txt(xy, s, size, fill, stroke):
         d.text(xy, s, font=ImageFont.truetype(FONT, size), fill=fill, anchor='mm',
                stroke_width=stroke, stroke_fill=(0, 0, 0))
-    txt((215, 85), ly, 118, YELLOW, 10)
-    txt((1065, 85), ry, 118, YELLOW, 10)
+    txt((lx, 85), ly, ts, YELLOW, 10)
+    txt((rx, 85), ry, ts, YELLOW, 10)
     txt((W // 2, 85), '›', 100, (255, 255, 255), 8)
     size = 205 if len(title) <= 9 else int(205 * 9 / len(title))
     txt((W // 2, 615), title, size, (255, 255, 255), 14)
@@ -63,5 +63,14 @@ if __name__ == '__main__':
     a.add_argument('--ry', default='NOW')
     a.add_argument('--lbox', default='0,0,1280')
     a.add_argument('--rbox', default='0,0,1280')
+    a.add_argument('--city', help='slug: reads city.cover.text_size / text_lx / text_rx from cities/<slug>/story.json')
+    a.add_argument('--text-size', type=int)
+    a.add_argument('--lx', type=int)
+    a.add_argument('--rx', type=int)
     o = a.parse_args()
-    compose(o.left, o.right, o.title.upper(), o.ly, o.ry, _box(o.lbox), _box(o.rbox), o.out)
+    cv = {}
+    if o.city:
+        import json, os
+        cv = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'cities', o.city, 'story.json')))['city'].get('cover', {})
+    compose(o.left, o.right, o.title.upper(), o.ly, o.ry, _box(o.lbox), _box(o.rbox), o.out,
+            o.text_size or cv.get('text_size', 118), o.lx or cv.get('text_lx', 215), o.rx or cv.get('text_rx', 1065))

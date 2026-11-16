@@ -1,13 +1,13 @@
 Marseille: regia automatica (kit/regia_kit.py)
-Camera drone: 15 tappe in hover (90.0 s) e voli (534.4 s), anni None/s fra le voci, nessuno stacco; vmax 153.44, amax 82.86, jmax 113.04, clear_min 464.47, clear_ground_min 499.5
-Durata 10:55.1  fotogrammi 15722  inquadrature 3  stacco medio ogni 218.4 s
-Musica: waking_monument  b_start None  notte 640.106640539748
+Camera drone: 15 tappe in hover (85.0 s) e voli (543.4 s), anni None/s fra le voci, nessuno stacco; vmax 153.44, amax 82.86, jmax 113.04, clear_min 464.47, clear_ground_min 499.5
+Durata 10:59.1  fotogrammi 15818  inquadrature 3  stacco medio ogni 219.7 s
+Musica: waking_monument  b_start None  notte 644.106640539748
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   -600.00  
-  10:40.1   2026.00  
+  10:44.1   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:22.7  -600.0->-590.0  Greek sailors found Massalia (c. 600 BC)  [forza 6.0, crowd]
@@ -60,23 +60,23 @@ SOSTE (video -> anni):
   6:40.6-6:45.6  1922.5->1922.5  An airport and a second exhibition  [forza 0.0]
   6:57.9-7:03.9  1934.8->1934.8  Assassination on the quay  [forza 0.0]
   7:06.6-7:10.6  1937.5->1937.5  A stadium for the city  [forza 0.0]
-  7:13.3-7:19.3  1940.6->1940.6  Vichy and the bombs  [forza 0.0]
-  7:21.0-7:26.0  1942.9->1942.9  German troops occupy the city  [forza 0.0]
-  7:26.1-7:40.1  1943.0->1943.1  The Saint-Jean quarter is dynamited (Feb 1943)  [forza 8.8, boom]
-  7:26.1-7:34.1  1943.2->1943.2  The Saint-Jean quarter is gone  [forza 0.0]
-  7:34.1-7:40.1  1944.7->1944.7  Liberation  [forza 0.0]
-  7:45.2-7:52.2  1949.0->1949.0  Rebuilding the Old Port  [forza 0.0]
-  7:55.7-8:01.7  1952.8->1952.8  Le Corbusier's Radiant City  [forza 0.0]
-  8:04.0-8:10.0  1955.0->1956.5  Pouillon's new Old Port quarter (1949-56)  [forza 4.0, build]
-  8:15.9-8:20.9  1962.4->1962.4  The pieds-noirs  [forza 0.0]
-  8:25.4-8:29.4  1967.0->1967.0  A tunnel under the Old Port  [forza 0.0]
-  8:37.9-8:43.9  1977.0->1977.0  Metro and a shipping giant  [forza 0.0]
-  8:48.5-8:52.5  1983.0->1983.0  The TGV arrives  [forza 0.0]
-  9:03.6-9:10.6  1995.0->1995.0  Euromediterranee  [forza 0.0]
-  9:16.6-9:21.6  2001.0->2001.0  2,600 years  [forza 0.0]
-  9:27.6-9:33.6  2007.0->2007.0  Tramway and a bigger waterfront  [forza 0.0]
-  9:37.8-9:42.8  2011.7->2011.7  A tower for a shipping giant  [forza 0.0]
-  9:44.1-9:50.1  2013.5->2014.0  MuCEM and the Euromediterranee waterfront (2013)  [forza 4.0, chime]
+  7:13.3-7:18.3  1940.6->1940.6  Vichy and the bombs  [forza 0.0]
+  7:20.0-7:24.0  1942.9->1942.9  German troops occupy the city  [forza 0.0]
+  7:24.1-7:30.1  1943.0->1943.0  The Saint-Jean quarter is condemned  [forza 0.0]
+  7:30.1-7:39.1  1943.0->1943.1  The Saint-Jean quarter is dynamited (Feb 1943)  [forza 8.8, boom]
+  7:41.1-7:46.1  1945.7->1945.7  Liberation and a fallen bridge  [forza 0.0]
+  7:49.2-7:56.2  1949.0->1949.0  Rebuilding the Old Port  [forza 0.0]
+  7:59.7-8:05.7  1952.8->1952.8  Le Corbusier's Radiant City  [forza 0.0]
+  8:08.0-8:14.0  1955.0->1956.5  Pouillon's new Old Port quarter (1949-56)  [forza 4.0, build]
+  8:19.9-8:24.9  1962.4->1962.4  The pieds-noirs  [forza 0.0]
+  8:29.4-8:33.4  1967.0->1967.0  A tunnel under the Old Port  [forza 0.0]
+  8:41.9-8:47.9  1977.0->1977.0  Metro and a shipping giant  [forza 0.0]
+  8:52.5-8:56.5  1983.0->1983.0  The TGV arrives  [forza 0.0]
+  9:07.6-9:14.6  1995.0->1995.0  Euromediterranee  [forza 0.0]
+  9:20.6-9:25.6  2001.0->2001.0  2,600 years  [forza 0.0]
+  9:31.6-9:37.6  2007.0->2007.0  Tramway and a bigger waterfront  [forza 0.0]
+  9:41.8-9:46.8  2011.7->2011.7  A tower for a shipping giant  [forza 0.0]
+  9:48.1-9:54.1  2013.5->2014.0  MuCEM and the Euromediterranee waterfront (2013)  [forza 4.0, chime]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -94,16 +94,16 @@ ANNO OGNI 30 s:
   6:00   1899.0  (0.00 anni/s)
   6:30   1915.9  (1.00 anni/s)
   7:00   1934.8  (0.00 anni/s)
-  7:30   1943.1  (0.01 anni/s)
+  7:30   1943.0  (0.04 anni/s)
   8:00   1952.8  (0.00 anni/s)
-  8:30   1967.7  (1.17 anni/s)
-  9:00   1991.1  (1.09 anni/s)
-  9:30   2007.0  (0.00 anni/s)
-  10:00   2016.3  (0.24 anni/s)
-  10:30   2023.6  (0.24 anni/s)
+  8:30   1967.0  (0.00 anni/s)
+  9:00   1986.8  (1.09 anni/s)
+  9:30   2005.4  (1.00 anni/s)
+  10:00   2015.4  (0.24 anni/s)
+  10:30   2022.6  (0.24 anni/s)
 
 Velocita fuori dalle soste: mediana 1.09 anni/s, max 30.0 anni/s
-Soste: 67, 373 s (59% del giorno)
+Soste: 67, 363 s (57% del giorno)
 
 AVVISI:
   nessuno

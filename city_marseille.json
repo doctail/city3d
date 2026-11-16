@@ -194,6 +194,8 @@
   "urban_dark": "#e3d7bf"
  },
  "cover": {
+  "text_size": 86,
+  "text_rx": 960,
   "cam": [
    -460,
    -760,

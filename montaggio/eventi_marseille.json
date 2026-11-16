@@ -74,20 +74,20 @@
    "sub": "Dec 1905"
   },
   {
-   "t_in": 446.12,
-   "t_out": 460.12,
+   "t_in": 450.12,
+   "t_out": 459.12,
    "title": "The Saint-Jean quarter is dynamited",
    "sub": "Feb 1943"
   },
   {
-   "t_in": 483.99,
-   "t_out": 489.99,
+   "t_in": 487.99,
+   "t_out": 493.99,
    "title": "Pouillon's new Old Port quarter",
    "sub": "1949-56"
   },
   {
-   "t_in": 584.13,
-   "t_out": 590.13,
+   "t_in": 588.13,
+   "t_out": 594.13,
    "title": "MuCEM and the Euromediterranee waterfront",
    "sub": "2013"
   }
@@ -491,7 +491,7 @@
   },
   {
    "t_in": 433.35,
-   "t_out": 439.35,
+   "t_out": 438.35,
    "date": "1940",
    "title": "Vichy and the bombs",
    "lines": [
@@ -501,8 +501,8 @@
    "sober": false
   },
   {
-   "t_in": 440.96,
-   "t_out": 445.96,
+   "t_in": 439.96,
+   "t_out": 443.96,
    "date": "1942",
    "title": "German troops occupy the city",
    "lines": [
@@ -511,10 +511,10 @@
    "sober": false
   },
   {
-   "t_in": 446.12,
-   "t_out": 454.12,
+   "t_in": 444.07,
+   "t_out": 450.07,
    "date": "1943",
-   "title": "The Saint-Jean quarter is gone",
+   "title": "The Saint-Jean quarter is condemned",
    "lines": [
     "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
     "From 1 February about 1,500 buildings on 14 hectares are dynamited."
@@ -522,19 +522,19 @@
    "sober": false
   },
   {
-   "t_in": 454.12,
-   "t_out": 460.12,
-   "date": "1944",
-   "title": "Liberation",
+   "t_in": 461.05,
+   "t_out": 466.05,
+   "date": "1945",
+   "title": "Liberation and a fallen bridge",
    "lines": [
-    "Marseille is liberated in late August 1944.",
-    "The Germans blow up the Transporter Bridge on 22 August."
+    "Marseille is liberated in late August 1944; the Germans blow up the Transporter Bridge on 22 August.",
+    "The last standing parts collapse on 1 September 1945."
    ],
    "sober": false
   },
   {
-   "t_in": 465.19,
-   "t_out": 472.19,
+   "t_in": 469.19,
+   "t_out": 476.19,
    "date": "1949",
    "title": "Rebuilding the Old Port",
    "lines": [
@@ -544,8 +544,8 @@
    "sober": false
   },
   {
-   "t_in": 475.75,
-   "t_out": 481.75,
+   "t_in": 479.75,
+   "t_out": 485.75,
    "date": "1952",
    "title": "Le Corbusier's Radiant City",
    "lines": [
@@ -554,8 +554,8 @@
    "sober": false
   },
   {
-   "t_in": 495.87,
-   "t_out": 500.87,
+   "t_in": 499.87,
+   "t_out": 504.87,
    "date": "1962",
    "title": "The pieds-noirs",
    "lines": [
@@ -564,8 +564,8 @@
    "sober": false
   },
   {
-   "t_in": 505.38,
-   "t_out": 509.38,
+   "t_in": 509.38,
+   "t_out": 513.38,
    "date": "1967",
    "title": "A tunnel under the Old Port",
    "lines": [
@@ -574,8 +574,8 @@
    "sober": false
   },
   {
-   "t_in": 517.94,
-   "t_out": 523.94,
+   "t_in": 521.94,
+   "t_out": 527.94,
    "date": "1977",
    "title": "Metro and a shipping giant",
    "lines": [
@@ -585,8 +585,8 @@
    "sober": false
   },
   {
-   "t_in": 528.55,
-   "t_out": 532.55,
+   "t_in": 532.55,
+   "t_out": 536.55,
    "date": "1983",
    "title": "The TGV arrives",
    "lines": [
@@ -595,8 +595,8 @@
    "sober": false
   },
   {
-   "t_in": 543.59,
-   "t_out": 550.59,
+   "t_in": 547.59,
+   "t_out": 554.59,
    "date": "1995",
    "title": "Euromediterranee",
    "lines": [
@@ -606,8 +606,8 @@
    "sober": false
   },
   {
-   "t_in": 556.59,
-   "t_out": 561.59,
+   "t_in": 560.59,
+   "t_out": 565.59,
    "date": "2001",
    "title": "2,600 years",
    "lines": [
@@ -616,8 +616,8 @@
    "sober": false
   },
   {
-   "t_in": 567.59,
-   "t_out": 573.59,
+   "t_in": 571.59,
+   "t_out": 577.59,
    "date": "2007",
    "title": "Tramway and a bigger waterfront",
    "lines": [
@@ -627,8 +627,8 @@
    "sober": false
   },
   {
-   "t_in": 577.75,
-   "t_out": 582.75,
+   "t_in": 581.75,
+   "t_out": 586.75,
    "date": "2011",
    "title": "A tower for a shipping giant",
    "lines": [
@@ -723,32 +723,32 @@
    "title": "Occupation and Ruins"
   },
   {
-   "t_in": 540.79,
-   "t_out": 543.59,
+   "t_in": 544.79,
+   "t_out": 547.59,
    "num": "XV",
    "title": "A New Waterfront"
   },
   {
-   "t_in": 540.79,
-   "t_out": 543.59,
+   "t_in": 544.79,
+   "t_out": 547.59,
    "num": "XVI",
    "title": "A New Waterfront"
   }
  ],
  "cta": {
-  "t_in": 642.6,
-  "t_out": 647.1,
+  "t_in": 646.6,
+  "t_out": 651.1,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 647.1,
-  "t_out": 655.1,
+  "t_in": 651.1,
+  "t_out": 659.1,
   "items": [
    "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
    "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
    "Streets and place names: © OpenStreetMap contributors (ODbL)",
-   "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
-   "Historical map (Saint-Jean quarter): Stadtplan von Marseille 1940, BnF Gallica",
+   "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+   "Saint-Jean quarter before 1943: approximated from the 1940 German city plan, BnF Gallica (public domain)",
    "History: Wikipedia EN/FR (Marseille, Siege of Massilia, Marseille roundup,",
    "Hotel de Ville, Vieille Charite, Notre-Dame de la Garde, Cite radieuse, Euromediterranee)",
    "Population: Wikipedia, Marseille, census figures",

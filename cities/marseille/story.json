@@ -153,7 +153,7 @@
     "#c9c1b0"
    ]
   ],
-  "data_reliable_from": 1850,
+  "data_reliable_from": 1800,
   "polities": [
    {
     "y": -600,
@@ -458,6 +458,8 @@
    }
   ],
   "cover": {
+   "text_size": 86,
+   "text_rx": 960,
    "cam": [
     -460,
     -760,
@@ -722,7 +724,7 @@
   "S28": {
    "url": "https://gallica.bnf.fr/ark:/12148/btv1b532606289",
    "title": "BnF Gallica, Stadtplan von Marseille, Sonderausgabe 6.40 (Generalstab des Heeres, 1940)",
-   "quote": "1:10,000 plan georeferenced in cities/marseille/mappe/FONTI_MAPPE.md; 347 test blocks in saintjean_isolati_test_1940.geojson (not a full survey)"
+   "quote": "1:10,000 plan georeferenced in cities/marseille/mappe/FONTI_MAPPE.md; 347 test blocks in saintjean_isolati_test_1940.geojson (not a full survey, not used as geometry: the pre-1943 quarter in the render is approximated from the plan)"
   },
   "S29": {
    "url": "https://www.data.gouv.fr/fr/datasets/base-de-donnees-nationale-des-batiments/",
@@ -1860,8 +1862,11 @@
   "style": "mattia",
   "open": [
    "MARSEILLE TODAY",
-   "886,040 people"
+   "886,040 people",
+   "2,625 YEARS",
+   "Every building in its real year."
   ],
+  "short_tag": "2,625 YEARS IN 28 SECONDS",
   "title": [
    "MARSEILLE",
    "600 BC TO NOW"
@@ -2440,7 +2445,7 @@
      "In June 1940 German and Italian aircraft bomb Marseille.",
      "The city then lies in the unoccupied zone, under the Vichy regime."
     ],
-    "hold_s": 6,
+    "hold_s": 5,
     "src": [
      "S2",
      "S30"
@@ -2456,7 +2461,7 @@
     "lines": [
      "In November 1942 German forces occupy Marseille."
     ],
-    "hold_s": 5,
+    "hold_s": 4,
     "src": [
      "S1",
      "S2"
@@ -2465,13 +2470,13 @@
     "shot": "wide"
    },
    {
-    "y": 1943.22,
-    "title": "The Saint-Jean quarter is gone",
+    "y": 1943.02,
+    "title": "The Saint-Jean quarter is condemned",
     "lines": [
      "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
      "From 1 February about 1,500 buildings on 14 hectares are dynamited."
     ],
-    "hold_s": 8,
+    "hold_s": 6,
     "src": [
      "S6",
      "S7",
@@ -2480,16 +2485,16 @@
     "conf": "medium",
     "shot": "wide",
     "target": "area:[43.2967,5.3655,330]",
-    "note": "Counts vary by source: 1,400-1,500 buildings; 20,000-30,000 expelled. The pre-1943 houses shown in the render are an approximation: say so in the description."
+    "note": "Counts vary by source: 1,400-1,500 buildings; 20,000-30,000 expelled. The pre-1943 houses shown in the render are approximated from the 1940 German plan (the 1940 block polygons are NOT used as geometry; the render covers ~2/3 of their area): say 'approximated from', never 'follows', in the description. Round 3: card moved before the hover (y 1943.02, 'condemned') so that the 9 s hover has no card text (cold open window clean)."
    },
    {
-    "y": 1944.66,
-    "title": "Liberation",
+    "y": 1945.67,
+    "title": "Liberation and a fallen bridge",
     "lines": [
-     "Marseille is liberated in late August 1944.",
-     "The Germans blow up the Transporter Bridge on 22 August."
+     "Marseille is liberated in late August 1944; the Germans blow up the Transporter Bridge on 22 August.",
+     "The last standing parts collapse on 1 September 1945."
     ],
-    "hold_s": 6,
+    "hold_s": 5,
     "src": [
      "S1",
      "S19"
@@ -2683,8 +2688,8 @@
     "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
     "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
     "Streets and place names: © OpenStreetMap contributors (ODbL)",
-    "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
-    "Historical map (Saint-Jean quarter): Stadtplan von Marseille 1940, BnF Gallica",
+    "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+    "Saint-Jean quarter before 1943: approximated from the 1940 German city plan, BnF Gallica (public domain)",
     "History: Wikipedia EN/FR (Marseille, Siege of Massilia, Marseille roundup,",
     "Hotel de Ville, Vieille Charite, Notre-Dame de la Garde, Cite radieuse, Euromediterranee)",
     "Population: Wikipedia, Marseille, census figures",
