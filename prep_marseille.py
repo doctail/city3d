@@ -1,7 +1,7 @@
 # Marsiglia, dati edifici (locale, gratis): da raw BDNB (fetch_fr_raw.py clip, anche raggio largo) a DATA/buildings.json + misure.
 # Uso: python prep_marseille.py RAW/bdnb.geojson.gz DATA_DIR [raggio_pack_m=9000]
 # Formato come Lione: {r (anello locale m, aperto), h, y, i (id gruppo BDNB, ripetuto per le parti), k (INSEE), hs}.
-# Anni mancanti: mediana dei 6 piu vicini con anno entro 150 m, al lustro (poi vicino piu prossimo entro 400 m, poi mediana generale); y_est elencati in buildings_y0_prov.json.
+# Anni mancanti: mediana dei 6 piu vicini con anno entro 150 m, +-2 anni a caso (poi vicino piu prossimo entro 400 m, poi mediana generale); y_est elencati in buildings_y0_prov.json.
 import gzip, json, math, os, sys, collections
 import numpy as np
 from scipy.spatial import cKDTree
@@ -16,6 +16,26 @@ for f in F:
     cx, cy = (c.x - LON0) * KX, (c.y - LAT0) * KY
     ys = p['y'] if p['y'] and 1000 <= p['y'] <= 2026 else None
     rows.append((p['id'], str(p['insee']), ys, p['h'], p['lev'], list(g.geoms) if g.geom_type == 'MultiPolygon' else [g], cx, cy))
+# ---- de-arrotondamento (stesso metodo di prep_parigi.py: gli anni tondi della BDNB sono segnaposto, nel video la citta' cresce a ondate) ----
+# Parigi: multipli di 10 -> +-5 a caso; multipli di 50 prima del 1850 -> +-20. Marsiglia: il picco 1900 e' 14.192 gruppi su 30 km
+# (9.627 entro 9 km) contro ~150 per anno vicino: con +-5 resterebbe un'onda di ~1.000 per anno. Quindi la finestra +-20 vale per i
+# multipli di 50 prima del 1850 E per ogni multiplo di 50 il cui conteggio supera 20 volte la mediana degli anni vicini non tondi.
+import random
+rnd = random.Random(3)
+_cnt = collections.Counter(r[2] for r in rows if r[2])
+def _spike(v): 
+    nb = [_cnt.get(v + d, 0) for d in (-4, -3, -2, -1, 1, 2, 3, 4)]
+    return v % 50 == 0 and _cnt.get(v, 0) > 20 * max(1.0, float(np.median(nb)))
+SPIKES = sorted(v for v in _cnt if _spike(v))
+def spread(v):
+    if v % 50 == 0 and (v < 1850 or v in SPIKES): return max(1000, min(2026, v + rnd.randint(-20, 20)))
+    if v % 10 == 0: return min(2026, v + rnd.randint(-5, 4))
+    return v
+PRE9 = collections.Counter(r[2] for r in rows if r[2] and r[6] ** 2 + r[7] ** 2 <= RP ** 2)
+PRE_ALL = collections.Counter(_cnt)
+n_round = sum(1 for r in rows if r[2] and r[2] % 10 == 0)
+rows = [(r[0], r[1], spread(r[2]) if r[2] else None) + r[3:] for r in rows]
+print(f'[de-arrotondamento] multipli di 10: {n_round} gruppi ({n_round / max(1, sum(1 for r in rows if r[2])):.0%} dei noti); picchi +-20: {SPIKES}', flush=True)
 def stats(sel, label):
     n = len(sel); a = sum(1 for r in sel if r[2]); 
     return {'zona': label, 'gruppi': n, 'con_anno': a, 'quota_anno': round(a / n, 4) if n else None, 'senza_anno': n - a, 'quota_senza': round(1 - a / n, 4) if n else None}
@@ -43,11 +63,11 @@ for r in pk:
     if r[2]: continue
     d, ix = tree.query((r[6], r[7]), k=6, distance_upper_bound=150)
     ok = [i for dd, i in zip(np.atleast_1d(d), np.atleast_1d(ix)) if i < len(known)]
-    if ok: y = int(round(float(np.median(ky[ok])) / 5) * 5); how['k6_150m'] += 1
+    if ok: y = min(2026, int(round(float(np.median(ky[ok]))) + rnd.randint(-2, 2))); how['k6_150m'] += 1   # niente arrotondamento al lustro: creava onde ogni 5 anni
     else:
         d1, i1 = tree.query((r[6], r[7]), distance_upper_bound=400)
-        if i1 < len(known): y = int(ky[i1] // 5 * 5); how['nn_400m'] += 1
-        else: y = genmed; how['default'] += 1
+        if i1 < len(known): y = min(2026, int(ky[i1]) + rnd.randint(-2, 2)); how['nn_400m'] += 1
+        else: y = genmed + rnd.randint(0, 4); how['default'] += 1
     est[r[0]] = y
 B = []; estidx = []
 for r in pk:
@@ -64,7 +84,12 @@ M['pack'] = {'parti_poligono': len(B), 'gruppi': len(pk), 'gruppi_stimati': len(
 # dove sono stimati: per arrondissement e per cella 1 km
 byk = collections.Counter(r[1] for r in pk if not r[2]); M['pack']['stimati_per_insee'] = dict(byk.most_common(20))
 cells = collections.Counter((int(r[6] // 1000), int(r[7] // 1000)) for r in pk if not r[2]); M['pack']['celle_1km_top'] = [[list(k), v] for k, v in cells.most_common(8)]
-json.dump({'note': 'anni stimati dai vicini (mediana dei 6 piu vicini entro 150 m, al lustro) per i gruppi BDNB senza annee_construction', 'estimated_indices': estidx, 'sources': dict(how)}, open(os.path.join(DATA, 'buildings_y0_prov.json'), 'w'))
+M['de_arrotondamento'] = {'metodo': 'prep_parigi.spread: x10 +-5, x50<1850 +-20, picchi x50 (>20x vicini) +-20', 'picchi_x50': SPIKES, 'multipli_di_10_gruppi': n_round}
+_post9 = collections.Counter(r[2] for r in pk if r[2])      # anni veri dopo de-arrotondamento (gruppi entro RP, senza stimati)
+M['de_arrotondamento']['gruppi_per_anno_1895_1905_prima_9km'] = {y: PRE9.get(y, 0) for y in range(1895, 1906)}
+M['de_arrotondamento']['gruppi_per_anno_1895_1905_dopo_9km'] = {y: _post9.get(y, 0) for y in range(1895, 1906)}
+M['de_arrotondamento']['gruppi_per_anno_1895_1905_dopo_incl_stimati_9km'] = {y: sum(1 for r in pk if (r[2] or est[r[0]]) == y) for y in range(1895, 1906)}
+json.dump({'note': 'anni stimati dai vicini (mediana dei 6 piu vicini entro 150 m, +-2 anni) per i gruppi BDNB senza annee_construction', 'estimated_indices': estidx, 'sources': dict(how)}, open(os.path.join(DATA, 'buildings_y0_prov.json'), 'w'))
 json.dump(M, open(os.path.join(DATA, 'misure_bdnb.json'), 'w'), indent=1, ensure_ascii=False)
 print(json.dumps({k: M[k] for k in ('comune_13201_13216', 'entro_1500m_VieuxPort', 'entro_9km', 'decenni_comune', 'pack')}, ensure_ascii=False)[:3500])
 print({k: v for k, v in M.items() if k.startswith('con_anno')})
