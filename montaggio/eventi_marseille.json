@@ -1,0 +1,615 @@
+{
+ "didascalie": [],
+ "soste": [
+  {
+   "t_in": 15.7,
+   "t_out": 22.7,
+   "title": "Greek sailors found Massalia",
+   "sub": "c. 600 BC"
+  },
+  {
+   "t_in": 63.68,
+   "t_out": 69.68,
+   "title": "Caesar besieges Massalia",
+   "sub": "49 BC"
+  },
+  {
+   "t_in": 127.0,
+   "t_out": 132.0,
+   "title": "The abbey church of Saint-Victor",
+   "sub": "1040"
+  },
+  {
+   "t_in": 173.74,
+   "t_out": 178.74,
+   "title": "King Rene's Tower",
+   "sub": "1447-53"
+  },
+  {
+   "t_in": 209.92,
+   "t_out": 214.92,
+   "title": "Louis XIV's forts guard the port",
+   "sub": "1660-68"
+  },
+  {
+   "t_in": 219.38,
+   "t_out": 224.38,
+   "title": "The Hotel de Ville",
+   "sub": "1653-73"
+  },
+  {
+   "t_in": 235.04,
+   "t_out": 240.04,
+   "title": "La Vieille Charite",
+   "sub": "1671-1749"
+  },
+  {
+   "t_in": 268.83,
+   "t_out": 273.83,
+   "title": "The railway reaches Saint-Charles",
+   "sub": "1848"
+  },
+  {
+   "t_in": 283.88,
+   "t_out": 289.88,
+   "title": "Rue Imperiale cuts through the old town",
+   "sub": "1862-64"
+  },
+  {
+   "t_in": 309.53,
+   "t_out": 314.53,
+   "title": "Notre-Dame de la Garde",
+   "sub": "1853-70"
+  },
+  {
+   "t_in": 334.2,
+   "t_out": 339.2,
+   "title": "The new Cathedral",
+   "sub": "1852-93"
+  },
+  {
+   "t_in": 349.73,
+   "t_out": 354.73,
+   "title": "The Transporter Bridge",
+   "sub": "Dec 1905"
+  },
+  {
+   "t_in": 405.42,
+   "t_out": 419.42,
+   "title": "The Saint-Jean quarter is dynamited",
+   "sub": "Feb 1943"
+  },
+  {
+   "t_in": 443.29,
+   "t_out": 449.29,
+   "title": "Pouillon's new Old Port quarter",
+   "sub": "1949-56"
+  },
+  {
+   "t_in": 518.45,
+   "t_out": 524.45,
+   "title": "MuCEM and the Euromediterranee waterfront",
+   "sub": "2013"
+  }
+ ],
+ "subscribe_t": 90.0,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 22.7,
+   "date": "600 BC",
+   "title": "A colony on the Lacydon",
+   "lines": [
+    "Greeks from Phocaea, in Asia Minor, found Massalia around 600 BC.",
+    "The settlers choose the hills north of a sheltered inlet, the Lacydon."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 25.04,
+   "t_out": 30.04,
+   "date": "540 BC",
+   "title": "A second wave",
+   "lines": [
+    "After the Persians destroy Phocaea, new colonists arrive around 540 BC."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 34.71,
+   "t_out": 40.71,
+   "date": "400 BC",
+   "title": "Walls of limestone and clay",
+   "lines": [
+    "A first rampart rises in the late 5th century BC.",
+    "It is rebuilt in the 4th century and on a large scale in the 2nd."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 43.04,
+   "t_out": 48.04,
+   "date": "330 BC",
+   "title": "Pytheas sails north",
+   "lines": [
+    "The Massaliote navigator Pytheas explores the Atlantic coasts, around 330-320 BC."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 55.16,
+   "t_out": 61.16,
+   "date": "123 BC",
+   "title": "Rome comes to the rescue",
+   "lines": [
+    "Gallic tribes threaten the city in 123-121 BC; Roman armies drive them back.",
+    "The alliance with Rome grows closer."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 63.68,
+   "t_out": 69.68,
+   "date": "48 BC",
+   "title": "A city that backed the wrong side",
+   "lines": [
+    "After Caesar's siege the city keeps nominal autonomy but loses its trading empire."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 85.12,
+   "t_out": 91.12,
+   "date": "AD 415",
+   "title": "Cassian and Saint-Victor",
+   "lines": [
+    "Tradition says the monk John Cassian founds two monasteries at Saint-Victor around 415.",
+    "Archaeology finds nothing there before the late 5th century."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 92.96,
+   "t_out": 98.96,
+   "date": "AD 470",
+   "title": "The Goths arrive",
+   "lines": [
+    "Visigoth forces under King Euric take Marseille around 470.",
+    "Franks follow in 536 (some sources say 537)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 107.92,
+   "t_out": 112.92,
+   "date": "AD 739",
+   "title": "Charles Martel sacks the city",
+   "lines": [
+    "Arab forces invited into Provence are driven out in 739 as the Franks sack Marseille."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 116.26,
+   "t_out": 120.26,
+   "date": "AD 839",
+   "title": "Raiders from the sea",
+   "lines": [
+    "Saracens sack Marseille in 839."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 133.93,
+   "t_out": 139.93,
+   "date": "1100",
+   "title": "Three lords, one city",
+   "lines": [
+    "In feudal times the city is split between the bishop, the viscount and the abbey of Saint-Victor."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 143.73,
+   "t_out": 149.73,
+   "date": "1214",
+   "title": "A commune and a chapel",
+   "lines": [
+    "Marseille governs itself as a commune from the early 13th century (sources differ: 1212-18).",
+    "In 1214 a priest begins a chapel on the Garde hill."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 151.0,
+   "t_out": 157.0,
+   "date": "1252",
+   "title": "Anjou takes Marseille",
+   "lines": [
+    "Charles of Anjou, count of Provence since 1246, takes the city in 1252.",
+    "A revolt is crushed in 1262-63."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 160.2,
+   "t_out": 165.2,
+   "date": "1348",
+   "title": "The Black Death",
+   "lines": [
+    "Plague kills about 15,000 of 25,000 inhabitants."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 167.7,
+   "t_out": 172.7,
+   "date": "1423",
+   "title": "The Aragonese sack the port",
+   "lines": [
+    "Alfonso V of Aragon sacks the city on 20 November 1423."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 179.68,
+   "t_out": 185.68,
+   "date": "1481",
+   "title": "Provence joins France",
+   "lines": [
+    "Charles III dies in December 1481 and leaves Provence to Louis XI.",
+    "The union is confirmed in 1486."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 187.1,
+   "t_out": 192.1,
+   "date": "1524",
+   "title": "A siege lifted",
+   "lines": [
+    "Imperial troops besiege the city in August-September 1524.",
+    "They withdraw as Francis I marches to its relief."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 196.61,
+   "t_out": 202.61,
+   "date": "1660",
+   "title": "The king enters through a breach",
+   "lines": [
+    "Louis XIV subdues a rebellious Marseille in 1660.",
+    "Forts Saint-Jean and Saint-Nicolas are built to watch the city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 202.81,
+   "t_out": 209.81,
+   "date": "1666",
+   "title": "A new city beyond the walls",
+   "lines": [
+    "In 1666 the king decides to enlarge Marseille; the old ramparts are razed in 1672 and a new wall follows in 1694.",
+    "A galley arsenal fills the port from 1665."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 226.59,
+   "t_out": 232.59,
+   "date": "1720",
+   "title": "The Great Plague",
+   "lines": [
+    "A ship from the Levant brings plague in 1720.",
+    "About 38,000 of 75,000 inhabitants die."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 243.61,
+   "t_out": 249.61,
+   "date": "1792",
+   "title": "The song of the Marseillais",
+   "lines": [
+    "Volunteers march from Marseille to Paris in 1792; their song becomes La Marseillaise."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 249.71,
+   "t_out": 254.71,
+   "date": "1793",
+   "title": "The city without a name",
+   "lines": [
+    "After a federalist revolt, Marseille is renamed Ville-sans-nom in 1793."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 261.9,
+   "t_out": 267.9,
+   "date": "1844",
+   "title": "A new port for steam",
+   "lines": [
+    "The Joliette basin is authorized in 1844 and completed in 1853.",
+    "The Old Port is no longer enough."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 268.83,
+   "t_out": 272.83,
+   "date": "1849",
+   "title": "Water for a growing city",
+   "lines": [
+    "The Canal de Marseille opens in 1849."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 276.78,
+   "t_out": 281.78,
+   "date": "1858",
+   "title": "The Docks of the Joliette",
+   "lines": [
+    "Giant warehouses rise from 1858; completion dates range from 1863 to 1866."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 293.33,
+   "t_out": 299.33,
+   "date": "1869",
+   "title": "Suez opens",
+   "lines": [
+    "The Suez Canal opens in 1869 and boosts the port; the Palais Longchamp is completed the same year."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 300.63,
+   "t_out": 305.63,
+   "date": "1870",
+   "title": "A street changes its name",
+   "lines": [
+    "On 16 October 1870 the Rue Imperiale becomes the Rue de la Republique."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 349.73,
+   "t_out": 354.73,
+   "date": "1906",
+   "title": "The colonial exhibition",
+   "lines": [
+    "Marseille hosts colonial exhibitions in 1906 and 1922."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 385.93,
+   "t_out": 389.93,
+   "date": "1937",
+   "title": "A stadium for the city",
+   "lines": [
+    "The Stade Velodrome opens in 1937."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 392.64,
+   "t_out": 398.64,
+   "date": "1940",
+   "title": "Vichy and the bombs",
+   "lines": [
+    "In June 1940 German and Italian aircraft bomb Marseille.",
+    "The city then lies in the unoccupied zone, under the Vichy regime."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 400.26,
+   "t_out": 405.26,
+   "date": "1942",
+   "title": "German troops occupy the city",
+   "lines": [
+    "In November 1942 German forces occupy Marseille."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 405.42,
+   "t_out": 413.42,
+   "date": "1943",
+   "title": "The Saint-Jean quarter is gone",
+   "lines": [
+    "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
+    "From 1 February about 1,500 buildings on 14 hectares are dynamited."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 413.42,
+   "t_out": 419.42,
+   "date": "1944",
+   "title": "Liberation",
+   "lines": [
+    "Marseille is liberated in late August 1944.",
+    "The Germans blow up the Transporter Bridge on 22 August."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 424.49,
+   "t_out": 431.49,
+   "date": "1949",
+   "title": "Rebuilding the Old Port",
+   "lines": [
+    "From 1949 the architect Fernand Pouillon builds new stone blocks on both sides of the Hotel de Ville.",
+    "The district is finished by 1956; the old lanes do not return."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 435.05,
+   "t_out": 441.05,
+   "date": "1952",
+   "title": "Le Corbusier's Radiant City",
+   "lines": [
+    "The Cite Radieuse is inaugurated on 14 October 1952: a 56-meter slab of apartments after five years of work."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 455.17,
+   "t_out": 460.17,
+   "date": "1962",
+   "title": "The pieds-noirs",
+   "lines": [
+    "After Algerian independence in 1962 about 150,000 pieds-noirs settle in Marseille."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 488.92,
+   "t_out": 495.92,
+   "date": "1995",
+   "title": "Euromediterranee",
+   "lines": [
+    "In 1995 the state and the city launch Euromediterranee: 310 hectares around La Joliette.",
+    "An extension adds 170 hectares from 2007."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 512.08,
+   "t_out": 517.08,
+   "date": "2011",
+   "title": "A tower for a shipping giant",
+   "lines": [
+    "Zaha Hadid's 147-meter CMA CGM Tower is completed in September 2011."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "The Greek Port"
+  },
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "II",
+   "title": "The Greek Port"
+  },
+  {
+   "t_in": 61.16,
+   "t_out": 63.68,
+   "num": "III",
+   "title": "Under Rome"
+  },
+  {
+   "t_in": 61.16,
+   "t_out": 63.68,
+   "num": "IV",
+   "title": "Under Rome"
+  },
+  {
+   "t_in": 82.32,
+   "t_out": 85.12,
+   "num": "V",
+   "title": "Saints, Goths and Counts"
+  },
+  {
+   "t_in": 82.32,
+   "t_out": 85.12,
+   "num": "VI",
+   "title": "Saints, Goths and Counts"
+  },
+  {
+   "t_in": 149.73,
+   "t_out": 151.0,
+   "num": "VII",
+   "title": "Anjou and the Crown"
+  },
+  {
+   "t_in": 149.73,
+   "t_out": 151.0,
+   "num": "VIII",
+   "title": "Anjou and the Crown"
+  },
+  {
+   "t_in": 193.81,
+   "t_out": 196.61,
+   "num": "IX",
+   "title": "The King's Port"
+  },
+  {
+   "t_in": 193.81,
+   "t_out": 196.61,
+   "num": "X",
+   "title": "The King's Port"
+  },
+  {
+   "t_in": 259.1,
+   "t_out": 261.9,
+   "num": "XI",
+   "title": "Gateway to the Empire"
+  },
+  {
+   "t_in": 259.1,
+   "t_out": 261.9,
+   "num": "XII",
+   "title": "Gateway to the Empire"
+  },
+  {
+   "t_in": 389.93,
+   "t_out": 392.64,
+   "num": "XIII",
+   "title": "Occupation and Ruins"
+  },
+  {
+   "t_in": 389.93,
+   "t_out": 392.64,
+   "num": "XIV",
+   "title": "Occupation and Ruins"
+  },
+  {
+   "t_in": 486.12,
+   "t_out": 488.92,
+   "num": "XV",
+   "title": "A New Waterfront"
+  },
+  {
+   "t_in": 486.12,
+   "t_out": 488.92,
+   "num": "XVI",
+   "title": "A New Waterfront"
+  }
+ ],
+ "cta": {
+  "t_in": 581.6,
+  "t_out": 586.1,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
+ "sources_card": {
+  "t_in": 586.1,
+  "t_out": 594.1,
+  "items": [
+   "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
+   "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
+   "Streets and place names: © OpenStreetMap contributors (ODbL)",
+   "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
+   "Historical map (Saint-Jean quarter): Stadtplan von Marseille 1940, BnF Gallica",
+   "History: Wikipedia EN/FR (Marseille, Siege of Massilia, Marseille roundup,",
+   "Hotel de Ville, Vieille Charite, Notre-Dame de la Garde, Cite radieuse, Euromediterranee)",
+   "Population: Wikipedia, Marseille, census figures",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
+}
