@@ -1,4 +1,4 @@
-# Marseille — miniature (packaging check, 16/11/2026) — PROVVISORIO: nessun fotogramma renderizzato
+# Marseille — miniature (packaging check, aggiornato 16/11/2026 dopo round 3) — PROVVISORIO: nessun fotogramma renderizzato
 
 Regole usate (analisi/ctr/MINIATURE.md + owner's review 14/11 + AVVIO "Packaging"): un soggetto; luminosa e satura (SAT 1,4, contrasto 1,2); due metà piene e diverse (se simili, un fotogramma solo); anno = primo anno del video = 600 BC; niente bandiere né tag canale; 3-4 parole; promessa consegnata entro 30-60 s (cold open); mai ciò che arriva al 70%. Concorrenti (dato del proprietario): Timeline Cities, Brick Cities, ChronosPulse 3D: tutti "Marseille 600 BC → 2026", bandiera, nome enorme, nessuno ha il 1943.
 
@@ -6,7 +6,7 @@ Regole usate (analisi/ctr/MINIATURE.md + owner's review 14/11 + AVVIO "Packaging
 Mockup `cities/marseille/copertina/mockup_168_placeholder.png` (3 layout a 168 px sopra e 120 px sotto, ingrandito 2x per vederlo). **Sfondi = rettangoli colorati finti: serve solo a giudicare il testo, NON la foto.** Layout fatto con `kit.thumb_kit` (stesso font Inter ExtraBold, contorno nero). Esito:
 - "MARSEILLE" a 205 px: leggibile a 168 e a 120 [Certain, visto nel mockup].
 - Chip "600 BC" e "NOW" a 96 px: leggibili a 168; a 120 piccoli ma ancora decifrabili.
-- **"BLOWN UP" esce dal bordo destro** con la posizione fissa del kit (centro a x=1050): va centrato a x≈960 e portato a ≈86 px, oppure su due righe. `thumb_kit.compose` oggi ha font 118 px e x fissi: non l'ho toccato (kit non è tra i file consentiti); è una modifica di 2 righe (font e x del chip destro).
+- Nel mockup con `kit.thumb_kit` di prima, "BLOWN UP" usciva dal bordo destro (font 118, centro x=1050). Il kit round 3 ha ora `--city`, `--text-size`, `--lx`, `--rx` e la story ha `cover.text_size` 86 e `text_rx` 960: **da riverificare con il fotogramma vero** (il mockup qui sopra è del kit vecchio) [Likely che ora entri].
 - Il testo del chip destro compete col nome: in B e C il gancio ("BLOWN UP") dovrebbe essere più grande del nome, non il contrario.
 Non verificabile ora: se la foto vera sia luminosa e piena (serve il fotogramma, vedi sotto).
 
@@ -22,8 +22,8 @@ Parametri dei fotogrammi (dalla story, `city.cover.shots`, lens 35, camera `[x,y
 - `now_day` anno 2026, stessa camera; `now_night` stessa camera di notte.
 - `hook_1943_pre` anno 1943,07, `hook_1943_mid` 1943,11, `hook_1943_post` 1943,15, cam [-730,-650,420,-730,150,0].
 - Prima del pod, su un fotogramma CPU: il fumo (flames 6, smoke 14) e i blocchi che spariscono devono leggersi a 168 px (nota della story). Se non si leggono, B e C cadono e resta A.
-Comando (dopo i fotogrammi, esempio B; correggere prima font/posizione dei chip): `python -m kit.thumb_kit cities/marseille/copertina/marseille_thumb_600bc_blownup.jpg --left out/marseille_cover_massalia_a.jpg --right out/marseille_cover_hook_1943_mid.jpg --title MARSEILLE --ly "600 BC" --ry "BLOWN UP"`.
+Comando (dopo i fotogrammi, esempio B; posizioni e dimensione chip dalla story con `--city`): `python -m kit.thumb_kit cities/marseille/copertina/marseille_thumb_600bc_blownup.jpg --left out/marseille_cover_massalia_a.jpg --right out/marseille_cover_hook_1943_mid.jpg --title MARSEILLE --ly "600 BC" --ry "BLOWN UP" --city marseille`. Per A: `--ry NOW` con `now_day`; per C: `--ly BEFORE --ry "BLOWN UP"` (nessun anno) con `hook_1943_pre`/`hook_1943_post`. Se serve, `--lx`/`--rx`/`--text-size` sovrascrivono la story.
 Con e senza opzioni (R7): A senza e con bandiera NON richiesta (regola: niente bandiere); consegnare B e A come file separati.
 
 ## Coerenza miniatura / titolo / video
-Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 mostra il quartiere in piedi, il dinamitaggio e le macerie [da confermare con la finestra reale]. Niente "Panier" in miniatura (vedi `METADATA.md`).
+Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 (hover 450,1-459,1 s: ~4 s quartiere in piedi, dinamitaggio 454,4-458,4, macerie) [PROVVISORIO: da confermare con `years.json`]. Niente "Panier" in miniatura (vedi `METADATA.md`).

@@ -1,15 +1,15 @@
 # Marseille — SHORT (16/11/2026) — PROVVISORIO fino al render
 
-Come Lione: il Short NON ha un render a parte; è il video lungo (secondi 10,5 → 649,1) accelerato a 28 s, con overlay verticale e audio dedicati. Non lanciare `run.sh shorts`.
+Come Lione: il Short NON ha un render a parte; è il video lungo (secondi 10,5 → 653,1) accelerato a 28 s, con overlay verticale e audio dedicati. Non lanciare `run.sh shorts`.
 File: `marseille_full.mp4` (quello del pod), `marseille_short_overlay.webm` (`bash montaggio/ov_kit.sh marseille short`), `marseille_short_audio.m4a` (`sfx_kit.py`).
-Valori da `kit_city.py` (formule lette nel codice, non ancora generato `kit_marseille.json`): a = title_t + 1,0 = 10,5; b = durata − 6,0 = 649,1; n = 672 fotogrammi = 28 s; SP = (28 − 1,5) / (649,1 − 10,5) = 0,04150. **Da ricontrollare in `public/kit_marseille.json` (chiave `short`) dopo `kit_city.py` e dopo il render (se la durata cambia, cambiano b e SP).**
+Valori da `kit_city.py` (formule lette in `kit_city.py` sullo schedule round 3, 659,1 s; `kit_marseille.json` non ancora generato): a = title_t + 1,0 = 10,5; b = durata − 6,0 = 653,1; n = 672 fotogrammi = 28 s; SP = (28 − 1,5) / (653,1 − 10,5) = 0,04124. **Da ricontrollare in `public/kit_marseille.json` (chiave `short`) dopo `kit_city.py` e dopo il render (se la durata cambia, cambiano b e SP).**
 
 ## Montaggio (cmd, una riga) → marseille_short_finale.mp4 (1080x1920, 28 s)
 ```
-ffmpeg -y -ss 10.5 -t 638.6 -i marseille_full.mp4 -c:v libvpx-vp9 -i marseille_short_overlay.webm -i marseille_short_audio.m4a -filter_complex "[0:v]setpts=PTS*0.0415,fps=24,tpad=stop_mode=clone:stop_duration=1.5,eq=contrast=1.03:saturation=1.08,split[s1][s2];[s1]scale=-2:1920,crop=1080:1920,boxblur=40:5,eq=brightness=-0.12[bg];[s2]scale=1080:608[fg];[bg][fg]overlay=0:656[m];[m][1:v]overlay=format=auto,format=yuv420p[v]" -map "[v]" -map 2:a -c:v libx264 -preset slow -crf 18 -c:a copy -t 28 -movflags +faststart marseille_short_finale.mp4
+ffmpeg -y -ss 10.5 -t 642.6 -i marseille_full.mp4 -c:v libvpx-vp9 -i marseille_short_overlay.webm -i marseille_short_audio.m4a -filter_complex "[0:v]setpts=PTS*0.04124,fps=24,tpad=stop_mode=clone:stop_duration=1.5,eq=contrast=1.03:saturation=1.08,split[s1][s2];[s1]scale=-2:1920,crop=1080:1920,boxblur=40:5,eq=brightness=-0.12[bg];[s2]scale=1080:608[fg];[bg][fg]overlay=0:656[m];[m][1:v]overlay=format=auto,format=yuv420p[v]" -map "[v]" -map 2:a -c:v libx264 -preset slow -crf 18 -c:a copy -t 28 -movflags +faststart marseille_short_finale.mp4
 ```
 (forma identica a `cities/lyon/SHORT.md`; non verificata con un video di prova: non c'è ancora `marseille_full.mp4`.)
-**Errore da evitare:** l'intestazione automatica del Short dice "2,626 YEARS IN 28 SECONDS" (`yrs_n` = 2026 − (−600)), mentre la end card della story dice 2,625. Mettere in `story.json` → `montaggio.short_tag: "2,625 YEARS IN 28 SECONDS"` prima di generare l'overlay.
+Intestazione automatica del Short: la story round 3 ha `montaggio.short_tag` = "2,625 YEARS IN 28 SECONDS" (verificato nel file): l'overlay dirà 2,625, coerente con la end card.
 
 ## Titolo (EN, ≤ 100 caratteri)
 2,600 YEARS OF MARSEILLE IN 28 SECONDS | 3D Timelapse | No AI #Shorts
