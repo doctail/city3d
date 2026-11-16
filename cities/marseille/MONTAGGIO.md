@@ -19,3 +19,10 @@ ffmpeg -y -ss 10.5 -t 638.8 -i marseille_full.mp4 -c:v libvpx-vp9 -i marseille_s
 - Musica: A@0 (Waking to Reality) > B@244 (Monument) > A@476 (chiusura 8 s) = playlist del kit per durata automatica. Effetti: 7 posizionati; gli fx `stone`, `chime`, `train`, `build` della story non esistono nel kit (saltati).
 - Mancano le etichette dei monumenti sullo schermo: `montaggio/labels_marseille.json` richiede Blender (`labels_cam.py`, bpy non disponibile qui).
 - `montaggio/eventi_marseille.json` e `public/kit_marseille_eventi.json` rigenerati senza `montaggio.chapters` della story: il kit (`kit/eventi_kit.py`, `kit_city.py`) leggeva i capitoli sia da `montaggio.chapters` sia dalle carte con `chapter`, quindi li duplicava (numeri I, III, V... XV). Correzione di una riga consigliata alla story: togliere `montaggio.chapters` (o dedupe nel kit); fino ad allora `kit_city.py marseille` senza `--story` rigenera il difetto.
+
+## Overlay lungo: 44,1 MB, diviso in due file da scaricare (sotto 30 MB)
+`out/marseille_overlay_1.webm` (24,6 MB, fotogrammi 0-7999) + `out/marseille_overlay_2.webm` (19,5 MB, 8000-15726). Verificato: riunendoli con il comando sotto si ottiene un file identico (stessa dimensione, 15.727 fotogrammi, 1920x1080, 24 fps). Una riga per cmd, nella cartella con i due file:
+```
+(echo file marseille_overlay_1.webm)>list.txt && (echo file marseille_overlay_2.webm)>>list.txt && ffmpeg -y -f concat -safe 0 -i list.txt -c copy marseille_overlay.webm
+```
+Poi il comando di unione del video lungo (sopra). Lo Short usa `marseille_short_overlay.webm` (1,9 MB) e `marseille_short_audio.m4a` (0,7 MB).
