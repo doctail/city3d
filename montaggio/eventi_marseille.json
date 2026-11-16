@@ -8,86 +8,86 @@
    "sub": "c. 600 BC"
   },
   {
-   "t_in": 63.68,
-   "t_out": 69.68,
+   "t_in": 63.65,
+   "t_out": 69.65,
    "title": "Caesar besieges Massalia",
    "sub": "49 BC"
   },
   {
-   "t_in": 127.0,
-   "t_out": 132.0,
+   "t_in": 136.97,
+   "t_out": 141.97,
    "title": "The abbey church of Saint-Victor",
    "sub": "1040"
   },
   {
-   "t_in": 173.74,
-   "t_out": 178.74,
+   "t_in": 183.71,
+   "t_out": 188.71,
    "title": "King Rene's Tower",
    "sub": "1447-53"
   },
   {
-   "t_in": 209.92,
-   "t_out": 214.92,
+   "t_in": 220.05,
+   "t_out": 225.05,
    "title": "Louis XIV's forts guard the port",
    "sub": "1660-68"
   },
   {
-   "t_in": 219.38,
-   "t_out": 224.38,
+   "t_in": 228.55,
+   "t_out": 233.55,
    "title": "The Hotel de Ville",
    "sub": "1653-73"
   },
   {
-   "t_in": 235.04,
-   "t_out": 240.04,
+   "t_in": 244.21,
+   "t_out": 249.21,
    "title": "La Vieille Charite",
    "sub": "1671-1749"
   },
   {
-   "t_in": 268.83,
-   "t_out": 273.83,
+   "t_in": 277.98,
+   "t_out": 282.98,
    "title": "The railway reaches Saint-Charles",
    "sub": "1848"
   },
   {
-   "t_in": 283.88,
-   "t_out": 289.88,
+   "t_in": 295.25,
+   "t_out": 301.25,
    "title": "Rue Imperiale cuts through the old town",
    "sub": "1862-64"
   },
   {
-   "t_in": 309.53,
-   "t_out": 314.53,
+   "t_in": 317.19,
+   "t_out": 322.19,
    "title": "Notre-Dame de la Garde",
    "sub": "1853-70"
   },
   {
-   "t_in": 334.2,
-   "t_out": 339.2,
+   "t_in": 349.86,
+   "t_out": 354.86,
    "title": "The new Cathedral",
    "sub": "1852-93"
   },
   {
-   "t_in": 349.73,
-   "t_out": 354.73,
+   "t_in": 375.43,
+   "t_out": 380.43,
    "title": "The Transporter Bridge",
    "sub": "Dec 1905"
   },
   {
-   "t_in": 405.42,
-   "t_out": 419.42,
+   "t_in": 446.12,
+   "t_out": 460.12,
    "title": "The Saint-Jean quarter is dynamited",
    "sub": "Feb 1943"
   },
   {
-   "t_in": 443.29,
-   "t_out": 449.29,
+   "t_in": 483.99,
+   "t_out": 489.99,
    "title": "Pouillon's new Old Port quarter",
    "sub": "1949-56"
   },
   {
-   "t_in": 518.45,
-   "t_out": 524.45,
+   "t_in": 584.13,
+   "t_out": 590.13,
    "title": "MuCEM and the Euromediterranee waterfront",
    "sub": "2013"
   }
@@ -106,8 +106,8 @@
    "sober": false
   },
   {
-   "t_in": 25.04,
-   "t_out": 30.04,
+   "t_in": 25.05,
+   "t_out": 30.05,
    "date": "540 BC",
    "title": "A second wave",
    "lines": [
@@ -127,8 +127,8 @@
    "sober": false
   },
   {
-   "t_in": 43.04,
-   "t_out": 48.04,
+   "t_in": 43.05,
+   "t_out": 48.05,
    "date": "330 BC",
    "title": "Pytheas sails north",
    "lines": [
@@ -137,8 +137,8 @@
    "sober": false
   },
   {
-   "t_in": 55.16,
-   "t_out": 61.16,
+   "t_in": 55.14,
+   "t_out": 61.14,
    "date": "123 BC",
    "title": "Rome comes to the rescue",
    "lines": [
@@ -148,8 +148,8 @@
    "sober": false
   },
   {
-   "t_in": 63.68,
-   "t_out": 69.68,
+   "t_in": 63.65,
+   "t_out": 69.65,
    "date": "48 BC",
    "title": "A city that backed the wrong side",
    "lines": [
@@ -158,8 +158,28 @@
    "sober": false
   },
   {
-   "t_in": 85.12,
-   "t_out": 91.12,
+   "t_in": 74.6,
+   "t_out": 79.6,
+   "date": "AD 100",
+   "title": "Christians in the Roman port",
+   "lines": [
+    "Christianity appears in Roman Massilia; catacombs above the harbor mark an early community."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 85.93,
+   "t_out": 90.93,
+   "date": "AD 290",
+   "title": "The martyr Victor",
+   "lines": [
+    "Around 290 Victor is martyred in Marseille; the abbey of Saint-Victor will take his name."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 95.1,
+   "t_out": 101.1,
    "date": "AD 415",
    "title": "Cassian and Saint-Victor",
    "lines": [
@@ -169,8 +189,8 @@
    "sober": false
   },
   {
-   "t_in": 92.96,
-   "t_out": 98.96,
+   "t_in": 102.93,
+   "t_out": 108.93,
    "date": "AD 470",
    "title": "The Goths arrive",
    "lines": [
@@ -180,8 +200,8 @@
    "sober": false
   },
   {
-   "t_in": 107.92,
-   "t_out": 112.92,
+   "t_in": 117.9,
+   "t_out": 122.9,
    "date": "AD 739",
    "title": "Charles Martel sacks the city",
    "lines": [
@@ -190,8 +210,8 @@
    "sober": false
   },
   {
-   "t_in": 116.26,
-   "t_out": 120.26,
+   "t_in": 126.23,
+   "t_out": 130.23,
    "date": "AD 839",
    "title": "Raiders from the sea",
    "lines": [
@@ -200,8 +220,8 @@
    "sober": false
   },
   {
-   "t_in": 133.93,
-   "t_out": 139.93,
+   "t_in": 143.9,
+   "t_out": 149.9,
    "date": "1100",
    "title": "Three lords, one city",
    "lines": [
@@ -210,8 +230,8 @@
    "sober": false
   },
   {
-   "t_in": 143.73,
-   "t_out": 149.73,
+   "t_in": 153.7,
+   "t_out": 159.7,
    "date": "1214",
    "title": "A commune and a chapel",
    "lines": [
@@ -221,8 +241,8 @@
    "sober": false
   },
   {
-   "t_in": 151.0,
-   "t_out": 157.0,
+   "t_in": 160.97,
+   "t_out": 166.97,
    "date": "1252",
    "title": "Anjou takes Marseille",
    "lines": [
@@ -232,8 +252,8 @@
    "sober": false
   },
   {
-   "t_in": 160.2,
-   "t_out": 165.2,
+   "t_in": 170.17,
+   "t_out": 175.17,
    "date": "1348",
    "title": "The Black Death",
    "lines": [
@@ -242,8 +262,8 @@
    "sober": false
   },
   {
-   "t_in": 167.7,
-   "t_out": 172.7,
+   "t_in": 177.67,
+   "t_out": 182.67,
    "date": "1423",
    "title": "The Aragonese sack the port",
    "lines": [
@@ -252,8 +272,8 @@
    "sober": false
   },
   {
-   "t_in": 179.68,
-   "t_out": 185.68,
+   "t_in": 189.65,
+   "t_out": 195.65,
    "date": "1481",
    "title": "Provence joins France",
    "lines": [
@@ -263,8 +283,8 @@
    "sober": false
   },
   {
-   "t_in": 187.1,
-   "t_out": 192.1,
+   "t_in": 197.07,
+   "t_out": 202.07,
    "date": "1524",
    "title": "A siege lifted",
    "lines": [
@@ -274,8 +294,8 @@
    "sober": false
   },
   {
-   "t_in": 196.61,
-   "t_out": 202.61,
+   "t_in": 206.68,
+   "t_out": 212.68,
    "date": "1660",
    "title": "The king enters through a breach",
    "lines": [
@@ -285,8 +305,8 @@
    "sober": false
   },
   {
-   "t_in": 202.81,
-   "t_out": 209.81,
+   "t_in": 212.94,
+   "t_out": 219.94,
    "date": "1666",
    "title": "A new city beyond the walls",
    "lines": [
@@ -296,8 +316,8 @@
    "sober": false
   },
   {
-   "t_in": 226.59,
-   "t_out": 232.59,
+   "t_in": 235.76,
+   "t_out": 241.76,
    "date": "1720",
    "title": "The Great Plague",
    "lines": [
@@ -307,8 +327,8 @@
    "sober": false
   },
   {
-   "t_in": 243.61,
-   "t_out": 249.61,
+   "t_in": 252.78,
+   "t_out": 258.78,
    "date": "1792",
    "title": "The song of the Marseillais",
    "lines": [
@@ -317,8 +337,8 @@
    "sober": false
   },
   {
-   "t_in": 249.71,
-   "t_out": 254.71,
+   "t_in": 258.87,
+   "t_out": 263.87,
    "date": "1793",
    "title": "The city without a name",
    "lines": [
@@ -327,8 +347,8 @@
    "sober": false
   },
   {
-   "t_in": 261.9,
-   "t_out": 267.9,
+   "t_in": 271.06,
+   "t_out": 277.06,
    "date": "1844",
    "title": "A new port for steam",
    "lines": [
@@ -338,8 +358,8 @@
    "sober": false
   },
   {
-   "t_in": 268.83,
-   "t_out": 272.83,
+   "t_in": 277.98,
+   "t_out": 281.98,
    "date": "1849",
    "title": "Water for a growing city",
    "lines": [
@@ -348,18 +368,19 @@
    "sober": false
   },
   {
-   "t_in": 276.78,
-   "t_out": 281.78,
+   "t_in": 285.94,
+   "t_out": 290.94,
    "date": "1858",
    "title": "The Docks of the Joliette",
    "lines": [
-    "Giant warehouses rise from 1858; completion dates range from 1863 to 1866."
+    "Giant warehouses rise from 1858; completion dates range from 1863 to 1866.",
+    "The Arenc basin was begun in November 1856."
    ],
    "sober": false
   },
   {
-   "t_in": 293.33,
-   "t_out": 299.33,
+   "t_in": 304.7,
+   "t_out": 310.7,
    "date": "1869",
    "title": "Suez opens",
    "lines": [
@@ -368,8 +389,8 @@
    "sober": false
   },
   {
-   "t_in": 300.63,
-   "t_out": 305.63,
+   "t_in": 312.0,
+   "t_out": 317.0,
    "date": "1870",
    "title": "A street changes its name",
    "lines": [
@@ -378,8 +399,49 @@
    "sober": false
   },
   {
-   "t_in": 349.73,
-   "t_out": 354.73,
+   "t_in": 325.25,
+   "t_out": 329.25,
+   "date": "1876",
+   "title": "Horse-drawn trams",
+   "lines": [
+    "Horse-drawn trams begin to run in 1876."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 336.62,
+   "t_out": 340.62,
+   "date": "1884",
+   "title": "Cholera",
+   "lines": [
+    "A cholera epidemic strikes the city in 1884."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 359.36,
+   "t_out": 365.36,
+   "date": "1899",
+   "title": "2,500 years",
+   "lines": [
+    "Marseille celebrates the 2,500th anniversary of its founding in 1899.",
+    "Olympique de Marseille is formed the same year."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 368.49,
+   "t_out": 372.49,
+   "date": "1903",
+   "title": "Plague returns",
+   "lines": [
+    "Bubonic plague breaks out again in September 1903."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 375.43,
+   "t_out": 380.43,
    "date": "1906",
    "title": "The colonial exhibition",
    "lines": [
@@ -388,8 +450,38 @@
    "sober": false
   },
   {
-   "t_in": 385.93,
-   "t_out": 389.93,
+   "t_in": 394.0,
+   "t_out": 398.0,
+   "date": "1919",
+   "title": "The Grand Theatre burns",
+   "lines": [
+    "The Grand Theatre burns down on 13 November 1919."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 400.63,
+   "t_out": 405.63,
+   "date": "1922",
+   "title": "An airport and a second exhibition",
+   "lines": [
+    "Marseille Provence Airport opens in 1922, the year of a second colonial exhibition."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 417.9,
+   "t_out": 423.9,
+   "date": "1934",
+   "title": "Assassination on the quay",
+   "lines": [
+    "King Alexander I of Yugoslavia and French minister Louis Barthou are assassinated on 9 October 1934."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 426.63,
+   "t_out": 430.63,
    "date": "1937",
    "title": "A stadium for the city",
    "lines": [
@@ -398,8 +490,8 @@
    "sober": false
   },
   {
-   "t_in": 392.64,
-   "t_out": 398.64,
+   "t_in": 433.35,
+   "t_out": 439.35,
    "date": "1940",
    "title": "Vichy and the bombs",
    "lines": [
@@ -409,8 +501,8 @@
    "sober": false
   },
   {
-   "t_in": 400.26,
-   "t_out": 405.26,
+   "t_in": 440.96,
+   "t_out": 445.96,
    "date": "1942",
    "title": "German troops occupy the city",
    "lines": [
@@ -419,8 +511,8 @@
    "sober": false
   },
   {
-   "t_in": 405.42,
-   "t_out": 413.42,
+   "t_in": 446.12,
+   "t_out": 454.12,
    "date": "1943",
    "title": "The Saint-Jean quarter is gone",
    "lines": [
@@ -430,8 +522,8 @@
    "sober": false
   },
   {
-   "t_in": 413.42,
-   "t_out": 419.42,
+   "t_in": 454.12,
+   "t_out": 460.12,
    "date": "1944",
    "title": "Liberation",
    "lines": [
@@ -441,8 +533,8 @@
    "sober": false
   },
   {
-   "t_in": 424.49,
-   "t_out": 431.49,
+   "t_in": 465.19,
+   "t_out": 472.19,
    "date": "1949",
    "title": "Rebuilding the Old Port",
    "lines": [
@@ -452,8 +544,8 @@
    "sober": false
   },
   {
-   "t_in": 435.05,
-   "t_out": 441.05,
+   "t_in": 475.75,
+   "t_out": 481.75,
    "date": "1952",
    "title": "Le Corbusier's Radiant City",
    "lines": [
@@ -462,8 +554,8 @@
    "sober": false
   },
   {
-   "t_in": 455.17,
-   "t_out": 460.17,
+   "t_in": 495.87,
+   "t_out": 500.87,
    "date": "1962",
    "title": "The pieds-noirs",
    "lines": [
@@ -472,8 +564,39 @@
    "sober": false
   },
   {
-   "t_in": 488.92,
-   "t_out": 495.92,
+   "t_in": 505.38,
+   "t_out": 509.38,
+   "date": "1967",
+   "title": "A tunnel under the Old Port",
+   "lines": [
+    "The Old Port tunnel opens in 1967."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 517.94,
+   "t_out": 523.94,
+   "date": "1977",
+   "title": "Metro and a shipping giant",
+   "lines": [
+    "The first metro line opens in 1977.",
+    "The shipping company CMA CGM is founded the same year."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 528.55,
+   "t_out": 532.55,
+   "date": "1983",
+   "title": "The TGV arrives",
+   "lines": [
+    "The TGV Sud-Est begins serving Marseille in 1983."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 543.59,
+   "t_out": 550.59,
    "date": "1995",
    "title": "Euromediterranee",
    "lines": [
@@ -483,8 +606,29 @@
    "sober": false
   },
   {
-   "t_in": 512.08,
-   "t_out": 517.08,
+   "t_in": 556.59,
+   "t_out": 561.59,
+   "date": "2001",
+   "title": "2,600 years",
+   "lines": [
+    "The Parc du 26e Centenaire opens in 2001, marking 2,600 years since the founding."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 567.59,
+   "t_out": 573.59,
+   "date": "2007",
+   "title": "Tramway and a bigger waterfront",
+   "lines": [
+    "The first tramway line opens in 2007.",
+    "Euromediterranee adds 170 hectares to the north."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 577.75,
+   "t_out": 582.75,
    "date": "2011",
    "title": "A tower for a shipping giant",
    "lines": [
@@ -507,98 +651,98 @@
    "title": "The Greek Port"
   },
   {
-   "t_in": 61.16,
-   "t_out": 63.68,
+   "t_in": 61.14,
+   "t_out": 63.65,
    "num": "III",
    "title": "Under Rome"
   },
   {
-   "t_in": 61.16,
-   "t_out": 63.68,
+   "t_in": 61.14,
+   "t_out": 63.65,
    "num": "IV",
    "title": "Under Rome"
   },
   {
-   "t_in": 82.32,
-   "t_out": 85.12,
+   "t_in": 92.3,
+   "t_out": 95.1,
    "num": "V",
    "title": "Saints, Goths and Counts"
   },
   {
-   "t_in": 82.32,
-   "t_out": 85.12,
+   "t_in": 92.3,
+   "t_out": 95.1,
    "num": "VI",
    "title": "Saints, Goths and Counts"
   },
   {
-   "t_in": 149.73,
-   "t_out": 151.0,
+   "t_in": 159.7,
+   "t_out": 160.97,
    "num": "VII",
    "title": "Anjou and the Crown"
   },
   {
-   "t_in": 149.73,
-   "t_out": 151.0,
+   "t_in": 159.7,
+   "t_out": 160.97,
    "num": "VIII",
    "title": "Anjou and the Crown"
   },
   {
-   "t_in": 193.81,
-   "t_out": 196.61,
+   "t_in": 203.88,
+   "t_out": 206.68,
    "num": "IX",
    "title": "The King's Port"
   },
   {
-   "t_in": 193.81,
-   "t_out": 196.61,
+   "t_in": 203.88,
+   "t_out": 206.68,
    "num": "X",
    "title": "The King's Port"
   },
   {
-   "t_in": 259.1,
-   "t_out": 261.9,
+   "t_in": 268.26,
+   "t_out": 271.06,
    "num": "XI",
    "title": "Gateway to the Empire"
   },
   {
-   "t_in": 259.1,
-   "t_out": 261.9,
+   "t_in": 268.26,
+   "t_out": 271.06,
    "num": "XII",
    "title": "Gateway to the Empire"
   },
   {
-   "t_in": 389.93,
-   "t_out": 392.64,
+   "t_in": 430.63,
+   "t_out": 433.35,
    "num": "XIII",
    "title": "Occupation and Ruins"
   },
   {
-   "t_in": 389.93,
-   "t_out": 392.64,
+   "t_in": 430.63,
+   "t_out": 433.35,
    "num": "XIV",
    "title": "Occupation and Ruins"
   },
   {
-   "t_in": 486.12,
-   "t_out": 488.92,
+   "t_in": 540.79,
+   "t_out": 543.59,
    "num": "XV",
    "title": "A New Waterfront"
   },
   {
-   "t_in": 486.12,
-   "t_out": 488.92,
+   "t_in": 540.79,
+   "t_out": 543.59,
    "num": "XVI",
    "title": "A New Waterfront"
   }
  ],
  "cta": {
-  "t_in": 581.6,
-  "t_out": 586.1,
+  "t_in": 642.6,
+  "t_out": 647.1,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 586.1,
-  "t_out": 594.1,
+  "t_in": 647.1,
+  "t_out": 655.1,
   "items": [
    "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
    "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",

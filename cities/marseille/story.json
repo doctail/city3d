@@ -1851,7 +1851,8 @@
   "night_hold": 15,
   "drone": {
    "pitch_max": 38,
-   "alt_max": 800
+   "alt_max": 500,
+   "d_min": 1150
   },
   "lens": 32
  },

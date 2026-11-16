@@ -28,7 +28,7 @@ DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s,
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9,
-                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -164,6 +164,7 @@ def _speed_profile(Tf, L, v0, v1, ts):
 def dims(s, cfg):
     """Posizione di hover davanti al bersaglio: distanza di vista d, elevazione 20-35 gradi (aree e citta': 25-55), raggio orizzontale rho e quota alt."""
     el = math.radians(float(np.clip(s['el'], 20, 35) if s['kind'] == 'bld' else np.clip(s['el'], 25, 55))); d = float(s['d'])
+    d = max(d, float(cfg.get('d_min', 0.0))); s['d'] = d   # 16 nov (Marsiglia): drone.d_min = distanza minima di hover (m); la formula 'wide' dava ~400 m su monumenti piccoli (mediana camera 735 m)
     if s['kind'] == 'bld':
         alt = float(np.clip(d * math.sin(el), 80, cfg.get('alt_max', 200.0))); dz = alt - float(s.get('tzo', 0.0)); rho = math.sqrt(max(d * d - dz * dz, (0.5 * d) ** 2))
     else:
@@ -301,7 +302,8 @@ def limit_pitch(ts, P, L, pmax_deg, sigma_s=1.5):
     need = hd < hreq
     tgt = np.where(need[:, None], dirn * hreq[:, None], v)          # offset orizzontale desiderato (camera -> punto guardato)
     off = gsmooth(tgt, sigma_s * FPS)
-    L[:, :2] = P[:, :2] + np.where((np.hypot(off[:, 0], off[:, 1]) < hd)[:, None], v, off)   # mai piu' vicino di prima
+    w = np.clip((np.hypot(off[:, 0], off[:, 1]) - hd) / np.maximum(0.15 * hd, 5.0), 0.0, 1.0)[:, None]   # 16 nov (Marsiglia): il passaggio netto v/off faceva un salto dello sguardo (22 gradi in 1 frame a 315,5 s): ora e' un raccordo continuo
+    L[:, :2] = P[:, :2] + (1.0 - w) * v + w * off   # mai piu' vicino di prima
     return L
 
 
