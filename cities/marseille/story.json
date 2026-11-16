@@ -157,7 +157,7 @@
   "polities": [
    {
     "y": -600,
-    "name": "Massalia · Greek city-state of Phocaean colonists",
+    "name": "Massalia · Greek city-state",
     "flag_colors": [
      "#1f5fa8",
      "#ffffff"
@@ -194,7 +194,7 @@
    },
    {
     "y": 470,
-    "name": "Late Roman Empire · Visigothic advance",
+    "name": "Late Roman Empire · Visigoths",
     "flag_colors": [
      "#a50f15",
      "#8a1c1c"
@@ -244,7 +244,7 @@
    },
    {
     "y": 879,
-    "name": "Kingdom of Provence · Carolingian successors",
+    "name": "Kingdom of Provence",
     "flag_colors": [
      "#d4af37",
      "#7a2a6e"
@@ -256,7 +256,7 @@
    },
    {
     "y": 1032,
-    "name": "County of Provence · Holy Roman Empire",
+    "name": "Provence · Holy Roman Empire",
     "flag_colors": [
      "#d4af37",
      "#111111"
@@ -268,7 +268,7 @@
    },
    {
     "y": 1112,
-    "name": "County of Provence · House of Barcelona",
+    "name": "Provence · House of Barcelona",
     "flag_colors": [
      "#f2c500",
      "#c60b1e"
@@ -292,7 +292,7 @@
    },
    {
     "y": 1252,
-    "name": "County of Provence · House of Anjou",
+    "name": "Provence · House of Anjou",
     "flag_colors": [
      "#1f3a93",
      "#f2c500"
@@ -305,7 +305,7 @@
    },
    {
     "y": 1481.95,
-    "name": "County of Provence · Louis XI of France",
+    "name": "Provence · Louis XI of France",
     "flag_colors": [
      "#1f3a93",
      "#f2c500"
@@ -431,7 +431,7 @@
    },
    {
     "y": 1942.86,
-    "name": "German-occupied Marseille · Vichy regime",
+    "name": "German-occupied · Vichy regime",
     "flag_colors": [
      "#2b2b2b",
      "#a50f15"
@@ -444,7 +444,7 @@
    },
    {
     "y": 1944.66,
-    "name": "Provisional Government of the French Republic",
+    "name": "Provisional French Government",
     "flag_colors": [
      "#0055a4",
      "#ffffff",
@@ -1893,9 +1893,10 @@
    "MARSEILLE TODAY",
    "886,040 people",
    "2,625 YEARS",
-   "Every building in its real year."
+   "Open data, reconstruction before 1800"
   ],
   "short_tag": "2,625 YEARS IN 28 SECONDS",
+  "label_area": [230, 1690, 230, 900],
   "title": [
    "MARSEILLE",
    "600 BC TO NOW"
@@ -2672,40 +2673,6 @@
     "conf": "high",
     "shot": "wide",
     "target": "CMA CGM Tower"
-   }
-  ],
-  "chapters": [
-   {
-    "y": -600,
-    "title": "The Greek Port"
-   },
-   {
-    "y": -48.2,
-    "title": "Under Rome"
-   },
-   {
-    "y": 415,
-    "title": "Saints, Goths and Counts"
-   },
-   {
-    "y": 1252,
-    "title": "Anjou and the Crown"
-   },
-   {
-    "y": 1660,
-    "title": "The King's Port"
-   },
-   {
-    "y": 1844,
-    "title": "Gateway to the Empire"
-   },
-   {
-    "y": 1940.6,
-    "title": "Occupation and Ruins"
-   },
-   {
-    "y": 1995,
-    "title": "A New Waterfront"
    }
   ],
   "cta": "Which city should grow next? Tell me in the comments",
