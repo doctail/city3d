@@ -15,7 +15,7 @@ J'ai fait un timelapse en 3D de l'évolution de Marseille, de la colonie grecque
 
 Ce que j'ai voulu raconter : le port. La Massalia grecque, le siège de César, la peste de 1720, la rue Impériale, Suez, la Joliette, le Vieux-Port, l'hiver 1943 où les troupes allemandes ont dynamité le quartier Saint-Jean (environ 1 500 immeubles, après la rafle de janvier), la reconstruction de Pouillon, la Cité radieuse, Euroméditerranée et le MuCEM.
 
-Comment c'est fait : tout est du 3D calculé, sans images d'IA. Les bâtiments actuels apparaissent à l'année enregistrée pour leur groupe de bâtiments dans la Base de Données Nationale des Bâtiments (BDNB) : une année par groupe, pas par bâtiment ; les groupes sans année sont placés d'après leurs voisins. Avant 1800, c'est une reconstitution approximative, marquée à l'écran « RECONSTRUCTION · APPROXIMATE ». Le quartier Saint-Jean avant 1943 est aussi une reconstitution, approximée d'après le plan de Marseille de l'armée allemande de 1940 (BnF Gallica) : la géométrie est générée et couvre environ les deux tiers de la surface bâtie, ce n'est pas un relevé maison par maison. Les rues viennent de la BD TOPO de l'IGN et d'OpenStreetMap, le relief de Copernicus GLO-30.
+Comment c'est fait : tout est du 3D calculé, sans images d'IA. Les bâtiments actuels apparaissent à l'année enregistrée pour leur groupe de bâtiments dans la Base de Données Nationale des Bâtiments (BDNB) : une année par groupe, pas par bâtiment ; les groupes sans année sont placés d'après leurs voisins. Avant 1800, c'est une reconstitution approximative, marquée à l'écran « RECONSTRUCTION · APPROXIMATE ». Le quartier Saint-Jean avant 1943 est aussi une reconstitution : les contours des îlots suivent le plan de Marseille de l'armée allemande de 1940 (BnF Gallica) pour environ 60 % de l'emprise, le reste est un remplissage généré ; hauteurs, dates et vides sont estimés. Les rues viennent de la BD TOPO de l'IGN et d'OpenStreetMap, le relief de Copernicus GLO-30.
 
 Je sais qu'il y aura des erreurs. Si une date, un nom de rue ou un bâtiment est faux, dites-le en commentaire : je préfère corriger. Si votre famille vivait dans le quartier Saint-Jean, vos souvenirs et vos corrections sont les bienvenus. Et pour le reste : en quelle année apparaît votre immeuble ?
 
@@ -32,7 +32,7 @@ Sources et limites, pour pouvoir vérifier :
 
 ## Reddit — variante EN (r/MapPorn ou autre, SEULEMENT si les règles l'autorisent)
 Title: [OC] Marseille from 600 BC to today in 3D, including the quarter the Germans dynamited in 1943 (no AI, open data)
-Comment: Every frame is rendered from open data (BDNB building years per group of buildings, IGN BD TOPO, OpenStreetMap, Copernicus DEM). Before 1800, and the Saint-Jean quarter before 1943, are an approximate reconstruction (generated geometry approximated from the 1940 German army city plan, BnF Gallica). Corrections welcome. Full video: {{URL_VIDEO}}
+Comment: Every frame is rendered from open data (BDNB building years per group of buildings, IGN BD TOPO, OpenStreetMap, Copernicus DEM). Before 1800, and the Saint-Jean quarter before 1943, are an approximate reconstruction (Saint-Jean block outlines follow the 1940 German army plan for about 60% of the footprint, the rest is generated fill; BnF Gallica). Corrections welcome. Full video: {{URL_VIDEO}}
 
 ## Communautés à contacter (6-10) — demander l'accord des admins AVANT de poster; vérifier les règles. Je n'ai PAS vérifié l'existence ni les règles actuelles: ce sont des catégories à rechercher.
 1. Reddit r/marseille (français).

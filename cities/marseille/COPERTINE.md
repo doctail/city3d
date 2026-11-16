@@ -1,4 +1,4 @@
-# Marseille — miniature (packaging check, aggiornato 16/11/2026 dopo round 3) — PROVVISORIO: nessun fotogramma renderizzato
+# Marseille — miniature (packaging check, aggiornato 16/11/2026 dopo round 4) — PROVVISORIO: nessun fotogramma renderizzato
 
 Regole usate (analisi/ctr/MINIATURE.md + owner's review 14/11 + AVVIO "Packaging"): un soggetto; luminosa e satura (SAT 1,4, contrasto 1,2); due metà piene e diverse (se simili, un fotogramma solo); anno = primo anno del video = 600 BC; niente bandiere né tag canale; 3-4 parole; promessa consegnata entro 30-60 s (cold open); mai ciò che arriva al 70%. Concorrenti (dato del proprietario): Timeline Cities, Brick Cities, ChronosPulse 3D: tutti "Marseille 600 BC → 2026", bandiera, nome enorme, nessuno ha il 1943.
 
@@ -26,4 +26,4 @@ Comando (dopo i fotogrammi, esempio B; posizioni e dimensione chip dalla story c
 Con e senza opzioni (R7): A senza e con bandiera NON richiesta (regola: niente bandiere); consegnare B e A come file separati.
 
 ## Coerenza miniatura / titolo / video
-Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 (hover 450,1-459,1 s: ~4 s quartiere in piedi, dinamitaggio 454,4-458,4, macerie) [PROVVISORIO: da confermare con `years.json`]. Niente "Panier" in miniatura (vedi `METADATA.md`).
+Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 (hover 447,9-456,9 s: ~4 s quartiere in piedi, dinamitaggio ≈452,2-456,2, macerie) [PROVVISORIO: da confermare con `years.json`]. Niente "Panier" in miniatura (vedi `METADATA.md`).

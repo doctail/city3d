@@ -1,4 +1,4 @@
-# Marseille: METADATA (YouTube) — PROVVISORIO fino al render (aggiornato 16/11/2026, schedule round 3: 659,1 s)
+# Marseille: METADATA (YouTube) — PROVVISORIO fino al render (aggiornato 16/11/2026, schedule round 4: 655,3 s)
 
 Titolo, descrizione, capitoli e tag completi e incollabili in 6 lingue: `CONSEGNA_YOUTUBE.md`. Qui: scelta del titolo e controlli.
 
@@ -19,7 +19,7 @@ Candidato dal packaging check ('Marseille: The Old Port Quarter the Germans Dyna
 - 'The Germans dynamited' è sostenuto dalla story (S6/S7: genieri tedeschi, dal 1° febbraio 1943). Evitare numeri di morti/deportati (non nella story).
 
 ## Dichiarazioni obbligatorie (tutte nel testo di `CONSEGNA_YOUTUBE.md`)
-- Saint-Jean pre-1943 = ricostruzione, isolati dalla pianta tedesca 1940 (Stadtplan von Marseille, Sonderausgabe 6.40, BnF Gallica, pubblico dominio). Testo allineato alla story round 3: isolati 'approximated from' la pianta, geometria generata, circa 2/3 dell'area costruita.
+- Saint-Jean pre-1943 = ricostruzione: contorni degli isolati dalla pianta tedesca 1940 per ~60% dell'impronta, resto riempimento generato, altezze/date/vuoti stimati (Stadtplan von Marseille, Sonderausgabe 6.40, BnF Gallica, pubblico dominio). Testo allineato al round 4: contorni isolati seguono la pianta 1940 per ~60% dell'impronta, resto riempimento generato; altezze, date e vuoti stimati.
 - Dopoguerra: anni BDNB. Prima del 1800 (`data_reliable_from` 1800, round 3): ricostruzione dichiarata e scritta a schermo.
 - Fonti e licenze: BDNB (Licence Ouverte 2.0), OSM (ODbL), IGN BD TOPO, Copernicus DEM GLO-30, Gallica. DEM Copernicus GLO-30 (la sources_card della story round 3 è ora allineata).
 - Numeri nei testi: 2,625 anni (end card e `short_tag` della story round 3), 'about 1,500' edifici e 'about 20,000' persone (story, fonti S6/S7 con forchetta 1.400-1.500 in S8). Nessun altro numero senza fonte.
@@ -28,4 +28,4 @@ Candidato dal packaging check ('Marseille: The Old Port Quarter the Germans Dyna
 Vedi `CONSEGNA_YOUTUBE.md` (437 caratteri su 500).
 
 ## Costo
-NON misurato. Nessuna cifra. (Base misurata disponibile solo per Lione: ~29 s di pod per secondo di video + 30 min di scena per processo; per Marseille 154.128 edifici nel DATA, durata 659,1 s: non estrapolare senza misura.)
+NON misurato. Nessuna cifra. (Base misurata disponibile solo per Lione: ~29 s di pod per secondo di video + 30 min di scena per processo; per Marseille 154.128 edifici nel DATA, durata 655,3 s: non estrapolare senza misura.)
