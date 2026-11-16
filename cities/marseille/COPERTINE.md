@@ -27,3 +27,11 @@ Con e senza opzioni (R7): A senza e con bandiera NON richiesta (regola: niente b
 
 ## Coerenza miniatura / titolo / video
 Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 (hover 447,9-456,9 s: ~4 s quartiere in piedi, dinamitaggio ≈452,2-456,2, macerie) [PROVVISORIO: da confermare con `years.json`]. Niente "Panier" in miniatura (vedi `METADATA.md`).
+
+## Decisione dopo i render veri (16/11/2026, chat)
+Copertine vere ricevute dal pod (7 file 1920x1080, giorno luminosita' 137-161). Test a 168 e 120 px con `python -m kit.thumb_kit ... --city marseille`:
+- **B finale = `massalia_b` (-540, sinistra) + `hook_1943_mid` (destra)**, testo "600 BC > BLOWN UP / MARSEILLE": entrambe le meta' piene, tutto leggibile a 168 e 120 px, testo dentro i bordi. File: `copertina/miniatura_B_600BC_BLOWNUP_1280x720.jpg`. La sinistra e' un fotogramma del -540, non del -600 esatto (il testo dice 600 BC, anno di partenza del video).
+- **Scartata A** (`massalia_a`, -600): la meta' sinistra e' un prato con macchie pallide, quasi vuota: viola 'due meta' piene'.
+- **Scartata C** (`hook_1943_pre` a sinistra): mostrerebbe la citta' del 1943 sotto l'etichetta 600 BC.
+- Notte: `now_night` aveva luminosita' media 31 (soglia 90): alzata con gamma 0,45 a 92 -> `copertina/marseille_cover_now_night_lift.jpg` (sollevamento forte: guardalo prima di usarlo).
+- Il titolo regge solo col cold open (la sequenza del 1943 arriva a ~68% del video senza).
