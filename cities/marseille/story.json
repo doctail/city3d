@@ -771,6 +771,11 @@
    "url": "https://fr.wikipedia.org/wiki/Pont_transbordeur_de_Marseille",
    "title": "Wikipedia FR, Pont transbordeur de Marseille",
    "quote": "paraphrase: links the quais du Port and de Rive Neuve; deck 239 m between two pylons, 52 m above the sea; pylons 86.60 m; built in 19 months, inaugurated 15 December 1905; north pylon fell 22 August 1944; rest collapsed 1 September 1945"
+  },
+  "S33": {
+   "url": "https://archaeologyinprocess.blogspot.com/2011/01",
+   "title": "Web-search summaries on Archaic Marseille (Alcazar excavation, Vieux-Port excavations); no page opened (books.openedition.org not reachable)",
+   "quote": "paraphrase, low confidence: second half of 6th c. BC clay pits for bricks 'destined for fortification walls and urban dwellings, in rapid expansion' (>200,000 m3 of clay); archaic habitat near the church of Saint-Laurent; first archaic city about 20 ha"
   }
  },
  "history": {
@@ -809,15 +814,15 @@
     ],
     "born": [
      -600,
-     -585
+     -480
     ],
     "seed": [
      43.2985,
      5.368
     ],
     "era_height": [
-     3,
-     5
+     2.5,
+     4
     ],
     "src": [
      "S1",
@@ -863,7 +868,7 @@
      ]
     ],
     "born": [
-     -400,
+     -480,
      -120
     ],
     "seed": [
@@ -871,8 +876,8 @@
      5.369
     ],
     "era_height": [
-     4,
-     7
+     3.5,
+     6
     ],
     "src": [
      "S1",
@@ -1016,7 +1021,7 @@
     ],
     "born": [
      1666,
-     1790
+     1800
     ],
     "seed": [
      43.2965,
