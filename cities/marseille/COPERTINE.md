@@ -1,37 +1,14 @@
-# Marseille — miniature (packaging check, aggiornato 16/11/2026 dopo round 4) — PROVVISORIO: nessun fotogramma renderizzato
+# Marseille — miniatura (formula Year Built/Lione, 16/11/2026) — PROVVISORIO: fotogrammi da ricontrollare dopo il render finale
 
-Regole usate (analisi/ctr/MINIATURE.md + owner's review 14/11 + AVVIO "Packaging"): un soggetto; luminosa e satura (SAT 1,4, contrasto 1,2); due metà piene e diverse (se simili, un fotogramma solo); anno = primo anno del video = 600 BC; niente bandiere né tag canale; 3-4 parole; promessa consegnata entro 30-60 s (cold open); mai ciò che arriva al 70%. Concorrenti (dato del proprietario): Timeline Cities, Brick Cities, ChronosPulse 3D: tutti "Marseille 600 BC → 2026", bandiera, nome enorme, nessuno ha il 1943.
+Regole (analisi/ctr/MINIATURE.md + AVVIO "Thumbnail layout"): un solo soggetto leggibile, luminosa e satura (SAT 1,4, contrasto 1,2), una città piena per metà, anno = primo anno del video = 600 BC, destra = NOW, niente bandiere né tag canale, 3-4 parole. Formula di Lione: "43 BC > NOW". Il 1943 NON è in miniatura (né nel titolo): è un capitolo. Concorrenti (dato del proprietario): Timeline Cities, Brick Cities, ChronosPulse 3D, tutti "Marseille 600 BC → 2026" con bandiera e nome enorme.
 
-## Test a 168 px (cosa ho fatto davvero)
-Mockup `cities/marseille/copertina/mockup_168_placeholder.png` (3 layout a 168 px sopra e 120 px sotto, ingrandito 2x per vederlo). **Sfondi = rettangoli colorati finti: serve solo a giudicare il testo, NON la foto.** Layout fatto con `kit.thumb_kit` (stesso font Inter ExtraBold, contorno nero). Esito:
-- "MARSEILLE" a 205 px: leggibile a 168 e a 120 [Certain, visto nel mockup].
-- Chip "600 BC" e "NOW" a 96 px: leggibili a 168; a 120 piccoli ma ancora decifrabili.
-- Nel mockup con `kit.thumb_kit` di prima, "BLOWN UP" usciva dal bordo destro (font 118, centro x=1050). Il kit round 3 ha ora `--city`, `--text-size`, `--lx`, `--rx` e la story ha `cover.text_size` 86 e `text_rx` 960: **da riverificare con il fotogramma vero** (il mockup qui sopra è del kit vecchio) [Likely che ora entri].
-- Il testo del chip destro compete col nome: in B e C il gancio ("BLOWN UP") dovrebbe essere più grande del nome, non il contrario.
-Non verificabile ora: se la foto vera sia luminosa e piena (serve il fotogramma, vedi sotto).
+## Miniatura finale
+Testo "600 BC > NOW / MARSEILLE". File: `cities/marseille/copertina/miniatura_600BC_NOW_1280x720.jpg`.
+- Sinistra `massalia_b` (anno -540, ritaglio `--lbox 480,0,720`), destra `now_day` (`--rbox 0,0,900`). Il ritaglio esclude il mare in basso; a destra resta l'azzurro del porto dietro la cattedrale.
+- La sinistra è un fotogramma del -540, non del -600 esatto.
+- Comando: `python -m kit.thumb_kit cities/marseille/copertina/miniatura_600BC_NOW_1280x720.jpg --left out/marseille_cover_massalia_b.jpg --right out/marseille_cover_now_day.jpg --title MARSEILLE --ly "600 BC" --ry NOW --lbox 480,0,720 --rbox 0,0,900 --text-size 104 --lx 225 --rx 1070`
+- Notte (opzione): `now_night` aveva luminosità media 31 (soglia 90): alzata con gamma 0,45 a 92 → `copertina/marseille_cover_now_night_lift.jpg` (sollevamento forte).
+- Scartate: `massalia_a` (metà sinistra vuota) e i concetti con il fotogramma 1943.
 
-## Tre concetti
-| | Soggetto | Testo (parole) | Anno | Fotogrammi `cover.shots` | Note |
-|---|---|---|---|---|---|
-| **A** sicuro | sinistra Massalia 600 BC, destra Marsiglia oggi | MARSEILLE · 600 BC · NOW (3) | 600 BC | `massalia_a` (anno -600) + `now_day` (2026, giorno; alternativa `now_night` sollevata a luminosità media ≥ 90) | Rispetta tutte le regole ma è la formula dei tre concorrenti: nessun gancio, nessuna differenza [Likely]. Controllo. |
-| **B** consigliato | sinistra Massalia, destra Saint-Jean in fumo | MARSEILLE · 600 BC · BLOWN UP (4) | 600 BC (primo anno) | `massalia_a` + `hook_1943_mid` | Coerente con il titolo A; il gancio si vede subito in miniatura e viene consegnato nei primi 9 s dal cold open. Scarto dalla regola "a destra NOW" della story: serve l'OK del proprietario (nessun anno sulla metà destra, quindi niente anno-gancio sbagliato). |
-| **C** gancio puro | un solo scenario prima/dopo, stessa camera | BLOWN UP (2) + nome piccolo | nessun anno | `hook_1943_pre` + `hook_1943_post` | Metà simili (stesso inquadramento): rischio regola 4; senza anno 600 BC rompe la regola 5. Solo come variante di test dopo ≥ 3.000 impressioni per variante. |
-
-Parametri dei fotogrammi (dalla story, `city.cover.shots`, lens 35, camera `[x,y,z,tx,ty,tz]`, 1080p dal pod con `run.sh cover` → `out/marseille_cover_<tag>.jpg`):
-- `massalia_a` anno -600, cam [-460,-760,700,-430,250,0] — **DRAFT**: Massalia è una piccola città, la metà sinistra deve essere piena di città: se nel fotogramma è un campo con pochi edifici, usare `massalia_b` (anno -540, cam [-300,-500,420,-400,200,0]) o stringere con `--lbox`.
-- `now_day` anno 2026, stessa camera; `now_night` stessa camera di notte.
-- `hook_1943_pre` anno 1943,07, `hook_1943_mid` 1943,11, `hook_1943_post` 1943,15, cam [-730,-650,420,-730,150,0].
-- Prima del pod, su un fotogramma CPU: il fumo (flames 6, smoke 14) e i blocchi che spariscono devono leggersi a 168 px (nota della story). Se non si leggono, B e C cadono e resta A.
-Comando (dopo i fotogrammi, esempio B; posizioni e dimensione chip dalla story con `--city`): `python -m kit.thumb_kit cities/marseille/copertina/marseille_thumb_600bc_blownup.jpg --left out/marseille_cover_massalia_a.jpg --right out/marseille_cover_hook_1943_mid.jpg --title MARSEILLE --ly "600 BC" --ry "BLOWN UP" --city marseille`. Per A: `--ry NOW` con `now_day`; per C: `--ly BEFORE --ry "BLOWN UP"` (nessun anno) con `hook_1943_pre`/`hook_1943_post`. Se serve, `--lx`/`--rx`/`--text-size` sovrascrivono la story.
-Con e senza opzioni (R7): A senza e con bandiera NON richiesta (regola: niente bandiere); consegnare B e A come file separati.
-
-## Coerenza miniatura / titolo / video
-Miniatura B promette "600 BC" + "BLOWN UP"; titolo A: "The Quarter the Germans Dynamited"; cold open 0:00-0:09 (hover 447,9-456,9 s: ~4 s quartiere in piedi, dinamitaggio ≈452,2-456,2, macerie) [PROVVISORIO: da confermare con `years.json`]. Niente "Panier" in miniatura (vedi `METADATA.md`).
-
-## Decisione dopo i render veri (16/11/2026, chat) - CORREZIONE
-Prima versione ("600 BC > BLOWN UP", destra = fotogramma 1943) SBAGLIATA: il video e la serie arrivano a NOW; la miniatura Year Built e' sempre "anno di partenza > NOW" con una sola citta' piena per metà (formula di Lione: 43 BC > NOW). Il gancio 1943 sta nel cold open, nel titolo/descrizione, non nella miniatura. Inoltre il mare in basso dava l'effetto 'disegnato'.
-- **Finale**: sinistra `massalia_b` (-540, ritaglio --lbox 480,0,720), destra `now_day` (--rbox 0,0,900), testo "600 BC > NOW / MARSEILLE" (--text-size 104 --lx 225 --rx 1070 per non tagliare '600 BC'). File: `copertina/miniatura_600BC_NOW_1280x720.jpg`. Comando: `python -m kit.thumb_kit OUT --left marseille_cover_massalia_b.jpg --right marseille_cover_now_day.jpg --title MARSEILLE --ly "600 BC" --ry NOW --lbox 480,0,720 --rbox 0,0,900 --text-size 104 --lx 225 --rx 1070`.
-- Il ritaglio esclude il mare in basso; a destra resta l'azzurro del porto dietro la cattedrale (il Vieux-Port e' li').
-- La sinistra e' un fotogramma del -540, non del -600 esatto.
-- Notte: `now_night` aveva luminosita' media 31 (soglia 90): alzata con gamma 0,45 a 92 -> `copertina/marseille_cover_now_night_lift.jpg` (sollevamento forte).
-- Scartate: A (`massalia_a`, meta' sinistra vuota), C (`hook_1943_pre` sotto l'etichetta 600 BC), e la versione 'BLOWN UP'.
+## Test a 168 px
+`copertina/mockup_168_placeholder.png` è del layout vecchio con sfondi finti: NON rappresenta la miniatura finale, da rifare con il file vero. Il testo grande (nome città) si leggeva a 168 e 120 px; chip piccoli a 120 px (per questo `--text-size 104`). Non verificato sulla miniatura finale in un feed con i concorrenti.

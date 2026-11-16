@@ -104,3 +104,6 @@ Vuoti (per anni, build precedente): -48,3 -> 415 (aggiunti 100, 290); 1871,6 -> 
 - Chip: 470 "Late Roman Empire · Visigothic advance" (conf low: 470 S2, 476 S26, 480 S5 discordano); 480 "Visigothic Kingdom" (S5, conf medium); 1252 "County of Provence · House of Anjou" (non piu' "Charles of Anjou" per 230 anni); 1481,95 "County of Provence · Louis XI of France" (S4 [Certain]: Carlo III muore dic. 1481); 1486,8 "Kingdom of France" (S4 [Certain]: lettere patenti ottobre 1486).
 - Transbordeur: `d` 1944,64 (sabotaggio 22 ago 1944, S19/S32 [Certain]). Il kit ha un impalcato per ponte (`bridges[].d`), niente crollo parziale: la rovina in piedi fino al 1 set 1945 non e' mostrata (limite).
 - Cartello 1943: aggiunta "The model is a partial reconstruction." Cifra del modello (~400 oggetti, 397 misurati in scratch al round 1) NON scritta a schermo: non verificata sul build corrente.
+
+## 16/11/2026 - ANNULLATE le note sul cold open
+Per ordine del proprietario NESSUN cold open, mai (kit/AVVIO_NUOVA_CITTA.md R14). Le righe 'Cold open' qui sopra (finestre 450,12-459,12 s, hover 1943 come apertura) sono storiche e NON vanno usate: il video parte dal 600 a.C. e il Saint-Jean 1943 e' solo un capitolo (7:27). L'hover 1943 resta una normale sosta del volo.

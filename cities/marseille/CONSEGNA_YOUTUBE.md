@@ -2,7 +2,7 @@
 
 **PROVVISORIO (nessun render ancora):** (1) gli orari dei capitoli vengono da `schedule_marseille.json` (durata 655,3 s): da RICALCOLARE dopo il render con la stessa regola di Lione (capitolo = t_in della carta − 2,8 s; carta/sosta = t_in; arrotondato per difetto; Sources = `end_plan.sources[0]` = 647,3 s) e confrontare con `years.json`; (2) la dichiarazione sul Saint-Jean pre-1943 va confrontata con ciò che il render mostra; (3) costo del pod: NON misurato, nessuna cifra.
 
-Orari ricalcolati il 16/11 sullo schedule round 4 (durata 655,3 s, camera yb-camera r2). Validi per il video (finale 655,3 s = 10:55). Nessun cold open, per ordine del proprietario: il video parte dal primo anno. Tutte le voci distano ≥ 10 s (verificato con script).
+Orari ricalcolati il 16/11 sullo schedule round 4 (durata 655,3 s, camera yb-camera r2). Validi per il video (finale 655,3 s = 10:55). Il video parte dal primo anno, senza apertura speciale. Tutte le voci distano ≥ 10 s (verificato con script).
 
 Due note prima di incollare: (a) dichiarazione Saint-Jean misurata da yb-qa a 1942,9: 866 edifici, 8,35 ha; circa un terzo dell'impronta (30%, 279 lotti) segue la pianta tedesca 1940, il resto e tutte le altezze/date è stimato (sempre con la riserva); (b) 'prima del 1800' = `city.data_reliable_from` 1800 (la scritta RECONSTRUCTION compare a schermo sotto quell'anno).
 
