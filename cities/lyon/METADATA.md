@@ -39,8 +39,8 @@ SOURCES AND LICENSES
 
 Rendered with an open-source 3D pipeline. Corrections are welcome in the comments.
 
-## Tags (EN + FR, <= 500 characters in total)
-lyon, evolution of lyon, lyon history, lyon 3d, 3d timelapse, city timelapse, city evolution, how lyon grew, history of lyon, lugdunum, roman lyon, croix-rousse, canuts, silk lyon, fourviere, vieux lyon, presqu'ile, part-dieu, confluence, lyon timelapse, no ai, histoire de lyon, evolution de lyon, lyon 3d, ponts de lyon 1944
+## Tags (EN + FR, <= 500 characters in total; 400 used)
+lyon, evolution of lyon, lyon history, history of lyon, lyon 3d, 3d timelapse, city timelapse, city evolution, how lyon grew, lugdunum, roman lyon, croix-rousse, canuts, silk lyon, fourviere, vieux lyon, presqu'ile, part-dieu, confluence, lyon timelapse, no ai, histoire de lyon, evolution de lyon, lyon 3d, ponts de lyon 1944, lyon siege 1793, lyon inondation 1856, 3d map, urban history, year built
 
 ## Titles (translations)
 - fr: ÉVOLUTION DE LYON | Timelapse 3D de la ville (43 av. J.-C.–AUJOURD'HUI) | Sans IA
