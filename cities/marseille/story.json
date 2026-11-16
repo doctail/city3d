@@ -194,16 +194,29 @@
    },
    {
     "y": 470,
-    "name": "Visigothic Kingdom",
+    "name": "Late Roman Empire · Visigothic advance",
     "flag_colors": [
-     "#8a1c1c",
-     "#d4af37"
+     "#a50f15",
+     "#8a1c1c"
     ],
     "src": [
      "S2",
      "S26"
     ],
     "conf": "low"
+   },
+   {
+    "y": 480,
+    "name": "Visigothic Kingdom",
+    "flag_colors": [
+     "#8a1c1c",
+     "#d4af37"
+    ],
+    "src": [
+     "S5",
+     "S26"
+    ],
+    "conf": "medium"
    },
    {
     "y": 508,
@@ -279,7 +292,7 @@
    },
    {
     "y": 1252,
-    "name": "County of Provence · Charles of Anjou",
+    "name": "County of Provence · House of Anjou",
     "flag_colors": [
      "#1f3a93",
      "#f2c500"
@@ -292,13 +305,26 @@
    },
    {
     "y": 1481.95,
-    "name": "Kingdom of France · Provence joins the Crown",
+    "name": "County of Provence · Louis XI of France",
     "flag_colors": [
      "#1f3a93",
      "#f2c500"
     ],
     "src": [
      "S4"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1486.8,
+    "name": "Kingdom of France",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "S4",
+     "S5"
     ],
     "conf": "high"
    },
@@ -1236,12 +1262,12 @@
     ],
     "w": 10,
     "y": 1905.96,
-    "d": 1945.67,
+    "d": 1944.64,
     "src": [
      "S19"
     ],
     "conf": "low",
-    "note": "Inaugurated 15 Dec 1905; blown up 22 Aug 1944 (north tower fell); rest collapsed 1 Sep 1945 (S19). Round 2: centre moved to the OSM node 'Pont Transbordeur' (43.292385, 5.364884, data_marseille/landmarks_osm.json), which is near the harbour mouth, not at the Hotel de Ville as in round 1 (error). Span 239 m between the quais du Port and de Rive Neuve (fr:Pont transbordeur de Marseille, [Certain]); N-S orientation is [Guessing]."
+    "note": "Inaugurated 15 Dec 1905; blown up 22 Aug 1944 (north tower fell); rest collapsed 1 Sep 1945 (S19). Round 2: centre moved to the OSM node 'Pont Transbordeur' (43.292385, 5.364884, data_marseille/landmarks_osm.json), which is near the harbour mouth, not at the Hotel de Ville as in round 1 (error). Round 4: `d` = 1944.64 (22 Aug 1944, the sabotage; the kit has one deck per bridge and no partial collapse, so the ruin standing until 1 Sep 1945 is NOT shown: limit). Span 239 m between the quais du Port and de Rive Neuve (fr:Pont transbordeur de Marseille, [Certain]); N-S orientation is [Guessing]."
    }
   ]
  },
@@ -2474,7 +2500,7 @@
     "title": "The Saint-Jean quarter is condemned",
     "lines": [
      "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
-     "From 1 February about 1,500 buildings on 14 hectares are dynamited."
+     "From 1 February about 1,500 buildings on 14 hectares are dynamited. The model is a partial reconstruction."
     ],
     "hold_s": 6,
     "src": [

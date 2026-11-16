@@ -99,3 +99,8 @@ Vuoti (per anni, build precedente): -48,3 -> 415 (aggiunti 100, 290); 1871,6 -> 
 - Lunghezza anni: da -600 a 2026 = 2.625 anni (non esiste l'anno 0: 600 a.C. e' l'anno -599 astronomico). Il kit calcola 2026-(-600) = 2.626; la story fissa 'short_tag' e la seconda schermata d'apertura (open a 4 voci) a 2,625.
 - Dem: Copernicus GLO-30 (prep_marseille_osm.py r.180 legge Copernicus_DSM_COG_10_*_DEM.tif; data_fr.sh r.5).
 - Miniatura: kit/thumb_kit.py ha ora --city/--text-size/--lx/--rx (default invariati: 118, 215, 1065); story cover.text_size 86, cover.text_rx 960.
+
+## Round 4 (16/11/2026)
+- Chip: 470 "Late Roman Empire · Visigothic advance" (conf low: 470 S2, 476 S26, 480 S5 discordano); 480 "Visigothic Kingdom" (S5, conf medium); 1252 "County of Provence · House of Anjou" (non piu' "Charles of Anjou" per 230 anni); 1481,95 "County of Provence · Louis XI of France" (S4 [Certain]: Carlo III muore dic. 1481); 1486,8 "Kingdom of France" (S4 [Certain]: lettere patenti ottobre 1486).
+- Transbordeur: `d` 1944,64 (sabotaggio 22 ago 1944, S19/S32 [Certain]). Il kit ha un impalcato per ponte (`bridges[].d`), niente crollo parziale: la rovina in piedi fino al 1 set 1945 non e' mostrata (limite).
+- Cartello 1943: aggiunta "The model is a partial reconstruction." Cifra del modello (~400 oggetti, 397 misurati in scratch al round 1) NON scritta a schermo: non verificata sul build corrente.
