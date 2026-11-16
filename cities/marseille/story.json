@@ -7,44 +7,2501 @@
   "lat0": 43.2953,
   "lon0": 5.3745,
   "radius_m": 9000,
-  "start_year": 1200,
+  "start_year": -600,
   "end_year": 2026,
-  "title": "EVOLUTION OF <CITY> | 3D City Timelapse (<YEAR>–NOW) | No AI",
+  "title": "EVOLUTION OF MARSEILLE | 3D City Timelapse (600 BC-NOW) | No AI",
   "data_source": "custom",
+  "data_dir": "data_marseille",
   "style_preset": "mediterranean",
-  "population": [],
-  "pop_src": [],
-  "eras": [],
-  "data_dir": "data_marseille"
+  "population": [
+   [
+    -600,
+    2000,
+    "rough estimate"
+   ],
+   [
+    -350,
+    50000,
+    "rough estimate"
+   ],
+   [
+    1347,
+    25000,
+    "historical estimate"
+   ],
+   [
+    1720,
+    75000,
+    "historical estimate"
+   ],
+   [
+    1800,
+    96413,
+    "historical estimate"
+   ],
+   [
+    1851,
+    195258,
+    "census"
+   ],
+   [
+    1866,
+    300131,
+    "census"
+   ],
+   [
+    1901,
+    491161,
+    "census"
+   ],
+   [
+    1936,
+    620232,
+    "census"
+   ],
+   [
+    1946,
+    636264,
+    "census"
+   ],
+   [
+    1975,
+    908600,
+    "census"
+   ],
+   [
+    1990,
+    800550,
+    "census"
+   ],
+   [
+    2007,
+    852395,
+    "census"
+   ],
+   [
+    2023,
+    886040,
+    "census"
+   ]
+  ],
+  "pop_conf": [
+   "low",
+   "low",
+   "medium",
+   "medium",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high"
+  ],
+  "pop_src": [
+   "S1",
+   "S2",
+   "S22"
+  ],
+  "eras": [
+   [
+    -600,
+    "Greek Massalia",
+    "#c9a24a"
+   ],
+   [
+    -48,
+    "Roman Massilia",
+    "#b5654a"
+   ],
+   [
+    470,
+    "Early Middle Ages",
+    "#9c7a52"
+   ],
+   [
+    1252,
+    "Medieval port",
+    "#8a6aa0"
+   ],
+   [
+    1481,
+    "Royal port",
+    "#6aa0c8"
+   ],
+   [
+    1666,
+    "Louis XIV's new city",
+    "#7cb06a"
+   ],
+   [
+    1844,
+    "Gateway to the Empire",
+    "#c98a4a"
+   ],
+   [
+    1943,
+    "Ruins and reconstruction",
+    "#8c8c8c"
+   ],
+   [
+    1995,
+    "Euromediterranee",
+    "#c9c1b0"
+   ]
+  ],
+  "data_reliable_from": 1850,
+  "polities": [
+   {
+    "y": -600,
+    "name": "Massalia · Greek city-state of Phocaean colonists",
+    "flag_colors": [
+     "#1f5fa8",
+     "#ffffff"
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -48.2,
+    "name": "Roman Republic · Massilia",
+    "flag_colors": [
+     "#a50f15",
+     "#d4af37"
+    ],
+    "src": [
+     "S1",
+     "S3"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -27,
+    "name": "Roman Empire · Massilia",
+    "flag_colors": [
+     "#a50f15",
+     "#d4af37"
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 470,
+    "name": "Visigothic Kingdom",
+    "flag_colors": [
+     "#8a1c1c",
+     "#d4af37"
+    ],
+    "src": [
+     "S2",
+     "S26"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 508,
+    "name": "Ostrogothic Kingdom",
+    "flag_colors": [
+     "#5b4a8a",
+     "#d4af37"
+    ],
+    "src": [
+     "S26"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 536,
+    "name": "Frankish Kingdom",
+    "flag_colors": [
+     "#1f3a93",
+     "#d4af37"
+    ],
+    "src": [
+     "S26"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 879,
+    "name": "Kingdom of Provence · Carolingian successors",
+    "flag_colors": [
+     "#d4af37",
+     "#7a2a6e"
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1032,
+    "name": "County of Provence · Holy Roman Empire",
+    "flag_colors": [
+     "#d4af37",
+     "#111111"
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1112,
+    "name": "County of Provence · House of Barcelona",
+    "flag_colors": [
+     "#f2c500",
+     "#c60b1e"
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1214,
+    "name": "Commune of Marseille",
+    "flag_colors": [
+     "#1f5fa8",
+     "#ffffff"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1252,
+    "name": "County of Provence · Charles of Anjou",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "S2",
+     "S5"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1481.95,
+    "name": "Kingdom of France · Provence joins the Crown",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "S4"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1792.72,
+    "name": "French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1804.38,
+    "name": "First French Empire",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1814.27,
+    "name": "Kingdom of France · Restoration",
+    "flag_colors": [
+     "#ffffff",
+     "#d4af37"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1830.57,
+    "name": "July Monarchy",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1848.15,
+    "name": "Second Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1852.92,
+    "name": "Second French Empire",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1870.67,
+    "name": "Third Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1940.52,
+    "name": "Vichy France",
+    "flag_colors": [
+     "#444444",
+     "#a50f15"
+    ],
+    "src": [
+     "S30",
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1942.86,
+    "name": "German-occupied Marseille · Vichy regime",
+    "flag_colors": [
+     "#2b2b2b",
+     "#a50f15"
+    ],
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1944.66,
+    "name": "Provisional Government of the French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S1",
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1946.82,
+    "name": "Fourth Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1958.76,
+    "name": "Fifth Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   }
+  ],
+  "cover": {
+   "cam": [
+    -460,
+    -760,
+    700,
+    -430,
+    250,
+    0
+   ],
+   "lens": 35,
+   "years": [
+    -600,
+    2026
+   ],
+   "night_years": [
+    2026
+   ],
+   "shots": [
+    {
+     "tag": "massalia_a",
+     "year": -600,
+     "cam": [
+      -460,
+      -760,
+      700,
+      -430,
+      250,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "DRAFT (yb-camera/packaging to tune): Greek Massalia on the Moulins/Saint-Laurent hills from the south over the Lacydon. First-year frame for the thumbnail (year = video's first year)."
+    },
+    {
+     "tag": "massalia_b",
+     "year": -540,
+     "cam": [
+      -300,
+      -500,
+      420,
+      -400,
+      200,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "DRAFT: closer, hill town above the inlet."
+    },
+    {
+     "tag": "now_day",
+     "year": 2026,
+     "cam": [
+      -460,
+      -760,
+      700,
+      -430,
+      250,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "same camera as the night cover, daylight"
+    },
+    {
+     "tag": "now_night",
+     "year": 2026,
+     "cam": [
+      -460,
+      -760,
+      700,
+      -430,
+      250,
+      0
+     ],
+     "lens": 35,
+     "night": true,
+     "note": "same camera, night (lift to mean luminance >= 90)"
+    },
+    {
+     "tag": "hook_1943_pre",
+     "year": 1943.07,
+     "cam": [
+      -730,
+      -650,
+      420,
+      -730,
+      150,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "CPU CHECK of the hook: Saint-Jean quarter standing, 3 weeks before the dynamiting"
+    },
+    {
+     "tag": "hook_1943_mid",
+     "year": 1943.11,
+     "cam": [
+      -730,
+      -650,
+      420,
+      -730,
+      150,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "CPU CHECK: mid-dynamiting, smoke and half the blocks gone"
+    },
+    {
+     "tag": "hook_1943_post",
+     "year": 1943.15,
+     "cam": [
+      -730,
+      -650,
+      420,
+      -730,
+      150,
+      0
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "CPU CHECK: ruins, Hotel de Ville still standing"
+    }
+   ]
+  }
  },
- "sources": {},
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Marseille",
+   "title": "Wikipedia EN, History of Marseille",
+   "quote": "established within modern Marseille around 600 BC; c. 540 BC second wave of colonists; 49 BC Caesar's siege, the city fell by September; 5th c. Visigoths; 736-739 Umayyad forces invited in, Charles Martel sacks the city in 739; 1348 Black Death kills about 15,000 of 25,000; 1792 volunteers march to Paris; 1793 renamed Ville-sans-nom; 1869 Suez Canal; 22 Jan 1943 Action Tiger; Nov 1942-Aug 1944 German occupation"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/Timeline_of_Marseille",
+   "title": "Wikipedia EN, Timeline of Marseille",
+   "quote": "paraphrase: 470 taken by Visigoths under Euric; 839 sacked by Saracens; 1214 republic; 1252 taken by Charles of Anjou; 1262 revolt; 1423 sacked by Alfonso V; 1481 united with Provence; 1486 part of France; 1524 besieged; 1660 Louis XIV conquest, Forts Saint-Jean and Saint-Nicolas built; 1673 Hotel de Ville; 1720-21 plague; 1848 Paris-Marseille railway, Gare Saint-Charles; 1849 Canal de Marseille; 1853 La Joliette dock; 1864 Rue de la Republique opens; 1869 Palais Longchamp; 1906/1922 colonial exhibitions; 1937 Stade Velodrome; 1940 bombing; 1952 Cite radieuse; 2013 MuCEM"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Massilia",
+   "title": "Wikipedia EN, Siege of Massilia",
+   "quote": "paraphrase: 19 April to 6 September 49 BC; Caesarian victory and Roman annexation of Massilia; Brutus's fleet won at Tauroento on 31 July 49 BC"
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Incorporation_of_Provence_into_France",
+   "title": "Wikipedia EN, Incorporation of Provence into France",
+   "quote": "Charles III bequeathed Provence to Louis XI and died in December 1481; Estates of Provence approve union in 1482; perpetual union granted in letters patent of October 1486"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Provence",
+   "title": "Wikipedia EN, Provence",
+   "quote": "paraphrase: 480 Visigoths enter Provence; 879 Boso first ruler of independent Provence; 1032 Provence a fiefdom of the Holy Roman Empire until 1246; 1112 Barcelona rule begins; 1246 Angevin rule begins; 1481 title passes to Louis XI; 1486 incorporated into the French royal domain"
+  },
+  "S6": {
+   "url": "https://fr.wikipedia.org/wiki/Rafle_de_Marseille",
+   "title": "Wikipedia FR, Rafle de Marseille",
+   "quote": "paraphrase: rafle on 22, 23 and 24 January 1943; German engineers dynamite from 1 February 1943; about 1,500 buildings and 14 hectares destroyed; 82 streets and squares and 850 shops disappeared; about 20,000 people rounded up; Hotel de ville, Hotel de Cabre, Maison Diamantee and Eglise Saint-Laurent spared; reconstruction of the Vieux-Port area not complete until 1956"
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Marseille_roundup",
+   "title": "Wikipedia EN, Marseille roundup",
+   "quote": "paraphrase: 22-24 January 1943; more than 6,000 arrested and 40,000 identities checked; about 20,000 displaced (infobox); about 1,500 buildings destroyed (citation needed in source)"
+  },
+  "S8": {
+   "url": "https://fresques.ina.fr/reperes-mediterraneens/fiche-media/Repmed00207/la-demolition-du-quartier-du-vieux-port.html",
+   "title": "INA, La demolition du quartier du vieux port (web-search snippet only: host not fetchable)",
+   "quote": "paraphrase from search snippet: demolition started on 1 February and ran until 17 February 1943; about 1,400 buildings demolished"
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/H%C3%B4tel_de_Ville,_Marseille",
+   "title": "Wikipedia EN, Hotel de Ville, Marseille",
+   "quote": "Work began in 1653 (foundation stone 25 October), completed in September 1673; in early 1943 one of only four buildings to survive in the surrounding area"
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/La_Vieille_Charit%C3%A9",
+   "title": "Wikipedia EN, La Vieille Charite",
+   "quote": "Building began in 1671 and was completed in 1749; architect Pierre Puget; central chapel 1679-1704"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/St._Victor%27s_Abbey,_Marseille",
+   "title": "Wikipedia EN, St. Victor's Abbey, Marseille",
+   "quote": "c. 415 John Cassian founded the abbey; 1020 construction of the upper church begun; 1040 church dedicated by Pope Benedict IX; 1361-62 Guillaume Grimoard abbot then Pope Urban V encloses the abbey with high crenellated walls"
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Marseille_Cathedral",
+   "title": "Wikipedia EN, Marseille Cathedral",
+   "quote": "old cathedral 12th century; Napoleon III laid the foundation stone in 1852 of the new cathedral; first service 1893; completion 1896; consecration 1897; architects Leon Vaudoyer and Henri-Jacques Esperandieu"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Notre-Dame_de_la_Garde",
+   "title": "Wikipedia EN, Notre-Dame de la Garde",
+   "quote": "chapel begun in 1214; Francis I fort 1536; present basilica first stone 11 September 1853, consecrated 1864 (still unfinished), statue dedicated 24 September 1870"
+  },
+  "S14": {
+   "url": "https://fr.wikipedia.org/wiki/Rue_de_la_R%C3%A9publique_(Marseille)",
+   "title": "Wikipedia FR, Rue de la Republique (Marseille)",
+   "quote": "paraphrase: council adopted the project in November 1858; percement begun in 1862; inaugurated 1864; 1,100 m; 935 houses destroyed and 61 streets partly or fully removed; called rue Imperiale, renamed rue de la Republique on 16 October 1870"
+  },
+  "S15": {
+   "url": "https://fr.wikipedia.org/wiki/Cit%C3%A9_radieuse_de_Marseille",
+   "title": "Wikipedia FR, Cite radieuse de Marseille",
+   "quote": "paraphrase: construction October 1947 to October 1952; first stone 14 October 1947; inaugurated 14 October 1952; 56 m high, 137 m long, 24 m wide"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Eurom%C3%A9diterran%C3%A9e",
+   "title": "Wikipedia EN, Euromediterranee",
+   "quote": "paraphrase: began in 1995 under Mayor Robert Vigouroux and the State; original area 310 hectares; Act 2 from 2007 added 170 hectares; includes MuCEM, Villa Mediterranee, Docks renovation, CMA CGM Tower"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/CMA_CGM_Tower",
+   "title": "Wikipedia EN, CMA CGM Tower",
+   "quote": "paraphrase: construction July 2006, completion September 2011, about 147 m, architect Zaha Hadid"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Museum_of_European_and_Mediterranean_Civilisations",
+   "title": "Wikipedia EN, Museum of European and Mediterranean Civilisations",
+   "quote": "paraphrase: opened in 2013 as part of Marseille-Provence 2013; architect Rudy Ricciotti with Roland Carta; 130 m footbridge to Fort Saint-Jean"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/Marseille_Transporter_Bridge",
+   "title": "Wikipedia EN, Marseille Transporter Bridge",
+   "quote": "inaugurated on 15 December 1905; on 22 August 1944 the German military blew it up, only the north tower fell; the rest collapsed on 1 September 1945"
+  },
+  "S20": {
+   "url": "https://fr.wikipedia.org/wiki/Fernand_Pouillon",
+   "title": "Wikipedia FR, Fernand Pouillon",
+   "quote": "paraphrase: reconstruction of the Vieux-Port listed as 1947-1953, project could start in 1949; modern buildings on both sides of the hotel de ville were built by Pouillon"
+  },
+  "S21": {
+   "url": "https://fr.wikipedia.org/wiki/Histoire_de_Marseille",
+   "title": "Wikipedia FR, Histoire de Marseille",
+   "quote": "paraphrase: vicomtes from the mid-10th century; 1252 peace with Charles d'Anjou; King Rene's tower 1447-1453 built on the ruins of the Maubert tower; Fort Saint-Jean built in the 17th century on Louis XIV's orders; plague of 1720: about 38,000 deaths out of 75,000 inhabitants"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Marseille",
+   "title": "Wikipedia EN, Marseille",
+   "quote": "paraphrase: commune population 96,413 (1800), 491,161 (1901), 620,232 (1936, INSEE-corrected), 908,600 (1975), 800,550 (1990), 852,395 (2007), 886,040 (2023)"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Jardin_des_Vestiges",
+   "title": "Jardin des Vestiges (Wikipedia mirror, garbled) + academic survey summaries via web search",
+   "quote": "paraphrase, low confidence: first rampart end of 5th c. BC (white limestone base, clay brick); rebuilt probably second half of 4th c. BC; rebuilt on a large scale in the second half of the 2nd c. BC; archaic city about 20 ha on the Saint-Laurent, Moulins and Roquette hills; the ancient city included the Saint-Laurent, Moulins and Carmes hills"
+  },
+  "S24": {
+   "url": "https://sites-vauban.org/en/node/7783",
+   "title": "Sites Vauban, Marseille (web-search summary)",
+   "quote": "paraphrase: 1665 king orders an arsenal for the galleys; 1666 extension decided by Louis XIV; 1672 earlier ramparts razed; 1694 new enceinte; arsenal closed 1748, demolished in the 1780s (Marseille Tourisme)"
+  },
+  "S25": {
+   "url": "https://marseille-tourisme.com/en/discover-marseille/culture-heritage/the-districts-of-marseille/la-joliette",
+   "title": "Marseille Tourisme / Provence-Alpes-Cote d'Azur, La Joliette and the Docks (web-search summaries)",
+   "quote": "paraphrase: Joliette basin authorized 1844, completed 1853; Docks 1858-1863/64/66 depending on source; Gare Saint-Charles opened 1848"
+  },
+  "S26": {
+   "url": "https://www.catholic.com/encyclopedia/diocese-of-marseilles",
+   "title": "Catholic Encyclopedia, Marseilles (web-search summary)",
+   "quote": "paraphrase: Visigothic 476, Ostrogothic 507, Frankish from 536 (other sources 508 and 537); in feudal times the city was divided among the bishop, the viscount and the abbey of Saint-Victor"
+  },
+  "S27": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Marseille_(1524)",
+   "title": "Wikipedia EN, Siege of Marseille (1524)",
+   "quote": "paraphrase: August and September 1524, Italian War; besiegers withdrew under the threat of a French relief army led by Francis I"
+  },
+  "S28": {
+   "url": "https://gallica.bnf.fr/ark:/12148/btv1b532606289",
+   "title": "BnF Gallica, Stadtplan von Marseille, Sonderausgabe 6.40 (Generalstab des Heeres, 1940)",
+   "quote": "1:10,000 plan georeferenced in cities/marseille/mappe/FONTI_MAPPE.md; 347 test blocks in saintjean_isolati_test_1940.geojson (not a full survey)"
+  },
+  "S29": {
+   "url": "https://www.data.gouv.fr/fr/datasets/base-de-donnees-nationale-des-batiments/",
+   "title": "BDNB (CSTB), data_marseille/buildings.json",
+   "quote": "year of construction per building group; share without year inside 1.5 km of the Vieux-Port: 17.6% (misure_bdnb.json)"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
+   "title": "Wikipedia EN, standard dates of French regimes (not re-fetched, from general knowledge)",
+   "quote": "paraphrase: First Republic Sept 1792; Empire 1804; Restoration 1814; July Monarchy 1830; Second Republic 1848; Second Empire Dec 1852; Third Republic Sept 1870; Vichy 10 July 1940; GPRF 1944; Fourth Republic Oct 1946; Fifth Republic Oct 1958"
+  }
+ },
  "history": {
-  "zones": [],
-  "walls": [],
-  "gutting": [],
+  "zones": [
+   {
+    "name": "Archaic Massalia (Saint-Laurent and Moulins hills)",
+    "ring": [
+     [
+      43.2965,
+      5.3655
+     ],
+     [
+      43.2963,
+      5.369
+     ],
+     [
+      43.2968,
+      5.3722
+     ],
+     [
+      43.2995,
+      5.3725
+     ],
+     [
+      43.3003,
+      5.3695
+     ],
+     [
+      43.3002,
+      5.366
+     ],
+     [
+      43.2985,
+      5.365
+     ]
+    ],
+    "born": [
+     -600,
+     -585
+    ],
+    "seed": [
+     43.2985,
+     5.368
+    ],
+    "era_height": [
+     3,
+     5
+    ],
+    "src": [
+     "S1",
+     "S23"
+    ],
+    "conf": "low",
+    "note": "Phocaean city founded c. 600 BC on the hills north of the Lacydon; about 20 ha for the archaic phase (S23, low). Polygon is a hand sketch around the Moulins/Saint-Laurent buttes (Vieille Charite area), +-150 m, NOT surveyed."
+   },
+   {
+    "name": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)",
+    "ring": [
+     [
+      43.296,
+      5.364
+     ],
+     [
+      43.2958,
+      5.372
+     ],
+     [
+      43.296,
+      5.3765
+     ],
+     [
+      43.2985,
+      5.3775
+     ],
+     [
+      43.301,
+      5.3755
+     ],
+     [
+      43.3012,
+      5.369
+     ],
+     [
+      43.3,
+      5.365
+     ],
+     [
+      43.2985,
+      5.3635
+     ]
+    ],
+    "born": [
+     -400,
+     -120
+    ],
+    "seed": [
+     43.2985,
+     5.369
+    ],
+    "era_height": [
+     4,
+     7
+    ],
+    "src": [
+     "S1",
+     "S23"
+    ],
+    "conf": "low",
+    "note": "Greek and Roman city (about 50 ha, 4th c. BC peak ~50,000 people per S1) extending east to the Carmes hill and the Jardin des Vestiges. Hand sketch, +-150 m. The Lacydon inlet reached the Bourse/Jardin des Vestiges area: shoreline NOT modelled (no history.water)."
+   },
+   {
+    "name": "Saint-Victor and the south shore",
+    "ring": [
+     [
+      43.2885,
+      5.361
+     ],
+     [
+      43.2885,
+      5.37
+     ],
+     [
+      43.2925,
+      5.3705
+     ],
+     [
+      43.2935,
+      5.366
+     ],
+     [
+      43.2925,
+      5.362
+     ]
+    ],
+    "born": [
+     420,
+     1100
+    ],
+    "seed": [
+     43.2903,
+     5.3656
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S11"
+    ],
+    "conf": "low",
+    "note": "Abbey founded c. 415 (S11); a bourg grows around it. Hand sketch around the Saint-Victor abbey (Wikipedia coordinates 43.2903, 5.3656)."
+   },
+   {
+    "name": "Medieval Marseille (Ville haute and Ville basse)",
+    "ring": [
+     [
+      43.2952,
+      5.3625
+     ],
+     [
+      43.2952,
+      5.377
+     ],
+     [
+      43.2978,
+      5.379
+     ],
+     [
+      43.3015,
+      5.377
+     ],
+     [
+      43.302,
+      5.368
+     ],
+     [
+      43.3008,
+      5.364
+     ],
+     [
+      43.2985,
+      5.362
+     ]
+    ],
+    "born": [
+     900,
+     1350
+    ],
+    "seed": [
+     43.2985,
+     5.37
+    ],
+    "era_height": [
+     5,
+     10
+    ],
+    "src": [
+     "S21",
+     "S26"
+    ],
+    "conf": "low",
+    "note": "North shore of the Vieux-Port inside the medieval walls, whose exact line is NOT verified. Hand sketch."
+   },
+   {
+    "name": "Louis XIV extension (1666-1700)",
+    "ring": [
+     [
+      43.2915,
+      5.371
+     ],
+     [
+      43.2905,
+      5.379
+     ],
+     [
+      43.2935,
+      5.3838
+     ],
+     [
+      43.2985,
+      5.3845
+     ],
+     [
+      43.3022,
+      5.381
+     ],
+     [
+      43.3018,
+      5.377
+     ],
+     [
+      43.2985,
+      5.378
+     ],
+     [
+      43.296,
+      5.377
+     ],
+     [
+      43.2955,
+      5.373
+     ]
+    ],
+    "born": [
+     1666,
+     1790
+    ],
+    "seed": [
+     43.2965,
+     5.3775
+    ],
+    "era_height": [
+     8,
+     14
+    ],
+    "src": [
+     "S24"
+    ],
+    "conf": "low",
+    "note": "First growth beyond the medieval ramparts: Cours Belsunce, Canebiere, Rue Paradis area. S24: 1666 extension decided; 1694 new enceinte (sources disagree on whether the area doubled or tripled). Hand sketch of the quarter, not of the 1694 wall line."
+   },
+   {
+    "name": "Joliette new quarter (1844-1870)",
+    "ring": [
+     [
+      43.3015,
+      5.3625
+     ],
+     [
+      43.3015,
+      5.369
+     ],
+     [
+      43.307,
+      5.37
+     ],
+     [
+      43.3075,
+      5.3615
+     ]
+    ],
+    "born": [
+     1844,
+     1870
+    ],
+    "seed": [
+     43.304,
+     5.365
+    ],
+    "era_height": [
+     14,
+     20
+    ],
+    "src": [
+     "S25",
+     "S2"
+    ],
+    "conf": "low",
+    "note": "Land behind the Joliette basin (authorized 1844, completed 1853, S25) and the Docks (1858-1863/66). The basin itself and the reclaimed quays are NOT modelled (no land phases): they appear with the modern coastline from the first frame unless land.json is dated."
+   }
+  ],
+  "walls": [
+   {
+    "name": "Ramparts of Massalia and medieval Marseille (approximate line)",
+    "ring": [
+     [
+      43.296,
+      5.364
+     ],
+     [
+      43.2958,
+      5.372
+     ],
+     [
+      43.296,
+      5.3765
+     ],
+     [
+      43.2985,
+      5.3775
+     ],
+     [
+      43.301,
+      5.3755
+     ],
+     [
+      43.3012,
+      5.369
+     ],
+     [
+      43.3,
+      5.365
+     ],
+     [
+      43.2985,
+      5.3635
+     ]
+    ],
+    "built": [
+     -420,
+     -100
+    ],
+    "demolished": [
+     1672,
+     1676
+    ],
+    "height": 7,
+    "width": 3,
+    "towers_every_m": 50,
+    "src": [
+     "S23",
+     "S24"
+    ],
+    "conf": "low",
+    "note": "First rampart end of 5th c. BC, rebuilt 4th c. BC and large-scale in 2nd c. BC (S23, low). Razed 1672 (S24, low). One ring is a simplification: the medieval line is not verified."
+   }
+  ],
+  "gutting": [
+   {
+    "name": "Rue Imperiale (Rue de la Republique)",
+    "ring": [
+     [
+      43.30535,
+      5.36524
+     ],
+     [
+      43.30545,
+      5.36556
+     ],
+     [
+      43.2966,
+      5.37066
+     ],
+     [
+      43.2965,
+      5.37034
+     ]
+    ],
+    "from": -600,
+    "until": 1864.0,
+    "src": [
+     "S14"
+    ],
+    "conf": "medium",
+    "note": "Percement begun 1862, inaugurated 1864, 1,100 m, 935 houses destroyed (S14). Centerline from Place Villeneuve-Bargemon to Place de la Joliette is a hand estimate (+-60 m): replace with the OSM way of Rue de la Republique."
+   }
+  ],
   "lost": [],
-  "fires": [],
+  "fires": [
+   {
+    "name": "Siege of Massilia 49 BC",
+    "ring": [
+     [
+      43.2975,
+      5.364
+     ],
+     [
+      43.2975,
+      5.369
+     ],
+     [
+      43.3005,
+      5.369
+     ],
+     [
+      43.3005,
+      5.364
+     ]
+    ],
+    "y": -48.7,
+    "y1": -48.32,
+    "destroy": false,
+    "flames": 14,
+    "smoke": 6,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "19 April-6 September 49 BC = -49 + 0.30 .. -49 + 0.68 (S3). The attack side is NOT identified in the sources read: polygon is the western part of the Hellenistic city, no building destroyed."
+   },
+   {
+    "name": "Saint-Jean quarter 1943",
+    "ring": [
+     [
+      43.29535,
+      5.3614
+     ],
+     [
+      43.2956,
+      5.365
+     ],
+     [
+      43.29585,
+      5.368
+     ],
+     [
+      43.2961,
+      5.3694
+     ],
+     [
+      43.29765,
+      5.3693
+     ],
+     [
+      43.2978,
+      5.3665
+     ],
+     [
+      43.2977,
+      5.363
+     ],
+     [
+      43.2971,
+      5.3612
+     ]
+    ],
+    "y": 1943.088,
+    "y1": 1943.132,
+    "destroy": true,
+    "rebuild_years": 7.0,
+    "origin": [
+     43.29545,
+     5.362
+    ],
+    "flames": 6,
+    "smoke": 14,
+    "src": [
+     "S6",
+     "S7",
+     "S8"
+    ],
+    "conf": "medium",
+    "note": "Dynamiting 1 Feb (1943.088) to 17 Feb (1943.132): start S6, end S8 (INA snippet, not fetched). Ring = ~14.8 ha box between Fort Saint-Jean and the Hotel de Ville, quay to about 200 m north: hand sketch, validated only against the 347 test blocks (see NOTE_STORIA.md). Wave from the fort side (origin) eastward. rebuild_years 7 puts new current buildings at ~1950-1954 (Pouillon from 1949, S20; district finished 1956, S6)."
+   }
+  ],
   "water": [],
-  "bridges": []
+  "bridges": [
+   {
+    "name": "Transporter Bridge (Old Port)",
+    "line": [
+     [
+      43.29565,
+      5.3697
+     ],
+     [
+      43.2937,
+      5.3697
+     ]
+    ],
+    "w": 10,
+    "y": 1905.96,
+    "d": 1945.67,
+    "src": [
+     "S19"
+    ],
+    "conf": "low",
+    "note": "Inaugurated 15 Dec 1905; blown up 22 Aug 1944 (north tower fell); rest collapsed 1 Sep 1945 (S19). Position across the Old Port near the Hotel de Ville is from memory (+-60 m)."
+   }
+  ]
  },
- "landmarks": [],
+ "landmarks": [
+  {
+   "name": "Abbey of Saint-Victor",
+   "kind": "church",
+   "at": [
+    43.2903,
+    5.3656
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 18,
+    "tower_h": 34,
+    "roof_c": "stone2"
+   },
+   "phases": [
+    {
+     "y": 1020,
+     "y1": 1040
+    }
+   ],
+   "label": true,
+   "src": [
+    "S11"
+   ],
+   "conf": "medium",
+   "note": "Upper church begun 1020, dedicated 1040 (S11). Fortification by Urban V 1361-62 not modelled. Coordinates = Wikipedia.",
+   "label_name": "Abbaye Saint-Victor"
+  },
+  {
+   "name": "King Rene's Tower",
+   "kind": "tower_square",
+   "at": [
+    43.2955,
+    5.3611
+   ],
+   "footprint": "none",
+   "params": {
+    "w": 14,
+    "h": 24,
+    "roof": "crenel",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1447,
+     "y1": 1453
+    }
+   ],
+   "label": true,
+   "src": [
+    "S21"
+   ],
+   "conf": "medium",
+   "note": "Built 1447-1453 on the ruins of the Maubert tower (S21). Position at the south-east corner of Fort Saint-Jean from memory, +-60 m.",
+   "label_name": "Tour du Roi Rene"
+  },
+  {
+   "name": "Fort Saint-Jean",
+   "kind": "castle",
+   "at": [
+    43.2951,
+    5.3604
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 130,
+    "w": 70,
+    "h": 12,
+    "keep_h": 16
+   },
+   "phases": [
+    {
+     "y": 1660,
+     "y1": 1668
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2",
+    "S21"
+   ],
+   "conf": "medium",
+   "note": "Forts built from 1660 on Louis XIV's orders (S2, S21); end year 1668 is a Likely guess (S21 gives only '17th century'). Footprint from memory.",
+   "label_name": "Fort Saint-Jean"
+  },
+  {
+   "name": "Fort Saint-Nicolas",
+   "kind": "castle",
+   "at": [
+    43.2911,
+    5.3623
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 110,
+    "w": 60,
+    "h": 12,
+    "keep_h": 14
+   },
+   "phases": [
+    {
+     "y": 1660,
+     "y1": 1664
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2"
+   ],
+   "conf": "low",
+   "note": "Built from 1660 (S2); 1664 end is a Likely guess. Coordinates from the QA control point of the 1940 map (OSM centroid, +-45 m).",
+   "label_name": "Fort Saint-Nicolas"
+  },
+  {
+   "name": "Hotel de Ville",
+   "kind": "palace_courtyard",
+   "at": [
+    43.2961,
+    5.3703
+   ],
+   "footprint": "auto",
+   "params": {
+    "l": 45,
+    "w": 25,
+    "wing_w": 12,
+    "h": 17
+   },
+   "phases": [
+    {
+     "y": 1653,
+     "y1": 1673
+    }
+   ],
+   "label": true,
+   "src": [
+    "S9"
+   ],
+   "conf": "medium",
+   "note": "Work began 1653, completed September 1673; survived the 1943 destruction (S9). Position from memory (+-80 m): footprint auto may miss.",
+   "label_name": "Hotel de Ville"
+  },
+  {
+   "name": "La Vieille Charite",
+   "kind": "palace_courtyard",
+   "at": [
+    43.3003,
+    5.3678
+   ],
+   "footprint": "auto",
+   "params": {
+    "l": 100,
+    "w": 70,
+    "wing_w": 16,
+    "h": 16,
+    "fountain": false
+   },
+   "phases": [
+    {
+     "y": 1671,
+     "y1": 1749
+    }
+   ],
+   "label": true,
+   "src": [
+    "S10"
+   ],
+   "conf": "medium",
+   "note": "Built 1671-1749 by Pierre Puget and successors; Wikipedia coordinates 43.3003, 5.3678 (S10).",
+   "label_name": "La Vieille Charite"
+  },
+  {
+   "name": "Marseille Cathedral (Major)",
+   "kind": "cathedral",
+   "at": [
+    43.2997,
+    5.365
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 24,
+    "aisle_h": 16,
+    "facade_towers": 2,
+    "tower_h": 45,
+    "crossing": "dome",
+    "roof_c": "stone2"
+   },
+   "phases": [
+    {
+     "y": 1852,
+     "y1": 1893
+    }
+   ],
+   "label": true,
+   "src": [
+    "S12"
+   ],
+   "conf": "medium",
+   "note": "Foundation stone 1852, first service 1893, completed 1896, consecrated 1897 (S12). Old Major (12th c.) not modelled separately. Coordinates = Wikipedia.",
+   "label_name": "Cathedrale de la Major"
+  },
+  {
+   "name": "Gare Saint-Charles",
+   "kind": "station",
+   "at": [
+    43.3031,
+    5.3811
+   ],
+   "footprint": "auto",
+   "params": {
+    "l": 110,
+    "w": 120,
+    "h": 17
+   },
+   "phases": [
+    {
+     "y": 1845,
+     "y1": 1848
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2",
+    "S25"
+   ],
+   "conf": "medium",
+   "note": "Station opened 1848 (S2, S25); work start 1845 is a guess. Coordinates = Wikipedia.",
+   "label_name": "Gare Saint-Charles"
+  },
+  {
+   "name": "Notre-Dame de la Garde",
+   "kind": "bell_tower",
+   "at": [
+    43.2841,
+    5.371
+   ],
+   "footprint": "auto",
+   "params": {
+    "style": "romanesque",
+    "w": 14,
+    "h": 54,
+    "plan": "square"
+   },
+   "phases": [
+    {
+     "y": 1853,
+     "y1": 1864
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "First stone 11 Sept 1853, consecrated 1864, statue 24 Sept 1870 (S13). Modelled as the tower only; coordinates = Wikipedia.",
+   "label_name": "Notre-Dame de la Garde"
+  },
+  {
+   "name": "Stade Velodrome",
+   "kind": "stadium",
+   "at": [
+    43.2697,
+    5.3958
+   ],
+   "footprint": "auto",
+   "params": {
+    "a_out": 120,
+    "b_out": 95,
+    "h": 28
+   },
+   "phases": [
+    {
+     "y": 1935,
+     "y1": 1937.4
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2"
+   ],
+   "conf": "low",
+   "note": "Opened 1937 (S2); start year 1935 is a guess. Coordinates = Wikipedia. Not a stop (far from the centre).",
+   "label_name": "Stade Velodrome"
+  },
+  {
+   "name": "Cite Radieuse",
+   "kind": "generic_footprint",
+   "at": [
+    43.2619,
+    5.3964
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 56,
+    "roof": "flat",
+    "c": "concrete",
+    "l": 137,
+    "w": 24
+   },
+   "phases": [
+    {
+     "y": 1947.8,
+     "y1": 1952.8
+    }
+   ],
+   "label": true,
+   "src": [
+    "S15"
+   ],
+   "conf": "medium",
+   "note": "First stone 14 Oct 1947, inaugurated 14 Oct 1952, 56 x 137 x 24 m (S15). Position from memory (+-100 m): footprint auto may miss, params give the slab.",
+   "label_name": "Cite Radieuse"
+  },
+  {
+   "name": "CMA CGM Tower",
+   "kind": "skyscraper",
+   "at": [
+    43.3053,
+    5.3637
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 147,
+    "plan": "rect",
+    "crown": "flat"
+   },
+   "phases": [
+    {
+     "y": 2006.5,
+     "y1": 2011.7
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "medium",
+   "note": "July 2006 to September 2011, about 147 m (S17). Position from memory (+-100 m).",
+   "label_name": "Tour CMA CGM"
+  },
+  {
+   "name": "MuCEM",
+   "kind": "generic_footprint",
+   "at": [
+    43.2968,
+    5.3614
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 20,
+    "roof": "flat",
+    "c": "glass2",
+    "a": 0.5,
+    "roof_c": "steel",
+    "l": 72,
+    "w": 72
+   },
+   "phases": [
+    {
+     "y": 2010.0,
+     "y1": 2013.4
+    }
+   ],
+   "label": true,
+   "src": [
+    "S18"
+   ],
+   "conf": "low",
+   "note": "Opened in 2013 (S18); construction start 2010.0 is a guess and the exact opening date (7 June 2013, [Likely]) is not in the page read. Position from memory (+-80 m).",
+   "label_name": "MuCEM"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
  "regia": {
   "camera": "drone",
   "music": "waking_monument",
   "duration": "auto",
+  "max_duration": 660,
   "night": true,
+  "pacing": "story",
   "open": {
    "year": 2026,
-   "rewind_to": 1200
+   "rewind_to": -600
   },
-  "soste": [],
-  "rmin": 0.5,
-  "rmax": 8.0
+  "soste": [
+   {
+    "y0": -600,
+    "y1": -590,
+    "dur": 6,
+    "caption": "Greek sailors found Massalia (c. 600 BC)",
+    "target": "area:[43.2985,5.3688,450]",
+    "shot": "wide",
+    "fx": "crowd",
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": -48.7,
+    "y1": -48.3,
+    "dur": 6,
+    "caption": "Caesar besieges Massalia (49 BC)",
+    "target": "fire:Siege of Massilia 49 BC",
+    "shot": "wide",
+    "fx": "hammer",
+    "src": [
+     "S3"
+    ],
+    "conf": "medium",
+    "weight": 7
+   },
+   {
+    "y0": 1040,
+    "y1": 1042,
+    "dur": 5,
+    "caption": "The abbey church of Saint-Victor (1040)",
+    "target": "Abbey of Saint-Victor",
+    "shot": "wide",
+    "fx": "bell",
+    "src": [
+     "S11"
+    ],
+    "conf": "medium",
+    "weight": 5
+   },
+   {
+    "y0": 1453,
+    "y1": 1453.8,
+    "dur": 5,
+    "caption": "King Rene's Tower (1447-53)",
+    "target": "King Rene's Tower",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S21"
+    ],
+    "conf": "medium",
+    "weight": 4
+   },
+   {
+    "y0": 1668,
+    "y1": 1669,
+    "dur": 5,
+    "caption": "Louis XIV's forts guard the port (1660-68)",
+    "target": "Fort Saint-Jean",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S2",
+     "S21"
+    ],
+    "conf": "medium",
+    "weight": 6
+   },
+   {
+    "y0": 1673.8,
+    "y1": 1674.5,
+    "dur": 5,
+    "caption": "The Hotel de Ville (1653-73)",
+    "target": "Hotel de Ville",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S9"
+    ],
+    "conf": "medium",
+    "weight": 5
+   },
+   {
+    "y0": 1749,
+    "y1": 1750,
+    "dur": 5,
+    "caption": "La Vieille Charite (1671-1749)",
+    "target": "La Vieille Charite",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S10"
+    ],
+    "conf": "medium",
+    "weight": 4
+   },
+   {
+    "y0": 1848.1,
+    "y1": 1848.9,
+    "dur": 5,
+    "caption": "The railway reaches Saint-Charles (1848)",
+    "target": "Gare Saint-Charles",
+    "shot": "wide",
+    "fx": "train",
+    "src": [
+     "S2",
+     "S25"
+    ],
+    "conf": "medium",
+    "weight": 6
+   },
+   {
+    "y0": 1862.5,
+    "y1": 1864.3,
+    "dur": 6,
+    "caption": "Rue Imperiale cuts through the old town (1862-64)",
+    "target": "area:[43.3010,5.3678,330]",
+    "shot": "wide",
+    "fx": "hammer",
+    "src": [
+     "S14"
+    ],
+    "conf": "medium",
+    "weight": 8
+   },
+   {
+    "y0": 1871.0,
+    "y1": 1871.6,
+    "dur": 5,
+    "caption": "Notre-Dame de la Garde (1853-70)",
+    "target": "Notre-Dame de la Garde",
+    "shot": "wide",
+    "fx": "bell",
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "weight": 6
+   },
+   {
+    "y0": 1893.2,
+    "y1": 1894.0,
+    "dur": 5,
+    "caption": "The new Cathedral (1852-93)",
+    "target": "Marseille Cathedral (Major)",
+    "shot": "wide",
+    "fx": "bell",
+    "src": [
+     "S12"
+    ],
+    "conf": "medium",
+    "weight": 5
+   },
+   {
+    "y0": 1905.95,
+    "y1": 1906.3,
+    "dur": 5,
+    "caption": "The Transporter Bridge (Dec 1905)",
+    "target": "area:[43.2947,5.3697,260]",
+    "shot": "wide",
+    "fx": "build",
+    "src": [
+     "S19"
+    ],
+    "conf": "medium",
+    "weight": 5
+   },
+   {
+    "y0": 1943.04,
+    "y1": 1943.14,
+    "dur": 9,
+    "caption": "The Saint-Jean quarter is dynamited (Feb 1943)",
+    "target": "fire:Saint-Jean quarter 1943",
+    "shot": "wide",
+    "fx": "boom",
+    "src": [
+     "S6",
+     "S7",
+     "S8"
+    ],
+    "conf": "medium",
+    "weight": "max"
+   },
+   {
+    "y0": 1955.0,
+    "y1": 1956.5,
+    "dur": 6,
+    "caption": "Pouillon's new Old Port quarter (1949-56)",
+    "target": "area:[43.2967,5.3655,330]",
+    "shot": "wide",
+    "fx": "build",
+    "src": [
+     "S6",
+     "S20"
+    ],
+    "conf": "medium",
+    "weight": 8
+   },
+   {
+    "y0": 2013.45,
+    "y1": 2013.95,
+    "dur": 6,
+    "caption": "MuCEM and the Euromediterranee waterfront (2013)",
+    "target": "MuCEM",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S16",
+     "S18"
+    ],
+    "conf": "medium",
+    "weight": 6
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "night_hold": 15,
+  "drone": {
+   "pitch_max": 38
+  },
+  "lens": 32
  },
  "montaggio": {
-  "open": [],
-  "title": [],
-  "end": [],
-  "events": []
+  "style": "mattia",
+  "open": [
+   "MARSEILLE TODAY",
+   "886,040 people"
+  ],
+  "title": [
+   "MARSEILLE",
+   "600 BC TO NOW"
+  ],
+  "end": [
+   "MARSEILLE · 2,625 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": -600,
+    "title": "A colony on the Lacydon",
+    "lines": [
+     "Greeks from Phocaea, in Asia Minor, found Massalia around 600 BC.",
+     "The settlers choose the hills north of a sheltered inlet, the Lacydon."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Archaic Massalia (Saint-Laurent and Moulins hills)",
+    "chapter": "The Greek Port"
+   },
+   {
+    "y": -540,
+    "title": "A second wave",
+    "lines": [
+     "After the Persians destroy Phocaea, new colonists arrive around 540 BC."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Archaic Massalia (Saint-Laurent and Moulins hills)"
+   },
+   {
+    "y": -400,
+    "title": "Walls of limestone and clay",
+    "lines": [
+     "A first rampart rises in the late 5th century BC.",
+     "It is rebuilt in the 4th century and on a large scale in the 2nd."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S23"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)",
+    "note": "S23 is a mirror plus search summaries: verify rampart dates in the excavation literature before print."
+   },
+   {
+    "y": -330,
+    "title": "Pytheas sails north",
+    "lines": [
+     "The Massaliote navigator Pytheas explores the Atlantic coasts, around 330-320 BC."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)"
+   },
+   {
+    "y": -123,
+    "title": "Rome comes to the rescue",
+    "lines": [
+     "Gallic tribes threaten the city in 123-121 BC; Roman armies drive them back.",
+     "The alliance with Rome grows closer."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)"
+   },
+   {
+    "y": -48.2,
+    "title": "A city that backed the wrong side",
+    "lines": [
+     "After Caesar's siege the city keeps nominal autonomy but loses its trading empire."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S3"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Hellenistic Massalia (Saint-Laurent, Moulins and Carmes hills)",
+    "chapter": "Under Rome"
+   },
+   {
+    "y": 415,
+    "title": "Cassian and Saint-Victor",
+    "lines": [
+     "Tradition says the monk John Cassian founds two monasteries at Saint-Victor around 415.",
+     "Archaeology finds nothing there before the late 5th century."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S11"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Saint-Victor and the south shore",
+    "chapter": "Saints, Goths and Counts"
+   },
+   {
+    "y": 470,
+    "title": "The Goths arrive",
+    "lines": [
+     "Visigoth forces under King Euric take Marseille around 470.",
+     "Franks follow in 536 (some sources say 537)."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S26"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Saint-Victor and the south shore"
+   },
+   {
+    "y": 739,
+    "title": "Charles Martel sacks the city",
+    "lines": [
+     "Arab forces invited into Provence are driven out in 739 as the Franks sack Marseille."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 839,
+    "title": "Raiders from the sea",
+    "lines": [
+     "Saracens sack Marseille in 839."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1100,
+    "title": "Three lords, one city",
+    "lines": [
+     "In feudal times the city is split between the bishop, the viscount and the abbey of Saint-Victor."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S26",
+     "S21"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1214,
+    "title": "A commune and a chapel",
+    "lines": [
+     "Marseille governs itself as a commune from the early 13th century (sources differ: 1212-18).",
+     "In 1214 a priest begins a chapel on the Garde hill."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S2",
+     "S13"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1252,
+    "title": "Anjou takes Marseille",
+    "lines": [
+     "Charles of Anjou, count of Provence since 1246, takes the city in 1252.",
+     "A revolt is crushed in 1262-63."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S2",
+     "S5"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)",
+    "chapter": "Anjou and the Crown"
+   },
+   {
+    "y": 1348,
+    "title": "The Black Death",
+    "lines": [
+     "Plague kills about 15,000 of 25,000 inhabitants."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1423,
+    "title": "The Aragonese sack the port",
+    "lines": [
+     "Alfonso V of Aragon sacks the city on 20 November 1423."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2",
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1481.95,
+    "title": "Provence joins France",
+    "lines": [
+     "Charles III dies in December 1481 and leaves Provence to Louis XI.",
+     "The union is confirmed in 1486."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S4"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1524.65,
+    "title": "A siege lifted",
+    "lines": [
+     "Imperial troops besiege the city in August-September 1524.",
+     "They withdraw as Francis I marches to its relief."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S27"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Medieval Marseille (Ville haute and Ville basse)"
+   },
+   {
+    "y": 1660,
+    "title": "The king enters through a breach",
+    "lines": [
+     "Louis XIV subdues a rebellious Marseille in 1660.",
+     "Forts Saint-Jean and Saint-Nicolas are built to watch the city."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S21"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Fort Saint-Jean",
+    "chapter": "The King's Port"
+   },
+   {
+    "y": 1666,
+    "title": "A new city beyond the walls",
+    "lines": [
+     "In 1666 the king decides to enlarge Marseille; the old ramparts are razed in 1672 and a new wall follows in 1694.",
+     "A galley arsenal fills the port from 1665."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S24"
+    ],
+    "conf": "low",
+    "shot": "top",
+    "target": "Louis XIV extension (1666-1700)",
+    "note": "S24 is a web-search summary: verify 1672 and 1694."
+   },
+   {
+    "y": 1720.4,
+    "title": "The Great Plague",
+    "lines": [
+     "A ship from the Levant brings plague in 1720.",
+     "About 38,000 of 75,000 inhabitants die."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S21",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Louis XIV extension (1666-1700)"
+   },
+   {
+    "y": 1792.5,
+    "title": "The song of the Marseillais",
+    "lines": [
+     "Volunteers march from Marseille to Paris in 1792; their song becomes La Marseillaise."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "Louis XIV extension (1666-1700)"
+   },
+   {
+    "y": 1793.65,
+    "title": "The city without a name",
+    "lines": [
+     "After a federalist revolt, Marseille is renamed Ville-sans-nom in 1793."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Louis XIV extension (1666-1700)",
+    "note": "Some sources give 1794 for the renaming."
+   },
+   {
+    "y": 1844,
+    "title": "A new port for steam",
+    "lines": [
+     "The Joliette basin is authorized in 1844 and completed in 1853.",
+     "The Old Port is no longer enough."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S25"
+    ],
+    "conf": "medium",
+    "shot": "top",
+    "target": "Joliette new quarter (1844-1870)",
+    "chapter": "Gateway to the Empire"
+   },
+   {
+    "y": 1849,
+    "title": "Water for a growing city",
+    "lines": [
+     "The Canal de Marseille opens in 1849."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Joliette new quarter (1844-1870)"
+   },
+   {
+    "y": 1858,
+    "title": "The Docks of the Joliette",
+    "lines": [
+     "Giant warehouses rise from 1858; completion dates range from 1863 to 1866."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S25"
+    ],
+    "conf": "low",
+    "shot": "wide",
+    "target": "Joliette new quarter (1844-1870)"
+   },
+   {
+    "y": 1869,
+    "title": "Suez opens",
+    "lines": [
+     "The Suez Canal opens in 1869 and boosts the port; the Palais Longchamp is completed the same year."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "Joliette new quarter (1844-1870)"
+   },
+   {
+    "y": 1870.79,
+    "title": "A street changes its name",
+    "lines": [
+     "On 16 October 1870 the Rue Imperiale becomes the Rue de la Republique."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S14"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[43.3010,5.3678,330]"
+   },
+   {
+    "y": 1906.5,
+    "title": "The colonial exhibition",
+    "lines": [
+     "Marseille hosts colonial exhibitions in 1906 and 1922."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2",
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1937.5,
+    "title": "A stadium for the city",
+    "lines": [
+     "The Stade Velodrome opens in 1937."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "Stade Velodrome"
+   },
+   {
+    "y": 1940.6,
+    "title": "Vichy and the bombs",
+    "lines": [
+     "In June 1940 German and Italian aircraft bomb Marseille.",
+     "The city then lies in the unoccupied zone, under the Vichy regime."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S2",
+     "S30"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "chapter": "Occupation and Ruins",
+    "note": "'Unoccupied zone' is general knowledge, not read in the cited pages [Likely]."
+   },
+   {
+    "y": 1942.86,
+    "title": "German troops occupy the city",
+    "lines": [
+     "In November 1942 German forces occupy Marseille."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1943.22,
+    "title": "The Saint-Jean quarter is gone",
+    "lines": [
+     "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
+     "From 1 February about 1,500 buildings on 14 hectares are dynamited."
+    ],
+    "hold_s": 8,
+    "src": [
+     "S6",
+     "S7",
+     "S8"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[43.2967,5.3655,330]",
+    "note": "Counts vary by source: 1,400-1,500 buildings; 20,000-30,000 expelled. The pre-1943 houses shown in the render are an approximation: say so in the description."
+   },
+   {
+    "y": 1944.66,
+    "title": "Liberation",
+    "lines": [
+     "Marseille is liberated in late August 1944.",
+     "The Germans blow up the Transporter Bridge on 22 August."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S1",
+     "S19"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1949,
+    "title": "Rebuilding the Old Port",
+    "lines": [
+     "From 1949 the architect Fernand Pouillon builds new stone blocks on both sides of the Hotel de Ville.",
+     "The district is finished by 1956; the old lanes do not return."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S20",
+     "S6"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[43.2967,5.3655,330]",
+    "note": "Pouillon works list 1947-53 (S20); fr:Rafle de Marseille says reconstruction finished 1956. 'The old lanes do not return' is an inference from the blocks, mark Likely."
+   },
+   {
+    "y": 1952.79,
+    "title": "Le Corbusier's Radiant City",
+    "lines": [
+     "The Cite Radieuse is inaugurated on 14 October 1952: a 56-meter slab of apartments after five years of work."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S15"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "Cite Radieuse"
+   },
+   {
+    "y": 1962.4,
+    "title": "The pieds-noirs",
+    "lines": [
+     "After Algerian independence in 1962 about 150,000 pieds-noirs settle in Marseille."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1995,
+    "title": "Euromediterranee",
+    "lines": [
+     "In 1995 the state and the city launch Euromediterranee: 310 hectares around La Joliette.",
+     "An extension adds 170 hectares from 2007."
+    ],
+    "hold_s": 7,
+    "src": [
+     "S16"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "Joliette new quarter (1844-1870)",
+    "chapter": "A New Waterfront"
+   },
+   {
+    "y": 2011.7,
+    "title": "A tower for a shipping giant",
+    "lines": [
+     "Zaha Hadid's 147-meter CMA CGM Tower is completed in September 2011."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S17"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "target": "CMA CGM Tower"
+   }
+  ],
+  "chapters": [
+   {
+    "y": -600,
+    "title": "The Greek Port"
+   },
+   {
+    "y": -48.2,
+    "title": "Under Rome"
+   },
+   {
+    "y": 415,
+    "title": "Saints, Goths and Counts"
+   },
+   {
+    "y": 1252,
+    "title": "Anjou and the Crown"
+   },
+   {
+    "y": 1660,
+    "title": "The King's Port"
+   },
+   {
+    "y": 1844,
+    "title": "Gateway to the Empire"
+   },
+   {
+    "y": 1940.6,
+    "title": "Occupation and Ruins"
+   },
+   {
+    "y": 1995,
+    "title": "A New Waterfront"
+   }
+  ],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
+    "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
+    "Streets and place names: © OpenStreetMap contributors (ODbL)",
+    "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
+    "Historical map (Saint-Jean quarter): Stadtplan von Marseille 1940, BnF Gallica",
+    "History: Wikipedia EN/FR (Marseille, Siege of Massilia, Marseille roundup,",
+    "Hotel de Ville, Vieille Charite, Notre-Dame de la Garde, Cite radieuse, Euromediterranee)",
+    "Population: Wikipedia, Marseille, census figures",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
+  }
+ },
+ "thumbnail_hook": {
+  "year": 1943.1,
+  "camera": "cover shots hook_1943_pre / mid / post (cam over the Old Port looking north-west at the Saint-Jean quarter)",
+  "shows": "COLD OPEN (5-8 s), not the thumbnail: the Saint-Jean quarter standing, then dynamited block by block from the Fort Saint-Jean side, smoke over the old lanes, only the Hotel de Ville left on the quay.",
+  "src": [
+   "S6",
+   "S7",
+   "S8"
+  ],
+  "thumbnail": "year on the thumbnail = FIRST year (600 BC), RIGHT = NOW; the hook frame goes in the cold open only (packaging rules 15/11).",
+  "cold_open": "cut from the 1943 hover (sosta 'The Saint-Jean quarter is dynamited'): hover window y 1943.04-1943.14, destruction wave 1943.088-1943.132 = about the 5th to 9th second of the 9 s hover; exact seconds to be read from schedule/years.json after the render.",
+  "note": "Check on a CPU frame that the smoke (flames 6, smoke 14) and the disappearing blocks are readable at 168 px before the pod."
  }
 }
