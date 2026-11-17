@@ -36,6 +36,20 @@ def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
 
 
 
+BUILDING_PALETTES = {
+    # citta' industriale USA (Pittsburgh): mattone rosso-bruno, pietra grigia, tan; tetti in asfalto scuro; torri grigio/vetro azzurro. Niente giallo.
+    'us_industrial': {
+        'wall_old': ['#9a5a45', '#8d8a84', '#a08d72', '#8a4f3d'],
+        'wall_new': ['#8c4a38', '#9a5240', '#a8a39a', '#b09a7c', '#8d8a84', '#a65d45'],
+        'wall_anc': ['#a8a39a', '#8d8a84', '#b0aaa0'],
+        'wall_eras': [[1915, ['#8c4a38', '#9a5240', '#7d4033', '#a65d45', '#8a5a46', '#8d8a84', '#b09a7c', '#8c4a38']],
+                      [1950, ['#9a5240', '#8a4a3a', '#b09a7c', '#a89c88', '#8d8a84', '#a65d45', '#c2b394', '#7d4033']],
+                      [9999, ['#b5ab98', '#a39d90', '#c4b79a', '#8f8c86', '#9e5a45', '#b9b2a4', '#a8a090', '#8d8a84']]],
+        'roof_old': ['#55555a', '#615c58', '#5a4e48', '#4c4c50'], 'roof_new': ['#55555a', '#615c58', '#4c4c50', '#6b6560', '#5a4e48', '#707072', '#4a4a4f'],
+        'wall_tall': ['#8b9199', '#7c838b', '#9aa0a6', '#a8aaa8', '#6f7780', '#8a8f94'], 'roof_tall': ['#6c7178', '#7d8288'], 'tall_h': 35,
+        'glass': ['#6f93ad', '#7fa3bb', '#5f86a4'],
+    },
+}
 def _rgb(h): return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
 def _hex(c): return '#%02x%02x%02x' % tuple(int(round(max(0, min(255, v)))) for v in c)
 def _sat1(h, s, tol):
@@ -85,7 +99,7 @@ def build_city(story):
     if lk.get('palette'):
         pal = json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render']
         st.update(pal.get('style', {})); cfg.update(pal.get('top', {}))
-    for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon'):
+    for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon', 'sky_tint'):
         if k in lk: st[k] = lk[k]
     if 'exposure' in lk: cfg['exposure'] = lk['exposure']
     # iterazione 2 (tutte opzionali, solo con city.look): saturation (x su luma, con rapporto R/B tenuto entro rb_tol dall'originale),
@@ -98,6 +112,9 @@ def build_city(story):
     if lk.get('street_gain') and st.get('urban'):
         st['street'] = _hex([v * float(lk['street_gain']) for v in _rgb(st['urban'][2])])
         if 'street_earth' not in st: st['street_earth'] = st['street']
+    if lk.get('building_palette'):   # iterazione 3: tavolozza edifici per citta' (nome in BUILDING_PALETTES o dict di chiavi di stile); solo con city.look
+        bp_ = lk['building_palette']; st.update(BUILDING_PALETTES[bp_] if isinstance(bp_, str) else bp_)
+    if lk.get('water_coat'): st['water_coat'] = lk['water_coat']
     if lk.get('view_look'): cfg['look'] = lk['view_look']
     if lk.get('view_transform'): cfg['view_transform'] = lk['view_transform']
     if lk.get('ground_tint'):

@@ -409,6 +409,10 @@ def add_bld(bm, col, vyear, vdie, b):
         elif gl: rpal = ST.get('roof_new', ROOF)
         elif old_: pal, rpal = ST['wall_old'], ST['roof_old']
         else: pal, rpal = (ST.get('wall_anc', ST['wall_new']) if b.get('k') == 'anc' else ST['wall_new']), ST['roof_new']
+        if ST.get('wall_eras') and not old_ and not gl and not b.get('lm'):   # city.look.building_palette: muri per epoca [[anno_max, tavolozza], ...]
+            for _ym, _pl in ST['wall_eras']:
+                if y < _ym: pal = _pl; break
+        if ST.get('wall_tall') and h > ST.get('tall_h', 35) and not gl and not b.get('lm'): pal, rpal = ST['wall_tall'], ST.get('roof_tall', rpal)   # torri del centro: grigio/vetro
     if ST.get('roof_rf') and not gl and not b.get('lm') and not old:
         # Parigi (prova mansarde 29 ott): coppi rossi dove la BDNB dice zinco/ardesia. Colore del tetto dal materiale vero
         # (rf: z zinco/ardesia, t tegole, b terrazza); senza dato: zinco nel centro (raggio roof_rf_core), tavolozza normale fuori
@@ -1080,6 +1084,8 @@ nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = ST.g
 bp = nt.nodes.new('ShaderNodeBump'); bp.inputs['Strength'].default_value = ST.get('wave_strength', 0.08); nt.links.new(nz.outputs['Fac'], bp.inputs['Height'])
 mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord'); nt.links.new(tc.outputs['Object'], mp.inputs['Vector']); nt.links.new(mp.outputs[0], nz.inputs['Vector'])
 nt.links.new(bp.outputs['Normal'], nt.nodes['Principled BSDF'].inputs['Normal'])
+if ST.get('water_coat'):   # city.look.water_coat: riflesso del cielo in piu' sull'acqua (strato coat liscio); senza chiave nulla cambia
+    _pb = nt.nodes['Principled BSDF']; _pb.inputs['Coat Weight'].default_value = float(ST['water_coat']); _pb.inputs['Coat Roughness'].default_value = 0.03
 if ST.get('water2'):   # due toni d'acqua a chiazze grandi (correnti, fondali): l'acqua non e' piu' una tinta piatta
     _wn = nt.nodes.new('ShaderNodeTexNoise'); _wn.inputs['Scale'].default_value = 0.0012; _wn.inputs['Detail'].default_value = 3; nt.links.new(tc.outputs['Object'], _wn.inputs['Vector'])
     _wr = nt.nodes.new('ShaderNodeValToRGB'); nt.links.new(_wn.outputs['Fac'], _wr.inputs[0])
@@ -1312,7 +1318,11 @@ SUNEL = float(opt('--sun', 1, str(CITY.get('sun_el', 17))))
 if LIGHT == 'sunset': SUNEL = ST.get('sunset_el', 3.0)   # sole basso: ombre lunghe, luce arancio
 _dummy = 0; sky.sun_elevation = math.radians(SUNEL); sky.sun_rotation = math.radians(float(CITY.get('sun_rot', 230)))   # Parigi 29 ott: luce di lato per il rilievo dei tetti
 WN = w.node_tree.nodes; WL = w.node_tree.links.new; bg = WN['Background']
-WL(sky.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = ST.get('sky_light', 0.35)
+if ST.get('sky_tint') and not NIGHT:   # city.look.sky_tint: moltiplica il colore della luce ambiente (il Nishita al tramonto basso e' caldo); senza chiave nulla cambia
+    _stm = WN.new('ShaderNodeMix'); _stm.data_type = 'RGBA'; _stm.blend_type = 'MULTIPLY'; _stm.inputs['Factor'].default_value = 1.0; _stm.inputs[7].default_value = (*ST['sky_tint'], 1)
+    WL(sky.outputs['Color'], _stm.inputs[6]); WL(_stm.outputs[2], bg.inputs['Color'])
+else: WL(sky.outputs['Color'], bg.inputs['Color'])
+bg.inputs['Strength'].default_value = ST.get('sky_light', 0.35)
 bg2 = WN.new('ShaderNodeBackground'); bg2.inputs['Color'].default_value = (*HAZE, 1); bg2.inputs['Strength'].default_value = 1.0
 # cielo visto dalla camera: sfumato (foschia all'orizzonte -> azzurro in alto), alone caldo verso il sole, nuvole sottili
 def sky_grad():
