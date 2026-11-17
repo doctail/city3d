@@ -1,10 +1,10 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 13:09. Esito complessivo: **FAIL**
+Generato da `python -m kit.qa` il 2026-11-17 14:06. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
-| a) Story e fonti | FAIL |
+| a) Story e fonti | PASS |
 | b) DATA | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | WARN |
@@ -13,8 +13,7 @@ Generato da `python -m kit.qa` il 2026-11-17 13:09. Esito complessivo: **FAIL**
 
 - **PASS** chiavi city
 - **PASS** 32 fonti
-- **FAIL** date con fonte
-  - senza src valido (e conf != low): history.lost[0] Fort Duquesne barracks; history.lost[1] Fort Duquesne barracks; history.lost[2] Fort Duquesne storehouse; history.lost[3] Fort Pitt barracks; history.lost[4] Fort Pitt barracks; history.lost[5] Fort Pitt barracks; history.lost[6] Fort Pitt barracks; history.lost[7] Fort Pitt magazine
+- **PASS** date con fonte
 
 ## b) DATA
 
