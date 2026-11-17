@@ -38,16 +38,16 @@ def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
 
 BUILDING_PALETTES = {
     # citta' industriale USA (Pittsburgh): mattone rosso-bruno, pietra grigia, tan; tetti in asfalto scuro; torri grigio/vetro azzurro. Niente giallo.
-    'us_industrial': {
-        'wall_old': ['#9a5a45', '#8d8a84', '#a08d72', '#8a4f3d'],
-        'wall_new': ['#8c4a38', '#9a5240', '#a8a39a', '#b09a7c', '#8d8a84', '#a65d45'],
-        'wall_anc': ['#a8a39a', '#8d8a84', '#b0aaa0'],
-        'wall_eras': [[1915, ['#8c4a38', '#9a5240', '#7d4033', '#a65d45', '#8a5a46', '#8d8a84', '#b09a7c', '#8c4a38']],
-                      [1950, ['#9a5240', '#8a4a3a', '#b09a7c', '#a89c88', '#8d8a84', '#a65d45', '#c2b394', '#7d4033']],
-                      [9999, ['#b5ab98', '#a39d90', '#c4b79a', '#8f8c86', '#9e5a45', '#b9b2a4', '#a8a090', '#8d8a84']]],
-        'roof_old': ['#55555a', '#615c58', '#5a4e48', '#4c4c50'], 'roof_new': ['#55555a', '#615c58', '#4c4c50', '#6b6560', '#5a4e48', '#707072', '#4a4a4f'],
-        'wall_tall': ['#8b9199', '#7c838b', '#9aa0a6', '#a8aaa8', '#6f7780', '#8a8f94'], 'roof_tall': ['#6c7178', '#7d8288'], 'tall_h': 35,
-        'glass': ['#6f93ad', '#7fa3bb', '#5f86a4'],
+    'us_industrial': {   # v3 (correzione luminanza owner): mattone brunastro attenuato, pietra grigio-tan, tetti grigio medio, torri grigio chiaro/vetro blu-grigio
+        'wall_old': ['#c3988b', '#cdcbc6', '#d3c7b5', '#b5897d'],
+        'wall_new': ['#c5958b', '#b98c7e', '#d7d5ce', '#d8cebb', '#c7c5c0', '#cea597'],
+        'wall_anc': ['#d7d5ce', '#c7c5c0', '#dadad5'],
+        'wall_eras': [[1915, ['#c5958b', '#b98c7e', '#ac8479', '#cea597', '#bb9589', '#c7c5c0', '#d8cebb', '#c5958b']],
+                      [1950, ['#cea597', '#bb9084', '#d8cebb', '#cfc8ba', '#c7c5c0', '#c5958b', '#dad9c4', '#ac8479']],
+                      [9999, ['#d9d5c8', '#d0cdc2', '#dad9c4', '#c1bfba', '#c49a8d', '#dad7cd', '#cdc8bc', '#c7c5c0']]],
+        'roof_old': ['#949498', '#a19d9a', '#948b86', '#85858a'], 'roof_new': ['#949498', '#a19d9a', '#85858a', '#aca8a3', '#948b86', '#bababe', '#88888c'],
+        'wall_tall': ['#b4bac2', '#a3aab3', '#bfc3c7', '#c8c8c4', '#9199a3', '#b0b5ba'], 'roof_tall': ['#8e949c', '#9ca2a9'], 'tall_h': 35,
+        'glass': ['#8fb0c6', '#9cbbd0', '#86a8c0'],
     },
 }
 def _rgb(h): return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
