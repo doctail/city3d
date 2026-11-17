@@ -1,6 +1,6 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 20:50. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-17 21:45. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
