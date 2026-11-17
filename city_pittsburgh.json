@@ -321,16 +321,16 @@
     "tag": "forts",
     "year": 1754.97,
     "cam": [
-     -945,
-     25,
-     40,
+     -920,
+     15,
+     140,
      -1050,
      125,
      3
     ],
-    "lens": 35,
+    "lens": 26,
     "night": false,
-    "note": "Fort Duquesne walls complete (1754.96); low SE view, Allegheny/Ohio and the Point behind. Thumbnail left half, label 1754"
+    "note": "Fort Duquesne walls complete (1754.96); high SE oblique, wide lens 26 so the whole fort sits inside the crop with land around. Thumbnail left, label 1754. Crop --lbox 464,0,1050 on the 1920 frame (choice L3 of 17/11 round 2)"
    },
    {
     "tag": "now",
@@ -345,7 +345,7 @@
     ],
     "lens": 35,
     "night": false,
-    "note": "Mt Washington view NE: Downtown towers, Monongahela and Allegheny. Thumbnail right half, NOW"
+    "note": "Mt Washington view NE: Downtown towers, Monongahela and Allegheny. Thumbnail right half, NOW. Crop --rbox 800,0,1050 on the 1920 frame"
    }
   ]
  },
