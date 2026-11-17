@@ -400,9 +400,9 @@ def run(slug, out=None, data=None, sched=None, city=None):
           f'Branch `{br}`. The GO message must contain, in ONE message: GPU check (`cuInit` = 0), `git pull` + this banner to verify, the launch command, the live progress one-liner, covers, and the condition to switch off (R3).', '']
     L += [f'- WARN {s}' for s in bst]
     L += ['', '## 6. Cost (measured basis only, R4)', ''] + [f'- {x}' for x in clines]
-    L += ['', '## 7. Packaging (R14: no cold open, no flag, series formula)', '']
+    L += ['', '## 7. Packaging (R14: series formula)', '']
     if pk:
-        L += [f'- Title: `{pk[0]}`', f'- Lyon title (approved): `{pk[4]}`', f'- Thumbnail: `{pk[1]} > NOW`, city name `{c["name"].upper()}`, two full halves, no flag, no cold open.',
+        L += [f'- Title: `{pk[0]}`', f'- Lyon title (approved): `{pk[4]}`', f'- Thumbnail: `{pk[1]} > NOW`, city name `{c["name"].upper()}`, two full halves, no flag.',
               '- First-year hover frame and NOW frame come from the city json `cover.shots`; the draft is built from 480x270 CPU frames, the final cover is rendered on the pod frames.', '',
               '![packaging](packaging_compare.jpg)']
         L += [f'- WARN {n}' for n in pk[5]]
