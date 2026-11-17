@@ -823,8 +823,8 @@
      1758.89,
      1758.92
     ],
-    "height": 4,
-    "width": 3,
+    "height": 6,
+    "width": 8,
     "towers_every_m": 35,
     "color": "#8a6a43",
     "tower_color": "#7a5a38",
@@ -833,7 +833,7 @@
      "S5"
     ],
     "conf": "low",
-    "note": "Square with corner bastions, 70 m side: schematic. Built from April 1754 (S3); destroyed by the French on 24 Nov 1758, Forbes occupies the ruins on 25 Nov (S3, S11). Position near the tip of the Point (the Fort Pitt site is \"near but not directly on\" it, S4): +-100 m, to be moved on the granite outlines in Point State Park (OSM)."
+    "note": "Square with corner bastions, 70 m side: schematic. Built from April 1754 (S3); destroyed by the French on 24 Nov 1758, Forbes occupies the ruins on 25 Nov (S3, S11). Position near the tip of the Point (the Fort Pitt site is \"near but not directly on\" it, S4): +-100 m, to be moved on the granite outlines in Point State Park (OSM). Walls drawn ~8 m thick and 6-7 m high (real palisade/earth ramparts are thinner) so they read from 600-1000 m; bastion towers 16 m wide."
    },
    {
     "name": "Fort Pitt (British, 1759-97)",
@@ -871,8 +871,8 @@
      1797.6,
      1798.8
     ],
-    "height": 5,
-    "width": 4,
+    "height": 7,
+    "width": 8,
     "towers_every_m": 95,
     "color": "#a2704f",
     "tower_color": "#8f5f43",
@@ -881,7 +881,7 @@
      "S5"
     ],
     "conf": "low",
-    "note": "Pentagon with five bastions, Capt. Harry Gordon (S4); built 1759-61 (S4); abandoned 1792, decommissioned and demolished in 1797 (S5; demolition span 1797.6-1798.8 is a guess). Circumradius 95 m and centre are schematic (+-100 m). The Block House (1764) is a separate landmark. Closed line, not \"ring\", so that it does not become WALL_P (Valencia-specific code in build_render)."
+    "note": "Pentagon with five bastions, Capt. Harry Gordon (S4); built 1759-61 (S4); abandoned 1792, decommissioned and demolished in 1797 (S5; demolition span 1797.6-1798.8 is a guess). Circumradius 95 m and centre are schematic (+-100 m). The Block House (1764) is a separate landmark. Closed line, not \"ring\", so that it does not become WALL_P (Valencia-specific code in build_render). Walls drawn ~8 m thick and 6-7 m high (real palisade/earth ramparts are thinner) so they read from 600-1000 m; bastion towers 16 m wide."
    }
   ],
   "gutting": [
@@ -952,7 +952,208 @@
     "note": "The Point was industrial until the 1950s: land taken from industrial enterprises for the park (S11); vast swaths near the Point demolished for Gateway Center by 1950 (S2). From 1800, after Fort Pitt is gone (1797), lots fill the void of the park; they go in 1952-53. Hand-drawn 36-acre outline."
    }
   ],
-  "lost": [],
+  "lost": [
+   {
+    "name": "Fort Duquesne barracks",
+    "ring": [
+     [
+      40.44158,
+      -80.012541
+     ],
+     [
+      40.44158,
+      -80.012139
+     ],
+     [
+      40.44166,
+      -80.012139
+     ],
+     [
+      40.44166,
+      -80.012541
+     ]
+    ],
+    "h": 6,
+    "from": 1754.9,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Duquesne barracks",
+    "ring": [
+     [
+      40.44194,
+      -80.012541
+     ],
+     [
+      40.44194,
+      -80.012139
+     ],
+     [
+      40.44202,
+      -80.012139
+     ],
+     [
+      40.44202,
+      -80.012541
+     ]
+    ],
+    "h": 6,
+    "from": 1755.0,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Duquesne storehouse",
+    "ring": [
+     [
+      40.441755,
+      -80.012399
+     ],
+     [
+      40.441755,
+      -80.012281
+     ],
+     [
+      40.441845,
+      -80.012281
+     ],
+     [
+      40.441845,
+      -80.012399
+     ]
+    ],
+    "h": 5,
+    "from": 1755.0,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441105,
+      -80.010863
+     ],
+     [
+      40.441105,
+      -80.010437
+     ],
+     [
+      40.441195,
+      -80.010437
+     ],
+     [
+      40.441195,
+      -80.010863
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.1,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441665,
+      -80.010863
+     ],
+     [
+      40.441665,
+      -80.010437
+     ],
+     [
+      40.441755,
+      -80.010437
+     ],
+     [
+      40.441755,
+      -80.010863
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.25,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441277,
+      -80.011159
+     ],
+     [
+      40.441277,
+      -80.011041
+     ],
+     [
+      40.441583,
+      -80.011041
+     ],
+     [
+      40.441583,
+      -80.011159
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.4,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441277,
+      -80.010259
+     ],
+     [
+      40.441277,
+      -80.010141
+     ],
+     [
+      40.441583,
+      -80.010141
+     ],
+     [
+      40.441583,
+      -80.010259
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.55,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt magazine",
+    "ring": [
+     [
+      40.441376,
+      -80.010721
+     ],
+     [
+      40.441376,
+      -80.010579
+     ],
+     [
+      40.441484,
+      -80.010579
+     ],
+     [
+      40.441484,
+      -80.010721
+     ]
+    ],
+    "h": 5,
+    "from": 1760.25,
+    "to": 1797.6,
+    "fine": true
+   }
+  ],
   "fires": [
    {
     "name": "Great Fire of 1845",
@@ -992,7 +1193,8 @@
      "S6"
     ],
     "conf": "medium",
-    "note": "Started 10 April 1845 (=1845.268) near Ferry Street and burned about 60 acres, as many as 1,200 buildings (S6). The real fire lasted hours; the window 1845.268-1845.30 (12 days) is only so that flames are visible during a 6 s hover. Ring is a ~27 ha sketch of the burned south-west of downtown ending at Market Square (+-100 m, NOT surveyed). destroy acts only on predecessor buildings from the zones (today's downtown is 1900+)."
+    "note": "Started 10 April 1845 (=1845.268) near Ferry Street and burned about 60 acres, as many as 1,200 buildings (S6). The real fire lasted hours; the window 1845.268-1845.30 (12 days) is only so that flames are visible during a 6 s hover. Ring is a ~27 ha sketch of the burned south-west of downtown ending at Market Square (+-100 m, NOT surveyed). destroy acts only on predecessor buildings from the zones (today's downtown is 1900+).",
+    "style": "blaze"
    }
   ],
   "floods": [
