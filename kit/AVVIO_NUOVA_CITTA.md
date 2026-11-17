@@ -33,14 +33,12 @@ Prompt to paste at the start of a new chat:
 - Known limits: the opening is only about 1 km from the first stop (250 m/s cap), the Plan Sur / cruise frames look almost straight down (about 2,900 m).
 
 ## Packaging rules (14/11/2026)
-- The promise of the thumbnail/title must appear in the first 30-60 s (a cold open of the climax for 5-8 s, then the rewind). A question in the thumbnail is only allowed if the video answers it early.
+- Superseded 16-17/11: no hook, no cold open; see R14.
 - Do not A/B test thumbnails under about 3,000 impressions per variant. Do not read a CTR under about 3,000 impressions.
 - Long-video thumbnail and Short thumbnail are different jobs: a single big number or a question belongs to a Short.
 
-## Hook frame (from Copenhagen's CTR of 6.8% vs Valencia's 1.3%, 14/11/2026; hypothesis, n=2)
-- Choose the city also for a dramatic, visible event (fire, bombardment, flood, quake) and decide the HOOK FRAME in the story before the render: one striking moment that goes on the thumbnail (one half) and in the cold open. Copenhagen's thumbnail: flames and smoke vs a night city with lights.
-- The hook frame must really be visible in the 3D render (Valencia's 1957 flood water was not): check it with a CPU frame before the pod.
-- Add a `thumbnail_hook` key to story.json: year, camera, what it shows.
+## Hook frame
+- Superseded 16-17/11: no hook, no cold open; see R14. (`thumbnail_hook` in story.json is no longer required; if present it is ignored.)
 
 ## Thumbnail layout (15/11/2026, from the 7 Valencia thumbnails: 131K winner vs 12-60 view flops; hypothesis)
 - Split screen, BOTH halves full of city: the left half must not be empty field (Valencia v1: a small red patch on green; the 131K winner had a dense Roman city). If the first year is a small town, zoom on it until it fills the half.
@@ -50,11 +48,11 @@ Prompt to paste at the start of a new chat:
 
 ## Reading retention (15/11/2026)
 - Do not read a retention curve under about 3,000 impressions: a few dozen viewers, many from Reddit/direct links, say nothing about the feed.
-- Valencia's first curve: plateau at 28% from 2:30 to 6:30 (the middle is fine), but 50% lost by 0:30. The first 30 s count in the first test too: cold open of the hook frame, no slow intro. Working only on clicks without the opening makes the first test worse.
+- Valencia's first curve: plateau at 28% from 2:30 to 6:30 (the middle is fine), but 50% lost by 0:30. The first 30 s count in the first test too: no slow intro (the cold-open idea is superseded 16-17/11, see R14). Working only on clicks without the opening makes the first test worse.
 
 ## Go / no-go gates (14/11/2026, thresholds provisional: recalibrate after 3 more videos)
-1. BEFORE any data work: free city (no relevant 3D timelapse above 5K views in 45 days, or a clearly different angle), per-building year data, AND a spectacular visible event (the hook frame). If one is missing, do not produce.
-2. BEFORE the story: a packaging check (30 min, free): thumbnail + title + hook frame rendered with one CPU frame, compared at 168 px in a feed mockup with the competitors (analisi/ctr/thumbs/feed_mockup.jpg). It must read in 1 second and its promise must be in the first 30-60 s of the video.
+1. BEFORE any data work: free city (no relevant 3D timelapse above 5K views in 45 days, or a clearly different angle; rule 5K/100K), per-building year data. If one is missing, do not produce. (The spectacular-event/hook requirement is superseded 16-17/11, see R14.)
+2. BEFORE the story: a packaging check (30 min, free): thumbnail (`<first year> > NOW`) + title (series formula) rendered with one CPU frame, compared at 168 px in a feed mockup with the competitors (analisi/ctr/thumbs/feed_mockup.jpg). It must read in 1 second.
 3. AFTER publication, read ONLY at 24 h: healthy = more than 10K impressions and CTR >= 4% (Copenhagen: 51.9K, 6.8%); stalled = under 2K impressions or CTR under 2% (Valencia 16 h: 823, 1.3%). Stalled: ONE change at most (thumbnail), then move on; never more.
 4. Three stalled videos in a row: stop producing, review the selection (steps 1-2), do not make more videos.
 5. Frequency follows the gates, not the calendar: one video that passes beats two that do not. No ads as a lever: 15 EUR buys about 10,000 views of 30 s and did not trigger Home (Rotterdam).
@@ -82,9 +80,9 @@ Every city needs, ready at launch: 6-10 local communities (city and country subr
 - Camera too close: new options `drone.cruise_k` (0.35), `cruise_min` (250), `alt_max` (200), `clear`, `rho_max` and `regia.lens` (35). Lyon uses 0.6 / 450 / 350 / 60 / 900 and lens 30 with `wide` shots. NOT validated in a full render yet: check this note after the Lyon video and update the defaults if it works.
 
 **Packaging**
-- The year on the thumbnail must be the video's first year (title "43 BC-NOW" means the thumbnail says 43 BC), never the year of the hook frame. The hook (fire) goes into the 5-8 s cold open, not on the thumbnail with its own year.
+- The year on the thumbnail must be the video's first year (title "43 BC-NOW" means the thumbnail says 43 BC). (Lyon history: the old hook/cold-open idea is superseded 16-17/11, see R14.)
 - Covers: `city.cover.shots` (per-shot camera and year, rendered in parallel by `run.sh cover`), 1080p on the pod; 960x540 preview frames are too soft. Lift night frames to a mean luminance of at least 90 (Lyon's first night cover was 31: owner: "too dark").
-- Do the packaging check (thumbnail + title + hook frame, 168 px) BEFORE the story, as the gate says: Lyon did it after the render.
+- Do the packaging check (thumbnail + title, 168 px) BEFORE the story, as the gate says: Lyon did it after the render.
 - Lyon full render on the A40 (15/11): 16,649 s = 4 h 37 min for 13,441 day frames + 240 night frames (565 s of video, 145K building groups), i.e. about 29 pod-seconds per second of video plus the 30 min scene build. `run.sh full` ends with a cover step (another ~35 min): skip or kill it when the covers already exist.
 - **Camera still too close in many stretches (owner, 15/11, after the full render).** Measured median camera-to-target distance (35 mm equivalent): Copenhagen 1,397 m (33K views), Paris 1,427, Madrid 2,538, Rotterdam 3,748, Lyon 930 (797 m at 30 mm) with `cruise_k` 0.6, `cruise_min` 450, `alt_max` 350, `wide` shots. `kit qa` now WARNs below 1,200 m. Tried in memory on Lyon: `regia.wide_min` 1400 only raises the median to 1,062 m, and `cruise_k` 1.0 / `cruise_min` 800 / `alt_max` 600 / `rho_max` 1400 to 1,060 m: the hover distance is not the problem; the median is dominated by the flights (about two thirds of the video), whose look point is only ~3 s ahead of the drone and whose approach is low (`fly()` in `kit/drone_kit.py`). NEXT CITY: have an agent change the flight profile (higher approach, look point farther ahead, a `lowness` parameter) and target at least 1,400 m before any pod run; check with the QA line "drone: distanza della camera".
 
@@ -92,7 +90,7 @@ Every city needs, ready at launch: 6-10 local communities (city and country subr
 Lyon kept the pod on for almost 10 hours, over 5 EUR, of which only 4 h 37 min were the real render: the rest was test cycles and waiting while the chat changed things. The owner switches the pod on ONLY when the chat says GO, and the chat says GO only when ALL of this is true:
 1. `python -m kit qa <slug>` has no FAIL and every WARN is explained (including "drone: distanza della camera" at least 1,200 m 35 mm-equivalent).
 2. Data packed (`kit pack`), story/schedule committed and pushed; the chat quotes the commit and the schedule duration/lens that the pod banner must show.
-3. Covers planned (`city.cover.shots`) and the thumbnail/title decided; the cold open decided.
+3. Covers planned (`city.cover.shots`) and the thumbnail/title decided (no cold open, R14).
 4. The chat gives, in ONE message, the whole command list: GPU check, `git pull`, version check, `full` launch, the real-time progress one-liner, the cover command, and the "you can close the pod when" condition (files downloaded: `lyon_full.mp4`, `years.json`, covers).
 5. Cover frames run during the 30 min scene build of `full` (GPU idle, CPU work), not afterwards; kill the final cover step of `full` if the covers exist.
 After the render the pod is switched off by the owner as soon as the files are downloaded; any fix is a NEW short session, announced with its cost (scene build + frames), never "while it is on".
@@ -127,7 +125,7 @@ Result: a video that exists, but the session was far slower and more expensive t
 **R11. The owner's constraints.** Windows with `cmd`, no `.bat` downloads, no file reading outside what is sent; answers in Italian; titles and on-screen text in American English; tags and credits as in Valencia; no questions that the chat can answer itself.
 
 ### Definition of done for a city (checklist, copy it into the first message of the next city)
-[ ] Gate 1 (free city, per-building data, hook event) and gate 2 (packaging check) passed BEFORE data work.
+[ ] Gate 1 (free city, per-building data) and gate 2 (packaging check) passed BEFORE data work.
 [ ] Agents assigned (R1), max 3 in parallel.
 [ ] QA green and the R2 numbers on screen.
 [ ] GO message written (R3) and approved by the owner.
