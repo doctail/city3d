@@ -252,7 +252,10 @@
   ],
   "look": {
    "palette": "cities/pittsburgh/palette.json",
-   "water_color": ["#2c6663", "#378078"],
+   "water_color": [
+    "#2c6663",
+    "#378078"
+   ],
    "sun_color": [
     1.0,
     0.96,
@@ -9513,7 +9516,11 @@
    "params": {
     "a_out": 100,
     "b_out": 85,
-    "h": 22
+    "h": 22,
+    "c": "#9b6b4f",
+    "seat_c": "#2f5d3a",
+    "seat_c2": "#3d7048",
+    "roof": false
    },
    "phases": [
     {
@@ -9532,7 +9539,7 @@
     "S32"
    ],
    "conf": "medium",
-   "note": "Opened 30 June 1909 (=1909.49), Timeline S5; verified by 2 sources (S13). Fire 17 July 1971, demolition began 11 days later = 28 July 1971 (=1971.57), S32; the end of the demolition (1971.95) is a guess. Wikipedia vs Wikidata coordinates differ ~150 m. Default stadium shape; the building has no footprint in the current data."
+   "note": "Opened 30 June 1909 (=1909.49), Timeline S5; verified by 2 sources (S13). Fire 17 July 1971, demolition began 11 days later = 28 July 1971 (=1971.57), S32; the end of the demolition (1971.95) is a guess. Wikipedia vs Wikidata coordinates differ ~150 m. Default stadium shape; the building has no footprint in the current data. Open-air bowl: no roof ring (the white canopy read as a donut); wall and seat colours are approximate."
   },
   {
    "name": "Gulf Tower",
@@ -10092,7 +10099,11 @@
    "params": {
     "a_out": 105,
     "b_out": 105,
-    "h": 30
+    "h": 30,
+    "c": "#b9b4ab",
+    "seat_c": "#9a5b2e",
+    "seat_c2": "#c0763a",
+    "roof": false
    },
    "phases": [
     {
@@ -10110,7 +10121,7 @@
     "S13"
    ],
    "conf": "high",
-   "note": "Ground broken April 1968, opened 16 July 1970 (=1970.54), imploded 11 Feb 2001 (S9, S13: verified by 2 sources). Default circular multi-purpose stadium, no footprint in the current data."
+   "note": "Ground broken April 1968, opened 16 July 1970 (=1970.54), imploded 11 Feb 2001 (S9, S13: verified by 2 sources). Default circular multi-purpose stadium, no footprint in the current data. Open-air bowl: no roof ring (the white canopy read as a donut); wall and seat colours are approximate."
   },
   {
    "name": "PNC Park",
@@ -10121,7 +10132,11 @@
    ],
    "footprint": "auto",
    "params": {
-    "h": 28
+    "h": 28,
+    "c": "#c9b79a",
+    "seat_c": "#1f4a35",
+    "seat_c2": "#2c6247",
+    "roof": false
    },
    "phases": [
     {
@@ -10135,7 +10150,7 @@
     "S13"
    ],
    "conf": "high",
-   "note": "Ground broken 7 April 1999 (=1999.27), opened during the 2001 season (opening day 9 April 2001 is [Likely], not read); verified by 2 sources (S13)."
+   "note": "Ground broken 7 April 1999 (=1999.27), opened during the 2001 season (opening day 9 April 2001 is [Likely], not read); verified by 2 sources (S13). Open-air bowl: no roof ring (the white canopy read as a donut); wall and seat colours are approximate."
   },
   {
    "name": "Heinz Field (Acrisure Stadium)",
@@ -10146,7 +10161,11 @@
    ],
    "footprint": "auto",
    "params": {
-    "h": 30
+    "h": 30,
+    "c": "#a8a39a",
+    "seat_c": "#2b2d30",
+    "seat_c2": "#b8962e",
+    "roof": false
    },
    "phases": [
     {
@@ -10161,7 +10180,7 @@
     "S13"
    ],
    "conf": "high",
-   "note": "Ground broken June 1999 (=1999.45), first football game September 2001 (S29); verified by 2 sources (S13). Named Heinz Field until 2021."
+   "note": "Ground broken June 1999 (=1999.45), first football game September 2001 (S29); verified by 2 sources (S13). Named Heinz Field until 2021. Open-air bowl: no roof ring (the white canopy read as a donut); wall and seat colours are approximate."
   },
   {
    "name": "U.S. Steel Tower",
