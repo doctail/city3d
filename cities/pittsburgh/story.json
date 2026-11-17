@@ -345,9 +345,9 @@
       125,
       3
      ],
-     "lens": 35,
+     "lens": 26,
      "night": false,
-     "note": "Fort Duquesne walls complete (1754.96); high SE oblique (elev ~35 deg), fort fills the left half, Allegheny/Ohio and the Point around it. Thumbnail left, label 1754. Crop --lbox 470,0,1050 on the 1920 frame"
+     "note": "Fort Duquesne walls complete (1754.96); high SE oblique, wide lens 26 so the whole fort sits inside the crop with land around. Thumbnail left, label 1754. Crop --lbox 464,0,1050 on the 1920 frame (choice L3 of 17/11 round 2)"
     },
     {
      "tag": "now",
