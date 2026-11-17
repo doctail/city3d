@@ -1,0 +1,108 @@
+src,name,lat,lon,year,height_m,floors,wikidata
+wiki_tall,U.S. Steel Tower,40.441326,-79.99472,1970,256.3,64,
+wiki_tall,BNY Mellon Center,40.439781,-79.996017,1983,221.0,54,
+wiki_tall,One PPG Place,40.439953,-80.003746,1984,193.6,40,
+wiki_tall,Fifth Avenue Place,40.441891,-80.00342,1987,187.8,32,
+wiki_tall,One Oxford Centre,40.438068,-79.99855,1983,187.5,45,
+wiki_tall,Gulf Tower,40.442577,-79.995224,1932,177.4,44,
+wiki_tall,Tower at PNC Plaza,40.440289,-80.000183,2015,166.0,33,
+wiki_tall,Cathedral of Learning,40.444313,-79.953117,1936,163.1,42,
+wiki_tall,525 William Penn Place,40.440113,-79.997757,1951,158.5,41,
+wiki_tall,K&L Gates Center,40.441952,-80.00004,1968,155.8,39,
+wiki_tall,Grant Building,40.437675,-79.997551,1930,147.8,40,
+wiki_tall,Koppers Tower,40.442123,-79.995537,1929,144.8,34,
+wiki_tall,Two PNC Plaza,40.441769,-80.000801,1975,135.6,34,
+wiki_tall,EQT Plaza,40.442448,-80.000916,1987,131.1,32,
+wiki_tall,One PNC Plaza,40.441223,-80.000587,1972,129.2,30,
+wiki_tall,,40.441669,-79.991539,2024,127.4,26,
+wiki_tall,Regional Enterprise Tower,40.441506,-79.996827,1953,125.0,30,
+wiki_tall,Federated Hermes Tower,40.444515,-79.994171,1986,109.1,27,
+wiki_tall,11 Stanwix Street,40.438988,-80.006264,1970,108.2,23,
+wiki_tall,Oliver Building,40.441147,-79.998169,1910,105.8,25,
+wiki_tall,Three PNC Plaza,40.441334,-80.001335,2009,105.0,23,
+wiki_tall,Three Gateway Center,40.441845,-80.005539,1952,104.9,24,
+wiki_tall,Centre City Tower,40.442554,-79.996635,1971,103.9,26,
+wiki_tall,William S. Moorhead Federal Building,40.443436,-79.994705,1964,103.6,23,
+wiki_tall,Bell Telephone Building,40.441959,-79.996452,1931,103.3,21,
+wiki_tall,,40.441757,-79.995674,1969,100.7,16,
+wiki_tall,Frick Building,40.439117,-79.997444,1902,100.6,20,
+wiki_tall,,40.442604,-80.000252,1907,93.0,18,
+wiki_tall,Omni William Penn Hotel,40.440624,-79.996628,1916,93.0,26,
+wiki_tall,Four Gateway Center,40.440891,-80.004654,1960,93.0,22,
+wiki_tall,,40.442757,-79.999519,1928,91.8,26,
+wiki_tall,Commonwealth Building,40.43906,-80.00084,1906,91.4,21,
+wiki_tall,The Carlyle,40.43914,-80.001167,1906,91.4,22,
+wiki_tall,City View,40.440399,-79.986557,1964,91.4,24,
+wikidata,Frick Building,40.439166666,-79.9975,1902,,20,Q175182
+wikidata,109-115 Wood Street,40.438333,-80.0025,1897,,,Q4546794
+wikidata,Allegheny Post Office,40.4525,-80.007222,1897,,,Q4731329
+wikidata,Bell Telephone Company of Pennsylvania Western Headquarters Building,40.440172,-80.005097,1956,,,Q4883274
+wikidata,Union Trust Building,40.44,-79.997,1916,,15,Q7886360
+wikidata,Oxford Centre,40.438055555,-79.998888888,1983,,46,Q3497523
+wikidata,Benedum–Trees Building,40.4398,-80.0022,1905,,19,Q4887396
+wikidata,Commonwealth Building,40.439166666,-80.000833333,1906,,21,Q5153703
+wikidata,Duquesne Club,40.4419,-79.9986,1873,,,Q5316081
+wikidata,First National Bank Building,40.4411,-80.0006,1909,,26,Q5453386
+wikidata,UPMC Cooper Fieldhouse,40.4374,-79.9879,2021,,,Q7128830
+wikidata,James Reed Building,40.44133333,-79.99627778,1902,,9,Q15229268
+wikidata,Investment Building,40.4398,-80.0018,1927,,21,Q16997248
+wikidata,The Gardens at Market Square,40.44021,-80.00112,2016,,18,Q17060560
+wikidata,The Salvation Army Building,40.4375,-79.99888889,1924,,10,Q65042333
+wikidata,Kaufmann's Building,40.439444444,-79.998333333,1898,,,Q122912817
+wikidata,Pitt Building,40.438055555,-80.000277777,1918,,,Q123563235
+wikidata,Pittsburgh Engineers' Building,40.43911,-79.99993,1898,,,Q126733296
+wikidata,Triangle Building,40.443013,-79.996924,1885,,,Q137668306
+wikidata,606 Liberty Avenue (Pittsburgh),40.441779,-80.001334,1900,,,Q140051184
+wikidata,Dollar Savings Bank,40.438722222,-80.000027777,1868,,,Q119982918
+wikidata,Benedum Center,40.4428,-79.9997,1927,,,Q817087
+wikidata,Byham Theater,40.4439,-80.0025,1904,,,Q5004095
+wikidata,Pittsburgh City-County Building,40.4381,-79.9969,1917,,10,Q7199249
+wikidata,Heinz Hall,40.4425,-80.0017,1927,,,Q12059806
+wikidata,Warner Theatre,40.440739,-79.999134,1918,,,Q16999687
+wikidata,Carnegie Free Library of Allegheny,40.453056,-80.005278,1889,,,Q5043895
+wikidata,United Steelworkers Building,40.4394,-80.0055,1964,,13,Q106600371
+wikidata,Grace Episcopal Church,40.432222222,-80.011388888,1926,,,Q122904432
+wikidata,First English Evangelical Lutheran Church,40.4414294,-79.9956597,1888,,,Q136088402
+wikidata,Andy Warhol Museum,40.448376,-80.002491,1994,,,Q751172
+wikidata,August Wilson African American Cultural Center,40.4433,-79.9957,2009,,,Q4820851
+wikidata,ToonSeum,40.4435,-79.9965,2007,,,Q7824139
+wikidata,Acrisure Stadium,40.446666666,-80.015833333,2001,,,Q1067148
+wikidata,PNC Park,40.446944444,-80.005833333,2001,,,Q1151177
+wikidata,Three Rivers Stadium,40.446666666,-80.012777777,1970,,,Q1189339
+wikidata,Civic Arena,40.441666666,-79.99,1961,,,Q1237181
+wikidata,Rooney Athletic Field,40.4356,-79.99,1993,,,Q4799198
+wikidata,Highmark Stadium,40.436111,-80.009444,2012,,,Q5759571
+wikidata,PPG Paints Arena,40.4394,-79.9892,2010,,,Q595460
+wikidata,Allegheny County Courthouse,40.4384,-79.9961,1888,,5,Q4731291
+wikidata,Omni William Penn Hotel,40.4406,-79.9966,1916,,23,Q7090344
+wikidata,Three PNC Plaza,40.4414,-80.0013,2009,,23,Q7797679
+wikidata,Westin Convention Center Pittsburgh,40.4442,-79.9949,1986,,26,Q17036165
+wikidata,Washington Plaza,40.440555555,-79.986388888,1964,,24,Q524673
+wikidata,525 William Penn Place,40.4403,-79.9978,1951,,41,Q4640167
+wikidata,Gulf Tower,40.4425,-79.995277777,1932,,44,Q5617541
+wikidata,Oliver Building,40.4411,-79.9981,1910,,25,Q7087430
+wikidata,Grant Street Transportation Center,40.4446,-79.9932,2008,,,Q57636703
+wikidata,Richard King Mellon Hall,40.4356,-79.9916,1968,,4,Q16899281
+wikidata,Pittsburgh Playhouse,40.43959,-79.99989,2018,,,Q7199370
+wikidata,Trinity Cathedral,40.4413,-79.9987,1872,,,Q7842607
+wikidata,"Nixon Theatre, Seventh Avenue",40.4429559,-79.993111,1903,,,Q43386193
+wikidata,St. Peter's Roman Catholic Church,40.4525,-80.008611111,1874,,,Q123565591
+wikidata,BNY Mellon Center,40.4397,-79.9961,1984,,55,Q2740919
+wikidata,Fifth Avenue Place,40.441944444,-80.003333333,1988,,31,Q3050814
+wikidata,The Carlyle,40.439166666,-80.001111111,1906,,21,Q3520210
+wikidata,11 Stanwix Street,40.4392,-80.0064,1969,,23,Q4547778
+wikidata,Bell Telephone Building,40.442222222,-79.996388888,1923,,20,Q4883271
+wikidata,Centre City Tower,40.4425,-79.996666666,1971,,,Q5062247
+wikidata,EQT Plaza,40.4425,-80.001111111,1987,,32,Q5323988
+wikidata,Federated Tower,40.444444444,-79.994166666,1982,,27,Q5440710
+wikidata,Four Gateway Center,40.44049,-80.00409,1960,305.11,22,Q5475194
+wikidata,Gateway Towers,40.4426,-80.0068,1964,,27,Q5527303
+wikidata,Grant Building,40.4375,-79.9975,1929,,,Q5596127
+wikidata,K&L Gates Center,40.442,-80.0,1968,,39,Q6322399
+wikidata,Koppers Tower,40.441944444,-79.995555555,1929,,34,Q6431177
+wikidata,One PNC Plaza,40.4411,-80.0006,1972,,30,Q7093103
+wikidata,Regional Enterprise Tower,40.441388888,-79.996944444,1953,,30,Q7309052
+wikidata,Three Gateway Center,40.441814,-80.005555,1952,,24,Q7797491
+wikidata,Tower at PNC Plaza,40.44025,-80.00017,2015,,33,Q7829752
+wikidata,Two PNC Plaza,40.441666666,-80.000833333,1976,,34,Q7859146
+wikidata,William S. Moorhead Federal Building,40.44341,-79.99464,1964,,23,Q8017985

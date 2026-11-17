@@ -33,6 +33,7 @@ def download():
         f = rp('dem', f'USGS_1_{t}.tif')
         if not os.path.exists(f): log('scarico DEM 3DEP', t); urllib.request.urlretrieve(f'https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1/TIFF/current/{t}/USGS_1_{t}.tif', f)
 
+_T2272 = None
 def to_local_2272(xy):
     global _T2272
     if _T2272 is None:
@@ -82,6 +83,31 @@ def build_buildings():
     log(f'anni tondi (particelle con anno: {n_known}): multipli di 10 {share10_before:.1%} -> {share10_after:.1%}; multipli di 50 {share50_before:.1%} -> {share50_after:.1%}; '
         f'picchi prima {top_before}, dopo {cnt2.most_common(4)}')
     fp['y'] = fp.PIN.map(known2)
+    # ---- anni ESTERNI per il centro (flag: PGH_EXT_YEARS=years_ext.csv da fetch_pgh_years.py; default NON attivo = comportamento invariato).
+    # Il catasto non ha YEARBLT per CLASS C/G (centro: 4 particelle su 238 entro 1 km): anno = Wikipedia "tallest buildings" (priorita') o Wikidata inception,
+    # assegnato al footprint che contiene il punto (altrimenti il piu' vicino entro 12 m) solo se il footprint non ha gia' un anno vero. Gli anni esterni
+    # entrano tra i "vicini con anno" dell'imputazione sotto. Anni esterni NON de-arrotondati (sono date vere).
+    ext_mask = np.zeros(len(fp), bool); ext_src = collections.Counter(); EXT = os.environ.get('PGH_EXT_YEARS')
+    if EXT:
+        import csv
+        from shapely import STRtree
+        from shapely.geometry import Point
+        rows = [r for r in csv.DictReader(open(EXT, encoding='utf-8')) if r['year'].isdigit() and 1750 <= int(r['year']) <= 2026]
+        t4326 = Transformer.from_crs(4326, 2272, always_xy=True)
+        px, py = t4326.transform([float(r['lon']) for r in rows], [float(r['lat']) for r in rows]); pts = shapely.points(px, py)
+        tree_f = STRtree(geoms); cand = collections.defaultdict(list)
+        hit_in = tree_f.query(pts, predicate='within'); inside = set(hit_in[0].tolist())
+        for k, i in zip(*hit_in.tolist()): cand[i].append(k)
+        near = tree_f.query_nearest(pts, max_distance=12 / FT, all_matches=False)
+        for k, i in zip(*near.tolist()):
+            if k not in inside: cand[i].append(k)
+        yv = fp.y.values.copy()
+        for i, ks in cand.items():
+            if i >= len(fp) or not np.isnan(yv[i]): continue
+            pri = [k for k in ks if rows[k]['src'] == 'wiki_tall'] or ks
+            yv[i] = int(np.median([int(rows[k]['year']) for k in pri])); ext_mask[i] = True; ext_src[rows[pri[0]]['src']] += 1
+        fp['y'] = yv
+        log(f'anni esterni ({EXT}): {len(rows)} punti -> {int(ext_mask.sum())} footprint ({dict(ext_src)})')
     # ---- anni mancanti: mediana dei 6 vicini con anno entro 150 m (+-2 a caso, niente lustro: crea onde), poi vicino piu' prossimo entro 400 m, poi mediana generale
     has = fp.y.notna().values; kxy = np.c_[fp.cx.values[has], fp.cy.values[has]]; ky = fp.y.values[has].astype(float); tree = cKDTree(kxy)
     genmed = int(np.median(ky)); est = np.zeros(len(fp), bool); how = collections.Counter()
@@ -127,7 +153,7 @@ def build_buildings():
     cov_ring = fp.groupby('ring', observed=True).agg(n=('has', 'size'), cov=('has', 'mean')).round(3)
     cov_cls = fp.groupby('cls', dropna=False).agg(n=('has', 'size'), cov=('has', 'mean')).round(3).sort_values('n', ascending=False).head(6)
     yy = np.array([b['y'] for b in B]); M = {
-        'footprints_raw': n_raw, 'entro_9km_senza_demolished': len(fp), 'poligoni_scritti': len(B), 'scartati': skipped, 'impronte_con_anno_vero': int(has.sum()), 'quota_con_anno_vero': round(float(has.mean()), 4),
+        'anni_esterni': int(ext_mask.sum()), 'anni_esterni_fonti': dict(ext_src), 'footprints_raw': n_raw, 'entro_9km_senza_demolished': len(fp), 'poligoni_scritti': len(B), 'scartati': skipped, 'impronte_con_anno_vero': int(has.sum()), 'quota_con_anno_vero': round(float(has.mean()), 4),
         'quota_area_con_anno_vero': round(float((fp.area * has).sum() / fp.area.sum()), 4), 'stimate': int(est.sum()), 'come': dict(how),
         'tondi_x10_prima_dopo': [round(share10_before, 4), round(share10_after, 4)], 'tondi_x50_prima_dopo': [round(share50_before, 4), round(share50_after, 4)],
         'picchi_prima': top_before, 'picchi_dopo': cnt2.most_common(6), 'y0_o_meno': int((yy <= 0).sum()), 'y_min': int(yy.min()), 'y_max': int(yy.max()), 'y_<1850': int((yy < 1850).sum()),
