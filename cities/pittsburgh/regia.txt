@@ -1,13 +1,13 @@
 Pittsburgh: regia automatica (kit/regia_kit.py)
-Camera drone: 9 tappe in hover (50.3 s) e voli (509.5 s), anni None/s fra le voci, nessuno stacco; vmax 135.99, amax 110.48, jmax 129.24, clear_min 642.61, clear_ground_min 699.88
-Durata 9:48.0  fotogrammi 14112  inquadrature 3  stacco medio ogni 196.0 s
+Camera drone: 10 tappe in hover (61.5 s) e voli (498.2 s), anni None/s fra le voci, nessuno stacco; vmax 215.58, amax 125.05, jmax 81.46, clear_min 636.53, clear_ground_min 699.93
+Durata 9:47.9  fotogrammi 14110  inquadrature 3  stacco medio ogni 196.0 s
 Musica: waking_monument  b_start None  notte None
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   1754.00  
-   9:35.5   2026.00  
+   9:35.4   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:23.5  1754.0->1754.0  The Forks of the Ohio  [forza 0.0]
@@ -24,51 +24,52 @@ SOSTE (video -> anni):
   1:50.1-1:56.1  1845.2->1845.3  The Great Fire (April 1845)  [forza 8.0, boom]
   1:57.8-2:03.9  1847.5->1847.5  The city rebuilds  [forza 0.0]
   2:08.2-2:13.8  1854.5->1854.5  The railroads arrive  [forza 0.0]
-  2:15.1-2:20.7  1857.5->1857.5  939 factories  [forza 0.0]
-  2:21.6-2:27.1  1859.5->1859.5  Coke and steel  [forza 0.0]
-  2:30.0-2:36.2  1865.3->1865.3  Arsenal of the Union  [forza 0.0]
-  2:37.7-2:43.7  1868.5->1868.5  The city swallows its neighbors  [forza 0.0]
+  2:15.1-2:26.3  1857.5->1857.8  939 factories (1857)  [forza 4.0, build]
+  2:15.1-2:20.8  1857.5->1857.5  939 factories  [forza 0.0]
+  2:20.8-2:26.3  1859.5->1859.5  Coke and steel  [forza 0.0]
+  2:29.9-2:36.1  1865.3->1865.3  Arsenal of the Union  [forza 0.0]
+  2:37.6-2:43.6  1868.5->1868.5  The city swallows its neighbors  [forza 0.0]
   2:44.5-2:49.5  1870.5->1871.0  The Monongahela Incline (1870)  [forza 4.0, build]
-  2:51.5-2:57.7  1875.5->1875.5  Bessemer steel at Braddock  [forza 0.0]
-  2:58.5-3:04.2  1877.4->1877.4  A second incline  [forza 0.0]
-  3:04.3-3:10.7  1877.5->1877.5  The railroad strike  [forza 0.0]
+  2:51.4-2:57.6  1875.5->1875.5  Bessemer steel at Braddock  [forza 0.0]
+  2:58.4-3:04.1  1877.4->1877.4  A second incline  [forza 0.0]
+  3:04.2-3:10.6  1877.5->1877.5  The railroad strike  [forza 0.0]
   3:14.9-3:19.9  1883.2->1883.8  The Smithfield Street Bridge (1883)  [forza 4.0, build]
-  3:22.6-3:28.1  1886.5->1886.5  Electricity and open-hearth steel  [forza 0.0]
-  3:29.8-3:34.8  1888.2->1888.8  The Allegheny County Courthouse (1888)  [forza 5.0, bell]
-  3:38.5-3:45.0  1892.5->1892.5  Homestead  [forza 0.0]
-  3:48.4-3:54.7  1895.8->1895.8  Steel pays for a museum  [forza 0.0]
-  4:00.1-4:05.7  1901.2->1901.2  U.S. Steel  [forza 0.0]
-  4:06.7-4:12.2  1902.2->1902.2  The Frick Building  [forza 0.0]
-  4:13.5-4:18.3  1903.5->1903.5  Union Station  [forza 0.0]
-  4:22.8-4:27.7  1908.0->1908.0  Allegheny City joins Pittsburgh  [forza 0.0]
-  4:29.2-4:34.6  1909.5->1909.5  Forbes Field  [forza 0.0]
-  4:36.6-4:42.0  1911.5->1911.5  Half of America's steel  [forza 0.0]
-  4:50.4-4:56.4  1919.8->1920.4  The Hill District, a center of Black life and jazz (1920)  [forza 4.0, chime]
-  4:59.0-5:05.5  1923.0->1923.0  The Strip  [forza 0.0]
-  5:09.5-5:15.5  1927.0->1927.0  Three Sisters  [forza 0.0]
-  5:20.8-5:26.7  1932.3->1932.3  The Gulf Tower  [forza 0.0]
-  5:30.6-5:38.2  1936.2->1936.2  The St. Patrick's Day flood  [forza 0.0]
-  5:39.5-5:45.0  1937.5->1937.5  The Cathedral of Learning  [forza 0.0]
-  5:50.0-5:55.7  1942.5->1942.5  Arsenal of Democracy  [forza 0.0]
-  5:59.2-6:04.5  1946.0->1946.0  Smoke and a new plan  [forza 0.0]
-  6:12.3-6:18.5  1953.8->1953.8  The old Point comes down  [forza 0.0]
-  6:21.2-6:28.2  1956.5->1956.5  The Lower Hill is cleared  [forza 0.0]
-  6:31.1-6:37.2  1959.5->1959.5  The Fort Pitt Bridge  [forza 0.0]
-  6:39.5-6:45.5  1961.8->1962.2  The Civic Arena opens on the cleared Lower Hill (1961)  [forza 4.0, stone]
-  6:52.1-6:57.7  1969.8->1969.8  The Bridge to Nowhere  [forza 0.0]
-  6:58.2-7:03.9  1970.5->1970.5  Three Rivers Stadium  [forza 0.0]
-  7:04.5-7:10.3  1971.8->1971.8  The U.S. Steel Tower  [forza 0.0]
-  7:11.6-7:17.9  1974.6->1974.6  Point State Park  [forza 0.0]
-  7:21.2-7:26.7  1982.0->1982.0  The mills close  [forza 0.0]
-  7:27.7-7:34.0  1984.3->1985.7  PPG Place and the second Renaissance (1984)  [forza 4.0, chime]
-  7:27.7-7:34.0  1985.6->1985.6  A headquarters town loses its headquarters  [forza 0.0]
-  7:36.1-7:42.8  1991.5->1991.5  The mills come down  [forza 0.0]
+  3:22.6-3:28.0  1886.5->1886.5  Electricity and open-hearth steel  [forza 0.0]
+  3:29.7-3:34.7  1888.2->1888.8  The Allegheny County Courthouse (1888)  [forza 5.0, bell]
+  3:38.4-3:44.9  1892.5->1892.5  Homestead  [forza 0.0]
+  3:48.3-3:54.6  1895.8->1895.8  Steel pays for a museum  [forza 0.0]
+  4:00.0-4:05.6  1901.2->1901.2  U.S. Steel  [forza 0.0]
+  4:06.6-4:12.1  1902.2->1902.2  The Frick Building  [forza 0.0]
+  4:13.4-4:18.2  1903.5->1903.5  Union Station  [forza 0.0]
+  4:22.7-4:27.6  1908.0->1908.0  Allegheny City joins Pittsburgh  [forza 0.0]
+  4:29.1-4:34.5  1909.5->1909.5  Forbes Field  [forza 0.0]
+  4:36.5-4:42.0  1911.5->1911.5  Half of America's steel  [forza 0.0]
+  4:50.3-4:56.3  1919.8->1920.4  The Hill District, a center of Black life and jazz (1920)  [forza 4.0, chime]
+  4:58.9-5:05.4  1923.0->1923.0  The Strip  [forza 0.0]
+  5:09.4-5:15.5  1927.0->1927.0  Three Sisters  [forza 0.0]
+  5:20.8-5:26.6  1932.3->1932.3  The Gulf Tower  [forza 0.0]
+  5:30.5-5:38.1  1936.2->1936.2  The St. Patrick's Day flood  [forza 0.0]
+  5:39.4-5:44.9  1937.5->1937.5  The Cathedral of Learning  [forza 0.0]
+  5:49.9-5:55.6  1942.5->1942.5  Arsenal of Democracy  [forza 0.0]
+  5:59.1-6:04.5  1946.0->1946.0  Smoke and a new plan  [forza 0.0]
+  6:12.3-6:18.4  1953.8->1953.8  The old Point comes down  [forza 0.0]
+  6:21.1-6:28.1  1956.5->1956.5  The Lower Hill is cleared  [forza 0.0]
+  6:31.0-6:37.1  1959.5->1959.5  The Fort Pitt Bridge  [forza 0.0]
+  6:39.4-6:45.4  1961.8->1962.2  The Civic Arena opens on the cleared Lower Hill (1961)  [forza 4.0, stone]
+  6:52.0-6:57.7  1969.8->1969.8  The Bridge to Nowhere  [forza 0.0]
+  6:58.1-7:03.8  1970.5->1970.5  Three Rivers Stadium  [forza 0.0]
+  7:04.4-7:10.2  1971.8->1971.8  The U.S. Steel Tower  [forza 0.0]
+  7:11.5-7:17.8  1974.6->1974.6  Point State Park  [forza 0.0]
+  7:21.1-7:26.6  1982.0->1982.0  The mills close  [forza 0.0]
+  7:27.6-7:33.9  1984.3->1985.7  PPG Place and the second Renaissance (1984)  [forza 4.0, chime]
+  7:27.6-7:33.9  1985.6->1985.6  A headquarters town loses its headquarters  [forza 0.0]
+  7:36.0-7:42.8  1991.5->1991.5  The mills come down  [forza 0.0]
   7:46.0-7:52.0  2000.9->2001.8  Three Rivers Stadium is imploded; PNC Park and Heinz Field open (2001)  [forza 8.0, boom]
-  7:52.7-7:58.1  2004.5->2004.5  Medicine replaces steel  [forza 0.0]
-  8:00.2-8:06.3  2010.7->2010.7  A new arena across the street  [forza 0.0]
-  8:06.6-8:12.3  2011.7->2011.7  The Igloo comes down  [forza 0.0]
+  7:52.6-7:58.0  2004.5->2004.5  Medicine replaces steel  [forza 0.0]
+  8:00.2-8:06.2  2010.7->2010.7  A new arena across the street  [forza 0.0]
+  8:06.5-8:12.2  2011.7->2011.7  The Igloo comes down  [forza 0.0]
   8:13.3-8:18.3  2015.8->2016.3  The Tower at PNC Plaza (2015)  [forza 4.0, chime]
-  8:20.8-8:26.0  2024.5->2024.5  The newest tower  [forza 0.0]
+  8:20.7-8:25.9  2024.5->2024.5  The newest tower  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -76,24 +77,24 @@ ANNO OGNI 30 s:
   1:00   1804.0  (2.34 anni/s)
   1:30   1829.0  (1.96 anni/s)
   2:00   1847.5  (0.00 anni/s)
-  2:30   1865.3  (0.94 anni/s)
+  2:30   1865.3  (0.61 anni/s)
   3:00   1877.4  (0.00 anni/s)
-  3:30   1888.3  (0.22 anni/s)
-  4:00   1901.2  (0.70 anni/s)
+  3:30   1888.3  (0.11 anni/s)
+  4:00   1901.2  (0.53 anni/s)
   4:30   1909.5  (0.00 anni/s)
   5:00   1923.0  (0.00 anni/s)
-  5:30   1935.6  (1.00 anni/s)
+  5:30   1935.7  (1.00 anni/s)
   6:00   1946.0  (0.00 anni/s)
-  6:30   1958.3  (1.00 anni/s)
+  6:30   1958.4  (1.00 anni/s)
   7:00   1970.5  (0.00 anni/s)
   7:30   1984.8  (0.22 anni/s)
-  8:00   2010.0  (2.89 anni/s)
+  8:00   2010.2  (2.39 anni/s)
   8:30   2024.6  (0.02 anni/s)
   9:00   2025.2  (0.02 anni/s)
   9:30   2025.9  (0.02 anni/s)
 
 Velocita fuori dalle soste: mediana 1.00 anni/s, max 11.1 anni/s
-Soste: 59, 348 s (62% del giorno)
+Soste: 60, 359 s (64% del giorno)
 
 AVVISI:
-  nessuno
+  - drone: accelerazione massima 125 m/s2 oltre 120

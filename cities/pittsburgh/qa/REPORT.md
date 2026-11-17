@@ -1,6 +1,6 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 09:21. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -24,7 +24,7 @@ Generato da `python -m kit.qa` il 2026-11-17 09:21. Esito complessivo: **WARN**
 - **PASS** roads.json
   - 206419 voci
 - **PASS** hist.json
-  - 31768 voci
+  - 31884 voci
 - **PASS** land.json
   - 54 voci
 - **PASS** landmarks.json
@@ -32,7 +32,7 @@ Generato da `python -m kit.qa` il 2026-11-17 09:21. Esito complessivo: **WARN**
 - **PASS** dem.npz
 - **PASS** anni edifici (179756)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1754 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **PASS** hist (31768 predecessori)
+- **PASS** hist (31884 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
 - **PASS** anni strade (206419 nastri)
   - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 1809
@@ -58,42 +58,42 @@ Generato da `python -m kit.qa` il 2026-11-17 09:21. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (6 s)
-  - oggetti citta' 2327, cambi in tutto il video 77473, max in un fotogramma 1015 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+- **PASS** costo dei cambi (7 s)
+  - oggetti citta' 2333, cambi in tutto il video 77684, max in un fotogramma 1017 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 135 m/s (limite 250), mediana 8
+  - 214 m/s (limite 250), mediana 6
 - **PASS** drone: accelerazione massima
-  - 109 m/s2 (limite 120), 99% 51
+  - 123 m/s2 (limite 120), 99% 46
 - **PASS** drone: jerk massimo
-  - 126 m/s3 (limite 200), 99% 48
+  - 79 m/s3 (limite 200), 99% 29
 - **PASS** drone: distanza minima da terreno e tetti
-  - 643 m (soglia 24); dal solo terreno 700 m
+  - 637 m (soglia 24); dal solo terreno 700 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 9 tenute, 0 solo sorvolate; hover 50 s, volo 509 s; 
+  - 0 tolte, 10 tenute, 0 solo sorvolate; hover 62 s, volo 498 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 8.4 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+  - v max in hover 8.8 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: voli con gli anni quasi fermi
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1905 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1730 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
-- **PASS** drone: grafico del percorso
-  - qa/drone_path.png
+- **WARN** drone: grafico non fatto
+  - No module named 'matplotlib'
 - **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 14.5 s (78-93 s)
+  - vuoto massimo 14.5 s (79-93 s)
 - **PASS** ritmo: anni/s per minuto
-  - 0:00  3.70 | 1:00  0.72 | 2:00  0.50 | 3:00  0.40 | 4:00  0.36 | 5:00  0.38 | 6:00  0.41 | 7:00  0.67 | 8:00  0.24 | 9:00  0.02
-- **PASS** 9 soste ben formate
+  - 0:00  3.70 | 1:00  0.72 | 2:00  0.50 | 3:00  0.40 | 4:00  0.36 | 5:00  0.38 | 6:00  0.41 | 7:00  0.66 | 8:00  0.25 | 9:00  0.02
+- **PASS** 10 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **WARN** evento forte entro 45 s
-  - primo a 110.0 s
+  - primo a 110.1 s
 
 ## Immagini
 

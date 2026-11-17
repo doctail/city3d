@@ -309,7 +309,8 @@
      0.943,
      2.462
     ]
-   ]
+   ],
+   "water_glint": 0.6
   }
  },
  "sources": {
@@ -9622,6 +9623,17 @@
     ],
     "conf": "medium",
     "weight": 8
+   },
+   {
+    "y0": 1857.5,
+    "y1": 1857.8,
+    "dur": 5,
+    "caption": "939 factories (1857)",
+    "target": "area:[40.4425,-79.9985,700]",
+    "shot": "wide",
+    "fx": "build",
+    "conf": "high",
+    "weight": 4
    },
    {
     "y0": 1870.45,
