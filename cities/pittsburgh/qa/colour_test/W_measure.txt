@@ -1,0 +1,3 @@
+River colour variants (look.water_color [water, water2]); 4 gate-camera crops 960x540 24 spp; baseline = cam2 24fbf80
+V1 ["#335d58","#3e6f68"]  V2 ["#2c6663","#378078"]  V3 ["#246b72","#2e8088"]
+Outside river (mask = pixels diff>12 dilated 3px): max diff 10-12/255, mean 1.0-1.5/255, 58-73% pixels changed >0, ~10% changed >2 (indirect light bounce from brighter water; baseline re-run diff = 0, deterministic)
