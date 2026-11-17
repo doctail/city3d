@@ -252,6 +252,7 @@
   ],
   "look": {
    "palette": "cities/pittsburgh/palette.json",
+   "water_color": ["#2c6663", "#378078"],
    "sun_color": [
     1.0,
     0.96,

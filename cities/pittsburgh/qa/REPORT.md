@@ -1,13 +1,13 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 14:44. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-17 18:14. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
 | a) Story e fonti | PASS |
 | b) DATA | PASS |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | WARN |
+| e) Costo e schedule | PASS |
 
 ## a) Story e fonti
 
@@ -82,8 +82,8 @@ Generato da `python -m kit.qa` il 2026-11-17 14:44. Esito complessivo: **WARN**
   - mediana 1745 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
-- **WARN** drone: grafico non fatto
-  - No module named 'matplotlib'
+- **PASS** drone: grafico del percorso
+  - qa/drone_path.png
 - **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
   - vuoto massimo 14.5 s (78-93 s)
 - **PASS** ritmo: anni/s per minuto
