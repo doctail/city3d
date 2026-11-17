@@ -60,7 +60,7 @@ Result: **WARN** (full report: qa_REPORT.md)
 ## 5. Expected pod banner (quote it in the GO message)
 
 ```
-VERSIONE: 4a94358 Pittsburgh: regenerate qa REPORT after merges | schedule_pittsburgh: 588 s, lens 32.0
+VERSIONE: bc0dcfe Pittsburgh: water_color V2 (#2c6663/#378078), plots regenerated, dossier verdict | schedule_pittsburgh: 588 s, lens 32.0
 ```
 
 Branch `claude/pittsburgh-int`. The GO message must contain, in ONE message: GPU check (`cuInit` = 0), `git pull` + this banner to verify, the launch command, the live progress one-liner, covers, and the condition to switch off (R3).
