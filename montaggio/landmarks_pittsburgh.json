@@ -1,1 +1,110 @@
-{}
+{
+"Fort Pitt Block House": [
+-832.0,
+64.6,
+8.9,
+1764
+],
+"Monongahela Incline": [
+-471.1,
+-957.3,
+14.3,
+1869
+],
+"Duquesne Incline": [
+-1530.1,
+-158.1,
+14.3,
+1876
+],
+"Allegheny County Courthouse": [
+330.4,
+-243.2,
+37.1,
+1884
+],
+"Frick Building": [
+216.9,
+-163.6,
+104.6,
+1901
+],
+"Union Station (Pennsylvania Station)": [
+727.6,
+500.0,
+31.0,
+1898
+],
+"Carnegie Museum and Library (Oakland)": [
+4235.9,
+290.4,
+29.0,
+1893
+],
+"Forbes Field": [
+3882.9,
+148.1,
+29.2,
+1909
+],
+"Gulf Tower": [
+405.0,
+218.9,
+201.2,
+1930
+],
+"Cathedral of Learning": [
+3971.8,
+410.1,
+165.3,
+1926
+],
+"Wabash Pittsburgh Terminal": [
+-381.3,
+44.2,
+72.3,
+1903
+],
+"Civic Arena": [
+847.2,
+118.3,
+28.0,
+1958
+],
+"Three Rivers Stadium": [
+-1082.8,
+671.0,
+37.2,
+1968
+],
+"PNC Park": [
+-493.9,
+700.8,
+35.2,
+1999
+],
+"Heinz Field (now Acrisure Stadium)": [
+-1341.2,
+671.0,
+37.2,
+1999
+],
+"U.S. Steel Tower": [
+447.3,
+80.7,
+260.3,
+1967
+],
+"PPG Place": [
+-317.7,
+-71.9,
+211.5,
+1981
+],
+"Tower at PNC Plaza": [
+-15.3,
+-34.3,
+170.0,
+2013
+]
+}

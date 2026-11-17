@@ -2,24 +2,724 @@
  "didascalie": [],
  "soste": [
   {
-   "t_in": 109.17,
-   "t_out": 115.17,
-   "title": "St. Patrick's Day flood",
-   "sub": "1936"
+   "t_in": 109.99,
+   "t_out": 115.99,
+   "title": "The Great Fire",
+   "sub": "April 1845"
   },
   {
-   "t_in": 170.77,
-   "t_out": 175.77,
-   "title": "Downtown",
-   "sub": "1990"
+   "t_in": 164.41,
+   "t_out": 169.41,
+   "title": "The Monongahela Incline",
+   "sub": "1870"
+  },
+  {
+   "t_in": 194.79,
+   "t_out": 199.79,
+   "title": "The Smithfield Street Bridge",
+   "sub": "1883"
+  },
+  {
+   "t_in": 209.66,
+   "t_out": 214.66,
+   "title": "The Allegheny County Courthouse",
+   "sub": "1888"
+  },
+  {
+   "t_in": 290.23,
+   "t_out": 296.23,
+   "title": "The Hill District, a center of Black life and jazz",
+   "sub": "1920"
+  },
+  {
+   "t_in": 399.35,
+   "t_out": 405.35,
+   "title": "The Civic Arena opens on the cleared Lower Hill",
+   "sub": "1961"
+  },
+  {
+   "t_in": 447.62,
+   "t_out": 453.95,
+   "title": "PPG Place and the second Renaissance",
+   "sub": "1984"
+  },
+  {
+   "t_in": 465.86,
+   "t_out": 471.86,
+   "title": "Three Rivers Stadium is imploded; PNC Park and Heinz Field open",
+   "sub": "2001"
+  },
+  {
+   "t_in": 493.14,
+   "t_out": 498.14,
+   "title": "The Tower at PNC Plaza",
+   "sub": "2015"
   }
  ],
  "subscribe_t": 90.0,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 23.48,
+   "date": "1754",
+   "title": "The Forks of the Ohio",
+   "lines": [
+    "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
+    "About 500 French soldiers force them out in April and build Fort Duquesne."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 23.65,
+   "t_out": 30.61,
+   "date": "1758",
+   "title": "Pittsburgh gets its name",
+   "lines": [
+    "The French blow up Fort Duquesne on November 24, 1758. General Forbes names the ruins for William Pitt.",
+    "The British build Fort Pitt in 1759-61 and hold it through the siege of 1763."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 30.8,
+   "t_out": 36.4,
+   "date": "1764",
+   "title": "The Block House",
+   "lines": [
+    "Colonel Bouquet adds a brick redoubt in 1764.",
+    "It still stands: the oldest authenticated building west of the Alleghenies."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 36.81,
+   "t_out": 42.78,
+   "date": "1777",
+   "title": "Headquarters of the West",
+   "lines": [
+    "In 1777 Fort Pitt becomes a U.S. fort under Gen. Edward Hand.",
+    "It serves as the American headquarters of the western war."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 44.29,
+   "t_out": 50.16,
+   "date": "1794",
+   "title": "A borough on the frontier",
+   "lines": [
+    "Pittsburgh is incorporated as a borough in 1794.",
+    "That summer farmers angry about the whiskey tax march on the town."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 50.98,
+   "t_out": 57.21,
+   "date": "1797",
+   "title": "Fort Pitt is torn down",
+   "lines": [
+    "The army abandoned the fort in 1792 and decommissioned it in 1797, and it was demolished.",
+    "In the same year Pittsburgh begins making glass."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 63.02,
+   "t_out": 68.71,
+   "date": "1811",
+   "title": "The first steamboat",
+   "lines": [
+    "The first steamboat is built in Pittsburgh in 1811.",
+    "By 1800 the town had 1,565 people and over 60 shops."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 70.93,
+   "t_out": 77.26,
+   "date": "1816",
+   "title": "A city at last",
+   "lines": [
+    "Pittsburgh is incorporated as a city on March 18, 1816.",
+    "The War of 1812 had cut off British goods and turned it into a factory town."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 78.45,
+   "t_out": 84.5,
+   "date": "1818",
+   "title": "The first bridge",
+   "lines": [
+    "A wooden bridge across the Monongahela opens in 1818, where the Smithfield Street Bridge stands today.",
+    "It will burn in the fire of 1845."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 92.93,
+   "t_out": 98.89,
+   "date": "1835",
+   "title": "Canal and locomotive",
+   "lines": [
+    "The Main Line Canal to Philadelphia is completed in 1834.",
+    "In 1835 a Pittsburgh firm builds the first locomotive west of the Alleghenies."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 101.6,
+   "t_out": 107.47,
+   "date": "1841",
+   "title": "A courthouse on Grant's Hill",
+   "lines": [
+    "The second Allegheny County courthouse, of gray sandstone, is finished in 1841.",
+    "The hill around it is still open ground."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 117.68,
+   "t_out": 123.73,
+   "date": "1847",
+   "title": "The city rebuilds",
+   "lines": [
+    "Pennsylvania grants $50,000 and a three-year tax holiday after the fire.",
+    "The demand for new homes and goods drives the iron and glass works."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 128.09,
+   "t_out": 133.69,
+   "date": "1854",
+   "title": "The railroads arrive",
+   "lines": [
+    "The Ohio and Pennsylvania Railroad reaches Allegheny City in 1851.",
+    "The Pennsylvania Railroad links Pittsburgh to Philadelphia in 1854."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 134.92,
+   "t_out": 140.61,
+   "date": "1857",
+   "title": "939 factories",
+   "lines": [
+    "An 1857 count lists 939 factories in Pittsburgh and Allegheny City.",
+    "In steam tonnage it is the nation's third busiest port."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 141.47,
+   "t_out": 146.98,
+   "date": "1859",
+   "title": "Coke and steel",
+   "lines": [
+    "In 1859 the Clinton and Soho furnaces introduce coke smelting.",
+    "Pittsburgh begins the move from iron to steel."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 149.84,
+   "t_out": 156.08,
+   "date": "1865",
+   "title": "Arsenal of the Union",
+   "lines": [
+    "By the end of the Civil War Pittsburgh makes over half of the nation's steel.",
+    "It also makes more than a third of its glass."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 157.53,
+   "t_out": 163.59,
+   "date": "1868",
+   "title": "The city swallows its neighbors",
+   "lines": [
+    "In 1868 Pittsburgh annexes Lawrenceville and the townships of Pitt, Oakland and others to the east.",
+    "The South Side joins in 1872."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 171.38,
+   "t_out": 177.53,
+   "date": "1875",
+   "title": "Bessemer steel at Braddock",
+   "lines": [
+    "In 1875 Carnegie's Edgar Thomson Works begins making steel rails with the Bessemer process.",
+    "The mill lies upriver, beyond the edge of this map."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 178.35,
+   "t_out": 184.04,
+   "date": "1877",
+   "title": "A second incline",
+   "lines": [
+    "The Duquesne Incline opens on May 20, 1877, seven years after the Monongahela Incline.",
+    "Both lift workers up Mount Washington."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 184.11,
+   "t_out": 190.53,
+   "date": "1877",
+   "title": "The railroad strike",
+   "lines": [
+    "In July 1877 strikers burn about 40 buildings, 100 locomotives and over 1,000 rail cars.",
+    "Forty men die; Pittsburgh is the most violent city of the national strike."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 202.49,
+   "t_out": 207.91,
+   "date": "1886",
+   "title": "Electricity and open-hearth steel",
+   "lines": [
+    "George Westinghouse founds Westinghouse Electric in 1886.",
+    "The same year Carnegie installs open-hearth furnaces at Homestead."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 218.37,
+   "t_out": 224.88,
+   "date": "1892",
+   "title": "Homestead",
+   "lines": [
+    "Carnegie Steel is formed on July 1, 1892. Five days later strikers and Pinkertons fight at Homestead.",
+    "Ten men die and the union loses. The mill lies just beyond this map."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 228.22,
+   "t_out": 234.55,
+   "date": "1895",
+   "title": "Steel pays for a museum",
+   "lines": [
+    "The Carnegie Institute opens in Oakland in 1895; the first gallery opens on November 5.",
+    "Library, museums and music hall are financed by Andrew Carnegie."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 239.95,
+   "t_out": 245.55,
+   "date": "1901",
+   "title": "U.S. Steel",
+   "lines": [
+    "In 1901 Carnegie sells his mills to J.P. Morgan for $250 million.",
+    "They become part of the new U.S. Steel."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 246.5,
+   "t_out": 252.01,
+   "date": "1902",
+   "title": "The Frick Building",
+   "lines": [
+    "Henry Clay Frick's office tower is finished in March 1902.",
+    "It is one of the first downtown skyscrapers."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 253.31,
+   "t_out": 258.18,
+   "date": "1903",
+   "title": "Union Station",
+   "lines": [
+    "The Pennsylvania Railroad opens Union Station in 1903.",
+    "Its rotunda still stands."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 262.63,
+   "t_out": 267.5,
+   "date": "1907",
+   "title": "Allegheny City joins Pittsburgh",
+   "lines": [
+    "In 1907 Pittsburgh annexes Allegheny City, today the North Side."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 269.04,
+   "t_out": 274.46,
+   "date": "1909",
+   "title": "Forbes Field",
+   "lines": [
+    "Forbes Field opens in Oakland on June 30, 1909.",
+    "The Pirates win their first World Series that October."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 276.47,
+   "t_out": 281.89,
+   "date": "1911",
+   "title": "Half of America's steel",
+   "lines": [
+    "By 1911 Pittsburgh is producing half of the nation's steel.",
+    "Smoke is a sign of prosperity."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 298.83,
+   "t_out": 305.34,
+   "date": "1923",
+   "title": "The Strip",
+   "lines": [
+    "By the 1920s the Strip District, from 11th to 33rd Street, is the city's economic center: wholesalers, produce dealers, auction houses.",
+    "Before them came mills and the Fort Pitt Foundry."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 309.34,
+   "t_out": 315.39,
+   "date": "1927",
+   "title": "Three Sisters",
+   "lines": [
+    "Three matching bridges cross the Allegheny between 1926 and 1928.",
+    "Seventh Street opens in June 1926, Ninth in November 1926 and Sixth in September 1928."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 320.69,
+   "t_out": 326.57,
+   "date": "1932",
+   "title": "The Gulf Tower",
+   "lines": [
+    "The Gulf Tower is finished in 1932 with a stepped pyramid on top.",
+    "It is the tallest building in Pittsburgh until 1970."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 330.48,
+   "t_out": 338.08,
+   "date": "1936",
+   "title": "The St. Patrick's Day flood",
+   "lines": [
+    "On March 18, 1936 the rivers crest at 46 feet, 21 feet over flood stage. Downtown is under water from the Point to Grant Street.",
+    "At least 69 people die in western Pennsylvania and 60,000 steelworkers lose their jobs."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 339.32,
+   "t_out": 344.82,
+   "date": "1937",
+   "title": "The Cathedral of Learning",
+   "lines": [
+    "The 42-story Cathedral of Learning is formally dedicated in June 1937; its exterior was finished in 1934."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 349.87,
+   "t_out": 355.57,
+   "date": "1942",
+   "title": "Arsenal of Democracy",
+   "lines": [
+    "In World War II Pittsburgh's mills deliver 95 million tons of steel.",
+    "The city fills with workers from the South."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 359.07,
+   "t_out": 364.39,
+   "date": "1946",
+   "title": "Smoke and a new plan",
+   "lines": [
+    "Mayor David Lawrence enforces the Smoke Control Ordinance from 1946.",
+    "The first Renaissance begins."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 372.19,
+   "t_out": 378.34,
+   "date": "1953",
+   "title": "The old Point comes down",
+   "lines": [
+    "Gateway Center replaces the warehouses and rail yards near the Point from 1950.",
+    "The Wabash Terminal, open since 1904, is demolished in 1953-54."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 381.04,
+   "t_out": 388.0,
+   "date": "1956",
+   "title": "The Lower Hill is cleared",
+   "lines": [
+    "In 1956 about 1,300 structures are razed and more than 8,000 people lose their homes.",
+    "Most are Black; the district was a center of jazz. The work runs from 1955 to 1960."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 390.96,
+   "t_out": 397.02,
+   "date": "1959",
+   "title": "The Fort Pitt Bridge",
+   "lines": [
+    "The Fort Pitt Bridge opens on June 19, 1959; the Fort Pitt Tunnel follows in 1960.",
+    "The Point becomes the gateway for cars."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 411.95,
+   "t_out": 417.64,
+   "date": "1969",
+   "title": "The Bridge to Nowhere",
+   "lines": [
+    "The Fort Duquesne Bridge opens on October 17, 1969.",
+    "Parts of it had stood for years without a connection."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 418.08,
+   "t_out": 423.77,
+   "date": "1970",
+   "title": "Three Rivers Stadium",
+   "lines": [
+    "Three Rivers Stadium opens on the North Shore on July 16, 1970.",
+    "The Pirates and Steelers play there until 2000."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 424.4,
+   "t_out": 430.19,
+   "date": "1971",
+   "title": "The U.S. Steel Tower",
+   "lines": [
+    "The U.S. Steel Tower is dedicated on September 30, 1971.",
+    "At 256 meters it is the tallest building in Pittsburgh."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 431.5,
+   "t_out": 437.82,
+   "date": "1974",
+   "title": "Point State Park",
+   "lines": [
+    "The park opens in August 1974 with its fountain at the tip of the Golden Triangle.",
+    "Granite lines mark the outlines of Fort Pitt and Fort Duquesne."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 441.14,
+   "t_out": 446.64,
+   "date": "1982",
+   "title": "The mills close",
+   "lines": [
+    "After the 1981-82 recession the steel mills lay off 153,000 workers.",
+    "Closures ripple through railroads, mines and factories."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 447.62,
+   "t_out": 453.95,
+   "date": "1985",
+   "title": "A headquarters town loses its headquarters",
+   "lines": [
+    "In 1985 Gulf Oil is bought in what was then the largest buyout in history.",
+    "More than 1,000 white-collar jobs vanish in one day."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 456.01,
+   "t_out": 462.8,
+   "date": "1991",
+   "title": "The mills come down",
+   "lines": [
+    "The Homestead Works closes in 1986 and is demolished in 1991.",
+    "In the 1990s the Homestead, Duquesne and South Side J&L sites are cleared. The mills are not in this model."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 472.52,
+   "t_out": 477.94,
+   "date": "2004",
+   "title": "Medicine replaces steel",
+   "lines": [
+    "Medicine has replaced steel as a leading industry.",
+    "Tourism booms: nearly 3,000 hotel rooms open after 2004."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 480.04,
+   "t_out": 486.1,
+   "date": "2010",
+   "title": "A new arena across the street",
+   "lines": [
+    "The Penguins move to a new arena in 2010.",
+    "The Civic Arena, the first major arena with a retractable roof, closes."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 486.39,
+   "t_out": 492.08,
+   "date": "2011",
+   "title": "The Igloo comes down",
+   "lines": [
+    "Demolition of the Civic Arena begins on September 26, 2011.",
+    "The cleared Lower Hill site waits for new buildings."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 500.61,
+   "t_out": 505.75,
+   "date": "2024",
+   "title": "The newest tower",
+   "lines": [
+    "The FNB Financial Center, finished in 2024, is the newest tower on the skyline."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "Forts on the Forks"
+  },
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "II",
+   "title": "Forts on the Forks"
+  },
+  {
+   "t_in": 35.61,
+   "t_out": 36.81,
+   "num": "III",
+   "title": "A Town on the Frontier"
+  },
+  {
+   "t_in": 35.61,
+   "t_out": 36.81,
+   "num": "IV",
+   "title": "A Town on the Frontier"
+  },
+  {
+   "t_in": 68.71,
+   "t_out": 70.93,
+   "num": "V",
+   "title": "The Iron City"
+  },
+  {
+   "t_in": 68.71,
+   "t_out": 70.93,
+   "num": "VI",
+   "title": "The Iron City"
+  },
+  {
+   "t_in": 140.27,
+   "t_out": 141.47,
+   "num": "VII",
+   "title": "Steel City"
+  },
+  {
+   "t_in": 140.27,
+   "t_out": 141.47,
+   "num": "VIII",
+   "title": "Steel City"
+  },
+  {
+   "t_in": 306.54,
+   "t_out": 309.34,
+   "num": "IX",
+   "title": "Between the Wars"
+  },
+  {
+   "t_in": 306.54,
+   "t_out": 309.34,
+   "num": "X",
+   "title": "Between the Wars"
+  },
+  {
+   "t_in": 356.27,
+   "t_out": 359.07,
+   "num": "XI",
+   "title": "Renaissance"
+  },
+  {
+   "t_in": 356.27,
+   "t_out": 359.07,
+   "num": "XII",
+   "title": "Renaissance"
+  },
+  {
+   "t_in": 416.88,
+   "t_out": 418.08,
+   "num": "XIII",
+   "title": "Collapse and Reinvention"
+  },
+  {
+   "t_in": 416.88,
+   "t_out": 418.08,
+   "num": "XIV",
+   "title": "Collapse and Reinvention"
+  },
+  {
+   "t_in": 469.72,
+   "t_out": 472.52,
+   "num": "XV",
+   "title": "Eds, Meds and Robots"
+  },
+  {
+   "t_in": 469.72,
+   "t_out": 472.52,
+   "num": "XVI",
+   "title": "Eds, Meds and Robots"
+  }
+ ],
+ "cta": {
+  "t_in": 575.3,
+  "t_out": 579.8,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
  "sources_card": {
-  "t_in": 220.7,
-  "t_out": 228.7,
+  "t_in": 579.8,
+  "t_out": 587.8,
   "items": [
-   "NWS/USACE Pittsburgh gauge (Point): flood stage 25 ft, 1936 crest 46.0 ft o..."
+   "Buildings: Allegheny County / WPRDC building footprints and assessor years built (roof outlines photogrammetrically compiled from 1992-93 aerial photography, updated 2004 and 2015)",
+   "Downtown towers: heights and years from Wikipedia and Wikidata, LiDAR-checked (USGS 3DEP)",
+   "Before 1880, mills, the Lower Hill and the Point warehouses are reconstructed: shapes and dates are estimates",
+   "Streets and rivers: Allegheny County GIS (WPRDC). Terrain: USGS 3DEP",
+   "History: Wikipedia (History of Pittsburgh, Fort Duquesne, Fort Pitt, Great Fire of 1845, 1936 flood, Mellon Arena, Hill District)",
+   "Population: census figures via Wikipedia",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
   ],
   "no_ai": "NO AI: every frame is rendered from open data"
  }
