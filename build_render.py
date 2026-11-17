@@ -812,7 +812,9 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
             if 'bz_char' not in globals():
                 bz_char = mat('bz_char', (0.018, 0.014, 0.012), 1.0, haze=False)
                 bz_ember = emat('bz_ember', (1.0, 0.16, 0.025), 2.2); bz_fl = emat('bz_flame', (1.0, 0.3, 0.04), 6.0); bz_core = emat('bz_core', (1.0, 0.65, 0.2), 11.0)
-                bz_smoke = mat('bz_smoke', srgb('#7a736b'), 1.0); bz_smoke.node_tree.nodes['Principled BSDF'].inputs['Alpha'].default_value = 0.5
+                bz_smokes = []
+                for _c, _al in (('#4a4540', 0.62), ('#7a736b', 0.5), ('#a8a29a', 0.38)):   # basso scuro, in alto chiaro e piu' trasparente
+                    _m = mat('bz_smoke', srgb(_c), 1.0); _m.node_tree.nodes['Principled BSDF'].inputs['Alpha'].default_value = _al; bz_smokes.append(_m)
             dead_ = []
             for b_ in blds:
                 d_ = b_.get('d', 99999)
@@ -849,15 +851,17 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
                     bmesh.ops.create_cone(bmc_, cap_ends=True, segments=5, radius1=r_ * 0.38, radius2=0.2, depth=h_ * 0.5, matrix=_M.Matrix.Translation((c_.x, c_.y, z_ + h_ * 0.3)))
                 o_ = obj(f'bz_flames_{k_}', bmo_, bz_fl); VIS.append((o_, 'window', (t0_, t0_ + 0.045 + span_ / NB_)))
                 o_ = obj(f'bz_core_{k_}', bmc_, bz_core); VIS.append((o_, 'window', (t0_, t0_ + 0.045 + span_ / NB_)))
-                bm_ = bmesh.new(); nc_ = max(1, int(fi_.get('smoke', 8)) // 3 + 1)
+                sm_ = [bmesh.new() for _ in range(3)]; nc_ = max(1, int(fi_.get('smoke', 8)) // 3 + 1)
                 for _ in range(nc_):
                     c_ = frnd.choice(bl_)[1].centroid; dx, dy = frnd.uniform(0.35, 0.6), frnd.uniform(-0.2, 0.15)
                     for k2 in range(9):
                         z_ = 25 + k2 * 34; rr_ = frnd.uniform(10, 15) * (1 + 0.42 * k2)
                         for _j in range(3):
-                            bmesh.ops.create_icosphere(bm_, subdivisions=2, radius=rr_ * frnd.uniform(0.55, 0.95), matrix=_M.Matrix.Translation((c_.x + dx * z_ + frnd.uniform(-16, 16), c_.y + dy * z_ + frnd.uniform(-16, 16), zat(c_.x, c_.y) + z_)))
-                for f_ in bm_.faces: f_.smooth = True
-                o_ = obj(f'bz_smoke_{k_}', bm_, bz_smoke); VIS.append((o_, 'window', (t0_ + 0.002, y1_ + 0.3)))
+                            M_ = _M.Matrix.Translation((c_.x + dx * z_ + frnd.uniform(-16, 16), c_.y + dy * z_ + frnd.uniform(-16, 16), zat(c_.x, c_.y) + z_)) @ _M.Matrix.Diagonal((1.0, 1.0, 1.7, 1.0))   # puffs allungati in verticale
+                            bmesh.ops.create_icosphere(sm_[min(2, k2 // 3)], subdivisions=2, radius=rr_ * frnd.uniform(0.55, 0.95), matrix=M_)
+                for j_, bmm_ in enumerate(sm_):
+                    for f_ in bmm_.faces: f_.smooth = True
+                    o_ = obj(f'bz_smoke_{k_}_{j_}', bmm_, bz_smokes[j_]); VIS.append((o_, 'window', (t0_ + 0.002, y1_ + 0.3)))
             log('incendio v2', fi_.get('name'), len(dead_), 'edifici bruciati'); continue
         bm_ = bmesh.new()
         try: bm_.faces.new([bm_.verts.new((x, y, 0.6)) for x, y in list(pg.exterior.coords)[:-1]])
