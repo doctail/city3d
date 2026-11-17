@@ -7,60 +7,933 @@
   "lat0": 40.4406,
   "lon0": -80.0,
   "radius_m": 9000,
-  "start_year": 1780,
+  "start_year": 1754,
   "end_year": 2026,
-  "title": "EVOLUTION OF PITTSBURGH | 3D City Timelapse (1780-NOW) | No AI",
+  "title": "EVOLUTION OF PITTSBURGH | 3D City Timelapse (1754-NOW) | No AI",
   "data_source": "custom",
+  "data_dir": "data_pittsburgh",
   "style_preset": "central",
   "population": [
    [
-    1780,
-    1400,
+    1754,
+    500,
     "rough estimate"
    ],
    [
-    1936,
-    630000,
+    1761,
+    332,
     "census"
    ],
    [
-    2025,
-    303000,
+    1800,
+    1565,
+    "census"
+   ],
+   [
+    1810,
+    4768,
+    "census"
+   ],
+   [
+    1820,
+    7248,
+    "census"
+   ],
+   [
+    1830,
+    12542,
+    "census"
+   ],
+   [
+    1860,
+    49221,
+    "census"
+   ],
+   [
+    1900,
+    321616,
+    "census"
+   ],
+   [
+    1950,
+    676806,
+    "census"
+   ],
+   [
+    1970,
+    540025,
+    "census"
+   ],
+   [
+    1980,
+    423938,
+    "census"
+   ],
+   [
+    1990,
+    369879,
+    "census"
+   ],
+   [
+    2010,
+    305704,
+    "census"
+   ],
+   [
+    2020,
+    302971,
     "census"
    ]
   ],
+  "pop_conf": [
+   "low",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high"
+  ],
   "pop_src": [
-   "S1"
+   "S5",
+   "S23"
   ],
   "eras": [
    [
-    1780,
-    "Early Pittsburgh",
+    1754,
+    "Forts on the Forks",
     "#c9a24a"
    ],
    [
-    1936,
+    1777,
+    "Frontier town",
+    "#9c7a52"
+   ],
+   [
+    1816,
+    "The Iron City",
+    "#8a6aa0"
+   ],
+   [
+    1859,
     "Steel City",
+    "#c98a4a"
+   ],
+   [
+    1946,
+    "Renaissance",
+    "#7cb06a"
+   ],
+   [
+    1970,
+    "Rust Belt",
+    "#8c8c8c"
+   ],
+   [
+    2004,
+    "Eds and meds",
     "#6aa0c8"
    ]
   ],
-  "data_dir": "data_pittsburgh"
+  "data_reliable_from": 1880,
+  "polities": [
+   {
+    "y": 1754.0,
+    "name": "Forks of the Ohio · Virginia and New France both claim it",
+    "flag_colors": [
+     "#002868",
+     "#ffffff",
+     "#1f3a93"
+    ],
+    "src": [
+     "S3"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1754.3,
+    "name": "New France · Fort Duquesne",
+    "flag_colors": [
+     "#ffffff",
+     "#1f3a93"
+    ],
+    "src": [
+     "S3",
+     "S5"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1758.9,
+    "name": "British Empire · Fort Pitt",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff",
+     "#012169"
+    ],
+    "src": [
+     "S3",
+     "S4"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1776.5,
+    "name": "United States · Virginia and Pennsylvania dispute the Point",
+    "flag_colors": [
+     "#b22234",
+     "#ffffff",
+     "#3c3b6e"
+    ],
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Fort Pitt: Virginians held it as Fort Dunmore in 1774 (S4); the 1776 start is the Declaration of Independence. Region claimed by both colonies until the 1780 agreement (S2)."
+   },
+   {
+    "y": 1780.0,
+    "name": "Commonwealth of Pennsylvania · United States",
+    "flag_colors": [
+     "#003f87",
+     "#ffd200"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1794.0,
+    "name": "Borough of Pittsburgh · Pennsylvania",
+    "flag_colors": [
+     "#fdb827",
+     "#000000"
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1816.21,
+    "name": "City of Pittsburgh · Pennsylvania",
+    "flag_colors": [
+     "#fdb827",
+     "#000000"
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1907.95,
+    "name": "Greater Pittsburgh · Allegheny City annexed",
+    "flag_colors": [
+     "#fdb827",
+     "#000000"
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "medium"
+   }
+  ]
  },
  "sources": {
   "S1": {
    "url": "https://water.noaa.gov/gauges/PTTP1",
    "title": "NWS/USACE Pittsburgh gauge (Point): flood stage 25 ft, 1936 crest 46.0 ft on 18 Mar 1936",
    "quote": "Pittsburgh flood of March 1936: crest 46.0 ft at the Point"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Pittsburgh",
+   "title": "Wikipedia EN, History of Pittsburgh",
+   "quote": "1760 first houses around Fort Pitt; 1794 courthouse; 1816 city; 1818 first Monongahela bridge; 1841 Second Court House; 10 Apr 1845 Great Fire (over 1,000 buildings); 1854 PRR to Philadelphia; 1857: 939 factories; 1859 coke; 1865 over half the steel and a third of the glass of the U.S.; 1877 railroad riots; 1892 Homestead; 1901 Carnegie sells; 1907 Allegheny City annexed; 1911 half the nation's steel; 1936 flood 46 ft; WWII 95 million tons of steel; 1946 Renaissance I; Lower Hill cleared late 1950s; 1970 U.S. Steel Tower and Three Rivers Stadium; 1974 Point State Park; 1981-82 mills lay off 153,000; 1985 Gulf Oil buyout; 1991 Homestead Works demolished; 2001 Heinz Field and PNC Park"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Fort_Duquesne",
+   "title": "Wikipedia EN, Fort Duquesne",
+   "quote": "Work on Fort Prince George began 17 Feb 1754; by 18 April a French force of five hundred forced the British garrison to surrender; the French knocked down the tiny fort and built Fort Duquesne; destroyed by the French before the British conquest in Nov 1758"
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Fort_Pitt_(Pennsylvania)",
+   "title": "Wikipedia EN, Fort Pitt (Pennsylvania)",
+   "quote": "Fort Pitt was built 1759-1761 as a pentagon with bastions by Capt. Harry Gordon; siege from 22 June 1763 relieved at Bushy Run 10 Aug; 1777 Continental Army western headquarters (Gen. Edward Hand)"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Timeline_of_Pittsburgh",
+   "title": "Wikipedia EN, Timeline of Pittsburgh",
+   "quote": "1754 Fort Duquesne established by French (April); 9 Jul 1755 British Army defeated; 25 Nov 1758 British take Fort Duquesne; 1764 Fort Pitt Blockhouse completed; 1792 Fort Pitt abandoned; 1794 borough; 1797 Fort Pitt decommissioned and demolished; 18 Mar 1816 city; 1834/35; 1845 Great Fire; 1868 annexations; 1870 Monongahela Incline (28 May); 1872 South Side; 1877 Duquesne Incline; 1883 Smithfield Street Bridge; 1907 Allegheny annexed; 1959 Fort Pitt Bridge (19 Jun); 1960 Fort Pitt Tunnel; 1969 Fort Duquesne Bridge (17 Oct); 1970 Three Rivers Stadium; population 1800 1,565, 1810 4,768, 1820 7,248, 1830 12,542, 1860 49,221, 1900 321,616, 1950 676,806, 1970 540,025, 1980 423,938, 1990 369,879"
+  },
+  "S6": {
+   "url": "https://en.wikipedia.org/wiki/Great_Fire_of_Pittsburgh",
+   "title": "Wikipedia EN, Great Fire of Pittsburgh",
+   "quote": "10 April 1845; a third of the city burned, 60 acres, as many as 1,200 buildings, 2,000 families displaced, 2 dead; the Monongahela bridge burned; state grants $50,000 and a three-year tax holiday"
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Pittsburgh_flood_of_1936",
+   "title": "Wikipedia EN, Pittsburgh flood of 1936",
+   "quote": "17-18 March 1936, crest about 46 ft, 21 ft above flood stage; 65 percent of the downtown business district under water from the Point to Grant Street; at least 69 deaths in western Pennsylvania, 45 in the city; 60,000 steelworkers out of work"
+  },
+  "S8": {
+   "url": "https://en.wikipedia.org/wiki/Mellon_Arena",
+   "title": "Wikipedia EN, Mellon Arena (Civic Arena)",
+   "quote": "To make room for the arena about 8,000 residents and 400 businesses were displaced from the lower Hill District; demolition began in 1955 and finished by 1960; opened 17 Sept 1961; demolition began 26 Sept 2011"
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/Three_Rivers_Stadium",
+   "title": "Wikipedia EN, Three Rivers Stadium",
+   "quote": "Ground broken April 1968; opened 16 July 1970; last game 16 Dec 2000; imploded in 2001"
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/Smithfield_Street_Bridge",
+   "title": "Wikipedia EN, Smithfield Street Bridge",
+   "quote": "Built 1881-1883, opened 19 March 1883 (Lindenthal lenticular truss); a wooden bridge of 1818 was destroyed in the Great Fire of 1845, then a Roebling suspension bridge"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Point_State_Park",
+   "title": "Wikipedia EN, Point State Park",
+   "quote": "Land acquired from industrial enterprises in the 1950s; park opened August 1974 with its fountain; outlines of Fort Pitt and Fort Duquesne laid in granite; Manchester and Point bridges removed in 1970"
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Carnegie_Steel_Company",
+   "title": "Wikipedia EN, Carnegie Steel Company",
+   "quote": "Formed 1 July 1892; Homestead acquired 1883, open-hearth 1886; sold in 1901 to become part of U.S. Steel"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+   "title": "Wikipedia EN, List of tallest buildings in Pittsburgh, plus per-building Wikipedia articles, Wikidata and OpenStreetMap (skyline dataset 17/11/2026, 67 landmarks, 23 verified by 2 sources)",
+   "quote": "height, floors, year and coordinates per building; Wikidata P571/P1619/P576 and OSM start_date as second databases (not fully independent of Wikipedia)"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Hill_District",
+   "title": "Wikipedia EN, Hill District",
+   "quote": "Cultural center of Black life and a major center of jazz from the years before WWI; in the summer of 1956 some 1,300 structures were razed, displacing about 1,500 families (more than 8,000 residents)"
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Homestead_strike",
+   "title": "Wikipedia EN, Homestead strike",
+   "quote": "Lockout and strike at the Homestead Steel Works in 1892; battle with Pinkerton agents on 6 July 1892; defeat for the union"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Great_Railroad_Strike_of_1877",
+   "title": "Wikipedia EN, Great Railroad Strike of 1877",
+   "quote": "Strikers in Pittsburgh burned 39 buildings, 104 engines and 1,200-1,383 freight cars (S2 says more than 40 buildings, 100 engines, 1,000 cars, 40 men dead)"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/Cathedral_of_Learning",
+   "title": "Wikipedia EN, Cathedral of Learning",
+   "quote": "Ground broken 1926; first class 1931; exterior finished October 1934; formal dedication June 1937; 163 m, 42 floors"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Gulf_Tower",
+   "title": "Wikipedia EN, Gulf Tower",
+   "quote": "44 floors, 177.4 m, completed 1932; stepped-pyramid crown modeled on the Mausoleum at Halicarnassus"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/PPG_Place",
+   "title": "Wikipedia EN, PPG Place",
+   "quote": "Groundbreaking 28 January 1981; buildings opened 1983-1984; dedication ceremony 11 April 1984"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/PNC_Park",
+   "title": "Wikipedia EN, PNC Park",
+   "quote": "Ground broken 7 April 1999; opened during the 2001 season; built just east of Three Rivers Stadium"
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Homestead_Steel_Works",
+   "title": "Wikipedia EN, Homestead Steel Works",
+   "quote": "The plant closed in 1986 because of a severe downturn in the domestic steel industry"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Jones_and_Laughlin_Steel_Corporation",
+   "title": "Wikipedia EN, Jones and Laughlin Steel Corporation",
+   "quote": "First firm to bear the name organized in 1861; steel from 1886; merged with Republic Steel in 1984"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Pittsburgh",
+   "title": "Wikipedia EN, Pittsburgh (census)",
+   "quote": "2010 census 305,704; 2020 census 302,971"
+  },
+  "S24": {
+   "url": "https://data.wprdc.org/",
+   "title": "WPRDC / Allegheny County open data: building footprints and property assessments (YEARBLT), street centerlines, rivers, hydrology",
+   "quote": "Allegheny County Building Footprint Locations (CKAN package 926d9afe, read 17/11/2026): photogrammetrically compiled roof outlines from aerial photography of spring 1992/1993, updated by flyovers in 2004 and 2015; license field \"not specified\". Joined to the assessor year built (YEARBLT) by parcel: year known for 89 percent of the footprints (60 percent of the area) in the local build"
+  },
+  "S25": {
+   "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1/TIFF/current/",
+   "title": "USGS 3DEP 1 arc-second bare-earth elevation (tiles n41w081, n41w080)",
+   "quote": "terrain; the flood rings use the 46 ft crest above gauge zero (692 ft)"
+  },
+  "S26": {
+   "url": "https://github.com/doctail/city3d/tree/claude/pittsburgh/cities/pittsburgh/data_ext",
+   "title": "Repo file cities/pittsburgh/data_ext/years_ext.csv (flag PGH_EXT_YEARS): 67 downtown years/heights from Wikipedia and Wikidata, LiDAR check",
+   "quote": "downtown towers: year and height overridden from Wikipedia list and Wikidata"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/Duquesne_Incline",
+   "title": "Wikipedia EN, Duquesne Incline",
+   "quote": "Opened 20 May 1877; designed by Samuel Diescher; 800 ft long, 400 ft high"
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Fort_Pitt_Block_House",
+   "title": "Wikipedia EN, Fort Pitt Block House",
+   "quote": "Constructed in 1764 as a redoubt of Fort Pitt; oldest extant structure in Western Pennsylvania, oldest authenticated structure west of the Allegheny Mountains"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Forbes_Field",
+   "title": "Wikipedia EN, Forbes Field",
+   "quote": "Ballpark 1909 to 28 June 1970; fire on 17 July 1971, demolition began eleven days later"
+  },
+  "S33": {
+   "url": "https://en.wikipedia.org/wiki/Strip_District,_Pittsburgh",
+   "title": "Wikipedia EN, Strip District, Pittsburgh",
+   "quote": "Between 11th and 33rd Streets; early mills and the Fort Pitt Foundry; by the early 20th century a network of wholesalers; by the 1920s the economic center of Pittsburgh"
+  },
+  "S28": {
+   "url": "https://en.wikipedia.org/wiki/U.S._Steel_Tower",
+   "title": "Wikipedia EN, U.S. Steel Tower",
+   "quote": "64 floors, 256.3 m, tallest in Pittsburgh; opening dedication 30 September 1971 (list gives completion 1970)"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/Acrisure_Stadium",
+   "title": "Wikipedia EN, Acrisure Stadium (Heinz Field)",
+   "quote": "Ground broken June 1999; opened 2001 after the implosion of Three Rivers Stadium; first football game September 2001"
   }
  },
  "history": {
-  "zones": [],
-  "walls": [],
-  "gutting": [],
+  "zones": [
+   {
+    "name": "Pittsburgh village and Golden Triangle (Point to Grant Street)",
+    "ring": [
+     [
+      40.4408,
+      -80.01
+     ],
+     [
+      40.444,
+      -80.0065
+     ],
+     [
+      40.4468,
+      -80.001
+     ],
+     [
+      40.4475,
+      -79.993
+     ],
+     [
+      40.4455,
+      -79.989
+     ],
+     [
+      40.44,
+      -79.9885
+     ],
+     [
+      40.4372,
+      -79.991
+     ],
+     [
+      40.4362,
+      -79.999
+     ],
+     [
+      40.438,
+      -80.0065
+     ]
+    ],
+    "born": [
+     1760,
+     1850
+    ],
+    "seed": [
+     40.4414,
+     -80.0105
+    ],
+    "era_height": [
+     [
+      1760,
+      5,
+      7
+     ],
+     [
+      1810,
+      8,
+      11
+     ],
+     [
+      1840,
+      10,
+      14
+     ]
+    ],
+    "src": [
+     "S2",
+     "S6"
+    ],
+    "conf": "low",
+    "note": "Hand-drawn outline of the Golden Triangle (+-100 m, NOT surveyed). Predecessors of today's downtown buildings are born in a ramp from the Fort Pitt seed (1760: \"lower town\" houses near the ramparts, S2) to Grant Street by 1850, and die when the current building is built. About 1,200 buildings burned in 1845 (S6): see the fire."
+   },
+   {
+    "name": "Allegheny City (North Side)",
+    "ring": [
+     [
+      40.4468,
+      -80.014
+     ],
+     [
+      40.447,
+      -79.999
+     ],
+     [
+      40.452,
+      -79.9935
+     ],
+     [
+      40.46,
+      -79.996
+     ],
+     [
+      40.474,
+      -80.008
+     ],
+     [
+      40.475,
+      -80.03
+     ],
+     [
+      40.462,
+      -80.03
+     ],
+     [
+      40.45,
+      -80.022
+     ]
+    ],
+    "born": [
+     1788,
+     1870
+    ],
+    "seed": [
+     40.4515,
+     -80.004
+    ],
+    "era_height": [
+     [
+      1788,
+      5,
+      8
+     ],
+     [
+      1840,
+      8,
+      12
+     ]
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "low",
+    "note": "Town of Allegheny laid out 1788, borough 1828, city 1840, annexed 1907 (S5, S2). Outline and ramp are guesses."
+   },
+   {
+    "name": "Birmingham and the South Side flats",
+    "ring": [
+     [
+      40.434,
+      -80.01
+     ],
+     [
+      40.4345,
+      -79.986
+     ],
+     [
+      40.433,
+      -79.96
+     ],
+     [
+      40.426,
+      -79.96
+     ],
+     [
+      40.4255,
+      -79.995
+     ],
+     [
+      40.429,
+      -80.012
+     ]
+    ],
+    "born": [
+     1811,
+     1872
+    ],
+    "seed": [
+     40.43,
+     -79.98
+    ],
+    "era_height": [
+     [
+      1811,
+      5,
+      8
+     ],
+     [
+      1850,
+      8,
+      12
+     ]
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "low",
+    "note": "South Side became part of the city in 1872 (S5). Birmingham borough start (1811) is general knowledge, not re-read: [Guessing]."
+   },
+   {
+    "name": "Hill District",
+    "ring": [
+     [
+      40.4425,
+      -79.9945
+     ],
+     [
+      40.448,
+      -79.993
+     ],
+     [
+      40.456,
+      -79.985
+     ],
+     [
+      40.458,
+      -79.97
+     ],
+     [
+      40.45,
+      -79.962
+     ],
+     [
+      40.444,
+      -79.97
+     ],
+     [
+      40.441,
+      -79.98
+     ],
+     [
+      40.4405,
+      -79.99
+     ]
+    ],
+    "born": [
+     1830,
+     1900
+    ],
+    "seed": [
+     40.442,
+     -79.9915
+    ],
+    "era_height": [
+     [
+      1830,
+      6,
+      9
+     ],
+     [
+      1880,
+      9,
+      13
+     ]
+    ],
+    "src": [
+     "S6",
+     "S14"
+    ],
+    "conf": "low",
+    "note": "The hills east of town were undeveloped in 1845 except the courthouse (S6); a free Black community is documented from the early 19th century (S14). Ramp 1830-1900 is a guess."
+   },
+   {
+    "name": "Strip District and Lawrenceville",
+    "ring": [
+     [
+      40.447,
+      -79.999
+     ],
+     [
+      40.4535,
+      -79.987
+     ],
+     [
+      40.464,
+      -79.962
+     ],
+     [
+      40.472,
+      -79.947
+     ],
+     [
+      40.477,
+      -79.95
+     ],
+     [
+      40.469,
+      -79.969
+     ],
+     [
+      40.458,
+      -79.988
+     ],
+     [
+      40.4505,
+      -79.995
+     ]
+    ],
+    "born": [
+     1830,
+     1880
+    ],
+    "seed": [
+     40.452,
+     -79.99
+    ],
+    "era_height": [
+     [
+      1830,
+      6,
+      9
+     ],
+     [
+      1880,
+      8,
+      12
+     ]
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "low",
+    "note": "Lawrenceville was annexed in 1868 (S5). Outline and ramp are guesses."
+   }
+  ],
+  "walls": [
+   {
+    "name": "Fort Duquesne (French, 1754-58)",
+    "line": [
+     [
+      40.44144,
+      -80.01275
+     ],
+     [
+      40.44153,
+      -80.01193
+     ],
+     [
+      40.44216,
+      -80.01205
+     ],
+     [
+      40.44207,
+      -80.01287
+     ],
+     [
+      40.44144,
+      -80.01275
+     ]
+    ],
+    "built": [
+     1754.3,
+     1755.0
+    ],
+    "demolished": [
+     1758.89,
+     1758.92
+    ],
+    "height": 4,
+    "width": 3,
+    "towers_every_m": 35,
+    "color": "#8a6a43",
+    "tower_color": "#7a5a38",
+    "src": [
+     "S3",
+     "S5"
+    ],
+    "conf": "low",
+    "note": "Square with corner bastions, 70 m side: schematic. Built from April 1754 (S3); destroyed by the French on 24 Nov 1758, Forbes occupies the ruins on 25 Nov (S3, S11). Position near the tip of the Point (the Fort Pitt site is \"near but not directly on\" it, S4): +-100 m, to be moved on the granite outlines in Point State Park (OSM)."
+   },
+   {
+    "name": "Fort Pitt (British, 1759-97)",
+    "line": [
+     [
+      40.44221,
+      -80.01065
+     ],
+     [
+      40.44162,
+      -80.01172
+     ],
+     [
+      40.44065,
+      -80.01131
+     ],
+     [
+      40.44065,
+      -80.00999
+     ],
+     [
+      40.44162,
+      -80.00958
+     ],
+     [
+      40.44221,
+      -80.01065
+     ]
+    ],
+    "built": [
+     1759.0,
+     1761.5
+    ],
+    "demolished": [
+     1797.6,
+     1798.8
+    ],
+    "height": 5,
+    "width": 4,
+    "towers_every_m": 95,
+    "color": "#a2704f",
+    "tower_color": "#8f5f43",
+    "src": [
+     "S4",
+     "S5"
+    ],
+    "conf": "low",
+    "note": "Pentagon with five bastions, Capt. Harry Gordon (S4); built 1759-61 (S4); abandoned 1792, decommissioned and demolished in 1797 (S5; demolition span 1797.6-1798.8 is a guess). Circumradius 95 m and centre are schematic (+-100 m). The Block House (1764) is a separate landmark. Closed line, not \"ring\", so that it does not become WALL_P (Valencia-specific code in build_render)."
+   }
+  ],
+  "gutting": [
+   {
+    "name": "Lower Hill District (cleared 1955-60)",
+    "ring": [
+     [
+      40.4398,
+      -79.9945
+     ],
+     [
+      40.44,
+      -79.987
+     ],
+     [
+      40.4448,
+      -79.9865
+     ],
+     [
+      40.445,
+      -79.994
+     ]
+    ],
+    "from": 1840,
+    "until": 1957.0,
+    "src": [
+     "S14",
+     "S8"
+    ],
+    "conf": "low",
+    "note": "About 1,300 structures razed in the summer of 1956 (S14); demolition 1955-60 (S8). Today this land is the arena lawn and parking, so no current building exists to hang a predecessor on: the kit fills the empty part of this ring with row-house lots from the Hill zone ramp, and removes them 1955.5-1956.8. Ring is ~35 ha (the clearance was 95 acres = 38 ha, S2). The last building, Bethel AME Church (1960), is not modelled."
+   },
+   {
+    "name": "Point warehouses and rail yards (cleared 1950-53)",
+    "ring": [
+     [
+      40.4408,
+      -80.014
+     ],
+     [
+      40.4426,
+      -80.0141
+     ],
+     [
+      40.4433,
+      -80.01
+     ],
+     [
+      40.4431,
+      -80.0075
+     ],
+     [
+      40.4417,
+      -80.007
+     ],
+     [
+      40.4406,
+      -80.01
+     ]
+    ],
+    "from": 1800,
+    "until": 1953.5,
+    "src": [
+     "S11",
+     "S2"
+    ],
+    "conf": "low",
+    "note": "The Point was industrial until the 1950s: land taken from industrial enterprises for the park (S11); vast swaths near the Point demolished for Gateway Center by 1950 (S2). From 1800, after Fort Pitt is gone (1797), lots fill the void of the park; they go in 1952-53. Hand-drawn 36-acre outline."
+   }
+  ],
   "lost": [],
-  "fires": [],
-  "water": [],
-  "bridges": [],
+  "fires": [
+   {
+    "name": "Great Fire of 1845",
+    "ring": [
+     [
+      40.4363,
+      -80.0062
+     ],
+     [
+      40.4363,
+      -79.999
+     ],
+     [
+      40.4398,
+      -79.9982
+     ],
+     [
+      40.4403,
+      -80.0035
+     ],
+     [
+      40.4392,
+      -80.0062
+     ]
+    ],
+    "y": 1845.268,
+    "y1": 1845.3,
+    "destroy": true,
+    "rebuild_years": 2.0,
+    "origin": [
+     40.4372,
+     -80.0055
+    ],
+    "flames": 30,
+    "smoke": 8,
+    "src": [
+     "S6"
+    ],
+    "conf": "medium",
+    "note": "Started 10 April 1845 (=1845.268) near Ferry Street and burned about 60 acres, as many as 1,200 buildings (S6). The real fire lasted hours; the window 1845.268-1845.30 (12 days) is only so that flames are visible during a 6 s hover. Ring is a ~27 ha sketch of the burned south-west of downtown ending at Market Square (+-100 m, NOT surveyed). destroy acts only on predecessor buildings from the zones (today's downtown is 1900+)."
+   }
+  ],
   "floods": [
    {
     "name": "1936 St. Patrick's Day flood (1)",
@@ -750,9 +1623,11 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "note": "Rings from fetch_pgh.py flood 46: DEM cells below 224.94 m (738 ft = gauge zero 692 ft + 46 ft) connected to the rivers; normal pool 710 ft. depth is the kit's constant draped depth (test value). 1936 flood: kept as an ordinary event (card), NOT a stop: the draped-water visual is a known limitation."
    },
    {
     "name": "1936 St. Patrick's Day flood (2)",
@@ -2666,7 +3541,8 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    },
@@ -4734,7 +5610,8 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    },
@@ -5194,7 +6071,8 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    },
@@ -7142,7 +8020,8 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    },
@@ -7394,7 +8273,8 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    },
@@ -7982,60 +8862,1634 @@
     "y1": 1936.213,
     "depth": 3.0,
     "src": [
-     "S1"
+     "S1",
+     "S7"
     ],
     "conf": "medium"
    }
   ],
-  "_flood_note": "Rings from fetch_pgh.py flood 46: DEM cells below 224.94 m (738 ft = gauge zero 692 ft + 46 ft) connected to the rivers; normal pool 710 ft. depth is the kit's constant draped depth (test value)."
+  "water": [],
+  "bridges": [
+   {
+    "name": "Smithfield Street Bridge",
+    "line": [
+     [
+      40.4364,
+      -80.0025
+     ],
+     [
+      40.43304,
+      -80.00194
+     ]
+    ],
+    "w": 18,
+    "y": 1883.211,
+    "d": null,
+    "src": [
+     "S10",
+     "S5"
+    ],
+    "conf": "medium",
+    "note": "Opened 19 March 1883 (S10); the 1818 wooden bridge burned in the 1845 fire (S10). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   },
+   {
+    "name": "Fort Pitt Bridge",
+    "line": [
+     [
+      40.44035,
+      -80.00975
+     ],
+     [
+      40.43735,
+      -80.0125
+     ]
+    ],
+    "w": 25,
+    "y": 1959.463,
+    "d": null,
+    "src": [
+     "S5",
+     "S13"
+    ],
+    "conf": "medium",
+    "note": "Opened 19 June 1959 (S5, S13). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   },
+   {
+    "name": "Fort Duquesne Bridge",
+    "line": [
+     [
+      40.4429,
+      -80.009
+     ],
+     [
+      40.4457,
+      -80.0096
+     ]
+    ],
+    "w": 22,
+    "y": 1969.792,
+    "d": null,
+    "src": [
+     "S5",
+     "S13"
+    ],
+    "conf": "medium",
+    "note": "Opened 17 Oct 1969 (S5); S13: parts built 1958-63 but not connected (\"Bridge to Nowhere\"), NOT 1963. Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   },
+   {
+    "name": "Andy Warhol (Seventh Street) Bridge",
+    "line": [
+     [
+      40.4445,
+      -80.00139
+     ],
+     [
+      40.4477,
+      -80.00139
+     ]
+    ],
+    "w": 20,
+    "y": 1926.458,
+    "d": null,
+    "src": [
+     "S13"
+    ],
+    "conf": "high",
+    "note": "Opened 17 June 1926 (Wikipedia, Wikidata). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   },
+   {
+    "name": "Rachel Carson (Ninth Street) Bridge",
+    "line": [
+     [
+      40.4451,
+      -79.9998
+     ],
+     [
+      40.4483,
+      -79.9998
+     ]
+    ],
+    "w": 20,
+    "y": 1926.901,
+    "d": null,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "note": "Opened 26 Nov 1926 (Wikipedia infobox, Wikidata). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   },
+   {
+    "name": "Roberto Clemente (Sixth Street) Bridge",
+    "line": [
+     [
+      40.444,
+      -80.0033
+     ],
+     [
+      40.4472,
+      -80.0033
+     ]
+    ],
+    "w": 20,
+    "y": 1928.742,
+    "d": null,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "note": "Current bridge completed 29 Sept 1928 (Wikipedia). Earlier bridges 1819 and 1859 (Roebling) not modelled. Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+   }
+  ]
  },
- "landmarks": [],
+ "landmarks": [
+  {
+   "name": "Fort Pitt Block House",
+   "kind": "generic_footprint",
+   "at": [
+    40.4412,
+    -80.0098
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 8,
+    "c": "brick",
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1764.0,
+     "y1": 1764.9
+    }
+   ],
+   "label": true,
+   "src": [
+    "S2",
+    "S5",
+    "S31",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Redoubt added by Col. Bouquet in 1764; the only remaining structure of Fort Pitt, oldest authenticated building west of the Alleghenies (S2). Verified by 2 sources (S13). Construction span 1764.0-1764.9 is a guess."
+  },
+  {
+   "name": "Monongahela Incline",
+   "kind": "generic_footprint",
+   "at": [
+    40.43194,
+    -80.00556
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 8,
+    "c": "brick",
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1869.6,
+     "y1": 1870.4
+    }
+   ],
+   "label": true,
+   "src": [
+    "S5",
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "Opened 28 May 1870 (=1870.4), S5; \"built 1870 by John Endres\" (S13). Coordinates Wikipedia vs OSM 51 m apart. Only the lower station is modelled; no track."
+  },
+  {
+   "name": "Duquesne Incline",
+   "kind": "generic_footprint",
+   "at": [
+    40.43917,
+    -80.01806
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 8,
+    "c": "brick",
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1876.6,
+     "y1": 1877.38
+    }
+   ],
+   "label": true,
+   "src": [
+    "S30",
+    "S5",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Opened 20 May 1877 (=1877.38), S30; infobox and Wikidata agree (S13, verified by 2 sources). Only the lower station is modelled; no track. Start 1876.6 is a guess."
+  },
+  {
+   "name": "Allegheny County Courthouse",
+   "kind": "palace_courtyard",
+   "at": [
+    40.4384,
+    -79.9961
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30.5,
+    "c": "granite",
+    "roof_c": "slate"
+   },
+   "phases": [
+    {
+     "y": 1884.0,
+     "y1": 1888.0
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13",
+    "S2"
+   ],
+   "conf": "medium",
+   "note": "Construction began 1884, completed 1888 (infobox, text, Wikidata, OSM; S13). CONFLICT: S2 says the courthouse and jail were completed in 1886 and Timeline (S5) lists the courthouse in 1888 and the jail in 1886: the courthouse is 1888, the jail 1886. Coordinates Wikipedia vs OSM 75 m apart. The 97 m clock tower is not modelled."
+  },
+  {
+   "name": "Frick Building",
+   "kind": "skyscraper",
+   "at": [
+    40.43912,
+    -79.99744
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 100.6,
+    "podium_h": 10,
+    "c": "stone2",
+    "podium_c": "granite",
+    "top_c": "stone"
+   },
+   "phases": [
+    {
+     "y": 1901.0,
+     "y1": 1902.2
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13",
+    "S5"
+   ],
+   "conf": "high",
+   "note": "Completed 15 March 1902 (infobox, list, Wikidata, OSM: verified by 2 sources, S13); start 1901.0 is a guess [Likely]."
+  },
+  {
+   "name": "Union Station",
+   "kind": "generic_footprint",
+   "at": [
+    40.44475,
+    -79.99214
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 24,
+    "c": "brick",
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1898.0,
+     "y1": 1903.5
+    }
+   ],
+   "label": true,
+   "label_name": "Union Station (Pennsylvania Station)",
+   "src": [
+    "S13",
+    "S5"
+   ],
+   "conf": "high",
+   "note": "Built 1898-1904, opened 1903 (infobox, Wikidata; Timeline S5 lists Union Station in 1903); verified by 2 sources (S13). Original building still stands, the demolished part is not documented. Coordinates Wikipedia vs OSM 46 m apart."
+  },
+  {
+   "name": "Carnegie Museum and Library (Oakland)",
+   "kind": "generic_footprint",
+   "at": [
+    40.44369,
+    -79.94898
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 22,
+    "c": "stone",
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1893.5,
+     "y1": 1895.85
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13",
+    "S2"
+   ],
+   "conf": "low",
+   "note": "First gallery 5 Nov 1895 (=1895.85); Carnegie founded the Carnegie Institute in 1895 (S2). The Forbes Avenue building was 1907 (Wikipedia text): which footprint the kit picks is unchecked. Start 1893.5 is a guess."
+  },
+  {
+   "name": "Forbes Field",
+   "kind": "stadium",
+   "at": [
+    40.44194,
+    -79.95417
+   ],
+   "params": {
+    "a_out": 100,
+    "b_out": 85,
+    "h": 22
+   },
+   "phases": [
+    {
+     "y": 1909.2,
+     "y1": 1909.49
+    }
+   ],
+   "demolished": [
+    1971.57,
+    1971.95
+   ],
+   "label": true,
+   "src": [
+    "S13",
+    "S5",
+    "S32"
+   ],
+   "conf": "medium",
+   "note": "Opened 30 June 1909 (=1909.49), Timeline S5; verified by 2 sources (S13). Fire 17 July 1971, demolition began 11 days later = 28 July 1971 (=1971.57), S32; the end of the demolition (1971.95) is a guess. Wikipedia vs Wikidata coordinates differ ~150 m. Default stadium shape; the building has no footprint in the current data."
+  },
+  {
+   "name": "Gulf Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44258,
+    -79.99522
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 177.4,
+    "crown": "pyramid",
+    "c": "limestone",
+    "podium_c": "limestone",
+    "top_c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1930.2,
+     "y1": 1932.3
+    }
+   ],
+   "label": true,
+   "src": [
+    "S18",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Completed 1932, 44 floors, 177.4 m, step-pyramid crown (S18); verified by 2 sources (S13). Tallest in Pittsburgh 1932-1970. Start 1930.2 is a guess."
+  },
+  {
+   "name": "Cathedral of Learning",
+   "kind": "tower_square",
+   "at": [
+    40.44431,
+    -79.95312
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 163,
+    "w": 24,
+    "roof": "crenel",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1926.0,
+     "y1": 1934.8
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17",
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "Ground broken 1926, exterior finished October 1934 (=1934.8), dedicated June 1937 (S17). CONFLICT: the tallest list gives 1936 (S13). The model follows the finished exterior (1934.8); the stop hovers on the June 1937 dedication."
+  },
+  {
+   "name": "Wabash Pittsburgh Terminal",
+   "kind": "generic_footprint",
+   "at": [
+    40.441,
+    -80.0045
+   ],
+   "params": {
+    "l": 65,
+    "w": 45,
+    "h": 55,
+    "c": "cream",
+    "roof": "dome"
+   },
+   "phases": [
+    {
+     "y": 1903.0,
+     "y1": 1904.28
+    }
+   ],
+   "demolished": [
+    1953.8,
+    1954.2
+   ],
+   "label": true,
+   "src": [
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "Opened 13 April 1904 (=1904.28), closed 31 Oct 1931, demolished Oct 1953 - early 1954 (Wikipedia, S13); 197 ft = 60 m. No footprint in the data (demolished): default 65 x 45 m block with a dome, schematic."
+  },
+  {
+   "name": "Civic Arena",
+   "kind": "bullring",
+   "at": [
+    40.44167,
+    -79.99
+   ],
+   "params": {
+    "plan": "round",
+    "r_out": 63,
+    "h": 28,
+    "c": "steel",
+    "tier_c": "concrete"
+   },
+   "phases": [
+    {
+     "y": 1958.2,
+     "y1": 1961.7
+    }
+   ],
+   "demolished": [
+    2011.74,
+    2012.25
+   ],
+   "label": true,
+   "label_name": "Civic Arena",
+   "src": [
+    "S8",
+    "S5",
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "Opened 17 Sept 1961 (=1961.71), verified by 2 sources (S8, S13); under construction in 1957 (S8), a steel strike halted work in July 1959 (S8). CONFLICT: Timeline S5 lists \"12 March 1958: Civic Arena opens\": most likely the groundbreaking; construction start 1958.2 is therefore [Likely]. Demolition began 26 Sept 2011 (S8); the end (31 Mar 2012) is from Wikidata/Wikipedia list (S13), not rechecked. Round plan 126 m (S8: roof diameter 415 ft), schematic dome."
+  },
+  {
+   "name": "Three Rivers Stadium",
+   "kind": "stadium",
+   "at": [
+    40.44667,
+    -80.01278
+   ],
+   "params": {
+    "a_out": 105,
+    "b_out": 105,
+    "h": 30
+   },
+   "phases": [
+    {
+     "y": 1968.3,
+     "y1": 1970.54
+    }
+   ],
+   "demolished": [
+    2001.108,
+    2001.118
+   ],
+   "label": true,
+   "src": [
+    "S9",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Ground broken April 1968, opened 16 July 1970 (=1970.54), imploded 11 Feb 2001 (S9, S13: verified by 2 sources). Default circular multi-purpose stadium, no footprint in the current data."
+  },
+  {
+   "name": "PNC Park",
+   "kind": "stadium",
+   "at": [
+    40.44694,
+    -80.00583
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 28
+   },
+   "phases": [
+    {
+     "y": 1999.27,
+     "y1": 2001.27
+    }
+   ],
+   "label": true,
+   "src": [
+    "S20",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Ground broken 7 April 1999 (=1999.27), opened during the 2001 season (opening day 9 April 2001 is [Likely], not read); verified by 2 sources (S13)."
+  },
+  {
+   "name": "Heinz Field (Acrisure Stadium)",
+   "kind": "stadium",
+   "at": [
+    40.44667,
+    -80.01583
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30
+   },
+   "phases": [
+    {
+     "y": 1999.45,
+     "y1": 2001.7
+    }
+   ],
+   "label": true,
+   "label_name": "Heinz Field (now Acrisure Stadium)",
+   "src": [
+    "S29",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Ground broken June 1999 (=1999.45), first football game September 2001 (S29); verified by 2 sources (S13). Named Heinz Field until 2021."
+  },
+  {
+   "name": "U.S. Steel Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44133,
+    -79.99472
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 256.3,
+    "c": "brick2",
+    "podium_c": "dark",
+    "top_c": "iron"
+   },
+   "phases": [
+    {
+     "y": 1967.5,
+     "y1": 1970.9
+    }
+   ],
+   "label": true,
+   "src": [
+    "S28",
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "256.3 m, 64 floors; dedication 30 Sept 1971 (S28); CONFLICT: the tallest list and infobox give completion 1970, Wikidata 1971. The model is complete from 1970.9; start 1967.5 is [Guessing]. Triangular plan comes from the footprint (auto)."
+  },
+  {
+   "name": "PPG Place",
+   "kind": "skyscraper",
+   "at": [
+    40.43995,
+    -80.00375
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 166,
+    "crown": "spire",
+    "c": "glass2"
+   },
+   "phases": [
+    {
+     "y": 1981.08,
+     "y1": 1984.28
+    }
+   ],
+   "label": true,
+   "src": [
+    "S19",
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Groundbreaking 28 Jan 1981 (=1981.08), dedication 11 April 1984 (=1984.28), buildings opened 1983-84 (S19); verified by 2 sources (S13). HEIGHT CONFLICT: 193.6 m with the glass spires (list) vs 166 m to the roof (infobox, OSM): the model uses 166 m + spire crown. Only the 40-floor tower footprint is replaced."
+  },
+  {
+   "name": "Tower at PNC Plaza",
+   "kind": "skyscraper",
+   "at": [
+    40.44029,
+    -80.00018
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 166,
+    "c": "glass"
+   },
+   "phases": [
+    {
+     "y": 2013.0,
+     "y1": 2015.75
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13"
+   ],
+   "conf": "high",
+   "note": "Opened 2 Oct 2015 (=2015.75; Wikipedia, verified by 2 sources, S13); construction start 2013.0 is a guess."
+  }
+ ],
+ "qa": {
+  "accept": [
+   {
+    "check": "corridoi",
+    "where": [
+     40.45604,
+     -79.99801,
+     480,
+     31
+    ],
+    "reason": "modern expressway/rail strip along the Allegheny River bank, outside the 1854 town: open riverbank in 1854; accepted"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     40.43406,
+     -79.99067,
+     860,
+     74
+    ],
+    "reason": "modern riverfront strip (Carson Street, Monongahela bank) between the South Side zone and the river: open bank in 1854; accepted"
+   }
+  ]
+ },
  "regia": {
   "camera": "drone",
   "music": "waking_monument",
   "duration": "auto",
+  "max_duration": 660,
   "night": false,
+  "pacing": "story",
   "open": {
    "year": 2026,
-   "rewind_to": 1780
+   "rewind_to": 1754
   },
   "soste": [
    {
-    "y0": 1936.2,
-    "y1": 1936.23,
+    "y0": 1845.24,
+    "y1": 1845.34,
     "dur": 6,
-    "caption": "St. Patrick's Day flood (1936)",
-    "target": "area:[40.4425,-80.0040,450]",
+    "caption": "The Great Fire (April 1845)",
+    "target": "fire:Great Fire of 1845",
     "shot": "wide",
-    "fx": "water",
+    "fx": "boom",
     "src": [
-     "S1"
+     "S6"
     ],
     "conf": "medium",
-    "weight": "max"
+    "weight": 8
    },
    {
-    "y0": 1990.0,
-    "y1": 1992.0,
+    "y0": 1870.45,
+    "y1": 1870.95,
     "dur": 5,
-    "caption": "Downtown (1990)",
-    "target": "area:[40.4440,-79.9960,450]",
+    "caption": "The Monongahela Incline (1870)",
+    "target": "area:[40.4322,-80.0056,320]",
     "shot": "wide",
-    "fx": "crowd",
+    "fx": "build",
     "src": [
-     "S1"
+     "S5"
     ],
-    "conf": "low"
+    "conf": "medium",
+    "weight": 4,
+    "note": "Mount Washington slope seen from the flats; the incline opened 28 May 1870 (=1870.40)."
+   },
+   {
+    "y0": 1883.25,
+    "y1": 1883.8,
+    "dur": 5,
+    "caption": "The Smithfield Street Bridge (1883)",
+    "target": "area:[40.4350,-80.0022,300]",
+    "shot": "wide",
+    "fx": "build",
+    "src": [
+     "S10"
+    ],
+    "conf": "medium",
+    "weight": 6,
+    "note": "Opened 19 March 1883 (=1883.21); deck exists for the whole hover."
+   },
+   {
+    "y0": 1888.25,
+    "y1": 1888.8,
+    "dur": 5,
+    "caption": "The Allegheny County Courthouse (1888)",
+    "target": "area:[40.4384,-79.9961,260]",
+    "shot": "wide",
+    "fx": "bell",
+    "src": [
+     "S13",
+     "S2"
+    ],
+    "conf": "medium",
+    "weight": 5,
+    "note": "Completed 1888 (S13); S2 says 1886 for courthouse and jail: see the landmark note."
+   },
+   {
+    "y0": 1919.8,
+    "y1": 1920.4,
+    "dur": 6,
+    "caption": "The Hill District, a center of Black life and jazz (1920)",
+    "target": "area:[40.4455,-79.9890,430]",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S14"
+    ],
+    "conf": "medium",
+    "weight": 6,
+    "note": "Area stop on the future Lower Hill clearance: the lots are the gutting fill (reconstruction), the Upper Hill is current data."
+   },
+   {
+    "y0": 1961.75,
+    "y1": 1962.2,
+    "dur": 6,
+    "caption": "The Civic Arena opens on the cleared Lower Hill (1961)",
+    "target": "area:[40.4417,-79.9900,420]",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S8",
+     "S14"
+    ],
+    "conf": "medium",
+    "weight": "max",
+    "note": "Hover opens after the Sept 1961 opening (=1961.71); Lower Hill lots are gone since 1956."
+   },
+   {
+    "y0": 1984.3,
+    "y1": 1985.7,
+    "dur": 5,
+    "caption": "PPG Place and the second Renaissance (1984)",
+    "target": "area:[40.4402,-80.0020,420]",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S19",
+     "S2"
+    ],
+    "conf": "medium",
+    "weight": 6,
+    "note": "Hover covers 1984.3-1985.7 so that the Gulf Oil card (1985.6) rides it with matching years."
+   },
+   {
+    "y0": 2000.9,
+    "y1": 2001.75,
+    "dur": 6,
+    "caption": "Three Rivers Stadium is imploded; PNC Park and Heinz Field open (2001)",
+    "target": "area:[40.4468,-80.0105,520]",
+    "shot": "wide",
+    "fx": "boom",
+    "src": [
+     "S9",
+     "S20",
+     "S29"
+    ],
+    "conf": "medium",
+    "weight": 8,
+    "note": "Implosion 11 Feb 2001 (=2001.108), PNC Park opens 2001, Heinz Field Sept 2001 (=2001.7): the hover ends after it."
+   },
+   {
+    "y0": 2015.8,
+    "y1": 2016.3,
+    "dur": 5,
+    "caption": "The Tower at PNC Plaza (2015)",
+    "target": "area:[40.4403,-80.0002,380]",
+    "shot": "wide",
+    "fx": "chime",
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "weight": 4
    }
   ],
-  "rmin": 0.5,
+  "rmin": 1.0,
   "rmax": 8.0,
-  "pacing": "story"
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400,
+   "v_leg": 90
+  },
+  "lens": 32,
+  "reading": {
+   "wps": 11.0,
+   "base": 3.6,
+   "min": 4.0,
+   "max": 9.0
+  }
  },
  "montaggio": {
-  "open": [],
-  "title": [],
-  "end": [],
-  "events": []
+  "style": "mattia",
+  "open": [
+   "PITTSBURGH TODAY",
+   "302,971 people",
+   "272 YEARS",
+   "Buildings placed in their documented years."
+  ],
+  "title": [
+   "PITTSBURGH",
+   "1754 TO NOW"
+  ],
+  "end": [
+   "PITTSBURGH · 272 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1754.0,
+    "title": "The Forks of the Ohio",
+    "lines": [
+     "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
+     "About 500 French soldiers force them out in April and build Fort Duquesne.",
+     "They keep the Forks for four years and beat a British army in 1755."
+    ],
+    "src": [
+     "S3",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "chapter": "Forts on the Forks"
+   },
+   {
+    "y": 1758.9,
+    "title": "Pittsburgh gets its name",
+    "lines": [
+     "The French blow up Fort Duquesne on November 24, 1758. General Forbes names the ruins for William Pitt.",
+     "The British build Fort Pitt in 1759-61 and hold it through the siege of 1763."
+    ],
+    "src": [
+     "S3",
+     "S11",
+     "S4",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1764.5,
+    "title": "The Block House",
+    "lines": [
+     "Colonel Bouquet adds a brick redoubt in 1764.",
+     "It still stands: the oldest authenticated building west of the Alleghenies."
+    ],
+    "src": [
+     "S2",
+     "S5",
+     "S31"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Fort Pitt Block House"
+   },
+   {
+    "y": 1777.0,
+    "title": "Headquarters of the West",
+    "lines": [
+     "In 1777 Fort Pitt becomes a U.S. fort under Gen. Edward Hand.",
+     "It serves as the American headquarters of the western war."
+    ],
+    "src": [
+     "S4",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "chapter": "A Town on the Frontier"
+   },
+   {
+    "y": 1794.0,
+    "title": "A borough on the frontier",
+    "lines": [
+     "Pittsburgh is incorporated as a borough in 1794.",
+     "That summer farmers angry about the whiskey tax march on the town."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1797.6,
+    "title": "Fort Pitt is torn down",
+    "lines": [
+     "The army abandoned the fort in 1792 and decommissioned it in 1797, and it was demolished.",
+     "In the same year Pittsburgh begins making glass."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Timeline S5: 1792 abandoned, 3 Aug 1797 decommissioned and \"subsequently demolished\"; demolition date itself not found."
+   },
+   {
+    "y": 1811.5,
+    "title": "The first steamboat",
+    "lines": [
+     "The first steamboat is built in Pittsburgh in 1811.",
+     "By 1800 the town had 1,565 people and over 60 shops."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1816.21,
+    "title": "A city at last",
+    "lines": [
+     "Pittsburgh is incorporated as a city on March 18, 1816.",
+     "The War of 1812 had cut off British goods and turned it into a factory town."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "chapter": "The Iron City"
+   },
+   {
+    "y": 1818.5,
+    "title": "The first bridge",
+    "lines": [
+     "A wooden bridge across the Monongahela opens in 1818, where the Smithfield Street Bridge stands today.",
+     "It will burn in the fire of 1845."
+    ],
+    "src": [
+     "S10",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1835.0,
+    "title": "Canal and locomotive",
+    "lines": [
+     "The Main Line Canal to Philadelphia is completed in 1834.",
+     "In 1835 a Pittsburgh firm builds the first locomotive west of the Alleghenies."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1841.5,
+    "title": "A courthouse on Grant's Hill",
+    "lines": [
+     "The second Allegheny County courthouse, of gray sandstone, is finished in 1841.",
+     "The hill around it is still open ground."
+    ],
+    "src": [
+     "S2",
+     "S6"
+    ],
+    "conf": "medium",
+    "shot": "wide"
+   },
+   {
+    "y": 1847.5,
+    "title": "The city rebuilds",
+    "lines": [
+     "Pennsylvania grants $50,000 and a three-year tax holiday after the fire.",
+     "The demand for new homes and goods drives the iron and glass works."
+    ],
+    "src": [
+     "S6"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1854.5,
+    "title": "The railroads arrive",
+    "lines": [
+     "The Ohio and Pennsylvania Railroad reaches Allegheny City in 1851.",
+     "The Pennsylvania Railroad links Pittsburgh to Philadelphia in 1854."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Timeline S5 dates the Pennsylvania Railroad service to 1852; S2 says 1854 for Philadelphia service."
+   },
+   {
+    "y": 1857.5,
+    "title": "939 factories",
+    "lines": [
+     "An 1857 count lists 939 factories in Pittsburgh and Allegheny City.",
+     "In steam tonnage it is the nation's third busiest port."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1859.5,
+    "title": "Coke and steel",
+    "lines": [
+     "In 1859 the Clinton and Soho furnaces introduce coke smelting.",
+     "Pittsburgh begins the move from iron to steel."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "chapter": "Steel City"
+   },
+   {
+    "y": 1865.3,
+    "title": "Arsenal of the Union",
+    "lines": [
+     "By the end of the Civil War Pittsburgh makes over half of the nation's steel.",
+     "It also makes more than a third of its glass."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1868.5,
+    "title": "The city swallows its neighbors",
+    "lines": [
+     "In 1868 Pittsburgh annexes Lawrenceville and the townships of Pitt, Oakland and others to the east.",
+     "The South Side joins in 1872."
+    ],
+    "src": [
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1875.5,
+    "title": "Bessemer steel at Braddock",
+    "lines": [
+     "In 1875 Carnegie's Edgar Thomson Works begins making steel rails with the Bessemer process.",
+     "The mill lies upriver, beyond the edge of this map."
+    ],
+    "src": [
+     "S2",
+     "S12"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1877.38,
+    "title": "A second incline",
+    "lines": [
+     "The Duquesne Incline opens on May 20, 1877, seven years after the Monongahela Incline.",
+     "Both lift workers up Mount Washington."
+    ],
+    "src": [
+     "S30",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Duquesne Incline"
+   },
+   {
+    "y": 1877.55,
+    "title": "The railroad strike",
+    "lines": [
+     "In July 1877 strikers burn about 40 buildings, 100 locomotives and over 1,000 rail cars.",
+     "Forty men die; Pittsburgh is the most violent city of the national strike."
+    ],
+    "src": [
+     "S2",
+     "S16"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Counts differ: S2 more than 40 buildings, 100 engines, 1,000 cars, 40 dead; S16 39 buildings, 104 engines, 1,200-1,383 freight cars."
+   },
+   {
+    "y": 1886.5,
+    "title": "Electricity and open-hearth steel",
+    "lines": [
+     "George Westinghouse founds Westinghouse Electric in 1886.",
+     "The same year Carnegie installs open-hearth furnaces at Homestead."
+    ],
+    "src": [
+     "S2",
+     "S12"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1892.51,
+    "title": "Homestead",
+    "lines": [
+     "Carnegie Steel is formed on July 1, 1892. Five days later strikers and Pinkertons fight at Homestead.",
+     "Ten men die and the union loses. The mill lies just beyond this map."
+    ],
+    "src": [
+     "S12",
+     "S15",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1895.85,
+    "title": "Steel pays for a museum",
+    "lines": [
+     "The Carnegie Institute opens in Oakland in 1895; the first gallery opens on November 5.",
+     "Library, museums and music hall are financed by Andrew Carnegie."
+    ],
+    "src": [
+     "S2",
+     "S13"
+    ],
+    "conf": "medium",
+    "shot": "medium",
+    "target": "Carnegie Museum and Library (Oakland)"
+   },
+   {
+    "y": 1901.25,
+    "title": "U.S. Steel",
+    "lines": [
+     "In 1901 Carnegie sells his mills to J.P. Morgan for $250 million.",
+     "They become part of the new U.S. Steel."
+    ],
+    "src": [
+     "S2",
+     "S12"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1902.2,
+    "title": "The Frick Building",
+    "lines": [
+     "Henry Clay Frick's office tower is finished in March 1902.",
+     "It is one of the first downtown skyscrapers."
+    ],
+    "src": [
+     "S13",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Frick Building"
+   },
+   {
+    "y": 1903.5,
+    "title": "Union Station",
+    "lines": [
+     "The Pennsylvania Railroad opens Union Station in 1903.",
+     "Its rotunda still stands."
+    ],
+    "src": [
+     "S13",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Union Station"
+   },
+   {
+    "y": 1907.95,
+    "title": "Allegheny City joins Pittsburgh",
+    "lines": [
+     "In 1907 Pittsburgh annexes Allegheny City, today the North Side."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[40.4545,-80.0050,520]"
+   },
+   {
+    "y": 1909.49,
+    "title": "Forbes Field",
+    "lines": [
+     "Forbes Field opens in Oakland on June 30, 1909.",
+     "The Pirates win their first World Series that October."
+    ],
+    "src": [
+     "S13",
+     "S5"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Forbes Field"
+   },
+   {
+    "y": 1911.5,
+    "title": "Half of America's steel",
+    "lines": [
+     "By 1911 Pittsburgh is producing half of the nation's steel.",
+     "Smoke is a sign of prosperity."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1923.0,
+    "title": "The Strip",
+    "lines": [
+     "By the 1920s the Strip District, from 11th to 33rd Street, is the city's economic center: wholesalers, produce dealers, auction houses.",
+     "Before them came mills and the Fort Pitt Foundry."
+    ],
+    "src": [
+     "S33"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "S33 gives no single year; 1923 is thematic (\"by the 1920s\")."
+   },
+   {
+    "y": 1927.0,
+    "title": "Three Sisters",
+    "lines": [
+     "Three matching bridges cross the Allegheny between 1926 and 1928.",
+     "Seventh Street opens in June 1926, Ninth in November 1926 and Sixth in September 1928."
+    ],
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "chapter": "Between the Wars"
+   },
+   {
+    "y": 1932.3,
+    "title": "The Gulf Tower",
+    "lines": [
+     "The Gulf Tower is finished in 1932 with a stepped pyramid on top.",
+     "It is the tallest building in Pittsburgh until 1970."
+    ],
+    "src": [
+     "S18",
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Gulf Tower"
+   },
+   {
+    "y": 1936.21,
+    "title": "The St. Patrick's Day flood",
+    "lines": [
+     "On March 18, 1936 the rivers crest at 46 feet, 21 feet over flood stage. Downtown is under water from the Point to Grant Street.",
+     "At least 69 people die in western Pennsylvania and 60,000 steelworkers lose their jobs."
+    ],
+    "src": [
+     "S7",
+     "S1",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1937.45,
+    "title": "The Cathedral of Learning",
+    "lines": [
+     "The 42-story Cathedral of Learning is formally dedicated in June 1937; its exterior was finished in 1934."
+    ],
+    "src": [
+     "S17"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[40.4443,-79.9531,420]"
+   },
+   {
+    "y": 1942.5,
+    "title": "Arsenal of Democracy",
+    "lines": [
+     "In World War II Pittsburgh's mills deliver 95 million tons of steel.",
+     "The city fills with workers from the South."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1946.0,
+    "title": "Smoke and a new plan",
+    "lines": [
+     "Mayor David Lawrence enforces the Smoke Control Ordinance from 1946.",
+     "The first Renaissance begins."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "chapter": "Renaissance"
+   },
+   {
+    "y": 1953.8,
+    "title": "The old Point comes down",
+    "lines": [
+     "Gateway Center replaces the warehouses and rail yards near the Point from 1950.",
+     "The Wabash Terminal, open since 1904, is demolished in 1953-54."
+    ],
+    "src": [
+     "S2",
+     "S11",
+     "S13"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "Wabash Pittsburgh Terminal",
+    "note": "Gateway Center start: S2 says vast swaths near the Point were demolished by 1950; Wabash terminal dates from Wikipedia (S13)."
+   },
+   {
+    "y": 1956.5,
+    "title": "The Lower Hill is cleared",
+    "lines": [
+     "In 1956 about 1,300 structures are razed and more than 8,000 people lose their homes.",
+     "Most are Black; the district was a center of jazz. The work runs from 1955 to 1960."
+    ],
+    "src": [
+     "S14",
+     "S8",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "note": "S14: 1,300 structures, about 1,500 families, more than 8,000 residents, summer 1956; S8: 8,000 residents and 400 businesses, demolition 1955-60; S2: 95 acres."
+   },
+   {
+    "y": 1959.46,
+    "title": "The Fort Pitt Bridge",
+    "lines": [
+     "The Fort Pitt Bridge opens on June 19, 1959; the Fort Pitt Tunnel follows in 1960.",
+     "The Point becomes the gateway for cars."
+    ],
+    "src": [
+     "S5",
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1969.79,
+    "title": "The Bridge to Nowhere",
+    "lines": [
+     "The Fort Duquesne Bridge opens on October 17, 1969.",
+     "Parts of it had stood for years without a connection."
+    ],
+    "src": [
+     "S5",
+     "S13"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "S13: built 1958-63 but not connected, opened 17 Oct 1969."
+   },
+   {
+    "y": 1970.54,
+    "title": "Three Rivers Stadium",
+    "lines": [
+     "Three Rivers Stadium opens on the North Shore on July 16, 1970.",
+     "The Pirates and Steelers play there until 2000."
+    ],
+    "src": [
+     "S9",
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Three Rivers Stadium",
+    "chapter": "Collapse and Reinvention"
+   },
+   {
+    "y": 1971.75,
+    "title": "The U.S. Steel Tower",
+    "lines": [
+     "The U.S. Steel Tower is dedicated on September 30, 1971.",
+     "At 256 meters it is the tallest building in Pittsburgh."
+    ],
+    "src": [
+     "S28",
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "U.S. Steel Tower",
+    "note": "List and infobox give completion 1970 (S13)."
+   },
+   {
+    "y": 1974.6,
+    "title": "Point State Park",
+    "lines": [
+     "The park opens in August 1974 with its fountain at the tip of the Golden Triangle.",
+     "Granite lines mark the outlines of Fort Pitt and Fort Duquesne."
+    ],
+    "src": [
+     "S11"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1982.0,
+    "title": "The mills close",
+    "lines": [
+     "After the 1981-82 recession the steel mills lay off 153,000 workers.",
+     "Closures ripple through railroads, mines and factories."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1985.6,
+    "title": "A headquarters town loses its headquarters",
+    "lines": [
+     "In 1985 Gulf Oil is bought in what was then the largest buyout in history.",
+     "More than 1,000 white-collar jobs vanish in one day."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 1991.5,
+    "title": "The mills come down",
+    "lines": [
+     "The Homestead Works closes in 1986 and is demolished in 1991.",
+     "In the 1990s the Homestead, Duquesne and South Side J&L sites are cleared. The mills are not in this model."
+    ],
+    "src": [
+     "S21",
+     "S2",
+     "S22"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "note": "Honest limit: the mills are demolished and absent from the footprint data."
+   },
+   {
+    "y": 2004.5,
+    "title": "Medicine replaces steel",
+    "lines": [
+     "Medicine has replaced steel as a leading industry.",
+     "Tourism booms: nearly 3,000 hotel rooms open after 2004."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "chapter": "Eds, Meds and Robots",
+    "note": "Year is thematic: S2 says \"since 2004\"; no single date."
+   },
+   {
+    "y": 2010.7,
+    "title": "A new arena across the street",
+    "lines": [
+     "The Penguins move to a new arena in 2010.",
+     "The Civic Arena, the first major arena with a retractable roof, closes."
+    ],
+    "src": [
+     "S8"
+    ],
+    "conf": "high",
+    "shot": "wide"
+   },
+   {
+    "y": 2011.74,
+    "title": "The Igloo comes down",
+    "lines": [
+     "Demolition of the Civic Arena begins on September 26, 2011.",
+     "The cleared Lower Hill site waits for new buildings."
+    ],
+    "src": [
+     "S8",
+     "S13"
+    ],
+    "conf": "high",
+    "shot": "medium",
+    "target": "Civic Arena"
+   },
+   {
+    "y": 2024.5,
+    "title": "The newest tower",
+    "lines": [
+     "The FNB Financial Center, finished in 2024, is the newest tower on the skyline."
+    ],
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Year from the Wikipedia tallest list (S13); not cross-checked."
+   }
+  ],
+  "chapters": [
+   {
+    "y": 1754.0,
+    "title": "Forts on the Forks"
+   },
+   {
+    "y": 1777.0,
+    "title": "A Town on the Frontier"
+   },
+   {
+    "y": 1816.21,
+    "title": "The Iron City"
+   },
+   {
+    "y": 1859.5,
+    "title": "Steel City"
+   },
+   {
+    "y": 1927.0,
+    "title": "Between the Wars"
+   },
+   {
+    "y": 1946.0,
+    "title": "Renaissance"
+   },
+   {
+    "y": 1970.54,
+    "title": "Collapse and Reinvention"
+   },
+   {
+    "y": 2004.5,
+    "title": "Eds, Meds and Robots"
+   }
+  ],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings: Allegheny County / WPRDC building footprints and assessor years built (roof outlines photogrammetrically compiled from 1992-93 aerial photography, updated 2004 and 2015)",
+    "Downtown towers: heights and years from Wikipedia and Wikidata, LiDAR-checked (USGS 3DEP)",
+    "Before 1880, mills, the Lower Hill and the Point warehouses are reconstructed: shapes and dates are estimates",
+    "Streets and rivers: Allegheny County GIS (WPRDC). Terrain: USGS 3DEP",
+    "History: Wikipedia (History of Pittsburgh, Fort Duquesne, Fort Pitt, Great Fire of 1845, 1936 flood, Mellon Arena, Hill District)",
+    "Population: census figures via Wikipedia",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
+  }
  }
 }

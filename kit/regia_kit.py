@@ -60,6 +60,15 @@ WIDE_MIN = 600.0       # m: distanza minima del tetto delle inquadrature 'wide' 
 WIDE_MAX = 3500.0     # m: distanza massima di un'inquadratura 'wide' (oltre, la citta' non si legge)
 
 
+def card_hold(c, reading=None):
+    """Tempo di lettura di un cartello. Senza `regia.reading` (default): hold_s esplicito o 5 s, invariato.
+    Con `regia.reading = {wps, base, min, max}` e senza hold_s esplicito: clamp(base + parole(titolo + righe) / wps, min, max)."""
+    if 'hold_s' in c or not reading: return float(c.get('hold_s', 5.0))
+    words = len(' '.join([str(c.get('title', ''))] + [str(x) for x in c.get('lines', []) or []]).split())
+    h = float(reading.get('base', 3.6)) + words / float(reading.get('wps', 11.0))
+    return float(min(max(h, float(reading.get('min', 4.0))), float(reading.get('max', 9.0))))
+
+
 def ease(u):
     return u * u * (3 - 2 * u)
 
@@ -646,7 +655,7 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         for i, c in enumerate(MO_.get('cards', []) or []):
             y = float(c['y'])
             if not (y_start <= y < 2026.0): warn(f"cartello fuori dagli anni del video, tolto: {c.get('title')} ({y})"); continue
-            h = float(c.get('hold_s', 5.0))
+            h = card_hold(c, (story.get('regia') or {}).get('reading'))
             SOSTE.append({'y0': y, 'y1': y, 'dur': h, 'caption': c['title'], '_i': 10000 + i, '_force': 0.0, '_dis': False,
                           '_card': True, '_tg': D.target(c.get('target')) if c.get('target') else None, 'shot': c.get('shot', 'medium'),
                           '_c': c})
