@@ -73,12 +73,22 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#3d4a3f",
-  "#414f47",
-  "#47544b",
-  "#525a50",
-  "#5e6157"
+  "#394c3c",
+  "#3c5145",
+  "#435648",
+  "#4f5b4d",
+  "#5d6253"
  ],
+ "ground_tint": {
+  "png": "cities/pittsburgh/ground_tint.png",
+  "box": [
+   -12000.0,
+   -12000.0,
+   12000.0,
+   12000.0
+  ],
+  "scene": "S2A_17TNE_20240912_0_L2A"
+ },
  "style": {
   "haze": [
    0.8,
@@ -101,24 +111,24 @@
    "#bdb6aa",
    "#c9c2b4"
   ],
-  "urban_green": "#5a6054",
-  "hedge": "#455249",
-  "blocks": "#63625a",
-  "grass": "#5a6054",
-  "tree": "#455249",
-  "forest_base": "#455249",
-  "park_ground": "#5a6054",
-  "reclaim": "#7f7970",
+  "urban_green": "#586150",
+  "hedge": "#415446",
+  "blocks": "#646257",
+  "grass": "#586150",
+  "tree": "#415446",
+  "forest_base": "#415446",
+  "park_ground": "#586150",
+  "reclaim": "#80796c",
   "urban_phase": "#b8ad98",
-  "street": "#c9c1b0",
+  "street": "#8c8879",
   "rail": "#8a8378",
   "bridge_deck": "#b9b2a4",
   "bridge_side": "#a39d92",
   "smoke": "#3a3532",
   "smoke_alpha": 0.85,
   "flood_water": "#946d3c",
-  "water": "#3b4541",
-  "water2": "#485250",
+  "water": "#475541",
+  "water2": "#576554",
   "water_rough": 0.02,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
@@ -183,15 +193,15 @@
    "#7a7f86"
   ],
   "urban": [
-   "#5a5b54",
-   "#63625a",
-   "#6b6961",
-   "#747168",
-   "#807b73",
-   "#6b6961"
+   "#5a5b51",
+   "#646257",
+   "#6c695d",
+   "#757164",
+   "#817b6f",
+   "#6c695d"
   ],
-  "urban_dark": "#63625a",
-  "street_earth": "#7f7970",
+  "urban_dark": "#646257",
+  "street_earth": "#80796c",
   "sun_color": [
    1.0,
    0.97,

@@ -326,6 +326,15 @@ def land_mat(mode='fields'):
         _fl = [srgb(c_) for c_ in FC]; _mean = tuple(sum(c_[i] for c_ in _fl) / len(_fl) for i in range(3))
         ffm_ = N.new('ShaderNodeMix'); ffm_.data_type = 'RGBA'; L(ffr_.outputs[0], ffm_.inputs['Factor']); L(fout_, ffm_.inputs[6]); ffm_.inputs[7].default_value = (*_mean, 1)
         fout_ = ffm_.outputs[2]
+    if mode == 'fields' and CITY.get('ground_tint'):   # city.look.ground_tint: tinta a bassa frequenza (Sentinel-2 sfocato) moltiplicata sul colore dei campi
+        _gt = CITY['ground_tint']; _gi = bpy.data.images.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), _gt['png'])); _gi.colorspace_settings.name = 'Non-Color'
+        _gx0, _gy0, _gx1, _gy1 = _gt['box']
+        _gm = N.new('ShaderNodeMapping'); _gm.inputs['Location'].default_value = (-_gx0 / (_gx1 - _gx0), -_gy0 / (_gy1 - _gy0), 0); _gm.inputs['Scale'].default_value = (1 / (_gx1 - _gx0), 1 / (_gy1 - _gy0), 1)
+        L(tc.outputs['Object'], _gm.inputs['Vector'])
+        _gn = N.new('ShaderNodeTexImage'); _gn.image = _gi; _gn.interpolation = 'Linear'; _gn.extension = 'EXTEND'; L(_gm.outputs[0], _gn.inputs['Vector'])
+        _gs = N.new('ShaderNodeVectorMath'); _gs.operation = 'SCALE'; _gs.inputs['Scale'].default_value = 2.0; L(_gn.outputs['Color'], _gs.inputs[0])
+        _gx = N.new('ShaderNodeMix'); _gx.data_type = 'RGBA'; _gx.blend_type = 'MULTIPLY'; _gx.inputs['Factor'].default_value = 1.0; L(fout_, _gx.inputs[6]); L(_gs.outputs['Vector'], _gx.inputs[7])
+        fout_ = _gx.outputs[2]
     # sfondo vero DOPO far_flat: far_flat appiattiva verso un tono medio proprio i colori lontani (boschi, banlieue) che servono
     if mode == 'fields' and FAR_IMG is not None: fout_ = far_land(N, L, tc, fout_, um.outputs[2], yv, b)
     L(fout_ if mode == 'fields' else um.outputs[2], b.inputs['Base Color'])

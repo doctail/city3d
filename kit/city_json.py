@@ -35,6 +35,23 @@ def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
     return cx, cy, e
 
 
+
+def _rgb(h): return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
+def _hex(c): return '#%02x%02x%02x' % tuple(int(round(max(0, min(255, v)))) for v in c)
+def _sat1(h, s, tol):
+    r, g, b = _rgb(h); y = 0.2126 * r + 0.7152 * g + 0.0722 * b
+    r2, g2, b2 = (y + (v - y) * s for v in (r, g, b))
+    if r > 0 and b > 0 and b2 > 0:   # il rapporto R/B resta entro tol dall'originale (niente ritorno al giallo)
+        q = (r2 / b2) / (r / b); q = max(1 - tol, min(1 + tol, q)); r2 = b2 * (r / b) * q
+    return _hex((r2, g2, b2))
+def _saturate(st, cfg, s, tol, keys):
+    for k, v in list(st.items()):
+        if k not in keys: continue   # solo i colori del suolo della palette: edifici, cielo, luce restano com'erano
+        if isinstance(v, str) and v[:1] == '#' and len(v) == 7: st[k] = _sat1(v, s, tol)
+        elif isinstance(v, list) and v and all(isinstance(x, str) and x[:1] == '#' for x in v): st[k] = [_sat1(x, s, tol) for x in v]
+    if cfg.get('field_colors'): cfg['field_colors'] = [_sat1(x, s, tol) for x in cfg['field_colors']]
+
+
 def build_city(story):
     c = story['city']; slug = c['slug']
     P = geo.Proj.of(story)
@@ -71,6 +88,20 @@ def build_city(story):
     for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon'):
         if k in lk: st[k] = lk[k]
     if 'exposure' in lk: cfg['exposure'] = lk['exposure']
+    # iterazione 2 (tutte opzionali, solo con city.look): saturation (x su luma, con rapporto R/B tenuto entro rb_tol dall'originale),
+    # water_gain/water_shift (acqua piu' chiara e oliva), street_gain (strade = mediana 'built' x gain), view_look/view_transform, ground_tint
+    if lk.get('saturation'): _saturate(st, cfg, float(lk['saturation']), float(lk.get('rb_tol', 0.045)), set(json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render'].get('style', {})) if lk.get('palette') else set())
+    if lk.get('water_gain') or lk.get('water_shift'):
+        w0 = _rgb(st.get('water', '#3b4541')); w1 = _rgb(st.get('water2', st.get('water', '#485250')))
+        g, sh = float(lk.get('water_gain', 1.0)), lk.get('water_shift', [0, 0, 0])
+        st['water'] = _hex([w0[i] * g + sh[i] for i in range(3)]); st['water2'] = _hex([w1[i] * g + sh[i] for i in range(3)])
+    if lk.get('street_gain') and st.get('urban'):
+        st['street'] = _hex([v * float(lk['street_gain']) for v in _rgb(st['urban'][2])])
+        if 'street_earth' not in st: st['street_earth'] = st['street']
+    if lk.get('view_look'): cfg['look'] = lk['view_look']
+    if lk.get('view_transform'): cfg['view_transform'] = lk['view_transform']
+    if lk.get('ground_tint'):
+        cfg['ground_tint'] = json.load(open(os.path.join(geo.ROOT, 'cities', slug, 'ground_tint.json')))
     st.update(c.get('style', {}))
     if 'night_off' in st and 'night_bld_off' not in c.get('style', {}):   # chiave vecchia nella story: si traduce nel nome letto
         st['night_bld_off'] = st.pop('night_off')

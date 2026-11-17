@@ -5,6 +5,7 @@ Globale e senza chiavi: usa solo S3 pubblico (listing + range request COG), nien
     (la nuvolosita' sta in <scena>.json, proprieta' eo:cloud_cover)
   - ESA WorldCover 2021: https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_<N39W081>_Map.tif
 Uso:  python -m kit.colour_kit <slug> [--season summer|winter] [--years 2024,2025] [--scenes 3]
+Con --tint scrive cities/<slug>/ground_tint.png/.json (tinta di terra sfocata, city.look.ground_tint).
 Scrive cities/<slug>/palette.json (+ palette_report in stdout). La story la attiva con  city.look.palette = "cities/<slug>/palette.json"
 (vedi kit/city_json.py); senza quella chiave nulla cambia.
 Richiede rasterio e numpy (non servono dentro Blender).
@@ -184,8 +185,44 @@ def to_render(pal, ground_dark=0.0):
     return {'style': style, 'top': top}
 
 
+def bake_tint(slug, season='summer', years=(2024, 2025), half=12000.0, cell=15.0, sigma_m=45.0, lum_keep=0.4):
+    """Tinta di terra a bassa frequenza: albedo Sentinel-2 (solo suolo non costruito/non acqua) / mediana del suolo, sfocata (sigma_m),
+    ricampionata su griglia locale in metri. Scrive cities/<slug>/ground_tint.png (+ .json con il box) per city.look.ground_tint.
+    Pixel = tinta/2 (0..255 lineare, 128 = neutro); la luminanza e' ridotta (lum_keep) perche' l'ombreggiatura del rilievo e' gia' nel render."""
+    from PIL import Image
+    from scipy.ndimage import gaussian_filter
+    from pyproj import Transformer
+    st = json.load(open(os.path.join(geo.ROOT, 'cities', slug, 'story.json'))); c = st['city']; lat, lon = float(c['lat0']), float(c['lon0'])
+    P = geo.Proj(lat, lon)
+    dlat = (half + 500) / 111320.0; dlon = (half + 500) / (111320.0 * math.cos(math.radians(lat)))
+    bbox = (lon - dlon, lat - dlat, lon + dlon, lat + dlat)
+    zone, band, sq, epsg = mgrs_tile(lat, lon)
+    pick = pick_scenes(zone, band, sq, list(years), SEASONS[season], 1)[0]
+    rgb, scl, tr, crs = read_scene(pick[1], bbox)
+    wc = read_worldcover(lat, lon, tr, crs, scl.shape)
+    ok = np.isin(scl, SCL_OK) & (rgb.sum(0) > 0) & np.isin(wc, (10, 20, 30, 40, 60))
+    alb = tci_to_srgb(rgb).astype(np.float32)
+    sig = sigma_m / 10.0
+    w = gaussian_filter(ok.astype(np.float32), sig)
+    ch = [gaussian_filter(np.where(ok, alb[i], 0).astype(np.float32), sig) / np.maximum(w, 1e-3) for i in range(3)]
+    med = np.array([np.median(alb[i][ok]) for i in range(3)], np.float32)
+    n = int(2 * half / cell); xs = -half + (np.arange(n) + .5) * cell; ys = half - (np.arange(n) + .5) * cell   # riga 0 = nord
+    X, Y = np.meshgrid(xs, ys); la, lo = P.inv(X, Y)
+    e, nn = Transformer.from_crs('EPSG:4326', crs, always_xy=True).transform(lo, la)
+    ci = np.clip(((e - tr.c) / tr.a).astype(int), 0, ok.shape[1] - 1); ri = np.clip(((nn - tr.f) / tr.e).astype(int), 0, ok.shape[0] - 1)
+    ratio = np.stack([ch[i][ri, ci] / med[i] for i in range(3)], -1); wt = w[ri, ci]
+    ratio = np.where(wt[..., None] > 0.15, ratio, 1.0)
+    lm = ratio.mean(-1, keepdims=True); tint = (ratio / lm) * (1 + lum_keep * (lm - 1))
+    tint = np.clip(tint, 0.7, 1.35)
+    out = os.path.join(geo.ROOT, 'cities', slug)
+    Image.fromarray(np.clip(tint / 2 * 255, 0, 255).astype(np.uint8)).save(os.path.join(out, 'ground_tint.png'))
+    json.dump({'png': f'cities/{slug}/ground_tint.png', 'box': [-half, -half, half, half], 'scene': pick[1].rstrip('/').split('/')[-1]}, open(os.path.join(out, 'ground_tint.json'), 'w'))
+    print('[colour] ground_tint', n, 'x', n, 'tint min/max', tint.min(0).min(0).round(2), tint.max(0).max(0).round(2), 'mean', tint.reshape(-1, 3).mean(0).round(3))
+
+
 def main(argv):
     slug = argv[0]
+    if '--tint' in argv: return bake_tint(slug)
     season = argv[argv.index('--season') + 1] if '--season' in argv else 'summer'
     years = tuple(int(v) for v in argv[argv.index('--years') + 1].split(',')) if '--years' in argv else (2024, 2025)
     n = int(argv[argv.index('--scenes') + 1]) if '--scenes' in argv else 3
