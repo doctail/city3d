@@ -249,7 +249,38 @@
     ],
     "conf": "medium"
    }
-  ]
+  ],
+  "look": {
+   "palette": "cities/pittsburgh/palette.json",
+   "sun_color": [
+    0.9,
+    0.97,
+    1.0
+   ],
+   "sky_horizon": [
+    0.78,
+    0.83,
+    0.9
+   ],
+   "exposure": -2.3,
+   "saturation": 1.7,
+   "water_gain": 1.0,
+   "water_shift": [
+    2,
+    2,
+    0
+   ],
+   "street_gain": 1.3,
+   "ground_tint": true,
+   "sky_tint": [
+    0.86,
+    0.96,
+    1.06
+   ],
+   "rb_tol": 0.06,
+   "building_palette": "us_industrial",
+   "water_coat": 0.5
+  }
  },
  "sources": {
   "S1": {

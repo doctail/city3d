@@ -48,7 +48,7 @@
  "water_z": -1.5,
  "view_transform": "Standard",
  "look": "None",
- "exposure": -2.0,
+ "exposure": -2.3,
  "sun_el": 22,
  "sun_rot": 140,
  "park_trees": 0.02,
@@ -73,12 +73,22 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#677a43",
-  "#78854e",
-  "#8a8a58",
-  "#6e7c48",
-  "#848b5a"
+  "#364c3a",
+  "#3a5144",
+  "#405647",
+  "#4e5c4b",
+  "#5d6251"
  ],
+ "ground_tint": {
+  "png": "cities/pittsburgh/ground_tint.png",
+  "box": [
+   -12000.0,
+   -12000.0,
+   12000.0,
+   12000.0
+  ],
+  "scene": "S2A_17TNE_20240912_0_L2A"
+ },
  "style": {
   "haze": [
    0.8,
@@ -89,36 +99,36 @@
   "pitched_until": 1850,
   "pitched_max_area": 600,
   "glass": [
-   "#7fb2d0",
-   "#6ea6c8",
-   "#8ec0da"
+   "#8fb0c6",
+   "#9cbbd0",
+   "#86a8c0"
   ],
   "glass_h": 70,
   "glass_min_area": 400,
   "window": "#2a3a4a",
   "wall_anc": [
-   "#cfc8bc",
-   "#bdb6aa",
-   "#c9c2b4"
+   "#d7d5ce",
+   "#c7c5c0",
+   "#dadad5"
   ],
-  "urban_green": "#7fb04e",
-  "hedge": "#2f6a25",
-  "blocks": "#8f8778",
-  "grass": "#6f9440",
-  "tree": "#3b5a2c",
-  "forest_base": "#5d9c3f",
-  "park_ground": "#5f8a3e",
-  "reclaim": "#c9b993",
+  "urban_green": "#57614d",
+  "hedge": "#3e5445",
+  "blocks": "#636255",
+  "grass": "#57614d",
+  "tree": "#3e5445",
+  "forest_base": "#3e5445",
+  "park_ground": "#57614d",
+  "reclaim": "#7f7969",
   "urban_phase": "#b8ad98",
-  "street": "#c9c1b0",
+  "street": "#8b8878",
   "rail": "#8a8378",
   "bridge_deck": "#b9b2a4",
   "bridge_side": "#a39d92",
   "smoke": "#3a3532",
   "smoke_alpha": 0.85,
   "flood_water": "#946d3c",
-  "water": "#2f6f86",
-  "water2": "#4a8ea3",
+  "water": "#394940",
+  "water2": "#465650",
   "water_rough": 0.02,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
@@ -148,49 +158,114 @@
   "bulb": 14.0,
   "bulb_size": 1.6,
   "wall_old": [
-   "#e4dac4",
-   "#d9cdb1",
-   "#e9e1cf",
-   "#cdbf9f",
-   "#d4c6a6",
-   "#c8b896",
-   "#ddd0b5",
-   "#bfae8c"
+   "#c3988b",
+   "#cdcbc6",
+   "#d3c7b5",
+   "#b5897d"
   ],
   "roof_old": [
-   "#6a6f77",
-   "#767a80",
-   "#5f646b",
-   "#8a5f4b",
-   "#94654f",
-   "#70757c"
+   "#949498",
+   "#a19d9a",
+   "#948b86",
+   "#85858a"
   ],
   "wall_new": [
-   "#e8dfca",
-   "#e2d7bf",
-   "#ece5d4",
-   "#ddd1b6",
-   "#d6c9ab",
-   "#efe9dc",
-   "#cfc3a6"
+   "#c5958b",
+   "#b98c7e",
+   "#d7d5ce",
+   "#d8cebb",
+   "#c7c5c0",
+   "#cea597"
   ],
   "roof_new": [
-   "#7f868f",
-   "#8b9199",
-   "#737a83",
-   "#969ca3",
-   "#6a7179",
-   "#7a7f86"
+   "#949498",
+   "#a19d9a",
+   "#85858a",
+   "#aca8a3",
+   "#948b86",
+   "#bababe",
+   "#88888c"
   ],
   "urban": [
-   "#cdc5b4",
-   "#c5bdab",
-   "#d2cab9",
-   "#bdb5a3",
-   "#c9c1af",
-   "#b9b09e"
+   "#5a5c50",
+   "#636255",
+   "#6b695c",
+   "#747162",
+   "#817b6d",
+   "#6b695c"
   ],
-  "urban_dark": "#d6cebd"
+  "urban_dark": "#636255",
+  "street_earth": "#7f7969",
+  "sun_color": [
+   0.9,
+   0.97,
+   1.0
+  ],
+  "sky_horizon": [
+   0.78,
+   0.83,
+   0.9
+  ],
+  "sky_tint": [
+   0.86,
+   0.96,
+   1.06
+  ],
+  "wall_eras": [
+   [
+    1915,
+    [
+     "#c5958b",
+     "#b98c7e",
+     "#ac8479",
+     "#cea597",
+     "#bb9589",
+     "#c7c5c0",
+     "#d8cebb",
+     "#c5958b"
+    ]
+   ],
+   [
+    1950,
+    [
+     "#cea597",
+     "#bb9084",
+     "#d8cebb",
+     "#cfc8ba",
+     "#c7c5c0",
+     "#c5958b",
+     "#dad9c4",
+     "#ac8479"
+    ]
+   ],
+   [
+    9999,
+    [
+     "#d9d5c8",
+     "#d0cdc2",
+     "#dad9c4",
+     "#c1bfba",
+     "#c49a8d",
+     "#dad7cd",
+     "#cdc8bc",
+     "#c7c5c0"
+    ]
+   ]
+  ],
+  "wall_tall": [
+   "#b4bac2",
+   "#a3aab3",
+   "#bfc3c7",
+   "#c8c8c4",
+   "#9199a3",
+   "#b0b5ba"
+  ],
+  "roof_tall": [
+   "#8e949c",
+   "#9ca2a9"
+  ],
+  "tall_h": 35,
+  "water_coat": 0.5
  },
  "cover": {
   "cam": [

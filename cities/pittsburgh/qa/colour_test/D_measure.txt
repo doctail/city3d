@@ -1,0 +1,7 @@
+0006.jpg mean all [85.1 88.3 74.7]
+  tree   render median [84. 90. 74.]  real(S2 albedo-sRGB) [69. 82. 73.]  ratio R/G/B-norm render [1.02 1.09 0.9 ] real [0.92 1.1  0.98]  n=204361
+  grass  render median [87. 94. 77.]  real(S2 albedo-sRGB) [90. 96. 84.]  ratio R/G/B-norm render [1.01 1.09 0.9 ] real [1.01 1.06 0.93]  n=16975
+  crop   render median [88. 95. 76.]  real(S2 albedo-sRGB) [87. 94. 80.]  ratio R/G/B-norm render [1.02 1.1  0.88] real [1.   1.08 0.92]  n=537
+  built  render median [86. 89. 76.]  real(S2 albedo-sRGB) [107. 105.  97.]  ratio R/G/B-norm render [1.03 1.06 0.91] real [1.04 1.02 0.94]  n=253452
+  bare   render median [90. 94. 78.]  real(S2 albedo-sRGB) [127. 121. 112.]  ratio R/G/B-norm render [1.03 1.08 0.89] real [1.06 1.01 0.93]  n=2778
+  water  render median [83. 93. 71.]  real(S2 albedo-sRGB) [59. 69. 65.]  ratio R/G/B-norm render [1.01 1.13 0.86] real [0.91 1.08 1.01]  n=40294

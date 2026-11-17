@@ -4,7 +4,7 @@ Nessuna chiave resta al default NYC di build_render.py (lat0/lon0, grid_deg, his
 parks, roads, outer sono sempre scritte). Valida il risultato (chiavi, tipi, colori, box).
 
 Uso:  python -m kit.city_json <slug> [--out city_<slug>.json] [--force] [--check-only]
-Override opzionali nella story: city.style (dict che si fonde sullo stile del preset),
+Override opzionali nella story: city.look (palette reale + luce, vedi kit/colour_kit.py), city.style (dict che si fonde sullo stile del preset),
 city.city_overrides (dict di chiavi top-level), city.cover (come in city_roma.json), city.shorts.
 """
 import json, math, os, re, sys
@@ -35,6 +35,37 @@ def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
     return cx, cy, e
 
 
+
+BUILDING_PALETTES = {
+    # citta' industriale USA (Pittsburgh): mattone rosso-bruno, pietra grigia, tan; tetti in asfalto scuro; torri grigio/vetro azzurro. Niente giallo.
+    'us_industrial': {   # v3 (correzione luminanza owner): mattone brunastro attenuato, pietra grigio-tan, tetti grigio medio, torri grigio chiaro/vetro blu-grigio
+        'wall_old': ['#c3988b', '#cdcbc6', '#d3c7b5', '#b5897d'],
+        'wall_new': ['#c5958b', '#b98c7e', '#d7d5ce', '#d8cebb', '#c7c5c0', '#cea597'],
+        'wall_anc': ['#d7d5ce', '#c7c5c0', '#dadad5'],
+        'wall_eras': [[1915, ['#c5958b', '#b98c7e', '#ac8479', '#cea597', '#bb9589', '#c7c5c0', '#d8cebb', '#c5958b']],
+                      [1950, ['#cea597', '#bb9084', '#d8cebb', '#cfc8ba', '#c7c5c0', '#c5958b', '#dad9c4', '#ac8479']],
+                      [9999, ['#d9d5c8', '#d0cdc2', '#dad9c4', '#c1bfba', '#c49a8d', '#dad7cd', '#cdc8bc', '#c7c5c0']]],
+        'roof_old': ['#949498', '#a19d9a', '#948b86', '#85858a'], 'roof_new': ['#949498', '#a19d9a', '#85858a', '#aca8a3', '#948b86', '#bababe', '#88888c'],
+        'wall_tall': ['#b4bac2', '#a3aab3', '#bfc3c7', '#c8c8c4', '#9199a3', '#b0b5ba'], 'roof_tall': ['#8e949c', '#9ca2a9'], 'tall_h': 35,
+        'glass': ['#8fb0c6', '#9cbbd0', '#86a8c0'],
+    },
+}
+def _rgb(h): return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
+def _hex(c): return '#%02x%02x%02x' % tuple(int(round(max(0, min(255, v)))) for v in c)
+def _sat1(h, s, tol):
+    r, g, b = _rgb(h); y = 0.2126 * r + 0.7152 * g + 0.0722 * b
+    r2, g2, b2 = (y + (v - y) * s for v in (r, g, b))
+    if r > 0 and b > 0 and b2 > 0:   # il rapporto R/B resta entro tol dall'originale (niente ritorno al giallo)
+        q = (r2 / b2) / (r / b); q = max(1 - tol, min(1 + tol, q)); r2 = b2 * (r / b) * q
+    return _hex((r2, g2, b2))
+def _saturate(st, cfg, s, tol, keys):
+    for k, v in list(st.items()):
+        if k not in keys: continue   # solo i colori del suolo della palette: edifici, cielo, luce restano com'erano
+        if isinstance(v, str) and v[:1] == '#' and len(v) == 7: st[k] = _sat1(v, s, tol)
+        elif isinstance(v, list) and v and all(isinstance(x, str) and x[:1] == '#' for x in v): st[k] = [_sat1(x, s, tol) for x in v]
+    if cfg.get('field_colors'): cfg['field_colors'] = [_sat1(x, s, tol) for x in cfg['field_colors']]
+
+
 def build_city(story):
     c = story['city']; slug = c['slug']
     P = geo.Proj.of(story)
@@ -61,7 +92,34 @@ def build_city(story):
     elif span > 900: cfg['bin'], cfg['dbin'] = 6, 16
     for k in PASSTHROUGH:
         if k in c: cfg[k] = c[k]
-    st = dict(style); st.update(c.get('style', {}))
+    st = dict(style)
+    # look reale (opzionale): city.look = {palette: "cities/<slug>/palette.json" (da kit/colour_kit.py), sun_color: [r,g,b], sky_horizon: [r,g,b] lineare, exposure, sun_energy, sky_light}
+    # Senza city.look il json generato e' identico a prima.
+    lk = c.get('look') or {}
+    if lk.get('palette'):
+        pal = json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render']
+        st.update(pal.get('style', {})); cfg.update(pal.get('top', {}))
+    for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon', 'sky_tint'):
+        if k in lk: st[k] = lk[k]
+    if 'exposure' in lk: cfg['exposure'] = lk['exposure']
+    # iterazione 2 (tutte opzionali, solo con city.look): saturation (x su luma, con rapporto R/B tenuto entro rb_tol dall'originale),
+    # water_gain/water_shift (acqua piu' chiara e oliva), street_gain (strade = mediana 'built' x gain), view_look/view_transform, ground_tint
+    if lk.get('saturation'): _saturate(st, cfg, float(lk['saturation']), float(lk.get('rb_tol', 0.045)), set(json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render'].get('style', {})) if lk.get('palette') else set())
+    if lk.get('water_gain') or lk.get('water_shift'):
+        w0 = _rgb(st.get('water', '#3b4541')); w1 = _rgb(st.get('water2', st.get('water', '#485250')))
+        g, sh = float(lk.get('water_gain', 1.0)), lk.get('water_shift', [0, 0, 0])
+        st['water'] = _hex([w0[i] * g + sh[i] for i in range(3)]); st['water2'] = _hex([w1[i] * g + sh[i] for i in range(3)])
+    if lk.get('street_gain') and st.get('urban'):
+        st['street'] = _hex([v * float(lk['street_gain']) for v in _rgb(st['urban'][2])])
+        if 'street_earth' not in st: st['street_earth'] = st['street']
+    if lk.get('building_palette'):   # iterazione 3: tavolozza edifici per citta' (nome in BUILDING_PALETTES o dict di chiavi di stile); solo con city.look
+        bp_ = lk['building_palette']; st.update(BUILDING_PALETTES[bp_] if isinstance(bp_, str) else bp_)
+    if lk.get('water_coat'): st['water_coat'] = lk['water_coat']
+    if lk.get('view_look'): cfg['look'] = lk['view_look']
+    if lk.get('view_transform'): cfg['view_transform'] = lk['view_transform']
+    if lk.get('ground_tint'):
+        cfg['ground_tint'] = json.load(open(os.path.join(geo.ROOT, 'cities', slug, 'ground_tint.json')))
+    st.update(c.get('style', {}))
     if 'night_off' in st and 'night_bld_off' not in c.get('style', {}):   # chiave vecchia nella story: si traduce nel nome letto
         st['night_bld_off'] = st.pop('night_off')
     st.pop('night_off', None)
