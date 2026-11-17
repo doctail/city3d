@@ -75,3 +75,5 @@ Nessun host ha risposto 403 al CONNECT in questa sessione. `en.wikipedia.org` AP
 - Tenuto 1754. Citta' "piena" (>=200 edifici vivi, predecessori inclusi, misurato su buildings.json + hist.json): 1783,99 (50 s di video); <50 edifici fino a ~1773 (40 s dal termine del riavvolgimento). Con i soli edifici attuali sarebbe oltre il 1850 (232).
 - Tolta la sosta del Point (nessun monumento esiste prima del 1764): nessun hover prima del Great Fire 1845. Cartelli tolti: 1755,5 Braddock (una riga nel cartello 1754), 1763,5 Assedio (una riga nel cartello 1758,9). Tenuti: 1754 (hold 12 s, ~230 caratteri a ~20 caratteri/s come Marsiglia), 1758,9 (9 s), 1764,5 Block House (7 s), poi 1777 ecc. invariati.
 - Contatore: rmax 8,0 e rmin 1,0 non limitano (tetto rate_cap 30 y/s): 1754->1758,9 in 0,2 s. Non si ottengono 8-12 s di corsa: i secondi sono dei cartelli e del volo iniziale.
+
+- Tempo dei cartelli: `regia.reading` {wps 11, base 3.6, min 4, max 9}, misurato su 137 cartelli di Lione/Marsiglia/Valencia (fit base 3,5-3,7 s, ~10,5-11,7 parole/s; correlazione 0,74, hold a gradini di 0,5-1 s: dato rumoroso [Likely]). Nessun limite di lunghezza; nessun hold_s esplicito.
