@@ -977,7 +977,12 @@
     "h": 6,
     "from": 1754.9,
     "to": 1758.89,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Duquesne barracks",
@@ -1002,7 +1007,12 @@
     "h": 6,
     "from": 1755.0,
     "to": 1758.89,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Duquesne storehouse",
@@ -1027,7 +1037,12 @@
     "h": 5,
     "from": 1755.0,
     "to": 1758.89,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Pitt barracks",
@@ -1052,7 +1067,12 @@
     "h": 6.5,
     "from": 1760.1,
     "to": 1797.6,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Pitt barracks",
@@ -1077,7 +1097,12 @@
     "h": 6.5,
     "from": 1760.25,
     "to": 1797.6,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Pitt barracks",
@@ -1102,7 +1127,12 @@
     "h": 6.5,
     "from": 1760.4,
     "to": 1797.6,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Pitt barracks",
@@ -1127,7 +1157,12 @@
     "h": 6.5,
     "from": 1760.55,
     "to": 1797.6,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    },
    {
     "name": "Fort Pitt magazine",
@@ -1152,7 +1187,12 @@
     "h": 5,
     "from": 1760.25,
     "to": 1797.6,
-    "fine": true
+    "fine": true,
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Interior layout schematic (barracks/storehouse/magazine placed inside the walls; positions and sizes are not surveyed). Existence of the fort is sourced; these inner buildings are illustrative."
    }
   ],
   "fires": [
