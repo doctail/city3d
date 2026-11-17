@@ -10281,16 +10281,42 @@
   "soste": [
    {
     "y0": 1754.4,
-    "y1": 1762.6,
+    "y1": 1755.2,
     "dur": 8,
-    "caption": "Fort Duquesne and Fort Pitt (1754-1762)",
+    "caption": "Fort Duquesne (1754)",
     "target": "area:[40.44180,-80.01240,130]",
     "shot": "close",
     "drone_d": 650.0,
     "fx": "build",
     "conf": "medium",
     "weight": 9,
-    "note": "Hover starts when Fort Duquesne walls exist (built from 1754.34); Forks card rides it."
+    "note": "Hover while the Forks card is read; Fort Duquesne walls built from 1754.34."
+   },
+   {
+    "y0": 1758.5,
+    "y1": 1759.5,
+    "dur": 7,
+    "caption": "Fort Pitt (1758-1761)",
+    "target": "area:[40.44190,-80.01120,130]",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 8,
+    "note": "Hover for the Pittsburgh-gets-its-name card (1758.9); Fort Pitt walls drawn 1759.0-1761.5."
+   },
+   {
+    "y0": 1764.2,
+    "y1": 1765.0,
+    "dur": 6,
+    "caption": "The Block House (1764)",
+    "target": "Fort Pitt Block House",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 8,
+    "note": "Hover for the Block House card (1764.5)."
    },
    {
     "y0": 1816.0,
