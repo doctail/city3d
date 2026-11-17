@@ -113,6 +113,8 @@ def build_city(story):
         w0 = _rgb(st.get('water', '#3b4541')); w1 = _rgb(st.get('water2', st.get('water', '#485250')))
         g, sh = float(lk.get('water_gain', 1.0)), lk.get('water_shift', [0, 0, 0])
         st['water'] = _hex([w0[i] * g + sh[i] for i in range(3)]); st['water2'] = _hex([w1[i] * g + sh[i] for i in range(3)])
+    if lk.get('water_color'):   # city.look.water_color: [colore, colore2] esadecimali dell'acqua (solo il materiale acqua); senza chiave nulla cambia
+        _wc = lk['water_color']; st['water'] = _wc[0]; st['water2'] = _wc[1] if len(_wc) > 1 else _wc[0]
     if lk.get('street_gain') and st.get('urban'):
         st['street'] = _hex([v * float(lk['street_gain']) for v in _rgb(st['urban'][2])])
         if 'street_earth' not in st: st['street_earth'] = st['street']
