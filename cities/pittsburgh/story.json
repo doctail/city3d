@@ -316,6 +316,55 @@
    ],
    "water_glint": 0.85,
    "water_sun": 0.0
+  },
+  "cover": {
+   "cam": [
+    -1250,
+    -1000,
+    330,
+    -330,
+    120,
+    80
+   ],
+   "lens": 35,
+   "years": [
+    1754.97,
+    2026
+   ],
+   "night_years": [],
+   "text_size": 104,
+   "shots": [
+    {
+     "tag": "forts",
+     "year": 1754.97,
+     "cam": [
+      -920,
+      15,
+      140,
+      -1050,
+      125,
+      3
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "Fort Duquesne walls complete (1754.96); high SE oblique (elev ~35 deg), fort fills the left half, Allegheny/Ohio and the Point around it. Thumbnail left, label 1754. Crop --lbox 470,0,1050 on the 1920 frame"
+    },
+    {
+     "tag": "now",
+     "year": 2026,
+     "cam": [
+      -1250,
+      -1000,
+      330,
+      -330,
+      120,
+      80
+     ],
+     "lens": 35,
+     "night": false,
+     "note": "Mt Washington view NE: Downtown towers, Monongahela and Allegheny. Thumbnail right half, NOW. Crop --rbox 800,0,1050 on the 1920 frame"
+    }
+   ]
   }
  },
  "sources": {
