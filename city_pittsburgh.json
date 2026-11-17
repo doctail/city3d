@@ -48,8 +48,8 @@
  "water_z": -1.5,
  "view_transform": "Standard",
  "look": "None",
- "exposure": -2.3,
- "sun_el": 22,
+ "exposure": -1.6,
+ "sun_el": 34,
  "sun_rot": 140,
  "park_trees": 0.02,
  "block_trees": 0.0008,
@@ -132,8 +132,8 @@
   "water_rough": 0.02,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
-  "sky_light": 0.35,
-  "sun_energy": 5.0,
+  "sky_light": 0.167,
+  "sun_energy": 1.78,
   "sky_in_reflections": true,
   "sunset_el": 4.0,
   "sunset_sun": 9.0,
@@ -197,9 +197,9 @@
   "urban_dark": "#636255",
   "street_earth": "#7f7969",
   "sun_color": [
-   0.9,
-   0.97,
-   1.0
+   1.0,
+   0.96,
+   0.9
   ],
   "sky_horizon": [
    0.78,
@@ -207,9 +207,36 @@
    0.9
   ],
   "sky_tint": [
-   0.86,
-   0.96,
+   0.9,
+   0.97,
    1.06
+  ],
+  "sky_ramp": [
+   [
+    1.68,
+    2.061,
+    2.557
+   ],
+   [
+    0.084,
+    0.477,
+    1.876
+   ],
+   [
+    1.68,
+    2.061,
+    2.557
+   ],
+   [
+    0.943,
+    1.587,
+    2.605
+   ],
+   [
+    0.345,
+    0.943,
+    2.462
+   ]
   ],
   "wall_eras": [
    [
