@@ -70,3 +70,8 @@ Nessun host ha risposto 403 al CONNECT in questa sessione. `en.wikipedia.org` AP
 - Rigenerare: `python -m kit build pittsburgh` (30 s) con i dati `data_pittsburgh` (non versionati): i file derivati (`schedule_pittsburgh.json`, `city_pittsburgh.json`, `montaggio/*`) NON sono stati committati su questo ramo: andranno rigenerati dopo l'unione con il ramo colore (`look`, non toccato qui).
 - Prima del GO: yb-camera guarda 3 fotogrammi di volo e un hover del Point (nessuna immagine vista); yb-modeler controlla i forti, Block House, Civic Arena (cupola), Three Rivers/Forbes (forma di default), US Steel Tower (impronta triangolare), CoL; yb-packaging decide la miniatura 1754 (vedi sopra) e prepara i capitoli con gli orari del render.
 - Costo pod: **non misurato**; citta' di ~180K edifici (>100K): niente anteprima, direttamente `full`. Nessun numero finche' non c'e' una base misurata per Pittsburgh.
+
+## Revisione 17/11 (decisione del proprietario: parte iniziale veloce)
+- Tenuto 1754. Citta' "piena" (>=200 edifici vivi, predecessori inclusi, misurato su buildings.json + hist.json): 1783,99 (50 s di video); <50 edifici fino a ~1773 (40 s dal termine del riavvolgimento). Con i soli edifici attuali sarebbe oltre il 1850 (232).
+- Tolta la sosta del Point (nessun monumento esiste prima del 1764): nessun hover prima del Great Fire 1845. Cartelli tolti: 1755,5 Braddock (una riga nel cartello 1754), 1763,5 Assedio (una riga nel cartello 1758,9). Tenuti: 1754 (hold 12 s, ~230 caratteri a ~20 caratteri/s come Marsiglia), 1758,9 (9 s), 1764,5 Block House (7 s), poi 1777 ecc. invariati.
+- Contatore: rmax 8,0 e rmin 1,0 non limitano (tetto rate_cap 30 y/s): 1754->1758,9 in 0,2 s. Non si ottengono 8-12 s di corsa: i secondi sono dei cartelli e del volo iniziale.

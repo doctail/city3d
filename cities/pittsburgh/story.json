@@ -9549,22 +9549,6 @@
   },
   "soste": [
    {
-    "y0": 1754.3,
-    "y1": 1764.9,
-    "dur": 10,
-    "caption": "Fort Duquesne, then Fort Pitt (1754-64)",
-    "target": "area:[40.4416,-80.0112,330]",
-    "shot": "wide",
-    "fx": "hammer",
-    "src": [
-     "S3",
-     "S4"
-    ],
-    "conf": "medium",
-    "weight": "max",
-    "note": "Opening hover at the Point; the four cards of 1755-64 ride this hover. 1754.30 = the French arrive (18 April)."
-   },
-   {
     "y0": 1845.24,
     "y1": 1845.34,
     "dur": 6,
@@ -9767,10 +9751,11 @@
     "y": 1754.0,
     "title": "The Forks of the Ohio",
     "lines": [
-     "Virginians start a small fort where the Allegheny and Monongahela meet, in February 1754.",
-     "About 500 French soldiers force them out in April and build Fort Duquesne."
+     "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
+     "About 500 French soldiers force them out in April and build Fort Duquesne.",
+     "They keep the Forks for four years and beat a British army in 1755."
     ],
-    "hold_s": 7,
+    "hold_s": 12,
     "src": [
      "S3",
      "S5"
@@ -9780,50 +9765,21 @@
     "chapter": "Forts on the Forks"
    },
    {
-    "y": 1755.52,
-    "title": "Braddock is defeated",
-    "lines": [
-     "On July 9, 1755, French and Native forces destroy a British army nine miles from the fort.",
-     "The French keep the Forks for three more years."
-    ],
-    "hold_s": 5,
-    "src": [
-     "S5",
-     "S3"
-    ],
-    "conf": "high",
-    "shot": "wide"
-   },
-   {
     "y": 1758.9,
     "title": "Pittsburgh gets its name",
     "lines": [
-     "The French blow up Fort Duquesne on November 24, 1758 and withdraw.",
-     "General Forbes occupies the ruins and names the place for William Pitt."
+     "The French blow up Fort Duquesne on November 24, 1758. General Forbes names the ruins for William Pitt.",
+     "The British build Fort Pitt in 1759-61 and hold it through the siege of 1763."
     ],
-    "hold_s": 6,
+    "hold_s": 9,
     "src": [
      "S3",
-     "S11"
-    ],
-    "conf": "high",
-    "shot": "wide"
-   },
-   {
-    "y": 1763.47,
-    "title": "The siege of Fort Pitt",
-    "lines": [
-     "Native forces besiege the new pentagonal fort from June 22, 1763, in Pontiac's War.",
-     "It holds until Colonel Bouquet relieves it in August."
-    ],
-    "hold_s": 6,
-    "src": [
+     "S11",
      "S4",
      "S5"
     ],
     "conf": "high",
-    "shot": "wide",
-    "note": "S4 says relieved 10 Aug (Bushy Run); Timeline S5 says the siege ends 20 Aug."
+    "shot": "wide"
    },
    {
     "y": 1764.5,
@@ -9832,7 +9788,7 @@
      "Colonel Bouquet adds a brick redoubt in 1764.",
      "It still stands: the oldest authenticated building west of the Alleghenies."
     ],
-    "hold_s": 6,
+    "hold_s": 7,
     "src": [
      "S2",
      "S5",
