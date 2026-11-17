@@ -44,7 +44,21 @@
     "#6aa0c8"
    ]
   ],
-  "data_dir": "data_pittsburgh"
+  "data_dir": "data_pittsburgh",
+  "look": {
+   "palette": "cities/pittsburgh/palette.json",
+   "sun_color": [
+    1.0,
+    0.97,
+    0.93
+   ],
+   "sky_horizon": [
+    0.78,
+    0.83,
+    0.9
+   ],
+   "exposure": -2.6
+  }
  },
  "sources": {
   "S1": {

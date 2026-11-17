@@ -4,7 +4,7 @@ Nessuna chiave resta al default NYC di build_render.py (lat0/lon0, grid_deg, his
 parks, roads, outer sono sempre scritte). Valida il risultato (chiavi, tipi, colori, box).
 
 Uso:  python -m kit.city_json <slug> [--out city_<slug>.json] [--force] [--check-only]
-Override opzionali nella story: city.style (dict che si fonde sullo stile del preset),
+Override opzionali nella story: city.look (palette reale + luce, vedi kit/colour_kit.py), city.style (dict che si fonde sullo stile del preset),
 city.city_overrides (dict di chiavi top-level), city.cover (come in city_roma.json), city.shorts.
 """
 import json, math, os, re, sys
@@ -61,7 +61,17 @@ def build_city(story):
     elif span > 900: cfg['bin'], cfg['dbin'] = 6, 16
     for k in PASSTHROUGH:
         if k in c: cfg[k] = c[k]
-    st = dict(style); st.update(c.get('style', {}))
+    st = dict(style)
+    # look reale (opzionale): city.look = {palette: "cities/<slug>/palette.json" (da kit/colour_kit.py), sun_color: [r,g,b], sky_horizon: [r,g,b] lineare, exposure, sun_energy, sky_light}
+    # Senza city.look il json generato e' identico a prima.
+    lk = c.get('look') or {}
+    if lk.get('palette'):
+        pal = json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render']
+        st.update(pal.get('style', {})); cfg.update(pal.get('top', {}))
+    for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon'):
+        if k in lk: st[k] = lk[k]
+    if 'exposure' in lk: cfg['exposure'] = lk['exposure']
+    st.update(c.get('style', {}))
     if 'night_off' in st and 'night_bld_off' not in c.get('style', {}):   # chiave vecchia nella story: si traduce nel nome letto
         st['night_bld_off'] = st.pop('night_off')
     st.pop('night_off', None)

@@ -48,7 +48,7 @@
  "water_z": -1.5,
  "view_transform": "Standard",
  "look": "None",
- "exposure": -2.0,
+ "exposure": -2.6,
  "sun_el": 22,
  "sun_rot": 140,
  "park_trees": 0.02,
@@ -73,11 +73,11 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#677a43",
-  "#78854e",
-  "#8a8a58",
-  "#6e7c48",
-  "#848b5a"
+  "#3d4a3f",
+  "#414f47",
+  "#47544b",
+  "#525a50",
+  "#5e6157"
  ],
  "style": {
   "haze": [
@@ -101,14 +101,14 @@
    "#bdb6aa",
    "#c9c2b4"
   ],
-  "urban_green": "#7fb04e",
-  "hedge": "#2f6a25",
-  "blocks": "#8f8778",
-  "grass": "#6f9440",
-  "tree": "#3b5a2c",
-  "forest_base": "#5d9c3f",
-  "park_ground": "#5f8a3e",
-  "reclaim": "#c9b993",
+  "urban_green": "#5a6054",
+  "hedge": "#455249",
+  "blocks": "#63625a",
+  "grass": "#5a6054",
+  "tree": "#455249",
+  "forest_base": "#455249",
+  "park_ground": "#5a6054",
+  "reclaim": "#7f7970",
   "urban_phase": "#b8ad98",
   "street": "#c9c1b0",
   "rail": "#8a8378",
@@ -117,8 +117,8 @@
   "smoke": "#3a3532",
   "smoke_alpha": 0.85,
   "flood_water": "#946d3c",
-  "water": "#2f6f86",
-  "water2": "#4a8ea3",
+  "water": "#3b4541",
+  "water2": "#485250",
   "water_rough": 0.02,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
@@ -183,14 +183,25 @@
    "#7a7f86"
   ],
   "urban": [
-   "#cdc5b4",
-   "#c5bdab",
-   "#d2cab9",
-   "#bdb5a3",
-   "#c9c1af",
-   "#b9b09e"
+   "#5a5b54",
+   "#63625a",
+   "#6b6961",
+   "#747168",
+   "#807b73",
+   "#6b6961"
   ],
-  "urban_dark": "#d6cebd"
+  "urban_dark": "#63625a",
+  "street_earth": "#7f7970",
+  "sun_color": [
+   1.0,
+   0.97,
+   0.93
+  ],
+  "sky_horizon": [
+   0.78,
+   0.83,
+   0.9
+  ]
  },
  "cover": {
   "cam": [

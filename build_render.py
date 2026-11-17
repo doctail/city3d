@@ -1311,7 +1311,7 @@ def sky_grad():
     sp = WN.new('ShaderNodeSeparateXYZ'); WL(nd.outputs[0], sp.inputs[0])
     rp = WN.new('ShaderNodeValToRGB'); WL(sp.outputs['Z'], rp.inputs[0]); cr_ = rp.color_ramp; cr_.interpolation = 'EASE'
     _SK = {'sunset': [(1.0, 0.55, 0.28), (0.12, 0.14, 0.32), (1.0, 0.62, 0.38), (0.78, 0.52, 0.55), (0.32, 0.30, 0.52)]}.get(LIGHT,
-           [HAZE, (0.08, 0.20, 0.52), (0.86, 0.78, 0.70), (0.50, 0.62, 0.84), (0.20, 0.36, 0.70)])
+           [HAZE, (0.08, 0.20, 0.52), tuple(ST.get('sky_horizon', (0.86, 0.78, 0.70))), (0.50, 0.62, 0.84), (0.20, 0.36, 0.70)])   # sky_horizon: city.look (default invariato)
     cr_.elements[0].position = 0.0; cr_.elements[0].color = (*_SK[0], 1)
     cr_.elements[1].position = 0.5; cr_.elements[1].color = (*_SK[1], 1)
     for p_, c_ in [(0.035, _SK[2]), (0.10, _SK[3]), (0.25, _SK[4])]:
@@ -1348,7 +1348,7 @@ if ST.get('sky_in_reflections'):   # l'acqua e i vetri riflettono il cielo sfuma
 else: WL(lp.outputs['Is Camera Ray'], mxw.inputs[0])
 WL(bg.outputs[0], mxw.inputs[1]); WL(bg2.outputs[0], mxw.inputs[2])
 WL(mxw.outputs[0], WN['World Output'].inputs['Surface'])
-sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4); sun.angle = math.radians(1.0); sun.color = (1, 0.84, 0.66)
+sun = bpy.data.lights.new('sun', 'SUN'); sun.energy = ST.get('sun_energy', 4.4); sun.angle = math.radians(1.0); sun.color = tuple(ST.get('sun_color', (1, 0.84, 0.66)))   # sun_color: city.look.sun_color (default invariato)
 if NIGHT: sun.energy = ST.get('moon', 0.35); sun.color = (0.55, 0.65, 1.0)
 if LIGHT == 'twilight': sun.energy = ST.get('twilight_sun', 0.6); sun.color = (0.62, 0.62, 0.95)
 if LIGHT == 'sunset': sun.energy = ST.get('sunset_sun', 4.2); sun.color = (1.0, 0.52, 0.24)
