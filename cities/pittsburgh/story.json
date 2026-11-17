@@ -10300,17 +10300,56 @@
   },
   "soste": [
    {
-    "y0": 1755.0,
-    "y1": 1762.6,
+    "y0": 1754.4,
+    "y1": 1755.2,
     "dur": 8,
-    "caption": "Fort Duquesne and Fort Pitt (1755-1762)",
+    "caption": "Fort Duquesne (1754)",
     "target": "area:[40.44180,-80.01240,130]",
     "shot": "close",
     "drone_d": 650.0,
     "fx": "build",
     "conf": "medium",
     "weight": 9,
-    "note": "Hover on the French fort so the Forks card is read with the fort in frame (walls complete 1755.0)."
+    "note": "Hover while the Forks card is read; Fort Duquesne walls built from 1754.34."
+   },
+   {
+    "y0": 1758.5,
+    "y1": 1759.5,
+    "dur": 7,
+    "caption": "Fort Pitt (1758-1761)",
+    "target": "area:[40.44190,-80.01120,130]",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 8,
+    "note": "Hover for the Pittsburgh-gets-its-name card (1758.9); Fort Pitt walls drawn 1759.0-1761.5."
+   },
+   {
+    "y0": 1764.2,
+    "y1": 1765.0,
+    "dur": 6,
+    "caption": "The Block House (1764)",
+    "target": "Fort Pitt Block House",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 8,
+    "note": "Hover for the Block House card (1764.5)."
+   },
+   {
+    "y0": 1816.0,
+    "y1": 1842.0,
+    "dur": 12.0,
+    "caption": "Pittsburgh becomes a city (1816-1841)",
+    "target": "area:[40.4415,-80.0035,500]",
+    "shot": "wide",
+    "fx": "build",
+    "conf": "high",
+    "weight": 5,
+    "note": "Hover on the town at the Point so the 'A city at last' card (1816) is read with the town in frame; the leg from the forts to the Great Fire otherwise looked away from the city.",
+    "drone_d": 800.0
    },
    {
     "y0": 1845.24,
@@ -10500,7 +10539,7 @@
   "label_years": true,
   "cards": [
    {
-    "y": 1755.0,
+    "y": 1754.4,
     "title": "The Forks of the Ohio",
     "lines": [
      "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
