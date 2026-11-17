@@ -9609,21 +9609,6 @@
     "note": "Completed 1888 (S13); S2 says 1886 for courthouse and jail: see the landmark note."
    },
    {
-    "y0": 1907.5,
-    "y1": 1907.95,
-    "dur": 5,
-    "caption": "Allegheny City joins Pittsburgh (1907)",
-    "target": "area:[40.4545,-80.0050,520]",
-    "shot": "wide",
-    "fx": "crowd",
-    "src": [
-     "S5",
-     "S2"
-    ],
-    "conf": "medium",
-    "weight": 5
-   },
-   {
     "y0": 1919.8,
     "y1": 1920.4,
     "dur": 6,
@@ -9637,21 +9622,6 @@
     "conf": "medium",
     "weight": 6,
     "note": "Area stop on the future Lower Hill clearance: the lots are the gutting fill (reconstruction), the Upper Hill is current data."
-   },
-   {
-    "y0": 1937.4,
-    "y1": 1937.9,
-    "dur": 5,
-    "caption": "The Cathedral of Learning is dedicated (1937)",
-    "target": "area:[40.4443,-79.9531,420]",
-    "shot": "wide",
-    "fx": "stone",
-    "src": [
-     "S17"
-    ],
-    "conf": "medium",
-    "weight": 6,
-    "note": "Exterior finished Oct 1934, formal dedication June 1937 (=1937.45, S17): the hover sits on the dedication; the model is complete since 1934.8. After the March 1936 flood."
    },
    {
     "y0": 1961.75,
@@ -10127,6 +10097,20 @@
     "target": "Union Station"
    },
    {
+    "y": 1907.95,
+    "title": "Allegheny City joins Pittsburgh",
+    "lines": [
+     "In 1907 Pittsburgh annexes Allegheny City, today the North Side."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[40.4545,-80.0050,520]"
+   },
+   {
     "y": 1909.49,
     "title": "Forbes Field",
     "lines": [
@@ -10211,6 +10195,19 @@
     ],
     "conf": "high",
     "shot": "wide"
+   },
+   {
+    "y": 1937.45,
+    "title": "The Cathedral of Learning",
+    "lines": [
+     "The 42-story Cathedral of Learning is formally dedicated in June 1937; its exterior was finished in 1934."
+    ],
+    "src": [
+     "S17"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "target": "area:[40.4443,-79.9531,420]"
    },
    {
     "y": 1942.5,
