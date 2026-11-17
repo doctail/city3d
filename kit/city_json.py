@@ -102,6 +102,10 @@ def build_city(story):
     for k in ('sun_color', 'sun_energy', 'sky_light', 'sky_horizon', 'sky_tint'):
         if k in lk: st[k] = lk[k]
     if 'exposure' in lk: cfg['exposure'] = lk['exposure']
+    for k in ('sky_ramp', 'sky_gain'):
+        if k in lk: st[k] = lk[k]
+    for k in ('sun_el', 'sun_rot'):
+        if k in lk: cfg[k] = lk[k]
     # iterazione 2 (tutte opzionali, solo con city.look): saturation (x su luma, con rapporto R/B tenuto entro rb_tol dall'originale),
     # water_gain/water_shift (acqua piu' chiara e oliva), street_gain (strade = mediana 'built' x gain), view_look/view_transform, ground_tint
     if lk.get('saturation'): _saturate(st, cfg, float(lk['saturation']), float(lk.get('rb_tol', 0.045)), set(json.load(open(os.path.join(geo.ROOT, lk['palette'])))['render'].get('style', {})) if lk.get('palette') else set())

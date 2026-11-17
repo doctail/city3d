@@ -1331,6 +1331,8 @@ def sky_grad():
     rp = WN.new('ShaderNodeValToRGB'); WL(sp.outputs['Z'], rp.inputs[0]); cr_ = rp.color_ramp; cr_.interpolation = 'EASE'
     _SK = {'sunset': [(1.0, 0.55, 0.28), (0.12, 0.14, 0.32), (1.0, 0.62, 0.38), (0.78, 0.52, 0.55), (0.32, 0.30, 0.52)]}.get(LIGHT,
            [HAZE, (0.08, 0.20, 0.52), tuple(ST.get('sky_horizon', (0.86, 0.78, 0.70))), (0.50, 0.62, 0.84), (0.20, 0.36, 0.70)])   # sky_horizon: city.look (default invariato)
+    if ST.get('sky_ramp') and LIGHT not in ('sunset',): _SK = [tuple(c_) for c_ in ST['sky_ramp']]   # city.look.sky_ramp: 5 colori lineari (sotto orizzonte, zenit, orizzonte, 10%, 25%); senza chiave nulla cambia
+    if ST.get('sky_gain') and LIGHT not in ('sunset',): _SK = [tuple(v_ * float(ST['sky_gain']) for v_ in c_) for c_ in _SK]
     cr_.elements[0].position = 0.0; cr_.elements[0].color = (*_SK[0], 1)
     cr_.elements[1].position = 0.5; cr_.elements[1].color = (*_SK[1], 1)
     for p_, c_ in [(0.035, _SK[2]), (0.10, _SK[3]), (0.25, _SK[4])]:

@@ -1,0 +1,6 @@
+5x3 km crops (nadir 3000 m + v1 Point 1936 + Oakland), ground L/R/B vs Sentinel (80.9 / 0.960)
+E2: ground L 89.5 R/B .964 | sky top (116,118,121) grey | nadir shadow p10 L 48 (0.55 of median)
+S1: ground L 102 R/B .979 (+2%) | sky top (197,215,236) horizon (179,194,206) | shadow p10 56 | sun glint blob in Oakland view
+S2: ground L 101 R/B .968 (+1%) | sky top (197,215,236) horizon (177,192,205) | shadow p10 67 | RECOMMENDED
+S3: ground L 102 R/B .957 (-0%) | sky same | shadow p10 80 (flatter, sun el 40)
+Diagnosis: exposure -2.3 x sky ramp (linear 0.5-0.8) -> grey 116-138; sun el 22 low; sky_tint cooled fill; no blue in sky ramp
