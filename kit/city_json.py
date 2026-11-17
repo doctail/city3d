@@ -119,6 +119,7 @@ def build_city(story):
     if lk.get('building_palette'):   # iterazione 3: tavolozza edifici per citta' (nome in BUILDING_PALETTES o dict di chiavi di stile); solo con city.look
         bp_ = lk['building_palette']; st.update(BUILDING_PALETTES[bp_] if isinstance(bp_, str) else bp_)
     if lk.get('water_coat'): st['water_coat'] = lk['water_coat']
+    if lk.get('water_glint'): st['water_glint'] = lk['water_glint']   # Pittsburgh: rugosita' minima di acqua e coat (sole speculare = macchia bianca); senza chiave nulla cambia
     if lk.get('view_look'): cfg['look'] = lk['view_look']
     if lk.get('view_transform'): cfg['view_transform'] = lk['view_transform']
     if lk.get('ground_tint'):

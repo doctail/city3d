@@ -292,7 +292,8 @@
    "#9ca2a9"
   ],
   "tall_h": 35,
-  "water_coat": 0.5
+  "water_coat": 0.5,
+  "water_glint": 0.6
  },
  "cover": {
   "cam": [

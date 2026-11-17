@@ -1086,6 +1086,9 @@ mp = nt.nodes.new('ShaderNodeMapping'); tc = nt.nodes.new('ShaderNodeTexCoord');
 nt.links.new(bp.outputs['Normal'], nt.nodes['Principled BSDF'].inputs['Normal'])
 if ST.get('water_coat'):   # city.look.water_coat: riflesso del cielo in piu' sull'acqua (strato coat liscio); senza chiave nulla cambia
     _pb = nt.nodes['Principled BSDF']; _pb.inputs['Coat Weight'].default_value = float(ST['water_coat']); _pb.inputs['Coat Roughness'].default_value = 0.03
+if ST.get('water_glint'):   # city.look.water_glint: rugosita' minima (base e coat) -> il sole speculare sull'acqua si allarga e perde il picco (niente macchia bianca); il riflesso del cielo resta; senza chiave nulla cambia
+    _pb = nt.nodes['Principled BSDF']; _pb.inputs['Roughness'].default_value = max(float(ST['water_glint']), _pb.inputs['Roughness'].default_value)
+    if ST.get('water_coat'): _pb.inputs['Coat Roughness'].default_value = max(float(ST['water_glint']), _pb.inputs['Coat Roughness'].default_value)
 if ST.get('water2'):   # due toni d'acqua a chiazze grandi (correnti, fondali): l'acqua non e' piu' una tinta piatta
     _wn = nt.nodes.new('ShaderNodeTexNoise'); _wn.inputs['Scale'].default_value = 0.0012; _wn.inputs['Detail'].default_value = 3; nt.links.new(tc.outputs['Object'], _wn.inputs['Vector'])
     _wr = nt.nodes.new('ShaderNodeValToRGB'); nt.links.new(_wn.outputs['Fac'], _wr.inputs[0])
