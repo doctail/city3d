@@ -50,7 +50,7 @@ def build_buildings():
     rnd = random.Random(3)
     pa = pd.read_csv(rp('pa.csv'), usecols=['PARID', 'YEARBLT', 'CLASS', 'USEDESC', 'COUNTYBUILDING', 'STORIES', 'MUNICODE'], dtype={'PARID': str})
     pa = pa.drop_duplicates('PARID').set_index('PARID')
-    fp = pd.read_csv(rp('fp.csv'), usecols=['PIN', 'x', 'y', 'status', 'area', 'geometry'])
+    fp = pd.read_csv(rp('fp.csv'), usecols=['PIN', 'x', 'y', 'status', 'area', 'geometry', 'outline_id'])
     n_raw = len(fp); st0 = fp.status.value_counts().to_dict()
     tr = Transformer.from_crs(2272, 4326, always_xy=True); lon, lat = tr.transform(fp.x.values, fp.y.values)
     cx, cy = L(lon, lat); fp['cx'], fp['cy'] = cx, cy; fp['d'] = np.hypot(cx, cy)
@@ -112,7 +112,33 @@ def build_buildings():
     has = fp.y.notna().values; kxy = np.c_[fp.cx.values[has], fp.cy.values[has]]; ky = fp.y.values[has].astype(float); tree = cKDTree(kxy)
     genmed = int(np.median(ky)); est = np.zeros(len(fp), bool); how = collections.Counter()
     ys = fp.y.values.copy()
-    for i in np.where(~has)[0]:
+    # ---- flag PGH_DT_IMPUTE=1: ZONA COMMERCIALE del centro (particelle CLASS C/G/U entro 1200 m dal Point). Copiare l'anno dall'anello residenziale era sbagliato
+    # (mediana 57 anni, +45 anni troppo vecchio contro i punti Wikipedia): qui i vicini sono SOLO della stessa zona con anno vero/esterno (mediana, almeno 3 entro 250 m),
+    # altrimenti un anno estratto dalla distribuzione degli anni noti della zona (prior ~1950, mai >= 2019). Marcati in buildings_y0_prov.json (downtown_imputed_indices).
+    # Fuori dalla zona (e senza la variabile) la regola resta quella residenziale qui sotto, invariata.
+    zone = np.zeros(len(fp), bool); dt_imp = np.zeros(len(fp), bool); DT = os.environ.get('PGH_DT_IMPUTE'); dt_how = collections.Counter(); loo = {}
+    if DT:
+        zone = (fp.d.values <= 1200) & fp.cls.isin(['C', 'G', 'U']).values
+        zk = zone & has; zxy = np.c_[fp.cx.values[zk], fp.cy.values[zk]]; zy = fp.y.values[zk].astype(float); ztree = cKDTree(zxy)
+        pool = zy[zy < 2019]; prior_med = float(np.median(pool)) if len(pool) >= 10 else 1950.0
+        rz = random.Random(11); zi_known = np.where(zk)[0]
+        def zone_est(i, excl=None):
+            d, ix = ztree.query([fp.cx.values[i], fp.cy.values[i]], k=7, distance_upper_bound=250)
+            ok = [j for dd, j in zip(np.atleast_1d(d), np.atleast_1d(ix)) if j < len(zy) and zi_known[j] != i][:6]
+            if len(ok) >= 3: return int(round(float(np.median(zy[ok])))), 'dt_zone_k6_250m'
+            return int(rz.choice(list(pool)) if len(pool) >= 10 else prior_med), 'dt_prior'
+        # leave-one-out sui punti esterni (Wikipedia/Wikidata) della zona: errore del metodo contro date vere
+        e_nb, e_pr = [], []
+        for i in zi_known[ext_mask[zi_known]]:
+            v, how_ = zone_est(i); e_nb.append(v - fp.y.values[i]) if how_ == 'dt_zone_k6_250m' else None
+            e_pr.append(int(rz.choice(list(pool))) - fp.y.values[i])
+        f_ = lambda e: {'n': len(e), 'bias': round(float(np.mean(e)), 1), 'mediana_assoluta': round(float(np.median(np.abs(e))), 1)} if e else {'n': 0}
+        loo = {'vicini_stessa_zona': f_(e_nb), 'prior_distribuzione_zona': f_(e_pr), 'prior_mediana': prior_med, 'zona_footprint': int(zone.sum()), 'zona_con_anno': int(zk.sum())}
+        log('zona centro (C/G/U <=1200 m): LOO su punti esterni', json.dumps(loo))
+        for i in np.where(zone & ~has)[0]:
+            v, how_ = zone_est(i); ys[i] = max(1750, min(2018, v + (rz.randint(-2, 2) if how_ == 'dt_zone_k6_250m' else 0))); est[i] = True; dt_imp[i] = True; dt_how[how_] += 1
+        log('anni imputati nella zona centro:', dict(dt_how))
+    for i in np.where(~has & ~zone)[0]:
         p = (fp.cx.values[i], fp.cy.values[i]); d, ix = tree.query(p, k=6, distance_upper_bound=150); ok = [j for dd, j in zip(np.atleast_1d(d), np.atleast_1d(ix)) if j < len(ky)]
         if ok: v = int(round(float(np.median(ky[ok])))) + rnd.randint(-2, 2); how['k6_150m'] += 1
         else:
@@ -127,8 +153,50 @@ def build_buildings():
     flo = (fp.cb.fillna(0) / np.maximum(tot_area, 1) / 600.0).clip(1, 14)
     h = np.where(fp.st.notna(), fp.st.fillna(0) * 3.2 + 1.0, np.where(fp.cb.fillna(0) > 0, flo * 3.6, 6.0)); hs = np.where(fp.st.notna(), 'stories', np.where(fp.cb.fillna(0) > 0, 'value_est', 'default'))
     h = np.clip(h, 3.0, 90.0)
+    # ---- flag PGH_LIDAR=1 (o =percorso csv): altezze VERE da LiDAR USGS 3DEP (fetch_pgh_lidar.py, nucleo 3 km, h98 = percentile 98 del tetto nel footprint meno il suolo).
+    # Regole: (a) edifici con anno >= 2019 (il rilievo e' del 2019): niente LiDAR, resta la stima; (b) torri in skyline.json (e wiki_tall di years_ext.csv) abbinate per
+    # punto-in-poligono (o footprint piu' vicino entro 12 m): se |lidar - Wikipedia| > 15 m o il lidar manca, vale l'altezza Wikipedia (podio sbagliato, blocchi fusi);
+    # (c) fuori dal nucleo restano STORIES x 3.2 / valore catastale. Le altezze LiDAR superano il tetto di 90 m delle stime (clip 3..270 m).
+    LID = os.environ.get('PGH_LIDAR'); lid_mask = np.zeros(len(fp), bool); wik_mask = np.zeros(len(fp), bool); lid_stat = collections.Counter(); lid_log = []
+    if LID:
+        import csv, pandas as pd
+        from shapely import STRtree
+        from shapely.geometry import Point
+        REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')); XD = os.path.join(REPO, 'cities', 'pittsburgh', 'data_ext')
+        lcsv = LID if os.path.exists(LID) else os.path.join(XD, 'lidar_heights_core_r3000.csv')
+        lz = pd.read_csv(lcsv).drop_duplicates('outline_id').set_index('outline_id'); Lz = lz.reindex(fp.outline_id.values)
+        h98 = Lz.h98.values; ok = (Lz.nok.fillna(0).values >= 4) & ~np.isnan(h98)
+        # torri note: (nome, lat, lon, altezza Wikipedia, anno)
+        towers = []; skp = os.environ.get('PGH_SKYLINE', os.path.join(XD, 'skyline.json'))
+        if os.path.exists(skp):
+            for x in json.load(open(skp))['landmarks']:
+                m_ = x.get('meta') or {}
+                if m_.get('status') == 'standing' and (m_.get('height_m') or 0) >= 60: towers.append((x['name'], x['at'][0], x['at'][1], float(m_['height_m']), m_.get('completed')))
+        names = {t_[0].lower() for t_ in towers}
+        if EXT:
+            for r in rows:
+                if r['src'] == 'wiki_tall' and r['height_m'] and float(r['height_m']) >= 60 and r['name'].lower() not in names: towers.append((r['name'], float(r['lat']), float(r['lon']), float(r['height_m']), int(r['year'])))
+        if towers:
+            tq = Transformer.from_crs(4326, 2272, always_xy=True); tx, ty = tq.transform([t_[2] for t_ in towers], [t_[1] for t_ in towers]); tp = shapely.points(tx, ty)
+            tree_g = STRtree(geoms); hit = tree_g.query(tp, predicate='within'); mt = {}
+            for k, i in zip(*hit.tolist()): mt.setdefault(k, i)
+            nr = tree_g.query_nearest(tp, max_distance=12 / FT, all_matches=False)
+            for k, i in zip(*nr.tolist()): mt.setdefault(k, i)
+            for k, (nm, la, lo, hw, comp) in enumerate(towers):
+                i = mt.get(k)
+                if i is None or i >= len(fp): lid_stat['torre_senza_footprint'] += 1; continue
+                lh = float(h98[i]) if ok[i] else float('nan'); post = bool(comp and int(comp) >= 2019)
+                if post or np.isnan(lh) or abs(lh - hw) > 15:
+                    h[i] = hw; wik_mask[i] = True; hs[i] = 'wiki'; lid_stat['wiki_post2018' if post else ('wiki_lidar_manca' if np.isnan(lh) else 'wiki_diff_gt15')] += 1
+                    lid_log.append([nm, round(lh, 1), hw, 'post2018' if post else 'diff'])
+                else: lid_stat['torre_lidar_ok'] += 1
+                if post: fp.at[i, 'y'] = int(comp); est[i] = False; dt_imp[i] = False   # anno vero (completamento) per l'edificio post-2018
+        use = ok & (fp.y.values < 2019) & ~wik_mask
+        old = h.copy(); h = np.where(use, np.clip(h98, 3.0, 270.0), h); hs = np.where(use, 'lidar', hs); lid_mask = use
+        lid_stat['footprint_lidar'] = int(use.sum()); lid_stat['footprint_stima_resta'] = int((~use & ~wik_mask).sum()); lid_stat['anno>=2019_stima'] = int((ok & (fp.y.values >= 2019)).sum())
+        log(f'LiDAR ({lcsv}): {dict(lid_stat)}; torri sostituite: {lid_log}')
     # ---- poligoni locali (m), anello aperto, semplificati 0,25 m
-    B = []; estidx = []; skipped = 0
+    B = []; estidx = []; dtidx = []; extidx = []; lididx = []; wikidx = []; skipped = 0
     for i, g in enumerate(geoms):
         if g is None: skipped += 1; continue
         for q in (g.geoms if g.geom_type == 'MultiPolygon' else [g]):
@@ -143,11 +211,17 @@ def build_buildings():
             rr = [[round(float(x), 2), round(float(y), 2)] for x, y in list(pg.exterior.coords)[:-1]]
             if len(rr) < 3: continue
             if est[i]: estidx.append(len(B))
+            if dt_imp[i]: dtidx.append(len(B))
+            if ext_mask[i]: extidx.append(len(B))
+            if lid_mask[i]: lididx.append(len(B))
+            if wik_mask[i]: wikidx.append(len(B))
             B.append({'r': rr, 'h': round(float(h[i]), 1), 'y': int(fp.y.values[i]), 'i': str(fp.PIN.values[i]), 'k': str(int(fp.mun.values[i])) if fp.mun.notna().values[i] else '', 'hs': str(hs[i])})
     os.makedirs(DATA, exist_ok=True)
     json.dump(B, open(os.path.join(DATA, 'buildings.json'), 'w'), separators=(',', ':'))
     json.dump({'note': 'anni stimati dai vicini (mediana dei 6 piu vicini entro 150 m, +-2 anni) per le impronte la cui particella non ha YEARBLT (commerciale/pubblico/industriale: i dati aperti non li hanno)',
-               'estimated_indices': estidx, 'sources': dict(how)}, open(os.path.join(DATA, 'buildings_y0_prov.json'), 'w'))
+               'estimated_indices': estidx, 'sources': dict(how),
+               **({'downtown_imputed_indices': dtidx, 'downtown_sources': dict(dt_how)} if DT else {}), **({'external_year_indices': extidx} if EXT else {}),
+               **({'lidar_height_indices': lididx, 'wikipedia_height_indices': wikidx} if LID else {})}, open(os.path.join(DATA, 'buildings_y0_prov.json'), 'w'))
     # ---- misure
     fp['has'] = ~est; fp['ring'] = pd.cut(fp.d, [0, 500, 1000, 2000, 4000, 9000.1])
     cov_ring = fp.groupby('ring', observed=True).agg(n=('has', 'size'), cov=('has', 'mean')).round(3)
@@ -371,3 +445,7 @@ if WHAT in ('roads', 'all'): build_roads(LND)
 if WHAT in ('dem', 'all'): build_dem()
 if WHAT in ('landmarks', 'all'): build_landmarks()
 if WHAT == 'flood': build_flood(float(sys.argv[4]) if len(sys.argv) > 4 else 46.0)
+# Flag opzionali (default = comportamento invariato, riproduce data_pittsburgh_src del commit c795c47):
+#   PGH_EXT_YEARS=cities/pittsburgh/data_ext/years_ext.csv  anni Wikipedia/Wikidata nel centro
+#   PGH_DT_IMPUTE=1   imputazione del centro (C/G/U <=1200 m) solo da vicini della stessa zona / prior della zona
+#   PGH_LIDAR=1       altezze LiDAR (data_ext/lidar_heights_core_r3000.csv da fetch_pgh_lidar.py RAW OUT 3000 10) + Wikipedia per le torri di skyline.json
