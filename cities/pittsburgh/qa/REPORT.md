@@ -1,6 +1,6 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 18:18. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-17 20:30. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -58,8 +58,8 @@ Generato da `python -m kit.qa` il 2026-11-17 18:18. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (8 s)
-  - oggetti citta' 2338, cambi in tutto il video 77095, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+- **PASS** costo dei cambi (7 s)
+  - oggetti citta' 2338, cambi in tutto il video 77676, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 164 m/s (limite 250), mediana 8
 - **PASS** drone: accelerazione massima
@@ -87,7 +87,7 @@ Generato da `python -m kit.qa` il 2026-11-17 18:18. Esito complessivo: **WARN**
 - **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
   - vuoto massimo 13.9 s (89-103 s)
 - **PASS** ritmo: anni/s per minuto
-  - 0:00  3.69 | 1:00  0.80 | 2:00  0.42 | 3:00  0.41 | 4:00  0.37 | 5:00  0.40 | 6:00  0.39 | 7:00  0.67 | 8:00  0.23 | 9:00  0.02
+  - 0:00  3.69 | 1:00  0.80 | 2:00  0.42 | 3:00  0.41 | 4:00  0.37 | 5:00  0.40 | 6:00  0.39 | 7:00  0.67 | 8:00  0.23 | 9:00  0.01
 - **PASS** 12 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"

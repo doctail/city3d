@@ -10280,17 +10280,17 @@
   },
   "soste": [
    {
-    "y0": 1755.0,
+    "y0": 1754.4,
     "y1": 1762.6,
     "dur": 8,
-    "caption": "Fort Duquesne and Fort Pitt (1755-1762)",
+    "caption": "Fort Duquesne and Fort Pitt (1754-1762)",
     "target": "area:[40.44180,-80.01240,130]",
     "shot": "close",
     "drone_d": 650.0,
     "fx": "build",
     "conf": "medium",
     "weight": 9,
-    "note": "Hover on the French fort so the Forks card is read with the fort in frame (walls complete 1755.0)."
+    "note": "Hover starts when Fort Duquesne walls exist (built from 1754.34); Forks card rides it."
    },
    {
     "y0": 1816.0,
@@ -10493,7 +10493,7 @@
   "label_years": true,
   "cards": [
    {
-    "y": 1755.0,
+    "y": 1754.4,
     "title": "The Forks of the Ohio",
     "lines": [
      "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
