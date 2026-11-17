@@ -824,8 +824,8 @@
      1758.89,
      1758.92
     ],
-    "height": 4,
-    "width": 3,
+    "height": 6,
+    "width": 8,
     "towers_every_m": 35,
     "color": "#8a6a43",
     "tower_color": "#7a5a38",
@@ -834,7 +834,7 @@
      "S5"
     ],
     "conf": "low",
-    "note": "Square with corner bastions, 70 m side: schematic. Built from April 1754 (S3); destroyed by the French on 24 Nov 1758, Forbes occupies the ruins on 25 Nov (S3, S11). Position near the tip of the Point (the Fort Pitt site is \"near but not directly on\" it, S4): +-100 m, to be moved on the granite outlines in Point State Park (OSM)."
+    "note": "Square with corner bastions, 70 m side: schematic. Built from April 1754 (S3); destroyed by the French on 24 Nov 1758, Forbes occupies the ruins on 25 Nov (S3, S11). Position near the tip of the Point (the Fort Pitt site is \"near but not directly on\" it, S4): +-100 m, to be moved on the granite outlines in Point State Park (OSM). Walls drawn ~8 m thick and 6-7 m high (real palisade/earth ramparts are thinner) so they read from 600-1000 m; bastion towers 16 m wide."
    },
    {
     "name": "Fort Pitt (British, 1759-97)",
@@ -872,8 +872,8 @@
      1797.6,
      1798.8
     ],
-    "height": 5,
-    "width": 4,
+    "height": 7,
+    "width": 8,
     "towers_every_m": 95,
     "color": "#a2704f",
     "tower_color": "#8f5f43",
@@ -882,7 +882,7 @@
      "S5"
     ],
     "conf": "low",
-    "note": "Pentagon with five bastions, Capt. Harry Gordon (S4); built 1759-61 (S4); abandoned 1792, decommissioned and demolished in 1797 (S5; demolition span 1797.6-1798.8 is a guess). Circumradius 95 m and centre are schematic (+-100 m). The Block House (1764) is a separate landmark. Closed line, not \"ring\", so that it does not become WALL_P (Valencia-specific code in build_render)."
+    "note": "Pentagon with five bastions, Capt. Harry Gordon (S4); built 1759-61 (S4); abandoned 1792, decommissioned and demolished in 1797 (S5; demolition span 1797.6-1798.8 is a guess). Circumradius 95 m and centre are schematic (+-100 m). The Block House (1764) is a separate landmark. Closed line, not \"ring\", so that it does not become WALL_P (Valencia-specific code in build_render). Walls drawn ~8 m thick and 6-7 m high (real palisade/earth ramparts are thinner) so they read from 600-1000 m; bastion towers 16 m wide."
    }
   ],
   "gutting": [
@@ -953,7 +953,208 @@
     "note": "The Point was industrial until the 1950s: land taken from industrial enterprises for the park (S11); vast swaths near the Point demolished for Gateway Center by 1950 (S2). From 1800, after Fort Pitt is gone (1797), lots fill the void of the park; they go in 1952-53. Hand-drawn 36-acre outline."
    }
   ],
-  "lost": [],
+  "lost": [
+   {
+    "name": "Fort Duquesne barracks",
+    "ring": [
+     [
+      40.44158,
+      -80.012541
+     ],
+     [
+      40.44158,
+      -80.012139
+     ],
+     [
+      40.44166,
+      -80.012139
+     ],
+     [
+      40.44166,
+      -80.012541
+     ]
+    ],
+    "h": 6,
+    "from": 1754.9,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Duquesne barracks",
+    "ring": [
+     [
+      40.44194,
+      -80.012541
+     ],
+     [
+      40.44194,
+      -80.012139
+     ],
+     [
+      40.44202,
+      -80.012139
+     ],
+     [
+      40.44202,
+      -80.012541
+     ]
+    ],
+    "h": 6,
+    "from": 1755.0,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Duquesne storehouse",
+    "ring": [
+     [
+      40.441755,
+      -80.012399
+     ],
+     [
+      40.441755,
+      -80.012281
+     ],
+     [
+      40.441845,
+      -80.012281
+     ],
+     [
+      40.441845,
+      -80.012399
+     ]
+    ],
+    "h": 5,
+    "from": 1755.0,
+    "to": 1758.89,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441105,
+      -80.010863
+     ],
+     [
+      40.441105,
+      -80.010437
+     ],
+     [
+      40.441195,
+      -80.010437
+     ],
+     [
+      40.441195,
+      -80.010863
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.1,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441665,
+      -80.010863
+     ],
+     [
+      40.441665,
+      -80.010437
+     ],
+     [
+      40.441755,
+      -80.010437
+     ],
+     [
+      40.441755,
+      -80.010863
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.25,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441277,
+      -80.011159
+     ],
+     [
+      40.441277,
+      -80.011041
+     ],
+     [
+      40.441583,
+      -80.011041
+     ],
+     [
+      40.441583,
+      -80.011159
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.4,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt barracks",
+    "ring": [
+     [
+      40.441277,
+      -80.010259
+     ],
+     [
+      40.441277,
+      -80.010141
+     ],
+     [
+      40.441583,
+      -80.010141
+     ],
+     [
+      40.441583,
+      -80.010259
+     ]
+    ],
+    "h": 6.5,
+    "from": 1760.55,
+    "to": 1797.6,
+    "fine": true
+   },
+   {
+    "name": "Fort Pitt magazine",
+    "ring": [
+     [
+      40.441376,
+      -80.010721
+     ],
+     [
+      40.441376,
+      -80.010579
+     ],
+     [
+      40.441484,
+      -80.010579
+     ],
+     [
+      40.441484,
+      -80.010721
+     ]
+    ],
+    "h": 5,
+    "from": 1760.25,
+    "to": 1797.6,
+    "fine": true
+   }
+  ],
   "fires": [
    {
     "name": "Great Fire of 1845",
@@ -993,7 +1194,8 @@
      "S6"
     ],
     "conf": "medium",
-    "note": "Started 10 April 1845 (=1845.268) near Ferry Street and burned about 60 acres, as many as 1,200 buildings (S6). The real fire lasted hours; the window 1845.268-1845.30 (12 days) is only so that flames are visible during a 6 s hover. Ring is a ~27 ha sketch of the burned south-west of downtown ending at Market Square (+-100 m, NOT surveyed). destroy acts only on predecessor buildings from the zones (today's downtown is 1900+)."
+    "note": "Started 10 April 1845 (=1845.268) near Ferry Street and burned about 60 acres, as many as 1,200 buildings (S6). The real fire lasted hours; the window 1845.268-1845.30 (12 days) is only so that flames are visible during a 6 s hover. Ring is a ~27 ha sketch of the burned south-west of downtown ending at Market Square (+-100 m, NOT surveyed). destroy acts only on predecessor buildings from the zones (today's downtown is 1900+).",
+    "style": "blaze"
    }
   ],
   "floods": [
@@ -9318,6 +9520,432 @@
    ],
    "conf": "high",
    "note": "Completed 1932, 44 floors, 177.4 m, step-pyramid crown (S18); verified by 2 sources (S13). Tallest in Pittsburgh 1932-1970. Start 1930.2 is a guess."
+  },
+  {
+   "name": "Fifth Avenue Place (podium)",
+   "kind": "generic_footprint",
+   "at": [
+    40.44189,
+    -80.00342
+   ],
+   "footprint": [
+    [
+     40.443559,
+     -80.004085
+    ],
+    [
+     40.443242,
+     -80.003944
+    ],
+    [
+     40.443245,
+     -80.003933
+    ],
+    [
+     40.44311,
+     -80.003873
+    ],
+    [
+     40.443108,
+     -80.003884
+    ],
+    [
+     40.442974,
+     -80.003825
+    ],
+    [
+     40.443084,
+     -80.003407
+    ],
+    [
+     40.442549,
+     -80.003169
+    ],
+    [
+     40.442433,
+     -80.003615
+    ],
+    [
+     40.442282,
+     -80.003548
+    ],
+    [
+     40.442395,
+     -80.003115
+    ],
+    [
+     40.441832,
+     -80.002864
+    ],
+    [
+     40.441786,
+     -80.003039
+    ],
+    [
+     40.441731,
+     -80.003015
+    ],
+    [
+     40.441576,
+     -80.003609
+    ],
+    [
+     40.44203,
+     -80.003812
+    ],
+    [
+     40.442059,
+     -80.003703
+    ],
+    [
+     40.442222,
+     -80.003775
+    ],
+    [
+     40.442269,
+     -80.003595
+    ],
+    [
+     40.44242,
+     -80.003662
+    ],
+    [
+     40.442328,
+     -80.004019
+    ],
+    [
+     40.443446,
+     -80.004518
+    ]
+   ],
+   "params": {
+    "h": 43,
+    "roof": "flat",
+    "c": "concrete"
+   },
+   "phases": [
+    {
+     "y": 1987,
+     "y1": 1988
+    }
+   ],
+   "label": false,
+   "src": [
+    "S1"
+   ],
+   "conf": "medium",
+   "note": "Podium = LiDAR median 43 m over the merged footprint; tower 187.8 m (Wikipedia); plan 45x45 m is schematic."
+  },
+  {
+   "name": "Fifth Avenue Place",
+   "kind": "skyscraper",
+   "at": [
+    40.44189,
+    -80.00342
+   ],
+   "footprint": [
+    [
+     40.441631,
+     -80.003585
+    ],
+    [
+     40.441764,
+     -80.003082
+    ],
+    [
+     40.442149,
+     -80.003255
+    ],
+    [
+     40.442016,
+     -80.003758
+    ]
+   ],
+   "params": {
+    "h": 184.0,
+    "crown": "pyramid",
+    "c": "glass2",
+    "podium_h": 6
+   },
+   "phases": [
+    {
+     "y": 1987,
+     "y1": 1988
+    }
+   ],
+   "label": false,
+   "src": [
+    "S1"
+   ],
+   "conf": "medium",
+   "note": "Replaces the merged cadastre block (one 12k-23k m2 slab at tower height)."
+  },
+  {
+   "name": "One Oxford Centre (podium)",
+   "kind": "generic_footprint",
+   "at": [
+    40.43807,
+    -79.99855
+   ],
+   "footprint": [
+    [
+     40.438138,
+     -79.999819
+    ],
+    [
+     40.437884,
+     -79.999139
+    ],
+    [
+     40.437971,
+     -79.999083
+    ],
+    [
+     40.438231,
+     -79.999778
+    ],
+    [
+     40.438653,
+     -79.999508
+    ],
+    [
+     40.438408,
+     -79.998854
+    ],
+    [
+     40.438509,
+     -79.998789
+    ],
+    [
+     40.438713,
+     -79.999335
+    ],
+    [
+     40.438702,
+     -79.999342
+    ],
+    [
+     40.438738,
+     -79.99944
+    ],
+    [
+     40.43875,
+     -79.999439
+    ],
+    [
+     40.439306,
+     -79.999083
+    ],
+    [
+     40.439197,
+     -79.998791
+    ],
+    [
+     40.439312,
+     -79.998718
+    ],
+    [
+     40.439418,
+     -79.999002
+    ],
+    [
+     40.439661,
+     -79.998846
+    ],
+    [
+     40.439665,
+     -79.998856
+    ],
+    [
+     40.440003,
+     -79.99864
+    ],
+    [
+     40.439691,
+     -79.997806
+    ],
+    [
+     40.439682,
+     -79.997811
+    ],
+    [
+     40.439515,
+     -79.997363
+    ],
+    [
+     40.439185,
+     -79.997574
+    ],
+    [
+     40.439179,
+     -79.997559
+    ],
+    [
+     40.439156,
+     -79.997574
+    ],
+    [
+     40.439162,
+     -79.997591
+    ],
+    [
+     40.438985,
+     -79.997705
+    ],
+    [
+     40.43898,
+     -79.997692
+    ],
+    [
+     40.438923,
+     -79.997728
+    ],
+    [
+     40.439079,
+     -79.998146
+    ],
+    [
+     40.439296,
+     -79.998007
+    ],
+    [
+     40.439318,
+     -79.998064
+    ],
+    [
+     40.439108,
+     -79.998198
+    ],
+    [
+     40.439291,
+     -79.998688
+    ],
+    [
+     40.439184,
+     -79.998757
+    ],
+    [
+     40.439035,
+     -79.998357
+    ],
+    [
+     40.438475,
+     -79.998716
+    ],
+    [
+     40.43849,
+     -79.998756
+    ],
+    [
+     40.438387,
+     -79.998822
+    ],
+    [
+     40.438187,
+     -79.998285
+    ],
+    [
+     40.438133,
+     -79.998261
+    ],
+    [
+     40.438088,
+     -79.99814
+    ],
+    [
+     40.438034,
+     -79.998117
+    ],
+    [
+     40.437942,
+     -79.998176
+    ],
+    [
+     40.437897,
+     -79.998154
+    ],
+    [
+     40.437737,
+     -79.998256
+    ],
+    [
+     40.437705,
+     -79.998387
+    ],
+    [
+     40.437951,
+     -79.999046
+    ],
+    [
+     40.437568,
+     -79.999291
+    ],
+    [
+     40.437837,
+     -80.000011
+    ]
+   ],
+   "params": {
+    "h": 29,
+    "roof": "flat",
+    "c": "concrete"
+   },
+   "phases": [
+    {
+     "y": 1983,
+     "y1": 1984
+    }
+   ],
+   "label": false,
+   "src": [
+    "S1"
+   ],
+   "conf": "medium",
+   "note": "Podium (mall, hotel, garage) = LiDAR median 29 m over the merged footprint; tower 187.5 m (Wikipedia, 45 floors); plan 45x45 m is schematic."
+  },
+  {
+   "name": "One Oxford Centre",
+   "kind": "skyscraper",
+   "at": [
+    40.43807,
+    -79.99855
+   ],
+   "footprint": [
+    [
+     40.437976,
+     -79.998905
+    ],
+    [
+     40.437798,
+     -79.998428
+    ],
+    [
+     40.438164,
+     -79.998195
+    ],
+    [
+     40.438342,
+     -79.998672
+    ]
+   ],
+   "params": {
+    "h": 183.5,
+    "crown": "flat",
+    "c": "glass",
+    "podium_h": 6
+   },
+   "phases": [
+    {
+     "y": 1983,
+     "y1": 1984
+    }
+   ],
+   "label": false,
+   "src": [
+    "S1"
+   ],
+   "conf": "medium",
+   "note": "Replaces the merged cadastre block (one 12k-23k m2 slab at tower height)."
   },
   {
    "name": "Cathedral of Learning",

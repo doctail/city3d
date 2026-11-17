@@ -807,6 +807,62 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
     except Exception: pass
     for fi_ in _fr:
         pg = Polygon(fi_['poly']); y0_, y1_ = fi_['y'], fi_['y1']
+        if fi_.get('style') == 'blaze':   # incendio v2 (opt-in per citta', story.history.fires[].style): segue gli edifici bruciati, ondata di fiamme, braci, terreno carbonizzato, colonne di fumo
+            _M = __import__('mathutils'); from shapely.ops import unary_union as _uu
+            if 'bz_char' not in globals():
+                bz_char = mat('bz_char', (0.018, 0.014, 0.012), 1.0, haze=False)
+                bz_ember = emat('bz_ember', (1.0, 0.16, 0.025), 2.2); bz_fl = emat('bz_flame', (1.0, 0.3, 0.04), 6.0); bz_core = emat('bz_core', (1.0, 0.65, 0.2), 11.0)
+                bz_smokes = []
+                for _c, _al in (('#4a4540', 0.62), ('#7a736b', 0.5), ('#a8a29a', 0.38)):   # basso scuro, in alto chiaro e piu' trasparente
+                    _m = mat('bz_smoke', srgb(_c), 1.0); _m.node_tree.nodes['Principled BSDF'].inputs['Alpha'].default_value = _al; bz_smokes.append(_m)
+            dead_ = []
+            for b_ in blds:
+                d_ = b_.get('d', 99999)
+                if not (b_.get('dfine') and y0_ - 0.003 <= d_ <= y1_ + 0.003): continue
+                try: pb_ = Polygon(b_['r']).buffer(0)
+                except Exception: continue
+                if not pb_.is_empty and pg.contains(pb_.centroid): dead_.append((d_, pb_))
+            NB_ = 6; ymax_ = max([d_ for d_, _ in dead_] + [y0_]); span_ = max(1e-4, ymax_ - y0_); rb_ = float(fi_.get('rebuild', 2.0)) + 1.0
+            bins_ = [[] for _ in range(NB_)]
+            for d_, pb_ in dead_: bins_[min(NB_ - 1, int((d_ - y0_) / span_ * NB_))].append((d_, pb_))
+            def zat(x_, y_): return float(dem_at([x_], [y_])[0]) if dem_at else 0.0
+            for k_, bl_ in enumerate(bins_):
+                if not bl_: continue
+                t0_ = min(d_ for d_, _ in bl_) - 0.0004
+                uni_ = _uu([q_.buffer(5, join_style=2) for _, q_ in bl_])
+                bm_ = bmesh.new()
+                for g_ in (list(uni_.geoms) if hasattr(uni_, 'geoms') else [uni_]):
+                    try: bm_.faces.new([bm_.verts.new((x, y, zat(x, y) + 0.7)) for x, y in list(g_.exterior.coords)[:-1]])
+                    except ValueError: pass
+                bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'bz_char_{k_}', bm_, bz_char); VIS.append((o_, 'window', (t0_, y1_ + rb_)))
+                bm_ = bmesh.new()
+                for d_, q_ in bl_:
+                    if frnd.random() < 0.6:
+                        qs_ = q_.buffer(-1.2)
+                        if qs_.is_empty or qs_.geom_type != 'Polygon': continue
+                        try: bm_.faces.new([bm_.verts.new((x, y, zat(x, y) + 0.95)) for x, y in list(qs_.exterior.coords)[:-1]])
+                        except ValueError: pass
+                bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'bz_ember_{k_}', bm_, bz_ember); VIS.append((o_, 'window', (t0_, y1_ + 0.08)))
+                bmo_ = bmesh.new(); bmc_ = bmesh.new()
+                for d_, q_ in bl_:
+                    if frnd.random() > 0.55: continue
+                    c_ = q_.centroid; r_ = frnd.uniform(5, 11) * min(1.6, max(0.7, (q_.area / 90) ** 0.3)); h_ = frnd.uniform(16, 52); z_ = zat(c_.x, c_.y) + 1.5
+                    bmesh.ops.create_cone(bmo_, cap_ends=True, segments=5, radius1=r_, radius2=0.3, depth=h_, matrix=_M.Matrix.Translation((c_.x + frnd.uniform(-3, 3), c_.y + frnd.uniform(-3, 3), z_ + h_ / 2)))
+                    bmesh.ops.create_cone(bmc_, cap_ends=True, segments=5, radius1=r_ * 0.38, radius2=0.2, depth=h_ * 0.5, matrix=_M.Matrix.Translation((c_.x, c_.y, z_ + h_ * 0.3)))
+                o_ = obj(f'bz_flames_{k_}', bmo_, bz_fl); VIS.append((o_, 'window', (t0_, t0_ + 0.045 + span_ / NB_)))
+                o_ = obj(f'bz_core_{k_}', bmc_, bz_core); VIS.append((o_, 'window', (t0_, t0_ + 0.045 + span_ / NB_)))
+                sm_ = [bmesh.new() for _ in range(3)]; nc_ = max(1, int(fi_.get('smoke', 8)) // 3 + 1)
+                for _ in range(nc_):
+                    c_ = frnd.choice(bl_)[1].centroid; dx, dy = frnd.uniform(0.35, 0.6), frnd.uniform(-0.2, 0.15)
+                    for k2 in range(9):
+                        z_ = 25 + k2 * 34; rr_ = frnd.uniform(10, 15) * (1 + 0.42 * k2)
+                        for _j in range(3):
+                            M_ = _M.Matrix.Translation((c_.x + dx * z_ + frnd.uniform(-16, 16), c_.y + dy * z_ + frnd.uniform(-16, 16), zat(c_.x, c_.y) + z_)) @ _M.Matrix.Diagonal((1.0, 1.0, 1.7, 1.0))   # puffs allungati in verticale
+                            bmesh.ops.create_icosphere(sm_[min(2, k2 // 3)], subdivisions=2, radius=rr_ * frnd.uniform(0.55, 0.95), matrix=M_)
+                for j_, bmm_ in enumerate(sm_):
+                    for f_ in bmm_.faces: f_.smooth = True
+                    o_ = obj(f'bz_smoke_{k_}_{j_}', bmm_, bz_smokes[j_]); VIS.append((o_, 'window', (t0_ + 0.002, y1_ + 0.3)))
+            log('incendio v2', fi_.get('name'), len(dead_), 'edifici bruciati'); continue
         bm_ = bmesh.new()
         try: bm_.faces.new([bm_.verts.new((x, y, 0.6)) for x, y in list(pg.exterior.coords)[:-1]])
         except ValueError: pass
