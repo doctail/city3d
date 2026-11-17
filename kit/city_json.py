@@ -39,13 +39,14 @@ def _zone_extent(story, P, kinds=('zones', 'walls', 'gutting')):
 BUILDING_PALETTES = {
     # citta' industriale USA (Pittsburgh): mattone rosso-bruno, pietra grigia, tan; tetti in asfalto scuro; torri grigio/vetro azzurro. Niente giallo.
     'us_industrial': {   # v3 (correzione luminanza owner): mattone brunastro attenuato, pietra grigio-tan, tetti grigio medio, torri grigio chiaro/vetro blu-grigio
-        'wall_old': ['#c3988b', '#cdcbc6', '#d3c7b5', '#b5897d'],
-        'wall_new': ['#c5958b', '#b98c7e', '#d7d5ce', '#d8cebb', '#c7c5c0', '#cea597'],
+        'wall_old': ['#d6a28e', '#c98f7a', '#d9c3a0', '#cfd0c8', '#c58470', '#b98672'],
+        'wall_new': ['#d29a86', '#c4826c', '#d6b58f', '#cdb9a0', '#d8c8b0', '#cfcac0'],
         'wall_anc': ['#d7d5ce', '#c7c5c0', '#dadad5'],
-        'wall_eras': [[1915, ['#c5958b', '#b98c7e', '#ac8479', '#cea597', '#bb9589', '#c7c5c0', '#d8cebb', '#c5958b']],
-                      [1950, ['#cea597', '#bb9084', '#d8cebb', '#cfc8ba', '#c7c5c0', '#c5958b', '#dad9c4', '#ac8479']],
+        'wall_eras': [[1915, ['#d29a86', '#c4826c', '#d6b58f', '#cdb9a0', '#b97762', '#d8c8b0', '#c88e78', '#cfcac0', '#b9805f']],
+                      [1950, ['#d6a28d', '#c58a74', '#dcc29b', '#d3c9b8', '#c07a64', '#e0cfb5', '#cd9680', '#c9c6bd', '#bd8a62']],
                       [9999, ['#d9d5c8', '#d0cdc2', '#dad9c4', '#c1bfba', '#c49a8d', '#dad7cd', '#cdc8bc', '#c7c5c0']]],
-        'roof_old': ['#949498', '#a19d9a', '#948b86', '#85858a'], 'roof_new': ['#949498', '#a19d9a', '#85858a', '#aca8a3', '#948b86', '#bababe', '#88888c'],
+        'roof_old': ['#b4b4ba', '#a9a29c', '#bfb9b2', '#9c9ca2', '#b8a79a'], 'roof_new': ['#b4b4ba', '#a9a29c', '#bfb9b2', '#9c9ca2', '#b8a79a', '#c2c2c6', '#a8a8ae'],
+        'blocks': '#8c887e',   # isolati sotto le case dense: prima #63625a (massa quasi nera nei quartieri a schiera)
         'wall_tall': ['#b4bac2', '#a3aab3', '#bfc3c7', '#c8c8c4', '#9199a3', '#b0b5ba'], 'roof_tall': ['#8e949c', '#9ca2a9'], 'tall_h': 35,
         'glass': ['#8fb0c6', '#9cbbd0', '#86a8c0'],
     },
