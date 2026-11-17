@@ -20,68 +20,68 @@
    "sub": "1764"
   },
   {
-   "t_in": 78.45,
-   "t_out": 102.67,
+   "t_in": 78.43,
+   "t_out": 102.65,
    "title": "Pittsburgh becomes a city",
    "sub": "1816-1841"
   },
   {
-   "t_in": 110.73,
-   "t_out": 116.73,
+   "t_in": 110.71,
+   "t_out": 116.71,
    "title": "The Great Fire",
    "sub": "April 1845"
   },
   {
-   "t_in": 135.73,
-   "t_out": 146.93,
+   "t_in": 135.7,
+   "t_out": 146.9,
    "title": "939 factories",
    "sub": "1857"
   },
   {
-   "t_in": 165.1,
-   "t_out": 170.1,
+   "t_in": 165.07,
+   "t_out": 170.07,
    "title": "The Monongahela Incline",
    "sub": "1870"
   },
   {
-   "t_in": 195.5,
-   "t_out": 200.5,
+   "t_in": 195.47,
+   "t_out": 200.47,
    "title": "The Smithfield Street Bridge",
    "sub": "1883"
   },
   {
-   "t_in": 210.37,
-   "t_out": 215.37,
+   "t_in": 210.34,
+   "t_out": 215.34,
    "title": "The Allegheny County Courthouse",
    "sub": "1888"
   },
   {
-   "t_in": 290.94,
-   "t_out": 296.94,
+   "t_in": 290.9,
+   "t_out": 296.9,
    "title": "The Hill District, a center of Black life and jazz",
    "sub": "1920"
   },
   {
-   "t_in": 400.05,
-   "t_out": 406.05,
+   "t_in": 400.02,
+   "t_out": 406.02,
    "title": "The Civic Arena opens on the cleared Lower Hill",
    "sub": "1961"
   },
   {
-   "t_in": 448.24,
-   "t_out": 454.57,
+   "t_in": 448.21,
+   "t_out": 454.54,
    "title": "PPG Place and the second Renaissance",
    "sub": "1984"
   },
   {
-   "t_in": 466.62,
-   "t_out": 472.62,
+   "t_in": 466.59,
+   "t_out": 472.59,
    "title": "Three Rivers Stadium is imploded; PNC Park and Heinz Field open",
    "sub": "2001"
   },
   {
-   "t_in": 493.92,
-   "t_out": 498.92,
+   "t_in": 493.89,
+   "t_out": 498.89,
    "title": "The Tower at PNC Plaza",
    "sub": "2015"
   }
@@ -133,7 +133,7 @@
    "sober": false
   },
   {
-   "t_in": 51.71,
+   "t_in": 51.7,
    "t_out": 57.58,
    "date": "1794",
    "title": "A borough on the frontier",
@@ -144,8 +144,8 @@
    "sober": false
   },
   {
-   "t_in": 58.37,
-   "t_out": 64.61,
+   "t_in": 58.36,
+   "t_out": 64.59,
    "date": "1797",
    "title": "Fort Pitt is torn down",
    "lines": [
@@ -155,8 +155,8 @@
    "sober": false
   },
   {
-   "t_in": 70.64,
-   "t_out": 76.33,
+   "t_in": 70.62,
+   "t_out": 76.31,
    "date": "1811",
    "title": "The first steamboat",
    "lines": [
@@ -166,8 +166,8 @@
    "sober": false
   },
   {
-   "t_in": 78.45,
-   "t_out": 84.78,
+   "t_in": 78.43,
+   "t_out": 84.76,
    "date": "1816",
    "title": "A city at last",
    "lines": [
@@ -177,8 +177,8 @@
    "sober": false
   },
   {
-   "t_in": 84.78,
-   "t_out": 90.83,
+   "t_in": 84.76,
+   "t_out": 90.81,
    "date": "1818",
    "title": "The first bridge",
    "lines": [
@@ -188,8 +188,8 @@
    "sober": false
   },
   {
-   "t_in": 90.83,
-   "t_out": 96.79,
+   "t_in": 90.81,
+   "t_out": 96.77,
    "date": "1835",
    "title": "Canal and locomotive",
    "lines": [
@@ -199,8 +199,8 @@
    "sober": false
   },
   {
-   "t_in": 96.79,
-   "t_out": 102.67,
+   "t_in": 96.77,
+   "t_out": 102.65,
    "date": "1841",
    "title": "A courthouse on Grant's Hill",
    "lines": [
@@ -210,8 +210,8 @@
    "sober": false
   },
   {
-   "t_in": 118.42,
-   "t_out": 124.48,
+   "t_in": 118.4,
+   "t_out": 124.45,
    "date": "1847",
    "title": "The city rebuilds",
    "lines": [
@@ -221,8 +221,8 @@
    "sober": false
   },
   {
-   "t_in": 128.86,
-   "t_out": 134.46,
+   "t_in": 128.83,
+   "t_out": 134.43,
    "date": "1854",
    "title": "The railroads arrive",
    "lines": [
@@ -232,8 +232,8 @@
    "sober": false
   },
   {
-   "t_in": 135.73,
-   "t_out": 141.42,
+   "t_in": 135.7,
+   "t_out": 141.39,
    "date": "1857",
    "title": "939 factories",
    "lines": [
@@ -243,8 +243,8 @@
    "sober": false
   },
   {
-   "t_in": 141.42,
-   "t_out": 146.93,
+   "t_in": 141.39,
+   "t_out": 146.9,
    "date": "1859",
    "title": "Coke and steel",
    "lines": [
@@ -254,8 +254,8 @@
    "sober": false
   },
   {
-   "t_in": 150.54,
-   "t_out": 156.77,
+   "t_in": 150.51,
+   "t_out": 156.74,
    "date": "1865",
    "title": "Arsenal of the Union",
    "lines": [
@@ -265,8 +265,8 @@
    "sober": false
   },
   {
-   "t_in": 158.23,
-   "t_out": 164.28,
+   "t_in": 158.2,
+   "t_out": 164.25,
    "date": "1868",
    "title": "The city swallows its neighbors",
    "lines": [
@@ -276,8 +276,8 @@
    "sober": false
   },
   {
-   "t_in": 172.08,
-   "t_out": 178.22,
+   "t_in": 172.05,
+   "t_out": 178.19,
    "date": "1875",
    "title": "Bessemer steel at Braddock",
    "lines": [
@@ -287,8 +287,8 @@
    "sober": false
   },
   {
-   "t_in": 179.04,
-   "t_out": 184.73,
+   "t_in": 179.01,
+   "t_out": 184.7,
    "date": "1877",
    "title": "A second incline",
    "lines": [
@@ -298,8 +298,8 @@
    "sober": false
   },
   {
-   "t_in": 184.81,
-   "t_out": 191.22,
+   "t_in": 184.78,
+   "t_out": 191.19,
    "date": "1877",
    "title": "The railroad strike",
    "lines": [
@@ -309,8 +309,8 @@
    "sober": false
   },
   {
-   "t_in": 203.2,
-   "t_out": 208.62,
+   "t_in": 203.17,
+   "t_out": 208.59,
    "date": "1886",
    "title": "Electricity and open-hearth steel",
    "lines": [
@@ -320,8 +320,8 @@
    "sober": false
   },
   {
-   "t_in": 219.08,
-   "t_out": 225.59,
+   "t_in": 219.05,
+   "t_out": 225.56,
    "date": "1892",
    "title": "Homestead",
    "lines": [
@@ -331,8 +331,8 @@
    "sober": false
   },
   {
-   "t_in": 228.93,
-   "t_out": 235.25,
+   "t_in": 228.9,
+   "t_out": 235.22,
    "date": "1895",
    "title": "Steel pays for a museum",
    "lines": [
@@ -342,8 +342,8 @@
    "sober": false
   },
   {
-   "t_in": 240.65,
-   "t_out": 246.25,
+   "t_in": 240.62,
+   "t_out": 246.22,
    "date": "1901",
    "title": "U.S. Steel",
    "lines": [
@@ -353,8 +353,8 @@
    "sober": false
   },
   {
-   "t_in": 247.2,
-   "t_out": 252.71,
+   "t_in": 247.17,
+   "t_out": 252.68,
    "date": "1902",
    "title": "The Frick Building",
    "lines": [
@@ -364,8 +364,8 @@
    "sober": false
   },
   {
-   "t_in": 254.01,
-   "t_out": 258.89,
+   "t_in": 253.98,
+   "t_out": 258.86,
    "date": "1903",
    "title": "Union Station",
    "lines": [
@@ -375,8 +375,8 @@
    "sober": false
   },
   {
-   "t_in": 263.34,
-   "t_out": 268.21,
+   "t_in": 263.31,
+   "t_out": 268.18,
    "date": "1907",
    "title": "Allegheny City joins Pittsburgh",
    "lines": [
@@ -385,8 +385,8 @@
    "sober": false
   },
   {
-   "t_in": 269.75,
-   "t_out": 275.17,
+   "t_in": 269.72,
+   "t_out": 275.14,
    "date": "1909",
    "title": "Forbes Field",
    "lines": [
@@ -396,8 +396,8 @@
    "sober": false
   },
   {
-   "t_in": 277.18,
-   "t_out": 282.6,
+   "t_in": 277.15,
+   "t_out": 282.56,
    "date": "1911",
    "title": "Half of America's steel",
    "lines": [
@@ -407,8 +407,8 @@
    "sober": false
   },
   {
-   "t_in": 299.54,
-   "t_out": 306.04,
+   "t_in": 299.5,
+   "t_out": 306.01,
    "date": "1923",
    "title": "The Strip",
    "lines": [
@@ -418,8 +418,8 @@
    "sober": false
   },
   {
-   "t_in": 310.04,
-   "t_out": 316.1,
+   "t_in": 310.01,
+   "t_out": 316.07,
    "date": "1927",
    "title": "Three Sisters",
    "lines": [
@@ -429,8 +429,8 @@
    "sober": false
   },
   {
-   "t_in": 321.4,
-   "t_out": 327.27,
+   "t_in": 321.37,
+   "t_out": 327.24,
    "date": "1932",
    "title": "The Gulf Tower",
    "lines": [
@@ -440,8 +440,8 @@
    "sober": false
   },
   {
-   "t_in": 331.18,
-   "t_out": 338.78,
+   "t_in": 331.15,
+   "t_out": 338.75,
    "date": "1936",
    "title": "The St. Patrick's Day flood",
    "lines": [
@@ -451,8 +451,8 @@
    "sober": false
   },
   {
-   "t_in": 340.02,
-   "t_out": 345.53,
+   "t_in": 339.99,
+   "t_out": 345.5,
    "date": "1937",
    "title": "The Cathedral of Learning",
    "lines": [
@@ -461,8 +461,8 @@
    "sober": false
   },
   {
-   "t_in": 350.58,
-   "t_out": 356.27,
+   "t_in": 350.55,
+   "t_out": 356.24,
    "date": "1942",
    "title": "Arsenal of Democracy",
    "lines": [
@@ -472,8 +472,8 @@
    "sober": false
   },
   {
-   "t_in": 359.77,
-   "t_out": 365.1,
+   "t_in": 359.74,
+   "t_out": 365.07,
    "date": "1946",
    "title": "Smoke and a new plan",
    "lines": [
@@ -483,8 +483,8 @@
    "sober": false
   },
   {
-   "t_in": 372.9,
-   "t_out": 379.04,
+   "t_in": 372.87,
+   "t_out": 379.01,
    "date": "1953",
    "title": "The old Point comes down",
    "lines": [
@@ -494,8 +494,8 @@
    "sober": false
   },
   {
-   "t_in": 381.74,
-   "t_out": 388.71,
+   "t_in": 381.71,
+   "t_out": 388.68,
    "date": "1956",
    "title": "The Lower Hill is cleared",
    "lines": [
@@ -505,8 +505,8 @@
    "sober": false
   },
   {
-   "t_in": 391.67,
-   "t_out": 397.72,
+   "t_in": 391.64,
+   "t_out": 397.69,
    "date": "1959",
    "title": "The Fort Pitt Bridge",
    "lines": [
@@ -516,8 +516,8 @@
    "sober": false
   },
   {
-   "t_in": 412.61,
-   "t_out": 418.3,
+   "t_in": 412.58,
+   "t_out": 418.27,
    "date": "1969",
    "title": "The Bridge to Nowhere",
    "lines": [
@@ -527,8 +527,8 @@
    "sober": false
   },
   {
-   "t_in": 418.72,
-   "t_out": 424.41,
+   "t_in": 418.7,
+   "t_out": 424.39,
    "date": "1970",
    "title": "Three Rivers Stadium",
    "lines": [
@@ -538,8 +538,8 @@
    "sober": false
   },
   {
-   "t_in": 425.03,
-   "t_out": 430.82,
+   "t_in": 425.01,
+   "t_out": 430.79,
    "date": "1971",
    "title": "The U.S. Steel Tower",
    "lines": [
@@ -549,8 +549,8 @@
    "sober": false
   },
   {
-   "t_in": 432.12,
-   "t_out": 438.45,
+   "t_in": 432.1,
+   "t_out": 438.42,
    "date": "1974",
    "title": "Point State Park",
    "lines": [
@@ -560,8 +560,8 @@
    "sober": false
   },
   {
-   "t_in": 441.76,
-   "t_out": 447.27,
+   "t_in": 441.74,
+   "t_out": 447.24,
    "date": "1982",
    "title": "The mills close",
    "lines": [
@@ -571,8 +571,8 @@
    "sober": false
   },
   {
-   "t_in": 448.24,
-   "t_out": 454.57,
+   "t_in": 448.21,
+   "t_out": 454.54,
    "date": "1985",
    "title": "A headquarters town loses its headquarters",
    "lines": [
@@ -582,8 +582,8 @@
    "sober": false
   },
   {
-   "t_in": 456.64,
-   "t_out": 463.43,
+   "t_in": 456.62,
+   "t_out": 463.4,
    "date": "1991",
    "title": "The mills come down",
    "lines": [
@@ -593,8 +593,8 @@
    "sober": false
   },
   {
-   "t_in": 473.29,
-   "t_out": 478.71,
+   "t_in": 473.26,
+   "t_out": 478.68,
    "date": "2004",
    "title": "Medicine replaces steel",
    "lines": [
@@ -604,8 +604,8 @@
    "sober": false
   },
   {
-   "t_in": 480.82,
-   "t_out": 486.87,
+   "t_in": 480.78,
+   "t_out": 486.84,
    "date": "2010",
    "title": "A new arena across the street",
    "lines": [
@@ -615,8 +615,8 @@
    "sober": false
   },
   {
-   "t_in": 487.17,
-   "t_out": 492.86,
+   "t_in": 487.14,
+   "t_out": 492.83,
    "date": "2011",
    "title": "The Igloo comes down",
    "lines": [
@@ -626,8 +626,8 @@
    "sober": false
   },
   {
-   "t_in": 501.39,
-   "t_out": 506.54,
+   "t_in": 501.35,
+   "t_out": 506.5,
    "date": "2024",
    "title": "The newest tower",
    "lines": [
@@ -662,86 +662,86 @@
    "title": "A Town on the Frontier"
   },
   {
-   "t_in": 76.33,
-   "t_out": 78.45,
+   "t_in": 76.31,
+   "t_out": 78.43,
    "num": "V",
    "title": "The Iron City"
   },
   {
-   "t_in": 76.33,
-   "t_out": 78.45,
+   "t_in": 76.31,
+   "t_out": 78.43,
    "num": "VI",
    "title": "The Iron City"
   },
   {
-   "t_in": 138.62,
-   "t_out": 141.42,
+   "t_in": 138.59,
+   "t_out": 141.39,
    "num": "VII",
    "title": "Steel City"
   },
   {
-   "t_in": 138.62,
-   "t_out": 141.42,
+   "t_in": 138.59,
+   "t_out": 141.39,
    "num": "VIII",
    "title": "Steel City"
   },
   {
-   "t_in": 307.24,
-   "t_out": 310.04,
+   "t_in": 307.21,
+   "t_out": 310.01,
    "num": "IX",
    "title": "Between the Wars"
   },
   {
-   "t_in": 307.24,
-   "t_out": 310.04,
+   "t_in": 307.21,
+   "t_out": 310.01,
    "num": "X",
    "title": "Between the Wars"
   },
   {
-   "t_in": 356.97,
-   "t_out": 359.77,
+   "t_in": 356.94,
+   "t_out": 359.74,
    "num": "XI",
    "title": "Renaissance"
   },
   {
-   "t_in": 356.97,
-   "t_out": 359.77,
+   "t_in": 356.94,
+   "t_out": 359.74,
    "num": "XII",
    "title": "Renaissance"
   },
   {
-   "t_in": 417.52,
-   "t_out": 418.72,
+   "t_in": 417.5,
+   "t_out": 418.7,
    "num": "XIII",
    "title": "Collapse and Reinvention"
   },
   {
-   "t_in": 417.52,
-   "t_out": 418.72,
+   "t_in": 417.5,
+   "t_out": 418.7,
    "num": "XIV",
    "title": "Collapse and Reinvention"
   },
   {
-   "t_in": 470.49,
-   "t_out": 473.29,
+   "t_in": 470.46,
+   "t_out": 473.26,
    "num": "XV",
    "title": "Eds, Meds and Robots"
   },
   {
-   "t_in": 470.49,
-   "t_out": 473.29,
+   "t_in": 470.46,
+   "t_out": 473.26,
    "num": "XVI",
    "title": "Eds, Meds and Robots"
   }
  ],
  "cta": {
-  "t_in": 576.1,
-  "t_out": 580.6,
+  "t_in": 576.0,
+  "t_out": 580.5,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 580.6,
-  "t_out": 588.6,
+  "t_in": 580.5,
+  "t_out": 588.5,
   "items": [
    "Buildings: Allegheny County / WPRDC building footprints and assessor years built (roof outlines photogrammetrically compiled from 1992-93 aerial photography, updated 2004 and 2015)",
    "Downtown towers: heights and years from Wikipedia and Wikidata, LiDAR-checked (USGS 3DEP)",
