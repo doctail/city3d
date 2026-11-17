@@ -1,10 +1,10 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-17 13:09. Esito complessivo: **FAIL**
 
 | Sezione | Esito |
 |---|---|
-| a) Story e fonti | PASS |
+| a) Story e fonti | FAIL |
 | b) DATA | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | WARN |
@@ -13,7 +13,8 @@ Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 
 - **PASS** chiavi city
 - **PASS** 32 fonti
-- **PASS** date con fonte
+- **FAIL** date con fonte
+  - senza src valido (e conf != low): history.lost[0] Fort Duquesne barracks; history.lost[1] Fort Duquesne barracks; history.lost[2] Fort Duquesne storehouse; history.lost[3] Fort Pitt barracks; history.lost[4] Fort Pitt barracks; history.lost[5] Fort Pitt barracks; history.lost[6] Fort Pitt barracks; history.lost[7] Fort Pitt magazine
 
 ## b) DATA
 
@@ -24,15 +25,15 @@ Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 - **PASS** roads.json
   - 206419 voci
 - **PASS** hist.json
-  - 31884 voci
+  - 32001 voci
 - **PASS** land.json
   - 54 voci
 - **PASS** landmarks.json
-  - 683 voci
+  - 700 voci
 - **PASS** dem.npz
 - **PASS** anni edifici (179756)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1754 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **PASS** hist (31884 predecessori)
+- **PASS** hist (32001 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
 - **PASS** anni strade (206419 nastri)
   - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 1809
@@ -48,7 +49,7 @@ Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 - **WARN** 1854: 60 aree vuote allungate
   - #1 278x55 m a (40.47285,-80.01102); #2 226x45 m a (40.47303,-80.00989); #3 126x24 m a (40.47332,-80.00824); #4 289x38 m a (40.47209,-80.01133); #5 745x65 m a (40.47028,-80.00517); #6 143x30 m a (40.47102,-80.01329) — corridoi_1854.png
 - **WARN** 1854: 33 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #61 2183x174 m a (40.45584,-80.00491); #62 1775x65 m a (40.46330,-80.02230); #63 1034x59 m a (40.42867,-79.99523); #64 1008x77 m a (40.46947,-80.01161); #65 906x38 m a (40.44430,-80.00283)
+  - #61 2183x174 m a (40.45584,-80.00491); #62 1775x65 m a (40.46330,-80.02230); #63 1034x59 m a (40.42867,-79.99523); #64 1008x77 m a (40.46947,-80.01161); #65 907x38 m a (40.44430,-80.00283)
 - **WARN** 1900: 99 aree vuote allungate
   - #1 130x25 m a (40.47462,-80.02731); #2 277x49 m a (40.47285,-80.01097); #3 193x38 m a (40.47308,-80.00989); #4 126x24 m a (40.47332,-80.00824); #5 244x38 m a (40.47187,-80.01130); #6 555x64 m a (40.46957,-80.00495) — corridoi_1900.png
 - **WARN** 1900: 40 viali larghi gia' visibili (se aperti sventrando: gutting)
@@ -59,7 +60,7 @@ Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (7 s)
-  - oggetti citta' 2333, cambi in tutto il video 77684, max in un fotogramma 1017 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+  - oggetti citta' 2338, cambi in tutto il video 78376, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 214 m/s (limite 250), mediana 6
 - **PASS** drone: accelerazione massima
@@ -87,13 +88,13 @@ Generato da `python -m kit.qa` il 2026-11-17 11:14. Esito complessivo: **WARN**
 - **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
   - vuoto massimo 14.5 s (79-93 s)
 - **PASS** ritmo: anni/s per minuto
-  - 0:00  3.70 | 1:00  0.72 | 2:00  0.50 | 3:00  0.40 | 4:00  0.36 | 5:00  0.38 | 6:00  0.41 | 7:00  0.66 | 8:00  0.25 | 9:00  0.02
+  - 0:00  3.70 | 1:00  0.73 | 2:00  0.50 | 3:00  0.39 | 4:00  0.37 | 5:00  0.38 | 6:00  0.41 | 7:00  0.65 | 8:00  0.26 | 9:00  0.02
 - **PASS** 10 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **WARN** evento forte entro 45 s
-  - primo a 110.1 s
+  - primo a 110.2 s
 
 ## Immagini
 
