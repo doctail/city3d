@@ -279,7 +279,7 @@
    ],
    "rb_tol": 0.06,
    "building_palette": "us_industrial",
-   "water_coat": 0.5,
+   "water_coat": 0.25,
    "sun_el": 34,
    "sun_energy": 1.78,
    "sky_light": 0.167,
@@ -310,7 +310,8 @@
      2.462
     ]
    ],
-   "water_glint": 0.6
+   "water_glint": 0.85,
+   "water_sun": 0.0
   }
  },
  "sources": {
@@ -10279,6 +10280,19 @@
   },
   "soste": [
    {
+    "y0": 1755.0,
+    "y1": 1762.6,
+    "dur": 8,
+    "caption": "Fort Duquesne and Fort Pitt (1755-1762)",
+    "target": "area:[40.44180,-80.01240,130]",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 9,
+    "note": "Hover on the French fort so the Forks card is read with the fort in frame (walls complete 1755.0)."
+   },
+   {
     "y0": 1845.24,
     "y1": 1845.34,
     "dur": 6,
@@ -10411,7 +10425,8 @@
     ],
     "conf": "medium",
     "weight": 8,
-    "note": "Implosion 11 Feb 2001 (=2001.108), PNC Park opens 2001, Heinz Field Sept 2001 (=2001.7): the hover ends after it."
+    "note": "Implosion 11 Feb 2001 (=2001.108), PNC Park opens 2001, Heinz Field Sept 2001 (=2001.7): the hover ends after it.",
+    "drone_d": 1000.0
    },
    {
     "y0": 2015.8,
@@ -10435,8 +10450,8 @@
    "alt_max": 500,
    "d_min": 1400,
    "drift_vmax": 8,
-   "rho_max": 1400,
-   "v_leg": 90
+   "rho_max": 1500.0,
+   "v_leg": 90.0
   },
   "lens": 32,
   "reading": {
@@ -10465,7 +10480,7 @@
   "label_years": true,
   "cards": [
    {
-    "y": 1754.0,
+    "y": 1755.0,
     "title": "The Forks of the Ohio",
     "lines": [
      "Virginians begin Fort Prince George at the Forks of the Ohio in February 1754.",
