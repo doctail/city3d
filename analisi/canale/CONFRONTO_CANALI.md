@@ -136,7 +136,7 @@ Data sources: municipal and national open-data portals and cadastres, U.S. Censu
 Rendered in Blender. Business inquiries: <CONTACT EMAIL PLACEHOLDER, set in Studio, not in this text>
 ```
 
-Note: "new cities on a regular schedule" non indica date (regola del proprietario). Sostituire "IGN"/cataste con i soli dataset realmente usati nel primo video.
+Note: "new cities on a regular schedule" non indica date (regola del proprietario). Sostituire "IGN"/catasti con i soli dataset realmente usati nel primo video.
 
 ### 3.6 Tag del canale (20, parole chiave Studio > Personalizzazione > Informazioni di base)
 Ordine: marchio, poi i termini più condivisi, poi i distintivi. Più di ~500 caratteri totali sono ignorati da YouTube.
