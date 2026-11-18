@@ -182,7 +182,7 @@ if __name__ == '__main__':
     try: blds = nyc_buildings(); src = 'NYC Open Data'
     except Exception as e:
         log('NYC Open Data non disponibile:', e, '-> OpenStreetMap'); blds = osm_buildings(); src = 'OpenStreetMap'
-    fill_missing(blds)
+    if '--no-fill' not in sys.argv: fill_missing(blds)   # --no-fill: anni/altezze grezzi (y=0 = mancante), li sistema prep_nyc.py
     json.dump(blds, open(f'{OUT}/buildings.json', 'w'))
     try: land = build_land()
     except Exception as e: log('confini non disponibili:', e, '-> inviluppo edifici'); land = []; json.dump(land, open(f'{OUT}/land.json', 'w'))
