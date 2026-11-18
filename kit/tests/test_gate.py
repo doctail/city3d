@@ -25,6 +25,24 @@ STORY = {'city': {'slug': 'x', 'name': 'Xville', 'start_year': 1000, 'end_year':
          'montaggio': {'chapters': [{'y': 1000, 'title': 'First'}, {'y': 1200, 'title': 'Second'}, {'y': 1800, 'title': 'Third'}], 'cards': []}}
 
 
+class TestPodParity(unittest.TestCase):
+    def _mk(self, tmp, stale):
+        import gzip
+        os.makedirs(os.path.join(tmp, 'data_z_src')); os.makedirs(os.path.join(tmp, 'D'))
+        open(os.path.join(tmp, 'hist_z.py'), 'w').write("import sys\nopen(sys.argv[1] + '/hist.json', 'w').write('{\"h\": 1}')\n")
+        for n, c in (('a.json', '{"a": 1}'),):
+            open(os.path.join(tmp, 'D', n), 'w').write(c)
+            with gzip.open(os.path.join(tmp, 'data_z_src', n + '.gz'), 'wb') as o: o.write((c if not stale else '{"a": 0}').encode())
+        open(os.path.join(tmp, 'D', 'hist.json'), 'w').write('{"h": 1}')
+
+    def test_parity_ok_and_stale(self):
+        for stale in (False, True):
+            with tempfile.TemporaryDirectory() as tmp:
+                self._mk(tmp, stale); d, _ = gate.pod_parity('z', os.path.join(tmp, 'D'), root=tmp)
+                self.assertEqual(bool(d), stale, d)
+                if stale: self.assertIn('a.json', d[0])
+
+
 class TestMetrics(unittest.TestCase):
     def test_distance_and_pitch(self):
         M = gate.camera_metrics(synth())

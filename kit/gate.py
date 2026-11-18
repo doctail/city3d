@@ -312,6 +312,32 @@ def cost_block(slug, sc, nb):
 
 
 # ------------------------------------------------------------------------------------------------ dossier
+def pod_parity(slug, D, root=None):
+    """POD PARITY: simula il passo dati di run.sh in una cartella vuota (gunzip di data_<slug>_src solo per i file mancanti, poi
+    hist_<slug>.py) e confronta l'md5 di ogni json/npz con la cartella dati usata dal gate. Ritorna (differenze, nota)."""
+    import gzip, hashlib, tempfile
+    root = root or geo.ROOT; src = os.path.join(root, f'data_{slug}_src')
+    if not os.path.isdir(src): return ['data_%s_src missing' % slug], 'no packed data: the pod would have no data'
+    md5 = lambda p: hashlib.md5(open(p, 'rb').read()).hexdigest()
+    diffs = []
+    with tempfile.TemporaryDirectory() as tmp:
+        pd = os.path.join(tmp, 'data'); os.makedirs(pd)
+        for g in sorted(os.listdir(src)):
+            if g.endswith('.gz'):
+                with gzip.open(os.path.join(src, g), 'rb') as i, open(os.path.join(pd, g[:-3]), 'wb') as o: shutil.copyfileobj(i, o)
+        stub = os.path.join(root, f'hist_{slug}.py')
+        if not os.path.exists(stub): diffs.append(f'hist_{slug}.py missing (run.sh would create it with make-stub)')
+        else:
+            r = subprocess.run([sys.executable, stub, pd], cwd=root, capture_output=True, text=True)
+            if r.returncode: diffs.append('hist step failed: ' + (r.stderr or r.stdout)[-200:].replace('\n', ' '))
+        for f in sorted(os.listdir(D)):
+            if not (f.endswith('.json') or f.endswith('.npz')) or '.bak' in f: continue
+            q = os.path.join(pd, f)
+            if not os.path.exists(q): diffs.append(f'{f}: missing on the pod')
+            elif md5(q) != md5(os.path.join(D, f)): diffs.append(f'{f}: differs (packed data stale)')
+    return diffs, f'{len(diffs)} difference(s)'
+
+
 def _md_flights(rows):
     h = ['| # | start s | end s | dur s | years/s | median dist m | max alt m | max pitch deg | to | flag |', '|---|---|---|---|---|---|---|---|---|---|']
     for f in rows:
@@ -356,6 +382,10 @@ def run(slug, out=None, data=None, sched=None, city=None):
         R.add(G, FAIL, 'plots not produced', str(e)); pp = None
     with open(os.path.join(out, 'flights.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=list(flights[0].keys()) if flights else ['n']); w.writeheader(); [w.writerow(r) for r in flights]
+    try:
+        pdif, pnote = pod_parity(slug, D)
+        R.add(G, FAIL if pdif else PASS, 'POD PARITY', ('fresh unpack of data_%s_src + hist stub == local data: every json/npz md5 identical' % slug) if not pdif else '; '.join(pdif[:6]) + '  -> python -m kit pack ' + slug)
+    except Exception as e: R.add(G, FAIL, 'POD PARITY', 'check not run: ' + str(e)[:200])
     # (1)(7) fotogrammi reali: una sola costruzione della scena per contact sheet + miniatura
     shots = select_shots(story, sc, M, D); tl, tr, cv = cover_shots(story, cj, sc, M)
     allshots = shots + [tl, tr]
