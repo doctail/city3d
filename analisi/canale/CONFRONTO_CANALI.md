@@ -172,3 +172,62 @@ Rationale: 1-14 sono i termini che più competitor usano (volume di ricerca, non
 - Non identificati: Atlas del Tiempo, Timelapse Atlas (nomi ambigui), "Timeline Cities" (2 candidati, entrambi in Tabella B).
 - Numeri vidIQ non ricontrollati (nessuna chiamata vidIQ, come richiesto); le medie sono calcolate dai totali pubblici.
 - Trademark ufficiali.
+
+## 5. Icon and banner (visti il 2026-11-18, un foglio contatto avatar 11 a 256 px con versione 48 px, un foglio banner 10)
+
+**Cosa ho visto e cosa no.** Scaricati 11 avatar e 10 banner dei 12 richiesti. **TimeLoop: la pagina non ha dati di canale** (nessun titolo, avatar predefinito, nessun banner), quindi non confrontabile [Certain]. **Humanity Timeline non ha banner** [Certain]. I banner scaricati sono il ritaglio largo della striscia centrale (2560x424 o 2048x339), non l'immagine intera 2048x1152: quanto sta fuori dalla striscia non è visibile [Certain]. File: `competitors/img/avatars_sheet.png`, `banners_sheet.png` (scratchpad, non in git).
+
+### 5.1 Avatar (11)
+| Canale | Soggetto | Colori dominanti | Testo | Legge a 48 px? |
+|---|---|---|---|---|
+| CityEons | logo piatto: skyline a barre dentro un anello, bianco crema su arancio | arancio rame #c07231, crema #fdf4e3 | no | Sì, nettissimo |
+| Cornerstone | render 3D di torri dorate su piedistallo con anello orologio | blu notte #172a3c, oro #c3b087 | scritta minuscola sul piedistallo (illeggibile) | Sì come forma (torri oro su blu) |
+| Timelapse Studio | quadrante di orologio oro su nero | nero-blu #171a27, oro | no | Sì (cerchio e lancette), ma generico |
+| Humanity Timeline | ritratto fotografico di un uomo con barba e occhiali in biblioteca | marroni #64544d | no | Sì come faccia, ma non dice nulla del tema |
+| Mattia Maps | monogramma "M" su bussola e mappa con curve di livello | crema #f3eddf, blu | "M" | Sì, "M" si legge |
+| Urbavision | barre crescenti nere su sfumatura verde acqua | nero-verde #06171b, verde #449784 | no | Sì, ma barre simili a quelle di CityEons |
+| Epoch Timeline | orologio meccanico dentro un occhio ornato | nero, bronzo #947854 | numeri romani (dettaglio) | No, diventa una macchia scura |
+| TimeLapse Lords | lancetta di orologio sopra skyline rosso (Eiffel, Statua della Libertà, Big Ben) | nero, rosso, oro | no | Parziale, troppi dettagli |
+| Evolapse | piramide, cupola, grattacielo e clessidra in cerchio | nero, blu navy, oro | no | No, dettagli persi |
+| URBIS | vista dall'alto di una città 3D in cerchio con bordo crema | verde-marrone #735f49 | no | Parziale, trama minuta ma forma circolare ok |
+| Built in Time | render 3D di una città su disco-orologio | blu #0f173e, oro | no | Sì come sagoma |
+
+[Certain] su tutto il contenuto della tabella: l'ho visto. Valutazione "legge a 48 px" = giudizio mio sull'anteprima a 48 px [Likely].
+
+### 5.2 Banner (10)
+| Canale | Soggetto | Colori | Testo | Nota |
+|---|---|---|---|---|
+| CityEons | foto-polaroid dell'autore con mano alzata, freccia | nero caldo #1c1815, arancio | "SUBSCRIBE It's about time. :)" | l'unico con volto reale e invito; niente fonti |
+| Cornerstone | render 3D di una skyline che passa da case basse a grattacieli | crepuscolo arancio-blu | nome, "Real cities, rebuilt in 3D — from first stone to skyline", tappe First Stone / Town / City / Skyline | racconta il prodotto nel banner |
+| Timelapse Studio | scena di strada storica fotorealistica | seppia | nessuno | aspetto da frame AI/film |
+| Mattia Maps | mappa a isolati azzurra su crema con cartiglio | crema, blu | nome, "HISTORY · CITIES · DATA" | il più coerente con avatar; dati di mappa |
+| Urbavision | sagome di monumenti e skyline su verde acqua | verde acqua, nero | nome, "CITIES THROUGH TIME" | silhouette |
+| Epoch Timeline | panorama di città storiche fotorealistico (piramide, Colosseo, skyline) | oro, ambra | nessuno | aspetto AI |
+| TimeLapse Lords | collage di monumenti con orologio | oro-seppia | nessuno | aspetto AI |
+| Evolapse | panorama deserto-antico a destra grattacieli | ambra, blu | nome, "Watch the world evolve through time" | |
+| URBIS | render 3D di città su prato con linea del tempo | verde, beige | nome, "CITIES REBUILT YEAR BY YEAR", linea cronologica con puntini | linea del tempo, vicino a noi |
+| Built in Time | skyline notturna di una città con fabbriche e grattacieli | blu notte, luci oro | "EVERY CITY. EVERY YEAR. IN MINUTES." | |
+
+### 5.3 Cosa condividono i vincitori e cosa è abusato
+- [Certain] **Oro/ambra/seppia su nero o blu notte** domina 8 avatar su 11 e 8 banner su 10 (Cornerstone, Timelapse Studio, Epoch, Lords, Evolapse, Built in Time, Urbavision in parte). È il colore abusato: se anche noi siamo oro su scuro, spariamo nel mucchio.
+- [Certain] **Orologio / clessidra** come simbolo in 5 avatar su 11 (Cornerstone, Timelapse Studio, Epoch, Lords, Evolapse) più Built in Time. Abusato.
+- [Certain] **Monumenti famosi** (piramidi, Colosseo, Eiffel) in 5 banner e 3 avatar, spesso con aspetto da immagine AI. Abusato.
+- [Certain] I vincitori che ho visto hanno **un solo simbolo semplice a contrasto alto**: CityEons (anello + skyline a barre, crema su arancio), Cornerstone (torri oro su blu), Timelapse Studio (cerchio con lancette), Mattia Maps (monogramma). Sono tutti leggibili a 48 px. I più dettagliati (Epoch, Evolapse, Lords) non lo sono. Humanity Timeline è l'eccezione: un volto.
+- [Certain] Tre dei cinque "alti" (CityEons, Mattia Maps, Cornerstone) hanno **banner coordinato con l'avatar** e dichiarano nel banner cosa sono (nome + riga di promessa, o "SUBSCRIBE").
+- [Likely] Il successo non dipende dall'avatar: Timelapse Studio ha un avatar generico e vince; Epoch Timeline ha un avatar illeggibile a 48 px e fa ~30K di media. La leggibilità è igiene, non motore.
+- [Certain] **Nessuno usa il colore a codice di epoca, una mappa di impronte edifici come avatar, o un colore freddo/acceso diverso da oro-blu-verde**. Mattia Maps è l'unico con tonalità chiara (crema/azzurro) e mappa di isolati; è la sola base di differenziazione già "dati".
+- [Certain] Banner con **linea del tempo cronologica** esistono solo in URBIS e Cornerstone; solo Cornerstone la associa a tappe di crescita.
+
+### 5.4 Brief di design per il nuovo canale (Lot by Lot Cities / Ledger of Cities / Yearplot)
+Obiettivo: differenziarsi da oro-su-nero, orologi e monumenti; leggibile a 48 px; coerente avatar-banner; nessuna immagine AI.
+**Avatar 800x800** (cerchio ritagliato, margine 100 px)
+- Fondo **chiaro** crema #F3EEE2 (unico tra i grandi, solo Mattia Maps è chiaro: usare un crema più caldo e non una mappa a curve di livello), non oro su nero.
+- Un solo simbolo: **blocco di 3 impronte edificio viste dall'alto**, forme nette, ognuna in un colore d'epoca saturo fuori dalla palette oro: vermiglio #D8452B (più vecchio), teal #1F8A8A, blu cobalto #2747B8 (più nuovo). Massimo 3 forme, bordo netto 24 px, nessuna sfumatura e nessun testo.
+- Prova obbligatoria a 48 px: devono leggersi 3 blocchi di colore distinti.
+- Variante per nome: Lot by Lot = 3 lotti rettangolari con 12 px di spazio; Ledger = le stesse forme su tre righe come registro; Yearplot = lotti con una piccola tacca anno (solo linea, nessuna cifra).
+**Banner 2048x1152, area sicura 1235x338** (si vede solo la striscia centrale, come nei 10 banner visti)
+- Fondo crema #F3EEE2 con pattern a bassa opacità (15%) di impronte edifici nei tre colori d'epoca, a tutta larghezza.
+- Area sicura: a sinistra il simbolo dell'avatar (130 px), il nome in grotesque bold scuro #14202B, maiuscole; sotto la riga "Every building in its real year. No AI." in grigio #4A5A68.
+- A destra, striscia a **3 riquadri della stessa città in tre anni** (1850, 1950, 2025), colorati per epoca, anno in monospace sotto; è la versione nostra della linea del tempo di URBIS/Cornerstone ma con dati reali.
+- Niente volto, niente monumenti famosi, niente oro, niente orologio. Credito "© OpenStreetMap contributors" solo se i riquadri usano dati OSM.
+- Verifica prima di caricare: ritagliare 2560x424 dal 2048x1152 e controllare nome e riga leggibili; rivedere l'anteprima accanto a due concorrenti.
