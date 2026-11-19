@@ -73,11 +73,11 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#677a43",
-  "#78854e",
-  "#8a8a58",
-  "#6e7c48",
-  "#848b5a"
+  "#4b551b",
+  "#5f6a24",
+  "#78642e",
+  "#8a7331",
+  "#6b6a2a"
  ],
  "style": {
   "haze": [
@@ -89,9 +89,9 @@
   "pitched_until": 1850,
   "pitched_max_area": 600,
   "glass": [
-   "#7fb2d0",
-   "#6ea6c8",
-   "#8ec0da"
+   "#8fa9b8",
+   "#85a1b2",
+   "#9ab3c0"
   ],
   "glass_h": 70,
   "glass_min_area": 400,
@@ -158,12 +158,12 @@
    "#bfae8c"
   ],
   "roof_old": [
-   "#6a6f77",
-   "#767a80",
-   "#5f646b",
-   "#8a5f4b",
-   "#94654f",
-   "#70757c"
+   "#b1623a",
+   "#984727",
+   "#a4552f",
+   "#8a4a2e",
+   "#b86d42",
+   "#7f3f26"
   ],
   "wall_new": [
    "#e8dfca",

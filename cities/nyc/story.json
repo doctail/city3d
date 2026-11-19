@@ -578,9 +578,12 @@
    "S73"
   ],
   "style": {
-   "glint_free": true
+   "glint_free": true,
+   "roof_old": ["#b1623a", "#984727", "#a4552f", "#8a4a2e", "#b86d42", "#7f3f26"],
+   "glass": ["#8fa9b8", "#85a1b2", "#9ab3c0"]
   },
   "city_overrides": {
+   "field_colors": ["#4b551b", "#5f6a24", "#78642e", "#8a7331", "#6b6a2a"],
    "urban_ground": "off",
    "vegetation": {
     "box": [
