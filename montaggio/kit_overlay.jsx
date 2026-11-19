@@ -220,7 +220,7 @@ export const Overlay = ({cfg, data: D, bg = false}) => {
 // Short verticale 1080x1920: tutto il video (dopo l'apertura, a -> b s) accelerato in ~28 s. Sopra: nome citta' e tag; sotto: anno, era, popolazione.
 export const Short = ({cfg, data: D}) => { const C = cfg.city, S = cfg.short; const f = useCurrentFrame(); const s = f / FPS; const dur = S.n / FPS;
   const src = S.a + (S.b - S.a) * Math.min(1, s / (dur - 1.5)); const y = yearAtF(D, cfg.n)(Math.round(src * FPS));
-  const k0 = interpolate(s, [0, 0.4], [0, 1], {extrapolateRight: 'clamp'}); const ke = interpolate(s, [dur - 1.4, dur - 0.8], [0, 1], clampI);
+  const k0 = interpolate(s, [0, 0.4], [0, 1], {extrapolateRight: 'clamp'}); const ke = interpolate(s, [dur - 1.4, dur - 0.8], [0, 1], clampI); const kc = interpolate(s, [dur - 0.8, dur - 0.3], [0, 1], clampI);
   const era = eraAt(C, y); const name = cfg.text.short_name;
   return (<AbsoluteFill>
     <div style={{position: 'absolute', top: 210, width: 1080, textAlign: 'center', opacity: k0}}>
@@ -230,7 +230,7 @@ export const Short = ({cfg, data: D}) => { const C = cfg.city, S = cfg.short; co
       <div style={{font: '900 230px Montserrat', color: INK, textShadow: SH, fontVariantNumeric: 'tabular-nums', lineHeight: 1}}>{yearLabel(y)}</div>
       <div style={{display: 'inline-flex', alignItems: 'center', gap: 14, font: '700 38px Montserrat', letterSpacing: 6, textTransform: 'uppercase', color: INK, textShadow: SH, marginTop: 10}}><span style={{width: 20, height: 20, borderRadius: 10, background: era[2]}} />{era[1]}</div>
       <div style={{font: '900 52px Montserrat', color: ACC, textShadow: SH, marginTop: 26}}>{y < C.EST_UNTIL ? '~' : ''}{fmtPop(popAt(C, y)).toLocaleString('en-US')} <span style={{font: '700 30px Montserrat', color: INK, letterSpacing: 3}}>PEOPLE</span></div></div>
-    {ke > 0 && <div style={{position: 'absolute', top: 1360, width: 1080, textAlign: 'center', opacity: ke}}>
+    {kc > 0 && <div style={{position: 'absolute', top: 1360, width: 1080, textAlign: 'center', opacity: kc}}>
       <div style={{font: '900 84px Montserrat', color: INK, textShadow: SH}}>FULL VIDEO</div>
       <div style={{font: '700 40px Montserrat', color: ACC, textShadow: SH, marginTop: 10, letterSpacing: 4}}>ON THE CHANNEL ↑</div></div>}
   </AbsoluteFill>); };

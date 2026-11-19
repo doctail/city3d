@@ -4,11 +4,12 @@ Come Lione: il Short NON ha un render a parte; è il video lungo (secondi 10,5 �
 File: `marseille_full.mp4` (quello del pod), `marseille_short_overlay.webm` (`bash montaggio/ov_kit.sh marseille short`), `marseille_short_audio.m4a` (`sfx_kit.py`).
 Valori da `kit_city.py` (formule lette in `kit_city.py` sullo schedule round 4, 655,3 s; `kit_marseille.json` non ancora generato): a = title_t + 1,0 = 10,5; b = durata − 6,0 = 649,3; n = 672 fotogrammi = 28 s; SP = (28 − 1,5) / (649,3 − 10,5) = 0,04148. **Da ricontrollare in `public/kit_marseille.json` (chiave `short`) dopo `kit_city.py` e dopo il render (se la durata cambia, cambiano b e SP).**
 
-## Montaggio (cmd, una riga) → marseille_short_finale.mp4 (1080x1920, 28 s)
+## Montaggio (cmd, una riga) → marseille_short.mp4 (1080x1920, 28 s)
 ```
-ffmpeg -y -ss 10.5 -t 638.8 -i marseille_full.mp4 -c:v libvpx-vp9 -i marseille_short_overlay.webm -i marseille_short_audio.m4a -filter_complex "[0:v]setpts=PTS*0.04148,fps=24,tpad=stop_mode=clone:stop_duration=1.5,eq=contrast=1.03:saturation=1.08,split[s1][s2];[s1]scale=-2:1920,crop=1080:1920,boxblur=40:5,eq=brightness=-0.12[bg];[s2]scale=1080:608[fg];[bg][fg]overlay=0:656[m];[m][1:v]overlay=format=auto,format=yuv420p[v]" -map "[v]" -map 2:a -c:v libx264 -preset slow -crf 18 -c:a copy -t 28 -movflags +faststart marseille_short_finale.mp4
+ffmpeg -y -ss 10.5 -t 638.8 -i marseille_full.mp4 -c:v libvpx-vp9 -i marseille_short_overlay.webm -i marseille_short_audio.m4a -filter_complex "[0:v]setpts=PTS*0.04148,fps=24,tpad=stop_mode=clone:stop_duration=1.5,eq=contrast=1.03:saturation=1.08,split[s1][s2];[s1]scale=-2:1920,crop=1080:1920,boxblur=40:5,eq=brightness=-0.12[bg];[s2]scale=1080:608[fg];[bg][fg]overlay=0:656[m];[m][1:v]overlay=format=auto,format=yuv420p[v]" -map "[v]" -map 2:a -c:v libx264 -preset slow -crf 18 -c:a copy -t 28 -movflags +faststart marseille_short.mp4
 ```
-(forma identica a `cities/lyon/SHORT.md`; non verificata con un video di prova: non c'è ancora `marseille_full.mp4`.)
+(forma identica a `cities/lyon/SHORT.md`. Overlay e audio dello Short prodotti e controllati (vedi sotto); il comando completo non è stato provato perché `marseille_full.mp4` ce l'ha il proprietario.)
+File da scaricare per lo Short: `out/marseille_short_overlay.webm` (1,9 MB, 28,03 s, rigenerato: CTA dopo la dissolvenza dell'anno) e `out/marseille_short_audio.m4a` (697.731 byte, 28,000 s, -13,9 LUFS, picco -0,5 dBFS, nessun silenzio, fade finale). Nella cartella del proprietario insieme a `marseille_full.mp4`.
 Intestazione automatica del Short: la story round 3 ha `montaggio.short_tag` = "2,625 YEARS IN 28 SECONDS" (verificato nel file): l'overlay dirà 2,625, coerente con la end card.
 
 ## Titolo (EN, ≤ 100 caratteri)

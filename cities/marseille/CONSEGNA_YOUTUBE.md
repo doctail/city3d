@@ -1,6 +1,6 @@
 # Marseille — consegna completa YouTube (16/11/2026) — PROVVISORIA fino al render
 
-**PROVVISORIO (nessun render ancora):** (1) gli orari dei capitoli vengono da `schedule_marseille.json` (durata 655,3 s): da RICALCOLARE dopo il render con la stessa regola di Lione (capitolo = t_in della carta − 2,8 s; carta/sosta = t_in; arrotondato per difetto; Sources = `end_plan.sources[0]` = 647,3 s) e confrontare con `years.json`; (2) la dichiarazione sul Saint-Jean pre-1943 va confrontata con ciò che il render mostra; (3) costo del pod: NON misurato, nessuna cifra.
+**PROVVISORIO (nessun render ancora):** (1) gli orari dei capitoli vengono da `schedule_marseille.json` (durata 655,3 s): da RICALCOLARE dopo il render con la stessa regola di Lione (capitolo = `t_in` in `montaggio/eventi_marseille.json`, cioè carta − 2,8 s o fine della carta precedente se più tardi; carta/sosta = t_in; arrotondato per difetto; Sources = `end_plan.sources[0]` = 647,3 s) e confrontare con `years.json`; (2) la dichiarazione sul Saint-Jean pre-1943 va confrontata con ciò che il render mostra; (3) costo del pod: NON misurato, nessuna cifra.
 
 Orari ricalcolati il 16/11 sullo schedule round 4 (durata 655,3 s, camera yb-camera r2). Validi per il video (finale 655,3 s = 10:55). Il video parte dal primo anno, senza apertura speciale. Tutte le voci distano ≥ 10 s (verificato con script).
 
@@ -27,10 +27,10 @@ CHAPTERS
 0:00 Marseille today
 0:12 I · The Greek Port: A colony on the Lacydon (600 BC)
 0:43 Pytheas sails north (330 BC)
-1:00 II · Under Rome: A city that backed the wrong side (49 BC)
+1:01 II · Under Rome: A city that backed the wrong side (49 BC)
 1:32 III · Saints, Goths and Counts: Cassian and Saint-Victor (415)
 1:57 Charles Martel sacks the city (739)
-2:38 IV · Anjou and the Crown: Anjou takes Marseille (1252)
+2:39 IV · Anjou and the Crown: Anjou takes Marseille (1252)
 2:50 The Black Death (1348)
 3:09 Provence joins France (1481)
 3:23 V · The King's Port: The king enters through a breach (1660)
@@ -82,10 +82,10 @@ CHAPITRES
 0:00 Marseille aujourd'hui
 0:12 I · Le port grec : une colonie sur le Lacydon (600 av. J.-C.)
 0:43 Pythéas navigue vers le nord (330 av. J.-C.)
-1:00 II · Sous Rome : une ville du mauvais côté (49 av. J.-C.)
+1:01 II · Sous Rome : une ville du mauvais côté (49 av. J.-C.)
 1:32 III · Saints, Wisigoths et comtes : Cassien et Saint-Victor (415)
 1:57 Charles Martel saccage la ville (739)
-2:38 IV · L'Anjou et la Couronne : l'Anjou prend Marseille (1252)
+2:39 IV · L'Anjou et la Couronne : l'Anjou prend Marseille (1252)
 2:50 La peste noire (1348)
 3:09 La Provence rejoint la France (1481)
 3:23 V · Le port du roi : le roi entre par une brèche (1660)
@@ -137,10 +137,10 @@ CAPITOLI
 0:00 Marsiglia oggi
 0:12 I · Il porto greco: una colonia sul Lacydon (600 a.C.)
 0:43 Pitea naviga verso nord (330 a.C.)
-1:00 II · Sotto Roma: una città dalla parte sbagliata (49 a.C.)
+1:01 II · Sotto Roma: una città dalla parte sbagliata (49 a.C.)
 1:32 III · Santi, Goti e conti: Cassiano e San Vittore (415)
 1:57 Carlo Martello saccheggia la città (739)
-2:38 IV · Gli Angiò e la Corona: gli Angiò prendono Marsiglia (1252)
+2:39 IV · Gli Angiò e la Corona: gli Angiò prendono Marsiglia (1252)
 2:50 La peste nera (1348)
 3:09 La Provenza entra in Francia (1481)
 3:23 V · Il porto del re: il re entra da una breccia (1660)
@@ -192,10 +192,10 @@ CAPÍTULOS
 0:00 Marsella hoy
 0:12 I · El puerto griego: una colonia en el Lacydon (600 a. C.)
 0:43 Piteas navega hacia el norte (330 a. C.)
-1:00 II · Bajo Roma: una ciudad del bando equivocado (49 a. C.)
+1:01 II · Bajo Roma: una ciudad del bando equivocado (49 a. C.)
 1:32 III · Santos, godos y condes: Casiano y San Víctor (415)
 1:57 Carlos Martel saquea la ciudad (739)
-2:38 IV · Anjou y la Corona: Anjou toma Marsella (1252)
+2:39 IV · Anjou y la Corona: Anjou toma Marsella (1252)
 2:50 La peste negra (1348)
 3:09 Provenza se une a Francia (1481)
 3:23 V · El puerto del rey: el rey entra por una brecha (1660)
@@ -247,10 +247,10 @@ KAPITEL
 0:00 Marseille heute
 0:12 I · Der griechische Hafen: eine Kolonie am Lacydon (600 v. Chr.)
 0:43 Pytheas segelt nach Norden (330 v. Chr.)
-1:00 II · Unter Rom: eine Stadt auf der falschen Seite (49 v. Chr.)
+1:01 II · Unter Rom: eine Stadt auf der falschen Seite (49 v. Chr.)
 1:32 III · Heilige, Goten und Grafen: Cassianus und Saint-Victor (415)
 1:57 Karl Martell plündert die Stadt (739)
-2:38 IV · Anjou und die Krone: Anjou erobert Marseille (1252)
+2:39 IV · Anjou und die Krone: Anjou erobert Marseille (1252)
 2:50 Der Schwarze Tod (1348)
 3:09 Die Provence kommt zu Frankreich (1481)
 3:23 V · Der Hafen des Königs: der König zieht durch eine Bresche ein (1660)
@@ -302,10 +302,10 @@ CAPÍTULOS
 0:00 Marselha hoje
 0:12 I · O porto grego: uma colônia no Lacydon (600 a.C.)
 0:43 Píteas navega para o norte (330 a.C.)
-1:00 II · Sob Roma: uma cidade do lado errado (49 a.C.)
+1:01 II · Sob Roma: uma cidade do lado errado (49 a.C.)
 1:32 III · Santos, godos e condes: Cassiano e São Vítor (415)
 1:57 Carlos Martel saqueia a cidade (739)
-2:38 IV · Anjou e a Coroa: Anjou toma Marselha (1252)
+2:39 IV · Anjou e a Coroa: Anjou toma Marselha (1252)
 2:50 A peste negra (1348)
 3:09 A Provença une-se à França (1481)
 3:23 V · O porto do rei: o rei entra por uma brecha (1660)
