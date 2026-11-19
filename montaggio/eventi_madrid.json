@@ -8,97 +8,73 @@
    "sub": "860"
   },
   {
-   "t_in": 44.86,
-   "t_out": 50.86,
+   "t_in": 39.57,
+   "t_out": 45.57,
    "title": "Madrid passes to Castile",
    "sub": "1085"
   },
   {
-   "t_in": 108.74,
-   "t_out": 119.74,
+   "t_in": 92.12,
+   "t_out": 103.12,
    "title": "Philip II moves the court to Madrid",
    "sub": "1561"
   },
   {
-   "t_in": 132.85,
-   "t_out": 138.85,
+   "t_in": 118.37,
+   "t_out": 124.37,
    "title": "Plaza Mayor is completed",
    "sub": "1619"
   },
   {
-   "t_in": 154.97,
-   "t_out": 169.97,
-   "title": "Philip IV rings the city with a wall",
-   "sub": "1625"
-  },
-  {
-   "t_in": 190.11,
-   "t_out": 195.11,
+   "t_in": 163.41,
+   "t_out": 168.41,
    "title": "The Alcázar burns",
    "sub": "1734"
   },
   {
-   "t_in": 201.0,
-   "t_out": 209.0,
+   "t_in": 173.92,
+   "t_out": 181.92,
    "title": "The Royal Palace is finished",
    "sub": "1755"
   },
   {
-   "t_in": 242.64,
-   "t_out": 248.64,
+   "t_in": 214.0,
+   "t_out": 220.0,
    "title": "The Prado opens",
    "sub": "1819"
   },
   {
-   "t_in": 287.56,
-   "t_out": 297.56,
-   "title": "The Retiro becomes a public park",
-   "sub": "1868"
-  },
-  {
-   "t_in": 309.72,
-   "t_out": 316.72,
+   "t_in": 258.18,
+   "t_out": 265.18,
    "title": "Castro's Ensanche grid takes shape",
    "sub": "1871"
   },
   {
-   "t_in": 333.54,
-   "t_out": 349.54,
+   "t_in": 305.78,
+   "t_out": 315.78,
    "title": "The Gran Vía cuts through the old city",
    "sub": "1910"
   },
   {
-   "t_in": 385.76,
-   "t_out": 394.76,
+   "t_in": 363.5,
+   "t_out": 372.5,
    "title": "Madrid under siege",
    "sub": "1936"
   },
   {
-   "t_in": 421.66,
-   "t_out": 431.66,
-   "title": "The Bernabéu stadium opens",
-   "sub": "1947"
-  },
-  {
-   "t_in": 456.2,
-   "t_out": 466.2,
+   "t_in": 395.76,
+   "t_out": 405.76,
    "title": "The Torre de Madrid tops Spain's skyline",
    "sub": "1957"
   },
   {
-   "t_in": 489.23,
-   "t_out": 499.23,
-   "title": "Almudena Cathedral is consecrated",
-   "sub": "1993"
-  },
-  {
-   "t_in": 558.28,
-   "t_out": 578.28,
+   "t_in": 489.7,
+   "t_out": 509.7,
    "title": "Four towers redraw the skyline",
    "sub": "2007"
   }
  ],
- "subscribe_t": 90.0,
+ "subscribe_t": 103.5,
  "cards": [
   {
    "t_in": 15.7,
@@ -111,8 +87,8 @@
    "sober": false
   },
   {
-   "t_in": 25.6,
-   "t_out": 30.6,
+   "t_in": 24.33,
+   "t_out": 29.33,
    "date": "AD 929",
    "title": "The Caliphate of Córdoba",
    "lines": [
@@ -121,8 +97,8 @@
    "sober": false
   },
   {
-   "t_in": 36.63,
-   "t_out": 41.63,
+   "t_in": 32.73,
+   "t_out": 37.73,
    "date": "1031",
    "title": "The caliphate breaks apart",
    "lines": [
@@ -131,8 +107,8 @@
    "sober": false
   },
   {
-   "t_in": 44.86,
-   "t_out": 49.86,
+   "t_in": 39.57,
+   "t_out": 44.57,
    "date": "1085",
    "title": "Madrid passes to Castile",
    "lines": [
@@ -141,8 +117,8 @@
    "sober": false
   },
   {
-   "t_in": 52.98,
-   "t_out": 57.98,
+   "t_in": 46.77,
+   "t_out": 51.77,
    "date": "1126",
    "title": "A suburb beyond the wall",
    "lines": [
@@ -151,8 +127,8 @@
    "sober": false
   },
   {
-   "t_in": 62.48,
-   "t_out": 67.48,
+   "t_in": 54.82,
+   "t_out": 59.82,
    "date": "1202",
    "title": "A wall still unfinished",
    "lines": [
@@ -161,8 +137,8 @@
    "sober": false
   },
   {
-   "t_in": 81.43,
-   "t_out": 86.43,
+   "t_in": 67.98,
+   "t_out": 72.98,
    "date": "1438",
    "title": "A wall for the suburbs",
    "lines": [
@@ -171,8 +147,8 @@
    "sober": false
   },
   {
-   "t_in": 88.14,
-   "t_out": 93.14,
+   "t_in": 73.94,
+   "t_out": 78.94,
    "date": "1467",
    "title": "A royal mint",
    "lines": [
@@ -181,8 +157,8 @@
    "sober": false
   },
   {
-   "t_in": 93.91,
-   "t_out": 98.91,
+   "t_in": 79.38,
+   "t_out": 84.38,
    "date": "1480",
    "title": "A town of 5,000",
    "lines": [
@@ -191,8 +167,8 @@
    "sober": false
   },
   {
-   "t_in": 101.3,
-   "t_out": 106.3,
+   "t_in": 85.73,
+   "t_out": 90.73,
    "date": "1520",
    "title": "The Comuneros rise",
    "lines": [
@@ -201,8 +177,8 @@
    "sober": false
   },
   {
-   "t_in": 108.74,
-   "t_out": 114.74,
+   "t_in": 92.12,
+   "t_out": 98.12,
    "date": "1561",
    "title": "The court settles in Madrid",
    "lines": [
@@ -211,8 +187,8 @@
    "sober": false
   },
   {
-   "t_in": 114.74,
-   "t_out": 119.74,
+   "t_in": 98.12,
+   "t_out": 103.12,
    "date": "1566",
    "title": "A wall for taxes and health",
    "lines": [
@@ -221,8 +197,8 @@
    "sober": false
   },
   {
-   "t_in": 121.21,
-   "t_out": 126.21,
+   "t_in": 104.44,
+   "t_out": 109.44,
    "date": "1590",
    "title": "Nearly 100,000 people",
    "lines": [
@@ -231,8 +207,8 @@
    "sober": false
   },
   {
-   "t_in": 126.86,
-   "t_out": 131.86,
+   "t_in": 110.7,
+   "t_out": 115.7,
    "date": "1601",
    "title": "The court leaves for Valladolid",
    "lines": [
@@ -241,8 +217,8 @@
    "sober": false
   },
   {
-   "t_in": 132.85,
-   "t_out": 137.85,
+   "t_in": 118.37,
+   "t_out": 123.37,
    "date": "1619",
    "title": "Plaza Mayor is finished",
    "lines": [
@@ -251,8 +227,8 @@
    "sober": false
   },
   {
-   "t_in": 154.97,
-   "t_out": 159.97,
+   "t_in": 125.54,
+   "t_out": 130.54,
    "date": "1625",
    "title": "Philip IV's wall",
    "lines": [
@@ -261,8 +237,8 @@
    "sober": false
   },
   {
-   "t_in": 159.97,
-   "t_out": 164.97,
+   "t_in": 132.18,
+   "t_out": 137.18,
    "date": "1631",
    "title": "Fire in the Plaza Mayor",
    "lines": [
@@ -271,8 +247,8 @@
    "sober": false
   },
   {
-   "t_in": 164.97,
-   "t_out": 169.97,
+   "t_in": 137.64,
+   "t_out": 142.64,
    "date": "1633",
    "title": "The Buen Retiro",
    "lines": [
@@ -281,8 +257,8 @@
    "sober": false
   },
   {
-   "t_in": 173.99,
-   "t_out": 178.99,
+   "t_in": 157.18,
+   "t_out": 162.18,
    "date": "1700",
    "title": "The Bourbons arrive",
    "lines": [
@@ -291,8 +267,8 @@
    "sober": false
   },
   {
-   "t_in": 190.11,
-   "t_out": 195.11,
+   "t_in": 163.41,
+   "t_out": 168.41,
    "date": "1734",
    "title": "The Alcázar burns",
    "lines": [
@@ -301,8 +277,8 @@
    "sober": false
   },
   {
-   "t_in": 195.29,
-   "t_out": 200.29,
+   "t_in": 168.51,
+   "t_out": 173.51,
    "date": "1738",
    "title": "A new palace",
    "lines": [
@@ -311,8 +287,8 @@
    "sober": false
   },
   {
-   "t_in": 201.0,
-   "t_out": 206.0,
+   "t_in": 173.92,
+   "t_out": 178.92,
    "date": "1755",
    "title": "The Royal Palace is done",
    "lines": [
@@ -321,8 +297,8 @@
    "sober": false
   },
   {
-   "t_in": 209.6,
-   "t_out": 214.6,
+   "t_in": 182.26,
+   "t_out": 187.26,
    "date": "1766",
    "title": "The Esquilache riots",
    "lines": [
@@ -331,8 +307,8 @@
    "sober": false
   },
   {
-   "t_in": 215.3,
-   "t_out": 220.3,
+   "t_in": 187.66,
+   "t_out": 192.66,
    "date": "1778",
    "title": "The Puerta de Alcalá",
    "lines": [
@@ -341,8 +317,8 @@
    "sober": false
   },
   {
-   "t_in": 220.71,
-   "t_out": 225.71,
+   "t_in": 192.89,
+   "t_out": 197.89,
    "date": "1785",
    "title": "A building by Villanueva",
    "lines": [
@@ -351,8 +327,8 @@
    "sober": false
   },
   {
-   "t_in": 226.0,
-   "t_out": 231.0,
+   "t_in": 198.06,
+   "t_out": 203.06,
    "date": "1790",
    "title": "The Plaza Mayor burns again",
    "lines": [
@@ -361,8 +337,8 @@
    "sober": false
   },
   {
-   "t_in": 232.09,
-   "t_out": 237.09,
+   "t_in": 203.67,
+   "t_out": 208.67,
    "date": "1808",
    "title": "The Second of May",
    "lines": [
@@ -371,8 +347,8 @@
    "sober": false
   },
   {
-   "t_in": 237.34,
-   "t_out": 242.34,
+   "t_in": 208.81,
+   "t_out": 213.81,
    "date": "1812",
    "title": "The French are driven out",
    "lines": [
@@ -381,8 +357,8 @@
    "sober": false
   },
   {
-   "t_in": 242.64,
-   "t_out": 247.64,
+   "t_in": 214.0,
+   "t_out": 219.0,
    "date": "1819",
    "title": "The Prado opens",
    "lines": [
@@ -391,8 +367,8 @@
    "sober": false
   },
   {
-   "t_in": 249.56,
-   "t_out": 254.56,
+   "t_in": 220.52,
+   "t_out": 225.52,
    "date": "1835",
    "title": "Convents are confiscated",
    "lines": [
@@ -401,8 +377,8 @@
    "sober": false
   },
   {
-   "t_in": 255.47,
-   "t_out": 260.47,
+   "t_in": 226.47,
+   "t_out": 231.47,
    "date": "1850",
    "title": "The Teatro Real opens",
    "lines": [
@@ -411,8 +387,8 @@
    "sober": false
   },
   {
-   "t_in": 260.48,
-   "t_out": 265.48,
+   "t_in": 231.5,
+   "t_out": 236.5,
    "date": "1851",
    "title": "The first railway station",
    "lines": [
@@ -421,18 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 265.89,
-   "t_out": 271.89,
-   "date": "1858",
-   "title": "Puerta del Sol takes its modern shape (1862)",
-   "lines": [
-    "Puerta del Sol takes its modern shape (1862)"
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 271.92,
-   "t_out": 276.92,
+   "t_in": 236.92,
+   "t_out": 241.92,
    "date": "1858",
    "title": "Water from the Lozoya",
    "lines": [
@@ -441,8 +407,8 @@
    "sober": false
   },
   {
-   "t_in": 277.04,
-   "t_out": 282.04,
+   "t_in": 242.15,
+   "t_out": 247.15,
    "date": "1860",
    "title": "The Ensanche plan",
    "lines": [
@@ -451,8 +417,8 @@
    "sober": false
   },
   {
-   "t_in": 282.12,
-   "t_out": 287.12,
+   "t_in": 247.3,
+   "t_out": 252.3,
    "date": "1862",
    "title": "Puerta del Sol rebuilt",
    "lines": [
@@ -461,8 +427,8 @@
    "sober": false
   },
   {
-   "t_in": 287.56,
-   "t_out": 292.56,
+   "t_in": 252.61,
+   "t_out": 257.61,
    "date": "1868",
    "title": "Walls down, Retiro open",
    "lines": [
@@ -471,8 +437,8 @@
    "sober": false
   },
   {
-   "t_in": 292.56,
-   "t_out": 297.56,
+   "t_in": 258.18,
+   "t_out": 263.18,
    "date": "1871",
    "title": "The first trams",
    "lines": [
@@ -481,8 +447,8 @@
    "sober": false
   },
   {
-   "t_in": 316.91,
-   "t_out": 321.91,
+   "t_in": 268.44,
+   "t_out": 273.44,
    "date": "1883",
    "title": "Almudena's first stone",
    "lines": [
@@ -491,8 +457,8 @@
    "sober": false
   },
   {
-   "t_in": 322.43,
-   "t_out": 327.43,
+   "t_in": 282.18,
+   "t_out": 287.18,
    "date": "1892",
    "title": "Atocha is rebuilt",
    "lines": [
@@ -501,8 +467,8 @@
    "sober": false
   },
   {
-   "t_in": 327.9,
-   "t_out": 332.9,
+   "t_in": 295.18,
+   "t_out": 300.18,
    "date": "1900",
    "title": "Over half a million",
    "lines": [
@@ -511,8 +477,8 @@
    "sober": false
   },
   {
-   "t_in": 333.54,
-   "t_out": 338.54,
+   "t_in": 305.78,
+   "t_out": 310.78,
    "date": "1910",
    "title": "The Gran Vía begins",
    "lines": [
@@ -521,8 +487,8 @@
    "sober": false
   },
   {
-   "t_in": 338.54,
-   "t_out": 343.54,
+   "t_in": 310.78,
+   "t_out": 315.78,
    "date": "1911",
    "title": "The Metropolis Building",
    "lines": [
@@ -531,18 +497,8 @@
    "sober": false
   },
   {
-   "t_in": 343.54,
-   "t_out": 349.54,
-   "date": "1917",
-   "title": "Cibeles Palace opens (1919)",
-   "lines": [
-    "Cibeles Palace opens (1919)"
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 349.68,
-   "t_out": 354.68,
+   "t_in": 316.86,
+   "t_out": 321.86,
    "date": "1919",
    "title": "Cibeles Palace opens",
    "lines": [
@@ -551,8 +507,8 @@
    "sober": false
   },
   {
-   "t_in": 354.71,
-   "t_out": 359.71,
+   "t_in": 322.19,
+   "t_out": 327.19,
    "date": "1919",
    "title": "The first Metro line",
    "lines": [
@@ -561,8 +517,8 @@
    "sober": false
   },
   {
-   "t_in": 360.29,
-   "t_out": 365.29,
+   "t_in": 333.57,
+   "t_out": 338.57,
    "date": "1929",
    "title": "The Gran Vía is complete",
    "lines": [
@@ -571,8 +527,8 @@
    "sober": false
   },
   {
-   "t_in": 365.39,
-   "t_out": 370.39,
+   "t_in": 340.29,
+   "t_out": 345.29,
    "date": "1931",
    "title": "The Second Republic",
    "lines": [
@@ -581,8 +537,8 @@
    "sober": false
   },
   {
-   "t_in": 370.7,
-   "t_out": 375.7,
+   "t_in": 348.33,
+   "t_out": 353.33,
    "date": "1936",
    "title": "The coup fails in Madrid",
    "lines": [
@@ -591,8 +547,8 @@
    "sober": false
   },
   {
-   "t_in": 375.71,
-   "t_out": 380.71,
+   "t_in": 353.39,
+   "t_out": 358.39,
    "date": "1936",
    "title": "The first air raid",
    "lines": [
@@ -601,8 +557,8 @@
    "sober": false
   },
   {
-   "t_in": 380.72,
-   "t_out": 385.72,
+   "t_in": 358.45,
+   "t_out": 363.45,
    "date": "1936",
    "title": "The siege begins",
    "lines": [
@@ -611,8 +567,8 @@
    "sober": false
   },
   {
-   "t_in": 385.76,
-   "t_out": 390.76,
+   "t_in": 363.5,
+   "t_out": 368.5,
    "date": "1939",
    "title": "Madrid falls",
    "lines": [
@@ -621,8 +577,8 @@
    "sober": false
   },
   {
-   "t_in": 421.66,
-   "t_out": 426.66,
+   "t_in": 380.13,
+   "t_out": 385.13,
    "date": "1947",
    "title": "The Bernabéu opens",
    "lines": [
@@ -631,8 +587,8 @@
    "sober": false
   },
   {
-   "t_in": 426.66,
-   "t_out": 431.66,
+   "t_in": 387.22,
+   "t_out": 392.22,
    "date": "1950",
    "title": "A much bigger city",
    "lines": [
@@ -641,8 +597,8 @@
    "sober": false
   },
   {
-   "t_in": 456.2,
-   "t_out": 461.2,
+   "t_in": 395.76,
+   "t_out": 400.76,
    "date": "1953",
    "title": "Edificio España",
    "lines": [
@@ -651,8 +607,8 @@
    "sober": false
   },
   {
-   "t_in": 461.2,
-   "t_out": 466.2,
+   "t_in": 400.76,
+   "t_out": 405.76,
    "date": "1957",
    "title": "The Torre de Madrid",
    "lines": [
@@ -661,8 +617,8 @@
    "sober": false
   },
   {
-   "t_in": 466.92,
-   "t_out": 471.92,
+   "t_in": 417.86,
+   "t_out": 422.86,
    "date": "1970",
    "title": "The M-30 ring road",
    "lines": [
@@ -671,18 +627,8 @@
    "sober": false
   },
   {
-   "t_in": 471.92,
-   "t_out": 477.92,
-   "date": "1970",
-   "title": "The M-30 ring road is built (1970)",
-   "lines": [
-    "Hover area is hand-set on the Manzanares stretch of the M-30."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 478.26,
-   "t_out": 483.26,
+   "t_in": 428.75,
+   "t_out": 433.75,
    "date": "1975",
    "title": "Franco dies",
    "lines": [
@@ -691,8 +637,8 @@
    "sober": false
   },
   {
-   "t_in": 483.44,
-   "t_out": 488.44,
+   "t_in": 436.79,
+   "t_out": 441.79,
    "date": "1978",
    "title": "A new constitution",
    "lines": [
@@ -701,8 +647,8 @@
    "sober": false
   },
   {
-   "t_in": 489.23,
-   "t_out": 494.23,
+   "t_in": 454.86,
+   "t_out": 459.86,
    "date": "1992",
    "title": "Atocha's new terminal",
    "lines": [
@@ -711,8 +657,8 @@
    "sober": false
   },
   {
-   "t_in": 494.23,
-   "t_out": 499.23,
+   "t_in": 461.31,
+   "t_out": 466.31,
    "date": "1993",
    "title": "Almudena is consecrated",
    "lines": [
@@ -721,8 +667,8 @@
    "sober": false
   },
   {
-   "t_in": 499.46,
-   "t_out": 504.46,
+   "t_in": 470.64,
+   "t_out": 475.64,
    "date": "1997",
    "title": "The Teatro Real reborn",
    "lines": [
@@ -731,8 +677,8 @@
    "sober": false
   },
   {
-   "t_in": 504.83,
-   "t_out": 509.83,
+   "t_in": 482.05,
+   "t_out": 487.05,
    "date": "2004",
    "title": "March 11, 2004",
    "lines": [
@@ -741,8 +687,8 @@
    "sober": false
   },
   {
-   "t_in": 558.28,
-   "t_out": 563.28,
+   "t_in": 489.7,
+   "t_out": 494.7,
    "date": "2007",
    "title": "The towers rise",
    "lines": [
@@ -751,8 +697,8 @@
    "sober": false
   },
   {
-   "t_in": 563.28,
-   "t_out": 568.28,
+   "t_in": 494.7,
+   "t_out": 499.7,
    "date": "2008",
    "title": "Spain's tallest tower",
    "lines": [
@@ -761,8 +707,8 @@
    "sober": false
   },
   {
-   "t_in": 568.28,
-   "t_out": 573.28,
+   "t_in": 499.7,
+   "t_out": 504.7,
    "date": "2009",
    "title": "A hub under Sol",
    "lines": [
@@ -771,8 +717,8 @@
    "sober": false
   },
   {
-   "t_in": 573.28,
-   "t_out": 578.28,
+   "t_in": 504.7,
+   "t_out": 509.7,
    "date": "2011",
    "title": "The M-30 goes underground",
    "lines": [
@@ -781,8 +727,8 @@
    "sober": false
   },
   {
-   "t_in": 579.11,
-   "t_out": 584.11,
+   "t_in": 519.98,
+   "t_out": 524.98,
    "date": "2024",
    "title": "A city of 3.4 million",
    "lines": [
@@ -799,56 +745,56 @@
    "title": "The Emir's Fortress"
   },
   {
-   "t_in": 42.06,
-   "t_out": 44.86,
+   "t_in": 37.73,
+   "t_out": 39.57,
    "num": "II",
    "title": "Castilian Town"
   },
   {
-   "t_in": 106.3,
-   "t_out": 108.74,
+   "t_in": 90.73,
+   "t_out": 92.12,
    "num": "III",
    "title": "Capital of the Empire"
   },
   {
-   "t_in": 171.19,
-   "t_out": 173.99,
+   "t_in": 154.38,
+   "t_out": 157.18,
    "num": "IV",
    "title": "Bourbon Madrid"
   },
   {
-   "t_in": 230.89,
-   "t_out": 232.09,
+   "t_in": 202.47,
+   "t_out": 203.67,
    "num": "V",
    "title": "War and Revolution"
   },
   {
-   "t_in": 275.84,
-   "t_out": 277.04,
+   "t_in": 240.95,
+   "t_out": 242.15,
    "num": "VI",
    "title": "Ensanche and Gran Vía"
   },
   {
-   "t_in": 364.19,
-   "t_out": 365.39,
+   "t_in": 338.57,
+   "t_out": 340.29,
    "num": "VII",
    "title": "Republic, Siege and Dictatorship"
   },
   {
-   "t_in": 477.06,
-   "t_out": 478.26,
+   "t_in": 425.95,
+   "t_out": 428.75,
    "num": "VIII",
    "title": "Democratic Capital"
   }
  ],
  "cta": {
-  "t_in": 647.5,
-  "t_out": 652.0,
+  "t_in": 588.4,
+  "t_out": 592.9,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 652.0,
-  "t_out": 660.0,
+  "t_in": 592.9,
+  "t_out": 600.9,
   "items": [
    "Buildings: Dirección General del Catastro (INSPIRE Buildings, Spanish cadastre)",
    "Roads, water, parks: © OpenStreetMap contributors (ODbL)",

@@ -1,0 +1,28 @@
+yb-historian/yb-qa cards pass madrid (2026-11-19)
+Base: story.json at commit c3b1371 (before this pass). Facts, years outside sourced windows, caption meaning and sources: untouched.
+
+REMOVED card 1858.0 'Puerta del Sol takes its modern shape (1862)' (hold 6.0, conf high, src ['S15']): demoted-stop card with no text; card 1862 'Puerta del Sol rebuilt' (S15) already carries the sourced text: merged into it
+REMOVED card 1917.2 'Cibeles Palace opens (1919)' (hold 6.0, conf high, src ['S20']): demoted-stop card with no text; card 1919.2 'Cibeles Palace opens' (S20) already carries the sourced text: merged into it
+REMOVED card 1970.0 'The M-30 ring road is built (1970)' (hold 6.0, conf medium, src ['S33']): demoted-stop card whose text was an internal note ('Hover area is hand-set...'); card 1970 'The M-30 ring road' (S33) already carries the sourced text: merged into it
+SOSTE removed 'Philip IV rings the city with a wall (1625)' (y 1625.0-1632.0, weight 4): flight Plaza Mayor -> Philip IV wall (1620-1625) is camera-geometry-bound, 16.1 s for 5 years = 0.31 y/s. Card 'Philip IV's wall' (1625, S9) already carries the text and stays
+SOSTE removed 'The Retiro becomes a public park (1868)' (y 1868.7-1870.0, weight 5): flight Retiro -> Ensanche (1870-1871) is camera-geometry-bound, 12.2 s for 1 year = 0.08 y/s; cards cannot shorten it. Card 'Walls down, Retiro open' (1868.74, S1/S9/S17) already carries the text and stays
+SOSTE removed 'The Bernabéu stadium opens (1947)' (y 1946.0-1948.0, weight 4): flights Siege -> Bernabeu (1939-1946: 26.9 s, 0.25 y/s) and Bernabeu -> Torre de Madrid (1948-1953: 24.5 s, 0.22 y/s) are camera-geometry-bound; one demotion fixes both. Card 'The Bernabeu opens' (1947.9, S35) already carries the text and stays
+SOSTE removed 'Almudena Cathedral is consecrated (1993)' (y 1991.5-1993.9, weight 5): flight Almudena -> Four towers (1994-2006) is camera-geometry-bound, 58.8 s for 12.8 years = 0.22 y/s, and it holds the 53 s gap without a new stimulus. Card 'Almudena is consecrated' (1993.45, S19/S18) already carries the text and stays
+
+NOTE Madrid's 5 slow flights and the 53 s gap were camera-geometry-bound (leg length / v_leg 12-59 s between soste a few years apart), so card edits could not fix them; the 4 lowest-weight soste on those legs became cards (their cards already existed with text). Soste 16 -> 12 (3 earlier demotions M-30/Cibeles/Sol kept as cards). max_duration stays 660 (natural 601 s).
+Counts: cards 69 -> 66 (3 text-less duplicates merged), soste removed 4.
+RESULT (kit build madrid --force; kit qa madrid --only a,b,c,e): duration 600.9 s, cards 66, max gap 19.5 s, QA WARN 3 / FAIL 0.
+Slow flights: nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
+LEGS
+   22.7->  39.6  16.9s  y   880.0-> 1084.9 rate 12.15  -> Madrid passes to Castile (1085
+   45.6->  92.1  46.6s  y  1090.0-> 1561.0 rate 10.12  -> Philip II moves the court to M
+  103.1-> 118.4  15.2s  y  1565.0-> 1617.0 rate  3.41  -> Plaza Mayor is completed (1619
+  124.4-> 163.4  39.0s  y  1620.0-> 1734.9 rate  2.94  -> The Alcázar burns (1734)
+  181.9-> 214.0  32.1s  y  1756.0-> 1817.0 rate  1.90  -> The Prado opens (1819)
+  220.0-> 258.2  38.2s  y  1820.0-> 1871.0 rate  1.34  -> Castro's Ensanche grid takes s
+  265.2-> 305.8  40.6s  y  1880.0-> 1910.2 rate  0.74  -> The Gran Vía cuts through the 
+  315.8-> 363.5  47.7s  y  1916.9-> 1936.8 rate  0.42  -> Madrid under siege (1936)
+  372.5-> 395.8  23.3s  y  1939.3-> 1953.5 rate  0.61  -> The Torre de Madrid tops Spain
+  405.8-> 489.7  83.9s  y  1957.9-> 2006.8 rate  0.58  -> Four towers redraw the skyline
+  509.7-> 588.4  78.7s  y  2009.9-> 2026.0 rate  0.20  -> finale
+GAPS>15: [(138, 19.5), (364, 16.6), (401, 17.1), (437, 18.1), (505, 15.3)]
