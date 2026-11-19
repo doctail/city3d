@@ -1,6 +1,6 @@
 # QA nyc
 
-Generato da `python -m kit.qa` il 2026-11-19 16:15. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-19 17:10. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -9,6 +9,7 @@ Generato da `python -m kit.qa` il 2026-11-19 16:15. Esito complessivo: **WARN**
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | WARN |
+| f) Fotogrammi locali | PASS |
 
 ## a) Story e fonti
 
@@ -73,8 +74,8 @@ Generato da `python -m kit.qa` il 2026-11-19 16:15. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (11 s)
-  - oggetti citta' 2186, cambi in tutto il video 79085, max in un fotogramma 780 (~9 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+- **PASS** costo dei cambi (12 s)
+  - oggetti citta' 1908, cambi in tutto il video 68797, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 138 m/s (limite 250), mediana 14
 - **PASS** drone: accelerazione massima
@@ -112,9 +113,17 @@ Generato da `python -m kit.qa` il 2026-11-19 16:15. Esito complessivo: **WARN**
 - **PASS** notte
   - night_t=540.2748639736368, schedule_nyc_night.json ok
 
+## f) Fotogrammi locali
+
+- **PASS** render locale: 8 fotogrammi in 194 s
+  - cities/nyc/qa/render.log
+- **PASS** foglio contatti
+  - cities/nyc/qa/contact.jpg: guardalo prima del pod (strade come nastri chiari, centro pieno)
+
 ## Immagini
 
 ![corridoi_1709.png](corridoi_1709.png)
 ![corridoi_1800.png](corridoi_1800.png)
 ![corridoi_1900.png](corridoi_1900.png)
 ![corridoi_1950.png](corridoi_1950.png)
+![contact.jpg](contact.jpg)
