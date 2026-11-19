@@ -6,14 +6,16 @@ from shapely.ops import unary_union
 D = '/home/user/doctail/city3d/data_nyc'
 land = json.load(open(f'{D}/land.json'))
 lg = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land]).buffer(15, join_style=2).buffer(-15, join_style=2)
-R_SPIKE, R_SLIP = 70, 60
+R_SPIKE, R_SLIP = 110, 110
 reg = box(-9500, -12500, 5500, 2500)
-opened = lg.buffer(-R_SPIKE, join_style=2).buffer(R_SPIKE, join_style=2)
-spikes = lg.difference(opened).intersection(reg)
-closed = lg.buffer(R_SLIP, join_style=2).buffer(-R_SLIP, join_style=2)
-slips = closed.difference(lg).intersection(reg)
+opened = lg.buffer(-R_SPIKE, 8).buffer(R_SPIKE, 8)
+pre = opened.buffer(R_SLIP, 8).buffer(-R_SLIP, 8)   # shore as it was before the piers: opening (spikes) then closing (slips), round joins
+spikes = lg.difference(pre).intersection(reg)
+slips = pre.difference(lg).intersection(reg)
 def parts(g, amin): return [p for p in getattr(g, 'geoms', [g]) if p.geom_type == 'Polygon' and p.area > amin]
-sp = parts(spikes, 400); sl = parts(slips, 400)
+pre_b = pre.buffer(6)
+sp = [p for p in parts(spikes, 400) if p.intersects(pre_b)];   # whole islands (Liberty, Ellis) are not piers
+sl0 = None; sl = parts(slips, 400)
 print('spikes', len(sp), round(sum(p.area for p in sp)), 'slips', len(sl), round(sum(p.area for p in sl)))
 if '--write' in sys.argv:
     ph = [x for x in json.load(open(f'{D}/landphases.json')) if not x.get('yb_pier')]

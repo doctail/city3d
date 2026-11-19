@@ -1,0 +1,51 @@
+[build] edifici 145927 (1s, 572 MB)
+[build] predecessori storici 305144 (2s, 1040 MB)
+[build] rilievo sotto gli edifici: max 89 m (16s, 1092 MB)
+[build] monumenti: 628 parti; tolti 16 edifici nelle impronte (68s, 1098 MB)
+[build] ritaglio 116135 (69s, 1098 MB)
+/home/user/doctail/city3d/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 2834 blocchi per anno, 1702063 vertici (78s, 1247 MB)
+/home/user/doctail/city3d/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (89s, 1394 MB)
+[build] suolo urbano dalle impronte: 140810 triangoli in 42 decenni (380s, 1636 MB)
+/home/user/doctail/city3d/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/home/user/doctail/city3d/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 677 poligoni in 55 finestre (380s, 1636 MB)
+[build] strade 31194 (381s, 1636 MB)
+[build] ponti 3 (381s, 1636 MB)
+/home/user/doctail/city3d/build_render.py:786: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 3 (381s, 1636 MB)
+[build] boschi 0 celle in 0 blocchi (381s, 1636 MB)
+[build] isolati 3181 (385s, 1636 MB)
+[build] parchi 330 (386s, 1659 MB)
+[build] piene 1 (386s, 1659 MB)
+[build] terra 320 poligoni (386s, 1659 MB)
+[build] monumenti costruiti: 288 parti (386s, 1659 MB)
+[build] rilievo applicato: 867948 vertici, massimo 219 m (391s, 1776 MB)
+[build] monumenti: parti staccate dalla scena: 196 (391s, 1776 MB)
+[build] monumenti uniti: 288 -> 127 oggetti (391s, 1776 MB)
+[build] alberi cotti: 674034 vertici (392s, 1827 MB)
+/home/user/doctail/city3d/build_render.py:1298: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 2834 città, 376 statici (392s, 1827 MB)
+[build] dati di costruzione liberati (392s, 1526 MB)
+[build] CPU (392s, 1526 MB)
+06:32.744  cycles           | WARNING CUEW initialization failed: Error opening the library
+[build] denoiser OPENIMAGEDENOISE (392s, 1526 MB)
+[build] render 1 -> 80 1280x720 16 campioni (392s, 1526 MB)
+06:50.426  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_p2/0009.jpg'
+[build] fotogramma 9: 17.7s (anno 1609)
+07:06.848  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_p2/0025.jpg'
+[build] fotogramma 25: 16.4s (anno 1625)
+07:23.525  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_p2/0041.jpg'
+[build] fotogramma 41: 16.7s (anno 1626)
+07:43.574  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_p2/0057.jpg'
+[build] fotogramma 57: 20.0s (anno 1930)
+08:02.855  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_p2/0073.jpg'
+[build] fotogramma 73: 19.3s (anno 1855)
+[build] FATTO 5 fotogrammi, 18.03s a fotogramma (482s, 3174 MB)
