@@ -171,3 +171,18 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
   spostati sull'inizio di una sosta entro 12 s quando possibile (mai forzando la durata), rientri di A dal secondo 30; piu' corta delle tracce: si taglia; sempre dissolvenza di chiusura di 8 s; loudnorm -14 LUFS.
 - Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
 - Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).
+
+## Navi (`traffic`, OPZIONALE, spento di default; prototipo 19 nov 2026, solo New York)
+Senza il flag `--ships` il build e' identico a prima (stato della scena verificato con hash su Valencia). Con `python build_render.py -- DATA OUT ... --ships cities/<slug>/traffic.json`
+si aggiungono navi decorative (NON una fonte storica: densita', corsie e velocita' sono scelte di regia). Il file puo' essere anche la chiave `traffic` di `story.json` (`load_cfg` accetta entrambi).
+```jsonc
+{"time_scale": 2.0,            // le velocita' sono m/s di scena x time_scale (il video e' un timelapse); il TEMPO delle navi e' fotogramma/FPS, non l'anno
+ "keepout_m": 250,             // niente navi vicino al bersaglio e nel corridoio camera->bersaglio durante le soste del drone (da schedule.drone.stays)
+ "lanes": {"hudson": {"line": [[lat, lon], ...], "width": 500, "from": 1609, "to": null}},   // poligonale sull'ACQUA; width = larghezza di scorrimento laterale
+ "classes": {"steam": {"model": "steam|sail|liner|ferry|tug", "lanes": ["hudson"], "len": [60, 110], "speed": [5, 9], "mode": "loop|pingpong",
+                       "density": [[1850, 10], [1910, 40]]}},   // navi vive per anno (interpolato); la i-esima compare quando la densita' supera i (dissolvenza di scala)
+ "specials": [{"name": "Half Moon", "model": "sail", "y0": 1609, "y1": 1610, "lane": "approach", "at": [lat, lon], "t_ref": 22.0, "len": 60, "speed": 1.2}]}
+```
+- Lunghezza minima 40 m (sotto non si legge a ~1.400 m con 32 mm). Le navi percorrono la corsia (loop: riappaiono all'inizio) con offset laterale fisso; prua = tangente.
+- Controllo terra: ogni nave e' controllata contro `land.json` meno/piu' `landphases.json` agli anni in cui esiste (margine max(len/2, 40 m)); se l'offset urta si prova la linea centrale, poi la nave e' scartata e stampata nel log. `python -m kit.traffic_kit <traffic.json> <data_dir> <lat0> <lon0>` lo esegue da solo.
+- Codice: `kit/traffic_kit.py` (puro Python), `kit/ships_bpy.py` (mesh condivise per modello + oggetti per nave), 12 righe guardate in `build_render.py`.
