@@ -3,16 +3,16 @@
  "city": {
   "slug": "parigi",
   "name": "Paris",
-  "country": "TODO",
+  "country": "France",
   "lat0": 48.85297,
   "lon0": 2.34993,
   "radius_m": 8000,
   "start_year": 1190,
   "end_year": 2026,
-  "title": "EVOLUTION OF PARIS | 3D City Timelapse (1190–NOW) | No AI",
+  "title": "EVOLUTION OF PARIS | 3D City Timelapse (1190-NOW) | No AI",
   "data_source": "custom",
   "data_dir": "data_parigi",
-  "style_preset": "mediterranean",
+  "style_preset": "central",
   "population": [
    [
     1190,
@@ -323,7 +323,53 @@
    "D050",
    "D051"
   ],
-  "eras": [],
+  "eras": [
+   [
+    1190,
+    "Capetian Paris",
+    "#c9a24a"
+   ],
+   [
+    1328,
+    "Valois Paris and the Hundred Years' War",
+    "#9c7a52"
+   ],
+   [
+    1589,
+    "Royal Paris: League and Bourbons",
+    "#8a6aa0"
+   ],
+   [
+    1789,
+    "Revolution and Empire",
+    "#b5654a"
+   ],
+   [
+    1814,
+    "Restorations and Second Republic",
+    "#6aa0c8"
+   ],
+   [
+    1852.92,
+    "Haussmann's Second Empire",
+    "#c98a4a"
+   ],
+   [
+    1870.67,
+    "Third Republic",
+    "#7cb06a"
+   ],
+   [
+    1940.45,
+    "Occupation and Liberation",
+    "#8c8c8c"
+   ],
+   [
+    1946.82,
+    "Fourth and Fifth Republics",
+    "#c9c1b0"
+   ]
+  ],
   "pop_conf": [
    "low",
    "low",
@@ -376,6 +422,298 @@
    "high",
    "high",
    "high"
+  ],
+  "data_reliable_from": 1800,
+  "_data_reliable_note": "[Guessing] 1800 copied from Marseille; Paris legacy data = BD buildings with dates + ALPAGE blocks 1300/1380/1553/1652/1741/1791 (hist_parigi.py): choose the real year after the local frame check",
+  "polities": [
+   {
+    "y": 1190,
+    "name": "Kingdom of France · Capetians (Philip II)",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "W001"
+    ],
+    "conf": "high",
+    "note": "Video starts 1190 (data pack + regia.open.rewind_to). Parisii, Roman Lutetia and Merovingian Paris are BEFORE the first frame: they are in the era text only, not as chips (Lutetia page + Merovingian page fetched)"
+   },
+   {
+    "y": 1328,
+    "name": "Kingdom of France · House of Valois",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "W002"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1418.4,
+    "name": "Burgundian then English Paris",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "W003"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1436.0,
+    "name": "Kingdom of France · Charles VII",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "W004"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1589.58,
+    "name": "Catholic League Paris · Henry IV besieges",
+    "flag_colors": [
+     "#ffffff",
+     "#b8860b"
+    ],
+    "src": [
+     "W005"
+    ],
+    "conf": "medium",
+    "note": "Henry III dies 2 Aug 1589 (Henry_IV_of_France p.), Paris stays Catholic League until 1594; the exact 1594 day is not in the pages read, y=1589.58 is the 2 Aug 1589 date, 1594.0 is the year only"
+   },
+   {
+    "y": 1594.0,
+    "name": "Kingdom of France · House of Bourbon (Henry IV)",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2c500"
+    ],
+    "src": [
+     "W006"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1789.54,
+    "name": "Revolutionary Paris · Constitutional Monarchy",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W007"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1792.72,
+    "name": "First French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W008"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1799.85,
+    "name": "Consulate · Bonaparte",
+    "flag_colors": [
+     "#0055a4",
+     "#d4af37"
+    ],
+    "src": [
+     "W009"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1804.38,
+    "name": "First French Empire",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "W010"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1814.27,
+    "name": "Bourbon Restoration · Louis XVIII",
+    "flag_colors": [
+     "#ffffff",
+     "#d4af37"
+    ],
+    "src": [
+     "W011"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1815.22,
+    "name": "Hundred Days · Napoleon returns",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "W012"
+    ],
+    "conf": "high",
+    "note": "\"Hundred Days\" chip: 1815.22 = 20 Mar 1815"
+   },
+   {
+    "y": 1815.51,
+    "name": "Second Restoration · Louis XVIII",
+    "flag_colors": [
+     "#ffffff",
+     "#d4af37"
+    ],
+    "src": [
+     "W012"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1830.6,
+    "name": "July Monarchy · Louis-Philippe",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W013"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1848.15,
+    "name": "Second Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W014"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1852.92,
+    "name": "Second French Empire · Napoleon III",
+    "flag_colors": [
+     "#1a237e",
+     "#d4af37"
+    ],
+    "src": [
+     "W015"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1870.67,
+    "name": "Third Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W016"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1871.21,
+    "name": "Paris Commune",
+    "flag_colors": [
+     "#c8102e",
+     "#c8102e"
+    ],
+    "src": [
+     "W017"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1871.41,
+    "name": "Third Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W017"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1940.45,
+    "name": "German-occupied Paris · Vichy France",
+    "flag_colors": [
+     "#2b2b2b",
+     "#a50f15"
+    ],
+    "src": [
+     "W018"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1944.65,
+    "name": "Provisional Government of the French Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W019"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1946.82,
+    "name": "Fourth Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W020"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1958.76,
+    "name": "Fifth Republic",
+    "flag_colors": [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    "src": [
+     "W021"
+    ],
+    "conf": "high"
+   }
   ]
  },
  "sources": {
@@ -1073,10 +1411,1388 @@
    "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
    "title": "Pont Notre-Dame — primo attraversamento sul sito (pont en bois)",
    "quote": "Premier pont en bois sur ce site, avant le pont maçonné avec maisons de 1510-1512; année à vérifier dans la fiche individuelle de la Nomenclature des voies."
+  },
+  "W001": {
+   "url": "https://en.wikipedia.org/wiki/Capetian_dynasty",
+   "title": "Wikipedia (EN): Capetian dynasty",
+   "quote": "It is among the largest and oldest royal houses in Europe and the world, and consists of Hugh Capet, the founder of the dynasty, and his male-line descendants, who ruled in France without interruption from 987 to 1792, and again from 1814 to 1848."
+  },
+  "W002": {
+   "url": "https://en.wikipedia.org/wiki/House_of_Valois",
+   "title": "Wikipedia (EN): House of Valois",
+   "quote": "They succeeded the House of Capet (or \"Direct Capetians\") to the French throne, and were the royal house of France from 1328 to 1589."
+  },
+  "W003": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Paris",
+   "title": "Wikipedia (EN): History of Paris",
+   "quote": "Between 1418 and 1436, the city was occupied by the Burgundians and English."
+  },
+  "W004": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Paris",
+   "title": "Wikipedia (EN): History of Paris",
+   "quote": "When the English left Paris in 1436, Charles VII was finally able to return."
+  },
+  "W005": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Paris",
+   "title": "Wikipedia (EN): History of Paris",
+   "quote": "Paris, along with the other towns of the Catholic League, held out until 1594 against Henry IV, who had succeeded Henry III."
+  },
+  "W006": {
+   "url": "https://en.wikipedia.org/wiki/House_of_Bourbon",
+   "title": "Wikipedia (EN): House of Bourbon",
+   "quote": "Under the Salic law, the head of the House of Bourbon, as the senior representative of the senior-surviving branch of the Capetian dynasty (first prince of the blood), became King of France as Henry IV."
+  },
+  "W007": {
+   "url": "https://en.wikipedia.org/wiki/French_Revolution",
+   "title": "Wikipedia (EN): French Revolution",
+   "quote": "== Constitutional monarchy (July 1789 – September 1792) =="
+  },
+  "W008": {
+   "url": "https://en.wikipedia.org/wiki/French_Revolution",
+   "title": "Wikipedia (EN): French Revolution",
+   "quote": "As a result, the monarchy was replaced by the French First Republic in September, followed by the execution of Louis XVI himself in January 1793."
+  },
+  "W009": {
+   "url": "https://en.wikipedia.org/wiki/French_Consulate",
+   "title": "Wikipedia (EN): French Consulate",
+   "quote": "The Consulate (French: Consulat) was the top-level government of the French First Republic from the fall of the Directory in the coup of 18 Brumaire on 9 November 1799 until the start of the First French Empire on 18 May 1804."
+  },
+  "W010": {
+   "url": "https://en.wikipedia.org/wiki/First_French_Empire",
+   "title": "Wikipedia (EN): First French Empire",
+   "quote": "On 18 May 1804, Napoleon was granted the title Emperor of the French (Empereur des Français, pronounced [ɑ̃pʁœʁ de fʁɑ̃sɛ]) by the French Sénat conservateur and was crowned on 2 December 1804 (11 Frimaire year XIII), signifying the end of the French Consulate and of the French First Republic."
+  },
+  "W011": {
+   "url": "https://en.wikipedia.org/wiki/Bourbon_Restoration_in_France",
+   "title": "Wikipedia (EN): Bourbon Restoration in France",
+   "quote": "In April 1814, the Armies of the Sixth Coalition restored Louis XVIII to the throne, the brother and heir of the late Louis XVI."
+  },
+  "W012": {
+   "url": "https://en.wikipedia.org/wiki/Hundred_Days",
+   "title": "Wikipedia (EN): Hundred Days",
+   "quote": "The Hundred Days, commonly referred to as The War of The Seventh Coalition or Napoleon’s Hundred days (French: les Cent-Jours IPA: [le sɑ̃ ʒuʁ]) marked the period between Napoleon's return from ten months of exile on the island of Elba to Paris on 20 March 1815 and the second restoration of King Louis XVIII on 8 July 1815 (a period of 110 days)."
+  },
+  "W013": {
+   "url": "https://en.wikipedia.org/wiki/July_Monarchy",
+   "title": "Wikipedia (EN): July Monarchy",
+   "quote": "The July Monarchy (French: Monarchie de Juillet), officially the Kingdom of France (French: Royaume de France), was a liberal constitutional monarchy in France under Louis Philippe I, starting on 9 August 1830, with the revolutionary victory in the July Revolution of 1830, and ending on 24 February 1848, with the Revolution of 1848."
+  },
+  "W014": {
+   "url": "https://en.wikipedia.org/wiki/French_Second_Republic",
+   "title": "Wikipedia (EN): French Second Republic",
+   "quote": "By the decree of 24 February, the provisional government had solemnly accepted the principle of the \"right to work\", and decided to establish \"National Workshops\" for the unemployed; at the same time, a sort of industrial parliament was established at the Luxembourg Palace, under the presidency of Louis Blanc, with the object of preparing a scheme for the organization of labor; and, lastly, by ..."
+  },
+  "W015": {
+   "url": "https://en.wikipedia.org/wiki/Second_French_Empire",
+   "title": "Wikipedia (EN): Second French Empire",
+   "quote": "It was established on 2 December 1852 by Louis-Napoléon Bonaparte, president of France under the French Second Republic, who proclaimed himself Emperor of the French as Napoleon III."
+  },
+  "W016": {
+   "url": "https://en.wikipedia.org/wiki/French_Third_Republic",
+   "title": "Wikipedia (EN): French Third Republic",
+   "quote": "The French Third Republic (French: Troisième République, sometimes written as La IIIe République) was the system of government adopted in France from 4 September 1870, when the Second French Empire collapsed during the Franco-Prussian War, until 10 July 1940, after the Fall of France during World War II led to the formation of the Vichy government."
+  },
+  "W017": {
+   "url": "https://en.wikipedia.org/wiki/Paris_Commune",
+   "title": "Wikipedia (EN): Paris Commune",
+   "quote": "The Paris Commune (French: Commune de Paris, pronounced [kɔ.myn də pa.ʁi]) was a French revolutionary government that seized power in Paris on 18 March 1871 and controlled parts of the city until 28 May 1871."
+  },
+  "W018": {
+   "url": "https://en.wikipedia.org/wiki/Battle_of_France",
+   "title": "Wikipedia (EN): Battle of France",
+   "quote": "German armies outflanked the Maginot Line and pushed deep into France, occupying Paris unopposed on 14 June."
+  },
+  "W019": {
+   "url": "https://en.wikipedia.org/wiki/Liberation_of_Paris",
+   "title": "Wikipedia (EN): Liberation of Paris",
+   "quote": "The Liberation of Paris (French: Libération de Paris) was a battle that took place during World War II from 19 August 1944 until the German garrison surrendered the French capital on 25 August 1944."
+  },
+  "W020": {
+   "url": "https://en.wikipedia.org/wiki/French_Fourth_Republic",
+   "title": "Wikipedia (EN): French Fourth Republic",
+   "quote": "The French Fourth Republic (French: Quatrième république française) was the republican government of France from 27 October 1946 to 4 October 1958, governed by the fourth republican constitution of 13 October 1946."
+  },
+  "W021": {
+   "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
+   "title": "Wikipedia (EN): French Fifth Republic",
+   "quote": "It was established on 4 October 1958 by Charles de Gaulle under the Constitution of the Fifth Republic."
+  },
+  "W022": {
+   "url": "https://en.wikipedia.org/wiki/Lutetia",
+   "title": "Wikipedia (EN): Lutetia",
+   "quote": "4500 BC) have been found nearby, and a larger settlement was established around the middle of the third century BC by the Parisii, a Gallic tribe."
+  },
+  "W023": {
+   "url": "https://en.wikipedia.org/wiki/Lutetia",
+   "title": "Wikipedia (EN): Lutetia",
+   "quote": "In the fifth century it became the capital of the Merovingian dynasty of French kings, and thereafter was known as Paris."
+  },
+  "W024": {
+   "url": "https://en.wikipedia.org/wiki/Wall_of_Philip_II_Augustus",
+   "title": "Wikipedia (EN): Wall of Philip II Augustus",
+   "quote": "The walls were fortified from 1190 to 1213, built under the command of Philip Augustus who also contributed to the cost of building the wall."
+  },
+  "W025": {
+   "url": "https://en.wikipedia.org/wiki/Wall_of_Charles_V",
+   "title": "Wikipedia (EN): Wall of Charles V",
+   "quote": "The wall of Charles V, built from 1356 to 1383 is one of the city walls of Paris built on orders granted by Charles V of France."
+  },
+  "W026": {
+   "url": "https://en.wikipedia.org/wiki/City_walls_of_Paris",
+   "title": "Wikipedia (EN): Walls of Paris",
+   "quote": "The Louis XIII Wall, also known as the \"yellow ditches wall\", was designed by Jacques Lemercier and built between 1633 and 1636."
+  },
+  "W027": {
+   "url": "https://en.wikipedia.org/wiki/Wall_of_the_Fermiers_g%C3%A9n%C3%A9raux",
+   "title": "Wikipedia (EN): Wall of the Farmers-General",
+   "quote": "Built between 1784 and 1791, the 24 km (15 mi) wall crossed the districts of the Place de l'Étoile, Batignolles, Pigalle, Belleville, Nation, the Place d'Italie, Denfert-Rochereau, Montparnasse and the Trocadéro, roughly following the route now traced by line 2 and line 6 of the Paris Métro."
+  },
+  "W028": {
+   "url": "https://en.wikipedia.org/wiki/Thiers_wall",
+   "title": "Wikipedia (EN): Thiers Wall",
+   "quote": "It was an enclosure constructed between 1841 and 1846 and was proposed by the French prime minister Adolphe Thiers but was actually implemented by his successor, Marshal Soult."
+  },
+  "W029": {
+   "url": "https://en.wikipedia.org/wiki/Haussmann%27s_renovation_of_Paris",
+   "title": "Wikipedia (EN): Haussmann's renovation of Paris",
+   "quote": "On 1 January 1860 Napoleon III officially annexed the suburbs of Paris out to the ring of fortifications around the city."
+  },
+  "W030": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Neuf",
+   "title": "Wikipedia (EN): Pont Neuf",
+   "quote": "It was inaugurated by Henry IV in 1607."
+  },
+  "W031": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Neuf",
+   "title": "Wikipedia (EN): Pont Neuf",
+   "quote": "The bridge was opened to traffic in 1604 and completed in July 1606."
+  },
+  "W032": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Notre-Dame",
+   "title": "Wikipedia (EN): Pont Notre-Dame",
+   "quote": "On 31 May 1412 Charles VI of France ordered the construction of the first version of the bridge to be named \"Notre-Dame\"."
+  },
+  "W033": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Notre-Dame",
+   "title": "Wikipedia (EN): Pont Notre-Dame",
+   "quote": "The houses were noted by Robert Gauguin as being \"remarkable for their height, and the uniformity of construction\" and was called the \"handsomest in France.\" King Charles' wooden bridge collapsed on 25 October 1499 near 9 a.m., likely due to structural instabilities caused by the lack of repairs."
+  },
+  "W034": {
+   "url": "https://en.wikipedia.org/wiki/Pont_au_Change",
+   "title": "Wikipedia (EN): Pont au Change",
+   "quote": "An early wooden bridge on this site was named the Grande Pont, which would later be commonly, and interchangeably, referred to by other names – Pont aux Changeurs, Pont de la Marchandise, Pont au Change – before the current name became permanent."
+  },
+  "W035": {
+   "url": "https://en.wikipedia.org/wiki/Pont_au_Change",
+   "title": "Wikipedia (EN): Pont au Change",
+   "quote": "Previous iterations were destroyed by fires, floods and ice floes; the current bridge was constructed from 1858 to 1860, during the reign of Napoleon III, and bears his imperial insignia."
+  },
+  "W036": {
+   "url": "https://en.wikipedia.org/wiki/Petit_Pont",
+   "title": "Wikipedia (EN): Petit-Pont",
+   "quote": "The Petit Pont (French pronunciation: [pəti pɔ̃], Little Bridge; since 2013 Petit-Pont-Cardinal-Lustiger) is an arch bridge crossing the River Seine in Paris, built in 1853, although a structure has crossed the river at this point since antiquity."
+  },
+  "W037": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Saint-Michel",
+   "title": "Wikipedia (EN): Pont Saint-Michel",
+   "quote": "Construction lasted from 1379 to 1387."
+  },
+  "W038": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Saint-Michel",
+   "title": "Wikipedia (EN): Pont Saint-Michel",
+   "quote": "First constructed in 1378, it has been rebuilt several times, most recently in 1857."
+  },
+  "W039": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Marie",
+   "title": "Wikipedia (EN): Pont Marie",
+   "quote": "In 1635 the bridge was opened to circulation."
+  },
+  "W040": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_la_Tournelle",
+   "title": "Wikipedia (EN): Pont de la Tournelle",
+   "quote": "The first, a wooden bridge, was built in 1620."
+  },
+  "W041": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Royal",
+   "title": "Wikipedia (EN): Pont Royal",
+   "quote": "In 1632, the entrepreneur Pierre Pidou directed the construction of a wooden toll-bridge which would be called Pont Sainte-Anne (in deference to Anne of Austria) or Pont Rouge (due to its color)."
+  },
+  "W042": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Royal",
+   "title": "Wikipedia (EN): Pont Royal",
+   "quote": "The bridge was finally reconstructed between 25 October 1685 and 13 June 1689, this time with stone, receiving complete financing from King Louis XIV."
+  },
+  "W043": {
+   "url": "https://en.wikipedia.org/wiki/Pont_des_Arts",
+   "title": "Wikipedia (EN): Pont des Arts",
+   "quote": "Between 1802 and 1804, under the government of Napoleon Bonaparte, a nine-arch metallic bridge for pedestrians was constructed at the location of the present-day Pont des Arts: this was the first metal bridge in Paris."
+  },
+  "W044": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Alexandre_III",
+   "title": "Wikipedia (EN): Pont Alexandre III",
+   "quote": "It was inaugurated in 1900 for the Exposition Universelle (universal exhibition) World's Fair, as were the nearby Grand Palais and Petit Palais."
+  },
+  "W045": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Bir-Hakeim",
+   "title": "Wikipedia (EN): Pont de Bir-Hakeim",
+   "quote": "The bridge, made of steel, was constructed between 1903 and 1905, in replacement of a footbridge that had been erected in 1878."
+  },
+  "W046": {
+   "url": "https://en.wikipedia.org/wiki/Pont_d%27I%C3%A9na",
+   "title": "Wikipedia (EN): Pont d'Iéna",
+   "quote": "The initial construction, the cost of which was enormous at the time, was fully financed by the State and spanned six years from 1808 to 1814."
+  },
+  "W047": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_l%27Alma",
+   "title": "Wikipedia (EN): Pont de l'Alma",
+   "quote": "It was designed by Paul Gallocher de Lagalisserie and was inaugurated by Napoleon III on 2 April 1856."
+  },
+  "W048": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Mirabeau",
+   "title": "Wikipedia (EN): Pont Mirabeau",
+   "quote": "The bridge was officially opened by the then French President Félix Faure at a ceremony conducted on 13 July 1897."
+  },
+  "W049": {
+   "url": "https://en.wikipedia.org/wiki/Pont_aval",
+   "title": "Wikipedia (EN): Pont Aval",
+   "quote": "The bridge was opened in 1968."
+  },
+  "W050": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Charles-de-Gaulle",
+   "title": "Wikipedia (EN): Pont Charles de Gaulle",
+   "quote": "In 1986, the Council of Paris (Conseil de Paris) decided to construct a new bridge between the Pont de Bercy and the Pont d'Austerlitz in southeast Paris, to imitate the design of the Pont d'Austerlitz."
+  },
+  "W051": {
+   "url": "https://en.wikipedia.org/wiki/Passerelle_Simone-de-Beauvoir",
+   "title": "Wikipedia (EN): Passerelle Simone-de-Beauvoir",
+   "quote": "In March 2005, Bertrand Delanoë, the mayor of Paris, proposed naming it \"Passerelle Simone de Beauvoir\" and inaugurated the bridge on 13 July 2006, with de Beauvoir's adoptive daughter Sylvie Le Bon-de Beauvoir in attendance."
+  },
+  "W052": {
+   "url": "https://en.wikipedia.org/wiki/Pont_amont",
+   "title": "Wikipedia (EN): Pont Amont",
+   "quote": "Inaugurated in 1969, it has not been given an official name : its current designation (Pont Amont) is, much like for the Pont Aval, completely unofficial."
+  },
+  "W053": {
+   "url": "https://en.wikipedia.org/wiki/Pont_National",
+   "title": "Wikipedia (EN): Pont National",
+   "quote": "It was built between 1852 and 1853 as a railway bridge (to allow the Petite Ceinture line to cross the river) and to link the \"enceintes\" on the two sides of the river."
+  },
+  "W054": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Tolbiac",
+   "title": "Wikipedia (EN): Pont de Tolbiac",
+   "quote": "The pont de Tolbiac (French pronunciation: [pɔ̃ də tɔlbjak]) is a bridge across the Seine in Paris built between 1879 and 1882 by H.P."
+  },
+  "W055": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Bercy",
+   "title": "Wikipedia (EN): Pont de Bercy",
+   "quote": "The Pont de Bercy was built at the site of another bridge, a suspension bridge opened in 1832 to replace a ferry that had become overcrowded and thus exceeded its tonnage limit."
+  },
+  "W056": {
+   "url": "https://en.wikipedia.org/wiki/Pont_du_Garigliano",
+   "title": "Wikipedia (EN): Pont du Garigliano",
+   "quote": "Construction began in 1963 under the architect Davy and the engineer Thenault, and the new structure was inaugurated on 1 September 1966."
+  },
+  "W057": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Sully",
+   "title": "Wikipedia (EN): Pont de Sully",
+   "quote": "They were constructed by the engineer Surville and opened in January 1838."
+  },
+  "W058": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Sully",
+   "title": "Wikipedia (EN): Pont de Sully",
+   "quote": "The current bridge was constructed in 1876, as part of Haussmann's renovation of Paris; it opened on 25 August 1877."
+  },
+  "W059": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Louis-Philippe",
+   "title": "Wikipedia (EN): Pont Louis-Philippe",
+   "quote": "It was opened to traffic one year later, on 26 July 1834."
+  },
+  "W060": {
+   "url": "https://en.wikipedia.org/wiki/Pont_d%27Arcole",
+   "title": "Wikipedia (EN): Pont d'Arcole",
+   "quote": "It was only in 1828 that a suspension bridge for pedestrians with two 6m-wide carriageways, supported from a central pier in midstream, was built by Marc Seguin."
+  },
+  "W061": {
+   "url": "https://en.wikipedia.org/wiki/Pont_du_Carrousel",
+   "title": "Wikipedia (EN): Pont du Carrousel",
+   "quote": "Begun in 1831 in the prolongation of the rue des Saints-Pères on the Left Bank, the original bridge was known under that name until its inauguration, in 1834, when king Louis-Philippe named it Pont du Carrousel, because it opened on the Right Bank river frontage of the Palais du Louvre near the Arc de Triomphe du Carrousel in front of the Tuileries."
+  },
+  "W062": {
+   "url": "https://en.wikipedia.org/wiki/Pont_des_Invalides",
+   "title": "Wikipedia (EN): Pont des Invalides",
+   "quote": "Therefore, in 1829, two engineers, de Verges and Bayard de la Vingtrie, completed the construction of a proper suspension bridge supported by two piers in the Seine and three porticos, each 20 m in height."
+  },
+  "W063": {
+   "url": "https://en.wikipedia.org/wiki/Passerelle_L%C3%A9opold-S%C3%A9dar-Senghor",
+   "title": "Wikipedia (EN): Passerelle Léopold-Sédar-Senghor",
+   "quote": "For a century, a cast iron bridge inaugurated by Napoleon III in 1861 allowed vehicles to cross between quai Anatole-France and quai des Tuileries."
+  },
+  "W064": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_Grenelle",
+   "title": "Wikipedia (EN): Pont de Grenelle",
+   "quote": "which had replaced the original wooden tollbridge built in 1827-29."
+  },
+  "W065": {
+   "url": "https://en.wikipedia.org/wiki/Pont_au_Double",
+   "title": "Wikipedia (EN): Pont au Double",
+   "quote": "Construction began in 1626 and in 1634 the two sides were connected."
+  },
+  "W066": {
+   "url": "https://en.wikipedia.org/wiki/Pont_d%27Austerlitz",
+   "title": "Wikipedia (EN): Pont d'Austerlitz",
+   "quote": "Construction : 1801–1805, 1854 and 1884–1885"
+  },
+  "W067": {
+   "url": "https://en.wikipedia.org/wiki/Pont_de_l%27Archev%C3%AAch%C3%A9",
+   "title": "Wikipedia (EN): Pont de l'Archevêché",
+   "quote": "It was built in 1828, by the engineer Plouard, for the society Pont des Invalides after the demolition of the suspension bridge at Les Invalides."
+  },
+  "W068": {
+   "url": "https://en.wikipedia.org/wiki/Pont_Saint-Louis",
+   "title": "Wikipedia (EN): Pont Saint-Louis",
+   "quote": "The pont Saint-Landry (1630–1634) was the first of  these."
+  },
+  "W069": {
+   "url": "https://en.wikipedia.org/wiki/Passerelle_Debilly",
+   "title": "Wikipedia (EN): Passerelle Debilly",
+   "quote": "In order to accommodate visitor traffic to the 1900 World's Fair across the Seine, the General Commissioner of the Exposition, Alfred Picard, approved the construction of a provisional footbridge opposite the Avenue Albert de Mun, to join the Army and Navy Halls to the exhibit recreating old Paris."
+  },
+  "W070": {
+   "url": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+   "title": "Wikipedia (EN): Arc de Triomphe",
+   "quote": "Inspired by the Arch of Titus in Rome, Italy, the Arc de Triomphe has an overall height of 49.54 m (162.5 ft), width of 44.82 m (147.0 ft) and depth of 22.21 m (72.9 ft), while its large vault is 29.19 m (95.8 ft) high and 14.62 m (48.0 ft) wide."
+  },
+  "W071": {
+   "url": "https://en.wikipedia.org/wiki/La_D%C3%A9fense",
+   "title": "Wikipedia (EN): La Défense",
+   "quote": "In 1982, the EPAD launched the Tête Défense competition to find a monument to complete the Axe historique, which eventually led to the construction of Grande Arche at the west end of the quarter."
+  },
+  "W072": {
+   "url": "https://en.wikipedia.org/wiki/La_D%C3%A9fense",
+   "title": "Wikipedia (EN): La Défense",
+   "quote": "In September 1958, the Public Establishment for Installation of La Défense (EPAD) buildings (of which the Esso Tower was the first) were constructed and began to slowly replace the city's factories, shanties, and even a few farms."
+  },
+  "W073": {
+   "url": "https://en.wikipedia.org/wiki/Treaty_of_Troyes",
+   "title": "Wikipedia (EN): Treaty of Troyes",
+   "quote": "Henry and Charles made a ceremonial entry into Paris together on 1 December 1420, with Philip the Good riding alongside in mourning for his father."
+  },
+  "W074": {
+   "url": "https://en.wikipedia.org/wiki/French_Revolution",
+   "title": "Wikipedia (EN): French Revolution",
+   "quote": "King Louis XVI's attempted flight to Varennes in June 1791 further discredited the French monarchy, and military defeats after the outbreak of the French Revolutionary Wars in April 1792 led to the insurrection of 10 August 1792."
+  },
+  "W075": {
+   "url": "https://en.wikipedia.org/wiki/July_Monarchy",
+   "title": "Wikipedia (EN): July Monarchy",
+   "quote": "It marks the end of the Bourbon Restoration (1814–1830)."
+  },
+  "W076": {
+   "url": "https://en.wikipedia.org/wiki/Second_French_Empire",
+   "title": "Wikipedia (EN): Second French Empire",
+   "quote": "The Second Empire came to an end during the Franco-Prussian War, following Napoleon III's capture at the Battle of Sedan and the proclamation of the Third French Republic on 4 September 1870."
   }
  },
  "history": {
-  "zones": [],
+  "zones": [
+   {
+    "name": "Paris core of 1190: Cite (Île de la Cité)",
+    "ring": [
+     [
+      48.854,
+      2.35314
+     ],
+     [
+      48.85526,
+      2.35284
+     ],
+     [
+      48.85639,
+      2.35197
+     ],
+     [
+      48.85729,
+      2.35061
+     ],
+     [
+      48.85787,
+      2.3489
+     ],
+     [
+      48.85807,
+      2.347
+     ],
+     [
+      48.85787,
+      2.3451
+     ],
+     [
+      48.85729,
+      2.34339
+     ],
+     [
+      48.85639,
+      2.34203
+     ],
+     [
+      48.85526,
+      2.34116
+     ],
+     [
+      48.854,
+      2.34086
+     ],
+     [
+      48.85274,
+      2.34116
+     ],
+     [
+      48.85161,
+      2.34203
+     ],
+     [
+      48.85071,
+      2.34339
+     ],
+     [
+      48.85013,
+      2.3451
+     ],
+     [
+      48.84993,
+      2.347
+     ],
+     [
+      48.85013,
+      2.3489
+     ],
+     [
+      48.85071,
+      2.35061
+     ],
+     [
+      48.85161,
+      2.35197
+     ],
+     [
+      48.85274,
+      2.35284
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Paris core of 1190: Grève / Saint-Gervais",
+    "ring": [
+     [
+      48.8566,
+      2.35739
+     ],
+     [
+      48.85766,
+      2.35713
+     ],
+     [
+      48.85862,
+      2.3564
+     ],
+     [
+      48.85938,
+      2.35525
+     ],
+     [
+      48.85987,
+      2.3538
+     ],
+     [
+      48.86004,
+      2.3522
+     ],
+     [
+      48.85987,
+      2.3506
+     ],
+     [
+      48.85938,
+      2.34915
+     ],
+     [
+      48.85862,
+      2.348
+     ],
+     [
+      48.85766,
+      2.34727
+     ],
+     [
+      48.8566,
+      2.34701
+     ],
+     [
+      48.85554,
+      2.34727
+     ],
+     [
+      48.85458,
+      2.348
+     ],
+     [
+      48.85382,
+      2.34915
+     ],
+     [
+      48.85333,
+      2.3506
+     ],
+     [
+      48.85316,
+      2.3522
+     ],
+     [
+      48.85333,
+      2.3538
+     ],
+     [
+      48.85382,
+      2.35525
+     ],
+     [
+      48.85458,
+      2.3564
+     ],
+     [
+      48.85554,
+      2.35713
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Paris core of 1190: Saint-Germain-des-Prés",
+    "ring": [
+     [
+      48.854,
+      2.3367
+     ],
+     [
+      48.85462,
+      2.33656
+     ],
+     [
+      48.85517,
+      2.33613
+     ],
+     [
+      48.85561,
+      2.33547
+     ],
+     [
+      48.85589,
+      2.33463
+     ],
+     [
+      48.85599,
+      2.3337
+     ],
+     [
+      48.85589,
+      2.33277
+     ],
+     [
+      48.85561,
+      2.33193
+     ],
+     [
+      48.85517,
+      2.33127
+     ],
+     [
+      48.85462,
+      2.33084
+     ],
+     [
+      48.854,
+      2.3307
+     ],
+     [
+      48.85338,
+      2.33084
+     ],
+     [
+      48.85283,
+      2.33127
+     ],
+     [
+      48.85239,
+      2.33193
+     ],
+     [
+      48.85211,
+      2.33277
+     ],
+     [
+      48.85201,
+      2.3337
+     ],
+     [
+      48.85211,
+      2.33463
+     ],
+     [
+      48.85239,
+      2.33547
+     ],
+     [
+      48.85283,
+      2.33613
+     ],
+     [
+      48.85338,
+      2.33656
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Paris core of 1190: Sainte-Geneviève",
+    "ring": [
+     [
+      48.8462,
+      2.35063
+     ],
+     [
+      48.84676,
+      2.3505
+     ],
+     [
+      48.84726,
+      2.35011
+     ],
+     [
+      48.84766,
+      2.3495
+     ],
+     [
+      48.84792,
+      2.34874
+     ],
+     [
+      48.84801,
+      2.3479
+     ],
+     [
+      48.84792,
+      2.34706
+     ],
+     [
+      48.84766,
+      2.3463
+     ],
+     [
+      48.84726,
+      2.34569
+     ],
+     [
+      48.84676,
+      2.3453
+     ],
+     [
+      48.8462,
+      2.34517
+     ],
+     [
+      48.84564,
+      2.3453
+     ],
+     [
+      48.84514,
+      2.34569
+     ],
+     [
+      48.84474,
+      2.3463
+     ],
+     [
+      48.84448,
+      2.34706
+     ],
+     [
+      48.84439,
+      2.3479
+     ],
+     [
+      48.84448,
+      2.34874
+     ],
+     [
+      48.84474,
+      2.3495
+     ],
+     [
+      48.84514,
+      2.35011
+     ],
+     [
+      48.84564,
+      2.3505
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Paris core of 1190: Saint-Marcel",
+    "ring": [
+     [
+      48.8375,
+      2.3613
+     ],
+     [
+      48.83812,
+      2.36116
+     ],
+     [
+      48.83867,
+      2.36073
+     ],
+     [
+      48.83911,
+      2.36007
+     ],
+     [
+      48.83939,
+      2.35923
+     ],
+     [
+      48.83949,
+      2.3583
+     ],
+     [
+      48.83939,
+      2.35737
+     ],
+     [
+      48.83911,
+      2.35653
+     ],
+     [
+      48.83867,
+      2.35587
+     ],
+     [
+      48.83812,
+      2.35544
+     ],
+     [
+      48.8375,
+      2.3553
+     ],
+     [
+      48.83688,
+      2.35544
+     ],
+     [
+      48.83633,
+      2.35587
+     ],
+     [
+      48.83589,
+      2.35653
+     ],
+     [
+      48.83561,
+      2.35737
+     ],
+     [
+      48.83551,
+      2.3583
+     ],
+     [
+      48.83561,
+      2.35923
+     ],
+     [
+      48.83589,
+      2.36007
+     ],
+     [
+      48.83633,
+      2.36073
+     ],
+     [
+      48.83688,
+      2.36116
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Paris core of 1190: Saint-Martin-des-Champs",
+    "ring": [
+     [
+      48.866,
+      2.35618
+     ],
+     [
+      48.86645,
+      2.35608
+     ],
+     [
+      48.86685,
+      2.35577
+     ],
+     [
+      48.86717,
+      2.35528
+     ],
+     [
+      48.86738,
+      2.35468
+     ],
+     [
+      48.86745,
+      2.354
+     ],
+     [
+      48.86738,
+      2.35332
+     ],
+     [
+      48.86717,
+      2.35272
+     ],
+     [
+      48.86685,
+      2.35223
+     ],
+     [
+      48.86645,
+      2.35192
+     ],
+     [
+      48.866,
+      2.35182
+     ],
+     [
+      48.86555,
+      2.35192
+     ],
+     [
+      48.86515,
+      2.35223
+     ],
+     [
+      48.86483,
+      2.35272
+     ],
+     [
+      48.86462,
+      2.35332
+     ],
+     [
+      48.86455,
+      2.354
+     ],
+     [
+      48.86462,
+      2.35468
+     ],
+     [
+      48.86483,
+      2.35528
+     ],
+     [
+      48.86515,
+      2.35577
+     ],
+     [
+      48.86555,
+      2.35608
+     ]
+    ],
+    "born": [
+     1190,
+     1190
+    ],
+    "seed": null,
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Circle (radius 450/380/220/200/220/160 m) from CORES in hist_parigi.py [Likely: legacy, positions from monument lat/lon]; HAND SKETCH, not an outline"
+   },
+   {
+    "name": "Inside the Philip Augustus wall (1190-1213)",
+    "ring": [
+     [
+      48.84464,
+      2.3481
+     ],
+     [
+      48.84813,
+      2.3413
+     ],
+     [
+      48.85722,
+      2.33765
+     ],
+     [
+      48.86075,
+      2.33878
+     ],
+     [
+      48.86445,
+      2.34536
+     ],
+     [
+      48.86317,
+      2.35259
+     ],
+     [
+      48.85574,
+      2.362
+     ]
+    ],
+    "born": [
+     1190,
+     1300
+    ],
+    "seed": [
+     48.854,
+     2.347
+    ],
+    "era_height": [
+     3,
+     6
+    ],
+    "src": [
+     "W024"
+    ],
+    "conf": "low",
+    "note": "Ring = convex hull of the wall parts in the legacy landmarks pack (ALPAGE-derived), 7 vertices, so approximate. born [1190,1300]: legacy comment in hist_parigi.py (growth to 1300 from the ALPAGE blocks 1300), not a sourced date"
+   },
+   {
+    "name": "Inside the Charles V wall (1356-1383), right bank",
+    "ring": [
+     [
+      48.84428,
+      2.34799
+     ],
+     [
+      48.84689,
+      2.34142
+     ],
+     [
+      48.86049,
+      2.3324
+     ],
+     [
+      48.86413,
+      2.33513
+     ],
+     [
+      48.86959,
+      2.35207
+     ],
+     [
+      48.86612,
+      2.365
+     ],
+     [
+      48.85383,
+      2.36902
+     ],
+     [
+      48.84799,
+      2.36649
+     ]
+    ],
+    "born": [
+     1300,
+     1420
+    ],
+    "seed": [
+     48.8566,
+     2.3522
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "W025"
+    ],
+    "conf": "low",
+    "note": "Ring = convex hull of the wall parts in the pack (right bank only). born range = HAND ESTIMATE [Guessing] around the wall dates"
+   },
+   {
+    "name": "Louis XIII wall quarters (1633-1636), west right bank",
+    "ring": [
+     [
+      48.86317,
+      2.32246
+     ],
+     [
+      48.86956,
+      2.32347
+     ],
+     [
+      48.87054,
+      2.3478
+     ],
+     [
+      48.87022,
+      2.34781
+     ]
+    ],
+    "born": [
+     1565,
+     1650
+    ],
+    "seed": [
+     48.862,
+     2.333
+    ],
+    "era_height": [
+     4,
+     10
+    ],
+    "src": [
+     "W026"
+    ],
+    "conf": "low",
+    "note": "Ring = hull of the Fossés jaunes parts in the pack (4 vertices, rough). born range HAND ESTIMATE [Guessing] (pack: wall parts 1570-1642)"
+   },
+   {
+    "name": "Inside the Farmers-General wall (1784-1791)",
+    "ring": [
+     [
+      48.82955,
+      2.34951
+     ],
+     [
+      48.83342,
+      2.33293
+     ],
+     [
+      48.84052,
+      2.31492
+     ],
+     [
+      48.85097,
+      2.29213
+     ],
+     [
+      48.85468,
+      2.28819
+     ],
+     [
+      48.86188,
+      2.28648
+     ],
+     [
+      48.8784,
+      2.2981
+     ],
+     [
+      48.88452,
+      2.32949
+     ],
+     [
+      48.88473,
+      2.35967
+     ],
+     [
+      48.88347,
+      2.36986
+     ],
+     [
+      48.85123,
+      2.39855
+     ],
+     [
+      48.84511,
+      2.40208
+     ],
+     [
+      48.8399,
+      2.40019
+     ]
+    ],
+    "born": [
+     1650,
+     1790
+    ],
+    "seed": [
+     48.85297,
+     2.34993
+    ],
+    "era_height": [
+     5,
+     14
+    ],
+    "src": [
+     "W027"
+    ],
+    "conf": "low",
+    "note": "Ring = hull of the wall parts in the pack (13 vertices). born range HAND ESTIMATE [Guessing]: faubourgs filled before the wall"
+   },
+   {
+    "name": "Inside the Thiers fortifications = Paris after the 1860 annexation",
+    "ring": [
+     [
+      48.81814,
+      2.36001
+     ],
+     [
+      48.81906,
+      2.34048
+     ],
+     [
+      48.83697,
+      2.25703
+     ],
+     [
+      48.84241,
+      2.25487
+     ],
+     [
+      48.89605,
+      2.27173
+     ],
+     [
+      48.91312,
+      2.33374
+     ],
+     [
+      48.89689,
+      2.39411
+     ],
+     [
+      48.8731,
+      2.40979
+     ],
+     [
+      48.84896,
+      2.4127
+     ],
+     [
+      48.83658,
+      2.40918
+     ],
+     [
+      48.8309,
+      2.39844
+     ]
+    ],
+    "born": [
+     1790,
+     1900
+    ],
+    "seed": [
+     48.85297,
+     2.34993
+    ],
+    "era_height": [
+     5,
+     18
+    ],
+    "src": [
+     "W028",
+     "W029"
+    ],
+    "conf": "low",
+    "note": "Ring = hull of the Thiers wall parts in the pack (11 vertices); the 1860 annexation limit is the Thiers wall (source). Wall built 1841-1846 per Wikipedia (legacy B009: 1841-1844). born range HAND ESTIMATE [Guessing]"
+   },
+   {
+    "name": "Suburbs beyond the Thiers wall (inner banlieue)",
+    "ring": [
+     [
+      48.85297,
+      2.45642
+     ],
+     [
+      48.86867,
+      2.45375
+     ],
+     [
+      48.88359,
+      2.44587
+     ],
+     [
+      48.89697,
+      2.43319
+     ],
+     [
+      48.90814,
+      2.41632
+     ],
+     [
+      48.91654,
+      2.39613
+     ],
+     [
+      48.92176,
+      2.37363
+     ],
+     [
+      48.92353,
+      2.34993
+     ],
+     [
+      48.92176,
+      2.32623
+     ],
+     [
+      48.91654,
+      2.30373
+     ],
+     [
+      48.90814,
+      2.28354
+     ],
+     [
+      48.89697,
+      2.26667
+     ],
+     [
+      48.88359,
+      2.25399
+     ],
+     [
+      48.86867,
+      2.24611
+     ],
+     [
+      48.85297,
+      2.24344
+     ],
+     [
+      48.83727,
+      2.24611
+     ],
+     [
+      48.82235,
+      2.25399
+     ],
+     [
+      48.80897,
+      2.26667
+     ],
+     [
+      48.7978,
+      2.28354
+     ],
+     [
+      48.7894,
+      2.30373
+     ],
+     [
+      48.78418,
+      2.32623
+     ],
+     [
+      48.78241,
+      2.34993
+     ],
+     [
+      48.78418,
+      2.37363
+     ],
+     [
+      48.7894,
+      2.39613
+     ],
+     [
+      48.7978,
+      2.41632
+     ],
+     [
+      48.80897,
+      2.43319
+     ],
+     [
+      48.82235,
+      2.44587
+     ],
+     [
+      48.83727,
+      2.45375
+     ]
+    ],
+    "born": [
+     1860,
+     1940
+    ],
+    "seed": [
+     48.85297,
+     2.34993
+    ],
+    "era_height": [
+     4,
+     12
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "HAND SKETCH: circle r=7,800 m around the city centre; no source for the ring or the born range [Guessing]. Drop it if the local frame check shows fake predecessors"
+   }
+  ],
   "walls": [],
   "gutting": [],
   "lost": [],
@@ -1156,7 +2872,8 @@
     ],
     "conf": "low",
     "_legacy": "cerchio r=350 m attorno al punto di riferimento della scheda (non il poligono reale); 1614-1655; tipo fill",
-    "from": 1655
+    "from": 1655,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A002 (water fill)",
@@ -1232,7 +2949,8 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=350 m attorno al punto di riferimento della scheda (non il poligono reale); 1843-1843; tipo fill",
-    "from": 1843
+    "from": 1843,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A012 (water dig)",
@@ -1305,7 +3023,8 @@
     "c": "field",
     "conf": "low",
     "_legacy": "cerchio r=300 m attorno al punto di riferimento della scheda (non il poligono reale); 1806-1811; tipo dig",
-    "to": 1806
+    "to": 1806,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A007 (water dig)",
@@ -1381,7 +3100,8 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=900 m attorno al punto di riferimento della scheda (non il poligono reale); 1822-1825; tipo dig",
-    "to": 1822
+    "to": 1822,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A011 (water dig)",
@@ -1454,7 +3174,8 @@
     "c": "field",
     "conf": "low",
     "_legacy": "cerchio r=500 m attorno al punto di riferimento della scheda (non il poligono reale); 1808-1813; tipo dig",
-    "to": 1808
+    "to": 1808,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A003 (water dig)",
@@ -1530,7 +3251,8 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=1500 m attorno al punto di riferimento della scheda (non il poligono reale); 1813-1813; tipo dig",
-    "to": 1813
+    "to": 1813,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A005 (water dig)",
@@ -1606,7 +3328,8 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=2500 m attorno al punto di riferimento della scheda (non il poligono reale); 1821-1821; tipo dig",
-    "to": 1821
+    "to": 1821,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A013 (water fill)",
@@ -1682,7 +3405,8 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=700 m attorno al punto di riferimento della scheda (non il poligono reale); 1860-1862; tipo fill",
-    "from": 1862
+    "from": 1862,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    },
    {
     "name": "A014 (water fill)",
@@ -1758,22 +3482,934 @@
     ],
     "conf": "high",
     "_legacy": "cerchio r=300 m attorno al punto di riferimento della scheda (non il poligono reale); 1906-1906; tipo fill",
-    "from": 1906
+    "from": 1906,
+    "_open": "STILL A CIRCLE: no sourced polygon (land.json water/canal outlines could not be read reliably in this pass); replace with the OSM canal/island outline"
    }
   ],
-  "bridges": []
+  "bridges": [
+   {
+    "name": "Pont Neuf",
+    "line": [
+     [
+      48.856202,
+      2.340561
+     ],
+     [
+      48.858385,
+      2.34239
+     ]
+    ],
+    "w": 22.3,
+    "y": 1607.0,
+    "d": null,
+    "src": [
+     "G005",
+     "W030",
+     "W031"
+    ],
+    "conf": "high",
+    "note": "First stone 31 May 1578 (G005); work stopped 1588 and resumed 1599; opened to traffic 1604, completed July 1606, inaugurated 1607 (Wikipedia). Seven spans of the long arm rebuilt 1848-1855. Same name is also in landmarks as bridge_arches: check for a duplicate deck"
+   },
+   {
+    "name": "Pont Notre-Dame",
+    "line": [
+     [
+      48.855729,
+      2.348359
+     ],
+     [
+      48.856609,
+      2.348867
+     ]
+    ],
+    "w": 23.2,
+    "y": 1413.0,
+    "d": null,
+    "src": [
+     "G060",
+     "W032",
+     "W033"
+    ],
+    "conf": "low",
+    "note": "y=1413 [Guessing]: ordered 31 May 1412, completion year not in the page read. Wooden bridge collapsed 25 Oct 1499 (gap 1499-1507 not modeled); stone bridge completed 1507, houses 1510-1512 (G001); houses demolished 1746-1788; new stone bridge on the old foundations 1853; present bridge inaugurated 1919. One deck entry per site: the kit keeps one y/d per bridge outline",
+    "phases": [
+     {
+      "what": "wooden bridge",
+      "y": 1413,
+      "d": 1499.82
+     },
+     {
+      "what": "stone bridge with houses",
+      "y": 1507,
+      "d": 1853
+     },
+     {
+      "what": "five-arch stone bridge",
+      "y": 1853,
+      "d": 1919
+     },
+     {
+      "what": "present bridge",
+      "y": 1919
+     }
+    ]
+   },
+   {
+    "name": "Pont au Change",
+    "line": [
+     [
+      48.857145,
+      2.347063
+     ],
+     [
+      48.856252,
+      2.346519
+     ]
+    ],
+    "w": 30.9,
+    "y": 1190.0,
+    "d": null,
+    "src": [
+     "W034",
+     "G004",
+     "W035"
+    ],
+    "conf": "medium",
+    "note": "Grand-Pont (wooden, mid-12th c. money-changers ruling of Louis VII) already there in 1190 [Likely: form unknown]; destroyed by fires, floods and ice several times; present bridge built 1858-1860 under Napoleon III (page + G004)"
+   },
+   {
+    "name": "Petit-Pont - Cardinal Lustiger",
+    "line": [
+     [
+      48.85349,
+      2.347034
+     ],
+     [
+      48.853144,
+      2.346829
+     ]
+    ],
+    "w": 18.8,
+    "y": 1190.0,
+    "d": null,
+    "src": [
+     "W036"
+    ],
+    "conf": "medium",
+    "note": "A crossing existed in 1190 (page: since antiquity). Swept away by floods at least 13 times 885-1658; rebuilt in stone 1398-1408, again 1409-1416 with houses; collapsed 1649, 1651, 1658, 1659; replaced 1719 without houses; present bridge begun 1852, opened 1853",
+    "phases": [
+     {
+      "what": "bridge of 1190 (form unknown)",
+      "y": 1190,
+      "d": 1393
+     },
+     {
+      "what": "stone 1398",
+      "y": 1398,
+      "d": 1408
+     },
+     {
+      "what": "rebuilt",
+      "y": 1416,
+      "d": 1659
+     },
+     {
+      "what": "1719 bridge",
+      "y": 1719,
+      "d": 1853
+     },
+     {
+      "what": "present",
+      "y": 1853
+     }
+    ]
+   },
+   {
+    "name": "Pont Saint-Michel",
+    "line": [
+     [
+      48.853851,
+      2.344388
+     ],
+     [
+      48.854269,
+      2.34482
+     ]
+    ],
+    "w": 29.5,
+    "y": 1387.0,
+    "d": null,
+    "src": [
+     "W037",
+     "W038"
+    ],
+    "conf": "high",
+    "note": "Stone bridge 1379-1387; collapsed 31 Jan 1408 with its houses (gap not modeled); rebuilt 1617-1623; houses stayed until 1808 (order of 1786); present bridge 1857",
+    "phases": [
+     {
+      "what": "first stone bridge",
+      "y": 1387,
+      "d": 1408.08
+     },
+     {
+      "what": "rebuilt with houses",
+      "y": 1623,
+      "d": 1857
+     },
+     {
+      "what": "present",
+      "y": 1857
+     }
+    ]
+   },
+   {
+    "name": "Pont Marie",
+    "line": [
+     [
+      48.853218,
+      2.357716
+     ],
+     [
+      48.852478,
+      2.357073
+     ]
+    ],
+    "w": 24.6,
+    "y": 1635.0,
+    "d": null,
+    "src": [
+     "G007",
+     "W039"
+    ],
+    "conf": "high",
+    "note": "Built 1614-1635 (G007, page). Flood 1 March 1658 destroyed 20 houses and two arches; wooden repair 1660, stone reconstruction completed 1670. Houses removed after the 1786 order (Pont Saint-Michel page)"
+   },
+   {
+    "name": "Pont de la Tournelle",
+    "line": [
+     [
+      48.850139,
+      2.355066
+     ],
+     [
+      48.851093,
+      2.355861
+     ]
+    ],
+    "w": 25.9,
+    "y": 1620.0,
+    "d": null,
+    "src": [
+     "W040"
+    ],
+    "conf": "medium",
+    "note": "Wooden 1620, stone 1654, demolished 1918, present bridge 1928 (Wikipedia). Legacy table had a wooden bridge in 1369.5 (G062 from memory): not confirmed by the page read, dropped",
+    "phases": [
+     {
+      "what": "wooden",
+      "y": 1620,
+      "d": 1654
+     },
+     {
+      "what": "stone",
+      "y": 1654,
+      "d": 1918
+     },
+     {
+      "what": "present",
+      "y": 1928
+     }
+    ]
+   },
+   {
+    "name": "Pont Royal",
+    "line": [
+     [
+      48.859589,
+      2.329514
+     ],
+     [
+      48.860679,
+      2.330277
+     ]
+    ],
+    "w": 15.9,
+    "y": 1632.0,
+    "d": null,
+    "src": [
+     "W041",
+     "W042"
+    ],
+    "conf": "high",
+    "note": "Wooden Pont Sainte-Anne / Pont Rouge 1632 (repaired 1649, rebuilt 1651 and 1660, burnt 1654, carried away later); stone bridge 25 Oct 1685 - 13 Jun 1689 (completed 1689.45); last reconstruction 1850",
+    "phases": [
+     {
+      "what": "wooden",
+      "y": 1632
+     },
+     {
+      "what": "stone",
+      "y": 1689.45
+     }
+    ]
+   },
+   {
+    "name": "Pont des Arts",
+    "line": [
+     [
+      48.859113,
+      2.337906
+     ],
+     [
+      48.857797,
+      2.337237
+     ]
+    ],
+    "w": 10.3,
+    "y": 1804.0,
+    "d": null,
+    "src": [
+     "W043"
+    ],
+    "conf": "high",
+    "note": "First metal bridge in Paris, pedestrians, 1802-1804. Partial collapse in 1979 (barge), present bridge built 1981-1984, inaugurated 27 June 1984",
+    "phases": [
+     {
+      "what": "nine-arch metal bridge",
+      "y": 1804,
+      "d": 1984.49
+     },
+     {
+      "what": "present seven-arch bridge",
+      "y": 1984.49
+     }
+    ]
+   },
+   {
+    "name": "Pont de la Concorde",
+    "line": [
+     [
+      48.862739,
+      2.319124
+     ],
+     [
+      48.864011,
+      2.320059
+     ]
+    ],
+    "w": 35.0,
+    "y": 1791.0,
+    "d": null,
+    "src": [
+     "G011"
+    ],
+    "conf": "high",
+    "note": "Built 1787-1791 (G011, Ville de Paris). Wikipedia page for this title is a disambiguation page: no second source"
+   },
+   {
+    "name": "Pont Alexandre III",
+    "line": [
+     [
+      48.862953,
+      2.313471
+     ],
+     [
+      48.864331,
+      2.313619
+     ]
+    ],
+    "w": 39.3,
+    "y": 1900.0,
+    "d": null,
+    "src": [
+     "G012",
+     "W044"
+    ],
+    "conf": "high",
+    "note": "First stone 7 Oct 1896 (G012), built 1896-1900, inaugurated 1900. Also in landmarks as bridge_arches: check for a duplicate deck"
+   },
+   {
+    "name": "Pont de Bir-Hakeim",
+    "line": [
+     [
+      48.854797,
+      2.288464
+     ],
+     [
+      48.856596,
+      2.286686
+     ]
+    ],
+    "w": 20.8,
+    "y": 1878.0,
+    "d": null,
+    "src": [
+     "W045"
+    ],
+    "conf": "medium",
+    "note": "Crossing since the Passy footbridge of 1878 (Exposition Universelle); steel bridge built 1903-1905 (footbridge moved 20-23 Aug 1903, demolished after 1905)",
+    "phases": [
+     {
+      "what": "Passerelle de Passy",
+      "y": 1878,
+      "d": 1905
+     },
+     {
+      "what": "steel bridge",
+      "y": 1905
+     }
+    ]
+   },
+   {
+    "name": "Pont d'Iéna",
+    "line": [
+     [
+      48.859314,
+      2.292848
+     ],
+     [
+      48.860303,
+      2.2913
+     ]
+    ],
+    "w": 36.1,
+    "y": 1814.0,
+    "d": null,
+    "src": [
+     "W046"
+    ],
+    "conf": "high",
+    "note": "Decree of 1807, built 1808-1814 (Wikipedia)"
+   },
+   {
+    "name": "Pont de l'Alma",
+    "line": [
+     [
+      48.862817,
+      2.301863
+     ],
+     [
+      48.864109,
+      2.301703
+     ]
+    ],
+    "w": 40.8,
+    "y": 1856.25,
+    "d": null,
+    "src": [
+     "W047"
+    ],
+    "conf": "high",
+    "note": "Arch bridge built 1854-1856, inaugurated 2 Apr 1856; rebuilt as a girder bridge 1970-1974 (Wikipedia)",
+    "phases": [
+     {
+      "what": "arch bridge",
+      "y": 1856.25,
+      "d": 1970
+     },
+     {
+      "what": "girder bridge",
+      "y": 1974
+     }
+    ]
+   },
+   {
+    "name": "Pont Mirabeau",
+    "line": [
+     [
+      48.847089,
+      2.274563
+     ],
+     [
+      48.846229,
+      2.276592
+     ]
+    ],
+    "w": 20.9,
+    "y": 1897.53,
+    "d": null,
+    "src": [
+     "W048"
+    ],
+    "conf": "high",
+    "note": "Built 1895-1897, opened 13 July 1897"
+   },
+   {
+    "name": "Pont Aval",
+    "line": [
+     [
+      48.834764,
+      2.266417
+     ],
+     [
+      48.835026,
+      2.262181
+     ]
+    ],
+    "w": 31.0,
+    "y": 1968.0,
+    "d": null,
+    "src": [
+     "W049"
+    ],
+    "conf": "high",
+    "note": "Carries the Boulevard Périphérique; opened 1968 (Wikipedia). Legacy table had 1967.5"
+   },
+   {
+    "name": "Pont Charles de Gaulle",
+    "line": [
+     [
+      48.843167,
+      2.370215
+     ],
+     [
+      48.841978,
+      2.36798
+     ]
+    ],
+    "w": 32.5,
+    "y": 1996.0,
+    "d": null,
+    "src": [
+     "G019",
+     "W050"
+    ],
+    "conf": "high",
+    "note": "Decided 1986, built 1993-1996 (G019)"
+   },
+   {
+    "name": "Passerelle Simone de Beauvoir",
+    "line": [
+     [
+      48.836085,
+      2.379573
+     ],
+     [
+      48.834814,
+      2.377248
+     ]
+    ],
+    "w": 12.0,
+    "y": 2006.53,
+    "d": null,
+    "src": [
+     "G020",
+     "W051"
+    ],
+    "conf": "high",
+    "note": "Inaugurated 13 July 2006"
+   },
+   {
+    "name": "Pont Amont",
+    "line": [
+     [
+      48.826958,
+      2.390261
+     ],
+     [
+      48.825851,
+      2.386961
+     ]
+    ],
+    "w": 38.2,
+    "y": 1969.0,
+    "d": null,
+    "src": [
+     "W052"
+    ],
+    "conf": "high",
+    "note": "Boulevard Périphérique bridge, inaugurated 1969 (year only)"
+   },
+   {
+    "name": "Pont National",
+    "line": [
+     [
+      48.828599,
+      2.388292
+     ],
+     [
+      48.827227,
+      2.385459
+     ]
+    ],
+    "w": 39.0,
+    "y": 1853.0,
+    "d": null,
+    "src": [
+     "W053"
+    ],
+    "conf": "high",
+    "note": "Built 1852-1853 (named Pont Napoléon-III until 1870); width doubled 1936 (Wikipedia). Legacy G022 widening 1936-1944 not rechecked"
+   },
+   {
+    "name": "Pont de Tolbiac",
+    "line": [
+     [
+      48.832305,
+      2.379929
+     ],
+     [
+      48.833453,
+      2.382038
+     ]
+    ],
+    "w": 21.1,
+    "y": 1882.0,
+    "d": null,
+    "src": [
+     "W054"
+    ],
+    "conf": "high",
+    "note": "Built 1879-1882"
+   },
+   {
+    "name": "Pont de Bercy",
+    "line": [
+     [
+      48.838518,
+      2.375749
+     ],
+     [
+      48.837584,
+      2.374013
+     ]
+    ],
+    "w": 39.5,
+    "y": 1832.0,
+    "d": null,
+    "src": [
+     "W055",
+     "G024"
+    ],
+    "conf": "high",
+    "note": "Suspension bridge 1832, replaced by stone 1863-1864, widened 1904 for the metro viaduct (G024), widened again 1989-1992 (Wikipedia)",
+    "phases": [
+     {
+      "what": "suspension",
+      "y": 1832,
+      "d": 1864
+     },
+     {
+      "what": "stone",
+      "y": 1864
+     }
+    ]
+   },
+   {
+    "name": "Pont du Garigliano",
+    "line": [
+     [
+      48.839851,
+      2.267207
+     ],
+     [
+      48.838775,
+      2.269583
+     ]
+    ],
+    "w": 25.8,
+    "y": 1966.67,
+    "d": null,
+    "src": [
+     "W056"
+    ],
+    "conf": "high",
+    "note": "Construction began 1963, inaugurated 1 Sep 1966; legacy table had 1963 (from memory)"
+   },
+   {
+    "name": "Pont de Sully",
+    "line": [
+     [
+      48.849471,
+      2.356959
+     ],
+     [
+      48.850754,
+      2.361273
+     ]
+    ],
+    "w": 17.5,
+    "y": 1838.0,
+    "d": null,
+    "src": [
+     "W057",
+     "W058"
+    ],
+    "conf": "medium",
+    "note": "Two footbridges (Damiette, Constantine) opened Jan 1838: Damiette destroyed 1848, Constantine collapsed 1872; present bridge built 1876, opened 25 Aug 1877 (gap not modeled)"
+   },
+   {
+    "name": "Pont Louis-Philippe",
+    "line": [
+     [
+      48.853464,
+      2.354041
+     ],
+     [
+      48.85423,
+      2.354796
+     ]
+    ],
+    "w": 16.1,
+    "y": 1834.57,
+    "d": null,
+    "src": [
+     "G044",
+     "W059"
+    ],
+    "conf": "high",
+    "note": "Suspension bridge 1833-1834, demolished 1860; arch bridge built Aug 1860 - Apr 1862 slightly upstream (Wikipedia)"
+   },
+   {
+    "name": "Pont d'Arcole",
+    "line": [
+     [
+      48.855134,
+      2.350311
+     ],
+     [
+      48.855887,
+      2.350865
+     ]
+    ],
+    "w": 16.2,
+    "y": 1828.0,
+    "d": null,
+    "src": [
+     "G043",
+     "W060"
+    ],
+    "conf": "high",
+    "note": "Suspension footbridge 1828 (Seguin), replaced 1854 by a metal bridge"
+   },
+   {
+    "name": "Pont du Carrousel",
+    "line": [
+     [
+      48.859967,
+      2.333245
+     ],
+     [
+      48.858697,
+      2.332542
+     ]
+    ],
+    "w": 26.6,
+    "y": 1834.0,
+    "d": null,
+    "src": [
+     "G042",
+     "W061",
+     "G032"
+    ],
+    "conf": "high",
+    "note": "First bridge 1831-1834; present bridge 1935-1939 a few tens of metres downstream (G032, page)"
+   },
+   {
+    "name": "Pont des Invalides",
+    "line": [
+     [
+      48.864253,
+      2.310362
+     ],
+     [
+      48.862897,
+      2.310422
+     ]
+    ],
+    "w": 18.8,
+    "y": 1829.0,
+    "d": null,
+    "src": [
+     "W062",
+     "G033"
+    ],
+    "conf": "high",
+    "note": "Suspension bridge 1829, demolished 1854, masonry bridge 1854-1856 (G033)"
+   },
+   {
+    "name": "Passerelle Léopold-Sédar-Senghor",
+    "line": [
+     [
+      48.862377,
+      2.325103
+     ],
+     [
+      48.861211,
+      2.324271
+     ]
+    ],
+    "w": 12.0,
+    "y": 1861.0,
+    "d": null,
+    "src": [
+     "W063"
+    ],
+    "conf": "high",
+    "note": "Pont de Solférino 1861, steel footbridge 1961-1992 (demolished), present passerelle built 1997-1999 (gap 1992-1997 not modeled); legacy table had 1858 (from memory)"
+   },
+   {
+    "name": "Pont de Grenelle - Cadets de Saumur",
+    "line": [
+     [
+      48.84958,
+      2.281232
+     ],
+     [
+      48.850972,
+      2.278987
+     ]
+    ],
+    "w": 26.3,
+    "y": 1827.33,
+    "d": null,
+    "src": [
+     "G045",
+     "W064"
+    ],
+    "conf": "high",
+    "note": "G045: opened 1 May 1827; Wikipedia says 1827-29 (conflict in the end year, G045 kept). Iron bridge 1875, present bridge 1966-1968"
+   },
+   {
+    "name": "Pont Rouelle",
+    "line": [
+     [
+      48.852504,
+      2.281817
+     ],
+     [
+      48.852213,
+      2.284543
+     ]
+    ],
+    "w": 9.8,
+    "y": 1900.0,
+    "d": null,
+    "src": [],
+    "conf": "low",
+    "note": "y=1900 [Guessing]: no date in the page read (Pont Rouelle page has none); legacy table from memory 1899. Find the date (Auteuil railway line / Exposition 1900) before the GO"
+   },
+   {
+    "name": "Pont au Double",
+    "line": [
+     [
+      48.852753,
+      2.348555
+     ],
+     [
+      48.85244,
+      2.348322
+     ]
+    ],
+    "w": 19.7,
+    "y": 1634.0,
+    "d": null,
+    "src": [
+     "G046",
+     "W065"
+    ],
+    "conf": "medium",
+    "note": "Built from 1626, joined 1634; collapsed 1709 and rebuilt; present one-arch cast-iron bridge 1883 (page, G046)"
+   },
+   {
+    "name": "Pont d'Austerlitz",
+    "line": [
+     [
+      48.84441,
+      2.3651
+     ],
+     [
+      48.84545,
+      2.366952
+     ]
+    ],
+    "w": 30.8,
+    "y": 1805.0,
+    "d": null,
+    "src": [
+     "W066"
+    ],
+    "conf": "medium",
+    "note": "Built 1801-1805 (page infobox), widened 1854, rebuilt 1884-1885; legacy table had iron bridge 1802 (from memory)"
+   },
+   {
+    "name": "Pont de l'Archevêché",
+    "line": [
+     [
+      48.851218,
+      2.351367
+     ],
+     [
+      48.851803,
+      2.351741
+     ]
+    ],
+    "w": 11.2,
+    "y": 1828.9,
+    "d": null,
+    "src": [
+     "G052",
+     "W067"
+    ],
+    "conf": "high",
+    "note": "Built April-November 1828 (G052)"
+   },
+   {
+    "name": "Pont Saint-Louis",
+    "line": [
+     [
+      48.852663,
+      2.352298
+     ],
+     [
+      48.85281,
+      2.35325
+     ]
+    ],
+    "w": 13.7,
+    "y": 1634.0,
+    "d": null,
+    "src": [
+     "W068"
+    ],
+    "conf": "high",
+    "note": "Seventh bridge since 1630: Saint-Landry 1630-1634; wooden Pont Rouge 1717-1795; 1804-1811; suspension 1842; metal 1862-1939; cage-like footbridge 1941; present bridge begun 1968, inaugurated 1970"
+   },
+   {
+    "name": "Passerelle Debilly",
+    "line": [
+     [
+      48.863131,
+      2.29648
+     ],
+     [
+      48.861992,
+      2.297375
+     ]
+    ],
+    "w": 9.7,
+    "y": 1900.0,
+    "d": null,
+    "src": [
+     "W069"
+    ],
+    "conf": "medium",
+    "note": "Provisional footbridge for the 1900 World Fair, made permanent 1906 after being relocated (page)"
+   }
+  ]
  },
  "landmarks": [
   {
    "name": "Notre-Dame",
-   "kind": "TODO",
+   "kind": "cathedral",
    "at": [
     48.852832,
     2.350035
    ],
    "footprint": "auto",
    "params": {
-    "h": 96.3
+    "h": 96.3,
+    "facade_towers": 2
    },
    "phases": [
     {
@@ -1788,18 +4424,20 @@
     "E024"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 96.3 m",
-   "conf": "medium"
+   "conf": "medium",
+   "note": "Preset choice: cathedral with two facade towers. Legacy h=96.3 (spire) kept in params; legacy bespoke module richer"
   },
   {
    "name": "Sainte-Chapelle",
-   "kind": "TODO",
+   "kind": "cathedral",
    "at": [
     48.855385,
     2.345027
    ],
    "footprint": "auto",
    "params": {
-    "h": 75.0
+    "facade_towers": 0,
+    "transept": false
    },
    "phases": [
     {
@@ -1811,19 +4449,19 @@
     "E028"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1248 (primo anno della scheda), altezza 75.0 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 75.0,
+   "note": "Preset approximation (single nave, no transept, no tower); kind chosen by the historian, shape not verified"
   },
   {
    "name": "Louvre",
-   "kind": "TODO",
+   "kind": "palace_courtyard",
    "at": [
     48.860479,
     2.339554
    ],
    "footprint": "auto",
-   "params": {
-    "h": 47.6
-   },
+   "params": {},
    "phases": [
     {
      "y": 1190
@@ -1841,19 +4479,19 @@
     "E017"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 47.6 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 47.6,
+   "note": "Preset approximation (courtyard palace, footprint auto); phases only the first year, legacy phases E001-E038 in sources"
   },
   {
    "name": "Tuileries Palace",
-   "kind": "TODO",
+   "kind": "palace_courtyard",
    "at": [
     48.860966,
     2.330376
    ],
    "footprint": "auto",
-   "params": {
-    "h": 52.0
-   },
+   "params": {},
    "phases": [
     {
      "y": 1564
@@ -1861,19 +4499,27 @@
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1564 (primo anno della scheda), altezza 52.0 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 52.0,
+   "src": [
+    "E019",
+    "E020"
+   ],
+   "demolished": [
+    1882.5,
+    1883.5
+   ],
+   "note": "Sources E019 (phases to refine), E020 (burned 1871; ruins demolished later). demolished [1882.5,1883.5] = card year 1883 from the legacy sheet [Likely], not re-read in a fetched page"
   },
   {
    "name": "Hôtel de Ville",
-   "kind": "TODO",
+   "kind": "palace_courtyard",
    "at": [
     48.856427,
     2.352531
    ],
    "footprint": "auto",
-   "params": {
-    "h": 59.0
-   },
+   "params": {},
    "phases": [
     {
      "y": 1533
@@ -1886,19 +4532,19 @@
     "E027"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1533 (primo anno della scheda), altezza 59.0 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 59.0,
+   "note": "Rebuilt 1873-1882 after the 1871 fire (card 1882, E027): second phase not modeled"
   },
   {
    "name": "Bastille",
-   "kind": "TODO",
+   "kind": "castle",
    "at": [
     48.853153,
     2.368537
    ],
    "footprint": "auto",
-   "params": {
-    "h": 27.5
-   },
+   "params": {},
    "phases": [
     {
      "y": 1370
@@ -1910,19 +4556,23 @@
     "E011"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1370 (primo anno della scheda), altezza 27.5 m",
-   "conf": "low"
+   "conf": "medium",
+   "_legacy_h": 27.5,
+   "demolished": [
+    1789.54,
+    1791.39
+   ],
+   "note": "Demolition 14 Jul 1789 start [Likely] to 21 May 1791 (E011: \"Fin du chantier de démolition de la Bastille\")"
   },
   {
    "name": "Grand Châtelet",
-   "kind": "TODO",
+   "kind": "castle",
    "at": [
     48.8577,
     2.347301
    ],
    "footprint": "auto",
-   "params": {
-    "h": 27.7
-   },
+   "params": {},
    "phases": [
     {
      "y": 1190
@@ -1933,18 +4583,25 @@
     "E037"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 27.7 m",
-   "conf": "high"
+   "conf": "high",
+   "_legacy_h": 27.7,
+   "demolished": [
+    1802.0,
+    1810.0
+   ],
+   "note": "Demolition 1802-1810 (E037)"
   },
   {
    "name": "Les Invalides",
-   "kind": "TODO",
+   "kind": "church_dome",
    "at": [
     48.855034,
     2.312539
    ],
    "footprint": "auto",
    "params": {
-    "h": 121.5
+    "h": 121.5,
+    "plan": "cross"
    },
    "phases": [
     {
@@ -1957,18 +4614,19 @@
     "E036"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1677 (primo anno della scheda), altezza 121.5 m",
-   "conf": "high"
+   "conf": "high",
+   "note": "Preset: central-plan church with dome = the Dôme des Invalides; the long hospital courtyard is not modeled"
   },
   {
    "name": "Panthéon",
-   "kind": "TODO",
+   "kind": "church_dome",
    "at": [
     48.846199,
     2.346102
    ],
    "footprint": "auto",
    "params": {
-    "h": 129.6
+    "plan": "cross"
    },
    "phases": [
     {
@@ -1980,18 +4638,20 @@
     "E007"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1758 (primo anno della scheda), altezza 129.6 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 129.6,
+   "note": "Preset approximation (Greek cross, drum, dome)"
   },
   {
    "name": "Sacré-Cœur",
-   "kind": "TODO",
+   "kind": "church_dome",
    "at": [
     48.886772,
     2.343019
    ],
    "footprint": "auto",
    "params": {
-    "h": 207.3
+    "plan": "cross"
    },
    "phases": [
     {
@@ -2000,18 +4660,23 @@
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1875 (primo anno della scheda), altezza 207.3 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 207.3,
+   "src": [
+    "E008"
+   ],
+   "note": "E008: long building phase, completion and consecration differ from the start (legacy phase 1875 only). Preset approximation of the domes"
   },
   {
    "name": "Palais Garnier",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     48.872039,
     2.331707
    ],
    "footprint": "auto",
    "params": {
-    "h": 83.4
+    "roof": "hip"
    },
    "phases": [
     {
@@ -2023,18 +4688,21 @@
     "E009"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1861 (primo anno della scheda), altezza 83.4 m",
-   "conf": "high"
+   "conf": "high",
+   "_legacy_h": 83.4,
+   "note": "Footprint extrusion with the cadastre height; the legacy bespoke module is richer"
   },
   {
    "name": "Arc de Triomphe",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     48.87378,
     2.295038
    ],
    "footprint": "auto",
    "params": {
-    "h": 94.3
+    "h": 49.54,
+    "roof": "flat"
    },
    "phases": [
     {
@@ -2043,42 +4711,50 @@
    ],
    "label": true,
    "src": [
-    "E030"
+    "E030",
+    "W070"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1806 (primo anno della scheda), altezza 94.3 m",
-   "conf": "low"
+   "conf": "medium",
+   "note": "Height 49.54 m from Wikipedia; legacy h=94.3 looked wrong (kept as _legacy_h)",
+   "_legacy_h": 94.3
   },
   {
    "name": "Eiffel Tower",
-   "kind": "TODO",
+   "kind": "tower_square",
    "at": [
     48.85837,
     2.29448
    ],
    "footprint": "auto",
    "params": {
-    "h": 196.0
+    "roof": "spire",
+    "w": 125
    },
    "phases": [
     {
-     "y": 1887
+     "y": 1887.07,
+     "y1": 1889.35
     }
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1887 (primo anno della scheda), altezza 196.0 m",
-   "conf": "low"
+   "conf": "medium",
+   "_legacy_h": 196.0,
+   "src": [
+    "E004"
+   ],
+   "note": "E004: works began 27 Jan 1887, inaugurated 6 May 1889 (phases from these dates). NO preset has four legs: tower_square is a placeholder; keep the legacy bespoke Eiffel (eiffel_leg parts) in landmarks_parigi.py"
   },
   {
    "name": "Grand Palais",
-   "kind": "TODO",
+   "kind": "hall_market",
    "at": [
     48.866149,
     2.312273
    ],
    "footprint": "auto",
-   "params": {
-    "h": 53.1
-   },
+   "params": {},
    "phases": [
     {
      "y": 1897
@@ -2089,18 +4765,20 @@
     "E018"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1897 (primo anno della scheda), altezza 53.1 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 53.1,
+   "note": "Preset approximation (glass hall with central dome)"
   },
   {
    "name": "Centre Pompidou",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     48.860538,
     2.352412
    ],
    "footprint": "auto",
    "params": {
-    "h": 60.2
+    "roof": "flat"
    },
    "phases": [
     {
@@ -2112,19 +4790,19 @@
     "E015"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1971 (primo anno della scheda), altezza 60.2 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 60.2,
+   "note": "Footprint extrusion"
   },
   {
    "name": "Gare du Nord",
-   "kind": "TODO",
+   "kind": "station",
    "at": [
     48.880878,
     2.355559
    ],
    "footprint": "auto",
-   "params": {
-    "h": 76.3
-   },
+   "params": {},
    "phases": [
     {
      "y": 1861
@@ -2135,11 +4813,13 @@
     "E031"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1861 (primo anno della scheda), altezza 76.3 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 76.3,
+   "note": "Station preset approximation"
   },
   {
    "name": "Tour Montparnasse",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     48.842112,
     2.321978
@@ -2158,18 +4838,19 @@
     "E016"
    ],
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1969 (primo anno della scheda), altezza 174.3 m",
-   "conf": "high"
+   "conf": "high",
+   "note": "Height kept from the legacy module (conf high in the sheet): not rechecked"
   },
   {
    "name": "La Défense",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     48.892565,
     2.235875
    ],
    "footprint": "auto",
    "params": {
-    "h": 103.5
+    "roof": "flat"
    },
    "phases": [
     {
@@ -2178,47 +4859,87 @@
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1958 (primo anno della scheda), altezza 103.5 m",
-   "conf": "low"
+   "conf": "low",
+   "_legacy_h": 103.5,
+   "src": [
+    "W071",
+    "W072"
+   ],
+   "note": "Point = Grande Arche (competition 1982; EPAD 1958 first towers: legacy year 1958 is the district, not the Arche). Phase year to split: district 1958 vs Grande Arche (Wikipedia: Tête Défense competition 1982)"
   },
   {
    "name": "Pont Neuf",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     48.857793,
     2.341896
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 12.0
+    "w": 22.3
    },
    "phases": [
     {
-     "y": 1578
+     "y": 1578.41,
+     "y1": 1607.0
     }
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1578 (primo anno della scheda), altezza 12.0 m",
-   "conf": "low"
+   "conf": "high",
+   "_legacy_h": 12.0,
+   "src": [
+    "G005",
+    "W030"
+   ],
+   "note": "Same bridge as history.bridges (same line): possible duplicate deck, check in the local frame. Phases: first stone (31 May 1578 / 7 Oct 1896) to opening",
+   "line": [
+    [
+     48.856202,
+     2.340561
+    ],
+    [
+     48.858385,
+     2.34239
+    ]
+   ]
   },
   {
    "name": "Pont Alexandre III",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     48.863642,
     2.313545
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 12.0
+    "w": 39.3
    },
    "phases": [
     {
-     "y": 1896
+     "y": 1896.77,
+     "y1": 1900.0
     }
    ],
    "label": true,
    "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1896 (primo anno della scheda), altezza 12.0 m",
-   "conf": "low"
+   "conf": "high",
+   "_legacy_h": 12.0,
+   "src": [
+    "G012",
+    "W044"
+   ],
+   "note": "Same bridge as history.bridges (same line): possible duplicate deck, check in the local frame. Phases: first stone (31 May 1578 / 7 Oct 1896) to opening",
+   "line": [
+    [
+     48.862953,
+     2.313471
+    ],
+    [
+     48.864331,
+     2.313619
+    ]
+   ]
   }
  ],
  "qa": {
@@ -2250,7 +4971,9 @@
      "E001",
      "E021"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "weight": 7,
+    "fx": "stone"
    },
    {
     "y0": 1356.0,
@@ -2264,7 +4987,9 @@
      "B003",
      "E010"
     ],
-    "conf": "low"
+    "conf": "low",
+    "weight": 5,
+    "fx": "hammer"
    },
    {
     "y0": 1578.0,
@@ -2279,7 +5004,9 @@
      "E033",
      "E012"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 6,
+    "fx": "build"
    },
    {
     "y0": 1670.0,
@@ -2293,7 +5020,9 @@
      "E006",
      "E036"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 5,
+    "fx": "chime"
    },
    {
     "y0": 1784.0,
@@ -2307,7 +5036,9 @@
      "E011",
      "B007"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 9,
+    "fx": "crowd"
    },
    {
     "y0": 1820.0,
@@ -2321,7 +5052,10 @@
      "A006",
      "A007"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "weight": 4,
+    "fx": "water",
+    "note": "Target stays an area (no monument within 700 m): area:[48.8705,2.3655,450] from the legacy aim point, to be checked against Canal Saint-Martin (lat/lon not re-fetched)"
    },
    {
     "y0": 1852.0,
@@ -2340,7 +5074,10 @@
      "F005",
      "E020"
     ],
-    "conf": "low"
+    "conf": "low",
+    "weight": "max",
+    "fx": "hammer",
+    "note": "weight max = Haussmann, the longest hold (13 s) and the story of the video"
    },
    {
     "y0": 1886.5,
@@ -2353,7 +5090,9 @@
     "src": [
      "E004"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 8,
+    "fx": "build"
    },
    {
     "y0": 1966.0,
@@ -2367,7 +5106,9 @@
      "E016",
      "E015"
     ],
-    "conf": "low"
+    "conf": "low",
+    "weight": 5,
+    "fx": "build"
    },
    {
     "y0": 2018.9,
@@ -2381,7 +5122,9 @@
      "E023",
      "E024"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 9,
+    "fx": "bell"
    }
   ],
   "rmin": 1.0,
@@ -2394,12 +5137,16 @@
    "rho_max": 1400
   },
   "lens": 32,
-  "night_hold": 15
+  "night_hold": 15,
+  "_soste_note": "weights and fx are the historian choice (owner can change); one max only"
  },
  "montaggio": {
   "style": "mattia",
   "open": [
-   "PARIS TODAY"
+   "PARIS TODAY",
+   "2,065,560 people",
+   "836 YEARS",
+   "Open data, reconstruction before 1800"
   ],
   "title": [
    "PARIS",
@@ -2572,6 +5319,30 @@
     "conf": "low"
    },
    {
+    "y": 1420.92,
+    "title": "Two kings enter Paris",
+    "lines": [
+     "Henry V of England and Charles VI ride in together under the Treaty of Troyes."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W073"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1436.0,
+    "title": "The English leave Paris",
+    "lines": [
+     "Charles VII can finally return to a city held by Burgundians and English since 1418."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W004"
+    ],
+    "conf": "medium"
+   },
+   {
     "y": 1490.0,
     "title": "Back to 200,000",
     "lines": [
@@ -2626,6 +5397,18 @@
      "E019"
     ],
     "conf": "low"
+   },
+   {
+    "y": 1594.0,
+    "title": "Henry IV takes Paris",
+    "lines": [
+     "The Catholic League held out in the city until 1594."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W005"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1607.0,
@@ -2876,6 +5659,19 @@
     "conf": "high"
    },
    {
+    "y": 1792.72,
+    "title": "The monarchy falls",
+    "lines": [
+     "After the insurrection of 10 August 1792, the First Republic replaces the king."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W074",
+     "W008"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1801.0,
     "title": "547,756 Parisians",
     "lines": [
@@ -2887,6 +5683,18 @@
      "D014"
     ],
     "conf": "medium"
+   },
+   {
+    "y": 1804.38,
+    "title": "Napoleon, emperor",
+    "lines": [
+     "He is granted the title Emperor of the French on 18 May 1804."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W010"
+    ],
+    "conf": "high"
    },
    {
     "y": 1805.0,
@@ -2939,6 +5747,18 @@
      "A003"
     ],
     "conf": "high"
+   },
+   {
+    "y": 1814.27,
+    "title": "The kings return",
+    "lines": [
+     "In April 1814 the allied armies restore Louis XVIII."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W011"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1821.0,
@@ -3008,6 +5828,18 @@
     "conf": "high"
    },
    {
+    "y": 1830.6,
+    "title": "The July Revolution",
+    "lines": [
+     "Three days of fighting end the Bourbon Restoration."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W075"
+    ],
+    "conf": "medium"
+   },
+   {
     "y": 1833.0,
     "title": "Pont Louis-Philippe",
     "lines": [
@@ -3068,9 +5900,11 @@
     "hold_s": 5,
     "legacy_date": "1841–1844",
     "src": [
-     "B009"
+     "B009",
+     "W028"
     ],
-    "conf": "high"
+    "conf": "high",
+    "note": "Legacy B009: 1841-1844; Wikipedia: 1841-1846"
    },
    {
     "y": 1846.0,
@@ -3087,6 +5921,18 @@
      "D021"
     ],
     "conf": "medium"
+   },
+   {
+    "y": 1852.92,
+    "title": "A second Napoleon",
+    "lines": [
+     "Louis-Napoleon proclaims himself Emperor on 2 December 1852."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W015"
+    ],
+    "conf": "high"
    },
    {
     "y": 1853.0,
@@ -3157,14 +6003,15 @@
     "y": 1860.0,
     "title": "20 arrondissements",
     "lines": [
-     "Paris annexes its suburbs."
+     "On 1 January 1860 Paris annexes its suburbs up to the Thiers wall."
     ],
     "hold_s": 5,
     "legacy_date": "1860",
     "src": [
-     "B011"
+     "B011",
+     "W029"
     ],
-    "conf": "low"
+    "conf": "high"
    },
    {
     "y": 1860.5,
@@ -3206,6 +6053,18 @@
     ],
     "src": [
      "E038"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1870.67,
+    "title": "The empire collapses",
+    "lines": [
+     "After Sedan, the Third Republic is proclaimed on 4 September 1870."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W076"
     ],
     "conf": "high"
    },
@@ -3450,6 +6309,30 @@
     "conf": "high"
    },
    {
+    "y": 1940.45,
+    "title": "Paris is occupied",
+    "lines": [
+     "German armies enter the city unopposed on 14 June 1940."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W018"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1944.65,
+    "title": "Paris is liberated",
+    "lines": [
+     "The German garrison surrenders the capital on 25 August 1944."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W019"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1946.0,
     "title": "2,725,374 Parisians",
     "lines": [
@@ -3487,6 +6370,18 @@
     "hold_s": 5,
     "legacy_date": "1958",
     "conf": "low"
+   },
+   {
+    "y": 1958.76,
+    "title": "A new republic",
+    "lines": [
+     "The Fifth Republic is established on 4 October 1958."
+    ],
+    "hold_s": 5,
+    "src": [
+     "W021"
+    ],
+    "conf": "high"
    },
    {
     "y": 1968.0,
@@ -3687,7 +6582,34 @@
    "seconds": 8,
    "max": 14,
    "no_ai": "NO AI: every frame is rendered from open data"
-  }
+  },
+  "chapters": [
+   {
+    "y": 1190.0,
+    "title": "Medieval Paris"
+   },
+   {
+    "y": 1546.0,
+    "title": "Renaissance and Royal Paris"
+   },
+   {
+    "y": 1790.0,
+    "title": "Revolution and Empire"
+   },
+   {
+    "y": 1853.0,
+    "title": "Haussmann's Paris"
+   },
+   {
+    "y": 1900.0,
+    "title": "Belle Époque and World Wars"
+   },
+   {
+    "y": 1958.0,
+    "title": "Modern Paris"
+   }
+  ],
+  "_open_note": "2,065,560 = INSEE 2025 (source D051 in pop_src); \"reconstruction before 1800\" copied from Marseille: data_reliable_from=1800 is a guess"
  },
  "legacy": {
   "metadata_file": "metadata_parigi.md",
@@ -3727,109 +6649,45 @@
  },
  "_legacy_gaps": [
   {
-   "path": "city",
-   "field": "country",
-   "reason": "non nei file legacy (TODO)"
-  },
-  {
-   "path": "city",
-   "field": "style_preset",
-   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
-  },
-  {
-   "path": "city",
-   "field": "eras",
-   "reason": "nessuna periodizzazione nel legacy"
-  },
-  {
-   "path": "city",
-   "field": "polities",
-   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
-  },
-  {
-   "path": "city",
-   "field": "data_reliable_from",
-   "reason": "non nel legacy"
-  },
-  {
-   "path": "landmarks",
-   "field": "kind",
-   "reason": "20 monumenti con geometria bespoke in landmarks_parigi.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
-  },
-  {
-   "path": "regia.soste[5]",
-   "field": "target",
-   "reason": "'Canal Saint-Martin is dug (1822-1825)': nessun monumento entro 700 m: area attorno al punto di mira legacy"
-  },
-  {
-   "path": "regia.soste",
-   "field": "target",
-   "reason": "2 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
-  },
-  {
-   "path": "regia.soste",
-   "field": "weight",
-   "reason": "10 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
-  },
-  {
-   "path": "regia.soste",
-   "field": "fx",
-   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards",
-   "reason": "92 cartelli importati (da CAPS di regia); minimo 45 rispettato"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "hold_s",
-   "reason": "60 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "target/shot",
-   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
-  },
-  {
-   "path": "montaggio",
-   "field": "chapters",
-   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
-  },
-  {
-   "path": "sources",
-   "field": "sources",
-   "reason": "139 fonti dalla scheda (id citati nei commenti legacy); elementi senza id/fonte: 0 soste, 1 cartelli, 6 monumenti (conf low)"
-  },
-  {
    "path": "history.water",
    "field": "ring",
-   "reason": "9 voci d'acqua come CERCHI attorno al punto di riferimento (WATER_KEYS): sostituire con i poligoni reali"
-  },
-  {
-   "path": "history.bridges",
-   "field": "bridges",
-   "reason": "36 ponti nel legacy (geometria da OSM, non letterale): pontneuf, pontnotredame, pontauchange, petitpontcardinallustiger, pontsaintmichel, pontmarie, pontdelatournelle, pontroyal, pontdesarts, pontdelaconcorde, pontalexandreiii, pontdebirhakeim, pontdiena, pontdelalma ... -> servono line [lat,lon], larghezza, anni, fonte"
+   "reason": "9 water entries are still circles (islands joined to the banks 1655/1843, canals dug 1806-1821, canal vaulted 1862/1906): replace with real polygons"
   },
   {
    "path": "history.zones",
-   "field": "zones",
-   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+   "field": "rings",
+   "reason": "rings are hulls of the legacy wall parts or hand sketches, born ranges are estimates (conf low)"
   },
   {
    "path": "history",
    "field": "walls/gutting/lost/fires",
-   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+   "reason": "Haussmann gutting lines, lost buildings, walls as story entries not written (legacy hist/landmarks pack already holds the walls and fires)"
   },
   {
-   "path": "montaggio",
-   "field": "open",
-   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+   "path": "landmarks",
+   "field": "phases/params",
+   "reason": "presets chosen; phases mostly the first year only; heights of generic_footprint dropped to cadastre height; Eiffel needs the legacy module"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot/hold_s",
+   "reason": "cards still have no target/shot (they fly during legs); 60 without hold_s caption"
   },
   {
    "path": "metadata",
    "field": "chapters/description/tags",
-   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+   "reason": "METADATA.md not rewritten in kit format: chapters with real times need the schedule (R14: no cold open)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "1800 is a guess"
+  },
+  {
+   "path": "history.bridges",
+   "field": "Pont Rouelle",
+   "reason": "no date found (y=1900 conf low)"
   }
- ]
+ ],
+ "_haussmann_note": "Haussmann 1853-1870 is NOT a growth ring: it needs gutting lines along the new boulevards (rue de Rivoli extension, Sebastopol, Saint-Germain, Haussmann, Opera): not done, geometry not sourced (see MISSING.md)"
 }
