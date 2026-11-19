@@ -5758,19 +5758,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1996.5,
-    "y1": 1999,
-    "dur": 6,
-    "caption": "City of Arts and Sciences (1998-2000)",
-    "target": "Hemisferic",
-    "shot": "medium",
-    "fx": "chime",
-    "src": [
-     "S17"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 2006,
     "y1": 2009,
     "dur": 6,
@@ -6539,6 +6526,22 @@
     "conf": "medium",
     "target": "area:[39.4731,-0.3660,500]",
     "shot": "medium"
+   },
+   {
+    "y": 1996.5,
+    "title": "City of Arts and Sciences (1998-2000)",
+    "lines": [
+     "Years 1996.5-1999."
+    ],
+    "hold_s": 6,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium",
+    "target": "Hemisferic",
+    "shot": "medium",
+    "was_sosta": true,
+    "y1": 1999
    },
    {
     "y": 1998,
