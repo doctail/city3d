@@ -5688,19 +5688,6 @@
     "note": "contiene la sosta 1891 (come in regia)"
    },
    {
-    "y0": 1891,
-    "y1": 1892,
-    "dur": 3.5,
-    "caption": "A convent becomes the main square (1891)",
-    "target": "area:[39.4703,-0.3769,280]",
-    "shot": "medium",
-    "fx": "crash",
-    "src": [
-     "S22"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1909.38,
     "y1": 1909.98,
     "dur": 4,
@@ -6290,6 +6277,22 @@
     "conf": "high",
     "target": "Russafa village",
     "shot": "medium"
+   },
+   {
+    "y": 1891,
+    "title": "A convent becomes the main square (1891)",
+    "lines": [
+     "Years 1891-1892."
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S22"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4703,-0.3769,280]",
+    "shot": "medium",
+    "was_sosta": true,
+    "y1": 1892
    },
    {
     "y": 1897,

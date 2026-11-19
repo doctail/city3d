@@ -1,13 +1,13 @@
 Valencia: regia automatica (kit/regia_kit.py)
-Camera drone: 25 tappe in hover (189.5 s) e voli (528.5 s), anni None/s fra le voci, nessuno stacco; vmax 213.71, amax 119.87, jmax 83.48, clear_min 458.06, clear_ground_min 475.75
-Durata 12:28.7  fotogrammi 17969  inquadrature 3  stacco medio ogni 249.6 s
-Musica: waking_monument  b_start None  notte 733.6782500194206
+Camera drone: 24 tappe in hover (186.0 s) e voli (512.2 s), anni None/s fra le voci, nessuno stacco; vmax 213.71, amax 119.87, jmax 86.87, clear_min 456.23, clear_ground_min 475.75
+Durata 12:08.9  fotogrammi 17494  inquadrature 3  stacco medio ogni 243.0 s
+Musica: waking_monument  b_start None  notte 713.8716130699341
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   1238.00  
-  12:13.7   2026.00  
+  11:53.9   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:29.7  1238.0->1238.8  Jaume I takes Valencia (1238)  [forza 6.0, crowd]
@@ -52,38 +52,38 @@ SOSTE (video -> anni):
   5:39.3-5:43.8  1873.0->1873.0  Capital of a canton  [forza 0.0]
   5:43.9-5:48.9  1877.0->1877.0  Russafa joins the city  [forza 0.0]
   5:55.3-6:00.3  1887.0->1890.9  The Ensanche (1887)  [forza 4.0, build]
-  6:16.9-6:20.4  1891.0->1892.0  A convent becomes the main square (1891)  [forza 7.0, crash]
-  6:20.7-6:25.7  1897.0->1897.0  The seaside towns join  [forza 0.0]
-  6:26.5-6:31.5  1900.0->1900.0  A city of 215,687  [forza 0.0]
-  6:33.3-6:39.3  1909.0->1909.0  The Regional Exhibition  [forza 0.0]
-  6:39.4-6:43.4  1909.4->1910.0  Regional Exhibition (1909)  [forza 6.0, crowd]
-  6:59.4-7:03.9  1915.0->1915.6  North Station (1906-17)  [forza 4.0, train]
-  7:19.9-7:23.4  1923.3->1923.5  Mestalla stadium (1923)  [forza 6.0, crowd]
-  7:39.4-7:43.9  1927.4->1928.0  Central Market (1915-28)  [forza 6.0, crowd]
-  7:59.9-8:04.9  1932.4->1933.0  City Hall square (1931-33)  [forza 4.0, build]
-  7:59.9-8:04.9  1933.5->1933.5  The Aragon bridge  [forza 0.0]
-  8:05.9-8:11.9  1936.8->1936.8  Capital of the Republic  [forza 0.0]
-  8:12.5-8:17.0  1939.2->1939.2  The war ends  [forza 0.0]
-  8:20.7-8:25.7  1950.0->1950.0  Half a million  [forza 0.0]
-  8:28.6-8:35.6  1957.8->1957.8  The Turia floods  [forza 0.0]
-  8:35.6-8:47.6  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
-  8:49.5-8:55.5  1961.0->1961.0  The Plan Sur  [forza 0.0]
-  8:56.1-9:00.6  1962.0->1962.0  A city of immigrants  [forza 0.0]
-  9:19.2-9:30.2  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
-  9:19.2-9:25.7  1970.0->1970.0  The river is moved  [forza 0.0]
-  9:25.7-9:30.2  1970.0->1970.0  Growing fast  [forza 0.0]
-  9:37.0-9:43.5  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
-  10:05.6-10:16.6  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
-  10:05.6-10:12.1  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
-  10:12.1-10:16.6  1989.0->1989.0  Calatrava arrives  [forza 0.0]
-  10:18.5-10:23.5  1995.3->1995.3  Calatrava's Exposition bridge  [forza 0.0]
-  10:53.2-11:04.2  1996.5->1999.0  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
-  10:53.2-10:59.2  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
-  10:59.2-11:04.2  1999.9->1999.9  The Kingdom of Valencia bridge  [forza 0.0]
-  11:20.2-11:26.2  2006.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
-  11:20.2-11:24.7  2007.0->2007.0  The America's Cup  [forza 0.0]
-  11:29.1-11:37.1  2024.8->2024.8  DANA, 29 October 2024  [forza 0.0]
-  11:37.3-11:42.3  2025.0->2025.0  Valencia today  [forza 0.0]
+  5:55.3-5:58.8  1891.0->1891.0  A convent becomes the main square (1891)  [forza 0.0]
+  6:00.9-6:05.9  1897.0->1897.0  The seaside towns join  [forza 0.0]
+  6:06.7-6:11.7  1900.0->1900.0  A city of 215,687  [forza 0.0]
+  6:13.5-6:19.5  1909.0->1909.0  The Regional Exhibition  [forza 0.0]
+  6:19.6-6:23.6  1909.4->1910.0  Regional Exhibition (1909)  [forza 6.0, crowd]
+  6:39.6-6:44.1  1915.0->1915.6  North Station (1906-17)  [forza 4.0, train]
+  7:00.1-7:03.6  1923.3->1923.5  Mestalla stadium (1923)  [forza 6.0, crowd]
+  7:19.6-7:24.1  1927.4->1928.0  Central Market (1915-28)  [forza 6.0, crowd]
+  7:40.1-7:45.1  1932.4->1933.0  City Hall square (1931-33)  [forza 4.0, build]
+  7:40.1-7:45.1  1933.5->1933.5  The Aragon bridge  [forza 0.0]
+  7:46.1-7:52.1  1936.8->1936.8  Capital of the Republic  [forza 0.0]
+  7:52.7-7:57.2  1939.2->1939.2  The war ends  [forza 0.0]
+  8:00.9-8:05.9  1950.0->1950.0  Half a million  [forza 0.0]
+  8:08.8-8:15.8  1957.8->1957.8  The Turia floods  [forza 0.0]
+  8:15.8-8:27.8  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
+  8:29.7-8:35.7  1961.0->1961.0  The Plan Sur  [forza 0.0]
+  8:36.3-8:40.8  1962.0->1962.0  A city of immigrants  [forza 0.0]
+  8:59.4-9:10.4  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
+  8:59.4-9:05.9  1970.0->1970.0  The river is moved  [forza 0.0]
+  9:05.9-9:10.4  1970.0->1970.0  Growing fast  [forza 0.0]
+  9:17.2-9:23.7  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
+  9:45.8-9:56.8  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
+  9:45.8-9:52.3  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
+  9:52.3-9:56.8  1989.0->1989.0  Calatrava arrives  [forza 0.0]
+  9:58.7-10:03.7  1995.3->1995.3  Calatrava's Exposition bridge  [forza 0.0]
+  10:33.4-10:44.4  1996.5->1999.0  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
+  10:33.4-10:39.4  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
+  10:39.4-10:44.4  1999.9->1999.9  The Kingdom of Valencia bridge  [forza 0.0]
+  11:00.4-11:06.4  2006.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
+  11:00.4-11:04.9  2007.0->2007.0  The America's Cup  [forza 0.0]
+  11:09.3-11:17.3  2024.8->2024.8  DANA, 29 October 2024  [forza 0.0]
+  11:17.5-11:22.5  2025.0->2025.0  Valencia today  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -99,21 +99,21 @@ ANNO OGNI 30 s:
   5:00   1850.0  (0.75 anni/s)
   5:30   1865.6  (0.27 anni/s)
   6:00   1890.7  (0.78 anni/s)
-  6:30   1900.0  (0.00 anni/s)
-  7:00   1915.1  (0.13 anni/s)
-  7:30   1925.1  (0.24 anni/s)
-  8:00   1932.4  (0.18 anni/s)
-  8:30   1957.8  (0.00 anni/s)
-  9:00   1962.0  (0.00 anni/s)
-  9:30   1969.8  (0.61 anni/s)
-  10:00   1985.0  (0.18 anni/s)
-  10:30   1995.6  (0.04 anni/s)
-  11:00   1998.0  (0.23 anni/s)
-  11:30   2024.8  (0.00 anni/s)
-  12:00   2025.6  (0.03 anni/s)
+  6:30   1912.0  (0.31 anni/s)
+  7:00   1923.2  (0.38 anni/s)
+  7:30   1929.6  (0.28 anni/s)
+  8:00   1947.5  (2.96 anni/s)
+  8:30   1961.0  (0.00 anni/s)
+  9:00   1964.3  (0.54 anni/s)
+  9:30   1983.1  (0.18 anni/s)
+  10:00   1995.3  (0.00 anni/s)
+  10:30   1996.4  (0.04 anni/s)
+  11:00   2005.8  (0.44 anni/s)
+  11:30   2025.2  (0.03 anni/s)
+  12:00   2026.0  (0.00 anni/s)
 
-Velocita fuori dalle soste: mediana 0.46 anni/s, max 30.0 anni/s
-Soste: 74, 471 s (65% del giorno)
+Velocita fuori dalle soste: mediana 0.48 anni/s, max 30.0 anni/s
+Soste: 74, 471 s (67% del giorno)
 
 AVVISI:
   nessuno
