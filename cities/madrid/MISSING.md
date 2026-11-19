@@ -1,62 +1,29 @@
-# MISSING — Madrid (importato dal legacy da `python -m kit legacy madrid`)
+# MISSING — Madrid (aggiornato da yb-historian + yb-modeler, branch yb/madrid)
 
-Campi richiesti dal formato kit che il legacy non poteva dare. Niente e' stato inventato: i campi sono `TODO`/vuoti/`conf: "low"` e sono elencati in `story._legacy_gaps`.
+Stato: `python -m kit qa madrid --only a` = PASS (49 fonti, 0 FAIL). Non eseguiti: build, qa b-e, render (CPU occupata, ordine del giro).
+Ogni citazione in `sources` e' stata verificata a macchina come sottostringa del testo scaricato (Wikipedia es/en, via action=raw; tabella S46 sul testo delle celle).
 
-## Importato
-- soste: 0 (con bersaglio risolto: 0, con fonte: 0)
-- cartelli: 11 (con fonte: 0); minimo richiesto 45: MANCANO 34
-- monumenti: 0 (con fonte: 0); tutti `kind: TODO`
-- fonti: 0 · popolazione: 0 punti · acqua: 0 · mura: 0 · ponti: 0 · zone: 0
-- eventi: 0 · camera drone (pitch_max 30, alt_max 500, d_min 1400, drift_vmax 8, rho_max 1400, lens 32)
+## Compilato
+- soste 19 (860-2009, una "max" = Royal Palace), tutte con `src` e `conf`; bersagli: 10 landmark, 2 fuochi, 7 aree a mano.
+- landmarks 17 (14 edifici + 2 ponti + Alcazar): 11 su impronta reale del catasto (`footprint: auto`), Palazzo Reale/Alcazar/Torre PwC/ponti come preset con POSIZIONE SEGNALATA.
+- polities 16 (Emirato, Califfato, Taifa di Toledo, Castiglia, Reyes Catolicos, Asburgo, Borboni, Napoleonico, Restaurazione Fernandina, Sexenio, Restaurazione, II Repubblica, assedio, franchismo, transizione, democrazia), eras 8, capitoli 8 (niente cold open), popolazione 29 punti con etichetta.
+- history: 5 zone (cittadella musulmana 4 ha, citta' cristiana 33 ha, arrabales, Madrid asburgica, Ensanche), 3 mura (musulmana, cristiana, Cerca di Filippo IV 1625-1868), 3 gutting (Gran Via 1917/1922/1929), 1 lost (Caños del Peral 1738-1817), 4 fuochi (Plaza Mayor 1631 e 1790, Alcazar 1734, fronte ovest 1936).
+- cartelli 66 (minimo 45), tutti con fonte; titolo `EVOLUTION OF MADRID | 3D City Timelapse (860-NOW) | No AI`.
 
-## Da compilare (storico)
+## Stime e punti deboli (R2: tutto cio' che e' ipotesi e' `conf` low/medium e [Guessing] nella nota)
+- `start_year` 860: scelta mia (il vecchio video partiva dal 1480). Le strade dei dati partono dal 1467: 860-1467 senza nastri stradali, solo zone+mura. Alternativa: 1085 o 1480 (cambia titolo e capitoli). Da decidere col proprietario insieme alla guardata della timeline.
+- Tutti gli anelli delle zone/mura/Cerca/Ensanche/gutting sono SCHIZZI A MANO (+-100 m), non georeferenziati. `born` ed `era_height` sono scelte di modello.
+- La zona "Mayrit" contiene 0 edifici del catasto (l'area del Palazzo Reale e' vuota): la cittadella e' solo Alcazar (preset castle 80x65 m, ipotesi) + mura; nessuna casa predecessore.
+- Predecessori attesi (edifici attuali dentro le zone): citta' cristiana 295, arrabales 1.323, Madrid asburgica 7.208, Ensanche 16.421 (anello 2.258 ha). Costo del cambio da MISURARE con qa c/e prima di ogni GO; se supera il budget, stringere l'anello Ensanche.
+- Palazzo Reale: nessuna impronta entro 40 m, preset a coordinate Wikipedia (140x140 m ipotesi). Torre PwC: impronta catasto 224 m2, preset 38x38 m (resta anche il pezzetto del catasto). Ponti di Segovia e Toledo: linee centrate sulla banda d'acqua del DEM, +-100 m, da verificare in locale.
+- Orientamento della Almudena (asse di default) e colori/altezze dei preset: non verificati con un render.
+- Altezze Cuatro Torres: da infobox Wikipedia (Espacio 230 m; la pagina Cuatro Torres dice 224,5 m): scelto 230.
+- Popolazione: punto 860 = segnaposto uguale al c.1000; 1000/1480 sono di Trapiello 2020 citato da S46, non ricontrollato; serie non omogenea per le annessioni 1948-54.
+- `data_reliable_from` 1900 e' un'ipotesi (54 edifici datati <1850, 1.470 <1900): leggere il report density.
+- Colori delle bandiere dei chip: illustrativi, non da fonte.
 
-### Fonti
-- `sources` · sources: nessuna scheda di validazione per madrid: 0 fonti; tutti gli elementi importati sono conf "low" (deroga regola 1) e vanno risalvati con una fonte reale
-
-### Regimi/polities, ere, popolazione
-- `city` · country: non nei file legacy (TODO)
-- `city` · style_preset: default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere
-- `city` · eras: nessuna periodizzazione nel legacy
-- `city` · polities: nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)
-- `city` · data_reliable_from: non nel legacy
-- `city` · population: nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione
-
-### Zone, mura, acqua, ponti
-- `history.bridges` · bridges: nessun bridges_madrid.py leggibile (vedi anche bridges.json di radice, non per citta')
-- `history.zones` · zones: nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare
-- `history` · walls/gutting/lost/fires: mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale
-
-### Monumenti
-- `landmarks` · landmarks: montaggio/landmarks_madrid.json e data_madrid_src/landmarks.json[labels] assenti
-
-### Soste (bersaglio, peso, fx)
-- `regia` · soste: nessuna sosta nello schedule legacy
-- `regia.soste` · weight: 0 soste senza peso (0-10 o "max"): default = forza dell'fx; scegliere almeno la piu' forte come "max"
-- `regia.soste` · fx: nessun fx del montaggio nel legacy (campo omesso)
-
-### Cartelli e capitoli
-- `montaggio.cards` · cards_src: 11 cartelli SOLO titolo+anno dai capitoli di metadata_madrid.md (nessun testo, nessuna fonte): sono capitoli di video, non schede storiche; da riscrivere dallo storico
-- `montaggio.cards` · cards: 11 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 34
-- `montaggio.cards` · hold_s: 11 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)
-- `montaggio.cards` · target/shot: il legacy non ha bersaglio per i cartelli (volano durante i tratti)
-- `montaggio` · chapters: nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere
-
-### Montaggio e consegna
-- `montaggio` · open: solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte
-- `metadata` · chapters/description/tags: capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)
-
-### Pacchetto dati
-- `data` · data_src: data_madrid_src incompleto per kit data/pack: mancano roads.json, dem.npz
-
-### Altro
-- `regia` · SOSTE/CAPS: regia_madrid.py assente o non analizzabile: soste da schedule, cartelli da eventi
-
-## Pacchetto dati per `kit pack`/`kit data`
-- cartella: `data_madrid_src`; presenti: buildings.json, land.json, parks.json
-- INCOMPLETO, mancano: roads.json, dem.npz
-
-## GAP PRINCIPALE: nessuna sosta (nessun monumento nei file legacy)
-Madrid legacy ha solo hist, metadata, schedule, city, overlay: niente regia/landmarks, quindi 0 soste e 0 monumenti. I 11 "cartelli" importati sono SOLO titolo+anno dai capitoli di video di metadata_madrid.md (conf low, senza testo).
-Candidati monumenti proposti (conf **low**, nessun anno/fonte/posizione verificati: serve lo storico; Palacio Real non ha impronta entro 40 m nei dati, edifici pre-1850 solo 54 (<1850) / 173 (<=1850), quindi i monumenti vanno modellati con preset, non presi dai dati):
-Palacio Real · Puerta del Sol · Plaza Mayor · Cibeles · Museo del Prado · Retiro · Gran Via · Congreso de los Diputados · Cuatro Torres · Almudena · Atocha · Edificio Metropolis (Metropolitan) · Puentes del Manzanares (Segovia/Toledo) · Alcazar (demolito, hist_madrid ALCAZAR) · Puerta de Alcala · Casa de Campo · Torre de Madrid / Edificio Espana · Estacion de Atocha · Basilica di San Francisco el Grande · Teatro Real
+## Da fare prima del GO (nulla di questo e' stato eseguito)
+1. `kit build madrid` + `qa madrid` (b-e): densita', corridoi, costo, camera (R2: distanza mediana >= 1.200 m, inclinazione < 45 gradi, nessun volo >= 12 s sotto 0,4 anni/s).
+2. Contact sheet locale di 24 fotogrammi 860-2026 (R15) e copertine (860 > NOW) con bpy.
+3. Ponti: `bridges` dei dati non fatti (qui solo 2 landmark `bridge_arches`).
+4. Consegna R7: `cities/madrid/METADATA.md` (descrizione, capitoli con orari finali, tag, commento fissato EN+ES, Reddit, distribuzione, nota stampa, comando di montaggio), `kit pack`.
