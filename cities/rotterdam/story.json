@@ -3,250 +3,1408 @@
  "city": {
   "slug": "rotterdam",
   "name": "Rotterdam",
-  "country": "TODO",
+  "country": "Netherlands",
   "lat0": 51.9221,
   "lon0": 4.4795,
   "radius_m": 9000,
-  "start_year": 1340,
+  "start_year": 1270,
   "end_year": 2026,
-  "title": "EVOLUTION OF ROTTERDAM | 3D City Timelapse (1340–NOW) | No AI**",
+  "title": "EVOLUTION OF ROTTERDAM | 3D City Timelapse (1270-NOW) | No AI",
   "data_source": "custom",
   "data_dir": "data_rotterdam",
-  "style_preset": "mediterranean",
-  "population": [],
-  "pop_src": [],
-  "eras": []
+  "style_preset": "nordic",
+  "population": [
+   [
+    1340,
+    3000,
+    "rough estimate"
+   ],
+   [
+    1573,
+    10000,
+    "rough estimate"
+   ],
+   [
+    1622,
+    20000,
+    "historical estimate"
+   ],
+   [
+    1675,
+    30000,
+    "rough estimate"
+   ],
+   [
+    1699,
+    50000,
+    "rough estimate"
+   ],
+   [
+    1750,
+    56000,
+    "rough estimate"
+   ],
+   [
+    1796,
+    53212,
+    "historical estimate"
+   ],
+   [
+    1838,
+    72000,
+    "historical estimate"
+   ],
+   [
+    1866,
+    115277,
+    "historical estimate"
+   ],
+   [
+    1880,
+    160000,
+    "historical estimate"
+   ],
+   [
+    1891,
+    203500,
+    "historical estimate"
+   ],
+   [
+    1900,
+    315000,
+    "historical estimate"
+   ],
+   [
+    1905,
+    379017,
+    "historical estimate"
+   ],
+   [
+    1920,
+    500000,
+    "historical estimate"
+   ],
+   [
+    1965,
+    731564,
+    "historical estimate"
+   ],
+   [
+    1985,
+    560000,
+    "historical estimate"
+   ],
+   [
+    2000,
+    592673,
+    "census"
+   ],
+   [
+    2010,
+    603425,
+    "census"
+   ],
+   [
+    2022,
+    655468,
+    "census"
+   ],
+   [
+    2023,
+    664311,
+    "census"
+   ]
+  ],
+  "pop_src": [
+   "S1",
+   "S2",
+   "S3",
+   "S44"
+  ],
+  "eras": [
+   [
+    1270,
+    "Dam town on the Rotte",
+    "#c9a24a"
+   ],
+   [
+    1340,
+    "Chartered town",
+    "#b5654a"
+   ],
+   [
+    1575,
+    "The Water Town",
+    "#6aa0c8"
+   ],
+   [
+    1795,
+    "Revolution and empire",
+    "#8a6aa0"
+   ],
+   [
+    1872,
+    "World port",
+    "#7cb06a"
+   ],
+   [
+    1940.38,
+    "Bombing and occupation",
+    "#8c8c8c"
+   ],
+   [
+    1945.34,
+    "Reconstruction",
+    "#c98a4b"
+   ],
+   [
+    1990,
+    "Manhattan on the Maas",
+    "#5fb0a8"
+   ]
+  ],
+  "pop_conf": [
+   "low",
+   "medium",
+   "medium",
+   "low",
+   "low",
+   "low",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "low",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "high",
+   "medium"
+  ],
+  "pop_point_src": [
+   "S1",
+   "S3",
+   "S3",
+   "S1",
+   "S3",
+   "S3",
+   "S2",
+   "S2",
+   "S2",
+   "S3",
+   "S2",
+   "S3",
+   "S2",
+   "S3",
+   "S1",
+   "S1",
+   "S44",
+   "S44",
+   "S44",
+   "S44"
+  ],
+  "pop_note": "1340: S1: \"only a few thousand\"; 3,000 is a [Guessing] reading. | 1622: S2 timeline says 20,000 for 1632 (approximate). | 1675: S1: around 30,000 by the 1670s. | 1699: S3: \"almost 50,000\" toward the end of the 17th century; conflicts with the 1670s figure only if read as growth of 20,000 in 25 years. | 1750: S3: about 56,000 in the middle of the 18th century (S2: 53,212 in 1796). | 1900: Includes the 1895 annexations of Kralingen and Charlois (S3). | 1920: S3: \"slightly above 500,000\". | 1965: Peak. No figure for 1930-1960 in the fetched texts: the HUD interpolates between 1920 and 1965. | 2023: Wikidata preferred rank.",
+  "data_reliable_from": 1900,
+  "data_reliable_note": "[Guessing] 1900: the cadastre (3DBAG) holds only surviving buildings: 8,417 with a year in 1850-1899 against 70,364 in 1900-1949 and almost none before 1850 (counted on data_rotterdam_src/buildings.json.gz, 2026-11-19); the 1940 center is all post-1945. Before 1900 the city is generated from zones.",
+  "polities": [
+   {
+    "y": 1270,
+    "name": "County of Holland",
+    "flag_colors": [
+     "#f2c200",
+     "#c8102e"
+    ],
+    "src": [
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1433,
+    "name": "Burgundian Netherlands",
+    "flag_colors": [
+     "#c8102e",
+     "#f2c200"
+    ],
+    "src": [
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1482,
+    "name": "Habsburg Netherlands",
+    "flag_colors": [
+     "#f2c200",
+     "#1a1a1a"
+    ],
+    "src": [
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1573,
+    "name": "Dutch Revolt · Holland against Spain",
+    "flag_colors": [
+     "#ff7f00",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "note": "The chip changes when Rotterdam itself joins the Revolt (S3, 1573); the Republic proper is dated 1581."
+   },
+   {
+    "y": 1581,
+    "name": "Dutch Republic",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S38",
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1795.05,
+    "name": "Batavian Republic",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S39"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1806.43,
+    "name": "Kingdom of Holland",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S40"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1810.0,
+    "name": "French Empire",
+    "flag_colors": [
+     "#21468b",
+     "#ffffff",
+     "#e1000f"
+    ],
+    "src": [
+     "S40"
+    ],
+    "conf": "medium",
+    "note": "Year only in S40; month not used."
+   },
+   {
+    "y": 1813.0,
+    "name": "United Netherlands",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "medium",
+    "note": "Year only in S41."
+   },
+   {
+    "y": 1815.2,
+    "name": "Kingdom of the Netherlands",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1940.38,
+    "name": "German occupation",
+    "flag_colors": [
+     "#2b2b2b",
+     "#8c8c8c"
+    ],
+    "src": [
+     "S1",
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "Capitulation 15 May 1940 (S1); the Reichskommissariat takes power 29 May 1940 (S42)."
+   },
+   {
+    "y": 1945.34,
+    "name": "Kingdom of the Netherlands",
+    "flag_colors": [
+     "#ae1c28",
+     "#ffffff",
+     "#21468b"
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "5 May 1945 is the national liberation date (S42); Rotterdam's own date is not in the fetched texts."
+   }
+  ],
+  "eras_note": "Display eras; boundaries follow the sourced events: 1340 charter, 1575 Water Town (S3), 1795 (S3), 1872 Nieuwe Waterweg (S1), 1940 bombing (S1), 1945 liberation (S42), 1990s Kop van Zuid (S3).",
+  "style_note": "[Guessing] nordic (brick walls, red roofs, green-blue water) as the closest preset for Dutch brick; no render done to check."
  },
- "sources": {},
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/Rotterdam",
+   "title": "Wikipedia EN, Rotterdam",
+   "quote": "A dam on the Rotte was built in the 1260s and was located at the present-day Hoogstraat. … On 7 July 1340, Count Willem IV of Holland granted city rights to Rotterdam, which then had a population of only a few thousand. … Around the year 1350, a shipping canal (the Rotterdamse Schie) was completed, which provided Rotterdam access to the larger towns in the north, allowing it to become a local trans-shipment centre between the Netherlands, England and Germany, and to urbanize. … The port of Rotterdam grew steadily in importance, the new harbours were built, and Rotterdam became the seat of one of the six chambers of the Vereenigde Oostindische Compagnie (VOC), the Dutch East India Company, and one of the five chambers of the West-Indische Compagnie (WIC), the Dutch West Ind … Beginning in the 1600s, Rotterdam was involved in the Atlantic slave trade. … According to historian Gerhard de Kok, \"Rotterdam merchants were the pioneers of the Dutch slave trade\". … From the 17th century until 1814, when the United Netherlands abolished the Netherlands' involvement in the slave trade at the request of the British government, Dutch slave ships from Rotterdam sailed to Africa and the Americas as part of the triangular trade. … The greatest spurt of growth, both in port activity and population, followed the completion of the Nieuwe Waterweg in 1872. … During World War I, the city was the world's largest spy centre because of Dutch neutrality and its strategic location between Britain, Germany and German-occupied Belgium. … During World War I, an average of 25,000 Belgian refugees lived in the city, as well as hundreds of German deserters and escaped Allied prisoners of war. … Some 80,000 civilians were made homeless, and 900 were killed; a relatively low number since many had fled the city because of the warfare and bombing going on in Rotterdam since the start of the invasion three days earlier. … The City Hall survived the bombing. … The Dutch army was forced to capitulate on 15 May 1940, following the bombing of Rotterdam on 14 May and the threat of bombing other Dutch cities. … Between 30 July 1942 and 22 April 1943, 6,790 people were deported in 8 transports via Loods 24. … In January 1948, Queen Wilhelmina presented the motto 'Sterker door strijd' (Stronger through effort) as part of the coat of arms of Rotterdam to the city government: … Its population peaked at 731,564 in 1965, but the dual processes of suburbanization and counterurbanization saw this number steadily decline over the next 2 decades, reaching 560,000 by 1985. … In the 1990s, the Kop van Zuid was built on the south bank of the river as a new business centre. … In 2022, Rotterdam had a population of 655,468 and is home to over 180 different nationalities. … In the 17th century, the city grew beyond the fortifications, and by the 1670s, its population was around 30,000. … In 1340, Rotterdam was granted city rights by William IV, Count of Holland. … The Witte Huis, or White House skyscraper, inspired by American office buildings and built in 1898 in the French Art Nouveau style, is evidence of Rotterdam's rapid growth and success. … The heart of Rotterdam was almost completely destroyed by the Luftwaffe.",
+   "fetched": "2026-11-19"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/Timeline_of_Rotterdam",
+   "title": "Wikipedia EN, Timeline of Rotterdam (History of Rotterdam)",
+   "quote": "1466 - Erasmus, philosopher and Catholic theologian born. … 1489 - Rotterdam besieged by forces of Frans van Brederode. … 1563 - Fire. … 1847 - Delftsche Poort railway station opens. … 1869 - Feijenoord becomes part of city. … 1878 - Willemsbrug opens. … 1886 - Delfshaven becomes part of city. … Plan for the Reconstruction of Rotterdam adopted. … 1796 - Population: 53,212. … 1838 - Population: 72,000. … 1866 - Population: 115,277. … 1891 - Population: 203,500. … Population: 379,017. … Cube houses built near Oude Haven.",
+   "fetched": "2026-11-19"
+  },
+  "S3": {
+   "url": "https://nl.wikipedia.org/wiki/Geschiedenis_van_Rotterdam",
+   "title": "Wikipedia NL, Geschiedenis van Rotterdam",
+   "quote": "In de dam komen spuisluizen, en op de dam worden rond 1275 de eerste houten huizen gebouwd. … In 1283 is de eerste vermelding van de plaats “Rotterdam”. … Op 17 maart 1299 krijgt Rotterdam stadsrechten van graaf Jan I van Holland, naar model van de stadsrechten van Beverwijk. … Na september 1299 worden de Rotterdamse stadsrechten weer ingetrokken door de nieuwe voogd (en latere graaf) Jan II van Avesnes. … Rechtsonder is een zegel van groene was bevestigd.Op 7 juni 1340 verleent graaf Willem IV van Holland Rotterdam definitief stadsrechten. … Uiteindelijk wordt deze Rotterdamse Schie pas rond 1350 voltooid. … In 1358 geeft graaf Albrecht van Beieren toestemming om verdedigingswerken rondom Rotterdam te bouwen. … De vestingsingels liepen langs de huidige Coolsingel, Warande, Blaak en Nieuwehaven. … Tussen 1449 en 1525 bouwt men de laat-gotische Laurenskerk. … Het is een ambitieus project, Rotterdam bestaat in die tijd uit ongeveer 1200 huizen. … Door het plaatsen van een standbeeld van Hendrick de Keyser wordt in 1622 een van Rotterdams beroemdste zonen, Erasmus geëerd. … Belangrijke gebouwen zijn ingetekend.]]Jonker Frans (van Brederode) heeft tijdens de Hoekse en Kabeljauwse twisten tussen 1488 en 1490 voor Rotterdam een belangrijke rol gespeeld. … Begin 1500 is de stadsmuur rondom Rotterdam voltooid.miniatuur|Kaart van Rotterdam rond 1560, gemaakt door [[Jacob van Deventer (cartograaf)|Jacob van Deventer|alt=Ingekleurde handgetekende kaart van middeleeuws Rotterdam. … Rond 1500 wordt het ommuurde stadsgebied verkleind. … In 1563 valt het oosten van de stad ten prooi aan een grote stadsbrand. … In 1572 werd Rotterdam geplunderd door troepen van de stadhouder van de Spaanse koning, de graaf van Bossu. … De Bestorming van Rotterdam werd geleid door Bossu via de Oostpoort tussen 7 en 9 april 1572. … In 1573 kiest de stad de kant van de Opstand. … De stad had toen ongeveer 10.000 inwoners. … Vanaf 1575 wordt de ommuurde stad weer uitgebreid. … Het gebied tussen Hoogstraat, Schiedamse Singel en de Nieuwe Maas. … Johan van Oldenbarnevelt, die van 1576 tot 1586 raadpensionaris van de stad was, kreeg in 1579 bij de Staten van Holland gedaan, dat het middeleeuwse stapelrecht van Dordrecht werd ingetrokken. … In 1581 kreeg de stad zelf zitting in de Staten. … Dit beeld, het oudste bronzen standbeeld van Nederland, staat nog altijd naast de Laurenskerk. … Bij de volkstelling van 1622 was het aantal inwoners gegroeid tot ongeveer 20.000. … De directe vaarroutes van Rotterdam naar zee liepen tot de jaren 1740 rondom het eiland Rozenburg. … Na 1740 verzandde deze routes en werden ze onbevaarbaar. … Tijdens de Franse inval in 1795 wordt het prinsgezinde stadsbestuur afgezet. … Voor het eerst komen er openbare verkiezingen van het stadsbestuur. … In 1823 is de oprichting van de Nederlandsche Stoomboot Maatschappij (NSbM). … Vanuit Rotterdam pioniert die met stoomaangedreven lijndiensten, met lijnen binnen Nederland, naar de Duitse steden langs de Rijn, en een lijndienst naar Londen. … In 1825 richt de NSbM het Etablissement Fijenoord op, voor de reparatie en bouw van stoomschepen.p:29 Dit is het begin van de scheepsbouwindustrie in Rotterdam-Zuid. … Desondanks breidde de stad zich niet uit buiten zijn wallen en singels. … Pas na 1825 zou zij zich buiten deze enge grenzen gaan uitbreiden. … In 1847 krijgt Rotterdam een eerste treinverbinding, een spoorlijn naar Den Haag en Amsterdam. … Wanneer in 1853 de nieuwe Boompjeskade gedeeltelijk instort moet Rose aftreden, hoewel hij als adviseur betrokken blijft bij de stad.p:70-73 Als laatste wordt in 1858 de Oosterkade voltooid. … Hiermee is alle geschikte ruimte in de stad en langs de rivier gebruikt. … In 1869 annexeert Rotterdam delen van gemeenten IJsselmonde, Katendrecht en Charlois. … In 1877 opent de spoorverbinding van Antwerpen naar Rotterdam. … Via de Willemsspoorbrug, Station Beurs en het Luchtspoor(viaduct) rijden treinen dwars door de stad naar het nieuwe Station Delftse Poort. … In 1878 opent de Willemsbrug, voor het stadsverkeer over de Nieuwe Maas. … In 1879 openen de havenfaciliteiten van de RHV. … Halsoverkop ontvlucht Pincoffs Nederland. … Ten oosten van de stad wordt in 1895 Kralingen geannexeerd, en vervolgens verder uitgebouwd. … In dat jaar worden ook Charlois (inclusief Katendrecht) en een deel van Overschie ingelijfd bij Rotterdam. … Tussen 1880 en 1900 is de bevolking snel gegroeid, van 160.000 naar 315.000 inwoners. … Tussen 1913 en 1922 wordt de Coolvest gedempt en de Zandstraatbuurt gesloopt. … De opening van warenhuis de Bijenkorf in 1930, naar een ontwerp van de beroemde architect Dudok trekt maar liefst 70.000 mensen naar de Coolsingel. … Het bruisende uitgaansleven rond de Schiedamsedijk is wijd en zijd bekend. … En tussen 1936 en 1940 wordt het modernistische nieuwe Beurs gebouw gerealiseerd. … Op 31 maart 1943 bombarderen de geallieerden bij vergissing een deel van Delfshaven, waarbij nog eens minstens 417 mensen sterven. … Op 10 en 11 november 1944 wordt er een grote razzia gehouden waarbij circa 50.000 mannen tussen 17 en 40 werden weggevoerd. … In 1970 maakt men de Euromast nóg hoger door er een Space Tower op te zetten, waarmee de totale hoogte op 185 meter komt.thumb|[[Euromast rond 1960|alt=Sepiafoto van wandelende mensen in Het Park. … In 1981 opent de nieuwe Willemsbrug, zo ontworpen dat de Oude Haven gespaard blijft. … Een ander megaproject (uitgevoerd vanaf 1994) is de Kop van Zuid. … Tegen het eind van de 17e eeuw zouden het er zelfs bijna 50.000 zijn. … Midden 18e eeuw groeide het inwonertal van Rotterdam tot zo'n 56.000 en haalde de stad ook Leiden in. … In 1920 zal de bevolking zelfs al iets boven de 500.000 inwoners bedragen. … Daaromheen groeit bedrijvigheid en een nederzetting. … De min of meer driehoekige ruimte tussen Coolsingel, Goudsesingel en de Nieuwe Maas bedroeg niet meer dan 140 hectare, dus de stad was werkelijk overbevolkt. … Allen havensteden die zich ontwikkelen door een positie langs vaarroutes met goede toegang tot zee. … Net als Gouda (1272), Schiedam (1275) en Brielle (1330). … Tussen 1982 en 1984 openen de kubuswoningen van Piet Blom. … De havenactiviteiten groeien nu zo snel dat de Rotterdamse haven in 1962 het predicaat 'grootste ter wereld' krijgt.",
+   "fetched": "2026-11-19"
+  },
+  "S4": {
+   "url": "https://nl.wikipedia.org/wiki/Hoogstraat_(Rotterdam)",
+   "title": "Wikipedia NL, Hoogstraat (Rotterdam)",
+   "quote": "Rond 1270 werd de dam in de Rotte voltooid waar Rotterdam naar is vernoemd. … Vlak na voltooiing werden de eerste houten huizen op deze dam gebouwd, later gevolgd door een straat. … De dam was onderdeel van het traject van een middeleeuwse zeewering, Schielands Hoge Zeedijk.",
+   "fetched": "2026-11-19"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Rotterdam_Blitz",
+   "title": "Wikipedia EN, Rotterdam Blitz",
+   "quote": "Only two buildings prior to the 19th century survived, Schielandshuis and Sint-Laurenskerk. … The psychological and the physical success of the raid, from the German perspective, led the Oberkommando der Luftwaffe (OKL) to threaten to destroy the city of Utrecht if the Dutch command did not surrender. … There seemed to be no thought of nostalgically rebuilding the old city, as it would be at the expense of a more modern future. … Reports stated that 900 people had reported been killed and 642 acres (2.60 km2) of the city centre had been destroyed. … The largest and most controversial change in the layout was to move the main dike of the city alongside the riverbank, so as to protect the low-lying Waterstad area from flooding. … Meanwhile, Witteveen's successor Cornelius van Traa drafted a completely new reconstruction plan, the Basisplan voor de Herbouw van de Binnenstad, which was adopted in 1946.",
+   "fetched": "2026-11-19"
+  },
+  "S6": {
+   "url": "https://nl.wikipedia.org/wiki/Bombardement_op_Rotterdam",
+   "title": "Wikipedia NL, Bombardement op Rotterdam",
+   "quote": "Het bombardement van een kwartier vernietigde bijna de gehele historische binnenstad van Rotterdam, mede door de branden die ontstonden. … De Duitse bommen vielen in een brede strook in het centrum en ten noorden ervan, van Kralingen tot station Hofplein. … Het bombardement op Rotterdam werd op 14 mei 1940 tussen 13.27 en ongeveer 13.40 uur uitgevoerd door Duitse bommenwerpers in het kader van de Duitse militaire overval op Nederland.",
+   "fetched": "2026-11-19"
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Laurenskerk",
+   "title": "Wikipedia EN, Laurenskerk",
+   "quote": "The church was built as a Roman Catholic Church between 1449 and 1525. … In the Rotterdam Blitz on May 14, 1940, the Laurenskerk was heavily damaged, with only the tower and walls surviving. … In 1952, Queen Juliana laid the foundation stone for the restoration, which was completed in 1968.",
+   "fetched": "2026-11-19"
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/Rotterdam_City_Hall",
+   "title": "Wikipedia EN, Rotterdam City Hall",
+   "quote": "To make room for the new buildings, an entire neighborhood, Zandstraat, where about 2,400 people lived, was demolished. … Rotterdam City Hall was built between 1914 and 1920 by .",
+   "fetched": "2026-11-19"
+  },
+  "S10": {
+   "url": "https://nl.wikipedia.org/wiki/Stadhuis_van_Rotterdam",
+   "title": "Wikipedia NL, Stadhuis van Rotterdam",
+   "quote": "Voor de uitvoering werd de Coolvest gedempt en de rosse wijk Zandstraatbuurt, waar zo'n 2.400 mensen woonden, gesloopt. … De eerste paal werd geslagen op 12 augustus 1914. … Op 1 september 1920 werd het gebouw tijdens een speciale zitting van de gemeenteraad officieel in gebruik genomen.",
+   "fetched": "2026-11-19"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Euromast",
+   "title": "Wikipedia EN, Euromast",
+   "quote": "Euromast is an observation tower in Rotterdam, Netherlands, designed by Hugh Maaskant constructed between 1958 and 1960.",
+   "fetched": "2026-11-19"
+  },
+  "S12": {
+   "url": "https://nl.wikipedia.org/wiki/Euromast",
+   "title": "Wikipedia NL, Euromast",
+   "quote": "Het gebouw werd officieel geopend door prinses Beatrix op 25 maart 1960.",
+   "fetched": "2026-11-19"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Delfshaven",
+   "title": "Wikipedia EN, Delfshaven",
+   "quote": "Delft itself was not located on a major river, so in 1389 a harbour was created about 12 km (7 mi) due south of the city, to be able to receive seafaring vessels and avoid tolls being levied by the neighbouring and competing city of Rotterdam. … On 1 August 1620 the Pilgrim fathers left Delfshaven with the Speedwell. … Delfshaven was annexed by Rotterdam in 1886 at its own request. … Later during the Second World War, the area around the Visserijplein and other parts of the western city of Rotterdam were destroyed by Allied bombing on 31 March 1943.",
+   "fetched": "2026-11-19"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Pilgrim_Fathers_Church",
+   "title": "Wikipedia EN, Old or Pilgrim Fathers' Church (Delfshaven)",
+   "quote": "The Speedwell left Delfshaven, on 21 July 1620, bound for America. … The history of the Old or Pilgrim Fathers' Church goes back as far as 1417, when the Roman Catholic church of St Anthony was consecrated on this site.",
+   "fetched": "2026-11-19"
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Nieuwe_Waterweg",
+   "title": "Wikipedia EN, Nieuwe Waterweg",
+   "quote": "In 1863, a law was passed that allowed for the provision of a new canal for large ocean-going ships from Rotterdam to the North Sea. … Hydraulic engineer Pieter Caland was commissioned to design a canal cutting through the \"Hook of Holland” and to extend the mouth of the Rhine to the sea. … In 1872, the Nieuwe Waterweg was completed and Rotterdam was easily accessible.",
+   "fetched": "2026-11-19"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Witte_Huis",
+   "title": "Wikipedia EN, Witte Huis (White House)",
+   "quote": "The Witte Huis () or White House is a building and National Heritage Site in Rotterdam, Netherlands, built in 1898 in the Art Nouveau style. … It was the first hoogbouw (literally: high-rise building) in Europe.",
+   "fetched": "2026-11-19"
+  },
+  "S17": {
+   "url": "https://nl.wikipedia.org/wiki/Witte_Huis_(Rotterdam)",
+   "title": "Wikipedia NL, Witte Huis (Rotterdam)",
+   "quote": "Het Witte Huis is in 1897 in Rotterdam gebouwd naar voorbeeld van Amerikaanse wolkenkrabbers.",
+   "fetched": "2026-11-19"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Rotterdam_Hofplein_railway_station",
+   "title": "Wikipedia EN, Rotterdam Hofplein railway station",
+   "quote": "Hofplein station was opened on 1 October 1908 by the Zuid-Hollandsche Electrische Spoorweg-Maatschappij.",
+   "fetched": "2026-11-19"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/Van_Nelle_Factory",
+   "title": "Wikipedia EN, Van Nelle Factory",
+   "quote": "Built between 1925 and 1931, the buildings were designed by architect Leendert van der Vlugt from the Brinkman & Van der Vlugt office in cooperation with civil engineer J.G. … Soon after it was built, prominent architects described the factory as \"the most beautiful spectacle of the modern age\" (Le Corbusier in 1932) and \"a poem in steel and glass\" (Robertson  in 1930). … It has been a designated UNESCO World Heritage Site since 2014.",
+   "fetched": "2026-11-19"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/Lijnbaan",
+   "title": "Wikipedia EN, Lijnbaan",
+   "quote": "It was designed by Jo van den Broek and Jaap Bakema as part of the rebuilding of the city after the German bombing of 1940, and opened on 9 October 1953. … The street opened on 9 October 1953 to such crowds that police let visitors in ten at a time.",
+   "fetched": "2026-11-19"
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Groothandelsgebouw",
+   "title": "Wikipedia EN, Groothandelsgebouw",
+   "quote": "Completed in 1953 it is one of the first major buildings built after the bombing of Rotterdam in the Second World War.",
+   "fetched": "2026-11-19"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Rotterdam_Centraal_railway_station",
+   "title": "Wikipedia EN, Rotterdam Centraal railway station",
+   "quote": "The station building was designed by architect Sybold van Ravesteyn and was completed on 13 March 1957, officially opening on 21 May. … Delftsche Poort station was badly damaged by bombing in the Rotterdam Blitz, it was replaced by the newly-built Rotterdam Centraal station just west of the site. … On 9 February 1968 Princess Beatrix opened the first metro line in the Netherlands at Rotterdam Centraal station. … The full completion of the station was on 13 March 2014, when the station was reopened by King Willem-Alexander.",
+   "fetched": "2026-11-19"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Port_of_Rotterdam",
+   "title": "Wikipedia EN, Port of Rotterdam",
+   "quote": "In the 1970s the port was extended into the sea at the south side of the mouth of the Nieuwe Waterweg by completion of the Maasvlakte (Meuse-plain) which was built in the North Sea near Hook of Holland. … From 1962 until 2004, it was the world's busiest port by annual cargo tonnage.",
+   "fetched": "2026-11-19"
+  },
+  "S24": {
+   "url": "https://en.wikipedia.org/wiki/Waalhaven",
+   "title": "Wikipedia EN, Waalhaven",
+   "quote": "It was the second civilian airport in the Netherlands and was opened in 1920.",
+   "fetched": "2026-11-19"
+  },
+  "S26": {
+   "url": "https://en.wikipedia.org/wiki/Erasmus_Bridge",
+   "title": "Wikipedia EN, Erasmus Bridge",
+   "quote": "Construction began in 1986 and was completed in 1996. … Costing over €165 million to construct, the bridge was officially opened by Queen Beatrix on September 6, 1996.",
+   "fetched": "2026-11-19"
+  },
+  "S28": {
+   "url": "https://en.wikipedia.org/wiki/Markthal",
+   "title": "Wikipedia EN, Markthal",
+   "quote": "The building was opened on October 1, 2014, by Queen Máxima of the Netherlands.",
+   "fetched": "2026-11-19"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/Maastoren",
+   "title": "Wikipedia EN, Maastoren",
+   "quote": "The Maastoren was built between 2006 and 2009, and had OVG as its developer. … The Maastoren has a total of 44 above ground floors and two underground floors.",
+   "fetched": "2026-11-19"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/De_Rotterdam",
+   "title": "Wikipedia EN, De Rotterdam",
+   "quote": "The complex is located between the KPN Tower and Rotterdam Cruise Terminal and was finalized at the end of 2013. … The building consists of three interconnected towers that share a thirty feet high base which includes six floors. … Construction began in 2009, when the municipality committed itself to hire 25,000 m² of the office space.",
+   "fetched": "2026-11-19"
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Zalmhaven",
+   "title": "Wikipedia EN, Zalmhaven",
+   "quote": "Zalmhaven I reached its highest point in September 2021, and the entire project was completed in April 2022. … It is the tallest prefab tower in the world, the tallest residential tower in Benelux and the tallest building in the Netherlands. … After fifteen years of preparation, construction started on 25 October 2018.",
+   "fetched": "2026-11-19"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Delftse_Poort",
+   "title": "Wikipedia EN, Delftse Poort",
+   "quote": "It was constructed between 1988 and 1991. … Both towers are built over a four-storey multifunctional podium which adjoins the Rotterdam central station.",
+   "fetched": "2026-11-19"
+  },
+  "S33": {
+   "url": "https://en.wikipedia.org/wiki/Maasvlakte",
+   "title": "Wikipedia EN, Maasvlakte",
+   "quote": "In 1973 EMO started as the first company at Maasvlakte. … The Maasvlakte was created in the 1960s by reclaiming land from the North Sea through dykes and sand suppletion. … This project extended the port of Rotterdam by about 2,000 hectares. … This new part of the Maasvlakte opened in 2013.",
+   "fetched": "2026-11-19"
+  },
+  "S34": {
+   "url": "https://en.wikipedia.org/wiki/Willemsbrug",
+   "title": "Wikipedia EN, Willemsbrug",
+   "quote": "The bridge was completed in 1981, designed by C.",
+   "fetched": "2026-11-19"
+  },
+  "S35": {
+   "url": "https://en.wikipedia.org/wiki/Schielandshuis",
+   "title": "Wikipedia EN, Schielandshuis",
+   "quote": "The Schielandshuis was built in 1662",
+   "fetched": "2026-11-19"
+  },
+  "S36": {
+   "url": "https://en.wikipedia.org/wiki/County_of_Holland",
+   "title": "Wikipedia EN, County of Holland",
+   "quote": "The County of Holland was a state of the Holy Roman Empire from its inception until 1433. … From 1433 onward it was part of the Burgundian Netherlands, from 1482 part of the Habsburg Netherlands and from 1581 onward the leading province of the Dutch Republic until the Batavian Revolution in 1795.",
+   "fetched": "2026-11-19"
+  },
+  "S38": {
+   "url": "https://en.wikipedia.org/wiki/Dutch_Republic",
+   "title": "Wikipedia EN, Dutch Republic",
+   "quote": "The republic was established after seven Dutch provinces in the Spanish Netherlands revolted against Spanish rule, forming a mutual alliance against Spain in 1579 (the Union of Utrecht) and declaring their independence in 1581 (the Act of Abjuration), after which they confederated in 1588 (the Instr",
+   "fetched": "2026-11-19"
+  },
+  "S39": {
+   "url": "https://en.wikipedia.org/wiki/Batavian_Republic",
+   "title": "Wikipedia EN, Batavian Republic",
+   "quote": "It was proclaimed on 19 January 1795 after the Batavian Revolution and ended on 5 June 1806, with the accession of Louis Bonaparte to the Dutch throne.",
+   "fetched": "2026-11-19"
+  },
+  "S40": {
+   "url": "https://en.wikipedia.org/wiki/Kingdom_of_Holland",
+   "title": "Wikipedia EN, Kingdom of Holland",
+   "quote": "Napoléon's brother Louis Bonaparte was installed as 'King of Holland' on 5 June 1806. … King Louis did not perform to Napoleon's expectations – he tried to serve Dutch interests instead of his brother's – and the kingdom was dissolved in 1810, after which the Netherlands were annexed by France until 1813.",
+   "fetched": "2026-11-19"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Netherlands",
+   "title": "Wikipedia EN, Kingdom of the Netherlands",
+   "quote": "The Netherlands regained its independence from France in 1813 as the Sovereign Principality of the United Netherlands, after having been annexed by the First French Empire in 1810. … In March 1815, amidst the turmoil of the Hundred Days, William Frederick adopted the style of \"William I, king of the Netherlands\".",
+   "fetched": "2026-11-19"
+  },
+  "S42": {
+   "url": "https://en.wikipedia.org/wiki/German_occupation_of_the_Netherlands",
+   "title": "Wikipedia EN, German occupation of the Netherlands",
+   "quote": "On 5 May 1945, the German surrender at Lüneburg Heath led to the final liberation of the whole country, the Netherlands being one of the last nations of Europe to be liberated from Germany. … When government leaders refused, Germany established the Reichskommissariat Niederlande (\"Dutch Imperial Commission\") as the occupation regime, assuming power on 29 May 1940, with its headquarters in The Hague.",
+   "fetched": "2026-11-19"
+  },
+  "S43": {
+   "url": "https://en.wikipedia.org/wiki/Rotte_(river)",
+   "title": "Wikipedia EN, Rotte (river)",
+   "quote": "The Rotte is the eponym of the city of Rotterdam: the city's name references a dam (Middle Dutch: dam) which local inhabitants built across the river in the 13th century CE.",
+   "fetched": "2026-11-19"
+  },
+  "S44": {
+   "url": "https://www.wikidata.org/wiki/Q34370",
+   "title": "Wikidata Q34370 (Rotterdam), population P1082",
+   "quote": "2000: 592673 … 2010: 603425 … 2022: 655468 … 2023: 664311",
+   "fetched": "2026-11-19"
+  }
+ },
  "history": {
-  "zones": [],
-  "walls": [],
-  "gutting": [],
+  "zones": [
+   {
+    "name": "Dam settlement on the Rotte",
+    "ring": [
+     [
+      51.92092,
+      4.49115
+     ],
+     [
+      51.92228,
+      4.49057
+     ],
+     [
+      51.92327,
+      4.48897
+     ],
+     [
+      51.92364,
+      4.48678
+     ],
+     [
+      51.92327,
+      4.4846
+     ],
+     [
+      51.92228,
+      4.483
+     ],
+     [
+      51.92092,
+      4.48241
+     ],
+     [
+      51.91957,
+      4.483
+     ],
+     [
+      51.91857,
+      4.4846
+     ],
+     [
+      51.91821,
+      4.48678
+     ],
+     [
+      51.91857,
+      4.48897
+     ],
+     [
+      51.91957,
+      4.49057
+     ]
+    ],
+    "born": [
+     1270,
+     1300
+    ],
+    "seed": [
+     51.92092,
+     4.48678
+    ],
+    "era_height": [
+     5,
+     8
+    ],
+    "src": [
+     "S4",
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Dam c. 1270, first houses c. 1275 (S3, S4). Ring/seed are a HAND SKETCH (+-150 m) at the east end of the Hoogstraat; born window 1270-1300 is a [Guessing]; heights 5-8 m [Guessing]."
+   },
+   {
+    "name": "Walled town between Coolsingel, Goudsesingel and the Hoogstraat",
+    "ring": [
+     [
+      51.92481,
+      4.47528
+     ],
+     [
+      51.91948,
+      4.49756
+     ],
+     [
+      51.92054,
+      4.49625
+     ],
+     [
+      51.92101,
+      4.48678
+     ],
+     [
+      51.92141,
+      4.47877
+     ]
+    ],
+    "born": [
+     1300,
+     1500
+    ],
+    "seed": [
+     51.92092,
+     4.48678
+    ],
+    "era_height": [
+     7,
+     11
+    ],
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Boundaries from S3 (moats along Coolsingel, Warande/Goudsesingel, Blaak, Nieuwehaven; walled area c. 140 ha, S3). Ring converted from the legacy triangle in hist_rotterdam.py (hand sketch). Growth 1300-1500 ramps outward from the dam: [Guessing]."
+   },
+   {
+    "name": "The Water Town",
+    "ring": [
+     [
+      51.92141,
+      4.47877
+     ],
+     [
+      51.92101,
+      4.48678
+     ],
+     [
+      51.92054,
+      4.49625
+     ],
+     [
+      51.91559,
+      4.49844
+     ],
+     [
+      51.9126,
+      4.4897
+     ],
+     [
+      51.91305,
+      4.48067
+     ],
+     [
+      51.91939,
+      4.47877
+     ]
+    ],
+    "born": [
+     1575,
+     1650
+    ],
+    "seed": [
+     51.91667,
+     4.48605
+    ],
+    "era_height": [
+     8,
+     12
+    ],
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Expansion starts 1575 (S3); the end of the build-out (1650) is the legacy value, not sourced."
+   },
+   {
+    "name": "Delfshaven harbor town",
+    "ring": [
+     [
+      51.9087,
+      4.45433
+     ],
+     [
+      51.91042,
+      4.45359
+     ],
+     [
+      51.91168,
+      4.45156
+     ],
+     [
+      51.91214,
+      4.4488
+     ],
+     [
+      51.91168,
+      4.44603
+     ],
+     [
+      51.91042,
+      4.444
+     ],
+     [
+      51.9087,
+      4.44326
+     ],
+     [
+      51.90698,
+      4.444
+     ],
+     [
+      51.90573,
+      4.44603
+     ],
+     [
+      51.90526,
+      4.4488
+     ],
+     [
+      51.90573,
+      4.45156
+     ],
+     [
+      51.90698,
+      4.45359
+     ]
+    ],
+    "born": [
+     1389,
+     1650
+    ],
+    "seed": [
+     51.9087,
+     4.4488
+    ],
+    "era_height": [
+     6,
+     10
+    ],
+    "src": [
+     "S13",
+     "S14"
+    ],
+    "conf": "low",
+    "note": "Harbor created 1389 (S13); growth window and ring are a hand sketch around the Pilgrim Fathers Church."
+   },
+   {
+    "name": "Schiedam",
+    "ring": [
+     [
+      51.91661,
+      4.41004
+     ],
+     [
+      51.91978,
+      4.40867
+     ],
+     [
+      51.92209,
+      4.40494
+     ],
+     [
+      51.92294,
+      4.39984
+     ],
+     [
+      51.92209,
+      4.39474
+     ],
+     [
+      51.91978,
+      4.39101
+     ],
+     [
+      51.91661,
+      4.38964
+     ],
+     [
+      51.91344,
+      4.39101
+     ],
+     [
+      51.91112,
+      4.39474
+     ],
+     [
+      51.91028,
+      4.39984
+     ],
+     [
+      51.91112,
+      4.40494
+     ],
+     [
+      51.91344,
+      4.40867
+     ]
+    ],
+    "born": [
+     1275,
+     1500
+    ],
+    "seed": [
+     51.91661,
+     4.39984
+    ],
+    "era_height": [
+     6,
+     10
+    ],
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "City rights 1275 (S3: \"Gouda (1272), Schiedam (1275)\"); ring is a hand sketch around Wikidata 51.91667, 4.40; growth window [Guessing]."
+   }
+  ],
+  "walls": [
+   {
+    "name": "Moats and town wall",
+    "ring": [
+     [
+      51.92481,
+      4.47528
+     ],
+     [
+      51.91948,
+      4.49756
+     ],
+     [
+      51.92054,
+      4.49625
+     ],
+     [
+      51.92101,
+      4.48678
+     ],
+     [
+      51.92141,
+      4.47877
+     ]
+    ],
+    "built": [
+     1358,
+     1500
+    ],
+    "demolished": 1850,
+    "height": 8,
+    "width": 2.5,
+    "towers_every_m": 80,
+    "src": [
+     "S3"
+    ],
+    "conf": "low",
+    "note": "Built 1358-1500 (S3). DEMOLISHED 1850 is a placeholder [Guessing]: S3 only says the walls were taken down \"some time ago\" before 1913 and that the city grew beyond them only after 1825. Ring = same hand sketch as the walled town."
+   },
+   {
+    "name": "Rotte dam and sea dike (Hoogstraat)",
+    "line": [
+     [
+      51.92109,
+      4.48431
+     ],
+     [
+      51.92097,
+      4.48678
+     ],
+     [
+      51.92074,
+      4.4897
+     ]
+    ],
+    "built": [
+     1268,
+     1272
+    ],
+    "demolished": 1946,
+    "height": 3,
+    "width": 9,
+    "towers_every_m": 0,
+    "src": [
+     "S4",
+     "S5"
+    ],
+    "conf": "low",
+    "note": "Dam in the Rotte c. 1270, part of Schielands Hoge Zeedijk (S3, S4); S4: the Hoogstraat is no longer part of the dike since the reconstruction. 1946 is the year of the Basisplan, which moved the dike to the riverbank (S5): [Likely], not an exact date."
+   }
+  ],
+  "gutting": [
+   {
+    "name": "Zandstraat quarter (City Hall site)",
+    "ring": [
+     [
+      51.92355,
+      4.47863
+     ],
+     [
+      51.92355,
+      4.4811
+     ],
+     [
+      51.9221,
+      4.4811
+     ],
+     [
+      51.9221,
+      4.47863
+     ]
+    ],
+    "from": 1825,
+    "until": 1914.5,
+    "src": [
+     "S9",
+     "S10"
+    ],
+    "conf": "low",
+    "note": "Demolished from 1913-14 for the City Hall (S9, S10). Ring is a hand sketch at the Coolsingel; \"from\" 1825 is a [Guessing] (S3: growth outside the walls only after 1825)."
+   }
+  ],
   "lost": [],
-  "fires": [],
+  "fires": [
+   {
+    "name": "Bombing of 14 May 1940",
+    "ring": [
+     [
+      51.92852,
+      4.47047
+     ],
+     [
+      51.92952,
+      4.48001
+     ],
+     [
+      51.92653,
+      4.49501
+     ],
+     [
+      51.92101,
+      4.50047
+     ],
+     [
+      51.915,
+      4.49596
+     ],
+     [
+      51.91351,
+      4.48503
+     ],
+     [
+      51.914,
+      4.47397
+     ],
+     [
+      51.92002,
+      4.47003
+     ]
+    ],
+    "y": 1940.366,
+    "y1": 1940.385,
+    "destroy": true,
+    "rebuild_years": 5,
+    "flames": 60,
+    "smoke": 10,
+    "origin": [
+     51.923,
+     4.48678
+    ],
+    "src": [
+     "S6",
+     "S5"
+    ],
+    "conf": "medium",
+    "note": "14 May 1940, 13:27-13:40 (S6); about 2.6 km2 of the center destroyed (S5: 642 acres). Ring = legacy damage-map polygon (hist_rotterdam.py BOMB, hand estimate, c. 3 km2) from Hofplein to Kralingen (S6). Fire window to 1940.385 (about 5 days of fire) and rebuild_years 5 are [Guessing]; the origin is an arbitrary point in the center."
+   }
+  ],
   "water": [],
   "bridges": []
  },
  "landmarks": [
   {
    "name": "Laurenskerk",
-   "kind": "TODO",
+   "kind": "church",
    "at": [
-    51.921476,
-    4.484948
+    51.92159,
+    4.48563
    ],
    "footprint": "auto",
    "params": {
-    "h": 62.2
+    "nave_h": 28,
+    "aisle_h": 18,
+    "facade_towers": 0,
+    "apse": true,
+    "transept": true
    },
    "phases": [
     {
-     "y": 1640
+     "y": 1449,
+     "y1": 1525
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1640 (primo anno della scheda), altezza 62.2 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S7",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "Dates from S7/S3 (high). Preset approximation: church on the cadastre footprint of the NAVE (the 62 m tower stays the cadastre building, BAG year 1640). Heights are [Guessing]; the legacy point was the tower (51.921476, 4.484948)."
   },
   {
    "name": "Witte Huis",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     51.918816,
     4.491706
    ],
    "footprint": "auto",
    "params": {
-    "h": 42.9
+    "h": 42.9,
+    "podium_h": 0,
+    "crown": "flat"
    },
    "phases": [
     {
-     "y": 1897
+     "y": 1897,
+     "y1": 1898
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1897 (primo anno della scheda), altezza 42.9 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S16",
+    "S17"
+   ],
+   "conf": "medium",
+   "note": "S16 says 1898, S17 says 1897. Height 42.9 m is the cadastre value (the floor counts in S16/S17 conflict: 10 vs 11). Footprint auto may pick a sub-block (34 m2 at the legacy point): check at the first render."
   },
   {
    "name": "City Hall",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     51.922797,
     4.479529
    ],
    "footprint": "auto",
    "params": {
-    "h": 69.9
+    "h": 69.9,
+    "roof": "hip"
    },
    "phases": [
     {
-     "y": 1920
+     "y": 1914.62,
+     "y1": 1920.67
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1920 (primo anno della scheda), altezza 69.9 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S10",
+    "S9"
+   ],
+   "conf": "medium",
+   "note": "Phase: first pile 12 Aug 1914 to inauguration 1 Sep 1920 (S10). Geometry [Guessing]: footprint at the legacy point is the clock tower only."
   },
   {
    "name": "Euromast",
-   "kind": "TODO",
+   "kind": "tower_round",
    "at": [
     51.905445,
     4.466639
    ],
    "footprint": "auto",
    "params": {
-    "h": 107.6
+    "rad": 5,
+    "h": 107.6,
+    "top": "lantern",
+    "c": "concrete"
    },
    "phases": [
     {
-     "y": 1961
+     "y": 1958,
+     "y1": 1960.23
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1961 (primo anno della scheda), altezza 107.6 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S11",
+    "S12"
+   ],
+   "conf": "medium",
+   "note": "Height 107.6 m is the cadastre value; the Space Tower (1970, S12: 185 m total) is not modeled. Radius is [Guessing]."
   },
   {
    "name": "Cube Houses",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     51.920508,
     4.489507
    ],
    "footprint": "auto",
    "params": {
-    "h": 25.0
+    "h": 25.0,
+    "roof": "hip",
+    "c": "ochre"
    },
    "phases": [
     {
-     "y": 1984
+     "y": 1982,
+     "y1": 1984
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1984 (primo anno della scheda), altezza 25.0 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S3",
+    "S2"
+   ],
+   "conf": "medium",
+   "note": "Tilted cubes approximated by hip roofs on the cadastre footprint; geometry [Guessing]."
   },
   {
    "name": "Markthal",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     51.92011,
     4.486958
    ],
    "footprint": "auto",
    "params": {
-    "h": 41.8
+    "h": 41.8,
+    "roof": "dome",
+    "roof_h": 12,
+    "c": "concrete"
    },
    "phases": [
     {
-     "y": 2014
+     "y": 2011.5,
+     "y1": 2014.75
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2014 (primo anno della scheda), altezza 41.8 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S28"
+   ],
+   "conf": "low",
+   "note": "Opening 1 Oct 2014 (S28). Start 2011.5 is a placement: the start of construction is not in the fetched text. The horseshoe arch is not modeled (preset approximation)."
   },
   {
    "name": "De Rotterdam",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     51.906893,
     4.488633
    ],
    "footprint": "auto",
    "params": {
-    "h": 151.5
+    "h": 151.5,
+    "podium_h": 8,
+    "crown": "flat"
    },
    "phases": [
     {
-     "y": 2013
+     "y": 2009,
+     "y1": 2013.9
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2013 (primo anno della scheda), altezza 151.5 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S30"
+   ],
+   "conf": "medium",
+   "note": "Three towers merged into one block by the preset; height from the cadastre."
   },
   {
    "name": "Maastoren",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     51.908702,
     4.493381
    ],
    "footprint": "auto",
    "params": {
-    "h": 165.2
+    "h": 165.2,
+    "podium_h": 10,
+    "crown": "flat"
    },
    "phases": [
     {
-     "y": 2011
+     "y": 2006,
+     "y1": 2009
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2011 (primo anno della scheda), altezza 165.2 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S29"
+   ],
+   "conf": "high",
+   "note": "Legacy year 2011 (cadastre) replaced by 2006-2009 (S29)."
   },
   {
    "name": "Zalmhaven",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     51.910222,
     4.480796
    ],
    "footprint": "auto",
    "params": {
-    "h": 203.0
+    "h": 203.0,
+    "podium_h": 10,
+    "crown": "flat"
    },
    "phases": [
     {
-     "y": 2022
+     "y": 2018.82,
+     "y1": 2022.3
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2022 (primo anno della scheda), altezza 203.0 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S31"
+   ],
+   "conf": "medium",
+   "note": "Height 203 m is the cadastre value; S1 says 215 m for the tallest tower: not changed without a measured source."
   },
   {
    "name": "Delftse Poort",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     51.924353,
     4.472159
    ],
    "footprint": "auto",
    "params": {
-    "h": 150.0
+    "h": 150.0,
+    "podium_h": 12,
+    "crown": "flat"
    },
    "phases": [
     {
-     "y": 1991
+     "y": 1988,
+     "y1": 1991
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1991 (primo anno della scheda), altezza 150.0 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S32"
+   ],
+   "conf": "high",
+   "note": "Two towers on a podium (S32); merged by the preset."
   },
   {
    "name": "Van Nelle Factory",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     51.923149,
     4.433385
    ],
    "footprint": "auto",
    "params": {
-    "h": 37.3
+    "h": 37.3,
+    "roof": "flat",
+    "c": "white"
    },
    "phases": [
     {
-     "y": 1926
+     "y": 1925,
+     "y1": 1931
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1926 (primo anno della scheda), altezza 37.3 m; posizione da montaggio/landmarks_<slug>.json",
-   "conf": "low"
+   "src": [
+    "S19"
+   ],
+   "conf": "high",
+   "note": "Dates from S19; geometry [Guessing] (cadastre footprint at the legacy point, 76 m2)."
+  },
+  {
+   "name": "Pilgrim Fathers Church",
+   "kind": "church",
+   "at": [
+    51.90861,
+    4.44917
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 13,
+    "facade_towers": 0,
+    "apse": false,
+    "transept": false
+   },
+   "phases": [
+    {
+     "y": 1417,
+     "y1": 1418
+    }
+   ],
+   "label": true,
+   "src": [
+    "S14"
+   ],
+   "conf": "medium",
+   "note": "Church of St Anthony consecrated 1417 (S14), rebuilt 1761. Coordinates from Wikidata. Cadastre footprint not verified (nearest buildings are BAG 1876)."
   }
  ],
  "qa": {
@@ -261,9 +1419,283 @@
   "pacing": "story",
   "open": {
    "year": 2026,
-   "rewind_to": 1340
+   "rewind_to": 1270
   },
-  "soste": [],
+  "soste": [
+   {
+    "y0": 1270.0,
+    "y1": 1276.0,
+    "dur": 6.0,
+    "caption": "A dam on the Rotte (1270)",
+    "shot": "wide",
+    "target": "area:[51.92092,4.48678,260]",
+    "fx": "water",
+    "weight": 7,
+    "src": [
+     "S4",
+     "S3"
+    ],
+    "conf": "medium",
+    "note": "Area on the Hoogstraat dam site; coordinate is a hand estimate (Hoogstraat runs between Beursplein and Binnenrotte, S4)."
+   },
+   {
+    "y0": 1340.0,
+    "y1": 1346.0,
+    "dur": 5.0,
+    "caption": "Rotterdam receives city rights (1340)",
+    "shot": "wide",
+    "target": "area:[51.92120,4.48533,450]",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S1",
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1389.0,
+    "y1": 1396.0,
+    "dur": 5.5,
+    "caption": "Delft digs its own harbor (1389)",
+    "shot": "wide",
+    "target": "area:[51.90870,4.44880,400]",
+    "fx": "water",
+    "weight": 4,
+    "src": [
+     "S13"
+    ],
+    "conf": "high",
+    "note": "Area at the Delfshaven harbor (Wikidata coordinates of the Pilgrim Fathers Church 51.90861, 4.44917)."
+   },
+   {
+    "y0": 1449.0,
+    "y1": 1525.0,
+    "dur": 7.0,
+    "caption": "The Laurenskerk rises (1449-1525)",
+    "shot": "medium",
+    "target": "Laurenskerk",
+    "fx": "hammer",
+    "weight": 6,
+    "src": [
+     "S3",
+     "S7"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1575.0,
+    "y1": 1620.0,
+    "dur": 6.0,
+    "caption": "The Water Town grows south (1575)",
+    "shot": "wide",
+    "target": "area:[51.91667,4.48605,450]",
+    "fx": "water",
+    "weight": 4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "note": "Area between the Hoogstraat and the Maas (S3)."
+   },
+   {
+    "y0": 1872.0,
+    "y1": 1879.0,
+    "dur": 7.0,
+    "caption": "A new waterway to the sea (1872)",
+    "shot": "wide",
+    "target": "area:[51.90853,4.49115,900]",
+    "fx": "horn",
+    "weight": 6,
+    "src": [
+     "S15",
+     "S3"
+    ],
+    "conf": "high",
+    "note": "The canal itself is 20 km west, outside the data; the hover shows the south-bank harbors it made possible (Kop van Zuid, S3, S27)."
+   },
+   {
+    "y0": 1897.2,
+    "y1": 1898.8,
+    "dur": 5.0,
+    "caption": "The White House (1898)",
+    "shot": "medium",
+    "target": "Witte Huis",
+    "fx": "hammer",
+    "weight": 5,
+    "src": [
+     "S1",
+     "S16"
+    ],
+    "conf": "medium",
+    "note": "S16 says 1898, S17 says 1897."
+   },
+   {
+    "y0": 1907.8,
+    "y1": 1908.9,
+    "dur": 4.5,
+    "caption": "Hofplein station and the Hofbogen (1908)",
+    "shot": "wide",
+    "target": "area:[51.92572,4.47781,300]",
+    "fx": "horn",
+    "weight": 4,
+    "src": [
+     "S18"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1914.5,
+    "y1": 1920.7,
+    "dur": 6.5,
+    "caption": "City Hall opens on the Coolsingel (1920)",
+    "shot": "medium",
+    "target": "City Hall",
+    "fx": "bell",
+    "weight": 6,
+    "src": [
+     "S10",
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1940.3,
+    "y1": 1940.46,
+    "dur": 9.0,
+    "caption": "The bombing of Rotterdam (14 May 1940)",
+    "shot": "wide",
+    "target": "fire:Bombing of 14 May 1940",
+    "fx": "boom",
+    "weight": "max",
+    "src": [
+     "S6",
+     "S5",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1946.0,
+    "y1": 1950.0,
+    "dur": 6.0,
+    "caption": "The center is redesigned (1946)",
+    "shot": "wide",
+    "target": "area:[51.91939,4.48605,700]",
+    "fx": "hammer",
+    "weight": 6,
+    "src": [
+     "S2",
+     "S5"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1951.5,
+    "y1": 1953.8,
+    "dur": 5.0,
+    "caption": "The Lijnbaan opens (1953)",
+    "shot": "wide",
+    "target": "area:[51.92150,4.47681,300]",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S20"
+    ],
+    "conf": "high",
+    "note": "Wikidata coordinates of the Lijnbaan 51.92111, 4.47667."
+   },
+   {
+    "y0": 1959.5,
+    "y1": 1960.4,
+    "dur": 5.0,
+    "caption": "The Euromast opens (1960)",
+    "shot": "medium",
+    "target": "Euromast",
+    "fx": "peal",
+    "weight": 5,
+    "src": [
+     "S11",
+     "S12"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1961.5,
+    "y1": 1962.8,
+    "dur": 5.0,
+    "caption": "The busiest port in the world (1962)",
+    "shot": "wide",
+    "target": "area:[51.90310,4.48970,800]",
+    "fx": "horn",
+    "weight": 4,
+    "src": [
+     "S23",
+     "S3"
+    ],
+    "conf": "high",
+    "note": "Area on the south-bank harbors (Rijnhaven/Maashaven complex, S23); the western ports (Europoort, Maasvlakte) are outside the data."
+   },
+   {
+    "y0": 1982.0,
+    "y1": 1984.9,
+    "dur": 5.0,
+    "caption": "The Cube Houses (1984)",
+    "shot": "medium",
+    "target": "Cube Houses",
+    "fx": "hammer",
+    "weight": 4,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1994.0,
+    "y1": 1996.8,
+    "dur": 5.5,
+    "caption": "Kop van Zuid and the Erasmus Bridge (1996)",
+    "shot": "wide",
+    "target": "area:[51.90850,4.48850,700]",
+    "fx": "horn",
+    "weight": 6,
+    "src": [
+     "S26",
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 2012.5,
+    "y1": 2014.9,
+    "dur": 5.5,
+    "caption": "The Markthal opens (2014)",
+    "shot": "medium",
+    "target": "Markthal",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S28"
+    ],
+    "conf": "high",
+    "note": "Hover start 2012.5 is a placement (start of construction not sourced)."
+   },
+   {
+    "y0": 2019.0,
+    "y1": 2022.3,
+    "dur": 5.0,
+    "caption": "The Zalmhaven towers (2022)",
+    "shot": "medium",
+    "target": "Zalmhaven",
+    "fx": "hammer",
+    "weight": 3,
+    "src": [
+     "S31"
+    ],
+    "conf": "high"
+   }
+  ],
   "rmin": 1.0,
   "rmax": 8.0,
   "drone": {
@@ -278,274 +1710,986 @@
  "montaggio": {
   "style": "mattia",
   "open": [
-   "ROTTERDAM TODAY"
+   "ROTTERDAM TODAY",
+   "664,311 people",
+   "756 YEARS",
+   "Open data, reconstruction before 1900"
   ],
   "title": [
    "ROTTERDAM",
-   "1340 TO NOW"
+   "1270 TO NOW"
   ],
   "end": [
-   "ROTTERDAM · 686 YEARS",
+   "ROTTERDAM · 756 YEARS",
    "WHICH CITY NEXT?"
   ],
   "label_years": true,
-  "cards": [
-   {
-    "y": 1340,
-    "title": "Rotte + dam",
-    "lines": [
-     "A dam on a small river called the Rotte. Guess where the name comes from."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1340",
-    "conf": "low"
-   },
-   {
-    "y": 1450,
-    "title": "Spanish soldiers",
-    "lines": [
-     "Troops let in through the gate kill townspeople. Rotterdam joins the Dutch Revolt."
-    ],
-    "hold_s": 5.3,
-    "legacy_date": "1572",
-    "conf": "low"
-   },
-   {
-    "y": 1590,
-    "title": "The Water Town",
-    "lines": [
-     "New harbors are dug inside the walls. Ships moor at the merchants' front doors."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1600",
-    "conf": "low"
-   },
-   {
-    "y": 1590,
-    "title": "Golden Age",
-    "lines": [
-     "Rotterdam helps run the Dutch East India Company, the giant of its age."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1630",
-    "conf": "low"
-   },
-   {
-    "y": 1650,
-    "title": "Two quiet centuries",
-    "lines": [
-     "For 200 years the city barely moves past its medieval walls."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1700",
-    "labels": [
-     "Laurenskerk"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1850,
-    "title": "Out of the walls",
-    "lines": [
-     "The Water Project: canals, parks and new streets finally break out."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1855",
-    "conf": "low"
-   },
-   {
-    "y": 1870,
-    "title": "A new way to the sea",
-    "lines": [
-     "A straight canal to the North Sea opens. Bigger ships can reach the city."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1872",
-    "conf": "low"
-   },
-   {
-    "y": 1870,
-    "title": "The south bank",
-    "lines": [
-     "A bridge and a railway reach the far side of the river. Docks follow fast."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1878",
-    "conf": "low"
-   },
-   {
-    "y": 1890,
-    "title": "Europe's first skyscraper?",
-    "lines": [
-     "The White House: 43 meters, ten floors. Rotterdam still claims the title."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1898",
-    "labels": [
-     "Witte Huis"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1905,
-    "title": "Waalhaven",
-    "lines": [
-     "Once the largest dug harbor basin in the world."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1910",
-    "conf": "low"
-   },
-   {
-    "y": 1920,
-    "title": "City Hall",
-    "lines": [
-     "It opens on the Coolsingel. Remember it: it survives what is coming."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1920",
-    "labels": [
-     "City Hall"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1920,
-    "title": "Van Nelle Factory",
-    "lines": [
-     "Coffee, tea and tobacco in a glass factory. Today a World Heritage Site."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1926",
-    "labels": [
-     "Van Nelle Factory"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1930,
-    "title": "620,000 people",
-    "lines": [
-     "Rotterdam on the eve of war: crowded, busy, built over six centuries."
-    ],
-    "hold_s": 6.0,
-    "legacy_date": "1935",
-    "conf": "low"
-   },
-   {
-    "y": 1940.0,
-    "title": "The center is gone",
-    "lines": [
-     "German bombers strike for 15 minutes. Around 850 people are killed and 80,000 lose their homes."
-    ],
-    "hold_s": 11.9,
-    "legacy_date": "14 MAY 1940",
-    "sober": true,
-    "conf": "low"
-   },
-   {
-    "y": 1946,
-    "title": "Start from scratch",
-    "lines": [
-     "The ruins are cleared. Rotterdam chooses not to rebuild the old city."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1946",
-    "conf": "low"
-   },
-   {
-    "y": 1946,
-    "title": "The Lijnbaan",
-    "lines": [
-     "One of Europe's first car-free shopping streets."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1953",
-    "conf": "low"
-   },
-   {
-    "y": 1957,
-    "title": "Euromast",
-    "lines": [
-     "Built for a garden show. It still has the best view in town."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1960",
-    "labels": [
-     "Euromast"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1957,
-    "title": "Underground",
-    "lines": [
-     "The first metro line in the Netherlands opens here."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1968",
-    "conf": "low"
-   },
-   {
-    "y": 1975,
-    "title": "Cube Houses",
-    "lines": [
-     "Piet Blom tilts houses 45 degrees. Residents learn to live with slanted walls."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1984",
-    "labels": [
-     "Cube Houses"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1975,
-    "title": "Delftse Poort",
-    "lines": [
-     "150 meters of glass: for years the tallest building in the Netherlands."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1991",
-    "labels": [
-     "Delftse Poort"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1975,
-    "title": "Manhattan on the Maas",
-    "lines": [
-     "The old docks of the south bank turn into a forest of towers."
-    ],
-    "hold_s": 5.5,
-    "legacy_date": "1998",
-    "labels": [
-     "Maastoren"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 2000,
-    "title": "De Rotterdam",
-    "lines": [
-     "Three towers, one 'vertical city': the largest building in the Netherlands."
-    ],
-    "hold_s": 5.2,
-    "legacy_date": "2013",
-    "labels": [
-     "De Rotterdam"
-    ],
-    "conf": "low"
-   }
-  ],
   "events": [],
   "cta": "Which city should grow next? Tell me in the comments",
   "sources_card": {
    "seconds": 8,
    "max": 14,
-   "no_ai": "NO AI: every frame is rendered from open data"
-  }
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings, streets, water, parks: © OpenStreetMap contributors (ODbL); building years: BAG / 3DBAG",
+    "Terrain: AHN / Copernicus GLO-30 DEM",
+    "History: Wikipedia NL and EN (Geschiedenis van Rotterdam, Rotterdam Blitz, Laurenskerk, City Hall and others)",
+    "Population: Wikipedia EN and NL, Wikidata",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
+  },
+  "chapters": [
+   {
+    "y": 1270,
+    "title": "The Dam Town"
+   },
+   {
+    "y": 1340,
+    "title": "A Chartered Town"
+   },
+   {
+    "y": 1575,
+    "title": "The Water Town"
+   },
+   {
+    "y": 1795,
+    "title": "Revolution and Steam"
+   },
+   {
+    "y": 1872,
+    "title": "A Port for the World"
+   },
+   {
+    "y": 1940.37,
+    "title": "Fire and Occupation"
+   },
+   {
+    "y": 1946,
+    "title": "Reconstruction"
+   },
+   {
+    "y": 1994,
+    "title": "Manhattan on the Maas"
+   }
+  ],
+  "cards": [
+   {
+    "y": 1270,
+    "title": "A dam on the Rotte",
+    "lines": [
+     "Around 1270 a dam closes the Rotte, a muddy fen stream.",
+     "The town takes its name from it."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S4",
+     "S43",
+     "S1"
+    ],
+    "conf": "medium",
+    "note": "S1 says the 1260s, S3/S4 say around 1270: year 1270 kept, conf medium."
+   },
+   {
+    "y": 1275,
+    "title": "The first wooden houses",
+    "lines": [
+     "Houses rise on top of the dam.",
+     "This is the start of today's Hoogstraat."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S3",
+     "S4"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1283,
+    "title": "Rotterdam on the record",
+    "lines": [
+     "The name Rotterdam is written down for the first time."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1299,
+    "title": "A charter, then withdrawn",
+    "lines": [
+     "Count John I grants town rights in March.",
+     "They are revoked before the year ends."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1340,
+    "title": "City rights",
+    "lines": [
+     "Count William IV grants Rotterdam city rights.",
+     "It still has only a few thousand people."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S1",
+     "S3"
+    ],
+    "conf": "high",
+    "note": "S1 says 7 July 1340, S3 says 7 June 1340: only the year is shown."
+   },
+   {
+    "y": 1350,
+    "title": "A canal to the north",
+    "lines": [
+     "The Rotterdamse Schie links the town with Delft and Leiden."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S3",
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1358,
+    "title": "Moats and palisades",
+    "lines": [
+     "The count allows defenses around the town.",
+     "The moats follow today's Coolsingel and Blaak."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1389,
+    "title": "Delft digs a harbor",
+    "lines": [
+     "To avoid Rotterdam's tolls, Delft builds a harbor of its own.",
+     "The settlement is called Delfshaven."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1449,
+    "title": "A church for the town",
+    "lines": [
+     "Work starts on the late-Gothic Laurenskerk.",
+     "Rotterdam has about 1,200 houses."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3",
+     "S7"
+    ],
+    "conf": "high",
+    "labels": [
+     "Laurenskerk"
+    ]
+   },
+   {
+    "y": 1466,
+    "title": "Erasmus is born",
+    "lines": [
+     "Erasmus, a philosopher and one of Rotterdam's most famous sons, is born."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2",
+     "S3"
+    ],
+    "conf": "medium",
+    "note": "S2 gives the year; S3 calls him one of Rotterdam's most famous sons (it does not give the birthplace)."
+   },
+   {
+    "y": 1489,
+    "title": "A siege",
+    "lines": [
+     "Forces of Frans van Brederode besiege the town in the Hook and Cod wars."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2",
+     "S3"
+    ],
+    "conf": "medium",
+    "note": "S2 gives 1489, S3 gives 1488-1490."
+   },
+   {
+    "y": 1500,
+    "title": "Walled at last",
+    "lines": [
+     "The town wall is complete.",
+     "The walled area shrinks: the Goudsesingel becomes the northeast edge."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1563,
+    "title": "The east burns",
+    "lines": [
+     "A great fire ravages the eastern part of the town."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1572,
+    "title": "The Spanish sack the town",
+    "lines": [
+     "Troops of the Spanish governor storm in through the Oostpoort.",
+     "Rotterdam is plundered."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1573,
+    "title": "Rotterdam joins the Revolt",
+    "lines": [
+     "The town chooses the side of the Dutch Revolt.",
+     "It has about 10,000 people."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1575,
+    "title": "The Water Town",
+    "lines": [
+     "The walled town grows south toward the river.",
+     "The Water Town fills the area between the Hoogstraat and the Maas."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1579,
+    "title": "Ships sail on to Rotterdam",
+    "lines": [
+     "Dordrecht loses its staple right.",
+     "Ships no longer have to unload there."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1581,
+    "title": "A seat in the States",
+    "lines": [
+     "Rotterdam is admitted to the States of Holland."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1600,
+    "title": "A company port",
+    "lines": [
+     "Rotterdam becomes the seat of a chamber of the Dutch East India Company and of the West India Company."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "note": "S1 gives no year for the chambers; the card year 1600 follows S1 \"Beginning in the 1600s ... the port ... grew\". Approximate."
+   },
+   {
+    "y": 1610,
+    "title": "The slave trade",
+    "lines": [
+     "From the 1600s until 1814, Dutch slave ships sail from Rotterdam.",
+     "Rotterdam merchants are pioneers of the trade."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium",
+    "sober": true,
+    "note": "Year 1610 is a placement inside \"beginning in the 1600s\"; no exact start year in the source."
+   },
+   {
+    "y": 1620,
+    "title": "The Pilgrims leave Delfshaven",
+    "lines": [
+     "English Dissenters sail on the Speedwell for America."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S13",
+     "S14"
+    ],
+    "conf": "medium",
+    "labels": [
+     "Pilgrim Fathers Church"
+    ],
+    "note": "S13 says 1 August 1620, S14 says 21 July 1620: only the year is shown."
+   },
+   {
+    "y": 1622,
+    "title": "Erasmus in bronze",
+    "lines": [
+     "A bronze statue of Erasmus is set up by the Laurenskerk.",
+     "Rotterdam has about 20,000 people."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1665,
+    "title": "The Schielandshuis",
+    "lines": [
+     "A grand house is finished in 1665.",
+     "It will be one of only two pre-19th-century buildings to survive 1940."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S35",
+     "S5"
+    ],
+    "conf": "medium",
+    "note": "\"on the Rotte side of town\" is not sourced and is dropped from the line below."
+   },
+   {
+    "y": 1740,
+    "title": "The sea route silts up",
+    "lines": [
+     "The old routes around Rozenburg become impassable.",
+     "Ships need a long detour to reach Rotterdam."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1795,
+    "title": "Revolution",
+    "lines": [
+     "French troops arrive and the pro-Orange council is removed.",
+     "For the first time the city holds public elections."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1823,
+    "title": "Steam",
+    "lines": [
+     "A steamboat company starts regular lines from Rotterdam.",
+     "In 1825 it opens a shipyard on the south bank."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "medium",
+    "note": "\"first Dutch steamboat company\" is not literally in the source; reworded below."
+   },
+   {
+    "y": 1825,
+    "title": "Beyond the walls",
+    "lines": [
+     "The town fills about 140 hectares and is crowded.",
+     "Only after 1825 does it start to grow outside its walls."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1847,
+    "title": "The first train",
+    "lines": [
+     "The first railway reaches Rotterdam, toward The Hague and Amsterdam."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1858,
+    "title": "The river is full",
+    "lines": [
+     "The Oosterkade quay is finished.",
+     "All usable space in the city and along the river is taken."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1863,
+    "title": "A new road to the sea",
+    "lines": [
+     "A law approves a canal for ocean ships.",
+     "Engineer Pieter Caland designs it."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1869,
+    "title": "The south bank joins",
+    "lines": [
+     "Rotterdam annexes parts of IJsselmonde, Katendrecht and Charlois."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1872,
+    "title": "The New Waterway opens",
+    "lines": [
+     "A canal through the Hook of Holland gives ocean ships a straight way to the city."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S15",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1877,
+    "title": "Trains cross the river",
+    "lines": [
+     "A railway bridge and an elevated line carry trains through the city.",
+     "The Willemsbrug opens for city traffic a year later."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "medium",
+    "note": "S34 says the first bridge opened in 1879; S3 and S2 say 1878."
+   },
+   {
+    "y": 1879,
+    "title": "A harbor on borrowed money",
+    "lines": [
+     "The new south-bank harbors open.",
+     "Their financier, Lodewijk Pincoffs, flees the country with a huge debt."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1886,
+    "title": "Delfshaven joins the city",
+    "lines": [
+     "Delfshaven asks to be annexed by Rotterdam."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S13",
+     "S2"
+    ],
+    "conf": "high",
+    "labels": [
+     "Pilgrim Fathers Church"
+    ]
+   },
+   {
+    "y": 1895,
+    "title": "Kralingen and Charlois join",
+    "lines": [
+     "Two more neighbors are annexed.",
+     "Between 1880 and 1900 the population doubles, from 160,000 to 315,000."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1913,
+    "title": "A canal becomes a boulevard",
+    "lines": [
+     "The Coolvest moat is filled in and the Zandstraat quarter, home to about 2,400 people, is torn down.",
+     "The Coolsingel boulevard takes shape."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S3",
+     "S10",
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1914,
+    "title": "A neutral city",
+    "lines": [
+     "In the First World War Rotterdam is a center of spying.",
+     "About 25,000 Belgian refugees live here."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1920,
+    "title": "Waalhaven Airport",
+    "lines": [
+     "The second civilian airport in the Netherlands opens next to the Waalhaven harbor."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1926,
+    "title": "The Van Nelle Factory",
+    "lines": [
+     "A glass-and-steel factory goes up on the Schie.",
+     "Since 2014 it is a World Heritage Site."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S19"
+    ],
+    "conf": "high",
+    "labels": [
+     "Van Nelle Factory"
+    ]
+   },
+   {
+    "y": 1930,
+    "title": "A department store draws a crowd",
+    "lines": [
+     "The Bijenkorf opens on the Coolsingel.",
+     "About 70,000 people come to see it."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1936,
+    "title": "A lively, modern city",
+    "lines": [
+     "Revues, cinemas and jazz fill the evenings around the Schiedamsedijk.",
+     "A new Beurs is built, finished in 1940."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1940.37,
+    "title": "Fifteen minutes",
+    "lines": [
+     "German bombers destroy the historic center in a raid of about fifteen minutes.",
+     "Around 80,000 people lose their homes."
+    ],
+    "hold_s": 6.5,
+    "src": [
+     "S6",
+     "S1"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1940.4,
+    "title": "What survived",
+    "lines": [
+     "Only two buildings from before the 19th century survive: the Laurenskerk, heavily damaged, and the Schielandshuis.",
+     "The City Hall also stands."
+    ],
+    "hold_s": 6.5,
+    "src": [
+     "S5",
+     "S7",
+     "S1"
+    ],
+    "conf": "high",
+    "labels": [
+     "Laurenskerk",
+     "City Hall"
+    ],
+    "sober": true
+   },
+   {
+    "y": 1940.45,
+    "title": "Surrender",
+    "lines": [
+     "The Dutch army capitulates the next day.",
+     "Germany had threatened to bomb Utrecht the same way."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S1",
+     "S5"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1942.6,
+    "title": "Deportations",
+    "lines": [
+     "Between July 1942 and April 1943, 6,790 people are deported from Rotterdam in 8 transports."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1943.25,
+    "title": "A bombing by mistake",
+    "lines": [
+     "Allied bombers destroy part of Delfshaven on 31 March 1943.",
+     "At least 417 people die."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S3",
+     "S13"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1944.86,
+    "title": "The razzia",
+    "lines": [
+     "On 10 and 11 November 1944 about 50,000 men between 17 and 40 are taken away."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1945.34,
+    "title": "Liberation",
+    "lines": [
+     "Germany surrenders on 5 May 1945.",
+     "The occupation of the Netherlands ends."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "S42 is about the whole country; the exact day Rotterdam itself was freed is not in the fetched texts."
+   },
+   {
+    "y": 1946,
+    "title": "Start from scratch",
+    "lines": [
+     "The city adopts a plan for rebuilding the center.",
+     "It chooses a modern city over the old street plan."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S2",
+     "S5"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1948.05,
+    "title": "Stronger through effort",
+    "lines": [
+     "Queen Wilhelmina presents the motto \"Sterker door strijd\" for Rotterdam's coat of arms."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1952,
+    "title": "The church is rebuilt",
+    "lines": [
+     "Queen Juliana lays the foundation stone for restoring the Laurenskerk.",
+     "It is finished in 1968."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S7"
+    ],
+    "conf": "high",
+    "labels": [
+     "Laurenskerk"
+    ]
+   },
+   {
+    "y": 1953,
+    "title": "A warehouse of the future",
+    "lines": [
+     "The Groothandelsgebouw opens, one of the first major buildings after the bombing."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1957,
+    "title": "A new Central Station",
+    "lines": [
+     "Rotterdam Centraal opens, replacing the bombed Delftsche Poort station."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1965,
+    "title": "The population peaks",
+    "lines": [
+     "Rotterdam reaches 731,564 people."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1968,
+    "title": "The first metro in the Netherlands",
+    "lines": [
+     "Princess Beatrix opens the line at Centraal station."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1970,
+    "title": "The Euromast grows",
+    "lines": [
+     "A Space Tower is added on top.",
+     "The Euromast is now 185 meters tall."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "labels": [
+     "Euromast"
+    ]
+   },
+   {
+    "y": 1973,
+    "title": "The port moves to sea",
+    "lines": [
+     "The Maasvlakte is built from sand in the North Sea.",
+     "The first company starts working there in 1973."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S33",
+     "S23"
+    ],
+    "conf": "high",
+    "note": "The Maasvlakte is about 30 km west of the center (Wikidata 51.9525 N, 4.0464 E): outside the 9 km data radius, so it is a card without a target."
+   },
+   {
+    "y": 1981,
+    "title": "A new Willemsbrug",
+    "lines": [
+     "A new bridge replaces the old one, designed to spare the Oude Haven."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S34",
+     "S3"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1991,
+    "title": "Delftse Poort",
+    "lines": [
+     "Twin office towers rise above the station.",
+     "They were built between 1988 and 1991."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S32"
+    ],
+    "conf": "high",
+    "labels": [
+     "Delftse Poort"
+    ]
+   },
+   {
+    "y": 1994,
+    "title": "Manhattan on the Maas",
+    "lines": [
+     "The Kop van Zuid project turns the south bank into a new business district."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S3",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2009,
+    "title": "Maastoren",
+    "lines": [
+     "A 44-floor office tower rises on the Kop van Zuid.",
+     "Built between 2006 and 2009."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S29"
+    ],
+    "conf": "high",
+    "labels": [
+     "Maastoren"
+    ]
+   },
+   {
+    "y": 2013.4,
+    "title": "A bigger port",
+    "lines": [
+     "Maasvlakte 2 opens: about 2,000 hectares of new land from the sea."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S33"
+    ],
+    "conf": "high",
+    "note": "Outside the data radius, card only."
+   },
+   {
+    "y": 2013.9,
+    "title": "De Rotterdam",
+    "lines": [
+     "Three interconnected towers rise from a shared base.",
+     "The complex is finished at the end of 2013."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S30"
+    ],
+    "conf": "high",
+    "labels": [
+     "De Rotterdam"
+    ]
+   },
+   {
+    "y": 2014.2,
+    "title": "The new Centraal",
+    "lines": [
+     "The rebuilt Rotterdam Centraal is reopened by the king on 13 March 2014."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2022.3,
+    "title": "The tallest in the Netherlands",
+    "lines": [
+     "The Zalmhaven towers are completed in April 2022."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S31"
+    ],
+    "conf": "high",
+    "labels": [
+     "Zalmhaven"
+    ]
+   }
+  ]
  },
  "legacy": {
   "metadata_file": "metadata_rotterdam.md",
@@ -558,123 +2702,16 @@
   "data_package": {
    "dir": "data_rotterdam_src",
    "present": [
-    "buildings.json",
-    "harbours.json",
-    "land.json",
-    "parks.json"
+    "buildings.json.gz",
+    "dem.npz.gz",
+    "harbours.json.gz",
+    "land.json.gz",
+    "parks.json.gz",
+    "roads.json.gz"
    ],
-   "missing_for_kit": [
-    "roads.json",
-    "dem.npz"
-   ],
-   "complete": false
+   "missing_for_kit": [],
+   "complete": true
   }
  },
- "_legacy_gaps": [
-  {
-   "path": "city",
-   "field": "country",
-   "reason": "non nei file legacy (TODO)"
-  },
-  {
-   "path": "city",
-   "field": "style_preset",
-   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
-  },
-  {
-   "path": "city",
-   "field": "eras",
-   "reason": "nessuna periodizzazione nel legacy"
-  },
-  {
-   "path": "city",
-   "field": "polities",
-   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
-  },
-  {
-   "path": "city",
-   "field": "data_reliable_from",
-   "reason": "non nel legacy"
-  },
-  {
-   "path": "landmarks",
-   "field": "kind",
-   "reason": "11 monumenti con geometria bespoke in landmarks_rotterdam.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
-  },
-  {
-   "path": "regia",
-   "field": "soste",
-   "reason": "nessuna sosta nello schedule legacy"
-  },
-  {
-   "path": "regia.soste",
-   "field": "weight",
-   "reason": "0 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
-  },
-  {
-   "path": "regia.soste",
-   "field": "fx",
-   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards_src",
-   "reason": "schede lette da montaggio/rotterdam_overlay.jsx (CARDS); anno = anno della curva schedule al t_in, `legacy_date` = data scritta nella scheda"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards",
-   "reason": "22 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 23"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "target/shot",
-   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
-  },
-  {
-   "path": "montaggio",
-   "field": "chapters",
-   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
-  },
-  {
-   "path": "city",
-   "field": "population",
-   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
-  },
-  {
-   "path": "sources",
-   "field": "sources",
-   "reason": "nessuna scheda di validazione per rotterdam: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
-  },
-  {
-   "path": "history.bridges",
-   "field": "bridges",
-   "reason": "nessun bridges_rotterdam.py leggibile (vedi anche bridges.json di radice, non per citta')"
-  },
-  {
-   "path": "history.zones",
-   "field": "zones",
-   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
-  },
-  {
-   "path": "history",
-   "field": "walls/gutting/lost/fires",
-   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
-  },
-  {
-   "path": "montaggio",
-   "field": "open",
-   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
-  },
-  {
-   "path": "metadata",
-   "field": "chapters/description/tags",
-   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
-  },
-  {
-   "path": "data",
-   "field": "data_src",
-   "reason": "data_rotterdam_src incompleto per kit data/pack: mancano roads.json, dem.npz"
-  }
- ]
+ "_filled_by": "yb-historian + yb-modeler, 2026-11-19: story rebuilt from fetched texts (Wikipedia NL/EN, Wikidata); every source quote is a verbatim sentence of the fetched text (checked by verify_quotes.py). No kit build or render was run. Items marked conf low or [Guessing] in notes are estimates."
 }
