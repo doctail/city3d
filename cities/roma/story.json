@@ -2180,11 +2180,12 @@
    },
    {
     "y": -329.0,
-    "title": "Circus Maximus (329 BC)",
+    "title": "Circus Maximus",
     "lines": [
-     "Circus Maximus (329 BC)"
+     "Permanent wooden starting stalls are built in 329 BC.",
+     "Later it spans 621 by 118 meters, the largest stadium in ancient Rome."
     ],
-    "hold_s": 3.5,
+    "hold_s": 4.8,
     "src": [
      "S5"
     ],
@@ -2243,11 +2244,11 @@
    },
    {
     "y": -13.5,
-    "title": "Theatre of Marcellus (13 BC)",
+    "title": "Theatre of Marcellus",
     "lines": [
-     "Theatre of Marcellus (13 BC)"
+     "Completed in 13 BC and formally inaugurated in 12 BC by Augustus."
     ],
-    "hold_s": 3.0,
+    "hold_s": 4.8,
     "src": [
      "S7"
     ],
@@ -2283,18 +2284,6 @@
     ]
    },
    {
-    "y": 112.5,
-    "title": "Trajan's Column (113)",
-    "lines": [
-     "Trajan's Column (113)"
-    ],
-    "hold_s": 3.0,
-    "src": [
-     "S9"
-    ],
-    "conf": "high"
-   },
-   {
     "y": 113,
     "title": "Trajan's Column",
     "lines": [
@@ -2310,18 +2299,6 @@
     "labels": [
      "Trajan's Column"
     ]
-   },
-   {
-    "y": 122.0,
-    "title": "The Pantheon (c. 126)",
-    "lines": [
-     "The Pantheon (c. 126)"
-    ],
-    "hold_s": 5.0,
-    "src": [
-     "S10"
-    ],
-    "conf": "medium"
    },
    {
     "y": 126,
@@ -2342,11 +2319,12 @@
    },
    {
     "y": 137.0,
-    "title": "Hadrian's Mausoleum (134-139)",
+    "title": "Hadrian's Mausoleum",
     "lines": [
-     "Hadrian's Mausoleum (134-139)"
+     "Erected on the right bank of the Tiber between 134 and 139.",
+     "Today it is known as Castel Sant'Angelo."
     ],
-    "hold_s": 3.5,
+    "hold_s": 4.8,
     "src": [
      "S13"
     ],
@@ -2365,18 +2343,6 @@
      "S52"
     ],
     "conf": "low"
-   },
-   {
-    "y": 214.0,
-    "title": "Baths of Caracalla (216)",
-    "lines": [
-     "Baths of Caracalla (216)"
-    ],
-    "hold_s": 4.0,
-    "src": [
-     "S14"
-    ],
-    "conf": "high"
    },
    {
     "y": 216,

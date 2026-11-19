@@ -1,0 +1,28 @@
+yb-historian/yb-qa cards pass roma (2026-11-19)
+Base: story.json at commit c3b1371 (before this pass). Facts, years outside sourced windows, caption meaning and sources: untouched.
+
+REMOVED card 112.5 'Trajan's Column (113)' (hold 3.0, conf high, src ['S9']): demoted-stop card with no text; the next card (113 'Trajan's Column') already carries the sourced text (S9): merged into it
+REMOVED card 122.0 'The Pantheon (c. 126)' (hold 5.0, conf medium, src ['S10']): demoted-stop card with no text; the next card (126 'The Pantheon') already carries the sourced text (S10): merged into it
+REMOVED card 214.0 'Baths of Caracalla (216)' (hold 4.0, conf high, src ['S14']): demoted-stop card with no text; the next card (216 'Baths of Caracalla') already carries the sourced text (S14): merged into it
+TEXT card -329.0 'Circus Maximus (329 BC)' -> title 'Circus Maximus', hold 3.5 -> 4.8; lines (was: caption repeated) -> 2 lines from S5 quote ('Permanent wooden starting stalls were built in 329 BC', '621 m x 118 m', 'first and largest stadium in ancient Rome'); date removed from title because the overlay already prints the year
+TEXT card -13.5 'Theatre of Marcellus (13 BC)' -> title 'Theatre of Marcellus', hold 3.0 -> 4.8; lines from S7 quote ('completed in 13 BC and formally inaugurated in 12 BC by Augustus')
+TEXT card 137.0 'Hadrian's Mausoleum (134-139)' -> title "Hadrian's Mausoleum", hold 3.5 -> 4.8; lines from S13 quote ('erected on the right bank of the Tiber between 134 and 139'; S13 is the Castel Sant'Angelo page, label_name of the landmark)
+
+NOTE the 30 s gap (226-256 s, Old St. Peter's soste -> Alaric soste, years 364-410) is flight-geometry-bound: that leg takes 26 s of camera flight (leg_est/v_leg) and no card or soste has a year between 364 and 410, so it cannot be split by card edits, holds or sourced re-timing (S17 window 318-360 for Old St. Peter's). Not changed. Options for the owner: demote the 'Old St. Peter's (c. 320-360)' soste (weight 5) to a card, which merges the two long flights (37.5 s + 26.4 s of geometry) into one with 4 cards inside; or accept 30 s.
+NOTE no slow flights existed in Roma (qa: PASS), max_duration stays 660 (natural 611 s).
+RESULT (kit build roma --force; kit qa roma --only a,b,c,e): duration 611.2 s, cards 51, max gap 30.4 s, QA WARN 3 / FAIL 0.
+Slow flights: nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
+LEGS
+   52.6-> 107.1  54.5s  y  -372.0->  -28.0 rate  6.31  -> Augustus builds his tomb (28 B
+  112.5-> 134.4  21.9s  y   -26.0->   64.4 rate  4.13  -> The Great Fire of Rome (AD 64)
+  148.9-> 181.3  32.4s  y    84.0->  272.9 rate  5.84  -> The Aurelian Walls (271-275)
+  187.3-> 225.8  38.6s  y   277.0->  356.0 rate  2.05  -> Old St. Peter's (c. 320-360)
+  229.8-> 256.2  26.4s  y   364.0->  410.0 rate  1.74  -> Alaric sacks Rome (410)
+  261.2-> 280.1  18.9s  y   410.8->  537.0 rate  6.67  -> The Goths cut the aqueducts (5
+  286.1-> 352.7  66.6s  y   538.3-> 1349.0 rate 12.18  -> Earthquake: the Colosseum fall
+  356.7-> 381.0  24.3s  y  1349.7-> 1587.9 rate  9.79  -> Michelangelo's dome (1590)
+  394.9-> 426.0  31.0s  y  1680.0-> 1870.6 rate  6.14  -> Rome, capital of Italy (1871)
+  431.4-> 449.4  18.0s  y  1871.4-> 1908.0 rate  2.03  -> The Vittoriano (1885-1911)
+  454.4-> 523.7  69.3s  y  1914.0-> 1960.4 rate  0.67  -> Rome Olympics (1960)
+  527.2-> 598.7  71.5s  y  1960.9-> 2026.0 rate  0.91  -> finale
+GAPS>15: [(16, 16.9), (60, 16.8), (76, 22.9), (114, 15.1), (198, 27.4), (226, 30.4), (434, 15.0)]
