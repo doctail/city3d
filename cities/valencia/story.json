@@ -5715,20 +5715,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1932.4,
-    "y1": 1933,
-    "dur": 4,
-    "caption": "City Hall square (1931-33)",
-    "target": "area:[39.4703,-0.3769,320]",
-    "shot": "medium",
-    "fx": "build",
-    "src": [
-     "S23",
-     "S42"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1957.78,
     "y1": 1957.8,
     "dur": 12,
@@ -6343,6 +6329,23 @@
     "shot": "medium",
     "was_sosta": true,
     "y1": 1928
+   },
+   {
+    "y": 1932.4,
+    "title": "City Hall square (1931-33)",
+    "lines": [
+     "Years 1932.4-1933."
+    ],
+    "hold_s": 4,
+    "src": [
+     "S23",
+     "S42"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4703,-0.3769,320]",
+    "shot": "medium",
+    "was_sosta": true,
+    "y1": 1933
    },
    {
     "y": 1933.5,
