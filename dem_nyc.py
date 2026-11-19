@@ -1,5 +1,5 @@
 # Rilievo di New York -> DATA/dem.npz {D, x0, y0, cell}. Come build_dem di prep_marseille_osm.py (Copernicus GLO-30 DSM, griglia 1334x1334 da 30 m, semi-lato 20 km,
-# apertura morfologica DEM_OPEN, quota sul mare, rampa a 0 sulla riva, esagerazione 1,6). Uso: python dem_nyc.py DEM_DIR DATA_DIR  (DEM_OPEN default 600 m: FiDi: 54 m di DSM residuo a 600, 125 a 300; Washington Heights scende da 63 a 10 m)
+# apertura morfologica DEM_OPEN, quota sul mare, rampa a 0 sulla riva, esagerazione 1,6). Uso: python dem_nyc.py DEM_DIR DATA_DIR  (DEM_OPEN default 900 m, owner-approved 19/11: FiDi residue 0 m at 900; at 600: FiDi: 54 m di DSM residuo a 600, 125 a 300; Washington Heights scende da 63 a 10 m)
 import glob, json, math, os, re, sys
 import numpy as np, tifffile
 from scipy import ndimage as nd
@@ -19,7 +19,7 @@ for (la, lo), f in TILES.items():
     t = tifffile.imread(f).astype(np.float64); ny0, nx0 = t.shape; m = (lat >= la) & (lat < la + 1) & (lon >= lo) & (lon < lo + 1)
     if m.any(): S[m] = nd.map_coordinates(t, [(la + 1 - lat[m]) * (ny0 - 1), (lon[m] - lo) * (nx0 - 1)], order=1)
 log('tile', sorted(TILES), 'celle senza dati (0):', int((S == 0).sum()))
-OPEN = float(os.environ.get('DEM_OPEN', 600.0))
+OPEN = float(os.environ.get('DEM_OPEN', 900.0))
 G = nd.gaussian_filter(nd.grey_opening(S, size=(int(OPEN / C), int(OPEN / C))), 4)
 lr = json.load(open(os.path.join(DATA, 'land.json')))
 LG = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in lr])
@@ -29,6 +29,23 @@ Rr = np.where(water, 0.0, np.maximum(G - sea, 0.0)); wet = nd.binary_dilation(wa
 taper = np.clip(nd.distance_transform_edt(~wet) * C / TAPER, 0, 1); taper = taper * taper * (3 - 2 * taper)
 eb = HALF - np.maximum(np.abs(GX), np.abs(GY)); edge = np.clip(eb / 2500.0, 0, 1); edge = edge * edge * (3 - 2 * edge)
 D = EXAG * np.maximum(Rr - FLAT, 0.0) * taper * edge
+# 19/11 (yb fix): land that was WATER in the early years (story history.water rings: infill zones, Collect Pond) must not be raised by the relief: the raised
+# ground around an unfilled zone made a pit whose water plane (z -1.5) rendered as black patches at 1700-1800. Flat inside the rings, ramp back up over 150 m.
+try:
+    from shapely.geometry import Polygon as _P
+    from shapely import distance as _dist
+    sj = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cities', 'nyc', 'story.json')))
+    rg = unary_union([_P([((lo - LON0) * KX, (la - LAT0) * KY) for la, lo in w['ring']]).buffer(25) for w in sj['history']['water'] if w.get('ring') and float(w.get('from', 0)) < 1900])
+    near = ~contains_xy(rg.buffer(150), GX, GY)   # fast reject
+    dd = np.zeros(GX.shape)
+    ii, jj = np.nonzero(~near)
+    from shapely import points as _pts
+    dd[ii, jj] = _dist(rg, _pts(GX[ii, jj], GY[ii, jj]))
+    dd[near] = 150.0
+    f = np.clip(dd / 150.0, 0, 1); f = f * f * (3 - 2 * f)
+    log('relief flattened in', len(sj['history']['water']), 'water-phase rings (max D inside before: %.1f m)' % float(D[f == 0].max() if (f == 0).any() else 0))
+    D = D * f
+except Exception as e: log('ring flattening skipped:', e)
 np.savez_compressed(os.path.join(DATA, 'dem.npz'), D=D.astype(np.float32), x0=float(xs[0]), y0=float(ys[0]), cell=C)
 log(f'dem.npz {len(xs)}x{len(ys)} cella {C:.0f} m, mare {sea:.1f} m, D max {D.max():.0f} m, medio {D.mean():.1f} m')
 for nm, (la, lo) in {'Midtown (Empire State)': (40.7484, -73.9857), 'Financial District': (40.7075, -74.0089), 'Washington Heights (Fort Tryon)': (40.8615, -73.9319), 'Central Park Belvedere': (40.7794, -73.9693), 'Downtown Brooklyn': (40.6929, -73.9856), 'Jersey City Palisades': (40.7500, -74.0450)}.items():

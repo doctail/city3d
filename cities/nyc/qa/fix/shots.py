@@ -17,7 +17,7 @@ here = os.path.dirname(os.path.abspath(__file__)); out = f'{here}/frames_{name}'
 shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
 sp = f'{here}/sched_{name}.json'
 json.dump({'duration': len(shots) * HOLD / FPS, 'lens': 35, 'years': years, 'cam': cam}, open(sp, 'w'))
-cmd = ['nice', '-n', '10', '/tmp/claude-0/blvenv/bin/python', ROOT + '/build_render.py', '--', ROOT + '/data_nyc', out, '--frames', '1', str(len(shots) * HOLD),
+cmd = ['nice', '-n', '10', '/tmp/claude-0/blvenv/bin/python', ROOT + '/build_render.py', '--', os.environ.get('NYC_DATA', ROOT + '/data_nyc'), out, '--frames', '1', str(len(shots) * HOLD),
        '--only', ','.join(map(str, only)), '--res', '1280', '720', '--samples', '16', '--device', 'CPU', '--schedule', sp, '--city', city,
        '--crop', '-6500', '-10500', '2500', '-1500'] + rest
 print(' '.join(cmd), flush=True)

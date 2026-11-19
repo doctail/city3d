@@ -61,7 +61,7 @@
  "land_from_buildings": true,
  "land_close": 15,
  "blocks_by_building": true,
- "urban_ground": "footprints",
+ "urban_ground": "off",
  "urban_buffer": 2.0,
  "urban_close": 2.0,
  "dur_min": 0.003,

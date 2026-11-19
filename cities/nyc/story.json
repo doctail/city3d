@@ -581,6 +581,7 @@
    "glint_free": true
   },
   "city_overrides": {
+   "urban_ground": "off",
    "vegetation": {
     "box": [
      -9000,

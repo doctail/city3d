@@ -14,6 +14,9 @@ spikes = lg.difference(pre).intersection(reg)
 slips = pre.difference(lg).intersection(reg)
 def parts(g, amin): return [p for p in getattr(g, 'geoms', [g]) if p.geom_type == 'Polygon' and p.area > amin]
 pre_b = pre.buffer(6)
+old = [x for x in json.load(open(f'{D}/landphases.json')) if not x.get('yb_pier')]
+oldg = unary_union([Polygon(x['r']).buffer(2) for x in old])   # existing phase slabs (infill 1700+): never overlap them (coplanar slabs render black)
+spikes = spikes.difference(oldg); slips = slips.difference(oldg)
 sp = [p for p in parts(spikes, 400) if p.intersects(pre_b)];   # whole islands (Liberty, Ellis) are not piers
 sl0 = None; sl = parts(slips, 400)
 print('spikes', len(sp), round(sum(p.area for p in sp)), 'slips', len(sl), round(sum(p.area for p in sl)))

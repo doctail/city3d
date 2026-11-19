@@ -725,7 +725,7 @@ if _ph_items:
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()
         for r_ in rings_:
-            try: bm_.faces.new([bm_.verts.new((x, y, 0.02)) for x, y in r_])   # 2 cm: sopra la terra solo nella fascia di 1,5 m di sovrapposizione
+            try: bm_.faces.new([bm_.verts.new((x, y, 0.02 + 0.004 * (i_ % 8))) for x, y in r_])   # 2 cm (+4 mm per finestra: fasi sovrapposte esattamente complanari = macchie nere d'ombra con DEM piatto): sopra la terra solo nella fascia di 1,5 m
             except ValueError: pass
         if not len(bm_.faces): bm_.free(); continue
         bmesh.ops.triangulate(bm_, faces=bm_.faces); bm_.normal_update()
