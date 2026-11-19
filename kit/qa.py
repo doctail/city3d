@@ -324,7 +324,7 @@ def _components(mask, min_cells):
         cov = np.cov(np.vstack([xx, yy])) if k > 2 else np.eye(2)
         ev = np.sort(np.linalg.eigvalsh(cov))[::-1]
         L = math.sqrt(12 * max(ev[0], 1e-6)) * CELL; W = k * CELL * CELL / max(L, 1e-6)
-        out.append({'id': i, 'cells': k, 'area': k * CELL * CELL, 'L': L, 'W': W, 'sl': sl, 'mask': (lab == i)})
+        out.append({'id': i, 'cells': k, 'area': k * CELL * CELL, 'L': L, 'W': W, 'sl': sl, 'mask': (lab == i) if L >= 120 else None})   # 18 nov: maschera piena solo se serve (i chiamanti scartano L < 120): evita OOM con migliaia di componenti
     return out
 
 

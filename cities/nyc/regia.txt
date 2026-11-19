@@ -1,0 +1,113 @@
+New York: regia automatica (kit/regia_kit.py)
+Camera drone: 20 tappe in hover (120.0 s) e voli (582.9 s), anni None/s fra le voci, nessuno stacco; vmax 172.96, amax 101.7, jmax 102.01, clear_min 469.13, clear_ground_min 478.83
+Durata 12:13.6  fotogrammi 17606  inquadrature 3  stacco medio ogni 244.5 s
+Musica: waking_monument  b_start None  notte 718.5932704771494
+
+ANCORE (video -> anno):
+   0:00.0   2026.00  
+   0:03.0   2026.00  
+   0:09.5   1609.00  
+  11:58.6   2026.00  
+
+SOSTE (video -> anni):
+  0:15.7-0:28.7  1609.0->1609.9  Henry Hudson's Half Moon enters the bay (1609)  [forza 4.0, water]
+  0:15.7-0:22.7  1609.0->1609.0  The island of the Lenape  [forza 0.0]
+  0:22.7-0:28.7  1609.5->1609.5  Hudson's voyage  [forza 0.0]
+  0:29.2-0:34.2  1624.0->1624.0  Families land  [forza 0.0]
+  0:34.2-0:40.2  1626.3->1626.3  The purchase of Manhattan  [forza 0.0]
+  0:40.3-0:45.3  1626.6->1626.6  Enslaved labor  [forza 0.0]
+  0:45.3-0:50.3  1626.9->1628.4  Fort Amsterdam anchors the town (1626)  [forza 4.0, hammer]
+  0:52.4-0:58.4  1653.1->1653.1  A city with a wall  [forza 0.0]
+  0:58.4-1:03.4  1653.2->1654.4  A wall for New Amsterdam (1653)  [forza 4.0, hammer]
+  1:06.9-1:12.9  1664.6->1665.0  New Amsterdam becomes New York (1664)  [forza 6.0, crowd]
+  1:06.9-1:12.9  1664.7->1664.7  New York  [forza 0.0]
+  1:13.4-1:19.4  1673.7->1673.7  New Orange  [forza 0.0]
+  1:23.6-1:28.6  1698.3->1699.2  Trinity Church's first building (1698)  [forza 5.0, bell]
+  1:23.6-1:28.6  1698.5->1698.5  A first count  [forza 0.0]
+  1:33.5-1:38.5  1719.7->1720.5  Fraunces Tavern: a house of 1719 (1719)  [forza 3.0, city_hum]
+  1:44.4-1:50.4  1765.8->1765.8  The Stamp Act Congress  [forza 0.0]
+  1:50.4-1:55.4  1766.7->1767.4  St. Paul's Chapel is completed (1766)  [forza 5.0, bell]
+  1:56.5-2:03.5  1776.7->1776.7  The British land  [forza 0.0]
+  2:03.5-2:08.5  1776.7->1776.8  The Great Fire burns the west side (1776)  [forza 8.0, fire]
+  2:09.2-2:14.2  1783.9->1783.9  Evacuation Day  [forza 0.0]
+  2:14.3-2:20.3  1785.2->1785.2  A capital for the young republic  [forza 0.0]
+  2:20.4-2:25.4  1789.2->1789.5  Washington is inaugurated at Federal Hall (1789)  [forza 5.0, bell]
+  2:25.5-2:30.5  1792.4->1792.4  The Buttonwood Agreement  [forza 0.0]
+  2:40.3-2:51.3  1811.0->1812.2  Castle Clinton guards the harbor (1811)  [forza 8.0, boom]
+  2:40.3-2:46.3  1811.3->1811.3  A grid for the island  [forza 0.0]
+  2:46.3-2:51.3  1811.6->1811.6  The Collect Pond disappears  [forza 0.0]
+  3:04.9-3:09.9  1825.8->1825.8  The Erie Canal opens  [forza 0.0]
+  3:20.0-3:25.0  1835.9->1836.1  The Great Fire of New York (1835)  [forza 8.0, fire]
+  3:31.4-3:37.4  1842.5->1842.5  Croton water  [forza 0.0]
+  3:41.3-3:46.3  1846.4->1846.4  The tallest spire  [forza 0.0]
+  3:48.3-3:53.3  1848.4->1848.4  High Bridge  [forza 0.0]
+  4:00.4-4:06.4  1855.5->1855.5  Immigrant metropolis  [forza 0.0]
+  4:08.4-4:14.4  1857.5->1857.5  Seneca Village is razed  [forza 0.0]
+  4:36.9-4:42.9  1858.8->1859.9  Central Park opens (1858)  [forza 3.0, city_hum]
+  4:46.5-4:52.5  1863.5->1863.5  The Draft Riots  [forza 0.0]
+  5:00.5-5:05.5  1871.5->1871.5  Grand Central Depot  [forza 0.0]
+  5:13.4-5:18.4  1879.4->1879.4  St. Patrick's Cathedral  [forza 0.0]
+  5:48.1-5:54.1  1883.3->1883.9  The Brooklyn Bridge opens (1883)  [forza 5.0, horn]
+  5:57.0-6:03.0  1886.8->1886.8  Liberty Enlightening the World  [forza 0.0]
+  6:08.7-6:14.7  1892.5->1892.5  Ellis Island  [forza 0.0]
+  6:20.2-6:26.2  1898.0->1898.0  Five boroughs, one city  [forza 0.0]
+  6:30.9-6:35.9  1902.8->1902.8  The Flatiron Building  [forza 0.0]
+  6:37.1-6:42.1  1903.9->1904.0  The Williamsburg Bridge opens (1903)  [forza 5.0, horn]
+  6:37.1-6:42.1  1904.8->1904.8  The subway opens  [forza 0.0]
+  6:47.4-6:52.4  1909.2->1909.2  The Queensboro Bridge  [forza 0.0]
+  6:53.1-6:58.1  1910.0->1910.0  The Manhattan Bridge  [forza 0.0]
+  6:59.0-7:05.0  1910.9->1910.9  Pennsylvania Station  [forza 0.0]
+  7:05.3-7:10.3  1911.2->1911.2  The Triangle fire  [forza 0.0]
+  7:12.2-7:17.2  1913.1->1913.1  Grand Central Terminal  [forza 0.0]
+  7:17.7-7:22.7  1913.6->1914.5  The Woolworth Building opens (1913)  [forza 4.0, chime]
+  7:31.5-7:36.5  1923.3->1923.3  Yankee Stadium  [forza 0.0]
+  7:43.0-7:49.0  1929.8->1929.8  The race to the sky  [forza 0.0]
+  8:11.4-8:16.4  1930.3->1931.0  The Chrysler Building opens (1930)  [forza 3.0, ding]
+  8:11.4-8:16.4  1931.8->1931.8  The George Washington Bridge  [forza 0.0]
+  8:19.9-8:25.9  1931.3->1931.9  The Empire State Building opens (1931)  [forza 3.0, ding]
+  8:19.9-8:24.9  1933.8->1933.8  Rockefeller Center  [forza 0.0]
+  8:32.3-8:37.3  1938.4->1938.4  The Cloisters  [forza 0.0]
+  8:51.0-8:56.0  1952.0->1952.8  United Nations Headquarters is completed (1952)  [forza 4.0, chime]
+  8:51.0-8:56.0  1952.1->1952.1  Home of the United Nations  [forza 0.0]
+  9:07.0-9:13.0  1963.8->1963.8  Penn Station is demolished  [forza 0.0]
+  9:51.5-9:57.5  1971.0->1973.4  The Twin Towers rise (1973)  [forza 4.0, hammer]
+  10:01.1-10:06.1  1977.5->1977.5  The 1977 blackout  [forza 0.0]
+  10:27.7-10:33.7  2001.7->2001.7  September 11, 2001  [forza 0.0]
+  10:38.3-10:43.3  2006.3->2006.3  Rebuilding  [forza 0.0]
+  10:49.1-10:54.1  2012.3->2012.3  Hudson Yards  [forza 0.0]
+  10:54.6-10:59.6  2012.8->2012.8  Hurricane Sandy  [forza 0.0]
+  11:01.5-11:07.5  2014.7->2015.4  One World Trade Center opens (2014)  [forza 4.0, chime]
+  11:01.5-11:07.5  2015.5->2015.5  A new skyline  [forza 0.0]
+
+ANNO OGNI 30 s:
+  0:00   2026.0  (0.00 anni/s)
+  0:30   1624.0  (0.00 anni/s)
+  1:00   1653.6  (0.24 anni/s)
+  1:30   1705.2  (4.20 anni/s)
+  2:00   1776.7  (0.00 anni/s)
+  2:30   1792.4  (0.00 anni/s)
+  3:00   1820.9  (1.00 anni/s)
+  3:30   1841.1  (1.00 anni/s)
+  4:00   1855.1  (1.00 anni/s)
+  4:30   1858.4  (0.06 anni/s)
+  5:00   1871.0  (1.00 anni/s)
+  5:30   1880.9  (0.13 anni/s)
+  6:00   1886.8  (0.00 anni/s)
+  6:30   1901.8  (1.00 anni/s)
+  7:00   1910.9  (0.00 anni/s)
+  7:30   1921.8  (1.00 anni/s)
+  8:00   1930.1  (0.02 anni/s)
+  8:30   1936.0  (1.00 anni/s)
+  9:00   1956.8  (1.00 anni/s)
+  9:30   1967.0  (0.19 anni/s)
+  10:00   1976.3  (1.14 anni/s)
+  10:30   2001.7  (0.00 anni/s)
+  11:00   2013.2  (0.98 anni/s)
+  11:30   2020.1  (0.21 anni/s)
+  12:00   2026.0  (0.00 anni/s)
+
+Velocita fuori dalle soste: mediana 1.00 anni/s, max 11.8 anni/s
+Soste: 68, 384 s (54% del giorno)
+
+AVVISI:
+  nessuno

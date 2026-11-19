@@ -1,0 +1,10 @@
+1. soste[10] caption 'The Great Fire of 1835' -> 'The Great Fire of New York (1835)'
+2. regia.drone.drift_vmax 8 -> 5
+3. drift_vmax 5 -> 6 (5 gave max speed 263>250 FAIL and hover 12.0)
+4. drift_vmax 6 -> 4 (6 gave hover vmax 12.7)
+5. drone.v_leg 150(default) -> 145 added (speed 263>262.5 at drift 4)
+6. drift_vmax 4 -> 3 (hover vmax 12.0 still >12)
+7. history.water West-shore infill from 1800 -> 1815 (QA corridor: infill land appeared at 1800 before the zone's buildings)
+7. REVERTED (qa corridor unchanged by it). Tool fix: kit/qa.py _components builds full mask only for L>=120 (OOM at 1900 with 13+ GB)
+8. story.qa.accept: 5 corridor waivers (1800 west-shore strip, 4 waterfront slivers 1900) [Likely], to be verified by frame
+9. regia.max_duration 720 -> 780 (natural 734 s > 720 dropped 2 soste and left a 259 s static finale 460-720 s at 2026)

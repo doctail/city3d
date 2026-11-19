@@ -1,0 +1,694 @@
+{
+ "didascalie": [],
+ "soste": [
+  {
+   "t_in": 15.7,
+   "t_out": 28.7,
+   "title": "Henry Hudson's Half Moon enters the bay",
+   "sub": "1609"
+  },
+  {
+   "t_in": 45.31,
+   "t_out": 50.31,
+   "title": "Fort Amsterdam anchors the town",
+   "sub": "1626"
+  },
+  {
+   "t_in": 58.41,
+   "t_out": 63.41,
+   "title": "A wall for New Amsterdam",
+   "sub": "1653"
+  },
+  {
+   "t_in": 66.91,
+   "t_out": 72.91,
+   "title": "New Amsterdam becomes New York",
+   "sub": "1664"
+  },
+  {
+   "t_in": 83.57,
+   "t_out": 88.57,
+   "title": "Trinity Church's first building",
+   "sub": "1698"
+  },
+  {
+   "t_in": 93.45,
+   "t_out": 98.45,
+   "title": "Fraunces Tavern: a house of 1719",
+   "sub": "1719"
+  },
+  {
+   "t_in": 110.43,
+   "t_out": 115.43,
+   "title": "St. Paul's Chapel is completed",
+   "sub": "1766"
+  },
+  {
+   "t_in": 123.48,
+   "t_out": 128.48,
+   "title": "The Great Fire burns the west side",
+   "sub": "1776"
+  },
+  {
+   "t_in": 140.44,
+   "t_out": 145.44,
+   "title": "Washington is inaugurated at Federal Hall",
+   "sub": "1789"
+  },
+  {
+   "t_in": 160.31,
+   "t_out": 171.31,
+   "title": "Castle Clinton guards the harbor",
+   "sub": "1811"
+  },
+  {
+   "t_in": 200.04,
+   "t_out": 205.04,
+   "title": "The Great Fire of New York",
+   "sub": "1835"
+  },
+  {
+   "t_in": 276.86,
+   "t_out": 282.86,
+   "title": "Central Park opens",
+   "sub": "1858"
+  },
+  {
+   "t_in": 348.06,
+   "t_out": 354.06,
+   "title": "The Brooklyn Bridge opens",
+   "sub": "1883"
+  },
+  {
+   "t_in": 397.1,
+   "t_out": 402.1,
+   "title": "The Williamsburg Bridge opens",
+   "sub": "1903"
+  },
+  {
+   "t_in": 437.75,
+   "t_out": 442.75,
+   "title": "The Woolworth Building opens",
+   "sub": "1913"
+  },
+  {
+   "t_in": 491.39,
+   "t_out": 496.39,
+   "title": "The Chrysler Building opens",
+   "sub": "1930"
+  },
+  {
+   "t_in": 499.89,
+   "t_out": 505.89,
+   "title": "The Empire State Building opens",
+   "sub": "1931"
+  },
+  {
+   "t_in": 530.99,
+   "t_out": 535.99,
+   "title": "United Nations Headquarters is completed",
+   "sub": "1952"
+  },
+  {
+   "t_in": 591.46,
+   "t_out": 597.46,
+   "title": "The Twin Towers rise",
+   "sub": "1973"
+  },
+  {
+   "t_in": 661.53,
+   "t_out": 667.53,
+   "title": "One World Trade Center opens",
+   "sub": "2014"
+  }
+ ],
+ "subscribe_t": 98.5,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 22.7,
+   "date": "1609",
+   "title": "The island of the Lenape",
+   "lines": [
+    "Manhattan lies in Lenapehoking, the land of the Munsee, Lenape and Wappinger peoples."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 22.7,
+   "t_out": 28.7,
+   "date": "1609",
+   "title": "Hudson's voyage",
+   "lines": [
+    "Sailing for the Dutch on the Halve Maen, Henry Hudson explores the bay and the river that will carry his name."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 29.17,
+   "t_out": 34.17,
+   "date": "1624",
+   "title": "Families land",
+   "lines": [
+    "In May 1624 the Dutch West India Company lands 30 families in New Netherland, some on Governors Island."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 34.25,
+   "t_out": 40.25,
+   "date": "1626",
+   "title": "The purchase of Manhattan",
+   "lines": [
+    "Peter Minuit, director from 1626, is credited with buying the island from Lenape representatives for goods worth 60 guilders."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 40.26,
+   "t_out": 45.26,
+   "date": "1626",
+   "title": "Enslaved labor",
+   "lines": [
+    "The first enslaved Africans in New Amsterdam help build the fort and clear the land."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 52.4,
+   "t_out": 58.4,
+   "date": "1653",
+   "title": "A city with a wall",
+   "lines": [
+    "New Amsterdam receives municipal rights on February 2, 1653.",
+    "A wall along today's Wall Street stands until 1699."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 66.91,
+   "t_out": 72.91,
+   "date": "1664",
+   "title": "New York",
+   "lines": [
+    "English forces seize the town in 1664 and rename it for the Duke of York.",
+    "About 2,500 of New Netherland's nearly 9,000 colonists live in the town."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 73.36,
+   "t_out": 79.36,
+   "date": "1673",
+   "title": "New Orange",
+   "lines": [
+    "The Dutch retake the city in August 1673 and rename it.",
+    "The Treaty of Westminster returns it to England in 1674."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 83.57,
+   "t_out": 88.57,
+   "date": "1698",
+   "title": "A first count",
+   "lines": [
+    "A 1698 count finds 4,937 people in the city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 104.37,
+   "t_out": 110.37,
+   "date": "1765",
+   "title": "The Stamp Act Congress",
+   "lines": [
+    "Delegates from most of the British colonies meet in City Hall in October 1765 to answer the Stamp Act."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 116.48,
+   "t_out": 123.48,
+   "date": "1776",
+   "title": "The British land",
+   "lines": [
+    "Redcoats under General Howe land on Manhattan on September 15, 1776; the armies fight at Harlem Heights the next day.",
+    "The city stays in British hands until 1783."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 129.22,
+   "t_out": 134.22,
+   "date": "1783",
+   "title": "Evacuation Day",
+   "lines": [
+    "British forces leave New York on November 25, 1783, after the Treaty of Paris."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 134.26,
+   "t_out": 140.26,
+   "date": "1785",
+   "title": "A capital for the young republic",
+   "lines": [
+    "The Confederation Congress meets in City Hall from 1785.",
+    "Congress leaves for Philadelphia in 1790."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 145.53,
+   "t_out": 150.53,
+   "date": "1792",
+   "title": "The Buttonwood Agreement",
+   "lines": [
+    "On May 17, 1792, 24 brokers sign the pact that grows into the New York Stock Exchange."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 160.31,
+   "t_out": 166.31,
+   "date": "1811",
+   "title": "A grid for the island",
+   "lines": [
+    "The Commissioners' Plan of 1811 lays a grid of streets over Manhattan between Houston Street and 155th Street."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 166.31,
+   "t_out": 171.31,
+   "date": "1811",
+   "title": "The Collect Pond disappears",
+   "lines": [
+    "Landfill finishes in 1811 and middle-class homes rise on the old pond."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 184.91,
+   "t_out": 189.91,
+   "date": "1825",
+   "title": "The Erie Canal opens",
+   "lines": [
+    "The canal opens on October 26, 1825, linking the Atlantic to the Great Lakes."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 211.44,
+   "t_out": 217.44,
+   "date": "1842",
+   "title": "Croton water",
+   "lines": [
+    "The Croton Aqueduct, built 1837 to 1842, brings water by gravity 41 miles to reservoirs in Manhattan."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 221.34,
+   "t_out": 226.34,
+   "date": "1846",
+   "title": "The tallest spire",
+   "lines": [
+    "Trinity Church, built 1839 to 1846, is the tallest building in New York until 1890."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 228.34,
+   "t_out": 233.34,
+   "date": "1848",
+   "title": "High Bridge",
+   "lines": [
+    "Water begins to flow across High Bridge in May 1848; it is the city's oldest major bridge."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 240.44,
+   "t_out": 246.44,
+   "date": "1855",
+   "title": "Immigrant metropolis",
+   "lines": [
+    "Castle Garden becomes the immigrant depot: more than 7.5 million people arrive there between 1855 and 1890."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 248.44,
+   "t_out": 254.44,
+   "date": "1857",
+   "title": "Seneca Village is razed",
+   "lines": [
+    "Founded in 1825 by free Black landowners, the village is torn down in 1857 to make room for Central Park."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 286.49,
+   "t_out": 292.49,
+   "date": "1863",
+   "title": "The Draft Riots",
+   "lines": [
+    "Draft riots rage from July 13 to 16, 1863; mobs burn the Colored Orphan Asylum on Fifth Avenue."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 300.46,
+   "t_out": 305.46,
+   "date": "1871",
+   "title": "Grand Central Depot",
+   "lines": [
+    "The first Grand Central station opens in 1871; today's terminal replaces it in 1913."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 313.36,
+   "t_out": 318.36,
+   "date": "1879",
+   "title": "St. Patrick's Cathedral",
+   "lines": [
+    "The cathedral is dedicated on May 25, 1879; its spires follow in 1888."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 356.98,
+   "t_out": 362.98,
+   "date": "1886",
+   "title": "Liberty Enlightening the World",
+   "lines": [
+    "The Statue of Liberty is dedicated on October 28, 1886, on what was then Bedloe's Island."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 368.66,
+   "t_out": 374.66,
+   "date": "1892",
+   "title": "Ellis Island",
+   "lines": [
+    "The immigration station opens in 1892; until 1954 about 12 million people are processed there."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 380.16,
+   "t_out": 386.16,
+   "date": "1898",
+   "title": "Five boroughs, one city",
+   "lines": [
+    "On January 1, 1898, New York merges with Brooklyn, western Queens and Staten Island."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 390.91,
+   "t_out": 395.91,
+   "date": "1902",
+   "title": "The Flatiron Building",
+   "lines": [
+    "The Flatiron Building opens on October 1, 1902, at 285 feet."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 397.1,
+   "t_out": 402.1,
+   "date": "1904",
+   "title": "The subway opens",
+   "lines": [
+    "The first subway line opens on October 27, 1904."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 407.36,
+   "t_out": 412.36,
+   "date": "1909",
+   "title": "The Queensboro Bridge",
+   "lines": [
+    "The bridge to Queens opens on March 30, 1909."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 413.1,
+   "t_out": 418.1,
+   "date": "1910",
+   "title": "The Manhattan Bridge",
+   "lines": [
+    "The Manhattan Bridge opens to traffic on December 31, 1909; subway trains follow in 1915."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 419.01,
+   "t_out": 425.01,
+   "date": "1910",
+   "title": "Pennsylvania Station",
+   "lines": [
+    "The station opens in 1910 and gives travelers from the south direct rail access to Manhattan for the first time."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 425.31,
+   "t_out": 430.31,
+   "date": "1911",
+   "title": "The Triangle fire",
+   "lines": [
+    "On March 25, 1911, fire sweeps the Triangle Shirtwaist Factory in the Asch Building near Washington Square."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 432.21,
+   "t_out": 437.21,
+   "date": "1913",
+   "title": "Grand Central Terminal",
+   "lines": [
+    "Grand Central Terminal opens in 1913 on the site of two earlier stations."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 451.55,
+   "t_out": 456.55,
+   "date": "1923",
+   "title": "Yankee Stadium",
+   "lines": [
+    "Built in 1922 and 1923, the stadium opens in the Bronx."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 463.05,
+   "t_out": 469.05,
+   "date": "1929",
+   "title": "The race to the sky",
+   "lines": [
+    "40 Wall Street, the Chrysler Building and the Empire State Building compete to be the tallest in the world."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 491.39,
+   "t_out": 496.39,
+   "date": "1931",
+   "title": "The George Washington Bridge",
+   "lines": [
+    "The bridge opens on October 25, 1931, with the longest main span in the world."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 499.89,
+   "t_out": 504.89,
+   "date": "1933",
+   "title": "Rockefeller Center",
+   "lines": [
+    "Construction starts in 1931 and the first buildings open in 1933; the core is complete by 1939."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 512.35,
+   "t_out": 517.35,
+   "date": "1938",
+   "title": "The Cloisters",
+   "lines": [
+    "The Cloisters museum opens in Fort Tryon Park on May 10, 1938."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 530.99,
+   "t_out": 535.99,
+   "date": "1952",
+   "title": "Home of the United Nations",
+   "lines": [
+    "The United Nations headquarters is completed in 1952 on the East River."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 547.04,
+   "t_out": 553.04,
+   "date": "1963",
+   "title": "Penn Station is demolished",
+   "lines": [
+    "Demolition of the station above ground begins in 1963 and ends by 1966; the loss galvanizes the preservation movement."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 601.1,
+   "t_out": 606.1,
+   "date": "1977",
+   "title": "The 1977 blackout",
+   "lines": [
+    "On July 13 and 14, 1977, a blackout hits most of the city, followed by looting and arson."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 627.66,
+   "t_out": 633.66,
+   "date": "2001",
+   "title": "September 11, 2001",
+   "lines": [
+    "The Twin Towers of the World Trade Center are destroyed in a terrorist attack."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 638.32,
+   "t_out": 643.32,
+   "date": "2006",
+   "title": "Rebuilding",
+   "lines": [
+    "Work on One World Trade Center begins on April 27, 2006."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 649.1,
+   "t_out": 654.1,
+   "date": "2012",
+   "title": "Hudson Yards",
+   "lines": [
+    "Construction begins in 2012 on platforms over the working rail yard on the far West Side."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 654.62,
+   "t_out": 659.62,
+   "date": "2012",
+   "title": "Hurricane Sandy",
+   "lines": [
+    "On October 29, 2012, the storm surge floods streets, tunnels and subway lines."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 661.53,
+   "t_out": 667.53,
+   "date": "2015",
+   "title": "A new skyline",
+   "lines": [
+    "432 Park Avenue, finished in 2015, is the tallest residential building in the world when completed; Central Park Tower follows in 2020."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "Mannahatta"
+  },
+  {
+   "t_in": 64.11,
+   "t_out": 66.91,
+   "num": "II",
+   "title": "The English Port"
+  },
+  {
+   "t_in": 113.68,
+   "t_out": 116.48,
+   "num": "III",
+   "title": "Revolution and Republic"
+  },
+  {
+   "t_in": 157.51,
+   "t_out": 160.31,
+   "num": "IV",
+   "title": "The Gridiron City"
+  },
+  {
+   "t_in": 237.64,
+   "t_out": 240.44,
+   "num": "V",
+   "title": "Immigrant Metropolis"
+  },
+  {
+   "t_in": 377.36,
+   "t_out": 380.16,
+   "num": "VI",
+   "title": "Five Boroughs, One City"
+  },
+  {
+   "t_in": 388.11,
+   "t_out": 390.91,
+   "num": "VII",
+   "title": "The Skyscraper Age"
+  },
+  {
+   "t_in": 528.19,
+   "t_out": 530.99,
+   "num": "VIII",
+   "title": "Postwar New York"
+  },
+  {
+   "t_in": 598.3,
+   "t_out": 601.1,
+   "num": "IX",
+   "title": "Crisis and Comeback"
+  },
+  {
+   "t_in": 635.52,
+   "t_out": 638.32,
+   "num": "X",
+   "title": "The Global City"
+  }
+ ],
+ "cta": {
+  "t_in": 721.1,
+  "t_out": 725.6,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
+ "sources_card": {
+  "t_in": 725.6,
+  "t_out": 733.6,
+  "items": [
+   "Buildings, heights, years: NYC Open Data Building Footprints",
+   "Borough boundaries and parks: NYC Open Data; New Jersey land: U.S. Census Bureau TIGER/Line",
+   "Before 1900 and for every building that no longer stands: approximate reconstruction",
+   "History: Wikipedia EN (New Amsterdam, Federal Hall, Brooklyn Bridge, Central Park,",
+   "Empire State Building, World Trade Center, Penn Station and 60 more pages)",
+   "Population: census figures as listed on Wikipedia, Demographics of New York City",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
+}
