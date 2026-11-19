@@ -576,7 +576,10 @@
   "data_src": [
    "S72",
    "S73"
-  ]
+  ],
+  "style": {
+   "glint_free": true
+  }
  },
  "sources": {
   "S1": {

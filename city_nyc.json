@@ -190,7 +190,8 @@
    "#c9c1af",
    "#b9b09e"
   ],
-  "urban_dark": "#d6cebd"
+  "urban_dark": "#d6cebd",
+  "glint_free": true
  },
  "cover": {
   "text_size": 86,

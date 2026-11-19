@@ -1,0 +1,5 @@
+yb-modeler/camera fix log (NYC, branch yb/nyc-data). Local crop renders: cities/nyc/qa/fix/shots.py (crop -6500 -10500 2500 -1500, 1280x720, 16 spp), compare: fix/cmp.py. Frames in cities/nyc/qa/fix/frames_*.
+Owner-approved 19/11: DEM_OPEN 900 for NYC, urban_ground OFF for NYC, thumbnail/title keep 1609 as the first year (after the 1609 half is fixed).
+Baseline (d13b094 + city3d crop): mean V / S p90: 1609 0.653/0.514, 1625 0.650/0.510, 1626 0.657/0.510, 1930 0.570/0.443, 1855 0.564/0.451, 2014 0.471/0.525.
+
+1. White hard-edged oval over the east water. CAUSE [Certain]: the 1-degree sun lamp mirrored in the bumpy water (not the sky glow: removing the sky glow from reflections left the oval; water_rough 0.02->0.12 made it a bigger blob, both rejected). FIX: new style key glint_free (story city.style -> city_nyc.json) -> build_render.py: sun object visible_glossy=False (one line, opt-in, other cities untouched). Direct light/shadows unchanged. Result: oval gone at 1609 and 1930 (looked); mean V 0.653->0.650 (1609), 0.570->0.563 (1930), S p90 unchanged.
