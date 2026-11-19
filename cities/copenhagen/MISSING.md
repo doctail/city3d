@@ -1,56 +1,20 @@
-# MISSING — Copenhagen (importato dal legacy da `python -m kit legacy copenhagen`)
+# MISSING — Copenhagen (dopo il passaggio historian+modeler, branch yb/copenhagen)
 
-Campi richiesti dal formato kit che il legacy non poteva dare. Niente e' stato inventato: i campi sono `TODO`/vuoti/`conf: "low"` e sono elencati in `story._legacy_gaps`.
+`python -m kit qa copenhagen --only a`: PASS (34 fonti). Nessun build, nessun render (CPU di altri agenti).
 
-## Importato
-- soste: 26 (con bersaglio risolto: 26, con fonte: 0)
-- cartelli: 41 (con fonte: 0); minimo richiesto 45: MANCANO 4
-- monumenti: 17 (con fonte: 0); tutti `kind: TODO`
-- fonti: 0 · popolazione: 0 punti · acqua: 0 · mura: 0 · ponti: 0 · zone: 0
-- eventi: 0 · camera drone (pitch_max 30, alt_max 500, d_min 1400, drift_vmax 8, rho_max 1400, lens 32)
+## Fatto (fonti = pagine Wikipedia/Wikidata scaricate; ogni citazione verificata nel testo)
+- 26 soste con src/weight/fx, UNA sola "max" (Great Fire 1728; 1807 peso 9); didascalie nel formato "Titolo (data)".
+- 20 monumenti con kind (17 + Absalon's Castle, Christiansborg I e II, aggiunti perche' le soste 1167-1884 puntavano a Christiansborg costruito nel 1928: regola R2). Forme: tutte approssimazioni da preset, conf low salvo Rundetarn/SAS Royal/Mermaid.
+- polities (11 chip), eras (7), country, style_preset nordic, population (19 punti, Wikidata + Wikipedia).
+- 49 cartelli (>=45), 10 capitoli dagli anni (nessun cold open), titolo "(1167-NOW)".
+- Correzioni al legacy: 1728 "15.000 senzatetto" -> 20% della popolazione; Shellhus 86 -> 87 scolari; SAS Royal "primo grattacielo di Danimarca" -> di Copenhagen; Nyhavn 1670-75; "Swedish occupation 1658-60" NON esiste (assedio, la citta' non fu occupata): chip "Besieged by Sweden"; 1369 -> 1370 (S04; altre pagine 1368); popolazione "670.000" -> 667.099 (Wikidata, 1/1/2025).
+- qa a): Oresund Bridge a 20 km, limite 1,5 x 9000 m. NON alzato radius_m (core_box della grafica fine = +49% celle, come il render vecchio a 9000): aggiunto `outside_core: true` al monumento + esclusione nel controllo a) in kit/qa.py (una riga, documentata in STORY_SCHEMA.md).
 
-## Da compilare (storico)
-
-### Fonti
-- `sources` · sources: nessuna scheda di validazione per copenhagen: 0 fonti; tutti gli elementi importati sono conf "low" (deroga regola 1) e vanno risalvati con una fonte reale
-
-### Regimi/polities, ere, popolazione
-- `city` · country: non nei file legacy (TODO)
-- `city` · style_preset: default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere
-- `city` · eras: nessuna periodizzazione nel legacy
-- `city` · polities: nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)
-- `city` · data_reliable_from: non nel legacy
-- `city` · population: nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione
-
-### Zone, mura, acqua, ponti
-- `history.bridges` · bridges: nessun bridges_copenhagen.py leggibile (vedi anche bridges.json di radice, non per citta')
-- `history.zones` · zones: nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare
-- `history` · walls/gutting/lost/fires: mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale
-
-### Monumenti
-- `landmarks` · kind: 17 monumenti con geometria bespoke in landmarks_copenhagen.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno
-
-### Soste (bersaglio, peso, fx)
-- `regia.soste[6]` · target: 'GREAT FIRE OF 1728': punto FIRE_PTS 'fire1728' di regia_copenhagen.py
-- `regia.soste[11]` · target: 'FIRE OF 1795': punto FIRE_PTS 'fire1795' di regia_copenhagen.py
-- `regia.soste[12]` · target: 'BRITISH BOMBARDMENT (1807)': punto FIRE_PTS 'fire1807' di regia_copenhagen.py
-- `regia.soste` · target: 13 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto
-- `regia.soste` · weight: 26 soste senza peso (0-10 o "max"): default = forza dell'fx; scegliere almeno la piu' forte come "max"
-- `regia.soste` · fx: nessun fx del montaggio nel legacy (campo omesso)
-
-### Cartelli e capitoli
-- `montaggio.cards` · cards_src: schede lette da montaggio/copenhagen_overlay.jsx (CARDS); anno = anno della curva schedule al t_in, `legacy_date` = data scritta nella scheda
-- `montaggio.cards` · cards: 41 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 4
-- `montaggio.cards` · target/shot: il legacy non ha bersaglio per i cartelli (volano durante i tratti)
-- `montaggio` · chapters: nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere
-
-### Montaggio e consegna
-- `montaggio` · open: solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte
-- `metadata` · chapters/description/tags: capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)
-
-### Pacchetto dati
-- `data` · data_src: data_copenhagen_src incompleto per kit data/pack: mancano dem.npz
-
-## Pacchetto dati per `kit pack`/`kit data`
-- cartella: `data_copenhagen_src`; presenti: bridges.json, buildings.json, fires.json, land.json, landmarks.json, parks.json, reclaim.json, roads.json
-- INCOMPLETO, mancano: dem.npz
+## Resta da fare
+- history.zones/walls/gutting/lost/bridges VUOTI: prima del 1728 restano 167 edifici reali (solo 4 nel 1167). Senza zone il video parte quasi vuoto: servono anelli, born, era_height (hist_copenhagen.py ha parametri a mano non fonte). Primo anno "reale" 1167 = castello di Absalon, citta' no: titolo da riconfermare con il contact sheet R15.
+- data_reliable_from 1728 e' una ipotesi.
+- Forme monumenti: guglie/torri non modellate (Borsen 56 m, City Hall 105,6 m, Christiansborg 106 m); gruppi 'towers'/'spire' della chiesa Our Saviour assunti dal preset; Borsen incendio 2024 non verificato nei dati.
+- Anno apertura Royal Playhouse non nel testo letto (solo premio RIBA 2008); cartello "harbor baths" a 2022 e' una collocazione a stima; population 1972-1998 da Wikidata con definizioni miste (1985 scartato); nessun dato prima del 1711.
+- Sospetti R2 (stima distanza/150 m/s): Christiansborg III -> Grundtvig (5,3 km, 0,5 anni); SAS Royal -> Oresund (20,5 km, 35 anni in ~137 s = 0,26 anni/s); Oresund -> Opera (19 km, 0,2 anni). Da misurare con `kit qa` completo dopo build.
+- METADATA (descrizione, tag, capitoli con orari, commento fisso, Reddit): dopo i tempi del render.
+- Pacchetto dati: dem.npz.gz ora presente (merge yb/data-complete); i 4 file attesi ci sono.

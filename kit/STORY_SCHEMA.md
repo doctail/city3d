@@ -171,3 +171,5 @@ Idea da `analisi/mattia_valencia/FORMULA.md`: documentario in cartelli, tempo pe
   spostati sull'inizio di una sosta entro 12 s quando possibile (mai forzando la durata), rientri di A dal secondo 30; piu' corta delle tracce: si taglia; sempre dissolvenza di chiusura di 8 s; loudnorm -14 LUFS.
 - Per i cartelli con `src`, `kit/qa.py` non e' ancora esteso: la regola 1 (ogni data con fonte) va controllata a mano.
 - Test: `python kit/tests/test_story_mode.py` (fixture `fixtures/story_valencia_cards.json` = delta su `cities/valencia/story.json`, 5 cartelli, 2 capitoli, 2 polity).
+
+- `landmarks[*].outside_core: true`: monumento dichiaramente fuori dal nucleo fine (oltre 1,5 x `radius_m`, es. Oresund Bridge a Copenaghen): escluso solo dal controllo a) sulle coordinate.
