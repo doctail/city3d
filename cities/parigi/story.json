@@ -5127,7 +5127,7 @@
     "fx": "bell"
    }
   ],
-  "rmin": 1.0,
+  "rmin": 2.0,
   "rmax": 8.0,
   "drone": {
    "pitch_max": 30,
@@ -5215,19 +5215,6 @@
     "conf": "high"
    },
    {
-    "y": 1240.0,
-    "title": "50,000 Parisians",
-    "lines": [
-     "Already one of the largest cities in Europe (estimate)."
-    ],
-    "hold_s": 5,
-    "legacy_date": "c. 1240",
-    "src": [
-     "D002"
-    ],
-    "conf": "low"
-   },
-   {
     "y": 1248.0,
     "title": "Sainte-Chapelle",
     "lines": [
@@ -5237,19 +5224,6 @@
     "legacy_date": "1248",
     "src": [
      "E028"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1290.0,
-    "title": "~120,000 people",
-    "lines": [
-     "Estimate; Paris is the biggest city in Western Europe."
-    ],
-    "hold_s": 5,
-    "legacy_date": "c. 1290",
-    "src": [
-     "D003"
     ],
     "conf": "low"
    },
@@ -5341,19 +5315,6 @@
      "W004"
     ],
     "conf": "medium"
-   },
-   {
-    "y": 1490.0,
-    "title": "Back to 200,000",
-    "lines": [
-     "The city recovers after the Hundred Years War (estimate)."
-    ],
-    "hold_s": 5,
-    "legacy_date": "c. 1490",
-    "src": [
-     "D007"
-    ],
-    "conf": "low"
    },
    {
     "y": 1533.0,
@@ -5480,19 +5441,6 @@
     "conf": "high"
    },
    {
-    "y": 1640.0,
-    "title": "450,000 people",
-    "lines": [
-     "Estimate."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "c. 1640",
-    "src": [
-     "D010"
-    ],
-    "conf": "low"
-   },
-   {
     "y": 1655.0,
     "title": "Île Saint-Louis",
     "lines": [
@@ -5532,19 +5480,6 @@
     "src": [
      "B004",
      "B006"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1690.0,
-    "title": "500,000 Parisians",
-    "lines": [
-     "Estimate."
-    ],
-    "hold_s": 5,
-    "legacy_date": "c. 1690",
-    "src": [
-     "D011"
     ],
     "conf": "low"
    },
@@ -5670,19 +5605,6 @@
      "W008"
     ],
     "conf": "high"
-   },
-   {
-    "y": 1801.0,
-    "title": "547,756 Parisians",
-    "lines": [
-     "First census."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1801",
-    "src": [
-     "D014"
-    ],
-    "conf": "medium"
    },
    {
     "y": 1804.38,
@@ -5845,7 +5767,7 @@
     "lines": [
      "The king lays the first stone."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "29 Jul 1833",
     "src": [
      "G044"
@@ -5884,7 +5806,7 @@
     "lines": [
      "Its river arm is filled; the island joins the Right Bank."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1843",
     "src": [
      "A002"
@@ -5912,7 +5834,7 @@
     "lines": [
      "1,053,897 Parisians."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1846",
     "labels": [
      "Louvre"
@@ -5928,35 +5850,9 @@
     "lines": [
      "Louis-Napoleon proclaims himself Emperor on 2 December 1852."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "src": [
      "W015"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 1853.0,
-    "title": "Haussmann begins",
-    "lines": [
-     "Boulevards are cut straight through the old city."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1853",
-    "src": [
-     "F004"
-    ],
-    "conf": "low"
-   },
-   {
-    "y": 1856.0,
-    "title": "Pont des Invalides",
-    "lines": [
-     "The suspension bridge is replaced in stone."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1854–1856",
-    "src": [
-     "G033"
     ],
     "conf": "high"
    },
@@ -5966,7 +5862,7 @@
     "lines": [
      "Baltard's iron and glass market pavilions."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "legacy_date": "1852–1870",
     "src": [
      "C016"
@@ -5979,7 +5875,7 @@
     "lines": [
      "Inaugurated through the heart of the Right Bank."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "legacy_date": "5 Apr 1858",
     "src": [
      "C003"
@@ -5992,7 +5888,7 @@
     "lines": [
      "Viollet-le-Duc's spire is inaugurated."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "legacy_date": "15 Aug 1859",
     "src": [
      "E022"
@@ -6005,54 +5901,11 @@
     "lines": [
      "On 1 January 1860 Paris annexes its suburbs up to the Thiers wall."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "legacy_date": "1860",
     "src": [
      "B011",
      "W029"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 1860.5,
-    "title": "Pont au Change",
-    "lines": [
-     "Rebuilt as it stands today."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1856–1860",
-    "src": [
-     "G004"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 1862.0,
-    "title": "The canal goes underground",
-    "lines": [
-     "Boulevard Richard-Lenoir is built on top."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1860–1862",
-    "src": [
-     "A013",
-     "C019"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 1863.0,
-    "title": "The New Louvre",
-    "lines": [
-     "The Louvre finally joins the Tuileries."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "1852–1863",
-    "labels": [
-     "Louvre"
-    ],
-    "src": [
-     "E038"
     ],
     "conf": "high"
    },
@@ -6062,7 +5915,7 @@
     "lines": [
      "After Sedan, the Third Republic is proclaimed on 4 September 1870."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "src": [
      "W076"
     ],
@@ -6074,7 +5927,7 @@
     "lines": [
      "The Tuileries and the Hôtel de Ville are set on fire."
     ],
-    "hold_s": 5,
+    "hold_s": 4.8,
     "legacy_date": "May 1871",
     "src": [
      "F005",
@@ -6088,7 +5941,7 @@
     "lines": [
      "The opera house opens."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1875",
     "labels": [
      "Palais Garnier"
@@ -6104,7 +5957,7 @@
     "lines": [
      "Cut straight from the Louvre to the Opéra."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1864–1876",
     "src": [
      "C006"
@@ -6117,7 +5970,7 @@
     "lines": [
      "Rebuilt on the same site."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1882",
     "labels": [
      "Louvre",
@@ -6134,7 +5987,7 @@
     "lines": [
      "The burnt palace is cleared away."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "legacy_date": "1883",
     "src": [
      "E020"
@@ -6283,19 +6136,6 @@
     "conf": "high"
    },
    {
-    "y": 1931.0,
-    "title": "2,891,020 Parisians",
-    "lines": [
-     "Census."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1931",
-    "src": [
-     "D037"
-    ],
-    "conf": "medium"
-   },
-   {
     "y": 1939.0,
     "title": "A new Pont du Carrousel",
     "lines": [
@@ -6333,45 +6173,6 @@
     "conf": "high"
    },
    {
-    "y": 1946.0,
-    "title": "2,725,374 Parisians",
-    "lines": [
-     "The first census after the war."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "1946",
-    "labels": [
-     "Tour Montparnasse"
-    ],
-    "src": [
-     "D039"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y": 1954.0,
-    "title": "2,850,189 Parisians",
-    "lines": [
-     "Census."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1954",
-    "src": [
-     "D040"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y": 1958.0,
-    "title": "La Défense",
-    "lines": [
-     "A business district rises west of Paris."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1958",
-    "conf": "low"
-   },
-   {
     "y": 1958.76,
     "title": "A new republic",
     "lines": [
@@ -6382,19 +6183,6 @@
      "W021"
     ],
     "conf": "high"
-   },
-   {
-    "y": 1968.0,
-    "title": "2,590,771 Parisians",
-    "lines": [
-     "Families leave for the suburbs."
-    ],
-    "hold_s": 5,
-    "legacy_date": "1968",
-    "src": [
-     "D042"
-    ],
-    "conf": "medium"
    },
    {
     "y": 1971.5,
@@ -6479,22 +6267,6 @@
     "conf": "high"
    },
    {
-    "y": 1999.0,
-    "title": "2,125,246 Parisians",
-    "lines": [
-     "The smallest population in a century."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "1999",
-    "labels": [
-     "Centre Pompidou"
-    ],
-    "src": [
-     "D046"
-    ],
-    "conf": "high"
-   },
-   {
     "y": 2006.0,
     "title": "Passerelle Simone-de-Beauvoir",
     "lines": [
@@ -6504,19 +6276,6 @@
     "legacy_date": "2006",
     "src": [
      "G020"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 2011.0,
-    "title": "2,249,975 Parisians",
-    "lines": [
-     "A brief rebound."
-    ],
-    "hold_s": 5,
-    "legacy_date": "2011",
-    "src": [
-     "D048"
     ],
     "conf": "high"
    },

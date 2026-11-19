@@ -1,16 +1,16 @@
 {
  "didascalie": [
   {
-   "t_in": 321.29,
-   "t_out": 325.89,
+   "t_in": 262.38,
+   "t_out": 266.98,
    "date": "1784",
    "title": "The Bastille falls (1789)",
    "line": "14 July 1789",
    "sober": false
   },
   {
-   "t_in": 892.62,
-   "t_out": 897.23,
+   "t_in": 644.25,
+   "t_out": 648.85,
    "date": "2018",
    "title": "Notre-Dame: fire and rebirth (2019-2024)",
    "line": "15 April 2019 – 7 December 2024",
@@ -25,56 +25,56 @@
    "sub": "1190-1215"
   },
   {
-   "t_in": 79.98,
-   "t_out": 89.98,
+   "t_in": 69.98,
+   "t_out": 79.98,
    "title": "Charles V: a new wall and the Bastille",
    "sub": "1356-1383"
   },
   {
-   "t_in": 145.95,
-   "t_out": 163.95,
+   "t_in": 130.95,
+   "t_out": 148.95,
    "title": "Pont Neuf and the Grande Galerie",
    "sub": "1578-1612"
   },
   {
-   "t_in": 199.31,
-   "t_out": 214.31,
+   "t_in": 176.31,
+   "t_out": 194.31,
    "title": "Les Invalides and its golden dome",
    "sub": "1670-1706"
   },
   {
-   "t_in": 321.29,
-   "t_out": 337.29,
+   "t_in": 262.34,
+   "t_out": 278.34,
    "title": "The Bastille falls",
    "sub": "1789"
   },
   {
-   "t_in": 394.59,
-   "t_out": 409.59,
+   "t_in": 330.64,
+   "t_out": 345.64,
    "title": "Canal Saint-Martin is dug",
    "sub": "1822-1825"
   },
   {
-   "t_in": 491.12,
-   "t_out": 521.12,
+   "t_in": 407.05,
+   "t_out": 440.65,
    "title": "Haussmann cuts through old Paris",
    "sub": "1853-1870"
   },
   {
-   "t_in": 612.7,
-   "t_out": 620.7,
+   "t_in": 467.94,
+   "t_out": 475.94,
    "title": "The Eiffel Tower rises",
    "sub": "1887-1889"
   },
   {
-   "t_in": 791.14,
-   "t_out": 806.14,
+   "t_in": 585.18,
+   "t_out": 600.18,
    "title": "Tour Montparnasse and Centre Pompidou",
    "sub": "1969-1977"
   },
   {
-   "t_in": 892.62,
-   "t_out": 908.62,
+   "t_in": 644.21,
+   "t_out": 660.21,
    "title": "Notre-Dame: fire and rebirth",
    "sub": "2019-2024"
   }
@@ -122,18 +122,8 @@
    "sober": false
   },
   {
-   "t_in": 39.73,
-   "t_out": 44.73,
-   "date": "1240",
-   "title": "50,000 Parisians",
-   "lines": [
-    "Already one of the largest cities in Europe (estimate)."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 45.82,
-   "t_out": 50.82,
+   "t_in": 40.82,
+   "t_out": 45.82,
    "date": "1248",
    "title": "Sainte-Chapelle",
    "lines": [
@@ -142,18 +132,8 @@
    "sober": false
   },
   {
-   "t_in": 56.86,
-   "t_out": 61.86,
-   "date": "1290",
-   "title": "~120,000 people",
-   "lines": [
-    "Estimate; Paris is the biggest city in Western Europe."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 63.97,
-   "t_out": 71.97,
+   "t_in": 53.97,
+   "t_out": 61.97,
    "date": "1345",
    "title": "Notre-Dame completed",
    "lines": [
@@ -162,8 +142,8 @@
    "sober": false
   },
   {
-   "t_in": 72.37,
-   "t_out": 77.37,
+   "t_in": 62.37,
+   "t_out": 67.37,
    "date": "1350",
    "title": "The Black Death",
    "lines": [
@@ -172,8 +152,8 @@
    "sober": false
   },
   {
-   "t_in": 79.98,
-   "t_out": 84.98,
+   "t_in": 69.98,
+   "t_out": 74.98,
    "date": "1370",
    "title": "The Bastille",
    "lines": [
@@ -182,8 +162,8 @@
    "sober": false
   },
   {
-   "t_in": 84.98,
-   "t_out": 89.98,
+   "t_in": 74.98,
+   "t_out": 79.98,
    "date": "1383",
    "title": "The Charles V wall",
    "lines": [
@@ -192,8 +172,8 @@
    "sober": false
   },
   {
-   "t_in": 99.24,
-   "t_out": 107.24,
+   "t_in": 89.24,
+   "t_out": 97.24,
    "date": "1413",
    "title": "Pont Notre-Dame",
    "lines": [
@@ -202,8 +182,8 @@
    "sober": false
   },
   {
-   "t_in": 107.68,
-   "t_out": 112.68,
+   "t_in": 97.68,
+   "t_out": 102.68,
    "date": "1420",
    "title": "Two kings enter Paris",
    "lines": [
@@ -212,8 +192,8 @@
    "sober": false
   },
   {
-   "t_in": 113.18,
-   "t_out": 118.18,
+   "t_in": 103.18,
+   "t_out": 108.18,
    "date": "1436",
    "title": "The English leave Paris",
    "lines": [
@@ -222,18 +202,8 @@
    "sober": false
   },
   {
-   "t_in": 119.98,
-   "t_out": 124.98,
-   "date": "1490",
-   "title": "Back to 200,000",
-   "lines": [
-    "The city recovers after the Hundred Years War (estimate)."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 126.41,
-   "t_out": 134.41,
+   "t_in": 111.41,
+   "t_out": 119.41,
    "date": "1533",
    "title": "A new Hôtel de Ville",
    "lines": [
@@ -242,8 +212,8 @@
    "sober": false
   },
   {
-   "t_in": 134.84,
-   "t_out": 139.84,
+   "t_in": 119.84,
+   "t_out": 124.84,
    "date": "1546",
    "title": "A Renaissance Louvre",
    "lines": [
@@ -252,8 +222,8 @@
    "sober": false
   },
   {
-   "t_in": 140.44,
-   "t_out": 145.44,
+   "t_in": 125.44,
+   "t_out": 130.44,
    "date": "1564",
    "title": "The Tuileries Palace",
    "lines": [
@@ -262,8 +232,8 @@
    "sober": false
   },
   {
-   "t_in": 145.95,
-   "t_out": 150.95,
+   "t_in": 130.95,
+   "t_out": 135.95,
    "date": "1594",
    "title": "Henry IV takes Paris",
    "lines": [
@@ -272,8 +242,8 @@
    "sober": false
   },
   {
-   "t_in": 150.95,
-   "t_out": 158.95,
+   "t_in": 135.95,
+   "t_out": 143.95,
    "date": "1607",
    "title": "Pont Neuf opens",
    "lines": [
@@ -282,8 +252,8 @@
    "sober": false
   },
   {
-   "t_in": 158.95,
-   "t_out": 163.95,
+   "t_in": 143.95,
+   "t_out": 148.95,
    "date": "1612",
    "title": "Place Royale",
    "lines": [
@@ -292,8 +262,8 @@
    "sober": false
   },
   {
-   "t_in": 166.01,
-   "t_out": 171.01,
+   "t_in": 151.01,
+   "t_out": 156.01,
    "date": "1626",
    "title": "Pont au Double",
    "lines": [
@@ -302,8 +272,8 @@
    "sober": false
   },
   {
-   "t_in": 171.34,
-   "t_out": 176.34,
+   "t_in": 156.34,
+   "t_out": 161.34,
    "date": "1630",
    "title": "The Fossés Jaunes",
    "lines": [
@@ -312,8 +282,8 @@
    "sober": false
   },
   {
-   "t_in": 176.69,
-   "t_out": 181.69,
+   "t_in": 161.69,
+   "t_out": 166.69,
    "date": "1635",
    "title": "Pont Marie",
    "lines": [
@@ -322,18 +292,8 @@
    "sober": false
   },
   {
-   "t_in": 182.06,
-   "t_out": 190.06,
-   "date": "1640",
-   "title": "450,000 people",
-   "lines": [
-    "Estimate."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 190.71,
-   "t_out": 198.71,
+   "t_in": 167.71,
+   "t_out": 175.71,
    "date": "1655",
    "title": "Île Saint-Louis",
    "lines": [
@@ -342,8 +302,8 @@
    "sober": false
   },
   {
-   "t_in": 199.31,
-   "t_out": 204.31,
+   "t_in": 176.31,
+   "t_out": 181.31,
    "date": "1674",
    "title": "The Louvre Colonnade",
    "lines": [
@@ -352,8 +312,8 @@
    "sober": false
   },
   {
-   "t_in": 204.31,
-   "t_out": 209.31,
+   "t_in": 181.31,
+   "t_out": 186.31,
    "date": "1676",
    "title": "The walls come down",
    "lines": [
@@ -362,18 +322,8 @@
    "sober": false
   },
   {
-   "t_in": 209.31,
-   "t_out": 214.31,
-   "date": "1690",
-   "title": "500,000 Parisians",
-   "lines": [
-    "Estimate."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 214.31,
-   "t_out": 222.31,
+   "t_in": 186.31,
+   "t_out": 194.31,
    "date": "1706",
    "title": "The Invalides dome is gilded",
    "lines": [
@@ -382,8 +332,8 @@
    "sober": false
   },
   {
-   "t_in": 236.31,
-   "t_out": 244.31,
+   "t_in": 201.31,
+   "t_out": 209.31,
    "date": "1720",
    "title": "Place Vendôme",
    "lines": [
@@ -392,8 +342,8 @@
    "sober": false
   },
   {
-   "t_in": 264.31,
-   "t_out": 272.31,
+   "t_in": 219.31,
+   "t_out": 227.31,
    "date": "1740",
    "title": "550,000 Parisians",
    "lines": [
@@ -402,8 +352,8 @@
    "sober": false
   },
   {
-   "t_in": 287.31,
-   "t_out": 295.31,
+   "t_in": 234.81,
+   "t_out": 242.81,
    "date": "1755",
    "title": "Place Louis XV",
    "lines": [
@@ -412,8 +362,8 @@
    "sober": false
   },
   {
-   "t_in": 298.31,
-   "t_out": 303.31,
+   "t_in": 244.31,
+   "t_out": 249.31,
    "date": "1758",
    "title": "Sainte-Geneviève",
    "lines": [
@@ -422,8 +372,8 @@
    "sober": false
   },
   {
-   "t_in": 321.29,
-   "t_out": 329.29,
+   "t_in": 262.34,
+   "t_out": 270.34,
    "date": "1786",
    "title": "Houses cleared off the bridges",
    "lines": [
@@ -432,8 +382,8 @@
    "sober": false
   },
   {
-   "t_in": 329.29,
-   "t_out": 337.29,
+   "t_in": 270.34,
+   "t_out": 278.34,
    "date": "1790",
    "title": "The Farmers-General wall",
    "lines": [
@@ -442,8 +392,8 @@
    "sober": false
   },
   {
-   "t_in": 337.29,
-   "t_out": 342.29,
+   "t_in": 278.34,
+   "t_out": 283.34,
    "date": "1791",
    "title": "Pont de la Concorde",
    "lines": [
@@ -452,8 +402,8 @@
    "sober": false
   },
   {
-   "t_in": 342.87,
-   "t_out": 347.87,
+   "t_in": 283.93,
+   "t_out": 288.93,
    "date": "1792",
    "title": "The monarchy falls",
    "lines": [
@@ -462,18 +412,8 @@
    "sober": false
   },
   {
-   "t_in": 349.5,
-   "t_out": 354.5,
-   "date": "1801",
-   "title": "547,756 Parisians",
-   "lines": [
-    "First census."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 355.11,
-   "t_out": 360.11,
+   "t_in": 291.16,
+   "t_out": 296.16,
    "date": "1804",
    "title": "Napoleon, emperor",
    "lines": [
@@ -482,8 +422,8 @@
    "sober": false
   },
   {
-   "t_in": 360.22,
-   "t_out": 365.22,
+   "t_in": 296.27,
+   "t_out": 301.27,
    "date": "1805",
    "title": "The Grand Châtelet is demolished",
    "lines": [
@@ -492,8 +432,8 @@
    "sober": false
   },
   {
-   "t_in": 365.4,
-   "t_out": 373.4,
+   "t_in": 301.46,
+   "t_out": 309.46,
    "date": "1806",
    "title": "Arc de Triomphe",
    "lines": [
@@ -502,8 +442,8 @@
    "sober": false
   },
   {
-   "t_in": 374.4,
-   "t_out": 382.4,
+   "t_in": 310.45,
+   "t_out": 318.45,
    "date": "1811",
    "title": "The Rohan wing",
    "lines": [
@@ -512,8 +452,8 @@
    "sober": false
   },
   {
-   "t_in": 382.84,
-   "t_out": 387.84,
+   "t_in": 318.89,
+   "t_out": 323.89,
    "date": "1813",
    "title": "Canal de l'Ourcq",
    "lines": [
@@ -522,8 +462,8 @@
    "sober": false
   },
   {
-   "t_in": 388.14,
-   "t_out": 393.14,
+   "t_in": 324.19,
+   "t_out": 329.19,
    "date": "1814",
    "title": "The kings return",
    "lines": [
@@ -532,8 +472,8 @@
    "sober": false
   },
   {
-   "t_in": 394.59,
-   "t_out": 399.59,
+   "t_in": 330.64,
+   "t_out": 335.64,
    "date": "1821",
    "title": "Canal Saint-Denis",
    "lines": [
@@ -542,8 +482,8 @@
    "sober": false
   },
   {
-   "t_in": 399.59,
-   "t_out": 404.59,
+   "t_in": 335.64,
+   "t_out": 340.64,
    "date": "1822",
    "title": "The Ourcq canal is complete",
    "lines": [
@@ -552,8 +492,8 @@
    "sober": false
   },
   {
-   "t_in": 409.63,
-   "t_out": 417.63,
+   "t_in": 345.68,
+   "t_out": 353.68,
    "date": "1825",
    "title": "Canal Saint-Martin",
    "lines": [
@@ -562,8 +502,8 @@
    "sober": false
   },
   {
-   "t_in": 404.59,
-   "t_out": 409.59,
+   "t_in": 340.64,
+   "t_out": 345.64,
    "date": "1827",
    "title": "Pont de Grenelle",
    "lines": [
@@ -572,8 +512,8 @@
    "sober": false
   },
   {
-   "t_in": 419.0,
-   "t_out": 424.0,
+   "t_in": 355.01,
+   "t_out": 360.01,
    "date": "1828",
    "title": "Three new crossings",
    "lines": [
@@ -582,8 +522,8 @@
    "sober": false
   },
   {
-   "t_in": 425.82,
-   "t_out": 430.82,
+   "t_in": 361.31,
+   "t_out": 366.31,
    "date": "1830",
    "title": "The July Revolution",
    "lines": [
@@ -592,8 +532,8 @@
    "sober": false
   },
   {
-   "t_in": 433.08,
-   "t_out": 441.08,
+   "t_in": 367.51,
+   "t_out": 372.51,
    "date": "1833",
    "title": "Pont Louis-Philippe",
    "lines": [
@@ -602,8 +542,8 @@
    "sober": false
   },
   {
-   "t_in": 442.08,
-   "t_out": 447.08,
+   "t_in": 373.01,
+   "t_out": 378.01,
    "date": "1834",
    "title": "Pont du Carrousel",
    "lines": [
@@ -612,8 +552,8 @@
    "sober": false
   },
   {
-   "t_in": 449.08,
-   "t_out": 454.08,
+   "t_in": 379.01,
+   "t_out": 384.01,
    "date": "1836",
    "title": "The Arc is finished",
    "lines": [
@@ -622,8 +562,8 @@
    "sober": false
   },
   {
-   "t_in": 461.08,
-   "t_out": 469.08,
+   "t_in": 387.51,
+   "t_out": 392.51,
    "date": "1843",
    "title": "Île Louviers disappears",
    "lines": [
@@ -632,8 +572,8 @@
    "sober": false
   },
   {
-   "t_in": 470.08,
-   "t_out": 475.08,
+   "t_in": 393.01,
+   "t_out": 398.01,
    "date": "1844",
    "title": "The Thiers wall",
    "lines": [
@@ -642,8 +582,8 @@
    "sober": false
   },
   {
-   "t_in": 477.08,
-   "t_out": 485.08,
+   "t_in": 399.01,
+   "t_out": 404.01,
    "date": "1846",
    "title": "Over 1 million",
    "lines": [
@@ -652,8 +592,8 @@
    "sober": false
   },
   {
-   "t_in": 491.12,
-   "t_out": 496.12,
+   "t_in": 407.05,
+   "t_out": 411.85,
    "date": "1852",
    "title": "A second Napoleon",
    "lines": [
@@ -662,28 +602,8 @@
    "sober": false
   },
   {
-   "t_in": 496.12,
-   "t_out": 501.12,
-   "date": "1853",
-   "title": "Haussmann begins",
-   "lines": [
-    "Boulevards are cut straight through the old city."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 501.12,
-   "t_out": 506.12,
-   "date": "1856",
-   "title": "Pont des Invalides",
-   "lines": [
-    "The suspension bridge is replaced in stone."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 506.12,
-   "t_out": 511.12,
+   "t_in": 411.85,
+   "t_out": 416.65,
    "date": "1857",
    "title": "Les Halles",
    "lines": [
@@ -692,8 +612,8 @@
    "sober": false
   },
   {
-   "t_in": 511.12,
-   "t_out": 516.12,
+   "t_in": 416.65,
+   "t_out": 421.45,
    "date": "1858",
    "title": "Boulevard de Sébastopol",
    "lines": [
@@ -702,8 +622,8 @@
    "sober": false
   },
   {
-   "t_in": 516.12,
-   "t_out": 521.12,
+   "t_in": 421.45,
+   "t_out": 426.25,
    "date": "1859",
    "title": "A new spire for Notre-Dame",
    "lines": [
@@ -712,8 +632,8 @@
    "sober": false
   },
   {
-   "t_in": 521.16,
-   "t_out": 526.16,
+   "t_in": 426.25,
+   "t_out": 431.05,
    "date": "1860",
    "title": "20 arrondissements",
    "lines": [
@@ -722,38 +642,8 @@
    "sober": false
   },
   {
-   "t_in": 526.66,
-   "t_out": 531.66,
-   "date": "1860",
-   "title": "Pont au Change",
-   "lines": [
-    "Rebuilt as it stands today."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 533.16,
-   "t_out": 538.16,
-   "date": "1862",
-   "title": "The canal goes underground",
-   "lines": [
-    "Boulevard Richard-Lenoir is built on top."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 539.16,
-   "t_out": 547.16,
-   "date": "1863",
-   "title": "The New Louvre",
-   "lines": [
-    "The Louvre finally joins the Tuileries."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 554.83,
-   "t_out": 559.83,
+   "t_in": 431.05,
+   "t_out": 435.85,
    "date": "1870",
    "title": "The empire collapses",
    "lines": [
@@ -762,8 +652,8 @@
    "sober": false
   },
   {
-   "t_in": 560.56,
-   "t_out": 565.56,
+   "t_in": 435.85,
+   "t_out": 440.65,
    "date": "1871",
    "title": "The Commune",
    "lines": [
@@ -772,8 +662,8 @@
    "sober": false
   },
   {
-   "t_in": 569.16,
-   "t_out": 577.16,
+   "t_in": 442.15,
+   "t_out": 447.15,
    "date": "1875",
    "title": "Palais Garnier",
    "lines": [
@@ -782,8 +672,8 @@
    "sober": false
   },
   {
-   "t_in": 578.16,
-   "t_out": 586.16,
+   "t_in": 447.65,
+   "t_out": 452.65,
    "date": "1876",
    "title": "Avenue de l'Opéra",
    "lines": [
@@ -792,8 +682,8 @@
    "sober": false
   },
   {
-   "t_in": 592.16,
-   "t_out": 600.16,
+   "t_in": 455.65,
+   "t_out": 460.65,
    "date": "1882",
    "title": "A new Hôtel de Ville",
    "lines": [
@@ -802,8 +692,8 @@
    "sober": false
   },
   {
-   "t_in": 601.16,
-   "t_out": 609.16,
+   "t_in": 461.15,
+   "t_out": 466.15,
    "date": "1883",
    "title": "Tuileries demolished",
    "lines": [
@@ -812,8 +702,8 @@
    "sober": false
   },
   {
-   "t_in": 612.7,
-   "t_out": 620.7,
+   "t_in": 467.94,
+   "t_out": 475.94,
    "date": "1889",
    "title": "Eiffel Tower opens",
    "lines": [
@@ -822,8 +712,8 @@
    "sober": false
   },
   {
-   "t_in": 627.1,
-   "t_out": 632.1,
+   "t_in": 479.14,
+   "t_out": 484.14,
    "date": "1896",
    "title": "Pont Alexandre III",
    "lines": [
@@ -832,8 +722,8 @@
    "sober": false
   },
   {
-   "t_in": 636.1,
-   "t_out": 641.1,
+   "t_in": 486.14,
+   "t_out": 491.14,
    "date": "1900",
    "title": "World Fair and the first Métro line",
    "lines": [
@@ -842,8 +732,8 @@
    "sober": false
   },
   {
-   "t_in": 645.1,
-   "t_out": 650.1,
+   "t_in": 493.14,
+   "t_out": 498.14,
    "date": "1904",
    "title": "Pont de Bercy",
    "lines": [
@@ -852,8 +742,8 @@
    "sober": false
   },
   {
-   "t_in": 652.6,
-   "t_out": 657.6,
+   "t_in": 499.39,
+   "t_out": 504.39,
    "date": "1906",
    "title": "Voûte du Temple",
    "lines": [
@@ -862,8 +752,8 @@
    "sober": false
   },
   {
-   "t_in": 661.1,
-   "t_out": 666.1,
+   "t_in": 506.14,
+   "t_out": 511.14,
    "date": "1910",
    "title": "The great flood",
    "lines": [
@@ -872,8 +762,8 @@
    "sober": false
   },
   {
-   "t_in": 670.1,
-   "t_out": 678.1,
+   "t_in": 513.14,
+   "t_out": 521.14,
    "date": "1914",
    "title": "Sacré-Cœur completed",
    "lines": [
@@ -882,8 +772,8 @@
    "sober": false
   },
   {
-   "t_in": 685.1,
-   "t_out": 690.1,
+   "t_in": 524.64,
+   "t_out": 529.64,
    "date": "1921",
    "title": "2.9 million Parisians",
    "lines": [
@@ -892,8 +782,8 @@
    "sober": false
   },
   {
-   "t_in": 695.1,
-   "t_out": 700.1,
+   "t_in": 532.14,
+   "t_out": 537.14,
    "date": "1926",
    "title": "Boulevard Haussmann",
    "lines": [
@@ -902,8 +792,8 @@
    "sober": false
   },
   {
-   "t_in": 703.1,
-   "t_out": 708.1,
+   "t_in": 538.64,
+   "t_out": 543.64,
    "date": "1929",
    "title": "The Thiers wall is razed",
    "lines": [
@@ -912,18 +802,8 @@
    "sober": false
   },
   {
-   "t_in": 710.1,
-   "t_out": 715.1,
-   "date": "1931",
-   "title": "2,891,020 Parisians",
-   "lines": [
-    "Census."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 723.1,
-   "t_out": 731.1,
+   "t_in": 548.64,
+   "t_out": 556.64,
    "date": "1939",
    "title": "A new Pont du Carrousel",
    "lines": [
@@ -932,8 +812,8 @@
    "sober": false
   },
   {
-   "t_in": 732.55,
-   "t_out": 737.55,
+   "t_in": 557.36,
+   "t_out": 562.36,
    "date": "1940",
    "title": "Paris is occupied",
    "lines": [
@@ -942,8 +822,8 @@
    "sober": false
   },
   {
-   "t_in": 741.75,
-   "t_out": 746.75,
+   "t_in": 564.46,
+   "t_out": 569.46,
    "date": "1944",
    "title": "Paris is liberated",
    "lines": [
@@ -952,38 +832,8 @@
    "sober": false
   },
   {
-   "t_in": 748.1,
-   "t_out": 756.1,
-   "date": "1946",
-   "title": "2,725,374 Parisians",
-   "lines": [
-    "The first census after the war."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 764.1,
-   "t_out": 769.1,
-   "date": "1954",
-   "title": "2,850,189 Parisians",
-   "lines": [
-    "Census."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 773.1,
-   "t_out": 778.1,
-   "date": "1958",
-   "title": "La Défense",
-   "lines": [
-    "A business district rises west of Paris."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 778.86,
-   "t_out": 783.86,
+   "t_in": 576.52,
+   "t_out": 581.52,
    "date": "1958",
    "title": "A new republic",
    "lines": [
@@ -992,18 +842,8 @@
    "sober": false
   },
   {
-   "t_in": 791.14,
-   "t_out": 796.14,
-   "date": "1968",
-   "title": "2,590,771 Parisians",
-   "lines": [
-    "Families leave for the suburbs."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 796.14,
-   "t_out": 801.14,
+   "t_in": 585.18,
+   "t_out": 590.18,
    "date": "1971",
    "title": "Les Halles demolished",
    "lines": [
@@ -1012,8 +852,8 @@
    "sober": false
   },
   {
-   "t_in": 801.14,
-   "t_out": 806.14,
+   "t_in": 590.18,
+   "t_out": 595.18,
    "date": "1973",
    "title": "Tour Montparnasse",
    "lines": [
@@ -1022,8 +862,8 @@
    "sober": false
   },
   {
-   "t_in": 806.18,
-   "t_out": 811.18,
+   "t_in": 595.18,
+   "t_out": 600.18,
    "date": "1973",
    "title": "Boulevard Périphérique",
    "lines": [
@@ -1032,8 +872,8 @@
    "sober": false
   },
   {
-   "t_in": 814.68,
-   "t_out": 822.68,
+   "t_in": 600.22,
+   "t_out": 608.22,
    "date": "1977",
    "title": "Centre Pompidou",
    "lines": [
@@ -1042,8 +882,8 @@
    "sober": false
   },
   {
-   "t_in": 834.68,
-   "t_out": 839.68,
+   "t_in": 614.22,
+   "t_out": 619.22,
    "date": "1989",
    "title": "The Louvre Pyramid",
    "lines": [
@@ -1052,8 +892,8 @@
    "sober": false
   },
   {
-   "t_in": 846.68,
-   "t_out": 851.68,
+   "t_in": 622.72,
+   "t_out": 627.72,
    "date": "1996",
    "title": "Pont Charles-de-Gaulle",
    "lines": [
@@ -1062,18 +902,8 @@
    "sober": false
   },
   {
-   "t_in": 854.68,
-   "t_out": 862.68,
-   "date": "1999",
-   "title": "2,125,246 Parisians",
-   "lines": [
-    "The smallest population in a century."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 869.68,
-   "t_out": 874.68,
+   "t_in": 632.72,
+   "t_out": 637.72,
    "date": "2006",
    "title": "Passerelle Simone-de-Beauvoir",
    "lines": [
@@ -1082,18 +912,8 @@
    "sober": false
   },
   {
-   "t_in": 879.68,
-   "t_out": 884.68,
-   "date": "2011",
-   "title": "2,249,975 Parisians",
-   "lines": [
-    "A brief rebound."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 892.62,
-   "t_out": 900.62,
+   "t_in": 644.21,
+   "t_out": 652.21,
    "date": "2019",
    "title": "Notre-Dame burns",
    "lines": [
@@ -1102,8 +922,8 @@
    "sober": false
   },
   {
-   "t_in": 900.62,
-   "t_out": 908.62,
+   "t_in": 652.21,
+   "t_out": 660.21,
    "date": "2024",
    "title": "Notre-Dame reopens",
    "lines": [
@@ -1112,8 +932,8 @@
    "sober": false
   },
   {
-   "t_in": 908.67,
-   "t_out": 913.67,
+   "t_in": 660.23,
+   "t_out": 665.23,
    "date": "2025",
    "title": "Paris today",
    "lines": [
@@ -1130,44 +950,44 @@
    "title": "Medieval Paris"
   },
   {
-   "t_in": 133.64,
-   "t_out": 134.84,
+   "t_in": 118.64,
+   "t_out": 119.84,
    "num": "II",
    "title": "Renaissance and Royal Paris"
   },
   {
-   "t_in": 326.49,
-   "t_out": 329.29,
+   "t_in": 267.54,
+   "t_out": 270.34,
    "num": "III",
    "title": "Revolution and Empire"
   },
   {
-   "t_in": 493.32,
-   "t_out": 496.12,
+   "t_in": 409.05,
+   "t_out": 411.85,
    "num": "IV",
    "title": "Haussmann's Paris"
   },
   {
-   "t_in": 633.3,
-   "t_out": 636.1,
+   "t_in": 484.14,
+   "t_out": 486.14,
    "num": "V",
    "title": "Belle Époque and World Wars"
   },
   {
-   "t_in": 770.3,
-   "t_out": 773.1,
+   "t_in": 573.72,
+   "t_out": 576.52,
    "num": "VI",
    "title": "Modern Paris"
   }
  ],
  "cta": {
-  "t_in": 959.2,
-  "t_out": 963.7,
+  "t_in": 710.7,
+  "t_out": 715.2,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 963.7,
-  "t_out": 971.7,
+  "t_in": 715.2,
+  "t_out": 723.2,
   "items": [
    "Île Saint-Louis: unificazione degli isolotti Notre-Dame e aux Vaches",
    "Île Louviers: riempimento del braccio del Mail e unione alla riva destra",
