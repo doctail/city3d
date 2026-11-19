@@ -3,31 +3,2047 @@
  "city": {
   "slug": "madrid",
   "name": "Madrid",
-  "country": "TODO",
+  "country": "Spain",
   "lat0": 40.4169,
   "lon0": -3.7035,
   "radius_m": 12000,
-  "start_year": 1480,
+  "start_year": 860,
   "end_year": 2026,
-  "title": "EVOLUTION OF MADRID | 3D City Timelapse (1480–NOW) | No AI**",
+  "title": "EVOLUTION OF MADRID | 3D City Timelapse (860-NOW) | No AI",
   "data_source": "custom",
   "data_dir": "data_madrid",
   "style_preset": "mediterranean",
-  "population": [],
-  "pop_src": [],
-  "eras": []
+  "population": [
+   [
+    860,
+    2000,
+    "rough estimate"
+   ],
+   [
+    1000,
+    2000,
+    "rough estimate"
+   ],
+   [
+    1480,
+    5000,
+    "rough estimate"
+   ],
+   [
+    1560,
+    20000,
+    "historical estimate"
+   ],
+   [
+    1590,
+    100000,
+    "historical estimate"
+   ],
+   [
+    1690,
+    95000,
+    "historical estimate"
+   ],
+   [
+    1714,
+    109000,
+    "historical estimate"
+   ],
+   [
+    1750,
+    150000,
+    "historical estimate"
+   ],
+   [
+    1787,
+    167000,
+    "historical estimate"
+   ],
+   [
+    1842,
+    157397,
+    "census"
+   ],
+   [
+    1857,
+    281170,
+    "census"
+   ],
+   [
+    1860,
+    298426,
+    "census"
+   ],
+   [
+    1877,
+    400917,
+    "census"
+   ],
+   [
+    1887,
+    472191,
+    "census"
+   ],
+   [
+    1897,
+    510616,
+    "census"
+   ],
+   [
+    1900,
+    540109,
+    "census"
+   ],
+   [
+    1910,
+    556958,
+    "census"
+   ],
+   [
+    1920,
+    728937,
+    "census"
+   ],
+   [
+    1930,
+    863958,
+    "census"
+   ],
+   [
+    1940,
+    1096466,
+    "census"
+   ],
+   [
+    1950,
+    1527894,
+    "census"
+   ],
+   [
+    1960,
+    2177123,
+    "census"
+   ],
+   [
+    1970,
+    3120941,
+    "census"
+   ],
+   [
+    1981,
+    3158818,
+    "census"
+   ],
+   [
+    1991,
+    2909792,
+    "census"
+   ],
+   [
+    2001,
+    2938723,
+    "census"
+   ],
+   [
+    2011,
+    3198645,
+    "census"
+   ],
+   [
+    2021,
+    3277451,
+    "census"
+   ],
+   [
+    2024,
+    3416771,
+    "census"
+   ]
+  ],
+  "pop_src": [
+   "S46",
+   "S49",
+   "S1"
+  ],
+  "pop_conf": [
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high"
+  ],
+  "pop_note": "1000-1787: estimates in the Spanish Wikipedia demography annex (S46; the 1000 and 1480 figures are credited there to Trapiello 2020, not re-checked); 1560 matches 'unlikely more than 20,000' in S1. The 860 point repeats the c.1000 figure as a PLACEHOLDER [Guessing]: no source for the 9th century. The annex also lists 60,000 for 1565 and 180,000 for 1790, left out as odd jumps. 1842-2021: INE census (de jure) figures as shown in S46 (the 1825 estimate of 201,000 is left out: it would show a drop to the 1842 census). 2024: municipal register figure in S46 (labelled 'census' for the HUD); S49 says over 3.4 million in 2025. The municipal area grew by annexations 1948-1954 (S1), so the series is not like-for-like.",
+  "eras": [
+   [
+    860,
+    "Emirate and Caliphate of Córdoba",
+    "#8fae6a"
+   ],
+   [
+    1085,
+    "Castilian Madrid",
+    "#c9a24a"
+   ],
+   [
+    1561,
+    "Capital of the empire",
+    "#b5654a"
+   ],
+   [
+    1700,
+    "Bourbon Madrid",
+    "#6aa0c8"
+   ],
+   [
+    1808,
+    "War and revolution",
+    "#8a6aa0"
+   ],
+   [
+    1860,
+    "Ensanche and Gran Vía",
+    "#9c7a52"
+   ],
+   [
+    1931,
+    "Republic, siege, dictatorship",
+    "#8c8c8c"
+   ],
+   [
+    1975,
+    "Democratic capital",
+    "#c98a4a"
+   ]
+  ],
+  "polities": [
+   {
+    "y": 860,
+    "name": "Emirate of Córdoba · Mayrit",
+    "flag_colors": [
+     "#f2f2f2",
+     "#2e7d32"
+    ],
+    "src": [
+     "S4",
+     "S3"
+    ],
+    "conf": "high",
+    "note": "Emirate 756-929 (S4); Mayrit founded under Muhammad I (S3)."
+   },
+   {
+    "y": 929,
+    "name": "Caliphate of Córdoba",
+    "flag_colors": [
+     "#2e7d32",
+     "#ffffff"
+    ],
+    "src": [
+     "S4"
+    ],
+    "conf": "high",
+    "note": "Caliph title taken in 929 (S4)."
+   },
+   {
+    "y": 1035,
+    "name": "Taifa of Toledo",
+    "flag_colors": [
+     "#c9a24a",
+     "#2e7d32"
+    ],
+    "src": [
+     "S5",
+     "S4"
+    ],
+    "conf": "medium",
+    "note": "Taifa emerged after 1018 (S5); Madrid lies in its greatest extent (S5). 1035 (S5 'around 1035', Dhunnunid takeover of Toledo) is a modelling choice; the caliphate fell in 1031 (S4)."
+   },
+   {
+    "y": 1085,
+    "name": "Crown of Castile · Alfonso VI",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S1",
+     "S6"
+    ],
+    "conf": "medium",
+    "note": "Conquest 1083/1085 (S1); Alfonso VI ruled León and Castile from 1072 (S6). The name 'Crown of Castile' is the later label."
+   },
+   {
+    "y": 1479,
+    "name": "Catholic Monarchs · Castile and Aragon",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S6"
+    ],
+    "conf": "high",
+    "note": "Dynastic union of Castile and Aragon in 1479 (S6)."
+   },
+   {
+    "y": 1516,
+    "name": "Habsburg Spain · Spanish Empire",
+    "flag_colors": [
+     "#6b3fa0",
+     "#f2c500"
+    ],
+    "src": [
+     "S40"
+    ],
+    "conf": "high",
+    "note": "Habsburg Spain 1516-1700 (S40)."
+   },
+   {
+    "y": 1700,
+    "name": "Bourbon Spain",
+    "flag_colors": [
+     "#1f3a93",
+     "#f2f2f2"
+    ],
+    "src": [
+     "S40",
+     "S1"
+    ],
+    "conf": "high",
+    "note": "Philip V succeeds in 1700 (S40)."
+   },
+   {
+    "y": 1808.34,
+    "name": "Napoleonic Spain · Joseph Bonaparte",
+    "flag_colors": [
+     "#1f3a93",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S1",
+     "S45"
+    ],
+    "conf": "high",
+    "note": "Napoleon hands the throne to Joseph on 5 May 1808 (S1)."
+   },
+   {
+    "y": 1814,
+    "name": "Bourbon Restoration · Ferdinand VII",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "high",
+    "note": "Ferdinand VII returns to the throne in 1814 (S1)."
+   },
+   {
+    "y": 1868.74,
+    "name": "Glorious Revolution · First Republic",
+    "flag_colors": [
+     "#a50f15",
+     "#f2c500",
+     "#5b2a86"
+    ],
+    "src": [
+     "S1",
+     "S41"
+    ],
+    "conf": "medium",
+    "note": "Sept 1868 revolution (S1); the First Republic was ended on 29 December 1874 (S41). Years 1868-1874 are grouped: the republic's start year is not in the fetched text."
+   },
+   {
+    "y": 1874.99,
+    "name": "Restoration monarchy",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "high",
+    "note": "Began 29 December 1874 (S41)."
+   },
+   {
+    "y": 1931.29,
+    "name": "Second Spanish Republic",
+    "flag_colors": [
+     "#a50f15",
+     "#f2c500",
+     "#5b2a86"
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "high",
+    "note": "Proclaimed 14 April 1931 (S42)."
+   },
+   {
+    "y": 1936.83,
+    "name": "Republican Madrid under siege",
+    "flag_colors": [
+     "#a50f15",
+     "#f2c500",
+     "#5b2a86"
+    ],
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "high",
+    "note": "Besieged from October 1936 (S34)."
+   },
+   {
+    "y": 1939.24,
+    "name": "Francoist Spain",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S34",
+     "S43"
+    ],
+    "conf": "high",
+    "note": "City fell 28 March 1939 (S34); Franco until 1975 (S43)."
+   },
+   {
+    "y": 1975.89,
+    "name": "Transition to democracy",
+    "flag_colors": [
+     "#b5282b",
+     "#f2c500"
+    ],
+    "src": [
+     "S43",
+     "S44"
+    ],
+    "conf": "high",
+    "note": "Franco died 20 November 1975 (S43)."
+   },
+   {
+    "y": 1978.95,
+    "name": "Democratic Spain",
+    "flag_colors": [
+     "#c60b1e",
+     "#ffc400"
+    ],
+    "src": [
+     "S44"
+    ],
+    "conf": "high",
+    "note": "Constitution approved by referendum in December 1978 (S44)."
+   }
+  ],
+  "data_reliable_from": 1900,
+  "data_reliable_note": "[Guessing] only 54 buildings are dated before 1850 (173 up to 1850) and 1,470 before 1900 in the cadastre extract, and the old video had the same early-years gap (historic-core fill missing). Before 1900 the city is the 'history.zones' reconstruction, not data; check the density report (QA c) before any GO."
  },
- "sources": {},
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Madrid",
+   "title": "Wikipedia EN, History of Madrid",
+   "quote": "By the late 10th century, Majriṭ was an important borderland military stronghold … Although he made no official declaration, the seat of the court became the de facto capital … The population plummeted (reportedly reduced to a half) during the 5-year period … led to the confiscation of ecclesiastical properties and the subsequent demolition of churches, convents … meant the introduction of the first collective system of transportation in the city … Conquered by Christians in 1083 or 1085 … The primitive urban nucleus of Madrid (Majriṭ) was founded in the late 9th century (from 852 to 886) as a citadel erected on behalf of Muhammad I … Extending across roughly 8 ha … historiography debates whether if the event took place in 1083 … The town briefly hosted a medieval mint, manufacturing coins from 1467 to 1471 … the comunero rebels deposed the corregidor, named Antonio de Astudillo, by 17 June 1520 … Philip II (1527–1598), moved the court to Madrid in 1561 … approaching the 100,000 mark by the end of the 16th century … the 5-year period the capital was set in Valladolid (1601–1606) … massive riots erupted in March 1766 in Madrid … On 2 May 1808 (Spanish: Dos de Mayo), the Madrileños revolted against the French forces … On 12 August 1812, following the defeat of the French forces at Salamanca, English and Portuguese troops entered Madrid … The reforms enacted by Finance Minister Juan Álvarez Mendizábal in 1835–1836 led to the confiscation of ecclesiastical properties … The Canal de Isabel II was inaugurated on 24 June 1858 … The plan for the Ensanche de Madrid ('widening of Madrid') by Carlos María de Castro was passed through a royal decree issued on 19 July 1860 … The creation of the Salamanca–Sol–Pozas tram service in Madrid in 1871 … the works formally started in April 1910 with a ceremony led by King Alfonso XIII … In 1919 the Madrid Metro (known as the Ferrocarril Metropolitano by that time) inaugurated its first service, which went from Sol to the Cuatro Caminos area. … After the proclamation of the Second Republic on 14 April 1931 … On 20 July armed workers and loyal troops stormed the single focus of resistance, the Cuartel de La Montaña … Madrid, besieged from October 1936, saw a major offensive in its western suburbs in November of that year. … The city fell to the nationalists on 28 March 1939. … Madrid proper was bombed for the first time in the night of 27–28 August 1936 … the municipality greatly increased in size through the annexation of 13 surrounding municipalities … The population of the city peaked in 1975 … killing 191 people and injuring 1,800 … Glorious Revolution resulting in the deposition of Queen Isabella II started with a pronunciamiento in the bay of Cádiz in September 1868 … Napoleon forced both kings to abdicate on 5 May, handing the throne to his brother Joseph Bonaparte … After the war of independence Ferdinand VII returned to the throne (1814)"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/Walls_of_Madrid",
+   "title": "Wikipedia EN, Walls of Madrid",
+   "quote": "Umayyad Emir of Cordoba Muhammad I ordered the walls to be built between the years 860 and 880 … The Christian Walls of Madrid, also known as the Medieval Walls, were built between the 11th and 12th centuries … they were most likely constructed around 1438 … The Walls of Philip II were constructed by Philip II, in 1566, for fiscal and sanitary control … The Walls of Felipe IV were built around the city of Madrid between 1625 and 1868 … Ruins of the walls still stand along the Calle Mayor street, at number 83 … A long section exists under the Plaza de la Armería … The first of these, known from 1126, was the Arrabal of Saint Martin … the population increasing from 5,000 to 12,000 inhabitants from the mid-15th to early 16th century … the walls fell into disuse and were almost entirely demolished"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Royal_Alc%C3%A1zar_of_Madrid",
+   "title": "Wikipedia EN, Royal Alcázar of Madrid",
+   "quote": "This original fortress was erected by the Umayyad amir Muhammad I of Córdoba (852–886) between 860 and 880 … originally built in the second half of the ninth century by the Muslims"
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Umayyad_state_of_C%C3%B3rdoba",
+   "title": "Wikipedia EN, Umayyad state of Córdoba",
+   "quote": "The Emirate of Córdoba, and from 929, the Caliphate of Córdoba, was an Arab Islamic state ruled by the Umayyad dynasty from 756 to 1031 … From 756 it was ruled as an independent emirate until Abd al-Rahman III proclaimed himself as caliph in 929 … In 1031, after years of infighting, the caliphate collapsed and fractured into a number of independent Muslim taifa"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Taifa_of_Toledo",
+   "title": "Wikipedia EN, Taifa of Toledo",
+   "quote": "It emerged after 1018 upon the fracturing of the Caliphate of Córdoba … It lasted until the Christian conquest of Toledo in 1085 … and Madrid (to the Sierra de Guadarrama)"
+  },
+  "S6": {
+   "url": "https://en.wikipedia.org/wiki/Crown_of_Castile",
+   "title": "Wikipedia EN, Crown of Castile",
+   "quote": "The consequence was a dynastic union of the Crown of Castile and the Crown of Aragon in 1479 … From 1072 until 1157 under Alfonso VI (died 1109), Urraca (died 1126), and Alfonso VII"
+  },
+  "S7": {
+   "url": "https://es.wikipedia.org/wiki/Muralla_cristiana_de_Madrid",
+   "title": "Wikipedia ES, Muralla cristiana de Madrid",
+   "quote": "La muralla cristiana de Madrid protegía un recinto de algo más de 33 hectáreas … Tenía una longitud aproximada de 2200 metros … todas las caloñas del Concejo inviértanse en la obra de la muralla hasta que se termine … especialmente a partir del siglo , con la designación de la ciudad como capital de España"
+  },
+  "S8": {
+   "url": "https://es.wikipedia.org/wiki/Muralla_musulmana_de_Madrid",
+   "title": "Wikipedia ES, Muralla musulmana de Madrid",
+   "quote": "Su longitud total era de aproximadamente 980 metros y encerraba una superficie de unas cuatro hectáreas … Fue mandada levantar por el emir cordobés Muhammad I (852-886), en una fecha indeterminada comprendida entre los años 860 y 880 … de doze pies [casi tres metros y medio] en ancho"
+  },
+  "S9": {
+   "url": "https://es.wikipedia.org/wiki/Cerca_de_Felipe_IV",
+   "title": "Wikipedia ES, Cerca de Felipe IV",
+   "quote": "La cerca de Felipe IV o Real Cerca de Felipe IV rodeó la ciudad de Madrid entre 1625 y 1868 … La nueva cerca tenía unos trece kilómetros de longitud y abarcaba una superficie de quinientas hectáreas, de las que más de ciento cincuenta pertenecían al Real Sitio del Buen Retiro … En 1650 ya abarcaba la Montaña del Príncipe Pío, el Buen Retiro y la ermita de Atocha … se derribó en 1868, durante la Gloriosa"
+  },
+  "S10": {
+   "url": "https://es.wikipedia.org/wiki/Ensanche_de_Madrid",
+   "title": "Wikipedia ES, Ensanche de Madrid",
+   "quote": "El ensanche fue aprobado en 1860 y realizado a partir de 1871 … La denominación «Plan Castro» es en honor a Carlos María de Castro"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Royal_Palace_of_Madrid",
+   "title": "Wikipedia EN, Royal Palace of Madrid",
+   "quote": "Construction took place between 1738 and 1755 … The fire lasted for four days and completely destroyed the old alcázar, whose remaining walls were finally demolished in 1738 … Christmas Eve 1734"
+  },
+  "S12": {
+   "url": "https://es.wikipedia.org/wiki/Palacio_Real_de_Madrid",
+   "title": "Wikipedia ES, Palacio Real de Madrid",
+   "quote": "planteó una estructura de planta cuadrada, centrada por un gran patio también cuadrado … La construcción del nuevo palacio se inició en 1738"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Plaza_Mayor,_Madrid",
+   "title": "Wikipedia EN, Plaza Mayor, Madrid",
+   "quote": "However, construction did not begin until 1617, under Philip III … The Plaza was completed in 1619 … The first occurred in 1631 … fire occurred in 1790, destroying nearly a third of the square"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Puerta_del_Sol",
+   "title": "Wikipedia EN, Puerta del Sol",
+   "quote": "It serves as the kilometre zero from which all radial roads in Spain are measured"
+  },
+  "S15": {
+   "url": "https://es.wikipedia.org/wiki/Puerta_del_Sol",
+   "title": "Wikipedia ES, Puerta del Sol",
+   "quote": "Entre 1857 y 1862, Lucio del Valle, Juan de Ribera y José Morer llevan a cabo la reforma de la plaza … La Puerta del Sol fue en sus orígenes uno de los accesos de la cerca que rodeaba Madrid … Entre 2004 y 2009 se realizaron las obras de construcción de un intercambiador de transportes, inaugurado el 27 de junio de 2009"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Museo_del_Prado",
+   "title": "Wikipedia EN, Museo del Prado",
+   "quote": "was designed in 1785 by architect of the Enlightenment in Spain Juan de Villanueva on the orders of Charles III … opened to the public for the first time in November 1819"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/Parque_del_Buen_Retiro",
+   "title": "Wikipedia EN, Parque del Buen Retiro",
+   "quote": "The park belonged to the Spanish monarchy until 1868, when it became a public park following the Glorious Revolution … The Count-Duke of Olivares commissioned the park in the 1630s"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Almudena_Cathedral",
+   "title": "Wikipedia EN, Almudena Cathedral",
+   "quote": "Its construction began in 1883 and finished over a century later, when it was consecrated by Pope John Paul II in 1993"
+  },
+  "S19": {
+   "url": "https://es.wikipedia.org/wiki/Catedral_de_la_Almudena",
+   "title": "Wikipedia ES, Catedral de la Almudena",
+   "quote": "El día 4 de abril de 1883 el rey AlfonsoXII puso la primera piedra del nuevo edificio … abierta al culto en 1911 … Los trabajos quedaron prácticamente abandonados hasta 1950 … Fue consagrada el 15 de junio de 1993 … la fachada principal se encuentra frente al Palacio Real"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/Palacio_de_Cibeles",
+   "title": "Wikipedia EN, Palacio de Cibeles",
+   "quote": "The first stone of the building was laid in 1907 … The building was officially opened on 14 March 1919"
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Gran_V%C3%ADa,_Madrid",
+   "title": "Wikipedia EN, Gran Vía, Madrid",
+   "quote": "The first one was built between 1910 and 1917 … The second part of the project commenced in 1917 and concluded in 1921 … Construction of the third and last part of the road did not start until 1925 … The last part of the street was completed in 1929 … earning the project the name of 'an axe blow on the map'"
+  },
+  "S22": {
+   "url": "https://es.wikipedia.org/wiki/Gran_V%C3%ADa",
+   "title": "Wikipedia ES, Gran Vía",
+   "quote": "Las obras comenzaron por fin el 4 de abril de 1910 … El primer tramo, entre la calle de Alcalá y la de Montera se realizó entre 1910 y 1915 … El segundo tramo, «el Bulevar», entre la Red de San Luis y Callao, se realizó en los siguientes cuatro años, entre 1917 y 1922"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Metropolis_Building,_Madrid",
+   "title": "Wikipedia EN, Metropolis Building, Madrid",
+   "quote": "was designed in 1907 and inaugurated in 1911 … five homes had to be demolished between two streets: Calle de Alcalá and Calle del Caballero de Gracia"
+  },
+  "S24": {
+   "url": "https://en.wikipedia.org/wiki/Madrid_Atocha_railway_station",
+   "title": "Wikipedia EN, Madrid Atocha railway station",
+   "quote": "Madrid's first railway station was inaugurated on 9 February 1851 … reopened in 1892 … In 1992, the original building was taken out of service as a terminal"
+  },
+  "S25": {
+   "url": "https://en.wikipedia.org/wiki/Edificio_Espa%C3%B1a",
+   "title": "Wikipedia EN, Edificio España",
+   "quote": "Construction began in 1948 on a site forming the corner of Plaza de España and Calle de la Princesa … The building opened in 1953 as the Edificio España … It was the tallest building in Spain until it was surpassed by the nearby Torre de Madrid"
+  },
+  "S26": {
+   "url": "https://en.wikipedia.org/wiki/Torre_de_Madrid",
+   "title": "Wikipedia EN, Torre de Madrid",
+   "quote": "It measures 142 metres in height, has 36 floors and was constructed between 1954 and 1957 … The works were finished on October 15, 1957"
+  },
+  "S27": {
+   "url": "https://en.wikipedia.org/wiki/Cuatro_Torres_Business_Area",
+   "title": "Wikipedia EN, Cuatro Torres Business Area",
+   "quote": "The area contains the four tallest skyscrapers in Spain … with a height of 249 meters, is the tallest building in the country"
+  },
+  "S28": {
+   "url": "https://es.wikipedia.org/wiki/Cuatro_Torres_Business_Area",
+   "title": "Wikipedia ES, Cuatro Torres Business Area",
+   "quote": "La construcción de los cuatro edificios comenzó en 2004 … La Torre Emperador (entonces denominada Torre Espacio) se terminó a finales de 2007, la Torre de Cristal a principios de 2008, la Torre Cepsa a mediados de 2008 y la Torre PwC a finales de 2009"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/Torre_de_Cristal",
+   "title": "Wikipedia EN, Torre de Cristal",
+   "quote": "Construction began in 2004 and was completed on December 4, 2008"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/Torre_Emperador",
+   "title": "Wikipedia EN, Torre Emperador",
+   "quote": "The structure was topped out on 19 March 2007 … {{convert|230|m|ft|abbr=on}}"
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Torre_PwC",
+   "title": "Wikipedia EN, Torre PwC",
+   "quote": "installed at almost 236 meters of height"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Torre_Moeve",
+   "title": "Wikipedia EN, Torre Moeve",
+   "quote": "the second tallest building in Madrid and the second tallest in the Cuatro Torres Business Area after Torre de Cristal"
+  },
+  "S33": {
+   "url": "https://es.wikipedia.org/wiki/M-30",
+   "title": "Wikipedia ES, M-30",
+   "quote": "No obstante, la construcción de la M-30 no se iniciaría hasta 1970 … no fueron completados hasta 1974 … el soterramiento mediante túneles de la vía a su paso por la ribera del río Manzanares … Estas obras concluyeron, en distintas fases, entre los años 2010 y 2011"
+  },
+  "S34": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Madrid",
+   "title": "Wikipedia EN, Siege of Madrid",
+   "quote": "The city, besieged from October 1936, fell to the Nationalist armies on 28 March 1939 … The Battle of Madrid in November 1936 saw the most intense fighting in and around the city"
+  },
+  "S35": {
+   "url": "https://en.wikipedia.org/wiki/Bernab%C3%A9u_(stadium)",
+   "title": "Wikipedia EN, Bernabéu (stadium)",
+   "quote": "construction was symbolically initiated with a groundbreaking strike by Santiago Bernabéu … beginning in June 1945 … It has been the home stadium of Real Madrid since its completion in 1947"
+  },
+  "S36": {
+   "url": "https://en.wikipedia.org/wiki/Puerta_de_Alcal%C3%A1",
+   "title": "Wikipedia EN, Puerta de Alcalá",
+   "quote": "It was inaugurated in 1778 … to construct a monumental gate in the city wall through which an expanded road to the city of Alcalá was to pass"
+  },
+  "S37": {
+   "url": "https://en.wikipedia.org/wiki/Teatro_Real",
+   "title": "Wikipedia EN, Teatro Real",
+   "quote": "The groundbreaking of the Teatro Real was on 23 April 1818 … it was formally opened by his daughter Queen Isabella II on 19 November 1850 … finally reopened as an opera house on 11 October 1997 … opened in 1738 under the reign of King Philip V … The theatre was demolished in 1817"
+  },
+  "S38": {
+   "url": "https://en.wikipedia.org/wiki/Casa_de_Campo",
+   "title": "Wikipedia EN, Casa de Campo",
+   "quote": "was opened to the public in 1931 when it became a public park"
+  },
+  "S39": {
+   "url": "https://en.wikipedia.org/wiki/Madrid_Metro",
+   "title": "Wikipedia EN, Madrid Metro",
+   "quote": "The Madrid metro was inaugurated on 17 October 1919 by King Alfonso XIII"
+  },
+  "S40": {
+   "url": "https://en.wikipedia.org/wiki/Habsburg_Spain",
+   "title": "Wikipedia EN, Habsburg Spain",
+   "quote": "from 1516 to 1700 when it was ruled by kings from the House of Habsburg … led to the War of the Spanish Succession and the ascension of Philip V"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Restoration_(Spain)",
+   "title": "Wikipedia EN, Restoration (Spain)",
+   "quote": "It began on 29 December 1874"
+  },
+  "S42": {
+   "url": "https://en.wikipedia.org/wiki/Second_Spanish_Republic",
+   "title": "Wikipedia EN, Second Spanish Republic",
+   "quote": "The Republic was proclaimed on 14 April 1931"
+  },
+  "S43": {
+   "url": "https://en.wikipedia.org/wiki/Francoist_Spain",
+   "title": "Wikipedia EN, Francoist Spain",
+   "quote": "With the death of Franco on 20 November 1975, Juan Carlos became the King of Spain"
+  },
+  "S44": {
+   "url": "https://en.wikipedia.org/wiki/Spanish_transition_to_democracy",
+   "title": "Wikipedia EN, Spanish transition to democracy",
+   "quote": "approved by referendum in December 1978"
+  },
+  "S45": {
+   "url": "https://en.wikipedia.org/wiki/Spain_under_Joseph_Bonaparte",
+   "title": "Wikipedia EN, Spain under Joseph Bonaparte",
+   "quote": "Ferdinand VII entered Madrid as king"
+  },
+  "S46": {
+   "url": "https://es.wikipedia.org/wiki/Anexo:Demograf%C3%ADa_de_Madrid",
+   "title": "Wikipedia ES, Anexo:Demografía de Madrid",
+   "quote": "1842|157397|1857|281170|1860|298426|1877|400917|1887|472191|1897|510616|1900|540109|1910|556958|1920|728937|1930|863958|1940|1096466|1950|1527894|1960|2177123|1970|3120941|1981|3158818|1991|2909792|2001|2938723|2011|3198645|2021|3277451 … c1000 | 2000 | - | - | c1480 | 5000 | - | - | - align=right | c1560 | 20000 … 1590 | 100000 | - | - | - align=right | 1690 | 95000 | - | - | - align=right | 1714 | 109000 | - | - | - align=right | 1750 | 150000 | - | - | - align=right | 1787 | 167000 … | 1825 | 201000 … | 2024 | 3416771"
+  },
+  "S47": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Segovia",
+   "title": "Wikipedia ES, Puente de Segovia",
+   "quote": "Las obras, que contaron con un presupuesto de 200000 ducados, se extendieron entre 1582 y 1584"
+  },
+  "S48": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Toledo",
+   "title": "Wikipedia ES, Puente de Toledo",
+   "quote": "fue construido entre los años 1718 y 1732 por el arquitecto Pedro de Ribera … Estas comenzaron en 1719 y concluyeron en 1732"
+  },
+  "S49": {
+   "url": "https://en.wikipedia.org/wiki/Madrid",
+   "title": "Wikipedia EN, Madrid",
+   "quote": "It had a population of over 3.4 million in the city proper in 2025"
+  }
+ },
  "history": {
-  "zones": [],
-  "walls": [],
-  "gutting": [],
-  "lost": [],
-  "fires": [],
+  "zones": [
+   {
+    "name": "Mayrit: Muslim citadel and town",
+    "ring": [
+     [
+      40.41594,
+      -3.71556
+     ],
+     [
+      40.41725,
+      -3.7155
+     ],
+     [
+      40.41771,
+      -3.71467
+     ],
+     [
+      40.41766,
+      -3.71337
+     ],
+     [
+      40.41698,
+      -3.71284
+     ],
+     [
+      40.41616,
+      -3.71296
+     ],
+     [
+      40.41585,
+      -3.71384
+     ]
+    ],
+    "born": [
+     860,
+     880
+    ],
+    "seed": [
+     40.41806,
+     -3.71417
+    ],
+    "era_height": [
+     4,
+     7
+    ],
+    "src": [
+     "S3",
+     "S8",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] the citadel was raised between 860 and 880 (S3, S8) and covered about 4 ha / 980 m of wall (S8); S1 says roughly 8 ha counting the alcazar and the wider citadel. [Guessing] the ring is a HAND SKETCH (+-100 m) around the Alcazar/Almudena ridge scaled to 4 ha; houses of 4-7 m are a modelling choice."
+   },
+   {
+    "name": "Christian walled town",
+    "ring": [
+     [
+      40.41301,
+      -3.71673
+     ],
+     [
+      40.4159,
+      -3.71686
+     ],
+     [
+      40.41759,
+      -3.71504
+     ],
+     [
+      40.41764,
+      -3.7105
+     ],
+     [
+      40.41679,
+      -3.70849
+     ],
+     [
+      40.4147,
+      -3.7084
+     ],
+     [
+      40.41331,
+      -3.70908
+     ],
+     [
+      40.41291,
+      -3.7131
+     ]
+    ],
+    "born": [
+     1085,
+     1202
+    ],
+    "seed": [
+     40.41806,
+     -3.71417
+    ],
+    "era_height": [
+     5,
+     8
+    ],
+    "src": [
+     "S7",
+     "S2",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] wall of a bit over 33 ha and about 2,200 m (S7), begun after 1083/1085 and still unfinished in 1202 (S7). [Guessing] ring is a HAND SKETCH scaled to 33 ha; the 1085-1202 ramp from the Alcazar is a modelling choice, not a measured growth."
+   },
+   {
+    "name": "Medieval suburbs (arrabales) and the 15th-century wall",
+    "ring": [
+     [
+      40.4185,
+      -3.7165
+     ],
+     [
+      40.4202,
+      -3.71
+     ],
+     [
+      40.4188,
+      -3.7052
+     ],
+     [
+      40.418,
+      -3.703
+     ],
+     [
+      40.415,
+      -3.7015
+     ],
+     [
+      40.4128,
+      -3.7003
+     ],
+     [
+      40.4108,
+      -3.7048
+     ],
+     [
+      40.4115,
+      -3.709
+     ],
+     [
+      40.4123,
+      -3.713
+     ],
+     [
+      40.414,
+      -3.7168
+     ]
+    ],
+    "born": [
+     1126,
+     1520
+    ],
+    "seed": [
+     40.41694,
+     -3.70361
+    ],
+    "era_height": [
+     5,
+     9
+    ],
+    "src": [
+     "S2",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] the Arrabal of San Martin is known from 1126, the suburb wall is most likely c. 1438 and its southern part was extended around 1520, population 5,000 to 12,000 from the mid-15th to the early 16th century (S2). [Guessing] ring is a HAND SKETCH following the streets listed in S2; the 1126-1520 ramp from Puerta del Sol is a modelling choice."
+   },
+   {
+    "name": "Habsburg Madrid inside Philip IV's wall (western part)",
+    "ring": [
+     [
+      40.415,
+      -3.717
+     ],
+     [
+      40.4118,
+      -3.7215
+     ],
+     [
+      40.4092,
+      -3.7185
+     ],
+     [
+      40.4075,
+      -3.7114
+     ],
+     [
+      40.404,
+      -3.7075
+     ],
+     [
+      40.4028,
+      -3.7015
+     ],
+     [
+      40.4035,
+      -3.697
+     ],
+     [
+      40.405,
+      -3.6925
+     ],
+     [
+      40.413,
+      -3.691
+     ],
+     [
+      40.42,
+      -3.6905
+     ],
+     [
+      40.4235,
+      -3.693
+     ],
+     [
+      40.4285,
+      -3.6975
+     ],
+     [
+      40.4292,
+      -3.7035
+     ],
+     [
+      40.4272,
+      -3.711
+     ],
+     [
+      40.424,
+      -3.7165
+     ],
+     [
+      40.4195,
+      -3.7195
+     ],
+     [
+      40.416,
+      -3.719
+     ]
+    ],
+    "born": [
+     1561,
+     1700
+    ],
+    "seed": [
+     40.41694,
+     -3.70361
+    ],
+    "era_height": [
+     7,
+     12
+    ],
+    "src": [
+     "S9",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] the court settles in 1561 and the city nears 100,000 by 1600 (S1); the wall of 1625 encloses 500 ha (S9). [Guessing] ring is a HAND SKETCH of the built-up west and south of the wall (the Retiro and the east are left to the default growth front); the 1561-1700 ramp from Sol is a modelling choice."
+   },
+   {
+    "name": "Ensanche (Castro plan)",
+    "ring": [
+     [
+      40.43,
+      -3.723
+     ],
+     [
+      40.447,
+      -3.71
+     ],
+     [
+      40.447,
+      -3.69
+     ],
+     [
+      40.44,
+      -3.676
+     ],
+     [
+      40.429,
+      -3.669
+     ],
+     [
+      40.413,
+      -3.667
+     ],
+     [
+      40.399,
+      -3.672
+     ],
+     [
+      40.396,
+      -3.69
+     ],
+     [
+      40.3965,
+      -3.706
+     ],
+     [
+      40.402,
+      -3.719
+     ],
+     [
+      40.409,
+      -3.724
+     ]
+    ],
+    "born": [
+     1871,
+     1900
+    ],
+    "seed": null,
+    "era_height": [
+     14,
+     20
+    ],
+    "src": [
+     "S10",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] plan approved in 1860 and carried out from 1871 (S10). [Guessing] ring is a HAND SKETCH of the ring around the 1868-demolished wall, NOT the plan's legal boundary; born 1871-1900 and 14-20 m heights are modelling choices. Cost to be measured by QA before any GO."
+   }
+  ],
+  "walls": [
+   {
+    "name": "Muslim wall of Mayrit",
+    "ring": [
+     [
+      40.41594,
+      -3.71556
+     ],
+     [
+      40.41725,
+      -3.7155
+     ],
+     [
+      40.41771,
+      -3.71467
+     ],
+     [
+      40.41766,
+      -3.71337
+     ],
+     [
+      40.41698,
+      -3.71284
+     ],
+     [
+      40.41616,
+      -3.71296
+     ],
+     [
+      40.41585,
+      -3.71384
+     ]
+    ],
+    "built": [
+     860,
+     880
+    ],
+    "demolished": [
+     1561,
+     1620
+    ],
+    "height": 9,
+    "width": 3.5,
+    "towers_every_m": 40,
+    "keep": [
+     [
+      40.4151,
+      -3.7155,
+      25
+     ],
+     [
+      40.4166,
+      -3.7137,
+      40
+     ]
+    ],
+    "src": [
+     "S2",
+     "S8"
+    ],
+    "conf": "low",
+    "note": "[Certain] ordered between 860 and 880, about 980 m long, 12 feet (about 3.5 m) thick (S2, S8); remains at Calle Mayor 83 and under the Plaza de la Armeria (S2, kept as circles, positions sketched). [Guessing] height 9 m; demolition 1561-1620 is a modelling choice (S2 only says the Christian walls fell into disuse after 1561)."
+   },
+   {
+    "name": "Christian wall of Madrid",
+    "ring": [
+     [
+      40.41301,
+      -3.71673
+     ],
+     [
+      40.4159,
+      -3.71686
+     ],
+     [
+      40.41759,
+      -3.71504
+     ],
+     [
+      40.41764,
+      -3.7105
+     ],
+     [
+      40.41679,
+      -3.70849
+     ],
+     [
+      40.4147,
+      -3.7084
+     ],
+     [
+      40.41331,
+      -3.70908
+     ],
+     [
+      40.41291,
+      -3.7131
+     ]
+    ],
+    "built": [
+     1090,
+     1202
+    ],
+    "demolished": [
+     1561,
+     1620
+    ],
+    "height": 8,
+    "width": 3,
+    "towers_every_m": 50,
+    "keep": [],
+    "src": [
+     "S7",
+     "S2"
+    ],
+    "conf": "low",
+    "note": "[Certain] built after the conquest, unfinished in 1202, ~2,200 m (S7); fell into disuse and was almost entirely demolished after 1561 (S2). [Guessing] 1090 start, the 1561-1620 demolition window, height 8 m, tower spacing and ring shape (HAND SKETCH)."
+   },
+   {
+    "name": "Philip IV's wall (Cerca)",
+    "ring": [
+     [
+      40.415,
+      -3.717
+     ],
+     [
+      40.4118,
+      -3.7215
+     ],
+     [
+      40.4092,
+      -3.7185
+     ],
+     [
+      40.4075,
+      -3.7114
+     ],
+     [
+      40.404,
+      -3.7075
+     ],
+     [
+      40.4028,
+      -3.7015
+     ],
+     [
+      40.4035,
+      -3.697
+     ],
+     [
+      40.405,
+      -3.6925
+     ],
+     [
+      40.4058,
+      -3.683
+     ],
+     [
+      40.407,
+      -3.674
+     ],
+     [
+      40.415,
+      -3.6742
+     ],
+     [
+      40.4205,
+      -3.6738
+     ],
+     [
+      40.42,
+      -3.682
+     ],
+     [
+      40.42,
+      -3.6888
+     ],
+     [
+      40.4251,
+      -3.689
+     ],
+     [
+      40.428,
+      -3.6912
+     ],
+     [
+      40.4295,
+      -3.699
+     ],
+     [
+      40.429,
+      -3.7035
+     ],
+     [
+      40.4284,
+      -3.7125
+     ],
+     [
+      40.4255,
+      -3.7195
+     ],
+     [
+      40.4215,
+      -3.7215
+     ],
+     [
+      40.4175,
+      -3.721
+     ]
+    ],
+    "built": [
+     1625,
+     1650
+    ],
+    "demolished": [
+     1868,
+     1869
+    ],
+    "height": 4,
+    "width": 1.5,
+    "towers_every_m": 0,
+    "keep": [
+     [
+      40.42,
+      -3.68889,
+      45
+     ]
+    ],
+    "src": [
+     "S9",
+     "S2",
+     "S36"
+    ],
+    "conf": "medium",
+    "note": "[Certain] ordered in 1625, brick, mortar and earth, ~13 km, 500 ha, already covering the Retiro, Atocha and Principe Pio by 1650, torn down in 1868 (S9); the Puerta de Alcala stands in the city wall (S36, kept). [Guessing] ring is a HAND SKETCH following the streets listed in S2; 1650 end of construction and 4 m height are modelling choices."
+   }
+  ],
+  "gutting": [
+   {
+    "name": "Gran Vía, section 1 (Alcalá to Red de San Luis)",
+    "ring": [
+     [
+      40.41904,
+      -3.69913
+     ],
+     [
+      40.41993,
+      -3.70122
+     ],
+     [
+      40.42027,
+      -3.70098
+     ],
+     [
+      40.41936,
+      -3.69887
+     ],
+     [
+      40.41846,
+      -3.69716
+     ],
+     [
+      40.41814,
+      -3.69744
+     ]
+    ],
+    "from": 860,
+    "until": 1917.0,
+    "src": [
+     "S21",
+     "S22"
+    ],
+    "conf": "low",
+    "note": "[Certain] first section built 1910-1917 (S21; S22 says 1910-1915 plus official completion in 1917). [Guessing] strip 42 m wide along a hand-drawn centreline."
+   },
+   {
+    "name": "Gran Vía, section 2 (Red de San Luis to Callao)",
+    "ring": [
+     [
+      40.42011,
+      -3.70353
+     ],
+     [
+      40.42031,
+      -3.70573
+     ],
+     [
+      40.42069,
+      -3.70567
+     ],
+     [
+      40.42049,
+      -3.70347
+     ],
+     [
+      40.42029,
+      -3.70107
+     ],
+     [
+      40.41991,
+      -3.70113
+     ]
+    ],
+    "from": 860,
+    "until": 1921.9,
+    "src": [
+     "S21",
+     "S22"
+    ],
+    "conf": "low",
+    "note": "[Certain] second section 1917-1921 (S21) or 1917-1922 (S22); the later year is used. [Guessing] strip 42 m wide, hand-drawn centreline."
+   },
+   {
+    "name": "Gran Vía, section 3 (Callao to Plaza de España)",
+    "ring": [
+     [
+      40.42133,
+      -3.70812
+     ],
+     [
+      40.42234,
+      -3.71043
+     ],
+     [
+      40.42324,
+      -3.71233
+     ],
+     [
+      40.42356,
+      -3.71207
+     ],
+     [
+      40.42266,
+      -3.71017
+     ],
+     [
+      40.42167,
+      -3.70788
+     ],
+     [
+      40.42067,
+      -3.70558
+     ],
+     [
+      40.42033,
+      -3.70582
+     ]
+    ],
+    "from": 860,
+    "until": 1929.0,
+    "src": [
+     "S21"
+    ],
+    "conf": "low",
+    "note": "[Certain] third section started 1925 and the street was completed in 1929 (S21). [Guessing] strip 42 m wide, hand-drawn centreline."
+   }
+  ],
+  "lost": [
+   {
+    "name": "Teatro de los Caños del Peral",
+    "ring": [
+     [
+      40.41798,
+      -3.7101
+     ],
+     [
+      40.41848,
+      -3.7101
+     ],
+     [
+      40.41848,
+      -3.71098
+     ],
+     [
+      40.41798,
+      -3.71098
+     ]
+    ],
+    "from": 1738,
+    "to": 1817,
+    "h": 14,
+    "src": [
+     "S37"
+    ],
+    "conf": "low",
+    "note": "[Certain] theatre opened 1738 and demolished in 1817 to clear the site of the Teatro Real (S37). [Guessing] block 75 x 55 m, height 14 m."
+   }
+  ],
+  "fires": [
+   {
+    "name": "Plaza Mayor fire of 1631",
+    "ring": [
+     [
+      40.41489,
+      -3.70656
+     ],
+     [
+      40.41583,
+      -3.70656
+     ],
+     [
+      40.41583,
+      -3.70822
+     ],
+     [
+      40.41489,
+      -3.70822
+     ]
+    ],
+    "y": 1631.0,
+    "y1": 1631.05,
+    "destroy": false,
+    "flames": 30,
+    "smoke": 6,
+    "src": [
+     "S13"
+    ],
+    "conf": "low",
+    "note": "[Certain] the first of several fires was in 1631 (S13). [Guessing] month and duration unknown; ring is a 140 x 105 m box on the plaza; no building is destroyed."
+   },
+   {
+    "name": "Plaza Mayor fire of 1790",
+    "ring": [
+     [
+      40.41489,
+      -3.70656
+     ],
+     [
+      40.41583,
+      -3.70656
+     ],
+     [
+      40.41583,
+      -3.70822
+     ],
+     [
+      40.41489,
+      -3.70822
+     ]
+    ],
+    "y": 1790.0,
+    "y1": 1790.05,
+    "destroy": false,
+    "flames": 40,
+    "smoke": 8,
+    "src": [
+     "S13"
+    ],
+    "conf": "low",
+    "note": "[Certain] nearly a third of the square was destroyed in 1790 (S13). [Guessing] month and duration unknown; no building is destroyed in the model."
+   },
+   {
+    "name": "Alcázar fire",
+    "ring": [
+     [
+      40.41747,
+      -3.71317
+     ],
+     [
+      40.41865,
+      -3.71317
+     ],
+     [
+      40.41865,
+      -3.71517
+     ],
+     [
+      40.41747,
+      -3.71517
+     ]
+    ],
+    "y": 1734.98,
+    "y1": 1735.02,
+    "destroy": false,
+    "flames": 50,
+    "smoke": 10,
+    "src": [
+     "S11"
+    ],
+    "conf": "medium",
+    "note": "[Certain] Christmas Eve 1734, the fire lasted four days and destroyed the old alcazar (S11). [Guessing] ring is a 170 x 130 m box; the alcazar is removed by its landmark demolition, not by the fire."
+   },
+   {
+    "name": "Siege of Madrid western front",
+    "ring": [
+     [
+      40.42683,
+      -3.71869
+     ],
+     [
+      40.43317,
+      -3.71869
+     ],
+     [
+      40.43317,
+      -3.72931
+     ],
+     [
+      40.42683,
+      -3.72931
+     ]
+    ],
+    "y": 1936.84,
+    "y1": 1936.95,
+    "destroy": false,
+    "flames": 25,
+    "smoke": 8,
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "[Certain] Madrid besieged from October 1936 and a major offensive in the western suburbs in November (S1, S34). [Guessing] the ring is a 900 x 700 m sketch near the Parque del Oeste, not a mapped front line; no building is destroyed."
+   }
+  ],
   "water": [],
   "bridges": []
  },
- "landmarks": [],
+ "landmarks": [
+  {
+   "name": "Alcázar of Madrid",
+   "kind": "castle",
+   "at": [
+    40.41806,
+    -3.71417
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 80,
+    "w": 65,
+    "h": 14,
+    "ang": 0,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 860,
+     "y1": 880
+    }
+   ],
+   "label": true,
+   "src": [
+    "S3",
+    "S8"
+   ],
+   "conf": "low",
+   "note": "[Certain] fortress built 860-880 by Muhammad I (S3); the Alcazar burned on Christmas Eve 1734 and its remaining walls were demolished in 1738 (S11). [Guessing] a generic walled castle, 80 x 65 m, because the real Alcazar grew irregularly from 1537 and 1636; position = Wikipedia coordinates of the site, no footprint in the data.",
+   "demolished": [
+    1734.98,
+    1738.0
+   ]
+  },
+  {
+   "name": "Royal Palace",
+   "kind": "palace_courtyard",
+   "at": [
+    40.41806,
+    -3.71417
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 140,
+    "w": 140,
+    "wing_w": 26,
+    "h": 24,
+    "c": "limestone",
+    "fountain": false
+   },
+   "phases": [
+    {
+     "y": 1738.0,
+     "y1": 1755.0
+    }
+   ],
+   "label": true,
+   "src": [
+    "S11",
+    "S12"
+   ],
+   "conf": "medium",
+   "note": "[Certain] built 1738-1755 on the site of the Alcazar (S11), square plan around a great square courtyard (S12). [Guessing] 140 x 140 m and 24 m are approximate; POSITION FLAGGED: no footprint within 40 m in buildings.json, so it is a preset at the Wikipedia coordinates, not on real data."
+  },
+  {
+   "name": "Museo del Prado",
+   "kind": "generic_footprint",
+   "at": [
+    40.41382,
+    -3.69222
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 17,
+    "roof": "hip",
+    "c": "cream"
+   },
+   "phases": [
+    {
+     "y": 1785.0,
+     "y1": 1819.85
+    }
+   ],
+   "label": true,
+   "src": [
+    "S16"
+   ],
+   "conf": "medium",
+   "note": "[Certain] designed in 1785 by Juan de Villanueva, opened in November 1819 (S16). [Guessing] building start taken as the design year 1785; height 17 m, hip roof and colour are approximations; footprint from the cadastre (9,773 m2)."
+  },
+  {
+   "name": "Almudena Cathedral",
+   "kind": "cathedral",
+   "at": [
+    40.41569,
+    -3.71436
+   ],
+   "footprint": "auto",
+   "params": {
+    "nave_h": 30,
+    "aisle_h": 18,
+    "facade_towers": 2,
+    "crossing": "dome",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1883.26,
+     "y1": 1911.0,
+     "groups": [
+      "found"
+     ]
+    },
+    {
+     "y": 1950.0,
+     "y1": 1993.45,
+     "groups": [
+      "apse",
+      "transept",
+      "nave",
+      "roof",
+      "crossing",
+      "facade",
+      "towers",
+      "spire"
+     ]
+    }
+   ],
+   "label": true,
+   "src": [
+    "S19",
+    "S18"
+   ],
+   "conf": "medium",
+   "note": "[Certain] first stone 4 April 1883, crypt open in 1911, works practically abandoned until 1950, consecrated 15 June 1993 (S19); main facade faces the Royal Palace (S19). [Guessing] heights and the facade orientation (default axis, not verified in a render); footprint from the cadastre (8,303 m2)."
+  },
+  {
+   "name": "Teatro Real",
+   "kind": "generic_footprint",
+   "at": [
+    40.41823,
+    -3.71054
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 26,
+    "roof": "hip",
+    "c": "cream"
+   },
+   "phases": [
+    {
+     "y": 1818.31,
+     "y1": 1850.88
+    }
+   ],
+   "label": true,
+   "src": [
+    "S37"
+   ],
+   "conf": "medium",
+   "note": "[Certain] groundbreaking 23 April 1818, opened 19 November 1850 (S37). [Guessing] height and roof are approximations; footprint from the cadastre (5,938 m2)."
+  },
+  {
+   "name": "Cibeles Palace",
+   "kind": "palace_courtyard",
+   "at": [
+    40.41877,
+    -3.69183
+   ],
+   "footprint": "auto",
+   "params": {
+    "wing_w": 24,
+    "h": 30,
+    "corner_towers": true,
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1907.0,
+     "y1": 1919.2
+    }
+   ],
+   "label": true,
+   "src": [
+    "S20"
+   ],
+   "conf": "medium",
+   "note": "[Certain] first stone 1907, opened 14 March 1919 (S20). [Guessing] heights and wing width; footprint from the cadastre (11,768 m2)."
+  },
+  {
+   "name": "Metropolis Building",
+   "kind": "generic_footprint",
+   "at": [
+    40.41818,
+    -3.69687
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30,
+    "roof": "dome",
+    "roof_h": 10,
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 1907.0,
+     "y1": 1911.5
+    }
+   ],
+   "label": true,
+   "src": [
+    "S23"
+   ],
+   "conf": "medium",
+   "note": "[Certain] designed in 1907 and inaugurated in 1911 (S23). [Guessing] 1911.5 as the opening time within the year; height 30 m and the dome are approximations; footprint from the cadastre (1,273 m2)."
+  },
+  {
+   "name": "Atocha Station",
+   "kind": "station",
+   "at": [
+    40.40608,
+    -3.6905
+   ],
+   "footprint": "auto",
+   "params": {
+    "c": "brick"
+   },
+   "phases": [
+    {
+     "y": 1850.5,
+     "y1": 1851.11
+    }
+   ],
+   "label": true,
+   "src": [
+    "S24"
+   ],
+   "conf": "low",
+   "note": "[Certain] Madrid's first station opened 9 February 1851; rebuilt after a fire and reopened in 1892; original building taken out of service as a terminal in 1992 (S24). [Guessing] one phase only: the 1892 rebuild and the 1992 conversion are not modelled; start 1850.5 is a modelling choice; footprint from the cadastre (11,840 m2, dated 1992 there)."
+  },
+  {
+   "name": "Edificio España",
+   "kind": "skyscraper",
+   "at": [
+    40.42412,
+    -3.71095
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 117,
+    "podium_h": 30
+   },
+   "phases": [
+    {
+     "y": 1948.0,
+     "y1": 1953.8
+    }
+   ],
+   "label": true,
+   "src": [
+    "S25"
+   ],
+   "conf": "medium",
+   "note": "[Certain] construction began 1948, opened in 1953 (S25). [Likely] height 117 m (Wikipedia infobox, not quoted in S25); setbacks default; the cadastre footprint (4,712 m2) sits ~85 m from the Wikipedia point."
+  },
+  {
+   "name": "Torre de Madrid",
+   "kind": "skyscraper",
+   "at": [
+    40.42447,
+    -3.71238
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 142,
+    "podium_h": 20
+   },
+   "phases": [
+    {
+     "y": 1954.0,
+     "y1": 1957.79
+    }
+   ],
+   "label": true,
+   "src": [
+    "S26"
+   ],
+   "conf": "medium",
+   "note": "[Certain] 142 m, 36 floors, built 1954-1957, finished 15 October 1957 (S26). [Guessing] podium and setbacks default; footprint from the cadastre (2,780 m2)."
+  },
+  {
+   "name": "Cuatro Torres: Torre de Cristal",
+   "kind": "skyscraper",
+   "at": [
+    40.47821,
+    -3.68751
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 249,
+    "podium_h": 10,
+    "crown": "flat"
+   },
+   "phases": [
+    {
+     "y": 2004.0,
+     "y1": 2008.93
+    }
+   ],
+   "label": true,
+   "src": [
+    "S29",
+    "S27"
+   ],
+   "conf": "medium",
+   "note": "[Certain] 249 m, begun 2004, completed 4 December 2008 (S29, S27). Footprint from the cadastre (2,023 m2)."
+  },
+  {
+   "name": "Cuatro Torres: Torre Emperador",
+   "kind": "skyscraper",
+   "at": [
+    40.4791,
+    -3.68682
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 230,
+    "podium_h": 10,
+    "crown": "flat"
+   },
+   "phases": [
+    {
+     "y": 2004.0,
+     "y1": 2007.22
+    }
+   ],
+   "label": true,
+   "src": [
+    "S30",
+    "S28"
+   ],
+   "conf": "medium",
+   "note": "[Certain] topped out 19 March 2007, 230 m in the Wikipedia infobox (S30); construction began 2004 (S28). [Guessing] Wikipedia's Cuatro Torres page lists a different figure for Torre Espacio (224.5 m); 230 m used. Footprint from the cadastre (1,779 m2)."
+  },
+  {
+   "name": "Cuatro Torres: Torre Cepsa",
+   "kind": "skyscraper",
+   "at": [
+    40.47572,
+    -3.68775
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 248,
+    "podium_h": 10,
+    "crown": "flat"
+   },
+   "phases": [
+    {
+     "y": 2004.0,
+     "y1": 2008.5
+    }
+   ],
+   "label": true,
+   "src": [
+    "S28",
+    "S32"
+   ],
+   "conf": "medium",
+   "note": "[Certain] second tallest of the four, finished mid-2008 (S28, S32); height 248 m is the Wikipedia infobox value. Footprint from the cadastre (1,869 m2)."
+  },
+  {
+   "name": "Cuatro Torres: Torre PwC",
+   "kind": "skyscraper",
+   "at": [
+    40.47667,
+    -3.68778
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 38,
+    "w": 38,
+    "h": 236,
+    "podium_h": 10,
+    "crown": "flat"
+   },
+   "phases": [
+    {
+     "y": 2004.0,
+     "y1": 2009.9
+    }
+   ],
+   "label": true,
+   "src": [
+    "S28",
+    "S31"
+   ],
+   "conf": "medium",
+   "note": "[Certain] finished at the end of 2009 (S28), about 236 m (S31). [Guessing] POSITION FLAGGED: the cadastre footprint near the Wikipedia point is only 224 m2, so a 38 x 38 m preset is used and the small cadastre piece stays."
+  },
+  {
+   "name": "Santiago Bernabéu Stadium",
+   "kind": "stadium",
+   "at": [
+    40.45298,
+    -3.68808
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1945.45,
+     "y1": 1947.95
+    }
+   ],
+   "label": true,
+   "src": [
+    "S35"
+   ],
+   "conf": "medium",
+   "note": "[Certain] groundbreaking 27 October 1944, construction from June 1945, completed 1947 (S35). [Guessing] 1947.95 as the end of the year; stadium preset with default seating and roof (the 2020s rebuild is not modelled); footprint from the cadastre (44,745 m2, dated 2007 there)."
+  },
+  {
+   "name": "Puente de Segovia",
+   "kind": "bridge_arches",
+   "footprint": "none",
+   "params": {
+    "w": 12,
+    "deck_z": 8
+   },
+   "phases": [
+    {
+     "y": 1582.0,
+     "y1": 1584.0
+    }
+   ],
+   "label": true,
+   "src": [
+    "S47"
+   ],
+   "conf": "low",
+   "note": "[Certain] built 1582-1584 (S47). [Guessing] POSITION FLAGGED: line is centred on the water band of the DEM (about lon -3.7223), +-100 m; width and deck height are approximations.",
+   "line": [
+    [
+     40.4125,
+     -3.7232
+    ],
+    [
+     40.4125,
+     -3.7214
+    ]
+   ]
+  },
+  {
+   "name": "Puente de Toledo",
+   "kind": "bridge_arches",
+   "footprint": "none",
+   "params": {
+    "w": 14,
+    "deck_z": 8
+   },
+   "phases": [
+    {
+     "y": 1719.0,
+     "y1": 1732.0
+    }
+   ],
+   "label": true,
+   "src": [
+    "S48"
+   ],
+   "conf": "low",
+   "note": "[Certain] built 1719-1732 by Pedro de Ribera (S48). [Guessing] POSITION FLAGGED: line is centred on the DEM water band (about lon -3.7213), +-100 m.",
+   "line": [
+    [
+     40.4036,
+     -3.7222
+    ],
+    [
+     40.4036,
+     -3.7203
+    ]
+   ]
+  }
+ ],
  "qa": {
   "accept": []
  },
@@ -40,9 +2056,295 @@
   "pacing": "story",
   "open": {
    "year": 2026,
-   "rewind_to": 1480
+   "rewind_to": 860
   },
-  "soste": [],
+  "soste": [
+   {
+    "y0": 860.0,
+    "y1": 880.0,
+    "dur": 7.0,
+    "caption": "Emir Muhammad I founds Mayrit (860)",
+    "target": "Alcázar of Madrid",
+    "shot": "medium",
+    "fx": "hammer",
+    "weight": 7,
+    "src": [
+     "S3",
+     "S8"
+    ],
+    "conf": "medium",
+    "note": "Founding date is a window, 860-880 (S3, S8): 860 is its start."
+   },
+   {
+    "y0": 1085.0,
+    "y1": 1090.0,
+    "dur": 6.0,
+    "caption": "Madrid passes to Castile (1085)",
+    "target": "area:[40.4152,-3.7118,380]",
+    "shot": "wide",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S1",
+     "S5"
+    ],
+    "conf": "medium",
+    "note": "Historians debate 1083 or 1085 (S1); target is a hand-set area on the Christian town."
+   },
+   {
+    "y0": 1561.0,
+    "y1": 1565.0,
+    "dur": 7.0,
+    "caption": "Philip II moves the court to Madrid (1561)",
+    "target": "Alcázar of Madrid",
+    "shot": "medium",
+    "fx": "crowd",
+    "weight": 7,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1617.0,
+    "y1": 1620.0,
+    "dur": 6.0,
+    "caption": "Plaza Mayor is completed (1619)",
+    "target": "area:[40.41536,-3.70739,140]",
+    "shot": "close",
+    "fx": "ding",
+    "weight": 5,
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1625.0,
+    "y1": 1632.0,
+    "dur": 6.0,
+    "caption": "Philip IV rings the city with a wall (1625)",
+    "target": "area:[40.4165,-3.7030,1500]",
+    "shot": "wide",
+    "fx": "hammer",
+    "weight": 4,
+    "src": [
+     "S9"
+    ],
+    "conf": "medium",
+    "note": "Hover area is hand-set around the sketched wall."
+   },
+   {
+    "y0": 1734.9,
+    "y1": 1735.1,
+    "dur": 5.0,
+    "caption": "The Alcázar burns (1734)",
+    "target": "fire:Alcázar fire",
+    "shot": "medium",
+    "fx": "fire",
+    "weight": 6,
+    "src": [
+     "S11"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1750.0,
+    "y1": 1756.0,
+    "dur": 8.0,
+    "caption": "The Royal Palace is finished (1755)",
+    "target": "Royal Palace",
+    "shot": "medium",
+    "fx": "bell",
+    "weight": "max",
+    "src": [
+     "S11",
+     "S12"
+    ],
+    "conf": "high",
+    "note": "Palace is a preset at a flagged position, see landmark note."
+   },
+   {
+    "y0": 1817.0,
+    "y1": 1820.0,
+    "dur": 6.0,
+    "caption": "The Prado opens (1819)",
+    "target": "Museo del Prado",
+    "shot": "medium",
+    "fx": "ding",
+    "weight": 4,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1858.0,
+    "y1": 1862.5,
+    "dur": 6.0,
+    "caption": "Puerta del Sol takes its modern shape (1862)",
+    "target": "area:[40.41694,-3.70361,160]",
+    "shot": "medium",
+    "fx": "crowd",
+    "weight": 4,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1868.7,
+    "y1": 1870.0,
+    "dur": 6.0,
+    "caption": "The Retiro becomes a public park (1868)",
+    "target": "area:[40.4150,-3.6839,650]",
+    "shot": "wide",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S17",
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1871.0,
+    "y1": 1880.0,
+    "dur": 7.0,
+    "caption": "Castro's Ensanche grid takes shape (1871)",
+    "target": "area:[40.4300,-3.6850,1400]",
+    "shot": "wide",
+    "fx": "hammer",
+    "weight": 5,
+    "src": [
+     "S10",
+     "S1"
+    ],
+    "conf": "medium",
+    "note": "Hover area is hand-set; the plan was approved in 1860 and carried out from 1871 (S10)."
+   },
+   {
+    "y0": 1910.2,
+    "y1": 1916.9,
+    "dur": 8.0,
+    "caption": "The Gran Vía cuts through the old city (1910)",
+    "target": "area:[40.4195,-3.7010,420]",
+    "shot": "medium",
+    "fx": "hammer",
+    "weight": 7,
+    "src": [
+     "S21",
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1917.2,
+    "y1": 1919.5,
+    "dur": 6.0,
+    "caption": "Cibeles Palace opens (1919)",
+    "target": "Cibeles Palace",
+    "shot": "medium",
+    "fx": "bell",
+    "weight": 4,
+    "src": [
+     "S20"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1936.8,
+    "y1": 1939.3,
+    "dur": 9.0,
+    "caption": "Madrid under siege (1936)",
+    "target": "fire:Siege of Madrid western front",
+    "shot": "wide",
+    "fx": "battle",
+    "weight": 8,
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "medium",
+    "note": "Hover area is the sketched western front (see fire note), not a mapped line."
+   },
+   {
+    "y0": 1946.0,
+    "y1": 1948.0,
+    "dur": 5.0,
+    "caption": "The Bernabéu stadium opens (1947)",
+    "target": "Santiago Bernabéu Stadium",
+    "shot": "medium",
+    "fx": "crowd",
+    "weight": 4,
+    "src": [
+     "S35"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1953.5,
+    "y1": 1957.9,
+    "dur": 6.0,
+    "caption": "The Torre de Madrid tops Spain's skyline (1957)",
+    "target": "Torre de Madrid",
+    "shot": "medium",
+    "fx": "whoosh",
+    "weight": 4,
+    "src": [
+     "S26",
+     "S25"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1970.0,
+    "y1": 1974.9,
+    "dur": 6.0,
+    "caption": "The M-30 ring road is built (1970)",
+    "target": "area:[40.4035,-3.7200,900]",
+    "shot": "wide",
+    "fx": "whoosh",
+    "weight": 4,
+    "src": [
+     "S33"
+    ],
+    "conf": "medium",
+    "note": "Hover area is hand-set on the Manzanares stretch of the M-30."
+   },
+   {
+    "y0": 1991.5,
+    "y1": 1993.9,
+    "dur": 6.0,
+    "caption": "Almudena Cathedral is consecrated (1993)",
+    "target": "Almudena Cathedral",
+    "shot": "medium",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S18",
+     "S19"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 2006.8,
+    "y1": 2009.9,
+    "dur": 8.0,
+    "caption": "Four towers redraw the skyline (2007)",
+    "target": "Cuatro Torres",
+    "shot": "wide",
+    "fx": "whoosh",
+    "weight": 7,
+    "src": [
+     "S27",
+     "S28",
+     "S29",
+     "S30"
+    ],
+    "conf": "high"
+   }
+  ],
   "rmin": 1.0,
   "rmax": 8.0,
   "drone": {
@@ -57,113 +2359,880 @@
  "montaggio": {
   "style": "mattia",
   "open": [
-   "MADRID TODAY"
+   "MADRID TODAY",
+   "3,416,771 people",
+   "1,166 YEARS",
+   "Open data, reconstruction before 1900"
   ],
   "title": [
    "MADRID",
-   "1480 TO NOW"
+   "860 TO NOW"
   ],
   "end": [
-   "MADRID · 546 YEARS",
+   "MADRID · 1,166 YEARS",
    "WHICH CITY NEXT?"
   ],
   "label_years": true,
+  "events": [],
   "cards": [
    {
+    "y": 860.0,
+    "title": "Mayrit rises on the ridge",
+    "lines": [
+     "Emir Muhammad I of Córdoba orders a walled citadel above the Manzanares, sometime between 860 and 880."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S3",
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 929.0,
+    "title": "The Caliphate of Córdoba",
+    "lines": [
+     "Abd al-Rahman III takes the title of caliph in 929; by the late 10th century Mayrit is a frontier stronghold."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S4",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1031.0,
+    "title": "The caliphate breaks apart",
+    "lines": [
+     "In 1031 it fractures into independent taifa kingdoms; Madrid lies within the Taifa of Toledo at its greatest extent."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S4",
+     "S5"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1085.0,
+    "title": "Madrid passes to Castile",
+    "lines": [
+     "The town goes to Christian rule with the conquest of Toledo; historians debate 1083 or 1085."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1",
+     "S5"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1126.0,
+    "title": "A suburb beyond the wall",
+    "lines": [
+     "The Arrabal of San Martín, known from 1126, is the first suburb outside the old walls."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1202.0,
+    "title": "A wall still unfinished",
+    "lines": [
+     "The Fuero of 1202 still orders the council's fines spent on the wall until it is finished."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S7"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1438.0,
+    "title": "A wall for the suburbs",
+    "lines": [
+     "Most likely around 1438, a second wall encloses the eastern suburbs; its exact course is uncertain."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1467.0,
+    "title": "A royal mint",
+    "lines": [
+     "The town strikes its own coins from 1467 to 1471."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1480.0,
-    "title": "A Castilian town",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1480",
-    "conf": "low"
+    "title": "A town of 5,000",
+    "lines": [
+     "About 5,000 people live in Madrid around 1480."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S46"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1520.46,
+    "title": "The Comuneros rise",
+    "lines": [
+     "Rebels depose the royal corregidor by 17 June 1520."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    },
    {
     "y": 1561.0,
-    "title": "Capital of Spain",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1561",
-    "conf": "low"
+    "title": "The court settles in Madrid",
+    "lines": [
+     "Philip II moves the court; with no official declaration, Madrid becomes the de facto capital."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1566.0,
+    "title": "A wall for taxes and health",
+    "lines": [
+     "Philip II's wall of 1566 controls goods and guards against disease."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1590.0,
+    "title": "Nearly 100,000 people",
+    "lines": [
+     "From some 20,000 in 1560, the new capital approaches 100,000 by 1590."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S46",
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1601.0,
+    "title": "The court leaves for Valladolid",
+    "lines": [
+     "The capital sits in Valladolid from 1601 to 1606, and Madrid's population reportedly halves."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1619.0,
+    "title": "Plaza Mayor is finished",
+    "lines": [
+     "Juan Gómez de Mora's arcaded square is completed in 1619."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
    },
    {
     "y": 1625.0,
-    "title": "The last wall",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1625",
-    "conf": "low"
+    "title": "Philip IV's wall",
+    "lines": [
+     "A brick-and-earth wall of about 13 km encloses 500 hectares, over 150 of them the royal Retiro."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1631.0,
+    "title": "Fire in the Plaza Mayor",
+    "lines": [
+     "The first of several fires hits the new square in 1631."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1633.0,
+    "title": "The Buen Retiro",
+    "lines": [
+     "The Count-Duke of Olivares commissions a royal park and palace in the 1630s."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1700.0,
-    "title": "Bourbon Madrid",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1700",
-    "conf": "low"
+    "title": "The Bourbons arrive",
+    "lines": [
+     "Habsburg rule ends in 1700; the succession war brings Philip V to the throne."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S40"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1800.0,
-    "title": "War and revolution",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1800",
-    "conf": "low"
+    "y": 1734.98,
+    "title": "The Alcázar burns",
+    "lines": [
+     "A Christmas Eve fire destroys the old royal alcázar; it burns for four days."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S11"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1860.0,
-    "title": "The Ensanche",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1860",
-    "conf": "low"
+    "y": 1738.0,
+    "title": "A new palace",
+    "lines": [
+     "Work begins in 1738 on a new Royal Palace, on the alcázar's site."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S11",
+     "S12"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1755.0,
+    "title": "The Royal Palace is done",
+    "lines": [
+     "Finished in 1755: a square plan around a great square courtyard."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S11",
+     "S12"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1766.2,
+    "title": "The Esquilache riots",
+    "lines": [
+     "Street lamps, taxes and a ban on traditional capes set off riots in March 1766."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1778.0,
+    "title": "The Puerta de Alcalá",
+    "lines": [
+     "Charles III's monumental gate, inaugurated in 1778, replaces a smaller one in the city wall."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1785.0,
+    "title": "A building by Villanueva",
+    "lines": [
+     "Juan de Villanueva designs the building that will become the Prado."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1790.0,
+    "title": "The Plaza Mayor burns again",
+    "lines": [
+     "A fire in 1790 destroys nearly a third of the square."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S13"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1808.34,
+    "title": "The Second of May",
+    "lines": [
+     "On 2 May 1808, Madrileños revolt against the French troops."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1812.62,
+    "title": "The French are driven out",
+    "lines": [
+     "On 12 August 1812, English and Portuguese troops enter Madrid after the French defeat at Salamanca."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1819.85,
+    "title": "The Prado opens",
+    "lines": [
+     "The royal museum opens to the public in November 1819."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1835.5,
+    "title": "Convents are confiscated",
+    "lines": [
+     "Church property is seized in 1835-1836; convents are demolished and streets widened."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1850.88,
+    "title": "The Teatro Real opens",
+    "lines": [
+     "Isabella II opens the opera house on 19 November 1850."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S37"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1851.11,
+    "title": "The first railway station",
+    "lines": [
+     "Madrid's first station opens at Atocha on 9 February 1851."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1858.48,
+    "title": "Water from the Lozoya",
+    "lines": [
+     "The Canal de Isabel II is inaugurated on 24 June 1858."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1860.55,
+    "title": "The Ensanche plan",
+    "lines": [
+     "A royal decree of 19 July 1860 approves Carlos María de Castro's expansion plan."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1",
+     "S10"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1862.0,
+    "title": "Puerta del Sol rebuilt",
+    "lines": [
+     "The square takes its modern shape in works from 1857 to 1862."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1868.74,
+    "title": "Walls down, Retiro open",
+    "lines": [
+     "After the Glorious Revolution of September 1868, Philip IV's wall is torn down and the Retiro becomes a public park."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1",
+     "S9",
+     "S17"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1871.0,
+    "title": "The first trams",
+    "lines": [
+     "The Salamanca–Sol–Pozas line brings Madrid's first collective transport in 1871."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1883.26,
+    "title": "Almudena's first stone",
+    "lines": [
+     "King Alfonso XII lays the first stone of the future cathedral on 4 April 1883."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S19"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1892.0,
+    "title": "Atocha is rebuilt",
+    "lines": [
+     "After a fire, the railway company rebuilds the station; it reopens in 1892."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
    },
    {
     "y": 1900.0,
-    "title": "Gran Vía and the Metro",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1900",
-    "conf": "low"
+    "title": "Over half a million",
+    "lines": [
+     "The census counts 540,109 people in 1900."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S46"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1931.0,
-    "title": "A city of a million",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1931",
-    "conf": "low"
+    "y": 1910.26,
+    "title": "The Gran Vía begins",
+    "lines": [
+     "King Alfonso XIII opens the works in April 1910, 'an axe blow on the map'."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1",
+     "S21"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1960.0,
-    "title": "The boom years",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1960",
-    "conf": "low"
+    "y": 1911.5,
+    "title": "The Metropolis Building",
+    "lines": [
+     "Inaugurated in 1911 on Alcalá Street, after five homes were demolished."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S23"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1919.2,
+    "title": "Cibeles Palace opens",
+    "lines": [
+     "The new post and telegraph palace opens on 14 March 1919."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S20"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1919.79,
+    "title": "The first Metro line",
+    "lines": [
+     "On 17 October 1919, Alfonso XIII opens the Metro from Sol to Cuatro Caminos, eight stops."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S39"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1929.5,
+    "title": "The Gran Vía is complete",
+    "lines": [
+     "The last section is finished in 1929."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S21"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1931.29,
+    "title": "The Second Republic",
+    "lines": [
+     "Proclaimed on 14 April 1931; that year the Casa de Campo opens to the public."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S42",
+     "S38"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1936.55,
+    "title": "The coup fails in Madrid",
+    "lines": [
+     "Workers and loyal troops storm the Cuartel de la Montaña on 20 July 1936."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1936.66,
+    "title": "The first air raid",
+    "lines": [
+     "On 27–28 August 1936, Madrid is bombed from the air for the first time."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1936.78,
+    "title": "The siege begins",
+    "lines": [
+     "Besieged from October 1936, Madrid sees its fiercest fighting that November."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1939.24,
+    "title": "Madrid falls",
+    "lines": [
+     "The city falls to the Nationalists on 28 March 1939."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S34",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1947.9,
+    "title": "The Bernabéu opens",
+    "lines": [
+     "Real Madrid's stadium is completed in 1947."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S35"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1950.0,
+    "title": "A much bigger city",
+    "lines": [
+     "Between 1948 and 1954, Madrid annexes 13 surrounding municipalities."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1953.8,
+    "title": "Edificio España",
+    "lines": [
+     "The tallest building in Spain opens on the Plaza de España in 1953."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S25"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1957.79,
+    "title": "The Torre de Madrid",
+    "lines": [
+     "At 142 m and 36 floors, it is finished on 15 October 1957."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S26"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1970.0,
+    "title": "The M-30 ring road",
+    "lines": [
+     "Building starts in 1970; the first two sections are completed in 1974."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S33"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1975.89,
+    "title": "Franco dies",
+    "lines": [
+     "He dies on 20 November 1975; the city's population peaks the same year."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S43",
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1978.93,
+    "title": "A new constitution",
+    "lines": [
+     "Spain approves its democratic constitution by referendum in December 1978."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S44"
+    ],
+    "conf": "high"
    },
    {
     "y": 1992.0,
-    "title": "Global capital",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "1992",
-    "conf": "low"
+    "title": "Atocha's new terminal",
+    "lines": [
+     "The old Atocha building leaves service as a terminal in 1992."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
    },
    {
-    "y": 2010.0,
-    "title": "Cuatro Torres",
-    "lines": [],
-    "hold_s": 5,
-    "legacy_date": "2010",
-    "conf": "low"
+    "y": 1993.45,
+    "title": "Almudena is consecrated",
+    "lines": [
+     "Pope John Paul II consecrates the cathedral on 15 June 1993."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S19",
+     "S18"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1997.78,
+    "title": "The Teatro Real reborn",
+    "lines": [
+     "It reopens as an opera house on 11 October 1997."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S37"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2004.19,
+    "title": "March 11, 2004",
+    "lines": [
+     "Train bombings kill 191 people and injure 1,800."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2007.22,
+    "title": "The towers rise",
+    "lines": [
+     "Torre Emperador tops out on 19 March 2007, at 230 m."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S30"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2008.93,
+    "title": "Spain's tallest tower",
+    "lines": [
+     "Torre de Cristal, 249 m, is completed on 4 December 2008."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S29",
+     "S27"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2009.49,
+    "title": "A hub under Sol",
+    "lines": [
+     "A commuter-rail interchange under the Puerta del Sol opens on 27 June 2009."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2011.0,
+    "title": "The M-30 goes underground",
+    "lines": [
+     "Tunnels bury the M-30 along the Manzanares; works end in 2010-2011 and the surface becomes a park."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S33"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2024.0,
+    "title": "A city of 3.4 million",
+    "lines": [
+     "The municipal register counts 3,416,771 people."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S46",
+     "S49"
+    ],
+    "conf": "high"
    }
   ],
-  "events": [],
+  "chapters": [
+   {
+    "y": 860,
+    "title": "The Emir's Fortress"
+   },
+   {
+    "y": 1085,
+    "title": "Castilian Town"
+   },
+   {
+    "y": 1561,
+    "title": "Capital of the Empire"
+   },
+   {
+    "y": 1700,
+    "title": "Bourbon Madrid"
+   },
+   {
+    "y": 1808,
+    "title": "War and Revolution"
+   },
+   {
+    "y": 1860,
+    "title": "Ensanche and Gran Vía"
+   },
+   {
+    "y": 1931,
+    "title": "Republic, Siege and Dictatorship"
+   },
+   {
+    "y": 1975,
+    "title": "Democratic Capital"
+   }
+  ],
   "cta": "Which city should grow next? Tell me in the comments",
   "sources_card": {
    "seconds": 8,
    "max": 14,
-   "no_ai": "NO AI: every frame is rendered from open data"
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings: Dirección General del Catastro (INSPIRE Buildings, Spanish cadastre)",
+    "Roads, water, parks: © OpenStreetMap contributors (ODbL)",
+    "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+    "History: Wikipedia EN/ES (History of Madrid, Walls of Madrid, Royal Alcázar, Royal Palace and others)",
+    "Population: INE census figures (via Wikipedia ES), historical estimates",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
   }
  },
  "legacy": {
@@ -177,130 +3246,16 @@
    "present": [
     "buildings.json",
     "land.json",
-    "parks.json"
-   ],
-   "missing_for_kit": [
+    "parks.json",
     "roads.json",
     "dem.npz"
    ],
-   "complete": false
+   "missing_for_kit": [],
+   "complete": true
   }
  },
- "_legacy_gaps": [
-  {
-   "path": "city",
-   "field": "country",
-   "reason": "non nei file legacy (TODO)"
-  },
-  {
-   "path": "city",
-   "field": "style_preset",
-   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
-  },
-  {
-   "path": "city",
-   "field": "eras",
-   "reason": "nessuna periodizzazione nel legacy"
-  },
-  {
-   "path": "city",
-   "field": "polities",
-   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
-  },
-  {
-   "path": "city",
-   "field": "data_reliable_from",
-   "reason": "non nel legacy"
-  },
-  {
-   "path": "regia",
-   "field": "SOSTE/CAPS",
-   "reason": "regia_madrid.py assente o non analizzabile: soste da schedule, cartelli da eventi"
-  },
-  {
-   "path": "landmarks",
-   "field": "landmarks",
-   "reason": "montaggio/landmarks_madrid.json e data_madrid_src/landmarks.json[labels] assenti"
-  },
-  {
-   "path": "regia",
-   "field": "soste",
-   "reason": "nessuna sosta nello schedule legacy"
-  },
-  {
-   "path": "regia.soste",
-   "field": "weight",
-   "reason": "0 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
-  },
-  {
-   "path": "regia.soste",
-   "field": "fx",
-   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards_src",
-   "reason": "11 cartelli SOLO titolo+anno dai capitoli di metadata_madrid.md (nessun testo, nessuna fonte): sono capitoli di video, non schede storiche; da riscrivere dallo storico"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards",
-   "reason": "11 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 34"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "hold_s",
-   "reason": "11 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "target/shot",
-   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
-  },
-  {
-   "path": "montaggio",
-   "field": "chapters",
-   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
-  },
-  {
-   "path": "city",
-   "field": "population",
-   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
-  },
-  {
-   "path": "sources",
-   "field": "sources",
-   "reason": "nessuna scheda di validazione per madrid: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
-  },
-  {
-   "path": "history.bridges",
-   "field": "bridges",
-   "reason": "nessun bridges_madrid.py leggibile (vedi anche bridges.json di radice, non per citta')"
-  },
-  {
-   "path": "history.zones",
-   "field": "zones",
-   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
-  },
-  {
-   "path": "history",
-   "field": "walls/gutting/lost/fires",
-   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
-  },
-  {
-   "path": "montaggio",
-   "field": "open",
-   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
-  },
-  {
-   "path": "metadata",
-   "field": "chapters/description/tags",
-   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
-  },
-  {
-   "path": "data",
-   "field": "data_src",
-   "reason": "data_madrid_src incompleto per kit data/pack: mancano roads.json, dem.npz"
-  }
+ "_notes": [
+  "Filled by yb-historian + yb-modeler from fetched es/en Wikipedia text; every source quote was machine-checked as a substring of the fetched text (markup removed; the S46 table is matched on its cell text).",
+  "Everything marked [Guessing] is a hand-set modelling choice (rings, heights, ramps, hover areas); conf low/medium says so. Bridges positions come from the DEM water band, not from a map."
  ]
 }
