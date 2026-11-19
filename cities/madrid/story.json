@@ -1,0 +1,306 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "madrid",
+  "name": "Madrid",
+  "country": "TODO",
+  "lat0": 40.4169,
+  "lon0": -3.7035,
+  "radius_m": 12000,
+  "start_year": 1480,
+  "end_year": 2026,
+  "title": "EVOLUTION OF MADRID | 3D City Timelapse (1480–NOW) | No AI**",
+  "data_source": "custom",
+  "data_dir": "data_madrid",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": []
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": false,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1480
+  },
+  "soste": [],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "MADRID TODAY"
+  ],
+  "title": [
+   "MADRID",
+   "1480 TO NOW"
+  ],
+  "end": [
+   "MADRID · 546 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1480.0,
+    "title": "A Castilian town",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1480",
+    "conf": "low"
+   },
+   {
+    "y": 1561.0,
+    "title": "Capital of Spain",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1561",
+    "conf": "low"
+   },
+   {
+    "y": 1625.0,
+    "title": "The last wall",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1625",
+    "conf": "low"
+   },
+   {
+    "y": 1700.0,
+    "title": "Bourbon Madrid",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1700",
+    "conf": "low"
+   },
+   {
+    "y": 1800.0,
+    "title": "War and revolution",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1800",
+    "conf": "low"
+   },
+   {
+    "y": 1860.0,
+    "title": "The Ensanche",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1860",
+    "conf": "low"
+   },
+   {
+    "y": 1900.0,
+    "title": "Gran Vía and the Metro",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1900",
+    "conf": "low"
+   },
+   {
+    "y": 1931.0,
+    "title": "A city of a million",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1931",
+    "conf": "low"
+   },
+   {
+    "y": 1960.0,
+    "title": "The boom years",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1960",
+    "conf": "low"
+   },
+   {
+    "y": 1992.0,
+    "title": "Global capital",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "1992",
+    "conf": "low"
+   },
+   {
+    "y": 2010.0,
+    "title": "Cuatro Torres",
+    "lines": [],
+    "hold_s": 5,
+    "legacy_date": "2010",
+    "conf": "low"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_madrid.md",
+  "translations_file": null,
+  "translation_languages": [],
+  "video_chapter_lines": 12,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_madrid_src",
+   "present": [
+    "buildings.json",
+    "land.json",
+    "parks.json"
+   ],
+   "missing_for_kit": [
+    "roads.json",
+    "dem.npz"
+   ],
+   "complete": false
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "regia",
+   "field": "SOSTE/CAPS",
+   "reason": "regia_madrid.py assente o non analizzabile: soste da schedule, cartelli da eventi"
+  },
+  {
+   "path": "landmarks",
+   "field": "landmarks",
+   "reason": "montaggio/landmarks_madrid.json e data_madrid_src/landmarks.json[labels] assenti"
+  },
+  {
+   "path": "regia",
+   "field": "soste",
+   "reason": "nessuna sosta nello schedule legacy"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "0 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards_src",
+   "reason": "11 cartelli SOLO titolo+anno dai capitoli di metadata_madrid.md (nessun testo, nessuna fonte): sono capitoli di video, non schede storiche; da riscrivere dallo storico"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "11 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 34"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "hold_s",
+   "reason": "11 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "city",
+   "field": "population",
+   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "nessuna scheda di validazione per madrid: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "nessun bridges_madrid.py leggibile (vedi anche bridges.json di radice, non per citta')"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  },
+  {
+   "path": "data",
+   "field": "data_src",
+   "reason": "data_madrid_src incompleto per kit data/pack: mancano roads.json, dem.npz"
+  }
+ ]
+}

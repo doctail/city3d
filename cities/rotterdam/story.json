@@ -1,0 +1,680 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "rotterdam",
+  "name": "Rotterdam",
+  "country": "TODO",
+  "lat0": 51.9221,
+  "lon0": 4.4795,
+  "radius_m": 9000,
+  "start_year": 1340,
+  "end_year": 2026,
+  "title": "EVOLUTION OF ROTTERDAM | 3D City Timelapse (1340–NOW) | No AI**",
+  "data_source": "custom",
+  "data_dir": "data_rotterdam",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": []
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [
+  {
+   "name": "Laurenskerk",
+   "kind": "TODO",
+   "at": [
+    51.921476,
+    4.484948
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 62.2
+   },
+   "phases": [
+    {
+     "y": 1640
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1640 (primo anno della scheda), altezza 62.2 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Witte Huis",
+   "kind": "TODO",
+   "at": [
+    51.918816,
+    4.491706
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 42.9
+   },
+   "phases": [
+    {
+     "y": 1897
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1897 (primo anno della scheda), altezza 42.9 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "City Hall",
+   "kind": "TODO",
+   "at": [
+    51.922797,
+    4.479529
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 69.9
+   },
+   "phases": [
+    {
+     "y": 1920
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1920 (primo anno della scheda), altezza 69.9 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Euromast",
+   "kind": "TODO",
+   "at": [
+    51.905445,
+    4.466639
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 107.6
+   },
+   "phases": [
+    {
+     "y": 1961
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1961 (primo anno della scheda), altezza 107.6 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Cube Houses",
+   "kind": "TODO",
+   "at": [
+    51.920508,
+    4.489507
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 25.0
+   },
+   "phases": [
+    {
+     "y": 1984
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1984 (primo anno della scheda), altezza 25.0 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Markthal",
+   "kind": "TODO",
+   "at": [
+    51.92011,
+    4.486958
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 41.8
+   },
+   "phases": [
+    {
+     "y": 2014
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2014 (primo anno della scheda), altezza 41.8 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "De Rotterdam",
+   "kind": "TODO",
+   "at": [
+    51.906893,
+    4.488633
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 151.5
+   },
+   "phases": [
+    {
+     "y": 2013
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2013 (primo anno della scheda), altezza 151.5 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Maastoren",
+   "kind": "TODO",
+   "at": [
+    51.908702,
+    4.493381
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 165.2
+   },
+   "phases": [
+    {
+     "y": 2011
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2011 (primo anno della scheda), altezza 165.2 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Zalmhaven",
+   "kind": "TODO",
+   "at": [
+    51.910222,
+    4.480796
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 203.0
+   },
+   "phases": [
+    {
+     "y": 2022
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 2022 (primo anno della scheda), altezza 203.0 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Delftse Poort",
+   "kind": "TODO",
+   "at": [
+    51.924353,
+    4.472159
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 150.0
+   },
+   "phases": [
+    {
+     "y": 1991
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1991 (primo anno della scheda), altezza 150.0 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  },
+  {
+   "name": "Van Nelle Factory",
+   "kind": "TODO",
+   "at": [
+    51.923149,
+    4.433385
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 37.3
+   },
+   "phases": [
+    {
+     "y": 1926
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_rotterdam.py; anno = 1926 (primo anno della scheda), altezza 37.3 m; posizione da montaggio/landmarks_<slug>.json",
+   "conf": "low"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": false,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1340
+  },
+  "soste": [],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "ROTTERDAM TODAY"
+  ],
+  "title": [
+   "ROTTERDAM",
+   "1340 TO NOW"
+  ],
+  "end": [
+   "ROTTERDAM · 686 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1340,
+    "title": "Rotte + dam",
+    "lines": [
+     "A dam on a small river called the Rotte. Guess where the name comes from."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1340",
+    "conf": "low"
+   },
+   {
+    "y": 1450,
+    "title": "Spanish soldiers",
+    "lines": [
+     "Troops let in through the gate kill townspeople. Rotterdam joins the Dutch Revolt."
+    ],
+    "hold_s": 5.3,
+    "legacy_date": "1572",
+    "conf": "low"
+   },
+   {
+    "y": 1590,
+    "title": "The Water Town",
+    "lines": [
+     "New harbors are dug inside the walls. Ships moor at the merchants' front doors."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1600",
+    "conf": "low"
+   },
+   {
+    "y": 1590,
+    "title": "Golden Age",
+    "lines": [
+     "Rotterdam helps run the Dutch East India Company, the giant of its age."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1630",
+    "conf": "low"
+   },
+   {
+    "y": 1650,
+    "title": "Two quiet centuries",
+    "lines": [
+     "For 200 years the city barely moves past its medieval walls."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1700",
+    "labels": [
+     "Laurenskerk"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1850,
+    "title": "Out of the walls",
+    "lines": [
+     "The Water Project: canals, parks and new streets finally break out."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1855",
+    "conf": "low"
+   },
+   {
+    "y": 1870,
+    "title": "A new way to the sea",
+    "lines": [
+     "A straight canal to the North Sea opens. Bigger ships can reach the city."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1872",
+    "conf": "low"
+   },
+   {
+    "y": 1870,
+    "title": "The south bank",
+    "lines": [
+     "A bridge and a railway reach the far side of the river. Docks follow fast."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1878",
+    "conf": "low"
+   },
+   {
+    "y": 1890,
+    "title": "Europe's first skyscraper?",
+    "lines": [
+     "The White House: 43 meters, ten floors. Rotterdam still claims the title."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1898",
+    "labels": [
+     "Witte Huis"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1905,
+    "title": "Waalhaven",
+    "lines": [
+     "Once the largest dug harbor basin in the world."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1910",
+    "conf": "low"
+   },
+   {
+    "y": 1920,
+    "title": "City Hall",
+    "lines": [
+     "It opens on the Coolsingel. Remember it: it survives what is coming."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1920",
+    "labels": [
+     "City Hall"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1920,
+    "title": "Van Nelle Factory",
+    "lines": [
+     "Coffee, tea and tobacco in a glass factory. Today a World Heritage Site."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1926",
+    "labels": [
+     "Van Nelle Factory"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1930,
+    "title": "620,000 people",
+    "lines": [
+     "Rotterdam on the eve of war: crowded, busy, built over six centuries."
+    ],
+    "hold_s": 6.0,
+    "legacy_date": "1935",
+    "conf": "low"
+   },
+   {
+    "y": 1940.0,
+    "title": "The center is gone",
+    "lines": [
+     "German bombers strike for 15 minutes. Around 850 people are killed and 80,000 lose their homes."
+    ],
+    "hold_s": 11.9,
+    "legacy_date": "14 MAY 1940",
+    "sober": true,
+    "conf": "low"
+   },
+   {
+    "y": 1946,
+    "title": "Start from scratch",
+    "lines": [
+     "The ruins are cleared. Rotterdam chooses not to rebuild the old city."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1946",
+    "conf": "low"
+   },
+   {
+    "y": 1946,
+    "title": "The Lijnbaan",
+    "lines": [
+     "One of Europe's first car-free shopping streets."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1953",
+    "conf": "low"
+   },
+   {
+    "y": 1957,
+    "title": "Euromast",
+    "lines": [
+     "Built for a garden show. It still has the best view in town."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1960",
+    "labels": [
+     "Euromast"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1957,
+    "title": "Underground",
+    "lines": [
+     "The first metro line in the Netherlands opens here."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1968",
+    "conf": "low"
+   },
+   {
+    "y": 1975,
+    "title": "Cube Houses",
+    "lines": [
+     "Piet Blom tilts houses 45 degrees. Residents learn to live with slanted walls."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1984",
+    "labels": [
+     "Cube Houses"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1975,
+    "title": "Delftse Poort",
+    "lines": [
+     "150 meters of glass: for years the tallest building in the Netherlands."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1991",
+    "labels": [
+     "Delftse Poort"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1975,
+    "title": "Manhattan on the Maas",
+    "lines": [
+     "The old docks of the south bank turn into a forest of towers."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1998",
+    "labels": [
+     "Maastoren"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 2000,
+    "title": "De Rotterdam",
+    "lines": [
+     "Three towers, one 'vertical city': the largest building in the Netherlands."
+    ],
+    "hold_s": 5.2,
+    "legacy_date": "2013",
+    "labels": [
+     "De Rotterdam"
+    ],
+    "conf": "low"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_rotterdam.md",
+  "translations_file": null,
+  "translation_languages": [],
+  "video_chapter_lines": 16,
+  "old_thumbnail_files": [
+   "copertina_rotterdam.jpg"
+  ],
+  "data_package": {
+   "dir": "data_rotterdam_src",
+   "present": [
+    "buildings.json",
+    "harbours.json",
+    "land.json",
+    "parks.json"
+   ],
+   "missing_for_kit": [
+    "roads.json",
+    "dem.npz"
+   ],
+   "complete": false
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "landmarks",
+   "field": "kind",
+   "reason": "11 monumenti con geometria bespoke in landmarks_rotterdam.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
+  },
+  {
+   "path": "regia",
+   "field": "soste",
+   "reason": "nessuna sosta nello schedule legacy"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "0 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards_src",
+   "reason": "schede lette da montaggio/rotterdam_overlay.jsx (CARDS); anno = anno della curva schedule al t_in, `legacy_date` = data scritta nella scheda"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "22 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 23"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "city",
+   "field": "population",
+   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "nessuna scheda di validazione per rotterdam: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "nessun bridges_rotterdam.py leggibile (vedi anche bridges.json di radice, non per citta')"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  },
+  {
+   "path": "data",
+   "field": "data_src",
+   "reason": "data_rotterdam_src incompleto per kit data/pack: mancano roads.json, dem.npz"
+  }
+ ]
+}

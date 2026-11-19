@@ -37,7 +37,29 @@ def _json(f):
     t = _read(f)
     try: return json.loads(t) if t else None
     except ValueError: return None
-def _norm(s): return re.sub(r'[^a-z0-9]+', ' ', unicodedata.normalize('NFKD', str(s)).encode('ascii', 'ignore').decode().lower()).strip()
+def _norm(s):
+    s = str(s).translate(str.maketrans({'ø': 'o', 'Ø': 'O', 'æ': 'ae', 'Æ': 'AE', 'ß': 'ss', 'đ': 'd'}))
+    return re.sub(r'[^a-z0-9]+', ' ', unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()).strip()
+def _gz_json(f):
+    for ff in (f, f + '.gz'):
+        try:
+            op = gzip.open if ff.endswith('.gz') else open
+            with op(P(ff), 'rt', encoding='utf-8') as fh: return json.load(fh)
+        except (OSError, ValueError): pass
+    return None
+def _js_rows(slug, name):
+    """Righe `[...]` di `export const NAME = [ ... ];` in montaggio/<slug>_overlay.jsx (schede/ganci del vecchio overlay Remotion)."""
+    t = _read(f'montaggio/{slug}_overlay.jsx')
+    if not t: return []
+    m = re.search(r'(?:export\s+)?const\s+' + name + r'\s*=\s*\[\n(.*?)\n\];', t, re.S)
+    if not m: return []
+    rows = []
+    for ln in m.group(1).splitlines():
+        ln = ln.strip().rstrip(',')
+        if not ln.startswith('['): continue
+        try: rows.append(ast.literal_eval(re.sub(r'\bfalse\b', 'False', re.sub(r'\btrue\b', 'True', ln))))
+        except Exception: pass
+    return rows
 def _yfmt(y): return f'{int(-y) if y < 0 else int(y)} BC' if y < 0 else str(int(y))
 
 
@@ -178,6 +200,11 @@ def run(slug, force=False):
     # ---- moduli legacy letti via AST
     base_env = _Env({'round': round, 'abs': abs, 'min': min, 'max': max, 'math': math})
     lm_json = _json(f'montaggio/landmarks_{slug}.json') or {}
+    lm_pack = _gz_json(f'data_{slug}_src/landmarks.json') or {}
+    lm_src = 'montaggio/landmarks_<slug>.json'
+    if not lm_json and lm_pack.get('labels'):   # fallback: etichette del pacchetto dati (name, x, y, z=altezza, from=anno)
+        lm_json = {l['name']: [l['x'], l['y'], l['z'], l['from']] for l in lm_pack['labels'] if all(k in l for k in ('name', 'x', 'y', 'z', 'from'))}
+        lm_src = f'data_{slug}_src/landmarks.json[labels]'
     def _lab(n):   # nome esatto, poi per contenimento (lmc('Maestranza') -> 'Maestranza Bullring')
         if n in lm_json: return tuple(lm_json[n][:2])
         for k, v in lm_json.items():
@@ -212,11 +239,11 @@ def run(slug, force=False):
               'phases': [{'y': yr}], 'label': True}
         if ids: lm['src'] = ids
         landmarks.append(lm); lm_xy[nm] = (x, y)
-        lm['_legacy'] = f'geometria bespoke in landmarks_{slug}.py; anno = {yr} (primo anno della scheda), altezza {h} m'
+        lm['_legacy'] = f'geometria bespoke in landmarks_{slug}.py; anno = {yr} (primo anno della scheda), altezza {h} m; posizione da {lm_src}'
     if landmarks:
         G.add('landmarks', 'kind', f'{len(landmarks)} monumenti con geometria bespoke in landmarks_{slug}.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno')
     else:
-        G.add('landmarks', 'landmarks', f'montaggio/landmarks_{slug}.json assente')
+        G.add('landmarks', 'landmarks', f'montaggio/landmarks_{slug}.json e data_{slug}_src/landmarks.json[labels] assenti')
 
     # ---- soste: anni/didascalie dallo schedule; bersaglio/id/durata dalla regia
     soste, rsost = [], []
@@ -234,6 +261,11 @@ def run(slug, force=False):
                     rsost.append((tup, _ids(rl, node), node))
                 break
     by_cap = {t[3]: (t, ids, nd) for t, ids, nd in rsost if len(t) > 3}
+    fire_pts = {}
+    for n in (rt.body if rt else []):
+        if isinstance(n, ast.Assign) and getattr(n.targets[0], 'id', '') == 'FIRE_PTS':
+            try: fire_pts = {k: tuple(v) for k, v in ast.literal_eval(n.value).items()}
+            except Exception: pass
 
     def tgt_of(raw, node=None):
         if isinstance(raw, tuple) and raw and isinstance(raw[0], str): raw = raw[0]   # ('Nome monumento', dist, incl, az0, az1, lens)
@@ -246,6 +278,15 @@ def run(slug, force=False):
             for k, (v, _) in H.items():
                 if _norm(k) == _norm(raw) and isinstance(v, tuple) and len(v) == 2:
                     la, lo = Pj.inv(*v); return f'area:[{la:.5f},{lo:.5f},500]', f"punto '{k}' di hist_{slug}.py"
+            fp = fire_pts.get(raw)
+            if fp:
+                la, lo = Pj.inv(*fp); return f'area:[{la:.5f},{lo:.5f},500]', f"punto FIRE_PTS '{raw}' di regia_{slug}.py"
+            ps = [p for p in lm_pack.get('parts', []) if str(p.get('name', '')).startswith(raw) and 'cx' in p]
+            if ps and lm_xy:   # centro (mediana) delle parti del monumento, come lmc() legacy -> etichetta piu' vicina entro 250 m
+                cx, cy = sorted(p['cx'] for p in ps)[len(ps) // 2], sorted(p['cy'] for p in ps)[len(ps) // 2]
+                nm, d = min(((n, math.hypot(cx - p[0], cy - p[1])) for n, p in lm_xy.items()), key=lambda a: a[1])
+                if d <= 250: return nm, f"parti legacy '{raw}' a {d:.0f} m da '{nm}' (monumento piu' vicino)"
+                la, lo = Pj.inv(cx, cy); return f'area:[{la:.5f},{lo:.5f},300]', f"centro delle parti legacy '{raw}' (nessun monumento entro 250 m)"
             return None, f"bersaglio legacy '{raw}' non risolto"
         if isinstance(raw, tuple) and len(raw) >= 2 and all(isinstance(a, (int, float)) for a in raw[:2]):
             # se l'espressione legacy parte da una variabile che e' la posizione di un monumento (ND, BASTILLE...) il bersaglio e' quel monumento
@@ -301,10 +342,23 @@ def run(slug, force=False):
             if tt <= t: best = yy
             else: break
         return best
-    raw_cards = []
+    raw_cards, jsx_cards, chap_cards = [], {}, set()
     if 'CAPS' in R:
         for node, tup in zip(R['CAPS'][1].elts, R['CAPS'][0]):
             if len(tup) >= 4: raw_cards.append((tup[0], tup[1], tup[2], tup[3], _ids(rl, node)))
+    elif not didas and _js_rows(slug, 'CARDS'):   # schede del vecchio overlay Remotion: [t_in, t_out, data, titolo, riga, sobria/tipo, etichette]
+        for r in _js_rows(slug, 'CARDS'):
+            if len(r) < 5: continue
+            y = year_at(r[0])
+            if y is None: continue
+            raw_cards.append((round(y, 1), r[2], r[3], r[4], []))
+            jsx_cards[r[3]] = r
+        G.add('montaggio.cards', 'cards_src', f'schede lette da montaggio/{slug}_overlay.jsx (CARDS); anno = anno della curva schedule al t_in, `legacy_date` = data scritta nella scheda')
+    elif not didas:   # nessuna scheda: i capitoli di metadata_<slug>.md "MM:SS YYYY - Titolo" danno solo anno+titolo (niente riga di testo)
+        for mm in re.finditer(r'^\d{1,2}:\d{2}\s+(\d{3,4})\s*[—–-]\s*(.+?)\s*$', meta, re.M):
+            raw_cards.append((float(mm.group(1)), mm.group(1), mm.group(2), '', []))
+            chap_cards.add(mm.group(2))
+        if chap_cards: G.add('montaggio.cards', 'cards_src', f'{len(chap_cards)} cartelli SOLO titolo+anno dai capitoli di metadata_{slug}.md (nessun testo, nessuna fonte): sono capitoli di video, non schede storiche; da riscrivere dallo storico')
     else:
         for d in didas:
             y = year_at(d.get('t_in', 0))
@@ -314,7 +368,15 @@ def run(slug, force=False):
     for y, date, ttl, line, ids in raw_cards:
         c = {'y': y, 'title': ttl, 'lines': [line] if line else [], 'hold_s': 5, 'legacy_date': date}
         d = by_title.get(ttl)
-        if d and d.get('t_out') and d.get('t_in') is not None:
+        jr = jsx_cards.get(ttl)
+        if jr:
+            c['hold_s'] = round(jr[1] - jr[0], 1)
+            lb = jr[6] if len(jr) > 6 and isinstance(jr[6], list) else (jr[5] if len(jr) > 5 and isinstance(jr[5], list) else [])
+            if lb: c['labels'] = lb
+            if jr[5:6] == [True] or jr[5:6] == ['quiet']: c['sober'] = True
+            if jr[5:6] == ['fire']: c['_legacy_kind'] = 'fire'
+        elif ttl in chap_cards: c['hold_s'] = 5; nomatch += 1
+        elif d and d.get('t_out') and d.get('t_in') is not None:
             c['hold_s'] = round(d['t_out'] - d['t_in'], 1)
             lb = sorted({n for a, b, names in labs if a < d['t_out'] and b > d['t_in'] for n in names})
             if lb: c['labels'] = lb
@@ -466,7 +528,7 @@ def write_missing(slug, story, G, pack):
     sections = [('Fonti', ['sources', 'ids']), ('Regimi/polities, ere, popolazione', ['polities', 'eras', 'population', 'data_reliable_from', 'country', 'style_preset', 'title/name', 'start_year']),
                 ('Zone, mura, acqua, ponti', ['zones', 'ring', 'built/demolished/src', 'bridges', 'walls/gutting/lost/fires']),
                 ('Monumenti', ['kind', 'landmarks']), ('Soste (bersaglio, peso, fx)', ['target', 'weight', 'fx', 'soste']),
-                ('Cartelli e capitoli', ['cards', 'hold_s', 'target/shot', 'chapters']), ('Montaggio e consegna', ['open', 'chapters/description/tags']),
+                ('Cartelli e capitoli', ['cards', 'cards_src', 'hold_s', 'target/shot', 'chapters']), ('Montaggio e consegna', ['open', 'chapters/description/tags']),
                 ('Pacchetto dati', ['data_src'])]
     done = set()
     for title, fields in sections:

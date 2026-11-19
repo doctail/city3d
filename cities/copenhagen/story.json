@@ -1,0 +1,1316 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "copenhagen",
+  "name": "Copenhagen",
+  "country": "TODO",
+  "lat0": 55.6761,
+  "lon0": 12.5683,
+  "radius_m": 9000,
+  "start_year": 1167,
+  "end_year": 2026,
+  "title": "EVOLUTION OF COPENHAGEN | 3D City Timelapse (1167–NOW) | No AI**",
+  "data_source": "custom",
+  "data_dir": "data_copenhagen",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": []
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [
+  {
+   "name": "Christiansborg",
+   "kind": "TODO",
+   "at": [
+    55.6759,
+    12.579399
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 106
+   },
+   "phases": [
+    {
+     "y": 1928
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1928 (primo anno della scheda), altezza 106 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Børsen",
+   "kind": "TODO",
+   "at": [
+    55.675517,
+    12.584026
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 56
+   },
+   "phases": [
+    {
+     "y": 1625
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1625 (primo anno della scheda), altezza 56 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Rundetårn",
+   "kind": "TODO",
+   "at": [
+    55.681362,
+    12.575794
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 40
+   },
+   "phases": [
+    {
+     "y": 1642
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1642 (primo anno della scheda), altezza 40 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Rosenborg Castle",
+   "kind": "TODO",
+   "at": [
+    55.685691,
+    12.577437
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 52
+   },
+   "phases": [
+    {
+     "y": 1624
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1624 (primo anno della scheda), altezza 52 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Marble Church",
+   "kind": "TODO",
+   "at": [
+    55.684968,
+    12.589573
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 77
+   },
+   "phases": [
+    {
+     "y": 1894
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1894 (primo anno della scheda), altezza 77 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Amalienborg Palace",
+   "kind": "TODO",
+   "at": [
+    55.683998,
+    12.593212
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 20
+   },
+   "phases": [
+    {
+     "y": 1760
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1760 (primo anno della scheda), altezza 20 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Church of Our Saviour",
+   "kind": "TODO",
+   "at": [
+    55.672788,
+    12.594054
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 90
+   },
+   "phases": [
+    {
+     "y": 1752
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1752 (primo anno della scheda), altezza 90 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Nyhavn",
+   "kind": "TODO",
+   "at": [
+    55.6799,
+    12.5904
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 12
+   },
+   "phases": [
+    {
+     "y": 1673
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1673 (primo anno della scheda), altezza 12 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Tivoli Gardens",
+   "kind": "TODO",
+   "at": [
+    55.6737,
+    12.568099
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30
+   },
+   "phases": [
+    {
+     "y": 1843
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1843 (primo anno della scheda), altezza 30 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "City Hall",
+   "kind": "TODO",
+   "at": [
+    55.675583,
+    12.57051
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 106
+   },
+   "phases": [
+    {
+     "y": 1905
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1905 (primo anno della scheda), altezza 106 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Opera House",
+   "kind": "TODO",
+   "at": [
+    55.681987,
+    12.600741
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 44
+   },
+   "phases": [
+    {
+     "y": 2005
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2005 (primo anno della scheda), altezza 44 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Royal Playhouse",
+   "kind": "TODO",
+   "at": [
+    55.680071,
+    12.594701
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 36
+   },
+   "phases": [
+    {
+     "y": 2008
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2008 (primo anno della scheda), altezza 36 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "CopenHill",
+   "kind": "TODO",
+   "at": [
+    55.684807,
+    12.620556
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 90
+   },
+   "phases": [
+    {
+     "y": 2019
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2019 (primo anno della scheda), altezza 90 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Øresund Bridge",
+   "kind": "TODO",
+   "at": [
+    55.577081,
+    12.841287
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 204
+   },
+   "phases": [
+    {
+     "y": 2000
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2000 (primo anno della scheda), altezza 204 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "Grundtvig Church",
+   "kind": "TODO",
+   "at": [
+    55.716589,
+    12.53332
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 49
+   },
+   "phases": [
+    {
+     "y": 1940
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1940 (primo anno della scheda), altezza 49 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "SAS Royal Hotel",
+   "kind": "TODO",
+   "at": [
+    55.675046,
+    12.563416
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 70
+   },
+   "phases": [
+    {
+     "y": 1960
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1960 (primo anno della scheda), altezza 70 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  },
+  {
+   "name": "The Little Mermaid",
+   "kind": "TODO",
+   "at": [
+    55.6929,
+    12.5993
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 2
+   },
+   "phases": [
+    {
+     "y": 1913
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1913 (primo anno della scheda), altezza 2 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": true,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1167
+  },
+  "soste": [
+   {
+    "y0": 1167.0,
+    "y1": 1169.0,
+    "dur": 6.0,
+    "caption": "Absalon builds his castle (1167)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "parti legacy 'Absalon castle' a 69 m da 'Christiansborg' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1369.3,
+    "y1": 1381.0,
+    "dur": 5.0,
+    "caption": "Hanseatic League razes the castle (1369)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "parti legacy 'Copenhagen Castle' a 33 m da 'Christiansborg' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1606.0,
+    "y1": 1612.5,
+    "dur": 5.0,
+    "caption": "Rosenborg Castle (1606)",
+    "shot": "medium",
+    "target": "Rosenborg Castle",
+    "_legacy_target": "nome legacy 'Rosenborg' -> 'Rosenborg Castle'",
+    "conf": "low"
+   },
+   {
+    "y0": 1618.8,
+    "y1": 1625.6,
+    "dur": 6.0,
+    "caption": "Børsen and its dragon spire (1619-25)",
+    "shot": "medium",
+    "target": "Børsen",
+    "_legacy_target": "parti legacy 'Boersen' a 0 m da 'Børsen' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1636.8,
+    "y1": 1642.6,
+    "dur": 5.0,
+    "caption": "The Round Tower (1637-42)",
+    "shot": "medium",
+    "target": "Rundetårn",
+    "_legacy_target": "parti legacy 'Rundetaarn' a 0 m da 'Rundetårn' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1670.8,
+    "y1": 1683.0,
+    "dur": 5.0,
+    "caption": "Nyhavn is dug (1671-73)",
+    "shot": "medium",
+    "target": "Nyhavn",
+    "conf": "low"
+   },
+   {
+    "y0": 1728.79,
+    "y1": 1729.05,
+    "dur": 10.0,
+    "caption": "GREAT FIRE OF 1728",
+    "shot": "medium",
+    "target": "area:[55.67990,12.57356,500]",
+    "_legacy_target": "punto FIRE_PTS 'fire1728' di regia_copenhagen.py",
+    "conf": "low"
+   },
+   {
+    "y0": 1735.5,
+    "y1": 1745.5,
+    "dur": 4.0,
+    "caption": "Christiansborg I (1733-45)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "nome legacy 'Christiansborg 1' -> 'Christiansborg'",
+    "conf": "low"
+   },
+   {
+    "y0": 1749.3,
+    "y1": 1752.3,
+    "dur": 4.5,
+    "caption": "Our Saviour's spiral spire (1749-52)",
+    "shot": "medium",
+    "target": "Church of Our Saviour",
+    "_legacy_target": "parti legacy 'Our Saviour's spire' a 0 m da 'Church of Our Saviour' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1752.3,
+    "y1": 1760.5,
+    "dur": 6.0,
+    "caption": "Frederiksstaden: Amalienborg (1750-60)",
+    "shot": "medium",
+    "target": "Amalienborg Palace",
+    "_legacy_target": "nome legacy 'Amalienborg' -> 'Amalienborg Palace'",
+    "conf": "low"
+   },
+   {
+    "y0": 1794.14,
+    "y1": 1794.4,
+    "dur": 3.5,
+    "caption": "Christiansborg burns (1794)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "nome legacy 'Christiansborg 1' -> 'Christiansborg'",
+    "conf": "low"
+   },
+   {
+    "y0": 1795.42,
+    "y1": 1795.7,
+    "dur": 4.0,
+    "caption": "FIRE OF 1795",
+    "shot": "medium",
+    "target": "area:[55.67818,12.57786,500]",
+    "_legacy_target": "punto FIRE_PTS 'fire1795' di regia_copenhagen.py",
+    "conf": "low"
+   },
+   {
+    "y0": 1807.66,
+    "y1": 1807.95,
+    "dur": 14.0,
+    "caption": "BRITISH BOMBARDMENT (1807)",
+    "shot": "medium",
+    "target": "area:[55.68153,12.57388,500]",
+    "_legacy_target": "punto FIRE_PTS 'fire1807' di regia_copenhagen.py",
+    "conf": "low"
+   },
+   {
+    "y0": 1809.5,
+    "y1": 1820.0,
+    "dur": 5.0,
+    "caption": "Christiansborg rises again",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "nome legacy 'Christiansborg 2' -> 'Christiansborg'",
+    "conf": "low"
+   },
+   {
+    "y0": 1842.8,
+    "y1": 1845.0,
+    "dur": 4.0,
+    "caption": "Tivoli opens (1843)",
+    "shot": "medium",
+    "target": "Tivoli Gardens",
+    "_legacy_target": "nome legacy 'Tivoli' -> 'Tivoli Gardens'",
+    "conf": "low"
+   },
+   {
+    "y0": 1876.5,
+    "y1": 1883.5,
+    "dur": 4.0,
+    "caption": "Marble Church rebuilt (1874)",
+    "shot": "medium",
+    "target": "Marble Church",
+    "conf": "low"
+   },
+   {
+    "y0": 1884.74,
+    "y1": 1885.0,
+    "dur": 3.5,
+    "caption": "Christiansborg burns again (1884)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "nome legacy 'Christiansborg 2' -> 'Christiansborg'",
+    "conf": "low"
+   },
+   {
+    "y0": 1886.5,
+    "y1": 1891.6,
+    "dur": 4.0,
+    "caption": "The great dome (1894)",
+    "shot": "medium",
+    "target": "Marble Church",
+    "conf": "low"
+   },
+   {
+    "y0": 1893.5,
+    "y1": 1905.5,
+    "dur": 5.0,
+    "caption": "City Hall (1892-1905)",
+    "shot": "medium",
+    "target": "City Hall",
+    "conf": "low"
+   },
+   {
+    "y0": 1917.5,
+    "y1": 1928.5,
+    "dur": 5.0,
+    "caption": "Christiansborg III and its tower (1907-28)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "_legacy_target": "nome legacy 'Christiansborg tower' -> 'Christiansborg'",
+    "conf": "low"
+   },
+   {
+    "y0": 1929.0,
+    "y1": 1934.5,
+    "dur": 5.0,
+    "caption": "Grundtvig Church (1921-40)",
+    "shot": "medium",
+    "target": "Grundtvig Church",
+    "conf": "low"
+   },
+   {
+    "y0": 1958.2,
+    "y1": 1960.4,
+    "dur": 4.5,
+    "caption": "SAS Royal, the city's first skyscraper (1960)",
+    "shot": "medium",
+    "target": "SAS Royal Hotel",
+    "conf": "low"
+   },
+   {
+    "y0": 1995.8,
+    "y1": 2000.6,
+    "dur": 5.0,
+    "caption": "The Øresund Bridge (2000)",
+    "shot": "medium",
+    "target": "Øresund Bridge",
+    "conf": "low"
+   },
+   {
+    "y0": 2000.8,
+    "y1": 2004.6,
+    "dur": 4.0,
+    "caption": "The Opera House (2005)",
+    "shot": "medium",
+    "target": "Opera House",
+    "conf": "low"
+   },
+   {
+    "y0": 2004.8,
+    "y1": 2008.3,
+    "dur": 4.0,
+    "caption": "Royal Playhouse (2008)",
+    "shot": "medium",
+    "target": "Royal Playhouse",
+    "conf": "low"
+   },
+   {
+    "y0": 2013.3,
+    "y1": 2019.3,
+    "dur": 5.0,
+    "caption": "CopenHill (2019)",
+    "shot": "medium",
+    "target": "CopenHill",
+    "conf": "low"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32,
+  "night_hold": 15
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "COPENHAGEN TODAY"
+  ],
+  "title": [
+   "COPENHAGEN",
+   "1167 TO NOW"
+  ],
+  "end": [
+   "COPENHAGEN · 859 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1171.0,
+    "title": "Bishop Absalon's castle",
+    "lines": [
+     "A fortress on a tiny island guards a fishing village called Havn: \"harbor\"."
+    ],
+    "hold_s": 5.8,
+    "legacy_date": "1167",
+    "labels": [
+     "Absalon's Castle"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1252.0,
+    "title": "A real town",
+    "lines": [
+     "Havn gets its town charter. Merchants start calling it \"the merchants' harbor\"."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1254",
+    "conf": "low"
+   },
+   {
+    "y": 1303.0,
+    "title": "København",
+    "lines": [
+     "Køpmannæhafn, the merchants' harbor, slowly becomes the city's name."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1300s",
+    "conf": "low"
+   },
+   {
+    "y": 1369.3,
+    "title": "Castle destroyed",
+    "lines": [
+     "The Hanseatic League tears down Absalon's castle. A new one soon rises."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1369",
+    "labels": [
+     "Absalon's Castle"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1441.0,
+    "title": "Capital of Denmark",
+    "lines": [
+     "The king settles here for good. Copenhagen has ruled Denmark ever since."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1443",
+    "conf": "low"
+   },
+   {
+    "y": 1531.0,
+    "title": "The Reformation",
+    "lines": [
+     "Denmark turns Lutheran. Church lands pass to the crown."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1536",
+    "conf": "low"
+   },
+   {
+    "y": 1606.0,
+    "title": "Rosenborg Castle",
+    "lines": [
+     "Christian IV builds a summer house just outside the walls."
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "1606",
+    "labels": [
+     "Rosenborg Castle"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1618.8,
+    "title": "Børsen",
+    "lines": [
+     "A stock exchange crowned by four dragons with their tails twisted into a spire."
+    ],
+    "hold_s": 5.8,
+    "legacy_date": "1619",
+    "labels": [
+     "Børsen"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1636.8,
+    "title": "The Round Tower",
+    "lines": [
+     "An observatory with no stairs: a spiral ramp wide enough for a horse."
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "1637",
+    "labels": [
+     "Rundetårn"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1656.0,
+    "title": "The Swedish assault",
+    "lines": [
+     "Swedish troops storm the walls at night. The city holds."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1659",
+    "conf": "low"
+   },
+   {
+    "y": 1670.8,
+    "title": "Nyhavn",
+    "lines": [
+     "A new canal brings ships right into the heart of the city."
+    ],
+    "hold_s": 5.3,
+    "legacy_date": "1671",
+    "labels": [
+     "Nyhavn"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1708.0,
+    "title": "The plague",
+    "lines": [
+     "About a third of the people in the city die in a single year."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1711",
+    "sober": true,
+    "conf": "low"
+   },
+   {
+    "y": 1728.8,
+    "title": "The Great Fire",
+    "lines": [
+     "Three days of flames. 28% of the city burns and 15,000 people lose their homes."
+    ],
+    "hold_s": 10.0,
+    "legacy_date": "20 OCTOBER 1728",
+    "_legacy_kind": "fire",
+    "conf": "low"
+   },
+   {
+    "y": 1735.5,
+    "title": "Christiansborg",
+    "lines": [
+     "A new royal palace rises on Absalon's island."
+    ],
+    "hold_s": 5.0,
+    "legacy_date": "1733",
+    "labels": [
+     "Christiansborg"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1749.3,
+    "title": "A golden spiral",
+    "lines": [
+     "400 steps up the spire of Our Saviour's Church, the last 150 outside."
+    ],
+    "hold_s": 4.3,
+    "legacy_date": "1752",
+    "labels": [
+     "Church of Our Saviour"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1752.3,
+    "title": "Frederiksstaden",
+    "lines": [
+     "A new royal district: four palaces around one octagonal square."
+    ],
+    "hold_s": 6.0,
+    "legacy_date": "1750s",
+    "labels": [
+     "Amalienborg Palace"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1769.0,
+    "title": "Left unfinished",
+    "lines": [
+     "Too expensive: the Marble Church stands as a ruin for over 100 years."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1770",
+    "labels": [
+     "Marble Church"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1794.1,
+    "title": "The palace burns",
+    "lines": [
+     "Christiansborg burns down."
+    ],
+    "hold_s": 3.6,
+    "legacy_date": "1794",
+    "labels": [
+     "Christiansborg"
+    ],
+    "_legacy_kind": "fire",
+    "conf": "low"
+   },
+   {
+    "y": 1795.4,
+    "title": "The second fire",
+    "lines": [
+     "909 houses burn. 6,000 people lose their homes."
+    ],
+    "hold_s": 5.9,
+    "legacy_date": "JUNE 1795",
+    "_legacy_kind": "fire",
+    "conf": "low"
+   },
+   {
+    "y": 1807.7,
+    "title": "British bombardment",
+    "lines": [
+     "The Royal Navy shells the city for three nights. About 195 civilians are killed."
+    ],
+    "hold_s": 14.0,
+    "legacy_date": "2-5 SEPTEMBER 1807",
+    "sober": true,
+    "conf": "low"
+   },
+   {
+    "y": 1809.5,
+    "title": "Christiansborg II",
+    "lines": [
+     "The palace is rebuilt in a sober classical style."
+    ],
+    "hold_s": 5.1,
+    "legacy_date": "1803–1828",
+    "labels": [
+     "Christiansborg"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1842.8,
+    "title": "Tivoli Gardens",
+    "lines": [
+     "An amusement park opens just outside the city gate. It is still there."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1843",
+    "labels": [
+     "Tivoli Gardens"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1852.0,
+    "title": "The walls come down",
+    "lines": [
+     "For the first time in centuries, the city may build beyond its ramparts."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1852",
+    "conf": "low"
+   },
+   {
+    "y": 1863.0,
+    "title": "The bridge quarters",
+    "lines": [
+     "Nørrebro, Vesterbro, Østerbro. The population triples in 50 years."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1870s",
+    "conf": "low"
+   },
+   {
+    "y": 1876.5,
+    "title": "Work restarts",
+    "lines": [
+     "After a century as a ruin, the Marble Church is finished."
+    ],
+    "hold_s": 4.5,
+    "legacy_date": "1877",
+    "labels": [
+     "Marble Church"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1884.7,
+    "title": "It burns again",
+    "lines": [
+     "Christiansborg burns for the second time."
+    ],
+    "hold_s": 4.1,
+    "legacy_date": "1884",
+    "labels": [
+     "Christiansborg"
+    ],
+    "_legacy_kind": "fire",
+    "conf": "low"
+   },
+   {
+    "y": 1886.5,
+    "title": "The dome",
+    "lines": [
+     "One of the largest church domes in Scandinavia."
+    ],
+    "hold_s": 5.5,
+    "legacy_date": "1894",
+    "labels": [
+     "Marble Church"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1893.5,
+    "title": "City Hall",
+    "lines": [
+     "Its clock tower rises 105.6 meters over the new square."
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "1905",
+    "labels": [
+     "City Hall"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1911.0,
+    "title": "The Little Mermaid",
+    "lines": [
+     "Too small to see from up here. This is where she sits."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1913",
+    "labels": [
+     "The Little Mermaid"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1917.5,
+    "title": "Christiansborg III",
+    "lines": [
+     "The third palace gets the tallest tower in town: 106 meters."
+    ],
+    "hold_s": 5.2,
+    "legacy_date": "1907–1928",
+    "labels": [
+     "Christiansborg"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1929.0,
+    "title": "Grundtvig Church",
+    "lines": [
+     "Yellow brick, built to look like a giant church organ."
+    ],
+    "hold_s": 5.2,
+    "legacy_date": "1921–1940",
+    "labels": [
+     "Grundtvig Church"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1940.0,
+    "title": "Occupation",
+    "lines": [
+     "German troops occupy Denmark. The city is spared heavy bombing."
+    ],
+    "hold_s": 6.0,
+    "legacy_date": "9 APRIL 1940",
+    "sober": true,
+    "conf": "low"
+   },
+   {
+    "y": 1945.0,
+    "title": "The Shellhus raid",
+    "lines": [
+     "An RAF raid on Gestapo headquarters also hits a school. 86 children are killed."
+    ],
+    "hold_s": 4.0,
+    "legacy_date": "21 MARCH 1945",
+    "sober": true,
+    "conf": "low"
+   },
+   {
+    "y": 1958.2,
+    "title": "SAS Royal Hotel",
+    "lines": [
+     "Arne Jacobsen's hotel: Denmark's first skyscraper."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1960",
+    "labels": [
+     "SAS Royal Hotel"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1970.0,
+    "title": "Christiania",
+    "lines": [
+     "Squatters take over an old military base and declare a free town."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1971",
+    "conf": "low"
+   },
+   {
+    "y": 1982.0,
+    "title": "Back to the harbor",
+    "lines": [
+     "Old docks turn into homes, offices and harbor baths."
+    ],
+    "hold_s": 5.6,
+    "legacy_date": "1990s",
+    "conf": "low"
+   },
+   {
+    "y": 1995.8,
+    "title": "The Øresund Bridge",
+    "lines": [
+     "16 km of bridge and tunnel to Sweden. Malmö is now a commute away."
+    ],
+    "hold_s": 5.0,
+    "legacy_date": "1 JULY 2000",
+    "labels": [
+     "Øresund Bridge"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 2000.8,
+    "title": "The Opera House",
+    "lines": [
+     "A gift to the nation from the Mærsk shipping family."
+    ],
+    "hold_s": 4.0,
+    "legacy_date": "2005",
+    "labels": [
+     "Opera House"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 2004.8,
+    "title": "The Royal Playhouse",
+    "lines": [
+     "A theater built out over the water."
+    ],
+    "hold_s": 4.0,
+    "legacy_date": "2008",
+    "labels": [
+     "Royal Playhouse"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 2013.3,
+    "title": "CopenHill",
+    "lines": [
+     "A power plant with a ski slope on its roof."
+    ],
+    "hold_s": 5.1,
+    "legacy_date": "2019",
+    "labels": [
+     "CopenHill"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 2026.0,
+    "title": "Copenhagen",
+    "lines": [
+     "About 670,000 people live in the city. Tivoli is still lit up every night."
+    ],
+    "hold_s": 6.5,
+    "legacy_date": "TODAY",
+    "labels": [
+     "Tivoli Gardens"
+    ],
+    "conf": "low"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_copenhagen.md",
+  "translations_file": null,
+  "translation_languages": [],
+  "video_chapter_lines": 23,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_copenhagen_src",
+   "present": [
+    "bridges.json",
+    "buildings.json",
+    "fires.json",
+    "land.json",
+    "landmarks.json",
+    "parks.json",
+    "reclaim.json",
+    "roads.json"
+   ],
+   "missing_for_kit": [
+    "dem.npz"
+   ],
+   "complete": false
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "landmarks",
+   "field": "kind",
+   "reason": "17 monumenti con geometria bespoke in landmarks_copenhagen.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
+  },
+  {
+   "path": "regia.soste[6]",
+   "field": "target",
+   "reason": "'GREAT FIRE OF 1728': punto FIRE_PTS 'fire1728' di regia_copenhagen.py"
+  },
+  {
+   "path": "regia.soste[11]",
+   "field": "target",
+   "reason": "'FIRE OF 1795': punto FIRE_PTS 'fire1795' di regia_copenhagen.py"
+  },
+  {
+   "path": "regia.soste[12]",
+   "field": "target",
+   "reason": "'BRITISH BOMBARDMENT (1807)': punto FIRE_PTS 'fire1807' di regia_copenhagen.py"
+  },
+  {
+   "path": "regia.soste",
+   "field": "target",
+   "reason": "13 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "26 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards_src",
+   "reason": "schede lette da montaggio/copenhagen_overlay.jsx (CARDS); anno = anno della curva schedule al t_in, `legacy_date` = data scritta nella scheda"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "41 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 4"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "city",
+   "field": "population",
+   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "nessuna scheda di validazione per copenhagen: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "nessun bridges_copenhagen.py leggibile (vedi anche bridges.json di radice, non per citta')"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  },
+  {
+   "path": "data",
+   "field": "data_src",
+   "reason": "data_copenhagen_src incompleto per kit data/pack: mancano dem.npz"
+  }
+ ]
+}
