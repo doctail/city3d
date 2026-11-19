@@ -1,0 +1,31 @@
+yb-historian/yb-qa cards pass rotterdam (2026-11-19)
+Base: story.json at commit c3b1371 (before this pass). Facts, years outside sourced windows, caption meaning and sources: untouched.
+
+REMOVED card 2019.0 'The Zalmhaven towers (2022)' (hold 5.0, conf high, src ['S31']): demoted-stop card with no text; card 2022.3 'The tallest in the Netherlands' (S31) already carries the sourced text: merged into it
+REMOVED card 1914 'A neutral city' (hold 5.6, conf high, src ['S1']): flight Hofplein -> City Hall (1909-1914) was 17 s for 5.6 years = 0.33 y/s (cards 1913 + 1914 = 11.4 s + year run); WWI spying note, secondary to the buildings story; with it removed the flight is under 12 s
+REMOVED card 1943.25 'A bombing by mistake' (hold 6.0, conf high, src ['S3', 'S13']): flight Bombing -> next soste (1940-1951) must reach 0.4 y/s: 6 war/rebuilding cards (35 s) cannot fit; Delfshaven 1943 bombing is secondary to the main WWII cards (Deportations, razzia, Liberation)
+REMOVED card 1948.05 'Stronger through effort' (hold 5.4, conf high, src ['S1']): same flight (1940-1951): coat-of-arms motto, secondary to the rebuilding cards
+REMOVED card 1945.34 'Liberation' (hold 5.6, conf medium, src ['S42']): same flight (1940-1951, still 0.35 y/s after the first cuts): lowest-confidence card of the four (conf medium; its own note says S42 covers the whole country, not Rotterdam's liberation day); Deportations, razzia and Start from scratch stay
+HOLD card 1942.6 'Deportations': 6.0 -> 5.6 s: flight Bombing -> Lijnbaan (1940.5-1951.5, 11 years) must be <= 27.5 s to reach 0.4 y/s
+HOLD card 1944.86 'The razzia': 6.0 -> 5.6 s: flight Bombing -> Lijnbaan (1940.5-1951.5, 11 years) must be <= 27.5 s to reach 0.4 y/s
+HOLD card 1946 'Start from scratch': 5.8 -> 4.8 s: flight Bombing -> Lijnbaan (1940.5-1951.5, 11 years) must be <= 27.5 s to reach 0.4 y/s
+SOSTE removed 'The center is redesigned (1946)' (y 1946-1950, weight 6): the flight Bombing -> center (1940.5-1946, 5.5 years) held 4 war cards = 28 s = 0.20 y/s and cannot reach 0.4 with the cards kept; the sourced card 'Start from scratch' (1946, S2/S5) already carries the text and stays; the cards 1946-1952 now play during the flight to the Lijnbaan soste
+
+NOTE max gap 21.7 s (63-84 s) NOT fixed: Delft soste hover (5.7 s) + the Delft -> Laurenskerk flight (16.0 s, 53 years at the natural year rate); no card or soste year lies in 1396-1449 and no sourced card can be re-timed into it (S3/S13 dates fixed), so only shortening the soste 'dur' (5.5 -> under 3.9 s) would get it under 20 s; not done (hover dur is not a card hold). max_duration stays 660 (natural 587 s).
+Counts: cards 67 -> 62 (5 removed: Zalmhaven duplicate, A neutral city, A bombing by mistake, Stronger through effort, Liberation), soste 17 -> 16.
+RESULT (kit build rotterdam --force; kit qa rotterdam --only a,b,c,e): duration 586.5 s, cards 62, max gap 21.7 s, QA WARN 3 / FAIL 0.
+Slow flights: nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
+LEGS
+   26.7->  40.4  13.7s  y  1276.0-> 1340.0 rate  4.67  -> Rotterdam receives city rights
+   46.0->  62.7  16.7s  y  1346.1-> 1389.0 rate  2.57  -> Delft digs its own harbor (138
+   68.3->  84.3  16.0s  y  1396.0-> 1449.0 rate  3.30  -> The Laurenskerk rises (1449-15
+  105.3-> 123.6  18.3s  y  1525.1-> 1575.0 rate  2.72  -> The Water Town grows south (15
+  139.4-> 222.9  83.4s  y  1620.0-> 1872.0 rate  3.02  -> A new waterway to the sea (187
+  240.1-> 257.6  17.5s  y  1879.0-> 1897.2 rate  1.04  -> The White House (1898)
+  293.5-> 329.8  36.2s  y  1920.7-> 1940.3 rate  0.54  -> The bombing of Rotterdam (14 M
+  348.8-> 374.7  25.9s  y  1940.5-> 1951.5 rate  0.43  -> The Lijnbaan opens (1953)
+  411.2-> 457.1  45.8s  y  1962.8-> 1982.0 rate  0.42  -> The Cube Houses (1984)
+  462.1-> 476.4  14.3s  y  1984.9-> 1994.0 rate  0.64  -> Kop van Zuid and the Erasmus B
+  481.9-> 502.8  20.9s  y  1996.8-> 2012.5 rate  0.75  -> The Markthal opens (2014)
+  518.6-> 574.0  55.4s  y  2014.9-> 2026.0 rate  0.20  -> finale
+GAPS>15: [(63, 21.7), (476, 17.7)]

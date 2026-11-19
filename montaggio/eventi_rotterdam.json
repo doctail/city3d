@@ -8,14 +8,14 @@
    "sub": "1270"
   },
   {
-   "t_in": 40.43,
-   "t_out": 46.03,
+   "t_in": 40.42,
+   "t_out": 46.02,
    "title": "Rotterdam receives city rights",
    "sub": "1340"
   },
   {
-   "t_in": 62.7,
-   "t_out": 68.3,
+   "t_in": 62.69,
+   "t_out": 68.29,
    "title": "Delft digs its own harbor",
    "sub": "1389"
   },
@@ -26,80 +26,74 @@
    "sub": "1449-1525"
   },
   {
-   "t_in": 123.65,
-   "t_out": 139.45,
+   "t_in": 123.64,
+   "t_out": 139.44,
    "title": "The Water Town grows south",
    "sub": "1575"
   },
   {
-   "t_in": 222.92,
-   "t_out": 240.12,
+   "t_in": 222.89,
+   "t_out": 240.09,
    "title": "A new waterway to the sea",
    "sub": "1872"
   },
   {
-   "t_in": 257.67,
-   "t_out": 262.67,
+   "t_in": 257.64,
+   "t_out": 262.64,
    "title": "The White House",
    "sub": "1898"
   },
   {
-   "t_in": 271.15,
-   "t_out": 275.65,
+   "t_in": 271.12,
+   "t_out": 275.62,
    "title": "Hofplein station and the Hofbogen",
    "sub": "1908"
   },
   {
-   "t_in": 292.69,
-   "t_out": 299.19,
+   "t_in": 287.02,
+   "t_out": 293.52,
    "title": "City Hall opens on the Coolsingel",
    "sub": "1920"
   },
   {
-   "t_in": 335.43,
-   "t_out": 354.43,
+   "t_in": 329.76,
+   "t_out": 348.76,
    "title": "The bombing of Rotterdam",
    "sub": "14 May 1940"
   },
   {
-   "t_in": 382.57,
-   "t_out": 399.17,
-   "title": "The center is redesigned",
-   "sub": "1946"
-  },
-  {
-   "t_in": 402.67,
-   "t_out": 407.87,
+   "t_in": 374.68,
+   "t_out": 385.28,
    "title": "The Lijnbaan opens",
    "sub": "1953"
   },
   {
-   "t_in": 418.77,
-   "t_out": 423.77,
+   "t_in": 396.18,
+   "t_out": 401.18,
    "title": "The Euromast opens",
    "sub": "1960"
   },
   {
-   "t_in": 428.83,
-   "t_out": 433.83,
+   "t_in": 406.24,
+   "t_out": 411.24,
    "title": "The busiest port in the world",
    "sub": "1962"
   },
   {
-   "t_in": 479.67,
-   "t_out": 484.67,
+   "t_in": 457.08,
+   "t_out": 462.08,
    "title": "The Cube Houses",
    "sub": "1984"
   },
   {
-   "t_in": 498.97,
-   "t_out": 504.47,
+   "t_in": 476.38,
+   "t_out": 481.88,
    "title": "Kop van Zuid and the Erasmus Bridge",
    "sub": "1996"
   },
   {
-   "t_in": 525.37,
-   "t_out": 541.17,
+   "t_in": 502.78,
+   "t_out": 518.58,
    "title": "The Markthal opens",
    "sub": "2014"
   }
@@ -139,8 +133,8 @@
    "sober": false
   },
   {
-   "t_in": 33.04,
-   "t_out": 38.44,
+   "t_in": 33.03,
+   "t_out": 38.43,
    "date": "1299",
    "title": "A charter, then withdrawn",
    "lines": [
@@ -150,8 +144,8 @@
    "sober": false
   },
   {
-   "t_in": 40.43,
-   "t_out": 46.03,
+   "t_in": 40.42,
+   "t_out": 46.02,
    "date": "1340",
    "title": "City rights",
    "lines": [
@@ -161,8 +155,8 @@
    "sober": false
   },
   {
-   "t_in": 46.19,
-   "t_out": 51.19,
+   "t_in": 46.18,
+   "t_out": 51.18,
    "date": "1350",
    "title": "A canal to the north",
    "lines": [
@@ -171,8 +165,8 @@
    "sober": false
   },
   {
-   "t_in": 51.6,
-   "t_out": 57.0,
+   "t_in": 51.59,
+   "t_out": 56.99,
    "date": "1358",
    "title": "Moats and palisades",
    "lines": [
@@ -182,8 +176,8 @@
    "sober": false
   },
   {
-   "t_in": 62.7,
-   "t_out": 68.3,
+   "t_in": 62.69,
+   "t_out": 68.29,
    "date": "1389",
    "title": "Delft digs a harbor",
    "lines": [
@@ -235,8 +229,8 @@
    "sober": false
   },
   {
-   "t_in": 106.61,
-   "t_out": 111.81,
+   "t_in": 106.6,
+   "t_out": 111.8,
    "date": "1563",
    "title": "The east burns",
    "lines": [
@@ -245,8 +239,8 @@
    "sober": true
   },
   {
-   "t_in": 112.11,
-   "t_out": 118.11,
+   "t_in": 112.1,
+   "t_out": 118.1,
    "date": "1572",
    "title": "The Spanish sack the town",
    "lines": [
@@ -267,8 +261,8 @@
    "sober": false
   },
   {
-   "t_in": 123.65,
-   "t_out": 129.25,
+   "t_in": 123.64,
+   "t_out": 129.24,
    "date": "1575",
    "title": "The Water Town",
    "lines": [
@@ -278,8 +272,8 @@
    "sober": false
   },
   {
-   "t_in": 129.25,
-   "t_out": 134.65,
+   "t_in": 129.24,
+   "t_out": 134.64,
    "date": "1579",
    "title": "Ships sail on to Rotterdam",
    "lines": [
@@ -289,8 +283,8 @@
    "sober": false
   },
   {
-   "t_in": 134.65,
-   "t_out": 139.45,
+   "t_in": 134.64,
+   "t_out": 139.44,
    "date": "1581",
    "title": "A seat in the States",
    "lines": [
@@ -299,8 +293,8 @@
    "sober": false
   },
   {
-   "t_in": 139.49,
-   "t_out": 145.09,
+   "t_in": 139.48,
+   "t_out": 145.08,
    "date": "1600",
    "title": "A company port",
    "lines": [
@@ -309,8 +303,8 @@
    "sober": false
   },
   {
-   "t_in": 145.82,
-   "t_out": 151.82,
+   "t_in": 145.81,
+   "t_out": 151.81,
    "date": "1610",
    "title": "The slave trade",
    "lines": [
@@ -320,8 +314,8 @@
    "sober": true
   },
   {
-   "t_in": 152.65,
-   "t_out": 158.05,
+   "t_in": 152.64,
+   "t_out": 158.04,
    "date": "1620",
    "title": "The Pilgrims leave Delfshaven",
    "lines": [
@@ -330,8 +324,8 @@
    "sober": false
   },
   {
-   "t_in": 158.22,
-   "t_out": 163.62,
+   "t_in": 158.21,
+   "t_out": 163.61,
    "date": "1622",
    "title": "Erasmus in bronze",
    "lines": [
@@ -341,8 +335,8 @@
    "sober": false
   },
   {
-   "t_in": 165.76,
-   "t_out": 171.36,
+   "t_in": 165.73,
+   "t_out": 171.33,
    "date": "1665",
    "title": "The Schielandshuis",
    "lines": [
@@ -352,8 +346,8 @@
    "sober": false
   },
   {
-   "t_in": 173.86,
-   "t_out": 179.46,
+   "t_in": 173.83,
+   "t_out": 179.43,
    "date": "1740",
    "title": "The sea route silts up",
    "lines": [
@@ -363,8 +357,8 @@
    "sober": false
   },
   {
-   "t_in": 181.3,
-   "t_out": 186.9,
+   "t_in": 181.28,
+   "t_out": 186.88,
    "date": "1795",
    "title": "Revolution",
    "lines": [
@@ -374,8 +368,8 @@
    "sober": false
   },
   {
-   "t_in": 187.9,
-   "t_out": 193.5,
+   "t_in": 187.88,
+   "t_out": 193.48,
    "date": "1823",
    "title": "Steam",
    "lines": [
@@ -385,8 +379,8 @@
    "sober": false
   },
   {
-   "t_in": 193.57,
-   "t_out": 199.17,
+   "t_in": 193.54,
+   "t_out": 199.14,
    "date": "1825",
    "title": "Beyond the walls",
    "lines": [
@@ -396,8 +390,8 @@
    "sober": false
   },
   {
-   "t_in": 199.91,
-   "t_out": 204.91,
+   "t_in": 199.88,
+   "t_out": 204.88,
    "date": "1847",
    "title": "The first train",
    "lines": [
@@ -406,8 +400,8 @@
    "sober": false
   },
   {
-   "t_in": 205.54,
-   "t_out": 211.14,
+   "t_in": 205.52,
+   "t_out": 211.12,
    "date": "1858",
    "title": "The river is full",
    "lines": [
@@ -417,8 +411,8 @@
    "sober": false
   },
   {
-   "t_in": 211.46,
-   "t_out": 216.86,
+   "t_in": 211.43,
+   "t_out": 216.83,
    "date": "1863",
    "title": "A new road to the sea",
    "lines": [
@@ -428,8 +422,8 @@
    "sober": false
   },
   {
-   "t_in": 217.32,
-   "t_out": 222.52,
+   "t_in": 217.29,
+   "t_out": 222.49,
    "date": "1869",
    "title": "The south bank joins",
    "lines": [
@@ -438,8 +432,8 @@
    "sober": false
   },
   {
-   "t_in": 222.92,
-   "t_out": 228.52,
+   "t_in": 222.89,
+   "t_out": 228.49,
    "date": "1872",
    "title": "The New Waterway opens",
    "lines": [
@@ -448,8 +442,8 @@
    "sober": false
   },
   {
-   "t_in": 228.52,
-   "t_out": 234.32,
+   "t_in": 228.49,
+   "t_out": 234.29,
    "date": "1877",
    "title": "Trains cross the river",
    "lines": [
@@ -459,8 +453,8 @@
    "sober": false
   },
   {
-   "t_in": 234.32,
-   "t_out": 240.12,
+   "t_in": 234.29,
+   "t_out": 240.09,
    "date": "1879",
    "title": "A harbor on borrowed money",
    "lines": [
@@ -470,8 +464,8 @@
    "sober": false
   },
   {
-   "t_in": 241.79,
-   "t_out": 246.79,
+   "t_in": 241.76,
+   "t_out": 246.76,
    "date": "1886",
    "title": "Delfshaven joins the city",
    "lines": [
@@ -480,8 +474,8 @@
    "sober": false
   },
   {
-   "t_in": 250.36,
-   "t_out": 256.16,
+   "t_in": 250.33,
+   "t_out": 256.13,
    "date": "1895",
    "title": "Kralingen and Charlois join",
    "lines": [
@@ -491,8 +485,8 @@
    "sober": false
   },
   {
-   "t_in": 279.75,
-   "t_out": 285.55,
+   "t_in": 279.72,
+   "t_out": 285.52,
    "date": "1913",
    "title": "A canal becomes a boulevard",
    "lines": [
@@ -502,19 +496,8 @@
    "sober": false
   },
   {
-   "t_in": 286.55,
-   "t_out": 292.15,
-   "date": "1914",
-   "title": "A neutral city",
-   "lines": [
-    "In the First World War Rotterdam is a center of spying.",
-    "About 25,000 Belgian refugees live here."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 292.69,
-   "t_out": 297.89,
+   "t_in": 287.02,
+   "t_out": 292.22,
    "date": "1920",
    "title": "Waalhaven Airport",
    "lines": [
@@ -523,8 +506,8 @@
    "sober": false
   },
   {
-   "t_in": 304.49,
-   "t_out": 310.09,
+   "t_in": 298.82,
+   "t_out": 304.42,
    "date": "1926",
    "title": "The Van Nelle Factory",
    "lines": [
@@ -534,8 +517,8 @@
    "sober": false
   },
   {
-   "t_in": 314.09,
-   "t_out": 319.49,
+   "t_in": 308.42,
+   "t_out": 313.82,
    "date": "1930",
    "title": "A department store draws a crowd",
    "lines": [
@@ -545,8 +528,8 @@
    "sober": false
   },
   {
-   "t_in": 325.49,
-   "t_out": 331.09,
+   "t_in": 319.82,
+   "t_out": 325.42,
    "date": "1936",
    "title": "A lively, modern city",
    "lines": [
@@ -556,8 +539,8 @@
    "sober": false
   },
   {
-   "t_in": 335.43,
-   "t_out": 341.93,
+   "t_in": 329.76,
+   "t_out": 336.26,
    "date": "1940",
    "title": "Fifteen minutes",
    "lines": [
@@ -567,8 +550,8 @@
    "sober": true
   },
   {
-   "t_in": 341.93,
-   "t_out": 348.43,
+   "t_in": 336.26,
+   "t_out": 342.76,
    "date": "1940",
    "title": "What survived",
    "lines": [
@@ -578,8 +561,8 @@
    "sober": true
   },
   {
-   "t_in": 348.43,
-   "t_out": 354.43,
+   "t_in": 342.76,
+   "t_out": 348.76,
    "date": "1940",
    "title": "Surrender",
    "lines": [
@@ -589,8 +572,8 @@
    "sober": true
   },
   {
-   "t_in": 356.57,
-   "t_out": 362.57,
+   "t_in": 350.9,
+   "t_out": 356.5,
    "date": "1942",
    "title": "Deportations",
    "lines": [
@@ -599,19 +582,8 @@
    "sober": true
   },
   {
-   "t_in": 363.17,
-   "t_out": 369.17,
-   "date": "1943",
-   "title": "A bombing by mistake",
-   "lines": [
-    "Allied bombers destroy part of Delfshaven on 31 March 1943.",
-    "At least 417 people die."
-   ],
-   "sober": true
-  },
-  {
-   "t_in": 370.17,
-   "t_out": 376.17,
+   "t_in": 358.1,
+   "t_out": 363.7,
    "date": "1944",
    "title": "The razzia",
    "lines": [
@@ -620,19 +592,8 @@
    "sober": true
   },
   {
-   "t_in": 376.47,
-   "t_out": 382.07,
-   "date": "1945",
-   "title": "Liberation",
-   "lines": [
-    "Germany surrenders on 5 May 1945.",
-    "The occupation of the Netherlands ends."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 382.57,
-   "t_out": 388.37,
+   "t_in": 364.47,
+   "t_out": 369.27,
    "date": "1946",
    "title": "Start from scratch",
    "lines": [
@@ -642,18 +603,8 @@
    "sober": false
   },
   {
-   "t_in": 388.37,
-   "t_out": 393.77,
-   "date": "1948",
-   "title": "Stronger through effort",
-   "lines": [
-    "Queen Wilhelmina presents the motto \"Sterker door strijd\" for Rotterdam's coat of arms."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 393.77,
-   "t_out": 399.17,
+   "t_in": 374.68,
+   "t_out": 380.08,
    "date": "1952",
    "title": "The church is rebuilt",
    "lines": [
@@ -663,8 +614,8 @@
    "sober": false
   },
   {
-   "t_in": 402.67,
-   "t_out": 407.87,
+   "t_in": 380.08,
+   "t_out": 385.28,
    "date": "1953",
    "title": "A warehouse of the future",
    "lines": [
@@ -673,8 +624,8 @@
    "sober": false
   },
   {
-   "t_in": 411.07,
-   "t_out": 416.27,
+   "t_in": 388.48,
+   "t_out": 393.68,
    "date": "1957",
    "title": "A new Central Station",
    "lines": [
@@ -683,8 +634,8 @@
    "sober": false
   },
   {
-   "t_in": 436.03,
-   "t_out": 441.03,
+   "t_in": 413.44,
+   "t_out": 418.44,
    "date": "1965",
    "title": "The population peaks",
    "lines": [
@@ -693,8 +644,8 @@
    "sober": false
   },
   {
-   "t_in": 444.03,
-   "t_out": 449.23,
+   "t_in": 421.44,
+   "t_out": 426.64,
    "date": "1968",
    "title": "The first metro in the Netherlands",
    "lines": [
@@ -703,8 +654,8 @@
    "sober": false
   },
   {
-   "t_in": 451.23,
-   "t_out": 456.43,
+   "t_in": 428.64,
+   "t_out": 433.84,
    "date": "1970",
    "title": "The Euromast grows",
    "lines": [
@@ -714,8 +665,8 @@
    "sober": false
   },
   {
-   "t_in": 459.43,
-   "t_out": 465.43,
+   "t_in": 436.84,
+   "t_out": 442.84,
    "date": "1973",
    "title": "The port moves to sea",
    "lines": [
@@ -725,8 +676,8 @@
    "sober": false
   },
   {
-   "t_in": 473.43,
-   "t_out": 478.63,
+   "t_in": 450.84,
+   "t_out": 456.04,
    "date": "1981",
    "title": "A new Willemsbrug",
    "lines": [
@@ -735,8 +686,8 @@
    "sober": false
   },
   {
-   "t_in": 490.77,
-   "t_out": 495.97,
+   "t_in": 468.18,
+   "t_out": 473.38,
    "date": "1991",
    "title": "Delftse Poort",
    "lines": [
@@ -746,8 +697,8 @@
    "sober": false
   },
   {
-   "t_in": 498.97,
-   "t_out": 504.37,
+   "t_in": 476.38,
+   "t_out": 481.78,
    "date": "1994",
    "title": "Manhattan on the Maas",
    "lines": [
@@ -756,8 +707,8 @@
    "sober": false
   },
   {
-   "t_in": 516.67,
-   "t_out": 521.87,
+   "t_in": 494.08,
+   "t_out": 499.28,
    "date": "2009",
    "title": "Maastoren",
    "lines": [
@@ -767,8 +718,8 @@
    "sober": false
   },
   {
-   "t_in": 525.37,
-   "t_out": 530.77,
+   "t_in": 502.78,
+   "t_out": 508.18,
    "date": "2013",
    "title": "A bigger port",
    "lines": [
@@ -777,8 +728,8 @@
    "sober": false
   },
   {
-   "t_in": 530.77,
-   "t_out": 535.97,
+   "t_in": 508.18,
+   "t_out": 513.38,
    "date": "2013",
    "title": "De Rotterdam",
    "lines": [
@@ -788,8 +739,8 @@
    "sober": false
   },
   {
-   "t_in": 535.97,
-   "t_out": 541.17,
+   "t_in": 513.38,
+   "t_out": 518.58,
    "date": "2014",
    "title": "The new Centraal",
    "lines": [
@@ -798,18 +749,8 @@
    "sober": false
   },
   {
-   "t_in": 545.27,
-   "t_out": 550.27,
-   "date": "2019",
-   "title": "The Zalmhaven towers (2022)",
-   "lines": [
-    "The Zalmhaven towers (2022)"
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 553.57,
-   "t_out": 558.97,
+   "t_in": 525.98,
+   "t_out": 531.38,
    "date": "2022",
    "title": "The tallest in the Netherlands",
    "lines": [
@@ -826,56 +767,56 @@
    "title": "The Dam Town"
   },
   {
-   "t_in": 38.44,
-   "t_out": 40.43,
+   "t_in": 38.43,
+   "t_out": 40.42,
    "num": "II",
    "title": "A Chartered Town"
   },
   {
-   "t_in": 122.45,
-   "t_out": 123.65,
+   "t_in": 122.44,
+   "t_out": 123.64,
    "num": "III",
    "title": "The Water Town"
   },
   {
-   "t_in": 179.46,
-   "t_out": 181.3,
+   "t_in": 179.43,
+   "t_out": 181.28,
    "num": "IV",
    "title": "Revolution and Steam"
   },
   {
-   "t_in": 221.72,
-   "t_out": 222.92,
+   "t_in": 221.69,
+   "t_out": 222.89,
    "num": "V",
    "title": "A Port for the World"
   },
   {
-   "t_in": 332.63,
-   "t_out": 335.43,
+   "t_in": 326.96,
+   "t_out": 329.76,
    "num": "VI",
    "title": "Fire and Occupation"
   },
   {
-   "t_in": 381.37,
-   "t_out": 382.57,
+   "t_in": 363.27,
+   "t_out": 364.47,
    "num": "VII",
    "title": "Reconstruction"
   },
   {
-   "t_in": 496.17,
-   "t_out": 498.97,
+   "t_in": 473.58,
+   "t_out": 476.38,
    "num": "VIII",
    "title": "Manhattan on the Maas"
   }
  ],
  "cta": {
-  "t_in": 593.3,
-  "t_out": 597.8,
+  "t_in": 574.0,
+  "t_out": 578.5,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 597.8,
-  "t_out": 605.8,
+  "t_in": 578.5,
+  "t_out": 586.5,
   "items": [
    "Buildings, streets, water, parks: © OpenStreetMap contributors (ODbL); building years: BAG / 3DBAG",
    "Terrain: AHN / Copernicus GLO-30 DEM",

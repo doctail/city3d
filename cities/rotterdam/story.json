@@ -1576,21 +1576,6 @@
     "conf": "high"
    },
    {
-    "y0": 1946.0,
-    "y1": 1950.0,
-    "dur": 6.0,
-    "caption": "The center is redesigned (1946)",
-    "shot": "wide",
-    "target": "area:[51.91939,4.48605,700]",
-    "fx": "hammer",
-    "weight": 6,
-    "src": [
-     "S2",
-     "S5"
-    ],
-    "conf": "high"
-   },
-   {
     "y0": 1951.5,
     "y1": 1953.8,
     "dur": 5.0,
@@ -2269,19 +2254,6 @@
     "conf": "high"
    },
    {
-    "y": 1914,
-    "title": "A neutral city",
-    "lines": [
-     "In the First World War Rotterdam is a center of spying.",
-     "About 25,000 Belgian refugees live here."
-    ],
-    "hold_s": 5.6,
-    "src": [
-     "S1"
-    ],
-    "conf": "high"
-   },
-   {
     "y": 1920,
     "title": "Waalhaven Airport",
     "lines": [
@@ -2391,24 +2363,9 @@
     "lines": [
      "Between July 1942 and April 1943, 6,790 people are deported from Rotterdam in 8 transports."
     ],
-    "hold_s": 6.0,
+    "hold_s": 5.6,
     "src": [
      "S1"
-    ],
-    "conf": "high",
-    "sober": true
-   },
-   {
-    "y": 1943.25,
-    "title": "A bombing by mistake",
-    "lines": [
-     "Allied bombers destroy part of Delfshaven on 31 March 1943.",
-     "At least 417 people die."
-    ],
-    "hold_s": 6.0,
-    "src": [
-     "S3",
-     "S13"
     ],
     "conf": "high",
     "sober": true
@@ -2419,26 +2376,12 @@
     "lines": [
      "On 10 and 11 November 1944 about 50,000 men between 17 and 40 are taken away."
     ],
-    "hold_s": 6.0,
+    "hold_s": 5.6,
     "src": [
      "S3"
     ],
     "conf": "high",
     "sober": true
-   },
-   {
-    "y": 1945.34,
-    "title": "Liberation",
-    "lines": [
-     "Germany surrenders on 5 May 1945.",
-     "The occupation of the Netherlands ends."
-    ],
-    "hold_s": 5.6,
-    "src": [
-     "S42"
-    ],
-    "conf": "medium",
-    "note": "S42 is about the whole country; the exact day Rotterdam itself was freed is not in the fetched texts."
    },
    {
     "y": 1946,
@@ -2447,22 +2390,10 @@
      "The city adopts a plan for rebuilding the center.",
      "It chooses a modern city over the old street plan."
     ],
-    "hold_s": 5.8,
+    "hold_s": 4.8,
     "src": [
      "S2",
      "S5"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 1948.05,
-    "title": "Stronger through effort",
-    "lines": [
-     "Queen Wilhelmina presents the motto \"Sterker door strijd\" for Rotterdam's coat of arms."
-    ],
-    "hold_s": 5.4,
-    "src": [
-     "S1"
     ],
     "conf": "high"
    },
@@ -2657,18 +2588,6 @@
     "hold_s": 5.2,
     "src": [
      "S22"
-    ],
-    "conf": "high"
-   },
-   {
-    "y": 2019.0,
-    "title": "The Zalmhaven towers (2022)",
-    "lines": [
-     "The Zalmhaven towers (2022)"
-    ],
-    "hold_s": 5.0,
-    "src": [
-     "S31"
     ],
     "conf": "high"
    },
