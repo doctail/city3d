@@ -1,0 +1,6 @@
+yb-qa Rotterdam (2026-11-19). Build: kit build rotterdam --force (hist 21 s, total 39 s, peak 846 MB).
+Initial QA e: FAIL vmax 297 m/s, amax 200, jerk 222, hover v 29.5 m/s (peak at Markthal -> Zalmhaven leg).
+Changes (demoted stop -> montaggio card, same y/title/hold_s/src):
+1) demote 'The Zalmhaven towers (2022)' (w3): all FAILs gone, vmax 174 m/s.
+Euromast legs (1953 Lijnbaan -> Euromast 1960 -> port 1962): measured 174 m/s peak and 130 m/s, within the 250 limit: OK, not changed.
+Tried and reverted: demote 'The center is redesigned (1946)' (slow flight WARN unchanged).

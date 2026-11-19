@@ -1,0 +1,1 @@
+Rotterdam: slow flights 276-293 s (0.33 y/s) and 354-383 s (0.20 y/s); gap 21.6 s (63-84 s). Section d not run.

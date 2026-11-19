@@ -1680,20 +1680,6 @@
     ],
     "conf": "high",
     "note": "Hover start 2012.5 is a placement (start of construction not sourced)."
-   },
-   {
-    "y0": 2019.0,
-    "y1": 2022.3,
-    "dur": 5.0,
-    "caption": "The Zalmhaven towers (2022)",
-    "shot": "medium",
-    "target": "Zalmhaven",
-    "fx": "hammer",
-    "weight": 3,
-    "src": [
-     "S31"
-    ],
-    "conf": "high"
    }
   ],
   "rmin": 1.0,
@@ -2671,6 +2657,18 @@
     "hold_s": 5.2,
     "src": [
      "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2019.0,
+    "title": "The Zalmhaven towers (2022)",
+    "lines": [
+     "The Zalmhaven towers (2022)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S31"
     ],
     "conf": "high"
    },
