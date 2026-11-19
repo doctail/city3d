@@ -1,0 +1,12 @@
+yb-qa Copenhagen (2026-11-19). Build: kit build copenhagen --force (hist 4 s, total 15 s, peak 363 MB).
+BLOCKER (not touched): history.zones empty -> hist.json empty -> only today's buildings with year<=y exist at the start (current-building counts with year<=y: 1167: 4, 1400: 8, 1600: 16, 1700: 111, 1800: 1079 of 131,938). Zones NOT invented.
+Initial QA e: FAIL vmax 440 m/s, amax 220, jerk 228, 39 jumps at 396.5 s, hover v 37.9, bodies after hover midpoint (Opera 2004.8 vs 2002.7; Playhouse 2008.0 vs 2006.5; CopenHill 2019.8 vs 2016.3); 2 soste dropped for time.
+Changes in order (demoted stop -> montaggio card, same y/title/hold_s/src):
+1) Opera House window 2000.8-2004.6 -> 2004.2-2005.6 (caption 2005).
+2) CopenHill window 2013.3-2019.3 -> 2018.9-2020.5, then -> 2019.0-2020.9 (centre 2019.95 > body 2019.8; caption 2019).
+3) demote Royal Playhouse (2008) (leg to CopenHill 3 s, 1560 m).
+4) demote Christiansborg burns (1794), Christiansborg rises again (1803-28), Christiansborg burns again (1884), The great dome (1894): 1794-1820 and 1884-94 clusters made 3.5 s legs.
+5) demote Rosenborg Castle (1606), Our Saviour's spiral spire (1749-52).
+6) demote The Opera House (2005) (after step 1 the window fix alone left hover v 24 m/s).
+7) demote Christiansborg III and its tower (1907-28) (accel 128 m/s2 at City Hall -> Christiansborg III).
+Result: QA e WARN only; vmax 225 m/s; 16 soste kept, 1 dropped for time (Oresund Bridge 2000 -> card).

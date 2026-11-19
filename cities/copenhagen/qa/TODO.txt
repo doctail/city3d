@@ -1,0 +1,1 @@
+Copenhagen: history.zones empty (blocker). Gaps 27 s (282-310 s) and 26 s (326-352 s). Section d not run.

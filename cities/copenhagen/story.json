@@ -1078,20 +1078,6 @@
     "note": "Importer caption said 1369; S04 says the demolition followed the Hanseatic victory of 1370; S32/S01 date the sack of Copenhagen to 1368. Dates differ by page: medium"
    },
    {
-    "y0": 1606.0,
-    "y1": 1612.5,
-    "dur": 5.0,
-    "caption": "Rosenborg Castle (1606)",
-    "shot": "medium",
-    "target": "Rosenborg Castle",
-    "conf": "high",
-    "weight": 5,
-    "fx": "build",
-    "src": [
-     "S07"
-    ]
-   },
-   {
     "y0": 1618.8,
     "y1": 1625.6,
     "dur": 6.0,
@@ -1164,20 +1150,6 @@
     ]
    },
    {
-    "y0": 1749.3,
-    "y1": 1752.3,
-    "dur": 4.5,
-    "caption": "Our Saviour's spiral spire (1749-52)",
-    "shot": "medium",
-    "target": "Church of Our Saviour",
-    "conf": "high",
-    "weight": 5,
-    "fx": "bell",
-    "src": [
-     "S10"
-    ]
-   },
-   {
     "y0": 1752.3,
     "y1": 1760.5,
     "dur": 6.0,
@@ -1191,21 +1163,6 @@
      "S09"
     ],
     "note": "Palaces on the western side start 1750 (S09); end year 1760 is the importer's, not in the page"
-   },
-   {
-    "y0": 1794.14,
-    "y1": 1794.4,
-    "dur": 3.5,
-    "caption": "Christiansborg burns (1794)",
-    "shot": "medium",
-    "target": "Christiansborg I",
-    "conf": "high",
-    "weight": 4,
-    "fx": "fire",
-    "src": [
-     "S04",
-     "S09"
-    ]
    },
    {
     "y0": 1795.42,
@@ -1233,20 +1190,6 @@
     "fx": "boom",
     "src": [
      "S23"
-    ]
-   },
-   {
-    "y0": 1809.5,
-    "y1": 1820.0,
-    "dur": 5.0,
-    "caption": "Christiansborg rises again (1803-28)",
-    "shot": "medium",
-    "target": "Christiansborg II",
-    "conf": "high",
-    "weight": 3,
-    "fx": "build",
-    "src": [
-     "S04"
     ]
    },
    {
@@ -1279,34 +1222,6 @@
     "note": "Importer caption said 1874: S08 sells the ruin in 1874; opening 1894"
    },
    {
-    "y0": 1884.74,
-    "y1": 1885.0,
-    "dur": 3.5,
-    "caption": "Christiansborg burns again (1884)",
-    "shot": "medium",
-    "target": "Christiansborg II",
-    "conf": "high",
-    "weight": 3,
-    "fx": "fire",
-    "src": [
-     "S04"
-    ]
-   },
-   {
-    "y0": 1886.5,
-    "y1": 1891.6,
-    "dur": 4.0,
-    "caption": "The great dome (1894)",
-    "shot": "medium",
-    "target": "Marble Church",
-    "conf": "high",
-    "weight": 3,
-    "fx": "bell",
-    "src": [
-     "S08"
-    ]
-   },
-   {
     "y0": 1893.5,
     "y1": 1905.5,
     "dur": 5.0,
@@ -1318,20 +1233,6 @@
     "fx": "bell",
     "src": [
      "S13"
-    ]
-   },
-   {
-    "y0": 1917.5,
-    "y1": 1928.5,
-    "dur": 5.0,
-    "caption": "Christiansborg III and its tower (1907-28)",
-    "shot": "medium",
-    "target": "Christiansborg",
-    "conf": "high",
-    "weight": 4,
-    "fx": "build",
-    "src": [
-     "S04"
     ]
    },
    {
@@ -1379,37 +1280,8 @@
     "note": "SUSPECT R2: 20 km from the other targets, long flights at under 0.4 years/s (see report)"
    },
    {
-    "y0": 2000.8,
-    "y1": 2004.6,
-    "dur": 4.0,
-    "caption": "The Opera House (2005)",
-    "shot": "medium",
-    "target": "Opera House",
-    "conf": "high",
-    "weight": 5,
-    "fx": "chime",
-    "src": [
-     "S14"
-    ]
-   },
-   {
-    "y0": 2004.8,
-    "y1": 2008.3,
-    "dur": 4.0,
-    "caption": "Royal Playhouse (2008)",
-    "shot": "medium",
-    "target": "Royal Playhouse",
-    "conf": "medium",
-    "weight": 3,
-    "fx": "chime",
-    "src": [
-     "S15"
-    ],
-    "note": "Opening year not in the fetched page text; S15 only gives the 2008 RIBA award"
-   },
-   {
-    "y0": 2013.3,
-    "y1": 2019.3,
+    "y0": 2019.0,
+    "y1": 2020.9,
     "dur": 5.0,
     "caption": "CopenHill (2019)",
     "shot": "medium",
@@ -1572,6 +1444,18 @@
     ]
    },
    {
+    "y": 1606.0,
+    "title": "Rosenborg Castle (1606)",
+    "lines": [
+     "Rosenborg Castle (1606)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S07"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1620.0,
     "title": "Børsen",
     "lines": [
@@ -1687,6 +1571,18 @@
     ]
    },
    {
+    "y": 1749.3,
+    "title": "Our Saviour's spiral spire (1749-52)",
+    "lines": [
+     "Our Saviour's spiral spire (1749-52)"
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S10"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1751.5,
     "title": "A golden spiral",
     "lines": [
@@ -1731,6 +1627,19 @@
     "labels": [
      "Marble Church"
     ]
+   },
+   {
+    "y": 1794.14,
+    "title": "Christiansborg burns (1794)",
+    "lines": [
+     "Christiansborg burns (1794)"
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S04",
+     "S09"
+    ],
+    "conf": "high"
    },
    {
     "y": 1794.15,
@@ -1800,6 +1709,18 @@
     "labels": [
      "Christiansborg II"
     ]
+   },
+   {
+    "y": 1809.5,
+    "title": "Christiansborg rises again (1803-28)",
+    "lines": [
+     "Christiansborg rises again (1803-28)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S04"
+    ],
+    "conf": "high"
    },
    {
     "y": 1814.04,
@@ -1898,6 +1819,30 @@
     ]
    },
    {
+    "y": 1884.74,
+    "title": "Christiansborg burns again (1884)",
+    "lines": [
+     "Christiansborg burns again (1884)"
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S04"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1886.5,
+    "title": "The great dome (1894)",
+    "lines": [
+     "The great dome (1894)"
+    ],
+    "hold_s": 4.0,
+    "src": [
+     "S08"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1894.63,
     "title": "The dome",
     "lines": [
@@ -1968,6 +1913,18 @@
     "labels": [
      "Christiansborg"
     ]
+   },
+   {
+    "y": 1917.5,
+    "title": "Christiansborg III and its tower (1907-28)",
+    "lines": [
+     "Christiansborg III and its tower (1907-28)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S04"
+    ],
+    "conf": "high"
    },
    {
     "y": 1929.0,
@@ -2068,6 +2025,30 @@
      "Øresund Bridge"
     ],
     "note": "Importer said 16 km: length not in the S17 segment quoted (7,845 m main link per page; not used on screen)"
+   },
+   {
+    "y": 2004.2,
+    "title": "The Opera House (2005)",
+    "lines": [
+     "The Opera House (2005)"
+    ],
+    "hold_s": 4.0,
+    "src": [
+     "S14"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2004.8,
+    "title": "Royal Playhouse (2008)",
+    "lines": [
+     "Opening year not in the fetched page text; S15 only gives the 2008 RIBA award"
+    ],
+    "hold_s": 4.0,
+    "src": [
+     "S15"
+    ],
+    "conf": "medium"
    },
    {
     "y": 2005.04,
