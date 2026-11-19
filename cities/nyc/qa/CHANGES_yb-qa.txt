@@ -8,3 +8,4 @@
 7. REVERTED (qa corridor unchanged by it). Tool fix: kit/qa.py _components builds full mask only for L>=120 (OOM at 1900 with 13+ GB)
 8. story.qa.accept: 5 corridor waivers (1800 west-shore strip, 4 waterfront slivers 1900) [Likely], to be verified by frame
 9. regia.max_duration 720 -> 780 (natural 734 s > 720 dropped 2 soste and left a 259 s static finale 460-720 s at 2026)
+10. landmark Castle Clinton params.c 'sandstone' (not in PAL: build_render crashed in srgb after 45 min scene build; local render impossible) -> '#b0745a' (red-brown sandstone)
