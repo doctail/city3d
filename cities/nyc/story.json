@@ -582,7 +582,12 @@
   },
   "city_overrides": {
    "vegetation": {
-    "box": [-9000, -12500, 6000, 9000],
+    "box": [
+     -9000,
+     -12500,
+     6000,
+     9000
+    ],
     "river_w": 90,
     "river_step": 9,
     "vega_r": 9000,
@@ -590,7 +595,12 @@
     "vega_clump": 0.1,
     "orchard_r": 1,
     "orchard_step": 8,
-    "colors": ["#2f4a22", "#3d5a2a", "#4b6030", "#36512a"]
+    "colors": [
+     "#2f4a22",
+     "#3d5a2a",
+     "#4b6030",
+     "#36512a"
+    ]
    }
   }
  },
@@ -3918,11 +3928,51 @@
  ],
  "qa": {
   "accept": [
-   {"check": "corridoi", "where": [40.71047, -74.01533, 700], "reason": "West-shore landfill strip (Greenwich-West Street) drawn as modern land at 1800: the water-phase ring rises it from 1800 and the zone is born 1800-1830; verify by frame"},
-   {"check": "corridoi", "where": [40.76572, -73.9516, 150], "reason": "1900 waterfront sliver (East River / Roosevelt Island channel), not a street"},
-   {"check": "corridoi", "where": [40.73672, -73.90777, 150], "reason": "1900 Newtown Creek bank sliver, not a street"},
-   {"check": "corridoi", "where": [40.72357, -73.96104, 150], "reason": "1900 Greenpoint waterfront sliver, not a street"},
-   {"check": "corridoi", "where": [40.71242, -73.95435, 150], "reason": "1900 Williamsburg waterfront sliver, not a street"}
+   {
+    "check": "corridoi",
+    "where": [
+     40.71047,
+     -74.01533,
+     700
+    ],
+    "reason": "West-shore landfill strip (Greenwich-West Street) drawn as modern land at 1800: the water-phase ring rises it from 1800 and the zone is born 1800-1830; verify by frame"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     40.76572,
+     -73.9516,
+     150
+    ],
+    "reason": "1900 waterfront sliver (East River / Roosevelt Island channel), not a street"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     40.73672,
+     -73.90777,
+     150
+    ],
+    "reason": "1900 Newtown Creek bank sliver, not a street"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     40.72357,
+     -73.96104,
+     150
+    ],
+    "reason": "1900 Greenpoint waterfront sliver, not a street"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     40.71242,
+     -73.95435,
+     150
+    ],
+    "reason": "1900 Williamsburg waterfront sliver, not a street"
+   }
   ]
  },
  "regia": {
@@ -4095,20 +4145,6 @@
     "weight": 8
    },
    {
-    "y0": 1858.8,
-    "y1": 1859.9,
-    "dur": 6,
-    "caption": "Central Park opens (1858)",
-    "target": "area:[40.7680,-73.9730,700]",
-    "shot": "wide",
-    "fx": "city_hum",
-    "src": [
-     "S24"
-    ],
-    "conf": "high",
-    "weight": 7
-   },
-   {
     "y0": 1883.3,
     "y1": 1883.9,
     "dur": 6,
@@ -4123,48 +4159,6 @@
     "weight": "max"
    },
    {
-    "y0": 1903.9,
-    "y1": 1903.99,
-    "dur": 5,
-    "caption": "The Williamsburg Bridge opens (1903)",
-    "target": "area:[40.7136,-73.9720,450]",
-    "shot": "wide",
-    "fx": "horn",
-    "src": [
-     "S35"
-    ],
-    "conf": "high",
-    "weight": 5
-   },
-   {
-    "y0": 1913.6,
-    "y1": 1914.5,
-    "dur": 5,
-    "caption": "The Woolworth Building opens (1913)",
-    "target": "Woolworth Building",
-    "shot": "medium",
-    "fx": "chime",
-    "src": [
-     "S40"
-    ],
-    "conf": "high",
-    "weight": 7
-   },
-   {
-    "y0": 1930.35,
-    "y1": 1931.0,
-    "dur": 5,
-    "caption": "The Chrysler Building opens (1930)",
-    "target": "Chrysler Building",
-    "shot": "medium",
-    "fx": "ding",
-    "src": [
-     "S44"
-    ],
-    "conf": "high",
-    "weight": 7
-   },
-   {
     "y0": 1931.35,
     "y1": 1931.9,
     "dur": 6,
@@ -4177,20 +4171,6 @@
     ],
     "conf": "high",
     "weight": "max"
-   },
-   {
-    "y0": 1952.0,
-    "y1": 1952.8,
-    "dur": 5,
-    "caption": "United Nations Headquarters is completed (1952)",
-    "target": "United Nations Secretariat",
-    "shot": "medium",
-    "fx": "chime",
-    "src": [
-     "S49"
-    ],
-    "conf": "high",
-    "weight": 5
    },
    {
     "y0": 1971.0,
@@ -4221,14 +4201,15 @@
     "weight": 7
    }
   ],
-  "rmin": 1.0,
+  "rmin": 1.8,
   "rmax": 8.0,
   "night_hold": 15,
   "drone": {
    "pitch_max": 38,
    "alt_max": 600,
    "d_min": 1400,
-   "drift_vmax": 3, "v_leg": 145,
+   "drift_vmax": 3,
+   "v_leg": 145,
    "rho_max": 1400,
    "clear": 60
   },
@@ -4549,6 +4530,18 @@
     "conf": "high"
    },
    {
+    "y": 1858.8,
+    "title": "Central Park opens",
+    "lines": [
+     "The first areas of Central Park open to the public in late 1858; the park is completed in 1876."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1863.53,
     "title": "The Draft Riots",
     "lines": [
@@ -4646,6 +4639,18 @@
     "shot": "medium"
    },
    {
+    "y": 1903.9,
+    "title": "The Williamsburg Bridge",
+    "lines": [
+     "The Williamsburg Bridge opens in December 1903 and holds the longest suspension span in the world until 1924."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S35"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1904.8,
     "title": "The subway opens",
     "lines": [
@@ -4726,6 +4731,18 @@
     "shot": "medium"
    },
    {
+    "y": 1913.6,
+    "title": "The Woolworth Building",
+    "lines": [
+     "The Woolworth Building opens in April 1913 and is the tallest building in the world until 1930."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S40"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1923.3,
     "title": "Yankee Stadium",
     "lines": [
@@ -4746,6 +4763,18 @@
      "40 Wall Street, the Chrysler Building and the Empire State Building compete to be the tallest in the world."
     ],
     "hold_s": 6,
+    "src": [
+     "S44"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1930.35,
+    "title": "The Chrysler Building",
+    "lines": [
+     "The Chrysler Building opens in May 1930, 1,046 feet tall, in a race with 40 Wall Street and the Empire State Building."
+    ],
+    "hold_s": 5,
     "src": [
      "S44"
     ],
