@@ -1,0 +1,8 @@
+yb-qa Parigi (2026-11-19)
+Build: kit build parigi --force (city_parigi.json was hand-written; --force regenerated it from story.json; hist/landmarks/regia/eventi/labs regenerated).
+1) regia.max_duration 660 -> 1500. Reason: with 104 story cards (616 s of hold) and night_t fixed by the music slot (460.5 s), 9 of 10 soste were dropped, drone vmax 366 m/s (limit 250), change cost 1.18 h (budget 1.0 h). With natural duration (969.7 s) all 10 soste kept, vmax 116 m/s, cost PASS. NOTE: natural video length is ~16 min; owner may prefer cutting cards instead (not done: content choice).
+2) regia.soste[Charles V/Bastille].y0 1356 -> 1368 (y1 stays 1383). Reason: Bastille body appears 1370.1 but hover was centered on 1369.5. Hover window now centered 1375.5. Caption date range kept (1356-1383 = wall years, source B003/E010).
+Open (not fixable in story without content changes):
+- WARN slow flights 410-491 s (0.32 y/s) and 521-613 s (0.17 y/s): driven by card density (104 cards, hold 0.2 y/s). Needs fewer cards between 1830-1887 (owner/historian).
+- WARN max gap without new stimulus 28 s (236-264 s).
+- section d (run once, 11 GB peak, OOM-killed afterwards, not rerun): FAIL 1900 4 modern-road-shaped corridors (data, e.g. 48.83416,2.31066 483x78 m); WARN many empty/wide corridors.

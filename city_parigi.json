@@ -1,41 +1,17 @@
 {
  "name": "parigi",
- "_doc": "Parigi (26 ott 2026, Fase 1). Centro = Notre-Dame. radius_m 8000 copre i 20 arrondissement (perimetro max ~7 km); La Defense (9,4 km a ovest-nord-ovest) entra come zona extra. clip_radius_m = ritaglio dei dati grezzi sul pod (largo, per decidere dopo). Render (27 ott 2026): stile Siviglia (STILE_VISIVO.md) con palette parigina: pietra calcarea crema, zinco e ardesia, tegole nei faubourg; Senna blu-grigio scuro; quai in pietra (landmarks); rilievo DSM ripulito (dem_parigi.py).",
+ "_doc": "Paris (France). Generato da kit/city_json.py da cities/parigi/story.json (preset 'central'). Non modificare a mano: cambia la story e rigenera.",
+ "_generated_by": "kit/city_json.py",
  "lat0": 48.85297,
  "lon0": 2.34993,
- "radius_m": 8000,
- "clip_radius_m": 11000,
- "extra_zones": [
-  {
-   "name": "La Defense",
-   "lat": 48.8915,
-   "lon": 2.2385,
-   "r_m": 1700
-  }
- ],
- "land_half_m": 40000,
- "min_area_m2": 12,
- "max_h": 330,
- "bdnb_deps": [
-  75,
-  92,
-  93,
-  94
- ],
- "bdnb_datasets": [
-  "base-de-donnees-nationale-des-batiments"
- ],
- "osm_pbf": "https://download.geofabrik.de/europe/france/ile-de-france-latest.osm.pbf",
- "dem_tiles": [
-  "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N48_00_E002_00_DEM/Copernicus_DSM_COG_10_N48_00_E002_00_DEM.tif"
- ],
- "coverage_min": 0.7,
+ "radius_m": 8000.0,
  "hist": "hist_parigi",
+ "story": "cities/parigi/story.json",
  "core_box": [
-  -12000,
-  -12000,
-  12000,
-  12000
+  -8000.0,
+  -8000.0,
+  8000.0,
+  8000.0
  ],
  "forest_box": [
   0,
@@ -45,10 +21,57 @@
  ],
  "parks": [],
  "roads": [],
+ "outer": {
+  "centers": [
+   [
+    48.85297,
+    2.34993
+   ]
+  ],
+  "curve": [
+   [
+    0,
+    9999
+   ],
+   [
+    1,
+    9999
+   ]
+  ],
+  "max": 9999
+ },
+ "min_area_m2": 12,
+ "land_half_m": 40000,
  "grid_deg": 0,
  "marsh": false,
- "haze_k": 22000.0,
- "water_z": -3.0,
+ "haze_k": 1000000000.0,
+ "water_z": -1.5,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -2.0,
+ "sun_el": 22,
+ "sun_rot": 140,
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "tree_scale": [
+  1.8,
+  3.2
+ ],
+ "tree_lift": 2.5,
+ "land_from_buildings": true,
+ "land_close": 15,
+ "blocks_by_building": true,
+ "urban_ground": "footprints",
+ "urban_buffer": 2.0,
+ "urban_close": 2.0,
+ "dur_min": 0.003,
+ "merge_parts": true,
+ "dem_band": 30.0,
+ "bin": 4,
+ "dbin": 8,
+ "rewind_hold": 4,
+ "ms_per_cambio": 12.0,
+ "budget_cambi_h": 1.0,
  "field_colors": [
   "#677a43",
   "#78854e",
@@ -56,61 +79,74 @@
   "#6e7c48",
   "#848b5a"
  ],
- "park_trees": 0.02,
- "block_trees": 0.0008,
- "view_transform": "AgX",
- "look": "AgX - Punchy",
- "exposure": -0.5,
- "land_from_buildings": true,
- "dur_min": 0.003,
- "tree_scale": [
-  2.0,
-  3.6
- ],
- "tree_lift": 2.8,
- "land_close": 6,
- "blocks_by_building": true,
- "skip_canals": true,
- "fields_style": "natural",
- "urban_ground": "footprints",
- "urban_grid": false,
- "row_scale": 0.012,
- "tree_mesh": "octa",
- "far_flat": [
-  7000,
-  16000,
-  0.6
- ],
- "sun_el": 12,
- "vegetation": {
-  "river_w": 60,
-  "river_step": 10,
-  "vega_r": 11000,
-  "vega_step": 24,
-  "vega_clump": 0.62,
-  "orchard_r": 900,
-  "orchard_step": 8,
-  "colors": [
-   "#34461f",
-   "#45552d",
-   "#57653a",
-   "#3c4b27"
-  ]
- },
- "merge_parts": true,
- "rewind_hold": 24,
- "dem_open_m": 270.0,
- "dem_exag": 1.6,
- "dem_flat": 3.0,
  "style": {
   "haze": [
-   0.78,
    0.8,
-   0.8
+   0.88,
+   0.96
   ],
   "era_split": 1850,
   "pitched_until": 1850,
   "pitched_max_area": 600,
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 70,
+  "glass_min_area": 400,
+  "window": "#2a3a4a",
+  "wall_anc": [
+   "#cfc8bc",
+   "#bdb6aa",
+   "#c9c2b4"
+  ],
+  "urban_green": "#7fb04e",
+  "hedge": "#2f6a25",
+  "blocks": "#8f8778",
+  "grass": "#6f9440",
+  "tree": "#3b5a2c",
+  "forest_base": "#5d9c3f",
+  "park_ground": "#5f8a3e",
+  "reclaim": "#c9b993",
+  "urban_phase": "#b8ad98",
+  "street": "#c9c1b0",
+  "rail": "#8a8378",
+  "bridge_deck": "#b9b2a4",
+  "bridge_side": "#a39d92",
+  "smoke": "#3a3532",
+  "smoke_alpha": 0.85,
+  "flood_water": "#946d3c",
+  "water": "#2f6f86",
+  "water2": "#4a8ea3",
+  "water_rough": 0.02,
+  "wave_scale": 0.025,
+  "wave_strength": 0.55,
+  "sky_light": 0.35,
+  "sun_energy": 5.0,
+  "sky_in_reflections": true,
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "night_bld_off": 0.82,
+  "night_floor_off": 0.45,
+  "night_win_off": 0.22,
+  "night_win": 4.5,
+  "night_street": 0.9,
+  "night_sky": 0.01,
+  "moon": 0.05,
+  "night_ground": [
+   0.6,
+   6.0,
+   0.25
+  ],
+  "night_lamp": "#ffa955",
+  "bulb": 14.0,
+  "bulb_size": 1.6,
   "wall_old": [
    "#e4dac4",
    "#d9cdb1",
@@ -138,11 +174,6 @@
    "#efe9dc",
    "#cfc3a6"
   ],
-  "wall_anc": [
-   "#cfc8bc",
-   "#bdb6aa",
-   "#c9c2b4"
-  ],
   "roof_new": [
    "#7f868f",
    "#8b9199",
@@ -151,138 +182,40 @@
    "#6a7179",
    "#7a7f86"
   ],
-  "glass": [
-   "#7fb2d0",
-   "#6ea6c8",
-   "#8ec0da"
-  ],
-  "glass_h": 70,
-  "window": "#2a3a4a",
   "urban": [
-   "#b9b2a3",
-   "#b1a999",
-   "#beb7a8",
-   "#a9a191",
-   "#b5ad9d",
-   "#a59c8b"
+   "#cdc5b4",
+   "#c5bdab",
+   "#d2cab9",
+   "#bdb5a3",
+   "#c9c1af",
+   "#b9b09e"
   ],
-  "urban_dark": "#c2baa9",
-  "urban_green": "#7fb04e",
-  "hedge": "#5d6238",
-  "blocks": "#8f8778",
-  "grass": "#5f7c3b",
-  "tree": "#3b5a2c",
-  "forest_base": "#5d9c3f",
-  "water": "#2c3d45",
-  "water_rough": 0.05,
-  "sky_light": 0.35,
-  "sun_energy": 4.2,
-  "night_off": 0.72,
-  "night_win": 9.0,
-  "moon": 0.05,
-  "night_street": 0.9,
-  "night_sky": 0.03,
-  "bridge_side": "#a39d92",
-  "glass_min_area": 400,
-  "bulb": 8.0,
-  "sky_in_reflections": true,
-  "wave_scale": 0.025,
-  "wave_strength": 0.05,
-  "water2": "#37494f",
-  "sunset_el": 4.0,
-  "sunset_sun": 9.0,
-  "exp_sunset": 0.35,
-  "twilight_sun": 0.12,
-  "twilight_sky": 0.05,
-  "twilight_sky_col": "#1f2f5a",
-  "exp_twilight": 0.0,
-  "reclaim": "#bdb39b",
-  "park_ground": "#5e7a3c",
-  "olive_soil": "#a8916a",
-  "olive_tree": "#4e5730",
-  "bulb_size": 1.6,
-  "nat": {
-   "vega1": "#556f39",
-   "vega2": "#6b8041",
-   "olive": "#4c5f35",
-   "olive_soil": "#77774f",
-   "marsh1": "#5f7050",
-   "marsh2": "#4f6448",
-   "marsh_y0": -20000.0,
-   "marsh_y1": -21000.0,
-   "campina": [
-    "#6c7944",
-    "#7d8550",
-    "#8e8c5a",
-    "#73804a",
-    "#9a9364"
-   ],
-   "_nota": "Ile-de-France estate: prati e grano misti (verde-oliva con chiazze bionde), vigne e boschi scuri sui rilievi; niente marismas"
-  },
-  "urban_phase": "#a9a294",
-  "night_ground": [
-   0.6,
-   6.0,
-   0.25
+  "urban_dark": "#d6cebd"
+ },
+ "cover": {
+  "cam": [
+   -2730,
+   -17160,
+   8580,
+   0,
+   780,
+   0
   ],
-  "night_lamp": "#ffa955",
-  "street": "#c9c1b0",
-  "mansard": true,
-  "mansard_roof": [
-   "#7d848d",
-   "#8a9099",
-   "#6f767f",
-   "#959ba2",
-   "#5f6670"
+  "lens": 35,
+  "years": [
+   1190,
+   2026
   ],
-  "street_old_until": 1800,
-  "street_earth": "#9c916c",
-  "roof_rf": {
-   "z": [
-    "#7d848d",
-    "#8a9099",
-    "#6f767f",
-    "#959ba2",
-    "#5f6670",
-    "#848a90"
-   ],
-   "t": [
-    "#94654f",
-    "#8a5f4b",
-    "#9c6a52",
-    "#7f5a48"
-   ],
-   "b": [
-    "#a9a8a4",
-    "#b5b3ae",
-    "#9d9c98"
-   ]
-  },
-  "roof_rf_core": 4500
+  "night_years": [
+   2026
+  ]
  },
- "blocks_by_decade": true,
- "far": {
-  "r0": 10500.0,
-  "blend": 3000.0,
-  "_nota": "sfondo vero oltre il modello: tools/fetch_far.py (pod) + tools/far_prep.py",
-  "far_core_m2": 150000,
-  "core_year": 1500
- },
- "dem_band": 30.0,
- "dbin": 8,
- "grow_step": 2,
- "urban_buffer_old": 5.0,
- "urban_old_until": 1800,
- "sun_rot": 140,
- "look_lite": {
-  "vegetation": {
-   "river_step": 16,
-   "vega_step": 40,
-   "orchard_step": 14
-  },
-  "dem_tol": 1.5,
-  "dem_edge_max": 480.0,
-  "samples": 6
- },
- "look_default": "lite"
+ "shorts": [
+  [
+   "A",
+   1,
+   7200,
+   10
+  ]
+ ]
 }

@@ -1,0 +1,1189 @@
+{
+ "didascalie": [
+  {
+   "t_in": 321.29,
+   "t_out": 325.89,
+   "date": "1784",
+   "title": "The Bastille falls (1789)",
+   "line": "14 July 1789",
+   "sober": false
+  },
+  {
+   "t_in": 892.62,
+   "t_out": 897.23,
+   "date": "2018",
+   "title": "Notre-Dame: fire and rebirth (2019-2024)",
+   "line": "15 April 2019 – 7 December 2024",
+   "sober": false
+  }
+ ],
+ "soste": [
+  {
+   "t_in": 15.7,
+   "t_out": 38.7,
+   "title": "Philippe Augustus walls the city",
+   "sub": "1190-1215"
+  },
+  {
+   "t_in": 79.98,
+   "t_out": 89.98,
+   "title": "Charles V: a new wall and the Bastille",
+   "sub": "1356-1383"
+  },
+  {
+   "t_in": 145.95,
+   "t_out": 163.95,
+   "title": "Pont Neuf and the Grande Galerie",
+   "sub": "1578-1612"
+  },
+  {
+   "t_in": 199.31,
+   "t_out": 214.31,
+   "title": "Les Invalides and its golden dome",
+   "sub": "1670-1706"
+  },
+  {
+   "t_in": 321.29,
+   "t_out": 337.29,
+   "title": "The Bastille falls",
+   "sub": "1789"
+  },
+  {
+   "t_in": 394.59,
+   "t_out": 409.59,
+   "title": "Canal Saint-Martin is dug",
+   "sub": "1822-1825"
+  },
+  {
+   "t_in": 491.12,
+   "t_out": 521.12,
+   "title": "Haussmann cuts through old Paris",
+   "sub": "1853-1870"
+  },
+  {
+   "t_in": 612.7,
+   "t_out": 620.7,
+   "title": "The Eiffel Tower rises",
+   "sub": "1887-1889"
+  },
+  {
+   "t_in": 791.14,
+   "t_out": 806.14,
+   "title": "Tour Montparnasse and Centre Pompidou",
+   "sub": "1969-1977"
+  },
+  {
+   "t_in": 892.62,
+   "t_out": 908.62,
+   "title": "Notre-Dame: fire and rebirth",
+   "sub": "2019-2024"
+  }
+ ],
+ "subscribe_t": 90.0,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 20.7,
+   "date": "1190",
+   "title": "A wall for Paris",
+   "lines": [
+    "Philippe Augustus orders a stone wall before leaving on crusade."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 20.7,
+   "t_out": 25.7,
+   "date": "1196",
+   "title": "Notre-Dame rises",
+   "lines": [
+    "The choir is done; the nave goes up next."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 25.7,
+   "t_out": 33.7,
+   "date": "1202",
+   "title": "The Louvre fortress",
+   "lines": [
+    "A castle guards the wall where it meets the Seine."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 33.7,
+   "t_out": 38.7,
+   "date": "1215",
+   "title": "The Left Bank wall closes",
+   "lines": [
+    "About 253 hectares inside the walls."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 39.73,
+   "t_out": 44.73,
+   "date": "1240",
+   "title": "50,000 Parisians",
+   "lines": [
+    "Already one of the largest cities in Europe (estimate)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 45.82,
+   "t_out": 50.82,
+   "date": "1248",
+   "title": "Sainte-Chapelle",
+   "lines": [
+    "A royal chapel built to hold the Crown of Thorns."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 56.86,
+   "t_out": 61.86,
+   "date": "1290",
+   "title": "~120,000 people",
+   "lines": [
+    "Estimate; Paris is the biggest city in Western Europe."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 63.97,
+   "t_out": 71.97,
+   "date": "1345",
+   "title": "Notre-Dame completed",
+   "lines": [
+    "Almost two centuries after the first stone."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 72.37,
+   "t_out": 77.37,
+   "date": "1350",
+   "title": "The Black Death",
+   "lines": [
+    "Paris loses a large share of its people (estimates vary)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 79.98,
+   "t_out": 84.98,
+   "date": "1370",
+   "title": "The Bastille",
+   "lines": [
+    "A fortress guards the new eastern gate."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 84.98,
+   "t_out": 89.98,
+   "date": "1383",
+   "title": "The Charles V wall",
+   "lines": [
+    "The Right Bank city doubles behind a new wall."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 99.24,
+   "t_out": 107.24,
+   "date": "1413",
+   "title": "Pont Notre-Dame",
+   "lines": [
+    "A bridge lined with houses."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 107.68,
+   "t_out": 112.68,
+   "date": "1420",
+   "title": "Two kings enter Paris",
+   "lines": [
+    "Henry V of England and Charles VI ride in together under the Treaty of Troyes."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 113.18,
+   "t_out": 118.18,
+   "date": "1436",
+   "title": "The English leave Paris",
+   "lines": [
+    "Charles VII can finally return to a city held by Burgundians and English since 1418."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 119.98,
+   "t_out": 124.98,
+   "date": "1490",
+   "title": "Back to 200,000",
+   "lines": [
+    "The city recovers after the Hundred Years War (estimate)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 126.41,
+   "t_out": 134.41,
+   "date": "1533",
+   "title": "A new Hôtel de Ville",
+   "lines": [
+    "Work begins on the Renaissance city hall."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 134.84,
+   "t_out": 139.84,
+   "date": "1546",
+   "title": "A Renaissance Louvre",
+   "lines": [
+    "The medieval castle starts to become a palace."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 140.44,
+   "t_out": 145.44,
+   "date": "1564",
+   "title": "The Tuileries Palace",
+   "lines": [
+    "Catherine de' Medici builds a palace west of the Louvre."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 145.95,
+   "t_out": 150.95,
+   "date": "1594",
+   "title": "Henry IV takes Paris",
+   "lines": [
+    "The Catholic League held out in the city until 1594."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 150.95,
+   "t_out": 158.95,
+   "date": "1607",
+   "title": "Pont Neuf opens",
+   "lines": [
+    "The first Paris bridge without houses on it."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 158.95,
+   "t_out": 163.95,
+   "date": "1612",
+   "title": "Place Royale",
+   "lines": [
+    "Today Place des Vosges."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 166.01,
+   "t_out": 171.01,
+   "date": "1626",
+   "title": "Pont au Double",
+   "lines": [
+    "The first bridge on the site (1626)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 171.34,
+   "t_out": 176.34,
+   "date": "1630",
+   "title": "The Fossés Jaunes",
+   "lines": [
+    "A new rampart pushes the Right Bank west."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 176.69,
+   "t_out": 181.69,
+   "date": "1635",
+   "title": "Pont Marie",
+   "lines": [
+    "Christophe Marie links Île Saint-Louis to the Right Bank."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 182.06,
+   "t_out": 190.06,
+   "date": "1640",
+   "title": "450,000 people",
+   "lines": [
+    "Estimate."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 190.71,
+   "t_out": 198.71,
+   "date": "1655",
+   "title": "Île Saint-Louis",
+   "lines": [
+    "Two islets are joined and built over."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 199.31,
+   "t_out": 204.31,
+   "date": "1674",
+   "title": "The Louvre Colonnade",
+   "lines": [
+    "A classical façade facing the city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 204.31,
+   "t_out": 209.31,
+   "date": "1676",
+   "title": "The walls come down",
+   "lines": [
+    "Old ramparts become the first Grands Boulevards."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 209.31,
+   "t_out": 214.31,
+   "date": "1690",
+   "title": "500,000 Parisians",
+   "lines": [
+    "Estimate."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 214.31,
+   "t_out": 222.31,
+   "date": "1706",
+   "title": "The Invalides dome is gilded",
+   "lines": [
+    "Mansart's dome: 107 m."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 236.31,
+   "t_out": 244.31,
+   "date": "1720",
+   "title": "Place Vendôme",
+   "lines": [
+    "A royal square of matching façades."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 264.31,
+   "t_out": 272.31,
+   "date": "1740",
+   "title": "550,000 Parisians",
+   "lines": [
+    "Estimate."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 287.31,
+   "t_out": 295.31,
+   "date": "1755",
+   "title": "Place Louis XV",
+   "lines": [
+    "Today Place de la Concorde."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 298.31,
+   "t_out": 303.31,
+   "date": "1758",
+   "title": "Sainte-Geneviève",
+   "lines": [
+    "The church that will become the Panthéon."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 321.29,
+   "t_out": 329.29,
+   "date": "1786",
+   "title": "Houses cleared off the bridges",
+   "lines": [
+    "Pont Notre-Dame and Pont au Change lose their houses."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 329.29,
+   "t_out": 337.29,
+   "date": "1790",
+   "title": "The Farmers-General wall",
+   "lines": [
+    "A customs wall around the whole city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 337.29,
+   "t_out": 342.29,
+   "date": "1791",
+   "title": "Pont de la Concorde",
+   "lines": [
+    "A new bridge to Place Louis XV."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 342.87,
+   "t_out": 347.87,
+   "date": "1792",
+   "title": "The monarchy falls",
+   "lines": [
+    "After the insurrection of 10 August 1792, the First Republic replaces the king."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 349.5,
+   "t_out": 354.5,
+   "date": "1801",
+   "title": "547,756 Parisians",
+   "lines": [
+    "First census."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 355.11,
+   "t_out": 360.11,
+   "date": "1804",
+   "title": "Napoleon, emperor",
+   "lines": [
+    "He is granted the title Emperor of the French on 18 May 1804."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 360.22,
+   "t_out": 365.22,
+   "date": "1805",
+   "title": "The Grand Châtelet is demolished",
+   "lines": [
+    "The medieval fortress at the heart of the Right Bank."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 365.4,
+   "t_out": 373.4,
+   "date": "1806",
+   "title": "Arc de Triomphe",
+   "lines": [
+    "Napoleon orders a triumphal arch at the Étoile."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 374.4,
+   "t_out": 382.4,
+   "date": "1811",
+   "title": "The Rohan wing",
+   "lines": [
+    "The Louvre grows along the new Rue de Rivoli."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 382.84,
+   "t_out": 387.84,
+   "date": "1813",
+   "title": "Canal de l'Ourcq",
+   "lines": [
+    "Fresh water reaches La Villette."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 388.14,
+   "t_out": 393.14,
+   "date": "1814",
+   "title": "The kings return",
+   "lines": [
+    "In April 1814 the allied armies restore Louis XVIII."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 394.59,
+   "t_out": 399.59,
+   "date": "1821",
+   "title": "Canal Saint-Denis",
+   "lines": [
+    "The canal is completed (1821)."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 399.59,
+   "t_out": 404.59,
+   "date": "1822",
+   "title": "The Ourcq canal is complete",
+   "lines": [
+    "From Mareuil to Paris."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 409.63,
+   "t_out": 417.63,
+   "date": "1825",
+   "title": "Canal Saint-Martin",
+   "lines": [
+    "A canal brings water and barges into Paris."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 404.59,
+   "t_out": 409.59,
+   "date": "1827",
+   "title": "Pont de Grenelle",
+   "lines": [
+    "The first bridge on the site opens on 1 May 1827."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 419.0,
+   "t_out": 424.0,
+   "date": "1828",
+   "title": "Three new crossings",
+   "lines": [
+    "Arcole footbridge and Pont de l'Archevêché."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 425.82,
+   "t_out": 430.82,
+   "date": "1830",
+   "title": "The July Revolution",
+   "lines": [
+    "Three days of fighting end the Bourbon Restoration."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 433.08,
+   "t_out": 441.08,
+   "date": "1833",
+   "title": "Pont Louis-Philippe",
+   "lines": [
+    "The king lays the first stone."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 442.08,
+   "t_out": 447.08,
+   "date": "1834",
+   "title": "Pont du Carrousel",
+   "lines": [
+    "A bridge straight into the Louvre."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 449.08,
+   "t_out": 454.08,
+   "date": "1836",
+   "title": "The Arc is finished",
+   "lines": [
+    "Thirty years after the first stone."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 461.08,
+   "t_out": 469.08,
+   "date": "1843",
+   "title": "Île Louviers disappears",
+   "lines": [
+    "Its river arm is filled; the island joins the Right Bank."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 470.08,
+   "t_out": 475.08,
+   "date": "1844",
+   "title": "The Thiers wall",
+   "lines": [
+    "A 33 km fortification around Paris."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 477.08,
+   "t_out": 485.08,
+   "date": "1846",
+   "title": "Over 1 million",
+   "lines": [
+    "1,053,897 Parisians."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 491.12,
+   "t_out": 496.12,
+   "date": "1852",
+   "title": "A second Napoleon",
+   "lines": [
+    "Louis-Napoleon proclaims himself Emperor on 2 December 1852."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 496.12,
+   "t_out": 501.12,
+   "date": "1853",
+   "title": "Haussmann begins",
+   "lines": [
+    "Boulevards are cut straight through the old city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 501.12,
+   "t_out": 506.12,
+   "date": "1856",
+   "title": "Pont des Invalides",
+   "lines": [
+    "The suspension bridge is replaced in stone."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 506.12,
+   "t_out": 511.12,
+   "date": "1857",
+   "title": "Les Halles",
+   "lines": [
+    "Baltard's iron and glass market pavilions."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 511.12,
+   "t_out": 516.12,
+   "date": "1858",
+   "title": "Boulevard de Sébastopol",
+   "lines": [
+    "Inaugurated through the heart of the Right Bank."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 516.12,
+   "t_out": 521.12,
+   "date": "1859",
+   "title": "A new spire for Notre-Dame",
+   "lines": [
+    "Viollet-le-Duc's spire is inaugurated."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 521.16,
+   "t_out": 526.16,
+   "date": "1860",
+   "title": "20 arrondissements",
+   "lines": [
+    "On 1 January 1860 Paris annexes its suburbs up to the Thiers wall."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 526.66,
+   "t_out": 531.66,
+   "date": "1860",
+   "title": "Pont au Change",
+   "lines": [
+    "Rebuilt as it stands today."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 533.16,
+   "t_out": 538.16,
+   "date": "1862",
+   "title": "The canal goes underground",
+   "lines": [
+    "Boulevard Richard-Lenoir is built on top."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 539.16,
+   "t_out": 547.16,
+   "date": "1863",
+   "title": "The New Louvre",
+   "lines": [
+    "The Louvre finally joins the Tuileries."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 554.83,
+   "t_out": 559.83,
+   "date": "1870",
+   "title": "The empire collapses",
+   "lines": [
+    "After Sedan, the Third Republic is proclaimed on 4 September 1870."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 560.56,
+   "t_out": 565.56,
+   "date": "1871",
+   "title": "The Commune",
+   "lines": [
+    "The Tuileries and the Hôtel de Ville are set on fire."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 569.16,
+   "t_out": 577.16,
+   "date": "1875",
+   "title": "Palais Garnier",
+   "lines": [
+    "The opera house opens."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 578.16,
+   "t_out": 586.16,
+   "date": "1876",
+   "title": "Avenue de l'Opéra",
+   "lines": [
+    "Cut straight from the Louvre to the Opéra."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 592.16,
+   "t_out": 600.16,
+   "date": "1882",
+   "title": "A new Hôtel de Ville",
+   "lines": [
+    "Rebuilt on the same site."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 601.16,
+   "t_out": 609.16,
+   "date": "1883",
+   "title": "Tuileries demolished",
+   "lines": [
+    "The burnt palace is cleared away."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 612.7,
+   "t_out": 620.7,
+   "date": "1889",
+   "title": "Eiffel Tower opens",
+   "lines": [
+    "300 m: the tallest structure in the world."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 627.1,
+   "t_out": 632.1,
+   "date": "1896",
+   "title": "Pont Alexandre III",
+   "lines": [
+    "A single steel arch over the Seine."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 636.1,
+   "t_out": 641.1,
+   "date": "1900",
+   "title": "World Fair and the first Métro line",
+   "lines": [
+    "Grand Palais, Pont Alexandre III, Line 1."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 645.1,
+   "t_out": 650.1,
+   "date": "1904",
+   "title": "Pont de Bercy",
+   "lines": [
+    "Widened 5.5 m to carry the Métro."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 652.6,
+   "t_out": 657.6,
+   "date": "1906",
+   "title": "Voûte du Temple",
+   "lines": [
+    "Another stretch of the canal is covered."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 661.1,
+   "t_out": 666.1,
+   "date": "1910",
+   "title": "The great flood",
+   "lines": [
+    "The Seine rises more than 8 m."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 670.1,
+   "t_out": 678.1,
+   "date": "1914",
+   "title": "Sacré-Cœur completed",
+   "lines": [
+    "Consecrated only in 1919, after the war."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 685.1,
+   "t_out": 690.1,
+   "date": "1921",
+   "title": "2.9 million Parisians",
+   "lines": [
+    "The all-time peak."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 695.1,
+   "t_out": 700.1,
+   "date": "1926",
+   "title": "Boulevard Haussmann",
+   "lines": [
+    "Finished 69 years after it began."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 703.1,
+   "t_out": 708.1,
+   "date": "1929",
+   "title": "The Thiers wall is razed",
+   "lines": [
+    "Its belt becomes housing and, later, the Périphérique."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 710.1,
+   "t_out": 715.1,
+   "date": "1931",
+   "title": "2,891,020 Parisians",
+   "lines": [
+    "Census."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 723.1,
+   "t_out": 731.1,
+   "date": "1939",
+   "title": "A new Pont du Carrousel",
+   "lines": [
+    "The current bridge opens."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 732.55,
+   "t_out": 737.55,
+   "date": "1940",
+   "title": "Paris is occupied",
+   "lines": [
+    "German armies enter the city unopposed on 14 June 1940."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 741.75,
+   "t_out": 746.75,
+   "date": "1944",
+   "title": "Paris is liberated",
+   "lines": [
+    "The German garrison surrenders the capital on 25 August 1944."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 748.1,
+   "t_out": 756.1,
+   "date": "1946",
+   "title": "2,725,374 Parisians",
+   "lines": [
+    "The first census after the war."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 764.1,
+   "t_out": 769.1,
+   "date": "1954",
+   "title": "2,850,189 Parisians",
+   "lines": [
+    "Census."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 773.1,
+   "t_out": 778.1,
+   "date": "1958",
+   "title": "La Défense",
+   "lines": [
+    "A business district rises west of Paris."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 778.86,
+   "t_out": 783.86,
+   "date": "1958",
+   "title": "A new republic",
+   "lines": [
+    "The Fifth Republic is established on 4 October 1958."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 791.14,
+   "t_out": 796.14,
+   "date": "1968",
+   "title": "2,590,771 Parisians",
+   "lines": [
+    "Families leave for the suburbs."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 796.14,
+   "t_out": 801.14,
+   "date": "1971",
+   "title": "Les Halles demolished",
+   "lines": [
+    "Baltard's pavilions are torn down."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 801.14,
+   "t_out": 806.14,
+   "date": "1973",
+   "title": "Tour Montparnasse",
+   "lines": [
+    "210 m: a tower Paris will never repeat inside the city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 806.18,
+   "t_out": 811.18,
+   "date": "1973",
+   "title": "Boulevard Périphérique",
+   "lines": [
+    "The ring road is completed."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 814.68,
+   "t_out": 822.68,
+   "date": "1977",
+   "title": "Centre Pompidou",
+   "lines": [
+    "Pipes and escalators on the outside."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 834.68,
+   "t_out": 839.68,
+   "date": "1989",
+   "title": "The Louvre Pyramid",
+   "lines": [
+    "And the Grande Arche at La Défense."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 846.68,
+   "t_out": 851.68,
+   "date": "1996",
+   "title": "Pont Charles-de-Gaulle",
+   "lines": [
+    "Built between 1993 and 1996."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 854.68,
+   "t_out": 862.68,
+   "date": "1999",
+   "title": "2,125,246 Parisians",
+   "lines": [
+    "The smallest population in a century."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 869.68,
+   "t_out": 874.68,
+   "date": "2006",
+   "title": "Passerelle Simone-de-Beauvoir",
+   "lines": [
+    "Inaugurated in 2006."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 879.68,
+   "t_out": 884.68,
+   "date": "2011",
+   "title": "2,249,975 Parisians",
+   "lines": [
+    "A brief rebound."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 892.62,
+   "t_out": 900.62,
+   "date": "2019",
+   "title": "Notre-Dame burns",
+   "lines": [
+    "The spire and the roof are lost."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 900.62,
+   "t_out": 908.62,
+   "date": "2024",
+   "title": "Notre-Dame reopens",
+   "lines": [
+    "The spire is back."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 908.67,
+   "t_out": 913.67,
+   "date": "2025",
+   "title": "Paris today",
+   "lines": [
+    "2,065,560 people inside the city."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "Medieval Paris"
+  },
+  {
+   "t_in": 133.64,
+   "t_out": 134.84,
+   "num": "II",
+   "title": "Renaissance and Royal Paris"
+  },
+  {
+   "t_in": 326.49,
+   "t_out": 329.29,
+   "num": "III",
+   "title": "Revolution and Empire"
+  },
+  {
+   "t_in": 493.32,
+   "t_out": 496.12,
+   "num": "IV",
+   "title": "Haussmann's Paris"
+  },
+  {
+   "t_in": 633.3,
+   "t_out": 636.1,
+   "num": "V",
+   "title": "Belle Époque and World Wars"
+  },
+  {
+   "t_in": 770.3,
+   "t_out": 773.1,
+   "num": "VI",
+   "title": "Modern Paris"
+  }
+ ],
+ "cta": {
+  "t_in": 959.2,
+  "t_out": 963.7,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
+ "sources_card": {
+  "t_in": 963.7,
+  "t_out": 971.7,
+  "items": [
+   "Île Saint-Louis: unificazione degli isolotti Notre-Dame e aux Vaches",
+   "Île Louviers: riempimento del braccio del Mail e unione alla riva destra",
+   "Canal de l’Ourcq: apertura del primo tratto navigabile fino a La Villette",
+   "Canal de l’Ourcq: apertura del tratto Mareuil–Parigi",
+   "Canal Saint-Denis: completamento e apertura",
+   "Canal Saint-Martin: scavo e costruzione (cantiere effettivo)",
+   "Canal Saint-Martin: completamento e apertura",
+   "Canal Saint-Martin: copertura parziale sul boulevard Richard-Lenoir",
+   "Canal Saint-Martin: copertura del tratto tra République e Bastille",
+   "Enceinte de Philippe Auguste — rive droite: costruzione",
+   "Enceinte de Philippe Auguste — rive gauche: costruzione",
+   "Enceinte de Charles V: costruzione",
+   "Enceinte de Charles V: dismissione e demolizione progressiva",
+   "Enceinte de Louis XIII: costruzione"
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
+}

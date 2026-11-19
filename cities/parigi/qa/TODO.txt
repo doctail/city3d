@@ -1,0 +1,1 @@
+Parigi: rerun 'kit qa parigi --only d' when memory is free (peaks ~11 GB); decide card density 1830-1887; video length 972 s.
