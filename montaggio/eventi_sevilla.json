@@ -17,56 +17,50 @@
    "sub": "1248"
   },
   {
-   "t_in": 59.55,
-   "t_out": 65.55,
+   "t_in": 59.6,
+   "t_out": 65.6,
    "title": "The Great Mosque gives way to the Cathedral",
    "sub": "1401"
   },
   {
-   "t_in": 76.96,
-   "t_out": 81.96,
+   "t_in": 77.01,
+   "t_out": 82.01,
    "title": "The Casa de Contratación opens the Americas trade",
    "sub": "1503"
   },
   {
-   "t_in": 91.02,
-   "t_out": 99.02,
+   "t_in": 91.07,
+   "t_out": 99.07,
    "title": "The Giralda gets its Renaissance belfry",
    "sub": "1558-1568"
   },
   {
-   "t_in": 220.62,
-   "t_out": 233.62,
+   "t_in": 220.92,
+   "t_out": 233.92,
    "title": "The walls come down",
    "sub": "from 1868"
   },
   {
-   "t_in": 255.77,
-   "t_out": 268.77,
+   "t_in": 256.06,
+   "t_out": 269.06,
    "title": "Plaza de España for the 1929 Expo",
    "sub": "1914-1929"
   },
   {
-   "t_in": 336.14,
-   "t_out": 341.64,
-   "title": "A planned district: Los Remedios",
-   "sub": "1960s"
-  },
-  {
-   "t_in": 374.68,
-   "t_out": 379.68,
+   "t_in": 357.34,
+   "t_out": 362.34,
    "title": "The river is moved west: Corta de la Cartuja",
    "sub": "1975-1982"
   },
   {
-   "t_in": 405.72,
-   "t_out": 423.72,
+   "t_in": 379.88,
+   "t_out": 397.88,
    "title": "Expo 92",
    "sub": "20 April - 12 October 1992"
   },
   {
-   "t_in": 469.04,
-   "t_out": 474.04,
+   "t_in": 437.5,
+   "t_out": 442.5,
    "title": "Torre Sevilla, 180 m",
    "sub": "2015"
   }
@@ -124,8 +118,8 @@
    "sober": false
   },
   {
-   "t_in": 54.44,
-   "t_out": 59.44,
+   "t_in": 54.47,
+   "t_out": 59.47,
    "date": "1400",
    "title": "A Christian crown",
    "lines": [
@@ -134,8 +128,8 @@
    "sober": false
   },
   {
-   "t_in": 59.55,
-   "t_out": 64.55,
+   "t_in": 59.6,
+   "t_out": 64.6,
    "date": "1402",
    "title": "Cathedral works begin",
    "lines": [
@@ -144,8 +138,8 @@
    "sober": false
   },
   {
-   "t_in": 67.8,
-   "t_out": 75.8,
+   "t_in": 67.85,
+   "t_out": 75.85,
    "date": "1478",
    "title": "The Inquisition begins here",
    "lines": [
@@ -154,8 +148,8 @@
    "sober": false
   },
   {
-   "t_in": 76.96,
-   "t_out": 81.96,
+   "t_in": 77.01,
+   "t_out": 82.01,
    "date": "1503",
    "title": "Gateway to the Americas",
    "lines": [
@@ -164,8 +158,8 @@
    "sober": false
   },
   {
-   "t_in": 82.64,
-   "t_out": 87.64,
+   "t_in": 82.69,
+   "t_out": 87.69,
    "date": "1519",
    "title": "Magellan sets out",
    "lines": [
@@ -174,8 +168,8 @@
    "sober": false
   },
   {
-   "t_in": 91.02,
-   "t_out": 99.02,
+   "t_in": 91.07,
+   "t_out": 99.07,
    "date": "1558",
    "title": "A new top for the Giralda",
    "lines": [
@@ -184,8 +178,8 @@
    "sober": false
   },
   {
-   "t_in": 99.37,
-   "t_out": 104.37,
+   "t_in": 99.42,
+   "t_out": 104.42,
    "date": "1574",
    "title": "The lagoon is drained",
    "lines": [
@@ -194,8 +188,8 @@
    "sober": false
   },
   {
-   "t_in": 106.65,
-   "t_out": 114.65,
+   "t_in": 106.7,
+   "t_out": 114.7,
    "date": "1600",
    "title": "Golden Age Seville",
    "lines": [
@@ -204,8 +198,8 @@
    "sober": false
   },
   {
-   "t_in": 118.53,
-   "t_out": 123.53,
+   "t_in": 118.58,
+   "t_out": 123.58,
    "date": "1649",
    "title": "The Great Plague",
    "lines": [
@@ -214,8 +208,8 @@
    "sober": false
   },
   {
-   "t_in": 127.31,
-   "t_out": 135.31,
+   "t_in": 127.44,
+   "t_out": 135.44,
    "date": "1700",
    "title": "A shrinking city",
    "lines": [
@@ -224,8 +218,8 @@
    "sober": false
   },
   {
-   "t_in": 136.29,
-   "t_out": 141.29,
+   "t_in": 136.47,
+   "t_out": 141.47,
    "date": "1717",
    "title": "Trade moves to Cádiz",
    "lines": [
@@ -234,8 +228,8 @@
    "sober": false
   },
   {
-   "t_in": 142.09,
-   "t_out": 147.09,
+   "t_in": 142.27,
+   "t_out": 147.27,
    "date": "1728",
    "title": "Royal Tobacco Factory",
    "lines": [
@@ -244,8 +238,8 @@
    "sober": false
   },
   {
-   "t_in": 148.36,
-   "t_out": 153.36,
+   "t_in": 148.54,
+   "t_out": 153.54,
    "date": "1755",
    "title": "Lisbon earthquake",
    "lines": [
@@ -254,18 +248,8 @@
    "sober": false
   },
   {
-   "t_in": 153.43,
-   "t_out": 158.43,
-   "date": "1758",
-   "title": "The Maestranza bullring rises (from 1761)",
-   "lines": [
-    "The Maestranza bullring rises (from 1761)"
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 158.5,
-   "t_out": 163.5,
+   "t_in": 153.68,
+   "t_out": 158.68,
    "date": "1760",
    "title": "Torre del Oro",
    "lines": [
@@ -274,8 +258,19 @@
    "sober": false
   },
   {
-   "t_in": 165.22,
-   "t_out": 170.22,
+   "t_in": 158.72,
+   "t_out": 163.52,
+   "date": "1761",
+   "title": "The Maestranza bullring rises",
+   "lines": [
+    "The inner gateway and the Prince's box go up between 1761 and 1765.",
+    "Construction then stops from 1766 to 1784."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 165.2,
+   "t_out": 170.2,
    "date": "1810",
    "title": "French occupation",
    "lines": [
@@ -284,8 +279,8 @@
    "sober": false
   },
   {
-   "t_in": 170.25,
-   "t_out": 175.25,
+   "t_in": 170.24,
+   "t_out": 175.24,
    "date": "1811",
    "title": "Encarnación convent demolished",
    "lines": [
@@ -294,8 +289,8 @@
    "sober": false
   },
   {
-   "t_in": 175.55,
-   "t_out": 183.55,
+   "t_in": 175.54,
+   "t_out": 183.54,
    "date": "1820",
    "title": "A market square",
    "lines": [
@@ -304,8 +299,8 @@
    "sober": false
   },
   {
-   "t_in": 184.08,
-   "t_out": 189.08,
+   "t_in": 184.07,
+   "t_out": 189.07,
    "date": "1836",
    "title": "Church property is sold off",
    "lines": [
@@ -314,8 +309,8 @@
    "sober": false
   },
   {
-   "t_in": 189.28,
-   "t_out": 197.28,
+   "t_in": 189.27,
+   "t_out": 197.27,
    "date": "1842",
    "title": "100,498 people",
    "lines": [
@@ -324,18 +319,19 @@
    "sober": false
   },
   {
-   "t_in": 197.32,
-   "t_out": 201.82,
-   "date": "1843",
-   "title": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+   "t_in": 197.37,
+   "t_out": 202.17,
+   "date": "1845",
+   "title": "Isabel II Bridge",
    "lines": [
-    "Isabel II Bridge replaces the boat bridge (1845-1852)"
+    "Work begins in 1845 on the first solid bridge in Seville.",
+    "Until then a pontoon bridge of boats, first built by the Moors in the 12th century, crosses the river."
    ],
    "sober": false
   },
   {
-   "t_in": 202.12,
-   "t_out": 207.12,
+   "t_in": 202.41,
+   "t_out": 207.41,
    "date": "1852",
    "title": "Isabel II Bridge opens",
    "lines": [
@@ -344,8 +340,8 @@
    "sober": false
   },
   {
-   "t_in": 207.13,
-   "t_out": 215.13,
+   "t_in": 207.42,
+   "t_out": 215.42,
    "date": "1852",
    "title": "Plaza Nueva",
    "lines": [
@@ -354,8 +350,8 @@
    "sober": false
   },
   {
-   "t_in": 215.28,
-   "t_out": 220.28,
+   "t_in": 215.58,
+   "t_out": 220.58,
    "date": "1857",
    "title": "112,529 people",
    "lines": [
@@ -364,8 +360,8 @@
    "sober": false
   },
   {
-   "t_in": 220.62,
-   "t_out": 228.62,
+   "t_in": 220.92,
+   "t_out": 228.92,
    "date": "1868",
    "title": "The walls come down",
    "lines": [
@@ -374,8 +370,8 @@
    "sober": false
   },
   {
-   "t_in": 228.62,
-   "t_out": 233.62,
+   "t_in": 228.92,
+   "t_out": 233.92,
    "date": "1876",
    "title": "Finishing the Maestranza",
    "lines": [
@@ -384,8 +380,8 @@
    "sober": false
   },
   {
-   "t_in": 233.72,
-   "t_out": 238.72,
+   "t_in": 234.02,
+   "t_out": 239.02,
    "date": "1877",
    "title": "133,247 people",
    "lines": [
@@ -394,8 +390,8 @@
    "sober": false
   },
   {
-   "t_in": 240.78,
-   "t_out": 248.78,
+   "t_in": 241.07,
+   "t_out": 249.07,
    "date": "1900",
    "title": "147,271 people",
    "lines": [
@@ -404,8 +400,8 @@
    "sober": false
   },
   {
-   "t_in": 250.34,
-   "t_out": 255.34,
+   "t_in": 250.62,
+   "t_out": 255.62,
    "date": "1909",
    "title": "Alfonso XIII Canal",
    "lines": [
@@ -414,8 +410,8 @@
    "sober": false
   },
   {
-   "t_in": 255.77,
-   "t_out": 260.77,
+   "t_in": 256.06,
+   "t_out": 261.06,
    "date": "1917",
    "title": "The Guadalquivir floods",
    "lines": [
@@ -424,8 +420,8 @@
    "sober": false
   },
   {
-   "t_in": 260.77,
-   "t_out": 268.77,
+   "t_in": 261.06,
+   "t_out": 269.06,
    "date": "1927",
    "title": "The river will move",
    "lines": [
@@ -434,8 +430,8 @@
    "sober": false
   },
   {
-   "t_in": 268.81,
-   "t_out": 276.81,
+   "t_in": 269.1,
+   "t_out": 277.1,
    "date": "1929",
    "title": "Ibero-American Exposition",
    "lines": [
@@ -444,8 +440,8 @@
    "sober": false
   },
   {
-   "t_in": 279.38,
-   "t_out": 284.38,
+   "t_in": 279.66,
+   "t_out": 284.66,
    "date": "1936",
    "title": "Spanish Civil War",
    "lines": [
@@ -454,8 +450,8 @@
    "sober": false
   },
   {
-   "t_in": 286.26,
-   "t_out": 294.26,
+   "t_in": 286.49,
+   "t_out": 294.49,
    "date": "1940",
    "title": "302,300 people",
    "lines": [
@@ -464,8 +460,8 @@
    "sober": false
   },
   {
-   "t_in": 299.02,
-   "t_out": 307.02,
+   "t_in": 299.23,
+   "t_out": 307.23,
    "date": "1950",
    "title": "Chapina is plugged",
    "lines": [
@@ -474,8 +470,8 @@
    "sober": false
   },
   {
-   "t_in": 314.1,
-   "t_out": 319.1,
+   "t_in": 314.3,
+   "t_out": 319.3,
    "date": "1960",
    "title": "Los Remedios",
    "lines": [
@@ -484,8 +480,8 @@
    "sober": false
   },
   {
-   "t_in": 321.0,
-   "t_out": 326.0,
+   "t_in": 321.2,
+   "t_out": 326.2,
    "date": "1961",
    "title": "Tamarguillo flood",
    "lines": [
@@ -494,8 +490,8 @@
    "sober": false
   },
   {
-   "t_in": 327.3,
-   "t_out": 332.3,
+   "t_in": 327.5,
+   "t_out": 332.5,
    "date": "1963",
    "title": "Another flood",
    "lines": [
@@ -504,18 +500,8 @@
    "sober": false
   },
   {
-   "t_in": 336.14,
-   "t_out": 341.14,
-   "date": "1970",
-   "title": "545,692 people",
-   "lines": [
-    "Census figure."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 344.64,
-   "t_out": 352.64,
+   "t_in": 342.3,
+   "t_out": 346.8,
    "date": "1973",
    "title": "Encarnación market demolished",
    "lines": [
@@ -524,18 +510,8 @@
    "sober": false
   },
   {
-   "t_in": 354.64,
-   "t_out": 362.64,
-   "date": "1975",
-   "title": "Corta de la Cartuja",
-   "lines": [
-    "A new river channel west of La Cartuja is cut against floods."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 363.53,
-   "t_out": 371.53,
+   "t_in": 349.69,
+   "t_out": 354.19,
    "date": "1975",
    "title": "Spain turns to democracy",
    "lines": [
@@ -544,8 +520,8 @@
    "sober": false
   },
   {
-   "t_in": 374.68,
-   "t_out": 379.68,
+   "t_in": 357.34,
+   "t_out": 362.34,
    "date": "1981",
    "title": "645,817 people",
    "lines": [
@@ -554,8 +530,8 @@
    "sober": false
   },
   {
-   "t_in": 385.68,
-   "t_out": 393.68,
+   "t_in": 368.34,
+   "t_out": 373.34,
    "date": "1989",
    "title": "Expo bridges rise",
    "lines": [
@@ -564,18 +540,8 @@
    "sober": false
   },
   {
-   "t_in": 394.18,
-   "t_out": 399.18,
-   "date": "1989",
-   "title": "Andalusian government",
-   "lines": [
-    "The presidency of the Junta de Andalucía settles at San Telmo."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 399.68,
-   "t_out": 404.68,
+   "t_in": 374.34,
+   "t_out": 378.84,
    "date": "1990",
    "title": "The plug moves north",
    "lines": [
@@ -584,8 +550,8 @@
    "sober": false
   },
   {
-   "t_in": 405.72,
-   "t_out": 413.72,
+   "t_in": 379.88,
+   "t_out": 384.38,
    "date": "1991",
    "title": "Santa Justa station",
    "lines": [
@@ -594,8 +560,8 @@
    "sober": false
   },
   {
-   "t_in": 413.72,
-   "t_out": 418.72,
+   "t_in": 384.38,
+   "t_out": 388.88,
    "date": "1991",
    "title": "Centenario Bridge",
    "lines": [
@@ -604,8 +570,8 @@
    "sober": false
   },
   {
-   "t_in": 418.72,
-   "t_out": 423.72,
+   "t_in": 388.88,
+   "t_out": 393.38,
    "date": "1992",
    "title": "Expo 92 opens",
    "lines": [
@@ -614,8 +580,8 @@
    "sober": false
   },
   {
-   "t_in": 423.76,
-   "t_out": 428.76,
+   "t_in": 393.38,
+   "t_out": 397.88,
    "date": "1992",
    "title": "High-speed rail",
    "lines": [
@@ -624,8 +590,8 @@
    "sober": false
   },
   {
-   "t_in": 433.46,
-   "t_out": 441.46,
+   "t_in": 401.89,
+   "t_out": 409.89,
    "date": "1997",
    "title": "Isla Mágica",
    "lines": [
@@ -634,8 +600,8 @@
    "sober": false
   },
   {
-   "t_in": 444.62,
-   "t_out": 452.62,
+   "t_in": 413.04,
+   "t_out": 421.04,
    "date": "2001",
    "title": "684,633 people",
    "lines": [
@@ -644,8 +610,8 @@
    "sober": false
   },
   {
-   "t_in": 460.01,
-   "t_out": 468.01,
+   "t_in": 428.48,
+   "t_out": 436.48,
    "date": "2011",
    "title": "Metropol Parasol",
    "lines": [
@@ -654,8 +620,8 @@
    "sober": false
   },
   {
-   "t_in": 469.04,
-   "t_out": 474.04,
+   "t_in": 437.5,
+   "t_out": 442.5,
    "date": "2015",
    "title": "Torre Sevilla",
    "lines": [
@@ -664,8 +630,8 @@
    "sober": false
   },
   {
-   "t_in": 476.09,
-   "t_out": 484.09,
+   "t_in": 444.55,
+   "t_out": 452.55,
    "date": "2025",
    "title": "Seville today",
    "lines": [
@@ -682,50 +648,50 @@
    "title": "Castilian Seville"
   },
   {
-   "t_in": 75.76,
-   "t_out": 76.96,
+   "t_in": 75.81,
+   "t_out": 77.01,
    "num": "II",
    "title": "Gateway to the Indies"
   },
   {
-   "t_in": 115.73,
-   "t_out": 118.53,
+   "t_in": 115.78,
+   "t_out": 118.58,
    "num": "III",
    "title": "Plague and Decline"
   },
   {
-   "t_in": 163.5,
-   "t_out": 165.22,
+   "t_in": 163.52,
+   "t_out": 165.2,
    "num": "IV",
    "title": "War and Reform"
   },
   {
-   "t_in": 219.42,
-   "t_out": 220.62,
+   "t_in": 219.72,
+   "t_out": 220.92,
    "num": "V",
    "title": "Walls Down, River Tamed"
   },
   {
-   "t_in": 267.61,
-   "t_out": 268.81,
+   "t_in": 267.9,
+   "t_out": 269.1,
    "num": "VI",
    "title": "Exposition, War and Dictatorship"
   },
   {
-   "t_in": 352.64,
-   "t_out": 354.64,
+   "t_in": 346.89,
+   "t_out": 349.69,
    "num": "VII",
    "title": "Democracy and Expo 92"
   }
  ],
  "cta": {
-  "t_in": 529.2,
-  "t_out": 533.7,
+  "t_in": 497.7,
+  "t_out": 502.2,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 533.7,
-  "t_out": 541.7,
+  "t_in": 502.2,
+  "t_out": 510.2,
   "items": [
    "Buildings: Dirección General del Catastro (INSPIRE Buildings, Spanish cadastre)",
    "Water, bridges, parks: © OpenStreetMap contributors (ODbL)",

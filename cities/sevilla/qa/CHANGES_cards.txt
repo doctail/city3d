@@ -1,0 +1,33 @@
+yb-historian/yb-qa cards pass sevilla (2026-11-19)
+Base: story.json at commit c3b1371 (before this pass). Facts, years outside sourced windows, caption meaning and sources: untouched.
+
+REMOVED card 1970.0 '545,692 people' (hold 5, conf high, src ['S1']): flight 1970-1979 to the Corta soste was 0.27 y/s; population-only card, the same census figure (S1) is shown by the HUD population counter
+REMOVED card 1989.5 'Andalusian government' (hold 5, conf high, src ['S2']): flight 1983-1991 to the Expo soste was 0.31 y/s; secondary item (Junta de Andalucia seat at San Telmo), not tied to a monument or a soste
+REMOVED card 1975.0 'Corta de la Cartuja' (hold 8.0, conf low, src ['S36', 'S56']): flight 1970-1979 to the Corta soste was 0.37 y/s after the first fix (camera geometry 19.7 s, cards+year run 24 s); conf low and it duplicates the soste 'The river is moved west: Corta de la Cartuja (1975-1982)' that follows (same S36 source)
+HOLD card 1973.0 'Encarnación market demolished': 8.0 -> 4.5 s: flight 1970-1979 to the Corta soste was 0.27 y/s (33 s): 8 -> 4.5 s brings it above 0.4
+HOLD card 1975.89 'Spain turns to democracy': 8.0 -> 4.5 s: flight 1970-1979 to the Corta soste was 0.27 y/s (33 s): 8 -> 4.5 s brings it above 0.4
+HOLD card 1989.0 'Expo bridges rise': 8.0 -> 5 s: flight 1983-1991 to the Expo soste was 0.31 y/s (26 s): 8 -> 5 s
+HOLD card 1990.0 'The plug moves north': 5 -> 4.5 s: flight 1983-1991 to the Expo soste: 5 -> 4.5 s
+HOLD card 1991.33 'Santa Justa station': 8.0 -> 4.5 s: 4 cards in the Expo hover window (1991-1993) must fit the hover cap 2.2*5.5+6 = 18.1 s (was 23 s: 'High-speed rail' played after the hover with the counter jumping back to 1992.31): 4 x 4.5 = 18 s
+HOLD card 1991.87 'Centenario Bridge': 5 -> 4.5 s: 4 cards in the Expo hover window (1991-1993) must fit the hover cap 2.2*5.5+6 = 18.1 s (was 23 s: 'High-speed rail' played after the hover with the counter jumping back to 1992.31): 4 x 4.5 = 18 s
+HOLD card 1992.3 'Expo 92 opens': 5 -> 4.5 s: 4 cards in the Expo hover window (1991-1993) must fit the hover cap 2.2*5.5+6 = 18.1 s (was 23 s: 'High-speed rail' played after the hover with the counter jumping back to 1992.31): 4 x 4.5 = 18 s
+HOLD card 1992.31 'High-speed rail': 5 -> 4.5 s: 4 cards in the Expo hover window (1991-1993) must fit the hover cap 2.2*5.5+6 = 18.1 s (was 23 s: 'High-speed rail' played after the hover with the counter jumping back to 1992.31): 4 x 4.5 = 18 s
+RETIME card 'The Maestranza bullring rises (from 1761)': year 1758.0 -> 1761.0: S37 supports 1761-1765 only (inner gateway and Prince's box); 1758 was the y0 of the old stop
+RETIME card 'Isabel II Bridge replaces the boat bridge (1845-1852)': year 1843.0 -> 1845.0: S39: works start in 1845; 1843 was the y0 of the old stop
+TEXT card 1761.0 (was 'The Maestranza bullring rises (from 1761)', hold 5.0 -> 4.8): title 'The Maestranza bullring rises'; lines from S37 (Spanish quote, translated): inner gateway and Prince's box built 1761-1765; construction stalled 1766-1784
+TEXT card 1845.0 (was 'Isabel II Bridge replaces the boat bridge (1845-1852)', hold 4.5 -> 4.8): title 'Isabel II Bridge'; line from S39/S9: work on the current bridge begins in 1845; the pontoon bridge of boats, first built by the Moors in the 12th century (S9), lasted seven centuries
+SOSTE removed 'A planned district: Los Remedios (1960s)' (y 1967-1970, weight 3 = lowest of the 10, conf low): the flight Remedios -> Corta (1970-1979) is bound by camera geometry (22.7 s for 9 years = 0.396 y/s; cards cannot shorten it, QA suggests merging the two near soste). The card 'Los Remedios' (1960, S24, medium) already carries the same sourced text and stays; the soste is now flown over by the camera as card.
+
+NOTE max_duration stays 660 (natural 510 s). Landphases: data_sevilla/landphases.json restored from data_sevilla_src/landphases.json.gz after the build (md5 check below); kit pack not run.
+Counts: soste 10 -> 9 (Los Remedios removed, see above); cards 60 -> 57 (3 removed; 2 cards got text and a sourced year: Maestranza 1758 -> 1761, Isabel II 1843 -> 1845).
+RESULT (kit build sevilla --force; kit qa sevilla --only a,b,c,e): duration 510.2 s, cards 57, max gap 15.4 s, QA WARN 3 / FAIL 0.
+Slow flights: nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
+LEGS
+   23.7->  59.6  35.9s  y  1250.0-> 1401.0 rate  4.21  -> The Great Mosque gives way to 
+   99.1-> 220.9 121.8s  y  1569.0-> 1866.0 rate  2.44  -> The walls come down (from 1868
+  233.9-> 256.1  22.1s  y  1874.1-> 1912.0 rate  1.71  -> Plaza de España for the 1929 E
+  269.1-> 357.3  88.3s  y  1929.9-> 1979.0 rate  0.56  -> The river is moved west: Corta
+  362.3-> 379.9  17.5s  y  1983.0-> 1991.0 rate  0.46  -> Expo 92 (20 April - 12 October
+  397.9-> 437.5  39.6s  y  1993.0-> 2014.0 rate  0.53  -> Torre Sevilla, 180 m (2015)
+  442.5-> 495.1  52.6s  y  2018.5-> 2026.0 rate  0.14  -> finale
+GAPS>15: [(299, 15.1), (413, 15.4)]

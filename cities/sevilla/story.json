@@ -5798,20 +5798,6 @@
     ]
    },
    {
-    "y0": 1967.0,
-    "y1": 1970.0,
-    "dur": 5.5,
-    "caption": "A planned district: Los Remedios (1960s)",
-    "shot": "medium",
-    "target": "Los Remedios",
-    "conf": "low",
-    "fx": "hum",
-    "weight": 3,
-    "src": [
-     "S24"
-    ]
-   },
-   {
     "y0": 1979.0,
     "y1": 1983.0,
     "dur": 5.0,
@@ -6116,19 +6102,6 @@
     "note": "Date 1 November 1755 is general knowledge, not in the fetched texts: the year is sourced."
    },
    {
-    "y": 1758.0,
-    "title": "The Maestranza bullring rises (from 1761)",
-    "lines": [
-     "The Maestranza bullring rises (from 1761)"
-    ],
-    "hold_s": 5.0,
-    "src": [
-     "S37",
-     "S1"
-    ],
-    "conf": "medium"
-   },
-   {
     "y": 1760.0,
     "title": "Torre del Oro",
     "lines": [
@@ -6139,6 +6112,20 @@
      "S5"
     ],
     "conf": "high"
+   },
+   {
+    "y": 1761.0,
+    "title": "The Maestranza bullring rises",
+    "lines": [
+     "The inner gateway and the Prince's box go up between 1761 and 1765.",
+     "Construction then stops from 1766 to 1784."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S37",
+     "S1"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1810.09,
@@ -6205,12 +6192,13 @@
     "conf": "high"
    },
    {
-    "y": 1843.0,
-    "title": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+    "y": 1845.0,
+    "title": "Isabel II Bridge",
     "lines": [
-     "Isabel II Bridge replaces the boat bridge (1845-1852)"
+     "Work begins in 1845 on the first solid bridge in Seville.",
+     "Until then a pontoon bridge of boats, first built by the Moors in the 12th century, crosses the river."
     ],
-    "hold_s": 4.5,
+    "hold_s": 4.8,
     "src": [
      "S9",
      "S39"
@@ -6437,24 +6425,12 @@
     "note": "S13 gives the year 1963 and the flow; March is from the scheda (S54)."
    },
    {
-    "y": 1970.0,
-    "title": "545,692 people",
-    "lines": [
-     "Census figure."
-    ],
-    "hold_s": 5,
-    "src": [
-     "S1"
-    ],
-    "conf": "high"
-   },
-   {
     "y": 1973.0,
     "title": "Encarnación market demolished",
     "lines": [
      "The square stays empty for decades, used as parking."
     ],
-    "hold_s": 8.0,
+    "hold_s": 4.5,
     "src": [
      "S38",
      "S20"
@@ -6462,26 +6438,12 @@
     "conf": "high"
    },
    {
-    "y": 1975.0,
-    "title": "Corta de la Cartuja",
-    "lines": [
-     "A new river channel west of La Cartuja is cut against floods."
-    ],
-    "hold_s": 8.0,
-    "src": [
-     "S36",
-     "S56"
-    ],
-    "conf": "low",
-    "note": "Years 1975-1982 from the scheda (S56, S57, not re-fetched); S36 confirms the cut and the Chapina plug."
-   },
-   {
     "y": 1975.89,
     "title": "Spain turns to democracy",
     "lines": [
      "Franco dies on 20 November 1975; the Constitution follows in 1978."
     ],
-    "hold_s": 8.0,
+    "hold_s": 4.5,
     "src": [
      "S28"
     ],
@@ -6505,7 +6467,7 @@
     "lines": [
      "Work starts on the Alamillo, Barqueta and Centenario bridges."
     ],
-    "hold_s": 8.0,
+    "hold_s": 5,
     "src": [
      "S17",
      "S18",
@@ -6514,25 +6476,12 @@
     "conf": "high"
    },
    {
-    "y": 1989.5,
-    "title": "Andalusian government",
-    "lines": [
-     "The presidency of the Junta de Andalucía settles at San Telmo."
-    ],
-    "hold_s": 5,
-    "src": [
-     "S2"
-    ],
-    "conf": "high",
-    "note": "S2 says since 1989; the month is a placeholder."
-   },
-   {
     "y": 1990.0,
     "title": "The plug moves north",
     "lines": [
      "For Expo 92 the Chapina plug is reopened and moved to San Jerónimo."
     ],
-    "hold_s": 5,
+    "hold_s": 4.5,
     "src": [
      "S36"
     ],
@@ -6545,7 +6494,7 @@
     "lines": [
      "The new railway station opens on 2 May 1991."
     ],
-    "hold_s": 8.0,
+    "hold_s": 4.5,
     "src": [
      "S22"
     ],
@@ -6557,7 +6506,7 @@
     "lines": [
      "A 565 m cable-stayed bridge opens on 15 November 1991."
     ],
-    "hold_s": 5,
+    "hold_s": 4.5,
     "src": [
      "S19"
     ],
@@ -6569,7 +6518,7 @@
     "lines": [
      "20 April - 12 October 1992, on La Cartuja."
     ],
-    "hold_s": 5,
+    "hold_s": 4.5,
     "src": [
      "S16"
     ],
@@ -6581,7 +6530,7 @@
     "lines": [
      "The Madrid-Seville high-speed line opens in 1992."
     ],
-    "hold_s": 5,
+    "hold_s": 4.5,
     "src": [
      "S22"
     ],

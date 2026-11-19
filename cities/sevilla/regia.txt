@@ -1,13 +1,13 @@
 Seville: regia automatica (kit/regia_kit.py)
-Camera drone: 10 tappe in hover (86.5 s) e voli (424.5 s), anni None/s fra le voci, nessuno stacco; vmax 113.26, amax 25.41, jmax 26.33, clear_min 394.98, clear_ground_min 499.98
-Durata 9:01.7  fotogrammi 13001  inquadrature 3  stacco medio ogni 180.6 s
-Musica: waking_monument  b_start None  notte 526.6922329009448
+Camera drone: 9 tappe in hover (81.0 s) e voli (398.5 s), anni None/s fra le voci, nessuno stacco; vmax 113.33, amax 25.41, jmax 26.33, clear_min 476.8, clear_ground_min 500.0
+Durata 8:30.2  fotogrammi 12245  inquadrature 3  stacco medio ogni 170.1 s
+Musica: waking_monument  b_start None  notte 495.15363282265685
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   1248.00  
-   8:46.7   2026.00  
+   8:15.2   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:23.7  1248.0->1250.0  Seville under Castile (1248)  [forza 6.2, crowd]
@@ -16,97 +16,91 @@ SOSTE (video -> anni):
   0:30.4-0:35.4  1300.0->1300.0  A city of about 50,000  [forza 0.0]
   0:38.0-0:46.0  1356.0->1356.0  Earthquake  [forza 0.0]
   0:46.6-0:51.6  1364.0->1364.0  Peter's palace  [forza 0.0]
-  0:54.4-0:59.4  1400.0->1400.0  A Christian crown  [forza 0.0]
+  0:54.5-0:59.5  1400.0->1400.0  A Christian crown  [forza 0.0]
   0:59.6-1:05.6  1401.0->1434.0  The Great Mosque gives way to the Cathedral (1401)  [forza 4.0, hammer]
   0:59.6-1:04.6  1402.0->1402.0  Cathedral works begin  [forza 0.0]
   1:07.8-1:15.8  1478.0->1478.0  The Inquisition begins here  [forza 0.0]
   1:17.0-1:22.0  1503.0->1512.0  The Casa de Contratación opens the Americas trade (1503)  [forza 5.0, horn]
   1:17.0-1:22.0  1503.0->1503.0  Gateway to the Americas  [forza 0.0]
-  1:22.6-1:27.6  1519.7->1519.7  Magellan sets out  [forza 0.0]
-  1:31.0-1:39.0  1558.0->1569.0  The Giralda gets its Renaissance belfry (1558-1568)  [forza 5.0, bell]
-  1:31.0-1:39.0  1558.0->1558.0  A new top for the Giralda  [forza 0.0]
+  1:22.7-1:27.7  1519.7->1519.7  Magellan sets out  [forza 0.0]
+  1:31.1-1:39.1  1558.0->1569.0  The Giralda gets its Renaissance belfry (1558-1568)  [forza 5.0, bell]
+  1:31.1-1:39.1  1558.0->1558.0  A new top for the Giralda  [forza 0.0]
   1:39.4-1:44.4  1574.0->1574.0  The lagoon is drained  [forza 0.0]
-  1:46.6-1:54.6  1600.0->1600.0  Golden Age Seville  [forza 0.0]
-  1:58.5-2:03.5  1649.0->1649.0  The Great Plague  [forza 0.0]
-  2:07.3-2:15.3  1700.0->1700.0  A shrinking city  [forza 0.0]
-  2:16.3-2:21.3  1717.0->1717.0  Trade moves to Cádiz  [forza 0.0]
-  2:22.1-2:27.1  1728.0->1728.0  Royal Tobacco Factory  [forza 0.0]
-  2:28.4-2:33.4  1755.8->1755.8  Lisbon earthquake  [forza 0.0]
-  2:33.4-2:38.4  1758.0->1758.0  The Maestranza bullring rises (from 1761)  [forza 0.0]
-  2:38.5-2:43.5  1760.0->1760.0  Torre del Oro  [forza 0.0]
+  1:46.7-1:54.7  1600.0->1600.0  Golden Age Seville  [forza 0.0]
+  1:58.6-2:03.6  1649.0->1649.0  The Great Plague  [forza 0.0]
+  2:07.4-2:15.4  1700.0->1700.0  A shrinking city  [forza 0.0]
+  2:16.5-2:21.5  1717.0->1717.0  Trade moves to Cádiz  [forza 0.0]
+  2:22.3-2:27.3  1728.0->1728.0  Royal Tobacco Factory  [forza 0.0]
+  2:28.5-2:33.5  1755.8->1755.8  Lisbon earthquake  [forza 0.0]
+  2:33.7-2:38.7  1760.0->1760.0  Torre del Oro  [forza 0.0]
+  2:38.7-2:43.5  1761.0->1761.0  The Maestranza bullring rises  [forza 0.0]
   2:45.2-2:50.2  1810.1->1810.1  French occupation  [forza 0.0]
   2:50.2-2:55.2  1811.0->1811.0  Encarnación convent demolished  [forza 0.0]
   2:55.5-3:03.5  1820.0->1820.0  A market square  [forza 0.0]
   3:04.1-3:09.1  1836.0->1836.0  Church property is sold off  [forza 0.0]
   3:09.3-3:17.3  1842.0->1842.0  100,498 people  [forza 0.0]
-  3:17.3-3:21.8  1843.0->1843.0  Isabel II Bridge replaces the boat bridge (1845-1852)  [forza 0.0]
-  3:22.1-3:27.1  1852.0->1852.0  Isabel II Bridge opens  [forza 0.0]
-  3:27.1-3:35.1  1852.3->1852.3  Plaza Nueva  [forza 0.0]
-  3:35.3-3:40.3  1857.0->1857.0  112,529 people  [forza 0.0]
-  3:40.6-3:53.6  1866.0->1874.0  The walls come down (from 1868)  [forza 7.0, crash]
-  3:40.6-3:48.6  1868.0->1868.0  The walls come down  [forza 0.0]
-  3:48.6-3:53.6  1876.0->1876.0  Finishing the Maestranza  [forza 0.0]
-  3:53.7-3:58.7  1877.0->1877.0  133,247 people  [forza 0.0]
-  4:00.8-4:08.8  1900.0->1900.0  147,271 people  [forza 0.0]
-  4:10.3-4:15.3  1909.0->1909.0  Alfonso XIII Canal  [forza 0.0]
-  4:15.8-4:28.8  1912.0->1930.0  Plaza de España for the 1929 Expo (1914-1929)  [forza 6.0, firework]
-  4:15.8-4:20.8  1917.1->1917.1  The Guadalquivir floods  [forza 0.0]
-  4:20.8-4:28.8  1927.0->1927.0  The river will move  [forza 0.0]
-  4:28.8-4:36.8  1929.4->1929.4  Ibero-American Exposition  [forza 0.0]
-  4:39.4-4:44.4  1936.5->1936.5  Spanish Civil War  [forza 0.0]
-  4:46.3-4:54.3  1940.0->1940.0  302,300 people  [forza 0.0]
-  4:59.0-5:07.0  1950.0->1950.0  Chapina is plugged  [forza 0.0]
-  5:14.1-5:19.1  1960.0->1960.0  Los Remedios  [forza 0.0]
-  5:21.0-5:26.0  1961.9->1961.9  Tamarguillo flood  [forza 0.0]
-  5:27.3-5:32.3  1963.2->1963.2  Another flood  [forza 0.0]
-  5:36.1-5:41.6  1967.0->1970.0  A planned district: Los Remedios (1960s)  [forza 4.0, hum]
-  5:36.1-5:41.1  1970.0->1970.0  545,692 people  [forza 0.0]
-  5:44.6-5:52.6  1973.0->1973.0  Encarnación market demolished  [forza 0.0]
-  5:54.6-6:02.6  1975.0->1975.0  Corta de la Cartuja  [forza 0.0]
-  6:03.5-6:11.5  1975.9->1975.9  Spain turns to democracy  [forza 0.0]
-  6:14.7-6:19.7  1979.0->1983.0  The river is moved west: Corta de la Cartuja (1975-1982)  [forza 4.0, water]
-  6:14.7-6:19.7  1981.0->1981.0  645,817 people  [forza 0.0]
-  6:25.7-6:33.7  1989.0->1989.0  Expo bridges rise  [forza 0.0]
-  6:34.2-6:39.2  1989.5->1989.5  Andalusian government  [forza 0.0]
-  6:39.7-6:44.7  1990.0->1990.0  The plug moves north  [forza 0.0]
-  6:45.7-7:03.7  1991.0->1993.0  Expo 92 (20 April - 12 October 1992)  [forza 6.0, firework]
-  6:45.7-6:53.7  1991.3->1991.3  Santa Justa station  [forza 0.0]
-  6:53.7-6:58.7  1991.9->1991.9  Centenario Bridge  [forza 0.0]
-  6:58.7-7:03.7  1992.3->1992.3  Expo 92 opens  [forza 0.0]
-  7:03.8-7:08.8  1992.3->1992.3  High-speed rail  [forza 0.0]
-  7:13.5-7:21.5  1997.5->1997.5  Isla Mágica  [forza 0.0]
-  7:24.6-7:32.6  2001.0->2001.0  684,633 people  [forza 0.0]
-  7:40.0-7:48.0  2011.3->2011.3  Metropol Parasol  [forza 0.0]
-  7:49.0-7:54.0  2014.0->2018.5  Torre Sevilla, 180 m (2015)  [forza 4.0, hammer]
-  7:49.0-7:54.0  2015.0->2015.0  Torre Sevilla  [forza 0.0]
-  7:56.1-8:04.1  2025.0->2025.0  Seville today  [forza 0.0]
+  3:17.4-3:22.2  1845.0->1845.0  Isabel II Bridge  [forza 0.0]
+  3:22.4-3:27.4  1852.0->1852.0  Isabel II Bridge opens  [forza 0.0]
+  3:27.4-3:35.4  1852.3->1852.3  Plaza Nueva  [forza 0.0]
+  3:35.6-3:40.6  1857.0->1857.0  112,529 people  [forza 0.0]
+  3:40.9-3:53.9  1866.0->1874.0  The walls come down (from 1868)  [forza 7.0, crash]
+  3:40.9-3:48.9  1868.0->1868.0  The walls come down  [forza 0.0]
+  3:48.9-3:53.9  1876.0->1876.0  Finishing the Maestranza  [forza 0.0]
+  3:54.0-3:59.0  1877.0->1877.0  133,247 people  [forza 0.0]
+  4:01.1-4:09.1  1900.0->1900.0  147,271 people  [forza 0.0]
+  4:10.6-4:15.6  1909.0->1909.0  Alfonso XIII Canal  [forza 0.0]
+  4:16.1-4:29.1  1912.0->1930.0  Plaza de España for the 1929 Expo (1914-1929)  [forza 6.0, firework]
+  4:16.1-4:21.1  1917.1->1917.1  The Guadalquivir floods  [forza 0.0]
+  4:21.1-4:29.1  1927.0->1927.0  The river will move  [forza 0.0]
+  4:29.1-4:37.1  1929.4->1929.4  Ibero-American Exposition  [forza 0.0]
+  4:39.7-4:44.7  1936.5->1936.5  Spanish Civil War  [forza 0.0]
+  4:46.5-4:54.5  1940.0->1940.0  302,300 people  [forza 0.0]
+  4:59.2-5:07.2  1950.0->1950.0  Chapina is plugged  [forza 0.0]
+  5:14.3-5:19.3  1960.0->1960.0  Los Remedios  [forza 0.0]
+  5:21.2-5:26.2  1961.9->1961.9  Tamarguillo flood  [forza 0.0]
+  5:27.5-5:32.5  1963.2->1963.2  Another flood  [forza 0.0]
+  5:42.3-5:46.8  1973.0->1973.0  Encarnación market demolished  [forza 0.0]
+  5:49.7-5:54.2  1975.9->1975.9  Spain turns to democracy  [forza 0.0]
+  5:57.3-6:02.3  1979.0->1983.0  The river is moved west: Corta de la Cartuja (1975-1982)  [forza 4.0, water]
+  5:57.3-6:02.3  1981.0->1981.0  645,817 people  [forza 0.0]
+  6:08.3-6:13.3  1989.0->1989.0  Expo bridges rise  [forza 0.0]
+  6:14.3-6:18.8  1990.0->1990.0  The plug moves north  [forza 0.0]
+  6:19.9-6:37.9  1991.0->1993.0  Expo 92 (20 April - 12 October 1992)  [forza 6.0, firework]
+  6:19.9-6:24.4  1991.3->1991.3  Santa Justa station  [forza 0.0]
+  6:24.4-6:28.9  1991.9->1991.9  Centenario Bridge  [forza 0.0]
+  6:28.9-6:33.4  1992.3->1992.3  Expo 92 opens  [forza 0.0]
+  6:33.4-6:37.9  1992.3->1992.3  High-speed rail  [forza 0.0]
+  6:41.9-6:49.9  1997.5->1997.5  Isla Mágica  [forza 0.0]
+  6:53.0-7:01.0  2001.0->2001.0  684,633 people  [forza 0.0]
+  7:08.5-7:16.5  2011.3->2011.3  Metropol Parasol  [forza 0.0]
+  7:17.5-7:22.5  2014.0->2018.5  Torre Sevilla, 180 m (2015)  [forza 4.0, hammer]
+  7:17.5-7:22.5  2015.0->2015.0  Torre Sevilla  [forza 0.0]
+  7:24.6-7:32.6  2025.0->2025.0  Seville today  [forza 0.0]
 
 EVENTI (didascalie):
-  6:45.7  1991.0  Expo 92
+  6:19.9  1991.0  Expo 92
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
   0:30   1289.0  (29.99 anni/s)
-  1:00   1403.5  (5.50 anni/s)
-  1:30   1546.4  (11.31 anni/s)
+  1:00   1403.2  (5.50 anni/s)
+  1:30   1545.9  (11.31 anni/s)
   2:00   1649.0  (0.00 anni/s)
   2:30   1755.8  (0.00 anni/s)
   3:00   1820.0  (0.00 anni/s)
   3:30   1852.3  (0.00 anni/s)
-  4:00   1891.3  (11.18 anni/s)
+  4:00   1888.0  (11.22 anni/s)
   4:30   1929.4  (0.00 anni/s)
   5:00   1950.0  (0.00 anni/s)
   5:30   1963.2  (0.00 anni/s)
-  6:00   1975.0  (0.00 anni/s)
-  6:30   1989.0  (0.00 anni/s)
-  7:00   1992.6  (0.11 anni/s)
-  7:30   2001.0  (0.00 anni/s)
-  8:00   2025.0  (0.00 anni/s)
-  8:30   2025.6  (0.02 anni/s)
-  9:00   2026.0  (0.00 anni/s)
+  6:00   1981.1  (0.80 anni/s)
+  6:30   1992.1  (0.11 anni/s)
+  7:00   2001.0  (0.00 anni/s)
+  7:30   2025.0  (0.00 anni/s)
+  8:00   2025.6  (0.02 anni/s)
 
 Velocita fuori dalle soste: mediana 1.00 anni/s, max 30.0 anni/s
-Soste: 70, 458 s (89% del giorno)
+Soste: 66, 419 s (86% del giorno)
 
 AVVISI:
   nessuno
