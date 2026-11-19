@@ -3,3 +3,7 @@ demote North Station: FAIL=[] dur=11:49.5 stays=24 gap=34.7s>15:16 slow=404-420 
 demote Central Market: FAIL=[] dur=11:30.6 stays=23 gap=34.7s>15:15 slow=470-501 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'; 558-595 s (37 s, 0.18 anni/s) verso 'City of Arts and Sciences '  [uniscili: trasforma una delle due soste vicine in cartello]
 demote City Hall square: FAIL=[] dur=11:26.6 stays=22 gap=34.7s>15:14 slow=466-497 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'; 554-591 s (37 s, 0.18 anni/s) verso 'City of Arts and Sciences '  [uniscili: trasforma una delle due soste vicine in cartello]
 demote City of Arts: FAIL=[] dur=10:59.0 stays=21 gap=28.5s>15:13 slow=466-497 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'  [uniscili: trasforma una delle due soste vicine in cartello]
+PLAN SUR sosta: y0 1964 -> 1969.9 (y1 1969.97 unchanged), target radius 5200 -> 3000 (flight from the flood was 0.20 years/s)
+drone.pace 0.003 -> 0.0015; drone.v_leg 170 -> 250; drone.t_leg_min 16 -> 13 (slow flights gone, accel limit held after Plaza Redonda became a card)
+demote Plaza Redonda (1840): sosta -> card (y 1840, keeps src)
+FINAL: 19 hovers + finale, 0 FAIL, no flight >=12 s under 0.4 y/s, max gap 19.4 s, median dist 1718 m, pitch 27.0/41.1, 0 jumps, 8:56.8, hover 157.5 s

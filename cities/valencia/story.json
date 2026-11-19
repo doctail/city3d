@@ -5491,9 +5491,10 @@
    "d_min": 1400,
    "drift_vmax": 8,
    "rho_max": 1400,
-   "t_leg_min": 16,
-   "v_leg": 170,
-   "leg_full": 1
+   "t_leg_min": 13,
+   "v_leg": 250,
+   "leg_full": 1,
+   "pace": 0.0015
   },
   "lens": 32,
   "soste": [
@@ -5633,19 +5634,6 @@
     "note": "solo fumo, nessun crollo; didascalia datata"
    },
    {
-    "y0": 1840,
-    "y1": 1842,
-    "dur": 3.5,
-    "caption": "Plaza Redonda (1840)",
-    "target": "area:[39.47358,-0.37660,200]",
-    "shot": "top",
-    "fx": "stone",
-    "src": [
-     "S24"
-    ],
-    "conf": "high"
-   },
-   {
     "y0": 1854,
     "y1": 1856,
     "dur": 4,
@@ -5731,11 +5719,11 @@
     "note": "effetto acqua da provare; ponte 1909 sparisce"
    },
    {
-    "y0": 1964,
+    "y0": 1969.9,
     "y1": 1969.97,
     "dur": 10,
     "caption": "PLAN SUR: THE RIVER IS MOVED (1964-69)",
-    "target": "area:[39.4454,-0.3933,5200]",
+    "target": "area:[39.4454,-0.3933,3000]",
     "shot": "wide",
     "fx": "dig",
     "src": [
@@ -6164,6 +6152,22 @@
     "conf": "high",
     "target": "fire:Siege of 1812",
     "shot": "wide"
+   },
+   {
+    "y": 1840,
+    "title": "Plaza Redonda (1840)",
+    "lines": [
+     "Years 1840-1842."
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S24"
+    ],
+    "conf": "high",
+    "target": "area:[39.47358,-0.37660,200]",
+    "shot": "top",
+    "was_sosta": true,
+    "y1": 1842
    },
    {
     "y": 1865.14,

@@ -8,121 +8,115 @@
    "sub": "1238"
   },
   {
-   "t_in": 48.57,
-   "t_out": 53.57,
+   "t_in": 48.55,
+   "t_out": 53.55,
    "title": "The Cathedral rises on the Great Mosque",
    "sub": "1262"
   },
   {
-   "t_in": 80.04,
-   "t_out": 88.04,
+   "t_in": 71.33,
+   "t_out": 79.33,
    "title": "A new, larger city wall",
    "sub": "1356"
   },
   {
-   "t_in": 108.83,
-   "t_out": 113.83,
+   "t_in": 93.31,
+   "t_out": 98.31,
    "title": "Torres de Serrans",
    "sub": "1392-98"
   },
   {
-   "t_in": 129.98,
-   "t_out": 134.98,
+   "t_in": 111.46,
+   "t_out": 116.46,
    "title": "El Micalet bell tower",
    "sub": "1381-1429"
   },
   {
-   "t_in": 150.98,
-   "t_out": 155.98,
+   "t_in": 129.46,
+   "t_out": 134.46,
    "title": "Torres de Quart",
    "sub": "1441-60"
   },
   {
-   "t_in": 171.98,
-   "t_out": 183.98,
+   "t_in": 147.46,
+   "t_out": 159.46,
    "title": "La Llotja de la Seda",
    "sub": "1483"
   },
   {
-   "t_in": 199.98,
-   "t_out": 216.98,
+   "t_in": 172.46,
+   "t_out": 189.46,
    "title": "Stone bridges cross the Turia",
    "sub": "1518-1607"
   },
   {
-   "t_in": 234.23,
-   "t_out": 246.23,
+   "t_in": 206.7,
+   "t_out": 218.7,
    "title": "The baroque Iron Gate",
    "sub": "1703-41"
   },
   {
-   "t_in": 262.8,
-   "t_out": 269.8,
+   "t_in": 232.26,
+   "t_out": 239.26,
    "title": "Siege of 1812",
    "sub": "1811-12"
   },
   {
-   "t_in": 285.8,
-   "t_out": 289.3,
-   "title": "Plaza Redonda",
-   "sub": "1840"
-  },
-  {
-   "t_in": 305.3,
-   "t_out": 309.3,
+   "t_in": 253.2,
+   "t_out": 257.2,
    "title": "The bullring",
    "sub": "1850-59"
   },
   {
-   "t_in": 327.98,
-   "t_out": 338.98,
+   "t_in": 270.2,
+   "t_out": 281.2,
    "title": "THE WALLS COME DOWN",
    "sub": "1865"
   },
   {
-   "t_in": 355.3,
-   "t_out": 360.3,
+   "t_in": 294.37,
+   "t_out": 299.37,
    "title": "The Ensanche",
    "sub": "1887"
   },
   {
-   "t_in": 379.63,
-   "t_out": 383.63,
+   "t_in": 317.1,
+   "t_out": 321.1,
    "title": "Regional Exhibition",
    "sub": "1909"
   },
   {
-   "t_in": 400.79,
-   "t_out": 404.29,
+   "t_in": 334.68,
+   "t_out": 338.18,
    "title": "Mestalla stadium",
    "sub": "1923"
   },
   {
-   "t_in": 453.51,
-   "t_out": 465.51,
+   "t_in": 380.81,
+   "t_out": 392.81,
    "title": "THE GREAT FLOOD",
    "sub": "14 October 1957"
   },
   {
-   "t_in": 497.12,
-   "t_out": 508.12,
+   "t_in": 413.97,
+   "t_out": 424.97,
    "title": "PLAN SUR: THE RIVER IS MOVED",
    "sub": "1964-69"
   },
   {
-   "t_in": 543.48,
-   "t_out": 554.48,
+   "t_in": 447.78,
+   "t_out": 458.78,
    "title": "The old riverbed becomes a park",
    "sub": "1986"
   },
   {
-   "t_in": 590.52,
-   "t_out": 596.52,
+   "t_in": 484.05,
+   "t_out": 490.05,
    "title": "Oceanogràfic, Palau de les Arts, Àgora",
    "sub": "2001-09"
   }
  ],
- "subscribe_t": 90.0,
+ "subscribe_t": 98.5,
  "cards": [
   {
    "t_in": 15.7,
@@ -147,8 +141,8 @@
    "sober": false
   },
   {
-   "t_in": 29.73,
-   "t_out": 35.23,
+   "t_in": 29.71,
+   "t_out": 35.21,
    "date": "1239",
    "title": "A new Valencia",
    "lines": [
@@ -158,8 +152,8 @@
    "sober": false
   },
   {
-   "t_in": 35.96,
-   "t_out": 41.96,
+   "t_in": 35.95,
+   "t_out": 41.95,
    "date": "1261",
    "title": "The Furs of Valencia",
    "lines": [
@@ -169,8 +163,8 @@
    "sober": false
   },
   {
-   "t_in": 42.0,
-   "t_out": 48.5,
+   "t_in": 41.98,
+   "t_out": 48.48,
    "date": "1262",
    "title": "The Cathedral and the water court",
    "lines": [
@@ -180,8 +174,8 @@
    "sober": false
   },
   {
-   "t_in": 58.77,
-   "t_out": 63.77,
+   "t_in": 56.87,
+   "t_out": 61.87,
    "date": "1348",
    "title": "The Black Death",
    "lines": [
@@ -190,8 +184,8 @@
    "sober": true
   },
   {
-   "t_in": 80.04,
-   "t_out": 87.04,
+   "t_in": 71.33,
+   "t_out": 78.33,
    "date": "1356",
    "title": "A war, a bigger wall",
    "lines": [
@@ -201,8 +195,8 @@
    "sober": false
   },
   {
-   "t_in": 88.94,
-   "t_out": 96.94,
+   "t_in": 79.78,
+   "t_out": 87.78,
    "date": "1377",
    "title": "The Senyera coronada",
    "lines": [
@@ -212,8 +206,8 @@
    "sober": false
   },
   {
-   "t_in": 108.83,
-   "t_out": 113.83,
+   "t_in": 93.31,
+   "t_out": 98.31,
    "date": "1398",
    "title": "Torres de Serrans",
    "lines": [
@@ -222,8 +216,8 @@
    "sober": false
   },
   {
-   "t_in": 113.98,
-   "t_out": 118.98,
+   "t_in": 98.46,
+   "t_out": 103.46,
    "date": "1402",
    "title": "The Trinitat bridge is finished",
    "lines": [
@@ -232,8 +226,8 @@
    "sober": false
   },
   {
-   "t_in": 129.98,
-   "t_out": 134.98,
+   "t_in": 111.46,
+   "t_out": 116.46,
    "date": "1429",
    "title": "El Micalet",
    "lines": [
@@ -242,8 +236,8 @@
    "sober": false
   },
   {
-   "t_in": 150.98,
-   "t_out": 155.98,
+   "t_in": 129.46,
+   "t_out": 134.46,
    "date": "1460",
    "title": "Torres de Quart",
    "lines": [
@@ -252,8 +246,8 @@
    "sober": false
   },
   {
-   "t_in": 171.98,
-   "t_out": 177.98,
+   "t_in": 147.46,
+   "t_out": 153.46,
    "date": "1483",
    "title": "La Llotja de la Seda",
    "lines": [
@@ -263,8 +257,8 @@
    "sober": false
   },
   {
-   "t_in": 177.98,
-   "t_out": 183.98,
+   "t_in": 153.46,
+   "t_out": 159.46,
    "date": "1500",
    "title": "The largest city of the Crown",
    "lines": [
@@ -274,8 +268,8 @@
    "sober": false
   },
   {
-   "t_in": 199.98,
-   "t_out": 206.98,
+   "t_in": 172.46,
+   "t_out": 179.46,
    "date": "1519",
    "title": "The Germania",
    "lines": [
@@ -285,8 +279,8 @@
    "sober": false
   },
   {
-   "t_in": 206.98,
-   "t_out": 211.48,
+   "t_in": 179.46,
+   "t_out": 183.96,
    "date": "1526",
    "title": "Forced conversions",
    "lines": [
@@ -295,8 +289,8 @@
    "sober": true
   },
   {
-   "t_in": 211.48,
-   "t_out": 216.98,
+   "t_in": 183.96,
+   "t_out": 189.46,
    "date": "1607",
    "title": "Stone bridges over the Turia",
    "lines": [
@@ -305,8 +299,8 @@
    "sober": false
   },
   {
-   "t_in": 217.05,
-   "t_out": 225.05,
+   "t_in": 189.52,
+   "t_out": 197.52,
    "date": "1609",
    "title": "The Moriscos are expelled",
    "lines": [
@@ -316,8 +310,8 @@
    "sober": true
   },
   {
-   "t_in": 226.98,
-   "t_out": 232.98,
+   "t_in": 199.46,
+   "t_out": 205.46,
    "date": "1667",
    "title": "The Basilica and the Falles",
    "lines": [
@@ -327,8 +321,8 @@
    "sober": false
   },
   {
-   "t_in": 234.23,
-   "t_out": 239.23,
+   "t_in": 206.7,
+   "t_out": 211.7,
    "date": "1706",
    "title": "The English ride in",
    "lines": [
@@ -338,8 +332,8 @@
    "sober": false
   },
   {
-   "t_in": 239.23,
-   "t_out": 246.23,
+   "t_in": 211.7,
+   "t_out": 218.7,
    "date": "1707",
    "title": "The Furs are abolished",
    "lines": [
@@ -349,8 +343,8 @@
    "sober": true
   },
   {
-   "t_in": 246.8,
-   "t_out": 251.8,
+   "t_in": 219.26,
+   "t_out": 224.26,
    "date": "1758",
    "title": "A prosperous Bourbon city",
    "lines": [
@@ -360,8 +354,8 @@
    "sober": false
   },
   {
-   "t_in": 254.21,
-   "t_out": 260.21,
+   "t_in": 225.96,
+   "t_out": 231.96,
    "date": "1808",
    "title": "The city rises",
    "lines": [
@@ -371,8 +365,8 @@
    "sober": false
   },
   {
-   "t_in": 262.8,
-   "t_out": 269.8,
+   "t_in": 232.26,
+   "t_out": 239.26,
    "date": "1812",
    "title": "Suchet takes Valencia",
    "lines": [
@@ -382,8 +376,18 @@
    "sober": false
   },
   {
-   "t_in": 327.98,
-   "t_out": 333.98,
+   "t_in": 240.2,
+   "t_out": 243.7,
+   "date": "1840",
+   "title": "Plaza Redonda (1840)",
+   "lines": [
+    "Years 1840-1842."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 270.2,
+   "t_out": 276.2,
    "date": "1865",
    "title": "The walls come down",
    "lines": [
@@ -393,8 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 333.98,
-   "t_out": 338.98,
+   "t_in": 276.2,
+   "t_out": 281.2,
    "date": "1868",
    "title": "The Citadel goes",
    "lines": [
@@ -403,8 +407,8 @@
    "sober": false
   },
   {
-   "t_in": 339.3,
-   "t_out": 343.8,
+   "t_in": 281.37,
+   "t_out": 285.87,
    "date": "1873",
    "title": "Capital of a canton",
    "lines": [
@@ -413,8 +417,8 @@
    "sober": false
   },
   {
-   "t_in": 343.94,
-   "t_out": 348.94,
+   "t_in": 286.0,
+   "t_out": 291.0,
    "date": "1877",
    "title": "Russafa joins the city",
    "lines": [
@@ -424,8 +428,8 @@
    "sober": false
   },
   {
-   "t_in": 355.3,
-   "t_out": 358.8,
+   "t_in": 294.37,
+   "t_out": 297.87,
    "date": "1891",
    "title": "A convent becomes the main square (1891)",
    "lines": [
@@ -434,8 +438,8 @@
    "sober": false
   },
   {
-   "t_in": 360.87,
-   "t_out": 365.87,
+   "t_in": 299.7,
+   "t_out": 304.7,
    "date": "1897",
    "title": "The seaside towns join",
    "lines": [
@@ -444,8 +448,8 @@
    "sober": false
   },
   {
-   "t_in": 366.72,
-   "t_out": 371.72,
+   "t_in": 305.12,
+   "t_out": 310.12,
    "date": "1900",
    "title": "A city of 215,687",
    "lines": [
@@ -455,8 +459,8 @@
    "sober": false
   },
   {
-   "t_in": 373.5,
-   "t_out": 379.5,
+   "t_in": 311.01,
+   "t_out": 317.01,
    "date": "1909",
    "title": "The Regional Exhibition",
    "lines": [
@@ -466,8 +470,8 @@
    "sober": false
   },
   {
-   "t_in": 384.79,
-   "t_out": 389.29,
+   "t_in": 321.68,
+   "t_out": 326.18,
    "date": "1915",
    "title": "North Station (1906-17)",
    "lines": [
@@ -476,8 +480,8 @@
    "sober": false
   },
   {
-   "t_in": 405.84,
-   "t_out": 410.34,
+   "t_in": 338.95,
+   "t_out": 343.45,
    "date": "1927",
    "title": "Central Market (1915-28)",
    "lines": [
@@ -486,8 +490,8 @@
    "sober": false
   },
   {
-   "t_in": 413.48,
-   "t_out": 417.48,
+   "t_in": 345.02,
+   "t_out": 349.02,
    "date": "1932",
    "title": "City Hall square (1931-33)",
    "lines": [
@@ -496,8 +500,8 @@
    "sober": false
   },
   {
-   "t_in": 417.97,
-   "t_out": 422.97,
+   "t_in": 349.27,
+   "t_out": 354.27,
    "date": "1933",
    "title": "The Aragon bridge",
    "lines": [
@@ -506,8 +510,8 @@
    "sober": false
   },
   {
-   "t_in": 423.77,
-   "t_out": 429.77,
+   "t_in": 354.67,
+   "t_out": 360.67,
    "date": "1936",
    "title": "Capital of the Republic",
    "lines": [
@@ -517,8 +521,8 @@
    "sober": true
   },
   {
-   "t_in": 430.43,
-   "t_out": 434.93,
+   "t_in": 361.0,
+   "t_out": 365.5,
    "date": "1939",
    "title": "The war ends",
    "lines": [
@@ -527,8 +531,8 @@
    "sober": true
   },
   {
-   "t_in": 438.56,
-   "t_out": 443.56,
+   "t_in": 367.31,
+   "t_out": 372.31,
    "date": "1950",
    "title": "Half a million",
    "lines": [
@@ -538,8 +542,8 @@
    "sober": false
   },
   {
-   "t_in": 446.47,
-   "t_out": 453.47,
+   "t_in": 373.77,
+   "t_out": 380.77,
    "date": "1957",
    "title": "The Turia floods",
    "lines": [
@@ -549,8 +553,8 @@
    "sober": true
   },
   {
-   "t_in": 467.37,
-   "t_out": 473.37,
+   "t_in": 393.74,
+   "t_out": 399.74,
    "date": "1961",
    "title": "The Plan Sur",
    "lines": [
@@ -559,8 +563,8 @@
    "sober": false
   },
   {
-   "t_in": 473.99,
-   "t_out": 478.49,
+   "t_in": 400.05,
+   "t_out": 404.55,
    "date": "1962",
    "title": "A city of immigrants",
    "lines": [
@@ -569,8 +573,8 @@
    "sober": false
   },
   {
-   "t_in": 497.12,
-   "t_out": 503.62,
+   "t_in": 413.97,
+   "t_out": 420.47,
    "date": "1969",
    "title": "The river is moved",
    "lines": [
@@ -580,8 +584,8 @@
    "sober": false
   },
   {
-   "t_in": 503.62,
-   "t_out": 508.12,
+   "t_in": 420.47,
+   "t_out": 424.97,
    "date": "1970",
    "title": "Growing fast",
    "lines": [
@@ -590,8 +594,8 @@
    "sober": false
   },
   {
-   "t_in": 514.94,
-   "t_out": 521.44,
+   "t_in": 428.38,
+   "t_out": 434.88,
    "date": "1982",
    "title": "The Senyera becomes official",
    "lines": [
@@ -601,8 +605,8 @@
    "sober": false
   },
   {
-   "t_in": 543.48,
-   "t_out": 549.98,
+   "t_in": 447.78,
+   "t_out": 454.28,
    "date": "1986",
    "title": "A garden in the riverbed",
    "lines": [
@@ -612,8 +616,8 @@
    "sober": false
   },
   {
-   "t_in": 549.98,
-   "t_out": 554.48,
+   "t_in": 454.28,
+   "t_out": 458.78,
    "date": "1989",
    "title": "Calatrava arrives",
    "lines": [
@@ -622,8 +626,8 @@
    "sober": false
   },
   {
-   "t_in": 556.38,
-   "t_out": 561.38,
+   "t_in": 459.74,
+   "t_out": 464.74,
    "date": "1995",
    "title": "Calatrava's Exposition bridge",
    "lines": [
@@ -632,8 +636,8 @@
    "sober": false
   },
   {
-   "t_in": 561.87,
-   "t_out": 567.87,
+   "t_in": 464.98,
+   "t_out": 470.98,
    "date": "1996",
    "title": "City of Arts and Sciences (1998-2000)",
    "lines": [
@@ -642,8 +646,8 @@
    "sober": false
   },
   {
-   "t_in": 568.5,
-   "t_out": 574.5,
+   "t_in": 471.3,
+   "t_out": 477.3,
    "date": "1998",
    "title": "Ciutat de les Arts i les Ciències",
    "lines": [
@@ -653,8 +657,8 @@
    "sober": false
   },
   {
-   "t_in": 575.35,
-   "t_out": 580.35,
+   "t_in": 477.72,
+   "t_out": 482.72,
    "date": "1999",
    "title": "The Kingdom of Valencia bridge",
    "lines": [
@@ -663,8 +667,8 @@
    "sober": false
   },
   {
-   "t_in": 590.52,
-   "t_out": 595.02,
+   "t_in": 484.05,
+   "t_out": 488.55,
    "date": "2007",
    "title": "The America's Cup",
    "lines": [
@@ -673,8 +677,8 @@
    "sober": false
   },
   {
-   "t_in": 599.46,
-   "t_out": 607.46,
+   "t_in": 491.52,
+   "t_out": 499.52,
    "date": "2024",
    "title": "DANA, 29 October 2024",
    "lines": [
@@ -684,8 +688,8 @@
    "sober": true
   },
   {
-   "t_in": 607.59,
-   "t_out": 612.59,
+   "t_in": 499.59,
+   "t_out": 504.59,
    "date": "2025",
    "title": "Valencia today",
    "lines": [
@@ -702,44 +706,44 @@
    "title": "Conquest and Settlement"
   },
   {
-   "t_in": 77.24,
-   "t_out": 80.04,
+   "t_in": 68.53,
+   "t_out": 71.33,
    "num": "II",
    "title": "Walls, Silk and Gold"
   },
   {
-   "t_in": 197.18,
-   "t_out": 199.98,
+   "t_in": 169.66,
+   "t_out": 172.46,
    "num": "III",
    "title": "Revolt, Exile and Decline"
   },
   {
-   "t_in": 260.21,
-   "t_out": 262.8,
+   "t_in": 231.06,
+   "t_out": 232.26,
    "num": "IV",
    "title": "The Walls Come Down"
   },
   {
-   "t_in": 443.67,
-   "t_out": 446.47,
+   "t_in": 372.31,
+   "t_out": 373.77,
    "num": "V",
    "title": "The River Is Moved"
   },
   {
-   "t_in": 540.68,
-   "t_out": 543.48,
+   "t_in": 444.98,
+   "t_out": 447.78,
    "num": "VI",
    "title": "The River Becomes a Garden"
   }
  ],
  "cta": {
-  "t_in": 646.5,
-  "t_out": 651.0,
+  "t_in": 524.3,
+  "t_out": 528.8,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 651.0,
-  "t_out": 659.0,
+  "t_in": 528.8,
+  "t_out": 536.8,
   "items": [
    "Ajuntament de Valencia, Muralla bajomedieval (BIC)",
    "Ajuntament de Valencia, Recinto muralla islamica (BIC)",

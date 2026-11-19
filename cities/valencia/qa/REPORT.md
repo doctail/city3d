@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-19 16:27. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-19 16:31. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -89,43 +89,43 @@ Generato da `python -m kit.qa` il 2026-11-19 16:27. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (2 s)
-  - oggetti citta' 1539, cambi in tutto il video 51705, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
+  - oggetti citta' 1539, cambi in tutto il video 50440, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 212 m/s (limite 250), mediana 17
+  - 258 m/s (limite 250), mediana 13
 - **PASS** drone: accelerazione massima
-  - 118 m/s2 (limite 120), 99% 41
+  - 106 m/s2 (limite 120), 99% 72
 - **PASS** drone: jerk massimo
-  - 79 m/s3 (limite 200), 99% 22
+  - 74 m/s3 (limite 200), 99% 49
 - **PASS** drone: distanza minima da terreno e tetti
-  - 462 m (soglia 24); dal solo terreno 476 m
+  - 457 m (soglia 24); dal solo terreno 476 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 20 tenute, 0 solo sorvolate; hover 161 s, volo 467 s; 
+  - 0 tolte, 19 tenute, 0 solo sorvolate; hover 158 s, volo 349 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 8.4 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
-- **WARN** drone: voli con gli anni quasi fermi
-  - 466-497 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'  [uniscili: trasforma una delle due soste vicine in cartello]
+  - v max in hover 8.5 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+- **PASS** drone: voli con gli anni quasi fermi
+  - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1992 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1718 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **WARN** drone: grafico non fatto
   - No module named 'matplotlib'
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 28.5 s (515-543 s); 13 oltre 15 s: 59-80, 89-109, 114-130, 130-151, 151-172, 178-200
+  - vuoto massimo 19.4 s (428-448 s); 5 oltre 15 s: 111-129, 129-147, 153-172, 253-270, 428-448
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 11.30 | 1:00  0.92 | 2:00  1.50 | 3:00  3.80 | 4:00  2.15 | 5:00  0.68 | 6:00  0.71 | 7:00  0.48 | 8:00  0.39 | 9:00  0.66 | 10:00  0.02
-- **PASS** 20 soste ben formate
+  - 0:00 11.30 | 1:00  1.40 | 2:00  2.09 | 3:00  4.61 | 4:00  1.05 | 5:00  0.66 | 6:00  0.55 | 7:00  0.50 | 8:00  0.46
+- **PASS** 19 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
   - primo a 15.7 s
 - **PASS** notte
-  - night_t=644.004006826097, schedule_valencia_night.json ok
+  - night_t=521.8104627928572, schedule_valencia_night.json ok
 
 ## Immagini
 
