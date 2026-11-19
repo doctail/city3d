@@ -1,13 +1,13 @@
 Valencia: regia automatica (kit/regia_kit.py)
-Camera drone: 23 tappe in hover (181.5 s) e voli (497.3 s), anni None/s fra le voci, nessuno stacco; vmax 213.71, amax 119.87, jmax 80.74, clear_min 459.07, clear_ground_min 475.75
-Durata 11:49.5  fotogrammi 17028  inquadrature 3  stacco medio ogni 236.5 s
-Musica: waking_monument  b_start None  notte 694.5372817453049
+Camera drone: 22 tappe in hover (177.0 s) e voli (482.9 s), anni None/s fra le voci, nessuno stacco; vmax 213.71, amax 119.87, jmax 95.42, clear_min 455.59, clear_ground_min 475.75
+Durata 11:30.6  fotogrammi 16574  inquadrature 3  stacco medio ogni 230.2 s
+Musica: waking_monument  b_start None  notte 675.5793969923703
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   1238.00  
-  11:34.5   2026.00  
+  11:15.6   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:29.7  1238.0->1238.8  Jaume I takes Valencia (1238)  [forza 6.0, crowd]
@@ -59,31 +59,31 @@ SOSTE (video -> anni):
   6:19.6-6:23.6  1909.4->1910.0  Regional Exhibition (1909)  [forza 6.0, crowd]
   6:24.8-6:29.3  1915.0->1915.0  North Station (1906-17)  [forza 0.0]
   6:40.8-6:44.3  1923.3->1923.5  Mestalla stadium (1923)  [forza 6.0, crowd]
-  7:00.3-7:04.8  1927.4->1928.0  Central Market (1915-28)  [forza 6.0, crowd]
-  7:20.8-7:25.8  1932.4->1933.0  City Hall square (1931-33)  [forza 4.0, build]
-  7:20.8-7:25.8  1933.5->1933.5  The Aragon bridge  [forza 0.0]
-  7:26.7-7:32.7  1936.8->1936.8  Capital of the Republic  [forza 0.0]
-  7:33.4-7:37.9  1939.2->1939.2  The war ends  [forza 0.0]
-  7:41.5-7:46.5  1950.0->1950.0  Half a million  [forza 0.0]
-  7:49.4-7:56.4  1957.8->1957.8  The Turia floods  [forza 0.0]
-  7:56.5-8:08.5  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
-  8:10.3-8:16.3  1961.0->1961.0  The Plan Sur  [forza 0.0]
-  8:17.0-8:21.5  1962.0->1962.0  A city of immigrants  [forza 0.0]
-  8:40.1-8:51.1  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
-  8:40.1-8:46.6  1970.0->1970.0  The river is moved  [forza 0.0]
-  8:46.6-8:51.1  1970.0->1970.0  Growing fast  [forza 0.0]
-  8:57.9-9:04.4  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
-  9:26.4-9:37.4  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
-  9:26.4-9:32.9  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
-  9:32.9-9:37.4  1989.0->1989.0  Calatrava arrives  [forza 0.0]
-  9:39.3-9:44.3  1995.3->1995.3  Calatrava's Exposition bridge  [forza 0.0]
-  10:14.0-10:25.0  1996.5->1999.0  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
-  10:14.0-10:20.0  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
-  10:20.0-10:25.0  1999.9->1999.9  The Kingdom of Valencia bridge  [forza 0.0]
-  10:41.0-10:47.0  2006.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
-  10:41.0-10:45.5  2007.0->2007.0  The America's Cup  [forza 0.0]
-  10:50.0-10:58.0  2024.8->2024.8  DANA, 29 October 2024  [forza 0.0]
-  10:58.1-11:03.1  2025.0->2025.0  Valencia today  [forza 0.0]
+  6:45.8-6:50.3  1927.4->1927.4  Central Market (1915-28)  [forza 0.0]
+  7:01.8-7:06.8  1932.4->1933.0  City Hall square (1931-33)  [forza 4.0, build]
+  7:01.8-7:06.8  1933.5->1933.5  The Aragon bridge  [forza 0.0]
+  7:07.8-7:13.8  1936.8->1936.8  Capital of the Republic  [forza 0.0]
+  7:14.4-7:18.9  1939.2->1939.2  The war ends  [forza 0.0]
+  7:22.6-7:27.6  1950.0->1950.0  Half a million  [forza 0.0]
+  7:30.5-7:37.5  1957.8->1957.8  The Turia floods  [forza 0.0]
+  7:37.5-7:49.5  1957.8->1957.8  THE GREAT FLOOD (14 October 1957)  [forza 5.5, water]
+  7:51.4-7:57.4  1961.0->1961.0  The Plan Sur  [forza 0.0]
+  7:58.0-8:02.5  1962.0->1962.0  A city of immigrants  [forza 0.0]
+  8:21.1-8:32.1  1964.0->1970.0  PLAN SUR: THE RIVER IS MOVED (1964-69)  [forza 5.0, dig]
+  8:21.1-8:27.6  1970.0->1970.0  The river is moved  [forza 0.0]
+  8:27.6-8:32.1  1970.0->1970.0  Growing fast  [forza 0.0]
+  8:38.9-8:45.4  1982.0->1982.0  The Senyera becomes official  [forza 0.0]
+  9:07.5-9:18.5  1986.0->1990.0  The old riverbed becomes a park (1986)  [forza 4.0, birds]
+  9:07.5-9:14.0  1986.0->1986.0  A garden in the riverbed  [forza 0.0]
+  9:14.0-9:18.5  1989.0->1989.0  Calatrava arrives  [forza 0.0]
+  9:20.4-9:25.4  1995.3->1995.3  Calatrava's Exposition bridge  [forza 0.0]
+  9:55.1-10:06.1  1996.5->1999.0  City of Arts and Sciences (1998-2000)  [forza 4.0, chime]
+  9:55.1-10:01.1  1998.0->1998.0  Ciutat de les Arts i les Ciències  [forza 0.0]
+  10:01.1-10:06.1  1999.9->1999.9  The Kingdom of Valencia bridge  [forza 0.0]
+  10:22.1-10:28.1  2006.0->2009.0  Oceanogràfic, Palau de les Arts, Àgora (2001-09)  [forza 4.0, chime]
+  10:22.1-10:26.6  2007.0->2007.0  The America's Cup  [forza 0.0]
+  10:31.0-10:39.0  2024.8->2024.8  DANA, 29 October 2024  [forza 0.0]
+  10:39.2-10:44.2  2025.0->2025.0  Valencia today  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
@@ -100,19 +100,18 @@ ANNO OGNI 30 s:
   5:30   1865.6  (0.27 anni/s)
   6:00   1890.7  (0.78 anni/s)
   6:30   1915.5  (0.72 anni/s)
-  7:00   1927.3  (0.24 anni/s)
-  7:30   1936.8  (0.00 anni/s)
-  8:00   1957.8  (0.00 anni/s)
-  8:30   1962.9  (0.11 anni/s)
-  9:00   1982.0  (0.00 anni/s)
-  9:30   1987.3  (0.36 anni/s)
-  10:00   1995.9  (0.04 anni/s)
-  10:30   2001.2  (0.44 anni/s)
-  11:00   2025.0  (0.00 anni/s)
-  11:30   2025.9  (0.03 anni/s)
+  7:00   1931.6  (0.43 anni/s)
+  7:30   1956.5  (2.67 anni/s)
+  8:00   1962.0  (0.00 anni/s)
+  8:30   1968.8  (0.54 anni/s)
+  9:00   1984.6  (0.18 anni/s)
+  9:30   1995.5  (0.04 anni/s)
+  10:00   1997.6  (0.23 anni/s)
+  10:30   2019.3  (5.38 anni/s)
+  11:00   2025.5  (0.03 anni/s)
 
-Velocita fuori dalle soste: mediana 0.48 anni/s, max 30.0 anni/s
-Soste: 74, 471 s (69% del giorno)
+Velocita fuori dalle soste: mediana 0.49 anni/s, max 30.0 anni/s
+Soste: 74, 471 s (71% del giorno)
 
 AVVISI:
   nessuno

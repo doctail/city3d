@@ -5715,20 +5715,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1927.4,
-    "y1": 1928,
-    "dur": 4.5,
-    "caption": "Central Market (1915-28)",
-    "target": "Mercat Central",
-    "shot": "medium",
-    "fx": "crowd",
-    "src": [
-     "S18",
-     "S42"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1932.4,
     "y1": 1933,
     "dur": 4,
@@ -6340,6 +6326,23 @@
     "shot": "medium",
     "was_sosta": true,
     "y1": 1915.6
+   },
+   {
+    "y": 1927.4,
+    "title": "Central Market (1915-28)",
+    "lines": [
+     "Years 1927.4-1928."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S18",
+     "S42"
+    ],
+    "conf": "medium",
+    "target": "Mercat Central",
+    "shot": "medium",
+    "was_sosta": true,
+    "y1": 1928
    },
    {
     "y": 1933.5,
