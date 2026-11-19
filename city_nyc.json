@@ -297,5 +297,26 @@
    7200,
    10
   ]
- ]
+ ],
+ "vegetation": {
+  "box": [
+   -9000,
+   -12500,
+   6000,
+   9000
+  ],
+  "river_w": 90,
+  "river_step": 9,
+  "vega_r": 9000,
+  "vega_step": 17,
+  "vega_clump": 0.1,
+  "orchard_r": 1,
+  "orchard_step": 8,
+  "colors": [
+   "#2f4a22",
+   "#3d5a2a",
+   "#4b6030",
+   "#36512a"
+  ]
+ }
 }
