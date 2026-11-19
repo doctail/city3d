@@ -1,0 +1,1 @@
+Sevilla: slow flights 342-375 s (0.27 y/s) and 380-406 s (0.31 y/s): card density 1960-1991. Gaps 15.4 s (WARN). Section d not run.

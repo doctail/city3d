@@ -5768,36 +5768,6 @@
     ]
    },
    {
-    "y0": 1758.0,
-    "y1": 1790.0,
-    "dur": 5.0,
-    "caption": "The Maestranza bullring rises (from 1761)",
-    "shot": "medium",
-    "target": "Maestranza Bullring",
-    "conf": "medium",
-    "fx": "crowd",
-    "weight": 4,
-    "src": [
-     "S37",
-     "S1"
-    ]
-   },
-   {
-    "y0": 1843.0,
-    "y1": 1852.5,
-    "dur": 4.5,
-    "caption": "Isabel II Bridge replaces the boat bridge (1845-1852)",
-    "shot": "medium",
-    "target": "Isabel II Bridge",
-    "conf": "high",
-    "fx": "water",
-    "weight": 5,
-    "src": [
-     "S9",
-     "S39"
-    ]
-   },
-   {
     "y0": 1866.0,
     "y1": 1874.0,
     "dur": 5.0,
@@ -5828,7 +5798,7 @@
     ]
    },
    {
-    "y0": 1960.0,
+    "y0": 1967.0,
     "y1": 1970.0,
     "dur": 5.5,
     "caption": "A planned district: Los Remedios (1960s)",
@@ -5876,7 +5846,7 @@
     "y0": 2014.0,
     "y1": 2018.5,
     "dur": 5.0,
-    "caption": "Torre Sevilla · 180 m · 2015",
+    "caption": "Torre Sevilla, 180 m (2015)",
     "shot": "medium",
     "target": "Torre Sevilla",
     "conf": "high",
@@ -6146,6 +6116,19 @@
     "note": "Date 1 November 1755 is general knowledge, not in the fetched texts: the year is sourced."
    },
    {
+    "y": 1758.0,
+    "title": "The Maestranza bullring rises (from 1761)",
+    "lines": [
+     "The Maestranza bullring rises (from 1761)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S37",
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
     "y": 1760.0,
     "title": "Torre del Oro",
     "lines": [
@@ -6218,6 +6201,19 @@
     "hold_s": 8.0,
     "src": [
      "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1843.0,
+    "title": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+    "lines": [
+     "Isabel II Bridge replaces the boat bridge (1845-1852)"
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S9",
+     "S39"
     ],
     "conf": "high"
    },

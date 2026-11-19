@@ -1,0 +1,9 @@
+yb-qa Siviglia (2026-11-19). Build: kit build sevilla --force (hist 8 s, total 17 s, peak 406 MB).
+LANDPHASES: pack data_sevilla_src/landphases.json.gz = 59 gradual strips (md5 30146d67...). `kit build` REGENERATED data_sevilla/landphases.json from history.water = 38 single windows (md5 f4697f4b...). I restored the pack version in data_sevilla/ from the gz (data_sevilla_src/ was never touched; a copy is in the yb-qa scratchpad). If anyone runs `kit build sevilla` again, re-extract: zcat data_sevilla_src/landphases.json.gz > data_sevilla/landphases.json (and do NOT run kit pack sevilla after a build).
+Initial QA e: FAIL vmax 302 m/s; FAIL bodies after hover midpoint (Maestranza 1804.2 vs 1774.0; Los Remedios 1968.0 vs 1965.0); FAIL caption format 'Torre Sevilla · 180 m · 2015'.
+Changes in order:
+1) caption 'Torre Sevilla · 180 m · 2015' -> 'Torre Sevilla, 180 m (2015)' (format Titolo (data), same facts).
+2) Los Remedios stop y0 1960 -> 1967 (y1 1970; still 'the 1960s', S24): hover center 1968.5 > body 1968.0.
+3) Maestranza stop demoted to card (body from 1804.2 vs hover 1758-1790; the S37 sources only support 1761-65 and 1876-81, so the window cannot move).
+4) Isabel II stop demoted to card (leg Isabel II -> walls caused vmax 283 m/s). Result vmax 113 m/s.
+Tried and reverted: demoting 'river is moved west' stop (flight to Expo still 0.29 y/s).
