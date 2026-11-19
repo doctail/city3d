@@ -1370,6 +1370,20 @@ for f, p, t in CAMKEYS:
     if '--cam' in a: v = list(map(float, opt('--cam', 6))); p, t = v[:3], v[3:]
     co.location = p; co.keyframe_insert('location', frame=f); tg.location = t; tg.keyframe_insert('location', frame=f)
 
+# ---------- navi (OPZIONALE: solo con --ships TRAFFIC.json; senza il flag non cambia nulla) ----------
+SHIPS = None
+if '--ships' in a:
+    from kit import traffic_kit as _tk, ships_bpy as _sb
+    _cfg = _tk.load_cfg(opt('--ships')); _fo = opt('--ships-sweep', 1, '')
+    _SW = [int(v) for v in _fo.split(',') if v] if _fo else None   # solo prove di costo: n. di navi per fotogramma di --only
+    _T = _tk.Traffic(_cfg, float(CITY['lat0']), float(CITY['lon0']), _tk.land_fn(DATA), force=max(_SW) if _SW else None, crowd=bool(os.environ.get('SHIPS_CROWD')))
+    if SCHED and not _SW:   # niente navi vicino al bersaglio e davanti ad esso durante le soste del drone
+        _cp = [(k_[0], k_[1][0], k_[1][1]) for k_ in SCHED['cam']]
+        for st_ in (SCHED.get('drone') or {}).get('stays', []):
+            c_ = min(_cp, key=lambda q_: abs(q_[0] - (st_[0] + st_[1]) / 2)); _T.keepouts.append((st_[0], st_[1], st_[2], st_[3], c_[1], c_[2], float(_cfg.get('keepout_m', 250))))
+    SHIPS = _sb.ShipsBpy(sc, _T, mat, float(CITY.get('water_z', -2)))
+    log('navi:', len(_T.ships), 'istanze,', len(_T.report), 'scartate (terra)', _T.report[:5])
+
 
 # ---------- visibilita' per fotogramma: solo cio' che cambia viene ricalcolato ----------
 def _dur(f):
@@ -1474,6 +1488,10 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
         if VISSET.get(o_.name) != hid: o_.location.z = -5000.0 if hid else pt['z0']; VISSET[o_.name] = hid
         if not hid and abs(o_.scale.z - g_) > 1e-4: o_.scale.z = g_
     for o_, kind, thr in VIS: setvis(o_, (y_ < thr) if kind == 'appear' else (y_ >= thr) if kind == 'vanish' else not (thr[0] <= y_ < thr[1]))
+    if SHIPS:
+        if _SW: SHIPS.set_count(_SW[(_ONLY or [f]).index(f)])
+        SHIPS.update(f, FPS, y_)
+        if _SW: log('navi: n =', _SW[(_ONLY or [f]).index(f)], 'RSS prima del render')
     if os.environ.get('DIAG'):   # diagnosi: oggetti cambiati (posizione o scala) dal fotogramma precedente, per tipo, con i vertici
         _st = {}
         for _o in sc.objects:
