@@ -1926,20 +1926,6 @@
     "conf": "medium"
    },
    {
-    "y0": -329.0,
-    "y1": -322.0,
-    "dur": 3.5,
-    "caption": "Circus Maximus (329 BC)",
-    "shot": "medium",
-    "target": "Circus Maximus",
-    "fx": "crowd",
-    "weight": 4,
-    "src": [
-     "S5"
-    ],
-    "conf": "low"
-   },
-   {
     "y0": -28.0,
     "y1": -26.0,
     "dur": 3.5,
@@ -1952,20 +1938,6 @@
      "S8"
     ],
     "conf": "high"
-   },
-   {
-    "y0": -13.5,
-    "y1": -11.0,
-    "dur": 3.0,
-    "caption": "Theatre of Marcellus (13 BC)",
-    "shot": "medium",
-    "target": "Theatre of Marcellus",
-    "fx": "crowd",
-    "weight": 3,
-    "src": [
-     "S7"
-    ],
-    "conf": "medium"
    },
    {
     "y0": 64.4,
@@ -1992,62 +1964,6 @@
     "weight": "max",
     "src": [
      "S6"
-    ],
-    "conf": "high"
-   },
-   {
-    "y0": 112.5,
-    "y1": 113.5,
-    "dur": 3.0,
-    "caption": "Trajan's Column (113)",
-    "shot": "medium",
-    "target": "Trajan's Column",
-    "fx": "bell",
-    "weight": 5,
-    "src": [
-     "S9"
-    ],
-    "conf": "high"
-   },
-   {
-    "y0": 122.0,
-    "y1": 130.0,
-    "dur": 5.0,
-    "caption": "The Pantheon (c. 126)",
-    "shot": "medium",
-    "target": "Pantheon",
-    "fx": "bell",
-    "weight": 8,
-    "src": [
-     "S10"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y0": 137.0,
-    "y1": 141.0,
-    "dur": 3.5,
-    "caption": "Hadrian's Mausoleum (134-139)",
-    "shot": "medium",
-    "target": "Hadrian's Mausoleum",
-    "fx": "hammer",
-    "weight": 3,
-    "src": [
-     "S13"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y0": 214.0,
-    "y1": 218.0,
-    "dur": 4.0,
-    "caption": "Baths of Caracalla (216)",
-    "shot": "medium",
-    "target": "Baths of Caracalla",
-    "fx": "crowd",
-    "weight": 4,
-    "src": [
-     "S14"
     ],
     "conf": "high"
    },
@@ -2263,6 +2179,18 @@
     "conf": "medium"
    },
    {
+    "y": -329.0,
+    "title": "Circus Maximus (329 BC)",
+    "lines": [
+     "Circus Maximus (329 BC)"
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S5"
+    ],
+    "conf": "low"
+   },
+   {
     "y": -312,
     "title": "The first road and aqueduct",
     "lines": [
@@ -2314,6 +2242,18 @@
     "conf": "medium"
    },
    {
+    "y": -13.5,
+    "title": "Theatre of Marcellus (13 BC)",
+    "lines": [
+     "Theatre of Marcellus (13 BC)"
+    ],
+    "hold_s": 3.0,
+    "src": [
+     "S7"
+    ],
+    "conf": "medium"
+   },
+   {
     "y": 64,
     "title": "The Great Fire",
     "lines": [
@@ -2343,6 +2283,18 @@
     ]
    },
    {
+    "y": 112.5,
+    "title": "Trajan's Column (113)",
+    "lines": [
+     "Trajan's Column (113)"
+    ],
+    "hold_s": 3.0,
+    "src": [
+     "S9"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 113,
     "title": "Trajan's Column",
     "lines": [
@@ -2358,6 +2310,18 @@
     "labels": [
      "Trajan's Column"
     ]
+   },
+   {
+    "y": 122.0,
+    "title": "The Pantheon (c. 126)",
+    "lines": [
+     "The Pantheon (c. 126)"
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S10"
+    ],
+    "conf": "medium"
    },
    {
     "y": 126,
@@ -2377,6 +2341,18 @@
     ]
    },
    {
+    "y": 137.0,
+    "title": "Hadrian's Mausoleum (134-139)",
+    "lines": [
+     "Hadrian's Mausoleum (134-139)"
+    ],
+    "hold_s": 3.5,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium"
+   },
+   {
     "y": 150,
     "title": "A city of a million or more",
     "lines": [
@@ -2389,6 +2365,18 @@
      "S52"
     ],
     "conf": "low"
+   },
+   {
+    "y": 214.0,
+    "title": "Baths of Caracalla (216)",
+    "lines": [
+     "Baths of Caracalla (216)"
+    ],
+    "hold_s": 4.0,
+    "src": [
+     "S14"
+    ],
+    "conf": "high"
    },
    {
     "y": 216,
