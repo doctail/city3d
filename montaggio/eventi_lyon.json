@@ -8,103 +8,85 @@
    "sub": "43 BC"
   },
   {
-   "t_in": 27.19,
-   "t_out": 32.19,
+   "t_in": 25.82,
+   "t_out": 29.82,
    "title": "Theatre of Fourvière",
    "sub": "16–14 BC"
   },
   {
-   "t_in": 45.67,
-   "t_out": 50.67,
-   "title": "Amphitheatre of the Three Gauls",
-   "sub": "AD 19"
+   "t_in": 101.84,
+   "t_out": 106.84,
+   "title": "The first Guillotière bridge falls",
+   "sub": "1190"
   },
   {
-   "t_in": 55.91,
-   "t_out": 61.91,
-   "title": "The martyrs of Lugdunum",
-   "sub": "AD 177"
+   "t_in": 111.34,
+   "t_out": 115.34,
+   "title": "Saint-Jean cathedral rises",
+   "sub": "1180–1476"
   },
   {
-   "t_in": 95.55,
-   "t_out": 101.55,
-   "title": "Saint-Jean cathedral is begun",
-   "sub": "1180"
+   "t_in": 135.47,
+   "t_out": 141.47,
+   "title": "Vieux Lyon, a Renaissance quarter",
+   "sub": "1500s"
   },
   {
-   "t_in": 115.54,
-   "t_out": 121.54,
-   "title": "The fairs of Lyon",
-   "sub": "1461–83"
+   "t_in": 145.97,
+   "t_out": 150.97,
+   "title": "Place Bellecour is laid out",
+   "sub": "1604"
   },
   {
-   "t_in": 141.58,
-   "t_out": 146.58,
-   "title": "Place Bellecour, a royal square",
-   "sub": "1715"
+   "t_in": 155.65,
+   "t_out": 159.65,
+   "title": "Hôtel de Ville, Place des Terreaux",
+   "sub": "1646–52"
   },
   {
-   "t_in": 151.55,
-   "t_out": 169.55,
-   "title": "The siege of Lyon",
-   "sub": "9 Aug–9 Oct 1793"
+   "t_in": 167.88,
+   "t_out": 172.88,
+   "title": "Hôtel-Dieu, the Rhône facade",
+   "sub": "1741–61"
   },
   {
-   "t_in": 176.84,
-   "t_out": 182.84,
-   "title": "Jacquard's loom takes shape",
-   "sub": "1801"
+   "t_in": 177.38,
+   "t_out": 182.38,
+   "title": "Silk workshops on the Croix-Rousse hill",
+   "sub": "1700s"
   },
   {
-   "t_in": 191.52,
-   "t_out": 204.52,
-   "title": "The first canut revolt",
-   "sub": "Nov 1831"
+   "t_in": 220.89,
+   "t_out": 233.89,
+   "title": "The Grand Théâtre opens",
+   "sub": "1831"
   },
   {
-   "t_in": 208.02,
-   "t_out": 220.02,
-   "title": "The canuts rise again",
-   "sub": "April 1834"
-  },
-  {
-   "t_in": 249.26,
-   "t_out": 267.26,
-   "title": "The Rhône floods the left bank",
-   "sub": "May 1856"
-  },
-  {
-   "t_in": 299.72,
-   "t_out": 310.72,
+   "t_in": 303.09,
+   "t_out": 310.09,
    "title": "Basilica of Notre-Dame de Fourvière",
    "sub": "1872–84"
   },
   {
-   "t_in": 348.74,
-   "t_out": 365.74,
-   "title": "The bridges are blown up",
-   "sub": "Sept 1944"
+   "t_in": 314.59,
+   "t_out": 319.59,
+   "title": "The Gros Caillou boulder is found",
+   "sub": "1890"
   },
   {
-   "t_in": 404.76,
-   "t_out": 415.76,
+   "t_in": 377.23,
+   "t_out": 388.23,
    "title": "La Part-Dieu and its Crayon tower",
    "sub": "1977"
   },
   {
-   "t_in": 419.76,
-   "t_out": 424.76,
-   "title": "Part-Dieu station opens",
-   "sub": "1983"
-  },
-  {
-   "t_in": 479.43,
-   "t_out": 485.43,
+   "t_in": 415.74,
+   "t_out": 421.74,
    "title": "Musée des Confluences",
    "sub": "2014"
   }
  ],
- "subscribe_t": 102.0,
+ "subscribe_t": 90.0,
  "cards": [
   {
    "t_in": 12.9,
@@ -118,8 +100,8 @@
    "sober": false
   },
   {
-   "t_in": 21.04,
-   "t_out": 26.04,
+   "t_in": 20.68,
+   "t_out": 25.68,
    "date": "20 BC",
    "title": "Water for the hill",
    "lines": [
@@ -128,8 +110,8 @@
    "sober": false
   },
   {
-   "t_in": 32.46,
-   "t_out": 37.46,
+   "t_in": 29.99,
+   "t_out": 34.99,
    "date": "10 BC",
    "title": "An emperor is born",
    "lines": [
@@ -138,8 +120,8 @@
    "sober": false
   },
   {
-   "t_in": 55.91,
-   "t_out": 61.91,
+   "t_in": 41.25,
+   "t_out": 47.25,
    "date": "AD 177",
    "title": "The martyrs",
    "lines": [
@@ -149,8 +131,39 @@
    "sober": true
   },
   {
-   "t_in": 95.55,
-   "t_out": 101.55,
+   "t_in": 54.68,
+   "t_out": 59.68,
+   "date": "AD 400",
+   "title": "Monks on the islands",
+   "lines": [
+    "Monastic communities settle at Île Barbe and Saint-Martin d'Ainay between the 4th and 6th centuries."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 74.45,
+   "t_out": 79.45,
+   "date": "AD 843",
+   "title": "Lyon changes crown",
+   "lines": [
+    "In 843 the Treaty of Verdun assigns Lyon to Lotharingia.",
+    "It later passes to the Burgundian kingdom."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 87.28,
+   "t_out": 92.28,
+   "date": "1078",
+   "title": "Primate of the Gauls",
+   "lines": [
+    "Pope Gregory VII gives the archbishopric of Lyon the title of Primate of the Gauls in 1078."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 95.7,
+   "t_out": 101.7,
    "date": "1180",
    "title": "Saint-Jean rises",
    "lines": [
@@ -160,8 +173,8 @@
    "sober": false
   },
   {
-   "t_in": 103.22,
-   "t_out": 108.22,
+   "t_in": 115.9,
+   "t_out": 120.9,
    "date": "1245",
    "title": "A council in Lyon",
    "lines": [
@@ -170,8 +183,8 @@
    "sober": false
   },
   {
-   "t_in": 115.54,
-   "t_out": 121.54,
+   "t_in": 128.13,
+   "t_out": 134.13,
    "date": "1461",
    "title": "Fairs and bankers",
    "lines": [
@@ -181,8 +194,8 @@
    "sober": false
   },
   {
-   "t_in": 123.91,
-   "t_out": 129.91,
+   "t_in": 135.47,
+   "t_out": 141.47,
    "date": "1536",
    "title": "Silk comes to Lyon",
    "lines": [
@@ -192,8 +205,8 @@
    "sober": false
   },
   {
-   "t_in": 132.43,
-   "t_out": 137.43,
+   "t_in": 145.97,
+   "t_out": 150.97,
    "date": "1604",
    "title": "A pasture becomes a square",
    "lines": [
@@ -203,8 +216,8 @@
    "sober": false
   },
   {
-   "t_in": 141.58,
-   "t_out": 146.58,
+   "t_in": 161.94,
+   "t_out": 166.94,
    "date": "1713",
    "title": "The king in bronze",
    "lines": [
@@ -214,8 +227,8 @@
    "sober": false
   },
   {
-   "t_in": 151.55,
-   "t_out": 157.55,
+   "t_in": 182.57,
+   "t_out": 188.57,
    "date": "1793",
    "title": "Lyon against Paris",
    "lines": [
@@ -225,8 +238,8 @@
    "sober": true
   },
   {
-   "t_in": 157.55,
-   "t_out": 163.55,
+   "t_in": 188.57,
+   "t_out": 194.57,
    "date": "1793",
    "title": "The city surrenders",
    "lines": [
@@ -236,8 +249,8 @@
    "sober": true
   },
   {
-   "t_in": 163.55,
-   "t_out": 169.55,
+   "t_in": 194.57,
+   "t_out": 200.57,
    "date": "1793",
    "title": "Ville-Affranchie",
    "lines": [
@@ -247,8 +260,8 @@
    "sober": true
   },
   {
-   "t_in": 169.56,
-   "t_out": 174.56,
+   "t_in": 200.58,
+   "t_out": 205.58,
    "date": "1793",
    "title": "Bellecour loses its king",
    "lines": [
@@ -257,8 +270,8 @@
    "sober": true
   },
   {
-   "t_in": 176.84,
-   "t_out": 182.84,
+   "t_in": 206.79,
+   "t_out": 212.79,
    "date": "1801",
    "title": "A mechanism for the loom",
    "lines": [
@@ -268,8 +281,8 @@
    "sober": false
   },
   {
-   "t_in": 186.03,
-   "t_out": 191.03,
+   "t_in": 215.6,
+   "t_out": 220.6,
    "date": "1830",
    "title": "A belt of forts",
    "lines": [
@@ -279,8 +292,8 @@
    "sober": false
   },
   {
-   "t_in": 191.52,
-   "t_out": 198.52,
+   "t_in": 220.89,
+   "t_out": 227.89,
    "date": "1831",
    "title": "The canuts take the city",
    "lines": [
@@ -290,8 +303,8 @@
    "sober": true
   },
   {
-   "t_in": 198.52,
-   "t_out": 204.52,
+   "t_in": 227.89,
+   "t_out": 233.89,
    "date": "1831",
    "title": "The cost",
    "lines": [
@@ -301,8 +314,8 @@
    "sober": true
   },
   {
-   "t_in": 208.02,
-   "t_out": 215.02,
+   "t_in": 234.18,
+   "t_out": 241.18,
    "date": "1834",
    "title": "The bloody week",
    "lines": [
@@ -312,8 +325,8 @@
    "sober": true
   },
   {
-   "t_in": 215.02,
-   "t_out": 220.02,
+   "t_in": 241.18,
+   "t_out": 246.18,
    "date": "1834",
    "title": "A fort to watch the hill",
    "lines": [
@@ -322,8 +335,8 @@
    "sober": false
   },
   {
-   "t_in": 221.53,
-   "t_out": 226.53,
+   "t_in": 247.18,
+   "t_out": 252.18,
    "date": "1843",
    "title": "The first power loom",
    "lines": [
@@ -333,8 +346,8 @@
    "sober": false
   },
   {
-   "t_in": 230.37,
-   "t_out": 236.37,
+   "t_in": 253.84,
+   "t_out": 259.84,
    "date": "1852",
    "title": "Three towns join Lyon",
    "lines": [
@@ -344,8 +357,8 @@
    "sober": false
   },
   {
-   "t_in": 237.24,
-   "t_out": 243.24,
+   "t_in": 260.18,
+   "t_out": 266.18,
    "date": "1853",
    "title": "The city crosses the Rhône",
    "lines": [
@@ -354,8 +367,8 @@
    "sober": false
   },
   {
-   "t_in": 249.26,
-   "t_out": 256.26,
+   "t_in": 267.16,
+   "t_out": 274.16,
    "date": "1856",
    "title": "The Rhône breaks out",
    "lines": [
@@ -365,8 +378,8 @@
    "sober": true
   },
   {
-   "t_in": 256.26,
-   "t_out": 262.26,
+   "t_in": 274.16,
+   "t_out": 280.16,
    "date": "1856",
    "title": "The emperor visits",
    "lines": [
@@ -376,8 +389,8 @@
    "sober": false
   },
   {
-   "t_in": 262.26,
-   "t_out": 267.26,
+   "t_in": 280.35,
+   "t_out": 285.35,
    "date": "1857",
    "title": "Under Fourvière",
    "lines": [
@@ -386,8 +399,8 @@
    "sober": false
   },
   {
-   "t_in": 267.65,
-   "t_out": 273.65,
+   "t_in": 285.39,
+   "t_out": 291.39,
    "date": "1857",
    "title": "A street through the Presqu'île",
    "lines": [
@@ -397,8 +410,8 @@
    "sober": false
   },
   {
-   "t_in": 299.72,
-   "t_out": 305.72,
+   "t_in": 295.79,
+   "t_out": 301.79,
    "date": "1872",
    "title": "A vow in stone",
    "lines": [
@@ -408,8 +421,8 @@
    "sober": false
   },
   {
-   "t_in": 305.72,
-   "t_out": 310.72,
+   "t_in": 303.09,
+   "t_out": 308.09,
    "date": "1884",
    "title": "The basilica stands",
    "lines": [
@@ -418,8 +431,28 @@
    "sober": false
   },
   {
-   "t_in": 348.74,
-   "t_out": 355.74,
+   "t_in": 314.59,
+   "t_out": 319.59,
+   "date": "1894",
+   "title": "A president in Lyon",
+   "lines": [
+    "French president Sadi Carnot is assassinated in Lyon in 1894."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 322.92,
+   "t_out": 327.92,
+   "date": "1905",
+   "title": "A mayor for fifty years",
+   "lines": [
+    "Édouard Herriot leads Lyon from 1905 to 1957."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 340.24,
+   "t_out": 347.24,
    "date": "1944",
    "title": "The bridges fall",
    "lines": [
@@ -429,8 +462,8 @@
    "sober": true
   },
   {
-   "t_in": 355.74,
-   "t_out": 360.74,
+   "t_in": 347.24,
+   "t_out": 352.24,
    "date": "1944",
    "title": "Lyon is free",
    "lines": [
@@ -439,8 +472,8 @@
    "sober": true
   },
   {
-   "t_in": 360.74,
-   "t_out": 365.74,
+   "t_in": 352.58,
+   "t_out": 357.58,
    "date": "1946",
    "title": "Lafayette reopens",
    "lines": [
@@ -449,8 +482,8 @@
    "sober": false
   },
   {
-   "t_in": 369.78,
-   "t_out": 374.78,
+   "t_in": 359.52,
+   "t_out": 364.52,
    "date": "1952",
    "title": "Pont Pasteur reopens",
    "lines": [
@@ -459,8 +492,8 @@
    "sober": false
   },
   {
-   "t_in": 382.52,
-   "t_out": 388.52,
+   "t_in": 367.19,
+   "t_out": 373.19,
    "date": "1960",
    "title": "Barracks into business",
    "lines": [
@@ -470,8 +503,8 @@
    "sober": false
   },
   {
-   "t_in": 404.76,
-   "t_out": 409.76,
+   "t_in": 377.23,
+   "t_out": 382.23,
    "date": "1974",
    "title": "The metro",
    "lines": [
@@ -480,8 +513,8 @@
    "sober": false
   },
   {
-   "t_in": 409.76,
-   "t_out": 415.76,
+   "t_in": 382.23,
+   "t_out": 388.23,
    "date": "1975",
    "title": "Europe's biggest urban mall",
    "lines": [
@@ -491,8 +524,8 @@
    "sober": false
   },
   {
-   "t_in": 439.76,
-   "t_out": 444.76,
+   "t_in": 395.23,
+   "t_out": 400.23,
    "date": "1998",
    "title": "A world heritage hill",
    "lines": [
@@ -501,8 +534,18 @@
    "sober": false
   },
   {
-   "t_in": 460.76,
-   "t_out": 465.76,
+   "t_in": 400.9,
+   "t_out": 405.9,
+   "date": "2000",
+   "title": "A new airport name",
+   "lines": [
+    "In June 2000 the airport at Colombier-Saugnieu is renamed Lyon–Saint-Exupéry."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 410.56,
+   "t_out": 415.56,
    "date": "2014",
    "title": "Part-Dieu again",
    "lines": [
@@ -511,8 +554,8 @@
    "sober": false
   },
   {
-   "t_in": 479.43,
-   "t_out": 485.43,
+   "t_in": 415.74,
+   "t_out": 421.74,
    "date": "2014",
    "title": "Where two rivers meet",
    "lines": [
@@ -521,8 +564,8 @@
    "sober": false
   },
   {
-   "t_in": 493.32,
-   "t_out": 498.32,
+   "t_in": 424.41,
+   "t_out": 429.41,
    "date": "2023",
    "title": "Lyon today",
    "lines": [
@@ -539,53 +582,53 @@
    "title": "Capital of the Gauls"
   },
   {
-   "t_in": 92.75,
-   "t_out": 95.55,
+   "t_in": 113.1,
+   "t_out": 115.9,
    "num": "II",
-   "title": "Cathedral, Fairs and Silk"
+   "title": "Bridge and Cathedral"
   },
   {
-   "t_in": 148.75,
-   "t_out": 151.55,
+   "t_in": 134.13,
+   "t_out": 135.47,
    "num": "III",
-   "title": "Siege and Revolt"
+   "title": "Renaissance Squares"
   },
   {
-   "t_in": 227.57,
-   "t_out": 230.37,
+   "t_in": 179.77,
+   "t_out": 182.57,
    "num": "IV",
-   "title": "Floods and Boulevards"
+   "title": "Hospital, Silk and Opera"
   },
   {
-   "t_in": 345.94,
-   "t_out": 348.74,
+   "t_in": 301.79,
+   "t_out": 303.09,
    "num": "V",
-   "title": "Bridges and Liberation"
+   "title": "Basilica to Towers"
   },
   {
-   "t_in": 379.72,
-   "t_out": 382.52,
+   "t_in": 374.43,
+   "t_out": 377.23,
    "num": "VI",
-   "title": "Towers and Rivers"
+   "title": "Towers and Confluence"
   }
  ],
  "cta": {
-  "t_in": 552.5,
-  "t_out": 557.0,
+  "t_in": 455.6,
+  "t_out": 460.1,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 557.0,
-  "t_out": 565.0,
+  "t_in": 460.1,
+  "t_out": 468.1,
   "items": [
    "Buildings: BDNB (CSTB), Fichiers fonciers (DGFiP)",
    "Heights, streets, rivers, rail: IGN BD TOPO (Licence Ouverte 2.0)",
    "Streets and place names: © OpenStreetMap contributors (ODbL)",
    "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
    "Historical maps (extent checks): BnF Gallica, 1735, 1847, 1852",
-   "History: Wikipedia EN/FR (Lugdunum, History of Lyon, Canut revolts,",
-   "Siege of Lyon, 1856 flood, bridges of Lyon, Liberation of Lyon,",
-   "Part-Dieu, Fourvière, Musée des Confluences, Croix-Rousse)",
+   "History: Wikipedia EN/FR (Lugdunum, History of Lyon, Vieux Lyon,",
+   "Hôtel-Dieu, Hôtel de Ville, Opéra, Guillotière bridge, Croix-Rousse,",
+   "Fourvière, Part-Dieu, Musée des Confluences, Gros Caillou)",
    "Population: Wikipedia, History of Lyon, census figures",
    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
   ],

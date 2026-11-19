@@ -9,7 +9,7 @@
   "radius_m": 9000,
   "start_year": -43,
   "end_year": 2026,
-  "title": "EVOLUTION OF LYON | 3D City Timelapse (43 BC–NOW) | No AI",
+  "title": "EVOLUTION OF LYON | 3D City Timelapse (43 BC-NOW) | No AI",
   "data_source": "custom",
   "data_dir": "data_lyon",
   "style_preset": "mediterranean",
@@ -379,6 +379,74 @@
      "note": "same camera as the night cover, daylight"
     }
    ]
+  },
+  "style": {
+   "wall_old": [
+    "#cf9a62",
+    "#c48c58",
+    "#d6a874",
+    "#b9814d",
+    "#e0c8a0",
+    "#d9b27a",
+    "#c9a14e",
+    "#a9693f"
+   ],
+   "roof_old": [
+    "#b1623a",
+    "#984727",
+    "#a8582f",
+    "#a05030",
+    "#b86a44"
+   ],
+   "wall_new": [
+    "#bdb5a6",
+    "#aaa498",
+    "#c8c0b0",
+    "#d0c7b3",
+    "#9b978f"
+   ],
+   "roof_new": [
+    "#8a7a6e",
+    "#9a8878",
+    "#7c7a76",
+    "#a7a299"
+   ],
+   "wall_anc": [
+    "#d3a874",
+    "#c99b66",
+    "#d9b588",
+    "#bf8b57"
+   ],
+   "glass": [
+    "#8b9ba5",
+    "#7d8e99",
+    "#97a5ad"
+   ],
+   "urban": [
+    "#b8a784",
+    "#b0a07c",
+    "#bfae8c",
+    "#a99872"
+   ],
+   "urban_dark": "#c6b690",
+   "street": "#b6a37a",
+   "grass": "#5f7a2c",
+   "tree": "#2f4a1d",
+   "urban_green": "#6a8a38",
+   "forest_base": "#4f6a2a",
+   "park_ground": "#55702f",
+   "water": "#2f7f9c",
+   "water2": "#4a93ae"
+  },
+  "city_overrides": {
+   "exposure": -2.5,
+   "field_colors": [
+    "#4b551b",
+    "#78642e",
+    "#8a7331",
+    "#5d6a22",
+    "#6b5d2a"
+   ]
   }
  },
  "sources": {
@@ -476,6 +544,51 @@
    "url": "https://data.grandlyon.com/geoserver/metropole-de-lyon/ows",
    "title": "Métropole de Lyon WFS, adr_voie_lieu.adrlineairevoie (street axes)",
    "quote": "Assi stradali georiferiti usati per i tracciati dei gutting (Licence Ouverte)."
+  },
+  "S40": {
+   "url": "https://fr.wikipedia.org/wiki/H%C3%B4tel-Dieu_de_Lyon",
+   "title": "Wikipedia FR, Hôtel-Dieu de Lyon",
+   "quote": "De 1741 à 1761 est construit sur les courtines du Rhône"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Op%C3%A9ra_Nouvel",
+   "title": "Wikipedia EN, Opéra Nouvel (Opéra de Lyon)",
+   "quote": "erected the new Opéra de Lyon which opened on July 1, 1831"
+  },
+  "S42": {
+   "url": "https://en.wikipedia.org/wiki/Vieux_Lyon",
+   "title": "Wikipedia EN, Vieux Lyon",
+   "quote": "it is one of Europe's most extensive Renaissance neighborhoods"
+  },
+  "S43": {
+   "url": "https://fr.wikipedia.org/wiki/Gros_Caillou_(Lyon)",
+   "title": "Wikipedia FR, Gros Caillou (Lyon)",
+   "quote": "Sa découverte remonte en 1890 lors du percement de la ficelle"
+  },
+  "S44": {
+   "url": "https://fr.wikipedia.org/wiki/Pont_de_la_Guilloti%C3%A8re",
+   "title": "Wikipedia FR, Pont de la Guillotière",
+   "quote": "le premier pont (en bois) s'effondre sous le passage des croisés en 1190"
+  },
+  "S45": {
+   "url": "https://en.wikipedia.org/wiki/Croix-Rousse",
+   "title": "Wikipedia EN, Croix-Rousse (silk workshops)",
+   "quote": "the silk workshops moved here from the Vieux-Lyon area"
+  },
+  "S46": {
+   "url": "https://en.wikipedia.org/wiki/H%C3%B4tel_de_Ville,_Lyon",
+   "title": "Wikipedia EN, Hôtel de Ville, Lyon",
+   "quote": "the council held their first meeting there on 14 November 1652"
+  },
+  "S47": {
+   "url": "https://en.wikipedia.org/wiki/Vieux_Lyon",
+   "title": "Wikipedia EN, Vieux Lyon (Saint-Paul)",
+   "quote": "The Saint-Paul section in the 15th and 16th centuries predominantly housed Italian banker-merchants"
+  },
+  "S48": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Lyon",
+   "title": "Wikipedia EN, History of Lyon (re-read 19 Nov 2026)",
+   "quote": "In 843 it was assigned to Lotharingia by the Treaty of Verdun | Pope Gregory VII conferred the title of “Primate of the Gauls” on the Archbishopric of Lyon in 1078 | In 1894, French president Sadi Carnot | In June 2000, the airport was renamed Lyon–Saint-Exupéry Airport | communities had been established from the 4th to the 6th centuries (Ile Barbe, Saint Martin d'Ainay) | Under the long-standing leadership of Édouard Herriot (1905–1957)"
   }
  },
  "history": {
@@ -1434,7 +1547,7 @@
     "y1": -41,
     "dur": 6,
     "caption": "Lugdunum is founded (43 BC)",
-    "target": "area:[45.7618,4.8210,450]",
+    "target": "area:[45.7612,4.8215,500]",
     "shot": "wide",
     "fx": "crowd",
     "src": [
@@ -1442,12 +1555,12 @@
      "S2"
     ],
     "conf": "medium",
-    "weight": "max"
+    "weight": 6
    },
    {
     "y0": -16,
     "y1": -14,
-    "dur": 5,
+    "dur": 4,
     "caption": "Theatre of Fourvière (16–14 BC)",
     "target": "Roman Theatre of Fourvière",
     "shot": "close",
@@ -1455,147 +1568,126 @@
     "src": [
      "S2"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "weight": 5
    },
    {
-    "y0": 17,
-    "y1": 19.5,
+    "y0": 1183,
+    "y1": 1190,
     "dur": 5,
-    "caption": "Amphitheatre of the Three Gauls (AD 19)",
-    "target": "Amphitheatre of the Three Gauls",
-    "shot": "close",
-    "fx": "stone",
-    "src": [
-     "S2"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y0": 176.5,
-    "y1": 177.5,
-    "dur": 5,
-    "caption": "The martyrs of Lugdunum (AD 177)",
-    "target": "Amphitheatre of the Three Gauls",
+    "caption": "The first Guillotière bridge falls (1190)",
+    "target": "xy:[220,-1180,300]",
     "shot": "wide",
-    "fx": "bell",
+    "fx": "water",
     "src": [
-     "S1",
-     "S2"
+     "S44"
     ],
-    "conf": "medium"
+    "conf": "low",
+    "weight": 4
    },
    {
-    "y0": 1180,
-    "y1": 1195,
-    "dur": 5,
-    "caption": "Saint-Jean cathedral is begun (1180)",
+    "y0": 1214,
+    "y1": 1228,
+    "dur": 4,
+    "caption": "Saint-Jean cathedral rises (1180–1476)",
     "target": "Saint-Jean Cathedral",
     "shot": "wide",
     "fx": "bell",
     "src": [
      "S11"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 5
    },
    {
-    "y0": 1461,
-    "y1": 1465,
-    "dur": 5,
-    "caption": "The fairs of Lyon (1461–83)",
-    "target": "area:[45.7650,4.8330,500]",
+    "y0": 1500,
+    "y1": 1540,
+    "dur": 4,
+    "caption": "Vieux Lyon, a Renaissance quarter (1500s)",
+    "target": "area:[45.7622,4.8267,300]",
     "shot": "top",
-    "fx": "crowd",
+    "fx": "chime",
     "src": [
-     "S2"
+     "S42",
+     "S47"
     ],
-    "conf": "medium"
+    "conf": "low",
+    "weight": 5
    },
    {
-    "y0": 1708,
-    "y1": 1715,
-    "dur": 5,
-    "caption": "Place Bellecour, a royal square (1715)",
-    "target": "area:[45.7577,4.8324,350]",
+    "y0": 1604,
+    "y1": 1612,
+    "dur": 4,
+    "caption": "Place Bellecour is laid out (1604)",
+    "target": "area:[45.7580,4.8325,400]",
     "shot": "top",
     "fx": "chime",
     "src": [
      "S13"
     ],
-    "conf": "high"
+    "conf": "medium",
+    "weight": 4
    },
    {
-    "y0": 1793.6,
-    "y1": 1793.78,
-    "dur": 7,
-    "caption": "The siege of Lyon (9 Aug–9 Oct 1793)",
-    "target": "fire:Siege of Lyon 1793",
+    "y0": 1646,
+    "y1": 1652,
+    "dur": 4,
+    "caption": "Hôtel de Ville, Place des Terreaux (1646–52)",
+    "target": "area:[45.7676,4.8350,250]",
     "shot": "wide",
-    "fx": "cannon",
+    "fx": "stone",
     "src": [
-     "S4"
+     "S46"
     ],
     "conf": "high",
-    "weight": "max"
+    "weight": 5
    },
    {
-    "y0": 1801,
-    "y1": 1803,
+    "y0": 1741,
+    "y1": 1761,
     "dur": 5,
-    "caption": "Jacquard's loom takes shape (1801)",
-    "target": "area:[45.7728,4.8315,500]",
+    "caption": "Hôtel-Dieu, the Rhône facade (1741–61)",
+    "target": "area:[45.7583,4.8364,250]",
+    "shot": "wide",
+    "fx": "stone",
+    "src": [
+     "S40"
+    ],
+    "conf": "high",
+    "weight": 5
+   },
+   {
+    "y0": 1762,
+    "y1": 1790,
+    "dur": 5,
+    "caption": "Silk workshops on the Croix-Rousse hill (1700s)",
+    "target": "area:[45.7735,4.8320,450]",
     "shot": "wide",
     "fx": "hammer",
     "src": [
-     "S8"
-    ],
-    "conf": "medium"
-   },
-   {
-    "y0": 1831.89,
-    "y1": 1831.93,
-    "dur": 6,
-    "caption": "The first canut revolt (Nov 1831)",
-    "target": "area:[45.7745,4.8320,600]",
-    "shot": "wide",
-    "fx": "crowd",
-    "src": [
-     "S3"
+     "S45"
     ],
     "conf": "medium",
-    "weight": "max"
+    "weight": 5
    },
    {
-    "y0": 1834.27,
-    "y1": 1834.3,
-    "dur": 6,
-    "caption": "The canuts rise again (April 1834)",
-    "target": "fire:Canut revolt 1834 (Croix-Rousse)",
+    "y0": 1831.4,
+    "y1": 1831.6,
+    "dur": 4,
+    "caption": "The Grand Théâtre opens (1831)",
+    "target": "area:[45.7678,4.8366,200]",
     "shot": "wide",
-    "fx": "boom",
+    "fx": "chime",
     "src": [
-     "S3"
+     "S41"
     ],
     "conf": "high",
-    "weight": "max"
+    "weight": 5
    },
    {
-    "y0": 1856.41,
-    "y1": 1856.45,
-    "dur": 6,
-    "caption": "The Rhône floods the left bank (May 1856)",
-    "target": "area:[45.7650,4.8500,1600]",
-    "shot": "wide",
-    "fx": "water",
-    "src": [
-     "S5"
-    ],
-    "conf": "medium",
-    "weight": "max"
-   },
-   {
-    "y0": 1872,
-    "y1": 1884,
-    "dur": 6,
+    "y0": 1879,
+    "y1": 1886,
+    "dur": 7,
     "caption": "Basilica of Notre-Dame de Fourvière (1872–84)",
     "target": "area:[45.76228,4.82259,200]",
     "shot": "wide",
@@ -1603,21 +1695,22 @@
     "src": [
      "S10"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": "max"
    },
    {
-    "y0": 1944.66,
-    "y1": 1944.7,
-    "dur": 7,
-    "caption": "The bridges are blown up (Sept 1944)",
-    "target": "area:[45.7600,4.8340,1400]",
-    "shot": "top",
-    "fx": "crash",
+    "y0": 1890,
+    "y1": 1892,
+    "dur": 5,
+    "caption": "The Gros Caillou boulder is found (1890)",
+    "target": "area:[45.7747,4.8352,250]",
+    "shot": "wide",
+    "fx": "stone",
     "src": [
-     "S6"
+     "S43"
     ],
-    "conf": "medium",
-    "weight": "max"
+    "conf": "low",
+    "weight": 3
    },
    {
     "y0": 1972,
@@ -1630,46 +1723,41 @@
     "src": [
      "S9"
     ],
-    "conf": "high"
-   },
-   {
-    "y0": 1981,
-    "y1": 1983,
-    "dur": 5,
-    "caption": "Part-Dieu station opens (1983)",
-    "target": "area:[45.7615,4.8593,300]",
-    "shot": "wide",
-    "fx": "train",
-    "src": [
-     "S9"
-    ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 5
    },
    {
     "y0": 2014.4,
     "y1": 2014.97,
     "dur": 6,
     "caption": "Musée des Confluences (2014)",
-    "target": "area:[45.73268,4.81816,200]",
+    "target": "Musée des Confluences",
     "shot": "wide",
     "fx": "chime",
     "src": [
      "S12"
     ],
-    "conf": "high"
+    "conf": "high",
+    "weight": 5
    }
   ],
-  "rmin": 1.0,
-  "rmax": 8.0,
-  "night_hold": 15,
+  "rmin": 3.0,
+  "rmax": 20.0,
+  "night_hold": 10,
   "drone": {
    "clear": 60,
-   "cruise_k": 0.6,
-   "cruise_min": 450,
-   "alt_max": 350,
-   "rho_max": 900
+   "cruise_k": 0.45,
+   "cruise_min": 400,
+   "pitch_max": 32,
+   "alt_max": 520,
+   "d_min": 1400,
+   "drift_vmax": 3,
+   "rho_max": 1400,
+   "pace": 0.002,
+   "v_leg": 230,
+   "t_leg_min": 4.5
   },
-  "lens": 30
+  "lens": 32
  },
  "montaggio": {
   "style": "mattia",
@@ -1747,6 +1835,49 @@
     "shot": "medium",
     "target": "Roman Condate and Three Gauls slope",
     "sober": true
+   },
+   {
+    "y": 400,
+    "title": "Monks on the islands",
+    "lines": [
+     "Monastic communities settle at Île Barbe and Saint-Martin d'Ainay between the 4th and 6th centuries."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "Saône valley (Vieux-Lyon)"
+   },
+   {
+    "y": 843,
+    "title": "Lyon changes crown",
+    "lines": [
+     "In 843 the Treaty of Verdun assigns Lyon to Lotharingia.",
+     "It later passes to the Burgundian kingdom."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "Saône valley (Vieux-Lyon)"
+   },
+   {
+    "y": 1078,
+    "title": "Primate of the Gauls",
+    "lines": [
+     "Pope Gregory VII gives the archbishopric of Lyon the title of Primate of the Gauls in 1078."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "Saône valley (Vieux-Lyon)"
    },
    {
     "y": 1180,
@@ -2133,6 +2264,34 @@
     "target": "Basilica of Fourvière"
    },
    {
+    "y": 1894,
+    "title": "A president in Lyon",
+    "lines": [
+     "French president Sadi Carnot is assassinated in Lyon in 1894."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7640,4.8340,600]"
+   },
+   {
+    "y": 1905,
+    "title": "A mayor for fifty years",
+    "lines": [
+     "Édouard Herriot leads Lyon from 1905 to 1957."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7640,4.8340,600]"
+   },
+   {
     "y": 1944.66,
     "title": "The bridges fall",
     "lines": [
@@ -2251,6 +2410,20 @@
     "note": "S14 parla di 'area'; il sito UNESCO e' piu' ampio: da verificare"
    },
    {
+    "y": 2000,
+    "title": "A new airport name",
+    "lines": [
+     "In June 2000 the airport at Colombier-Saugnieu is renamed Lyon–Saint-Exupéry."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "shot": "top",
+    "target": "area:[45.7640,4.8340,1500]"
+   },
+   {
     "y": 2014,
     "title": "Part-Dieu again",
     "lines": [
@@ -2299,24 +2472,24 @@
     "title": "Capital of the Gauls"
    },
    {
-    "y": 1180,
-    "title": "Cathedral, Fairs and Silk"
+    "y": 1183,
+    "title": "Bridge and Cathedral"
    },
    {
-    "y": 1793.6,
-    "title": "Siege and Revolt"
+    "y": 1500,
+    "title": "Renaissance Squares"
    },
    {
-    "y": 1852,
-    "title": "Floods and Boulevards"
+    "y": 1741,
+    "title": "Hospital, Silk and Opera"
    },
    {
-    "y": 1944.66,
-    "title": "Bridges and Liberation"
+    "y": 1879,
+    "title": "Basilica to Towers"
    },
    {
-    "y": 1960,
-    "title": "Towers and Rivers"
+    "y": 1972,
+    "title": "Towers and Confluence"
    }
   ],
   "cta": "Which city should grow next? Tell me in the comments",
@@ -2330,9 +2503,9 @@
     "Streets and place names: © OpenStreetMap contributors (ODbL)",
     "Terrain: Terrain Tiles, AWS Open Data (Mapzen, NASA SRTM)",
     "Historical maps (extent checks): BnF Gallica, 1735, 1847, 1852",
-    "History: Wikipedia EN/FR (Lugdunum, History of Lyon, Canut revolts,",
-    "Siege of Lyon, 1856 flood, bridges of Lyon, Liberation of Lyon,",
-    "Part-Dieu, Fourvière, Musée des Confluences, Croix-Rousse)",
+    "History: Wikipedia EN/FR (Lugdunum, History of Lyon, Vieux Lyon,",
+    "Hôtel-Dieu, Hôtel de Ville, Opéra, Guillotière bridge, Croix-Rousse,",
+    "Fourvière, Part-Dieu, Musée des Confluences, Gros Caillou)",
     "Population: Wikipedia, History of Lyon, census figures",
     "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
    ]
@@ -2346,12 +2519,7 @@
   ]
  },
  "qa": {
-  "accept": [
-   {
-    "check": "monumenti visibili",
-    "reason": "Saint-Jean hover (1180-1195, 'cathedral is begun') shows the foundation only: the body appears at 1213.8. Accepted because the full render was already running (15/11); if the segment 96-102 s looks empty, set phases to y 1180 / y1 1190 and re-render frames ~2300-2500 only."
-   }
-  ]
+  "accept": []
  },
  "thumbnail_hook": {
   "year": 1793.7,

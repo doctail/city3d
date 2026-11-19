@@ -1,6 +1,6 @@
 # QA lyon
 
-Generato da `python -m kit.qa` il 2026-11-15 18:01. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-19 15:58. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -13,7 +13,7 @@ Generato da `python -m kit.qa` il 2026-11-15 18:01. Esito complessivo: **WARN**
 ## a) Story e fonti
 
 - **PASS** chiavi city
-- **PASS** 19 fonti
+- **PASS** 28 fonti
 - **PASS** date con fonte
 
 ## b) DATA
@@ -80,44 +80,44 @@ Generato da `python -m kit.qa` il 2026-11-15 18:01. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (6 s)
-  - oggetti citta' 1729, cambi in tutto il video 44925, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.15 h (budget 1.0 h)
+- **PASS** costo dei cambi (5 s)
+  - oggetti citta' 1729, cambi in tutto il video 46549, max in un fotogramma 319 (~4 s), costo dei soli cambi ~0.16 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 191 m/s (limite 250), mediana 21
+  - 174 m/s (limite 250), mediana 19
 - **PASS** drone: accelerazione massima
-  - 106 m/s2 (limite 120), 99% 71
+  - 100 m/s2 (limite 120), 99% 65
 - **PASS** drone: jerk massimo
-  - 159 m/s3 (limite 200), 99% 64
+  - 76 m/s3 (limite 200), 99% 62
 - **PASS** drone: distanza minima da terreno e tetti
-  - 60 m (soglia 48); dal solo terreno 80 m
+  - 466 m (soglia 48); dal solo terreno 479 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 17 tenute, 0 solo sorvolate; hover 157 s, volo 380 s; 
+  - 0 tolte, 14 tenute, 0 solo sorvolate; hover 87 s, volo 358 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 9.1 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+  - v max in hover 11.8 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: voli con gli anni quasi fermi
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
-- **WARN** drone: monumenti visibili durante il loro hover
-  - Saint-Jean Cathedral: corpo dal 1213.8, hover centrato su 1187.5  [accettato: Saint-Jean hover (1180-1195, 'cathedral is begun') shows the foundation only: the body appears at 1213.8. Accepted because the full render was already running (15/11); if the segment 96-102 s looks empty, set phases to y 1180 / y1 1190 and re-render frames ~2300-2500 only.]
-- **WARN** drone: distanza della camera
-  - mediana 930 m equivalenti a 35 mm (obiettivo 30 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+- **PASS** drone: monumenti visibili durante il loro hover
+  - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
+- **PASS** drone: distanza della camera
+  - mediana 1665 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 43.0 s (306-349 s); 7 oltre 15 s: 56-96, 268-300, 306-349, 383-405, 420-440, 440-461
+  - vuoto massimo 19.8 s (55-74 s); 2 oltre 15 s: 55-74, 323-340
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 30.81 | 1:00 21.45 | 2:00  5.63 | 3:00  0.85 | 4:00  0.32 | 5:00  1.21 | 6:00  0.61 | 7:00  0.56 | 8:00  0.18 | 9:00  0.02
-- **PASS** 17 soste ben formate
+  - 0:00 26.94 | 1:00 13.93 | 2:00  8.86 | 3:00  0.96 | 4:00  0.63 | 5:00  1.33 | 6:00  1.05 | 7:00  0.23
+- **PASS** 14 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
   - primo a 12.9 s
 - **PASS** notte
-  - night_t=550.0232491489309, schedule_lyon_night.json ok
+  - night_t=458.0991541637216, schedule_lyon_night.json ok
 
 ## Immagini
 
