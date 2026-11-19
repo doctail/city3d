@@ -1,0 +1,9 @@
+yb-qa Madrid (2026-11-19). Build: kit build madrid --force (hist 23 s, total 39 s, peak 1,081 MB).
+Ensanche ring (2,258 ha) cost measured by kit qa section e: 1,702 city objects, 49,818 changes in the whole video, max 667 in one frame (~8 s), cost of changes ~0.17 h (budget 1.0 h): PASS.
+Initial QA e: FAIL vmax 447 m/s, amax 309, jerk 285, 46 jumps at 484.3 s, hover v 43.1 m/s.
+Changes (demoted stop -> montaggio card, same y/title/hold_s/src):
+1) demote 'The M-30 ring road is built (1970)' (leg M-30 -> Almudena 6 s; 46 jumps at 484 s).
+2) demote 'Cibeles Palace opens (1919)'.
+3) demote 'Puerta del Sol takes its modern shape (1862)'.
+Result: QA WARN only. Tried and reverted: demote Bernabeu stadium (accel went to FAIL 135 m/s2).
+Density note (qa c WARN): Mayrit 1500: 55 buildings alive (14/ha, 14% coverage) vs 24 in 2026 (6/ha, 40%): ratio 2.29 (covers only 14% - sparse).

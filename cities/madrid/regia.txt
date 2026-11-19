@@ -1,0 +1,127 @@
+Madrid: regia automatica (kit/regia_kit.py)
+Camera drone: 16 tappe in hover (156.0 s) e voli (475.8 s), anni 16.92/s fra le voci, nessuno stacco; vmax 169.91, amax 112.54, jmax 105.25, clear_min 432.27, clear_ground_min 499.97
+Durata 11:00.0  fotogrammi 15840  inquadrature 3  stacco medio ogni 220.0 s
+Musica: waking_monument  b_start None  notte None
+
+ANCORE (video -> anno):
+   0:00.0   2026.00  
+   0:03.0   2026.00  
+   0:09.5    860.00  
+  10:47.5   2026.00  
+
+SOSTE (video -> anni):
+  0:15.7-0:22.7  860.0->880.0  Emir Muhammad I founds Mayrit (860)  [forza 4.2, hammer]
+  0:15.7-0:21.7  860.0->860.0  Mayrit rises on the ridge  [forza 0.0]
+  0:25.6-0:30.6  929.0->929.0  The Caliphate of Córdoba  [forza 0.0]
+  0:36.6-0:41.6  1031.0->1031.0  The caliphate breaks apart  [forza 0.0]
+  0:44.9-0:50.9  1085.0->1090.0  Madrid passes to Castile (1085)  [forza 5.0, bell]
+  0:44.9-0:49.9  1085.0->1085.0  Madrid passes to Castile  [forza 0.0]
+  0:53.0-0:58.0  1126.0->1126.0  A suburb beyond the wall  [forza 0.0]
+  1:02.5-1:07.5  1202.0->1202.0  A wall still unfinished  [forza 0.0]
+  1:21.4-1:26.4  1438.0->1438.0  A wall for the suburbs  [forza 0.0]
+  1:28.1-1:33.1  1467.0->1467.0  A royal mint  [forza 0.0]
+  1:33.9-1:38.9  1480.0->1480.0  A town of 5,000  [forza 0.0]
+  1:41.3-1:46.3  1520.5->1520.5  The Comuneros rise  [forza 0.0]
+  1:48.7-1:59.7  1561.0->1565.0  Philip II moves the court to Madrid (1561)  [forza 6.2, crowd]
+  1:48.7-1:54.7  1561.0->1561.0  The court settles in Madrid  [forza 0.0]
+  1:54.7-1:59.7  1566.0->1566.0  A wall for taxes and health  [forza 0.0]
+  2:01.2-2:06.2  1590.0->1590.0  Nearly 100,000 people  [forza 0.0]
+  2:06.9-2:11.9  1601.0->1601.0  The court leaves for Valladolid  [forza 0.0]
+  2:12.8-2:18.8  1617.0->1620.0  Plaza Mayor is completed (1619)  [forza 3.0, ding]
+  2:12.8-2:17.8  1619.0->1619.0  Plaza Mayor is finished  [forza 0.0]
+  2:35.0-2:50.0  1625.0->1632.0  Philip IV rings the city with a wall (1625)  [forza 4.0, hammer]
+  2:35.0-2:40.0  1625.0->1625.0  Philip IV's wall  [forza 0.0]
+  2:40.0-2:45.0  1631.0->1631.0  Fire in the Plaza Mayor  [forza 0.0]
+  2:45.0-2:50.0  1633.0->1633.0  The Buen Retiro  [forza 0.0]
+  2:54.0-2:59.0  1700.0->1700.0  The Bourbons arrive  [forza 0.0]
+  3:10.1-3:15.1  1734.9->1735.1  The Alcázar burns (1734)  [forza 8.0, fire]
+  3:10.1-3:15.1  1735.0->1735.0  The Alcázar burns  [forza 0.0]
+  3:15.3-3:20.3  1738.0->1738.0  A new palace  [forza 0.0]
+  3:21.0-3:29.0  1750.0->1756.0  The Royal Palace is finished (1755)  [forza 5.5, bell]
+  3:21.0-3:26.0  1755.0->1755.0  The Royal Palace is done  [forza 0.0]
+  3:29.6-3:34.6  1766.2->1766.2  The Esquilache riots  [forza 0.0]
+  3:35.3-3:40.3  1778.0->1778.0  The Puerta de Alcalá  [forza 0.0]
+  3:40.7-3:45.7  1785.0->1785.0  A building by Villanueva  [forza 0.0]
+  3:46.0-3:51.0  1790.0->1790.0  The Plaza Mayor burns again  [forza 0.0]
+  3:52.1-3:57.1  1808.3->1808.3  The Second of May  [forza 0.0]
+  3:57.3-4:02.3  1812.6->1812.6  The French are driven out  [forza 0.0]
+  4:02.6-4:08.6  1817.0->1820.0  The Prado opens (1819)  [forza 3.0, ding]
+  4:02.6-4:07.6  1819.8->1819.8  The Prado opens  [forza 0.0]
+  4:09.6-4:14.6  1835.5->1835.5  Convents are confiscated  [forza 0.0]
+  4:15.5-4:20.5  1850.9->1850.9  The Teatro Real opens  [forza 0.0]
+  4:20.5-4:25.5  1851.1->1851.1  The first railway station  [forza 0.0]
+  4:25.9-4:31.9  1858.0->1858.0  Puerta del Sol takes its modern shape (1862)  [forza 0.0]
+  4:31.9-4:36.9  1858.5->1858.5  Water from the Lozoya  [forza 0.0]
+  4:37.0-4:42.0  1860.5->1860.5  The Ensanche plan  [forza 0.0]
+  4:42.1-4:47.1  1862.0->1862.0  Puerta del Sol rebuilt  [forza 0.0]
+  4:47.6-4:57.6  1868.7->1870.0  The Retiro becomes a public park (1868)  [forza 6.0, crowd]
+  4:47.6-4:52.6  1868.7->1868.7  Walls down, Retiro open  [forza 0.0]
+  4:52.6-4:57.6  1871.0->1871.0  The first trams  [forza 0.0]
+  5:09.7-5:16.7  1871.0->1880.0  Castro's Ensanche grid takes shape (1871)  [forza 4.2, hammer]
+  5:16.9-5:21.9  1883.3->1883.3  Almudena's first stone  [forza 0.0]
+  5:22.4-5:27.4  1892.0->1892.0  Atocha is rebuilt  [forza 0.0]
+  5:27.9-5:32.9  1900.0->1900.0  Over half a million  [forza 0.0]
+  5:33.5-5:49.5  1910.2->1916.9  The Gran Vía cuts through the old city (1910)  [forza 4.5, hammer]
+  5:33.5-5:38.5  1910.3->1910.3  The Gran Vía begins  [forza 0.0]
+  5:38.5-5:43.5  1911.5->1911.5  The Metropolis Building  [forza 0.0]
+  5:43.5-5:49.5  1917.2->1917.2  Cibeles Palace opens (1919)  [forza 0.0]
+  5:49.7-5:54.7  1919.2->1919.2  Cibeles Palace opens  [forza 0.0]
+  5:54.7-5:59.7  1919.8->1919.8  The first Metro line  [forza 0.0]
+  6:00.3-6:05.3  1929.5->1929.5  The Gran Vía is complete  [forza 0.0]
+  6:05.4-6:10.4  1931.3->1931.3  The Second Republic  [forza 0.0]
+  6:10.7-6:15.7  1936.5->1936.5  The coup fails in Madrid  [forza 0.0]
+  6:15.7-6:20.7  1936.7->1936.7  The first air raid  [forza 0.0]
+  6:20.7-6:25.7  1936.8->1936.8  The siege begins  [forza 0.0]
+  6:25.8-6:34.8  1936.8->1939.3  Madrid under siege (1936)  [forza 8.8, battle]
+  6:25.8-6:30.8  1939.2->1939.2  Madrid falls  [forza 0.0]
+  7:01.7-7:11.7  1946.0->1948.0  The Bernabéu stadium opens (1947)  [forza 6.0, crowd]
+  7:01.7-7:06.7  1947.9->1947.9  The Bernabéu opens  [forza 0.0]
+  7:06.7-7:11.7  1950.0->1950.0  A much bigger city  [forza 0.0]
+  7:36.2-7:46.2  1953.5->1957.9  The Torre de Madrid tops Spain's skyline (1957)  [forza 4.0, whoosh]
+  7:36.2-7:41.2  1953.8->1953.8  Edificio España  [forza 0.0]
+  7:41.2-7:46.2  1957.8->1957.8  The Torre de Madrid  [forza 0.0]
+  7:46.9-7:51.9  1970.0->1970.0  The M-30 ring road  [forza 0.0]
+  7:51.9-7:57.9  1970.0->1970.0  The M-30 ring road is built (1970)  [forza 0.0]
+  7:58.3-8:03.3  1975.9->1975.9  Franco dies  [forza 0.0]
+  8:03.4-8:08.4  1978.9->1978.9  A new constitution  [forza 0.0]
+  8:09.2-8:19.2  1991.5->1993.9  Almudena Cathedral is consecrated (1993)  [forza 5.0, bell]
+  8:09.2-8:14.2  1992.0->1992.0  Atocha's new terminal  [forza 0.0]
+  8:14.2-8:19.2  1993.5->1993.5  Almudena is consecrated  [forza 0.0]
+  8:19.5-8:24.5  1997.8->1997.8  The Teatro Real reborn  [forza 0.0]
+  8:24.8-8:29.8  2004.2->2004.2  March 11, 2004  [forza 0.0]
+  9:18.3-9:38.3  2006.8->2009.9  Four towers redraw the skyline (2007)  [forza 4.5, whoosh]
+  9:18.3-9:23.3  2007.2->2007.2  The towers rise  [forza 0.0]
+  9:23.3-9:28.3  2008.9->2008.9  Spain's tallest tower  [forza 0.0]
+  9:28.3-9:33.3  2009.5->2009.5  A hub under Sol  [forza 0.0]
+  9:33.3-9:38.3  2011.0->2011.0  The M-30 goes underground  [forza 0.0]
+  9:39.1-9:44.1  2024.0->2024.0  A city of 3.4 million  [forza 0.0]
+
+ANNO OGNI 30 s:
+  0:00   2026.0  (0.00 anni/s)
+  0:30    929.0  (0.00 anni/s)
+  1:00   1160.1  (16.92 anni/s)
+  1:30   1467.0  (0.00 anni/s)
+  2:00   1569.5  (16.91 anni/s)
+  2:30   1623.5  (0.31 anni/s)
+  3:00   1703.2  (3.14 anni/s)
+  3:30   1766.2  (0.00 anni/s)
+  4:00   1812.6  (0.00 anni/s)
+  4:30   1858.0  (0.00 anni/s)
+  5:00   1870.2  (0.08 anni/s)
+  5:30   1900.0  (0.00 anni/s)
+  6:00   1924.6  (16.92 anni/s)
+  6:30   1938.0  (0.28 anni/s)
+  7:00   1945.6  (0.25 anni/s)
+  7:30   1952.1  (0.22 anni/s)
+  8:00   1975.9  (0.00 anni/s)
+  8:30   2004.2  (0.04 anni/s)
+  9:00   2005.8  (0.05 anni/s)
+  9:30   2008.6  (0.16 anni/s)
+  10:00   2024.5  (0.03 anni/s)
+  10:30   2025.4  (0.03 anni/s)
+
+Velocita fuori dalle soste: mediana 0.08 anni/s, max 16.9 anni/s
+Soste: 85, 506 s (79% del giorno)
+
+AVVISI:
+  - durata naturale 734 s > max_duration 660 s: tolgo le soste a peso minimo

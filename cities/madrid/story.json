@@ -2179,20 +2179,6 @@
     "conf": "high"
    },
    {
-    "y0": 1858.0,
-    "y1": 1862.5,
-    "dur": 6.0,
-    "caption": "Puerta del Sol takes its modern shape (1862)",
-    "target": "area:[40.41694,-3.70361,160]",
-    "shot": "medium",
-    "fx": "crowd",
-    "weight": 4,
-    "src": [
-     "S15"
-    ],
-    "conf": "high"
-   },
-   {
     "y0": 1868.7,
     "y1": 1870.0,
     "dur": 6.0,
@@ -2235,20 +2221,6 @@
     "src": [
      "S21",
      "S22"
-    ],
-    "conf": "high"
-   },
-   {
-    "y0": 1917.2,
-    "y1": 1919.5,
-    "dur": 6.0,
-    "caption": "Cibeles Palace opens (1919)",
-    "target": "Cibeles Palace",
-    "shot": "medium",
-    "fx": "bell",
-    "weight": 4,
-    "src": [
-     "S20"
     ],
     "conf": "high"
    },
@@ -2296,21 +2268,6 @@
      "S25"
     ],
     "conf": "high"
-   },
-   {
-    "y0": 1970.0,
-    "y1": 1974.9,
-    "dur": 6.0,
-    "caption": "The M-30 ring road is built (1970)",
-    "target": "area:[40.4035,-3.7200,900]",
-    "shot": "wide",
-    "fx": "whoosh",
-    "weight": 4,
-    "src": [
-     "S33"
-    ],
-    "conf": "medium",
-    "note": "Hover area is hand-set on the Manzanares stretch of the M-30."
    },
    {
     "y0": 1991.5,
@@ -2767,6 +2724,18 @@
     "conf": "high"
    },
    {
+    "y": 1858.0,
+    "title": "Puerta del Sol takes its modern shape (1862)",
+    "lines": [
+     "Puerta del Sol takes its modern shape (1862)"
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
     "y": 1858.48,
     "title": "Water from the Lozoya",
     "lines": [
@@ -2889,6 +2858,18 @@
      "S23"
     ],
     "conf": "medium"
+   },
+   {
+    "y": 1917.2,
+    "title": "Cibeles Palace opens (1919)",
+    "lines": [
+     "Cibeles Palace opens (1919)"
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S20"
+    ],
+    "conf": "high"
    },
    {
     "y": 1919.2,
@@ -3048,6 +3029,18 @@
      "S33"
     ],
     "conf": "high"
+   },
+   {
+    "y": 1970.0,
+    "title": "The M-30 ring road is built (1970)",
+    "lines": [
+     "Hover area is hand-set on the Manzanares stretch of the M-30."
+    ],
+    "hold_s": 6.0,
+    "src": [
+     "S33"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1975.89,

@@ -1,0 +1,1 @@
+Madrid: slow flights (0.31, 0.08, 0.22-0.25 y/s) from card density; gap 53 s (505-558 s). Section d not run.
