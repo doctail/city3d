@@ -3,26 +3,2153 @@
  "city": {
   "slug": "sevilla",
   "name": "Seville",
-  "country": "TODO",
+  "country": "Spain",
   "lat0": 37.386194,
   "lon0": -5.992417,
   "radius_m": 16000,
   "start_year": 1248,
   "end_year": 2026,
-  "title": "EVOLUTION OF SEVILLE | 3D City Timelapse (1248–NOW) | No AI**",
+  "title": "EVOLUTION OF SEVILLE | 3D City Timelapse (1248-NOW) | No AI",
   "data_source": "custom",
   "data_dir": "data_sevilla",
   "style_preset": "mediterranean",
-  "population": [],
-  "pop_src": [],
-  "eras": []
+  "population": [
+   [
+    1248,
+    50000,
+    "rough estimate"
+   ],
+   [
+    1300,
+    50000,
+    "rough estimate"
+   ],
+   [
+    1400,
+    30000,
+    "rough estimate"
+   ],
+   [
+    1500,
+    60000,
+    "rough estimate"
+   ],
+   [
+    1600,
+    120000,
+    "rough estimate"
+   ],
+   [
+    1700,
+    70000,
+    "rough estimate"
+   ],
+   [
+    1800,
+    75000,
+    "rough estimate"
+   ],
+   [
+    1842,
+    100498,
+    "census"
+   ],
+   [
+    1857,
+    112529,
+    "census"
+   ],
+   [
+    1877,
+    133247,
+    "census"
+   ],
+   [
+    1887,
+    143840,
+    "census"
+   ],
+   [
+    1900,
+    147271,
+    "census"
+   ],
+   [
+    1910,
+    153258,
+    "census"
+   ],
+   [
+    1920,
+    205723,
+    "census"
+   ],
+   [
+    1930,
+    217788,
+    "census"
+   ],
+   [
+    1940,
+    302300,
+    "census"
+   ],
+   [
+    1950,
+    374138,
+    "census"
+   ],
+   [
+    1960,
+    441869,
+    "census"
+   ],
+   [
+    1970,
+    545692,
+    "census"
+   ],
+   [
+    1981,
+    645817,
+    "census"
+   ],
+   [
+    1991,
+    683028,
+    "census"
+   ],
+   [
+    2001,
+    684633,
+    "census"
+   ],
+   [
+    2011,
+    698042,
+    "census"
+   ],
+   [
+    2021,
+    684340,
+    "census"
+   ],
+   [
+    2025,
+    688714,
+    "census"
+   ]
+  ],
+  "pop_src": [
+   "S1",
+   "S50"
+  ],
+  "eras": [
+   [
+    1248,
+    "Castilian Seville",
+    "#c9a24a"
+   ],
+   [
+    1503,
+    "Gateway to the Indies",
+    "#b5654a"
+   ],
+   [
+    1649,
+    "Plague and decline",
+    "#9c7a52"
+   ],
+   [
+    1810,
+    "War and reform",
+    "#8a6aa0"
+   ],
+   [
+    1868,
+    "Walls down, river tamed",
+    "#6aa0c8"
+   ],
+   [
+    1929,
+    "Exposition, war, dictatorship",
+    "#8c8c8c"
+   ],
+   [
+    1975,
+    "Democracy and Expo 92",
+    "#c98a4a"
+   ]
+  ],
+  "pop_conf": [
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high"
+  ],
+  "pop_note": "1842-2021: INE de jure municipal census figures as reproduced in Wikipedia EN Seville (S1; the scheda cites INE, S65, same numbers). 2025: municipal figure in S1. 1248-1800: scheda D estimates (S50, not re-fetched), conf low. Conflict: S1 says the walled enclosure perhaps held 80,000 by the end of the 12th century and that the conquest evicted much of the population; the scheda flags 1248 as one of the 5 riskiest dates, so the HUD shows \"rough estimate\".",
+  "data_reliable_from": 1900,
+  "data_reliable_note": "[Guessing] cadastre building years of the walled centre are mostly the last rebuild; 1900 chosen as the start of the reliable growth front (hist_sevilla.py urban grid starts 1860). Check against the QA density report.",
+  "polities": [
+   {
+    "y": -800,
+    "name": "Tartessian Hisbaal",
+    "flag_colors": [
+     "#8a5a2b",
+     "#d4af37"
+    ],
+    "src": [
+     "S33",
+     "S32"
+    ],
+    "conf": "low",
+    "note": "Name Hisbaal given by Phoenicians and Tartessians (S33); no start year in the sources: -800 is a placeholder for \"Phoenician period, 8th c. BC\" [Guessing]"
+   },
+   {
+    "y": -206,
+    "name": "Roman Hispalis",
+    "flag_colors": [
+     "#a50f15",
+     "#5b2a86"
+    ],
+    "src": [
+     "S2",
+     "S33"
+    ],
+    "conf": "low",
+    "note": "Scipio wins at Ilipa in 206 BC (S2 text); Roman city Hispalis, walls and forum 45-49 BC (S2). Year is a modelling choice"
+   },
+   {
+    "y": 500,
+    "name": "Visigothic Hispalis",
+    "flag_colors": [
+     "#6b3fa0",
+     "#d4af37"
+    ],
+    "src": [
+     "S33"
+    ],
+    "conf": "low",
+    "note": "S33: conquests by Vandals, Suebi and Visigoths during the 5th and 6th centuries; 500 is a placeholder"
+   },
+   {
+    "y": 712.6,
+    "name": "Al-Andalus · Umayyad conquest",
+    "flag_colors": [
+     "#2e7d32",
+     "#ffffff"
+    ],
+    "src": [
+     "S33"
+    ],
+    "conf": "medium",
+    "note": "Seville taken by Musa ibn Nusayr in late summer 712 (S33)"
+   },
+   {
+    "y": 1023,
+    "name": "Taifa of Seville · Abbadids",
+    "flag_colors": [
+     "#2e7d32",
+     "#f1bf00"
+    ],
+    "src": [
+     "S31"
+    ],
+    "conf": "high",
+    "note": "Abbadid kingdom 1023-1091 (S31)"
+   },
+   {
+    "y": 1091.7,
+    "name": "Almoravid Seville",
+    "flag_colors": [
+     "#1b5e20",
+     "#f1bf00"
+    ],
+    "src": [
+     "S29"
+    ],
+    "conf": "high",
+    "note": "September 1091 (S29)"
+   },
+   {
+    "y": 1147,
+    "name": "Almohad Seville",
+    "flag_colors": [
+     "#1b5e20",
+     "#ffffff"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "low",
+    "note": "S30: Almohads took the Iberian principalities between 1146 and 1173 and moved the capital of Muslim Iberia to Seville; 1147 is the year they took Marrakesh, so the Seville year is [Likely], not stated"
+   },
+   {
+    "y": 1248.9,
+    "name": "Crown of Castile · Ferdinand III",
+    "flag_colors": [
+     "#c8102e",
+     "#f1bf00"
+    ],
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "high",
+    "note": "Surrender 23 November 1248 (S1)"
+   },
+   {
+    "y": 1503,
+    "name": "Spanish Empire · Casa de Contratación",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S7",
+     "S1"
+    ],
+    "conf": "high",
+    "note": "Casa de Contratación, crown agency for the Spanish Empire, Seville port 1503 (S7); American trade monopoly: S7 text says it was the crown agency for the Empire; \"monopoly\" in the card is the legacy wording, S1 says Seville \"became the port and gateway to the Indies\""
+   },
+   {
+    "y": 1717,
+    "name": "Spanish Empire · trade moves to Cádiz",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S7"
+    ],
+    "conf": "high",
+    "note": "Casa moved to Cádiz in 1717 (S7)"
+   },
+   {
+    "y": 1810.09,
+    "name": "French occupation · Joseph Bonaparte",
+    "flag_colors": [
+     "#0055a4",
+     "#ef4135"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "note": "1 February 1810 (S2)"
+   },
+   {
+    "y": 1812.65,
+    "name": "Kingdom of Spain",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "note": "French leave 27 August 1812 (S2)"
+   },
+   {
+    "y": 1931.29,
+    "name": "Second Spanish Republic",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#800080"
+    ],
+    "src": [
+     "S27"
+    ],
+    "conf": "high",
+    "note": "Proclaimed 14 April 1931 (S27)"
+   },
+   {
+    "y": 1936.54,
+    "name": "Civil War · rebel Seville",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00",
+     "#1a1a1a"
+    ],
+    "src": [
+     "S2",
+     "S26"
+    ],
+    "conf": "high",
+    "note": "Seville taken by Queipo de Llano on 18 July 1936 (S2)"
+   },
+   {
+    "y": 1939.25,
+    "name": "Francoist Spain",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S2",
+     "S26"
+    ],
+    "conf": "high",
+    "note": "Francoist Spain (1939-1975) (S2); war ended 1 April 1939 (S26)"
+   },
+   {
+    "y": 1975.89,
+    "name": "Spain · Transition to democracy",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S28"
+    ],
+    "conf": "high",
+    "note": "Death of Franco 20 November 1975 (S28)"
+   },
+   {
+    "y": 1978.99,
+    "name": "Democratic Spain",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S28"
+    ],
+    "conf": "high",
+    "note": "Constitution adopted 29 December 1978 (S28)"
+   },
+   {
+    "y": 1992.3,
+    "name": "Democratic Spain · Expo 92",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S16"
+    ],
+    "conf": "high",
+    "note": "Expo 20 April - 12 October 1992 (S16)"
+   },
+   {
+    "y": 1992.78,
+    "name": "Democratic Spain",
+    "flag_colors": [
+     "#aa151b",
+     "#f1bf00"
+    ],
+    "src": [
+     "S16"
+    ],
+    "conf": "high",
+    "note": "Expo closed 12 October 1992 (S16)"
+   }
+  ]
  },
- "sources": {},
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/Seville",
+   "title": "Wikipedia EN, Seville",
+   "quote": "The city surrendered on 23 November 1248, after fifteen months of siege. … Seville was chosen as headquarters of the Casa de Contratación in 1503, which was the decisive development for Seville becoming the port and gateway to the Indies. … The first tribunal of the Spanish Inquisition was instituted in Seville in 1478. … reduced the population by almost half … 1842 100,498 — 1857 112,529 +12.0% 1877 133,247 +18.4% 1887 143,840 +7.9% 1900 147,271 +2.4% 1910 153,258 +4.1% 1920 205,723 +34.2% 1930 217,788 +5.9% 1940 302,300 +38.8% 1950 374,138 +23.8% 1960 441,869 +18.1% 1970 545,692 +23.5% 1981 645,817 +18.3% 1991 683,028 +5.8% 2001 684,633 +0.2% 2011 698,042 +2.0% 2021 684,340 −2.0% Source: INE … Seville has a municipal population of about 688,714 as of 2025 … By the end of the 12th century, the walled enclosure perhaps contained 80,000 inhabitants. … The city's bullring , the Real Maestranza , was designed in 1761 by Vicente San Martin. … Until the economic crisis of 2007, this urban area saw significant population growth … the current building is a massive Gothic structure begun after 1401 and finished in 1506",
+   "fetched": "2026-11-19"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Seville",
+   "title": "Wikipedia EN, History of Seville",
+   "quote": "On 30 May 1252, King Ferdinand III died in the Alcázar; he was buried in the cathedral, formerly the great mosque … The city was chosen for the first auto de fe , after which six people were burned alive on 6 February 1481. … On 1 February, Marshal Claude Victor occupied the city, accompanied by the pretender to the Spanish throne, Joseph Bonaparte (José I) … The French settled in until 27 August 1812, when they were forced to retreat by Anglo-Spanish counterattacks … Construction began in 1728, and proceeded intermittently for the next 30 years. … One of the first large industrial building projects in modern Europe, the Royal Tobacco Factory … In 1835–1837 the Ecclesiastical Confiscations of Mendizábal involved the national confiscation and sale of church property … On 18 July General Gonzalo Queipo de Llano quickly gained control of the 2nd División Orgánica … Seville was thus occupied by the rebels along with Cadiz and Algeciras … Francoist Spain (1939–1975) … since 1989, it has been home to the Presidency of the Andalusian Autonomous Government (Junta de Andalucía) … damaging the Giralda and killing nine people … The Second Republic and Civil War (1931–1939) … The city surrendered on 23 November 1248. … In 45 BC, after the Roman Civil War ended at the Battle of Munda , Híspalis built city walls and a forum … Carthaginians had caused the collapse of Tartessos by 530 BC … Preparations and construction began in 1910 for the Ibero-American Exposition of 1929",
+   "fetched": "2026-11-19"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Giralda",
+   "title": "Wikipedia EN, Giralda",
+   "quote": "The metal spheres that originally topped the tower fell during the 1356 earthquake, and the spheres were replaced in 1400 with a cross and bell. … The new belfry was constructed between 1558 and 1568. … In the 16th century Hernán Ruiz the Younger , who was commissioned to work on cathedral, constructed a new Renaissance-style belfry extension at the top of the tower … Upon returning to al-Andalus in 1184 for a new military campaign, Aby Ya'qub Yusuf ordered the construction of the minaret. … On 10 March 1198, the tower was completed … During the 1755 Lisbon earthquake it suffered damage but repairs were not performed until 1770 … It brings the height of the tower to approximately 95 or 96 meters.",
+   "fetched": "2026-11-19"
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Seville_Cathedral",
+   "title": "Wikipedia EN, Seville Cathedral",
+   "quote": "In July 1401, city leaders decided to build a new cathedral to replace the grand mosque that served as the cathedral until then. … Work began in 1402 and continued for over a century. … It is one of the largest churches in the world and the largest Gothic cathedral. … The new mosque was dedicated in 1182, but was not completed until 1198. … the current crossing lantern, with its ornate lierne vaulting , was designed by Juan Gil de Hontañón the Elder in 1513 and completed in 1519",
+   "fetched": "2026-11-19"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Torre_del_Oro",
+   "title": "Wikipedia EN, Torre del Oro",
+   "quote": "The Tower of Gold was built 1220–1221, by order of the Almohad governor of Seville, Abu l-Ulà, with a twelve-sided base. … Rebuilding of the third level was made by Brusselian military engineer Sebastian Van der Borcht in 1760. … The tower was badly damaged by the Lisbon earthquake of 1755",
+   "fetched": "2026-11-19"
+  },
+  "S6": {
+   "url": "https://en.wikipedia.org/wiki/Alc%C3%A1zar_of_Seville",
+   "title": "Wikipedia EN, Alcázar of Seville",
+   "quote": "A Latin inscription on the palace façade includes the year 1364 while an Arabic inscription in the Hall of Ambassadors gives the year 1366, which indicate the probable dates for the start and completion of construction, respectively. … Towards 1150, the Almohad Caliphate began to develop Seville as their capital in al-Andalus. … Much of the old Gothic Palace of Alfonso X was destroyed during the 1755 Lisbon earthquake .",
+   "fetched": "2026-11-19"
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Casa_de_Contrataci%C3%B3n",
+   "title": "Wikipedia EN, Casa de Contratación",
+   "quote": "was established by the Crown of Castile , in 1503 in the port of Seville (and transferred to Cádiz in 1717) as a crown agency for the Spanish Empire … In 1717 they moved the Casa from Seville to Cádiz , diminishing Seville's importance in international trade.",
+   "fetched": "2026-11-19"
+  },
+  "S8": {
+   "url": "https://en.wikipedia.org/wiki/Great_Plague_of_Seville",
+   "title": "Wikipedia EN, Great Plague of Seville",
+   "quote": "The Great Plague of Seville (1647–1652) was a massive outbreak of disease in Spain that killed up to a quarter of Seville 's population.",
+   "fetched": "2026-11-19"
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/Triana_Bridge",
+   "title": "Wikipedia EN, Triana Bridge",
+   "quote": "It was built during the reign of Isabella II of Spain and completed in 1852 as the first solid bridge in Seville, replacing an earlier floating bridge consisting of boats (a pontoon bridge ). … First built by the Moors in the 12th century, the pontoon bridge managed to exist for seven centuries due to later repairs.",
+   "fetched": "2026-11-19"
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/Walls_of_Seville",
+   "title": "Wikipedia EN, Walls of Seville",
+   "quote": "The walls remained intact until the 19th century, when they were partially demolished after the revolution of 1868 . … Some parts of the walls still exist, especially around the Alcázar of Seville and some curtain walls in the barrio de la Macarena . … In 1023, Abu al-Qasim first King Taifa of Seville (1023–1042), ordered the walls to be raised again to protect the city from Christian troops, and between the 11th century and 12th century a major expansion that doubled the walled enclosure took place. … The city has been surrounded by walls since the Roman period … In late 2021, for the first time, the remains of a section of the Roman wall of Seville were discovered.",
+   "fetched": "2026-11-19"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Plaza_Nueva,_Seville",
+   "title": "Wikipedia EN, Plaza Nueva (Seville)",
+   "quote": "The land which the plaza is built on was formerly part of the San Fernando convent from 1270 to 1840. … The plaza was completed in 1856. … Construction start 1852 Completed 1856",
+   "fetched": "2026-11-19"
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Alameda_de_H%C3%A9rcules",
+   "title": "Wikipedia EN, Alameda de Hércules",
+   "quote": "Before its urban transformation, the Alameda square was a fragment of the easternmost branch of the Guadalquivir River. … In 1574, the Count of Barajas further drained the water, building irrigation channels and fountains, and planting lines of waterside white poplar trees. … Built in 1574, it was originally a promenaded public garden",
+   "fetched": "2026-11-19"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Guadalquivir",
+   "title": "Wikipedia EN, Guadalquivir",
+   "quote": "This was below that recorded in Seville in the flood of 1963 when 6,000 m 3 /s … During the 16th century, the silting up of the Guadalquivir became ever more serious and started to halt navigation on the river. … The construction of the canal known as the Corta de Merlina in 1794 marked the beginning of the modernisation of the port of Seville.",
+   "fetched": "2026-11-19"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Ibero-American_Exposition_of_1929",
+   "title": "Wikipedia EN, Ibero-American Exposition of 1929",
+   "quote": "was a world's fair held in Seville , Spain , from 9 May 1929 until 21 June 1930",
+   "fetched": "2026-11-19"
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a,_Seville",
+   "title": "Wikipedia EN, Plaza de España (Seville)",
+   "quote": "It was built in 1928 for the Ibero-American Exposition of 1929 . … In 1929, Seville hosted the Ibero-American Exposition World's Fair , located in the celebrated Maria Luisa Park",
+   "fetched": "2026-11-19"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Expo_92",
+   "title": "Wikipedia EN, Expo 92",
+   "quote": "was a universal exhibition held from Monday 20 April to Monday 12 October 1992, at the Isla de La Cartuja , in Seville , Spain. … The site of the exposition covered 215 hectares (530 acres) … Five more new bridges were built over the Guadalquivir river: Alamillo , Barqueta , Cartuja, Cristo de la Expiración, and Delicias.",
+   "fetched": "2026-11-19"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/Alamillo_Bridge",
+   "title": "Wikipedia EN, Alamillo Bridge",
+   "quote": "Construction of the bridge began in 1989 and was completed in 1992 from a design by Santiago Calatrava .",
+   "fetched": "2026-11-19"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Puente_de_la_Barqueta",
+   "title": "Wikipedia EN, Puente de la Barqueta",
+   "quote": "It was built between 1989 and 1992, on the occasion of the Universal Exposition Expo'92",
+   "fetched": "2026-11-19"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/Centenario_Bridge",
+   "title": "Wikipedia EN, Centenario Bridge",
+   "quote": "building works took place from 1989 to 1991. … The bridge opened on 15 November 1991. … with a main span of 265 metres (869 ft) and a maximum height of 102 metres (335 ft)",
+   "fetched": "2026-11-19"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/Metropol_Parasol",
+   "title": "Wikipedia EN, Metropol Parasol",
+   "quote": "was completed in April 2011, and is roughly 150 by 70 metres (490 by 230 ft) with an approximate height of 26 metres (85 ft) … Construction began on June 26, 2005 … The market itself remained until 1973, when the remainder of the dilapidated market building was finally demolished. … The land remained undeveloped until 1990",
+   "fetched": "2026-11-19"
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Torre_Sevilla",
+   "title": "Wikipedia EN, Torre Sevilla",
+   "quote": "Its construction started in March 2008 and was completed in 2015. … The tower is the tallest building in Andalusia and in the city of Seville",
+   "fetched": "2026-11-19"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Seville-Santa_Justa_railway_station",
+   "title": "Wikipedia EN, Seville-Santa Justa railway station",
+   "quote": "Opened 2 May 1991 … The Madrid–Seville high-speed rail line was opened in 1992",
+   "fetched": "2026-11-19"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Isla_M%C3%A1gica",
+   "title": "Wikipedia EN, Isla Mágica",
+   "quote": "the theme park was later redesigned and it reopened as Isla Mágica on 28 June 1997.",
+   "fetched": "2026-11-19"
+  },
+  "S24": {
+   "url": "https://en.wikipedia.org/wiki/Los_Remedios,_Seville",
+   "title": "Wikipedia EN, Los Remedios (Seville)",
+   "quote": "In the 1960s a large-scale urbanization took place, and the new residential construction led to the city's first planned neighbourhood. … In 1945 the Avenida de la Republica Argentina was built",
+   "fetched": "2026-11-19"
+  },
+  "S25": {
+   "url": "https://en.wikipedia.org/wiki/Ferdinand_Magellan",
+   "title": "Wikipedia EN, Ferdinand Magellan",
+   "quote": "In Seville , he married, fathered two children, and organized the expedition. … The fleet left Spain on 20 September 1519",
+   "fetched": "2026-11-19"
+  },
+  "S26": {
+   "url": "https://en.wikipedia.org/wiki/Spanish_Civil_War",
+   "title": "Wikipedia EN, Spanish Civil War",
+   "quote": "Date 17 July 1936 – 1 April 1939",
+   "fetched": "2026-11-19"
+  },
+  "S27": {
+   "url": "https://en.wikipedia.org/wiki/Second_Spanish_Republic",
+   "title": "Wikipedia EN, Second Spanish Republic",
+   "quote": "The Republic was proclaimed on 14 April 1931 after the deposition of King Alfonso XIII .",
+   "fetched": "2026-11-19"
+  },
+  "S28": {
+   "url": "https://en.wikipedia.org/wiki/Spanish_transition_to_democracy",
+   "title": "Wikipedia EN, Spanish transition to democracy",
+   "quote": "Death of Franco 20 November 1975 … Constitution adopted 29 December 1978",
+   "fetched": "2026-11-19"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/Almoravid_dynasty",
+   "title": "Wikipedia EN, Almoravid dynasty",
+   "quote": "In September 1091, al-Mu'tamid surrendered Seville to the Almoravids and was exiled to Aghmat.",
+   "fetched": "2026-11-19"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/Almohad_Caliphate",
+   "title": "Wikipedia EN, Almohad Caliphate",
+   "quote": "Between 1146 and 1173, the Almohads gradually wrested control from the Almoravids over the Muslim principalities in Iberia. … The Almohads transferred the capital of Muslim Iberia from Córdoba to Seville .",
+   "fetched": "2026-11-19"
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Taifa_of_Seville",
+   "title": "Wikipedia EN, Taifa of Seville",
+   "quote": "Arab State ruled by Abbadids (1023–1091)",
+   "fetched": "2026-11-19"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Tartessos",
+   "title": "Wikipedia EN, Tartessos",
+   "quote": "a historical civilization settled in the southern Iberian Peninsula from about the late Bronze Age until the 5th century BC",
+   "fetched": "2026-11-19"
+  },
+  "S33": {
+   "url": "https://en.wikipedia.org/wiki/Seville",
+   "title": "Wikipedia EN, Seville (Hispalis, Umayyad conquest)",
+   "quote": "The town was called Hisbaal by the Phoenicians and by the Tartessians, the indigenous pre-Roman Iberian people of Tartessos , who controlled the Guadalquivir Valley at the time. … Following Roman rule, there were successive conquests of the Roman province of Hispania Baetica by the Germanic Vandals , Suebi and Visigoths during the 5th and 6th centuries. … Seville ( Spalis ) was seemingly taken by Musa ibn Nusayr in the late summer of 712",
+   "fetched": "2026-11-19"
+  },
+  "S35": {
+   "url": "https://es.wikipedia.org/wiki/Puerto_de_Sevilla",
+   "title": "Wikipedia ES, Puerto de Sevilla",
+   "quote": "Los trabajos de la corta de Tablada comenzaron en 1909. … Se reanudaron en 1919 y quedaron terminaron en 1926. … En 1927 elaboró el conocido como \"Plan Brackenbury\", que convertiría el Guadalquivir a su paso por Sevilla en una dársena cerrada al sur por una esclusa, pasando el río vivo por San Juan de Aznalfarache y la Vega de Triana. … Las obras del nuevo cauce por la Vega de Triana se suspendieron en 1933 y continuaron en 1943. … Las obras del \"Plan Brackenbury\" de 1927 no terminaron hasta 1951. … En 1951 se construyó la esclusa al sur del puerto.",
+   "fetched": "2026-11-19"
+  },
+  "S36": {
+   "url": "https://es.wikipedia.org/wiki/Canal_de_Alfonso_XIII",
+   "title": "Wikipedia ES, Canal de Alfonso XIII",
+   "quote": "se creó un nuevo cauce por la Cartuja , que se unió en San Juan de Aznalfarache con el antiguo cauce abandonado tras la creación del canal de Alfonso XIII, y se taponó el río en Chapina, la entrada norte del río en Sevilla. … Con las obras de la Exposición Universal de 1992 se volvió a abrir el tapón de Chapina, desplazándose su final más hacia el norte, hasta la zona de San Jerónimo",
+   "fetched": "2026-11-19"
+  },
+  "S37": {
+   "url": "https://es.wikipedia.org/wiki/Plaza_de_toros_de_la_Real_Maestranza_de_Caballer%C3%ADa_de_Sevilla",
+   "title": "Wikipedia ES, Plaza de toros de la Real Maestranza",
+   "quote": "Entre 1761 y 1765 se construyó la portada interior y, sobre la misma, el palco del Príncipe. … La construcción de la plaza estuvo paralizada entre 1766 y 1784. … En 1876 se le encargó al arquitecto Juan Talavera de la Vega la finalización de la plaza.",
+   "fetched": "2026-11-19"
+  },
+  "S38": {
+   "url": "https://es.wikipedia.org/wiki/Plaza_de_la_Encarnaci%C3%B3n_(Sevilla)",
+   "title": "Wikipedia ES, Plaza de la Encarnación (Sevilla)",
+   "quote": "A principio del siglo XIX , durante la invasión francesa, se derribó el convento de la Encarnación, y se construyó en el centro un mercado de tres calles cubiertas de galerías. … En 1948 se planteó la ampliación del eje principal de Campana - Osario , por lo que se derribó el tercio meridional del mercado … lo que restaba del mercado fue demolido en 1973 debido a su estado ruinoso.",
+   "fetched": "2026-11-19"
+  },
+  "S39": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Isabel_II_(Sevilla)",
+   "title": "Wikipedia ES, Puente de Isabel II (Sevilla)",
+   "quote": "Su construcción finalizó en 1852, bajo el reinado de Isabel II … Solo en 1845, cuando se iniciaron las obras de construcción del actual puente",
+   "fetched": "2026-11-19"
+  },
+  "S40": {
+   "url": "https://es.wikipedia.org/wiki/Historia_de_Sevilla",
+   "title": "Wikipedia ES, Historia de Sevilla",
+   "quote": "Para la Exposición de 1929 construyeron dos plazas: la Plaza de España y la Plaza de América . … La peste negra de 1348, el gran terremoto del año 1355",
+   "fetched": "2026-11-19"
+  },
+  "S50": {
+   "url": "https://eprints.ucm.es/id/eprint/38954/",
+   "title": "Population estimates 1248-1800 (cited in scheda D; not re-fetched)",
+   "claim": "scheda D: ~50,000 (1248, 1300), ~30,000 (1400), ~60,000 (1500), ~120,000 (1600), ~70,000 (1700), ~75,000 (1800), \"historical urban population, not a modern census\"",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S51": {
+   "url": "https://www.sevilla.org/servicios/medio-ambiente-parques-jardines/parques/paseos-arbolados/jardines-de-chapina/jardines-de-chapina",
+   "title": "Ayuntamiento de Sevilla, Jardines de Chapina (cited in scheda A; not re-fetched)",
+   "claim": "scheda A: works 1948-1950 on the Chapina plug; the Revista Triana puts the final cut at the end of 1950",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S52": {
+   "url": "https://www.sevilla.org/servicios/medio-ambiente-parques-jardines/parques/plazas-ajardinadas-o-arboladas/plaza-de-la-encarnacion",
+   "title": "Ayuntamiento de Sevilla, Plaza de la Encarnación (cited in scheda C; not re-fetched)",
+   "claim": "scheda C: convent demolished 1811 under French occupation; market built 1820; 1948 and 1956 are different phases; market demolished 1973",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S53": {
+   "url": "https://www.sevilla.org/no8do-digital/expo-no8do/operacion-clavel/galeria-fotografica-operacion-clavel",
+   "title": "Ayuntamiento de Sevilla, Operación Clavel photo gallery (cited in scheda A/F; not re-fetched)",
+   "claim": "scheda A/F: Tamarguillo flood, 25 November 1961 (wall breach)",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S54": {
+   "url": "https://revistas.ucm.es/index.php/ESMP/en/article/view/67297",
+   "title": "Guadalquivir floods of February 1917 and March 1963 (cited in scheda F; not re-fetched)",
+   "claim": "scheda F: flood of February 1917; flood of March 1963",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S55": {
+   "url": "https://institucional.us.es/puertassevilla/carbon2-7",
+   "title": "Universidad de Sevilla, Puertas de Sevilla (cited in scheda B; not re-fetched)",
+   "claim": "scheda B: Almoravid circuit near the Macarena 1120-1140; Almohad raising, barbican and moat 1170-1210; progressive demolition 1858-c.1873; Macarena gate rebuilt 1723, 1795, 1997-1998",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S56": {
+   "url": "https://ingenieria-civil.org/GOING/obra.php?id=117",
+   "title": "Corta de Triana / Cartuja works chronology (cited in scheda A; not re-fetched)",
+   "claim": "scheda A: Corta de Triana works 1930-1948 with a pause 1933-1943; Corta de la Cartuja works 1975-1982",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S57": {
+   "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-1975-8304",
+   "title": "BOE-A-1975-8304 (cited in scheda A; not re-fetched)",
+   "claim": "scheda A: 1975 is the administrative start of the Corta de la Cartuja, not the end of works",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S58": {
+   "url": "https://polipapers.upv.es/index.php/HC/article/view/25500",
+   "title": "Corta de Tablada academic article (cited in scheda A; not re-fetched)",
+   "claim": "scheda A: works 1909-1926, port use from 1926",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S59": {
+   "url": "https://visitasevilla.es/plaza-nueva/",
+   "title": "Visita Sevilla, Plaza Nueva (cited in scheda C; not re-fetched)",
+   "claim": "scheda C: convent demolished 1848, completed 1853, inaugurated 1857 (conflicts with Wikipedia EN: begun 1852, completed 1856)",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S60": {
+   "url": "https://www.realmaestranza.com/en/royal-bullring/history-of-the-construction",
+   "title": "Real Maestranza, history of the construction (cited in scheda E; not re-fetched)",
+   "claim": "scheda E: Maestranza 1761-1881",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S61": {
+   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-16637",
+   "title": "BOE-A-2023-16637, Plaza de España (cited in scheda C/E/F; not re-fetched)",
+   "claim": "scheda C/E: project 1914, complete 1929; Ibero-American Exposition 1929",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S62": {
+   "url": "https://visitasevilla.es/en/triana-bridge/",
+   "title": "Visita Sevilla, Triana Bridge (cited in scheda E; not re-fetched)",
+   "claim": "scheda E: boat bridge (Puente de Barcas) 1171-1852; Isabel II bridge 1845-1852",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S63": {
+   "url": "https://guiadigital.iaph.es/sys/productos/Velazquez/velazquezSevilla/laCiudad/aprendiendo/alamedaHercules.html",
+   "title": "IAPH, Alameda de Hércules (cited in scheda A/C; not re-fetched)",
+   "claim": "scheda A/C: lagoon drained 1574; promenade inaugurated 1578",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S64": {
+   "url": "https://www.boe.es/eli/es/ai/1988/09/28/%281%29",
+   "title": "BOE 1988 Expo 92 (cited in scheda E/F; not re-fetched)",
+   "claim": "scheda E/F: Expo 92 site works 1987-1992; opening 20 April, closing 12 October 1992",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  },
+  "S65": {
+   "url": "https://ine.es/intercensal/intercensal.do?btnBuscarCod=Consultar+selecci%C3%B3n",
+   "title": "INE intercensal municipal series (cited in scheda D; not re-fetched)",
+   "claim": "scheda D: census series 1842-2021 (de facto and de jure); the de jure figures match the INE table reproduced by Wikipedia EN",
+   "fetched": false,
+   "note": "cited in data_sevilla_src/scheda_validazione_storica.md; host not reachable from the agent proxy, so NOT verified here: dates taken only from it stay conf low"
+  }
+ },
  "history": {
-  "zones": [],
+  "zones": [
+   {
+    "name": "Alameda de Hércules: houses around the drained lagoon",
+    "ring": [
+     [
+      37.39515,
+      -5.992869
+     ],
+     [
+      37.39515,
+      -5.994396
+     ],
+     [
+      37.395177,
+      -5.994625
+     ],
+     [
+      37.395257,
+      -5.994835
+     ],
+     [
+      37.395382,
+      -5.995007
+     ],
+     [
+      37.395541,
+      -5.995127
+     ],
+     [
+      37.39566,
+      -5.995172
+     ],
+     [
+      37.401273,
+      -5.995183
+     ],
+     [
+      37.401454,
+      -5.995127
+     ],
+     [
+      37.401613,
+      -5.995007
+     ],
+     [
+      37.40177,
+      -5.994769
+     ],
+     [
+      37.401832,
+      -5.99455
+     ],
+     [
+      37.401844,
+      -5.992869
+     ],
+     [
+      37.401817,
+      -5.992639
+     ],
+     [
+      37.401738,
+      -5.99243
+     ],
+     [
+      37.401613,
+      -5.992257
+     ],
+     [
+      37.401454,
+      -5.992138
+     ],
+     [
+      37.401335,
+      -5.992093
+     ],
+     [
+      37.395721,
+      -5.992082
+     ],
+     [
+      37.395485,
+      -5.992171
+     ],
+     [
+      37.395294,
+      -5.992367
+     ],
+     [
+      37.395198,
+      -5.992566
+     ]
+    ],
+    "born": [
+     1574,
+     1578
+    ],
+    "seed": null,
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [
+     "S12"
+    ],
+    "conf": "medium",
+    "note": "Lagoon drained and promenade built in 1574 (S12); the houses around it follow. Ring = legacy rectangle buffered 70 m; hand-set model carried over from the legacy hist_sevilla.py (ring and born years are not surveyed). "
+   },
+   {
+    "name": "Northern gardens inside the walls (San Gil, Macarena)",
+    "ring": [
+     [
+      37.400668,
+      -5.998748
+     ],
+     [
+      37.403292,
+      -5.996148
+     ],
+     [
+      37.402885,
+      -5.988912
+     ],
+     [
+      37.402749,
+      -5.987329
+     ],
+     [
+      37.401754,
+      -5.986086
+     ],
+     [
+      37.400307,
+      -5.985181
+     ],
+     [
+      37.398226,
+      -5.984051
+     ],
+     [
+      37.396869,
+      -5.982807
+     ],
+     [
+      37.396597,
+      -5.982881
+     ],
+     [
+      37.396597,
+      -5.992078
+     ],
+     [
+      37.401273,
+      -5.992082
+     ],
+     [
+      37.401454,
+      -5.992138
+     ],
+     [
+      37.401659,
+      -5.99231
+     ],
+     [
+      37.401796,
+      -5.992566
+     ],
+     [
+      37.401844,
+      -5.992869
+     ],
+     [
+      37.401832,
+      -5.99455
+     ],
+     [
+      37.40177,
+      -5.994769
+     ],
+     [
+      37.401701,
+      -5.994898
+     ],
+     [
+      37.401563,
+      -5.995054
+     ],
+     [
+      37.401395,
+      -5.995153
+     ],
+     [
+      37.401211,
+      -5.995187
+     ],
+     [
+      37.396597,
+      -5.995187
+     ],
+     [
+      37.396597,
+      -6.000839
+     ],
+     [
+      37.397954,
+      -6.000557
+     ]
+    ],
+    "born": [
+     1225,
+     1480
+    ],
+    "seed": [
+     37.396597,
+     -5.993548
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Orchard-to-houses ramp 1225 -> 1480 from south to north [Guessing]; no source found."
+   },
+   {
+    "name": "Arenal and port of the Indies",
+    "ring": [
+     [
+      37.383191,
+      -5.995447
+     ],
+     [
+      37.382422,
+      -5.996397
+     ],
+     [
+      37.383932,
+      -5.996939
+     ],
+     [
+      37.386737,
+      -5.998296
+     ],
+     [
+      37.388908,
+      -6.000331
+     ],
+     [
+      37.391622,
+      -6.001009
+     ],
+     [
+      37.391984,
+      -5.999879
+     ],
+     [
+      37.389496,
+      -5.998748
+     ],
+     [
+      37.387198,
+      -5.996498
+     ],
+     [
+      37.385805,
+      -5.994497
+     ]
+    ],
+    "born": [
+     1490,
+     1600
+    ],
+    "seed": [
+     37.386646,
+     -5.995809
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). S1: Seville became the port and gateway to the Indies from 1503; the 1490-1600 growth of the Arenal waterfront is a modelling choice [Guessing]."
+   },
+   {
+    "name": "Triana",
+    "ring": [
+     [
+      37.378528,
+      -6.001152
+     ],
+     [
+      37.378476,
+      -6.001815
+     ],
+     [
+      37.378476,
+      -6.003145
+     ],
+     [
+      37.378615,
+      -6.004465
+     ],
+     [
+      37.378736,
+      -6.005114
+     ],
+     [
+      37.379078,
+      -6.006374
+     ],
+     [
+      37.379298,
+      -6.00698
+     ],
+     [
+      37.37983,
+      -6.008133
+     ],
+     [
+      37.380141,
+      -6.008674
+     ],
+     [
+      37.380843,
+      -6.009675
+     ],
+     [
+      37.381232,
+      -6.01013
+     ],
+     [
+      37.381644,
+      -6.010553
+     ],
+     [
+      37.382529,
+      -6.011292
+     ],
+     [
+      37.382999,
+      -6.011606
+     ],
+     [
+      37.383983,
+      -6.012115
+     ],
+     [
+      37.384493,
+      -6.012308
+     ],
+     [
+      37.385537,
+      -6.012568
+     ],
+     [
+      37.386067,
+      -6.012633
+     ],
+     [
+      37.387133,
+      -6.012633
+     ],
+     [
+      37.387663,
+      -6.012568
+     ],
+     [
+      37.388707,
+      -6.012308
+     ],
+     [
+      37.389716,
+      -6.011881
+     ],
+     [
+      37.390201,
+      -6.011606
+     ],
+     [
+      37.391123,
+      -6.01094
+     ],
+     [
+      37.391556,
+      -6.010553
+     ],
+     [
+      37.392357,
+      -6.009675
+     ],
+     [
+      37.392721,
+      -6.009189
+     ],
+     [
+      37.39337,
+      -6.008133
+     ],
+     [
+      37.393651,
+      -6.007568
+     ],
+     [
+      37.394122,
+      -6.006374
+     ],
+     [
+      37.39431,
+      -6.005751
+     ],
+     [
+      37.394464,
+      -6.005114
+     ],
+     [
+      37.394672,
+      -6.003808
+     ],
+     [
+      37.394742,
+      -6.00248
+     ],
+     [
+      37.394724,
+      -6.001815
+     ],
+     [
+      37.394638,
+      -6.000892
+     ],
+     [
+      37.393168,
+      -6.000331
+     ],
+     [
+      37.378645,
+      -6.000331
+     ]
+    ],
+    "born": [
+     1225,
+     1780
+    ],
+    "seed": [
+     37.3866,
+     -6.00248
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Triana already linked to the city by the boat bridge in 1248 (S2: the bridge was cut in May 1248); the growth ramp to 1780 is a modelling choice [Guessing]."
+   },
+   {
+    "name": "Suburb: San Bernardo",
+    "ring": [
+     [
+      37.382115,
+      -5.973967
+     ],
+     [
+      37.381353,
+      -5.974092
+     ],
+     [
+      37.380978,
+      -5.974202
+     ],
+     [
+      37.38025,
+      -5.974511
+     ],
+     [
+      37.379899,
+      -5.974709
+     ],
+     [
+      37.379233,
+      -5.97519
+     ],
+     [
+      37.37892,
+      -5.97547
+     ],
+     [
+      37.378623,
+      -5.975775
+     ],
+     [
+      37.378079,
+      -5.976455
+     ],
+     [
+      37.377835,
+      -5.976826
+     ],
+     [
+      37.377408,
+      -5.977626
+     ],
+     [
+      37.377226,
+      -5.97805
+     ],
+     [
+      37.376932,
+      -5.978938
+     ],
+     [
+      37.37682,
+      -5.979398
+     ],
+     [
+      37.37667,
+      -5.980341
+     ],
+     [
+      37.376632,
+      -5.980819
+     ],
+     [
+      37.376632,
+      -5.981781
+     ],
+     [
+      37.376733,
+      -5.982734
+     ],
+     [
+      37.37682,
+      -5.983202
+     ],
+     [
+      37.377067,
+      -5.984112
+     ],
+     [
+      37.377226,
+      -5.98455
+     ],
+     [
+      37.377408,
+      -5.984974
+     ],
+     [
+      37.377835,
+      -5.985774
+     ],
+     [
+      37.378079,
+      -5.986145
+     ],
+     [
+      37.378623,
+      -5.986825
+     ],
+     [
+      37.379233,
+      -5.98741
+     ],
+     [
+      37.37956,
+      -5.987664
+     ],
+     [
+      37.38025,
+      -5.988089
+     ],
+     [
+      37.38061,
+      -5.988259
+     ],
+     [
+      37.381353,
+      -5.988508
+     ],
+     [
+      37.381732,
+      -5.988586
+     ],
+     [
+      37.382115,
+      -5.988633
+     ],
+     [
+      37.382836,
+      -5.988635
+     ],
+     [
+      37.384068,
+      -5.988008
+     ],
+     [
+      37.384113,
+      -5.987442
+     ],
+     [
+      37.385805,
+      -5.986086
+     ],
+     [
+      37.38724,
+      -5.985643
+     ],
+     [
+      37.387592,
+      -5.984974
+     ],
+     [
+      37.387774,
+      -5.98455
+     ],
+     [
+      37.387933,
+      -5.984112
+     ],
+     [
+      37.38818,
+      -5.983202
+     ],
+     [
+      37.38833,
+      -5.982259
+     ],
+     [
+      37.38838,
+      -5.9813
+     ],
+     [
+      37.388368,
+      -5.980819
+     ],
+     [
+      37.388267,
+      -5.979866
+     ],
+     [
+      37.38818,
+      -5.979398
+     ],
+     [
+      37.388068,
+      -5.978938
+     ],
+     [
+      37.387774,
+      -5.97805
+     ],
+     [
+      37.387389,
+      -5.977217
+     ],
+     [
+      37.387165,
+      -5.976826
+     ],
+     [
+      37.386921,
+      -5.976455
+     ],
+     [
+      37.386377,
+      -5.975775
+     ],
+     [
+      37.385767,
+      -5.97519
+     ],
+     [
+      37.38544,
+      -5.974936
+     ],
+     [
+      37.38475,
+      -5.974511
+     ],
+     [
+      37.38439,
+      -5.974341
+     ],
+     [
+      37.384022,
+      -5.974202
+     ],
+     [
+      37.383268,
+      -5.974014
+     ],
+     [
+      37.382885,
+      -5.973967
+     ]
+    ],
+    "born": [
+     1290,
+     1650
+    ],
+    "seed": [
+     37.3825,
+     -5.9813
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Growth ramp is a modelling choice [Guessing]; no source found."
+   },
+   {
+    "name": "Suburb: Macarena",
+    "ring": [
+     [
+      37.405534,
+      -5.983523
+     ],
+     [
+      37.405006,
+      -5.98361
+     ],
+     [
+      37.404491,
+      -5.983782
+     ],
+     [
+      37.403999,
+      -5.984037
+     ],
+     [
+      37.403538,
+      -5.98437
+     ],
+     [
+      37.403116,
+      -5.984775
+     ],
+     [
+      37.402739,
+      -5.985246
+     ],
+     [
+      37.402415,
+      -5.985773
+     ],
+     [
+      37.402092,
+      -5.986508
+     ],
+     [
+      37.402749,
+      -5.987329
+     ],
+     [
+      37.402885,
+      -5.988912
+     ],
+     [
+      37.40308,
+      -5.992383
+     ],
+     [
+      37.403322,
+      -5.992636
+     ],
+     [
+      37.403765,
+      -5.993006
+     ],
+     [
+      37.404491,
+      -5.993418
+     ],
+     [
+      37.405269,
+      -5.993644
+     ],
+     [
+      37.406066,
+      -5.993677
+     ],
+     [
+      37.406854,
+      -5.993514
+     ],
+     [
+      37.407601,
+      -5.993163
+     ],
+     [
+      37.408278,
+      -5.992636
+     ],
+     [
+      37.408861,
+      -5.991954
+     ],
+     [
+      37.409326,
+      -5.991144
+     ],
+     [
+      37.409655,
+      -5.990235
+     ],
+     [
+      37.409836,
+      -5.989264
+     ],
+     [
+      37.409862,
+      -5.988267
+     ],
+     [
+      37.409732,
+      -5.987283
+     ],
+     [
+      37.409451,
+      -5.98635
+     ],
+     [
+      37.40903,
+      -5.985503
+     ],
+     [
+      37.408484,
+      -5.984775
+     ],
+     [
+      37.407835,
+      -5.984194
+     ],
+     [
+      37.407109,
+      -5.983782
+     ],
+     [
+      37.406331,
+      -5.983556
+     ]
+    ],
+    "born": [
+     1520,
+     1700
+    ],
+    "seed": [
+     37.4058,
+     -5.9886
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Growth ramp is a modelling choice [Guessing]; no source found."
+   },
+   {
+    "name": "Suburb: San Roque / Puerta de Carmona",
+    "ring": [
+     [
+      37.389574,
+      -5.974377
+     ],
+     [
+      37.388729,
+      -5.974516
+     ],
+     [
+      37.387906,
+      -5.974792
+     ],
+     [
+      37.387119,
+      -5.975199
+     ],
+     [
+      37.386381,
+      -5.975732
+     ],
+     [
+      37.385705,
+      -5.97638
+     ],
+     [
+      37.385103,
+      -5.977133
+     ],
+     [
+      37.384584,
+      -5.977978
+     ],
+     [
+      37.384158,
+      -5.9789
+     ],
+     [
+      37.383832,
+      -5.979883
+     ],
+     [
+      37.383612,
+      -5.980912
+     ],
+     [
+      37.3835,
+      -5.981968
+     ],
+     [
+      37.3835,
+      -5.983032
+     ],
+     [
+      37.383612,
+      -5.984088
+     ],
+     [
+      37.383832,
+      -5.985117
+     ],
+     [
+      37.384158,
+      -5.9861
+     ],
+     [
+      37.384601,
+      -5.987051
+     ],
+     [
+      37.385805,
+      -5.986086
+     ],
+     [
+      37.390301,
+      -5.984729
+     ],
+     [
+      37.392527,
+      -5.983994
+     ],
+     [
+      37.396503,
+      -5.982906
+     ],
+     [
+      37.3965,
+      -5.981968
+     ],
+     [
+      37.396388,
+      -5.980912
+     ],
+     [
+      37.396168,
+      -5.979883
+     ],
+     [
+      37.396018,
+      -5.979385
+     ],
+     [
+      37.395842,
+      -5.9789
+     ],
+     [
+      37.395416,
+      -5.977978
+     ],
+     [
+      37.394897,
+      -5.977133
+     ],
+     [
+      37.394606,
+      -5.976744
+     ],
+     [
+      37.393965,
+      -5.976042
+     ],
+     [
+      37.393257,
+      -5.97545
+     ],
+     [
+      37.392881,
+      -5.975199
+     ],
+     [
+      37.392094,
+      -5.974792
+     ],
+     [
+      37.391271,
+      -5.974516
+     ],
+     [
+      37.39085,
+      -5.974429
+     ],
+     [
+      37.390426,
+      -5.974377
+     ]
+    ],
+    "born": [
+     1480,
+     1720
+    ],
+    "seed": [
+     37.39,
+     -5.9825
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Growth ramp is a modelling choice [Guessing]; no source found."
+   },
+   {
+    "name": "Suburb: Extramuros Puerta del Sol / Osario",
+    "ring": [
+     [
+      37.396562,
+      -5.973652
+     ],
+     [
+      37.395694,
+      -5.973794
+     ],
+     [
+      37.395267,
+      -5.973919
+     ],
+     [
+      37.394438,
+      -5.974271
+     ],
+     [
+      37.393653,
+      -5.974755
+     ],
+     [
+      37.392925,
+      -5.975363
+     ],
+     [
+      37.392266,
+      -5.976084
+     ],
+     [
+      37.391689,
+      -5.976907
+     ],
+     [
+      37.391434,
+      -5.977352
+     ],
+     [
+      37.390996,
+      -5.9783
+     ],
+     [
+      37.390815,
+      -5.978798
+     ],
+     [
+      37.390534,
+      -5.979835
+     ],
+     [
+      37.390363,
+      -5.980908
+     ],
+     [
+      37.39032,
+      -5.981453
+     ],
+     [
+      37.39032,
+      -5.982547
+     ],
+     [
+      37.390434,
+      -5.983632
+     ],
+     [
+      37.390643,
+      -5.984616
+     ],
+     [
+      37.392527,
+      -5.983994
+     ],
+     [
+      37.396869,
+      -5.982807
+     ],
+     [
+      37.398226,
+      -5.984051
+     ],
+     [
+      37.400307,
+      -5.985181
+     ],
+     [
+      37.401754,
+      -5.986086
+     ],
+     [
+      37.402415,
+      -5.986912
+     ],
+     [
+      37.402798,
+      -5.986183
+     ],
+     [
+      37.403004,
+      -5.9857
+     ],
+     [
+      37.403339,
+      -5.984689
+     ],
+     [
+      37.403566,
+      -5.983632
+     ],
+     [
+      37.40368,
+      -5.982547
+     ],
+     [
+      37.40368,
+      -5.981453
+     ],
+     [
+      37.403566,
+      -5.980368
+     ],
+     [
+      37.403466,
+      -5.979835
+     ],
+     [
+      37.403185,
+      -5.978798
+     ],
+     [
+      37.402798,
+      -5.977817
+     ],
+     [
+      37.402311,
+      -5.976907
+     ],
+     [
+      37.401734,
+      -5.976084
+     ],
+     [
+      37.401075,
+      -5.975363
+     ],
+     [
+      37.400347,
+      -5.974755
+     ],
+     [
+      37.399562,
+      -5.974271
+     ],
+     [
+      37.398733,
+      -5.973919
+     ],
+     [
+      37.397874,
+      -5.973705
+     ],
+     [
+      37.397438,
+      -5.973652
+     ]
+    ],
+    "born": [
+     1500,
+     1740
+    ],
+    "seed": [
+     37.397,
+     -5.982
+    ],
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [],
+    "conf": "low",
+    "note": "Hand-set model carried over from the legacy hist_sevilla.py (ring and born years are NOT surveyed). Growth ramp is a modelling choice [Guessing]; no source found."
+   },
+   {
+    "name": "Almohad walled city (Ishbiliya)",
+    "ring": [
+     [
+      37.383191,
+      -5.995447
+     ],
+     [
+      37.385805,
+      -5.994497
+     ],
+     [
+      37.387198,
+      -5.996498
+     ],
+     [
+      37.389496,
+      -5.998748
+     ],
+     [
+      37.391984,
+      -5.999879
+     ],
+     [
+      37.39524,
+      -6.001122
+     ],
+     [
+      37.397954,
+      -6.000557
+     ],
+     [
+      37.400668,
+      -5.998748
+     ],
+     [
+      37.403292,
+      -5.996148
+     ],
+     [
+      37.402885,
+      -5.988912
+     ],
+     [
+      37.402749,
+      -5.987329
+     ],
+     [
+      37.401754,
+      -5.986086
+     ],
+     [
+      37.400307,
+      -5.985181
+     ],
+     [
+      37.398226,
+      -5.984051
+     ],
+     [
+      37.396869,
+      -5.982807
+     ],
+     [
+      37.394788,
+      -5.983372
+     ],
+     [
+      37.392527,
+      -5.983994
+     ],
+     [
+      37.390301,
+      -5.984729
+     ],
+     [
+      37.388003,
+      -5.985407
+     ],
+     [
+      37.385805,
+      -5.986086
+     ],
+     [
+      37.384113,
+      -5.987442
+     ],
+     [
+      37.384068,
+      -5.988008
+     ],
+     [
+      37.381626,
+      -5.989251
+     ],
+     [
+      37.381996,
+      -5.992994
+     ]
+    ],
+    "born": [
+     1225,
+     1225
+    ],
+    "seed": null,
+    "era_height": [
+     6.5,
+     9.5
+    ],
+    "src": [
+     "S1",
+     "S10"
+    ],
+    "conf": "low",
+    "note": "City full at the start year (rule r/Madrid). S1: the walled enclosure perhaps held 80,000 people by the end of the 12th century; S10: the walls were raised in 1023 and expanded in the 11th-12th centuries doubling the enclosure. Ring = legacy walls_1248.json (georeferenced from IAPH figure, approximate). Born 1225 is the legacy convention (everything standing by 1248)."
+   }
+  ],
   "walls": [
    {
-    "name": "Walls (walls_1248.json)",
+    "name": "Almohad walls (Islamic circuit on the Roman line)",
     "ring": [
      [
       37.383191,
@@ -122,124 +2249,2949 @@
      ]
     ],
     "built": [
-     null,
-     null
+     1170,
+     1210
     ],
-    "demolished": null,
-    "conf": "low",
-    "_legacy": "anello metrico di walls_1248.json"
+    "demolished": [
+     1868,
+     1873
+    ],
+    "conf": "medium",
+    "height": 10,
+    "width": 4,
+    "towers_every_m": 45,
+    "keep": [
+     [
+      37.4016,
+      -5.9873,
+      130
+     ],
+     [
+      37.3831,
+      -5.9903,
+      140
+     ]
+    ],
+    "src": [
+     "S10",
+     "S55"
+    ],
+    "note": "S10: surrounded by walls since the Roman period; the Taifa raised them in 1023 and an 11th-12th c. expansion doubled the enclosure; partially demolished after the 1868 revolution; sections survive around the Alcázar and in the Macarena. Almohad raising 1170-1210 and demolition \"1858-c.1873\" come from the scheda (S55, not re-fetched). CONFLICT: S10 says after 1868, the scheda says from 1858 -> demolition window set to 1868-1873 (start from S10, end from S55). Height 10 m, width 4 m, tower spacing 45 m = modelling parameters [Guessing]. The Roman wall (Caesar; a 3rd c. section found in 2021, S10) predates the start year and no sourced ring exists: NOT modelled, the 1248 ring follows the later Islamic circuit [Likely]."
    }
   ],
   "gutting": [],
-  "lost": [],
+  "lost": [
+   {
+    "name": "Convent on the Plaza Nueva site",
+    "ring": [
+     [
+      37.388607,
+      -5.995341
+     ],
+     [
+      37.389693,
+      -5.995341
+     ],
+     [
+      37.389693,
+      -5.996359
+     ],
+     [
+      37.388607,
+      -5.996359
+     ]
+    ],
+    "from": 1270,
+    "to": 1840.5,
+    "h": 13,
+    "src": [
+     "S11"
+    ],
+    "conf": "medium",
+    "note": "S11: the land was part of the San Fernando convent from 1270 to 1840 (the legacy and the scheda call it the Casa Grande de San Francisco; S59). Block size from legacy hist_sevilla.py, shape approximate. Height 13 m [Guessing]."
+   },
+   {
+    "name": "Encarnación convent block",
+    "ring": [
+     [
+      37.392863,
+      -5.990932
+     ],
+     [
+      37.393497,
+      -5.990932
+     ],
+     [
+      37.393497,
+      -5.992628
+     ],
+     [
+      37.392863,
+      -5.992628
+     ]
+    ],
+    "from": 1248,
+    "to": 1811.5,
+    "h": 9,
+    "src": [
+     "S38",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "S38: the Encarnación convent was pulled down during the French invasion (early 19th c.); 1811 is the scheda year (S52, not re-fetched). Block size from the legacy code, approximate."
+   }
+  ],
   "fires": [],
-  "water": [],
-  "bridges": []
+  "water": [
+   {
+    "name": "Alameda lagoon (marsh)",
+    "ring": [
+     [
+      37.396044,
+      -5.992821
+     ],
+     [
+      37.395865,
+      -5.992858
+     ],
+     [
+      37.395706,
+      -5.992972
+     ],
+     [
+      37.3956,
+      -5.993147
+     ],
+     [
+      37.395567,
+      -5.993358
+     ],
+     [
+      37.395613,
+      -5.993903
+     ],
+     [
+      37.395675,
+      -5.994105
+     ],
+     [
+      37.395795,
+      -5.994272
+     ],
+     [
+      37.39604,
+      -5.994408
+     ],
+     [
+      37.400658,
+      -5.994347
+     ],
+     [
+      37.400847,
+      -5.994261
+     ],
+     [
+      37.400936,
+      -5.994127
+     ],
+     [
+      37.400986,
+      -5.993958
+     ],
+     [
+      37.40104,
+      -5.993207
+     ],
+     [
+      37.400937,
+      -5.99298
+     ],
+     [
+      37.400812,
+      -5.992902
+     ]
+    ],
+    "from": -9999,
+    "to": 1574,
+    "c": "marsh",
+    "src": [
+     "S12",
+     "S63"
+    ],
+    "conf": "high",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S12: the old river branch became a swampy pond after a dam in 1383; drained in 1574 by the Count of Barajas."
+   },
+   {
+    "name": "Alameda lagoon (drained field)",
+    "ring": [
+     [
+      37.396044,
+      -5.992821
+     ],
+     [
+      37.395865,
+      -5.992858
+     ],
+     [
+      37.395706,
+      -5.992972
+     ],
+     [
+      37.3956,
+      -5.993147
+     ],
+     [
+      37.395567,
+      -5.993358
+     ],
+     [
+      37.395613,
+      -5.993903
+     ],
+     [
+      37.395675,
+      -5.994105
+     ],
+     [
+      37.395795,
+      -5.994272
+     ],
+     [
+      37.39604,
+      -5.994408
+     ],
+     [
+      37.400658,
+      -5.994347
+     ],
+     [
+      37.400847,
+      -5.994261
+     ],
+     [
+      37.400936,
+      -5.994127
+     ],
+     [
+      37.400986,
+      -5.993958
+     ],
+     [
+      37.40104,
+      -5.993207
+     ],
+     [
+      37.400937,
+      -5.99298
+     ],
+     [
+      37.400812,
+      -5.992902
+     ]
+    ],
+    "from": 1574,
+    "to": 1578,
+    "c": "field",
+    "src": [
+     "S12",
+     "S63"
+    ],
+    "conf": "medium",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). Legacy data fills the lagoon in gradual strips 1574-1578; here a single window."
+   },
+   {
+    "name": "Alameda promenade",
+    "ring": [
+     [
+      37.396044,
+      -5.992821
+     ],
+     [
+      37.395865,
+      -5.992858
+     ],
+     [
+      37.395706,
+      -5.992972
+     ],
+     [
+      37.3956,
+      -5.993147
+     ],
+     [
+      37.395567,
+      -5.993358
+     ],
+     [
+      37.395613,
+      -5.993903
+     ],
+     [
+      37.395675,
+      -5.994105
+     ],
+     [
+      37.395795,
+      -5.994272
+     ],
+     [
+      37.39604,
+      -5.994408
+     ],
+     [
+      37.400658,
+      -5.994347
+     ],
+     [
+      37.400847,
+      -5.994261
+     ],
+     [
+      37.400936,
+      -5.994127
+     ],
+     [
+      37.400986,
+      -5.993958
+     ],
+     [
+      37.40104,
+      -5.993207
+     ],
+     [
+      37.400937,
+      -5.99298
+     ],
+     [
+      37.400812,
+      -5.992902
+     ]
+    ],
+    "from": 1578,
+    "to": 2027,
+    "c": "park",
+    "src": [
+     "S63"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). 1578 = inauguration of the promenade per scheda (IAPH, not re-fetched)."
+   },
+   {
+    "name": "Corta de Tablada cut (land until the canal opens)",
+    "ring": [
+     [
+      37.321694,
+      -6.000674
+     ],
+     [
+      37.321824,
+      -6.000124
+     ],
+     [
+      37.32206,
+      -5.999491
+     ],
+     [
+      37.323393,
+      -5.998275
+     ],
+     [
+      37.324338,
+      -5.99771
+     ],
+     [
+      37.325489,
+      -5.997099
+     ],
+     [
+      37.32729,
+      -5.9965
+     ],
+     [
+      37.329094,
+      -5.99625
+     ],
+     [
+      37.329864,
+      -5.996281
+     ],
+     [
+      37.331085,
+      -5.995865
+     ],
+     [
+      37.331081,
+      -5.995741
+     ],
+     [
+      37.333493,
+      -5.995319
+     ],
+     [
+      37.333502,
+      -5.995441
+     ],
+     [
+      37.333402,
+      -5.995464
+     ],
+     [
+      37.333432,
+      -5.995809
+     ],
+     [
+      37.334665,
+      -5.99558
+     ],
+     [
+      37.334984,
+      -5.995352
+     ],
+     [
+      37.337296,
+      -5.996748
+     ],
+     [
+      37.338135,
+      -5.995238
+     ],
+     [
+      37.338843,
+      -5.995923
+     ],
+     [
+      37.33914,
+      -5.995946
+     ],
+     [
+      37.33914,
+      -5.995238
+     ],
+     [
+      37.339345,
+      -5.995078
+     ],
+     [
+      37.345417,
+      -5.99485
+     ],
+     [
+      37.345965,
+      -5.994964
+     ],
+     [
+      37.346422,
+      -5.994895
+     ],
+     [
+      37.346833,
+      -5.995032
+     ],
+     [
+      37.347266,
+      -5.994918
+     ],
+     [
+      37.347997,
+      -5.994895
+     ],
+     [
+      37.348544,
+      -5.994622
+     ],
+     [
+      37.348887,
+      -5.99421
+     ],
+     [
+      37.348953,
+      -5.994027
+     ],
+     [
+      37.349144,
+      -5.993906
+     ],
+     [
+      37.349321,
+      -5.993949
+     ],
+     [
+      37.34996,
+      -5.993822
+     ],
+     [
+      37.351102,
+      -5.993891
+     ],
+     [
+      37.351494,
+      -5.994295
+     ],
+     [
+      37.352333,
+      -5.994348
+     ],
+     [
+      37.352546,
+      -5.994567
+     ],
+     [
+      37.355702,
+      -5.994659
+     ],
+     [
+      37.355775,
+      -5.994555
+     ],
+     [
+      37.355712,
+      -5.994389
+     ],
+     [
+      37.355418,
+      -5.993994
+     ],
+     [
+      37.355465,
+      -5.993723
+     ],
+     [
+      37.355571,
+      -5.993649
+     ],
+     [
+      37.355707,
+      -5.993675
+     ],
+     [
+      37.355803,
+      -5.993795
+     ],
+     [
+      37.355928,
+      -5.994187
+     ],
+     [
+      37.35736,
+      -5.994194
+     ],
+     [
+      37.36076,
+      -5.994009
+     ],
+     [
+      37.361397,
+      -5.994256
+     ],
+     [
+      37.361785,
+      -5.99412
+     ],
+     [
+      37.362031,
+      -5.993643
+     ],
+     [
+      37.362173,
+      -5.993571
+     ],
+     [
+      37.366023,
+      -5.993424
+     ],
+     [
+      37.366294,
+      -5.993307
+     ],
+     [
+      37.36728,
+      -5.993243
+     ],
+     [
+      37.367276,
+      -5.99315
+     ],
+     [
+      37.367336,
+      -5.993146
+     ],
+     [
+      37.367341,
+      -5.993239
+     ],
+     [
+      37.3682,
+      -5.993254
+     ],
+     [
+      37.368423,
+      -5.993165
+     ],
+     [
+      37.368533,
+      -5.993353
+     ],
+     [
+      37.36855,
+      -5.993503
+     ],
+     [
+      37.368375,
+      -5.993831
+     ],
+     [
+      37.368299,
+      -5.994176
+     ],
+     [
+      37.368485,
+      -5.994246
+     ],
+     [
+      37.368637,
+      -5.994172
+     ],
+     [
+      37.368693,
+      -5.993662
+     ],
+     [
+      37.368655,
+      -5.993542
+     ],
+     [
+      37.368776,
+      -5.993458
+     ],
+     [
+      37.36991,
+      -5.993422
+     ],
+     [
+      37.36991,
+      -5.991652
+     ],
+     [
+      37.368258,
+      -5.991465
+     ],
+     [
+      37.368086,
+      -5.991568
+     ],
+     [
+      37.368086,
+      -5.991664
+     ],
+     [
+      37.357201,
+      -5.992129
+     ],
+     [
+      37.357198,
+      -5.992002
+     ],
+     [
+      37.356085,
+      -5.992078
+     ],
+     [
+      37.356085,
+      -5.992172
+     ],
+     [
+      37.356003,
+      -5.992174
+     ],
+     [
+      37.356003,
+      -5.992088
+     ],
+     [
+      37.354183,
+      -5.992189
+     ],
+     [
+      37.354184,
+      -5.992253
+     ],
+     [
+      37.352874,
+      -5.99228
+     ],
+     [
+      37.35206,
+      -5.992429
+     ],
+     [
+      37.349635,
+      -5.992592
+     ],
+     [
+      37.349632,
+      -5.992481
+     ],
+     [
+      37.348134,
+      -5.992521
+     ],
+     [
+      37.347859,
+      -5.992429
+     ],
+     [
+      37.34576,
+      -5.992818
+     ],
+     [
+      37.343842,
+      -5.992818
+     ],
+     [
+      37.342952,
+      -5.992658
+     ],
+     [
+      37.342381,
+      -5.992658
+     ],
+     [
+      37.342015,
+      -5.992818
+     ],
+     [
+      37.340554,
+      -5.992772
+     ],
+     [
+      37.340212,
+      -5.992955
+     ],
+     [
+      37.338934,
+      -5.992955
+     ],
+     [
+      37.338494,
+      -5.992791
+     ],
+     [
+      37.338492,
+      -5.992849
+     ],
+     [
+      37.336869,
+      -5.99292
+     ],
+     [
+      37.336354,
+      -5.993047
+     ],
+     [
+      37.335145,
+      -5.99259
+     ],
+     [
+      37.332679,
+      -5.991448
+     ],
+     [
+      37.330236,
+      -5.990673
+     ],
+     [
+      37.328752,
+      -5.990261
+     ],
+     [
+      37.327451,
+      -5.990033
+     ],
+     [
+      37.322384,
+      -5.988755
+     ],
+     [
+      37.321882,
+      -5.988937
+     ],
+     [
+      37.321128,
+      -5.989394
+     ],
+     [
+      37.318549,
+      -5.991152
+     ],
+     [
+      37.317407,
+      -5.991745
+     ],
+     [
+      37.315534,
+      -5.992918
+     ],
+     [
+      37.315444,
+      -5.993137
+     ],
+     [
+      37.315512,
+      -5.993617
+     ],
+     [
+      37.315741,
+      -5.993891
+     ],
+     [
+      37.316319,
+      -5.99515
+     ],
+     [
+      37.316631,
+      -5.995009
+     ],
+     [
+      37.316562,
+      -5.994713
+     ],
+     [
+      37.319142,
+      -5.99348
+     ],
+     [
+      37.32179,
+      -5.992658
+     ],
+     [
+      37.324461,
+      -5.99227
+     ],
+     [
+      37.325511,
+      -5.992225
+     ],
+     [
+      37.326858,
+      -5.992339
+     ],
+     [
+      37.327234,
+      -5.992663
+     ],
+     [
+      37.327424,
+      -5.992988
+     ],
+     [
+      37.327499,
+      -5.993413
+     ],
+     [
+      37.327494,
+      -5.993762
+     ],
+     [
+      37.327347,
+      -5.994251
+     ],
+     [
+      37.325783,
+      -5.995154
+     ],
+     [
+      37.324484,
+      -5.995745
+     ],
+     [
+      37.323467,
+      -5.996305
+     ],
+     [
+      37.322605,
+      -5.997006
+     ],
+     [
+      37.321878,
+      -5.99725
+     ],
+     [
+      37.321383,
+      -5.997815
+     ],
+     [
+      37.320532,
+      -5.998418
+     ],
+     [
+      37.31938,
+      -5.999562
+     ],
+     [
+      37.318358,
+      -6.000402
+     ],
+     [
+      37.31926,
+      -6.002739
+     ],
+     [
+      37.31957,
+      -6.002859
+     ],
+     [
+      37.319753,
+      -6.003258
+     ],
+     [
+      37.31917,
+      -6.004853
+     ],
+     [
+      37.319567,
+      -6.004853
+     ],
+     [
+      37.320751,
+      -6.001588
+     ],
+     [
+      37.320991,
+      -6.001332
+     ],
+     [
+      37.321331,
+      -6.001349
+     ]
+    ],
+    "from": -9999,
+    "to": 1926,
+    "c": "field",
+    "src": [
+     "S35",
+     "S58"
+    ],
+    "conf": "high",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S35: works on the Tablada cut (Canal de Alfonso XIII) began in 1909, resumed in 1919 and ended in 1926. Legacy data fills it in gradual strips 1909-1926; here water appears at the end of works (1926)."
+   },
+   {
+    "name": "Vega de Triana new channel (land until 1949)",
+    "ring": [
+     [
+      37.370591,
+      -6.023486
+     ],
+     [
+      37.375051,
+      -6.023231
+     ],
+     [
+      37.376555,
+      -6.022901
+     ],
+     [
+      37.378049,
+      -6.02247
+     ],
+     [
+      37.379196,
+      -6.022028
+     ],
+     [
+      37.381015,
+      -6.021587
+     ],
+     [
+      37.382009,
+      -6.021112
+     ],
+     [
+      37.386633,
+      -6.0198
+     ],
+     [
+      37.388908,
+      -6.019022
+     ],
+     [
+      37.388908,
+      -6.017225
+     ],
+     [
+      37.38073,
+      -6.01974
+     ],
+     [
+      37.377558,
+      -6.020898
+     ],
+     [
+      37.376467,
+      -6.021199
+     ],
+     [
+      37.374996,
+      -6.021461
+     ],
+     [
+      37.373466,
+      -6.021628
+     ],
+     [
+      37.371757,
+      -6.021601
+     ],
+     [
+      37.371346,
+      -6.022248
+     ],
+     [
+      37.371145,
+      -6.022798
+     ]
+    ],
+    "from": -9999,
+    "to": 1949,
+    "c": "field",
+    "src": [
+     "S35",
+     "S56"
+    ],
+    "conf": "medium",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S35: the new channel through the Vega de Triana was suspended in 1933 and continued in 1943; the Plan Brackenbury (1927) works ended in 1951 with the lock. 1949 = water year chosen by the owner (scheda S56: works 1930-1948)."
+   },
+   {
+    "name": "Corta de la Cartuja (land until 1982)",
+    "ring": [
+     [
+      37.405816,
+      -6.014179
+     ],
+     [
+      37.41571,
+      -6.011629
+     ],
+     [
+      37.421607,
+      -6.010427
+     ],
+     [
+      37.422561,
+      -6.010298
+     ],
+     [
+      37.424299,
+      -6.009784
+     ],
+     [
+      37.425458,
+      -6.009655
+     ],
+     [
+      37.426923,
+      -6.009225
+     ],
+     [
+      37.428867,
+      -6.008887
+     ],
+     [
+      37.42984,
+      -6.008666
+     ],
+     [
+      37.430725,
+      -6.008546
+     ],
+     [
+      37.433418,
+      -6.007797
+     ],
+     [
+      37.435497,
+      -6.007364
+     ],
+     [
+      37.435497,
+      -6.006888
+     ],
+     [
+      37.43398,
+      -6.006808
+     ],
+     [
+      37.432098,
+      -6.006215
+     ],
+     [
+      37.431653,
+      -6.005872
+     ],
+     [
+      37.42914,
+      -6.006801
+     ],
+     [
+      37.426818,
+      -6.007516
+     ],
+     [
+      37.425102,
+      -6.007831
+     ],
+     [
+      37.424158,
+      -6.008072
+     ],
+     [
+      37.422367,
+      -6.008336
+     ],
+     [
+      37.414232,
+      -6.010298
+     ],
+     [
+      37.413377,
+      -6.010411
+     ],
+     [
+      37.412335,
+      -6.010642
+     ],
+     [
+      37.399994,
+      -6.013818
+     ],
+     [
+      37.388908,
+      -6.017225
+     ],
+     [
+      37.388908,
+      -6.019022
+     ],
+     [
+      37.400902,
+      -6.015526
+     ]
+    ],
+    "from": -9999,
+    "to": 1982,
+    "c": "field",
+    "src": [
+     "S36",
+     "S56",
+     "S57"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S36 confirms a new channel was cut through La Cartuja against floods; the years 1975-1982 are scheda-only (S56, S57, not re-fetched)."
+   },
+   {
+    "name": "Chapina plug (old river entrance closed)",
+    "ring": [
+     [
+      37.389902,
+      -6.007101
+     ],
+     [
+      37.390171,
+      -6.007343
+     ],
+     [
+      37.390492,
+      -6.007295
+     ],
+     [
+      37.390814,
+      -6.007477
+     ],
+     [
+      37.391228,
+      -6.007486
+     ],
+     [
+      37.391515,
+      -6.007207
+     ],
+     [
+      37.391784,
+      -6.006754
+     ],
+     [
+      37.391936,
+      -6.006224
+     ],
+     [
+      37.391964,
+      -6.005797
+     ],
+     [
+      37.391444,
+      -6.005785
+     ],
+     [
+      37.391092,
+      -6.005918
+     ],
+     [
+      37.389932,
+      -6.005265
+     ],
+     [
+      37.389757,
+      -6.005231
+     ],
+     [
+      37.389587,
+      -6.005041
+     ],
+     [
+      37.389318,
+      -6.004956
+     ],
+     [
+      37.389154,
+      -6.004772
+     ],
+     [
+      37.389007,
+      -6.005112
+     ],
+     [
+      37.388897,
+      -6.005659
+     ],
+     [
+      37.388897,
+      -6.006037
+     ],
+     [
+      37.389007,
+      -6.006584
+     ],
+     [
+      37.38909,
+      -6.006792
+     ]
+    ],
+    "from": 1950,
+    "to": 1991.9,
+    "c": "urban",
+    "src": [
+     "S36",
+     "S51"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S36: the river was plugged at Chapina and the plug reopened and moved north (San Jerónimo) with the Expo 92 works. Dates 1948-1950 from the scheda (S51, not re-fetched; the Revista Triana puts the final cut at the end of 1950); end = Expo works, owner decision 1991.9."
+   },
+   {
+    "name": "Delicias elbow filled",
+    "ring": [
+     [
+      37.371535,
+      -6.021597
+     ],
+     [
+      37.371308,
+      -6.021492
+     ],
+     [
+      37.371193,
+      -6.021274
+     ],
+     [
+      37.371216,
+      -6.020689
+     ],
+     [
+      37.371346,
+      -6.020208
+     ],
+     [
+      37.371637,
+      -6.019621
+     ],
+     [
+      37.371662,
+      -6.018945
+     ],
+     [
+      37.371853,
+      -6.018545
+     ],
+     [
+      37.371865,
+      -6.017719
+     ],
+     [
+      37.372081,
+      -6.017092
+     ],
+     [
+      37.372068,
+      -6.016704
+     ],
+     [
+      37.371986,
+      -6.016367
+     ],
+     [
+      37.372068,
+      -6.016
+     ],
+     [
+      37.372081,
+      -6.015614
+     ],
+     [
+      37.371975,
+      -6.015224
+     ],
+     [
+      37.371961,
+      -6.014293
+     ],
+     [
+      37.371867,
+      -6.014042
+     ],
+     [
+      37.371853,
+      -6.013757
+     ],
+     [
+      37.371657,
+      -6.013151
+     ],
+     [
+      37.371639,
+      -6.012818
+     ],
+     [
+      37.371454,
+      -6.012364
+     ],
+     [
+      37.371425,
+      -6.012014
+     ],
+     [
+      37.371114,
+      -6.011099
+     ],
+     [
+      37.371104,
+      -6.010809
+     ],
+     [
+      37.371018,
+      -6.010599
+     ],
+     [
+      37.370995,
+      -6.010273
+     ],
+     [
+      37.370903,
+      -6.009975
+     ],
+     [
+      37.370888,
+      -6.00907
+     ],
+     [
+      37.370783,
+      -6.008726
+     ],
+     [
+      37.370794,
+      -6.007308
+     ],
+     [
+      37.370674,
+      -6.006717
+     ],
+     [
+      37.370676,
+      -6.004931
+     ],
+     [
+      37.370793,
+      -6.004495
+     ],
+     [
+      37.370781,
+      -6.004111
+     ],
+     [
+      37.370674,
+      -6.003728
+     ],
+     [
+      37.370676,
+      -6.002499
+     ],
+     [
+      37.370794,
+      -6.001939
+     ],
+     [
+      37.370783,
+      -5.997048
+     ],
+     [
+      37.370888,
+      -5.996708
+     ],
+     [
+      37.370902,
+      -5.996066
+     ],
+     [
+      37.370995,
+      -5.995769
+     ],
+     [
+      37.371018,
+      -5.995444
+     ],
+     [
+      37.371208,
+      -5.99497
+     ],
+     [
+      37.371253,
+      -5.994737
+     ],
+     [
+      37.371429,
+      -5.994425
+     ],
+     [
+      37.371651,
+      -5.994253
+     ],
+     [
+      37.372134,
+      -5.994212
+     ],
+     [
+      37.372358,
+      -5.99409
+     ],
+     [
+      37.373077,
+      -5.994089
+     ],
+     [
+      37.373083,
+      -5.993816
+     ],
+     [
+      37.373135,
+      -5.993655
+     ],
+     [
+      37.373262,
+      -5.993507
+     ],
+     [
+      37.373428,
+      -5.99345
+     ],
+     [
+      37.372621,
+      -5.993453
+     ],
+     [
+      37.372062,
+      -5.99335
+     ],
+     [
+      37.371265,
+      -5.993331
+     ],
+     [
+      37.370044,
+      -5.99338
+     ],
+     [
+      37.370044,
+      -5.993421
+     ],
+     [
+      37.369737,
+      -5.993428
+     ],
+     [
+      37.369851,
+      -5.993488
+     ],
+     [
+      37.369953,
+      -5.99361
+     ],
+     [
+      37.370017,
+      -5.993903
+     ],
+     [
+      37.369963,
+      -5.99437
+     ],
+     [
+      37.369761,
+      -5.994866
+     ],
+     [
+      37.369754,
+      -5.995385
+     ],
+     [
+      37.369654,
+      -5.99567
+     ],
+     [
+      37.369647,
+      -5.996211
+     ],
+     [
+      37.369535,
+      -5.996591
+     ],
+     [
+      37.369548,
+      -6.001718
+     ],
+     [
+      37.369441,
+      -6.0021
+     ],
+     [
+      37.369422,
+      -6.002432
+     ],
+     [
+      37.369321,
+      -6.002754
+     ],
+     [
+      37.369333,
+      -6.003403
+     ],
+     [
+      37.369438,
+      -6.003746
+     ],
+     [
+      37.369433,
+      -6.00425
+     ],
+     [
+      37.369321,
+      -6.004629
+     ],
+     [
+      37.369438,
+      -6.005065
+     ],
+     [
+      37.36944,
+      -6.005759
+     ],
+     [
+      37.36932,
+      -6.006233
+     ],
+     [
+      37.36932,
+      -6.00703
+     ],
+     [
+      37.369429,
+      -6.007398
+     ],
+     [
+      37.36944,
+      -6.007693
+     ],
+     [
+      37.369537,
+      -6.007961
+     ],
+     [
+      37.369547,
+      -6.00903
+     ],
+     [
+      37.369632,
+      -6.009242
+     ],
+     [
+      37.369655,
+      -6.009569
+     ],
+     [
+      37.369747,
+      -6.009867
+     ],
+     [
+      37.369762,
+      -6.01131
+     ],
+     [
+      37.369933,
+      -6.011618
+     ],
+     [
+      37.369977,
+      -6.01185
+     ],
+     [
+      37.370169,
+      -6.012324
+     ],
+     [
+      37.370191,
+      -6.01265
+     ],
+     [
+      37.370488,
+      -6.013665
+     ],
+     [
+      37.370513,
+      -6.014124
+     ],
+     [
+      37.370708,
+      -6.014617
+     ],
+     [
+      37.370724,
+      -6.015735
+     ],
+     [
+      37.370607,
+      -6.016285
+     ],
+     [
+      37.370598,
+      -6.017628
+     ],
+     [
+      37.370404,
+      -6.018044
+     ],
+     [
+      37.370393,
+      -6.018554
+     ],
+     [
+      37.37019,
+      -6.018981
+     ],
+     [
+      37.370175,
+      -6.019369
+     ],
+     [
+      37.370084,
+      -6.019651
+     ],
+     [
+      37.370059,
+      -6.019927
+     ],
+     [
+      37.369692,
+      -6.020477
+     ],
+     [
+      37.369486,
+      -6.020966
+     ],
+     [
+      37.369212,
+      -6.02119
+     ],
+     [
+      37.369043,
+      -6.021481
+     ],
+     [
+      37.368836,
+      -6.021558
+     ]
+    ],
+    "from": 1950,
+    "to": 2027,
+    "c": "urban",
+    "src": [],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). Legacy \"not verified\" (water_sevilla.py): no source found."
+   },
+   {
+    "name": "Chapina-canal link (water until 1948)",
+    "ring": [
+     [
+      37.388676,
+      -6.017296
+     ],
+     [
+      37.388507,
+      -6.017293
+     ],
+     [
+      37.38838,
+      -6.017216
+     ],
+     [
+      37.388286,
+      -6.017084
+     ],
+     [
+      37.388237,
+      -6.016928
+     ],
+     [
+      37.388259,
+      -6.016571
+     ],
+     [
+      37.388438,
+      -6.016263
+     ],
+     [
+      37.390962,
+      -6.014286
+     ],
+     [
+      37.394304,
+      -6.011153
+     ],
+     [
+      37.394486,
+      -6.011088
+     ],
+     [
+      37.395693,
+      -6.011071
+     ],
+     [
+      37.395693,
+      -6.006629
+     ],
+     [
+      37.395736,
+      -6.006416
+     ],
+     [
+      37.395855,
+      -6.006252
+     ],
+     [
+      37.394999,
+      -6.006942
+     ],
+     [
+      37.39346,
+      -6.007381
+     ],
+     [
+      37.393411,
+      -6.007093
+     ],
+     [
+      37.393486,
+      -6.007088
+     ],
+     [
+      37.393542,
+      -6.006944
+     ],
+     [
+      37.393467,
+      -6.006897
+     ],
+     [
+      37.393382,
+      -6.006986
+     ],
+     [
+      37.39339,
+      -6.007034
+     ],
+     [
+      37.393268,
+      -6.007066
+     ],
+     [
+      37.393352,
+      -6.00758
+     ],
+     [
+      37.392176,
+      -6.007917
+     ],
+     [
+      37.392288,
+      -6.008106
+     ],
+     [
+      37.392304,
+      -6.008367
+     ],
+     [
+      37.392227,
+      -6.008563
+     ],
+     [
+      37.391984,
+      -6.008816
+     ],
+     [
+      37.391972,
+      -6.009949
+     ],
+     [
+      37.391929,
+      -6.010116
+     ],
+     [
+      37.391839,
+      -6.010251
+     ],
+     [
+      37.390925,
+      -6.011168
+     ],
+     [
+      37.386322,
+      -6.014756
+     ],
+     [
+      37.384837,
+      -6.015777
+     ],
+     [
+      37.384819,
+      -6.018096
+     ],
+     [
+      37.384673,
+      -6.018425
+     ],
+     [
+      37.384397,
+      -6.018612
+     ]
+    ],
+    "from": -9999,
+    "to": 1948,
+    "c": "field",
+    "src": [
+     "S51"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). From the 1956 IGN aerial photo (owner); 1948-1990 window is legacy [L]."
+   },
+   {
+    "name": "Chapina-canal link (filled for Expo)",
+    "ring": [
+     [
+      37.388676,
+      -6.017296
+     ],
+     [
+      37.388507,
+      -6.017293
+     ],
+     [
+      37.38838,
+      -6.017216
+     ],
+     [
+      37.388286,
+      -6.017084
+     ],
+     [
+      37.388237,
+      -6.016928
+     ],
+     [
+      37.388259,
+      -6.016571
+     ],
+     [
+      37.388438,
+      -6.016263
+     ],
+     [
+      37.390962,
+      -6.014286
+     ],
+     [
+      37.394304,
+      -6.011153
+     ],
+     [
+      37.394486,
+      -6.011088
+     ],
+     [
+      37.395693,
+      -6.011071
+     ],
+     [
+      37.395693,
+      -6.006629
+     ],
+     [
+      37.395736,
+      -6.006416
+     ],
+     [
+      37.395855,
+      -6.006252
+     ],
+     [
+      37.394999,
+      -6.006942
+     ],
+     [
+      37.39346,
+      -6.007381
+     ],
+     [
+      37.393411,
+      -6.007093
+     ],
+     [
+      37.393486,
+      -6.007088
+     ],
+     [
+      37.393542,
+      -6.006944
+     ],
+     [
+      37.393467,
+      -6.006897
+     ],
+     [
+      37.393382,
+      -6.006986
+     ],
+     [
+      37.39339,
+      -6.007034
+     ],
+     [
+      37.393268,
+      -6.007066
+     ],
+     [
+      37.393352,
+      -6.00758
+     ],
+     [
+      37.392176,
+      -6.007917
+     ],
+     [
+      37.392288,
+      -6.008106
+     ],
+     [
+      37.392304,
+      -6.008367
+     ],
+     [
+      37.392227,
+      -6.008563
+     ],
+     [
+      37.391984,
+      -6.008816
+     ],
+     [
+      37.391972,
+      -6.009949
+     ],
+     [
+      37.391929,
+      -6.010116
+     ],
+     [
+      37.391839,
+      -6.010251
+     ],
+     [
+      37.390925,
+      -6.011168
+     ],
+     [
+      37.386322,
+      -6.014756
+     ],
+     [
+      37.384837,
+      -6.015777
+     ],
+     [
+      37.384819,
+      -6.018096
+     ],
+     [
+      37.384673,
+      -6.018425
+     ],
+     [
+      37.384397,
+      -6.018612
+     ]
+    ],
+    "from": 1990,
+    "to": 2027,
+    "c": "urban",
+    "src": [
+     "S36"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). S36: Expo works reopened the Chapina plug; 1990 is the legacy filling year."
+   },
+   {
+    "name": "Old northern meander (San Jerónimo), land from 1987",
+    "ring": [
+     [
+      37.434261,
+      -6.005254
+     ],
+     [
+      37.43252,
+      -6.004693
+     ],
+     [
+      37.431357,
+      -6.003715
+     ],
+     [
+      37.430297,
+      -6.002189
+     ],
+     [
+      37.429222,
+      -5.999961
+     ],
+     [
+      37.427435,
+      -5.995494
+     ],
+     [
+      37.426878,
+      -5.993933
+     ],
+     [
+      37.426815,
+      -5.994176
+     ],
+     [
+      37.426415,
+      -5.99445
+     ],
+     [
+      37.426182,
+      -5.99522
+     ],
+     [
+      37.425806,
+      -5.995389
+     ],
+     [
+      37.426028,
+      -5.995431
+     ],
+     [
+      37.426177,
+      -5.995606
+     ],
+     [
+      37.428188,
+      -6.000663
+     ],
+     [
+      37.429318,
+      -6.003015
+     ],
+     [
+      37.430561,
+      -6.004809
+     ],
+     [
+      37.431199,
+      -6.005399
+     ],
+     [
+      37.431258,
+      -6.005606
+     ],
+     [
+      37.431233,
+      -6.005823
+     ],
+     [
+      37.431129,
+      -6.006
+     ],
+     [
+      37.431005,
+      -6.006083
+     ],
+     [
+      37.432546,
+      -6.005542
+     ],
+     [
+      37.434905,
+      -6.005424
+     ],
+     [
+      37.435816,
+      -6.005315
+     ]
+    ],
+    "from": 1987,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S36"
+    ],
+    "conf": "low",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). Legacy owner decision; S36: the San Jerónimo meander was incorporated into the dársena with the Expo works."
+   },
+   {
+    "name": "Expo 92 lake (water from 1992)",
+    "ring": [
+     [
+      37.408515,
+      -6.000555
+     ],
+     [
+      37.408447,
+      -6.000717
+     ],
+     [
+      37.408523,
+      -6.000749
+     ],
+     [
+      37.408594,
+      -6.000933
+     ],
+     [
+      37.408636,
+      -6.00096
+     ],
+     [
+      37.408744,
+      -6.000958
+     ],
+     [
+      37.408814,
+      -6.000834
+     ],
+     [
+      37.408791,
+      -6.000924
+     ],
+     [
+      37.408861,
+      -6.001153
+     ],
+     [
+      37.408903,
+      -6.001213
+     ],
+     [
+      37.408974,
+      -6.001222
+     ],
+     [
+      37.409154,
+      -6.000938
+     ],
+     [
+      37.409262,
+      -6.000842
+     ],
+     [
+      37.40927,
+      -6.000758
+     ],
+     [
+      37.409217,
+      -6.000605
+     ],
+     [
+      37.409234,
+      -6.000463
+     ],
+     [
+      37.40929,
+      -6.000428
+     ],
+     [
+      37.409313,
+      -6.000186
+     ],
+     [
+      37.409347,
+      -6.000128
+     ],
+     [
+      37.409459,
+      -6.000066
+     ],
+     [
+      37.409656,
+      -6.000083
+     ],
+     [
+      37.409791,
+      -6.000016
+     ],
+     [
+      37.41006,
+      -5.999672
+     ],
+     [
+      37.409952,
+      -5.999566
+     ],
+     [
+      37.409875,
+      -5.999641
+     ],
+     [
+      37.409771,
+      -5.99991
+     ],
+     [
+      37.409727,
+      -5.999944
+     ],
+     [
+      37.409438,
+      -5.999867
+     ],
+     [
+      37.40936,
+      -5.999925
+     ],
+     [
+      37.409238,
+      -5.999858
+     ],
+     [
+      37.40927,
+      -5.999621
+     ],
+     [
+      37.409218,
+      -5.999371
+     ],
+     [
+      37.409254,
+      -5.999216
+     ],
+     [
+      37.409115,
+      -5.999086
+     ],
+     [
+      37.408965,
+      -5.999077
+     ],
+     [
+      37.408733,
+      -5.999313
+     ],
+     [
+      37.408597,
+      -5.999218
+     ],
+     [
+      37.408893,
+      -5.998822
+     ],
+     [
+      37.408829,
+      -5.998738
+     ],
+     [
+      37.408735,
+      -5.99878
+     ],
+     [
+      37.408791,
+      -5.998546
+     ],
+     [
+      37.408758,
+      -5.998372
+     ],
+     [
+      37.408625,
+      -5.998226
+     ],
+     [
+      37.408383,
+      -5.998123
+     ],
+     [
+      37.40824,
+      -5.998169
+     ],
+     [
+      37.408204,
+      -5.998292
+     ],
+     [
+      37.408278,
+      -5.998405
+     ],
+     [
+      37.408261,
+      -5.998524
+     ],
+     [
+      37.408576,
+      -5.998905
+     ],
+     [
+      37.408472,
+      -5.998997
+     ],
+     [
+      37.408431,
+      -5.999119
+     ],
+     [
+      37.408034,
+      -5.998941
+     ],
+     [
+      37.408003,
+      -5.999078
+     ],
+     [
+      37.407861,
+      -5.999141
+     ],
+     [
+      37.407811,
+      -5.999088
+     ],
+     [
+      37.407564,
+      -5.999021
+     ],
+     [
+      37.407544,
+      -5.998957
+     ],
+     [
+      37.407341,
+      -5.999018
+     ],
+     [
+      37.407335,
+      -5.999092
+     ],
+     [
+      37.407124,
+      -5.999224
+     ],
+     [
+      37.406994,
+      -5.999602
+     ],
+     [
+      37.406866,
+      -5.999764
+     ],
+     [
+      37.406849,
+      -5.999851
+     ],
+     [
+      37.406781,
+      -5.999874
+     ],
+     [
+      37.406727,
+      -5.999954
+     ],
+     [
+      37.406584,
+      -5.999981
+     ],
+     [
+      37.406231,
+      -6.000238
+     ],
+     [
+      37.406074,
+      -6.00032
+     ],
+     [
+      37.40596,
+      -6.000288
+     ],
+     [
+      37.405866,
+      -6.000377
+     ],
+     [
+      37.405898,
+      -6.000531
+     ],
+     [
+      37.40616,
+      -6.000688
+     ],
+     [
+      37.406222,
+      -6.000766
+     ],
+     [
+      37.406238,
+      -6.000906
+     ],
+     [
+      37.406311,
+      -6.000958
+     ],
+     [
+      37.406399,
+      -6.00092
+     ],
+     [
+      37.406421,
+      -6.000859
+     ],
+     [
+      37.406318,
+      -6.000446
+     ],
+     [
+      37.406868,
+      -6.000235
+     ],
+     [
+      37.407136,
+      -5.999981
+     ],
+     [
+      37.407245,
+      -5.999988
+     ],
+     [
+      37.407274,
+      -5.999951
+     ],
+     [
+      37.407469,
+      -6.000054
+     ],
+     [
+      37.407499,
+      -6.000097
+     ],
+     [
+      37.407453,
+      -6.000197
+     ],
+     [
+      37.407362,
+      -6.000245
+     ],
+     [
+      37.407359,
+      -6.000352
+     ],
+     [
+      37.407491,
+      -6.000521
+     ],
+     [
+      37.407516,
+      -6.00062
+     ],
+     [
+      37.407473,
+      -6.000799
+     ],
+     [
+      37.407331,
+      -6.000952
+     ],
+     [
+      37.407262,
+      -6.000923
+     ],
+     [
+      37.407158,
+      -6.001009
+     ],
+     [
+      37.40696,
+      -6.000965
+     ],
+     [
+      37.406915,
+      -6.001046
+     ],
+     [
+      37.406809,
+      -6.001085
+     ],
+     [
+      37.40653,
+      -6.001051
+     ],
+     [
+      37.4064,
+      -6.001124
+     ],
+     [
+      37.406414,
+      -6.001205
+     ],
+     [
+      37.406711,
+      -6.001336
+     ],
+     [
+      37.4068,
+      -6.001208
+     ],
+     [
+      37.406953,
+      -6.001158
+     ],
+     [
+      37.407134,
+      -6.001225
+     ],
+     [
+      37.407689,
+      -6.001031
+     ],
+     [
+      37.407736,
+      -6.000837
+     ],
+     [
+      37.407629,
+      -6.000689
+     ],
+     [
+      37.407637,
+      -6.000651
+     ],
+     [
+      37.407719,
+      -6.000649
+     ],
+     [
+      37.407763,
+      -6.000493
+     ],
+     [
+      37.40756,
+      -6.000419
+     ],
+     [
+      37.4076,
+      -6.000384
+     ],
+     [
+      37.407795,
+      -6.000447
+     ],
+     [
+      37.407908,
+      -6.000622
+     ],
+     [
+      37.408064,
+      -6.000618
+     ],
+     [
+      37.408136,
+      -6.000479
+     ],
+     [
+      37.408024,
+      -6.000353
+     ],
+     [
+      37.407928,
+      -6.000156
+     ],
+     [
+      37.407806,
+      -6.000042
+     ],
+     [
+      37.408152,
+      -6.000125
+     ],
+     [
+      37.408217,
+      -6.000057
+     ],
+     [
+      37.408336,
+      -6.000044
+     ],
+     [
+      37.408506,
+      -5.999789
+     ],
+     [
+      37.40853,
+      -5.999806
+     ],
+     [
+      37.408516,
+      -6.000022
+     ],
+     [
+      37.409047,
+      -6.000021
+     ],
+     [
+      37.409016,
+      -6.000093
+     ],
+     [
+      37.40903,
+      -6.000187
+     ],
+     [
+      37.409137,
+      -6.000364
+     ],
+     [
+      37.409112,
+      -6.000584
+     ],
+     [
+      37.409005,
+      -6.000779
+     ],
+     [
+      37.408964,
+      -6.000953
+     ],
+     [
+      37.408926,
+      -6.00064
+     ],
+     [
+      37.408735,
+      -6.000504
+     ]
+    ],
+    "from": -9999,
+    "to": 1992,
+    "c": "field",
+    "src": [
+     "S16"
+    ],
+    "conf": "medium",
+    "note": "Ring from data_sevilla_src/water_src.json (owner georeferencing). Owner decision 23 Oct: lake present from 1992 (Expo opens 20 April 1992, S16)."
+   }
+  ],
+  "bridges": [
+   {
+    "name": "San Telmo Bridge",
+    "line": [
+     [
+      37.380299,
+      -5.99724
+     ],
+     [
+      37.381186,
+      -5.99551
+     ]
+    ],
+    "w": 14,
+    "y": 1931,
+    "d": null,
+    "src": [],
+    "conf": "low",
+    "note": "Year 1931 from the legacy bridges_sevilla.py ([V] in a source file that is no longer in the repo): not re-verified. S36 only confirms the bridge exists over the dársena."
+   },
+   {
+    "name": "Los Remedios Bridge",
+    "line": [
+     [
+      37.374922,
+      -5.993751
+     ],
+     [
+      37.375365,
+      -5.99194
+     ]
+    ],
+    "w": 20,
+    "y": 1968,
+    "d": null,
+    "src": [],
+    "conf": "low",
+    "note": "Year 1968 from the legacy bridges_sevilla.py, not re-verified."
+   },
+   {
+    "name": "Delicias Bridge",
+    "line": [
+     [
+      37.367769,
+      -5.996019
+     ],
+     [
+      37.367513,
+      -5.99018
+     ]
+    ],
+    "w": 18,
+    "y": 1990,
+    "d": null,
+    "src": [
+     "S16"
+    ],
+    "conf": "low",
+    "note": "S16: built for Expo 92 (opening 1992); 1990 = owner decision 22 Oct (sources say 1990 or 1992)."
+   },
+   {
+    "name": "Cachorro Bridge (Cristo de la Expiración)",
+    "line": [
+     [
+      37.390615,
+      -6.00406
+     ],
+     [
+      37.390237,
+      -6.00774
+     ]
+    ],
+    "w": 20,
+    "y": 1991,
+    "d": null,
+    "src": [
+     "S16"
+    ],
+    "conf": "low",
+    "note": "S16: built for Expo 92; 1991 is the legacy year."
+   },
+   {
+    "name": "Cartuja Footbridge",
+    "line": [
+     [
+      37.395795,
+      -6.003692
+     ],
+     [
+      37.397241,
+      -6.006118
+     ]
+    ],
+    "w": 10,
+    "y": 1991,
+    "d": null,
+    "src": [
+     "S16"
+    ],
+    "conf": "low",
+    "note": "S16: built for Expo 92; 1991 is the legacy owner decision."
+   }
+  ],
+  "floods": []
  },
  "landmarks": [
   {
    "name": "Giralda",
-   "kind": "TODO",
+   "kind": "tower_square",
    "at": [
     37.386191,
     -5.992555
    ],
    "footprint": "auto",
    "params": {
-    "h": 102
+    "w": 13,
+    "h": 96,
+    "roof": "lantern",
+    "belfry": true,
+    "c": "limestone"
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1184,
+     "y1": 1198,
+     "groups": [
+      "found",
+      "body"
+     ]
+    },
+    {
+     "y": 1558,
+     "y1": 1568,
+     "groups": [
+      "belfry",
+      "roof",
+      "spire",
+      "dome",
+      "lantern",
+      "merlons"
+     ]
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 102 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S3",
+    "S4"
+   ],
+   "note": "Almohad minaret ordered 1184, finished 10 March 1198 (S3); Renaissance belfry 1558-1568 by Hernán Ruiz the Younger (S3), ~95-96 m with the belfry (S3). Width 13 m and the body/belfry split are approximations [Guessing]; the 1356-1400 loss of the spheres is not modelled."
   },
   {
    "name": "Great Mosque",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.386426,
     -5.993312
    ],
    "footprint": "auto",
    "params": {
-    "h": 16
+    "h": 16,
+    "roof": "flat",
+    "c": "limestone"
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1182,
+     "y1": 1198
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 16 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S4"
+   ],
+   "note": "S4: the new mosque was dedicated in 1182 and completed in 1198 (phase 1182-1198); \"Christianized mosque\" 1248-1401; city leaders decided to replace it in July 1401. Demolition window 1402-1434 is a modelling choice tied to the Cathedral works (S4: work began 1402). Height 16 m = legacy [Guessing].",
+   "demolished": [
+    1402,
+    1434
+   ]
   },
   {
    "name": "Cathedral",
-   "kind": "TODO",
+   "kind": "cathedral",
    "at": [
     37.385796,
     -5.993095
    ],
    "footprint": "auto",
    "params": {
-    "h": 42
+    "nave_h": 38,
+    "aisle_h": 25,
+    "facade_towers": 0,
+    "tower_ref": "Giralda"
    },
    "phases": [
     {
-     "y": 1434
+     "y": 1402,
+     "y1": 1506
+    },
+    {
+     "y": 1513,
+     "y1": 1519,
+     "groups": [
+      "crossing"
+     ]
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1434 (primo anno della scheda), altezza 42 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S4",
+    "S1"
+   ],
+   "note": "S4: work began in 1402 and continued for over a century; the crossing lantern (designed 1513) was completed in 1519; \"one of the largest churches in the world and the largest Gothic cathedral\". S1: begun after 1401 and finished in 1506. Nave 38 m = [Guessing]. The legacy/scheda start 1434 (Ysambert in charge) is replaced by 1402."
   },
   {
    "name": "Torre del Oro",
-   "kind": "TODO",
+   "kind": "tower_round",
    "at": [
     37.38242,
     -5.99623
    ],
    "footprint": "auto",
    "params": {
-    "h": 38
+    "rad": 7.5,
+    "h": 36,
+    "top": "crenel",
+    "seg": 12,
+    "c": "sand"
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1220,
+     "y1": 1221
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 38 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S5"
+   ],
+   "note": "S5: built 1220-1221 with a twelve-sided base; third level rebuilt in 1760 after the 1755 earthquake. Radius 7.5 m and height 36 m are approximations [Guessing] (legacy 38 m). The 1760 top is not modelled as a second phase."
   },
   {
    "name": "Real Alcázar",
-   "kind": "TODO",
+   "kind": "palace_courtyard",
    "at": [
     37.383088,
     -5.990301
    ],
    "footprint": "auto",
    "params": {
-    "h": 20
+    "l": 120,
+    "w": 100,
+    "h": 14,
+    "wing_w": 16,
+    "corner_towers": true
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1150,
+     "y1": 1200
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 20 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S6"
+   ],
+   "note": "S6: the Almohads developed Seville as capital from c.1150 and built the Al-Muwarak palace on the Alcázar site; the Palace of Peter dates from 1364-1366 (inscriptions, S6, not modelled as a phase). The 1150-1200 span is a modelling choice [Guessing]; no cadastre building within 30 m: params 120 x 100 m, orientation unset [Guessing]."
   },
   {
    "name": "Maestranza Bullring",
-   "kind": "TODO",
+   "kind": "bullring",
    "at": [
     37.385958,
     -5.99805
@@ -250,312 +5202,495 @@
    },
    "phases": [
     {
-     "y": 1761
+     "y": 1761,
+     "y1": 1881
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1761 (primo anno della scheda), altezza 16 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S37",
+    "S1",
+    "S60"
+   ],
+   "note": "S37: inner portal built 1761-1765; construction paralysed 1766-1784; architect commissioned in 1876 to finish it (the 19th century). S1: designed in 1761. The end 1881 is from the scheda (S60, not re-fetched). Height 16 m = legacy."
   },
   {
    "name": "Pontoon bridge",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.386535,
     -6.002757
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 3
+    "l": 150,
+    "w": 5.5,
+    "h": 1.4,
+    "roof": "flat",
+    "c": "wood",
+    "ang": 0
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1171,
+     "y1": 1172
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 3 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S9",
+    "S62"
+   ],
+   "note": "S9: pontoon bridge first built by the Moors in the 12th century, lasted ~700 years until the Isabel II bridge (1852). 1171 is from the scheda (S62, not re-fetched). Axis and length approximated [Guessing]; box model.",
+   "demolished": 1852
   },
   {
    "name": "Isabel II Bridge",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     37.386327,
     -6.002388
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 10
+    "w": 16.3,
+    "deck_z": 8,
+    "n": 3,
+    "c": "steel",
+    "deck_c": "iron"
    },
    "phases": [
     {
-     "y": 1845
+     "y": 1845,
+     "y1": 1852
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1845 (primo anno della scheda), altezza 10 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S9",
+    "S39"
+   ],
+   "note": "S9: completed in 1852, first solid bridge in Seville; S39: works began in 1845 when the boat bridge was moved. Iron bridge modelled with the stone-arch preset (3 spans) [Guessing]; length/width from the OSM outline.",
+   "line": [
+    [
+     37.385719,
+     -6.002923
+    ],
+    [
+     37.386934,
+     -6.001853
+    ]
+   ]
   },
   {
    "name": "Macarena walls",
-   "kind": "TODO",
+   "kind": "wall_segment",
    "at": [
     37.401573,
     -5.987273
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 16
+    "h": 10,
+    "w": 4,
+    "towers_every_m": 45,
+    "tower": "square",
+    "tower_h": 13
    },
    "phases": [
     {
-     "y": 1248
+     "y": 1091,
+     "y1": 1147
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 16 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S10",
+    "S55"
+   ],
+   "note": "S10: the Puerta de la Macarena is of Almoravid origin and curtain walls in the Macarena survive; scheda: Almoravid circuit 1120-1140, Almohad raising 1170-1210 (S55). Span = Almoravid rule of Seville 1091-1147 (S29), modelling choice; line = a stretch of the legacy 1248 ring [Guessing]. Not demolished.",
+   "line": [
+    [
+     37.402749,
+     -5.987329
+    ],
+    [
+     37.401754,
+     -5.986086
+    ]
+   ]
   },
   {
    "name": "Plaza Nueva",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.38915,
     -5.996275
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 5
+    "l": 90,
+    "w": 120,
+    "h": 0.4,
+    "roof": "flat",
+    "c": "stone"
    },
    "phases": [
     {
-     "y": 1857
+     "y": 1852,
+     "y1": 1856
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1857 (primo anno della scheda), altezza 5 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S11",
+    "S59"
+   ],
+   "note": "S11: construction started 1852, completed 1856. CONFLICT: the scheda (S59, not re-fetched) says demolition 1848, completed 1853, inaugurated 1857. Flat paving block 90 x 120 m from the legacy PLAZAS box."
   },
   {
    "name": "Plaza de España",
-   "kind": "TODO",
+   "kind": "palace_courtyard",
    "at": [
     37.377166,
     -5.9869
    ],
    "footprint": "auto",
    "params": {
-    "h": 40
+    "l": 180,
+    "w": 70,
+    "h": 22,
+    "wing_w": 20,
+    "corner_towers": true,
+    "tower_top": "dome"
    },
    "phases": [
     {
-     "y": 1914
+     "y": 1914,
+     "y1": 1929
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1914 (primo anno della scheda), altezza 40 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S15",
+    "S40",
+    "S61"
+   ],
+   "note": "S15: \"built in 1928 for the Ibero-American Exposition of 1929\"; S40: built for the 1929 Exposition. The 1914 start is the scheda/BOE project year (S61, not re-fetched) -> conf low. Real plan is a semicircle: the courtyard preset (180 x 70 m, orientation unset) is an approximation [Guessing]; no cadastre building within 30 m."
   },
   {
    "name": "Los Remedios",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.376062,
     -6.001009
    ],
    "footprint": "auto",
    "params": {
-    "h": 20
+    "roof": "flat"
    },
    "phases": [
     {
-     "y": 1950
+     "y": 1960,
+     "y1": 1968
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1950 (primo anno della scheda), altezza 20 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S24"
+   ],
+   "note": "District anchor (label), not a monument: footprint = the cadastre building at the point, so the shape does not change. S24: large-scale urbanization in the 1960s, the city's first planned neighbourhood; Avenida de la República Argentina built 1945."
   },
   {
    "name": "Cartuja Island",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.405192,
     -6.003723
    ],
    "footprint": "auto",
    "params": {
-    "h": 10
+    "l": 30,
+    "w": 18,
+    "h": 0.15,
+    "roof": "flat",
+    "c": "stone"
    },
    "phases": [
     {
-     "y": 1982
+     "y": 1989,
+     "y1": 1992.3
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1982 (primo anno della scheda), altezza 10 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S16",
+    "S64"
+   ],
+   "note": "Expo 92 site anchor (label): no cadastre building within 30 m, so only a 0.15 m slab is built (no invented building). S16: 215-hectare Expo site on the Isla de La Cartuja, 20 April - 12 October 1992; works 1987-1992 per the scheda (S64, not re-fetched), 1989 start is the bridge works year (S17-S19)."
   },
   {
    "name": "Barqueta Bridge",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     37.404366,
     -5.9973
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 38
+    "w": 21.5,
+    "deck_z": 9,
+    "n": 1,
+    "c": "white",
+    "deck_c": "white",
+    "rise": 6
    },
    "phases": [
     {
-     "y": 1989
+     "y": 1989,
+     "y1": 1992
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1989 (primo anno della scheda), altezza 38 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S18"
+   ],
+   "note": "S18: built 1989-1992 for Expo 92. The real bridge is a single steel arch with hangers: modelled with the arch preset, no hangers [Guessing]; axis from the OSM outline.",
+   "line": [
+    [
+     37.404947,
+     -5.998323
+    ],
+    [
+     37.403786,
+     -5.996277
+    ]
+   ]
   },
   {
    "name": "Alamillo Bridge",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     37.413352,
     -5.992498
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 60
+    "w": 24,
+    "deck_z": 10,
+    "n": 1,
+    "c": "white",
+    "deck_c": "white",
+    "rise": 6
    },
    "phases": [
     {
-     "y": 1987
+     "y": 1989,
+     "y1": 1992
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1987 (primo anno della scheda), altezza 60 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S17"
+   ],
+   "note": "S17: construction began in 1989, completed 1992 (design concept 1987). The cable-stayed pylon (140 m in the legacy) cannot be made by a preset: deck only; the bespoke legacy geometry in bridges_sevilla.py remains the model of record.",
+   "line": [
+    [
+     37.413363,
+     -5.992048
+    ],
+    [
+     37.413391,
+     -5.989221
+    ]
+   ]
   },
   {
    "name": "Centenario Bridge",
-   "kind": "TODO",
+   "kind": "bridge_arches",
    "at": [
     37.35046,
     -5.994883
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 105
+    "w": 22.9,
+    "deck_z": 45,
+    "n": 1,
+    "rise": 4,
+    "c": "concrete"
    },
    "phases": [
     {
-     "y": 1991
+     "y": 1989,
+     "y1": 1991.87
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1991 (primo anno della scheda), altezza 105 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S19"
+   ],
+   "note": "S19: works 1989-1991, opened 15 November 1991 (1991.87); 565 m long, main span 265 m, maximum height 102 m. Deck only with the arch preset; pylon/cables not modelled (see bridges_sevilla.py).",
+   "line": [
+    [
+     37.348641,
+     -5.992726
+    ],
+    [
+     37.35235,
+     -5.997122
+    ]
+   ]
   },
   {
    "name": "Metropol Parasol",
-   "kind": "TODO",
+   "kind": "park_structure",
    "at": [
     37.393087,
     -5.991784
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 32
+    "kind": "pergola",
+    "l": 150,
+    "w": 70,
+    "h": 26,
+    "c": "wood"
    },
    "phases": [
     {
-     "y": 2010.5
+     "y": 2005.5,
+     "y1": 2011.3
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 2010.5 (primo anno della scheda), altezza 32 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S20"
+   ],
+   "note": "S20: construction began 26 June 2005, completed April 2011, about 150 x 70 m, ~26 m high (legacy 32 m). Pergola preset approximates the waffle canopy."
   },
   {
    "name": "Torre Sevilla",
-   "kind": "TODO",
+   "kind": "skyscraper",
    "at": [
     37.391305,
     -6.010585
    ],
    "footprint": "auto",
    "params": {
-    "h": 180
+    "h": 180,
+    "crown": "flat",
+    "podium_h": 12
    },
    "phases": [
     {
-     "y": 2015
+     "y": 2008.2,
+     "y1": 2015
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 2015 (primo anno della scheda), altezza 180 m",
-   "conf": "low"
+   "conf": "high",
+   "src": [
+    "S21"
+   ],
+   "note": "S21: construction started March 2008, completed 2015, 180.5 m, tallest building in Andalusia."
   },
   {
    "name": "Santa Justa station",
-   "kind": "TODO",
+   "kind": "station",
    "at": [
     37.391721,
     -5.9756
    ],
    "footprint": "auto",
    "params": {
-    "h": 15
+    "l": 110,
+    "w": 120,
+    "h": 15,
+    "accent_c": "brick",
+    "max_fp": 120
    },
    "phases": [
     {
-     "y": 1991
+     "y": 1989,
+     "y1": 1991.33
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1991 (primo anno della scheda), altezza 15 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S22"
+   ],
+   "note": "S22: opened 2 May 1991. The 1989 start is the legacy/scheda year (visitasevilla page, not re-fetched). The cadastre parcel (418 x 149 m) is too large for the preset: footprint ignored (max_fp 120), params 110 x 120 m used."
   },
   {
    "name": "Isla Mágica",
-   "kind": "TODO",
+   "kind": "generic_footprint",
    "at": [
     37.404568,
     -6.004
    ],
    "footprint": "auto",
    "params": {
-    "h": 15
+    "l": 30,
+    "w": 18,
+    "h": 0.15,
+    "roof": "flat",
+    "c": "stone"
    },
    "phases": [
     {
-     "y": 1997
+     "y": 1997,
+     "y1": 1997.49
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1997 (primo anno della scheda), altezza 15 m",
-   "conf": "low"
+   "conf": "medium",
+   "src": [
+    "S23"
+   ],
+   "note": "Theme-park anchor (label): no cadastre building within 30 m, so only a 0.15 m slab is built (no invented building). S23: reopened as Isla Mágica on 28 June 1997 (it was first a different park); no construction start in the fetched text."
   },
   {
    "name": "Encarnación",
-   "kind": "TODO",
+   "kind": "hall_market",
    "at": [
     37.393087,
     -5.991784
    ],
-   "footprint": "auto",
+   "footprint": "none",
    "params": {
-    "h": 8
+    "l": 120,
+    "w": 56,
+    "h": 7
    },
    "phases": [
     {
-     "y": 1820
+     "y": 1820,
+     "y1": 1820.5
     }
    ],
    "label": true,
-   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1820 (primo anno della scheda), altezza 8 m",
-   "conf": "low"
+   "conf": "low",
+   "src": [
+    "S38",
+    "S52",
+    "S20"
+   ],
+   "note": "S38: a three-aisle market was built in the middle of the square during the French invasion; 1820 = scheda (S52, not re-fetched). Southern third demolished 1948, rest in 1973 (S38, S20). The 1973 end is modelled; box size from the legacy lost-building code.",
+   "demolished": 1973
   }
  ],
  "qa": {
@@ -579,38 +5714,73 @@
     "dur": 7.0,
     "caption": "Seville under Castile (1248)",
     "shot": "medium",
+    "target": "Real Alcázar",
+    "conf": "high",
+    "fx": "crowd",
+    "weight": 6,
+    "src": [
+     "S1",
+     "S2"
+    ]
+   },
+   {
+    "y0": 1401.0,
+    "y1": 1434.0,
+    "dur": 6.0,
+    "caption": "The Great Mosque gives way to the Cathedral (1401)",
+    "shot": "medium",
     "target": "Cathedral",
-    "_legacy_target": "punto di mira legacy a 91 m da 'Cathedral' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "high",
+    "fx": "hammer",
+    "weight": "max",
+    "src": [
+     "S4"
+    ]
    },
    {
-    "y0": 1430.0,
-    "y1": 1437.0,
-    "dur": 5.0,
-    "caption": "The Great Mosque gives way to the Cathedral (1434)",
-    "shot": "medium",
-    "target": "Giralda",
-    "_legacy_target": "punto di mira legacy = GIRALDA spostato (monumento 'Giralda')",
-    "conf": "low"
-   },
-   {
-    "y0": 1564.0,
-    "y1": 1571.0,
+    "y0": 1503.0,
+    "y1": 1512.0,
     "dur": 4.5,
-    "caption": "The Giralda gets its Renaissance belfry (1568)",
+    "caption": "The Casa de Contratación opens the Americas trade (1503)",
+    "shot": "medium",
+    "target": "Real Alcázar",
+    "fx": "horn",
+    "weight": 7,
+    "src": [
+     "S7",
+     "S1",
+     "S6"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1558.0,
+    "y1": 1569.0,
+    "dur": 4.5,
+    "caption": "The Giralda gets its Renaissance belfry (1558-1568)",
     "shot": "medium",
     "target": "Giralda",
-    "_legacy_target": "punto di mira legacy = GIRALDA spostato (monumento 'Giralda')",
-    "conf": "low"
+    "conf": "high",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S3"
+    ]
    },
    {
     "y0": 1758.0,
     "y1": 1790.0,
     "dur": 5.0,
-    "caption": "The Maestranza bullring rises (1761-1785)",
+    "caption": "The Maestranza bullring rises (from 1761)",
     "shot": "medium",
-    "target": "TODO",
-    "conf": "low"
+    "target": "Maestranza Bullring",
+    "conf": "medium",
+    "fx": "crowd",
+    "weight": 4,
+    "src": [
+     "S37",
+     "S1"
+    ]
    },
    {
     "y0": 1843.0,
@@ -618,18 +5788,28 @@
     "dur": 4.5,
     "caption": "Isabel II Bridge replaces the boat bridge (1845-1852)",
     "shot": "medium",
-    "target": "TODO",
-    "conf": "low"
+    "target": "Isabel II Bridge",
+    "conf": "high",
+    "fx": "water",
+    "weight": 5,
+    "src": [
+     "S9",
+     "S39"
+    ]
    },
    {
-    "y0": 1858.0,
+    "y0": 1866.0,
     "y1": 1874.0,
     "dur": 5.0,
-    "caption": "The walls come down (1858-1873)",
+    "caption": "The walls come down (from 1868)",
     "shot": "medium",
     "target": "Macarena walls",
-    "_legacy_target": "punto di mira legacy a 40 m da 'Macarena walls' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "medium",
+    "fx": "crash",
+    "weight": 6,
+    "src": [
+     "S10"
+    ]
    },
    {
     "y0": 1912.0,
@@ -638,38 +5818,59 @@
     "caption": "Plaza de España for the 1929 Expo (1914-1929)",
     "shot": "medium",
     "target": "Plaza de España",
-    "_legacy_target": "punto di mira legacy a 4 m da 'Plaza de España' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "low",
+    "fx": "firework",
+    "weight": 7,
+    "src": [
+     "S15",
+     "S14",
+     "S61"
+    ]
    },
    {
-    "y0": 1952.0,
-    "y1": 1966.0,
+    "y0": 1960.0,
+    "y1": 1970.0,
     "dur": 5.5,
-    "caption": "A new district: Los Remedios",
+    "caption": "A planned district: Los Remedios (1960s)",
     "shot": "medium",
     "target": "Los Remedios",
-    "_legacy_target": "punto di mira legacy a 0 m da 'Los Remedios' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "low",
+    "fx": "hum",
+    "weight": 3,
+    "src": [
+     "S24"
+    ]
    },
    {
-    "y0": 1975.0,
+    "y0": 1979.0,
     "y1": 1983.0,
     "dur": 5.0,
     "caption": "The river is moved west: Corta de la Cartuja (1975-1982)",
     "shot": "medium",
-    "target": "Plaza Nueva",
-    "_legacy_target": "punto di mira legacy a 398 m da 'Plaza Nueva' (monumento piu' vicino)",
-    "conf": "low"
+    "target": "area:[37.4052,-6.0037,700]",
+    "conf": "low",
+    "fx": "water",
+    "weight": 6,
+    "src": [
+     "S36",
+     "S56",
+     "S57"
+    ]
    },
    {
     "y0": 1991.0,
     "y1": 1993.0,
     "dur": 5.5,
-    "caption": "Expo 92",
+    "caption": "Expo 92 (20 April - 12 October 1992)",
     "shot": "medium",
     "target": "Alamillo Bridge",
-    "_legacy_target": "punto di mira legacy a 307 m da 'Alamillo Bridge' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "high",
+    "fx": "firework",
+    "weight": 8,
+    "src": [
+     "S16",
+     "S17"
+    ]
    },
    {
     "y0": 2014.0,
@@ -678,8 +5879,12 @@
     "caption": "Torre Sevilla · 180 m · 2015",
     "shot": "medium",
     "target": "Torre Sevilla",
-    "_legacy_target": "punto di mira legacy a 0 m da 'Torre Sevilla' (monumento piu' vicino)",
-    "conf": "low"
+    "conf": "high",
+    "fx": "hammer",
+    "weight": 4,
+    "src": [
+     "S21"
+    ]
    }
   ],
   "rmin": 1.0,
@@ -697,7 +5902,10 @@
  "montaggio": {
   "style": "mattia",
   "open": [
-   "SEVILLE TODAY"
+   "SEVILLE TODAY",
+   "688,714 people",
+   "778 YEARS",
+   "Open data, reconstruction before 1900"
   ],
   "title": [
    "SEVILLE",
@@ -710,144 +5918,194 @@
   "label_years": true,
   "cards": [
    {
-    "y": 1248.9,
+    "y": 1248.89,
     "title": "Ferdinand III takes Seville",
     "lines": [
-     "After a 15-month siege the Almohad city surrenders to Castile."
+     "After fifteen months of siege, the Almohad city surrenders to Castile."
     ],
     "hold_s": 8.0,
-    "legacy_date": "23 Nov 1248",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1252.4,
+    "y": 1252.41,
     "title": "The king dies in Seville",
     "lines": [
-     "Ferdinand III is buried in the old mosque, now the cathedral."
+     "Ferdinand III dies in the Alcázar and is buried in the old mosque, now the cathedral."
     ],
     "hold_s": 5,
-    "legacy_date": "1252",
-    "conf": "low"
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
    },
    {
     "y": 1300.0,
-    "title": "A city of ~50,000",
+    "title": "A city of about 50,000",
     "lines": [
-     "Orchards inside the walls slowly fill with houses."
+     "A rough estimate puts the walled city at about 50,000 people."
     ],
     "hold_s": 5,
-    "legacy_date": "c. 1300",
-    "conf": "low"
+    "src": [
+     "S50"
+    ],
+    "conf": "low",
+    "note": "Scheda D estimate, source not re-fetched; S1 says perhaps 80,000 by the end of the 12th century."
    },
    {
     "y": 1356.0,
     "title": "Earthquake",
     "lines": [
-     "The Giralda's four golden spheres fall."
+     "The Giralda's metal spheres fall."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1356",
-    "conf": "low"
+    "src": [
+     "S3"
+    ],
+    "conf": "high",
+    "note": "S40 (Spanish Wikipedia) dates the great earthquake 1355; S3 says 1356."
+   },
+   {
+    "y": 1364.0,
+    "title": "Peter's palace",
+    "lines": [
+     "Inscriptions date the palace of Peter in the Alcázar to 1364-1366."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S6"
+    ],
+    "conf": "medium",
+    "note": "S6 calls them the probable start and completion dates."
    },
    {
     "y": 1400.0,
     "title": "A Christian crown",
     "lines": [
-     "A cross and a bell replace the minaret top."
+     "A cross and a bell replace the spheres on the Giralda."
     ],
     "hold_s": 5,
-    "legacy_date": "c. 1400",
-    "conf": "low"
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1434.0,
+    "y": 1402.0,
     "title": "Cathedral works begin",
     "lines": [
-     "The Almohad mosque is pulled down, the Giralda is kept."
+     "In 1401 city leaders decide to replace the great mosque; work starts in 1402."
     ],
     "hold_s": 5,
-    "legacy_date": "1434",
-    "conf": "low"
+    "src": [
+     "S4"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1481.0,
-    "title": "The Inquisition arrives",
+    "y": 1478.0,
+    "title": "The Inquisition begins here",
     "lines": [
-     "Its first Castilian tribunal sits in Triana Castle."
+     "The first tribunal of the Spanish Inquisition is set up in Seville; the first auto de fe follows in 1481."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1481",
-    "conf": "low"
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "conf": "high"
    },
    {
     "y": 1503.0,
     "title": "Gateway to the Americas",
     "lines": [
-     "The Casa de Contratación gives Seville a trade monopoly."
+     "The Casa de Contratación makes Seville the port of the Indies."
     ],
     "hold_s": 5,
-    "legacy_date": "1503",
-    "conf": "low"
+    "src": [
+     "S1",
+     "S7"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1519.6,
-    "title": "Magellan sets sail",
+    "y": 1519.72,
+    "title": "Magellan sets out",
     "lines": [
-     "His fleet leaves from the Arenal docks."
+     "Organized in Seville, the fleet leaves Spain on 20 September 1519."
     ],
     "hold_s": 5,
-    "legacy_date": "1519",
-    "conf": "low"
+    "src": [
+     "S25"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1568.0,
+    "y": 1558.0,
     "title": "A new top for the Giralda",
     "lines": [
-     "Hernán Ruiz adds the Renaissance belfry: ~100 m."
+     "Hernán Ruiz the Younger builds the Renaissance belfry, 1558-1568."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1568",
-    "conf": "low"
+    "src": [
+     "S3"
+    ],
+    "conf": "high"
    },
    {
     "y": 1574.0,
     "title": "The lagoon is drained",
     "lines": [
-     "The Feria marsh becomes the Alameda de Hércules."
+     "An old river branch becomes the Alameda de Hércules."
     ],
     "hold_s": 5,
-    "legacy_date": "1574–1578",
-    "conf": "low"
+    "src": [
+     "S12"
+    ],
+    "conf": "high"
    },
    {
     "y": 1600.0,
-    "title": "Peak of the Golden Age",
+    "title": "Golden Age Seville",
     "lines": [
-     "About 120,000 people: one of Europe's largest cities."
+     "Estimates put the city near 120,000 people."
     ],
     "hold_s": 8.0,
-    "legacy_date": "c. 1600",
-    "conf": "low"
+    "src": [
+     "S50"
+    ],
+    "conf": "low",
+    "note": "Scheda D estimate, not re-fetched."
    },
    {
     "y": 1649.0,
     "title": "The Great Plague",
     "lines": [
-     "A huge share of the city dies; no reliable count exists."
+     "Estimates of the dead range from a quarter to almost half of the city."
     ],
     "hold_s": 5,
-    "legacy_date": "1649",
-    "conf": "low"
+    "src": [
+     "S8",
+     "S1"
+    ],
+    "conf": "medium",
+    "note": "S8: up to a quarter; S1: almost half. No reliable count."
    },
    {
     "y": 1700.0,
     "title": "A shrinking city",
     "lines": [
-     "Population falls to ~70,000."
+     "The population is estimated at about 70,000."
     ],
     "hold_s": 8.0,
-    "legacy_date": "c. 1700",
-    "conf": "low"
+    "src": [
+     "S50",
+     "S1"
+    ],
+    "conf": "low",
+    "note": "S1: the plague cut the population by almost half and it did not recover until the early 19th century."
    },
    {
     "y": 1717.0,
@@ -856,398 +6114,543 @@
      "The Casa de Contratación leaves Seville."
     ],
     "hold_s": 5,
-    "legacy_date": "1717",
-    "conf": "low"
+    "src": [
+     "S7"
+    ],
+    "conf": "high"
    },
    {
     "y": 1728.0,
     "title": "Royal Tobacco Factory",
     "lines": [
-     "Work starts on one of the largest industrial buildings in Europe."
+     "Work starts on one of the first large industrial buildings in modern Europe."
     ],
     "hold_s": 5,
-    "legacy_date": "1728",
-    "conf": "low"
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1755.9,
+    "y": 1755.84,
     "title": "Lisbon earthquake",
     "lines": [
-     "The shock damages buildings across Seville."
+     "The Giralda and the Torre del Oro are damaged; nine people die in Seville."
     ],
     "hold_s": 5,
-    "legacy_date": "1755",
-    "conf": "low"
+    "src": [
+     "S2",
+     "S5"
+    ],
+    "conf": "high",
+    "note": "Date 1 November 1755 is general knowledge, not in the fetched texts: the year is sourced."
    },
    {
     "y": 1760.0,
     "title": "Torre del Oro",
     "lines": [
-     "The tower gets its cylindrical top."
+     "Its third level is rebuilt after the earthquake."
     ],
     "hold_s": 5,
-    "legacy_date": "1760",
-    "conf": "low"
+    "src": [
+     "S5"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1810.1,
+    "y": 1810.09,
     "title": "French occupation",
     "lines": [
-     "Napoleon's troops hold the city."
+     "Marshal Victor occupies the city on 1 February 1810."
     ],
     "hold_s": 5,
-    "legacy_date": "1810–1812",
-    "conf": "low"
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
    },
    {
     "y": 1811.0,
     "title": "Encarnación convent demolished",
     "lines": [
-     "Its site becomes a market square."
+     "The convent comes down during the French occupation."
     ],
     "hold_s": 5,
-    "legacy_date": "1811",
-    "conf": "low"
+    "src": [
+     "S38",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Year 1811 from the scheda (S52, not re-fetched); S38 says early 19th century, during the French invasion."
    },
    {
     "y": 1820.0,
     "title": "A market square",
     "lines": [
-     "A market rises on the Encarnación convent site."
+     "A market with three covered aisles rises on the Encarnación site."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1820",
-    "conf": "low"
+    "src": [
+     "S38",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Year 1820 from the scheda (S52, not re-fetched); S38 gives no year."
    },
    {
     "y": 1836.0,
-    "title": "Disentailment",
+    "title": "Church property is sold off",
     "lines": [
-     "Church property is sold off; convents are emptied."
+     "The Mendizábal confiscations of 1835-1837 put church property up for sale."
     ],
     "hold_s": 5,
-    "legacy_date": "1836",
-    "conf": "low"
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
    },
    {
     "y": 1842.0,
-    "title": "100,000 people",
+    "title": "100,498 people",
     "lines": [
-     "The first modern census."
+     "The municipal census counts 100,498 residents."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1842",
-    "conf": "low"
-   },
-   {
-    "y": 1848.0,
-    "title": "Plaza Nueva",
-    "lines": [
-     "The San Francisco convent is replaced by a square."
+    "src": [
+     "S1"
     ],
-    "hold_s": 8.0,
-    "legacy_date": "1848–1857",
-    "conf": "low"
+    "conf": "high"
    },
    {
-    "y": 1852.2,
+    "y": 1852.0,
     "title": "Isabel II Bridge opens",
     "lines": [
-     "The first fixed bridge to Triana ends 600 years of boats."
+     "The first solid bridge in Seville replaces a pontoon bridge that lasted almost seven centuries."
     ],
     "hold_s": 5,
-    "legacy_date": "23 Feb 1852",
-    "conf": "low"
+    "src": [
+     "S9",
+     "S39"
+    ],
+    "conf": "high",
+    "note": "Exact day (23 Feb 1852 in the legacy) not in the fetched texts: the year is sourced."
    },
    {
-    "y": 1858.0,
-    "title": "The walls come down",
+    "y": 1852.3,
+    "title": "Plaza Nueva",
     "lines": [
-     "Gates and walls give way to boulevards; Macarena survives."
+     "A convent site becomes a square, begun in 1852 and finished in 1856."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1858–1873",
-    "conf": "low"
+    "src": [
+     "S11"
+    ],
+    "conf": "medium",
+    "note": "Scheda says demolition 1848, inauguration 1857 (S59, not re-fetched)."
    },
    {
-    "y": 1860.0,
-    "title": "118,000 people",
+    "y": 1857.0,
+    "title": "112,529 people",
     "lines": [
-     "Still mostly inside the old walls."
+     "The city has grown by 12% since 1842."
     ],
     "hold_s": 5,
-    "legacy_date": "1860",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1868.0,
+    "title": "The walls come down",
+    "lines": [
+     "After the 1868 revolution the walls are partly demolished; the Macarena stretch survives."
+    ],
+    "hold_s": 8.0,
+    "src": [
+     "S10"
+    ],
+    "conf": "high",
+    "note": "Scheda: demolition 1858-c.1873 (S55, not re-fetched)."
+   },
+   {
+    "y": 1876.0,
+    "title": "Finishing the Maestranza",
+    "lines": [
+     "An architect is hired to complete the bullring, unfinished since the 1760s."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S37"
+    ],
+    "conf": "high"
    },
    {
     "y": 1877.0,
-    "title": "134,000 people",
+    "title": "133,247 people",
     "lines": [
-     "The city finally grows beyond its medieval size."
+     "Census figure."
     ],
     "hold_s": 5,
-    "legacy_date": "1877",
-    "conf": "low"
-   },
-   {
-    "y": 1881.0,
-    "title": "Maestranza completed",
-    "lines": [
-     "The bullring takes its final form after 120 years."
+    "src": [
+     "S1"
     ],
-    "hold_s": 8.0,
-    "legacy_date": "1881",
-    "conf": "low"
+    "conf": "high"
    },
    {
     "y": 1900.0,
-    "title": "148,000 people",
+    "title": "147,271 people",
     "lines": [
-     "The first districts grow outside the old walls."
+     "The city is still mostly inside its old circuit."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1900",
-    "conf": "low"
+    "src": [
+     "S1",
+     "S10"
+    ],
+    "conf": "medium",
+    "note": "The second line is an interpretation of the density data, not a quoted claim [Likely]."
    },
    {
     "y": 1909.0,
     "title": "Alfonso XIII Canal",
     "lines": [
-     "A new cut shortens the river for the port."
+     "Work starts on the Tablada cut; it resumes in 1919 and ends in 1926."
     ],
     "hold_s": 5,
-    "legacy_date": "1909–1926",
-    "conf": "low"
+    "src": [
+     "S35"
+    ],
+    "conf": "high"
    },
    {
     "y": 1917.1,
     "title": "The Guadalquivir floods",
     "lines": [
-     "One of several floods that push the river works."
+     "The river floods in February 1917."
     ],
     "hold_s": 5,
-    "legacy_date": "Feb 1917",
-    "conf": "low"
+    "src": [
+     "S54"
+    ],
+    "conf": "low",
+    "note": "Scheda F only, not re-fetched."
    },
    {
-    "y": 1929.35,
-    "title": "Ibero-American Exposition",
+    "y": 1927.0,
+    "title": "The river will move",
     "lines": [
-     "Plaza de España and María Luisa Park open."
+     "A plan turns the old river into a dock and sends the river west of Triana."
     ],
     "hold_s": 8.0,
-    "legacy_date": "9 May 1929",
-    "conf": "low"
+    "src": [
+     "S35"
+    ],
+    "conf": "high",
+    "note": "S35 Plan Brackenbury 1927; works finished in 1951."
    },
    {
-    "y": 1936.5,
+    "y": 1929.36,
+    "title": "Ibero-American Exposition",
+    "lines": [
+     "Plaza de España and María Luisa Park open to the world."
+    ],
+    "hold_s": 8.0,
+    "src": [
+     "S14",
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1936.54,
     "title": "Spanish Civil War",
     "lines": [
-     "Seville falls to the rebels in the first days."
+     "On 18 July General Queipo de Llano takes Seville for the rebels."
     ],
     "hold_s": 5,
-    "legacy_date": "1936–1939",
-    "conf": "low"
+    "src": [
+     "S2",
+     "S26"
+    ],
+    "conf": "high"
    },
    {
     "y": 1940.0,
-    "title": "312,000 people",
+    "title": "302,300 people",
     "lines": [
-     "The city doubles in twenty years."
+     "Census figure."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1940",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1948.0,
-    "title": "Chapina is closed",
+    "y": 1950.0,
+    "title": "Chapina is plugged",
     "lines": [
-     "The old river arm is dammed; the city side becomes a dock."
+     "The old river entrance is closed; the city side becomes a dock."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1948–1950",
-    "conf": "low"
+    "src": [
+     "S36",
+     "S51"
+    ],
+    "conf": "low",
+    "note": "Years 1948-1950 from the scheda (S51, not re-fetched); S36 confirms the plug."
    },
    {
-    "y": 1955.0,
+    "y": 1960.0,
     "title": "Los Remedios",
     "lines": [
-     "A new district rises on the old Tablada fields."
+     "A large planned neighbourhood rises on the west bank."
     ],
-    "hold_s": 8.0,
-    "legacy_date": "1950s",
-    "conf": "low"
+    "hold_s": 5,
+    "src": [
+     "S24"
+    ],
+    "conf": "medium"
    },
    {
     "y": 1961.9,
     "title": "Tamarguillo flood",
     "lines": [
-     "Much of the eastern city goes under water."
+     "The Tamarguillo overflows and floods much of the city."
     ],
     "hold_s": 5,
-    "legacy_date": "25 Nov 1961",
-    "conf": "low"
+    "src": [
+     "S53"
+    ],
+    "conf": "low",
+    "note": "Scheda only (25 November 1961), not re-fetched."
    },
    {
     "y": 1963.2,
     "title": "Another flood",
     "lines": [
-     "The Guadalquivir overflows again."
+     "The Guadalquivir peaks at 6,000 cubic meters per second, the record in Seville."
     ],
     "hold_s": 5,
-    "legacy_date": "Mar 1963",
-    "conf": "low"
+    "src": [
+     "S13",
+     "S54"
+    ],
+    "conf": "medium",
+    "note": "S13 gives the year 1963 and the flow; March is from the scheda (S54)."
    },
    {
     "y": 1970.0,
-    "title": "548,000 people",
+    "title": "545,692 people",
     "lines": [
-     "High-rise blocks spread east and south."
+     "Census figure."
     ],
     "hold_s": 5,
-    "legacy_date": "1970",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    },
    {
     "y": 1973.0,
     "title": "Encarnación market demolished",
     "lines": [
-     "The square stays empty for three decades."
+     "The square stays empty for decades, used as parking."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1973",
-    "conf": "low"
+    "src": [
+     "S38",
+     "S20"
+    ],
+    "conf": "high"
    },
    {
     "y": 1975.0,
     "title": "Corta de la Cartuja",
     "lines": [
-     "The river is diverted west of La Cartuja against floods."
+     "A new river channel west of La Cartuja is cut against floods."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1975–1982",
-    "conf": "low"
+    "src": [
+     "S36",
+     "S56"
+    ],
+    "conf": "low",
+    "note": "Years 1975-1982 from the scheda (S56, S57, not re-fetched); S36 confirms the cut and the Chapina plug."
+   },
+   {
+    "y": 1975.89,
+    "title": "Spain turns to democracy",
+    "lines": [
+     "Franco dies on 20 November 1975; the Constitution follows in 1978."
+    ],
+    "hold_s": 8.0,
+    "src": [
+     "S28"
+    ],
+    "conf": "high"
    },
    {
     "y": 1981.0,
-    "title": "654,000 people",
+    "title": "645,817 people",
     "lines": [
-     "Thirty years of record growth."
+     "Census figure."
     ],
     "hold_s": 5,
-    "legacy_date": "1981",
-    "conf": "low"
-   },
-   {
-    "y": 1982.5,
-    "title": "Capital of Andalusia",
-    "lines": [
-     "The new regional government sits in Seville."
+    "src": [
+     "S1"
     ],
-    "hold_s": 5,
-    "legacy_date": "1982",
-    "conf": "low"
-   },
-   {
-    "y": 1985.0,
-    "title": "An empty riverbed",
-    "lines": [
-     "The old Chapina arm lies dry, waiting for the Expo."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "1980s",
-    "conf": "low"
-   },
-   {
-    "y": 1987.0,
-    "title": "Alamillo Bridge begun",
-    "lines": [
-     "Works start on the first new bridge for the Expo."
-    ],
-    "hold_s": 8.0,
-    "legacy_date": "1987",
-    "conf": "low"
+    "conf": "high"
    },
    {
     "y": 1989.0,
-    "title": "Expo works",
+    "title": "Expo bridges rise",
     "lines": [
-     "Barqueta Bridge and Santa Justa station are begun."
+     "Work starts on the Alamillo, Barqueta and Centenario bridges."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1989",
-    "conf": "low"
+    "src": [
+     "S17",
+     "S18",
+     "S19"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1989.5,
+    "title": "Andalusian government",
+    "lines": [
+     "The presidency of the Junta de Andalucía settles at San Telmo."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S2"
+    ],
+    "conf": "high",
+    "note": "S2 says since 1989; the month is a placeholder."
+   },
+   {
+    "y": 1990.0,
+    "title": "The plug moves north",
+    "lines": [
+     "For Expo 92 the Chapina plug is reopened and moved to San Jerónimo."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S36"
+    ],
+    "conf": "medium",
+    "note": "S36 gives no year (\"with the Expo works\"): 1990 is a placeholder inside the works period."
    },
    {
     "y": 1991.33,
     "title": "Santa Justa station",
     "lines": [
-     "The new railway station opens."
+     "The new railway station opens on 2 May 1991."
     ],
     "hold_s": 8.0,
-    "legacy_date": "2 May 1991",
-    "conf": "low"
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1991.87,
+    "title": "Centenario Bridge",
+    "lines": [
+     "A 565 m cable-stayed bridge opens on 15 November 1991."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S19"
+    ],
+    "conf": "high"
    },
    {
     "y": 1992.3,
     "title": "Expo 92 opens",
     "lines": [
-     "20 April – 12 October 1992, on La Cartuja."
+     "20 April - 12 October 1992, on La Cartuja."
     ],
     "hold_s": 5,
-    "legacy_date": "20 Apr 1992",
-    "conf": "low"
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1992.3,
+    "y": 1992.31,
     "title": "High-speed rail",
     "lines": [
-     "The first AVE line links Seville to Madrid."
+     "The Madrid-Seville high-speed line opens in 1992."
     ],
     "hold_s": 5,
-    "legacy_date": "Apr 1992",
-    "conf": "low"
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
    },
    {
-    "y": 1997.5,
+    "y": 1997.49,
     "title": "Isla Mágica",
     "lines": [
-     "A theme park opens on the old Expo grounds."
+     "A theme park opens on the old Expo grounds on 28 June 1997."
     ],
     "hold_s": 8.0,
-    "legacy_date": "1997",
-    "conf": "low"
+    "src": [
+     "S23",
+     "S16"
+    ],
+    "conf": "high"
    },
    {
     "y": 2001.0,
-    "title": "684,000 people",
+    "title": "684,633 people",
     "lines": [
-     "Growth moves to the suburbs."
+     "The city holds steady while the metro area keeps growing until 2007."
     ],
     "hold_s": 8.0,
-    "legacy_date": "2001",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    },
    {
-    "y": 2011.0,
+    "y": 2011.3,
     "title": "Metropol Parasol",
     "lines": [
-     "\"Las Setas\", a wooden canopy, opens over the Encarnación square."
+     "\"Las Setas\", a giant wooden canopy, is completed over the Encarnación square."
     ],
     "hold_s": 8.0,
-    "legacy_date": "2011",
-    "conf": "low"
+    "src": [
+     "S20"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2015.0,
+    "title": "Torre Sevilla",
+    "lines": [
+     "At 180.5 m it becomes Andalusia's tallest building."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
    },
    {
     "y": 2025.0,
     "title": "Seville today",
     "lines": [
-     "~690,000 people."
+     "688,714 people."
     ],
     "hold_s": 8.0,
-    "legacy_date": "2025",
-    "conf": "low"
+    "src": [
+     "S1"
+    ],
+    "conf": "high"
    }
   ],
   "events": [
@@ -1262,8 +6665,46 @@
   "sources_card": {
    "seconds": 8,
    "max": 14,
-   "no_ai": "NO AI: every frame is rendered from open data"
-  }
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings: Dirección General del Catastro (INSPIRE Buildings, Spanish cadastre)",
+    "Water, bridges, parks: © OpenStreetMap contributors (ODbL)",
+    "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+    "History: Wikipedia EN/ES (Seville, History of Seville, Giralda, Cathedral, Alcázar and others)",
+    "Population: INE municipal census (via Wikipedia EN), historical estimates",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
+  },
+  "chapters": [
+   {
+    "y": 1248,
+    "title": "Castilian Seville"
+   },
+   {
+    "y": 1503,
+    "title": "Gateway to the Indies"
+   },
+   {
+    "y": 1649,
+    "title": "Plague and Decline"
+   },
+   {
+    "y": 1810,
+    "title": "War and Reform"
+   },
+   {
+    "y": 1868,
+    "title": "Walls Down, River Tamed"
+   },
+   {
+    "y": 1929,
+    "title": "Exposition, War and Dictatorship"
+   },
+   {
+    "y": 1975,
+    "title": "Democracy and Expo 92"
+   }
+  ]
  },
  "legacy": {
   "metadata_file": "metadata_sevilla.md",
@@ -1287,126 +6728,5 @@
    "complete": false
   }
  },
- "_legacy_gaps": [
-  {
-   "path": "city",
-   "field": "country",
-   "reason": "non nei file legacy (TODO)"
-  },
-  {
-   "path": "city",
-   "field": "style_preset",
-   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
-  },
-  {
-   "path": "city",
-   "field": "eras",
-   "reason": "nessuna periodizzazione nel legacy"
-  },
-  {
-   "path": "city",
-   "field": "polities",
-   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
-  },
-  {
-   "path": "city",
-   "field": "data_reliable_from",
-   "reason": "non nel legacy"
-  },
-  {
-   "path": "landmarks",
-   "field": "kind",
-   "reason": "21 monumenti con geometria bespoke in landmarks_sevilla.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
-  },
-  {
-   "path": "regia.soste[3]",
-   "field": "target",
-   "reason": "'The Maestranza bullring rises (1761-1785)': bersaglio legacy assente"
-  },
-  {
-   "path": "regia.soste[4]",
-   "field": "target",
-   "reason": "'Isabel II Bridge replaces the boat bridge (1845-1852)': bersaglio legacy assente"
-  },
-  {
-   "path": "regia.soste",
-   "field": "target",
-   "reason": "7 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
-  },
-  {
-   "path": "regia.soste",
-   "field": "weight",
-   "reason": "11 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
-  },
-  {
-   "path": "regia.soste",
-   "field": "fx",
-   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "cards",
-   "reason": "54 cartelli importati (da CAPS di regia); minimo 45 rispettato"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "hold_s",
-   "reason": "28 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
-  },
-  {
-   "path": "montaggio.cards",
-   "field": "target/shot",
-   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
-  },
-  {
-   "path": "montaggio",
-   "field": "chapters",
-   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
-  },
-  {
-   "path": "city",
-   "field": "population",
-   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
-  },
-  {
-   "path": "sources",
-   "field": "sources",
-   "reason": "nessuna scheda di validazione per sevilla: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
-  },
-  {
-   "path": "history.walls[0]",
-   "field": "built/demolished/src",
-   "reason": "walls_1248.json: solo il tracciato; anni e fonte da compilare"
-  },
-  {
-   "path": "history.bridges",
-   "field": "bridges",
-   "reason": "nessun bridges_sevilla.py leggibile (vedi anche bridges.json di radice, non per citta')"
-  },
-  {
-   "path": "history.zones",
-   "field": "zones",
-   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
-  },
-  {
-   "path": "history",
-   "field": "walls/gutting/lost/fires",
-   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
-  },
-  {
-   "path": "montaggio",
-   "field": "open",
-   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
-  },
-  {
-   "path": "metadata",
-   "field": "chapters/description/tags",
-   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
-  },
-  {
-   "path": "data",
-   "field": "data_src",
-   "reason": "data_sevilla_src incompleto per kit data/pack: mancano roads.json, land.json, dem.npz"
-  }
- ]
+ "_filled_by": "yb-historian+yb-modeler 2026-11-19: Wikipedia EN/ES texts fetched, every quote in sources checked as an exact substring of the fetched text; scheda-only claims stay conf low (hosts unreachable)."
 }
