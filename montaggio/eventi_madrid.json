@@ -1,0 +1,862 @@
+{
+ "didascalie": [],
+ "soste": [
+  {
+   "t_in": 15.7,
+   "t_out": 22.7,
+   "title": "Emir Muhammad I founds Mayrit",
+   "sub": "860"
+  },
+  {
+   "t_in": 44.86,
+   "t_out": 50.86,
+   "title": "Madrid passes to Castile",
+   "sub": "1085"
+  },
+  {
+   "t_in": 108.74,
+   "t_out": 119.74,
+   "title": "Philip II moves the court to Madrid",
+   "sub": "1561"
+  },
+  {
+   "t_in": 132.85,
+   "t_out": 138.85,
+   "title": "Plaza Mayor is completed",
+   "sub": "1619"
+  },
+  {
+   "t_in": 154.97,
+   "t_out": 169.97,
+   "title": "Philip IV rings the city with a wall",
+   "sub": "1625"
+  },
+  {
+   "t_in": 190.11,
+   "t_out": 195.11,
+   "title": "The Alcázar burns",
+   "sub": "1734"
+  },
+  {
+   "t_in": 201.0,
+   "t_out": 209.0,
+   "title": "The Royal Palace is finished",
+   "sub": "1755"
+  },
+  {
+   "t_in": 242.64,
+   "t_out": 248.64,
+   "title": "The Prado opens",
+   "sub": "1819"
+  },
+  {
+   "t_in": 287.56,
+   "t_out": 297.56,
+   "title": "The Retiro becomes a public park",
+   "sub": "1868"
+  },
+  {
+   "t_in": 309.72,
+   "t_out": 316.72,
+   "title": "Castro's Ensanche grid takes shape",
+   "sub": "1871"
+  },
+  {
+   "t_in": 333.54,
+   "t_out": 349.54,
+   "title": "The Gran Vía cuts through the old city",
+   "sub": "1910"
+  },
+  {
+   "t_in": 385.76,
+   "t_out": 394.76,
+   "title": "Madrid under siege",
+   "sub": "1936"
+  },
+  {
+   "t_in": 421.66,
+   "t_out": 431.66,
+   "title": "The Bernabéu stadium opens",
+   "sub": "1947"
+  },
+  {
+   "t_in": 456.2,
+   "t_out": 466.2,
+   "title": "The Torre de Madrid tops Spain's skyline",
+   "sub": "1957"
+  },
+  {
+   "t_in": 489.23,
+   "t_out": 499.23,
+   "title": "Almudena Cathedral is consecrated",
+   "sub": "1993"
+  },
+  {
+   "t_in": 558.28,
+   "t_out": 578.28,
+   "title": "Four towers redraw the skyline",
+   "sub": "2007"
+  }
+ ],
+ "subscribe_t": 90.0,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 21.7,
+   "date": "AD 860",
+   "title": "Mayrit rises on the ridge",
+   "lines": [
+    "Emir Muhammad I of Córdoba orders a walled citadel above the Manzanares, sometime between 860 and 880."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 25.6,
+   "t_out": 30.6,
+   "date": "AD 929",
+   "title": "The Caliphate of Córdoba",
+   "lines": [
+    "Abd al-Rahman III takes the title of caliph in 929; by the late 10th century Mayrit is a frontier stronghold."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 36.63,
+   "t_out": 41.63,
+   "date": "1031",
+   "title": "The caliphate breaks apart",
+   "lines": [
+    "In 1031 it fractures into independent taifa kingdoms; Madrid lies within the Taifa of Toledo at its greatest extent."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 44.86,
+   "t_out": 49.86,
+   "date": "1085",
+   "title": "Madrid passes to Castile",
+   "lines": [
+    "The town goes to Christian rule with the conquest of Toledo; historians debate 1083 or 1085."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 52.98,
+   "t_out": 57.98,
+   "date": "1126",
+   "title": "A suburb beyond the wall",
+   "lines": [
+    "The Arrabal of San Martín, known from 1126, is the first suburb outside the old walls."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 62.48,
+   "t_out": 67.48,
+   "date": "1202",
+   "title": "A wall still unfinished",
+   "lines": [
+    "The Fuero of 1202 still orders the council's fines spent on the wall until it is finished."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 81.43,
+   "t_out": 86.43,
+   "date": "1438",
+   "title": "A wall for the suburbs",
+   "lines": [
+    "Most likely around 1438, a second wall encloses the eastern suburbs; its exact course is uncertain."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 88.14,
+   "t_out": 93.14,
+   "date": "1467",
+   "title": "A royal mint",
+   "lines": [
+    "The town strikes its own coins from 1467 to 1471."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 93.91,
+   "t_out": 98.91,
+   "date": "1480",
+   "title": "A town of 5,000",
+   "lines": [
+    "About 5,000 people live in Madrid around 1480."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 101.3,
+   "t_out": 106.3,
+   "date": "1520",
+   "title": "The Comuneros rise",
+   "lines": [
+    "Rebels depose the royal corregidor by 17 June 1520."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 108.74,
+   "t_out": 114.74,
+   "date": "1561",
+   "title": "The court settles in Madrid",
+   "lines": [
+    "Philip II moves the court; with no official declaration, Madrid becomes the de facto capital."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 114.74,
+   "t_out": 119.74,
+   "date": "1566",
+   "title": "A wall for taxes and health",
+   "lines": [
+    "Philip II's wall of 1566 controls goods and guards against disease."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 121.21,
+   "t_out": 126.21,
+   "date": "1590",
+   "title": "Nearly 100,000 people",
+   "lines": [
+    "From some 20,000 in 1560, the new capital approaches 100,000 by 1590."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 126.86,
+   "t_out": 131.86,
+   "date": "1601",
+   "title": "The court leaves for Valladolid",
+   "lines": [
+    "The capital sits in Valladolid from 1601 to 1606, and Madrid's population reportedly halves."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 132.85,
+   "t_out": 137.85,
+   "date": "1619",
+   "title": "Plaza Mayor is finished",
+   "lines": [
+    "Juan Gómez de Mora's arcaded square is completed in 1619."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 154.97,
+   "t_out": 159.97,
+   "date": "1625",
+   "title": "Philip IV's wall",
+   "lines": [
+    "A brick-and-earth wall of about 13 km encloses 500 hectares, over 150 of them the royal Retiro."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 159.97,
+   "t_out": 164.97,
+   "date": "1631",
+   "title": "Fire in the Plaza Mayor",
+   "lines": [
+    "The first of several fires hits the new square in 1631."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 164.97,
+   "t_out": 169.97,
+   "date": "1633",
+   "title": "The Buen Retiro",
+   "lines": [
+    "The Count-Duke of Olivares commissions a royal park and palace in the 1630s."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 173.99,
+   "t_out": 178.99,
+   "date": "1700",
+   "title": "The Bourbons arrive",
+   "lines": [
+    "Habsburg rule ends in 1700; the succession war brings Philip V to the throne."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 190.11,
+   "t_out": 195.11,
+   "date": "1734",
+   "title": "The Alcázar burns",
+   "lines": [
+    "A Christmas Eve fire destroys the old royal alcázar; it burns for four days."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 195.29,
+   "t_out": 200.29,
+   "date": "1738",
+   "title": "A new palace",
+   "lines": [
+    "Work begins in 1738 on a new Royal Palace, on the alcázar's site."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 201.0,
+   "t_out": 206.0,
+   "date": "1755",
+   "title": "The Royal Palace is done",
+   "lines": [
+    "Finished in 1755: a square plan around a great square courtyard."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 209.6,
+   "t_out": 214.6,
+   "date": "1766",
+   "title": "The Esquilache riots",
+   "lines": [
+    "Street lamps, taxes and a ban on traditional capes set off riots in March 1766."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 215.3,
+   "t_out": 220.3,
+   "date": "1778",
+   "title": "The Puerta de Alcalá",
+   "lines": [
+    "Charles III's monumental gate, inaugurated in 1778, replaces a smaller one in the city wall."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 220.71,
+   "t_out": 225.71,
+   "date": "1785",
+   "title": "A building by Villanueva",
+   "lines": [
+    "Juan de Villanueva designs the building that will become the Prado."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 226.0,
+   "t_out": 231.0,
+   "date": "1790",
+   "title": "The Plaza Mayor burns again",
+   "lines": [
+    "A fire in 1790 destroys nearly a third of the square."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 232.09,
+   "t_out": 237.09,
+   "date": "1808",
+   "title": "The Second of May",
+   "lines": [
+    "On 2 May 1808, Madrileños revolt against the French troops."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 237.34,
+   "t_out": 242.34,
+   "date": "1812",
+   "title": "The French are driven out",
+   "lines": [
+    "On 12 August 1812, English and Portuguese troops enter Madrid after the French defeat at Salamanca."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 242.64,
+   "t_out": 247.64,
+   "date": "1819",
+   "title": "The Prado opens",
+   "lines": [
+    "The royal museum opens to the public in November 1819."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 249.56,
+   "t_out": 254.56,
+   "date": "1835",
+   "title": "Convents are confiscated",
+   "lines": [
+    "Church property is seized in 1835-1836; convents are demolished and streets widened."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 255.47,
+   "t_out": 260.47,
+   "date": "1850",
+   "title": "The Teatro Real opens",
+   "lines": [
+    "Isabella II opens the opera house on 19 November 1850."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 260.48,
+   "t_out": 265.48,
+   "date": "1851",
+   "title": "The first railway station",
+   "lines": [
+    "Madrid's first station opens at Atocha on 9 February 1851."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 265.89,
+   "t_out": 271.89,
+   "date": "1858",
+   "title": "Puerta del Sol takes its modern shape (1862)",
+   "lines": [
+    "Puerta del Sol takes its modern shape (1862)"
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 271.92,
+   "t_out": 276.92,
+   "date": "1858",
+   "title": "Water from the Lozoya",
+   "lines": [
+    "The Canal de Isabel II is inaugurated on 24 June 1858."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 277.04,
+   "t_out": 282.04,
+   "date": "1860",
+   "title": "The Ensanche plan",
+   "lines": [
+    "A royal decree of 19 July 1860 approves Carlos María de Castro's expansion plan."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 282.12,
+   "t_out": 287.12,
+   "date": "1862",
+   "title": "Puerta del Sol rebuilt",
+   "lines": [
+    "The square takes its modern shape in works from 1857 to 1862."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 287.56,
+   "t_out": 292.56,
+   "date": "1868",
+   "title": "Walls down, Retiro open",
+   "lines": [
+    "After the Glorious Revolution of September 1868, Philip IV's wall is torn down and the Retiro becomes a public park."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 292.56,
+   "t_out": 297.56,
+   "date": "1871",
+   "title": "The first trams",
+   "lines": [
+    "The Salamanca–Sol–Pozas line brings Madrid's first collective transport in 1871."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 316.91,
+   "t_out": 321.91,
+   "date": "1883",
+   "title": "Almudena's first stone",
+   "lines": [
+    "King Alfonso XII lays the first stone of the future cathedral on 4 April 1883."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 322.43,
+   "t_out": 327.43,
+   "date": "1892",
+   "title": "Atocha is rebuilt",
+   "lines": [
+    "After a fire, the railway company rebuilds the station; it reopens in 1892."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 327.9,
+   "t_out": 332.9,
+   "date": "1900",
+   "title": "Over half a million",
+   "lines": [
+    "The census counts 540,109 people in 1900."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 333.54,
+   "t_out": 338.54,
+   "date": "1910",
+   "title": "The Gran Vía begins",
+   "lines": [
+    "King Alfonso XIII opens the works in April 1910, 'an axe blow on the map'."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 338.54,
+   "t_out": 343.54,
+   "date": "1911",
+   "title": "The Metropolis Building",
+   "lines": [
+    "Inaugurated in 1911 on Alcalá Street, after five homes were demolished."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 343.54,
+   "t_out": 349.54,
+   "date": "1917",
+   "title": "Cibeles Palace opens (1919)",
+   "lines": [
+    "Cibeles Palace opens (1919)"
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 349.68,
+   "t_out": 354.68,
+   "date": "1919",
+   "title": "Cibeles Palace opens",
+   "lines": [
+    "The new post and telegraph palace opens on 14 March 1919."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 354.71,
+   "t_out": 359.71,
+   "date": "1919",
+   "title": "The first Metro line",
+   "lines": [
+    "On 17 October 1919, Alfonso XIII opens the Metro from Sol to Cuatro Caminos, eight stops."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 360.29,
+   "t_out": 365.29,
+   "date": "1929",
+   "title": "The Gran Vía is complete",
+   "lines": [
+    "The last section is finished in 1929."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 365.39,
+   "t_out": 370.39,
+   "date": "1931",
+   "title": "The Second Republic",
+   "lines": [
+    "Proclaimed on 14 April 1931; that year the Casa de Campo opens to the public."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 370.7,
+   "t_out": 375.7,
+   "date": "1936",
+   "title": "The coup fails in Madrid",
+   "lines": [
+    "Workers and loyal troops storm the Cuartel de la Montaña on 20 July 1936."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 375.71,
+   "t_out": 380.71,
+   "date": "1936",
+   "title": "The first air raid",
+   "lines": [
+    "On 27–28 August 1936, Madrid is bombed from the air for the first time."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 380.72,
+   "t_out": 385.72,
+   "date": "1936",
+   "title": "The siege begins",
+   "lines": [
+    "Besieged from October 1936, Madrid sees its fiercest fighting that November."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 385.76,
+   "t_out": 390.76,
+   "date": "1939",
+   "title": "Madrid falls",
+   "lines": [
+    "The city falls to the Nationalists on 28 March 1939."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 421.66,
+   "t_out": 426.66,
+   "date": "1947",
+   "title": "The Bernabéu opens",
+   "lines": [
+    "Real Madrid's stadium is completed in 1947."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 426.66,
+   "t_out": 431.66,
+   "date": "1950",
+   "title": "A much bigger city",
+   "lines": [
+    "Between 1948 and 1954, Madrid annexes 13 surrounding municipalities."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 456.2,
+   "t_out": 461.2,
+   "date": "1953",
+   "title": "Edificio España",
+   "lines": [
+    "The tallest building in Spain opens on the Plaza de España in 1953."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 461.2,
+   "t_out": 466.2,
+   "date": "1957",
+   "title": "The Torre de Madrid",
+   "lines": [
+    "At 142 m and 36 floors, it is finished on 15 October 1957."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 466.92,
+   "t_out": 471.92,
+   "date": "1970",
+   "title": "The M-30 ring road",
+   "lines": [
+    "Building starts in 1970; the first two sections are completed in 1974."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 471.92,
+   "t_out": 477.92,
+   "date": "1970",
+   "title": "The M-30 ring road is built (1970)",
+   "lines": [
+    "Hover area is hand-set on the Manzanares stretch of the M-30."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 478.26,
+   "t_out": 483.26,
+   "date": "1975",
+   "title": "Franco dies",
+   "lines": [
+    "He dies on 20 November 1975; the city's population peaks the same year."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 483.44,
+   "t_out": 488.44,
+   "date": "1978",
+   "title": "A new constitution",
+   "lines": [
+    "Spain approves its democratic constitution by referendum in December 1978."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 489.23,
+   "t_out": 494.23,
+   "date": "1992",
+   "title": "Atocha's new terminal",
+   "lines": [
+    "The old Atocha building leaves service as a terminal in 1992."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 494.23,
+   "t_out": 499.23,
+   "date": "1993",
+   "title": "Almudena is consecrated",
+   "lines": [
+    "Pope John Paul II consecrates the cathedral on 15 June 1993."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 499.46,
+   "t_out": 504.46,
+   "date": "1997",
+   "title": "The Teatro Real reborn",
+   "lines": [
+    "It reopens as an opera house on 11 October 1997."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 504.83,
+   "t_out": 509.83,
+   "date": "2004",
+   "title": "March 11, 2004",
+   "lines": [
+    "Train bombings kill 191 people and injure 1,800."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 558.28,
+   "t_out": 563.28,
+   "date": "2007",
+   "title": "The towers rise",
+   "lines": [
+    "Torre Emperador tops out on 19 March 2007, at 230 m."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 563.28,
+   "t_out": 568.28,
+   "date": "2008",
+   "title": "Spain's tallest tower",
+   "lines": [
+    "Torre de Cristal, 249 m, is completed on 4 December 2008."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 568.28,
+   "t_out": 573.28,
+   "date": "2009",
+   "title": "A hub under Sol",
+   "lines": [
+    "A commuter-rail interchange under the Puerta del Sol opens on 27 June 2009."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 573.28,
+   "t_out": 578.28,
+   "date": "2011",
+   "title": "The M-30 goes underground",
+   "lines": [
+    "Tunnels bury the M-30 along the Manzanares; works end in 2010-2011 and the surface becomes a park."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 579.11,
+   "t_out": 584.11,
+   "date": "2024",
+   "title": "A city of 3.4 million",
+   "lines": [
+    "The municipal register counts 3,416,771 people."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "The Emir's Fortress"
+  },
+  {
+   "t_in": 42.06,
+   "t_out": 44.86,
+   "num": "II",
+   "title": "Castilian Town"
+  },
+  {
+   "t_in": 106.3,
+   "t_out": 108.74,
+   "num": "III",
+   "title": "Capital of the Empire"
+  },
+  {
+   "t_in": 171.19,
+   "t_out": 173.99,
+   "num": "IV",
+   "title": "Bourbon Madrid"
+  },
+  {
+   "t_in": 230.89,
+   "t_out": 232.09,
+   "num": "V",
+   "title": "War and Revolution"
+  },
+  {
+   "t_in": 275.84,
+   "t_out": 277.04,
+   "num": "VI",
+   "title": "Ensanche and Gran Vía"
+  },
+  {
+   "t_in": 364.19,
+   "t_out": 365.39,
+   "num": "VII",
+   "title": "Republic, Siege and Dictatorship"
+  },
+  {
+   "t_in": 477.06,
+   "t_out": 478.26,
+   "num": "VIII",
+   "title": "Democratic Capital"
+  }
+ ],
+ "cta": {
+  "t_in": 647.5,
+  "t_out": 652.0,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
+ "sources_card": {
+  "t_in": 652.0,
+  "t_out": 660.0,
+  "items": [
+   "Buildings: Dirección General del Catastro (INSPIRE Buildings, Spanish cadastre)",
+   "Roads, water, parks: © OpenStreetMap contributors (ODbL)",
+   "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+   "History: Wikipedia EN/ES (History of Madrid, Walls of Madrid, Royal Alcázar, Royal Palace and others)",
+   "Population: INE census figures (via Wikipedia ES), historical estimates",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
+}
