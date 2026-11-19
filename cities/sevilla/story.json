@@ -1,0 +1,1412 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "sevilla",
+  "name": "Seville",
+  "country": "TODO",
+  "lat0": 37.386194,
+  "lon0": -5.992417,
+  "radius_m": 16000,
+  "start_year": 1248,
+  "end_year": 2026,
+  "title": "EVOLUTION OF SEVILLE | 3D City Timelapse (1248–NOW) | No AI**",
+  "data_source": "custom",
+  "data_dir": "data_sevilla",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": []
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [
+   {
+    "name": "Walls (walls_1248.json)",
+    "ring": [
+     [
+      37.383191,
+      -5.995447
+     ],
+     [
+      37.385805,
+      -5.994497
+     ],
+     [
+      37.387198,
+      -5.996498
+     ],
+     [
+      37.389496,
+      -5.998748
+     ],
+     [
+      37.391984,
+      -5.999879
+     ],
+     [
+      37.39524,
+      -6.001122
+     ],
+     [
+      37.397954,
+      -6.000557
+     ],
+     [
+      37.400668,
+      -5.998748
+     ],
+     [
+      37.403292,
+      -5.996148
+     ],
+     [
+      37.402885,
+      -5.988912
+     ],
+     [
+      37.402749,
+      -5.987329
+     ],
+     [
+      37.401754,
+      -5.986086
+     ],
+     [
+      37.400307,
+      -5.985181
+     ],
+     [
+      37.398226,
+      -5.984051
+     ],
+     [
+      37.396869,
+      -5.982807
+     ],
+     [
+      37.394788,
+      -5.983372
+     ],
+     [
+      37.392527,
+      -5.983994
+     ],
+     [
+      37.390301,
+      -5.984729
+     ],
+     [
+      37.388003,
+      -5.985407
+     ],
+     [
+      37.385805,
+      -5.986086
+     ],
+     [
+      37.384113,
+      -5.987442
+     ],
+     [
+      37.384068,
+      -5.988008
+     ],
+     [
+      37.381626,
+      -5.989251
+     ],
+     [
+      37.381996,
+      -5.992994
+     ]
+    ],
+    "built": [
+     null,
+     null
+    ],
+    "demolished": null,
+    "conf": "low",
+    "_legacy": "anello metrico di walls_1248.json"
+   }
+  ],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [
+  {
+   "name": "Giralda",
+   "kind": "TODO",
+   "at": [
+    37.386191,
+    -5.992555
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 102
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 102 m",
+   "conf": "low"
+  },
+  {
+   "name": "Great Mosque",
+   "kind": "TODO",
+   "at": [
+    37.386426,
+    -5.993312
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 16
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 16 m",
+   "conf": "low"
+  },
+  {
+   "name": "Cathedral",
+   "kind": "TODO",
+   "at": [
+    37.385796,
+    -5.993095
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 42
+   },
+   "phases": [
+    {
+     "y": 1434
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1434 (primo anno della scheda), altezza 42 m",
+   "conf": "low"
+  },
+  {
+   "name": "Torre del Oro",
+   "kind": "TODO",
+   "at": [
+    37.38242,
+    -5.99623
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 38
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 38 m",
+   "conf": "low"
+  },
+  {
+   "name": "Real Alcázar",
+   "kind": "TODO",
+   "at": [
+    37.383088,
+    -5.990301
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 20
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 20 m",
+   "conf": "low"
+  },
+  {
+   "name": "Maestranza Bullring",
+   "kind": "TODO",
+   "at": [
+    37.385958,
+    -5.99805
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 16
+   },
+   "phases": [
+    {
+     "y": 1761
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1761 (primo anno della scheda), altezza 16 m",
+   "conf": "low"
+  },
+  {
+   "name": "Pontoon bridge",
+   "kind": "TODO",
+   "at": [
+    37.386535,
+    -6.002757
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 3
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Isabel II Bridge",
+   "kind": "TODO",
+   "at": [
+    37.386327,
+    -6.002388
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 10
+   },
+   "phases": [
+    {
+     "y": 1845
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1845 (primo anno della scheda), altezza 10 m",
+   "conf": "low"
+  },
+  {
+   "name": "Macarena walls",
+   "kind": "TODO",
+   "at": [
+    37.401573,
+    -5.987273
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 16
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1248 (primo anno della scheda), altezza 16 m",
+   "conf": "low"
+  },
+  {
+   "name": "Plaza Nueva",
+   "kind": "TODO",
+   "at": [
+    37.38915,
+    -5.996275
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 5
+   },
+   "phases": [
+    {
+     "y": 1857
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1857 (primo anno della scheda), altezza 5 m",
+   "conf": "low"
+  },
+  {
+   "name": "Plaza de España",
+   "kind": "TODO",
+   "at": [
+    37.377166,
+    -5.9869
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 40
+   },
+   "phases": [
+    {
+     "y": 1914
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1914 (primo anno della scheda), altezza 40 m",
+   "conf": "low"
+  },
+  {
+   "name": "Los Remedios",
+   "kind": "TODO",
+   "at": [
+    37.376062,
+    -6.001009
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 20
+   },
+   "phases": [
+    {
+     "y": 1950
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1950 (primo anno della scheda), altezza 20 m",
+   "conf": "low"
+  },
+  {
+   "name": "Cartuja Island",
+   "kind": "TODO",
+   "at": [
+    37.405192,
+    -6.003723
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 10
+   },
+   "phases": [
+    {
+     "y": 1982
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1982 (primo anno della scheda), altezza 10 m",
+   "conf": "low"
+  },
+  {
+   "name": "Barqueta Bridge",
+   "kind": "TODO",
+   "at": [
+    37.404366,
+    -5.9973
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 38
+   },
+   "phases": [
+    {
+     "y": 1989
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1989 (primo anno della scheda), altezza 38 m",
+   "conf": "low"
+  },
+  {
+   "name": "Alamillo Bridge",
+   "kind": "TODO",
+   "at": [
+    37.413352,
+    -5.992498
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 60
+   },
+   "phases": [
+    {
+     "y": 1987
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1987 (primo anno della scheda), altezza 60 m",
+   "conf": "low"
+  },
+  {
+   "name": "Centenario Bridge",
+   "kind": "TODO",
+   "at": [
+    37.35046,
+    -5.994883
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 105
+   },
+   "phases": [
+    {
+     "y": 1991
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1991 (primo anno della scheda), altezza 105 m",
+   "conf": "low"
+  },
+  {
+   "name": "Metropol Parasol",
+   "kind": "TODO",
+   "at": [
+    37.393087,
+    -5.991784
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 32
+   },
+   "phases": [
+    {
+     "y": 2010.5
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 2010.5 (primo anno della scheda), altezza 32 m",
+   "conf": "low"
+  },
+  {
+   "name": "Torre Sevilla",
+   "kind": "TODO",
+   "at": [
+    37.391305,
+    -6.010585
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 180
+   },
+   "phases": [
+    {
+     "y": 2015
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 2015 (primo anno della scheda), altezza 180 m",
+   "conf": "low"
+  },
+  {
+   "name": "Santa Justa station",
+   "kind": "TODO",
+   "at": [
+    37.391721,
+    -5.9756
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 15
+   },
+   "phases": [
+    {
+     "y": 1991
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1991 (primo anno della scheda), altezza 15 m",
+   "conf": "low"
+  },
+  {
+   "name": "Isla Mágica",
+   "kind": "TODO",
+   "at": [
+    37.404568,
+    -6.004
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 15
+   },
+   "phases": [
+    {
+     "y": 1997
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1997 (primo anno della scheda), altezza 15 m",
+   "conf": "low"
+  },
+  {
+   "name": "Encarnación",
+   "kind": "TODO",
+   "at": [
+    37.393087,
+    -5.991784
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 8
+   },
+   "phases": [
+    {
+     "y": 1820
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_sevilla.py; anno = 1820 (primo anno della scheda), altezza 8 m",
+   "conf": "low"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": true,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1248
+  },
+  "soste": [
+   {
+    "y0": 1248.0,
+    "y1": 1250.0,
+    "dur": 7.0,
+    "caption": "Seville under Castile (1248)",
+    "shot": "medium",
+    "target": "Cathedral",
+    "_legacy_target": "punto di mira legacy a 91 m da 'Cathedral' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1430.0,
+    "y1": 1437.0,
+    "dur": 5.0,
+    "caption": "The Great Mosque gives way to the Cathedral (1434)",
+    "shot": "medium",
+    "target": "Giralda",
+    "_legacy_target": "punto di mira legacy = GIRALDA spostato (monumento 'Giralda')",
+    "conf": "low"
+   },
+   {
+    "y0": 1564.0,
+    "y1": 1571.0,
+    "dur": 4.5,
+    "caption": "The Giralda gets its Renaissance belfry (1568)",
+    "shot": "medium",
+    "target": "Giralda",
+    "_legacy_target": "punto di mira legacy = GIRALDA spostato (monumento 'Giralda')",
+    "conf": "low"
+   },
+   {
+    "y0": 1758.0,
+    "y1": 1790.0,
+    "dur": 5.0,
+    "caption": "The Maestranza bullring rises (1761-1785)",
+    "shot": "medium",
+    "target": "TODO",
+    "conf": "low"
+   },
+   {
+    "y0": 1843.0,
+    "y1": 1852.5,
+    "dur": 4.5,
+    "caption": "Isabel II Bridge replaces the boat bridge (1845-1852)",
+    "shot": "medium",
+    "target": "TODO",
+    "conf": "low"
+   },
+   {
+    "y0": 1858.0,
+    "y1": 1874.0,
+    "dur": 5.0,
+    "caption": "The walls come down (1858-1873)",
+    "shot": "medium",
+    "target": "Macarena walls",
+    "_legacy_target": "punto di mira legacy a 40 m da 'Macarena walls' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1912.0,
+    "y1": 1930.0,
+    "dur": 5.5,
+    "caption": "Plaza de España for the 1929 Expo (1914-1929)",
+    "shot": "medium",
+    "target": "Plaza de España",
+    "_legacy_target": "punto di mira legacy a 4 m da 'Plaza de España' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1952.0,
+    "y1": 1966.0,
+    "dur": 5.5,
+    "caption": "A new district: Los Remedios",
+    "shot": "medium",
+    "target": "Los Remedios",
+    "_legacy_target": "punto di mira legacy a 0 m da 'Los Remedios' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1975.0,
+    "y1": 1983.0,
+    "dur": 5.0,
+    "caption": "The river is moved west: Corta de la Cartuja (1975-1982)",
+    "shot": "medium",
+    "target": "Plaza Nueva",
+    "_legacy_target": "punto di mira legacy a 398 m da 'Plaza Nueva' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 1991.0,
+    "y1": 1993.0,
+    "dur": 5.5,
+    "caption": "Expo 92",
+    "shot": "medium",
+    "target": "Alamillo Bridge",
+    "_legacy_target": "punto di mira legacy a 307 m da 'Alamillo Bridge' (monumento piu' vicino)",
+    "conf": "low"
+   },
+   {
+    "y0": 2014.0,
+    "y1": 2018.5,
+    "dur": 5.0,
+    "caption": "Torre Sevilla · 180 m · 2015",
+    "shot": "medium",
+    "target": "Torre Sevilla",
+    "_legacy_target": "punto di mira legacy a 0 m da 'Torre Sevilla' (monumento piu' vicino)",
+    "conf": "low"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32,
+  "night_hold": 15
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "SEVILLE TODAY"
+  ],
+  "title": [
+   "SEVILLE",
+   "1248 TO NOW"
+  ],
+  "end": [
+   "SEVILLE · 778 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1248.9,
+    "title": "Ferdinand III takes Seville",
+    "lines": [
+     "After a 15-month siege the Almohad city surrenders to Castile."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "23 Nov 1248",
+    "conf": "low"
+   },
+   {
+    "y": 1252.4,
+    "title": "The king dies in Seville",
+    "lines": [
+     "Ferdinand III is buried in the old mosque, now the cathedral."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1252",
+    "conf": "low"
+   },
+   {
+    "y": 1300.0,
+    "title": "A city of ~50,000",
+    "lines": [
+     "Orchards inside the walls slowly fill with houses."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1300",
+    "conf": "low"
+   },
+   {
+    "y": 1356.0,
+    "title": "Earthquake",
+    "lines": [
+     "The Giralda's four golden spheres fall."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1356",
+    "conf": "low"
+   },
+   {
+    "y": 1400.0,
+    "title": "A Christian crown",
+    "lines": [
+     "A cross and a bell replace the minaret top."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1400",
+    "conf": "low"
+   },
+   {
+    "y": 1434.0,
+    "title": "Cathedral works begin",
+    "lines": [
+     "The Almohad mosque is pulled down, the Giralda is kept."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1434",
+    "conf": "low"
+   },
+   {
+    "y": 1481.0,
+    "title": "The Inquisition arrives",
+    "lines": [
+     "Its first Castilian tribunal sits in Triana Castle."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1481",
+    "conf": "low"
+   },
+   {
+    "y": 1503.0,
+    "title": "Gateway to the Americas",
+    "lines": [
+     "The Casa de Contratación gives Seville a trade monopoly."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1503",
+    "conf": "low"
+   },
+   {
+    "y": 1519.6,
+    "title": "Magellan sets sail",
+    "lines": [
+     "His fleet leaves from the Arenal docks."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1519",
+    "conf": "low"
+   },
+   {
+    "y": 1568.0,
+    "title": "A new top for the Giralda",
+    "lines": [
+     "Hernán Ruiz adds the Renaissance belfry: ~100 m."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1568",
+    "conf": "low"
+   },
+   {
+    "y": 1574.0,
+    "title": "The lagoon is drained",
+    "lines": [
+     "The Feria marsh becomes the Alameda de Hércules."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1574–1578",
+    "conf": "low"
+   },
+   {
+    "y": 1600.0,
+    "title": "Peak of the Golden Age",
+    "lines": [
+     "About 120,000 people: one of Europe's largest cities."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "c. 1600",
+    "conf": "low"
+   },
+   {
+    "y": 1649.0,
+    "title": "The Great Plague",
+    "lines": [
+     "A huge share of the city dies; no reliable count exists."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1649",
+    "conf": "low"
+   },
+   {
+    "y": 1700.0,
+    "title": "A shrinking city",
+    "lines": [
+     "Population falls to ~70,000."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "c. 1700",
+    "conf": "low"
+   },
+   {
+    "y": 1717.0,
+    "title": "Trade moves to Cádiz",
+    "lines": [
+     "The Casa de Contratación leaves Seville."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1717",
+    "conf": "low"
+   },
+   {
+    "y": 1728.0,
+    "title": "Royal Tobacco Factory",
+    "lines": [
+     "Work starts on one of the largest industrial buildings in Europe."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1728",
+    "conf": "low"
+   },
+   {
+    "y": 1755.9,
+    "title": "Lisbon earthquake",
+    "lines": [
+     "The shock damages buildings across Seville."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1755",
+    "conf": "low"
+   },
+   {
+    "y": 1760.0,
+    "title": "Torre del Oro",
+    "lines": [
+     "The tower gets its cylindrical top."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1760",
+    "conf": "low"
+   },
+   {
+    "y": 1810.1,
+    "title": "French occupation",
+    "lines": [
+     "Napoleon's troops hold the city."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1810–1812",
+    "conf": "low"
+   },
+   {
+    "y": 1811.0,
+    "title": "Encarnación convent demolished",
+    "lines": [
+     "Its site becomes a market square."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1811",
+    "conf": "low"
+   },
+   {
+    "y": 1820.0,
+    "title": "A market square",
+    "lines": [
+     "A market rises on the Encarnación convent site."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1820",
+    "conf": "low"
+   },
+   {
+    "y": 1836.0,
+    "title": "Disentailment",
+    "lines": [
+     "Church property is sold off; convents are emptied."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1836",
+    "conf": "low"
+   },
+   {
+    "y": 1842.0,
+    "title": "100,000 people",
+    "lines": [
+     "The first modern census."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1842",
+    "conf": "low"
+   },
+   {
+    "y": 1848.0,
+    "title": "Plaza Nueva",
+    "lines": [
+     "The San Francisco convent is replaced by a square."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1848–1857",
+    "conf": "low"
+   },
+   {
+    "y": 1852.2,
+    "title": "Isabel II Bridge opens",
+    "lines": [
+     "The first fixed bridge to Triana ends 600 years of boats."
+    ],
+    "hold_s": 5,
+    "legacy_date": "23 Feb 1852",
+    "conf": "low"
+   },
+   {
+    "y": 1858.0,
+    "title": "The walls come down",
+    "lines": [
+     "Gates and walls give way to boulevards; Macarena survives."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1858–1873",
+    "conf": "low"
+   },
+   {
+    "y": 1860.0,
+    "title": "118,000 people",
+    "lines": [
+     "Still mostly inside the old walls."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1860",
+    "conf": "low"
+   },
+   {
+    "y": 1877.0,
+    "title": "134,000 people",
+    "lines": [
+     "The city finally grows beyond its medieval size."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1877",
+    "conf": "low"
+   },
+   {
+    "y": 1881.0,
+    "title": "Maestranza completed",
+    "lines": [
+     "The bullring takes its final form after 120 years."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1881",
+    "conf": "low"
+   },
+   {
+    "y": 1900.0,
+    "title": "148,000 people",
+    "lines": [
+     "The first districts grow outside the old walls."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1900",
+    "conf": "low"
+   },
+   {
+    "y": 1909.0,
+    "title": "Alfonso XIII Canal",
+    "lines": [
+     "A new cut shortens the river for the port."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1909–1926",
+    "conf": "low"
+   },
+   {
+    "y": 1917.1,
+    "title": "The Guadalquivir floods",
+    "lines": [
+     "One of several floods that push the river works."
+    ],
+    "hold_s": 5,
+    "legacy_date": "Feb 1917",
+    "conf": "low"
+   },
+   {
+    "y": 1929.35,
+    "title": "Ibero-American Exposition",
+    "lines": [
+     "Plaza de España and María Luisa Park open."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "9 May 1929",
+    "conf": "low"
+   },
+   {
+    "y": 1936.5,
+    "title": "Spanish Civil War",
+    "lines": [
+     "Seville falls to the rebels in the first days."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1936–1939",
+    "conf": "low"
+   },
+   {
+    "y": 1940.0,
+    "title": "312,000 people",
+    "lines": [
+     "The city doubles in twenty years."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1940",
+    "conf": "low"
+   },
+   {
+    "y": 1948.0,
+    "title": "Chapina is closed",
+    "lines": [
+     "The old river arm is dammed; the city side becomes a dock."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1948–1950",
+    "conf": "low"
+   },
+   {
+    "y": 1955.0,
+    "title": "Los Remedios",
+    "lines": [
+     "A new district rises on the old Tablada fields."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1950s",
+    "conf": "low"
+   },
+   {
+    "y": 1961.9,
+    "title": "Tamarguillo flood",
+    "lines": [
+     "Much of the eastern city goes under water."
+    ],
+    "hold_s": 5,
+    "legacy_date": "25 Nov 1961",
+    "conf": "low"
+   },
+   {
+    "y": 1963.2,
+    "title": "Another flood",
+    "lines": [
+     "The Guadalquivir overflows again."
+    ],
+    "hold_s": 5,
+    "legacy_date": "Mar 1963",
+    "conf": "low"
+   },
+   {
+    "y": 1970.0,
+    "title": "548,000 people",
+    "lines": [
+     "High-rise blocks spread east and south."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1970",
+    "conf": "low"
+   },
+   {
+    "y": 1973.0,
+    "title": "Encarnación market demolished",
+    "lines": [
+     "The square stays empty for three decades."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1973",
+    "conf": "low"
+   },
+   {
+    "y": 1975.0,
+    "title": "Corta de la Cartuja",
+    "lines": [
+     "The river is diverted west of La Cartuja against floods."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1975–1982",
+    "conf": "low"
+   },
+   {
+    "y": 1981.0,
+    "title": "654,000 people",
+    "lines": [
+     "Thirty years of record growth."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1981",
+    "conf": "low"
+   },
+   {
+    "y": 1982.5,
+    "title": "Capital of Andalusia",
+    "lines": [
+     "The new regional government sits in Seville."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1982",
+    "conf": "low"
+   },
+   {
+    "y": 1985.0,
+    "title": "An empty riverbed",
+    "lines": [
+     "The old Chapina arm lies dry, waiting for the Expo."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1980s",
+    "conf": "low"
+   },
+   {
+    "y": 1987.0,
+    "title": "Alamillo Bridge begun",
+    "lines": [
+     "Works start on the first new bridge for the Expo."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1987",
+    "conf": "low"
+   },
+   {
+    "y": 1989.0,
+    "title": "Expo works",
+    "lines": [
+     "Barqueta Bridge and Santa Justa station are begun."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1989",
+    "conf": "low"
+   },
+   {
+    "y": 1991.33,
+    "title": "Santa Justa station",
+    "lines": [
+     "The new railway station opens."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "2 May 1991",
+    "conf": "low"
+   },
+   {
+    "y": 1992.3,
+    "title": "Expo 92 opens",
+    "lines": [
+     "20 April – 12 October 1992, on La Cartuja."
+    ],
+    "hold_s": 5,
+    "legacy_date": "20 Apr 1992",
+    "conf": "low"
+   },
+   {
+    "y": 1992.3,
+    "title": "High-speed rail",
+    "lines": [
+     "The first AVE line links Seville to Madrid."
+    ],
+    "hold_s": 5,
+    "legacy_date": "Apr 1992",
+    "conf": "low"
+   },
+   {
+    "y": 1997.5,
+    "title": "Isla Mágica",
+    "lines": [
+     "A theme park opens on the old Expo grounds."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1997",
+    "conf": "low"
+   },
+   {
+    "y": 2001.0,
+    "title": "684,000 people",
+    "lines": [
+     "Growth moves to the suburbs."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "2001",
+    "conf": "low"
+   },
+   {
+    "y": 2011.0,
+    "title": "Metropol Parasol",
+    "lines": [
+     "\"Las Setas\", a wooden canopy, opens over the Encarnación square."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "2011",
+    "conf": "low"
+   },
+   {
+    "y": 2025.0,
+    "title": "Seville today",
+    "lines": [
+     "~690,000 people."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "2025",
+    "conf": "low"
+   }
+  ],
+  "events": [
+   {
+    "y": 1991.0,
+    "title": "Expo 92",
+    "line": "20 April – 12 October 1992",
+    "sober": false
+   }
+  ],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_sevilla.md",
+  "translations_file": null,
+  "translation_languages": [],
+  "video_chapter_lines": 96,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_sevilla_src",
+   "present": [
+    "buildings.json",
+    "dem_rel.npz",
+    "walls_1248.json",
+    "water_src.json"
+   ],
+   "missing_for_kit": [
+    "roads.json",
+    "land.json",
+    "dem.npz"
+   ],
+   "complete": false
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "landmarks",
+   "field": "kind",
+   "reason": "21 monumenti con geometria bespoke in landmarks_sevilla.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
+  },
+  {
+   "path": "regia.soste[3]",
+   "field": "target",
+   "reason": "'The Maestranza bullring rises (1761-1785)': bersaglio legacy assente"
+  },
+  {
+   "path": "regia.soste[4]",
+   "field": "target",
+   "reason": "'Isabel II Bridge replaces the boat bridge (1845-1852)': bersaglio legacy assente"
+  },
+  {
+   "path": "regia.soste",
+   "field": "target",
+   "reason": "7 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "11 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "54 cartelli importati (da CAPS di regia); minimo 45 rispettato"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "hold_s",
+   "reason": "28 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "city",
+   "field": "population",
+   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "nessuna scheda di validazione per sevilla: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
+  },
+  {
+   "path": "history.walls[0]",
+   "field": "built/demolished/src",
+   "reason": "walls_1248.json: solo il tracciato; anni e fonte da compilare"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "nessun bridges_sevilla.py leggibile (vedi anche bridges.json di radice, non per citta')"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  },
+  {
+   "path": "data",
+   "field": "data_src",
+   "reason": "data_sevilla_src incompleto per kit data/pack: mancano roads.json, land.json, dem.npz"
+  }
+ ]
+}

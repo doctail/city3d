@@ -1,0 +1,3835 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "parigi",
+  "name": "Paris",
+  "country": "TODO",
+  "lat0": 48.85297,
+  "lon0": 2.34993,
+  "radius_m": 8000,
+  "start_year": 1190,
+  "end_year": 2026,
+  "title": "EVOLUTION OF PARIS | 3D City Timelapse (1190–NOW) | No AI",
+  "data_source": "custom",
+  "data_dir": "data_parigi",
+  "style_preset": "mediterranean",
+  "population": [
+   [
+    1190,
+    25000,
+    "historical estimate"
+   ],
+   [
+    1240,
+    50000,
+    "historical estimate"
+   ],
+   [
+    1290,
+    120000,
+    "historical estimate"
+   ],
+   [
+    1340,
+    200000,
+    "historical estimate"
+   ],
+   [
+    1390,
+    100000,
+    "historical estimate"
+   ],
+   [
+    1440,
+    100000,
+    "historical estimate"
+   ],
+   [
+    1490,
+    200000,
+    "historical estimate"
+   ],
+   [
+    1540,
+    350000,
+    "historical estimate"
+   ],
+   [
+    1590,
+    400000,
+    "historical estimate"
+   ],
+   [
+    1640,
+    450000,
+    "historical estimate"
+   ],
+   [
+    1690,
+    500000,
+    "historical estimate"
+   ],
+   [
+    1740,
+    550000,
+    "historical estimate"
+   ],
+   [
+    1790,
+    600000,
+    "historical estimate"
+   ],
+   [
+    1801,
+    547756,
+    "census"
+   ],
+   [
+    1807,
+    580609,
+    "census"
+   ],
+   [
+    1811,
+    622636,
+    "census"
+   ],
+   [
+    1817,
+    713966,
+    "census"
+   ],
+   [
+    1831,
+    785862,
+    "census"
+   ],
+   [
+    1836,
+    909126,
+    "census"
+   ],
+   [
+    1841,
+    935261,
+    "census"
+   ],
+   [
+    1846,
+    1053897,
+    "census"
+   ],
+   [
+    1851,
+    1053262,
+    "census"
+   ],
+   [
+    1856,
+    1174346,
+    "census"
+   ],
+   [
+    1861,
+    1696141,
+    "census"
+   ],
+   [
+    1866,
+    1825274,
+    "census"
+   ],
+   [
+    1872,
+    1851792,
+    "census"
+   ],
+   [
+    1876,
+    1988806,
+    "census"
+   ],
+   [
+    1881,
+    2269023,
+    "census"
+   ],
+   [
+    1886,
+    2344550,
+    "census"
+   ],
+   [
+    1891,
+    2447957,
+    "census"
+   ],
+   [
+    1896,
+    2536834,
+    "census"
+   ],
+   [
+    1901,
+    2714068,
+    "census"
+   ],
+   [
+    1906,
+    2763393,
+    "census"
+   ],
+   [
+    1911,
+    2888110,
+    "census"
+   ],
+   [
+    1921,
+    2906472,
+    "census"
+   ],
+   [
+    1926,
+    2871429,
+    "census"
+   ],
+   [
+    1931,
+    2891020,
+    "census"
+   ],
+   [
+    1936,
+    2829746,
+    "census"
+   ],
+   [
+    1946,
+    2725374,
+    "census"
+   ],
+   [
+    1954,
+    2850189,
+    "census"
+   ],
+   [
+    1962,
+    2790091,
+    "census"
+   ],
+   [
+    1968,
+    2590771,
+    "census"
+   ],
+   [
+    1975,
+    2299830,
+    "census"
+   ],
+   [
+    1982,
+    2176243,
+    "census"
+   ],
+   [
+    1990,
+    2152423,
+    "census"
+   ],
+   [
+    1999,
+    2125246,
+    "census"
+   ],
+   [
+    2006,
+    2181371,
+    "census"
+   ],
+   [
+    2011,
+    2249975,
+    "census"
+   ],
+   [
+    2016,
+    2190327,
+    "census"
+   ],
+   [
+    2021,
+    2133111,
+    "census"
+   ],
+   [
+    2025,
+    2065560,
+    "census"
+   ]
+  ],
+  "pop_src": [
+   "D001",
+   "D002",
+   "D003",
+   "D004",
+   "D005",
+   "D006",
+   "D007",
+   "D008",
+   "D009",
+   "D010",
+   "D011",
+   "D012",
+   "D013",
+   "D014",
+   "D015",
+   "D016",
+   "D017",
+   "D018",
+   "D019",
+   "D020",
+   "D021",
+   "D022",
+   "D023",
+   "D024",
+   "D025",
+   "D026",
+   "D027",
+   "D028",
+   "D029",
+   "D030",
+   "D031",
+   "D032",
+   "D033",
+   "D034",
+   "D035",
+   "D036",
+   "D037",
+   "D038",
+   "D039",
+   "D040",
+   "D041",
+   "D042",
+   "D043",
+   "D044",
+   "D045",
+   "D046",
+   "D047",
+   "D048",
+   "D049",
+   "D050",
+   "D051"
+  ],
+  "eras": [],
+  "pop_conf": [
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high"
+  ]
+ },
+ "sources": {
+  "A001": {
+   "url": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/veue-et-perspective-de-l-isle-nostre-dame-et-de-la-porte-st-bernard-sic",
+   "title": "Île Saint-Louis: unificazione degli isolotti Notre-Dame e aux Vaches",
+   "quote": "Intervento autorizzato nel 1614; completamento convenzionale verso il 1655."
+  },
+  "A002": {
+   "url": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/l-ile-louviers-et-la-pointe-de-l-ile-saint-louis-vues-du-port-saint-paul",
+   "title": "Île Louviers: riempimento del braccio del Mail e unione alla riva destra",
+   "quote": "La fonte riporta: «En 1843, par comblement du petit bras du “Mail”, l'île Louviers fut rattachée à la rive droite de Paris»."
+  },
+  "A003": {
+   "url": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+   "title": "Canal de l’Ourcq: apertura del primo tratto navigabile fino a La Villette",
+   "quote": "La fonte riporta: «Le canal de l’Ourcq est inauguré le 15 août 1813»."
+  },
+  "A004": {
+   "url": "https://www.paris.fr/pages/10-choses-a-savoir-sur-le-canal-de-l-ourcq-19869",
+   "title": "Canal de l’Ourcq: apertura del tratto Mareuil–Parigi",
+   "quote": "La fonte riporta: «la portion du canal de l’Ourcq entre Mareuil (Oise) et Paris ouvre en 1822»."
+  },
+  "A005": {
+   "url": "https://www.paris.fr/pages/tmp-canaux-7834",
+   "title": "Canal Saint-Denis: completamento e apertura",
+   "quote": "La fonte riporta: «Le canal Saint-Denis est achevé en 1821»."
+  },
+  "A006": {
+   "url": "https://ws-paris-v4.paris.fr/pages/les-passerelles-du-canal-saint-martin-un-pont-vers-l-histoire-de-paris-16492",
+   "title": "Canal Saint-Martin: scavo e costruzione (cantiere effettivo)",
+   "quote": "Nel modello: GRADUALE 1822→1825 (prima pietra 3 maggio 1822, inaugurazione 4 novembre 1825, riga A007). Il 1802 resta solo come nota (legge/progetto). CONFLITTO tra cronologie istituzionali: la Ville de Paris scrive «Les travaux de creusement du canal débutent en 1802 et s’achèvent vingt ans plus tard»; la mairie du 10e indica «Le 3 mai 1822, la première pierre est posée». Il 19 maggio 1802 è anche la data della legge/progetto; inaugurazione nel 1825. Non assimilare automaticamente avvio del progetto e inizio effettivo del cantiere."
+  },
+  "A007": {
+   "url": "https://www.paris.fr/pages/le-canal-saint-martin-fete-ses-200-ans-32285",
+   "title": "Canal Saint-Martin: completamento e apertura",
+   "quote": "La Ville de Paris indica: «Charles X inaugure le canal Saint-Martin, le 4 novembre 1825». È la data d’inaugurazione, distinta dalla posa della prima pietra nel 1822."
+  },
+  "A013": {
+   "url": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+   "title": "Canal Saint-Martin: copertura parziale sul boulevard Richard-Lenoir",
+   "quote": "La mairie du 10e indique : «C’est entre 1860 et 1862 que le préfet Haussmann décida de couvrir le canal au moyen d’une voûte [...] afin de créer le boulevard Richard-Lenoir»."
+  },
+  "A014": {
+   "url": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+   "title": "Canal Saint-Martin: copertura del tratto tra République e Bastille",
+   "quote": "La mairie du 10e indique : «Une idée reprise en 1906, avec la voûte du Temple [...] afin de donner le jour au boulevard Jules Ferry»."
+  },
+  "B001": {
+   "url": "https://www.paris.fr/pages/sur-la-piste-de-l-enceinte-medievale-philippe-auguste-rive-droite-episode-1-2-20729",
+   "title": "Enceinte de Philippe Auguste — rive droite: costruzione",
+   "quote": "La fonte riporta: «Entre 1190 et 1210»."
+  },
+  "B002": {
+   "url": "https://www.paris.fr/pages/sur-la-piste-de-l-enceinte-medievale-philippe-auguste-rive-gauche-episode-2-2-21081",
+   "title": "Enceinte de Philippe Auguste — rive gauche: costruzione",
+   "quote": "La fonte riporta: «construite entre 1190 et 1215»; la riva sinistra va distinta dalla destra."
+  },
+  "B003": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Enceinte de Charles V: costruzione",
+   "quote": "La fonte riporta: «Entre 1356 et 1383»."
+  },
+  "B004": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Enceinte de Charles V: dismissione e demolizione progressiva",
+   "quote": "La fonte conferma che le due cinte più tarde furono rase sotto Luigi XIV; intervallo operativo approssimativo."
+  },
+  "B005": {
+   "url": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/limites-et-enceintes-successives-de-paris",
+   "title": "Enceinte de Louis XIII: costruzione",
+   "quote": "Le plan des enceintes porte «enceinte de Charles IX à Louis XIII...1560-1643»; la Ville de Paris date le lancement du front de 1566."
+  },
+  "B006": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Enceinte de Louis XIII: demolizione",
+   "quote": "La Ville de Paris indique que les deux enceintes les plus tardives sont rasées sous Louis XIV pour laisser place aux grands boulevards; 1670 est le début documenté de cette phase, 1700 borne opérationnelle. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "B007": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Mur des Fermiers généraux: costruzione",
+   "quote": "La fonte riporta: «La construction du mur des Fermiers généraux s’étend de 1784 à 1790»."
+  },
+  "B009": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Enceinte de Thiers: costruzione",
+   "quote": "La fonte riporta: «Construite entre 1841 et 1844»."
+  },
+  "B010": {
+   "url": "https://www.paris.fr/pages/de-porte-en-porte-paris-se-raconte-16658",
+   "title": "Enceinte de Thiers: demolizione",
+   "quote": "La fonte riporta che fu distrutta «dans les années 1920»; intervallo reso in anni interi per il modello."
+  },
+  "B011": {
+   "url": "https://www.observatoire-des-territoires.gouv.fr/kiosque/2021-2022-rapport-cahier-1-demo-chap-01-04-levolution-demographique-de-la-ville-de-paris",
+   "title": "Annessione dei comuni suburbani e passaggio da 12 a 20 arrondissement",
+   "quote": "La fonte riporta che nel 1860 i limiti furono ampliati e gli arrondissement passarono da 12 a 20. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "B012": {
+   "url": "https://fr.wikipedia.org/wiki/Boulevard_p%C3%A9riph%C3%A9rique_de_Paris",
+   "title": "Boulevard périphérique: apertura al traffico",
+   "quote": "Anno di apertura convenzionale dell’anello stradale."
+  },
+  "C001": {
+   "url": "https://cdn.paris.fr/paris/2020/02/26/2036630923f689f0c704a7d9522c82a9.pdf",
+   "title": "Rue de Rivoli: primo asse urbano",
+   "quote": "Le document d’urbanisme de la Ville de Paris décrit le prolongement de la rue de Rivoli parmi les percées du Second Empire et indique un segment déjà tracé en 1854; les bornes de cette ligne restent un phasage général à préciser par tronçon. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "C003": {
+   "url": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/inauguration-du-boulevard-de-sebastopol-le-5-avril-1858-en-presence-de-l",
+   "title": "Boulevard de Sébastopol: apertura",
+   "quote": "Paris Musées / Musée Carnavalet indique : «Ce boulevard a été inauguré le 5 avril 1858»; l’inauguration de 1858 est attestée, le démarrage du chantier en 1854 reste une borne de phase."
+  },
+  "C006": {
+   "url": "https://www.parismuseescollections.paris.fr/en/node/160698",
+   "title": "Avenue de l’Opéra: apertura",
+   "quote": "La notice de Paris Musées indique : «le percement de l’avenue à partir de 1864 (achevé en 1876)»; ouverture et achèvement du percement sont distingués."
+  },
+  "C007": {
+   "url": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/le-percement-du-boulevard-haussmann-en-1926",
+   "title": "Boulevard Haussmann: apertura e completamento",
+   "quote": "Paris Musées documente explicitement «Le percement du boulevard Haussmann en 1926»; cette phase terminale complète les travaux antérieurs."
+  },
+  "C008": {
+   "url": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/architecture-ephemere-ceremonie-d-inauguration-du-boulevard-du-prince",
+   "title": "Boulevard Voltaire: apertura",
+   "quote": "La notice de Paris Musées identifie le boulevard Voltaire sous son ancien nom «boulevard du Prince-Eugène» et date son inauguration de 1862."
+  },
+  "C014": {
+   "url": "https://www.paris.fr/lieux/square-louis-xiii-36",
+   "title": "Place des Vosges: realizzazione e impianto",
+   "quote": "La Ville de Paris indique : «C’est en 1605 que la place prit le nom de “place Royale”» et «La place Royale ne fut achevée qu’en 1612». Place postérieure à 1190, donc absente de l’état initial."
+  },
+  "C015": {
+   "url": "https://fr.wikipedia.org/wiki/Place_Vend%C3%B4me",
+   "title": "Place Vendôme: impianto urbano",
+   "quote": "Piazza sviluppata in più fasi."
+  },
+  "C016": {
+   "url": "https://www.parismuseescollections.paris.fr/en/node/172337",
+   "title": "Les Halles: mercato centrale, costruzione dei pavillons Baltard",
+   "quote": "Paris Musées indique que les pavillons de fer, verre et fonte furent construits «de 1852 et 1870»."
+  },
+  "C017": {
+   "url": "https://www.parismuseescollections.paris.fr/en/node/172337",
+   "title": "Les Halles: demolizione dei pavillons Baltard",
+   "quote": "Paris Musées indique le transfert du marché à Rungis en 1969 puis «leur démolition en 1971-1973»."
+  },
+  "C019": {
+   "url": "https://mairie10.paris.fr/pages/bicentenairecanalsaintmartin-15898",
+   "title": "Boulevard Richard-Lenoir: realizzazione sopra il canal Saint-Martin coperto",
+   "quote": "La mairie du 10e indique : «C’est entre 1860 et 1862 que le préfet Haussmann décida de couvrir le canal au moyen d’une voûte [...] afin de créer le boulevard Richard-Lenoir»."
+  },
+  "D001": {
+   "url": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
+   "title": "Stima ricostruttiva medievale",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D002": {
+   "url": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
+   "title": "Stima storica interpolata",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D003": {
+   "url": "https://www.persee.fr/doc/crai_0065-0536_1966_num_110_4_12047",
+   "title": "Stima storica interpolata",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D004": {
+   "url": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
+   "title": "Stima di popolazione medievale",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D005": {
+   "url": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
+   "title": "Contrazione dopo crisi e peste; stima",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D006": {
+   "url": "https://piren-seine.fr/rapports/les_archives/lalimentation_et_les_usages_de_leau_a_paris_du_xiie_au_xvie_siecle",
+   "title": "Stima di metà XV secolo",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D007": {
+   "url": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1456?pageId=T1_88",
+   "title": "Stima di fine XV secolo",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D008": {
+   "url": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1456?pageId=T1_88",
+   "title": "Stima di metà XVI secolo",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D009": {
+   "url": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
+   "title": "Stima intorno all’assedio; ordine di grandezza",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D010": {
+   "url": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
+   "title": "Stima di XVII secolo",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D011": {
+   "url": "https://www.lem.santannapisa.it/WPLem/files/2017-14.pdf",
+   "title": "Stima di fine XVII secolo",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D012": {
+   "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1-2_6853",
+   "title": "Stima interpolata tra serie storiche",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D013": {
+   "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1-2_6853",
+   "title": "Stima alla vigilia della Rivoluzione",
+   "quote": "Stima indicativa, non censimento; la popolazione storica è incerta e il perimetro storico non coincide con quello comunale attuale."
+  },
+  "D014": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1801 547,756». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D015": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1807 580,609». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D016": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1811 622,636». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D017": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1817 713,966». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D018": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1831 785,862». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D019": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1836 909,126». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D020": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1841 935,261». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D021": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1846 1,053,897». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D022": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1851 1,053,262». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D023": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1856 1,174,346». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D024": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1861 1,696,141». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D025": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1866 1,825,274». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D026": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1872 1,851,792». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D027": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1876 1,988,806». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D028": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1881 2,269,023». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D029": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1886 2,344,550». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D030": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1891 2,447,957». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D031": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1896 2,536,834». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D032": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1901 2,714,068». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D033": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1906 2,763,393». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D034": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1911 2,888,110». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D035": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1921 2,906,472». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D036": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1926 2,871,429». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D037": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1931 2,891,020». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D038": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1936 2,829,746». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D039": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1946 2,725,374». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D040": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1954 2,850,189». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D041": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1962 2,790,091». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D042": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1968 2,590,771». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D043": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1975 2,299,830». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D044": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1982 2,176,243». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D045": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1990 2,152,423». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D046": {
+   "url": "https://commons.wikimedia.org/wiki/Data:Population_%E2%80%93_Paris_%E2%80%93_%E2%80%93_INSEE_75.tab",
+   "title": "Population recensée ou série historique publiée",
+   "quote": "La fonte riporta: «1999 2,125,246». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D047": {
+   "url": "https://www.insee.fr/fr/statistiques/serie/001760155",
+   "title": "Population municipale / population de référence",
+   "quote": "La fonte riporta: «2006 2,181,371». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D048": {
+   "url": "https://www.insee.fr/fr/statistiques/serie/001760155",
+   "title": "Population municipale / population de référence",
+   "quote": "La fonte riporta: «2011 2,249,975». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D049": {
+   "url": "https://www.insee.fr/fr/statistiques/serie/001760155",
+   "title": "Population municipale / population de référence",
+   "quote": "La fonte riporta: «2016 2,190,327». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D050": {
+   "url": "https://www.insee.fr/fr/statistiques/serie/001760155",
+   "title": "Population municipale / population de référence",
+   "quote": "La fonte riporta: «2021 2,133,111». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "D051": {
+   "url": "https://www.insee.fr/fr/statistiques/serie/001760155",
+   "title": "Population municipale / population de référence",
+   "quote": "La fonte riporta: «2025 2,065,560». Valore di serie storica o censimento; le definizioni possono variare tra millésimes."
+  },
+  "E001": {
+   "url": "https://www.paris.fr/pages/sur-la-piste-de-l-enceinte-medievale-philippe-auguste-rive-droite-episode-1-2-20729",
+   "title": "Musée du Louvre — forteresse médiévale",
+   "quote": "La fonte riporta: «construite entre 1190 et 1202»."
+  },
+  "E002": {
+   "url": "https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
+   "title": "Musée du Louvre — aile Lescot et lancement de la Cour Carrée",
+   "quote": "Le Louvre indique : «En 1546 [...] le roi commande une nouvelle aile»; l’aile Lescot est «terminée entre 1553 et 1555»."
+  },
+  "E003": {
+   "url": "https://api-www.louvre.fr/sites/default/files/2022-07/1_Du%20Palais%20au%20mus%C3%A9e-OK.pdf",
+   "title": "Musée du Louvre — Cour Carrée : agrandissement classique",
+   "quote": "La source officielle précise que l’agrandissement devient la Cour Carrée et qu’il est réalisé par les successeurs d’Henri IV; 1670 est une borne de modélisation du grand chantier classique. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E004": {
+   "url": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/souvenir-d-une-ascension-au-sommet-de-la-tour-eiffel-1889-0",
+   "title": "Tour Eiffel",
+   "quote": "La fonte riporta: «LES TRAVAUX ONT COMMENCE / LE 27 JANV. 1887» e «LE MONUMENT A ETE INAUGURE / LE 6 MAI 1889»."
+  },
+  "E005": {
+   "url": "https://www.paris.fr/pages/a-la-decouverte-des-4-arcs-de-triomphe-parisiens-18800",
+   "title": "Arc de triomphe de l'Étoile",
+   "quote": "La fonte riporta: «Débutés en 1806» e «Inauguré le 29 juillet 1836»."
+  },
+  "E006": {
+   "url": "https://www.carnavalet.paris.fr/sites/default/files/2020-03/Exe%20DP%20couleurs%20du%20ciel.pdf",
+   "title": "Hôtel des Invalides — construction du complexe",
+   "quote": "La source donne «1677-1699 Construction de l’église du dôme des Invalides»; la phase du dôme est isolée en E036."
+  },
+  "E007": {
+   "url": "https://fr.wikipedia.org/wiki/Panth%C3%A9on_(Paris)",
+   "title": "Panthéon — église Sainte-Geneviève puis monument",
+   "quote": "La forma e la funzione cambiano durante la Rivoluzione."
+  },
+  "E008": {
+   "url": "https://fr.wikipedia.org/wiki/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre",
+   "title": "Basilique du Sacré-Cœur de Montmartre — construction",
+   "quote": "Fase edilizia lunga; completamento e consacrazione non coincidono con l’inizio."
+  },
+  "E009": {
+   "url": "https://prod-v3.paris.fr/pages/l-opera-garnier-fete-ses-150-ans-feuilletez-son-album-photo-29886",
+   "title": "Palais Garnier",
+   "quote": "La Ville de Paris indique : «La construction du Palais Garnier (1861 - 1875)» et l’inauguration du 5 janvier 1875."
+  },
+  "E010": {
+   "url": "https://fr.wikipedia.org/wiki/Bastille_(Paris)",
+   "title": "Place de la Bastille — forteresse de la Bastille",
+   "quote": "La forteresse médiévale est documentée, mais cette source ne donne pas une date de construction suffisamment précise pour convertir la phase en BLOCCO TECNICO."
+  },
+  "E011": {
+   "url": "https://parcoursrevolution.paris.fr/fr/quartiers/1-la-bastille",
+   "title": "Place de la Bastille — disparition de la Bastille",
+   "quote": "Le Parcours Révolution de la Ville de Paris indique «Fin du chantier de démolition de la Bastille» le 21 mai 1791."
+  },
+  "E012": {
+   "url": "https://www.paris.fr/lieux/square-louis-xiii-36",
+   "title": "Place des Vosges — place Royale",
+   "quote": "La Ville de Paris indique : «La place Royale ne fut achevée qu’en 1612»."
+  },
+  "E014": {
+   "url": "https://fr.wikipedia.org/wiki/Place_de_la_Concorde",
+   "title": "Place de la Concorde — aménagement de la place",
+   "quote": "La configurazione cambia tra monarchia, rivoluzione e XIX secolo."
+  },
+  "E015": {
+   "url": "https://www.centrepompidou.fr/fr/le-centre-pompidou/histoire-du-centre-pompidou",
+   "title": "Centre Pompidou",
+   "quote": "La notice officielle retrace l’histoire du Centre Pompidou, ouvert en 1977. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E016": {
+   "url": "https://www.paris.fr/pages/la-tour-montparnasse-fete-ses-50-ans-24034",
+   "title": "Tour Montparnasse",
+   "quote": "La Ville de Paris précise : «Le chantier a duré quatre ans, de 1969 à 1973» et l’inauguration le 18 juin 1973."
+  },
+  "E017": {
+   "url": "https://www.louvre.fr/decouvrir/le-palais/la-pyramide-du-louvre",
+   "title": "Musée du Louvre — Pyramide du Louvre",
+   "quote": "Phase contemporaine distincte du palais historique; ouverture au public en 1989. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E018": {
+   "url": "https://www.grandpalais.fr/fr/histoire-du-grand-palais",
+   "title": "Grand Palais",
+   "quote": "Notice officielle du Grand Palais; phase de construction pour l’Exposition universelle de 1900. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E019": {
+   "url": "https://fr.wikipedia.org/wiki/Palais_des_Tuileries",
+   "title": "Palais des Tuileries — construction et extensions",
+   "quote": "Edificio scomparso: fasi principali da rifinire per singola ala."
+  },
+  "E020": {
+   "url": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/palais-des-tuileries-incendie",
+   "title": "Palais des Tuileries — incendie et destruction",
+   "quote": "La fonte cataloga il soggetto come «Palais des Tuileries incendié» e lo data «En 1871»; demolizione delle rovine successiva."
+  },
+  "E021": {
+   "url": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
+   "title": "Cathédrale Notre-Dame de Paris — campagne médiévale postérieure à 1190",
+   "quote": "La Ville de Paris indique une construction «de 1163 au milieu du XIVe siècle»; 1345 est une borne de modélisation, non une date exacte attestée."
+  },
+  "E022": {
+   "url": "https://ws-paris-v4.paris.fr/pages/l-histoire-en-images-de-la-fleche-de-notre-dame-6716",
+   "title": "Cathédrale Notre-Dame de Paris — flèche de Viollet-le-Duc",
+   "quote": "La Ville de Paris précise : «La flèche est inaugurée le 15 août 1859». Cette phase de flèche est distincte de la restauration générale engagée après le concours de 1842."
+  },
+  "E023": {
+   "url": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
+   "title": "Cathédrale Notre-Dame de Paris — incendie et perte de la flèche et toiture",
+   "quote": "La fonte riporta: «du 15 avril 2019» e descrive la perdita della flèche e delle coperture."
+  },
+  "E024": {
+   "url": "https://www.paris.fr/dossiers/notre-dame-de-paris-la-resurrection-207",
+   "title": "Cathédrale Notre-Dame de Paris — flèche reconstruite et réouverture",
+   "quote": "La fonte riporta la flèche «depuis le 6 décembre 2023» e la riapertura del 7–8 dicembre 2024."
+  },
+  "E025": {
+   "url": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
+   "title": "Hôtel de Ville de Paris — bâtiment Renaissance",
+   "quote": "La Ville de Paris indique la pose de la première pierre le «15 juillet 1533»; la borne 1628 reste une convention de phase."
+  },
+  "E026": {
+   "url": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
+   "title": "Hôtel de Ville de Paris — destruction par incendie",
+   "quote": "L’Hôtel de Ville Renaissance est incendié en 1871 pendant la Commune. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E027": {
+   "url": "https://www.paris.fr/pages/l-histoire-de-l-hotel-de-ville-en-sept-dates-marquantes-7667",
+   "title": "Hôtel de Ville de Paris — reconstruction",
+   "quote": "La Ville de Paris indique : «les travaux commencent. Ils s’achèveront en 1882» après la décision de reconstruire en 1873."
+  },
+  "E028": {
+   "url": "https://fr.wikipedia.org/wiki/Sainte-Chapelle",
+   "title": "Sainte-Chapelle",
+   "quote": "Costruzione della cappella palatina."
+  },
+  "E030": {
+   "url": "https://fr.wikipedia.org/wiki/Arc_de_triomphe_du_Carrousel",
+   "title": "Arc de triomphe du Carrousel",
+   "quote": "Arco associato al complesso del palais des Tuileries."
+  },
+  "E031": {
+   "url": "https://fr.wikipedia.org/wiki/Gare_du_Nord",
+   "title": "Gare du Nord",
+   "quote": "Fase della stazione ottocentesca."
+  },
+  "E033": {
+   "url": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+   "title": "Musée du Louvre — Grande Galerie / liaison avec les Tuileries",
+   "quote": "Le Louvre indique : «Travaux de la Grande Galerie» et «construite entre 1595 et 1610»; elle relie le Louvre au château des Tuileries."
+  },
+  "E034": {
+   "url": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+   "title": "Musée du Louvre — Colonnade de Perrault",
+   "quote": "Phase de la colonnade classique de la façade orientale; bornes de chantier à confirmer dans la notice architecturale détaillée. Date/fase non sostenuta da una citazione puntuale verificabile nella fonte attualmente associata; mantenere come ipotesi a bassa affidabilità."
+  },
+  "E035": {
+   "url": "https://www.tuileries.org/page_id_dessein/",
+   "title": "Musée du Louvre — aile Rohan le long de la rue de Rivoli, phase de Napoléon Ier",
+   "quote": "La source historique sur le Grand Dessein indique : «de 1806 à 1811 de l’aile Rohan, le long de la nouvelle Rue de Rivoli». Le Louvre confirme qu’une aile supplémentaire est construite au nord le long de la rue de Rivoli sous Napoléon Bonaparte. À distinguer du Nouveau Louvre de Napoléon III (E038)."
+  },
+  "E036": {
+   "url": "https://www.carnavalet.paris.fr/sites/default/files/2020-03/Exe%20DP%20couleurs%20du%20ciel.pdf",
+   "title": "Dôme des Invalides — construction de la coupole",
+   "quote": "La source donne «1677-1699 Construction de l’église du dôme des Invalides» et «1706 Achèvement du décor des Invalides»."
+  },
+  "E037": {
+   "url": "https://parcoursrevolution.paris.fr/fr/points-interet/54-le-grand-chatelet-geole-de-l-ancien-regime",
+   "title": "Grand Châtelet — démolition",
+   "quote": "La Ville de Paris indique : «Elle ne commence qu’en 1802, pour s’achever en 1810» à propos de la démolition du Grand Châtelet."
+  },
+  "E038": {
+   "url": "https://presse.louvre.fr/wp-content/uploads/2016/02/833536.pdf",
+   "title": "Musée du Louvre — Nouveau Louvre de Napoléon III : liaison Louvre–Tuileries",
+   "quote": "La source officielle date le programme du «Nouveau Louvre et le musée Napoléon III» de 1852-1863 et indique qu’il achève la liaison Louvre-Tuileries côté nord. La Cour Napoléon au cœur de cet ensemble est achevée en 1857."
+  },
+  "F003": {
+   "url": "https://www.ratp.fr/decouvrir/coulisses/histoire",
+   "title": "Ouverture du premier tronçon du métro de Paris",
+   "quote": "Événement d’infrastructure, distinct des bâtiments et espaces enregistrés en A–E."
+  },
+  "F004": {
+   "url": "https://fr.wikipedia.org/wiki/Transformations_de_Paris_sous_le_second_Empire",
+   "title": "Lancement des grands travaux haussmanniens",
+   "quote": "Cartel de contexte; ne remplace pas les lignes séparées pour chaque axe."
+  },
+  "F005": {
+   "url": "https://parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/palais-des-tuileries-incendie",
+   "title": "Commune de Paris et destructions",
+   "quote": "Pour les formes bâties, utiliser les phases dédiées de E."
+  },
+  "F006": {
+   "url": "https://fr.wikipedia.org/wiki/Exposition_universelle_de_1900",
+   "title": "Exposition universelle de 1900",
+   "quote": "Cartel de contexte urbain, distinct de la seule construction du Grand Palais."
+  },
+  "F007": {
+   "url": "https://www.paris.fr/pages/la-crue-de-1910-189",
+   "title": "Crue de la Seine de 1910",
+   "quote": "Crue temporaire; restituer le niveau normal après l’événement."
+  },
+  "G001": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Notre-Dame",
+   "title": "Pont Notre-Dame — pont avec maisons",
+   "quote": "La Ville de Paris date de «1510-1512» les deux rangées de maisons du pont Notre-Dame; cette phase est postérieure à 1190."
+  },
+  "G004": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=quai+de+l%27Horloge",
+   "title": "Pont au Change — reconstruction actuelle",
+   "quote": "La nomenclature officielle indique : «Il a été reconstruit de 1856 à 1860»."
+  },
+  "G005": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Neuf",
+   "title": "Pont Neuf — primo attraversamento sul sito (costruzione del ponte)",
+   "quote": "La Ville de Paris date la première pierre du «31 mai 1578»; la nomenclature donne 1578–1607."
+  },
+  "G007": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Marie",
+   "title": "Pont Marie — primo attraversamento sul sito (costruzione del ponte)",
+   "quote": "La Ville de Paris indique que Christophe Marie le construisit «de 1614 à 1635»."
+  },
+  "G011": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+la+Concorde",
+   "title": "Pont de la Concorde — primo attraversamento sul sito",
+   "quote": "La Ville de Paris indique : «Le pont de la Concorde a été bâti entre 1787 et 1791»."
+  },
+  "G012": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Alexandre+III",
+   "title": "Pont Alexandre III — primo attraversamento sul sito",
+   "quote": "La Ville de Paris date la première pierre du «7 octobre 1896» et rattache le pont à l’Exposition universelle de 1900."
+  },
+  "G019": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Charles-de-Gaulle",
+   "title": "Pont Charles-de-Gaulle — primo attraversamento sul sito",
+   "quote": "La Ville de Paris indique : «Réalisé entre 1993 et 1996»."
+  },
+  "G020": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Passerelle+Simone-de-Beauvoir",
+   "title": "Passerelle Simone-de-Beauvoir — primo attraversamento sul sito",
+   "quote": "La Ville de Paris indique qu’elle fut «inaugurée en 2006»."
+  },
+  "G024": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Bercy",
+   "title": "Pont de Bercy — élargissement et superposition du viaduc du métro",
+   "quote": "La fiche indique : «En 1904, le pont est élargi de 5,50 m pour permettre d’y superposer le viaduc du métropolitain»."
+  },
+  "G032": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+du+Carrousel",
+   "title": "Pont du Carrousel — reconstruction du pont actuel",
+   "quote": "La fiche historique date le pont actuel de «Juillet 1935 à juillet 1939»."
+  },
+  "G033": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+des+Invalides",
+   "title": "Pont des Invalides — construction du pont actuel en maçonnerie",
+   "quote": "La fiche donne : «de 1854 à 1856, à la construction d’un nouveau pont, non plus suspendu mais en maçonnerie»."
+  },
+  "G042": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+du+Carrousel",
+   "title": "Pont du Carrousel — primo ponte sul sito",
+   "quote": "La fiche historique donne pour l’ancien pont : «Date de construction : 1831-1834»."
+  },
+  "G043": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+d%E2%80%99Arcole",
+   "title": "Pont d’Arcole — primo attraversamento sul sito (passerelle piétonne suspendue)",
+   "quote": "La Ville de Paris indique : «Construite en 1828, une passerelle est ouverte à la circulation»."
+  },
+  "G044": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+Louis-Philippe",
+   "title": "Pont Louis-Philippe — premier pont sur le site (pont suspendu)",
+   "quote": "La fiche indique : «la première pierre est posée par Louis Philippe, le 29 juillet 1833»."
+  },
+  "G045": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+Grenelle",
+   "title": "Pont de Grenelle — premier pont sur le site",
+   "quote": "La fiche historique donne «fin 1825 — début des travaux» et «1er mai 1827 — ouverture à la circulation»."
+  },
+  "G046": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+au+Double",
+   "title": "Pont au Double — premier pont sur le site",
+   "quote": "La fiche historique identifie le premier ouvrage comme «Pont de 1626»."
+  },
+  "G052": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/?q=Pont+de+l%E2%80%99Archev%C3%AAch%C3%A9",
+   "title": "Pont de l’Archevêché — premier traversamento sul site",
+   "quote": "La fiche indique : «Construit d’avril à novembre 1828» et «Date de construction : 1828»."
+  },
+  "G060": {
+   "url": "https://opendata.paris.fr/explore/dataset/denominations-emprises-voies-actuelles/table/",
+   "title": "Pont Notre-Dame — primo attraversamento sul sito (pont en bois)",
+   "quote": "Premier pont en bois sur ce site, avant le pont maçonné avec maisons de 1510-1512; année à vérifier dans la fiche individuelle de la Nomenclature des voies."
+  }
+ },
+ "history": {
+  "zones": [],
+  "walls": [],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [
+   {
+    "name": "A001 (water fill)",
+    "ring": [
+     [
+      48.8517,
+      2.361478
+     ],
+     [
+      48.852912,
+      2.361114
+     ],
+     [
+      48.853939,
+      2.360079
+     ],
+     [
+      48.854625,
+      2.358529
+     ],
+     [
+      48.854866,
+      2.3567
+     ],
+     [
+      48.854625,
+      2.354871
+     ],
+     [
+      48.853939,
+      2.353321
+     ],
+     [
+      48.852912,
+      2.352286
+     ],
+     [
+      48.8517,
+      2.351922
+     ],
+     [
+      48.850488,
+      2.352286
+     ],
+     [
+      48.849461,
+      2.353321
+     ],
+     [
+      48.848775,
+      2.354871
+     ],
+     [
+      48.848534,
+      2.3567
+     ],
+     [
+      48.848775,
+      2.358529
+     ],
+     [
+      48.849461,
+      2.360079
+     ],
+     [
+      48.850488,
+      2.361114
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A001"
+    ],
+    "conf": "low",
+    "_legacy": "cerchio r=350 m attorno al punto di riferimento della scheda (non il poligono reale); 1614-1655; tipo fill",
+    "from": 1655
+   },
+   {
+    "name": "A002 (water fill)",
+    "ring": [
+     [
+      48.8497,
+      2.368778
+     ],
+     [
+      48.850912,
+      2.368414
+     ],
+     [
+      48.851939,
+      2.367379
+     ],
+     [
+      48.852625,
+      2.365828
+     ],
+     [
+      48.852866,
+      2.364
+     ],
+     [
+      48.852625,
+      2.362172
+     ],
+     [
+      48.851939,
+      2.360621
+     ],
+     [
+      48.850912,
+      2.359586
+     ],
+     [
+      48.8497,
+      2.359222
+     ],
+     [
+      48.848488,
+      2.359586
+     ],
+     [
+      48.847461,
+      2.360621
+     ],
+     [
+      48.846775,
+      2.362172
+     ],
+     [
+      48.846534,
+      2.364
+     ],
+     [
+      48.846775,
+      2.365828
+     ],
+     [
+      48.847461,
+      2.367379
+     ],
+     [
+      48.848488,
+      2.368414
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A002"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=350 m attorno al punto di riferimento della scheda (non il poligono reale); 1843-1843; tipo fill",
+    "from": 1843
+   },
+   {
+    "name": "A012 (water dig)",
+    "ring": [
+     [
+      48.849,
+      2.372595
+     ],
+     [
+      48.850039,
+      2.372284
+     ],
+     [
+      48.850919,
+      2.371396
+     ],
+     [
+      48.851507,
+      2.370067
+     ],
+     [
+      48.851714,
+      2.3685
+     ],
+     [
+      48.851507,
+      2.366933
+     ],
+     [
+      48.850919,
+      2.365604
+     ],
+     [
+      48.850039,
+      2.364716
+     ],
+     [
+      48.849,
+      2.364405
+     ],
+     [
+      48.847961,
+      2.364716
+     ],
+     [
+      48.847081,
+      2.365604
+     ],
+     [
+      48.846493,
+      2.366933
+     ],
+     [
+      48.846286,
+      2.3685
+     ],
+     [
+      48.846493,
+      2.370067
+     ],
+     [
+      48.847081,
+      2.371396
+     ],
+     [
+      48.847961,
+      2.372284
+     ]
+    ],
+    "c": "field",
+    "conf": "low",
+    "_legacy": "cerchio r=300 m attorno al punto di riferimento della scheda (non il poligono reale); 1806-1811; tipo dig",
+    "to": 1806
+   },
+   {
+    "name": "A007 (water dig)",
+    "ring": [
+     [
+      48.871,
+      2.377291
+     ],
+     [
+      48.874116,
+      2.376356
+     ],
+     [
+      48.876757,
+      2.373691
+     ],
+     [
+      48.878522,
+      2.369704
+     ],
+     [
+      48.879142,
+      2.365
+     ],
+     [
+      48.878522,
+      2.360296
+     ],
+     [
+      48.876757,
+      2.356309
+     ],
+     [
+      48.874116,
+      2.353644
+     ],
+     [
+      48.871,
+      2.352709
+     ],
+     [
+      48.867884,
+      2.353644
+     ],
+     [
+      48.865243,
+      2.356309
+     ],
+     [
+      48.863478,
+      2.360296
+     ],
+     [
+      48.862858,
+      2.365
+     ],
+     [
+      48.863478,
+      2.369704
+     ],
+     [
+      48.865243,
+      2.373691
+     ],
+     [
+      48.867884,
+      2.376356
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A007"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=900 m attorno al punto di riferimento della scheda (non il poligono reale); 1822-1825; tipo dig",
+    "to": 1822
+   },
+   {
+    "name": "A011 (water dig)",
+    "ring": [
+     [
+      48.888,
+      2.380831
+     ],
+     [
+      48.889731,
+      2.380311
+     ],
+     [
+      48.891198,
+      2.37883
+     ],
+     [
+      48.892179,
+      2.376614
+     ],
+     [
+      48.892523,
+      2.374
+     ],
+     [
+      48.892179,
+      2.371386
+     ],
+     [
+      48.891198,
+      2.36917
+     ],
+     [
+      48.889731,
+      2.367689
+     ],
+     [
+      48.888,
+      2.367169
+     ],
+     [
+      48.886269,
+      2.367689
+     ],
+     [
+      48.884802,
+      2.36917
+     ],
+     [
+      48.883821,
+      2.371386
+     ],
+     [
+      48.883477,
+      2.374
+     ],
+     [
+      48.883821,
+      2.376614
+     ],
+     [
+      48.884802,
+      2.37883
+     ],
+     [
+      48.886269,
+      2.380311
+     ]
+    ],
+    "c": "field",
+    "conf": "low",
+    "_legacy": "cerchio r=500 m attorno al punto di riferimento della scheda (non il poligono reale); 1808-1813; tipo dig",
+    "to": 1808
+   },
+   {
+    "name": "A003 (water dig)",
+    "ring": [
+     [
+      48.893,
+      2.410495
+     ],
+     [
+      48.898193,
+      2.408935
+     ],
+     [
+      48.902595,
+      2.404492
+     ],
+     [
+      48.905537,
+      2.397843
+     ],
+     [
+      48.90657,
+      2.39
+     ],
+     [
+      48.905537,
+      2.382157
+     ],
+     [
+      48.902595,
+      2.375508
+     ],
+     [
+      48.898193,
+      2.371065
+     ],
+     [
+      48.893,
+      2.369505
+     ],
+     [
+      48.887807,
+      2.371065
+     ],
+     [
+      48.883405,
+      2.375508
+     ],
+     [
+      48.880463,
+      2.382157
+     ],
+     [
+      48.87943,
+      2.39
+     ],
+     [
+      48.880463,
+      2.397843
+     ],
+     [
+      48.883405,
+      2.404492
+     ],
+     [
+      48.887807,
+      2.408935
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A003"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=1500 m attorno al punto di riferimento della scheda (non il poligono reale); 1813-1813; tipo dig",
+    "to": 1813
+   },
+   {
+    "name": "A005 (water dig)",
+    "ring": [
+     [
+      48.9,
+      2.400163
+     ],
+     [
+      48.908655,
+      2.397562
+     ],
+     [
+      48.915992,
+      2.390157
+     ],
+     [
+      48.920895,
+      2.379074
+     ],
+     [
+      48.922616,
+      2.366
+     ],
+     [
+      48.920895,
+      2.352926
+     ],
+     [
+      48.915992,
+      2.341843
+     ],
+     [
+      48.908655,
+      2.334438
+     ],
+     [
+      48.9,
+      2.331837
+     ],
+     [
+      48.891345,
+      2.334438
+     ],
+     [
+      48.884008,
+      2.341843
+     ],
+     [
+      48.879105,
+      2.352926
+     ],
+     [
+      48.877384,
+      2.366
+     ],
+     [
+      48.879105,
+      2.379074
+     ],
+     [
+      48.884008,
+      2.390157
+     ],
+     [
+      48.891345,
+      2.397562
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A005"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=2500 m attorno al punto di riferimento della scheda (non il poligono reale); 1821-1821; tipo dig",
+    "to": 1821
+   },
+   {
+    "name": "A013 (water fill)",
+    "ring": [
+     [
+      48.862,
+      2.379558
+     ],
+     [
+      48.864423,
+      2.378831
+     ],
+     [
+      48.866478,
+      2.376759
+     ],
+     [
+      48.867851,
+      2.373658
+     ],
+     [
+      48.868333,
+      2.37
+     ],
+     [
+      48.867851,
+      2.366342
+     ],
+     [
+      48.866478,
+      2.363241
+     ],
+     [
+      48.864423,
+      2.361169
+     ],
+     [
+      48.862,
+      2.360442
+     ],
+     [
+      48.859577,
+      2.361169
+     ],
+     [
+      48.857522,
+      2.363241
+     ],
+     [
+      48.856149,
+      2.366342
+     ],
+     [
+      48.855667,
+      2.37
+     ],
+     [
+      48.856149,
+      2.373658
+     ],
+     [
+      48.857522,
+      2.376759
+     ],
+     [
+      48.859577,
+      2.378831
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A013"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=700 m attorno al punto di riferimento della scheda (non il poligono reale); 1860-1862; tipo fill",
+    "from": 1862
+   },
+   {
+    "name": "A014 (water fill)",
+    "ring": [
+     [
+      48.868,
+      2.370097
+     ],
+     [
+      48.869039,
+      2.369785
+     ],
+     [
+      48.869919,
+      2.368897
+     ],
+     [
+      48.870507,
+      2.367568
+     ],
+     [
+      48.870714,
+      2.366
+     ],
+     [
+      48.870507,
+      2.364432
+     ],
+     [
+      48.869919,
+      2.363103
+     ],
+     [
+      48.869039,
+      2.362215
+     ],
+     [
+      48.868,
+      2.361903
+     ],
+     [
+      48.866961,
+      2.362215
+     ],
+     [
+      48.866081,
+      2.363103
+     ],
+     [
+      48.865493,
+      2.364432
+     ],
+     [
+      48.865286,
+      2.366
+     ],
+     [
+      48.865493,
+      2.367568
+     ],
+     [
+      48.866081,
+      2.368897
+     ],
+     [
+      48.866961,
+      2.369785
+     ]
+    ],
+    "c": "field",
+    "src": [
+     "A014"
+    ],
+    "conf": "high",
+    "_legacy": "cerchio r=300 m attorno al punto di riferimento della scheda (non il poligono reale); 1906-1906; tipo fill",
+    "from": 1906
+   }
+  ],
+  "bridges": []
+ },
+ "landmarks": [
+  {
+   "name": "Notre-Dame",
+   "kind": "TODO",
+   "at": [
+    48.852832,
+    2.350035
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 96.3
+   },
+   "phases": [
+    {
+     "y": 1190
+    }
+   ],
+   "label": true,
+   "src": [
+    "E021",
+    "E022",
+    "E023",
+    "E024"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 96.3 m",
+   "conf": "medium"
+  },
+  {
+   "name": "Sainte-Chapelle",
+   "kind": "TODO",
+   "at": [
+    48.855385,
+    2.345027
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 75.0
+   },
+   "phases": [
+    {
+     "y": 1248
+    }
+   ],
+   "label": true,
+   "src": [
+    "E028"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1248 (primo anno della scheda), altezza 75.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Louvre",
+   "kind": "TODO",
+   "at": [
+    48.860479,
+    2.339554
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 47.6
+   },
+   "phases": [
+    {
+     "y": 1190
+    }
+   ],
+   "label": true,
+   "src": [
+    "E001",
+    "E002",
+    "E003",
+    "E033",
+    "E034",
+    "E035",
+    "E038",
+    "E017"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 47.6 m",
+   "conf": "low"
+  },
+  {
+   "name": "Tuileries Palace",
+   "kind": "TODO",
+   "at": [
+    48.860966,
+    2.330376
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 52.0
+   },
+   "phases": [
+    {
+     "y": 1564
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1564 (primo anno della scheda), altezza 52.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Hôtel de Ville",
+   "kind": "TODO",
+   "at": [
+    48.856427,
+    2.352531
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 59.0
+   },
+   "phases": [
+    {
+     "y": 1533
+    }
+   ],
+   "label": true,
+   "src": [
+    "E025",
+    "E026",
+    "E027"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1533 (primo anno della scheda), altezza 59.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Bastille",
+   "kind": "TODO",
+   "at": [
+    48.853153,
+    2.368537
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 27.5
+   },
+   "phases": [
+    {
+     "y": 1370
+    }
+   ],
+   "label": true,
+   "src": [
+    "E010",
+    "E011"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1370 (primo anno della scheda), altezza 27.5 m",
+   "conf": "low"
+  },
+  {
+   "name": "Grand Châtelet",
+   "kind": "TODO",
+   "at": [
+    48.8577,
+    2.347301
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 27.7
+   },
+   "phases": [
+    {
+     "y": 1190
+    }
+   ],
+   "label": true,
+   "src": [
+    "E037"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1190 (primo anno della scheda), altezza 27.7 m",
+   "conf": "high"
+  },
+  {
+   "name": "Les Invalides",
+   "kind": "TODO",
+   "at": [
+    48.855034,
+    2.312539
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 121.5
+   },
+   "phases": [
+    {
+     "y": 1677
+    }
+   ],
+   "label": true,
+   "src": [
+    "E006",
+    "E036"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1677 (primo anno della scheda), altezza 121.5 m",
+   "conf": "high"
+  },
+  {
+   "name": "Panthéon",
+   "kind": "TODO",
+   "at": [
+    48.846199,
+    2.346102
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 129.6
+   },
+   "phases": [
+    {
+     "y": 1758
+    }
+   ],
+   "label": true,
+   "src": [
+    "E007"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1758 (primo anno della scheda), altezza 129.6 m",
+   "conf": "low"
+  },
+  {
+   "name": "Sacré-Cœur",
+   "kind": "TODO",
+   "at": [
+    48.886772,
+    2.343019
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 207.3
+   },
+   "phases": [
+    {
+     "y": 1875
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1875 (primo anno della scheda), altezza 207.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Palais Garnier",
+   "kind": "TODO",
+   "at": [
+    48.872039,
+    2.331707
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 83.4
+   },
+   "phases": [
+    {
+     "y": 1861
+    }
+   ],
+   "label": true,
+   "src": [
+    "E009"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1861 (primo anno della scheda), altezza 83.4 m",
+   "conf": "high"
+  },
+  {
+   "name": "Arc de Triomphe",
+   "kind": "TODO",
+   "at": [
+    48.87378,
+    2.295038
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 94.3
+   },
+   "phases": [
+    {
+     "y": 1806
+    }
+   ],
+   "label": true,
+   "src": [
+    "E030"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1806 (primo anno della scheda), altezza 94.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Eiffel Tower",
+   "kind": "TODO",
+   "at": [
+    48.85837,
+    2.29448
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 196.0
+   },
+   "phases": [
+    {
+     "y": 1887
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1887 (primo anno della scheda), altezza 196.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Grand Palais",
+   "kind": "TODO",
+   "at": [
+    48.866149,
+    2.312273
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 53.1
+   },
+   "phases": [
+    {
+     "y": 1897
+    }
+   ],
+   "label": true,
+   "src": [
+    "E018"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1897 (primo anno della scheda), altezza 53.1 m",
+   "conf": "low"
+  },
+  {
+   "name": "Centre Pompidou",
+   "kind": "TODO",
+   "at": [
+    48.860538,
+    2.352412
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 60.2
+   },
+   "phases": [
+    {
+     "y": 1971
+    }
+   ],
+   "label": true,
+   "src": [
+    "E015"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1971 (primo anno della scheda), altezza 60.2 m",
+   "conf": "low"
+  },
+  {
+   "name": "Gare du Nord",
+   "kind": "TODO",
+   "at": [
+    48.880878,
+    2.355559
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 76.3
+   },
+   "phases": [
+    {
+     "y": 1861
+    }
+   ],
+   "label": true,
+   "src": [
+    "E031"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1861 (primo anno della scheda), altezza 76.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Tour Montparnasse",
+   "kind": "TODO",
+   "at": [
+    48.842112,
+    2.321978
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 174.3
+   },
+   "phases": [
+    {
+     "y": 1969
+    }
+   ],
+   "label": true,
+   "src": [
+    "E016"
+   ],
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1969 (primo anno della scheda), altezza 174.3 m",
+   "conf": "high"
+  },
+  {
+   "name": "La Défense",
+   "kind": "TODO",
+   "at": [
+    48.892565,
+    2.235875
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 103.5
+   },
+   "phases": [
+    {
+     "y": 1958
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1958 (primo anno della scheda), altezza 103.5 m",
+   "conf": "low"
+  },
+  {
+   "name": "Pont Neuf",
+   "kind": "TODO",
+   "at": [
+    48.857793,
+    2.341896
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 12.0
+   },
+   "phases": [
+    {
+     "y": 1578
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1578 (primo anno della scheda), altezza 12.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Pont Alexandre III",
+   "kind": "TODO",
+   "at": [
+    48.863642,
+    2.313545
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 12.0
+   },
+   "phases": [
+    {
+     "y": 1896
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_parigi.py; anno = 1896 (primo anno della scheda), altezza 12.0 m",
+   "conf": "low"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": true,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1190
+  },
+  "soste": [
+   {
+    "y0": 1190.0,
+    "y1": 1215.0,
+    "dur": 8.0,
+    "caption": "Philippe Augustus walls the city (1190-1215)",
+    "shot": "medium",
+    "target": "Notre-Dame",
+    "_legacy_target": "punto di mira legacy = ND spostato (monumento 'Notre-Dame')",
+    "src": [
+     "B001",
+     "B002",
+     "E001",
+     "E021"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1356.0,
+    "y1": 1383.0,
+    "dur": 6.0,
+    "caption": "Charles V: a new wall and the Bastille (1356-1383)",
+    "shot": "medium",
+    "target": "Bastille",
+    "_legacy_target": "punto di mira legacy = BASTILLE spostato (monumento 'Bastille')",
+    "src": [
+     "B003",
+     "E010"
+    ],
+    "conf": "low"
+   },
+   {
+    "y0": 1578.0,
+    "y1": 1612.0,
+    "dur": 6.5,
+    "caption": "Pont Neuf and the Grande Galerie (1578-1612)",
+    "shot": "medium",
+    "target": "Pont Neuf",
+    "_legacy_target": "punto di mira legacy a 211 m da 'Pont Neuf' (monumento piu' vicino)",
+    "src": [
+     "G005",
+     "E033",
+     "E012"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1670.0,
+    "y1": 1706.0,
+    "dur": 6.0,
+    "caption": "Les Invalides and its golden dome (1670-1706)",
+    "shot": "medium",
+    "target": "Les Invalides",
+    "_legacy_target": "punto di mira legacy = INVAL spostato (monumento 'Les Invalides')",
+    "src": [
+     "E006",
+     "E036"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1784.0,
+    "y1": 1791.0,
+    "dur": 5.5,
+    "caption": "The Bastille falls (1789)",
+    "shot": "medium",
+    "target": "Bastille",
+    "_legacy_target": "punto di mira legacy = BASTILLE spostato (monumento 'Bastille')",
+    "src": [
+     "E011",
+     "B007"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1820.0,
+    "y1": 1826.0,
+    "dur": 5.0,
+    "caption": "Canal Saint-Martin is dug (1822-1825)",
+    "shot": "medium",
+    "target": "area:[48.87050,2.36550,450]",
+    "_legacy_target": "nessun monumento entro 700 m: area attorno al punto di mira legacy",
+    "src": [
+     "A006",
+     "A007"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1852.0,
+    "y1": 1872.0,
+    "dur": 13.0,
+    "caption": "Haussmann cuts through old Paris (1853-1870)",
+    "shot": "medium",
+    "target": "Louvre",
+    "_legacy_target": "punto di mira legacy a 157 m da 'Louvre' (monumento piu' vicino)",
+    "src": [
+     "F004",
+     "C001",
+     "C008",
+     "E038",
+     "E009",
+     "F005",
+     "E020"
+    ],
+    "conf": "low"
+   },
+   {
+    "y0": 1886.5,
+    "y1": 1889.6,
+    "dur": 6.0,
+    "caption": "The Eiffel Tower rises (1887-1889)",
+    "shot": "medium",
+    "target": "Eiffel Tower",
+    "_legacy_target": "punto di mira legacy = EIFFEL spostato (monumento 'Eiffel Tower')",
+    "src": [
+     "E004"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1966.0,
+    "y1": 1977.5,
+    "dur": 6.0,
+    "caption": "Tour Montparnasse and Centre Pompidou (1969-1977)",
+    "shot": "medium",
+    "target": "Tour Montparnasse",
+    "_legacy_target": "punto di mira legacy = MONTP spostato (monumento 'Tour Montparnasse')",
+    "src": [
+     "E016",
+     "E015"
+    ],
+    "conf": "low"
+   },
+   {
+    "y0": 2018.9,
+    "y1": 2024.95,
+    "dur": 6.0,
+    "caption": "Notre-Dame: fire and rebirth (2019-2024)",
+    "shot": "medium",
+    "target": "Notre-Dame",
+    "_legacy_target": "punto di mira legacy = ND spostato (monumento 'Notre-Dame')",
+    "src": [
+     "E023",
+     "E024"
+    ],
+    "conf": "high"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32,
+  "night_hold": 15
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "PARIS TODAY"
+  ],
+  "title": [
+   "PARIS",
+   "1190 TO NOW"
+  ],
+  "end": [
+   "PARIS · 836 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1190.5,
+    "title": "A wall for Paris",
+    "lines": [
+     "Philippe Augustus orders a stone wall before leaving on crusade."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1190",
+    "src": [
+     "B001"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1196.0,
+    "title": "Notre-Dame rises",
+    "lines": [
+     "The choir is done; the nave goes up next."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1190s",
+    "src": [
+     "E021"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1202.0,
+    "title": "The Louvre fortress",
+    "lines": [
+     "A castle guards the wall where it meets the Seine."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1202",
+    "labels": [
+     "Grand Châtelet",
+     "Notre-Dame"
+    ],
+    "src": [
+     "E001"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1215.0,
+    "title": "The Left Bank wall closes",
+    "lines": [
+     "About 253 hectares inside the walls."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1215",
+    "src": [
+     "B002"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1240.0,
+    "title": "50,000 Parisians",
+    "lines": [
+     "Already one of the largest cities in Europe (estimate)."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1240",
+    "src": [
+     "D002"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1248.0,
+    "title": "Sainte-Chapelle",
+    "lines": [
+     "A royal chapel built to hold the Crown of Thorns."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1248",
+    "src": [
+     "E028"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1290.0,
+    "title": "~120,000 people",
+    "lines": [
+     "Estimate; Paris is the biggest city in Western Europe."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1290",
+    "src": [
+     "D003"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1345.0,
+    "title": "Notre-Dame completed",
+    "lines": [
+     "Almost two centuries after the first stone."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "c. 1345",
+    "src": [
+     "E021"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1350.0,
+    "title": "The Black Death",
+    "lines": [
+     "Paris loses a large share of its people (estimates vary)."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1348",
+    "src": [
+     "D005"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1370.0,
+    "title": "The Bastille",
+    "lines": [
+     "A fortress guards the new eastern gate."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1370",
+    "src": [
+     "E010"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1383.0,
+    "title": "The Charles V wall",
+    "lines": [
+     "The Right Bank city doubles behind a new wall."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1383",
+    "src": [
+     "B003"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1413.0,
+    "title": "Pont Notre-Dame",
+    "lines": [
+     "A bridge lined with houses."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1413",
+    "src": [
+     "G060"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1490.0,
+    "title": "Back to 200,000",
+    "lines": [
+     "The city recovers after the Hundred Years War (estimate)."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1490",
+    "src": [
+     "D007"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1533.0,
+    "title": "A new Hôtel de Ville",
+    "lines": [
+     "Work begins on the Renaissance city hall."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1533",
+    "labels": [
+     "Louvre",
+     "Pont Neuf"
+    ],
+    "src": [
+     "E025"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1546.0,
+    "title": "A Renaissance Louvre",
+    "lines": [
+     "The medieval castle starts to become a palace."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1546",
+    "src": [
+     "E002"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1564.0,
+    "title": "The Tuileries Palace",
+    "lines": [
+     "Catherine de' Medici builds a palace west of the Louvre."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1564",
+    "src": [
+     "E019"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1607.0,
+    "title": "Pont Neuf opens",
+    "lines": [
+     "The first Paris bridge without houses on it."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1607",
+    "labels": [
+     "Louvre",
+     "Pont Neuf"
+    ],
+    "src": [
+     "G005"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1612.0,
+    "title": "Place Royale",
+    "lines": [
+     "Today Place des Vosges."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1612",
+    "src": [
+     "C014"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1626.0,
+    "title": "Pont au Double",
+    "lines": [
+     "The first bridge on the site (1626)."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1626",
+    "src": [
+     "G046"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1630.0,
+    "title": "The Fossés Jaunes",
+    "lines": [
+     "A new rampart pushes the Right Bank west."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1566–1643",
+    "src": [
+     "B005"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1635.0,
+    "title": "Pont Marie",
+    "lines": [
+     "Christophe Marie links Île Saint-Louis to the Right Bank."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1614–1635",
+    "src": [
+     "G007"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1640.0,
+    "title": "450,000 people",
+    "lines": [
+     "Estimate."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "c. 1640",
+    "src": [
+     "D010"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1655.0,
+    "title": "Île Saint-Louis",
+    "lines": [
+     "Two islets are joined and built over."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1614–1655",
+    "labels": [
+     "Les Invalides"
+    ],
+    "src": [
+     "A001"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1674.0,
+    "title": "The Louvre Colonnade",
+    "lines": [
+     "A classical façade facing the city."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1667–1674",
+    "src": [
+     "E034"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1676.0,
+    "title": "The walls come down",
+    "lines": [
+     "Old ramparts become the first Grands Boulevards."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1670s",
+    "src": [
+     "B004",
+     "B006"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1690.0,
+    "title": "500,000 Parisians",
+    "lines": [
+     "Estimate."
+    ],
+    "hold_s": 5,
+    "legacy_date": "c. 1690",
+    "src": [
+     "D011"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1706.0,
+    "title": "The Invalides dome is gilded",
+    "lines": [
+     "Mansart's dome: 107 m."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1706",
+    "labels": [
+     "Les Invalides"
+    ],
+    "src": [
+     "E036"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1720.0,
+    "title": "Place Vendôme",
+    "lines": [
+     "A royal square of matching façades."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1686–1720",
+    "src": [
+     "C015"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1740.0,
+    "title": "550,000 Parisians",
+    "lines": [
+     "Estimate."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "c. 1740",
+    "src": [
+     "D012"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1755.0,
+    "title": "Place Louis XV",
+    "lines": [
+     "Today Place de la Concorde."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1755",
+    "src": [
+     "E014"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1758.0,
+    "title": "Sainte-Geneviève",
+    "lines": [
+     "The church that will become the Panthéon."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1758",
+    "src": [
+     "E007"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1786.5,
+    "title": "Houses cleared off the bridges",
+    "lines": [
+     "Pont Notre-Dame and Pont au Change lose their houses."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1786–1788",
+    "labels": [
+     "Bastille"
+    ],
+    "src": [
+     "G001"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1790.0,
+    "title": "The Farmers-General wall",
+    "lines": [
+     "A customs wall around the whole city."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1784–1790",
+    "src": [
+     "B007"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1791.0,
+    "title": "Pont de la Concorde",
+    "lines": [
+     "A new bridge to Place Louis XV."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1787–1791",
+    "src": [
+     "G011"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1801.0,
+    "title": "547,756 Parisians",
+    "lines": [
+     "First census."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1801",
+    "src": [
+     "D014"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1805.0,
+    "title": "The Grand Châtelet is demolished",
+    "lines": [
+     "The medieval fortress at the heart of the Right Bank."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1802–1810",
+    "src": [
+     "E037"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1806.0,
+    "title": "Arc de Triomphe",
+    "lines": [
+     "Napoleon orders a triumphal arch at the Étoile."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1806",
+    "src": [
+     "E005"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1811.0,
+    "title": "The Rohan wing",
+    "lines": [
+     "The Louvre grows along the new Rue de Rivoli."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1806–1811",
+    "src": [
+     "E035"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1813.0,
+    "title": "Canal de l'Ourcq",
+    "lines": [
+     "Fresh water reaches La Villette."
+    ],
+    "hold_s": 5,
+    "legacy_date": "15 Aug 1813",
+    "src": [
+     "A003"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1821.0,
+    "title": "Canal Saint-Denis",
+    "lines": [
+     "The canal is completed (1821)."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1821",
+    "src": [
+     "A005"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1822.0,
+    "title": "The Ourcq canal is complete",
+    "lines": [
+     "From Mareuil to Paris."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1822",
+    "src": [
+     "A004"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1825.0,
+    "title": "Canal Saint-Martin",
+    "lines": [
+     "A canal brings water and barges into Paris."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1822–1825",
+    "src": [
+     "A006",
+     "A007"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1827.0,
+    "title": "Pont de Grenelle",
+    "lines": [
+     "The first bridge on the site opens on 1 May 1827."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1825–1827",
+    "src": [
+     "G045"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1828.0,
+    "title": "Three new crossings",
+    "lines": [
+     "Arcole footbridge and Pont de l'Archevêché."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1828",
+    "src": [
+     "G043",
+     "G052"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1833.0,
+    "title": "Pont Louis-Philippe",
+    "lines": [
+     "The king lays the first stone."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "29 Jul 1833",
+    "src": [
+     "G044"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1834.0,
+    "title": "Pont du Carrousel",
+    "lines": [
+     "A bridge straight into the Louvre."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1831–1834",
+    "src": [
+     "G042"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1836.0,
+    "title": "The Arc is finished",
+    "lines": [
+     "Thirty years after the first stone."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1836",
+    "src": [
+     "E005"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1843.0,
+    "title": "Île Louviers disappears",
+    "lines": [
+     "Its river arm is filled; the island joins the Right Bank."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1843",
+    "src": [
+     "A002"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1844.0,
+    "title": "The Thiers wall",
+    "lines": [
+     "A 33 km fortification around Paris."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1841–1844",
+    "src": [
+     "B009"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1846.0,
+    "title": "Over 1 million",
+    "lines": [
+     "1,053,897 Parisians."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1846",
+    "labels": [
+     "Louvre"
+    ],
+    "src": [
+     "D021"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1853.0,
+    "title": "Haussmann begins",
+    "lines": [
+     "Boulevards are cut straight through the old city."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1853",
+    "src": [
+     "F004"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1856.0,
+    "title": "Pont des Invalides",
+    "lines": [
+     "The suspension bridge is replaced in stone."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1854–1856",
+    "src": [
+     "G033"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1857.0,
+    "title": "Les Halles",
+    "lines": [
+     "Baltard's iron and glass market pavilions."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1852–1870",
+    "src": [
+     "C016"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1858.0,
+    "title": "Boulevard de Sébastopol",
+    "lines": [
+     "Inaugurated through the heart of the Right Bank."
+    ],
+    "hold_s": 5,
+    "legacy_date": "5 Apr 1858",
+    "src": [
+     "C003"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1859.6,
+    "title": "A new spire for Notre-Dame",
+    "lines": [
+     "Viollet-le-Duc's spire is inaugurated."
+    ],
+    "hold_s": 5,
+    "legacy_date": "15 Aug 1859",
+    "src": [
+     "E022"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1860.0,
+    "title": "20 arrondissements",
+    "lines": [
+     "Paris annexes its suburbs."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1860",
+    "src": [
+     "B011"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1860.5,
+    "title": "Pont au Change",
+    "lines": [
+     "Rebuilt as it stands today."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1856–1860",
+    "src": [
+     "G004"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1862.0,
+    "title": "The canal goes underground",
+    "lines": [
+     "Boulevard Richard-Lenoir is built on top."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1860–1862",
+    "src": [
+     "A013",
+     "C019"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1863.0,
+    "title": "The New Louvre",
+    "lines": [
+     "The Louvre finally joins the Tuileries."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1852–1863",
+    "labels": [
+     "Louvre"
+    ],
+    "src": [
+     "E038"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1871.4,
+    "title": "The Commune",
+    "lines": [
+     "The Tuileries and the Hôtel de Ville are set on fire."
+    ],
+    "hold_s": 5,
+    "legacy_date": "May 1871",
+    "src": [
+     "F005",
+     "E020"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1875.0,
+    "title": "Palais Garnier",
+    "lines": [
+     "The opera house opens."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1875",
+    "labels": [
+     "Palais Garnier"
+    ],
+    "src": [
+     "E009"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1876.0,
+    "title": "Avenue de l'Opéra",
+    "lines": [
+     "Cut straight from the Louvre to the Opéra."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1864–1876",
+    "src": [
+     "C006"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1882.0,
+    "title": "A new Hôtel de Ville",
+    "lines": [
+     "Rebuilt on the same site."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1882",
+    "labels": [
+     "Louvre",
+     "Pont Neuf"
+    ],
+    "src": [
+     "E027"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1883.0,
+    "title": "Tuileries demolished",
+    "lines": [
+     "The burnt palace is cleared away."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1883",
+    "src": [
+     "E020"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1889.3,
+    "title": "Eiffel Tower opens",
+    "lines": [
+     "300 m: the tallest structure in the world."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "6 May 1889",
+    "labels": [
+     "Eiffel Tower",
+     "Gare du Nord",
+     "Pont Alexandre III"
+    ],
+    "src": [
+     "E004"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1896.0,
+    "title": "Pont Alexandre III",
+    "lines": [
+     "A single steel arch over the Seine."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1896–1900",
+    "src": [
+     "G012"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1900.0,
+    "title": "World Fair and the first Métro line",
+    "lines": [
+     "Grand Palais, Pont Alexandre III, Line 1."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1900",
+    "src": [
+     "F006",
+     "F003",
+     "E018",
+     "G012"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1904.0,
+    "title": "Pont de Bercy",
+    "lines": [
+     "Widened 5.5 m to carry the Métro."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1904",
+    "src": [
+     "G024"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1906.5,
+    "title": "Voûte du Temple",
+    "lines": [
+     "Another stretch of the canal is covered."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1906",
+    "src": [
+     "A014"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1910.0,
+    "title": "The great flood",
+    "lines": [
+     "The Seine rises more than 8 m."
+    ],
+    "hold_s": 5,
+    "legacy_date": "Jan 1910",
+    "src": [
+     "F007"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1914.0,
+    "title": "Sacré-Cœur completed",
+    "lines": [
+     "Consecrated only in 1919, after the war."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1914",
+    "labels": [
+     "Gare du Nord"
+    ],
+    "src": [
+     "E008"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1921.0,
+    "title": "2.9 million Parisians",
+    "lines": [
+     "The all-time peak."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1921",
+    "src": [
+     "D035"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1926.0,
+    "title": "Boulevard Haussmann",
+    "lines": [
+     "Finished 69 years after it began."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1857–1926",
+    "src": [
+     "C007"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1929.0,
+    "title": "The Thiers wall is razed",
+    "lines": [
+     "Its belt becomes housing and, later, the Périphérique."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1919–1929",
+    "src": [
+     "B010"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1931.0,
+    "title": "2,891,020 Parisians",
+    "lines": [
+     "Census."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1931",
+    "src": [
+     "D037"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1939.0,
+    "title": "A new Pont du Carrousel",
+    "lines": [
+     "The current bridge opens."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1935–1939",
+    "src": [
+     "G032"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1946.0,
+    "title": "2,725,374 Parisians",
+    "lines": [
+     "The first census after the war."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1946",
+    "labels": [
+     "Tour Montparnasse"
+    ],
+    "src": [
+     "D039"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1954.0,
+    "title": "2,850,189 Parisians",
+    "lines": [
+     "Census."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1954",
+    "src": [
+     "D040"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1958.0,
+    "title": "La Défense",
+    "lines": [
+     "A business district rises west of Paris."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1958",
+    "conf": "low"
+   },
+   {
+    "y": 1968.0,
+    "title": "2,590,771 Parisians",
+    "lines": [
+     "Families leave for the suburbs."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1968",
+    "src": [
+     "D042"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1971.5,
+    "title": "Les Halles demolished",
+    "lines": [
+     "Baltard's pavilions are torn down."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1971–1973",
+    "src": [
+     "C017"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1973.0,
+    "title": "Tour Montparnasse",
+    "lines": [
+     "210 m: a tower Paris will never repeat inside the city."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1973",
+    "src": [
+     "E016"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1973.5,
+    "title": "Boulevard Périphérique",
+    "lines": [
+     "The ring road is completed."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1973",
+    "src": [
+     "B012"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1977.0,
+    "title": "Centre Pompidou",
+    "lines": [
+     "Pipes and escalators on the outside."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1977",
+    "labels": [
+     "Centre Pompidou",
+     "Tour Montparnasse"
+    ],
+    "src": [
+     "E015"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1989.0,
+    "title": "The Louvre Pyramid",
+    "lines": [
+     "And the Grande Arche at La Défense."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1989",
+    "src": [
+     "E017"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1996.0,
+    "title": "Pont Charles-de-Gaulle",
+    "lines": [
+     "Built between 1993 and 1996."
+    ],
+    "hold_s": 5,
+    "legacy_date": "1993–1996",
+    "src": [
+     "G019"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1999.0,
+    "title": "2,125,246 Parisians",
+    "lines": [
+     "The smallest population in a century."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "1999",
+    "labels": [
+     "Centre Pompidou"
+    ],
+    "src": [
+     "D046"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2006.0,
+    "title": "Passerelle Simone-de-Beauvoir",
+    "lines": [
+     "Inaugurated in 2006."
+    ],
+    "hold_s": 5,
+    "legacy_date": "2006",
+    "src": [
+     "G020"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2011.0,
+    "title": "2,249,975 Parisians",
+    "lines": [
+     "A brief rebound."
+    ],
+    "hold_s": 5,
+    "legacy_date": "2011",
+    "src": [
+     "D048"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2019.3,
+    "title": "Notre-Dame burns",
+    "lines": [
+     "The spire and the roof are lost."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "15 Apr 2019",
+    "labels": [
+     "Notre-Dame"
+    ],
+    "src": [
+     "E023"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2024.9,
+    "title": "Notre-Dame reopens",
+    "lines": [
+     "The spire is back."
+    ],
+    "hold_s": 8.0,
+    "legacy_date": "7 Dec 2024",
+    "src": [
+     "E024"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2025.0,
+    "title": "Paris today",
+    "lines": [
+     "2,065,560 people inside the city."
+    ],
+    "hold_s": 5,
+    "legacy_date": "2025",
+    "src": [
+     "D051"
+    ],
+    "conf": "high"
+   }
+  ],
+  "events": [
+   {
+    "y": 1784.0,
+    "title": "The Bastille falls (1789)",
+    "line": "14 July 1789",
+    "sober": false
+   },
+   {
+    "y": 2018.9,
+    "title": "Notre-Dame: fire and rebirth (2019-2024)",
+    "line": "15 April 2019 – 7 December 2024",
+    "sober": false
+   }
+  ],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_parigi.md",
+  "translations_file": "traduzioni_parigi.md",
+  "translation_languages": [
+   "Spagnolo",
+   "Portoghese (Brasile)",
+   "Tedesco",
+   "Francese",
+   "Italiano",
+   "Titolo B tradotto (solo se la regia sceglie il B)",
+   "Short — titoli e descrizioni tradotti"
+  ],
+  "video_chapter_lines": 20,
+  "old_thumbnail_files": [
+   "copertina_parigi.jpg",
+   "copertina_parigi_B.jpg"
+  ],
+  "data_package": {
+   "dir": "data_parigi_src",
+   "present": [
+    "buildings.json",
+    "dem.npz",
+    "far.json",
+    "hist.json",
+    "land.json",
+    "landmarks.json",
+    "landphases.json",
+    "parks.json",
+    "roads.json",
+    "urban_grid.npz",
+    "wall_p.json"
+   ],
+   "missing_for_kit": [],
+   "complete": true
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "landmarks",
+   "field": "kind",
+   "reason": "20 monumenti con geometria bespoke in landmarks_parigi.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
+  },
+  {
+   "path": "regia.soste[5]",
+   "field": "target",
+   "reason": "'Canal Saint-Martin is dug (1822-1825)': nessun monumento entro 700 m: area attorno al punto di mira legacy"
+  },
+  {
+   "path": "regia.soste",
+   "field": "target",
+   "reason": "2 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "10 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "92 cartelli importati (da CAPS di regia); minimo 45 rispettato"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "hold_s",
+   "reason": "60 cartelli senza didascalia in eventi (hold_s 5 s di default, nessuna etichetta monumento)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "139 fonti dalla scheda (id citati nei commenti legacy); elementi senza id/fonte: 0 soste, 1 cartelli, 6 monumenti (conf low)"
+  },
+  {
+   "path": "history.water",
+   "field": "ring",
+   "reason": "9 voci d'acqua come CERCHI attorno al punto di riferimento (WATER_KEYS): sostituire con i poligoni reali"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "36 ponti nel legacy (geometria da OSM, non letterale): pontneuf, pontnotredame, pontauchange, petitpontcardinallustiger, pontsaintmichel, pontmarie, pontdelatournelle, pontroyal, pontdesarts, pontdelaconcorde, pontalexandreiii, pontdebirhakeim, pontdiena, pontdelalma ... -> servono line [lat,lon], larghezza, anni, fonte"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  }
+ ]
+}

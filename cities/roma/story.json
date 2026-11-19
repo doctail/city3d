@@ -1,0 +1,1308 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "roma",
+  "name": "Rome",
+  "country": "TODO",
+  "lat0": 41.896,
+  "lon0": 12.4823,
+  "radius_m": 9000,
+  "start_year": -753,
+  "end_year": 2026,
+  "title": "EVOLUTION OF ROME | 3D City Timelapse (753 BC–NOW)",
+  "data_source": "custom",
+  "data_dir": "data_roma",
+  "style_preset": "mediterranean",
+  "population": [],
+  "pop_src": [],
+  "eras": []
+ },
+ "sources": {},
+ "history": {
+  "zones": [],
+  "walls": [
+   {
+    "name": "Aurelian",
+    "ring": [
+     [
+      41.9105,
+      12.4733
+     ],
+     [
+      41.9115,
+      12.4764
+     ],
+     [
+      41.911,
+      12.4815
+     ],
+     [
+      41.9093,
+      12.4882
+     ],
+     [
+      41.9093,
+      12.5016
+     ],
+     [
+      41.9068,
+      12.507
+     ],
+     [
+      41.904,
+      12.5098
+     ],
+     [
+      41.8985,
+      12.5128
+     ],
+     [
+      41.8915,
+      12.5156
+     ],
+     [
+      41.8875,
+      12.513
+     ],
+     [
+      41.8846,
+      12.5098
+     ],
+     [
+      41.879,
+      12.501
+     ],
+     [
+      41.8735,
+      12.5016
+     ],
+     [
+      41.872,
+      12.4935
+     ],
+     [
+      41.8763,
+      12.4813
+     ],
+     [
+      41.879,
+      12.474
+     ],
+     [
+      41.8815,
+      12.473
+     ],
+     [
+      41.884,
+      12.46
+     ],
+     [
+      41.8925,
+      12.4655
+     ],
+     [
+      41.8975,
+      12.469
+     ],
+     [
+      41.904,
+      12.47
+     ]
+    ],
+    "built": [
+     null,
+     null
+    ],
+    "demolished": null,
+    "conf": "low",
+    "_legacy": "anello letterale AURELIAN in hist_roma.py; anni non nel legacy"
+   },
+   {
+    "name": "Servian",
+    "ring": [
+     [
+      41.8985,
+      12.481
+     ],
+     [
+      41.903,
+      12.49
+     ],
+     [
+      41.904,
+      12.4975
+     ],
+     [
+      41.9005,
+      12.503
+     ],
+     [
+      41.8955,
+      12.502
+     ],
+     [
+      41.8905,
+      12.4985
+     ],
+     [
+      41.885,
+      12.4945
+     ],
+     [
+      41.88,
+      12.487
+     ],
+     [
+      41.8815,
+      12.479
+     ],
+     [
+      41.8875,
+      12.4775
+     ],
+     [
+      41.893,
+      12.48
+     ]
+    ],
+    "built": [
+     null,
+     null
+    ],
+    "demolished": null,
+    "conf": "low",
+    "_legacy": "anello letterale SERVIAN in hist_roma.py; anni non nel legacy"
+   }
+  ],
+  "gutting": [],
+  "lost": [],
+  "fires": [],
+  "water": [],
+  "bridges": []
+ },
+ "landmarks": [
+  {
+   "name": "Colosseum",
+   "kind": "TODO",
+   "at": [
+    41.8902,
+    12.4922
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 35.7
+   },
+   "phases": [
+    {
+     "y": 72
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 72 (primo anno della scheda), altezza 35.7 m",
+   "conf": "low"
+  },
+  {
+   "name": "Circus Maximus",
+   "kind": "TODO",
+   "at": [
+    41.8861,
+    12.4851
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 28.6
+   },
+   "phases": [
+    {
+     "y": -329
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -329 (primo anno della scheda), altezza 28.6 m",
+   "conf": "low"
+  },
+  {
+   "name": "Temple of Jupiter",
+   "kind": "TODO",
+   "at": [
+    41.8925,
+    12.4818
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 57.4
+   },
+   "phases": [
+    {
+     "y": -509
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -509 (primo anno della scheda), altezza 57.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "Basilica of Maxentius",
+   "kind": "TODO",
+   "at": [
+    41.8919,
+    12.488401
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 37.8
+   },
+   "phases": [
+    {
+     "y": 308
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 308 (primo anno della scheda), altezza 37.8 m",
+   "conf": "low"
+  },
+  {
+   "name": "Palatine Palace",
+   "kind": "TODO",
+   "at": [
+    41.8883,
+    12.4868
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 65.1
+   },
+   "phases": [
+    {
+     "y": 92
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 92 (primo anno della scheda), altezza 65.1 m",
+   "conf": "low"
+  },
+  {
+   "name": "Palatine Hill",
+   "kind": "TODO",
+   "at": [
+    41.8892,
+    12.4875
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 64.3
+   },
+   "phases": [
+    {
+     "y": -753
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -753 (primo anno della scheda), altezza 64.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Trajan's Column",
+   "kind": "TODO",
+   "at": [
+    41.8958,
+    12.4843
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 34.5
+   },
+   "phases": [
+    {
+     "y": 113
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 113 (primo anno della scheda), altezza 34.5 m",
+   "conf": "low"
+  },
+  {
+   "name": "Pantheon",
+   "kind": "TODO",
+   "at": [
+    41.898509,
+    12.476899
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 46.3
+   },
+   "phases": [
+    {
+     "y": 118
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 118 (primo anno della scheda), altezza 46.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "Theatre of Marcellus",
+   "kind": "TODO",
+   "at": [
+    41.892262,
+    12.4799
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 31.4
+   },
+   "phases": [
+    {
+     "y": -13
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -13 (primo anno della scheda), altezza 31.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "Mausoleum of Augustus",
+   "kind": "TODO",
+   "at": [
+    41.906,
+    12.4763
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 22.2
+   },
+   "phases": [
+    {
+     "y": -28
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -28 (primo anno della scheda), altezza 22.2 m",
+   "conf": "low"
+  },
+  {
+   "name": "Hadrian's Mausoleum",
+   "kind": "TODO",
+   "at": [
+    41.9031,
+    12.4663
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 23.4
+   },
+   "phases": [
+    {
+     "y": 135
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 135 (primo anno della scheda), altezza 23.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "Castel Sant'Angelo",
+   "kind": "TODO",
+   "at": [
+    41.9031,
+    12.4663
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 23.4
+   },
+   "phases": [
+    {
+     "y": 590
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 590 (primo anno della scheda), altezza 23.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "Baths of Caracalla",
+   "kind": "TODO",
+   "at": [
+    41.879,
+    12.4925
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 36.7
+   },
+   "phases": [
+    {
+     "y": 212
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 212 (primo anno della scheda), altezza 36.7 m",
+   "conf": "low"
+  },
+  {
+   "name": "Baths of Diocletian",
+   "kind": "TODO",
+   "at": [
+    41.903,
+    12.498
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 91.2
+   },
+   "phases": [
+    {
+     "y": 298
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 298 (primo anno della scheda), altezza 91.2 m",
+   "conf": "low"
+  },
+  {
+   "name": "Old St Peter's",
+   "kind": "TODO",
+   "at": [
+    41.9022,
+    12.4539
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 51.4
+   },
+   "phases": [
+    {
+     "y": 326
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 326 (primo anno della scheda), altezza 51.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "St Peter's Basilica",
+   "kind": "TODO",
+   "at": [
+    41.9022,
+    12.453236
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 50.3
+   },
+   "phases": [
+    {
+     "y": 1506
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1506 (primo anno della scheda), altezza 50.3 m",
+   "conf": "low"
+  },
+  {
+   "name": "St Peter's Square",
+   "kind": "TODO",
+   "at": [
+    41.9022,
+    12.457301
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 21.4
+   },
+   "phases": [
+    {
+     "y": 1660
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1660 (primo anno della scheda), altezza 21.4 m",
+   "conf": "low"
+  },
+  {
+   "name": "Aurelian Walls",
+   "kind": "TODO",
+   "at": [
+    41.8738,
+    12.501
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 54.8
+   },
+   "phases": [
+    {
+     "y": 271
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 271 (primo anno della scheda), altezza 54.8 m",
+   "conf": "low"
+  },
+  {
+   "name": "Servian Wall",
+   "kind": "TODO",
+   "at": [
+    41.8835,
+    12.4905
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 24.0
+   },
+   "phases": [
+    {
+     "y": -378
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = -378 (primo anno della scheda), altezza 24.0 m",
+   "conf": "low"
+  },
+  {
+   "name": "Vittoriano",
+   "kind": "TODO",
+   "at": [
+    41.8946,
+    12.4831
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 63.6
+   },
+   "phases": [
+    {
+     "y": 1885
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1885 (primo anno della scheda), altezza 63.6 m",
+   "conf": "low"
+  },
+  {
+   "name": "Stadio Olimpico",
+   "kind": "TODO",
+   "at": [
+    41.9341,
+    12.4547
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 17.1
+   },
+   "phases": [
+    {
+     "y": 1953
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1953 (primo anno della scheda), altezza 17.1 m",
+   "conf": "low"
+  },
+  {
+   "name": "EUR",
+   "kind": "TODO",
+   "at": [
+    41.8364,
+    12.4659
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 65.5
+   },
+   "phases": [
+    {
+     "y": 1938
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1938 (primo anno della scheda), altezza 65.5 m",
+   "conf": "low"
+  },
+  {
+   "name": "Termini Station",
+   "kind": "TODO",
+   "at": [
+    41.9009,
+    12.5013
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 84.1
+   },
+   "phases": [
+    {
+     "y": 1950
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_roma.py; anno = 1950 (primo anno della scheda), altezza 84.1 m",
+   "conf": "low"
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": false,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": -753
+  },
+  "soste": [
+   {
+    "y0": -753.0,
+    "y1": -735.0,
+    "dur": 6.0,
+    "caption": "Romulus founds Rome (753 BC)",
+    "shot": "medium",
+    "target": "Palatine Palace",
+    "_legacy_target": "nome legacy 'palatine' -> 'Palatine Palace'",
+    "conf": "low"
+   },
+   {
+    "y0": -509.0,
+    "y1": -504.0,
+    "dur": 4.0,
+    "caption": "Temple of Jupiter (509 BC)",
+    "shot": "medium",
+    "target": "Temple of Jupiter",
+    "conf": "low"
+   },
+   {
+    "y0": -378.0,
+    "y1": -372.0,
+    "dur": 4.5,
+    "caption": "The Servian Wall (378 BC)",
+    "shot": "medium",
+    "target": "Servian Wall",
+    "conf": "low"
+   },
+   {
+    "y0": -329.0,
+    "y1": -322.0,
+    "dur": 3.5,
+    "caption": "Circus Maximus (329 BC)",
+    "shot": "medium",
+    "target": "Circus Maximus",
+    "conf": "low"
+   },
+   {
+    "y0": -46.0,
+    "y1": -26.0,
+    "dur": 5.0,
+    "caption": "Caesar and Augustus rebuild Rome",
+    "shot": "medium",
+    "target": "Circus Maximus",
+    "conf": "low"
+   },
+   {
+    "y0": -13.5,
+    "y1": -11.0,
+    "dur": 3.0,
+    "caption": "Theatre of Marcellus (13 BC)",
+    "shot": "medium",
+    "target": "Theatre of Marcellus",
+    "conf": "low"
+   },
+   {
+    "y0": 71.5,
+    "y1": 80.5,
+    "dur": 6.0,
+    "caption": "The Colosseum (AD 72-80)",
+    "shot": "medium",
+    "target": "Colosseum",
+    "conf": "low"
+   },
+   {
+    "y0": 112.5,
+    "y1": 113.5,
+    "dur": 3.0,
+    "caption": "Trajan's Column (113)",
+    "shot": "medium",
+    "target": "Trajan's Column",
+    "conf": "low"
+   },
+   {
+    "y0": 117.5,
+    "y1": 126.0,
+    "dur": 5.0,
+    "caption": "The Pantheon (125)",
+    "shot": "medium",
+    "target": "Pantheon",
+    "conf": "low"
+   },
+   {
+    "y0": 134.5,
+    "y1": 138.0,
+    "dur": 3.5,
+    "caption": "Hadrian's Mausoleum (135)",
+    "shot": "medium",
+    "target": "Castel Sant'Angelo",
+    "conf": "low"
+   },
+   {
+    "y0": 211.5,
+    "y1": 216.5,
+    "dur": 4.0,
+    "caption": "Baths of Caracalla (216)",
+    "shot": "medium",
+    "target": "Baths of Caracalla",
+    "conf": "low"
+   },
+   {
+    "y0": 271.0,
+    "y1": 276.0,
+    "dur": 6.0,
+    "caption": "The Aurelian Walls (271)",
+    "shot": "medium",
+    "target": "Aurelian Walls",
+    "_legacy_target": "nome legacy 'walls' -> 'Aurelian Walls'",
+    "conf": "low"
+   },
+   {
+    "y0": 325.5,
+    "y1": 330.0,
+    "dur": 4.0,
+    "caption": "Old St Peter's (326)",
+    "shot": "medium",
+    "target": "Old St Peter's",
+    "conf": "low"
+   },
+   {
+    "y0": 410.0,
+    "y1": 410.8,
+    "dur": 4.0,
+    "caption": "Alaric sacks Rome (410)",
+    "shot": "medium",
+    "target": "TODO",
+    "conf": "low"
+   },
+   {
+    "y0": 537.0,
+    "y1": 560.0,
+    "dur": 7.0,
+    "caption": "The aqueducts are cut (537)",
+    "shot": "medium",
+    "target": "TODO",
+    "conf": "low"
+   },
+   {
+    "y0": 1349.0,
+    "y1": 1349.6,
+    "dur": 4.0,
+    "caption": "Earthquake: the Colosseum falls (1349)",
+    "shot": "medium",
+    "target": "Colosseum",
+    "conf": "low"
+   },
+   {
+    "y0": 1505.5,
+    "y1": 1547.0,
+    "dur": 4.0,
+    "caption": "New St Peter's (1506)",
+    "shot": "medium",
+    "target": "St Peter's Basilica",
+    "conf": "low"
+   },
+   {
+    "y0": 1584.5,
+    "y1": 1593.0,
+    "dur": 5.0,
+    "caption": "Michelangelo's dome (1590)",
+    "shot": "medium",
+    "target": "St Peter's Basilica",
+    "conf": "low"
+   },
+   {
+    "y0": 1655.5,
+    "y1": 1667.0,
+    "dur": 4.0,
+    "caption": "Bernini's colonnade (1667)",
+    "shot": "medium",
+    "target": "St Peter's Square",
+    "conf": "low"
+   },
+   {
+    "y0": 1870.6,
+    "y1": 1871.4,
+    "dur": 4.0,
+    "caption": "Rome, capital of Italy (1871)",
+    "shot": "medium",
+    "target": "TODO",
+    "conf": "low"
+   },
+   {
+    "y0": 1884.5,
+    "y1": 1911.0,
+    "dur": 5.0,
+    "caption": "The Vittoriano (1885-1911)",
+    "shot": "medium",
+    "target": "Vittoriano",
+    "conf": "low"
+   },
+   {
+    "y0": 1952.5,
+    "y1": 1960.5,
+    "dur": 3.5,
+    "caption": "Rome Olympics (1960)",
+    "shot": "medium",
+    "target": "Stadio Olimpico",
+    "conf": "low"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "ROME TODAY"
+  ],
+  "title": [
+   "ROME",
+   "753 BC TO NOW"
+  ],
+  "end": [
+   "ROME · 2,779 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": -615.0,
+    "title": "The Etruscan kings",
+    "lines": [
+     "They drain the marshes between the hills. The Forum is born."
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "616 BC",
+    "labels": [
+     "Temple of Jupiter"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": -505.5,
+    "title": "No more kings",
+    "lines": [
+     "The last king is driven out. Rome becomes a republic."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "509 BC",
+    "labels": [
+     "Temple of Jupiter"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": -389.0,
+    "title": "The Gauls sack Rome",
+    "lines": [
+     "Only the Capitoline Hill holds out."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "390 BC",
+    "conf": "low"
+   },
+   {
+    "y": -311.0,
+    "title": "The Appian Way",
+    "lines": [
+     "The first great Roman road, and the first aqueduct."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "312 BC",
+    "conf": "low"
+   },
+   {
+    "y": -141.0,
+    "title": "Carthage destroyed",
+    "lines": [
+     "Rome now rules the Mediterranean."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "146 BC",
+    "conf": "low"
+   },
+   {
+    "y": -44.0,
+    "title": "The Ides of March",
+    "lines": [
+     "Julius Caesar is murdered in the Senate."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "44 BC",
+    "labels": [
+     "Circus Maximus"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": -27.0,
+    "title": "Augustus, first emperor",
+    "lines": [
+     "\"I found Rome a city of brick and left it a city of marble.\""
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "27 BC",
+    "labels": [
+     "Theatre of Marcellus"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 63.0,
+    "title": "The Great Fire",
+    "lines": [
+     "Ten of the fourteen districts burn. Nero rebuilds."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 64",
+    "labels": [
+     "Colosseum"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 117.0,
+    "title": "The empire at its largest",
+    "lines": [
+     "From Scotland to Iraq, ruled from this city."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 117",
+    "labels": [
+     "Pantheon"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 180.0,
+    "title": "A million people",
+    "lines": [
+     "The largest city the world has ever seen."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 180",
+    "labels": [
+     "Baths of Caracalla"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 330.0,
+    "title": "A new capital",
+    "lines": [
+     "Constantine moves the emperor to Constantinople."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 330",
+    "labels": [
+     "Basilica of Maxentius",
+     "Circus Maximus",
+     "Colosseum",
+     "Pantheon"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 476.0,
+    "title": "The end of the Western Empire",
+    "lines": [
+     "The last emperor in the West is deposed."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 476",
+    "labels": [
+     "Baths of Caracalla",
+     "Circus Maximus",
+     "Colosseum"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 590.0,
+    "title": "Plague and floods",
+    "lines": [
+     "Fewer than 50,000 people live inside walls built for a million."
+    ],
+    "hold_s": 5.4,
+    "legacy_date": "AD 590",
+    "conf": "low"
+   },
+   {
+    "y": 800.0,
+    "title": "Charlemagne",
+    "lines": [
+     "Crowned emperor in Old St Peter's on Christmas Day."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "AD 800",
+    "conf": "low"
+   },
+   {
+    "y": 1085.0,
+    "title": "The Normans",
+    "lines": [
+     "Allies of the Pope burn much of the city."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1084",
+    "conf": "low"
+   },
+   {
+    "y": 1309.0,
+    "title": "The Popes leave",
+    "lines": [
+     "The papacy moves to Avignon. Rome falls to ~17,000 people."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1309",
+    "labels": [
+     "Colosseum"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1377.0,
+    "title": "The Popes return",
+    "lines": [
+     "Rome starts to grow again, around the Vatican."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1377",
+    "conf": "low"
+   },
+   {
+    "y": 1526.2,
+    "title": "The Sack of Rome",
+    "lines": [
+     "Charles V's unpaid troops loot the city for months."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1527",
+    "labels": [
+     "St Peter's Basilica"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 1762.0,
+    "title": "Trevi Fountain",
+    "lines": [
+     "Finished after 30 years of work."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1762",
+    "conf": "low"
+   },
+   {
+    "y": 1806.0,
+    "title": "Napoleon",
+    "lines": [
+     "French troops arrive. The Pope is taken prisoner."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1798",
+    "conf": "low"
+   },
+   {
+    "y": 1922.0,
+    "title": "March on Rome",
+    "lines": [
+     "Mussolini takes power."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1922",
+    "conf": "low"
+   },
+   {
+    "y": 1950.0,
+    "title": "Liberation",
+    "lines": [
+     "Allied troops enter Rome on 4 June 1944."
+    ],
+    "hold_s": 4.6,
+    "legacy_date": "1944",
+    "labels": [
+     "Stadio Olimpico",
+     "Termini Station"
+    ],
+    "sober": true,
+    "conf": "low"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  }
+ },
+ "legacy": {
+  "metadata_file": "metadata_roma.md",
+  "translations_file": "traduzioni_roma.md",
+  "translation_languages": [
+   "Español (es)",
+   "Português (pt-BR)",
+   "Deutsch (de)",
+   "Français (fr)",
+   "Italiano (it)",
+   "Short (titolo)"
+  ],
+  "video_chapter_lines": 19,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_roma_src",
+   "present": [
+    "buildings.json",
+    "dem.npz",
+    "land.json",
+    "landmarks.json",
+    "parks.json",
+    "roads.json"
+   ],
+   "missing_for_kit": [],
+   "complete": true
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "city",
+   "field": "country",
+   "reason": "non nei file legacy (TODO)"
+  },
+  {
+   "path": "city",
+   "field": "style_preset",
+   "reason": "default 'mediterranean' (il legacy ha lo stile in city_<slug>.json, non e' un preset): scegliere"
+  },
+  {
+   "path": "city",
+   "field": "eras",
+   "reason": "nessuna periodizzazione nel legacy"
+  },
+  {
+   "path": "city",
+   "field": "polities",
+   "reason": "nessun regime/chip bandiera nel legacy: ogni regime da compilare (regola R2)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "non nel legacy"
+  },
+  {
+   "path": "landmarks",
+   "field": "kind",
+   "reason": "23 monumenti con geometria bespoke in landmarks_roma.py: scegliere un preset di kit/landmarks_kit.py o tenere il modulo legacy; phases con solo il primo anno"
+  },
+  {
+   "path": "regia.soste[13]",
+   "field": "target",
+   "reason": "'Alaric sacks Rome (410)': bersaglio legacy 'center' non risolto"
+  },
+  {
+   "path": "regia.soste[14]",
+   "field": "target",
+   "reason": "'The aqueducts are cut (537)': bersaglio legacy 'center' non risolto"
+  },
+  {
+   "path": "regia.soste[19]",
+   "field": "target",
+   "reason": "'Rome, capital of Italy (1871)': bersaglio legacy 'center' non risolto"
+  },
+  {
+   "path": "regia.soste",
+   "field": "target",
+   "reason": "2 bersagli dedotti per vicinanza/nome approssimato (vedi _legacy_target di ogni sosta): verificare che il monumento sia quello giusto"
+  },
+  {
+   "path": "regia.soste",
+   "field": "weight",
+   "reason": "22 soste senza peso (0-10 o \"max\"): default = forza dell'fx; scegliere almeno la piu' forte come \"max\""
+  },
+  {
+   "path": "regia.soste",
+   "field": "fx",
+   "reason": "nessun fx del montaggio nel legacy (campo omesso)"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "cards",
+   "reason": "22 cartelli importati (da eventi_<slug>.json); SOTTO IL MINIMO di 45: ne mancano 23"
+  },
+  {
+   "path": "montaggio.cards",
+   "field": "target/shot",
+   "reason": "il legacy non ha bersaglio per i cartelli (volano durante i tratti)"
+  },
+  {
+   "path": "montaggio",
+   "field": "chapters",
+   "reason": "nessun capitolo storico nel legacy (capitoli_<slug>.txt e metadata sono per orari di video, non per anni): tracciare dalle ere"
+  },
+  {
+   "path": "city",
+   "field": "population",
+   "reason": "nessuna serie di popolazione nel legacy (la scheda non c'e'): HUD senza popolazione"
+  },
+  {
+   "path": "sources",
+   "field": "sources",
+   "reason": "nessuna scheda di validazione per roma: 0 fonti; tutti gli elementi importati sono conf \"low\" (deroga regola 1) e vanno risalvati con una fonte reale"
+  },
+  {
+   "path": "history.walls[0]",
+   "field": "built/demolished/src",
+   "reason": "AURELIAN: solo il tracciato; costruzione/demolizione/altezza/fonte da compilare"
+  },
+  {
+   "path": "history.walls[1]",
+   "field": "built/demolished/src",
+   "reason": "SERVIAN: solo il tracciato; costruzione/demolizione/altezza/fonte da compilare"
+  },
+  {
+   "path": "history.bridges",
+   "field": "bridges",
+   "reason": "nessun bridges_roma.py leggibile (vedi anche bridges.json di radice, non per citta')"
+  },
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "nessuna zona pre-catasto con anello e anni di nascita nel legacy (le zone sono codice in hist_<slug>.py: nuclei/villaggi con parametri a mano): anelli, born, era_height da compilare"
+  },
+  {
+   "path": "history",
+   "field": "walls/gutting/lost/fires",
+   "reason": "mura/sventramenti/edifici perduti/incendi sono generati da codice o da dati esterni (ALPAGE ecc.) nel legacy: non importabili in modo letterale"
+  },
+  {
+   "path": "montaggio",
+   "field": "open",
+   "reason": "solo il titolo base ('<CITY> TODAY'): aggiungere la popolazione di oggi con fonte"
+  },
+  {
+   "path": "metadata",
+   "field": "chapters/description/tags",
+   "reason": "capitoli con orari (legacy: orari del vecchio render, non validi per il drone), descrizione, tag, commento fisso, Reddit: da rifare nel formato kit (cities/<slug>/METADATA.md)"
+  }
+ ]
+}

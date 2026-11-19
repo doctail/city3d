@@ -9,6 +9,7 @@ Comandi
   build <slug>       hist stub + hist -> landmarks -> city json -> regia -> eventi/labs (se i moduli ci sono)
   qa <slug> [--render]   controlli automatici (kit/qa.py), report in cities/<slug>/qa/REPORT.md
   pack <slug>        comprime DATA in data_<slug>_src/*.gz (come le altre citta': run.sh li scompatta sul pod)
+  legacy <slug> [--force]   importa una citta' vecchia (hist_/regia_/landmarks_/eventi/metadata) in cities/<slug>/story.json + MISSING.md
   montaggio <slug> [--A a.mp3 --B b.mp3] [--overlay]   montaggio/kit_city.py, sfx_kit.py (se ci sono i brani), ov_kit.sh
   all <slug> [--render]  data -> build -> qa -> pack
 Ogni passo stampa tempo ed esito; ci si ferma al primo FAIL (codice di uscita 1).
@@ -123,7 +124,8 @@ def cmd_build(slug, opts):
 
 def cmd_qa(slug, opts):
     from . import qa
-    R = qa.run(slug, data=opts.get('data'), render='render' in opts)
+    only = opts['only'].replace(',', '') if isinstance(opts.get('only'), str) else None   # --only a,b,c: solo quei controlli
+    R = qa.run(slug, data=opts.get('data'), render='render' in opts, only=only)
     w = R.worst()
     if w == 'FAIL':
         bad = [f'{r[0]}) {r[2]}' for r in R.rows if r[1] == 'FAIL']
@@ -160,12 +162,20 @@ def cmd_montaggio(slug, opts):
     return 'OK'
 
 
+def cmd_legacy(slug, opts):
+    from . import legacy_kit
+    try: story, G = legacy_kit.run(slug, force=bool(opts.get('force')))
+    except FileExistsError as e: raise Fail(str(e))
+    return (f'soste {len(story["regia"]["soste"])}, cartelli {len(story["montaggio"]["cards"])}, monumenti {len(story["landmarks"])}, '
+            f'lacune {len(G.rows)} -> cities/{slug}/story.json + MISSING.md')
+
+
 def cmd_all(slug, opts):
     for n, f in (('data', cmd_data), ('build', cmd_build), ('qa', cmd_qa), ('pack', cmd_pack)): step(n, f, slug, opts)
     return 'OK'
 
 
-CMDS = {'init': cmd_init, 'data': cmd_data, 'build': cmd_build, 'qa': cmd_qa, 'pack': cmd_pack, 'montaggio': cmd_montaggio, 'all': cmd_all}
+CMDS = {'init': cmd_init, 'data': cmd_data, 'build': cmd_build, 'qa': cmd_qa, 'pack': cmd_pack, 'montaggio': cmd_montaggio, 'legacy': cmd_legacy, 'all': cmd_all}
 
 
 def main(argv=None):
