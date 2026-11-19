@@ -28,7 +28,7 @@ DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s,
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9,
-                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0, drift_vmax=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0, drift_vmax=0.0, leg_full=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -173,9 +173,11 @@ def dims(s, cfg):
     return s
 
 
-def leg_est(a, b, f=1.0):
-    """Lunghezza stimata (3D) del tratto fra due tappe (hover di a -> hover di b)."""
-    dxy = max(60.0, math.hypot(b['x'] - a['x'], b['y'] - a['y']) - b['rho'])
+def leg_est(a, b, f=1.0, full=False):
+    """Lunghezza stimata (3D) del tratto fra due tappe (hover di a -> hover di b).
+    full=True (opt-in, drone.leg_full): |distanza - rho_b| + 0,5 rho_a, perche' l'hover di a sta dal suo lato di arrivo (hover lontani, d_min/rho_max grandi: due soste vicine ma con hover a 1400 m davano tratti di 4 s e 300 m/s; Valencia 19 nov)."""
+    dd = math.hypot(b['x'] - a['x'], b['y'] - a['y'])
+    dxy = max(60.0, abs(dd - b['rho']) + 0.5 * a['rho']) if full else max(60.0, dd - b['rho'])
     return 1.5 * math.hypot(dxy, 1.6 * (b['alt'] - a['alt']))
 
 

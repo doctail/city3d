@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-12 13:54. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-19 16:23. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -8,12 +8,12 @@ Generato da `python -m kit.qa` il 2026-11-12 13:54. Esito complessivo: **WARN**
 | b) DATA | PASS |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | PASS |
+| e) Costo e schedule | WARN |
 
 ## a) Story e fonti
 
 - **PASS** chiavi city
-- **PASS** 56 fonti
+- **PASS** 68 fonti
 - **PASS** date con fonte
 - **WARN** date fuori dall'intervallo del video
   - history.water[3] Jardi del Turia 1: 99999; history.water[5] Jardi del Turia 2: 99999; history.water[7] Jardi del Turia 3: 99999; history.water[9] Jardi del Turia 4: 99999; history.water[11] Jardi del Turia 5: 99999; history.water[13] Jardi del Turia 6: 99999
@@ -34,7 +34,7 @@ Generato da `python -m kit.qa` il 2026-11-12 13:54. Esito complessivo: **WARN**
   - 1664 voci
 - **PASS** dem.npz
 - **PASS** anni edifici (38240)
-  - senza anno 0, dopo 2026: 0, prima di 1238 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
+  - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1238 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
 - **PASS** hist (9367 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
 - **PASS** anni strade (13838 nastri)
@@ -89,15 +89,43 @@ Generato da `python -m kit.qa` il 2026-11-12 13:54. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (3 s)
-  - oggetti citta' 1539, cambi in tutto il video 67138, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.22 h (budget 1.0 h)
+  - oggetti citta' 1539, cambi in tutto il video 51469, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
+- **PASS** drone: velocita' massima
+  - 212 m/s (limite 250), mediana 16
+- **PASS** drone: accelerazione massima
+  - 118 m/s2 (limite 120), 99% 84
+- **PASS** drone: jerk massimo
+  - 82 m/s3 (limite 200), 99% 58
+- **PASS** drone: distanza minima da terreno e tetti
+  - 458 m (soglia 24); dal solo terreno 476 m
+- **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
+  - 0 salti
+- **PASS** drone: soste tolte per tempo
+  - 0 tolte, 25 tenute, 0 solo sorvolate; hover 190 s, volo 528 s; 
+- **PASS** drone: hover quasi fermo
+  - v max in hover 8.4 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+- **WARN** drone: voli con gli anni quasi fermi
+  - 360-377 s (17 s, 0.01 anni/s) verso 'A convent becomes the main'; 403-419 s (16 s, 0.31 anni/s) verso 'North Station (1906-17)'; 443-459 s (16 s, 0.24 anni/s) verso 'Central Market (1915-28)'; 464-480 s (16 s, 0.27 anni/s) verso 'City Hall square (1931-33)'; 528-559 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'; 617-653 s (37 s, 0.18 anni/s) verso 'City of Arts and Sciences '  [uniscili: trasforma una delle due soste vicine in cartello]
+- **PASS** drone: monumenti visibili durante il loro hover
+  - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
+- **PASS** drone: distanza della camera
+  - mediana 1654 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+- **PASS** drone: esattezza anni
+  - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
+- **WARN** drone: grafico non fatto
+  - No module named 'matplotlib'
+- **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
+  - vuoto massimo 34.7 s (618-653 s); 18 oltre 15 s: 59-80, 89-109, 114-130, 130-151, 151-172, 178-200
+- **PASS** ritmo: anni/s per minuto
+  - 0:00 11.30 | 1:00  0.92 | 2:00  1.50 | 3:00  3.80 | 4:00  2.15 | 5:00  0.68 | 6:00  0.41 | 7:00  0.29 | 8:00  0.49 | 9:00  0.38 | 10:00  0.22 | 11:00  0.46 | 12:00  0.02
 - **PASS** 25 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
-  - primo a 12.9 s
+  - primo a 15.7 s
 - **PASS** notte
-  - night_t=460.5, schedule_valencia_night.json ok
+  - night_t=733.6782500194206, schedule_valencia_night.json ok
 
 ## Immagini
 

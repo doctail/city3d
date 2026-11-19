@@ -9,7 +9,7 @@
   "radius_m": 12000,
   "start_year": 1238,
   "end_year": 2026,
-  "title": "EVOLUTION OF VALENCIA | 3D City Timelapse (1238–NOW) | No AI",
+  "title": "EVOLUTION OF VALENCIA | 3D City Timelapse (1238-NOW) | No AI",
   "data_source": "catastro",
   "data_dir": "data_valencia",
   "style_preset": "mediterranean",
@@ -240,7 +240,10 @@
     ],
     "conf": "medium"
    }
-  ]
+  ],
+  "style": {
+   "flood_water": "#6e4a24"
+  }
  },
  "sources": {
   "S1": {
@@ -311,7 +314,7 @@
   "S14": {
    "url": "https://en.wikipedia.org/wiki/Bridge_of_the_Exposici%C3%B3n_Regional_Valenciana_1909",
    "title": "Wikipedia, Exposicion bridge 1909",
-   "quote": "inaugurated on 22 May 1909"
+   "quote": "inaugurated May 22, 1909"
   },
   "S15": {
    "url": "https://www.archiseek.com/?p=18519",
@@ -522,6 +525,66 @@
    "url": "https://es.wikipedia.org/wiki/Bandera_de_la_Comunidad_Valenciana",
    "title": "Wikipedia ES, Bandera de la Comunidad Valenciana",
    "quote": "Originally the flag of the city of Valencia; official flag of the Valencian Community since 1982"
+  },
+  "S57": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Serranos",
+   "title": "Wikipedia ES, Puente de Serranos (elenco dei ponti storici)",
+   "quote": "Puente de la Trinidad (1356-1402), Puente de Serranos (1518), Puente del Mar (1592-1596), Puente del Real (1594-1599) y finalmente Puente de San José (1604-1607)"
+  },
+  "S58": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Serranos",
+   "title": "Wikipedia ES, Puente de Serranos (1518)",
+   "quote": "dispuso el 22 de junio de 1518 su reedificación"
+  },
+  "S59": {
+   "url": "https://es.wikipedia.org/wiki/Puente_del_Mar_(Valencia)",
+   "title": "Wikipedia ES, Puente del Mar",
+   "quote": "Las obras se concluyeron en 1596."
+  },
+  "S60": {
+   "url": "https://es.wikipedia.org/wiki/Puente_del_Real_(Valencia)",
+   "title": "Wikipedia ES, Puente del Real",
+   "quote": "El actual puente del Real es el que se reconstruyó después de la avenida de 1589."
+  },
+  "S61": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Arag%C3%B3n_(Valencia)",
+   "title": "Wikipedia ES, Puente de Aragón",
+   "quote": "el puente fue inaugurado oficialmente en 1933"
+  },
+  "S62": {
+   "url": "https://en.wikipedia.org/wiki/Bridge_of_the_Exposici%C3%B3n_Regional_Valenciana_1909",
+   "title": "Wikipedia EN, Exposicion bridge 1909 (destroyed)",
+   "quote": "destroyed on October 14, 1957, in the flood of the Turia"
+  },
+  "S63": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_la_Exposici%C3%B3n",
+   "title": "Wikipedia ES, Puente de la Exposición (Calatrava)",
+   "quote": "construido entre los años 1991 y 1995"
+  },
+  "S64": {
+   "url": "https://es.wikipedia.org/wiki/Puente_del_Reino_de_Valencia",
+   "title": "Wikipedia ES, Puente del Reino de Valencia",
+   "quote": "Fue inaugurado el diciembre del 1999 por la alcaldesa Rita Barberá"
+  },
+  "S65": {
+   "url": "https://en.wikipedia.org/wiki/1957_Valencia_flood",
+   "title": "Wikipedia EN, 1957 Valencia flood (Marxalenes)",
+   "quote": "In the Marxalanes district, some streets were under 5 metres (16 ft) of water."
+  },
+  "S66": {
+   "url": "https://en.wikipedia.org/wiki/1957_Valencia_flood",
+   "title": "Wikipedia EN, 1957 Valencia flood (north of the river)",
+   "quote": "the newer bridges and areas to the north of the river, such as Zaidia and Campanar, suffered severe damage"
+  },
+  "S67": {
+   "url": "https://es.wikipedia.org/wiki/Jard%C3%ADn_del_Turia",
+   "title": "Wikipedia ES, Jardín del Turia (1986)",
+   "quote": "En 1986 se inauguró el parque"
+  },
+  "S68": {
+   "url": "https://en.wikipedia.org/wiki/1957_Valencia_flood",
+   "title": "Wikipedia EN, 1957 Valencia flood (Plan Sur dates)",
+   "quote": "work began in 1964 and finished in 1973"
   }
  },
  "history": {
@@ -4278,7 +4341,7 @@
     "d": 1957.78,
     "src": [
      "S14",
-     "S28"
+     "S62"
     ],
     "conf": "medium",
     "note": "ponte in cemento del 1909 sul sito del ponte attuale (linea OSM del ponte di Calatrava): sito esatto non verificato; crolla nella piena del 13-14 ott 1957"
@@ -4299,9 +4362,11 @@
     "y": 1995,
     "d": null,
     "src": [
+     "S63",
      "S15"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "note": "Calatrava, built 1991-95 (S63); replaced a plainer bridge/gateway built after 1957 (not modeled as a separate deck)"
    },
    {
     "name": "Puente de Aragon",
@@ -4319,9 +4384,10 @@
     "y": 1933,
     "d": null,
     "src": [
+     "S61",
      "S13"
     ],
-    "conf": "medium"
+    "conf": "high"
    },
    {
     "name": "Puente de las Flores",
@@ -4362,11 +4428,141 @@
      "S17"
     ],
     "conf": "medium"
+   },
+   {
+    "name": "Puente de Serranos",
+    "line": [
+     [
+      39.47996,
+      -0.37565
+     ],
+     [
+      39.48132,
+      -0.37503
+     ]
+    ],
+    "w": 12,
+    "y": 1521,
+    "d": null,
+    "src": [
+     "S57",
+     "S58"
+    ],
+    "conf": "low",
+    "note": "S58: rebuilding ordered 22 Jun 1518 after the 1517 flood; completion year 1521 is the story phase, NOT in the quote (low)"
+   },
+   {
+    "name": "Puente de la Trinidad",
+    "line": [
+     [
+      39.47959,
+      -0.37217
+     ],
+     [
+      39.47839,
+      -0.37314
+     ]
+    ],
+    "w": 14,
+    "y": 1402,
+    "d": null,
+    "src": [
+     "S57"
+    ],
+    "conf": "medium",
+    "note": "stone bridge 1356-1402 (S57); earlier timber bridges (14th c.) not modeled"
+   },
+   {
+    "name": "Puente del Mar",
+    "line": [
+     [
+      39.47021,
+      -0.36464
+     ],
+     [
+      39.47032,
+      -0.3627
+     ]
+    ],
+    "w": 15,
+    "y": 1596,
+    "d": null,
+    "src": [
+     "S59",
+     "S57"
+    ],
+    "conf": "high",
+    "note": "stone bridge finished 1596 (S59) after the 1589 flood destroyed the previous one; earlier timber/stone-footing bridge not modeled"
+   },
+   {
+    "name": "Puente del Real",
+    "line": [
+     [
+      39.47576,
+      -0.36945
+     ],
+     [
+      39.47697,
+      -0.36819
+     ]
+    ],
+    "w": 20,
+    "y": 1599,
+    "d": null,
+    "src": [
+     "S60",
+     "S57"
+    ],
+    "conf": "medium",
+    "note": "rebuilt 1594-1599 (S57) after the 1589 flood; 1517 flood and 1528 collapse of the earlier bridge not modeled"
+   },
+   {
+    "name": "Puente de San Jose",
+    "line": [
+     [
+      39.48153,
+      -0.38023
+     ],
+     [
+      39.48283,
+      -0.3804
+     ]
+    ],
+    "w": 12,
+    "y": 1607,
+    "d": null,
+    "src": [
+     "S57",
+     "S11"
+    ],
+    "conf": "medium",
+    "note": "1604-1607 from the S57 list; the UPV page S11 is not re-verified"
+   },
+   {
+    "name": "Puente del Reino de Valencia",
+    "line": [
+     [
+      39.46224,
+      -0.36021
+     ],
+     [
+      39.46176,
+      -0.35781
+     ]
+    ],
+    "w": 25,
+    "y": 1999.92,
+    "d": null,
+    "src": [
+     "S64"
+    ],
+    "conf": "medium",
+    "note": "NOT a Calatrava bridge: engineer Salvador Monleon Cremades, inaugurated December 1999 (S64). Deck from OSM Pont del Regne de Valencia"
    }
   ],
   "floods": [
    {
-    "name": "1957 flood (low centre, old-river districts)",
+    "name": "1957 flood (south bank, old centre)",
     "ring": [
      [
       39.47571,
@@ -4521,15 +4717,90 @@
       -0.38402
      ]
     ],
-    "y": 1957.78,
-    "y1": 1957.8,
-    "depth": 1.5,
+    "y": 1957.77,
+    "y1": 1957.82,
+    "depth": 3.5,
     "src": [
      "S28",
      "S45",
-     "S42"
+     "S65"
     ],
-    "conf": "low"
+    "conf": "low",
+    "note": "water window 1957.77-1957.84 covers the card, the whole hover (1957.78-1957.80) and the departure; depth 3.5 m is a visual compromise (documented: up to 5 m in streets of Marxalenes, S65); the old centre largely escaped in reality"
+   },
+   {
+    "name": "1957 flood (north bank: Zaidia, Marxalenes, Campanar)",
+    "ring": [
+     [
+      39.4777,
+      -0.369
+     ],
+     [
+      39.47917,
+      -0.37283
+     ],
+     [
+      39.48148,
+      -0.37678
+     ],
+     [
+      39.48158,
+      -0.37736
+     ],
+     [
+      39.48207,
+      -0.37926
+     ],
+     [
+      39.48214,
+      -0.38026
+     ],
+     [
+      39.48205,
+      -0.38087
+     ],
+     [
+      39.48183,
+      -0.38153
+     ],
+     [
+      39.48109,
+      -0.38343
+     ],
+     [
+      39.485,
+      -0.388
+     ],
+     [
+      39.49,
+      -0.385
+     ],
+     [
+      39.492,
+      -0.376
+     ],
+     [
+      39.49,
+      -0.368
+     ],
+     [
+      39.485,
+      -0.365
+     ],
+     [
+      39.48,
+      -0.366
+     ]
+    ],
+    "y": 1957.77,
+    "y1": 1957.82,
+    "depth": 3.5,
+    "src": [
+     "S66",
+     "S65"
+    ],
+    "conf": "low",
+    "note": "S66: areas north of the river (Zaidia, Campanar) suffered severe damage; polygon hand-drawn from the river banks, to be checked on a frame"
    }
   ]
  },
@@ -5202,14 +5473,29 @@
   }
  ],
  "regia": {
+  "camera": "drone",
   "music": "waking_monument",
-  "duration": 511.5,
+  "duration": "auto",
   "night": true,
+  "pacing": "story",
   "open": {
    "year": 2026,
-   "rewind_to": 1238,
-   "story_lead": 3.4
+   "rewind_to": 1238
   },
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "night_hold": 15,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400,
+   "t_leg_min": 16,
+   "v_leg": 170,
+   "leg_full": 1
+  },
+  "lens": 32,
   "soste": [
    {
     "y0": 1238.0,
@@ -5226,8 +5512,8 @@
     "conf": "medium"
    },
    {
-    "y0": 1262,
-    "y1": 1270,
+    "y0": 1263,
+    "y1": 1273,
     "dur": 5,
     "caption": "The Cathedral rises on the Great Mosque (1262)",
     "target": "Cathedral",
@@ -5252,19 +5538,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1381,
-    "y1": 1429,
-    "dur": 5,
-    "caption": "El Micalet bell tower (1381-1429)",
-    "target": "Micalet",
-    "shot": "close",
-    "fx": "bell",
-    "src": [
-     "S7"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1392,
     "y1": 1398,
     "dur": 5,
@@ -5276,6 +5549,19 @@
      "S3"
     ],
     "conf": "high"
+   },
+   {
+    "y0": 1410,
+    "y1": 1429,
+    "dur": 5,
+    "caption": "El Micalet bell tower (1381-1429)",
+    "target": "Micalet",
+    "shot": "close",
+    "fx": "bell",
+    "src": [
+     "S7"
+    ],
+    "conf": "medium"
    },
    {
     "y0": 1441,
@@ -5360,8 +5646,8 @@
     "conf": "high"
    },
    {
-    "y0": 1850,
-    "y1": 1859,
+    "y0": 1854,
+    "y1": 1856,
     "dur": 4,
     "caption": "The bullring (1850-59)",
     "target": "Plaza de Toros",
@@ -5388,10 +5674,10 @@
    },
    {
     "y0": 1887,
-    "y1": 1900,
+    "y1": 1890.9,
     "dur": 5,
     "caption": "The Ensanche (1887)",
-    "target": "area:[39.4680,-0.3700,1600]",
+    "target": "area:[39.4680,-0.3700,1000]",
     "shot": "top",
     "fx": "build",
     "src": [
@@ -5415,19 +5701,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1906,
-    "y1": 1917,
-    "dur": 4.5,
-    "caption": "North Station (1906-17)",
-    "target": "Estació del Nord",
-    "shot": "medium",
-    "fx": "train",
-    "src": [
-     "S19"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1909.38,
     "y1": 1909.98,
     "dur": 4,
@@ -5443,15 +5716,14 @@
    },
    {
     "y0": 1915,
-    "y1": 1928,
+    "y1": 1915.6,
     "dur": 4.5,
-    "caption": "Central Market (1915-28)",
-    "target": "Mercat Central",
+    "caption": "North Station (1906-17)",
+    "target": "Estació del Nord",
     "shot": "medium",
-    "fx": "crowd",
+    "fx": "train",
     "src": [
-     "S18",
-     "S42"
+     "S19"
     ],
     "conf": "medium"
    },
@@ -5469,7 +5741,21 @@
     "conf": "medium"
    },
    {
-    "y0": 1931,
+    "y0": 1927.4,
+    "y1": 1928,
+    "dur": 4.5,
+    "caption": "Central Market (1915-28)",
+    "target": "Mercat Central",
+    "shot": "medium",
+    "fx": "crowd",
+    "src": [
+     "S18",
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 1932.4,
     "y1": 1933,
     "dur": 4,
     "caption": "City Hall square (1931-33)",
@@ -5526,8 +5812,8 @@
     "conf": "medium"
    },
    {
-    "y0": 1995,
-    "y1": 2000.9,
+    "y0": 1996.5,
+    "y1": 1999,
     "dur": 6,
     "caption": "City of Arts and Sciences (1998-2000)",
     "target": "Hemisferic",
@@ -5539,7 +5825,7 @@
     "conf": "medium"
    },
    {
-    "y0": 2001,
+    "y0": 2006,
     "y1": 2009,
     "dur": 6,
     "caption": "Oceanogràfic, Palau de les Arts, Àgora (2001-09)",
@@ -5551,10 +5837,7 @@
     ],
     "conf": "medium"
    }
-  ],
-  "rmin": 0.5,
-  "rmax": 8.0,
-  "pacing": "story"
+  ]
  },
  "montaggio": {
   "style": "mattia",
@@ -5713,6 +5996,20 @@
     "conf": "high",
     "target": "Torres de Serrans",
     "shot": "close"
+   },
+   {
+    "y": 1402.4,
+    "title": "The Trinitat bridge is finished",
+    "lines": [
+     "After 46 years of work the oldest surviving bridge over the Turia is complete (1356-1402)."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S57"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4790,-0.3727,500]",
+    "shot": "medium"
    },
    {
     "y": 1429,
@@ -6039,6 +6336,20 @@
     "shot": "medium"
    },
    {
+    "y": 1933.5,
+    "title": "The Aragon bridge",
+    "lines": [
+     "A six-arch, 30 m wide bridge opens in 1933 and frees the old Mar bridge of traffic."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S61"
+    ],
+    "conf": "high",
+    "target": "area:[39.4689,-0.3628,500]",
+    "shot": "medium"
+   },
+   {
     "y": 1936.85,
     "title": "Capital of the Republic",
     "lines": [
@@ -6203,6 +6514,21 @@
     "shot": "wide"
    },
    {
+    "y": 1995.3,
+    "title": "Calatrava's Exposition bridge",
+    "lines": [
+     "La Peineta (1991-95) stands near the site of the 1909 bridge swept away in 1957."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S63",
+     "S62"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4731,-0.3660,500]",
+    "shot": "medium"
+   },
+   {
     "y": 1998,
     "title": "Ciutat de les Arts i les Ciències",
     "lines": [
@@ -6215,6 +6541,20 @@
     ],
     "conf": "medium",
     "target": "Hemisferic",
+    "shot": "medium"
+   },
+   {
+    "y": 1999.92,
+    "title": "The Kingdom of Valencia bridge",
+    "lines": [
+     "At 220 m the longest bridge in the city opens in December 1999, by engineer Salvador Monleon."
+    ],
+    "hold_s": 5,
+    "src": [
+     "S64"
+    ],
+    "conf": "medium",
+    "target": "area:[39.4620,-0.3590,500]",
     "shot": "medium"
    },
    {

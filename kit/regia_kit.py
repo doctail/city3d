@@ -507,7 +507,7 @@ def build_story_drone(SOSTE, FIXED, title_t, y_start, end_t, tail, lead, warn, D
             geom = 0.0
             if a is not None:
                 tgt = fin if b is None else b['_stay']
-                geom = max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg)) / dcfg['v_leg']) * stretch
+                geom = max(dcfg['t_leg_min'], DK.leg_est(DK.dims(a['_stay'], dcfg), DK.dims(tgt, dcfg), full=bool(dcfg.get('leg_full'))) / dcfg['v_leg']) * stretch
             cards_t = sum(r[2]['dur'] for r in rid); cur = cur0; runs = 0.0; jumps = 0
             for y0, y1, r in rid:
                 if y0 - cur > 1e-6: runs += rt(cur, y0, rate)
