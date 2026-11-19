@@ -72,7 +72,7 @@ def story_extras(story, S, Y, after=9.5):
         if t1 > S['duration'] - 1: continue
         cards.append((c['y'], {'t_in': round(t0, 2), 't_out': round(t1, 2), 'date': c.get('date') or yfmt(c['y']), 'title': c['title'],
                                'lines': list(c.get('lines', []))[:2], 'sober': bool(c.get('sober', False))}))
-        if c.get('chapter'): ch_in.append({'y': c['y'], 'title': c['chapter']})
+        if c.get('chapter') and not any(x.get('title') == c['chapter'] for x in ch_in): ch_in.append({'y': c['y'], 'title': c['chapter']})   # niente capitolo doppio se e' gia' in montaggio.chapters
     if cards: out['cards'] = [c for _, c in cards]
     chs = []
     for n, ch in enumerate(sorted(ch_in, key=lambda c: c['y']), 1):

@@ -644,93 +644,45 @@
    "title": "Forts on the Forks"
   },
   {
-   "t_in": 12.91,
-   "t_out": 15.71,
+   "t_in": 42.91,
+   "t_out": 44.11,
    "num": "II",
-   "title": "Forts on the Forks"
+   "title": "A Town on the Frontier"
   },
   {
-   "t_in": 42.91,
-   "t_out": 44.11,
+   "t_in": 76.31,
+   "t_out": 78.43,
    "num": "III",
-   "title": "A Town on the Frontier"
+   "title": "The Iron City"
   },
   {
-   "t_in": 42.91,
-   "t_out": 44.11,
+   "t_in": 138.59,
+   "t_out": 141.39,
    "num": "IV",
-   "title": "A Town on the Frontier"
+   "title": "Steel City"
   },
   {
-   "t_in": 76.31,
-   "t_out": 78.43,
+   "t_in": 307.21,
+   "t_out": 310.01,
    "num": "V",
-   "title": "The Iron City"
+   "title": "Between the Wars"
   },
   {
-   "t_in": 76.31,
-   "t_out": 78.43,
+   "t_in": 356.94,
+   "t_out": 359.74,
    "num": "VI",
-   "title": "The Iron City"
+   "title": "Renaissance"
   },
   {
-   "t_in": 138.59,
-   "t_out": 141.39,
+   "t_in": 417.5,
+   "t_out": 418.7,
    "num": "VII",
-   "title": "Steel City"
+   "title": "Collapse and Reinvention"
   },
   {
-   "t_in": 138.59,
-   "t_out": 141.39,
+   "t_in": 470.46,
+   "t_out": 473.26,
    "num": "VIII",
-   "title": "Steel City"
-  },
-  {
-   "t_in": 307.21,
-   "t_out": 310.01,
-   "num": "IX",
-   "title": "Between the Wars"
-  },
-  {
-   "t_in": 307.21,
-   "t_out": 310.01,
-   "num": "X",
-   "title": "Between the Wars"
-  },
-  {
-   "t_in": 356.94,
-   "t_out": 359.74,
-   "num": "XI",
-   "title": "Renaissance"
-  },
-  {
-   "t_in": 356.94,
-   "t_out": 359.74,
-   "num": "XII",
-   "title": "Renaissance"
-  },
-  {
-   "t_in": 417.5,
-   "t_out": 418.7,
-   "num": "XIII",
-   "title": "Collapse and Reinvention"
-  },
-  {
-   "t_in": 417.5,
-   "t_out": 418.7,
-   "num": "XIV",
-   "title": "Collapse and Reinvention"
-  },
-  {
-   "t_in": 470.46,
-   "t_out": 473.26,
-   "num": "XV",
-   "title": "Eds, Meds and Robots"
-  },
-  {
-   "t_in": 470.46,
-   "t_out": 473.26,
-   "num": "XVI",
    "title": "Eds, Meds and Robots"
   }
  ],
