@@ -3,7 +3,7 @@
 Chapter times are placeholders `{{t:YEAR}}` (the second the counter reaches that year/card in the final render): derive them from `regia.txt` after rendering, never by hand. The first chapter must be 0:00, at least 3 chapters, each at least 10 s.
 
 ## Title (<= 100 characters)
-EVOLUTION OF VALENCIA | 3D City Timelapse (1238–NOW) | No AI
+EVOLUTION OF VALENCIA | 3D City Timelapse (1238-NOW) | No AI
 
 ## Description (EN)
 Valencia's river made the city, flooded it, and was finally moved. Watch 788 years of Valencia grow around the Turia, from the conquest of 1238 to the garden that now fills its old riverbed.
@@ -14,25 +14,24 @@ Which city should grow next? Tell me in the comments. And if a building or a mon
 
 CHAPTERS
 0:00 Valencia today
-0:09 I · Conquest and Settlement: Balansiya surrenders (1238)
-0:26 The city empties and refills
-0:46 The Cathedral and the water court
-1:08 II · Walls, Silk and Gold: a war, a bigger wall (1356)
-1:25 The Senyera coronada (1377)
-1:35 Torres de Serrans and Torres de Quart
-2:07 La Llotja de la Seda (1483)
-2:26 III · Revolt, Exile and Decline: the Germania (1519)
-2:55 The Moriscos are expelled (1609)
-3:16 The Furs are abolished (1707)
-3:52 IV · The Walls Come Down: Suchet takes Valencia (1812)
-4:14 The walls come down (1865)
-5:05 The Regional Exhibition (1909)
-5:31 Capital of the Republic (1936)
-5:48 V · The River Is Moved: the Turia floods (1957)
-6:07 The Plan Sur (1961-69)
-6:46 VI · The River Becomes a Garden: Jardí del Túria (1986)
-7:06 Ciutat de les Arts i les Ciències (1998)
-7:27 DANA, 29 October 2024
+0:15 I · Conquest and Settlement: Balansiya surrenders (1238)
+0:42 The Cathedral and the water court
+1:20 II · Walls, Silk and Gold: a war, a bigger wall (1356)
+1:48 Torres de Serrans and Torres de Quart
+2:52 La Llotja de la Seda (1483)
+3:20 III · Revolt, Exile and Decline: the Germania (1519)
+3:37 The Moriscos are expelled (1609)
+3:59 The Furs are abolished (1707)
+4:22 IV · The Walls Come Down: Suchet takes Valencia (1812)
+5:28 The walls come down (1865)
+6:33 The Regional Exhibition (1909)
+8:05 Capital of the Republic (1936)
+8:28 V · The River Is Moved: the Turia floods (1957)
+8:49 The Plan Sur (1961-69)
+10:05 VI · The River Becomes a Garden: Jardí del Túria (1986)
+10:18 Calatrava's Exposition bridge (1995)
+10:53 Ciutat de les Arts i les Ciències (1998)
+11:29 DANA, 29 October 2024
 {{t:recap}} 788 years in 20 seconds, from one spot
 {{t:sources}} Sources
 
