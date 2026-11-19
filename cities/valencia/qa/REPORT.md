@@ -1,6 +1,6 @@
 # QA valencia
 
-Generato da `python -m kit.qa` il 2026-11-19 16:25. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-19 16:26. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -89,43 +89,43 @@ Generato da `python -m kit.qa` il 2026-11-19 16:25. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (3 s)
-  - oggetti citta' 1539, cambi in tutto il video 51737, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
+  - oggetti citta' 1539, cambi in tutto il video 51508, max in un fotogramma 406 (~5 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 212 m/s (limite 250), mediana 15
+  - 212 m/s (limite 250), mediana 17
 - **PASS** drone: accelerazione massima
-  - 118 m/s2 (limite 120), 99% 82
+  - 118 m/s2 (limite 120), 99% 50
 - **PASS** drone: jerk massimo
-  - 85 m/s3 (limite 200), 99% 59
+  - 79 m/s3 (limite 200), 99% 41
 - **PASS** drone: distanza minima da terreno e tetti
-  - 456 m (soglia 24); dal solo terreno 476 m
+  - 459 m (soglia 24); dal solo terreno 476 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 24 tenute, 0 solo sorvolate; hover 186 s, volo 512 s; 
+  - 0 tolte, 23 tenute, 0 solo sorvolate; hover 182 s, volo 497 s; 
 - **PASS** drone: hover quasi fermo
   - v max in hover 8.4 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **WARN** drone: voli con gli anni quasi fermi
-  - 384-400 s (16 s, 0.31 anni/s) verso 'North Station (1906-17)'; 424-440 s (16 s, 0.24 anni/s) verso 'Central Market (1915-28)'; 444-460 s (16 s, 0.27 anni/s) verso 'City Hall square (1931-33)'; 508-539 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'; 597-633 s (37 s, 0.18 anni/s) verso 'City of Arts and Sciences '  [uniscili: trasforma una delle due soste vicine in cartello]
+  - 404-420 s (16 s, 0.24 anni/s) verso 'Central Market (1915-28)'; 425-441 s (16 s, 0.27 anni/s) verso 'City Hall square (1931-33)'; 488-520 s (32 s, 0.20 anni/s) verso 'PLAN SUR: THE RIVER IS MOV'; 577-614 s (37 s, 0.18 anni/s) verso 'City of Arts and Sciences '  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1676 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1698 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **WARN** drone: grafico non fatto
   - No module named 'matplotlib'
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 34.7 s (599-633 s); 17 oltre 15 s: 59-80, 89-109, 114-130, 130-151, 151-172, 178-200
+  - vuoto massimo 34.7 s (579-614 s); 16 oltre 15 s: 59-80, 89-109, 114-130, 130-151, 151-172, 178-200
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 11.30 | 1:00  0.92 | 2:00  1.50 | 3:00  3.80 | 4:00  2.15 | 5:00  0.68 | 6:00  0.54 | 7:00  0.40 | 8:00  0.28 | 9:00  0.52 | 10:00  0.18 | 11:00  0.34 | 12:00  0.00
-- **PASS** 24 soste ben formate
+  - 0:00 11.30 | 1:00  0.92 | 2:00  1.50 | 3:00  3.80 | 4:00  2.15 | 5:00  0.68 | 6:00  0.61 | 7:00  0.51 | 8:00  0.40 | 9:00  0.23 | 10:00  0.48 | 11:00  0.02
+- **PASS** 23 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
   - primo a 15.7 s
 - **PASS** notte
-  - night_t=713.8716130699341, schedule_valencia_night.json ok
+  - night_t=694.5372817453049, schedule_valencia_night.json ok
 
 ## Immagini
 

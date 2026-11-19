@@ -5702,19 +5702,6 @@
     "conf": "medium"
    },
    {
-    "y0": 1915,
-    "y1": 1915.6,
-    "dur": 4.5,
-    "caption": "North Station (1906-17)",
-    "target": "Estació del Nord",
-    "shot": "medium",
-    "fx": "train",
-    "src": [
-     "S19"
-    ],
-    "conf": "medium"
-   },
-   {
     "y0": 1923.3,
     "y1": 1923.5,
     "dur": 3.5,
@@ -6337,6 +6324,22 @@
     "conf": "high",
     "target": "area:[39.4735,-0.3670,600]",
     "shot": "medium"
+   },
+   {
+    "y": 1915,
+    "title": "North Station (1906-17)",
+    "lines": [
+     "Years 1915-1915.6."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S19"
+    ],
+    "conf": "medium",
+    "target": "Estació del Nord",
+    "shot": "medium",
+    "was_sosta": true,
+    "y1": 1915.6
    },
    {
     "y": 1933.5,

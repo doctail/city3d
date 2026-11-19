@@ -92,56 +92,50 @@
    "sub": "1909"
   },
   {
-   "t_in": 399.63,
-   "t_out": 404.13,
-   "title": "North Station",
-   "sub": "1906-17"
-  },
-  {
-   "t_in": 420.13,
-   "t_out": 423.63,
+   "t_in": 400.79,
+   "t_out": 404.29,
    "title": "Mestalla stadium",
    "sub": "1923"
   },
   {
-   "t_in": 439.63,
-   "t_out": 444.13,
+   "t_in": 420.29,
+   "t_out": 424.79,
    "title": "Central Market",
    "sub": "1915-28"
   },
   {
-   "t_in": 460.13,
-   "t_out": 465.13,
+   "t_in": 440.79,
+   "t_out": 445.79,
    "title": "City Hall square",
    "sub": "1931-33"
   },
   {
-   "t_in": 495.81,
-   "t_out": 507.81,
+   "t_in": 476.47,
+   "t_out": 488.47,
    "title": "THE GREAT FLOOD",
    "sub": "14 October 1957"
   },
   {
-   "t_in": 539.42,
-   "t_out": 550.42,
+   "t_in": 520.08,
+   "t_out": 531.08,
    "title": "PLAN SUR: THE RIVER IS MOVED",
    "sub": "1964-69"
   },
   {
-   "t_in": 585.77,
-   "t_out": 596.77,
+   "t_in": 566.44,
+   "t_out": 577.44,
    "title": "The old riverbed becomes a park",
    "sub": "1986"
   },
   {
-   "t_in": 633.38,
-   "t_out": 644.38,
+   "t_in": 614.05,
+   "t_out": 625.05,
    "title": "City of Arts and Sciences",
    "sub": "1998-2000"
   },
   {
-   "t_in": 660.38,
-   "t_out": 666.38,
+   "t_in": 641.05,
+   "t_out": 647.05,
    "title": "Oceanogràfic, Palau de les Arts, Àgora",
    "sub": "2001-09"
   }
@@ -490,8 +484,18 @@
    "sober": false
   },
   {
-   "t_in": 460.13,
-   "t_out": 465.13,
+   "t_in": 384.79,
+   "t_out": 389.29,
+   "date": "1915",
+   "title": "North Station (1906-17)",
+   "lines": [
+    "Years 1915-1915.6."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 440.79,
+   "t_out": 445.79,
    "date": "1933",
    "title": "The Aragon bridge",
    "lines": [
@@ -500,8 +504,8 @@
    "sober": false
   },
   {
-   "t_in": 466.07,
-   "t_out": 472.07,
+   "t_in": 446.73,
+   "t_out": 452.73,
    "date": "1936",
    "title": "Capital of the Republic",
    "lines": [
@@ -511,8 +515,8 @@
    "sober": true
   },
   {
-   "t_in": 472.72,
-   "t_out": 477.22,
+   "t_in": 453.39,
+   "t_out": 457.89,
    "date": "1939",
    "title": "The war ends",
    "lines": [
@@ -521,8 +525,8 @@
    "sober": true
   },
   {
-   "t_in": 480.85,
-   "t_out": 485.85,
+   "t_in": 461.52,
+   "t_out": 466.52,
    "date": "1950",
    "title": "Half a million",
    "lines": [
@@ -532,8 +536,8 @@
    "sober": false
   },
   {
-   "t_in": 488.76,
-   "t_out": 495.76,
+   "t_in": 469.43,
+   "t_out": 476.43,
    "date": "1957",
    "title": "The Turia floods",
    "lines": [
@@ -543,8 +547,8 @@
    "sober": true
   },
   {
-   "t_in": 509.67,
-   "t_out": 515.67,
+   "t_in": 490.33,
+   "t_out": 496.33,
    "date": "1961",
    "title": "The Plan Sur",
    "lines": [
@@ -553,8 +557,8 @@
    "sober": false
   },
   {
-   "t_in": 516.29,
-   "t_out": 520.79,
+   "t_in": 496.95,
+   "t_out": 501.45,
    "date": "1962",
    "title": "A city of immigrants",
    "lines": [
@@ -563,8 +567,8 @@
    "sober": false
   },
   {
-   "t_in": 539.42,
-   "t_out": 545.92,
+   "t_in": 520.08,
+   "t_out": 526.58,
    "date": "1969",
    "title": "The river is moved",
    "lines": [
@@ -574,8 +578,8 @@
    "sober": false
   },
   {
-   "t_in": 545.92,
-   "t_out": 550.42,
+   "t_in": 526.58,
+   "t_out": 531.08,
    "date": "1970",
    "title": "Growing fast",
    "lines": [
@@ -584,8 +588,8 @@
    "sober": false
   },
   {
-   "t_in": 557.24,
-   "t_out": 563.74,
+   "t_in": 537.9,
+   "t_out": 544.4,
    "date": "1982",
    "title": "The Senyera becomes official",
    "lines": [
@@ -595,8 +599,8 @@
    "sober": false
   },
   {
-   "t_in": 585.77,
-   "t_out": 592.27,
+   "t_in": 566.44,
+   "t_out": 572.94,
    "date": "1986",
    "title": "A garden in the riverbed",
    "lines": [
@@ -606,8 +610,8 @@
    "sober": false
   },
   {
-   "t_in": 592.27,
-   "t_out": 596.77,
+   "t_in": 572.94,
+   "t_out": 577.44,
    "date": "1989",
    "title": "Calatrava arrives",
    "lines": [
@@ -616,8 +620,8 @@
    "sober": false
   },
   {
-   "t_in": 598.68,
-   "t_out": 603.68,
+   "t_in": 579.34,
+   "t_out": 584.34,
    "date": "1995",
    "title": "Calatrava's Exposition bridge",
    "lines": [
@@ -626,8 +630,8 @@
    "sober": false
   },
   {
-   "t_in": 633.38,
-   "t_out": 639.38,
+   "t_in": 614.05,
+   "t_out": 620.05,
    "date": "1998",
    "title": "Ciutat de les Arts i les Ciències",
    "lines": [
@@ -637,8 +641,8 @@
    "sober": false
   },
   {
-   "t_in": 639.38,
-   "t_out": 644.38,
+   "t_in": 620.05,
+   "t_out": 625.05,
    "date": "1999",
    "title": "The Kingdom of Valencia bridge",
    "lines": [
@@ -647,8 +651,8 @@
    "sober": false
   },
   {
-   "t_in": 660.38,
-   "t_out": 664.88,
+   "t_in": 641.05,
+   "t_out": 645.55,
    "date": "2007",
    "title": "The America's Cup",
    "lines": [
@@ -657,8 +661,8 @@
    "sober": false
   },
   {
-   "t_in": 669.33,
-   "t_out": 677.33,
+   "t_in": 649.99,
+   "t_out": 657.99,
    "date": "2024",
    "title": "DANA, 29 October 2024",
    "lines": [
@@ -668,8 +672,8 @@
    "sober": true
   },
   {
-   "t_in": 677.46,
-   "t_out": 682.46,
+   "t_in": 658.12,
+   "t_out": 663.12,
    "date": "2025",
    "title": "Valencia today",
    "lines": [
@@ -704,26 +708,26 @@
    "title": "The Walls Come Down"
   },
   {
-   "t_in": 485.96,
-   "t_out": 488.76,
+   "t_in": 466.63,
+   "t_out": 469.43,
    "num": "V",
    "title": "The River Is Moved"
   },
   {
-   "t_in": 582.97,
-   "t_out": 585.77,
+   "t_in": 563.64,
+   "t_out": 566.44,
    "num": "VI",
    "title": "The River Becomes a Garden"
   }
  ],
  "cta": {
-  "t_in": 716.4,
-  "t_out": 720.9,
+  "t_in": 697.0,
+  "t_out": 701.5,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 720.9,
-  "t_out": 728.9,
+  "t_in": 701.5,
+  "t_out": 709.5,
   "items": [
    "Ajuntament de Valencia, Muralla bajomedieval (BIC)",
    "Ajuntament de Valencia, Recinto muralla islamica (BIC)",
