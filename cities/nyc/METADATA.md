@@ -1,6 +1,8 @@
 # New York: METADATA (YouTube), EN + chapters in ES, PT-BR, DE, FR, IT, regenerated 20/11/2026 from the current direction
 
-Chapter times are computed from the current direction (`schedule_nyc.json`, regenerated 20/11/2026, video length 9:14, i.e. 554 s = cards-based pacing): the second at which the year counter first reaches the chapter year after the 1609 rewind. They are for the schedule, NOT yet for a final render: recompute with the same rule if the schedule changes. First chapter 0:00, no cold open (R14).
+**20/11/2026 update: chapter times now follow the Lyon/Marseille rule (t_in of the chapter card, VII at its first card); full paste-ready delivery in `delivery/CONSEGNA_YOUTUBE.md`, Reddit/distribution/press in `delivery/REDDIT_DISTRIBUZIONE.md`, montage in `delivery/MONTAGGIO.md`, thumbnail in `delivery/COPERTINE.md`.**
+
+Chapter times (old rule, superseded) were computed from the current direction (`schedule_nyc.json`, regenerated 20/11/2026, video length 9:14, i.e. 554 s = cards-based pacing): the second at which the year counter first reaches the chapter year after the 1609 rewind. They are for the schedule, NOT yet for a final render: recompute with the same rule if the schedule changes. First chapter 0:00, no cold open (R14).
 Status tags: every date in the description comes from `story.json` sources S1-S76 (Wikipedia pages fetched 18/11/2026); [Likely]/[Guessing] items are listed in `NOTE_STORIA.md`.
 
 ## Title (<= 100 characters)
@@ -17,16 +19,17 @@ Find your building: if a landmark or a block of your neighborhood is missing or 
 
 CHAPTERS
 0:00 New York today
-0:10 I · Mannahatta: Henry Hudson's Half Moon enters the bay (1609)
-1:06 II · The English Port: New Amsterdam becomes New York (1664)
-1:55 III · Revolution and Republic: The Great Fire (1776) and Washington at Federal Hall (1789)
-2:37 IV · The Gridiron City: a grid for the island (1811)
-3:38 V · Immigrant Metropolis: Central Park and the Brooklyn Bridge
-4:52 VI · Five Boroughs, One City (1898)
+0:12 I · Mannahatta: Henry Hudson's Half Moon enters the bay (1609)
+1:04 II · The English Port: New Amsterdam becomes New York (1664)
+1:52 III · Revolution and Republic: The Great Fire (1776) and Washington at Federal Hall (1789)
+2:34 IV · The Gridiron City: a grid for the island (1811)
+3:35 V · Immigrant Metropolis: Central Park and the Brooklyn Bridge
+4:49 VI · Five Boroughs, One City (1898)
 5:01 VII · The Skyscraper Age: Woolworth, Chrysler, Empire State
-6:45 VIII · Postwar New York: the United Nations, the loss of Penn Station
-7:15 IX · Crisis and Comeback: the Twin Towers (1973)
-7:42 X · The Global City: One World Trade Center (2014)
+6:42 VIII · Postwar New York: the United Nations, the loss of Penn Station
+7:13 IX · Crisis and Comeback: the Twin Towers (1973)
+7:40 X · The Global City: One World Trade Center (2014)
+9:06 Sources
 
 Data and sources: building footprints, heights and construction years from NYC Open Data; borough boundaries and parks from NYC Open Data; New Jersey land from U.S. Census Bureau TIGER/Line; history from Wikipedia (EN) pages for each event, listed in the video's last card; population from the censuses as compiled on Wikipedia (the city as defined at each date: Manhattan only before 1874, five boroughs from 1898). Music: Unicorn Heads, TrackTribe (YouTube Audio Library). Rendered in Blender.
 
@@ -47,67 +50,72 @@ Pinned comment in the local language: not needed (the local language is English)
 ## Chapters in the other languages (same times; YouTube reads chapters only from the original-language description)
 ### Chapters (ES)
 0:00 Nueva York hoy
-0:10 I · Mannahatta: la Half Moon de Henry Hudson entra en la bahía (1609)
-1:06 II · El puerto inglés: Nueva Ámsterdam se convierte en Nueva York (1664)
-1:55 III · Revolución y República: el Gran Incendio (1776) y Washington en Federal Hall (1789)
-2:37 IV · La ciudad cuadriculada: una retícula para la isla (1811)
-3:38 V · Metrópolis de inmigrantes: Central Park y el puente de Brooklyn
-4:52 VI · Cinco distritos, una ciudad (1898)
+0:12 I · Mannahatta: la Half Moon de Henry Hudson entra en la bahía (1609)
+1:04 II · El puerto inglés: Nueva Ámsterdam se convierte en Nueva York (1664)
+1:52 III · Revolución y República: el Gran Incendio (1776) y Washington en Federal Hall (1789)
+2:34 IV · La ciudad cuadriculada: una retícula para la isla (1811)
+3:35 V · Metrópolis de inmigrantes: Central Park y el puente de Brooklyn
+4:49 VI · Cinco distritos, una ciudad (1898)
 5:01 VII · La era de los rascacielos: Woolworth, Chrysler, Empire State
-6:45 VIII · Nueva York de posguerra: Naciones Unidas, la pérdida de Penn Station
-7:15 IX · Crisis y recuperación: las Torres Gemelas (1973)
-7:42 X · La ciudad global: One World Trade Center (2014)
+6:42 VIII · Nueva York de posguerra: Naciones Unidas, la pérdida de Penn Station
+7:13 IX · Crisis y recuperación: las Torres Gemelas (1973)
+7:40 X · La ciudad global: One World Trade Center (2014)
+9:06 Fuentes
 ### Capítulos (PT-BR)
 0:00 Nova York hoje
-0:10 I · Mannahatta: o Half Moon de Henry Hudson entra na baía (1609)
-1:06 II · O porto inglês: Nova Amsterdã vira Nova York (1664)
-1:55 III · Revolução e República: o Grande Incêndio (1776) e Washington no Federal Hall (1789)
-2:37 IV · A cidade em grade: uma malha para a ilha (1811)
-3:38 V · Metrópole de imigrantes: Central Park e a Ponte do Brooklyn
-4:52 VI · Cinco distritos, uma cidade (1898)
+0:12 I · Mannahatta: o Half Moon de Henry Hudson entra na baía (1609)
+1:04 II · O porto inglês: Nova Amsterdã vira Nova York (1664)
+1:52 III · Revolução e República: o Grande Incêndio (1776) e Washington no Federal Hall (1789)
+2:34 IV · A cidade em grade: uma malha para a ilha (1811)
+3:35 V · Metrópole de imigrantes: Central Park e a Ponte do Brooklyn
+4:49 VI · Cinco distritos, uma cidade (1898)
 5:01 VII · A era dos arranha-céus: Woolworth, Chrysler, Empire State
-6:45 VIII · Nova York do pós-guerra: as Nações Unidas, a perda da Penn Station
-7:15 IX · Crise e recuperação: as Torres Gêmeas (1973)
-7:42 X · A cidade global: One World Trade Center (2014)
+6:42 VIII · Nova York do pós-guerra: as Nações Unidas, a perda da Penn Station
+7:13 IX · Crise e recuperação: as Torres Gêmeas (1973)
+7:40 X · A cidade global: One World Trade Center (2014)
+9:06 Fontes
 ### Kapitel (DE)
 0:00 New York heute
-0:10 I · Mannahatta: Henry Hudsons Half Moon läuft in die Bucht ein (1609)
-1:06 II · Der englische Hafen: aus Neu Amsterdam wird New York (1664)
-1:55 III · Revolution und Republik: der Große Brand (1776) und Washington in der Federal Hall (1789)
-2:37 IV · Die Rasterstadt: ein Raster für die Insel (1811)
-3:38 V · Einwanderermetropole: Central Park und Brooklyn Bridge
-4:52 VI · Fünf Boroughs, eine Stadt (1898)
+0:12 I · Mannahatta: Henry Hudsons Half Moon läuft in die Bucht ein (1609)
+1:04 II · Der englische Hafen: aus Neu Amsterdam wird New York (1664)
+1:52 III · Revolution und Republik: der Große Brand (1776) und Washington in der Federal Hall (1789)
+2:34 IV · Die Rasterstadt: ein Raster für die Insel (1811)
+3:35 V · Einwanderermetropole: Central Park und Brooklyn Bridge
+4:49 VI · Fünf Boroughs, eine Stadt (1898)
 5:01 VII · Das Wolkenkratzer-Zeitalter: Woolworth, Chrysler, Empire State
-6:45 VIII · New York nach dem Krieg: die Vereinten Nationen, der Verlust der Penn Station
-7:15 IX · Krise und Comeback: die Twin Towers (1973)
-7:42 X · Die Weltstadt: One World Trade Center (2014)
+6:42 VIII · New York nach dem Krieg: die Vereinten Nationen, der Verlust der Penn Station
+7:13 IX · Krise und Comeback: die Twin Towers (1973)
+7:40 X · Die Weltstadt: One World Trade Center (2014)
+9:06 Quellen
 ### Chapitres (FR)
 0:00 New York aujourd'hui
-0:10 I · Mannahatta : le Half Moon d'Henry Hudson entre dans la baie (1609)
-1:06 II · Le port anglais : La Nouvelle-Amsterdam devient New York (1664)
-1:55 III · Révolution et République : le Grand Incendie (1776) et Washington au Federal Hall (1789)
-2:37 IV · La ville en damier : une grille pour l'île (1811)
-3:38 V · Métropole d'immigrants : Central Park et le pont de Brooklyn
-4:52 VI · Cinq arrondissements, une seule ville (1898)
+0:12 I · Mannahatta : le Half Moon d'Henry Hudson entre dans la baie (1609)
+1:04 II · Le port anglais : La Nouvelle-Amsterdam devient New York (1664)
+1:52 III · Révolution et République : le Grand Incendie (1776) et Washington au Federal Hall (1789)
+2:34 IV · La ville en damier : une grille pour l'île (1811)
+3:35 V · Métropole d'immigrants : Central Park et le pont de Brooklyn
+4:49 VI · Cinq arrondissements, une seule ville (1898)
 5:01 VII · L'ère des gratte-ciel : Woolworth, Chrysler, Empire State
-6:45 VIII · New York d'après-guerre : les Nations unies, la perte de Penn Station
-7:15 IX · Crise et renouveau : les Twin Towers (1973)
-7:42 X · La ville mondiale : One World Trade Center (2014)
+6:42 VIII · New York d'après-guerre : les Nations unies, la perte de Penn Station
+7:13 IX · Crise et renouveau : les Twin Towers (1973)
+7:40 X · La ville mondiale : One World Trade Center (2014)
+9:06 Sources
 ### Capitoli (IT)
 0:00 New York oggi
-0:10 I · Mannahatta: la Half Moon di Henry Hudson entra nella baia (1609)
-1:06 II · Il porto inglese: Nuova Amsterdam diventa New York (1664)
-1:55 III · Rivoluzione e Repubblica: il Grande Incendio (1776) e Washington al Federal Hall (1789)
-2:37 IV · La città a griglia: una griglia per l'isola (1811)
-3:38 V · Metropoli degli immigrati: Central Park e il ponte di Brooklyn
-4:52 VI · Cinque distretti, una città (1898)
+0:12 I · Mannahatta: la Half Moon di Henry Hudson entra nella baia (1609)
+1:04 II · Il porto inglese: Nuova Amsterdam diventa New York (1664)
+1:52 III · Rivoluzione e Repubblica: il Grande Incendio (1776) e Washington al Federal Hall (1789)
+2:34 IV · La città a griglia: una griglia per l'isola (1811)
+3:35 V · Metropoli degli immigrati: Central Park e il ponte di Brooklyn
+4:49 VI · Cinque distretti, una città (1898)
 5:01 VII · L'età dei grattacieli: Woolworth, Chrysler, Empire State
-6:45 VIII · New York del dopoguerra: le Nazioni Unite, la perdita di Penn Station
-7:15 IX · Crisi e rinascita: le Twin Towers (1973)
-7:42 X · La città globale: One World Trade Center (2014)
+6:42 VIII · New York del dopoguerra: le Nazioni Unite, la perdita di Penn Station
+7:13 IX · Crisi e rinascita: le Twin Towers (1973)
+7:40 X · La città globale: One World Trade Center (2014)
+9:06 Fonti
 
-## Not done yet (first line of the delivery will say so)
-Reddit post and first comment, distribution list (candidate communities r/nyc, r/AskNYC, r/newyorkcity, r/MapPorn, r/geography, NYC history Facebook groups, local blogs and outlets: [Guessing], none verified or approached), press note, montage command, covers, cost (NOT measured: the old NYC render of 5:27 is not a basis).
+## Not done yet
+Done in `delivery/` on 20/11/2026: Reddit, distribution, press note, montage command, thumbnail. Still open: chapter times recomputed on the final render, pod cost (NOT measured).
 
 
 ## Captions on screen (from regia.txt, 20/11/2026; stop captions "Title (date)" and cards)
