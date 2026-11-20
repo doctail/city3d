@@ -1,0 +1,23 @@
+Pittsburgh: acqua, isole, colore (20/11/2026)
+CAUSA (misurata): land.json (riva moderna, nessuna isola, history.water vuoto) + zona/gut disegnati a mano.
+ 1. Isole mancanti: Washington's Landing/Herr's (Allegheny), Brunot, Neville non erano terra: 150 edifici veri e 108 predecessori 'Strip District' stavano nel fiume.
+    Fix: cities/pittsburgh/qa/fix/islands_fix.py (isola = impronte degli edifici veri buffer 35 m, chiusa 60 m; +-50 m, dichiarato) -> land.json -> data_pittsburgh_src/land.json.gz.
+ 2. Anello gut 'Point warehouses' (disegnato a mano) esce a ovest nel fiume Ohio (lon -80.014): 296 edifici su acqua dal 1800 al 1953.
+    Fix: kit/hist_kit.py water_clip_pass (opt-in story city.water_clip): predecessori <50% su terra non compaiono mai (y=99998, d=99999, restano in lista: indici e casuali degli altri edifici identici). Marcati yb_water='dropped'.
+ 3. Riva = moderna in ogni anno (nessun dato di riva storica): LIMITE DICHIARATO. Nessun riempimento storico del Point modellato.
+MISURA (cities/pittsburgh/qa/water_check.py, centroide fuori terra, buildings.json + hist.json):
+ anno   prima   dopo
+ 1850   350     0
+ 1900   407     1
+ 1936   507     4
+ 1950   511     7
+ 2000   150     12
+ 2023   150     12
+ Residui 12 = edifici veri del county a <= 20 m dalla riva (moli, darsene), 1 isolato a 169 m (capanno 6 m, x -5641 y 5292). Non toccati.
+ hist.json: 297 predecessori scartati (296 Point + 1 North Side), vita 1800.13-1969.4. Fotogrammi video interessati: circa 119-9894 (anni 1800-1953) per i predecessori; le isole cambiano il TERRENO in tutti gli anni in cui sono inquadrate.
+COLORE (city.look / city.style, riferimenti STYLE 19/11):
+ acqua #2c6663/#378078 -> #1b4b4f/#245f64 (resa teal scuro, non turchese); campi 5 toni olive/ocra #4b551b #5a6420 #6b6a24 #78642e #5d5a22 (nuovo look.field_colors in kit/city_json.py);
+ tetti roof_old/roof terracotta #b1623a #984727 #a95a35 #8f4426 (+ ardesia); erba/alberi olive.
+ Fotogrammi 960x540 Point+Strip 1800..2023: V media 0.50-0.56 (target 0.40-0.62), S p90 0.51-0.57 (prima 0.43-0.45; target 0.76-0.88 NON raggiunto: il quadro ha acqua, strade, ombre).
+PARITA' POD: kit pack pittsburgh + gate.pod_parity: 0 differenze.
+Fotogrammi: cities/pittsburgh/qa/water_frames/ (sheet.jpg + 12 jpg). Render locale bpy CPU: ~50 min di costruzione scena + ~20 s per fotogramma.

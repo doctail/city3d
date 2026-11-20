@@ -504,6 +504,28 @@ def landphases(ctx, objs=()):
     return out
 
 
+def water_clip_pass(ctx, D, hist, cfg):
+    """Opt-in (story city.water_clip = {"frac": 0.5, "land_close": 15}): predecessors (hist) whose footprint is < frac on land, or whose
+    centroid is outside the land polygon, are never shown: y=99998, d=99999 (the entry stays in the list so every other building keeps its index
+    and its per-building random numbers; build_render orders blocks by 'y_orig'/'d_orig'). Land = DATA/land.json closed by land_close, i.e. the
+    shore is the modern one for every year (history.water empty = declared limit). Idempotent via 'yb_water'. Returns (hist, n_dropped)."""
+    cfg = cfg if isinstance(cfg, dict) else {}
+    frac = float(cfg.get('frac', 0.5)); lc = float(cfg.get('land_close', 15))
+    lf = os.path.join(D, 'land.json')
+    if not os.path.exists(lf): return hist, 0
+    land = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in json.load(open(lf)) if len(r) >= 1]).buffer(lc, join_style=2).buffer(-lc, join_style=2)
+    pl = prep(land); n = 0
+    for b in hist:
+        if b.get('yb_water') or len(b.get('r', [])) < 3 or b['y'] >= 9000: continue
+        q = _poly(b['r'])
+        if q.is_empty or q.area <= 0: continue
+        if pl.contains(q): continue
+        if pl.contains(q.centroid) and q.intersection(land).area / q.area >= frac: continue
+        b['yb_water'] = 'dropped'; b['y_orig'] = b['y']; b['d_orig'] = b.get('d')
+        b['y'] = 99998.0; b['d'] = 99999.0; n += 1
+    return hist, n
+
+
 # ---------------------------------------------------------------- pipeline
 
 def build(story, D=None, seed=11, quiet=False):
@@ -521,6 +543,9 @@ def build(story, D=None, seed=11, quiet=False):
     hist, ncl = clear_pass(ctx, D, hist, random.Random(seed + 4))
     hist += blocks_pass(ctx, D, good, hist, random.Random(seed + 5))
     burned = fires_pass(ctx, good, hist, random.Random(seed + 2))
+    nwet = 0
+    _wc = story['city'].get('water_clip')
+    if _wc: hist, nwet = water_clip_pass(ctx, D, hist, _wc)
     if any('y_kit0' in b for b in blds) or touched:
         json.dump(blds, open(os.path.join(D, 'buildings.json'), 'w'))
     json.dump(hist, open(os.path.join(D, 'hist.json'), 'w'))
@@ -554,7 +579,7 @@ def build(story, D=None, seed=11, quiet=False):
           'by_zone': dict(collections.Counter(h.get('zone', h.get('name', '?')) for h in hist)),
           'by_kind': dict(collections.Counter(h['kit'] for h in hist)),
           'gutting_filled': filled, 'monument_sites_filled': ncl, 'roads_gutting_lanes': list(nroads), 'landphases': len(ph) if H.get('water') else None, 'bridges_updated_added': list(nbr), 'fires_destroyed': burned,
-          'wall_parts': len(walls), 'alive': {str(int(k)): v for k, v in alive.items()}}
+          'water_clip_dropped': nwet, 'wall_parts': len(walls), 'alive': {str(int(k)): v for k, v in alive.items()}}
     json.dump(st, open(os.path.join(D, 'hist_kit_stats.json'), 'w'), indent=1)
     if not quiet:
         print(f"[hist_kit] {story['city']['slug']}: {len(hist)} predecessori da {len(blds)} edifici attuali", flush=True)

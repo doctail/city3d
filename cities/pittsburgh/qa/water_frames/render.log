@@ -1,0 +1,60 @@
+[build] edifici 179756 (1s, 674 MB)
+[build] predecessori storici 31978 (1s, 723 MB)
+[build] rilievo sotto gli edifici: max 301 m (7s, 758 MB)
+[build] monumenti: 572 parti; tolti 10 edifici nelle impronte (29s, 761 MB)
+/home/user/city3d/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 2911 blocchi per anno, 3619012 vertici (42s, 1109 MB)
+/home/user/city3d/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (45s, 1201 MB)
+[build] suolo urbano dalle impronte: 614087 triangoli in 29 decenni (2774s, 3237 MB)
+/home/user/city3d/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+[build] strade 206419 (2777s, 3431 MB)
+[build] ponti 156 (2777s, 3431 MB)
+/home/user/city3d/build_render.py:809: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendio v2 Great Fire of 1845 820 edifici bruciati (2778s, 3432 MB)
+[build] incendi 1 (2778s, 3432 MB)
+[build] boschi 0 celle in 0 blocchi (2778s, 3432 MB)
+[build] isolati 35299 (2804s, 3526 MB)
+[build] piene 7 (2805s, 3526 MB)
+[build] terra 62 poligoni (2805s, 3526 MB)
+[build] monumenti costruiti: 572 parti (2805s, 3526 MB)
+[build] rilievo applicato: 4018448 vertici, massimo 323 m (2844s, 4299 MB)
+[build] monumenti: parti staccate dalla scena: 416 (2845s, 4288 MB)
+[build] monumenti uniti: 572 -> 294 oggetti (2845s, 4288 MB)
+[build] alberi cotti: 0 vertici (2845s, 4291 MB)
+/home/user/city3d/build_render.py:1383: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 2911 città, 268 statici (2845s, 4291 MB)
+[build] dati di costruzione liberati (2846s, 2236 MB)
+[build] CPU (2846s, 2236 MB)
+[build] denoiser nessuno (2846s, 2236 MB)
+[build] render 1 -> 192 960x540 16 campioni (2846s, 2236 MB)
+47:40.868  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0009.jpg'
+[build] fotogramma 9: 14.0s (anno 1800)
+47:56.037  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0025.jpg'
+[build] fotogramma 25: 15.2s (anno 1850)
+48:11.680  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0041.jpg'
+[build] fotogramma 41: 15.7s (anno 1900)
+48:27.345  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0057.jpg'
+[build] fotogramma 57: 15.7s (anno 1936)
+48:41.947  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0073.jpg'
+[build] fotogramma 73: 14.6s (anno 1950)
+48:58.102  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0089.jpg'
+[build] fotogramma 89: 16.2s (anno 2023)
+49:11.413  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0105.jpg'
+[build] fotogramma 105: 13.3s (anno 1800)
+49:25.034  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0121.jpg'
+[build] fotogramma 121: 13.6s (anno 1850)
+49:38.801  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0137.jpg'
+[build] fotogramma 137: 13.8s (anno 1900)
+49:51.282  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0153.jpg'
+[build] fotogramma 153: 12.5s (anno 1936)
+50:04.146  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0169.jpg'
+[build] fotogramma 169: 12.9s (anno 1950)
+50:17.198  render           | Saved: '/home/user/city3d/cities/pittsburgh/qa/water_frames/raw/0185.jpg'
+[build] fotogramma 185: 13.1s (anno 2023)
+[build] FATTO 12 fotogrammi, 14.20s a fotogramma (3017s, 3957 MB)

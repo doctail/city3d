@@ -1,6 +1,6 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-17 21:45. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-20 18:16. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -26,7 +26,7 @@ Generato da `python -m kit.qa` il 2026-11-17 21:45. Esito complessivo: **WARN**
 - **PASS** hist.json
   - 31978 voci
 - **PASS** land.json
-  - 54 voci
+  - 62 voci
 - **PASS** landmarks.json
   - 572 voci
 - **PASS** dem.npz
@@ -59,7 +59,7 @@ Generato da `python -m kit.qa` il 2026-11-17 21:45. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (7 s)
-  - oggetti citta' 2337, cambi in tutto il video 78128, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+  - oggetti citta' 2338, cambi in tutto il video 78128, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 163 m/s (limite 250), mediana 8
 - **PASS** drone: accelerazione massima

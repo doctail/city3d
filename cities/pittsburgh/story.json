@@ -13,6 +13,11 @@
   "data_source": "custom",
   "data_dir": "data_pittsburgh",
   "style_preset": "central",
+  "water_clip": {
+   "frac": 0.5,
+   "land_close": 15,
+   "note": "Shore = modern one in every year (no historical shoreline data). Predecessors < 50% on land are never shown (kit/hist_kit.py water_clip_pass); islands added to land.json by cities/pittsburgh/qa/fix/islands_fix.py."
+  },
   "population": [
    [
     1754,
@@ -253,8 +258,8 @@
   "look": {
    "palette": "cities/pittsburgh/palette.json",
    "water_color": [
-    "#2c6663",
-    "#378078"
+    "#1b4b4f",
+    "#245f64"
    ],
    "sun_color": [
     1.0,
@@ -315,7 +320,14 @@
     ]
    ],
    "water_glint": 0.85,
-   "water_sun": 0.0
+   "water_sun": 0.0,
+   "field_colors": [
+    "#4b551b",
+    "#5a6420",
+    "#6b6a24",
+    "#78642e",
+    "#5d5a22"
+   ]
   },
   "cover": {
    "cam": [
@@ -365,6 +377,29 @@
      "note": "Mt Washington view NE: Downtown towers, Monongahela and Allegheny. Thumbnail right half, NOW. Crop --rbox 800,0,1050 on the 1920 frame"
     }
    ]
+  },
+  "style": {
+   "roof_old": [
+    "#b1623a",
+    "#984727",
+    "#a95a35",
+    "#8f4426",
+    "#b87048"
+   ],
+   "roof": [
+    "#b1623a",
+    "#984727",
+    "#7f4a30",
+    "#8a8f96",
+    "#a95a35",
+    "#6f7479"
+   ],
+   "grass": "#566220",
+   "tree": "#3f4c1c",
+   "forest_base": "#3a4719",
+   "urban_green": "#5d6a28",
+   "park_ground": "#5a6624",
+   "hedge": "#3a4a20"
   }
  },
  "sources": {
