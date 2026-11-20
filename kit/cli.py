@@ -118,6 +118,8 @@ def cmd_build(slug, opts):
     for m, args in (('kit.eventi_kit', [slug]), ('kit.labs_kit', [slug])):
         if _mod_exists(m): step(f'build 5/5 {m.split(".")[1]}', sh, [PY, '-m', m] + args)
         else: print(f'  ({m} non presente: passo saltato)')
+    rs = os.path.join(geo.ROOT, 'cities', slug, 'qa', 'fix', 'restore_after_build.sh')   # post-build per-city restore (NYC: pier phases + flat-relief DEM), so it is never forgotten
+    if os.path.exists(rs): step('build post: restore_after_build.sh', sh, ['sh', rs], {'PY': PY})
     return 'OK'
 
 

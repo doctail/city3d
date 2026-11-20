@@ -3,7 +3,8 @@
 import json, sys
 from shapely.geometry import Polygon, box
 from shapely.ops import unary_union
-D = '/home/user/doctail/city3d/data_nyc'
+import os
+D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'data_nyc')
 land = json.load(open(f'{D}/land.json'))
 lg = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land]).buffer(15, join_style=2).buffer(-15, join_style=2)
 R_SPIKE, R_SLIP = 110, 110

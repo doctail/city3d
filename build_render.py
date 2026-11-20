@@ -724,8 +724,10 @@ if _ph_items:
             'park': mat('ph_park', srgb(ST.get('park_ground', '#5f8a3e')), 1.0), 'marsh': marsh_mat()}
     for i_, ((f_, t_, c_), rings_) in enumerate(sorted(_ph_items.items())):
         bm_ = bmesh.new()
+        _u = unary_union([Polygon(r2_).buffer(0) for r2_ in rings_])   # slab of the same window that overlap each other are coplanar = black shadow ovals (NYC Pearl/Water St 1709): one union per window
+        rings_ = [list(g2_.exterior.coords)[:-1] for g2_ in getattr(_u, 'geoms', [_u]) if isinstance(g2_, Polygon) and g2_.area > 1]   # exterior only, as before
         for r_ in rings_:
-            try: bm_.faces.new([bm_.verts.new((x, y, 0.02 + 0.004 * (i_ % 8))) for x, y in r_])   # 2 cm (+4 mm per finestra: fasi sovrapposte esattamente complanari = macchie nere d'ombra con DEM piatto): sopra la terra solo nella fascia di 1,5 m
+            try: bm_.faces.new([bm_.verts.new((x, y, 0.02 + 0.0008 * i_)) for x, y in r_])   # 2 cm + 0,8 mm per finestra (indice UNICO, non i_%8: con 60 finestre i_ e i_+8 erano complanari e sovrapposti = ovali neri d'ombra a Pearl/Water St 1709, 4 fix 19/11 + 20/11): sopra la terra solo nella fascia di 1,5 m
             except ValueError: pass
         if not len(bm_.faces): bm_.free(); continue
         bmesh.ops.triangulate(bm_, faces=bm_.faces); bm_.normal_update()
