@@ -50,6 +50,14 @@ BUILDING_PALETTES = {
         'wall_tall': ['#b4bac2', '#a3aab3', '#bfc3c7', '#c8c8c4', '#9199a3', '#b0b5ba'], 'roof_tall': ['#8e949c', '#9ca2a9'], 'tall_h': 35,
         'glass': ['#8fb0c6', '#9cbbd0', '#86a8c0'],
     },
+    # Marsiglia (STYLE 19/11): tetti terracotta/mattone saturi (Bruges #b1623a/#984727), muri crema-ocra, vetro desaturato; il nuovo e' grigio (vecchio saturo / nuovo desaturato)
+    'provence_terracotta': {
+        'wall_old': ['#d9c29e', '#cfae82', '#e0c9a6', '#c8a272', '#e6d8bd', '#cfa665'],
+        'wall_new': ['#d6c5a8', '#cbb594', '#e1d4ba', '#e6dfd0', '#c5ad8b', '#d9ccb4'],
+        'roof_old': ['#b1623a', '#a85a34', '#984727', '#b86a40', '#a4522f', '#9d4c2b'],
+        'roof_new': ['#a9593a', '#984727', '#8b8884', '#7d7f82', '#b1623a', '#9a9791', '#a3a09b'],
+        'glass': ['#8c9aa3', '#7f909b', '#97a5ad'], 'window': '#2d3a44',
+    },
 }
 def _rgb(h): return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
 def _hex(c): return '#%02x%02x%02x' % tuple(int(round(max(0, min(255, v)))) for v in c)
@@ -122,6 +130,7 @@ def build_city(story):
         if 'street_earth' not in st: st['street_earth'] = st['street']
     if lk.get('building_palette'):   # iterazione 3: tavolozza edifici per citta' (nome in BUILDING_PALETTES o dict di chiavi di stile); solo con city.look
         bp_ = lk['building_palette']; st.update(BUILDING_PALETTES[bp_] if isinstance(bp_, str) else bp_)
+    if lk.get('field_colors'): cfg['field_colors'] = lk['field_colors']   # colori dei campi scelti a mano (STYLE: oliva); senza chiave nulla cambia
     if lk.get('water_coat'): st['water_coat'] = lk['water_coat']
     if lk.get('water_glint'): st['water_glint'] = lk['water_glint']   # Pittsburgh: rugosita' minima di acqua e coat (sole speculare = macchia bianca); senza chiave nulla cambia
     if lk.get('view_look'): cfg['look'] = lk['view_look']

@@ -330,6 +330,10 @@ def pod_parity(slug, D, root=None):
         else:
             r = subprocess.run([sys.executable, stub, pd], cwd=root, capture_output=True, text=True)
             if r.returncode: diffs.append('hist step failed: ' + (r.stderr or r.stdout)[-200:].replace('\n', ' '))
+            rs = os.path.join(root, 'cities', slug, 'qa', 'fix', 'restore_after_build.sh')   # run.sh: hist_kit build + restore_after_build.sh; solo gli script che dichiarano YB_DATA (dati nella cartella indicata, mai in data_<slug>)
+            if not r.returncode and os.path.exists(rs) and 'YB_DATA' in open(rs).read():
+                r2 = subprocess.run(['sh', rs], cwd=root, capture_output=True, text=True, env=dict(os.environ, PY=sys.executable, YB_DATA=pd))
+                if r2.returncode: diffs.append('restore_after_build.sh failed: ' + (r2.stderr or r2.stdout)[-200:].replace('\n', ' '))
         for f in sorted(os.listdir(D)):
             if not (f.endswith('.json') or f.endswith('.npz')) or '.bak' in f: continue
             q = os.path.join(pd, f)

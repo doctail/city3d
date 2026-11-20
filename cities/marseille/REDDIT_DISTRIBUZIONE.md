@@ -21,7 +21,7 @@ Comment c'est fait : tout est du 3D calculé, sans images d'IA. Les bâtiments a
 
 Je sais qu'il y aura des erreurs. Si une date, un nom de rue ou un bâtiment est faux, dites-le en commentaire : je préfère corriger. Si votre famille vivait dans le quartier Saint-Jean, vos souvenirs et vos corrections sont les bienvenus. Et s'il manque quelque chose dans votre quartier, donnez-moi la rue et l'année où vous pensez qu'il devrait apparaître.
 
-La vidéo est de moi, sur une petite chaîne (Year Built) : {{URL_VIDEO}}
+La vidéo est de moi, sur une petite chaîne (Ledger of Cities) : {{URL_VIDEO}}
 
 **Premier commentaire (à poster juste après, en tant qu'auteur)**
 Sources et limites, pour pouvoir vérifier :

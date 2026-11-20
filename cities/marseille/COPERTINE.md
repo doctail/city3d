@@ -1,4 +1,4 @@
-# Marseille — miniatura (formula Year Built/Lione, 16/11/2026) — PROVVISORIO: fotogrammi da ricontrollare dopo il render finale
+# Marseille — miniatura (formula Ledger of Cities (serie Lione), 16/11/2026) — PROVVISORIO: fotogrammi da ricontrollare dopo il render finale
 
 Regole (analisi/ctr/MINIATURE.md + AVVIO "Thumbnail layout"): un solo soggetto leggibile, luminosa e satura (SAT 1,4, contrasto 1,2), una città piena per metà, anno = primo anno del video = 600 BC, destra = NOW, niente bandiere né tag canale, 3-4 parole. Formula di Lione: "43 BC > NOW". Il 1943 NON è in miniatura (né nel titolo): è un capitolo. Concorrenti (dato del proprietario): Timeline Cities, Brick Cities, ChronosPulse 3D, tutti "Marseille 600 BC → 2026" con bandiera e nome enorme.
 

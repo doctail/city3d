@@ -44,50 +44,50 @@
    "sub": "1671-1749"
   },
   {
-   "t_in": 277.98,
-   "t_out": 282.98,
+   "t_in": 277.96,
+   "t_out": 282.96,
    "title": "The railway reaches Saint-Charles",
    "sub": "1848"
   },
   {
-   "t_in": 293.04,
-   "t_out": 299.04,
+   "t_in": 293.01,
+   "t_out": 299.01,
    "title": "Rue Imperiale cuts through the old town",
    "sub": "1862-64"
   },
   {
-   "t_in": 314.98,
-   "t_out": 319.98,
+   "t_in": 314.94,
+   "t_out": 319.94,
    "title": "Notre-Dame de la Garde",
    "sub": "1853-70"
   },
   {
-   "t_in": 347.66,
-   "t_out": 352.66,
+   "t_in": 347.64,
+   "t_out": 352.64,
    "title": "The new Cathedral",
    "sub": "1852-93"
   },
   {
-   "t_in": 373.23,
-   "t_out": 378.23,
+   "t_in": 373.21,
+   "t_out": 378.21,
    "title": "The Transporter Bridge",
    "sub": "Dec 1905"
   },
   {
-   "t_in": 447.92,
-   "t_out": 456.92,
+   "t_in": 447.9,
+   "t_out": 456.9,
    "title": "The Saint-Jean quarter is dynamited",
    "sub": "Feb 1943"
   },
   {
-   "t_in": 485.79,
-   "t_out": 491.79,
+   "t_in": 485.77,
+   "t_out": 491.77,
    "title": "Pouillon's new Old Port quarter",
    "sub": "1949-56"
   },
   {
-   "t_in": 585.92,
-   "t_out": 591.92,
+   "t_in": 585.9,
+   "t_out": 591.9,
    "title": "MuCEM and the Euromediterranee waterfront",
    "sub": "2013"
   }
@@ -257,7 +257,8 @@
    "date": "1348",
    "title": "The Black Death",
    "lines": [
-    "Plague kills about 15,000 of 25,000 inhabitants."
+    "Plague reaches Europe by ship through Marseille in late 1347.",
+    "The city loses a large part of its people; no reliable count survives."
    ],
    "sober": false
   },
@@ -322,7 +323,7 @@
    "title": "The Great Plague",
    "lines": [
     "A ship from the Levant brings plague in 1720.",
-    "About 38,000 of 75,000 inhabitants die."
+    "Between 30,000 and 40,000 of about 90,000 inhabitants die."
    ],
    "sober": false
   },
@@ -347,8 +348,8 @@
    "sober": false
   },
   {
-   "t_in": 271.06,
-   "t_out": 277.06,
+   "t_in": 271.04,
+   "t_out": 277.04,
    "date": "1844",
    "title": "A new port for steam",
    "lines": [
@@ -358,8 +359,8 @@
    "sober": false
   },
   {
-   "t_in": 277.98,
-   "t_out": 281.98,
+   "t_in": 277.96,
+   "t_out": 281.96,
    "date": "1849",
    "title": "Water for a growing city",
    "lines": [
@@ -368,8 +369,8 @@
    "sober": false
   },
   {
-   "t_in": 285.94,
-   "t_out": 290.94,
+   "t_in": 285.91,
+   "t_out": 290.91,
    "date": "1858",
    "title": "The Docks of the Joliette",
    "lines": [
@@ -379,8 +380,8 @@
    "sober": false
   },
   {
-   "t_in": 302.5,
-   "t_out": 308.5,
+   "t_in": 302.45,
+   "t_out": 308.45,
    "date": "1869",
    "title": "Suez opens",
    "lines": [
@@ -389,8 +390,8 @@
    "sober": false
   },
   {
-   "t_in": 309.79,
-   "t_out": 314.79,
+   "t_in": 309.75,
+   "t_out": 314.75,
    "date": "1870",
    "title": "A street changes its name",
    "lines": [
@@ -399,8 +400,8 @@
    "sober": false
   },
   {
-   "t_in": 323.05,
-   "t_out": 327.05,
+   "t_in": 322.99,
+   "t_out": 326.99,
    "date": "1876",
    "title": "Horse-drawn trams",
    "lines": [
@@ -409,8 +410,8 @@
    "sober": false
   },
   {
-   "t_in": 334.42,
-   "t_out": 338.42,
+   "t_in": 334.4,
+   "t_out": 338.4,
    "date": "1884",
    "title": "Cholera",
    "lines": [
@@ -419,8 +420,8 @@
    "sober": false
   },
   {
-   "t_in": 357.16,
-   "t_out": 363.16,
+   "t_in": 357.14,
+   "t_out": 363.14,
    "date": "1899",
    "title": "2,500 years",
    "lines": [
@@ -430,8 +431,8 @@
    "sober": false
   },
   {
-   "t_in": 366.29,
-   "t_out": 370.29,
+   "t_in": 366.27,
+   "t_out": 370.27,
    "date": "1903",
    "title": "Plague returns",
    "lines": [
@@ -440,8 +441,8 @@
    "sober": false
   },
   {
-   "t_in": 373.23,
-   "t_out": 378.23,
+   "t_in": 373.21,
+   "t_out": 378.21,
    "date": "1906",
    "title": "The colonial exhibition",
    "lines": [
@@ -450,8 +451,8 @@
    "sober": false
   },
   {
-   "t_in": 391.8,
-   "t_out": 395.8,
+   "t_in": 391.78,
+   "t_out": 395.78,
    "date": "1919",
    "title": "The Grand Theatre burns",
    "lines": [
@@ -460,8 +461,8 @@
    "sober": false
   },
   {
-   "t_in": 398.43,
-   "t_out": 403.43,
+   "t_in": 398.41,
+   "t_out": 403.41,
    "date": "1922",
    "title": "An airport and a second exhibition",
    "lines": [
@@ -470,8 +471,8 @@
    "sober": false
   },
   {
-   "t_in": 415.7,
-   "t_out": 421.7,
+   "t_in": 415.68,
+   "t_out": 421.68,
    "date": "1934",
    "title": "Assassination on the quay",
    "lines": [
@@ -480,8 +481,8 @@
    "sober": false
   },
   {
-   "t_in": 424.43,
-   "t_out": 428.43,
+   "t_in": 424.41,
+   "t_out": 428.41,
    "date": "1937",
    "title": "A stadium for the city",
    "lines": [
@@ -490,8 +491,8 @@
    "sober": false
   },
   {
-   "t_in": 431.14,
-   "t_out": 436.14,
+   "t_in": 431.13,
+   "t_out": 436.13,
    "date": "1940",
    "title": "Vichy and the bombs",
    "lines": [
@@ -501,8 +502,8 @@
    "sober": false
   },
   {
-   "t_in": 437.75,
-   "t_out": 441.75,
+   "t_in": 437.74,
+   "t_out": 441.74,
    "date": "1942",
    "title": "German troops occupy the city",
    "lines": [
@@ -511,19 +512,19 @@
    "sober": false
   },
   {
-   "t_in": 441.86,
-   "t_out": 447.86,
+   "t_in": 441.85,
+   "t_out": 447.85,
    "date": "1943",
    "title": "The Saint-Jean quarter is condemned",
    "lines": [
     "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
-    "From 1 February about 1,500 buildings on 14 hectares are dynamited. The model is a partial reconstruction."
+    "From 1 February about 1,500 buildings on 14 hectares are dynamited."
    ],
    "sober": false
   },
   {
-   "t_in": 458.85,
-   "t_out": 463.85,
+   "t_in": 458.83,
+   "t_out": 463.83,
    "date": "1945",
    "title": "Liberation and a fallen bridge",
    "lines": [
@@ -533,8 +534,8 @@
    "sober": false
   },
   {
-   "t_in": 466.99,
-   "t_out": 473.99,
+   "t_in": 466.97,
+   "t_out": 473.97,
    "date": "1949",
    "title": "Rebuilding the Old Port",
    "lines": [
@@ -544,8 +545,8 @@
    "sober": false
   },
   {
-   "t_in": 477.54,
-   "t_out": 483.54,
+   "t_in": 477.53,
+   "t_out": 483.53,
    "date": "1952",
    "title": "Le Corbusier's Radiant City",
    "lines": [
@@ -554,8 +555,8 @@
    "sober": false
   },
   {
-   "t_in": 497.67,
-   "t_out": 502.67,
+   "t_in": 497.65,
+   "t_out": 502.65,
    "date": "1962",
    "title": "The pieds-noirs",
    "lines": [
@@ -564,8 +565,8 @@
    "sober": false
   },
   {
-   "t_in": 507.17,
-   "t_out": 511.17,
+   "t_in": 507.16,
+   "t_out": 511.16,
    "date": "1967",
    "title": "A tunnel under the Old Port",
    "lines": [
@@ -574,8 +575,8 @@
    "sober": false
   },
   {
-   "t_in": 519.74,
-   "t_out": 525.74,
+   "t_in": 519.72,
+   "t_out": 525.72,
    "date": "1977",
    "title": "Metro and a shipping giant",
    "lines": [
@@ -585,8 +586,8 @@
    "sober": false
   },
   {
-   "t_in": 530.34,
-   "t_out": 534.34,
+   "t_in": 530.33,
+   "t_out": 534.33,
    "date": "1983",
    "title": "The TGV arrives",
    "lines": [
@@ -595,8 +596,8 @@
    "sober": false
   },
   {
-   "t_in": 545.39,
-   "t_out": 552.39,
+   "t_in": 545.37,
+   "t_out": 552.37,
    "date": "1995",
    "title": "Euromediterranee",
    "lines": [
@@ -606,8 +607,8 @@
    "sober": false
   },
   {
-   "t_in": 558.39,
-   "t_out": 563.39,
+   "t_in": 558.37,
+   "t_out": 563.37,
    "date": "2001",
    "title": "2,600 years",
    "lines": [
@@ -616,8 +617,8 @@
    "sober": false
   },
   {
-   "t_in": 569.39,
-   "t_out": 575.39,
+   "t_in": 569.37,
+   "t_out": 575.37,
    "date": "2007",
    "title": "Tramway and a bigger waterfront",
    "lines": [
@@ -627,8 +628,8 @@
    "sober": false
   },
   {
-   "t_in": 579.55,
-   "t_out": 584.55,
+   "t_in": 579.53,
+   "t_out": 584.53,
    "date": "2011",
    "title": "A tower for a shipping giant",
    "lines": [
@@ -669,20 +670,20 @@
    "title": "The King's Port"
   },
   {
-   "t_in": 268.26,
-   "t_out": 271.06,
+   "t_in": 268.24,
+   "t_out": 271.04,
    "num": "VI",
    "title": "Gateway to the Empire"
   },
   {
-   "t_in": 428.43,
-   "t_out": 431.14,
+   "t_in": 428.41,
+   "t_out": 431.13,
    "num": "VII",
    "title": "Occupation and Ruins"
   },
   {
-   "t_in": 542.59,
-   "t_out": 545.39,
+   "t_in": 542.57,
+   "t_out": 545.37,
    "num": "VIII",
    "title": "A New Waterfront"
   }

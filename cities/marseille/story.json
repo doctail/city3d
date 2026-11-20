@@ -31,8 +31,8 @@
    ],
    [
     1720,
-    75000,
-    "historical estimate"
+    90000,
+    "historical estimate (before the plague)"
    ],
    [
     1800,
@@ -88,7 +88,7 @@
   "pop_conf": [
    "low",
    "low",
-   "medium",
+   "low",
    "medium",
    "medium",
    "high",
@@ -609,7 +609,40 @@
      "note": "CPU CHECK: ruins, Hotel de Ville still standing"
     }
    ]
-  }
+  },
+  "look": {
+   "palette": "cities/marseille/palette.json",
+   "building_palette": "provence_terracotta",
+   "field_colors": [
+    "#3f5a0a",
+    "#4d6410",
+    "#5a5f14",
+    "#6f651b",
+    "#68691a"
+   ],
+   "water_color": [
+    "#1f4d55",
+    "#2a6067"
+   ],
+   "saturation": 1.5,
+   "rb_tol": 0.06,
+   "exposure": -2.3,
+   "street_gain": 1.0,
+   "sun_color": [
+    1.0,
+    0.95,
+    0.86
+   ]
+  },
+  "style": {
+   "tree": "#3b4a1c",
+   "forest_base": "#46541f",
+   "grass": "#59602a",
+   "park_ground": "#59602a",
+   "urban_green": "#59602a",
+   "hedge": "#334318"
+  },
+  "est_until": 1800
  },
  "sources": {
   "S1": {
@@ -1246,7 +1279,1165 @@
     "note": "Dynamiting 1 Feb (1943.088) to 17 Feb (1943.132): start S6, end S8 (INA snippet, not fetched). Ring = ~14.8 ha box between Fort Saint-Jean and the Hotel de Ville, quay to about 200 m north: hand sketch, validated only against the 347 test blocks (see NOTE_STORIA.md). Wave from the fort side (origin) eastward. rebuild_years 7 puts new current buildings at ~1950-1954 (Pouillon from 1949, S20; district finished 1956, S6)."
    }
   ],
-  "water": [],
+  "water": [
+   {
+    "name": "Joliette docks",
+    "ring": [
+     [
+      43.305172,
+      5.362231
+     ],
+     [
+      43.305221,
+      5.362186
+     ],
+     [
+      43.305382,
+      5.362252
+     ],
+     [
+      43.305325,
+      5.362662
+     ],
+     [
+      43.309044,
+      5.363771
+     ],
+     [
+      43.309124,
+      5.36339
+     ],
+     [
+      43.309465,
+      5.363497
+     ],
+     [
+      43.309417,
+      5.363881
+     ],
+     [
+      43.310279,
+      5.364151
+     ],
+     [
+      43.307061,
+      5.364379
+     ],
+     [
+      43.304856,
+      5.364279
+     ]
+    ],
+    "from": 1853,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Joliette docks",
+    "ring": [
+     [
+      43.300968,
+      5.361185
+     ],
+     [
+      43.301469,
+      5.361336
+     ],
+     [
+      43.302545,
+      5.363709
+     ],
+     [
+      43.303163,
+      5.363191
+     ],
+     [
+      43.302604,
+      5.361974
+     ],
+     [
+      43.303086,
+      5.361569
+     ],
+     [
+      43.30427,
+      5.364228
+     ],
+     [
+      43.30109,
+      5.363392
+     ],
+     [
+      43.29952,
+      5.362416
+     ]
+    ],
+    "from": 1853,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Joliette docks",
+    "ring": [
+     [
+      43.310679,
+      5.360234
+     ],
+     [
+      43.309865,
+      5.360895
+     ],
+     [
+      43.309385,
+      5.361363
+     ],
+     [
+      43.308996,
+      5.361574
+     ],
+     [
+      43.308568,
+      5.361522
+     ],
+     [
+      43.303485,
+      5.359511
+     ],
+     [
+      43.299477,
+      5.358309
+     ],
+     [
+      43.299432,
+      5.358389
+     ],
+     [
+      43.299238,
+      5.358318
+     ],
+     [
+      43.2991,
+      5.358092
+     ],
+     [
+      43.2991,
+      5.357767
+     ],
+     [
+      43.299203,
+      5.357676
+     ],
+     [
+      43.2991,
+      5.357445
+     ],
+     [
+      43.2991,
+      5.35721
+     ],
+     [
+      43.299386,
+      5.357805
+     ],
+     [
+      43.299422,
+      5.358014
+     ],
+     [
+      43.300824,
+      5.358438
+     ],
+     [
+      43.300941,
+      5.358343
+     ],
+     [
+      43.301445,
+      5.358489
+     ],
+     [
+      43.301518,
+      5.358636
+     ],
+     [
+      43.303738,
+      5.359289
+     ],
+     [
+      43.3056,
+      5.360027
+     ],
+     [
+      43.305729,
+      5.359945
+     ],
+     [
+      43.306204,
+      5.360125
+     ],
+     [
+      43.306262,
+      5.360231
+     ],
+     [
+      43.306463,
+      5.360301
+     ],
+     [
+      43.306469,
+      5.360353
+     ],
+     [
+      43.308753,
+      5.361236
+     ],
+     [
+      43.30891,
+      5.361217
+     ],
+     [
+      43.309154,
+      5.36101
+     ],
+     [
+      43.309149,
+      5.360956
+     ],
+     [
+      43.309501,
+      5.36072
+     ],
+     [
+      43.310679,
+      5.359733
+     ]
+    ],
+    "from": 1853,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Lazaret and Arenc docks",
+    "ring": [
+     [
+      43.313422,
+      5.362766
+     ],
+     [
+      43.313651,
+      5.362557
+     ],
+     [
+      43.313806,
+      5.362925
+     ],
+     [
+      43.313576,
+      5.363124
+     ],
+     [
+      43.313965,
+      5.364026
+     ],
+     [
+      43.313392,
+      5.364132
+     ],
+     [
+      43.312336,
+      5.364131
+     ],
+     [
+      43.312392,
+      5.364058
+     ],
+     [
+      43.311284,
+      5.361504
+     ],
+     [
+      43.312439,
+      5.360552
+     ]
+    ],
+    "from": 1860,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Lazaret and Arenc docks",
+    "ring": [
+     [
+      43.315777,
+      5.358731
+     ],
+     [
+      43.315873,
+      5.358589
+     ],
+     [
+      43.315964,
+      5.358526
+     ],
+     [
+      43.316042,
+      5.35866
+     ],
+     [
+      43.316545,
+      5.358233
+     ],
+     [
+      43.317699,
+      5.360795
+     ],
+     [
+      43.318012,
+      5.360539
+     ],
+     [
+      43.318373,
+      5.360505
+     ],
+     [
+      43.318207,
+      5.357457
+     ],
+     [
+      43.319117,
+      5.356716
+     ],
+     [
+      43.320175,
+      5.359118
+     ],
+     [
+      43.320373,
+      5.35898
+     ],
+     [
+      43.32057,
+      5.3594
+     ],
+     [
+      43.321523,
+      5.35864
+     ],
+     [
+      43.321535,
+      5.360093
+     ],
+     [
+      43.321262,
+      5.360332
+     ],
+     [
+      43.321535,
+      5.360956
+     ],
+     [
+      43.321535,
+      5.36187
+     ],
+     [
+      43.32063,
+      5.362158
+     ],
+     [
+      43.317916,
+      5.362651
+     ],
+     [
+      43.316107,
+      5.363639
+     ],
+     [
+      43.314926,
+      5.363852
+     ],
+     [
+      43.314791,
+      5.363554
+     ],
+     [
+      43.314943,
+      5.363402
+     ],
+     [
+      43.313949,
+      5.361108
+     ],
+     [
+      43.314696,
+      5.360518
+     ],
+     [
+      43.31528,
+      5.361792
+     ],
+     [
+      43.316272,
+      5.360984
+     ],
+     [
+      43.315474,
+      5.359161
+     ],
+     [
+      43.315817,
+      5.35885
+     ]
+    ],
+    "from": 1860,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Lazaret and Arenc docks",
+    "ring": [
+     [
+      43.315433,
+      5.356602
+     ],
+     [
+      43.315737,
+      5.357334
+     ],
+     [
+      43.31502,
+      5.35794
+     ],
+     [
+      43.314894,
+      5.35768
+     ],
+     [
+      43.315146,
+      5.357454
+     ],
+     [
+      43.314935,
+      5.356977
+     ],
+     [
+      43.31467,
+      5.357182
+     ],
+     [
+      43.314554,
+      5.356973
+     ],
+     [
+      43.31362,
+      5.357787
+     ],
+     [
+      43.313573,
+      5.357733
+     ],
+     [
+      43.313192,
+      5.358041
+     ],
+     [
+      43.313217,
+      5.35812
+     ],
+     [
+      43.313082,
+      5.358235
+     ],
+     [
+      43.31292,
+      5.358267
+     ],
+     [
+      43.312431,
+      5.358775
+     ],
+     [
+      43.311798,
+      5.359329
+     ],
+     [
+      43.31209,
+      5.360075
+     ],
+     [
+      43.311121,
+      5.360874
+     ],
+     [
+      43.310784,
+      5.360141
+     ],
+     [
+      43.310679,
+      5.360234
+     ],
+     [
+      43.310679,
+      5.359733
+     ],
+     [
+      43.311302,
+      5.35921
+     ],
+     [
+      43.311317,
+      5.359137
+     ],
+     [
+      43.31194,
+      5.358673
+     ],
+     [
+      43.314367,
+      5.35664
+     ],
+     [
+      43.314362,
+      5.356584
+     ],
+     [
+      43.315003,
+      5.356106
+     ],
+     [
+      43.317082,
+      5.35437
+     ],
+     [
+      43.317075,
+      5.354311
+     ],
+     [
+      43.317131,
+      5.354324
+     ],
+     [
+      43.319742,
+      5.352146
+     ],
+     [
+      43.319758,
+      5.352069
+     ],
+     [
+      43.319792,
+      5.352101
+     ],
+     [
+      43.321535,
+      5.35064
+     ],
+     [
+      43.321535,
+      5.351484
+     ]
+    ],
+    "from": 1860,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Lazaret and Arenc docks",
+    "ring": [
+     [
+      43.320983,
+      5.355209
+     ],
+     [
+      43.321001,
+      5.355137
+     ],
+     [
+      43.321535,
+      5.354695
+     ],
+     [
+      43.321535,
+      5.356474
+     ]
+    ],
+    "from": 1860,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Northern docks and Digue du Large",
+    "ring": [
+     [
+      43.321933,
+      5.359574
+     ],
+     [
+      43.321908,
+      5.359766
+     ],
+     [
+      43.321535,
+      5.360093
+     ],
+     [
+      43.321535,
+      5.358666
+     ]
+    ],
+    "from": 1880,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Northern docks and Digue du Large",
+    "ring": [
+     [
+      43.321535,
+      5.360956
+     ],
+     [
+      43.321892,
+      5.36175
+     ],
+     [
+      43.321535,
+      5.36187
+     ]
+    ],
+    "from": 1880,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Northern docks and Digue du Large",
+    "ring": [
+     [
+      43.33524,
+      5.338905
+     ],
+     [
+      43.33534,
+      5.33925
+     ],
+     [
+      43.335329,
+      5.339372
+     ],
+     [
+      43.335411,
+      5.339405
+     ],
+     [
+      43.33566,
+      5.339788
+     ],
+     [
+      43.335623,
+      5.340111
+     ],
+     [
+      43.334621,
+      5.341354
+     ],
+     [
+      43.334254,
+      5.340543
+     ],
+     [
+      43.328464,
+      5.34541
+     ],
+     [
+      43.328897,
+      5.346409
+     ],
+     [
+      43.328287,
+      5.346913
+     ],
+     [
+      43.327874,
+      5.346029
+     ],
+     [
+      43.322971,
+      5.350153
+     ],
+     [
+      43.323348,
+      5.351038
+     ],
+     [
+      43.323316,
+      5.351084
+     ],
+     [
+      43.323387,
+      5.351266
+     ],
+     [
+      43.323188,
+      5.35143
+     ],
+     [
+      43.323095,
+      5.351258
+     ],
+     [
+      43.322755,
+      5.351535
+     ],
+     [
+      43.322391,
+      5.350766
+     ],
+     [
+      43.321535,
+      5.351484
+     ],
+     [
+      43.321535,
+      5.35064
+     ],
+     [
+      43.322235,
+      5.350049
+     ],
+     [
+      43.322227,
+      5.349995
+     ],
+     [
+      43.322288,
+      5.350008
+     ],
+     [
+      43.324962,
+      5.347768
+     ],
+     [
+      43.324958,
+      5.347712
+     ],
+     [
+      43.325014,
+      5.347724
+     ],
+     [
+      43.327731,
+      5.34545
+     ],
+     [
+      43.327725,
+      5.345393
+     ],
+     [
+      43.327781,
+      5.345409
+     ],
+     [
+      43.330904,
+      5.342794
+     ],
+     [
+      43.330922,
+      5.342718
+     ],
+     [
+      43.330954,
+      5.342751
+     ],
+     [
+      43.334203,
+      5.340022
+     ],
+     [
+      43.334199,
+      5.339964
+     ],
+     [
+      43.334256,
+      5.339975
+     ],
+     [
+      43.334801,
+      5.339523
+     ],
+     [
+      43.334763,
+      5.339407
+     ],
+     [
+      43.33691,
+      5.335144
+     ],
+     [
+      43.336913,
+      5.335618
+     ]
+    ],
+    "from": 1880,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Northern docks and Digue du Large",
+    "ring": [
+     [
+      43.33635,
+      5.344872
+     ],
+     [
+      43.336679,
+      5.344909
+     ],
+     [
+      43.336867,
+      5.345309
+     ],
+     [
+      43.336914,
+      5.345291
+     ],
+     [
+      43.336911,
+      5.357465
+     ],
+     [
+      43.331486,
+      5.357468
+     ],
+     [
+      43.326058,
+      5.358702
+     ],
+     [
+      43.324701,
+      5.360306
+     ],
+     [
+      43.323344,
+      5.361293
+     ],
+     [
+      43.322919,
+      5.361422
+     ],
+     [
+      43.323645,
+      5.360809
+     ],
+     [
+      43.323549,
+      5.360564
+     ],
+     [
+      43.324267,
+      5.359953
+     ],
+     [
+      43.32422,
+      5.359833
+     ],
+     [
+      43.324258,
+      5.359776
+     ],
+     [
+      43.324124,
+      5.359476
+     ],
+     [
+      43.324068,
+      5.359497
+     ],
+     [
+      43.323968,
+      5.359285
+     ],
+     [
+      43.323813,
+      5.358922
+     ],
+     [
+      43.323844,
+      5.358854
+     ],
+     [
+      43.323736,
+      5.358614
+     ],
+     [
+      43.323682,
+      5.358629
+     ],
+     [
+      43.323595,
+      5.358446
+     ],
+     [
+      43.322993,
+      5.358894
+     ],
+     [
+      43.322556,
+      5.358607
+     ],
+     [
+      43.322213,
+      5.358847
+     ],
+     [
+      43.321817,
+      5.357956
+     ],
+     [
+      43.322073,
+      5.357709
+     ],
+     [
+      43.321535,
+      5.356474
+     ],
+     [
+      43.321535,
+      5.354695
+     ],
+     [
+      43.321725,
+      5.354538
+     ],
+     [
+      43.32179,
+      5.354562
+     ],
+     [
+      43.322971,
+      5.357247
+     ],
+     [
+      43.324455,
+      5.356022
+     ],
+     [
+      43.324324,
+      5.355692
+     ],
+     [
+      43.324511,
+      5.355516
+     ],
+     [
+      43.323261,
+      5.352682
+     ],
+     [
+      43.323602,
+      5.352385
+     ],
+     [
+      43.323532,
+      5.352184
+     ],
+     [
+      43.323792,
+      5.351978
+     ],
+     [
+      43.323886,
+      5.352157
+     ],
+     [
+      43.32425,
+      5.351867
+     ],
+     [
+      43.325031,
+      5.353614
+     ],
+     [
+      43.329574,
+      5.349844
+     ],
+     [
+      43.328789,
+      5.34805
+     ],
+     [
+      43.329693,
+      5.347289
+     ],
+     [
+      43.331103,
+      5.350451
+     ],
+     [
+      43.331879,
+      5.349794
+     ],
+     [
+      43.332064,
+      5.346047
+     ],
+     [
+      43.333089,
+      5.345202
+     ],
+     [
+      43.333253,
+      5.345228
+     ],
+     [
+      43.332913,
+      5.352711
+     ],
+     [
+      43.334785,
+      5.351156
+     ],
+     [
+      43.334965,
+      5.34752
+     ],
+     [
+      43.334664,
+      5.347452
+     ],
+     [
+      43.334688,
+      5.346892
+     ],
+     [
+      43.334992,
+      5.346868
+     ],
+     [
+      43.335203,
+      5.342729
+     ],
+     [
+      43.336319,
+      5.341798
+     ],
+     [
+      43.336498,
+      5.341819
+     ]
+    ],
+    "from": 1880,
+    "to": 2030,
+    "c": "site",
+    "conf": "low",
+    "src": [
+     "S25"
+    ],
+    "note": "Approximate: modern quays are shown as sea until the basin openings (Joliette 1853, Arenc 1856-60s, northern docks and Digue du Large 1880); the pre-1844 shore is the landward edge of the modern basins, not a surveyed line."
+   },
+   {
+    "name": "Lacydon inner creek (to the Bourse)",
+    "ring": [
+     [
+      43.295755,
+      5.373559
+     ],
+     [
+      43.296095,
+      5.374178
+     ],
+     [
+      43.29651,
+      5.374815
+     ],
+     [
+      43.296932,
+      5.375416
+     ],
+     [
+      43.297124,
+      5.375807
+     ],
+     [
+      43.297004,
+      5.375958
+     ],
+     [
+      43.296744,
+      5.375683
+     ],
+     [
+      43.296261,
+      5.375173
+     ],
+     [
+      43.295772,
+      5.374575
+     ],
+     [
+      43.295388,
+      5.37396
+     ]
+    ],
+    "from": 400,
+    "to": 2030,
+    "c": "urban",
+    "conf": "low",
+    "src": [
+     "S1",
+     "S2"
+    ],
+    "note": "Approximate: the inner end of the Lacydon silted up in late antiquity; shape is a hand-drawn estimate toward the Bourse site, not surveyed."
+   }
+  ],
   "bridges": [
    {
     "name": "Transporter Bridge (Old Port)",
@@ -1885,7 +3076,10 @@
    "drift_vmax": 8,
    "rho_max": 1400
   },
-  "lens": 32
+  "lens": 32,
+  "music_cuts": {
+   "snap_after": 11.0
+  }
  },
  "montaggio": {
   "style": "mattia",
@@ -1893,10 +3087,15 @@
    "MARSEILLE TODAY",
    "886,040 people",
    "2,625 YEARS",
-   "Open data, reconstruction before 1800"
+   "Open data, reconstruction before 1800, port coast approximate"
   ],
   "short_tag": "2,625 YEARS IN 28 SECONDS",
-  "label_area": [230, 1690, 230, 900],
+  "label_area": [
+   230,
+   1690,
+   230,
+   900
+  ],
   "title": [
    "MARSEILLE",
    "600 BC TO NOW"
@@ -2139,13 +3338,14 @@
     "y": 1348,
     "title": "The Black Death",
     "lines": [
-     "Plague kills about 15,000 of 25,000 inhabitants."
+     "Plague reaches Europe by ship through Marseille in late 1347.",
+     "The city loses a large part of its people; no reliable count survives."
     ],
     "hold_s": 5,
     "src": [
      "S1"
     ],
-    "conf": "medium",
+    "conf": "low",
     "shot": "wide",
     "target": "Medieval Marseille (Ville haute and Ville basse)"
    },
@@ -2232,7 +3432,7 @@
     "title": "The Great Plague",
     "lines": [
      "A ship from the Levant brings plague in 1720.",
-     "About 38,000 of 75,000 inhabitants die."
+     "Between 30,000 and 40,000 of about 90,000 inhabitants die."
     ],
     "hold_s": 6,
     "src": [
@@ -2504,7 +3704,8 @@
     "title": "The Saint-Jean quarter is condemned",
     "lines": [
      "On 22-24 January 1943 a police roundup arrests more than 6,000 people and expels about 20,000.",
-     "From 1 February about 1,500 buildings on 14 hectares are dynamited. The model is a partial reconstruction."
+     "From 1 February about 1,500 buildings on 14 hectares are dynamited.",
+     "The model shows 867 of them: 279 follow the 1940 plan, the rest is generated."
     ],
     "hold_s": 6,
     "src": [
@@ -2691,7 +3892,8 @@
     "Population: Wikipedia, Marseille, census figures",
     "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
    ]
-  }
+  },
+  "channel": "Ledger of Cities"
  },
  "thumbnail_hook": {
   "year": 1943.1,

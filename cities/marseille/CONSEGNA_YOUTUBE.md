@@ -340,7 +340,7 @@ Rendered with an open-source 3D pipeline. Corrections are welcome in the comment
 
 ## TAG (un solo campo YouTube, tutte le lingue insieme; 437 caratteri su 500)
 ```
-marseille, evolution of marseille, marseille history, history of marseille, marseille 3d, 3d timelapse, city timelapse, city evolution, how marseille grew, massalia, greek marseille, vieux-port, old port marseille, notre-dame de la garde, mucem, marseille 1943, saint-jean quarter, marseille timelapse, no ai, histoire de marseille, evolution de marseille, quartier saint-jean 1943, marsiglia, marsella, 3d map, urban history, year built
+marseille, evolution of marseille, marseille history, history of marseille, marseille 3d, 3d timelapse, city timelapse, city evolution, how marseille grew, massalia, greek marseille, vieux-port, old port marseille, notre-dame de la garde, mucem, marseille 1943, saint-jean quarter, marseille timelapse, no ai, histoire de marseille, evolution de marseille, quartier saint-jean 1943, marsiglia, marsella, 3d map, urban history, ledger of cities
 ```
 
 ## Commento fissato (EN + FR)
