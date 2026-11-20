@@ -1557,7 +1557,56 @@ def _fv(f):
     else: q_ = f
     return q_ if q_ in YF else f
 _ONLY = [int(v) for v in opt('--only', 1, '').split(',') if v] if '--only' in a else None   # prove: solo questi fotogrammi (es. 133,3241)
-for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
+_FRAMES = list(_ONLY or range(F0, F1 + 1, sc.frame_step))
+def _prune_dead(frames, rm_veg=False, rm_parks=False, only_ab=False):
+    # yb/nyc-perf: toglie DAVVERO dalla scena gli oggetti mai visibili nei fotogrammi 'frames' (invece di z=-5000); rm_veg / rm_parks solo per ablazione
+    global CHUNKS, PARTS, VIS
+    ys_ = [YF[_fv(g)] for g in frames]; n0 = len(sc.objects); nv0 = 0; keep = []; rm = []
+    for ch in CHUNKS: (keep if (only_ab or any(growth(ch, _fv(g)) >= 0.002 for g in frames)) else rm).append(ch)
+    CHUNKS = keep; rm_o = [c['obj'] for c in rm]; keep = []; rm = []
+    for pt in PARTS: (keep if (only_ab or any(growth(pt, _fv(g)) >= 0.002 for g in frames)) else rm).append(pt)
+    PARTS = keep; rm_o += [c['obj'] for c in rm]; keepv = []
+    for o_, kind, thr in VIS:
+        vis = any(((y < thr) if kind == 'appear' else (y >= thr) if kind == 'vanish' else not (thr[0] <= y < thr[1])) is False for y in ys_)
+        dead = (not vis) and not only_ab
+        if o_.name.startswith('veg_') and rm_veg: dead = True
+        if o_.name.startswith('parks_') and rm_parks: dead = True
+        if dead: rm_o.append(o_)
+        else: keepv.append((o_, kind, thr))
+    VIS = keepv
+    for o_ in rm_o:
+        nv0 += len(o_.data.vertices) if o_.type == 'MESH' else 0; VISSET.pop(o_.name, None); me_ = o_.data; bpy.data.objects.remove(o_, do_unlink=True)
+        if me_ and me_.users == 0 and hasattr(bpy.data.meshes, 'remove'):
+            try: bpy.data.meshes.remove(me_)
+            except Exception: pass
+    if os.environ.get('CULL'):   # alberi istanziati fuori dall'inquadratura (+margine) in TUTTI i fotogrammi della finestra: tolti (l'immagine non cambia; margine per ombre e luce indiretta)
+        import numpy as _np
+        _mg = float(os.environ.get('CULL_MARGIN', '0.6')); _dgc = bpy.context.evaluated_depsgraph_get(); _Ms = []
+        for g in list(frames)[::int(os.environ.get('CULL_STEP', '6'))] + [frames[-1]]:
+            sc.frame_set(g); _ce = co.evaluated_get(bpy.context.evaluated_depsgraph_get()); _Ms.append((_np.array(_ce.matrix_world.inverted()), lens_at(g) / 18.0))
+        _asp = RW / RH; _kept = _tot = 0
+        for o_ in list(sc.objects):
+            if not o_.name.startswith('veg_') or o_.type != 'MESH': continue
+            me_ = o_.data; n_ = len(me_.vertices)
+            if not n_: continue
+            P = _np.empty(n_ * 3, dtype=_np.float64); me_.vertices.foreach_get('co', P); P = P.reshape(-1, 3); sc_ = _np.empty(n_, dtype=_np.float32); kd_ = _np.empty(n_, dtype=_np.int32)
+            me_.attributes['sc'].data.foreach_get('value', sc_); me_.attributes['kd'].data.foreach_get('value', kd_)
+            keep_m = _np.zeros(n_, bool)
+            for W2C, kl in _Ms:   # quota vera del punto (rilievo gia' applicato) e +40 m (altezza della chioma): basta una delle due
+                for zz in (0.0, 40.0):
+                    Pc = (W2C[:3, :3] @ _np.c_[P[:, :2], P[:, 2] + zz].T + W2C[:3, 3:4]).T; d_ = -Pc[:, 2]; ok = d_ > 1.0
+                    ndx = _np.where(ok, Pc[:, 0] / _np.where(ok, d_, 1) * kl, 0); ndy = _np.where(ok, Pc[:, 1] / _np.where(ok, d_, 1) * kl * _asp, 0)
+                    keep_m |= (~ok & (d_ > -300)) | (ok & (_np.abs(ndx) < 1 + _mg) & (_np.abs(ndy) < 1 + _mg))
+            _tot += n_; _kept += int(keep_m.sum())
+            me_.clear_geometry(); m_ = int(keep_m.sum()); me_.vertices.add(m_); me_.vertices.foreach_set('co', P[keep_m].ravel())
+            me_.attributes.new('sc', 'FLOAT', 'POINT').data.foreach_set('value', sc_[keep_m]); me_.attributes.new('kd', 'INT', 'POINT').data.foreach_set('value', kd_[keep_m]); me_.update()
+        log('CULL alberi veg:', _tot, '->', _kept, 'margine', _mg)
+    log('PRUNE: oggetti', n0, '->', len(sc.objects), 'vertici tolti', nv0, '| alberi veg vivi', sum(len(o.data.vertices) for o in sc.objects if o.name.startswith('veg_')), '| blocchi citta vivi', len(CHUNKS), 'vertici citta vivi', sum(len(c['obj'].data.vertices) for c in CHUNKS))
+_ABL = {int(k): v for k, v in (x.split('@')[::-1] for x in os.environ.get('ABL', '').split(',') if x)}   # ablazione: ABL=veg@4,dead@6 -> prima del 4o fotogramma tolgo la vegetazione istanziata, ecc.
+if os.environ.get('PRUNE'): _prune_dead(_FRAMES if not os.environ.get('WIN') else list(range(_FRAMES[0], min(F1, _FRAMES[0] + int(os.environ['WIN'])) + 1)))
+for _fi, f in enumerate(_FRAMES):
+    if _fi in _ABL:
+        _w = _ABL[_fi]; _prune_dead(list(range(_FRAMES[_fi], min(F1, _FRAMES[_fi] + int(os.environ.get('WIN', '600'))) + 1)), rm_veg=(_w == 'veg'), rm_parks=(_w == 'parks'), only_ab=(_w in ('veg','parks')))
     path = os.path.join(OUT, f'{f:0{NW}d}.{EXT}')
     if any(os.path.exists(q_) and os.path.getsize(q_) > 0 for q_ in (os.path.join(OUT, f'{f:0{NW}d}.jpg'), os.path.join(OUT, f'{f:0{NW}d}.png'))): continue
     t_ = time.time(); sc.frame_set(f); fv = _fv(f); y_ = YF[fv]
@@ -1591,6 +1640,11 @@ for f in (_ONLY or range(F0, F1 + 1, sc.frame_step)):
             _h = sc.ray_cast(_dg, (_x, _y, 600.0), (0.0, 0.0, -1.0))
             log('PROBE', _p, '->', _h[4].name if _h[0] else 'niente', 'z=%.2f' % _h[1].z if _h[0] else '', 'normale', tuple(round(v, 2) for v in _h[2]) if _h[0] else '')
     if os.environ.get('DIAG_ONLY'): done += 1; continue   # diagnosi: solo conteggio, niente render
+    if os.environ.get('PERF'):   # profilo (yb/nyc-perf): A = python (visibilita'/crescita), B = render minimo 32x18 1 campione (sync scena + BVH + avvio kernel), C = render a risoluzione piena (scena gia' sincronizzata)
+        _tA = time.time() - t_; _rx, _ry, _sm = sc.render.resolution_x, sc.render.resolution_y, sc.cycles.samples
+        sc.render.resolution_x, sc.render.resolution_y, sc.cycles.samples = 32, 18, 1; _t1 = time.time(); bpy.ops.render.render(write_still=False); _tB = time.time() - _t1
+        sc.render.resolution_x, sc.render.resolution_y, sc.cycles.samples = _rx, _ry, _sm; _t1 = time.time(); bpy.ops.render.render(write_still=False); _tC = time.time() - _t1
+        print(f'[build] PERF f{f} anno {y_:.0f}: python {_tA:.2f}s | sync+BVH(32x18,1spp) {_tB:.2f}s | render {RW}x{RH} {SAMPLES}spp {_tC:.2f}s', flush=True)
     sc.render.filepath = path; bpy.ops.render.render(write_still=True); done += 1
     print(f'[build] fotogramma {f}: {time.time() - t_:.1f}s (anno {y_:.0f})', flush=True)
     # regola di stop (Fabio, 23 ott): ogni N fotogrammi, se la media degli ultimi N supera la soglia, ci si ferma

@@ -181,7 +181,13 @@ if [ "$MODE" = "full" ]; then
   step "4/5 render VIDEO COMPLETO ($NF fotogrammi, riprende da dove si e' fermato)"
   mkdir -p out/full; find out/full \( -name "*.png" -o -name "*.jpg" \) -size 0 -delete
   LASTD=$NF; [ "$NT" -gt 0 ] && LASTD=$(( NT + 240 ))   # giorno fino a 10 s dopo l'inizio della notte (tramonto)
+  if [ -n "${SEG:-}" ]; then   # yb/nyc-perf: citta' pesanti. Un processo per segmento di SEG fotogrammi; PRUNE toglie dalla scena gli oggetti mai visibili nel segmento, CULL gli alberi istanziati fuori inquadratura (immagine invariata)
+    S0=1; while [ $S0 -le $LASTD ]; do S1=$(( S0 + SEG - 1 )); [ $S1 -gt $LASTD ] && S1=$LASTD
+      PRUNE=1 CULL=1 $PY build_render.py -- $D out/full --frames $S0 $S1 --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
+      S0=$(( S1 + 1 )); done
+  else
   $PY build_render.py -- $D out/full --frames 1 $LASTD --res 1920 1080 --samples ${SAMPLES:-8} --device $DEV --schedule $SCHED $CARGS ${STOP_AVG:+--stop-avg $STOP_AVG --stop-every ${STOP_EVERY:-500}} 2>&1 | grep --line-buffered -E "\[build\]|Error|Traceback|rror|RRORE"
+  fi
   # 30 ott: se il giorno si e' fermato (STOP o errore) non si passa alla notte ne' al montaggio di un video incompleto
   ND=$(ls out/full/*.jpg 2>/dev/null | wc -l); [ "$ND" -lt "$LASTD" ] && { echo "GIORNO INCOMPLETO: $ND/$LASTD fotogrammi. Rilancia lo stesso comando (riprende da qui) e manda in chat la riga STOP."; exit 3; }
   if [ "$NT" -gt 0 ]; then
