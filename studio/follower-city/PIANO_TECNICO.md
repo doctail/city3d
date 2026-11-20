@@ -1,3 +1,5 @@
+> Grafica COZY (diorama, Blender/Cycles): vedi `studio/follower-city/blender/` (`cozy_city.py` + 3 still di prova).
+
 # Follower City — piano tecnico (solo analisi, nessun pod, nessun costo)
 
 Etichette: [Certain] = misurato/letto nei file del repo; [Likely] = deduzione solida; [Guessing] = stima da verificare con una prova. Blender NON è installato in questo container (ci sono solo ffmpeg e node 22), quindi NESSUN dato di render di questo progetto è misurato.
