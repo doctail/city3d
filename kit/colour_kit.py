@@ -143,12 +143,14 @@ def derive(slug, season='summer', years=(2024, 2025), nscenes=3):
     dlat = R / 111320.0; dlon = R / (111320.0 * math.cos(math.radians(lat)))
     bbox = (lon - dlon, lat - dlat, lon + dlon, lat + dlat)
     zone, band, sq, epsg = mgrs_tile(lat, lon)
-    picks = pick_scenes(zone, band, sq, list(years), SEASONS[season], nscenes)
+    picks = pick_scenes(zone, band, sq, list(years), SEASONS[season], nscenes + 6)   # + riserva: scene con la bbox fuori dalla striscia (nodata) si saltano
     if not picks: raise SystemExit('nessuna scena Sentinel-2 L2A con nuvole < 15% trovata')
     acc = {}
     used = []
     for cc, pre in picks:
+        if len(used) >= nscenes: break
         rgb, scl, tr, crs = read_scene(pre, bbox)
+        if (rgb.sum(0) > 0).mean() < 0.5: print(f'[colour] scena {pre.rstrip("/").split("/")[-1]} saltata: copre meno del 50% della bbox'); continue
         wc = read_worldcover(lat, lon, tr, crs, scl.shape)
         ok = np.isin(scl, SCL_OK) & (rgb.sum(0) > 0)
         rgb = tci_to_srgb(rgb)

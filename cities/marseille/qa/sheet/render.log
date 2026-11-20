@@ -1,0 +1,7 @@
+[build] edifici 154128 (1s, 622 MB)
+[build] predecessori storici 9589 (1s, 640 MB)
+[build] rilievo sotto gli edifici: max 531 m (6s, 664 MB)
+[build] monumenti: 713 parti; tolti 59 edifici nelle impronte (19s, 667 MB)
+/home/user/wt/mrs/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 1452 blocchi per anno, 2907225 vertici (31s, 949 MB)

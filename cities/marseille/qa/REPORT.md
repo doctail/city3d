@@ -1,10 +1,10 @@
 # QA marseille
 
-Generato da `python -m kit.qa` il 2026-11-16 11:48. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-20 18:37. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
-| a) Story e fonti | PASS |
+| a) Story e fonti | WARN |
 | b) DATA | PASS |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
@@ -15,6 +15,8 @@ Generato da `python -m kit.qa` il 2026-11-16 11:48. Esito complessivo: **WARN**
 - **PASS** chiavi city
 - **PASS** 32 fonti
 - **PASS** date con fonte
+- **WARN** date fuori dall'intervallo del video
+  - history.water[0] Joliette docks: 2030; history.water[1] Joliette docks: 2030; history.water[2] Joliette docks: 2030; history.water[3] Lazaret and Arenc docks: 2030; history.water[4] Lazaret and Arenc docks: 2030; history.water[5] Lazaret and Arenc docks: 2030; history.water[6] Lazaret and Arenc docks: 2030; history.water[7] Northern docks and Digue du Large: 2030
 
 ## b) DATA
 
@@ -65,21 +67,21 @@ Generato da `python -m kit.qa` il 2026-11-16 11:48. Esito complessivo: **WARN**
   - corridoi_-600.png
 - **PASS** -500: nessun corridoio vuoto
   - corridoi_-500.png
-- **WARN** 1800: 6 aree vuote allungate
-  - #1 217x49 m a (43.29936,5.36285); #2 133x16 m a (43.29860,5.37660); #3 206x24 m a (43.29820,5.38235); #4 329x18 m a (43.29603,5.37157); #5 179x39 m a (43.29518,5.37396); #6 168x29 m a (43.28969,5.36744) — corridoi_1800.png
+- **WARN** 1800: 5 aree vuote allungate
+  - #1 217x49 m a (43.29936,5.36285); #2 133x16 m a (43.29860,5.37660); #3 206x24 m a (43.29820,5.38235); #4 329x18 m a (43.29603,5.37157); #5 168x29 m a (43.28969,5.36744) — corridoi_1800.png
 - **WARN** 1800: 4 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #7 1556x69 m a (43.29722,5.37371); #8 492x42 m a (43.29838,5.36322); #9 369x18 m a (43.28944,5.36347); #10 340x23 m a (43.29784,5.37453)
-- **WARN** 1900: 8 aree vuote allungate
+  - #6 1556x69 m a (43.29722,5.37371); #7 492x42 m a (43.29838,5.36322); #8 369x18 m a (43.28944,5.36347); #9 340x23 m a (43.29784,5.37453)
+- **WARN** 1900: 7 aree vuote allungate
   - #1 290x64 m a (43.29970,5.36475); #2 217x49 m a (43.29936,5.36285); #3 133x16 m a (43.29860,5.37660); #4 206x24 m a (43.29820,5.38235); #5 329x18 m a (43.29603,5.37157); #6 138x26 m a (43.29577,5.38309) — corridoi_1900.png
 - **WARN** 1900: 5 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #9 1540x73 m a (43.29720,5.37379); #10 588x74 m a (43.30428,5.36665); #11 492x42 m a (43.29838,5.36322); #12 372x18 m a (43.28944,5.36347); #13 344x24 m a (43.29784,5.37458)
-- **WARN** 1950: 9 aree vuote allungate
+  - #8 1540x73 m a (43.29720,5.37379); #9 588x74 m a (43.30428,5.36665); #10 492x42 m a (43.29838,5.36322); #11 372x18 m a (43.28944,5.36347); #12 344x24 m a (43.29784,5.37458)
+- **WARN** 1950: 8 aree vuote allungate
   - #1 290x64 m a (43.29970,5.36475); #2 217x49 m a (43.29936,5.36285); #3 133x16 m a (43.29860,5.37660); #4 206x24 m a (43.29820,5.38235); #5 222x53 m a (43.29670,5.36404); #6 329x18 m a (43.29603,5.37157) — corridoi_1950.png
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (7 s)
-  - oggetti citta' 1267, cambi in tutto il video 34447, max in un fotogramma 422 (~5 s), costo dei soli cambi ~0.11 h (budget 1.0 h)
+- **PASS** costo dei cambi (6 s)
+  - oggetti citta' 1269, cambi in tutto il video 34501, max in un fotogramma 423 (~5 s), costo dei soli cambi ~0.12 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 195 m/s (limite 250), mediana 8
 - **PASS** drone: accelerazione massima
@@ -102,8 +104,8 @@ Generato da `python -m kit.qa` il 2026-11-16 11:48. Esito complessivo: **WARN**
   - mediana 1519 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
-- **WARN** drone: grafico non fatto
-  - No module named 'matplotlib'
+- **PASS** drone: grafico del percorso
+  - qa/drone_path.png
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
   - vuoto massimo 18.6 s (373-392 s); 3 oltre 15 s: 373-392, 398-416, 530-545
 - **PASS** ritmo: anni/s per minuto

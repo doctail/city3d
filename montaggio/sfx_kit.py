@@ -119,6 +119,32 @@ def cannon(dur=3.6):   # assedio: colpi sordi di cannone, distanti (attacco morb
         if m > 0: out[i:i + m] += b[:m]
     return out
 
+def stone(n_hits=5, gap=0.5):   # pietra: colpi sordi di mazza su blocchi (cantiere di pietra, mura, forti)
+    out = np.zeros(int((n_hits * gap + 1.8) * SR))
+    for k in range(n_hits):
+        L = int(0.35 * SR); t = np.arange(L) / SR
+        h = lowpass(rng.standard_normal(L), 900) * np.exp(-t / 0.045) * 2.2 + np.sin(2 * np.pi * rng.uniform(140, 210) * t) * np.exp(-t / 0.09) * 0.7
+        i = max(0, int((k * gap + rng.uniform(-0.04, 0.04)) * SR)); out[i:i + L] += h * rng.uniform(0.7, 1.0)
+    return reverb(out, ((0.07, .35), (0.13, .25), (0.23, .15)))
+def chime(f0=784.0):   # rintocco leggero: tre note ascendenti di campanella (apertura di un edificio, fondazione)
+    out = np.zeros(int(4.2 * SR))
+    for k, r in enumerate((1.0, 1.25, 1.5)):
+        t = np.arange(int(2.4 * SR)) / SR; y = (np.sin(2 * np.pi * f0 * r * t) + 0.3 * np.sin(2 * np.pi * f0 * r * 2.76 * t)) * np.exp(-t / 0.9)
+        i = int(k * 0.35 * SR); out[i:i + len(y)] += y * env(len(y), 40, 2000)
+    return reverb(out)
+def train(dur=6.0):   # treno a vapore: sbuffi ritmici che accelerano + fischio breve
+    n = int(dur * SR); t = np.arange(n) / SR; out = np.zeros(n); tt = 0.0
+    while tt < dur - 0.4:
+        L = int(0.16 * SR); ch = lowpass(rng.standard_normal(L), 1800) * np.exp(-np.arange(L) / (0.045 * SR)); i = int(tt * SR); out[i:i + L] += ch[:n - i] * 0.9
+        tt += max(0.16, 0.5 - 0.06 * tt)
+    out += lowpass(rng.standard_normal(n), 140) * 0.5 * env(n, int(1.0 * SR), int(1.5 * SR))
+    w = horn(1.4, 520.0) * 0.5; i = int(1.6 * SR); out[i:i + len(w)] += w[:n - i]
+    return reverb(out * env(n, int(0.4 * SR), int(1.5 * SR)), ((0.09, .25), (0.19, .15)))
+def build(dur=5.0):   # cantiere generico: martelli + pietre (costruzione di un grande edificio)
+    n = int(dur * SR); out = np.zeros(n + SR); h = hammer(int(dur / 0.45), 0.45); out[:min(len(h), n)] += h[:n] * 0.8
+    s = stone(max(2, int(dur / 1.2)), 1.2); out[:min(len(s), n)] += s[:n] * 0.6
+    return out[:n] * env(n, int(0.3 * SR), int(1.0 * SR))
+
 # ======== piazzamento generico ========
 FX = {   # nome: (funzione, dt di default dall'inizio della sosta, gain, parametri di default)
     'hammer': (hammer, 0.8, 0.08, {'n_hits': 6}), 'crowd': (crowd, 0.3, 0.14, {'dur': 4.0}), 'fire': (fire, 0.2, 0.20, {'dur': 6.0, 'intensity': 1.2}),
@@ -126,6 +152,7 @@ FX = {   # nome: (funzione, dt di default dall'inizio della sosta, gain, paramet
     'battle': (battle, 0.2, 0.22, {'dur': 4.0}), 'quake': (quake, 0.0, 0.26, {'dur': 5.0}), 'horn': (horn, 0.2, 0.12, {'dur': 3.0, 'f': 82.0}),
     'peal': (None, 1.0, 0.12, {}), 'crash': (crash, 0.3, 0.16, {}), 'firework': (firework, 0.3, 0.16, {}), 'rocket': (rocket, 0.0, 0.20, {}),
     'alarm': (alarm_bells, 0.0, 0.13, {'dur': 6.0}), 'hum': (city_hum, 0.0, 0.08, {'dur': 6.0}), 'whoosh': (whoosh, 0.0, 0.22, {'dur': 3.0}), 'cannon': (cannon, 0.3, 0.20, {}),
+    'stone': (stone, 0.8, 0.12, {'n_hits': 5}), 'chime': (chime, 0.3, 0.12, {}), 'train': (train, 0.2, 0.12, {'dur': 6.0}), 'build': (build, 0.6, 0.10, {'dur': 5.0}),
 }
 ALIAS = {'n': 'n_hits', 'hits': 'n_hits', 'gap': 'gap', 'intensity': 'intensity', 'freq': 'f0'}
 LOUD = {'battle', 'boom', 'quake', 'fire', 'crash', 'firework'}   # fx che coprono da soli un taglio musicale
@@ -137,7 +164,7 @@ def fx_list(spec):
     return [{'fx': s} if isinstance(s, str) else dict(s) for s in spec]
 
 
-def music_playlist(DUR, LA, LB, fade_a, fade_b, times, b_offset=5.0, X=3.0, CLOSE=8.0, a_repeat_off=30.0):
+def music_playlist(DUR, LA, LB, fade_a, fade_b, times, b_offset=5.0, X=3.0, CLOSE=8.0, a_repeat_off=30.0, snap_after=0.0):
     """Musica per qualsiasi durata (fino a ~15 min): lista di segmenti (traccia, offset, t0, t1, fade_in, fade_out, gain) A, B, A, B...
     Ogni traccia suona fino al suo calo naturale (fade_a / fade_b); i passaggi sono dissolvenze incrociate di X s, spostati sull'inizio di una sosta
     entro 12 s se il segmento resta >= 60% della sua durata utile; l'ultimo segmento si taglia a DUR con dissolvenza di chiusura di CLOSE s.
@@ -152,7 +179,7 @@ def music_playlist(DUR, LA, LB, fade_a, fade_b, times, b_offset=5.0, X=3.0, CLOS
         if end_nat >= DUR - 15.0 or L <= 20.0:
             segs.append((name, off, t, DUR, fin, CLOSE, gain)); return segs
         tb = end_nat
-        cand = [t0 for t0 in times if abs(t0 - tb) <= 12.0 and t0 - t >= 0.6 * L and t0 <= end_nat]
+        cand = [t0 for t0 in times if abs(t0 - tb) <= 12.0 and t0 - t >= 0.6 * L and t0 <= end_nat + snap_after]   # snap_after (regia.music_cuts.snap_after): il passaggio puo' slittare DOPO la fine naturale della traccia fino a una sosta (ritorno B>A di Marsiglia)
         if cand: tb = max(cand)
         segs.append((name, off, t, tb + X, fin, X, gain)); t = tb; i += 1
 
@@ -275,7 +302,7 @@ def main():
         mp_ = f"{ROOT}/kit/music/{story.get('regia', {}).get('music')}.json"
         if os.path.exists(mp_): mm = json.load(open(mp_)).get('tracks', {})
         fa = mm.get('A', {}).get('fade_out', LA - 27.0); fb = mm.get('B', {}).get('fade_out', (len(B_) / SR - 15.0) if B_ is not None else 0.0)
-        segs = music_playlist(DUR, LA, (len(B_) / SR) if B_ is not None else 0.0, fa, fb, [t0 for t0, _, _ in times if t0 is not None], a.b_offset)
+        segs = music_playlist(DUR, LA, (len(B_) / SR) if B_ is not None else 0.0, fa, fb, [t0 for t0, _, _ in times if t0 is not None], a.b_offset, snap_after=float(mc.get('snap_after', 0.0)))
         for name, off, t0_, t1_, fi_, fo_, g_ in segs: seg(A_ if name == 'A' else B_, off, t0_, t1_, fi_, fo_, gain=g_)
         FF_TXT = 'musica a playlist: ' + ' > '.join(f'{n}@{t0_:.0f}' for n, _, t0_, _, _, _, _ in segs) + f' (chiusura {segs[-1][5]:.0f} s)'
     elif cut1 is None or cut1 >= DUR:
