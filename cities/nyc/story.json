@@ -616,6 +616,8 @@
     "vega_r": 9000,
     "vega_step": 17,
     "vega_clump": 0.1,
+    "density": 0.3333,
+    "scale_mul": 1.6,
     "orchard_r": 1,
     "orchard_step": 8,
     "colors": [

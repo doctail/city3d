@@ -1048,6 +1048,7 @@ if CITY.get('vegetation'):
     import numpy as _vn
     from shapely import contains_xy as _cxy
     _VC = CITY['vegetation']; _rng = _vn.random.default_rng(7)
+    _VD = float(os.environ.get('VEGDENS', _VC.get('density', 1.0))); _VS = float(os.environ.get('VEGSCALE', _VC.get('scale_mul', 1.0))); _VQ = _VD ** -0.5   # density: frazione di alberi (griglia: passo / sqrt(density)); scale_mul: chioma piu' grande a compensazione
     _land48 = unary_union([lgeom] + [Polygon(ph_['r']).buffer(0) for ph_ in _PH if ph_['from'] <= 1248 < ph_['to']]) if _PH else lgeom
     _box = sbox(*_VC.get('box', CITY['core_box']))
     _l48 = _land48.intersection(_box)
@@ -1065,10 +1066,10 @@ if CITY.get('vegetation'):
     # 1) boschi di riva: fascia 8-70 m dalla riva del fiume del 1248
     _bnd = _l48.boundary
     _band = _l48.intersection(_bnd.buffer(_VC.get('river_w', 70))).difference(_bnd.buffer(8))
-    xs, ys = _grid(_band, _VC.get('river_step', 10), 0.8); _pts.append((xs, ys, _rng.uniform(3.5, 6.5, xs.size), 0))
+    xs, ys = _grid(_band, _VC.get('river_step', 10) * _VQ, 0.8); _pts.append((xs, ys, _rng.uniform(3.5, 6.5, xs.size), 0))
     # 2) vega: alberi a gruppi (siepi, boschetti) e qualche albero isolato, entro un raggio dal centro
     _vr = sbox(-_VC.get('vega_r', 9000), -_VC.get('vega_r', 9000), _VC.get('vega_r', 9000), _VC.get('vega_r', 9000)).intersection(_l48)
-    xs, ys = _grid(_vr, _VC.get('vega_step', 24))
+    xs, ys = _grid(_vr, _VC.get('vega_step', 24) * _VQ)
     nz_ = _smooth_noise(xs, ys, 180.0, 11); m_ = (nz_ > _VC.get('vega_clump', 0.66)) | (_rng.random(xs.size) < 0.015)
     xs, ys = xs[m_], ys[m_]; _pts.append((xs, ys, _rng.uniform(3.0, 5.5, xs.size), 1))
     # 3) orti attorno alle mura del 1248: anello fino a 700 m, a chiazze, filari fitti
@@ -1076,9 +1077,9 @@ if CITY.get('vegetation'):
     except Exception: _WP = None
     if _WP is not None:
         _ring = _WP.buffer(_VC.get('orchard_r', 700)).difference(_WP.buffer(25)).intersection(_l48)
-        xs, ys = _grid(_ring, _VC.get('orchard_step', 8))
+        xs, ys = _grid(_ring, _VC.get('orchard_step', 8) * _VQ)
         nz_ = _smooth_noise(xs, ys, 120.0, 23); m_ = nz_ > 0.5; xs, ys = xs[m_], ys[m_]; _pts.append((xs, ys, _rng.uniform(2.2, 3.4, xs.size), 2))
-    X = _vn.concatenate([p_[0] for p_ in _pts]); Y = _vn.concatenate([p_[1] for p_ in _pts]); SC = _vn.concatenate([p_[2] for p_ in _pts]); K = _vn.concatenate([_vn.full(p_[0].size, p_[3]) for p_ in _pts])
+    X = _vn.concatenate([p_[0] for p_ in _pts]); Y = _vn.concatenate([p_[1] for p_ in _pts]); SC = _vn.concatenate([p_[2] for p_ in _pts]) * _VS; K = _vn.concatenate([_vn.full(p_[0].size, p_[3]) for p_ in _pts])
     # anno di sparizione: cella urbanizzata (CELLMIN, 120 m) o terreno che diventa acqua (finestre di terra che finiscono)
     VY = _vn.full(X.size, 99999.0)
     if CELLMIN is not None:

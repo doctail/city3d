@@ -37,3 +37,17 @@ Regola: prima del pod, misurare con PERF=1 (sync 32x18 1 spp a scena ferma) e co
 
 ## Cosa e' nel branch
 build_render.py: PERF=1 (profilo per fase), PRUNE=1 (toglie oggetti mai visibili; WIN=N limita la finestra), CULL=1 (sperimentale, non identico), ABL (ablazioni di prova). run.sh: SEG=N (full a segmenti con PRUNE; non provato end-to-end su run.sh, provata solo la logica PRUNE in build_render). Nessuna modifica attiva di default.
+
+## Aggiornamento: alberi istanziati a 1/3 (decisione del proprietario)
+Opzione di citta' `vegetation.density` (griglia: passo / sqrt(density)) e `vegetation.scale_mul` (chioma piu' grande), env VEGDENS / VEGSCALE per prove. Messe in city_nyc.json e cities/nyc/story.json: density 0,3333, scale_mul 1,6. Le altre citta' non cambiano (default 1 e 1).
+Istanze verificate: 958.688 -> 319.704 (0,333 esatto; riva 223.179 -> 74.490, vega 735.509 -> 245.214).
+Misure CPU 640x360 4 spp, fotogramma che cambia (sync + render, s), stessa base di sopra:
+| anno | base | 1/3 alberi | 1/3 + PRUNE (finestra 600) |
+|---|---|---|---|
+| 1609 | ~9,5 | 4,3 (2,2x) | 4,2 (2,3x) |
+| 1930 | ~14,4 | 7,7 (1,9x) | 5,9 (2,4x) |
+| 2014 | ~14,7 | 7,5 (2,0x) | 5,6 (2,6x) |
+Stima NYC sul pod (base 4,5 s/fotogramma, 13186 fotogrammi, 0,62 euro/h, rapporto CPU non misurato su pod [Likely]):
+- 1/3 alberi, senza segmenti: 4,5/2,0 = ~2,25 s -> 8,2 h -> ~5,1 euro.
+- 1/3 alberi + PRUNE a segmenti (SEG=1000): 4,5/2,4 = ~1,9 s -> 7,0 h + ~0,7 h ricostruzioni = ~7,7 h -> ~4,8 euro.
+Aspetto (1920x1080 8 spp, cities/nyc/qa/trees3/before|after|after_scale16): Manhattan 1930, 2014 e 2026 e i parchi: invariati (i loro alberi sono "cotti", non toccati). La foresta 1609 (e fino a ~1800, dove esistono alberi istanziati) PERDE carattere con 1/3 e scala 1,0: fascia di riva molto piu' rada e radure inland visibili. Con scale_mul 1,6 (a costo zero: stesse istanze) la copertura della chioma torna simile; restano alberi piu' grandi/alti (pioppi) e la riva un po' meno fitta.
