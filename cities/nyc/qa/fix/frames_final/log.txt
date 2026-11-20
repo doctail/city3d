@@ -1,0 +1,92 @@
+[build] edifici 145927 (1s, 574 MB)
+[build] predecessori storici 305144 (2s, 1042 MB)
+[build] rilievo sotto gli edifici: max 67 m (15s, 1094 MB)
+[build] monumenti: 628 parti; tolti 16 edifici nelle impronte (61s, 1100 MB)
+/home/user/city3d/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 3323 blocchi per anno, 6742890 vertici (88s, 1718 MB)
+/home/user/city3d/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 228 blocchi (101s, 1837 MB)
+/home/user/city3d/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/home/user/city3d/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 672 poligoni in 55 finestre (101s, 1837 MB)
+[build] strade 117786 (101s, 1929 MB)
+[build] ponti 17 (101s, 1929 MB)
+/home/user/city3d/build_render.py:788: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 3 (102s, 1930 MB)
+[build] boschi 0 celle in 0 blocchi (102s, 1930 MB)
+[build] isolati 12734 (121s, 1975 MB)
+[build] parchi 1146 (122s, 2104 MB)
+/home/user/city3d/build_render.py:1026: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  _vm = bpy.data.materials.new('veg'); _vm.use_nodes = True; _VN = _vm.node_tree.nodes; _VL = _vm.node_tree.links.new; _vb = _VN['Principled BSDF']; _vb.inputs['Roughness'].default_value = 0.9
+[build] vegetazione istanziata: 958688 alberi (riva 223179 , vega 735509 , orti 0 ) in 87 oggetti (138s, 2589 MB)
+[build] piene 1 (138s, 2590 MB)
+[build] terra 320 poligoni (138s, 2590 MB)
+[build] monumenti costruiti: 628 parti (138s, 2591 MB)
+[build] rilievo applicato: 2087455 vertici, massimo 202 m (148s, 2602 MB)
+[build] monumenti: parti staccate dalla scena: 408 (148s, 2602 MB)
+[build] monumenti uniti: 628 -> 346 oggetti (148s, 2602 MB)
+[build] alberi cotti: 4429085 vertici (150s, 3568 MB)
+/home/user/city3d/build_render.py:1300: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 3323 città, 691 statici (150s, 3568 MB)
+[build] dati di costruzione liberati (150s, 3025 MB)
+[build] CPU (150s, 3025 MB)
+02:30.578  cycles           | WARNING CUEW initialization failed: Error opening the library
+[build] denoiser OPENIMAGEDENOISE (150s, 3025 MB)
+[build] render 1 -> 400 1920x1080 12 campioni (150s, 3025 MB)
+03:10.659  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0009.jpg'
+[build] fotogramma 9: 40.1s (anno 1609)
+03:47.942  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0025.jpg'
+[build] fotogramma 25: 37.3s (anno 1626)
+04:28.211  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0041.jpg'
+[build] fotogramma 41: 40.3s (anno 1628)
+05:09.814  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0057.jpg'
+[build] fotogramma 57: 41.6s (anno 1654)
+05:48.662  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0073.jpg'
+[build] fotogramma 73: 38.8s (anno 1665)
+06:29.976  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0089.jpg'
+[build] fotogramma 89: 41.3s (anno 1699)
+07:10.047  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0105.jpg'
+[build] fotogramma 105: 40.1s (anno 1720)
+07:49.911  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0121.jpg'
+[build] fotogramma 121: 39.9s (anno 1766)
+08:30.752  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0137.jpg'
+[build] fotogramma 137: 40.8s (anno 1767)
+09:08.301  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0153.jpg'
+[build] fotogramma 153: 37.5s (anno 1777)
+09:46.372  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0169.jpg'
+[build] fotogramma 169: 38.1s (anno 1785)
+10:27.317  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0185.jpg'
+[build] fotogramma 185: 40.9s (anno 1789)
+11:04.777  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0201.jpg'
+[build] fotogramma 201: 37.5s (anno 1796)
+11:43.837  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0217.jpg'
+[build] fotogramma 217: 39.1s (anno 1812)
+12:23.867  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0233.jpg'
+[build] fotogramma 233: 40.0s (anno 1826)
+13:06.778  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0249.jpg'
+[build] fotogramma 249: 42.9s (anno 1836)
+13:48.549  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0265.jpg'
+[build] fotogramma 265: 41.8s (anno 1858)
+14:30.321  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0281.jpg'
+[build] fotogramma 281: 41.8s (anno 1884)
+15:17.604  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0297.jpg'
+[build] fotogramma 297: 47.3s (anno 1910)
+16:08.016  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0313.jpg'
+[build] fotogramma 313: 50.4s (anno 1932)
+16:52.931  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0329.jpg'
+[build] fotogramma 329: 44.9s (anno 1952)
+17:37.399  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0345.jpg'
+[build] fotogramma 345: 44.5s (anno 1972)
+18:23.965  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0361.jpg'
+[build] fotogramma 361: 46.6s (anno 2002)
+19:08.689  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0377.jpg'
+[build] fotogramma 377: 44.7s (anno 2015)
+19:49.720  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_final/0393.jpg'
+[build] fotogramma 393: 41.0s (anno 2026)
+[build] FATTO 25 fotogrammi, 41.57s a fotogramma (1189s, 10274 MB)
