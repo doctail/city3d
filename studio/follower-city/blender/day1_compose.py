@@ -29,7 +29,9 @@ def load(n):
 G0, G1, C0 = int(T.T_GLOW0 * FPS), int(T.T_GLOW1 * FPS), int(T.T_CARD0 * FPS)
 def scene(n):
     if n < int(T.T_POP * FPS): return load(0)
-    if n < C0: return load(n)
+    if n < C0:
+        if n < int(T.T_POP * FPS) + 36 or n % 2 == 0: return load(n)
+        return Image.blend(load(n - 1), load(n + 1), 0.5)
     if n < G0: return load(G0)
     if n >= G1: return load(G1)
     if (n - G0) % 2 == 0: return load(n)

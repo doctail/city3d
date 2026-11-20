@@ -27,7 +27,7 @@ NTOT = int(T.DUR * FPS)
 
 
 def unique_frames():
-    L = [0] + list(range(A.F_POP, A.F_CARD0)) + list(range(A.F_GLOW0, A.F_GLOW1, 2)) + [A.F_GLOW1]
+    L = [0] + list(range(A.F_POP, A.F_POP + 36)) + list(range(A.F_POP + 36, A.F_CARD0, 2)) + list(range(A.F_GLOW0, A.F_GLOW1, 2)) + [A.F_GLOW1]
     return L
 
 
