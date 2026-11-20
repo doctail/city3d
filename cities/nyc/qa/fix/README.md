@@ -8,6 +8,6 @@ After EVERY `python -m kit build nyc` (and on a fresh checkout / pod after `kit 
 - `dem.npz`: flat-relief DEM (DEM_OPEN 900, relief flattened inside history.water rings). Rebuilt with `dem_nyc.py` only if the raw Copernicus tiles are passed; otherwise restored from `data_nyc_src/dem.npz.gz` (same result).
 - `piers.py --write`: pier spikes (visible from 1850) and slips (filled until 1850) added to `landphases.json` (`yb_pier` entries, idempotent). `hist_kit` overwrites landphases, so without this step 1609 shows a comb of modern piers.
 
-Known trap [Certain]: on FRESH data `kit build` runs hist before landmarks and gives 305090 predecessors; a second hist build (after landmarks.json exists) gives the committed 305144 and `kit qa` WARN instead of FAIL (Radio Row ribbon before 1967). Run `python -m kit.hist_kit build nyc data_nyc` once more, then restore_after_build.sh, before `kit qa`/render.
+Fixed [Certain]: `kit build` now runs landmarks -> hist -> landmarks (2b, merges the walls hist writes). One build from fresh data gives 305144 predecessors and `kit qa nyc` WARN (no FAIL); no extra hist run needed.
 
 Local frames: `shots.py NAME shots.json` (crop 1280x720). `YB_FULL=1 YB_SPP=8 python shots.py NAME shots.json` = whole city 1920x1080 (scene-cost measurement). Env `YB_PY` = interpreter with bpy.

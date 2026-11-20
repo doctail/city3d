@@ -105,11 +105,15 @@ def cmd_build(slug, opts):
     st = geo.load_story(slug); D = opts.get('data') or geo.data_dir(st)
     if not os.path.isdir(D): raise Fail(f'DATA {D} assente: python -m kit data {slug}')
     stub = os.path.join(geo.ROOT, f'hist_{slug}.py')
-    step('build 1/5 hist (stub + predecessori)', lambda: (
+    # landmarks BEFORE hist: hist_kit.clear_pass reads DATA/landmarks.json (clear footprints); on fresh data the opposite order
+    # gives a different predecessor set (NYC 305090 vs 305144). Mura: landmarks.merge_walls reads landmarks_walls.json (written by hist), see 2b.
+    if _mod_exists('kit.landmarks_kit'): step('build 1/5 landmarks', sh, [PY, '-m', 'kit.landmarks_kit', 'build', slug, D])
+    elif st.get('landmarks'): raise Fail('kit/landmarks_kit.py non c\'e\' e la story ha landmarks')
+    step('build 2/5 hist (stub + predecessori)', lambda: (
         os.path.exists(stub) or sh([PY, '-m', 'kit.hist_kit', 'make-stub', slug]),
         sh([PY, '-m', 'kit.hist_kit', 'build', slug, D]))[-1])
-    if _mod_exists('kit.landmarks_kit'): step('build 2/5 landmarks', sh, [PY, '-m', 'kit.landmarks_kit', 'build', slug, D])
-    elif st.get('landmarks'): raise Fail('kit/landmarks_kit.py non c\'e\' e la story ha landmarks')
+    if _mod_exists('kit.landmarks_kit') and os.path.exists(os.path.join(D, 'landmarks_walls.json')):   # 2b: hist wrote the walls -> landmarks merges them (cities without walls: file absent/empty, same output)
+        step('build 2b/5 landmarks (+mura da hist)', sh, [PY, '-m', 'kit.landmarks_kit', 'build', slug, D])
     from . import city_json
     step('build 3/5 city json', lambda: city_json.write(slug, force=opts.get('force') is not None)[0])
     if not _mod_exists('kit.regia_kit'): raise Fail('kit/regia_kit.py non c\'e\'')
