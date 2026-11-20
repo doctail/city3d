@@ -1,0 +1,54 @@
+[build] edifici 145927 (3s, 569 MB)
+[build] predecessori storici 305144 (5s, 1037 MB)
+[build] rilievo sotto gli edifici: max 89 m (15s, 1089 MB)
+[build] monumenti: 628 parti; tolti 16 edifici nelle impronte (54s, 1094 MB)
+[build] ritaglio 116135 (54s, 1094 MB)
+/home/user/doctail/city3d/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 2834 blocchi per anno, 1702063 vertici (61s, 1245 MB)
+/home/user/doctail/city3d/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (70s, 1392 MB)
+[build] suolo urbano dalle impronte: 140810 triangoli in 42 decenni (300s, 1489 MB)
+/home/user/doctail/city3d/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/home/user/doctail/city3d/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 677 poligoni in 55 finestre (300s, 1489 MB)
+[build] strade 31194 (301s, 1490 MB)
+[build] ponti 3 (301s, 1491 MB)
+/home/user/doctail/city3d/build_render.py:786: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 3 (301s, 1491 MB)
+[build] boschi 0 celle in 0 blocchi (301s, 1491 MB)
+[build] isolati 3181 (305s, 1493 MB)
+[build] parchi 330 (305s, 1513 MB)
+/home/user/doctail/city3d/build_render.py:1024: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  _vm = bpy.data.materials.new('veg'); _vm.use_nodes = True; _VN = _vm.node_tree.nodes; _VL = _vm.node_tree.links.new; _vb = _VN['Principled BSDF']; _vb.inputs['Roughness'].default_value = 0.9
+[build] vegetazione istanziata: 669102 alberi (riva 223197 , vega 445905 , orti 0 ) in 73 oggetti (320s, 1869 MB)
+[build] piene 1 (320s, 1870 MB)
+[build] terra 320 poligoni (320s, 1870 MB)
+[build] monumenti costruiti: 288 parti (320s, 1870 MB)
+[build] rilievo applicato: 1537050 vertici, massimo 219 m (325s, 1881 MB)
+[build] monumenti: parti staccate dalla scena: 196 (325s, 1881 MB)
+[build] monumenti uniti: 288 -> 127 oggetti (325s, 1881 MB)
+[build] alberi cotti: 674034 vertici (326s, 2003 MB)
+/home/user/doctail/city3d/build_render.py:1298: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 2834 città, 449 statici (326s, 2003 MB)
+[build] dati di costruzione liberati (326s, 1571 MB)
+[build] CPU (326s, 1571 MB)
+05:30.794  cycles           | WARNING CUEW initialization failed: Error opening the library
+[build] denoiser OPENIMAGEDENOISE (326s, 1572 MB)
+[build] render 1 -> 80 1280x720 16 campioni (326s, 1572 MB)
+05:53.356  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_v1/0009.jpg'
+[build] fotogramma 9: 22.6s (anno 1609)
+06:19.483  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_v1/0025.jpg'
+[build] fotogramma 25: 26.1s (anno 1625)
+06:38.412  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_v1/0041.jpg'
+[build] fotogramma 41: 18.9s (anno 1626)
+07:04.907  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_v1/0057.jpg'
+[build] fotogramma 57: 26.5s (anno 1930)
+07:34.648  render           | Saved: '/home/user/doctail/city3d/cities/nyc/qa/fix/frames_v1/0073.jpg'
+[build] fotogramma 73: 29.7s (anno 1855)
+[build] FATTO 5 fotogrammi, 24.77s a fotogramma (450s, 4059 MB)
