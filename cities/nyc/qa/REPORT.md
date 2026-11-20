@@ -1,11 +1,11 @@
 # QA nyc
 
-Generato da `python -m kit.qa` il 2026-11-20 14:12. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
 | a) Story e fonti | WARN |
-| b) DATA | PASS |
+| b) DATA | WARN |
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | WARN |
@@ -35,8 +35,8 @@ Generato da `python -m kit.qa` il 2026-11-20 14:12. Esito complessivo: **WARN**
 - **PASS** dem.npz
 - **PASS** anni edifici (145927)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1609 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **PASS** hist (304876 predecessori)
-  - senza y/d 0, d<y 0, nati dopo 2026: 0
+- **WARN** hist (304876 predecessori)
+  - senza y/d 0, d<y 0, nati dopo 2026: 16
 - **PASS** anni strade (117786 nastri)
   - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 6597
 
@@ -74,7 +74,7 @@ Generato da `python -m kit.qa` il 2026-11-20 14:12. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (15 s)
-  - oggetti citta' 1904, cambi in tutto il video 68903, max in un fotogramma 684 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
+  - oggetti citta' 1903, cambi in tutto il video 68858, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 146 m/s (limite 250), mediana 14
 - **PASS** drone: accelerazione massima
