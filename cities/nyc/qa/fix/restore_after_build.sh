@@ -4,6 +4,7 @@
 #   1. dem.npz  : if raw Copernicus tiles are given (DEM_DIR), rebuild with dem_nyc.py (DEM_OPEN 900, ring flattening from story.json);
 #                 otherwise restore the committed one from data_nyc_src/dem.npz.gz (identical output, md5 checked by `kit gate` parity).
 #   2. piers.py --write : adds the pier-spike / slip landphases (idempotent, 'yb_pier' entries replaced).
+#   3. water_fix.py --write : buildings < 50% on land at their start year are delayed to the first year land exists under them (or dropped); hist.json 'yb_water'.
 # usage: sh cities/nyc/qa/fix/restore_after_build.sh [DEM_DIR]      (PY=python interpreter, default python3)
 set -e
 R=$(cd "$(dirname "$0")/../../../.." && pwd); PY=${PY:-python3}; D=$R/data_nyc
@@ -14,6 +15,7 @@ else
   gzip -dc "$R/data_nyc_src/dem.npz.gz" > "$D/dem.npz"; echo "[restore] dem.npz from data_nyc_src (no raw tiles given)"
 fi
 $PY "$R/cities/nyc/qa/fix/piers.py" --write
+$PY "$R/cities/nyc/qa/fix/water_fix.py" --write   # 3. buildings on water: delay to the first year with land under them, or drop (idempotent, yb_water marker)
 $PY - "$D" <<'P'
 import json, sys, numpy as np
 D = sys.argv[1]; ph = json.load(open(D + '/landphases.json')); z = np.load(D + '/dem.npz')

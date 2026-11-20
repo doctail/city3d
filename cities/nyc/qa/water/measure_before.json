@@ -1,0 +1,86 @@
+{
+ "1609": {
+  "alive": 0,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1650": {
+  "alive": 1240,
+  "centroid_in_water": 94,
+  "water_>30m_from_land": 9,
+  "zones": {
+   "New Amsterdam (Battery to Wall Street)": 94
+  },
+  "kit": {
+   "zone": 94
+  }
+ },
+ "1700": {
+  "alive": 4240,
+  "centroid_in_water": 129,
+  "water_>30m_from_land": 11,
+  "zones": {
+   "New Amsterdam (Battery to Wall Street)": 113,
+   "Colonial town (Wall Street to Canal Street)": 16
+  },
+  "kit": {
+   "zone": 129
+  }
+ },
+ "1750": {
+  "alive": 10254,
+  "centroid_in_water": 433,
+  "water_>30m_from_land": 36,
+  "zones": {
+   "Colonial town (Wall Street to Canal Street)": 319,
+   "New Amsterdam (Battery to Wall Street)": 113,
+   "East-shore infill (Pearl Street to South Street)": 1
+  },
+  "kit": {
+   "zone": 433
+  }
+ },
+ "1800": {
+  "alive": 12006,
+  "centroid_in_water": 404,
+  "water_>30m_from_land": 36,
+  "zones": {
+   "Colonial town (Wall Street to Canal Street)": 294,
+   "New Amsterdam (Battery to Wall Street)": 109,
+   "East-shore infill (Pearl Street to South Street)": 1
+  },
+  "kit": {
+   "zone": 404
+  }
+ },
+ "1850": {
+  "alive": 101279,
+  "centroid_in_water": 47,
+  "water_>30m_from_land": 0,
+  "zones": {
+   "West-shore infill (Greenwich Street to West Street)": 40,
+   "New Amsterdam (Battery to Wall Street)": 4,
+   "Brooklyn and western Queens (ferry front)": 2,
+   "Colonial town (Wall Street to Canal Street)": 1
+  },
+  "kit": {
+   "zone": 47
+  }
+ },
+ "1900": {
+  "alive": 259053,
+  "centroid_in_water": 120,
+  "water_>30m_from_land": 2,
+  "zones": {
+   "Upper East and West Sides (59th to 110th Street)": 70,
+   "West-shore infill (Greenwich Street to West Street)": 40,
+   "Brooklyn and western Queens (ferry front)": 9,
+   "Colonial town (Wall Street to Canal Street)": 1
+  },
+  "kit": {
+   "zone": 120
+  }
+ }
+}

@@ -1,6 +1,6 @@
 # QA nyc
 
-Generato da `python -m kit.qa` il 2026-11-20 07:36. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-20 14:12. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -9,7 +9,6 @@ Generato da `python -m kit.qa` il 2026-11-20 07:36. Esito complessivo: **WARN**
 | c) Densita' storica | PASS |
 | d) Corridoi vuoti | WARN |
 | e) Costo e schedule | WARN |
-| f) Fotogrammi locali | PASS |
 
 ## a) Story e fonti
 
@@ -46,23 +45,23 @@ Generato da `python -m kit.qa` il 2026-11-20 07:36. Esito complessivo: **WARN**
 - **PASS** East-shore infill (Pearl Street to South Street) nel 1800
   - 763 edifici vivi (26/ha, copertura 31%) contro 151 (5/ha, copertura 34%) nel 2026: rapporto 5.05
 - **PASS** New Amsterdam (Battery to Wall Street) nel 1800
-  - 1379 edifici vivi (6/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 6.44
+  - 1269 edifici vivi (5/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 5.93
 - **PASS** Colonial town (Wall Street to Canal Street) nel 1800
-  - 9465 edifici vivi (23/ha, copertura 28%) contro 2683 (6/ha, copertura 30%) nel 2026: rapporto 3.53
+  - 9172 edifici vivi (22/ha, copertura 27%) contro 2683 (6/ha, copertura 30%) nel 2026: rapporto 3.42
 
 ## d) Corridoi vuoti
 
 - **WARN** centro storico molto grande: raster limitato a 10 km
-- **WARN** 1709: 6 aree vuote allungate
-  - #1 131x23 m a (40.71640,-74.00340); #2 1251x252 m a (40.70821,-74.00281); #3 188x25 m a (40.71248,-74.00198); #4 148x18 m a (40.70620,-74.01533); #5 136x33 m a (40.69308,-74.01614); #6 180x36 m a (40.69185,-74.01365) — corridoi_1709.png
-- **WARN** 1709: 8 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #7 1166x112 m a (40.71105,-74.00257); #8 836x63 m a (40.71539,-74.00758); #9 643x23 m a (40.70437,-74.00753); #10 387x19 m a (40.69223,-74.01588); #11 301x56 m a (40.70596,-74.01462)
+- **WARN** 1709: 7 aree vuote allungate
+  - #1 131x23 m a (40.71640,-74.00340); #2 1252x264 m a (40.70783,-74.00281); #3 188x25 m a (40.71248,-74.00198); #4 148x18 m a (40.70620,-74.01533); #5 122x22 m a (40.70434,-74.01789); #6 144x33 m a (40.69308,-74.01607) — corridoi_1709.png
+- **WARN** 1709: 7 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #8 1514x122 m a (40.71193,-74.00381); #9 643x23 m a (40.70437,-74.00753); #10 387x19 m a (40.69223,-74.01588); #11 301x56 m a (40.70596,-74.01462); #12 277x35 m a (40.69191,-74.01896)
 - **WARN** 1800: 1 corridoi accettati (FAIL -> WARN)
-  - #0 1339x220 m a (40.71047,-74.01533) — West-shore landfill strip (Greenwich-West Street) drawn as modern land at 1800: the water-phase ring rises it from 1800 and the zone is born 1800-1830; verify by frame
+  - #0 1344x220 m a (40.71047,-74.01540) — West-shore landfill strip (Greenwich-West Street) drawn as modern land at 1800: the water-phase ring rises it from 1800 and the zone is born 1800-1830; verify by frame
 - **WARN** 1800: 13 aree vuote allungate
   - #1 175x34 m a (40.71751,-73.98521); #2 140x27 m a (40.71651,-74.00580); #3 192x23 m a (40.71239,-73.98244); #4 161x40 m a (40.71237,-73.99966); #5 188x25 m a (40.71248,-74.00198); #6 186x36 m a (40.71119,-73.98208) — corridoi_1800.png
-- **WARN** 1800: 11 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #14 3115x176 m a (40.71248,-73.99401); #15 387x19 m a (40.69223,-74.01588); #16 361x21 m a (40.71608,-74.00366); #17 361x29 m a (40.70864,-74.01185); #18 327x50 m a (40.71765,-74.01306)
+- **WARN** 1800: 10 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #14 3115x176 m a (40.71248,-73.99401); #15 425x71 m a (40.71649,-74.00255); #16 387x19 m a (40.69223,-74.01588); #17 361x29 m a (40.70864,-74.01185); #18 327x50 m a (40.71765,-74.01306)
 - **WARN** 1900: 4 corridoi accettati (FAIL -> WARN)
   - #0 123x20 m a (40.76572,-73.95160) — 1900 waterfront sliver (East River / Roosevelt Island channel), not a street; #0 163x26 m a (40.73672,-73.90777) — 1900 Newtown Creek bank sliver, not a street; #0 188x18 m a (40.72357,-73.96104) — 1900 Greenpoint waterfront sliver, not a street; #0 193x30 m a (40.71242,-73.95435) — 1900 Williamsburg waterfront sliver, not a street
 - **WARN** 1900: 420 aree vuote allungate
@@ -74,8 +73,8 @@ Generato da `python -m kit.qa` il 2026-11-20 07:36. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (14 s)
-  - oggetti citta' 1907, cambi in tutto il video 69023, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
+- **PASS** costo dei cambi (15 s)
+  - oggetti citta' 1904, cambi in tutto il video 68903, max in un fotogramma 684 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 146 m/s (limite 250), mediana 14
 - **PASS** drone: accelerazione massima
@@ -113,17 +112,9 @@ Generato da `python -m kit.qa` il 2026-11-20 07:36. Esito complessivo: **WARN**
 - **PASS** notte
   - night_t=539.4061589505081, schedule_nyc_night.json ok
 
-## f) Fotogrammi locali
-
-- **PASS** render locale: 8 fotogrammi in 223 s
-  - cities/nyc/qa/render.log
-- **PASS** foglio contatti
-  - cities/nyc/qa/contact.jpg: guardalo prima del pod (strade come nastri chiari, centro pieno)
-
 ## Immagini
 
 ![corridoi_1709.png](corridoi_1709.png)
 ![corridoi_1800.png](corridoi_1800.png)
 ![corridoi_1900.png](corridoi_1900.png)
 ![corridoi_1950.png](corridoi_1950.png)
-![contact.jpg](contact.jpg)

@@ -399,19 +399,19 @@ def add_bld(bm, col, vyear, vdie, b):
     if not poly.exterior.is_ccw: ring = ring[::-1]
     old = b.get('old', False)
     if not old: polys.append(poly); polys_y.append(b['y'])
-    h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999)
-    gl = h > ST.get('glass_h', 90) and y > 1955 and poly.area > ST.get('glass_min_area', 0)   # ciminiere e antenne: niente vetro
+    h = max(3.0, b['h']); y = b['y']; dd = b.get('d', 99999); ys = b.get('y_orig', y)   # ys: anno d'origine per lo stile (NYC: water_fix ritarda/ritira edifici in acqua senza cambiare il loro colore)
+    gl = h > ST.get('glass_h', 90) and ys > 1955 and poly.area > ST.get('glass_min_area', 0)   # ciminiere e antenne: niente vetro
     pal = GLASS if gl else MID if h > 35 else LOW
     rpal = ROOF
     if ST.get('era_split'):   # stile leggibile: prima dell'anno di taglio muri caldi e tetti in coppi, dopo muri chiari e tetti grigi
-        es = ST['era_split']; old_ = y < es
+        es = ST['era_split']; old_ = ys < es
         if b.get('lm'): pal, rpal = [b['wall']], [b['roof']]
         elif gl: rpal = ST.get('roof_new', ROOF)
         elif old_: pal, rpal = ST['wall_old'], ST['roof_old']
         else: pal, rpal = (ST.get('wall_anc', ST['wall_new']) if b.get('k') == 'anc' else ST['wall_new']), ST['roof_new']
         if ST.get('wall_eras') and not old_ and not gl and not b.get('lm'):   # city.look.building_palette: muri per epoca [[anno_max, tavolozza], ...]
             for _ym, _pl in ST['wall_eras']:
-                if y < _ym: pal = _pl; break
+                if ys < _ym: pal = _pl; break
         if ST.get('wall_tall') and h > ST.get('tall_h', 35) and not gl and not b.get('lm'): pal, rpal = ST['wall_tall'], ST.get('roof_tall', rpal)   # torri del centro: grigio/vetro
     if ST.get('roof_rf') and not gl and not b.get('lm') and not old:
         # Parigi (prova mansarde 29 ott): coppi rossi dove la BDNB dice zinco/ardesia. Colore del tetto dal materiale vero
@@ -419,12 +419,12 @@ def add_bld(bm, col, vyear, vdie, b):
         _rf = b.get('rf') or ('z' if (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2 else None)
         if _rf in ST['roof_rf']: rpal = ST['roof_rf'][_rf]
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
-    if y < ST.get('no_windows_before', -99999): wa = 0.05   # Roma: case antiche e medievali senza finestre (stile Latos)
+    if ys < ST.get('no_windows_before', -99999): wa = 0.05   # Roma: case antiche e medievali senza finestre (stile Latos)
     z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
     vb = [bm.verts.new((x, yy, z0_ - (1.0 if dem_at else 0.0))) for x, yy in ring]   # con rilievo: muri 1 m sotto il suolo (pendii)
-    pitched = (old and y < 1840) or (ST.get('pitched_until') and y < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
+    pitched = (old and ys < 1840) or (ST.get('pitched_until') and ys < ST['pitched_until'] and poly.area < ST.get('pitched_max_area', 600) and not b.get('lm'))
     # mansarda (Parigi, style.mansard): tetto in zinco/ardesia (rf='z' dalla BDNB): muri fino a h - mh, poi falda ripida rientrata
-    if ST.get('mansard') and (b.get('rf') == 'z' or (ST.get('roof_rf') and not b.get('rf') and y < 1930 and (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2)) and not pitched and not gl and h > 11 and poly.area > 40 and len(ring) <= 40:
+    if ST.get('mansard') and (b.get('rf') == 'z' or (ST.get('roof_rf') and not b.get('rf') and ys < 1930 and (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2)) and not pitched and not gl and h > 11 and poly.area > 40 and len(ring) <= 40:
         mh = min(5.5, 0.32 * h); ins = min(2.2, math.sqrt(poly.area) * 0.12); n_ = len(ring); inner = []
         for i in range(n_):
             (xa, ya_), (xb, yb), (xc, yc) = ring[i - 1], ring[i], ring[(i + 1) % n_]
@@ -474,13 +474,17 @@ def add_bld(bm, col, vyear, vdie, b):
             for l in f.loops: l[col] = (*wc, wa)
         except ValueError: pass
 CM = city_mat(); ZBASE = {}
-def ckey(b_):
+def ckey(b_, orig=False):
     # 'y1': cantiere lungo (es. Plaza de Espana 1914-1929): blocco a parte, cresce da y a y1 invece che nella durata standard
-    dd_ = b_.get('d', 99999); y1_ = b_.get('y1', 0)
+    # orig=True: chiave dell'edificio PRIMA di water_fix (NYC): serve solo a tenere l'ordine di costruzione (e quindi la sequenza di rnd) identico
+    dd_ = b_.get('d', 99999); y1_ = b_.get('y1', 0); y_ = b_['y']
+    if orig and b_.get('yb_water'):
+        y_ = b_['y_orig']
+        if 'd_orig' in b_: dd_ = b_['d_orig'] if b_['d_orig'] is not None else 99999
     w_ = FINE_D if b_.get('dfine') else DBIN   # dfine (kit, fuochi 'destroy'): demolizione in blocchi stretti, il blocco scala da d0 (con dbin 50 spariva dal 1900)
-    return (int(b_['y']) if y1_ else int(b_['y'] // BIN), (dd_ // w_) * w_ if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_), w_)
-blds.sort(key=ckey)
-cur = None; nv = 0
+    return (int(y_) if y1_ else int(y_ // BIN), (dd_ // w_) * w_ if dd_ < 9000 else 99999, int(round(b_.get('_band', 0.0))), int(y1_), w_)
+blds.sort(key=lambda b_: ckey(b_, True))
+cur = None; nv = 0; MODC = {}   # MODC: edifici spostati da water_fix, in blocchi propri col loro anno vero; gli altri blocchi restano come prima
 def flush(cur):
     k_, bm_, col_, vy_, vd_ = cur
     if not len(bm_.faces): bm_.free(); return 0
@@ -491,11 +495,15 @@ def flush(cur):
     return len(m_.vertices)
 for b in blds:
     k_ = ckey(b)
+    if b.get('yb_water'):
+        if k_ not in MODC: _bm = bmesh.new(); MODC[k_] = (k_, _bm, _bm.loops.layers.color.new('col'), [], [])
+        add_bld(MODC[k_][1], MODC[k_][2], MODC[k_][3], MODC[k_][4], b); continue
     if cur is None or cur[0] != k_:
         if cur: nv += flush(cur)
         bm_ = bmesh.new(); cur = (k_, bm_, bm_.loops.layers.color.new('col'), [], [])
     add_bld(cur[1], cur[2], cur[3], cur[4], b)
 if cur: nv += flush(cur)
+for _c in MODC.values(): nv += flush(_c)
 log('città in', len(CHUNKS), 'blocchi per anno,', nv, 'vertici')
 
 # ---------- crescita: Geometry Nodes ----------
@@ -1456,9 +1464,11 @@ for f, p, t in CAMKEYS:
 
 # ---------- navi (OPZIONALE: solo con --ships TRAFFIC.json; senza il flag non cambia nulla) ----------
 SHIPS = None
-if '--ships' in a:
+_SHP = opt('--ships') if '--ships' in a else (None if '--no-ships' in a else CITY.get('ships'))   # opzione di citta' (city_<slug>.json "ships": TRAFFIC.json, NYC); --no-ships la spegne
+if _SHP:
     from kit import traffic_kit as _tk, ships_bpy as _sb
-    _cfg = _tk.load_cfg(opt('--ships')); _fo = opt('--ships-sweep', 1, '')
+    _SHP = _SHP if os.path.isabs(_SHP) else os.path.join(os.path.dirname(os.path.abspath(__file__)), _SHP)
+    _cfg = _tk.load_cfg(_SHP); _fo = opt('--ships-sweep', 1, '')
     _SW = [int(v) for v in _fo.split(',') if v] if _fo else None   # solo prove di costo: n. di navi per fotogramma di --only
     _T = _tk.Traffic(_cfg, float(CITY['lat0']), float(CITY['lon0']), _tk.land_fn(DATA), force=max(_SW) if _SW else None, crowd=bool(os.environ.get('SHIPS_CROWD')))
     if SCHED and not _SW:   # niente navi vicino al bersaglio e davanti ad esso durante le soste del drone

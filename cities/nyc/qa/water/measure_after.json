@@ -1,0 +1,55 @@
+{
+ "1609": {
+  "alive": 0,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1650": {
+  "alive": 1146,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1700": {
+  "alive": 4111,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1750": {
+  "alive": 9821,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1800": {
+  "alive": 11602,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ },
+ "1850": {
+  "alive": 101233,
+  "centroid_in_water": 1,
+  "water_>30m_from_land": 0,
+  "zones": {
+   "New Amsterdam (Battery to Wall Street)": 1
+  },
+  "kit": {
+   "zone": 1
+  }
+ },
+ "1900": {
+  "alive": 258933,
+  "centroid_in_water": 0,
+  "water_>30m_from_land": 0,
+  "zones": {},
+  "kit": {}
+ }
+}

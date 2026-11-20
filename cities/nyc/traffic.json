@@ -1,6 +1,6 @@
 {
  "version": 1,
- "note": "Traffic is DECORATION (not a historical source): lanes, counts and speeds are art-directed. Half Moon (1609) and Nieu Nederlandt (1624) are named; sizes are scaled up to stay readable from the drone (real Half Moon ~20 m).",
+ "note": "Traffic is DECORATION (not a historical source): lanes, counts and speeds are art-directed. Half Moon (1609) and Nieu Nederlandt (1624) are named; sizes are scaled up to stay readable from the drone (real Half Moon ~20 m). NYC video: ships exist only 1609-1905 (port era); all densities reach 0 at 1905 so frames after 1905 are untouched.",
  "time_scale": 2.0,
  "seed": 7,
  "lanes": {
@@ -258,26 +258,22 @@
     ],
     [
      1830,
-     45
+     38
     ],
     [
      1860,
-     40
+     34
     ],
     [
-     1880,
-     22
+     1885,
+     16
     ],
     [
      1900,
-     10
+     6
     ],
     [
-     1920,
-     2
-    ],
-    [
-     1930,
+     1905,
      0
     ]
    ]
@@ -308,31 +304,19 @@
     ],
     [
      1850,
-     10
+     8
     ],
     [
      1880,
+     20
+    ],
+    [
+     1900,
      26
     ],
     [
-     1910,
-     40
-    ],
-    [
-     1940,
-     36
-    ],
-    [
-     1970,
-     26
-    ],
-    [
-     2000,
-     16
-    ],
-    [
-     2026,
-     14
+     1905,
+     0
     ]
    ]
   },
@@ -352,7 +336,7 @@
    ],
    "density": [
     [
-     1880,
+     1888,
      0
     ],
     [
@@ -360,15 +344,7 @@
      3
     ],
     [
-     1930,
-     7
-    ],
-    [
-     1965,
-     5
-    ],
-    [
-     1975,
+     1905,
      0
     ]
    ]
@@ -395,23 +371,15 @@
     ],
     [
      1880,
-     6
+     5
     ],
     [
-     1920,
-     16
+     1900,
+     8
     ],
     [
-     1950,
-     20
-    ],
-    [
-     2000,
-     12
-    ],
-    [
-     2026,
-     10
+     1905,
+     0
     ]
    ]
   },
@@ -441,19 +409,15 @@
     ],
     [
      1870,
-     6
-    ],
-    [
-     1920,
-     10
-    ],
-    [
-     1960,
-     6
-    ],
-    [
-     2026,
      5
+    ],
+    [
+     1900,
+     6
+    ],
+    [
+     1905,
+     0
     ]
    ]
   }

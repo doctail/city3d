@@ -596,6 +596,7 @@
    "water2": "#126a84"
   },
   "city_overrides": {
+   "ships": "cities/nyc/traffic.json",
    "field_colors": [
     "#4b551b",
     "#5f6a24",
