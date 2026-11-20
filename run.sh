@@ -17,7 +17,7 @@ PY=/workspace/bl/bin/python
 
 cd /workspace/city3d
 CITY=${CITY:-nyc}   # CITY=madrid bash run.sh full
-if [ "$CITY" = "nyc" ]; then
+if [ "$CITY" = "nyc" ] && [ ! -f cities/nyc/story.json ]; then   # 20 nov: NYC ora e' una citta' kit (story.json): ramo vecchio solo senza story
   D=data; SCHED=schedule_nyc.json; CARGS=""
   step "3/5 dati New York"
   [ -s data/buildings.json ] || $PY fetch_nyc.py data
@@ -33,7 +33,9 @@ else
     # DATA viene da data_<slug>_src (python -m kit pack); hist_<slug>.py e' lo stub generato dal kit (lo crea se manca)
     [ -f hist_$CITY.py ] || $PY -m kit.hist_kit make-stub $CITY
     [ -f city_$CITY.json ] || $PY -m kit.city_json $CITY
-    $PY hist_$CITY.py $D
+    if [ -f cities/$CITY/qa/fix/restore_after_build.sh ]; then   # NYC (20 nov): hist_nyc.py e' il modulo VECCHIO (non lo stub): hist con il kit, poi ripristino moli+DEM
+      $PY -m kit.hist_kit build $CITY $D; PY=$PY sh cities/$CITY/qa/fix/restore_after_build.sh
+    else $PY hist_$CITY.py $D; fi
   else
   $PY hist_$CITY.py $D
   fi
