@@ -20,3 +20,5 @@ studio/follower-city/blender/day2_frames/
 studio/follower-city/blender/day2_frames_probe/
 studio/follower-city/blender/day2_text/
 studio/follower-city/blender/*_silent.mp4
+studio/follower-city/blender/*_frames/
+studio/follower-city/blender/*.log
