@@ -1,10 +1,11 @@
-"""Follower City - COZY v4: QUARTIERE URBANO accogliente (palazzi a schiera lungo vere strade, golden hour, DOF).
+"""Follower City - COZY v5: CENTRO STORICO basso (2-3 piani) che cresce da UN palazzo; camera alta 20-30 gradi, tutto visibile.
 
-Uso (pip bpy):  python cozy_city.py --followers 111 --out cozy4_111.png
+Uso (pip bpy):  python cozy_city.py --followers 111 --out cozy5_111.png
 Opzioni: --res 540 960 --samples 40 --seed 7 --save-blend f.blend
 Citta' a isolati ortogonali: un viale (x=0, asse y) con isolati ai due lati; ogni follower = un lotto (palazzo).
 Ordine dei lotti FISSO (distanza dal centro): il lotto i ha sempre posizione/stile/colori uguali, N sceglie quanti.
-Camera bassa a livello strada con DOF, sale con N (camera_for, max ~25 gradi). Campi e colline solo sullo sfondo.
+v5: camera alta (22->30 gradi) che si allontana con N (camera_for), DOF leggero; centro storico basso, altezza cresce con la distanza dal centro;
+terreno = prato/orti, colline verdi; N=1: un solo palazzo con lotto di selciato, pezzo di strada, lampione, albero; niente fumo.
 """
 import sys, math, random, time, argparse, zlib
 import bpy, bmesh
@@ -508,6 +509,15 @@ def mk_building(P):
         for x in xs:
             if abs(x - dx) > 0.9:
                 window(b, x, 0.95 + stoop * 0.5, ww, 1.8, rg.random() < 0.7, trim, flowers=(rg.randrange(5) + 1 if rg.random() < 0.3 else 0))
+    # ---- finestre sulle pareti laterali (solo palazzi isolati, es. il primo)
+    if P.get('sidewin'):
+        for sgn in (1, -1):
+            b.T = Matrix.Translation((sgn * hw, 0, 0)) @ Matrix.Rotation(sgn * math.pi / 2, 4, 'Z')
+            for f in range(0, n):
+                zb = 0.95 if f == 0 else FH0 + FH * (f - 1) + 0.55
+                for u in (1.9, 4.0, 6.1):
+                    window(b, sgn * u, zb, 0.95, 1.8 if f == 0 else 1.95, rg.random() < 0.55, trim, flowers=(rg.randrange(5) + 1 if rg.random() < 0.2 else 0))
+            b.T = None
     # ---- tetto
     zr = H
     if st == 0:
@@ -684,15 +694,24 @@ def prop_lamp(b, x, y, z=0.0, face=0.0):
     b.cone(x, y, z + 4.1, z + 4.35, 0.2, m_iron(), n=6)
 
 
-def prop_tree(b, x, y, rg, z=0.0):
-    h = rg.uniform(3.0, 4.0)
-    b.cyl(x, y, z, z + h, 0.09, m_trunk(), n=7, r2=0.05)
+def prop_tree(b, x, y, rg, z=0.0, big=1.0):
+    """albero con chioma irregolare: blob di forma/colore diversi, asimmetrica, rami principali."""
+    h = rg.uniform(2.6, 3.4) * (0.6 + 0.4 * big)
+    lean = rg.uniform(-0.25, 0.25)
+    b.cyl(x, y, z, z + h, 0.10 * big, m_trunk(), n=7, r2=0.05 * big)
     k = rg.randrange(3)
-    for q in range(6):
+    bias = rg.uniform(0, 6.28)
+    nb = rg.randrange(7, 12)
+    for q in range(nb):
+        a = bias + rg.gauss(0, 1.5)
+        rr_ = rg.uniform(0.1, 1.3) * big
+        zz = h * 0.85 + rg.uniform(-0.3, 1.9) * big - 0.5 * rr_
+        rad = rg.uniform(0.40, 0.95) * big * (1.0 - 0.25 * max(0.0, zz - h) / (1.9 * big))
+        b.sphere(x + lean * (zz - h) + rr_ * math.cos(a), y + rr_ * math.sin(a), z + zz, rad, m_leaf(k + rg.randrange(3)),
+                 sub=1, sz=rg.uniform(0.65, 1.05))
+    if rg.random() < 0.7:                                       # ramo-chioma bassa che rompe la sagoma
         a = rg.uniform(0, 6.28)
-        rr_ = rg.uniform(0.15, 0.7)
-        b.sphere(x + rr_ * math.cos(a), y + rr_ * math.sin(a), z + h + rg.uniform(0.0, 1.6), rg.uniform(0.45, 0.75), m_leaf(k + q), sub=2, sz=0.9)
-    b.cyl(x, y, z, z + 0.06, 0.45, m_iron(), n=8)
+        b.sphere(x + 0.9 * math.cos(a) * big, y + 0.9 * math.sin(a) * big, z + h * 0.7, 0.42 * big, m_leaf(k + 1), sub=1, sz=0.7)
 
 
 def prop_bench(b, x, y, along='y'):
@@ -782,7 +801,7 @@ def all_slots(seed):
                 y = cy - BLK_L / 2
                 idx = 0
                 while y < cy + BLK_L / 2 - 3.6:
-                    w = rg.choice([4.6, 5.0, 5.4, 5.8, 6.4])
+                    w = rg.choice([5.4, 5.8, 6.2, 6.6, 7.0])
                     lm = LANDMARKS.get((c, r, side, idx))
                     if lm:
                         w = 8.4 if lm == 'tower' else 9.0
@@ -801,14 +820,24 @@ def all_slots(seed):
         if s['side'] == 'E':
             s['dist'] += 0.002
     out.sort(key=lambda s: s['dist'])
+    for k, s in enumerate(out):
+        s['rank'] = k
     return out
 
 
 def lot_params(s, seed):
     rg = rgs(seed, 'lot', s['c'], s['r'], s['side'], s['idx'])
     avenue = abs(s['xf']) < 6
-    n_base = 6 if s['dist'] < 40 else (5 if s['dist'] < 75 else (4 if s['dist'] < 120 else 3))
-    n = max(3, min(6, n_base + rg.choice([-1, 0, 0, 1])))
+    d = s['dist']
+    # centro storico basso (2-3 piani); l'altezza cresce solo con la distanza dal centro
+    if d < 45:
+        n = rg.choice([2, 3, 3])
+    elif d < 90:
+        n = rg.choice([3, 3, 4])
+    elif d < 150:
+        n = rg.choice([3, 4, 4, 5])
+    else:
+        n = rg.choice([4, 5, 5, 6])
     brickc = rg.random() < 0.5
     wall = rg.randrange(5) if brickc else 100 + rg.randrange(8)
     shop = rg.randrange(3) if rg.random() < (0.75 if avenue else 0.3) else -1
@@ -822,23 +851,28 @@ def lot_params(s, seed):
     if (s['first'] or s['last']) and not s['lm'] and s['w'] > 4.3:
         if rg.random() < 0.5 and s['w'] > 4.9:
             north = s['last']
-            # sul lato W il +x locale va verso -y; sul lato E verso +y
             cs = (1 if north else -1) * (1 if s['side'] == 'E' else -1)
             corner = cs
             style = 2 if style == 0 else style
-            n = max(n, 4)
-    return dict(style=style, w=round(s['w'] * 4) / 4, n=n, wall=wall, roof=rg.randrange(3), shop=shop,
-                corner=corner, door=rg.randrange(5), gab=rg.randrange(2), seed=seed)
+            n = max(n, 3)
+    P = dict(style=style, w=round(s['w'] * 4) / 4, n=n, wall=wall, roof=rg.randrange(3), shop=shop,
+             corner=corner, door=rg.randrange(5), gab=rg.randrange(2), seed=seed)
+    if s.get('rank') == 0 and not s['lm']:                      # il primo palazzo: negozietto cozy a 3 piani
+        P.update(HERO)
+    return P
+
+
+HERO = dict(sidewin=1, style=2, n=3, wall=106, roof=1, shop=0, corner=0, door=2, gab=1)
 
 
 # ---------------------------------------------------------------- terreno
 def hill_h(x, y):
-    ex = max(0.0, abs(x) - 300) / 500.0
-    ey = max(0.0, abs(y) - 360) / 500.0
+    ex = max(0.0, abs(x) - 150) / 260.0
+    ey = max(0.0, abs(y) - 150) / 260.0
     e = min(1.0, math.hypot(ex, ey))
     e = e * e * (3 - 2 * e)
     n = (math.sin(x * 0.0065 + 1.3) * math.cos(y * 0.0049 + 0.4) + 0.6 * math.sin(x * 0.0123 + y * 0.0087) + 0.3 * math.sin(y * 0.021 - x * 0.013))
-    return e * (55 + 45 * n) * (0.9 if y > 0 else 0.6) + (e * 20 if e > 0 else 0)
+    return e * (70 + 45 * n) * (1.0 if y > 0 else 0.7) + (e * 25 if e > 0 else 0)
 
 
 def big_ground(coll):
@@ -866,33 +900,47 @@ def big_ground(coll):
 
 
 def field_material():
+    """prato curato: verdi variati + toppe di orto/campo a strisce, foschia calda in lontananza."""
     m = bpy.data.materials.new("field"); m.use_nodes = True
     nt = m.node_tree
     b = nt.nodes["Principled BSDF"]
     b.inputs["Roughness"].default_value = 0.95
     tc = nt.nodes.new("ShaderNodeTexCoord")
-    n1 = nt.nodes.new("ShaderNodeTexNoise"); n1.inputs["Scale"].default_value = 0.012; n1.inputs["Detail"].default_value = 3
+    n1 = nt.nodes.new("ShaderNodeTexNoise"); n1.inputs["Scale"].default_value = 0.02; n1.inputs["Detail"].default_value = 4
     nt.links.new(tc.outputs["Object"], n1.inputs["Vector"])
     cr = nt.nodes.new("ShaderNodeValToRGB")
     ce = cr.color_ramp.elements
-    ce[0].position = 0.38; ce[0].color = (*lin((0.40, 0.56, 0.28)), 1)
-    ce[1].position = 0.60; ce[1].color = (*lin((0.78, 0.68, 0.34)), 1)
+    ce[0].position = 0.35; ce[0].color = (*lin((0.30, 0.50, 0.22)), 1)
+    ce[1].position = 0.62; ce[1].color = (*lin((0.50, 0.66, 0.28)), 1)
     nt.links.new(n1.outputs["Fac"], cr.inputs["Fac"])
-    wv = nt.nodes.new("ShaderNodeTexWave"); wv.inputs["Scale"].default_value = 0.09; wv.inputs["Distortion"].default_value = 3.0
+    n2 = nt.nodes.new("ShaderNodeTexNoise"); n2.inputs["Scale"].default_value = 0.9; n2.inputs["Detail"].default_value = 6
+    nt.links.new(tc.outputs["Object"], n2.inputs["Vector"])
+    mx0 = nt.nodes.new("ShaderNodeMix"); mx0.data_type = 'RGBA'; mx0.inputs[0].default_value = 0.22
+    nt.links.new(cr.outputs["Color"], mx0.inputs[6])
+    mx0.inputs[7].default_value = (*lin((0.26, 0.42, 0.18)), 1)
+    nt.links.new(n2.outputs["Fac"], mx0.inputs[0])
+    # strisce di coltivazione (campi) a toppe, colori verde/verde-oliva (mai deserto giallo)
+    wv = nt.nodes.new("ShaderNodeTexWave"); wv.inputs["Scale"].default_value = 0.35; wv.inputs["Distortion"].default_value = 0.6
     wv.wave_profile = 'SAW'
     nt.links.new(tc.outputs["Object"], wv.inputs["Vector"])
-    mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
-    mx.inputs[0].default_value = 0.18
-    nt.links.new(cr.outputs["Color"], mx.inputs[6])
-    mx.inputs[7].default_value = (*lin((0.55, 0.50, 0.24)), 1)
-    nt.links.new(wv.outputs["Fac"], mx.inputs[0])
+    n3 = nt.nodes.new("ShaderNodeTexNoise"); n3.inputs["Scale"].default_value = 0.008
+    nt.links.new(tc.outputs["Object"], n3.inputs["Vector"])
+    patch = nt.nodes.new("ShaderNodeMapRange"); patch.inputs["From Min"].default_value = 0.52; patch.inputs["From Max"].default_value = 0.58
+    nt.links.new(n3.outputs["Fac"], patch.inputs["Value"])
+    mxs = nt.nodes.new("ShaderNodeMix"); mxs.data_type = 'RGBA'
+    mxs.inputs[6].default_value = (*lin((0.40, 0.58, 0.24)), 1)
+    mxs.inputs[7].default_value = (*lin((0.56, 0.66, 0.30)), 1)
+    nt.links.new(wv.outputs["Fac"], mxs.inputs[0])
+    mxp = nt.nodes.new("ShaderNodeMix"); mxp.data_type = 'RGBA'
+    nt.links.new(patch.outputs["Result"], mxp.inputs[0])
+    nt.links.new(mx0.outputs[2], mxp.inputs[6]); nt.links.new(mxs.outputs[2], mxp.inputs[7])
     cd = nt.nodes.new("ShaderNodeCameraData")
     mr = nt.nodes.new("ShaderNodeMapRange")
-    mr.inputs["From Min"].default_value = 250.0; mr.inputs["From Max"].default_value = 2200.0; mr.inputs["To Max"].default_value = 0.8
+    mr.inputs["From Min"].default_value = 100.0; mr.inputs["From Max"].default_value = 1100.0; mr.inputs["To Max"].default_value = 0.4
     nt.links.new(cd.outputs["View Distance"], mr.inputs["Value"])
     hz = nt.nodes.new("ShaderNodeMix"); hz.data_type = 'RGBA'
-    hz.inputs[7].default_value = (*lin((1.0, 0.76, 0.48)), 1)
-    nt.links.new(mr.outputs["Result"], hz.inputs[0]); nt.links.new(mx.outputs[2], hz.inputs[6])
+    hz.inputs[7].default_value = (*lin((0.56, 0.70, 0.52)), 1)
+    nt.links.new(mr.outputs["Result"], hz.inputs[0]); nt.links.new(mxp.outputs[2], hz.inputs[6])
     nt.links.new(hz.outputs[2], b.inputs["Base Color"])
     return m
 
@@ -917,22 +965,28 @@ def flat_quad_mesh(rects, z, m, name):
     return me
 
 
-def camera_for(N):
-    """camera(N) continua: bassa a livello strada per N piccolo, sale con N (max ~25 gradi), dietro al viale.
+def camera_for(N, seed=7):
+    """camera(N) continua, ALTA: 22 gradi (N=1) -> 30 gradi (N grande), prospettiva naturale, si allontana lentamente con N.
+    N=1 inquadra il primo palazzo; poi il centro dell'inquadratura va sul centro dell'abitato.
     Ritorna (pos, target, lens, fstop, focus_dist)."""
-    R = 4.5 * math.sqrt(N + 1.5)
-    lens = 28.0 + 8.0 * (1 - math.exp(-N / 260.0))
-    ycam = -(R * (0.80 + 0.55 * (1 - math.exp(-N / 300.0))) + 9.0)
-    zc = 1.7 + 0.0045 * R ** 1.8
-    pitch = math.radians(-6.0 + 21.0 * (1 - math.exp(-N / 380.0)))
-    ty = 0.12 * R
-    dist = ty - ycam
-    tz = zc - dist * math.tan(pitch)
-    pos = (-0.9 - 0.8 * (1 - math.exp(-N / 200.0)), ycam, zc)
-    tgt = (0.0, ty, tz)
-    fd = (Vector(tgt) - Vector(pos)).length * (0.75 if N < 300 else 0.9)
-    fstop = 1.1 + 3.4 * (1 - math.exp(-N / 250.0))
-    return pos, tgt, lens, fstop, fd
+    s0 = all_slots(seed)[0]
+    sg = -1 if s0['side'] == 'W' else 1
+    k = math.exp(-(N - 1) / 14.0)                                # peso del primo palazzo
+    ext = 4.6 * math.sqrt(N)                                      # raggio dell'abitato (m)
+    tx = (s0['xf'] - sg * 4.0) * k
+    ty = s0['yc'] * k + 0.20 * ext * (1 - k) + 1.0
+    tz = 4.6 + 0.012 * ext
+    width = 17.0 + 5.0 * math.sqrt(N)                             # larghezza visibile al target (m)
+    lens = 24.0 + 6.0 * (1 - math.exp(-N / 300.0))
+    hfov = 2 * math.atan(12.0 * (9.0 / 16.0) / lens)   # sensor_fit VERTICAL usa sensor_height=24
+    dist = width / (2 * math.tan(hfov / 2))
+    el = math.radians(20.0 + 9.0 * (1 - math.exp(-N / 120.0)))
+    az = math.radians(24.0 + 36.0 * math.exp(-(N - 1) / 6.0))
+    sx = sg * (0.35 + 0.65 * k)                            # lato da cui si guarda: davanti alla facciata del primo palazzo
+    pos = (tx + sx * dist * math.cos(el) * math.sin(az), ty - dist * math.cos(el) * math.cos(az), tz + dist * math.sin(el))
+    tgt = (tx, ty, tz)
+    fstop = 4.2
+    return pos, tgt, lens, fstop, dist
 
 
 # ---------------------------------------------------------------- scena
@@ -942,52 +996,60 @@ def build_scene(N, seed, res, samples):
     _mats.clear()
     sc = bpy.context.scene
     coll = sc.collection
-    pos, tgt, lens, fstop, fdist = camera_for(N)
+    pos, tgt, lens, fstop, fdist = camera_for(N, seed)
     slots = all_slots(seed)[:N]
     big_ground(coll)
 
-    # ---- strade: viale + traverse + marciapiedi dei soli isolati usati
+    # ---- strade: solo dove c'e' l'abitato (pezzo di viale + traverse tra lotti usati); il resto e' prato/orto
+    ys0 = min(s['y0'] for s in slots)
+    ys1 = max(s['y0'] + s['w'] for s in slots)
+    rd0, rd1 = ys0 - 9.0, ys1 + 9.0
+    road, paving = [(-2.5, rd0, 2.5, rd1)], [(-4.5, rd0, -2.5, rd1), (2.5, rd0, 4.5, rd1)]
     used = {(s['c'], s['r']) for s in slots}
-    ymin = min([s['y0'] for s in slots] + [pos[1] - 5]) - 4
-    ymax = max(s['y0'] + s['w'] for s in slots) + 40
-    ymax = max(ymax, 60)
-    road, paving, curbs = [], [], []
-    road.append((-2.5, pos[1] - 60, 2.5, ymax + 400))       # viale che prosegue in campagna
-    paving.append((-4.5, pos[1] - 60, -2.5, ymax + 400)); paving.append((2.5, pos[1] - 60, 4.5, ymax + 400))
-    # asfalto/selciato del viale: sempre; marciapiedi realistici solo dove ci sono edifici
-    pav_y = ymin - 25
-    cols = sorted({c for c, r in used})
-    rows = sorted({r for c, r in used})
-    cxs = sorted({PX * k for k in range(min(cols) - 1, max(cols) + 3)})
-    rys = sorted({PY * k + PY / 2 for k in range(min(rows) - 1, max(rows) + 1)})
-    ext_y0 = PY * (min(rows)) - BLK_L / 2 - 3.5
-    ext_y1 = PY * (max(rows)) + BLK_L / 2 + 3.5
-    for x in cxs:
-        if x != 0:
-            road.append((x - 2.5, ext_y0, x + 2.5, ext_y1)); paving.append((x - 4.5, ext_y0, x - 2.5, ext_y1)); paving.append((x + 2.5, ext_y0, x + 4.5, ext_y1))
-    xa, xb = PX * (min(cols) - 1) + 0.5, PX * (max(cols) + 2) - 0.5
-    for y in rys:
-        road.append((xa, y - 2.0, xb, y + 2.0))  # traversa
-        for (ya, yb) in ((y - 3.5, y - 2.0), (y + 2.0, y + 3.5)):
-            paving.append((xa, ya, -4.5, yb)); paving.append((4.5, ya, xb, yb))
+    # strade laterali: x = PX*k dove affacciano lotti (W affaccia su xf-4.5, E su xf+4.5)
+    side_roads = {}
+    for s in slots:
+        xr = round(s['xf'] - 4.5 if s['side'] == 'W' else s['xf'] + 4.5)
+        if abs(xr) > 6:
+            side_roads.setdefault(xr, []).append(s)
+    for xr, lst in side_roads.items():
+        a0 = min(q['y0'] for q in lst) - 3.0
+        a1 = max(q['y0'] + q['w'] for q in lst) + 3.0
+        road.append((xr - 2.5, a0, xr + 2.5, a1))
+        paving.append((xr - 4.5, a0, xr - 2.5, a1)); paving.append((xr + 2.5, a0, xr + 4.5, a1))
+    # traverse: solo tra lotti usati (fra due righe di isolati)
+    xa = min(s['xf'] for s in slots) - 6.0
+    xb = max(s['xf'] for s in slots) + 6.0
+    for r in sorted({r for c, r in used}):
+        ycen = PY * r + PY / 2
+        above = [s for s in slots if s['yc'] > ycen + 2]
+        below = [s for s in slots if s['yc'] < ycen - 2]
+        if above and below and ycen > ys0 and ycen < ys1:
+            road.append((xa, ycen - 2.0, xb, ycen + 2.0))
+            for (ya, yb) in ((ycen - 3.5, ycen - 2.0), (ycen + 2.0, ycen + 3.5)):
+                paving.append((xa, ya, -4.5, yb)); paving.append((4.5, ya, xb, yb))
     link(bpy.data.objects.new("road", flat_quad_mesh(road[:1], 0.02, m_asphalt(), "road")), coll)
-    link(bpy.data.objects.new("paving2", flat_quad_mesh(paving[2:], 0.14, m_paving(), "paving2")), coll)
-    link(bpy.data.objects.new("road2", flat_quad_mesh(road[1:], 0.03, m_asphalt(), "road2")), coll)
-    # marciapiedi continui: rialzati con cordolo
+    link(bpy.data.objects.new("paving2", flat_quad_mesh(paving, 0.14, m_paving(), "paving2")), coll)
+    if len(road) > 1:
+        link(bpy.data.objects.new("road2", flat_quad_mesh(road[1:], 0.03, m_asphalt(), "road2")), coll)
+    # sentiero di terra battuta che prosegue nel prato, alle due estremita' del viale
+    dirt = [(-1.3, rd1, 1.3, rd1 + 260.0), (-1.3, rd0 - 60.0, 1.3, rd0)]
+    link(bpy.data.objects.new("track", flat_quad_mesh(dirt, 0.015, flat("dirt", (0.62, 0.50, 0.34), rough=0.95), "track")), coll)
+    # lotti di selciato (piazzetta) + marciapiedi: ogni lotto ha il suo basamento in pietra, con un margine
     sb = MB()
     for s in slots:
         x0 = s['xf']
-        sgn = -1 if s['side'] == 'W' else 1
         if s['side'] == 'W':
-            sb.box(x0 - SW, s['y0'], 0.0, x0, s['y0'] + s['w'], 0.14, m_paving())
+            sb.box(x0 - SW, s['y0'] - 2.4, 0.0, x0 + BLK_D + 0.6, s['y0'] + s['w'] + 2.4, 0.14, m_paving())
         else:
-            sb.box(x0, s['y0'], 0.0, x0 + SW, s['y0'] + s['w'], 0.14, m_paving())
+            sb.box(x0 - BLK_D - 0.6, s['y0'] - 2.4, 0.0, x0 + SW, s['y0'] + s['w'] + 2.4, 0.14, m_paving())
     link(bpy.data.objects.new("sidewalks", sb.build("sidewalks")), coll)
-    # rotaie del tram
-    rb = MB()
-    for xx in (0.95 - 0.72, 0.95 + 0.72):
-        rb.box(xx - 0.03, pos[1] - 50, 0.02, xx + 0.03, ymax + 100, 0.07, m_rail())
-    link(bpy.data.objects.new("rails", rb.build("rails")), coll)
+    # rotaie del tram (solo quando c'e' il tram)
+    if N >= 45:
+        rb = MB()
+        for xx in (0.95 - 0.72, 0.95 + 0.72):
+            rb.box(xx - 0.03, rd0, 0.02, xx + 0.03, rd1, 0.07, m_rail())
+        link(bpy.data.objects.new("rails", rb.build("rails")), coll)
 
     # ---- palazzi (mesh in cache, istanze)
     cache = {}
@@ -1033,18 +1095,24 @@ def build_scene(N, seed, res, samples):
             prop_person(PM, s['xf'] + sg * rg.uniform(0.9, 1.6), yc + rg.uniform(-2, 2), rg, 0.14)
         if rg.random() < 0.08:
             prop_bench(PM, s['xf'] + sg * 1.4, yc, 'y')
-    # bench + vasi in primo piano (sempre): piazzati vicino alla camera, marciapiede W
-    fr = rgs(seed, 'foreground')
-    py = pos[1] + 4.8 + 0.1 * (-pos[1])
-    prop_bench(PM, -3.2, py)
-    prop_planter(PM, -3.6, py + 2.4, fr)
-    prop_planter(PM, 3.6, py + 1.2, fr)
-    prop_lamp(PM, -3.9, py - 1.0, 0.0)
-    prop_lamp(PM, 3.9, py + 3.5, 0.0)
-    prop_bike(PM, 3.5, py + 4.8, fr)
-    # fiori a bordo strada in primo piano
-    for q in range(10):
-        PM.sphere(-3.7 + fr.uniform(-0.15, 0.15), py - 2.5 + q * 0.16, 0.15 + fr.uniform(0, 0.1), 0.09, m_flow(q), sub=1)
+    # N=1: il primo palazzo ha lampione + albero + panca + vasi garantiti (piazzetta); poi i lotti seguono le regole fisse
+    s0 = slots[0]
+    sg0 = -1 if s0['side'] == 'W' else 1
+    fr = rgs(seed, 'hero')
+    prop_tree(PM, s0['xf'] + sg0 * (SW - 0.6), s0['y0'] - 1.7, fr, 0.14, big=1.15)
+    prop_lamp(PM, s0['xf'] + sg0 * (SW - 0.35), s0['y0'] + s0['w'] + 0.6, 0.14)
+    prop_bench(PM, s0['xf'] + sg0 * 1.3, s0['y0'] + s0['w'] + 3.0 if False else s0['y0'] - 2.4, 'y') if False else None
+    prop_planter(PM, s0['xf'] + sg0 * 0.5, s0['y0'] + s0['w'] + 0.2, fr)
+    # alberi sparsi nel prato attorno all'abitato (posizioni fisse, scartati se cadono sull'abitato)
+    for q in range(90):
+        tr_r = rgs(seed, 'meadow-trees', q)
+        a_ = tr_r.uniform(0, 6.283); r_ = 30 + 160 * tr_r.random() ** 0.8
+        tx_, ty_ = r_ * math.cos(a_) * 1.2, r_ * math.sin(a_) * 1.6
+        if abs(tx_) < 8:
+            tx_ += 14 if tx_ >= 0 else -14
+        keep = all(abs(tx_ - q2['xf']) > 14 or not (q2['y0'] - 8 < ty_ < q2['y0'] + q2['w'] + 8) for q2 in slots)
+        if keep and not any(abs(tx_ - q2['xf']) < 22 and abs(ty_ - q2['yc']) < 22 for q2 in slots):
+            prop_tree(PM, tx_, ty_, tr_r, 0.0, big=tr_r.uniform(1.0, 1.9))
     if N >= 22:
         prop_cart(PM, 1.9, pos[1] + 20 + 0.2 * N ** 0.5 * 3, rgs(seed, 'cart'))
     if N >= 45:
@@ -1104,7 +1172,7 @@ def build_scene(N, seed, res, samples):
             sc.view_settings.view_transform = vt; sc.view_settings.look = lk; break
         except Exception:
             pass
-    print(f"[cozy4] N={N} lotti={cnt} mesh={len(cache)} cam={tuple(round(v, 1) for v in pos)} f/{fstop:.2f} {lens:.0f}mm build={time.time()-t0:.1f}s")
+    print(f"[cozy5] N={N} lotti={cnt} mesh={len(cache)} cam={tuple(round(v, 1) for v in pos)} f/{fstop:.2f} {lens:.0f}mm build={time.time()-t0:.1f}s")
     return sc
 
 
@@ -1137,7 +1205,7 @@ def sky_world(sc):
     mx.inputs[7].default_value = (*lin((1.0, 0.86, 0.68)), 1)
     nt.links.new(cl.outputs["Result"], mx.inputs[0]); nt.links.new(cr.outputs["Color"], mx.inputs[6])
     nt.links.new(mx.outputs[2], bg.inputs["Color"])
-    bg.inputs["Strength"].default_value = 1.0
+    bg.inputs["Strength"].default_value = 1.5
 
 
 def grade(path, sat=1.08, contrast=1.04):
@@ -1150,7 +1218,7 @@ def grade(path, sat=1.08, contrast=1.04):
         im = np.clip((im - 0.5) * contrast + 0.5, 0, 1)
         Image.fromarray((im * 255 + 0.5).astype(np.uint8)).save(path)
     except Exception as e:
-        print("[cozy4] grade saltato:", e)
+        print("[cozy5] grade saltato:", e)
 
 
 def main(argv):
@@ -1168,7 +1236,7 @@ def main(argv):
         bpy.ops.wm.save_as_mainfile(filepath=a.save_blend)
     t = time.time()
     bpy.ops.render.render(write_still=True)
-    print(f"[cozy4] render {time.time()-t:.1f}s -> {a.out}")
+    print(f"[cozy5] render {time.time()-t:.1f}s -> {a.out}")
     grade(a.out)
 
 
