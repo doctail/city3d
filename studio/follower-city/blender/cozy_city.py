@@ -1,137 +1,229 @@
-"""Follower City - COZY v3: MINIATURA DA TAVOLO in MACRO (case di argilla/feltro, DOF reale).
+"""Follower City - COZY v4: QUARTIERE URBANO accogliente (palazzi a schiera lungo vere strade, golden hour, DOF).
 
-Uso (pip bpy):  python cozy_city.py --followers 111 --out cozy3_111.png
+Uso (pip bpy):  python cozy_city.py --followers 111 --out cozy4_111.png
 Opzioni: --res 540 960 --samples 40 --seed 7 --save-blend f.blend
-N follower = N casette in un cluster organico (fillotassi + jitter, strade serpeggianti di terra/ciottoli)
-sulla cima di una collina fissa. Camera bassa, 70-85 mm, f-stop basso (DOF forte), sale con N (camera_for).
-Deterministico: il lotto i ha SEMPRE posizione/tipo/colori uguali; N sceglie solo quanti lotti (0..N-1).
+Citta' a isolati ortogonali: un viale (x=0, asse y) con isolati ai due lati; ogni follower = un lotto (palazzo).
+Ordine dei lotti FISSO (distanza dal centro): il lotto i ha sempre posizione/stile/colori uguali, N sceglie quanti.
+Camera bassa a livello strada con DOF, sale con N (camera_for, max ~25 gradi). Campi e colline solo sullo sfondo.
 """
 import sys, math, random, time, argparse, zlib
 import bpy, bmesh
-from mathutils import Vector
+from mathutils import Vector, Matrix
 
-GA = math.pi * (3 - math.sqrt(5))
-A_SP = 1.75                 # spaziatura fillotassi
-HILL_H, HILL_S = 30.0, 36.0  # collina fissa (indipendente da N)
+PX, PY = 25.0, 37.0          # passo isolati: x (viale largo 9), y (traversa larga 7)
+BLK_D, BLK_L = 8.0, 30.0     # profondita' lotto, lunghezza lato isolato
+SW = 2.0                     # marciapiede viale
+FH, FH0 = 3.2, 3.7           # altezza piano, piano terra
 
 
 def lin(c):
     return tuple(x ** 2.2 for x in c)
 
 
-TER, TERF = 2.6, 0.65
+def rgs(seed, *key):
+    return random.Random(zlib.crc32((str(seed) + ":" + ":".join(map(str, key))).encode()))
 
 
-def hill(r):
-    """collina a terrazze (fissa, indipendente da N)."""
-    z = HILL_H * math.exp(-(r / HILL_S) ** 2)
-    t = (HILL_H - z) / TER
-    k = math.floor(t)
-    f = t - k
-    u = min(1.0, max(0.0, (f - (1 - TERF)) / TERF))
-    u = u * u * (3 - 2 * u)
-    return HILL_H - TER * (k + u)
-
-
-# ---------------------------------------------------------------- palette
-WALLS = [(0.98, 0.88, 0.70), (0.96, 0.72, 0.58), (0.80, 0.86, 0.66), (0.70, 0.82, 0.90), (0.95, 0.80, 0.80),
-         (0.99, 0.93, 0.78), (0.88, 0.76, 0.62)]
-ROOFS = [(0.78, 0.36, 0.26), (0.62, 0.30, 0.22), (0.40, 0.50, 0.62), (0.45, 0.60, 0.42), (0.86, 0.50, 0.28)]
-SHUT = [(0.35, 0.58, 0.42), (0.30, 0.52, 0.74), (0.82, 0.32, 0.28), (0.95, 0.72, 0.28), (0.28, 0.62, 0.62)]
-FLOW = [(0.95, 0.30, 0.38), (0.99, 0.85, 0.30), (0.99, 0.97, 0.92), (0.72, 0.50, 0.90), (0.98, 0.58, 0.72)]
+# ---------------------------------------------------------------- materiali
 _mats = {}
 
 
-def mat(name, rgb, rough=0.8, emit=None, strength=0.0, bump=0.25, scale=55.0, sss=0.18, tex='noise', var=0.06):
-    """argilla/feltro: variazione di colore + grana (bump) + SSS morbido."""
-    if name in _mats:
-        return _mats[name]
+def _principled(name, rough=0.8):
     m = bpy.data.materials.new(name)
     m.use_nodes = True
     nt = m.node_tree
-    bsdf = nt.nodes["Principled BSDF"]
-    bsdf.inputs["Roughness"].default_value = rough
-    try:
-        bsdf.inputs["Subsurface Weight"].default_value = sss
-        bsdf.inputs["Subsurface Radius"].default_value = (0.6, 0.3, 0.2)
-        bsdf.inputs["Subsurface Scale"].default_value = 0.08
-    except Exception:
-        pass
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = rough
+    return m, nt, b
+
+
+def _spec(b, v):
+    for k in ("Specular IOR Level", "Specular"):
+        if k in b.inputs:
+            b.inputs[k].default_value = v
+            return
+
+
+def flat(name, rgb, rough=0.8, emit=None, strength=0.0, metal=0.0):
+    if name in _mats:
+        return _mats[name]
+    m, nt, b = _principled(name, rough)
+    b.inputs["Base Color"].default_value = (*lin(rgb), 1)
+    b.inputs["Metallic"].default_value = metal
     if emit:
-        bsdf.inputs["Emission Color"].default_value = (*lin(emit), 1)
-        bsdf.inputs["Emission Strength"].default_value = strength
-    base = lin(rgb)
-    if tex == 'none':
-        bsdf.inputs["Base Color"].default_value = (*base, 1)
-        return _mats.setdefault(name, m)
-    tc = nt.nodes.new("ShaderNodeTexCoord")
-    nz = nt.nodes.new("ShaderNodeTexNoise")
-    nz.inputs["Scale"].default_value = scale
-    nz.inputs["Detail"].default_value = 6
-    nz.inputs["Roughness"].default_value = 0.65
-    nt.links.new(tc.outputs["Object"], nz.inputs["Vector"])
-    mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
-    mx.inputs[6].default_value = (*[c * (1 - var * 2.5) for c in base], 1)
-    mx.inputs[7].default_value = (*[min(1, c * (1 + var * 2.5)) for c in base], 1)
-    nt.links.new(nz.outputs["Fac"], mx.inputs[0])
-    nt.links.new(mx.outputs[2], bsdf.inputs["Base Color"])
-    bp = nt.nodes.new("ShaderNodeBump")
-    bp.inputs["Strength"].default_value = bump
-    bp.inputs["Distance"].default_value = 0.02
-    nt.links.new(nz.outputs["Fac"], bp.inputs["Height"])
-    nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
+        b.inputs["Emission Color"].default_value = (*lin(emit), 1)
+        b.inputs["Emission Strength"].default_value = strength
     _mats[name] = m
     return m
 
 
-def M(name, rgb, **kw):
-    return mat(name, rgb, **kw)
+def brick(name, c1, c2, mortar, bw=0.5, bh=0.18, scale=1.0, rough=0.85, bump=0.5, off=0.5, msz=0.012, fine=True):
+    """mattoni/tegole/pietra: texture mattoni procedurale su UV (1 uv = 1 m), bump sottile."""
+    if name in _mats:
+        return _mats[name]
+    m, nt, b = _principled(name, rough)
+    uv = nt.nodes.new("ShaderNodeUVMap")
+    br = nt.nodes.new("ShaderNodeTexBrick")
+    br.offset = off
+    br.inputs["Scale"].default_value = scale
+    br.inputs["Color1"].default_value = (*lin(c1), 1)
+    br.inputs["Color2"].default_value = (*lin(c2), 1)
+    br.inputs["Mortar"].default_value = (*lin(mortar), 1)
+    br.inputs["Mortar Size"].default_value = msz
+    br.inputs["Mortar Smooth"].default_value = 0.1
+    br.inputs["Bias"].default_value = 0.0
+    br.inputs["Brick Width"].default_value = bw
+    br.inputs["Row Height"].default_value = bh
+    nt.links.new(uv.outputs["UV"], br.inputs["Vector"])
+    nt.links.new(br.outputs["Color"], b.inputs["Base Color"])
+    bp = nt.nodes.new("ShaderNodeBump")
+    bp.inputs["Strength"].default_value = bump
+    bp.inputs["Distance"].default_value = 0.02
+    nt.links.new(br.outputs["Fac"], bp.inputs["Height"])
+    nt.links.new(bp.outputs["Normal"], b.inputs["Normal"])
+    _mats[name] = m
+    return m
 
 
-def m_wall(i): return M(f"wall{i}", WALLS[i % len(WALLS)], rough=0.9, bump=0.35, scale=70, var=0.05)
-def m_roof(i): return M(f"roof{i}", ROOFS[i % len(ROOFS)], rough=0.7, bump=0.2, scale=40, var=0.09)
-def m_shut(i): return M(f"shut{i}", SHUT[i % len(SHUT)], rough=0.6, bump=0.15)
-def m_flow(i): return M(f"flw{i}", FLOW[i % len(FLOW)], rough=0.6, tex='none')
-def m_trim(): return M("trim", (0.99, 0.94, 0.84), rough=0.7)
-def m_wood(): return M("wood", (0.50, 0.32, 0.20), rough=0.8, bump=0.4, scale=30)
-def m_dark(): return M("darkwood", (0.30, 0.19, 0.14), rough=0.75, bump=0.3)
-def m_stone(): return M("stone", (0.74, 0.68, 0.60), rough=0.9, bump=0.5, scale=22, var=0.1)
-def m_thatch(k): return M(f"thatch{k}", [(0.90, 0.72, 0.36), (0.82, 0.62, 0.30), (0.95, 0.80, 0.46)][k % 3], rough=0.95, bump=0.8, scale=90, var=0.12)
-def m_moss(): return M("moss", (0.42, 0.62, 0.30), rough=0.95, bump=0.6, scale=45, var=0.1)
-def m_leaf(i): return M(f"leaf{i}", [(0.45, 0.65, 0.30), (0.36, 0.57, 0.30), (0.58, 0.72, 0.32), (0.92, 0.60, 0.50)][i % 4], rough=0.9, bump=0.5, scale=35)
-def m_win(): return M("win", (1.0, 0.82, 0.45), rough=0.4, emit=(1.0, 0.66, 0.22), strength=9.0, tex='none')
-def m_lamp(): return M("lamp", (1, 0.85, 0.5), rough=0.4, emit=(1.0, 0.70, 0.28), strength=25.0, tex='none')
-def m_smoke(): return M("smoke", (0.97, 0.93, 0.90), rough=1.0, bump=0.2, scale=20)
-def m_red(): return M("barnred", (0.74, 0.26, 0.20), rough=0.85, bump=0.4)
-def m_hay(): return M("hay", (0.93, 0.76, 0.36), rough=0.95, bump=0.7, scale=60)
-def m_trunk(): return M("trunk", (0.45, 0.30, 0.20), rough=0.9, bump=0.5)
-def m_white(): return M("white", (0.99, 0.96, 0.90), rough=0.85)
-def m_awn(k): return M(f"awn{k}", [(0.86, 0.30, 0.28), (0.30, 0.60, 0.45)][k % 2], rough=0.8, bump=0.3, scale=100)
+def plaster(name, rgb, rough=0.88, var=0.04):
+    if name in _mats:
+        return _mats[name]
+    m, nt, b = _principled(name, rough)
+    uv = nt.nodes.new("ShaderNodeUVMap")
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 18.0
+    nz.inputs["Detail"].default_value = 8
+    nt.links.new(uv.outputs["UV"], nz.inputs["Vector"])
+    base = lin(rgb)
+    mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
+    mx.inputs[6].default_value = (*[c * (1 - var * 2) for c in base], 1)
+    mx.inputs[7].default_value = (*[min(1, c * (1 + var * 2)) for c in base], 1)
+    nt.links.new(nz.outputs["Fac"], mx.inputs[0])
+    nt.links.new(mx.outputs[2], b.inputs["Base Color"])
+    bp = nt.nodes.new("ShaderNodeBump")
+    bp.inputs["Strength"].default_value = 0.12
+    bp.inputs["Distance"].default_value = 0.01
+    nt.links.new(nz.outputs["Fac"], bp.inputs["Height"])
+    nt.links.new(bp.outputs["Normal"], b.inputs["Normal"])
+    _mats[name] = m
+    return m
+
+
+BRICKS = [((0.66, 0.30, 0.22), (0.58, 0.25, 0.19)), ((0.55, 0.26, 0.20), (0.48, 0.21, 0.16)),
+          ((0.72, 0.40, 0.28), (0.64, 0.34, 0.24)), ((0.46, 0.30, 0.26), (0.40, 0.25, 0.22)),
+          ((0.78, 0.60, 0.42), (0.70, 0.52, 0.36))]
+PLASTERS = [(0.95, 0.86, 0.68), (0.93, 0.70, 0.60), (0.78, 0.84, 0.70), (0.72, 0.82, 0.88), (0.94, 0.78, 0.76),
+            (0.97, 0.92, 0.80), (0.90, 0.74, 0.50), (0.76, 0.80, 0.78)]
+STONES = [(0.84, 0.78, 0.66), (0.78, 0.70, 0.58), (0.88, 0.84, 0.74)]
+ROOFC = [((0.30, 0.34, 0.40), (0.26, 0.30, 0.36)), ((0.60, 0.30, 0.22), (0.54, 0.26, 0.19)),
+         ((0.36, 0.40, 0.44), (0.30, 0.34, 0.38))]
+DOORS = [(0.16, 0.32, 0.26), (0.14, 0.24, 0.42), (0.58, 0.16, 0.16), (0.20, 0.20, 0.22), (0.82, 0.60, 0.20)]
+AWNC = [(0.80, 0.22, 0.22), (0.22, 0.46, 0.34), (0.18, 0.30, 0.52), (0.88, 0.62, 0.20)]
+COATS = [(0.8, 0.25, 0.22), (0.25, 0.45, 0.7), (0.9, 0.75, 0.3), (0.3, 0.55, 0.4), (0.9, 0.9, 0.85), (0.5, 0.3, 0.6)]
+FLOW = [(0.95, 0.30, 0.38), (0.99, 0.85, 0.30), (0.99, 0.97, 0.92), (0.72, 0.50, 0.90), (0.98, 0.58, 0.72)]
+
+
+def m_wall(k):
+    if k < 100:
+        c1, c2 = BRICKS[k % len(BRICKS)]
+        return brick(f"brick{k}", c1, c2, (0.80, 0.74, 0.64), bw=0.42, bh=0.16, scale=1.0, bump=0.45)
+    return plaster(f"plast{k}", PLASTERS[(k - 100) % len(PLASTERS)])
+
+
+def m_stone(i=0):
+    c = STONES[i % 3]
+    return brick(f"stone{i % 3}", c, tuple(x * 0.93 for x in c), tuple(x * 0.8 for x in c), bw=1.1, bh=0.55, bump=0.3, msz=0.02, off=0.5)
+
+
+def m_roof(i):
+    c1, c2 = ROOFC[i % 3]
+    return brick(f"roof{i % 3}", c1, c2, tuple(x * 0.45 for x in c1), bw=0.28, bh=0.22, scale=1.0, bump=0.8, msz=0.03, rough=0.6)
+
+
+def m_trim(): return plaster("trim", (0.97, 0.94, 0.88), rough=0.7, var=0.01)
+def m_iron(): return flat("iron", (0.10, 0.10, 0.11), rough=0.5, metal=0.6)
+def m_zinc(): return flat("zinc", (0.42, 0.46, 0.50), rough=0.5, metal=0.4)
+def m_door(i): return flat(f"door{i % 5}", DOORS[i % 5], rough=0.55)
+def m_wood(): return flat("wood", (0.40, 0.26, 0.17), rough=0.7)
+def m_dark(): return flat("darkw", (0.22, 0.15, 0.12), rough=0.7)
+def m_awn(i): return flat(f"awn{i % 4}", AWNC[i % 4], rough=0.8)
+def m_cream(): return flat("cream", (0.96, 0.92, 0.84), rough=0.8)
+def m_leaf(i): return flat(f"leaf{i % 3}", [(0.30, 0.46, 0.24), (0.38, 0.52, 0.26), (0.26, 0.40, 0.24)][i % 3], rough=0.85)
+def m_trunk(): return flat("trunk", (0.34, 0.24, 0.17), rough=0.9)
+def m_flow(i): return flat(f"flw{i % 5}", FLOW[i % 5], rough=0.6)
+def m_coat(i): return flat(f"coat{i % 6}", COATS[i % 6], rough=0.8)
+def m_skin(): return flat("skin", (0.92, 0.72, 0.58), rough=0.8)
+def m_copper(): return flat("copper", (0.30, 0.55, 0.48), rough=0.45, metal=0.5)
+def m_water(): return flat("water", (0.40, 0.62, 0.66), rough=0.05)
+def m_pot(): return flat("pot", (0.70, 0.38, 0.26), rough=0.8)
+def m_sign(i): return flat(f"sign{i % 4}", [(0.14, 0.28, 0.24), (0.55, 0.14, 0.16), (0.14, 0.22, 0.40), (0.30, 0.18, 0.12)][i % 4], rough=0.6)
+def m_lettr(): return flat("lettr", (0.98, 0.88, 0.62), rough=0.5, emit=(1.0, 0.80, 0.40), strength=1.5)
+def m_lamp(): return flat("lamp", (1, 0.85, 0.5), rough=0.4, emit=(1.0, 0.72, 0.30), strength=40.0)
+def m_win_lit(): return flat("winlit", (1.0, 0.82, 0.45), rough=0.3, emit=(1.0, 0.68, 0.26), strength=4.2)
+def m_shop_lit(): return flat("shoplit", (1.0, 0.86, 0.55), rough=0.3, emit=(1.0, 0.72, 0.32), strength=7.0)
+def m_win_dark():
+    if "windark" in _mats:
+        return _mats["windark"]
+    m = flat("windark", (0.05, 0.07, 0.09), rough=0.06)
+    _spec(m.node_tree.nodes["Principled BSDF"], 1.0)
+    return m
+
+
+def m_asphalt():
+    return brick("cobble", (0.50, 0.48, 0.46), (0.44, 0.42, 0.41), (0.27, 0.26, 0.25), bw=0.22, bh=0.14, scale=1.0, bump=1.2, msz=0.02, off=0.5, rough=0.8)
+
+
+def m_paving():
+    return brick("paving", (0.76, 0.69, 0.60), (0.70, 0.63, 0.55), (0.55, 0.50, 0.44), bw=0.6, bh=0.3, bump=0.4, msz=0.015, rough=0.85)
+
+
+def m_curb(): return flat("curb", (0.70, 0.66, 0.60), rough=0.8)
+def m_rail(): return flat("rails", (0.28, 0.27, 0.27), rough=0.4, metal=0.7)
 
 
 # ---------------------------------------------------------------- mesh builder
 class MB:
-    def __init__(self):
+    def __init__(self, T=None):
         self.bm = bmesh.new()
         self.slots = []
+        self.T = T
+        self.uvl = self.bm.loops.layers.uv.verify()
 
     def slot(self, m):
         if m not in self.slots:
             self.slots.append(m)
         return self.slots.index(m)
 
-    def part(self, verts, faces, m, bevel=0.0):
+    def _add(self, pb, idx, smooth):
+        T = self.T
+        mp = {v: self.bm.verts.new(T @ v.co if T else v.co) for v in pb.verts}
+        for f in pb.faces:
+            nf = self.bm.faces.new([mp[v] for v in f.verts])
+            nf.material_index = idx
+            nf.smooth = smooth
+            n = f.normal
+            if T:
+                n = T.to_3x3() @ n
+            ax, ay, az = abs(n.x), abs(n.y), abs(n.z)
+            for l in nf.loops:
+                p = l.vert.co
+                if az > 0.72:
+                    l[self.uvl].uv = (p.x, p.y)
+                elif ax > ay:
+                    l[self.uvl].uv = (p.y, p.z)
+                else:
+                    l[self.uvl].uv = (p.x, p.z)
+
+    def part(self, verts, faces, m, bevel=0.0, smooth=False):
         pb = bmesh.new()
         vs = [pb.verts.new(v) for v in verts]
         for f in faces:
             pb.faces.new([vs[i] for i in f])
         bmesh.ops.recalc_face_normals(pb, faces=pb.faces)
         if bevel > 0:
-            bmesh.ops.bevel(pb, geom=list(pb.edges), offset=bevel, segments=2, affect='EDGES')
-        idx = self.slot(m)
-        mp = {v: self.bm.verts.new(v.co) for v in pb.verts}
-        for f in pb.faces:
-            self.bm.faces.new([mp[v] for v in f.verts]).material_index = idx
+            bmesh.ops.bevel(pb, geom=list(pb.edges), offset=bevel, segments=1, affect='EDGES')
+            pb.normal_update()
+        self._add(pb, self.slot(m), smooth)
         pb.free()
 
     def box(self, x0, y0, z0, x1, y1, z1, m, bevel=0.0):
@@ -140,32 +232,23 @@ class MB:
              (x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)]
         self.part(v, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], m, bevel)
 
-    def lbox(self, fr, u0, u1, z0, z1, o0, o1, m, bevel=0.0):
-        O, T, Nn = fr
-        Z = Vector((0, 0, 1))
-        v = []
-        for z in (z0, z1):
-            pass
-        pts = []
-        for (u, z, o) in ((u0, z0, o0), (u1, z0, o0), (u1, z0, o1), (u0, z0, o1),
-                          (u0, z1, o0), (u1, z1, o0), (u1, z1, o1), (u0, z1, o1)):
-            pts.append(tuple(O + T * u + Z * z + Nn * o))
-        self.part(pts, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], m, bevel)
-
-    def lcyl(self, fr, u, z, o0, o1, r, m, n=12, bevel=0.0):
-        O, T, Nn = fr
-        Z = Vector((0, 0, 1))
-        v = []
-        for o in (o0, o1):
-            for k in range(n):
-                a = 2 * math.pi * k / n
-                v.append(tuple(O + T * (u + r * math.cos(a)) + Z * (z + r * math.sin(a)) + Nn * o))
-        f = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))]
+    def prism(self, poly, y0, y1, m):
+        """poligono (x,z) estruso lungo y."""
+        n = len(poly)
+        v = [(x, y0, z) for x, z in poly] + [(x, y1, z) for x, z in poly]
+        f = [tuple(range(n)), tuple(range(2 * n - 1, n - 1, -1))]
         for k in range(n):
             f.append((k, (k + 1) % n, n + (k + 1) % n, n + k))
-        self.part(v, f, m, bevel)
+        self.part(v, f, m)
 
-    def cyl(self, cx, cy, z0, z1, r, m, n=14, r2=None, bevel=0.0):
+    def slab(self, p, th, m):
+        """quadrilatero p[0..3] con spessore th lungo la normale."""
+        a, b, c, d = [Vector(q) for q in p]
+        nrm = (b - a).cross(d - a).normalized() * th
+        v = [tuple(q) for q in (a, b, c, d)] + [tuple(q + nrm) for q in (a, b, c, d)]
+        self.part(v, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], m)
+
+    def cyl(self, cx, cy, z0, z1, r, m, n=12, r2=None, smooth=True):
         r2 = r if r2 is None else r2
         v = []
         for rad, zz in ((r, z0), (r2, z1)):
@@ -175,51 +258,43 @@ class MB:
         f = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))]
         for k in range(n):
             f.append((k, (k + 1) % n, n + (k + 1) % n, n + k))
-        self.part(v, f, m, bevel)
+        self.part(v, f, m, smooth=smooth)
 
-    def bar(self, p0, p1, t1, t2, m, ref=(1, 0, 0), bevel=0.0):
-        p0, p1 = Vector(p0), Vector(p1)
-        d = (p1 - p0).normalized()
-        s1 = d.cross(Vector(ref))
-        if s1.length < 1e-4:
-            s1 = d.cross(Vector((0, 0, 1)))
-        s1 = s1.normalized() * (t1 / 2)
-        s2 = d.cross(s1).normalized() * (t2 / 2)
+    def cylx(self, x0, x1, cy, cz, r, m, n=12):
+        """cilindro lungo x (ruote orientate lungo l'asse)."""
         v = []
-        for p in (p0, p1):
-            for a, b_ in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
-                v.append(tuple(p + s1 * a + s2 * b_))
-        self.part(v, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], m, bevel)
+        for xx in (x0, x1):
+            for k in range(n):
+                a = 2 * math.pi * k / n
+                v.append((xx, cy + r * math.cos(a), cz + r * math.sin(a)))
+        f = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))]
+        for k in range(n):
+            f.append((k, (k + 1) % n, n + (k + 1) % n, n + k))
+        self.part(v, f, m, smooth=True)
 
-    def sphere(self, cx, cy, cz, r, m, sub=2, sx=1.0, sy=1.0, sz=1.0):
-        pb = bmesh.new()
-        bmesh.ops.create_icosphere(pb, subdivisions=sub, radius=r)
-        idx = self.slot(m)
-        mp = {v: self.bm.verts.new((v.co.x * sx + cx, v.co.y * sy + cy, v.co.z * sz + cz)) for v in pb.verts}
-        for f in pb.faces:
-            self.bm.faces.new([mp[v] for v in f.verts]).material_index = idx
-        pb.free()
-
-    def cone(self, cx, cy, z0, z1, r, m, n=12, bevel=0.0):
+    def cone(self, cx, cy, z0, z1, r, m, n=12):
         v = [(cx + r * math.cos(2 * math.pi * k / n), cy + r * math.sin(2 * math.pi * k / n), z0) for k in range(n)]
         v.append((cx, cy, z1))
-        self.part(v, [tuple(range(n - 1, -1, -1))] + [(k, (k + 1) % n, n) for k in range(n)], m, bevel)
+        self.part(v, [tuple(range(n - 1, -1, -1))] + [(k, (k + 1) % n, n) for k in range(n)], m, smooth=False)
 
-    def warp(self, amp, seed):
-        """pareti non dritte: deformazione morbida e deterministica (sag + onde a bassa frequenza)."""
-        r = random.Random(seed)
-        p = [r.uniform(0, 6.28) for _ in range(8)]
-        for v in self.bm.verts:
-            x, y, z = v.co
-            v.co.x += amp * (math.sin(z * 2.6 + p[0] + y * 1.3) + 0.6 * math.sin(y * 3.1 + p[1]))
-            v.co.y += amp * (math.sin(z * 2.2 + p[2] + x * 1.1) + 0.6 * math.sin(x * 2.7 + p[3]))
-            v.co.z += amp * 0.5 * math.sin(x * 2.0 + p[4]) * math.sin(y * 2.3 + p[5]) * (z / 1.5)
+    def sphere(self, cx, cy, cz, r, m, sub=2, sz=1.0):
+        pb = bmesh.new()
+        bmesh.ops.create_icosphere(pb, subdivisions=sub, radius=r)
+        for v in pb.verts:
+            v.co.z *= sz
+            v.co += Vector((cx, cy, cz))
+        pb.normal_update()
+        self._add(pb, self.slot(m), True)
+        pb.free()
 
-    def build(self, name, smooth=True):
+    def frustum(self, x0, x1, ya0, ya1, z0, yb0, yb1, z1, m):
+        v = [(x0, ya0, z0), (x1, ya0, z0), (x1, ya1, z0), (x0, ya1, z0),
+             (x0, yb0, z1), (x1, yb0, z1), (x1, yb1, z1), (x0, yb1, z1)]
+        self.part(v, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], m)
+
+    def build(self, name):
         me = bpy.data.meshes.new(name)
         self.bm.normal_update()
-        for f in self.bm.faces:
-            f.smooth = smooth
         self.bm.to_mesh(me)
         self.bm.free()
         for m in self.slots:
@@ -227,367 +302,599 @@ class MB:
         return me
 
 
-def frames(w, d):
-    X, Y = Vector((1, 0, 0)), Vector((0, 1, 0))
-    return {'F': (Vector((0, -d / 2, 0)), X, -Y), 'B': (Vector((0, d / 2, 0)), -X, Y),
-            'R': (Vector((w / 2, 0, 0)), Y, X), 'L': (Vector((-w / 2, 0, 0)), -Y, -X)}
-
-
-# ---------------------------------------------------------------- dettagli
-def window(b, fr, u, z, ww, wh, sh, rg, flowers=True, shutters=True, arch=False):
-    t = m_trim()
-    b.lbox(fr, u - ww / 2 - 0.05, u + ww / 2 + 0.05, z - wh / 2 - 0.05, z + wh / 2 + 0.05, -0.02, 0.05, m_wood(), 0.03)
-    b.lbox(fr, u - ww / 2, u + ww / 2, z - wh / 2, z + wh / 2, 0.0, 0.07, m_win(), 0.015)
-    if arch:
-        b.lcyl(fr, u, z + wh / 2, 0.0, 0.07, ww / 2, m_win(), 10)
-    b.lbox(fr, u - 0.012, u + 0.012, z - wh / 2, z + wh / 2, 0.06, 0.095, m_wood())
-    b.lbox(fr, u - ww / 2, u + ww / 2, z - 0.012, z + 0.012, 0.06, 0.095, m_wood())
-    b.lbox(fr, u - ww / 2 - 0.08, u + ww / 2 + 0.08, z - wh / 2 - 0.09, z - wh / 2 - 0.03, 0.0, 0.14, t, 0.02)
-    if shutters:
-        for sd in (-1, 1):
-            uc = u + sd * (ww / 2 + 0.17)
-            b.lbox(fr, uc - 0.1, uc + 0.1, z - wh / 2 - 0.03, z + wh / 2 + 0.03, 0.0, 0.05, m_shut(sh), 0.02)
+# ---------------------------------------------------------------- elementi di facciata (coord locali: fronte y=0, x centro)
+def window(b, x, zb, ww, wh, lit, trim, flowers=0, shut=None, arch=False):
+    g = m_win_lit() if lit else m_win_dark()
+    b.box(x - ww / 2, -0.05, zb, x + ww / 2, 0.0, zb + wh, g)
+    b.box(x - ww / 2 - 0.09, -0.16, zb - 0.10, x + ww / 2 + 0.09, 0.0, zb, trim)                    # davanzale
+    b.box(x - ww / 2 - 0.10, -0.10, zb + wh, x + ww / 2 + 0.10, 0.0, zb + wh + 0.13, trim)          # architrave
+    for s in (-1, 1):
+        b.box(x + s * ww / 2 - 0.04 + (0.04 if s > 0 else 0.0), -0.09, zb, x + s * (ww / 2 + 0.08) , 0.0, zb + wh, trim)
+    b.box(x - 0.02, -0.08, zb, x + 0.02, -0.04, zb + wh, trim)                                    # montante
+    b.box(x - ww / 2, -0.08, zb + wh * 0.66, x + ww / 2, -0.04, zb + wh * 0.66 + 0.04, trim)      # traversa
+    if shut is not None:
+        for s in (-1, 1):
+            b.box(x + s * (ww / 2 + 0.12) - 0.2 * (1 if s > 0 else 0) - 0.2 * (0 if s > 0 else 1) + (0 if s > 0 else 0),
+                  -0.1, zb, x + s * (ww / 2 + 0.12) + (0.0), 0.0, zb + wh, m_door(shut))
     if flowers:
-        b.lbox(fr, u - ww / 2 - 0.06, u + ww / 2 + 0.06, z - wh / 2 - 0.2, z - wh / 2 - 0.05, 0.02, 0.17, m_wood(), 0.02)
-        for k in range(5):
-            uu = u - ww / 2 + (k + 0.5) * ww / 5
-            O, T, Nn = fr
-            p = O + T * uu + Vector((0, 0, 1)) * (z - wh / 2 - 0.12) + Nn * 0.1
-            b.sphere(p.x, p.y, p.z, 0.07 + 0.015 * rg.random(), m_flow(rg.randrange(5)) if k % 2 else m_leaf(rg.randrange(3)), 1)
+        b.box(x - ww / 2 - 0.05, -0.34, zb - 0.32, x + ww / 2 + 0.05, -0.1, zb - 0.1, m_wood())
+        for q in range(4):
+            b.sphere(x - ww / 2 + 0.12 + q * (ww - 0.2) / 3, -0.24, zb - 0.02, 0.09, m_flow(flowers + q), sub=1)
+        b.box(x - ww / 2, -0.30, zb - 0.1, x + ww / 2, -0.12, zb - 0.02, m_leaf(flowers))
 
 
-def door(b, fr, u, wd, hd, dc, rg, pot=True):
-    O, T, Nn = fr
-    b.lbox(fr, u - wd / 2 - 0.07, u + wd / 2 + 0.07, 0.0, hd + 0.0, -0.02, 0.06, m_trim(), 0.03)
-    b.lcyl(fr, u, hd, -0.02, 0.06, wd / 2 + 0.07, m_trim(), 12)
-    b.lbox(fr, u - wd / 2, u + wd / 2, 0.0, hd, 0.0, 0.08, m_shut(dc), 0.02)
-    b.lcyl(fr, u, hd, 0.0, 0.08, wd / 2, m_shut(dc), 12)
-    p = O + T * (u + wd * 0.28) + Vector((0, 0, 0.3)) + Nn * 0.1
-    b.sphere(p.x, p.y, p.z, 0.028, m_lamp(), 1)
-    b.lbox(fr, u - wd / 2 - 0.2, u + wd / 2 + 0.2, -0.0, 0.07, 0.0, 0.42, m_stone(), 0.03)       # gradino tondo
-    if pot:
-        uu = u + wd / 2 + 0.28
-        p = O + T * uu + Nn * 0.2
-        b.cyl(p.x, p.y, 0.0, 0.17, 0.09, m_red(), 10, r2=0.11, bevel=0.02)
-        for k in range(3):
-            q = p + Vector((rg.uniform(-0.04, 0.04), rg.uniform(-0.04, 0.04), 0.2 + 0.05 * k))
-            b.sphere(q.x, q.y, q.z, 0.07, m_flow(rg.randrange(5)) if k else m_leaf(0), 1)
+def balcony(b, x, zb, ww, trim):
+    hw = ww / 2 + 0.28
+    b.box(x - hw, -0.62, zb - 0.10, x + hw, 0.0, zb + 0.02, m_stone(1))
+    b.box(x - hw, -0.62, zb + 0.98, x + hw, -0.58, zb + 1.02, m_iron())
+    b.box(x - hw, -0.62, zb + 0.04, x + hw, -0.58, zb + 0.08, m_iron())
+    for s in (-1, 1):
+        b.box(x + s * hw - 0.02, -0.62, zb, x + s * hw + 0.02, 0.0, zb + 1.0, m_iron())
+    npk = int(hw * 2 / 0.16)
+    for q in range(npk + 1):
+        xx = x - hw + q * (2 * hw) / npk
+        b.box(xx - 0.012, -0.61, zb + 0.06, xx + 0.012, -0.59, zb + 1.0, m_iron())
 
 
-def sign(b, fr, u, z, rg, txt=0):
-    O, T, Nn = fr
-    p = O + T * u + Nn * 0.02
-    b.lbox(fr, u - 0.01, u + 0.01, z + 0.1, z + 0.12, 0.02, 0.42, m_dark())
-    b.lbox(fr, u - 0.19, u + 0.19, z - 0.16, z + 0.08, 0.38, 0.43, m_wood(), 0.03)
-    b.lcyl(fr, u, z - 0.04, 0.43, 0.47, 0.09, m_hay() if txt % 2 == 0 else m_red(), 10)
+def door(b, x, dm, trim, stoop=0.0):
+    dw, dh = 1.15, 2.45
+    z0 = stoop
+    b.box(x - dw / 2 - 0.14, -0.16, z0, x + dw / 2 + 0.14, 0.0, z0 + dh + 0.18, trim)
+    b.box(x - dw / 2, -0.20, z0, x + dw / 2, -0.12, z0 + dh, m_door(dm))
+    b.box(x - dw / 2 + 0.2, -0.215, z0 + 1.3, x + dw / 2 - 0.2, -0.19, z0 + dh - 0.2, m_win_lit())
+    b.box(x + dw / 2 - 0.2, -0.24, z0 + 1.0, x + dw / 2 - 0.14, -0.2, z0 + 1.1, m_lamp() if False else flat("brass", (0.8, 0.6, 0.2), rough=0.3, metal=0.8))
+    if stoop > 0:
+        steps = int(stoop / 0.2)
+        for q in range(steps):
+            b.box(x - dw / 2 - 0.3, -0.55 - (steps - q) * 0.28, 0, x + dw / 2 + 0.3, -0.27 - (steps - q) * 0.28 + 0.28, stoop - q * 0.2, m_stone(0))
+        b.box(x - dw / 2 - 0.3, -0.62, 0, x + dw / 2 + 0.3, 0.0, stoop, m_stone(0))
 
 
-def ivy(b, fr, wl, hgt, rg, n=26):
-    O, T, Nn = fr
-    u0 = rg.uniform(-wl * 0.4, wl * 0.4)
-    for k in range(n):
-        u = u0 + rg.uniform(-0.28, 0.28) * (1 + 0.8 * k / n)
-        z = hgt * (k / n) ** 0.9 * 1.0 + rg.uniform(0, 0.1)
-        p = O + T * u + Vector((0, 0, z)) + Nn * 0.04
-        b.sphere(p.x, p.y, p.z, rg.uniform(0.07, 0.14), m_leaf(rg.randrange(2)), 1, sz=0.8)
-        if rg.random() < 0.18:
-            b.sphere(p.x + Nn.x * 0.05, p.y + Nn.y * 0.05, p.z, 0.04, m_flow(rg.randrange(5)), 1)
+def awning(b, x0, x1, zt, proj, drop, k, rg):
+    ns = max(6, int((x1 - x0) / 0.32))
+    wst = (x1 - x0) / ns
+    for q in range(ns):
+        xa, xb = x0 + q * wst, x0 + (q + 1) * wst
+        mm = m_awn(k) if q % 2 == 0 else m_cream()
+        b.slab([(xa, 0.02, zt), (xb, 0.02, zt), (xb, -proj, zt - drop), (xa, -proj, zt - drop)], 0.025, mm)
+        b.box(xa, -proj - 0.01, zt - drop - 0.18, xb, -proj + 0.02, zt - drop, mm)       # frangia
 
 
-def chimney(b, x, y, zt, rg, smoke=True):
-    lean = rg.uniform(-0.05, 0.05)
-    b.box(x - 0.15, y - 0.15, zt - 0.2, x + 0.15, y + 0.15, zt + 0.45, m_stone(), 0.04)
-    b.box(x - 0.19 + lean, y - 0.19, zt + 0.4, x + 0.19 + lean, y + 0.19, zt + 0.52, m_stone(), 0.03)
-    if smoke:
-        for k in range(4):
-            r = 0.06 + 0.03 * k
-            b.sphere(x + lean + 0.08 * k + 0.05 * math.sin(k * 2), y + 0.03 * k, zt + 0.7 + 0.2 * k, r, m_smoke(), 2)
+def shopfront(b, w, kind, rg, k):
+    """vetrina: cornice scura, vetro illuminato, porta, insegna, tenda a righe, tavolini."""
+    fc = m_sign(k)
+    hw = w / 2
+    b.box(-hw, -0.20, 0.0, hw, 0.0, 0.35, m_stone(2))                                             # zoccolo
+    b.box(-hw, -0.20, 3.35, hw, 0.0, FH0, fc)                                                      # fascia insegna
+    for s in (-1, 1):
+        b.box(s * hw - (0.25 if s > 0 else -0.25) * 1.0, -0.20, 0.35, s * hw, 0.0, 3.35, fc)       # pilastri
+    dx = hw - 1.0 if rg.random() < 0.5 else -hw + 1.0
+    gx0, gx1 = (-hw + 0.25, hw - 1.6) if dx > 0 else (-hw + 1.6, hw - 0.25)
+    b.box(gx0, -0.26, 0.5, gx1, -0.20, 2.7, m_shop_lit())
+    nm = max(2, int((gx1 - gx0) / 0.9))
+    for q in range(nm + 1):
+        xx = gx0 + q * (gx1 - gx0) / nm
+        b.box(xx - 0.025, -0.30, 0.5, xx + 0.025, -0.24, 2.7, fc)
+    for zz in (0.5, 2.65):
+        b.box(gx0, -0.30, zz, gx1, -0.24, zz + 0.06, fc)
+    b.box(gx0, -0.30, 1.05, gx1, -0.22, 1.10, m_dark())                                            # ripiano
+    for q in range(int((gx1 - gx0) / 0.45)):
+        c = (rg.choice([m_flow(q), m_awn(q), m_cream()]) if kind != 1 else m_flow(q))
+        b.box(gx0 + 0.15 + q * 0.45, -0.38, 1.10, gx0 + 0.45 + q * 0.45, -0.28, 1.10 + rg.uniform(0.12, 0.3), c)
+    b.box(dx - 0.5, -0.24, 0.0, dx + 0.5, -0.18, 2.5, m_door(k + 1))
+    b.box(dx - 0.35, -0.26, 1.0, dx + 0.35, -0.24, 2.3, m_shop_lit())
+    # lettere (strisce chiare) sulla fascia
+    cx = -hw + 0.5
+    while cx < hw - 0.8:
+        ln = rg.uniform(0.12, 0.34)
+        b.box(cx, -0.215, 3.45, cx + ln, -0.20, 3.62, m_lettr())
+        cx += ln + 0.09
+    # tenda
+    awning(b, -hw + 0.1, hw - 0.1, 3.3, 1.35, 0.55, k, rg)
+    # insegna a bandiera
+    sx = hw - 0.05 if rg.random() < 0.5 else -hw + 0.05
+    b.box(sx - 0.02, -0.80, 3.5, sx + 0.02, -0.18, 3.55, m_iron())
+    b.box(sx - 0.03, -0.84, 2.95, sx + 0.03, -0.30, 3.5, m_sign(k + 2))
+    b.box(sx - 0.035, -0.80, 3.1, sx + 0.035, -0.34, 3.2, m_lettr())
+    # tavolini fuori (caffe') / cassette fiori
+    if kind == 0:
+        for q, tx in enumerate((-hw * 0.35, hw * 0.35)):
+            b.cyl(tx, -1.75, 0.72, 0.76, 0.32, m_dark(), n=10)
+            b.cyl(tx, -1.75, 0.0, 0.72, 0.04, m_iron(), n=6)
+            for ch in (-1, 1):
+                b.box(tx + ch * 0.5 - 0.17, -1.75 - 0.17, 0.44, tx + ch * 0.5 + 0.17, -1.75 + 0.17, 0.48, m_awn(k))
+                b.box(tx + ch * 0.5 - 0.17, -1.75 + (0.15 if ch > 0 else -0.17) - 0.01 * 0, 0.48, tx + ch * 0.5 + 0.17, -1.75 + (0.17 if ch > 0 else -0.15), 0.9, m_awn(k))
+                b.box(tx + ch * 0.5 - 0.15, -1.75 - 0.15, 0.0, tx + ch * 0.5 - 0.12, -1.75 - 0.12, 0.44, m_iron())
+                b.box(tx + ch * 0.5 + 0.12, -1.75 + 0.12, 0.0, tx + ch * 0.5 + 0.15, -1.75 + 0.15, 0.44, m_iron())
+    elif kind == 2:
+        for q in range(3):
+            fx = -hw * 0.6 + q * hw * 0.55
+            b.box(fx - 0.25, -1.05, 0, fx + 0.25, -0.65, 0.55, m_wood())
+            for s_ in range(6):
+                b.sphere(fx - 0.18 + (s_ % 3) * 0.18, -0.95 + (s_ // 3) * 0.18, 0.62, 0.1, m_flow(q + s_), sub=1)
 
 
-def roof_gable(b, w, d, zt, rh, rm, kind, rg, oe=0.16, ov=0.22, rows=7):
-    """tetto a due falde (colmo lungo x), spesso e morbido, con scaglie/paglia."""
-    hs = d / 2 + ov
-    for sg in (-1, 1):
-        e = Vector((0, sg * hs, zt - 0.04))
-        r_ = Vector((0, 0, zt + rh))
-        n_ = Vector((0, -sg * rh, hs)).normalized() * -1   # normale esterna approssimata
-        n_ = (r_ - e).cross(Vector((1, 0, 0)))
-        if n_.z < 0:
-            n_ = -n_
-        n_.normalize()
-        base_m = rm
-        b.bar(e - n_ * 0.07, r_ - n_ * 0.07 + Vector((0, 0, 0.02)), 0.12, w + 2 * oe, base_m, bevel=0.04)
-        ln = (r_ - e).length
-        for j in range(rows):
-            t0 = j / rows
-            t1 = min(1.0, t0 + 1.6 / rows)
-            for c in range(max(3, int((w + 2 * oe) / 0.2))):
-                cw = (w + 2 * oe) / max(3, int((w + 2 * oe) / 0.2))
-                xc = -(w + 2 * oe) / 2 + cw * (c + 0.5 + (0.5 if j % 2 else 0.0))
-                if abs(xc) > (w + 2 * oe) / 2 - 0.02:
-                    continue
-                jit = rg.uniform(-0.02, 0.03)
-                mm = rm
-                if kind == 'thatch':
-                    mm = m_thatch(rg.randrange(3)); t1 = min(1.0, t0 + 2.4 / rows) + jit
-                p0 = e + (r_ - e) * t0 + n_ * 0.015
-                p1 = e + (r_ - e) * t1 + n_ * 0.07
-                p0.x = p1.x = xc
-                b.bar(p0, p1, 0.04 if kind != 'thatch' else 0.06, cw * (0.97 if kind != 'thatch' else 1.1), mm,
-                      bevel=0.02 if kind != 'thatch' else 0.015)
-                if kind == 'moss' and rg.random() < 0.22:
-                    q = (p0 + p1) / 2 + n_ * 0.05
-                    b.sphere(q.x, q.y, q.z, rg.uniform(0.07, 0.14), m_moss(), 1, sz=0.5)
-    # gronda tonda sul colmo
-    b.lbox((Vector((0, 0, zt + rh)), Vector((1, 0, 0)), Vector((0, -1, 0))), -(w / 2 + oe), (w / 2 + oe), -0.07, 0.09, -0.12, 0.07,
-           m_thatch(0) if kind == 'thatch' else rm, 0.045)
-    if kind == 'moss':
-        for k in range(7):
-            b.sphere(rg.uniform(-w / 2, w / 2), rg.uniform(-0.15, 0.15), zt + rh + 0.06, rg.uniform(0.09, 0.15), m_moss(), 1, sz=0.6)
+def chimney(b, x, y, zt, rg, wall):
+    b.box(x - 0.35, y - 0.3, zt - 0.5, x + 0.35, y + 0.3, zt + 1.3, wall)
+    b.box(x - 0.42, y - 0.37, zt + 1.3, x + 0.42, y + 0.37, zt + 1.42, m_trim())
+    b.box(x - 0.18, y - 0.14, zt + 1.42, x + 0.18, y + 0.14, zt + 1.75, m_pot())
 
 
-def gable_fill(b, w, d, zt, rh, wm):
-    for sx in (-1, 1):
-        x0 = sx * (w / 2 - 0.03)
-        v = [(x0, -d / 2, zt), (x0, d / 2, zt), (x0, 0, zt + rh * 0.92)]
-        v2 = [(x0 - sx * 0.12, -d / 2, zt), (x0 - sx * 0.12, d / 2, zt), (x0 - sx * 0.12, 0, zt + rh * 0.92)]
-        b.part(v + v2, [(0, 2, 1), (3, 4, 5), (0, 1, 4, 3), (1, 2, 5, 4), (2, 0, 3, 5)], wm, 0.02)
+def dormer(b, x, z0, ys, wid, lit, roofm, trim):
+    """abbaino su falda: ys = y della falda a quota z0."""
+    b.box(x - wid / 2, ys - 0.6, z0, x + wid / 2, ys + 0.7, z0 + 1.4, trim)
+    b.box(x - wid / 2 + 0.12, ys - 0.64, z0 + 0.15, x + wid / 2 - 0.12, ys - 0.6, z0 + 1.2, m_win_lit() if lit else m_win_dark())
+    b.box(x - 0.02, ys - 0.68, z0 + 0.15, x + 0.02, ys - 0.62, z0 + 1.2, trim)
+    p = [(x - wid / 2 - 0.15, z0 + 1.4), (x + wid / 2 + 0.15, z0 + 1.4), (x, z0 + 2.1)]
+    b.prism(p, ys - 0.7, ys + 0.8, roofm)
+    b.box(x - wid / 2 - 0.18, ys - 0.72, z0 + 1.35, x + wid / 2 + 0.18, ys - 0.60, z0 + 1.42, trim)
 
 
-# ---------------------------------------------------------------- tipi di casa (8)
-def mk_house(tp, var, seed):
-    rg = random.Random(seed * 131 + tp * 17 + var)
+# ---------------------------------------------------------------- palazzo
+def mk_building(P):
+    """P: style, w, n, wall, roof, shop, corner, door, seed -> mesh locale (fronte y=0)."""
+    rg = rgs(P['seed'], 'b', P['style'], P['w'], P['n'], P['wall'], P['roof'], P['shop'], P['corner'], P['gab'])
     b = MB()
-    ci = (tp * 2 + var * 3) % 7
-    ri = (tp + var * 2) % 5
-    sh = (tp + var) % 5
-    dc = (tp + var * 2) % 5
-    if tp == 7:
-        return mill(b, rg, var)
-    spec = {
-        0: dict(w=2.3, d=1.7, fl=1, kind='tile', hs=0.62, rh=1.0, feat=('awning', 'sign', 'chimney')),     # panetteria
-        1: dict(w=1.7, d=1.5, fl=2, kind='tile', hs=0.66, rh=0.85, feat=('chimney', 'timber', 'ivy')),       # casa a graticcio alta
-        2: dict(w=2.1, d=1.6, fl=1, kind='thatch', hs=0.66, rh=1.0, feat=('chimney', 'ivy')),                # cottage paglia
-        3: dict(w=1.9, d=1.7, fl=1, kind='moss', hs=0.7, rh=0.95, feat=('chimney', 'stonewall')),            # pietra muschio
-        4: dict(w=1.8, d=1.55, fl=1, kind='tile', hs=0.66, rh=0.9, feat=('chimney', 'ivy', 'dormer')),       # rampicanti
-        5: dict(w=2.0, d=1.5, fl=1, kind='tile', hs=0.62, rh=0.8, feat=('awning', 'sign', 'lantern')),       # bottega
-        6: dict(w=2.4, d=1.9, fl=1, kind='tile', hs=0.9, rh=1.15, feat=('barn',)),                           # fienile
-    }[tp]
-    w = spec['w'] * rg.uniform(0.95, 1.1); d = spec['d'] * rg.uniform(0.95, 1.08)
-    hs = spec['hs']; fl = spec['fl']; H = hs * fl + (0.05 if fl > 1 else 0)
-    feat = spec['feat']
-    wm = m_red() if 'barn' in feat else (m_stone() if 'stonewall' in feat else m_wall(ci))
-    rm = m_red() if False else m_roof(ri + (3 if 'barn' in feat else 0))
-    if spec['kind'] == 'thatch':
-        rm = m_thatch(var)
-    elif spec['kind'] == 'moss':
-        rm = m_roof(2)
-    fr = frames(w, d)
-    # base di pietra (fondazione sotto il terreno) + muri tondi
-    b.box(-w / 2 - 0.06, -d / 2 - 0.06, -2.2, w / 2 + 0.06, d / 2 + 0.06, 0.12, m_stone(), 0.05)
-    b.box(-w / 2, -d / 2, 0.05, w / 2, d / 2, hs, wm, 0.11)
-    if fl == 2:
-        o = 0.1
-        b.box(-w / 2 - o, -d / 2 - o, hs - 0.02, w / 2 + o, d / 2 + o, H + hs - 0.05 + 0.0, wm, 0.1)
-        H = hs * 2
-    # graticcio
-    if 'timber' in feat:
-        for xs in (-0.38, 0.0, 0.38):
-            b.lbox(fr['F'], xs * w - 0.03, xs * w + 0.03, hs + 0.05, hs * 2 - 0.05, 0.1, 0.14, m_dark(), 0.015)
-        b.lbox(fr['F'], -w / 2 - 0.05, w / 2 + 0.05, hs - 0.08, hs + 0.04, 0.1, 0.15, m_dark(), 0.02)
-        b.lbox(fr['F'], -w / 2 - 0.05, w / 2 + 0.05, hs * 2 - 0.1, hs * 2, 0.1, 0.15, m_dark(), 0.02)
-    # tetto
-    zt = H - 0.02
-    gable_fill(b, w, d, zt, spec['rh'], wm if 'barn' not in feat else m_red())
-    roof_gable(b, w, d, zt, spec['rh'], rm, spec['kind'], rg, rows=7 if fl == 1 else 6)
-    # lato porta F
-    wl = fr['F']
-    if 'barn' in feat:
-        b.lbox(wl, -0.5, 0.5, 0.0, 0.8, 0.0, 0.07, m_dark(), 0.03)
-        b.lbox(wl, -0.5, 0.0, 0.0, 0.8, 0.07, 0.1, m_wood(), 0.02)
-        b.lbox(wl, 0.0, 0.5, 0.0, 0.8, 0.07, 0.1, m_wood(), 0.02)
-        window(b, wl, -0.85, 1.1, 0.3, 0.3, sh, rg, False, True)
-        window(b, wl, 0.85, 1.1, 0.3, 0.3, sh, rg, False, True)
-        window(b, fr['R'], 0.0, 0.55, 0.45, 0.4, sh, rg, True, True)
-        # balle di fieno
-        for k in range(3):
-            b.cyl(w / 2 + 0.35 + 0.3 * k, -d / 2 + 0.1 + 0.15 * k, 0.0, 0.45, 0.27, m_hay(), 12, bevel=0.05)
+    w, n, st = P['w'], P['n'], P['style']
+    hw = w / 2
+    d = BLK_D
+    H = FH0 + FH * (n - 1)
+    wall = m_wall(P['wall'])
+    trim = m_trim()
+    stone = m_stone(P['wall'])
+    roofm = m_roof(P['roof'])
+    shop = P['shop'] >= 0
+    brickwall = P['wall'] < 100
+    # ---- corpo (poligono facciata)
+    outline = [(-hw, 0), (hw, 0), (hw, H), (-hw, H)]
+    gab = P['gab']
+    if st == 0:                                                 # Amsterdam: timpano a gradoni / a campana
+        if gab == 0:
+            pts = [(hw, H)]
+            zz = H
+            xx = hw
+            for s in range(4):
+                pts.append((xx, zz + 0.45)); xx -= hw * 0.2; pts.append((xx, zz + 0.45)); zz += 0.45
+            top = zz
+            pts.append((0, top + 0.55))
+            pts2 = [(-px, pz) for px, pz in reversed(pts)]
+            outline = [(-hw, 0), (hw, 0)] + pts + pts2[1:] if False else [(-hw, 0), (hw, 0)] + pts + [(-p[0], p[1]) for p in reversed(pts[:-1])]
+        else:
+            pts = []
+            for q in range(0, 13):
+                t = q / 12.0
+                px = hw * (1 - 0.82 * math.sin(t * math.pi / 2) ** 1.5) if t < 0.5 else hw * (0.55 - 0.55 * ((t - 0.5) * 2) ** 0.8) + 0.0
+                pts.append((px, H + 2.4 * t))
+            half = [(hw, H)] + [(min(hw, max(0.0, hw * (1.0 - 0.5 * t - 0.5 * t * t))), H + 2.2 * t) for t in [q / 10 for q in range(1, 11)]]
+            outline = [(-hw, 0), (hw, 0)] + half + [(-p[0], p[1]) for p in reversed(half[:-1])]
+    b.prism(outline, 0, d, wall)
+    # fascia basamento in pietra
+    if not shop:
+        b.box(-hw - 0.02, -0.08, 0, hw + 0.02, 0.0, 0.9, stone)
+    # cordoli di piano
+    if st in (1, 2, 3, 5):
+        for f in range(1, n):
+            z = FH0 + FH * (f - 1) - 0.1 if f > 0 else 0
+            b.box(-hw - 0.03, -0.08, z, hw + 0.03, 0.0, z + 0.12, trim if not brickwall else stone)
+    elif st == 0:
+        for f in range(1, n):
+            z = FH0 + FH * (f - 1) + 1.0
+            b.box(-hw - 0.02, -0.04, z, hw + 0.02, 0.0, z + 0.08, trim)
+    # ---- finestre
+    nb = max(2, int(round(w / 1.85)))
+    ww = 0.95 if w < 5.2 else 1.05
+    xs = [-hw + (q + 0.5) * w / nb for q in range(nb)]
+    shut = rg.randrange(5) if (st in (2,) and rg.random() < 0.35) else None
+    bal_floor = 1 if (st in (1, 2, 5) and n >= 3) else (2 if st == 2 else -1)
+    for f in range(1, n):
+        zb = FH0 + FH * (f - 1) + 0.55
+        hh = 1.95 if f != bal_floor else 2.3
+        for q, x in enumerate(xs):
+            lit = rg.random() < 0.62
+            fl = rg.randrange(5) + 1 if (rg.random() < 0.18 and f != bal_floor) else 0
+            window(b, x, zb, ww, hh, lit, trim, flowers=fl, shut=shut)
+        if f == bal_floor and st in (1, 2, 5):
+            balcony(b, xs[len(xs) // 2], zb, ww, trim)
+            if len(xs) >= 3 and w > 5.4:
+                balcony(b, xs[0], zb, ww, trim) if rg.random() < 0.5 else None
+    # ---- piano terra
+    dm = P['door']
+    if shop:
+        shopfront(b, w, P['shop'], rg, P['door'])
     else:
-        du = rg.choice((-1, 1)) * 0.28 * w if fl == 1 else -0.28 * w
-        door(b, wl, du, 0.32, 0.5, dc, rg)
-        ws = [x for x in (-0.3 * w * (1 if du > 0 else -1) * -1,)]
-        wu = -du * 1.35 if abs(du) > 0.1 else 0.5
-        window(b, wl, wu, 0.38, 0.36, 0.44, sh, rg, True, True)
-        if fl == 2:
-            window(b, wl, -0.28 * w, hs + 0.38, 0.36, 0.44, sh, rg, True, True)
-            window(b, wl, 0.28 * w, hs + 0.38, 0.36, 0.44, sh, rg, True, True)
-        for s in ('R', 'L'):
-            window(b, fr[s], rg.uniform(-0.2, 0.2), 0.42 if fl == 1 else hs + 0.4, 0.3, 0.4, sh, rg, rg.random() < 0.6, False)
-        window(b, fr['B'], 0.0, 0.42, 0.3, 0.4, sh, rg, False, False)
-    if 'awning' in feat:
-        bo = wl[0] + Vector((0, 0, 0))
-        for k in range(8):
-            uu = -0.6 + k * 0.15
-            b.lbox(wl, uu, uu + 0.15, 0.68 + 0.04 * (k % 2), 0.95, 0.0, 0.5, m_awn(0) if k % 2 == 0 else m_white(), 0.03)
-        b.lbox(wl, -0.6, 0.6, 0.64, 0.74, 0.45, 0.5, m_awn(0), 0.02)
-    if 'sign' in feat:
-        sign(b, fr['F'], 0.95 if tp == 0 else -0.95, 0.75, rg, tp)
-    if 'lantern' in feat:
-        O, T, Nn = fr['F']
-        for sd in (-1, 1):
-            p = O + T * (sd * (w * 0.46)) + Nn * 0.32 + Vector((0, 0, 0.8))
-            b.cyl(p.x, p.y, 0.0, 0.78, 0.025, m_dark(), 6)
-            b.sphere(p.x, p.y, p.z + 0.04, 0.085, m_lamp(), 1)
-    if 'ivy' in feat:
-        ivy(b, fr[rg.choice('RLF')], d, H + 0.05, rg)
-        if rg.random() < 0.7:
-            ivy(b, fr['R'], d, H, rg)
-    if 'dormer' in feat:
-        zq = zt + spec['rh'] * 0.35
-        O = Vector((rg.uniform(-0.3, 0.3), -d / 2 * 0.45, zq))
-        b.box(O.x - 0.28, O.y - 0.14, zq - 0.06, O.x + 0.28, O.y + 0.2, zq + 0.34, wm, 0.06)
-        window(b, (Vector((O.x, O.y - 0.14, zq - 0.06)), Vector((1, 0, 0)), Vector((0, -1, 0))), 0, 0.18, 0.26, 0.3, sh, rg, False, False)
-        b.bar((O.x, O.y - 0.2, zq + 0.34), (O.x, O.y + 0.35, zq + 0.55), 0.06, 0.7, rm, bevel=0.02)
-    if 'chimney' in feat:
-        chimney(b, w * rg.uniform(0.15, 0.32) * rg.choice((-1, 1)), -d * 0.1, zt + spec['rh'] * 0.55, rg)
-    b.warp(0.012 + 0.008 * var, seed * 7 + tp)
-    return b.build(f"house{tp}_{var}")
+        dx = xs[0] if len(xs) == 2 else xs[len(xs) // 2 - 1 if len(xs) > 2 else 0]
+        stoop = 1.1 if st == 1 else 0.0
+        door(b, dx, dm, trim, stoop)
+        for x in xs:
+            if abs(x - dx) > 0.9:
+                window(b, x, 0.95 + stoop * 0.5, ww, 1.8, rg.random() < 0.7, trim, flowers=(rg.randrange(5) + 1 if rg.random() < 0.3 else 0))
+    # ---- tetto
+    zr = H
+    if st == 0:
+        top = H + (2.4 if gab else 2.0)
+        for s in (-1, 1):
+            b.box(s * hw - 0.06, -0.14, H - 0.1, s * hw + 0.06, 0.12, top, trim) if False else None
+        b.box(-hw - 0.05, -0.18, H - 0.05, hw + 0.05, 0.0, H + 0.08, trim)
+        b.box(-0.03, -0.12, H + 0.0, 0.03, 0.02, H + 0.0, trim) if False else None
+        # carrucola (trave) in cima
+        b.box(-0.05, -0.80, top - 0.1, 0.05, 0.0, top - 0.02, m_dark())
+        b.box(-0.06, -0.86, top - 0.2, 0.06, -0.70, top - 0.05, m_iron())
+        # falde (visibili dall'alto)
+        rh = 2.6
+        b.slab([(-hw, 0.1, top - 0.3), (hw, 0.1, top - 0.3), (hw, d / 2, top + rh * 0.5), (-hw, d / 2, top + rh * 0.5)], 0.08, roofm)
+        b.slab([(-hw, d / 2, top + rh * 0.5), (hw, d / 2, top + rh * 0.5), (hw, d, top - 0.3), (-hw, d, top - 0.3)], 0.08, roofm)
+        chimney(b, rg.uniform(-hw * 0.5, hw * 0.5), d * 0.7, top + 0.8, rg, wall)
+    elif st == 1:                                               # brownstone: cornice a mensole + tetto piano
+        b.box(-hw - 0.05, -0.52, H, hw + 0.05, d + 0.05, H + 0.35, stone)
+        b.box(-hw - 0.03, -0.62, H + 0.35, hw + 0.03, d + 0.03, H + 0.5, trim)
+        nbk = int(w / 0.5)
+        for q in range(nbk):
+            xx = -hw + 0.25 + q * w / nbk
+            b.box(xx - 0.09, -0.5, H - 0.45, xx + 0.09, 0.0, H, stone)
+        b.box(-hw, -0.1, H + 0.5, hw, d, H + 0.56, m_zinc())
+        chimney(b, rg.uniform(-hw * 0.5, hw * 0.5), d * 0.6, H + 0.5, rg, wall)
+    elif st in (2, 5):                                          # mansarda con abbaini
+        b.box(-hw - 0.04, -0.46, H, hw + 0.04, 0.0, H + 0.28, trim)
+        b.box(-hw - 0.02, -0.5, H + 0.28, hw + 0.02, -0.0, H + 0.36, stone)
+        rh, ins = 2.6, 1.5
+        b.frustum(-hw, hw, 0.0, d, H + 0.3, ins, d - ins, H + 0.3 + rh, roofm)
+        b.box(-hw + 0.02, ins, H + 0.3 + rh, hw - 0.02, d - ins, H + 0.3 + rh + 0.12, m_zinc())
+        zs = H + 0.3 + 0.35
+        ysf = ins * (0.35 / rh)
+        for x in xs:
+            dormer(b, x, zs, ysf, 1.15, rg.random() < 0.6, roofm, trim)
+        chimney(b, rg.uniform(-hw * 0.5, hw * 0.5), d * 0.55, H + 0.3 + rh, rg, wall)
+        chimney(b, rg.uniform(-hw * 0.5, hw * 0.5), d * 0.62, H + 0.3 + rh, rg, wall)
+    else:                                                       # st 3 (e negozi): tetto a due falde parallele alla strada
+        ov = 0.35
+        rh = 2.2 + 0.2 * rg.random()
+        b.box(-hw - 0.04, -0.4, H, hw + 0.04, 0.0, H + 0.22, trim)
+        p0 = [(-hw - 0.02, -ov, H + 0.2), (-hw - 0.02, d / 2, H + 0.2 + rh), (-hw - 0.02, d + ov, H + 0.2)]
+        # falde: due lastre inclinate in (y,z)
+        b.slab([(-hw, -ov, H + 0.18), (hw, -ov, H + 0.18), (hw, d / 2, H + 0.2 + rh), (-hw, d / 2, H + 0.2 + rh)], 0.1, roofm)
+        b.slab([(-hw, d / 2, H + 0.2 + rh), (hw, d / 2, H + 0.2 + rh), (hw, d + ov, H + 0.18), (-hw, d + ov, H + 0.18)], 0.1, roofm)
+        for s in (-1, 1):
+            b.prism([(0, H + 0.2 + rh), (-0.0, H + 0.2 + rh)], 0, 0, wall) if False else None
+        # timpani laterali (frontoni)
+        for s in (-1, 1):
+            xx = s * hw
+            b.prism([(xx, H), (xx + s * 0.0 + 0.001, H)], 0, 0, wall) if False else None
+        yz = (-ov + (d / 2 + ov) * 0.0)
+        if w > 4.8:
+            for x in xs[::2]:
+                dormer(b, x, H + 0.2 + 0.5, (0.5 / rh) * d / 2 - ov * 0.0, 1.1, rg.random() < 0.6, roofm, trim)
+        chimney(b, rg.uniform(-hw * 0.5, hw * 0.5), d * 0.55, H + 0.2 + rh * 0.8, rg, wall)
+    # ---- torretta d'angolo
+    if P['corner'] != 0:
+        cs = P['corner']
+        cx = cs * hw
+        r = 1.15
+        z0 = FH0 + FH * 0.9
+        zt = H + (0.3 if st in (2, 5) else 0.0) + 0.9
+        b.cyl(cx, 0.0, z0 + 0.2, zt, r, wall, n=12)
+        b.cyl(cx, 0.0, z0 - 0.9, z0 + 0.2, 0.55, wall, n=12, r2=r)               # beccatello
+        b.cyl(cx, 0.0, zt, zt + 0.25, r + 0.18, trim, n=12)
+        b.cone(cx, 0.0, zt + 0.25, zt + 3.4, r + 0.25, m_roof(P['roof'] + 1), n=12)
+        b.sphere(cx, 0.0, zt + 3.55, 0.12, m_lamp(), sub=1)
+        for zz in (z0 + 0.7, z0 + FH * 0.95 if n > 3 else z0 + 0.7):
+            if zz + 1.6 > zt:
+                continue
+            b.box(cx - 0.4, -r - 0.06, zz, cx + 0.4, -r + 0.12, zz + 1.5, m_win_lit() if rg.random() < 0.6 else m_win_dark())
+            b.box(cx - 0.46, -r - 0.1, zz + 1.5, cx + 0.46, -r + 0.12, zz + 1.62, trim)
+            sx = cx + cs * r
+            b.box(min(sx - 0.06, sx + 0.12 * cs), -0.4, zz, max(sx - 0.06, sx + 0.12 * cs) + 0.0, 0.4, zz + 1.5, m_win_lit() if rg.random() < 0.6 else m_win_dark())
+    return b
 
 
-def mill(b, rg, var):
-    wm = m_wall(5)
-    b.cyl(0, 0, -0.9, 0.2, 1.0, m_stone(), 16, bevel=0.05)
-    b.cyl(0, 0, 0.1, 2.5, 0.85, wm, 16, r2=0.58, bevel=0.06)
-    b.cone(0, 0, 2.4, 3.5, 0.78, m_roof(0), 16, bevel=0.04)
-    b.sphere(0, 0, 3.58, 0.1, m_wood(), 1)
-    fr = frames(1.7, 1.7)
-    door(b, (Vector((0, -0.85, 0)), Vector((1, 0, 0)), Vector((0, -1, 0))), 0, 0.34, 0.55, 2, rg)
-    for z, rr in ((1.2, 0.74), (1.9, 0.64)):
-        window(b, (Vector((0, -rr, 0)), Vector((1, 0, 0)), Vector((0, -1, 0))), 0, z, 0.3, 0.36, 1, rg, False, True)
-    # pale
-    hub = Vector((0, -0.72, 2.2))
-    ang0 = rg.uniform(0.2, 0.7)
+def mk_tower(P):
+    """edificio con torre dell'orologio (landmark)."""
+    rg = rgs(P['seed'], 'tower')
+    b = MB()
+    w = P['w']; hw = w / 2; d = BLK_D
+    wall = m_wall(101); stone = m_stone(0); trim = m_trim()
+    H = FH0 + FH * 2
+    b.prism([(-hw, 0), (hw, 0), (hw, H), (-hw, H)], 0, d, m_wall(0))
+    b.box(-hw - 0.05, -0.12, 0, hw + 0.05, 0.0, 1.0, stone)
+    # portico ad archi
+    for q in range(3):
+        x = -hw + (q + 0.5) * w / 3
+        b.box(x - 0.9, -0.3, 0, x + 0.9, 0.0, 2.9, m_stone(2)); b.box(x - 0.65, -0.34, 0, x + 0.65, -0.2, 2.5, m_shop_lit() if q != 1 else m_door(0))
+    for f in (1, 2):
+        zb = FH0 + FH * (f - 1) + 0.4
+        for q in range(4):
+            x = -hw + (q + 0.5) * w / 4
+            window(b, x, zb, 1.0, 2.0, rg.random() < 0.6, trim)
+    b.box(-hw - 0.1, -0.6, H, hw + 0.1, d, H + 0.3, stone)
+    b.frustum(-hw, hw, 0.0, d, H + 0.3, 1.0, d - 1.0, H + 2.6, m_roof(0))
+    tw = 3.6
+    zt = H + 2.0
+    th = zt + 12
+    b.prism([(-tw / 2, zt - 2.1), (tw / 2, zt - 2.1), (tw / 2, th), (-tw / 2, th)], 1.4, 1.4 + tw, m_wall(2))
+    b.box(-tw / 2 - 0.15, 1.25, th - 0.5, tw / 2 + 0.15, 1.55 + tw, th + 0.3, stone)
+    for q, (xs_, ys_, rot) in enumerate(((0, 1.4 - 0.08, 0), (0, 1.4 + tw + 0.08, 0))):
+        b.cyl(0, 0, 0, 0, 0.01, trim, n=3) if False else None
+    zc = th - 3.6
+    # quadrante frontale (verso -y) e lati
+    b.cylx(-0.0, 0.0, 0, 0, 0.0, trim, n=3) if False else None
+    for yy in (1.4 - 0.12, 1.4 + tw + 0.12):
+        pass
+    # disco frontale: cilindro con asse y costruito a mano
+    n = 20
+    r = 1.2
+    for (y0, y1) in ((1.4 - 0.12, 1.4 - 0.0),):
+        v = []
+        for yy in (y0, y1):
+            for k in range(n):
+                a = 2 * math.pi * k / n
+                v.append((r * math.cos(a), yy, zc + r * math.sin(a)))
+        f = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(k, (k + 1) % n, n + (k + 1) % n, n + k) for k in range(n)]
+        b.part(v, f, m_cream())
+        b.box(-0.04, y0 - 0.02, zc, 0.04, y0 + 0.03, zc + 0.95, m_iron())
+        b.box(0.0, y0 - 0.02, zc - 0.04, 0.7, y0 + 0.03, zc + 0.04, m_iron())
+    b.box(-tw / 2 + 0.6, 1.4 - 0.1, zc - 3.0, tw / 2 - 0.6, 1.4 - 0.0, zc - 1.6, m_win_lit())
+    b.frustum(-tw / 2 - 0.4, tw / 2 + 0.4, 1.0, 1.8 + tw, th + 0.3, 1.4 + tw / 2 - 0.1, 1.4 + tw / 2 + 0.1, th + 6.0, m_copper())
+    b.sphere(0, 1.4 + tw / 2, th + 6.3, 0.2, flat("gold", (0.95, 0.75, 0.30), rough=0.3, metal=0.8), sub=1)
+    return b
+
+
+def mk_church(P):
+    rg = rgs(P['seed'], 'church')
+    b = MB()
+    w = P['w']; hw = w / 2; d = BLK_D
+    stone = m_stone(2); trim = m_trim()
+    wl = m_stone(1)
+    H = 11.0
+    bw = hw - 2.4
+    b.prism([(-hw, 0), (bw + 0.4, 0), (bw + 0.4, H), (0, H + 3.2), (-hw, H)], 0, d, wl)
+    tx0, tx1 = bw + 0.6, hw
+    b.prism([(tx0, 0), (tx1, 0), (tx1, 21), (tx0, 21)], 0, 3.4, wl)
+    b.frustum(tx0 - 0.2, tx1 + 0.2, -0.2, 3.6, 21, 1.4, 2.0, 30, m_copper())
+    b.box(tx0 + 0.3, -0.05, 15.5, tx1 - 0.3, 0.1, 19.0, m_win_dark())
+    b.cyl((tx0 + tx1) / 2, -0.2, 17.8, 18.0, 0.7, m_cream(), n=16) if False else None
+    # portale + rosone + guglia
+    cxp = (-hw + bw + 0.4) / 2
+    b.box(cxp - 1.2, -0.3, 0, cxp + 1.2, 0.0, 4.0, trim)
+    b.box(cxp - 0.9, -0.34, 0, cxp + 0.9, -0.2, 3.4, m_door(2))
+    b.box(cxp - 0.9, -0.34, 3.4, cxp + 0.9, -0.2, 3.6, m_shop_lit())
+    n = 18
+    r = 1.1
+    v = []
+    for yy in (-0.12, 0.0):
+        for k in range(n):
+            a = 2 * math.pi * k / n
+            v.append((cxp + r * math.cos(a), yy, 7.6 + r * math.sin(a)))
+    f = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(k, (k + 1) % n, n + (k + 1) % n, n + k) for k in range(n)]
+    b.part(v, f, m_win_lit())
+    for q in range(3):
+        b.box(cxp - 0.5 + q * 0.5 - 0.3, -0.12, 2.2 + 0.0, cxp - 0.5 + q * 0.5 + 0.3, 0.0, 2.8, m_win_lit()) if False else None
+    b.box(-hw + 0.5, -0.1, 4.0, bw - 0.1, 0.0, 6.5, m_win_lit()) if False else None
+    for x in (cxp - 2.0, cxp + 2.0):
+        b.box(x - 0.4, -0.1, 4.2, x + 0.4, 0.0, 7.0, m_win_lit())
+    rr = m_roof(0)
+    b.slab([(-hw, -0.4, H - 0.1), (bw + 0.5, -0.4, H - 0.1), (bw + 0.5, d / 2, H + 3.3), (-hw, d / 2, H + 3.3)], 0.1, rr) if False else None
+    b.slab([(-hw, 0.0, H + 0.0), (bw + 0.4, 0.0, H + 0.0), (bw + 0.4, d + 4, H + 0.0), (-hw, d + 4, H + 0.0)], 0.1, rr) if False else None
+    return b
+
+
+# ---------------------------------------------------------------- props di strada
+def prop_lamp(b, x, y, z=0.0, face=0.0):
+    b.cyl(x, y, z, z + 0.25, 0.14, m_iron(), n=8)
+    b.cyl(x, y, z + 0.25, z + 3.9, 0.04, m_iron(), n=6)
+    b.box(x - 0.14, y - 0.14, z + 3.9, x + 0.14, y + 0.14, z + 4.1, m_lamp())
+    b.cone(x, y, z + 4.1, z + 4.35, 0.2, m_iron(), n=6)
+
+
+def prop_tree(b, x, y, rg, z=0.0):
+    h = rg.uniform(3.0, 4.0)
+    b.cyl(x, y, z, z + h, 0.09, m_trunk(), n=7, r2=0.05)
+    k = rg.randrange(3)
+    for q in range(6):
+        a = rg.uniform(0, 6.28)
+        rr_ = rg.uniform(0.15, 0.7)
+        b.sphere(x + rr_ * math.cos(a), y + rr_ * math.sin(a), z + h + rg.uniform(0.0, 1.6), rg.uniform(0.45, 0.75), m_leaf(k + q), sub=2, sz=0.9)
+    b.cyl(x, y, z, z + 0.06, 0.45, m_iron(), n=8)
+
+
+def prop_bench(b, x, y, along='y'):
+    # panca con asse lungo y (marciapiede), schienale verso x+
+    b.box(x - 0.25, y - 0.7, 0.42, x + 0.25, y + 0.7, 0.47, m_wood())
+    b.box(x + 0.22, y - 0.7, 0.47, x + 0.27, y + 0.7, 0.95, m_wood())
+    for yy in (-0.6, 0.6):
+        b.box(x - 0.22, y + yy - 0.03, 0.0, x + 0.22, y + yy + 0.03, 0.42, m_iron())
+
+
+def prop_planter(b, x, y, rg):
+    b.box(x - 0.45, y - 0.3, 0.0, x + 0.45, y + 0.3, 0.5, m_pot())
+    b.box(x - 0.42, y - 0.27, 0.5, x + 0.42, y + 0.27, 0.58, m_leaf(0))
+    for q in range(7):
+        b.sphere(x + rg.uniform(-0.36, 0.36), y + rg.uniform(-0.2, 0.2), 0.7 + rg.uniform(0, 0.12), rg.uniform(0.09, 0.14), m_flow(rg.randrange(5)), sub=1)
+
+
+def prop_person(b, x, y, rg, z=0.0):
+    c = rg.randrange(6)
+    b.cyl(x, y, z, z + 0.85, 0.11, flat("trou", (0.22, 0.22, 0.28), rough=0.8), n=8, r2=0.1)
+    b.cyl(x, y, z + 0.85, z + 1.45, 0.17, m_coat(c), n=8, r2=0.14)
+    b.sphere(x, y, z + 1.6, 0.115, m_skin(), sub=1)
+    b.cyl(x, y, z + 1.66, z + 1.72, 0.125, m_dark() if c % 2 else m_coat(c + 2), n=8)
+
+
+def prop_bike(b, x, y, rg, z=0.0):
+    # bicicletta lungo y
+    for yy in (-0.42, 0.42):
+        b.cylx(x - 0.015, x + 0.015, y + yy, z + 0.34, 0.34, m_iron(), n=14)
+        b.cylx(x - 0.01, x + 0.01, y + yy, z + 0.34, 0.26, m_win_dark(), n=14) if False else None
+    b.box(x - 0.015, y - 0.42, z + 0.34, x + 0.015, y + 0.0, z + 0.62, m_awn(rg.randrange(4)))
+    b.box(x - 0.015, y - 0.0, z + 0.34, x + 0.015, y + 0.42, z + 0.40, m_awn(rg.randrange(4)))
+    b.box(x - 0.015, y - 0.1, z + 0.60, x + 0.015, y + 0.18, z + 0.65, m_iron())
+    b.box(x - 0.2, y - 0.46, z + 0.78, x + 0.2, y - 0.43, z + 0.81, m_iron())
+    b.box(x - 0.17, y - 0.5, z + 0.62, x + 0.17, y - 0.2, z + 0.7, m_wood())          # cestino
+
+
+def prop_fountain(b, x, y):
+    b.cyl(x, y, 0.0, 0.7, 3.0, m_stone(0), n=24, smooth=False)
+    b.cyl(x, y, 0.7, 0.74, 2.7, m_water(), n=24)
+    b.cyl(x, y, 0.74, 2.2, 0.32, m_stone(0), n=12)
+    b.cyl(x, y, 2.0, 2.15, 1.2, m_stone(0), n=16)
+    b.cyl(x, y, 2.15, 2.19, 1.05, m_water(), n=16)
+    b.cyl(x, y, 2.19, 3.2, 0.12, m_stone(0), n=8)
+    b.sphere(x, y, 3.3, 0.18, m_water(), sub=2)
     for k in range(4):
-        a = ang0 + k * math.pi / 2
-        dv = Vector((math.cos(a), 0, math.sin(a)))
-        b.bar(hub - Vector((0, 0.1, 0)), hub + dv * 1.7 - Vector((0, 0.1, 0)), 0.05, 0.08, m_dark(), ref=(0, 1, 0), bevel=0.01)
-        pv = Vector((-dv.z, 0, dv.x))
-        for s in range(2):
-            c = hub + dv * (0.7 + 0.8 * s) + pv * 0.18 - Vector((0, 0.14, 0))
-            b.bar(c - dv * 0.3, c + dv * 0.3, 0.025, 0.3, m_white(), ref=(0, 1, 0), bevel=0.01)
-    b.sphere(hub.x, hub.y - 0.1, hub.z, 0.12, m_wood(), 1)
-    b.warp(0.012, 3 + var)
-    return b.build(f"house7_{var}")
+        a = k * math.pi / 2
+        b.sphere(x + 0.7 * math.cos(a), y + 0.7 * math.sin(a), 2.4, 0.07, m_water(), sub=1)
 
 
-def mk_tree(kind, seed):
-    rg = random.Random(seed)
-    b = MB()
-    if kind == 0:   # albero tondo da favola
-        h = rg.uniform(1.1, 1.5)
-        b.cyl(0, 0, -0.2, h, 0.13, m_trunk(), 8, r2=0.09, bevel=0.01)
-        for k in range(6):
-            b.sphere(rg.uniform(-0.45, 0.45), rg.uniform(-0.4, 0.4), h + rg.uniform(0.2, 0.75), rg.uniform(0.45, 0.65), m_leaf(rg.randrange(3) if k else 0), 2)
-    elif kind == 1:  # cespuglio con fiori
-        for k in range(5):
-            b.sphere(rg.uniform(-0.25, 0.25), rg.uniform(-0.25, 0.25), 0.12 + rg.uniform(0, 0.15), rg.uniform(0.22, 0.34), m_leaf(rg.randrange(2)), 2)
-        for k in range(8):
-            b.sphere(rg.uniform(-0.4, 0.4), rg.uniform(-0.4, 0.4), rg.uniform(0.15, 0.4), 0.045, m_flow(rg.randrange(5)), 1)
-    elif kind == 2:  # covone
-        b.cyl(0, 0, -0.1, 0.55, 0.38, m_hay(), 12, r2=0.3, bevel=0.04)
-        b.sphere(0, 0, 0.58, 0.31, m_hay(), 2, sz=0.8)
-    elif kind == 3:  # lampione
-        b.cyl(0, 0, -0.2, 1.0, 0.03, m_dark(), 6)
-        b.sphere(0, 0, 1.08, 0.1, m_lamp(), 2)
-        b.cone(0, 0, 1.15, 1.3, 0.13, m_dark(), 6)
-    elif kind == 4:  # ciuffo d'erba
-        for k in range(22):
-            a = rg.uniform(0, 6.28); r = rg.uniform(0.0, 0.14); hh = rg.uniform(0.3, 0.7)
-            lean = rg.uniform(0.08, 0.28)
-            x0, y0 = r * math.cos(a), r * math.sin(a)
-            b.part([(x0 - 0.025, y0, 0), (x0 + 0.025, y0, 0), (x0, y0 + 0.02, 0),
-                    (x0 + 0.01 + lean * math.cos(a + 1), y0 + lean * math.sin(a + 1), hh)],
-                   [(0, 2, 1), (0, 1, 3), (1, 2, 3), (2, 0, 3)], m_leaf(rg.randrange(3)))
-    elif kind == 5:  # fiore di campo
-        for k in range(4):
-            a = rg.uniform(0, 6.28); r = rg.uniform(0.0, 0.1); hh = rg.uniform(0.35, 0.6)
-            b.bar((r * math.cos(a), r * math.sin(a), 0), (r * math.cos(a) * 1.2, r * math.sin(a) * 1.2, hh), 0.014, 0.014, m_leaf(1))
-            fm = m_flow(rg.randrange(5))
-            b.sphere(r * math.cos(a) * 1.2, r * math.sin(a) * 1.2, hh + 0.02, 0.055, fm, 1)
-            b.sphere(r * math.cos(a) * 1.2, r * math.sin(a) * 1.2, hh + 0.05, 0.02, m_hay(), 1)
-    elif kind == 6:  # spiga di grano
-        for k in range(10):
-            a = rg.uniform(0, 6.28); r = rg.uniform(0, 0.1); hh = rg.uniform(0.5, 0.8)
-            tx, ty = r * math.cos(a) + rg.uniform(-0.05, 0.05), r * math.sin(a) + rg.uniform(-0.05, 0.05)
-            b.bar((r * math.cos(a), r * math.sin(a), 0), (tx, ty, hh), 0.012, 0.012, m_hay())
-            b.sphere(tx, ty, hh + 0.05, 0.03, m_hay(), 1, sz=2.4)
-    elif kind == 7:  # staccionata (3 doghe)
-        for k in range(3):
-            x = (k - 1) * 0.34
-            b.box(x - 0.04, -0.02, -0.1, x + 0.04, 0.02, 0.38, m_wood(), 0.012)
-        b.box(-0.5, -0.04, 0.12, 0.5, 0.0, 0.17, m_wood(), 0.01)
-    elif kind == 8:  # pozzo
-        b.cyl(0, 0, -0.1, 0.4, 0.38, m_stone(), 12, bevel=0.04)
-        b.cyl(0, 0, 0.38, 0.41, 0.3, m_M_water(), 12)
-        for sx in (-1, 1):
-            b.box(sx * 0.4 - 0.03, -0.03, 0.3, sx * 0.4 + 0.03, 0.03, 1.0, m_wood())
-        b.bar((-0.5, 0, 1.0), (0, 0, 1.3), 0.05, 0.9, m_roof(0), ref=(0, 1, 0), bevel=0.02)
-        b.bar((0, 0, 1.3), (0.5, 0, 1.0), 0.05, 0.9, m_roof(0), ref=(0, 1, 0), bevel=0.02)
-    return b.build(f"prop{kind}_{seed}")
+def prop_tram(b, y, x=0.95):
+    L, W, Hh = 12.0, 2.3, 3.4
+    b.box(x - W / 2, y - L / 2, 0.45, x + W / 2, y + L / 2, Hh, flat("tram", (0.88, 0.76, 0.34), rough=0.45))
+    b.box(x - W / 2 - 0.01, y - L / 2, 1.0, x + W / 2 + 0.01, y + L / 2, 1.18, m_awn(0))
+    b.box(x - W / 2, y - L / 2, 0.15, x + W / 2, y + L / 2, 0.5, m_iron())
+    b.box(x - W / 2 - 0.02, y - L / 2 + 0.2, 1.6, x + W / 2 + 0.02, y + L / 2 - 0.2, 2.7, m_win_lit())
+    for q in range(9):
+        yy = y - L / 2 + 0.2 + q * (L - 0.4) / 8
+        b.box(x - W / 2 - 0.04, yy - 0.04, 1.6, x + W / 2 + 0.04, yy + 0.04, 2.7, m_iron())
+    b.box(x - W / 2 + 0.2, y - L / 2 - 0.02, 1.6, x + W / 2 - 0.2, y - L / 2 + 0.0, 2.7, m_win_lit())
+    b.box(x - 0.6, y - 0.1, Hh, x + 0.6, y + 0.1, Hh + 0.2, m_iron())
+    b.box(x - 0.02, y - 0.02, Hh + 0.2, x + 0.02, y + 4.0, Hh + 1.2, m_iron())
 
 
-def m_M_water():
-    return M("water", (0.45, 0.72, 0.8), rough=0.1, tex='none')
+def prop_cart(b, x, y, rg):
+    b.box(x - 0.55, y - 1.1, 0.55, x + 0.55, y + 1.1, 0.75, m_wood())
+    for s in (-1, 1):
+        b.box(x + s * 0.55 - 0.03, y - 1.1, 0.75, x + s * 0.55 + 0.03, y + 1.1, 1.15, m_wood())
+        b.cylx(x + s * 0.6 - 0.04, x + s * 0.6 + 0.04, y, 0.5, 0.5, m_dark(), n=14)
+    for q in range(5):
+        b.sphere(x + rg.uniform(-0.3, 0.3), y + rg.uniform(-0.8, 0.8), 0.85, rg.uniform(0.18, 0.26), m_flow(q), sub=1)
+    b.box(x - 0.05, y - 2.6, 0.45, x + 0.05, y - 1.1, 0.5, m_wood())
 
 
-# ---------------------------------------------------------------- disposizione
-def lot(i, seed):
-    """lotto i: posizione, rotazione, tipo, variante, scala. Deterministico, indipendente da N."""
-    rg = random.Random(seed * 100003 + i)
-    r = A_SP * math.sqrt(i + 0.7)
-    a = i * GA
-    jit = 0.28 if i > 0 else 0.0
-    x = r * math.cos(a) + rg.uniform(-jit, jit) * A_SP
-    y = r * math.sin(a) + rg.uniform(-jit, jit) * A_SP
-    special = [0, 1, 2, 3, 4, 5, 6, 1, 2, 4, 3, 5, 2, 7]
-    if i < len(special):
-        tp = special[i]
+# ---------------------------------------------------------------- lotti e citta'
+LANDMARKS = {(0, -1, 'W', 3): 'tower', (-1, 1, 'E', 3): 'church'}
+
+
+def all_slots(seed):
+    """tutti i lotti possibili della griglia, ordinati per distanza dal centro: lotto i fisso, N prende i primi N."""
+    out = []
+    for c in range(-6, 6):
+        for r in range(-5, 6):
+            cx, cy = PX * c + PX / 2, PY * r
+            for side in ('W', 'E'):
+                rg = rgs(seed, 'side', c, r, side)
+                y = cy - BLK_L / 2
+                idx = 0
+                while y < cy + BLK_L / 2 - 3.6:
+                    w = rg.choice([4.6, 5.0, 5.4, 5.8, 6.4])
+                    lm = LANDMARKS.get((c, r, side, idx))
+                    if lm:
+                        w = 8.4 if lm == 'tower' else 9.0
+                    if y + w > cy + BLK_L / 2 - 3.0:
+                        w = cy + BLK_L / 2 - y
+                        if w < 3.8 and out and False:
+                            pass
+                    xf = cx - BLK_D if side == 'W' else cx + BLK_D
+                    out.append(dict(c=c, r=r, side=side, idx=idx, y0=y, w=w, yc=y + w / 2, xf=xf, lm=lm,
+                                    first=(idx == 0), last=False))
+                    y += w
+                    idx += 1
+                out[-1]['last'] = True
+    for s in out:
+        s['dist'] = math.hypot(s['xf'], (s['yc'] - 2.0) * 0.8) + 0.01 * s['idx'] + 0.0001 * s['c'] + 0.00001 * s['r']
+        if s['side'] == 'E':
+            s['dist'] += 0.002
+    out.sort(key=lambda s: s['dist'])
+    return out
+
+
+def lot_params(s, seed):
+    rg = rgs(seed, 'lot', s['c'], s['r'], s['side'], s['idx'])
+    avenue = abs(s['xf']) < 6
+    n_base = 6 if s['dist'] < 40 else (5 if s['dist'] < 75 else (4 if s['dist'] < 120 else 3))
+    n = max(3, min(6, n_base + rg.choice([-1, 0, 0, 1])))
+    brickc = rg.random() < 0.5
+    wall = rg.randrange(5) if brickc else 100 + rg.randrange(8)
+    shop = rg.randrange(3) if rg.random() < (0.75 if avenue else 0.3) else -1
+    if s['w'] < 5.0 and rg.random() < 0.55:
+        style = 0
     else:
-        tp = rg.choices(range(8), weights=[1.2, 2, 2.2, 1.8, 2, 1.4, 1, 0.12])[0]
-    return dict(i=i, x=x, y=y, tp=tp, var=rg.randrange(3), sc=rg.uniform(0.92, 1.18) * (1.1 if i < 3 else 1.0),
-                jrot=rg.uniform(-0.5, 0.5), rg=rg)
+        style = rg.choice([1, 2, 2, 3, 3, 0] if not brickc else [0, 0, 1, 3, 2])
+    if s['lm']:
+        style = 9
+    corner = 0
+    if (s['first'] or s['last']) and not s['lm'] and s['w'] > 4.3:
+        if rg.random() < 0.5 and s['w'] > 4.9:
+            north = s['last']
+            # sul lato W il +x locale va verso -y; sul lato E verso +y
+            cs = (1 if north else -1) * (1 if s['side'] == 'E' else -1)
+            corner = cs
+            style = 2 if style == 0 else style
+            n = max(n, 4)
+    return dict(style=style, w=round(s['w'] * 4) / 4, n=n, wall=wall, roof=rg.randrange(3), shop=shop,
+                corner=corner, door=rg.randrange(5), gab=rg.randrange(2), seed=seed)
 
 
-def parent_of(i, lots):
-    if i == 0:
-        return None
-    best, bd = 0, 1e9
-    for k in range(max(0, i - 60), i):
-        d = (lots[k]['x'] - lots[i]['x']) ** 2 + (lots[k]['y'] - lots[i]['y']) ** 2
-        if d < bd:
-            best, bd = k, d
-    return best
+# ---------------------------------------------------------------- terreno
+def hill_h(x, y):
+    ex = max(0.0, abs(x) - 300) / 500.0
+    ey = max(0.0, abs(y) - 360) / 500.0
+    e = min(1.0, math.hypot(ex, ey))
+    e = e * e * (3 - 2 * e)
+    n = (math.sin(x * 0.0065 + 1.3) * math.cos(y * 0.0049 + 0.4) + 0.6 * math.sin(x * 0.0123 + y * 0.0087) + 0.3 * math.sin(y * 0.021 - x * 0.013))
+    return e * (55 + 45 * n) * (0.9 if y > 0 else 0.6) + (e * 20 if e > 0 else 0)
 
 
-def camera_for(N):
-    """camera(N) continua: bassa e macro per N piccolo, sale e si allontana con N (max ~25 gradi).
-    Ritorna (pos, target, lens, fstop, focus_dist)."""
-    Rc = A_SP * math.sqrt(N + 0.7)
-    lens = 70.0 + 15.0 * math.exp(-N / 220.0)
-    Wv = 1.05 * Rc + 1.9
-    d = Wv * lens / 20.25
-    pitch = math.radians(2.0 + 7.0 * (1 - math.exp(-N / 300.0)))
-    az = math.radians(-90 - 14)
-    zc = hill(Rc * 0.55)
-    ty = 0.1 * Rc
-    tz = zc + 0.9 + 0.1 * Rc + 0.45 * (hill(Rc * 0.3) - zc)
-    h = tz + d * math.tan(pitch)
-    pos = (d * math.cos(az), d * math.sin(az) + ty, h)
-    tgt = (0.0, ty, tz)
-    # focus sul bordo anteriore del cluster
-    fd = d - 0.5 * Rc
-    fstop = 0.4 * (1 - 0.25 * N / (N + 300.0))    # DOF forte (sensore 36mm): piu' aperto = piu' sfocato
-    return pos, tgt, lens, fstop, fd, d
+def big_ground(coll):
+    xs = []
+    nn = 150
+    for k in range(-nn, nn + 1):
+        t = k / nn
+        xs.append(math.copysign(abs(t) ** 2.0, t) * 2500)
+    bm = bmesh.new()
+    rows = []
+    for y in xs:
+        row = []
+        for x in xs:
+            row.append(bm.verts.new((x, y, hill_h(x, y))))
+        rows.append(row)
+    for j in range(len(xs) - 1):
+        for i in range(len(xs) - 1):
+            bm.faces.new((rows[j][i], rows[j][i + 1], rows[j + 1][i + 1], rows[j + 1][i]))
+    me = bpy.data.meshes.new("ground")
+    for f in bm.faces:
+        f.smooth = True
+    bm.to_mesh(me); bm.free()
+    me.materials.append(field_material())
+    return link(bpy.data.objects.new("ground", me), coll)
+
+
+def field_material():
+    m = bpy.data.materials.new("field"); m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = 0.95
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    n1 = nt.nodes.new("ShaderNodeTexNoise"); n1.inputs["Scale"].default_value = 0.012; n1.inputs["Detail"].default_value = 3
+    nt.links.new(tc.outputs["Object"], n1.inputs["Vector"])
+    cr = nt.nodes.new("ShaderNodeValToRGB")
+    ce = cr.color_ramp.elements
+    ce[0].position = 0.38; ce[0].color = (*lin((0.40, 0.56, 0.28)), 1)
+    ce[1].position = 0.60; ce[1].color = (*lin((0.78, 0.68, 0.34)), 1)
+    nt.links.new(n1.outputs["Fac"], cr.inputs["Fac"])
+    wv = nt.nodes.new("ShaderNodeTexWave"); wv.inputs["Scale"].default_value = 0.09; wv.inputs["Distortion"].default_value = 3.0
+    wv.wave_profile = 'SAW'
+    nt.links.new(tc.outputs["Object"], wv.inputs["Vector"])
+    mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
+    mx.inputs[0].default_value = 0.18
+    nt.links.new(cr.outputs["Color"], mx.inputs[6])
+    mx.inputs[7].default_value = (*lin((0.55, 0.50, 0.24)), 1)
+    nt.links.new(wv.outputs["Fac"], mx.inputs[0])
+    cd = nt.nodes.new("ShaderNodeCameraData")
+    mr = nt.nodes.new("ShaderNodeMapRange")
+    mr.inputs["From Min"].default_value = 250.0; mr.inputs["From Max"].default_value = 2200.0; mr.inputs["To Max"].default_value = 0.8
+    nt.links.new(cd.outputs["View Distance"], mr.inputs["Value"])
+    hz = nt.nodes.new("ShaderNodeMix"); hz.data_type = 'RGBA'
+    hz.inputs[7].default_value = (*lin((1.0, 0.76, 0.48)), 1)
+    nt.links.new(mr.outputs["Result"], hz.inputs[0]); nt.links.new(mx.outputs[2], hz.inputs[6])
+    nt.links.new(hz.outputs[2], b.inputs["Base Color"])
+    return m
 
 
 def link(obj, coll):
@@ -595,361 +902,188 @@ def link(obj, coll):
     return obj
 
 
-def polar_ground(R, rings=110, segs=160, hfun=None):
+def flat_quad_mesh(rects, z, m, name):
+    """rettangoli (x0,y0,x1,y1) a quota z in una mesh unica con UV mondo."""
     bm = bmesh.new()
-    rs = [0.0] + [R * ((k / rings) ** 2.2) for k in range(1, rings + 1)]
-    grid = []
-    for ri, r in enumerate(rs):
-        row = []
-        for s in range(segs if ri else 1):
-            a = 2 * math.pi * s / segs
-            x, y = r * math.cos(a), r * math.sin(a)
-            row.append(bm.verts.new((x, y, hfun(x, y, r, a))))
-        grid.append(row)
-    for ri in range(1, len(rs)):
-        for s in range(segs):
-            s2 = (s + 1) % segs
-            if ri == 1:
-                bm.faces.new([grid[0][0], grid[1][s], grid[1][s2]])
-            else:
-                bm.faces.new([grid[ri - 1][s], grid[ri][s], grid[ri][s2], grid[ri - 1][s2]])
-    me = bpy.data.meshes.new("ground")
+    uvl = bm.loops.layers.uv.verify()
+    for (x0, y0, x1, y1) in rects:
+        vs = [bm.verts.new((x0, y0, z)), bm.verts.new((x1, y0, z)), bm.verts.new((x1, y1, z)), bm.verts.new((x0, y1, z))]
+        f = bm.faces.new(vs)
+        for l in f.loops:
+            l[uvl].uv = (l.vert.co.x, l.vert.co.y)
+    me = bpy.data.meshes.new(name)
     bm.to_mesh(me); bm.free()
-    for p in me.polygons:
-        p.use_smooth = True
+    me.materials.append(m)
     return me
 
 
-PAD = {'c': (0, 0, 0), 'k': 0.0}
+def camera_for(N):
+    """camera(N) continua: bassa a livello strada per N piccolo, sale con N (max ~25 gradi), dietro al viale.
+    Ritorna (pos, target, lens, fstop, focus_dist)."""
+    R = 4.5 * math.sqrt(N + 1.5)
+    lens = 28.0 + 8.0 * (1 - math.exp(-N / 260.0))
+    ycam = -(R * (0.80 + 0.55 * (1 - math.exp(-N / 300.0))) + 9.0)
+    zc = 1.7 + 0.0045 * R ** 1.8
+    pitch = math.radians(-6.0 + 21.0 * (1 - math.exp(-N / 380.0)))
+    ty = 0.12 * R
+    dist = ty - ycam
+    tz = zc - dist * math.tan(pitch)
+    pos = (-0.9 - 0.8 * (1 - math.exp(-N / 200.0)), ycam, zc)
+    tgt = (0.0, ty, tz)
+    fd = (Vector(tgt) - Vector(pos)).length * (0.75 if N < 300 else 0.9)
+    fstop = 1.1 + 3.4 * (1 - math.exp(-N / 250.0))
+    return pos, tgt, lens, fstop, fd
 
 
-def ground_h(x, y, r, a):
-    h = hill(r)
-    if PAD['k'] > 0.02:
-        cx, cy = PAD['c'][0], PAD['c'][1]
-        L = math.hypot(cx, cy); ux, uy = cx / L, cy / L
-        t = x * ux + y * uy; lat = -x * uy + y * ux
-        sv = min(1.0, max(0.0, (t - PAD['Rc'] * 0.6) / (PAD['d'] * 1.05 - PAD['Rc'] * 0.6)))
-        sv = sv * sv * (3 - 2 * sv)
-        ph = PAD['zv'] + (PAD['gz'] - PAD['zv']) * sv
-        wl = math.exp(-(lat / (0.6 * PAD['d'])) ** 2) * PAD['k']
-        if t > 0:
-            h += wl * max(0.0, ph - h)
-    far = min(1.0, max(0.0, (r - 110) / 330.0)); far = far * far * (3 - 2 * far)
-    ang = 1.0 + 0.5 * math.sin(a * 2.0 + 1.0) + 0.35 * math.sin(a * 5.0 + 2.0)
-    h += far * (24 * ang + 6 * math.sin(r * 0.03))
-    h += 0.18 * math.sin(x * 0.9 + y * 0.7) * math.sin(y * 1.1 - x * 0.4) * min(1.0, r / 4.0) * (1 if r < 90 else 0.0)
-    return h
-
-
-def gz(x, y):
-    return ground_h(x, y, math.hypot(x, y), math.atan2(y, x))
-
-
-def ground_material(k):
-    m = bpy.data.materials.new("ground"); m.use_nodes = True
-    nt = m.node_tree
-    bsdf = nt.nodes["Principled BSDF"]
-    bsdf.inputs["Roughness"].default_value = 0.95
-    tc = nt.nodes.new("ShaderNodeTexCoord")
-    n1 = nt.nodes.new("ShaderNodeTexNoise"); n1.inputs["Scale"].default_value = 0.35; n1.inputs["Detail"].default_value = 3
-    n2 = nt.nodes.new("ShaderNodeTexNoise"); n2.inputs["Scale"].default_value = 40; n2.inputs["Detail"].default_value = 5
-    nt.links.new(tc.outputs["Object"], n1.inputs["Vector"]); nt.links.new(tc.outputs["Object"], n2.inputs["Vector"])
-    n3 = nt.nodes.new("ShaderNodeTexNoise"); n3.inputs["Scale"].default_value = 0.03; n3.inputs["Detail"].default_value = 2
-    nt.links.new(tc.outputs["Object"], n3.inputs["Vector"])
-    pr = nt.nodes.new("ShaderNodeMapRange"); pr.inputs["From Min"].default_value = 0.46; pr.inputs["From Max"].default_value = 0.54
-    nt.links.new(n3.outputs["Fac"], pr.inputs["Value"])
-    ln = nt.nodes.new("ShaderNodeVectorMath"); ln.operation = 'LENGTH'
-    nt.links.new(tc.outputs["Object"], ln.inputs[0])
-    rr = nt.nodes.new("ShaderNodeMapRange"); rr.inputs["From Min"].default_value = 30; rr.inputs["From Max"].default_value = 80
-    nt.links.new(ln.outputs["Value"], rr.inputs["Value"])
-    wf = nt.nodes.new("ShaderNodeMath"); wf.operation = 'MULTIPLY'
-    nt.links.new(pr.outputs["Result"], wf.inputs[0]); nt.links.new(rr.outputs["Result"], wf.inputs[1])
-    cr = nt.nodes.new("ShaderNodeValToRGB")
-    ce = cr.color_ramp.elements
-    ce[0].position = 0.38; ce[0].color = (*lin((0.38, 0.58, 0.26)), 1)
-    ce[1].position = 0.62; ce[1].color = (*lin((0.66, 0.74, 0.30)), 1)
-    nt.links.new(n1.outputs["Fac"], cr.inputs["Fac"])
-    mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
-    nt.links.new(wf.outputs["Value"], mx.inputs[0])
-    nt.links.new(cr.outputs["Color"], mx.inputs[6])
-    mx.inputs[7].default_value = (*lin((0.88, 0.70, 0.30)), 1)
-    # foschia dorata con la distanza dalla camera
-    cd = nt.nodes.new("ShaderNodeCameraData")
-    mr = nt.nodes.new("ShaderNodeMapRange")
-    mr.inputs["From Min"].default_value = 90.0 * k; mr.inputs["From Max"].default_value = 900.0 * k
-    mr.inputs["To Max"].default_value = 0.85
-    nt.links.new(cd.outputs["View Distance"], mr.inputs["Value"])
-    hz = nt.nodes.new("ShaderNodeMix"); hz.data_type = 'RGBA'
-    hz.inputs[7].default_value = (*lin((1.0, 0.78, 0.45)), 1)
-    nt.links.new(mr.outputs["Result"], hz.inputs[0])
-    nt.links.new(mx.outputs[2], hz.inputs[6])
-    gn = nt.nodes.new("ShaderNodeNewGeometry")
-    sn = nt.nodes.new("ShaderNodeSeparateXYZ"); nt.links.new(gn.outputs["Normal"], sn.inputs["Vector"])
-    sr = nt.nodes.new("ShaderNodeMapRange"); sr.inputs["From Min"].default_value = 0.93; sr.inputs["From Max"].default_value = 0.6
-    nt.links.new(sn.outputs["Z"], sr.inputs["Value"])
-    st = nt.nodes.new("ShaderNodeMix"); st.data_type = 'RGBA'; st.inputs[7].default_value = (*lin((0.70, 0.62, 0.52)), 1)
-    nt.links.new(sr.outputs["Result"], st.inputs[0]); nt.links.new(hz.outputs[2], st.inputs[6])
-    nt.links.new(st.outputs[2], bsdf.inputs["Base Color"])
-    bp = nt.nodes.new("ShaderNodeBump"); bp.inputs["Strength"].default_value = 0.3; bp.inputs["Distance"].default_value = 0.05
-    nt.links.new(n2.outputs["Fac"], bp.inputs["Height"])
-    nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
-    return m
-
-
-def path_material():
-    m = bpy.data.materials.new("path"); m.use_nodes = True
-    nt = m.node_tree
-    bsdf = nt.nodes["Principled BSDF"]; bsdf.inputs["Roughness"].default_value = 0.9
-    tc = nt.nodes.new("ShaderNodeTexCoord")
-    vo = nt.nodes.new("ShaderNodeTexVoronoi"); vo.inputs["Scale"].default_value = 7.0
-    vo.feature = 'DISTANCE_TO_EDGE'
-    nt.links.new(tc.outputs["Object"], vo.inputs["Vector"])
-    nz = nt.nodes.new("ShaderNodeTexNoise"); nz.inputs["Scale"].default_value = 3.0
-    nt.links.new(tc.outputs["Object"], nz.inputs["Vector"])
-    cr = nt.nodes.new("ShaderNodeValToRGB")
-    cr.color_ramp.elements[0].color = (*lin((0.55, 0.40, 0.28)), 1)
-    cr.color_ramp.elements[1].color = (*lin((0.80, 0.66, 0.46)), 1)
-    nt.links.new(nz.outputs["Fac"], cr.inputs["Fac"])
-    nt.links.new(cr.outputs["Color"], bsdf.inputs["Base Color"])
-    bp = nt.nodes.new("ShaderNodeBump"); bp.inputs["Strength"].default_value = 0.9; bp.inputs["Distance"].default_value = 0.04
-    mr = nt.nodes.new("ShaderNodeMapRange"); mr.inputs["From Max"].default_value = 0.12
-    nt.links.new(vo.outputs["Distance"], mr.inputs["Value"])
-    nt.links.new(mr.outputs["Result"], bp.inputs["Height"])
-    nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
-    return m
-
-
-def wheat_material():
-    m = bpy.data.materials.new("wheat"); m.use_nodes = True
-    nt = m.node_tree
-    bsdf = nt.nodes["Principled BSDF"]; bsdf.inputs["Roughness"].default_value = 0.9
-    tc = nt.nodes.new("ShaderNodeTexCoord")
-    nz = nt.nodes.new("ShaderNodeTexNoise"); nz.inputs["Scale"].default_value = 60; nz.inputs["Detail"].default_value = 5
-    nt.links.new(tc.outputs["Object"], nz.inputs["Vector"])
-    cr = nt.nodes.new("ShaderNodeValToRGB")
-    cr.color_ramp.elements[0].color = (*lin((0.80, 0.60, 0.22)), 1)
-    cr.color_ramp.elements[1].color = (*lin((0.98, 0.84, 0.44)), 1)
-    nt.links.new(nz.outputs["Fac"], cr.inputs["Fac"])
-    nt.links.new(cr.outputs["Color"], bsdf.inputs["Base Color"])
-    bp = nt.nodes.new("ShaderNodeBump"); bp.inputs["Strength"].default_value = 0.8; bp.inputs["Distance"].default_value = 0.03
-    nt.links.new(nz.outputs["Fac"], bp.inputs["Height"])
-    nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
-    return m
-
-
+# ---------------------------------------------------------------- scena
 def build_scene(N, seed, res, samples):
     t0 = time.time()
     bpy.ops.wm.read_factory_settings(use_empty=True)
     _mats.clear()
     sc = bpy.context.scene
     coll = sc.collection
-    pos, tgt, lens, fstop, fdist, cdist = camera_for(N)
-    k = max(1.0, cdist / 28.0)          # fattore di scala degli elementi di scenografia (primo piano)
-    lots = [lot(i, seed) for i in range(N)]
-    Rv = max(math.hypot(l['x'], l['y']) for l in lots) + 2.2
+    pos, tgt, lens, fstop, fdist = camera_for(N)
+    slots = all_slots(seed)[:N]
+    big_ground(coll)
 
-    # ---- terreno + colline lontane
-    PAD['c'] = pos; PAD['d'] = cdist; PAD['Rc'] = A_SP * math.sqrt(N + 0.7); PAD['zv'] = hill(PAD['Rc'] * 0.6)
-    PAD['gz'] = pos[2] - 1.5; PAD['k'] = math.exp(-N / 200.0)
-    gm = polar_ground(1600, 800, 360, ground_h)
-    go = link(bpy.data.objects.new("ground", gm), coll)
-    go.data.materials.append(ground_material(k))
-
-    # ---- case (mesh condivise: 8 tipi x 3 varianti; istanze)
-    cache = {}
-    def house_mesh(tp, var):
-        if (tp, var) not in cache:
-            cache[(tp, var)] = mk_house(tp, var, seed)
-        return cache[(tp, var)]
-    props = {}
-    def prop(kind, s):
-        key = (kind, s)
-        if key not in props:
-            props[key] = mk_tree(kind, seed * 31 + s)
-        return props[key]
-    pm = path_material()
-    pb = bmesh.new()
-    cnt = 0
-    for l in lots:
-        i = l['i']
-        z = min(gz(l['x'] + dx, l['y'] + dy) for dx, dy in ((0, 0), (0.9, 0.9), (-0.9, 0.9), (0.9, -0.9), (-0.9, -0.9)))
-        par = parent_of(i, lots)
-        # orientamento: la porta guarda il genitore (lungo la strada), con rumore
-        if par is None:
-            face = -math.pi / 2 + 0.4
+    # ---- strade: viale + traverse + marciapiedi dei soli isolati usati
+    used = {(s['c'], s['r']) for s in slots}
+    ymin = min([s['y0'] for s in slots] + [pos[1] - 5]) - 4
+    ymax = max(s['y0'] + s['w'] for s in slots) + 40
+    ymax = max(ymax, 60)
+    road, paving, curbs = [], [], []
+    road.append((-2.5, pos[1] - 60, 2.5, ymax + 400))       # viale che prosegue in campagna
+    paving.append((-4.5, pos[1] - 60, -2.5, ymax + 400)); paving.append((2.5, pos[1] - 60, 4.5, ymax + 400))
+    # asfalto/selciato del viale: sempre; marciapiedi realistici solo dove ci sono edifici
+    pav_y = ymin - 25
+    cols = sorted({c for c, r in used})
+    rows = sorted({r for c, r in used})
+    cxs = sorted({PX * k for k in range(min(cols) - 1, max(cols) + 3)})
+    rys = sorted({PY * k + PY / 2 for k in range(min(rows) - 1, max(rows) + 1)})
+    ext_y0 = PY * (min(rows)) - BLK_L / 2 - 3.5
+    ext_y1 = PY * (max(rows)) + BLK_L / 2 + 3.5
+    for x in cxs:
+        if x != 0:
+            road.append((x - 2.5, ext_y0, x + 2.5, ext_y1)); paving.append((x - 4.5, ext_y0, x - 2.5, ext_y1)); paving.append((x + 2.5, ext_y0, x + 4.5, ext_y1))
+    xa, xb = PX * (min(cols) - 1) + 0.5, PX * (max(cols) + 2) - 0.5
+    for y in rys:
+        road.append((xa, y - 2.0, xb, y + 2.0))  # traversa
+        for (ya, yb) in ((y - 3.5, y - 2.0), (y + 2.0, y + 3.5)):
+            paving.append((xa, ya, -4.5, yb)); paving.append((4.5, ya, xb, yb))
+    link(bpy.data.objects.new("road", flat_quad_mesh(road[:1], 0.02, m_asphalt(), "road")), coll)
+    link(bpy.data.objects.new("paving2", flat_quad_mesh(paving[2:], 0.14, m_paving(), "paving2")), coll)
+    link(bpy.data.objects.new("road2", flat_quad_mesh(road[1:], 0.03, m_asphalt(), "road2")), coll)
+    # marciapiedi continui: rialzati con cordolo
+    sb = MB()
+    for s in slots:
+        x0 = s['xf']
+        sgn = -1 if s['side'] == 'W' else 1
+        if s['side'] == 'W':
+            sb.box(x0 - SW, s['y0'], 0.0, x0, s['y0'] + s['w'], 0.14, m_paving())
         else:
-            face = math.atan2(lots[par]['y'] - l['y'], lots[par]['x'] - l['x'])
-        # la casa e' costruita con la porta verso -y => rot = face + 90 deg
-        rot = face + math.pi / 2 + l['jrot'] * 0.5
-        o = link(bpy.data.objects.new(f"h{i}", house_mesh(l['tp'], l['var'])), coll)
-        s = l['sc']
-        o.location = (l['x'], l['y'], z)
+            sb.box(x0, s['y0'], 0.0, x0 + SW, s['y0'] + s['w'], 0.14, m_paving())
+    link(bpy.data.objects.new("sidewalks", sb.build("sidewalks")), coll)
+    # rotaie del tram
+    rb = MB()
+    for xx in (0.95 - 0.72, 0.95 + 0.72):
+        rb.box(xx - 0.03, pos[1] - 50, 0.02, xx + 0.03, ymax + 100, 0.07, m_rail())
+    link(bpy.data.objects.new("rails", rb.build("rails")), coll)
+
+    # ---- palazzi (mesh in cache, istanze)
+    cache = {}
+    cnt = 0
+    PM = MB()
+    for i, s in enumerate(slots):
+        P = lot_params(s, seed)
+        key = tuple(sorted(P.items())) + (s['lm'],)
+        if key not in cache:
+            if s['lm'] == 'tower':
+                P2 = dict(P, w=8.4)
+                cache[key] = mk_tower(P2).build("tower")
+            elif s['lm'] == 'church':
+                cache[key] = mk_church(dict(P, w=9.0)).build("church")
+            else:
+                cache[key] = mk_building(P).build(f"b{len(cache)}")
+        o = link(bpy.data.objects.new(f"lot{i}", cache[key]), coll)
+        rot = -math.pi / 2 if s['side'] == 'W' else math.pi / 2
+        # centro frontale del lotto
         o.rotation_euler = (0, 0, rot)
-        o.scale = (s, s * l['rg'].uniform(0.92, 1.06), s * l['rg'].uniform(0.95, 1.08))
+        if s['side'] == 'W':
+            o.location = (s['xf'], s['yc'], 0.14)
+        else:
+            o.location = (s['xf'], s['yc'], 0.14)
+        o.matrix_world  # noqa
         cnt += 1
-        # strada serpeggiante verso il genitore (ribbon sul terreno)
-        if par is not None:
-            p0 = Vector((l['x'], l['y'])); p1 = Vector((lots[par]['x'], lots[par]['y']))
-            dv = p1 - p0
-            ln = dv.length
-            nrm = Vector((-dv.y, dv.x)).normalized()
-            wd = 0.28 + 0.06 * l['rg'].random()
-            ph = l['rg'].uniform(0, 6.28)
-            seg = max(6, int(ln / 0.25))
-            prev = None
-            for q in range(seg + 1):
-                t = q / seg
-                c = p0 + dv * t + nrm * (0.22 * math.sin(t * 5.2 + ph) * math.sin(math.pi * t) ** 0.5)
-                a_, b_ = c + nrm * wd, c - nrm * wd
-                row = []
-                for pp in (a_, b_):
-                    zz = gz(pp.x, pp.y) + 0.035
-                    row.append(pb.verts.new((pp.x, pp.y, zz)))
-                if prev:
-                    pb.faces.new([prev[0], prev[1], row[1], row[0]])
-                prev = row
-        # steccato e fiori / cespugli attorno alla casa (decor deterministica)
-        rg = l['rg']
-        for _ in range(rg.choice((1, 2, 2, 3))):
-            kind = rg.choice((1, 1, 4, 4, 5, 5, 6, 2, 7)) if l['i'] > 1 else rg.choice((1, 4, 5, 5, 7))
-            a = rg.uniform(0, 6.28); rr = rg.uniform(1.0, 1.55) * s
-            px, py = l['x'] + rr * math.cos(a), l['y'] + rr * math.sin(a)
-            oo = link(bpy.data.objects.new("d", prop(kind, rg.randrange(3))), coll)
-            oo.location = (px, py, gz(px, py))
-            oo.rotation_euler = (0, 0, rg.uniform(0, 6.28))
-            sc_ = rg.uniform(0.9, 1.4)
-            oo.scale = (sc_, sc_, sc_)
-        if rg.random() < 0.55:
-            a = rg.uniform(0, 6.28); rr = rg.uniform(1.3, 1.7) * s
-            px, py = l['x'] + rr * math.cos(a), l['y'] + rr * math.sin(a)
-            oo = link(bpy.data.objects.new("t", prop(0 if rg.random() < 0.7 else 3, rg.randrange(3))), coll)
-            oo.location = (px, py, gz(px, py))
-            oo.scale = (s * 0.9,) * 3 if oo.data.name.startswith("prop0") else (1.0, 1.0, 1.0)
-    pme = bpy.data.meshes.new("paths"); pb.to_mesh(pme); pb.free()
-    for p in pme.polygons: p.use_smooth = True
-    po = link(bpy.data.objects.new("paths", pme), coll); po.data.materials.append(pm)
-    # pozzo al centro-fronte
-    wo = link(bpy.data.objects.new("well", prop(8, 0)), coll)
-    wo.location = (2.2, -2.4, gz(2.2, -2.4)); wo.scale = (1.3,) * 3
+        # ---- props del lotto (nel mondo)
+        rg = rgs(seed, 'prop', i)
+        yc = s['yc']
+        sg = -1 if s['side'] == 'W' else 1
+        xcurb = s['xf'] + sg * (SW - 0.35)
+        if i % 2 == 0:
+            prop_lamp(PM, xcurb, s['y0'] + 0.5, 0.14)
+        if i % 3 == 1:
+            prop_tree(PM, xcurb, yc + rg.uniform(-0.5, 0.5), rg, 0.14)
+        r_ = rg.random()
+        xb = s['xf'] + sg * 0.7
+        if r_ < 0.18 and s['w'] > 4.5:
+            prop_bike(PM, s['xf'] + sg * 0.55, yc + rg.uniform(-0.6, 0.6), rg, 0.14)
+        elif r_ < 0.34:
+            prop_planter(PM, s['xf'] + sg * 0.5, yc + rg.uniform(-1.2, 1.2), rg)
+        if rg.random() < 0.4:
+            prop_person(PM, s['xf'] + sg * rg.uniform(0.9, 1.6), yc + rg.uniform(-2, 2), rg, 0.14)
+        if rg.random() < 0.08:
+            prop_bench(PM, s['xf'] + sg * 1.4, yc, 'y')
+    # bench + vasi in primo piano (sempre): piazzati vicino alla camera, marciapiede W
+    fr = rgs(seed, 'foreground')
+    py = pos[1] + 4.8 + 0.1 * (-pos[1])
+    prop_bench(PM, -3.2, py)
+    prop_planter(PM, -3.6, py + 2.4, fr)
+    prop_planter(PM, 3.6, py + 1.2, fr)
+    prop_lamp(PM, -3.9, py - 1.0, 0.0)
+    prop_lamp(PM, 3.9, py + 3.5, 0.0)
+    prop_bike(PM, 3.5, py + 4.8, fr)
+    # fiori a bordo strada in primo piano
+    for q in range(10):
+        PM.sphere(-3.7 + fr.uniform(-0.15, 0.15), py - 2.5 + q * 0.16, 0.15 + fr.uniform(0, 0.1), 0.09, m_flow(q), sub=1)
+    if N >= 22:
+        prop_cart(PM, 1.9, pos[1] + 20 + 0.2 * N ** 0.5 * 3, rgs(seed, 'cart'))
+    if N >= 45:
+        prop_tram(PM, 22.0 + 0.0, 0.95)
+    if N >= 60:
+        prop_fountain(PM, 0.0, PY / 2)
+        for q in range(4):
+            a = q * math.pi / 2 + 0.4
+            prop_person(PM, 4.8 * math.cos(a), PY / 2 + 4.2 * math.sin(a), rgs(seed, 'pf', q), 0.0)
+    if N >= 150:
+        prop_cart(PM, -1.5, 60.0, rgs(seed, 'cart2'))
+    link(bpy.data.objects.new("props", PM.build("props")), coll)
+    if N >= 60:
+        pb = MB()
+        pb.cyl(0, PY / 2, 0.0, 0.03, 5.0, m_paving(), n=32, smooth=False)
+        link(bpy.data.objects.new("plaza", pb.build("plaza")), coll)
 
-    # ---- anello di campi di grano attorno al paese (strisce curve)
-    wmat = wheat_material()
-    rg = random.Random(seed + 5)
-    wb = bmesh.new()
-    nstrips = 9
-    strips = []
-    for si in range(nstrips):
-        r0 = Rv + 4.2 + si * 2.0 * (1 + 0.04 * Rv ** 0.5)
-        wdt = 1.05 * (1 + 0.04 * Rv ** 0.5)
-        a0 = rg.uniform(0, 6.28); arc = rg.uniform(1.8, 3.4)
-        strips.append((a0, arc, r0, wdt))
-        segs = 70
-        prev = None
-        for q in range(segs + 1):
-            a = a0 + arc * q / segs
-            row = []
-            for ro, ridge in ((r0, 0.0), (r0 + wdt * 0.5, 0.22), (r0 + wdt, 0.0)):
-                x, y = ro * math.cos(a), ro * math.sin(a)
-                row.append(wb.verts.new((x, y, gz(x, y) + 0.05 + ridge * (1 + 0.3 * math.sin(a * 60)))))
-            if prev:
-                for c in range(2):
-                    wb.faces.new([prev[c], prev[c + 1], row[c + 1], row[c]])
-            prev = row
-    wme = bpy.data.meshes.new("wheat"); wb.to_mesh(wme); wb.free()
-    for p in wme.polygons: p.use_smooth = True
-    wo = link(bpy.data.objects.new("wheat", wme), coll); wo.data.materials.append(wmat)
-    for (a0, arc, r0, wdt) in strips:
-        ns = int(arc * (r0 + wdt / 2) / (0.42 * (1 + 0.05 * Rv ** 0.5)))
-        for q in range(ns):
-            a = a0 + arc * rg.random(); r = r0 + wdt * rg.uniform(0.08, 0.92)
-            x, y = r * math.cos(a), r * math.sin(a)
-            oo = link(bpy.data.objects.new("ws", prop(6, rg.randrange(3))), coll)
-            oo.location = (x, y, gz(x, y) + 0.1)
-            sx = rg.uniform(0.9, 1.3) * (1 + 0.12 * Rv ** 0.5)
-            oo.scale = (sx,) * 3
-            oo.rotation_euler = (0, 0, rg.uniform(0, 6.28))
-    # spighe di grano e fiori sparsi lungo le strisce + primo piano
-    for _ in range(int(60 + 1 * Rv)):
-        a = rg.uniform(0, 6.28); r = rg.uniform(Rv + 3.0, Rv + 24)
-        x, y = r * math.cos(a), r * math.sin(a)
-        oo = link(bpy.data.objects.new("w", prop(rg.choice((6, 6, 5, 4)), rg.randrange(3))), coll)
-        oo.location = (x, y, gz(x, y))
-        sx = rg.uniform(0.9, 1.5) * (1 + 0.15 * Rv ** 0.5)
-        oo.scale = (sx,) * 3
-        oo.rotation_euler = (0, 0, rg.uniform(0, 6.28))
-    # primo piano: erba e fiori vicino alla camera, sfocati (scalati con la distanza camera)
-    cx, cy, cz = pos
-    fwd = Vector((tgt[0] - cx, tgt[1] - cy)).normalized()
-    side = Vector((-fwd.y, fwd.x))
-    for q in range(int(50 + 15 * k)):
-        dd = rg.uniform(0.35, 0.72) * cdist
-        lat = rg.uniform(-0.2, 0.2) * dd * 0.9
-        p = Vector((cx, cy)) + fwd * dd + side * lat
-        oo = link(bpy.data.objects.new("fg", prop(rg.choice((4, 4, 4, 5, 5, 6)), rg.randrange(3))), coll)
-        oo.location = (p.x, p.y, ground_h(p.x, p.y, math.hypot(p.x, p.y), 0))
-        ss = (0.35 + 0.6 * dd / cdist) * k * rg.uniform(0.7, 1.3)
-        oo.scale = (ss,) * 3
-        oo.rotation_euler = (0, 0, rg.uniform(0, 6.28))
-    # alberi lontani e boschetti (bokeh verde), puntini luminosi dorati (bokeh)
-    for q in range(int(40 + 25 * k)):
-        a = rg.uniform(0, 6.28); r = rg.uniform(Rv + 14, Rv + 90 * k)
-        x, y = r * math.cos(a), r * math.sin(a)
-        if y < -r * 0.3 and r < cdist * 0.9:
-            continue
-        oo = link(bpy.data.objects.new("tr", prop(0, rg.randrange(3))), coll)
-        oo.location = (x, y, ground_h(x, y, math.hypot(x, y), a))
-        ss = rg.uniform(1.6, 3.0) * (0.6 + 0.25 * k)
-        oo.scale = (ss,) * 3
-    sp = link(bpy.data.objects.new("bokeh", bpy.data.meshes.new("bk")), coll)
-    bb = bmesh.new()
-    bk = M("bokeh", (1.0, 0.82, 0.45), rough=0.5, emit=(1.0, 0.74, 0.30), strength=4.5, tex='none')
-    for q in range(260):
-        a = math.radians(rg.uniform(35, 145)) if rg.random() < 0.9 else rg.uniform(0, 6.28)
-        r = rg.uniform(Rv + 22, Rv + 70 * k + 30)
-        x, y = r * math.cos(a), r * math.sin(a)
-        z = gz(x, y) + rg.uniform(0.8, 14) * k
-        pb2 = bmesh.new(); bmesh.ops.create_icosphere(pb2, subdivisions=1, radius=rg.uniform(0.06, 0.16) * k)
-        for v in pb2.verts:
-            bb.verts.new(v.co + Vector((x, y, z)))
-        pb2.free()
-    # (le sfere vengono unite: facce ricostruite per gruppi di 12 vertici = icosfera sub1)
-    bb.verts.ensure_lookup_table()
-    # semplice: usa istanze di una sola sfera al posto della mesh unita
-    bb.free(); coll.objects.unlink(sp)
-    sph = bmesh.new(); bmesh.ops.create_icosphere(sph, subdivisions=3, radius=1.0)
-    sme = bpy.data.meshes.new("bks"); sph.to_mesh(sme); sph.free(); sme.materials.append(bk)
-    for p_ in sme.polygons: p_.use_smooth = True
-    for q in range(150):
-        a = math.radians(rg.uniform(40, 140)) if rg.random() < 0.9 else rg.uniform(0, 6.28)
-        r = rg.uniform(Rv + 14, Rv + 45 * k ** 0.8 + 14)
-        x, y = r * math.cos(a), r * math.sin(a)
-        oo = link(bpy.data.objects.new("bk", sme), coll)
-        oo.location = (x, y, hill(Rv * 0.3) + rg.uniform(0.5, 9.0) * k ** 0.8)
-        ss = rg.uniform(0.1, 0.32) * k ** 0.7
-        oo.scale = (ss,) * 3
-
-    # ---- luci: sole basso caldo dietro/lato (rim), fill morbido davanti
-    sun = bpy.data.lights.new("sun", 'SUN'); sun.energy = 4.2; sun.angle = math.radians(3.5)
+    # ---- bokeh luminoso di sfondo: lanterne lontane (nessun fumo)
+    # ---- luci: sole basso dorato (rim da dietro-destra) + fill caldo
+    sun = bpy.data.lights.new("sun", 'SUN'); sun.energy = 4.6; sun.angle = math.radians(3.0)
     sun.color = (1.0, 0.72, 0.42)
     so = link(bpy.data.objects.new("sun", sun), coll)
-    so.rotation_euler = (math.radians(80), 0, math.radians(180 + 38 - 14 + 90 - 90 - 10))   # da dietro a destra, bassa
-    so.rotation_euler = (math.radians(78), 0, math.radians(-14 + 140))
-    fill = bpy.data.lights.new("fill", 'AREA'); fill.energy = 900 * k * k; fill.size = 25 * k
-    fill.color = (1.0, 0.82, 0.68)
+    so.rotation_euler = (math.radians(72), 0, math.radians(-232))    # da dietro-destra, bassa
+    fill = bpy.data.lights.new("fill", 'AREA')
+    kk = max(1.0, (-pos[1]) / 30.0)
+    fill.energy = 1200 * kk * kk; fill.size = 30 * kk
+    fill.color = (1.0, 0.84, 0.70)
     fo = link(bpy.data.objects.new("fill", fill), coll)
-    fo.location = (pos[0] * 0.5 - 8 * k, pos[1] * 0.6, pos[2] + 7 * k)
-    tr = fo.constraints.new('TRACK_TO'); tg = link(bpy.data.objects.new("tg", None), coll); tg.location = (0, 0, gz(0, 0) + 1)
-    tr.target = tg; tr.track_axis = 'TRACK_NEGATIVE_Z'; tr.up_axis = 'UP_Y'
-    sky_world(sc, k)
+    fo.location = (-30 * kk, pos[1] - 10 * kk, pos[2] + 14 * kk)
+    tg = link(bpy.data.objects.new("tg", None), coll); tg.location = (0, tgt[1], 5)
+    tr = fo.constraints.new('TRACK_TO'); tr.target = tg; tr.track_axis = 'TRACK_NEGATIVE_Z'; tr.up_axis = 'UP_Y'
+    sky_world(sc)
 
-    # ---- camera con DOF vera
+    # ---- camera con DOF
     cam = bpy.data.cameras.new("cam")
     cam.lens = lens; cam.sensor_width = 36; cam.sensor_fit = 'VERTICAL'
-    cam.clip_end = 6000; cam.clip_start = 0.5
+    cam.clip_end = 8000; cam.clip_start = 0.3
     cam.dof.use_dof = True; cam.dof.aperture_fstop = fstop
     cam.dof.focus_distance = fdist
-    cam.dof.aperture_blades = 0
     co = link(bpy.data.objects.new("cam", cam), coll)
     co.location = pos
     tgo = link(bpy.data.objects.new("ctgt", None), coll); tgo.location = tgt
@@ -963,18 +1097,18 @@ def build_scene(N, seed, res, samples):
         cy.denoiser = 'OPENIMAGEDENOISE'
     except Exception:
         pass
-    cy.max_bounces = 5; cy.diffuse_bounces = 3; cy.glossy_bounces = 2; cy.transmission_bounces = 1
-    cy.sample_clamp_indirect = 5; cy.device = 'CPU'
+    cy.max_bounces = 5; cy.diffuse_bounces = 3; cy.glossy_bounces = 3; cy.transmission_bounces = 1
+    cy.sample_clamp_indirect = 6; cy.device = 'CPU'
     for vt, lk in (('AgX', 'AgX - Medium High Contrast'), ('AgX', 'Medium High Contrast')):
         try:
             sc.view_settings.view_transform = vt; sc.view_settings.look = lk; break
         except Exception:
             pass
-    print(f"[cozy3] N={N} Rv={Rv:.1f} case={cnt} cam={tuple(round(v, 1) for v in pos)} d={cdist:.0f} f/{fstop:.2f} build={time.time()-t0:.1f}s")
+    print(f"[cozy4] N={N} lotti={cnt} mesh={len(cache)} cam={tuple(round(v, 1) for v in pos)} f/{fstop:.2f} {lens:.0f}mm build={time.time()-t0:.1f}s")
     return sc
 
 
-def sky_world(sc, k):
+def sky_world(sc):
     w = bpy.data.worlds.new("w"); sc.world = w
     w.use_nodes = True
     nt = w.node_tree
@@ -989,10 +1123,10 @@ def sky_world(sc, k):
     nt.links.new(sp.outputs["Z"], ad.inputs[0])
     cr = nt.nodes.new("ShaderNodeValToRGB")
     ce = cr.color_ramp.elements
-    ce[0].position = 0.50; ce[0].color = (*lin((1.0, 0.80, 0.46)), 1)
-    e1 = ce.new(0.54); e1.color = (*lin((1.0, 0.74, 0.52)), 1)
-    e2 = ce.new(0.62); e2.color = (*lin((0.78, 0.78, 0.82)), 1)
-    ce[3].position = 0.80; ce[3].color = (*lin((0.46, 0.64, 0.86)), 1)
+    ce[0].position = 0.50; ce[0].color = (*lin((1.0, 0.80, 0.50)), 1)
+    e1 = ce.new(0.55); e1.color = (*lin((1.0, 0.76, 0.56)), 1)
+    e2 = ce.new(0.66); e2.color = (*lin((0.80, 0.80, 0.84)), 1)
+    ce[3].position = 0.85; ce[3].color = (*lin((0.46, 0.64, 0.88)), 1)
     nt.links.new(ad.outputs["Value"], cr.inputs["Fac"])
     nz = nt.nodes.new("ShaderNodeTexNoise"); nz.inputs["Scale"].default_value = 3.0; nz.inputs["Detail"].default_value = 5
     mp = nt.nodes.new("ShaderNodeMapping"); mp.inputs["Scale"].default_value = (1.0, 1.0, 3.5)
@@ -1000,13 +1134,13 @@ def sky_world(sc, k):
     cl = nt.nodes.new("ShaderNodeMapRange"); cl.inputs["From Min"].default_value = 0.42; cl.inputs["From Max"].default_value = 0.62
     nt.links.new(nz.outputs["Fac"], cl.inputs["Value"])
     mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = 'RGBA'
-    mx.inputs[7].default_value = (*lin((1.0, 0.86, 0.66)), 1)
+    mx.inputs[7].default_value = (*lin((1.0, 0.86, 0.68)), 1)
     nt.links.new(cl.outputs["Result"], mx.inputs[0]); nt.links.new(cr.outputs["Color"], mx.inputs[6])
     nt.links.new(mx.outputs[2], bg.inputs["Color"])
-    bg.inputs["Strength"].default_value = 1.1
+    bg.inputs["Strength"].default_value = 1.0
 
 
-def grade(path, sat=1.12, contrast=1.04):
+def grade(path, sat=1.08, contrast=1.04):
     try:
         import numpy as np
         from PIL import Image
@@ -1016,13 +1150,13 @@ def grade(path, sat=1.12, contrast=1.04):
         im = np.clip((im - 0.5) * contrast + 0.5, 0, 1)
         Image.fromarray((im * 255 + 0.5).astype(np.uint8)).save(path)
     except Exception as e:
-        print("[cozy3] grade saltato:", e)
+        print("[cozy4] grade saltato:", e)
 
 
 def main(argv):
     ap = argparse.ArgumentParser()
     ap.add_argument("--followers", type=int, default=111)
-    ap.add_argument("--out", default="cozy3.png")
+    ap.add_argument("--out", default="cozy4.png")
     ap.add_argument("--res", type=int, nargs=2, default=[540, 960])
     ap.add_argument("--samples", type=int, default=40)
     ap.add_argument("--seed", type=int, default=7)
@@ -1034,7 +1168,7 @@ def main(argv):
         bpy.ops.wm.save_as_mainfile(filepath=a.save_blend)
     t = time.time()
     bpy.ops.render.render(write_still=True)
-    print(f"[cozy3] render {time.time()-t:.1f}s -> {a.out}")
+    print(f"[cozy4] render {time.time()-t:.1f}s -> {a.out}")
     grade(a.out)
 
 
