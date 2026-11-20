@@ -1,0 +1,4099 @@
+{
+ "version": 1,
+ "city": "pittsburgh",
+ "generated": "2026-11-17",
+ "note": "landmarks[] follows kit/STORY_SCHEMA.md; \"meta\" is extra and ignored by the kit. coords [lat, lon] WGS84.",
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+   "title": "List of tallest buildings in Pittsburgh (Wikipedia)",
+   "quote": "ranks completed buildings in Pittsburgh that stand at least 300 ft (91 m) tall; height, floors, year, coordinates per row"
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/",
+   "title": "Individual Wikipedia articles (url per landmark in meta.urls): infobox and text for years, heights, demolitions",
+   "quote": "varies per entry"
+  },
+  "S3": {
+   "url": "https://www.wikidata.org/",
+   "title": "Wikidata items (P625 coordinates, P571 inception, P1619 opening, P576 dissolved/demolished; QID in meta.qid)",
+   "quote": "varies per entry; not fully independent of Wikipedia"
+  },
+  "S4": {
+   "url": "https://nominatim.openstreetmap.org/",
+   "title": "OpenStreetMap via Nominatim: independent coordinate check, height / building:levels / start_date tags where mapped",
+   "quote": "ODbL; query per entry in meta.urls"
+  },
+  "S5": {
+   "url": "https://data.wprdc.org/dataset/city-designated-individual-historic-sites",
+   "title": "WPRDC / City of Pittsburgh: City Designated Individual Historic Sites (158 records, names only, no dates)",
+   "quote": "used only to set meta.city_designated_historic_site"
+  },
+  "S6": {
+   "url": "https://en.wikipedia.org/wiki/Pittsburgh_flood_of_1936",
+   "title": "Pittsburgh flood of 1936 (Wikipedia)",
+   "quote": "Sixty five percent of the downtown business district had been under water from the Point all the way up to Grant Street; crest about 46 ft on March 18, 1936"
+  }
+ },
+ "landmarks": [
+  {
+   "name": "U.S. Steel Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44133,
+    -79.99472
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 256.3,
+    "plan": "triangle?"
+   },
+   "phases": [
+    {
+     "y": 1970,
+     "y1": 1971
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "completed 1970 (list/infobox); opened Sept 30 1971 (infobox); Wikidata inception 1971; coords: Wikipedia vs OSM 6 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1970,
+    "demolished": null,
+    "height_m": 256.3,
+    "height_osm_m": 256.34,
+    "stories": 64,
+    "roof": "flat",
+    "style": "Modernist, Cor-Ten steel, triangular plan",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 6,
+    "year_by_source": {
+     "wikipedia_list": 1970,
+     "wikidata_inception": 1971,
+     "osm_start_date": 1971,
+     "wikipedia_infobox": 1970
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/U.S._Steel_Tower",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q632329",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=US%20Steel%20Tower%20Pittsburgh"
+    ],
+    "qid": "Q632329"
+   },
+   "label_name": "U.S. Steel Tower"
+  },
+  {
+   "name": "BNY Mellon Center",
+   "kind": "skyscraper",
+   "at": [
+    40.43978,
+    -79.99602
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 221.0
+   },
+   "phases": [
+    {
+     "y": 1983,
+     "y1": 1984
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "list says 1983; infobox completion June 1984; Wikidata 1984; coords: Wikipedia vs OSM 16 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1983,
+    "demolished": null,
+    "height_m": 221.0,
+    "height_osm_m": 221.0,
+    "stories": 54,
+    "roof": "flat",
+    "style": "Modernist, stepped top",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 16,
+    "year_by_source": {
+     "wikipedia_list": 1983,
+     "wikidata_inception": 1984,
+     "wikipedia_infobox": 1984
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/BNY_Mellon_Center_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q2740919",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=BNY%20Mellon%20Center%20Pittsburgh"
+    ],
+    "qid": "Q2740919"
+   },
+   "label_name": "BNY Mellon Center"
+  },
+  {
+   "name": "PPG Place (One PPG Place)",
+   "kind": "skyscraper",
+   "at": [
+    40.43995,
+    -80.00375
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 193.6,
+    "crown": "spire"
+   },
+   "phases": [
+    {
+     "y": 1984,
+     "y1": 1985
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "completed 1984 (list, infobox Apr 11 1984, Wikidata, OSM); list 193.6 m incl. spires; infobox and OSM 166 m (roof); coords: Wikipedia vs OSM 6 m apart; Wikidata coord 49 m from Wikipedia",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1984,
+    "demolished": null,
+    "height_m": 193.6,
+    "height_osm_m": 166.0,
+    "stories": 40,
+    "roof": "glass spires/pinnacles on a glass-clad tower",
+    "style": "Postmodern, Philip Johnson; all-glass",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 6,
+    "year_by_source": {
+     "wikipedia_list": 1984,
+     "wikidata_inception": 1984,
+     "osm_start_date": 1984,
+     "wikipedia_infobox": 1984
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/PPG_Place",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q1322398",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=One%20PPG%20Place%20Pittsburgh"
+    ],
+    "qid": "Q1322398"
+   },
+   "label_name": "PPG Place (One PPG Place)"
+  },
+  {
+   "name": "Fifth Avenue Place",
+   "kind": "skyscraper",
+   "at": [
+    40.44189,
+    -80.00342
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 187.8
+   },
+   "phases": [
+    {
+     "y": 1987,
+     "y1": 1988
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "list 1987; infobox/Wikidata 1988; coords: Wikipedia vs OSM 8 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1987,
+    "demolished": null,
+    "height_m": 187.8,
+    "height_osm_m": 188.0,
+    "stories": 32,
+    "roof": "flat/pyramid-capped",
+    "style": "Postmodern",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 8,
+    "year_by_source": {
+     "wikipedia_list": 1987,
+     "wikidata_inception": 1988,
+     "wikipedia_infobox": 1988
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fifth_Avenue_Place_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q3050814",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Fifth%20Avenue%20Place%20Pittsburgh"
+    ],
+    "qid": "Q3050814"
+   },
+   "label_name": "Fifth Avenue Place"
+  },
+  {
+   "name": "One Oxford Centre",
+   "kind": "skyscraper",
+   "at": [
+    40.43807,
+    -79.99855
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 187.5
+   },
+   "phases": [
+    {
+     "y": 1983,
+     "y1": 1984
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "list 1983; infobox April 1983; Wikidata 1983",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1983,
+    "demolished": null,
+    "height_m": 187.5,
+    "height_osm_m": null,
+    "stories": 45,
+    "roof": "flat",
+    "style": "Modernist",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_list": 1983,
+     "wikidata_inception": 1983,
+     "wikidata_opened": 1983,
+     "wikipedia_infobox": 1983
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/One_Oxford_Centre",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q3497523"
+    ],
+    "qid": "Q3497523"
+   },
+   "label_name": "One Oxford Centre"
+  },
+  {
+   "name": "Gulf Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44258,
+    -79.99522
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 177.4,
+    "crown": "pyramid"
+   },
+   "phases": [
+    {
+     "y": 1932,
+     "y1": 1933
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "completed 1932 (list, infobox, Wikidata, OSM); tallest in Pittsburgh 1932-1970; coords: Wikipedia vs OSM 3 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1932,
+    "demolished": null,
+    "height_m": 177.4,
+    "height_osm_m": 177.5,
+    "stories": 44,
+    "roof": "pyramid (stepped pyramidal crown, lit)",
+    "style": "Art Deco",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 3,
+    "year_by_source": {
+     "wikipedia_list": 1932,
+     "wikidata_inception": 1932,
+     "osm_start_date": 1932,
+     "wikipedia_infobox": 1932
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Gulf_Tower",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5617541",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Gulf%20Tower%20Pittsburgh"
+    ],
+    "qid": "Q5617541"
+   },
+   "label_name": "Gulf Tower"
+  },
+  {
+   "name": "Tower at PNC Plaza",
+   "kind": "skyscraper",
+   "at": [
+    40.44029,
+    -80.00018
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 166.0
+   },
+   "phases": [
+    {
+     "y": 2015,
+     "y1": 2016
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "opened Oct 2 2015; coords: Wikipedia vs OSM 3 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 2015,
+    "demolished": null,
+    "height_m": 166.0,
+    "height_osm_m": 166.0,
+    "stories": 33,
+    "roof": "flat",
+    "style": "Contemporary glass, double-skin facade",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 3,
+    "year_by_source": {
+     "wikipedia_list": 2015,
+     "wikidata_inception": 2015,
+     "wikidata_opened": 2015,
+     "wikipedia_infobox": 2015
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Tower_at_PNC_Plaza",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q7829752",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Tower%20at%20PNC%20Plaza%20Pittsburgh"
+    ],
+    "qid": "Q7829752"
+   },
+   "label_name": "Tower at PNC Plaza"
+  },
+  {
+   "name": "Cathedral of Learning",
+   "kind": "tower_square",
+   "at": [
+    40.44431,
+    -79.95312
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 163.1
+   },
+   "phases": [
+    {
+     "y": 1936,
+     "y1": 1937
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "list says 1936 completion; Wikipedia infobox/Wikidata give construction start 1926 (built 1926-1937 per common accounts, Likely); coords: Wikipedia vs OSM 7 m apart",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1936,
+    "demolished": null,
+    "height_m": 163.1,
+    "height_osm_m": null,
+    "stories": 42,
+    "roof": "flat with Gothic crown/pinnacles",
+    "style": "Late Gothic Revival (Art Deco influences), Charles Klauder",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 7,
+    "year_by_source": {
+     "wikipedia_list": 1936,
+     "wikidata_inception": 1926
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Cathedral_of_Learning",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q797017",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Cathedral%20of%20Learning%20Pittsburgh"
+    ],
+    "qid": "Q797017"
+   },
+   "label_name": "Cathedral of Learning"
+  },
+  {
+   "name": "525 William Penn Place",
+   "kind": "skyscraper",
+   "at": [
+    40.44011,
+    -79.99776
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 158.5
+   },
+   "phases": [
+    {
+     "y": 1951,
+     "y1": 1952
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1951 (list, infobox, Wikidata, OSM); coords: Wikipedia vs OSM 6 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1951,
+    "demolished": null,
+    "height_m": 158.5,
+    "height_osm_m": 160.0,
+    "stories": 41,
+    "roof": "flat",
+    "style": "Modernist (Harrison & Abramovitz)",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 6,
+    "year_by_source": {
+     "wikipedia_list": 1951,
+     "wikidata_inception": 1951,
+     "wikidata_opened": 1951,
+     "osm_start_date": 1951,
+     "wikipedia_infobox": 1951
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/525_William_Penn_Place",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q4640167",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=525%20William%20Penn%20Place%20Pittsburgh"
+    ],
+    "qid": "Q4640167"
+   },
+   "label_name": "525 William Penn Place"
+  },
+  {
+   "name": "K&L Gates Center",
+   "kind": "skyscraper",
+   "at": [
+    40.44195,
+    -80.00004
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 155.8
+   },
+   "phases": [
+    {
+     "y": 1968,
+     "y1": 1969
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1968 (list, infobox, Wikidata, OSM); coords: Wikipedia vs OSM 5 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1968,
+    "demolished": null,
+    "height_m": 155.8,
+    "height_osm_m": 156.0,
+    "stories": 39,
+    "roof": "flat",
+    "style": "Modernist (Lescaze)",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 5,
+    "year_by_source": {
+     "wikipedia_list": 1968,
+     "wikidata_inception": 1968,
+     "osm_start_date": 1968,
+     "wikipedia_infobox": 1968
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/K%26L_Gates_Center",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q6322399",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=K%26L%20Gates%20Center%20Pittsburgh"
+    ],
+    "qid": "Q6322399"
+   },
+   "label_name": "K&L Gates Center"
+  },
+  {
+   "name": "Grant Building",
+   "kind": "skyscraper",
+   "at": [
+    40.43767,
+    -79.99755
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 147.8
+   },
+   "phases": [
+    {
+     "y": 1930,
+     "y1": 1931
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "list 1930; infobox/Wikidata 1929 (construction 1929-30); coords: Wikipedia vs OSM 3 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1930,
+    "demolished": null,
+    "height_m": 147.8,
+    "height_osm_m": 149.0,
+    "stories": 40,
+    "roof": "flat, stepped; beacon on top",
+    "style": "Art Deco / Art Moderne, Hornbostel",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 3,
+    "year_by_source": {
+     "wikipedia_list": 1930,
+     "wikidata_inception": 1929,
+     "osm_start_date": 1930,
+     "wikipedia_infobox": 1929
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Grant_Building_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5596127",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Grant%20Building%20Pittsburgh"
+    ],
+    "qid": "Q5596127"
+   },
+   "label_name": "Grant Building"
+  },
+  {
+   "name": "Koppers Building (Koppers Tower)",
+   "kind": "skyscraper",
+   "at": [
+    40.44212,
+    -79.99554
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 144.8,
+    "crown": "pyramid"
+   },
+   "phases": [
+    {
+     "y": 1929,
+     "y1": 1930
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "completed March 1929 (infobox, list, Wikidata)",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1929,
+    "demolished": null,
+    "height_m": 144.8,
+    "height_osm_m": null,
+    "stories": 34,
+    "roof": "copper-clad mansard/pyramid-like crown",
+    "style": "Art Deco/Gothic crown, Graham Anderson Probst & White",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_list": 1929,
+     "wikidata_inception": 1929,
+     "wikipedia_infobox": 1929
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Koppers_Tower",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q6431177"
+    ],
+    "qid": "Q6431177"
+   },
+   "label_name": "Koppers Building (Koppers Tower)"
+  },
+  {
+   "name": "Regional Enterprise Tower (Alcoa Building)",
+   "kind": "skyscraper",
+   "at": [
+    40.44151,
+    -79.99683
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 125.0
+   },
+   "phases": [
+    {
+     "y": 1953,
+     "y1": 1954
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1953 (list, infobox, Wikidata, OSM); list 125 m; OSM 120 m; infobox 410 ft = 125 m; coords: Wikipedia vs OSM 5 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1953,
+    "demolished": null,
+    "height_m": 125.0,
+    "height_osm_m": 120.0,
+    "stories": 30,
+    "roof": "flat",
+    "style": "Modernist, aluminum-clad",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 5,
+    "year_by_source": {
+     "wikipedia_list": 1953,
+     "wikidata_inception": 1953,
+     "osm_start_date": 1953,
+     "wikipedia_infobox": 1953
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Regional_Enterprise_Tower",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q7309052",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Regional%20Enterprise%20Tower%20Pittsburgh"
+    ],
+    "qid": "Q7309052"
+   },
+   "label_name": "Regional Enterprise Tower (Alcoa Building)"
+  },
+  {
+   "name": "Oliver Building",
+   "kind": "skyscraper",
+   "at": [
+    40.44115,
+    -79.99817
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 105.8
+   },
+   "phases": [
+    {
+     "y": 1910,
+     "y1": 1911
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "completed April 1 1910 (infobox, list, Wikidata)",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1910,
+    "demolished": null,
+    "height_m": 105.8,
+    "height_osm_m": null,
+    "stories": 25,
+    "roof": "flat, cornice",
+    "style": "Burnham & Co., Chicago-school office tower",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_list": 1910,
+     "wikidata_inception": 1910,
+     "wikipedia_infobox": 1910
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Oliver_Building_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q7087430"
+    ],
+    "qid": "Q7087430"
+   },
+   "label_name": "Oliver Building"
+  },
+  {
+   "name": "Gateway Center (Three Gateway Center)",
+   "kind": "skyscraper",
+   "at": [
+    40.44185,
+    -80.00554
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 104.9
+   },
+   "phases": [
+    {
+     "y": 1952,
+     "y1": 1953
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "One, Two and Three Gateway Center completed 1952 (Wikipedia Gateway Center article, list); coords: Wikipedia vs OSM 2 m apart",
+   "meta": {
+    "zone": "Golden Triangle (Point)",
+    "completed": 1952,
+    "demolished": null,
+    "height_m": 104.9,
+    "height_osm_m": null,
+    "stories": 24,
+    "roof": "flat",
+    "style": "Modernist urban-renewal towers, Renaissance I",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 2,
+    "year_by_source": {
+     "wikipedia_list": 1952
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Gateway_Center_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5527214",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Three%20Gateway%20Center%20Pittsburgh"
+    ],
+    "qid": "Q5527214"
+   },
+   "label_name": "Gateway Center (Three Gateway Center)"
+  },
+  {
+   "name": "Bell Telephone Building (Verizon Building)",
+   "kind": "skyscraper",
+   "at": [
+    40.44196,
+    -79.99645
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 103.3
+   },
+   "phases": [
+    {
+     "y": 1931,
+     "y1": 1932
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "list 1931; infobox/Wikidata 1923 (first phase; later tower to 1931, Likely); coords: Wikipedia vs OSM 30 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1931,
+    "demolished": null,
+    "height_m": 103.3,
+    "height_osm_m": 103.0,
+    "stories": 21,
+    "roof": "stepped flat",
+    "style": "Art Deco",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 30,
+    "year_by_source": {
+     "wikipedia_list": 1931,
+     "wikidata_inception": 1923,
+     "wikipedia_infobox": 1923
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Bell_Telephone_Building_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q4883271",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Bell%20Telephone%20Building%20Pittsburgh"
+    ],
+    "qid": "Q4883271"
+   },
+   "label_name": "Bell Telephone Building (Verizon Building)"
+  },
+  {
+   "name": "Frick Building",
+   "kind": "skyscraper",
+   "at": [
+    40.43912,
+    -79.99744
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 100.6
+   },
+   "phases": [
+    {
+     "y": 1902,
+     "y1": 1903
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "completed March 15 1902 (infobox, list, Wikidata); coords: Wikipedia vs OSM 13 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1902,
+    "demolished": null,
+    "height_m": 100.6,
+    "height_osm_m": 101.0,
+    "stories": 20,
+    "roof": "flat, cornice",
+    "style": "Burnham & Co., Neoclassical/Chicago school",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 13,
+    "year_by_source": {
+     "wikipedia_list": 1902,
+     "wikidata_inception": 1902,
+     "wikipedia_infobox": 1902
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Frick_Building",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q175182",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Frick%20Building%20Pittsburgh"
+    ],
+    "qid": "Q175182"
+   },
+   "label_name": "Frick Building"
+  },
+  {
+   "name": "Omni William Penn Hotel",
+   "kind": "generic_footprint",
+   "at": [
+    40.44062,
+    -79.99663
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 93.0
+   },
+   "phases": [
+    {
+     "y": 1916,
+     "y1": 1917
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "opened March 11 1916 (Wikipedia text, Wikidata, OSM start_date); list 93 m/26 floors; article says 23 floors; coords: Wikipedia vs OSM 4 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1916,
+    "demolished": null,
+    "height_m": 93.0,
+    "height_osm_m": null,
+    "stories": 26,
+    "roof": "flat",
+    "style": "Beaux-Arts hotel (Janssen & Abbott)",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 4,
+    "year_by_source": {
+     "wikipedia_list": 1916,
+     "wikidata_opened": 1916,
+     "osm_start_date": 1916,
+     "wikipedia_infobox": 1916
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Omni_William_Penn_Hotel",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q7090344",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=William%20Penn%20Hotel%20Pittsburgh"
+    ],
+    "qid": "Q7090344"
+   },
+   "label_name": "Omni William Penn Hotel"
+  },
+  {
+   "name": "Clark Building",
+   "kind": "skyscraper",
+   "at": [
+    40.44276,
+    -79.99952
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 91.8
+   },
+   "phases": [
+    {
+     "y": 1928,
+     "y1": 1929
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "1928 per Wikipedia tallest list (Wikipedia article for this name resolves to a different building, ignored); list 91.8 m/26; OSM 25 levels; coords: Wikipedia vs OSM 8 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1928,
+    "demolished": null,
+    "height_m": 91.8,
+    "height_osm_m": null,
+    "stories": 26,
+    "roof": "flat",
+    "style": "Early skyscraper, Liberty Ave",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "osm"
+    ],
+    "coord_agree_osm_m": 8,
+    "year_by_source": {
+     "wikipedia_list": 1928
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Clark%20Building%20Pittsburgh"
+    ],
+    "qid": null
+   },
+   "label_name": "Clark Building"
+  },
+  {
+   "name": "Commonwealth Building",
+   "kind": "skyscraper",
+   "at": [
+    40.43906,
+    -80.00084
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 91.4
+   },
+   "phases": [
+    {
+     "y": 1906,
+     "y1": 1907
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1906 (list, infobox, Wikidata); coords: Wikipedia vs OSM 5 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1906,
+    "demolished": null,
+    "height_m": 91.4,
+    "height_osm_m": 91.0,
+    "stories": 21,
+    "roof": "flat",
+    "style": "Osterling early skyscraper",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 5,
+    "year_by_source": {
+     "wikipedia_list": 1906,
+     "wikidata_inception": 1906,
+     "wikipedia_infobox": 1906
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Commonwealth_Building_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5153703",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Commonwealth%20Building%20Pittsburgh"
+    ],
+    "qid": "Q5153703"
+   },
+   "label_name": "Commonwealth Building"
+  },
+  {
+   "name": "William S. Moorhead Federal Building",
+   "kind": "skyscraper",
+   "at": [
+    40.44344,
+    -79.9947
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 103.6
+   },
+   "phases": [
+    {
+     "y": 1964,
+     "y1": 1965
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1964 (list, infobox, Wikidata, OSM); coords: Wikipedia vs OSM 5 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1964,
+    "demolished": null,
+    "height_m": 103.6,
+    "height_osm_m": 104.0,
+    "stories": 23,
+    "roof": "flat",
+    "style": "Modernist",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 5,
+    "year_by_source": {
+     "wikipedia_list": 1964,
+     "wikidata_inception": 1964,
+     "osm_start_date": 1964,
+     "wikipedia_infobox": 1964
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/William_S._Moorhead_Federal_Building",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q8017985",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Moorhead%20Federal%20Building%20Pittsburgh"
+    ],
+    "qid": "Q8017985"
+   },
+   "label_name": "William S. Moorhead Federal Building"
+  },
+  {
+   "name": "Centre City Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44255,
+    -79.99663
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 103.9
+   },
+   "phases": [
+    {
+     "y": 1971,
+     "y1": 1972
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "1971 (list, infobox, Wikidata, OSM); coords: Wikipedia vs OSM 4 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1971,
+    "demolished": null,
+    "height_m": 103.9,
+    "height_osm_m": 104.0,
+    "stories": 26,
+    "roof": "flat",
+    "style": "Modernist",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 4,
+    "year_by_source": {
+     "wikipedia_list": 1971,
+     "wikidata_inception": 1971,
+     "osm_start_date": 1971,
+     "wikipedia_infobox": 1971
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Centre_City_Tower_%28Pittsburgh%29",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5062247",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Centre%20City%20Tower%20Pittsburgh"
+    ],
+    "qid": "Q5062247"
+   },
+   "label_name": "Centre City Tower"
+  },
+  {
+   "name": "Federated Hermes Tower",
+   "kind": "skyscraper",
+   "at": [
+    40.44452,
+    -79.99417
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 109.1
+   },
+   "phases": [
+    {
+     "y": 1986,
+     "y1": 1987
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "list/infobox 1986; Wikidata 1982",
+   "meta": {
+    "zone": "North Shore edge/Allegheny Center",
+    "completed": 1986,
+    "demolished": null,
+    "height_m": 109.1,
+    "height_osm_m": null,
+    "stories": 27,
+    "roof": "flat",
+    "style": "Postmodern",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_list": 1986,
+     "wikidata_inception": 1982,
+     "wikipedia_infobox": 1986
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Federated_Hermes_Tower",
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://www.wikidata.org/wiki/Q5440710"
+    ],
+    "qid": "Q5440710"
+   },
+   "label_name": "Federated Hermes Tower"
+  },
+  {
+   "name": "FNB Financial Center",
+   "kind": "skyscraper",
+   "at": [
+    40.44167,
+    -79.99154
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 127.4
+   },
+   "phases": [
+    {
+     "y": 2024,
+     "y1": 2025
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S2",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "2024 per Wikipedia tallest list; coords: Wikipedia vs OSM 14 m apart",
+   "meta": {
+    "zone": "Golden Triangle (east)",
+    "completed": 2024,
+    "demolished": null,
+    "height_m": 127.4,
+    "height_osm_m": null,
+    "stories": 26,
+    "roof": "flat",
+    "style": "Contemporary glass",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "osm"
+    ],
+    "coord_agree_osm_m": 14,
+    "year_by_source": {
+     "wikipedia_list": 2024
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_Pittsburgh",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=FNB%20Financial%20Center%20Pittsburgh"
+    ],
+    "qid": null
+   },
+   "label_name": "FNB Financial Center"
+  },
+  {
+   "name": "Allegheny County Courthouse",
+   "kind": "palace_courtyard",
+   "at": [
+    40.4384,
+    -79.9961
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 30.5
+   },
+   "phases": [
+    {
+     "y": 1888,
+     "y1": 1889
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "construction began 1884, completed 1888 (infobox, text, Wikidata, OSM); roof/eave 30.48 m per Wikipedia infobox and OSM; clock tower much taller (CTBUH 318 ft = 97 m cited in Wikipedia list comment, not used by list); coords: Wikipedia vs OSM 75 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1888,
+    "demolished": null,
+    "height_m": 30.48,
+    "height_osm_m": 30.48,
+    "stories": 5,
+    "roof": "hip roof + central tower with pyramid cap",
+    "style": "Richardsonian Romanesque (H.H. Richardson), granite",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 75,
+    "year_by_source": {
+     "wikidata_inception": 1888,
+     "osm_start_date": 1888,
+     "wikipedia_infobox": 1888,
+     "wikipedia_text": 1888
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Allegheny_County_Courthouse",
+     "https://www.wikidata.org/wiki/Q4731291",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Allegheny%20County%20Courthouse%20Pittsburgh"
+    ],
+    "qid": "Q4731291"
+   },
+   "label_name": "Allegheny County Courthouse"
+  },
+  {
+   "name": "Old Allegheny County Jail",
+   "kind": "generic_footprint",
+   "at": [
+    40.43847,
+    -79.99553
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1886,
+     "y1": 1887
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "built 1886 (Wikipedia infobox, Richardson); modern jail 1995 elsewhere is a different building",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1886,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "hip",
+    "style": "Richardsonian Romanesque",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_text": 1886
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Allegheny_County_Jail",
+     "https://www.wikidata.org/wiki/Q4731292"
+    ],
+    "qid": "Q4731292"
+   },
+   "label_name": "Old Allegheny County Jail"
+  },
+  {
+   "name": "Pittsburgh City-County Building",
+   "kind": "generic_footprint",
+   "at": [
+    40.4381,
+    -79.9969
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 43.9
+   },
+   "phases": [
+    {
+     "y": 1917,
+     "y1": 1918
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "built 1914-1917 (Wikipedia infobox), Wikidata 1917; OSM 43.9 m; 10 floors (OSM+Wikidata); coords: Wikipedia vs OSM 4 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1917,
+    "demolished": null,
+    "height_m": 43.9,
+    "height_osm_m": 43.9,
+    "stories": 10,
+    "roof": "flat/low hip",
+    "style": "Beaux-Arts/Classical (Hornbostel)",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 4,
+    "year_by_source": {
+     "wikidata_inception": 1917,
+     "wikipedia_infobox": 1914
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Pittsburgh_City-County_Building",
+     "https://www.wikidata.org/wiki/Q7199249",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=City-County%20Building%20Pittsburgh"
+    ],
+    "qid": "Q7199249"
+   },
+   "label_name": "Pittsburgh City-County Building"
+  },
+  {
+   "name": "Union Station (Pennsylvania Station)",
+   "kind": "station",
+   "at": [
+    40.44475,
+    -79.99214
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1903,
+     "y1": 1904
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "built 1898-1904; infobox opened 1903; Wikidata 1903; original building still stands (rotunda NRHP 1973); the demolished part is not documented in the sources reachable; coords: Wikipedia vs OSM 46 m apart; Wikidata coord 52 m from Wikipedia",
+   "meta": {
+    "zone": "Golden Triangle / Strip edge",
+    "completed": 1903,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "rotunda dome head house",
+    "style": "Beaux-Arts, Burnham",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 46,
+    "year_by_source": {
+     "wikidata_inception": 1903,
+     "wikidata_opened": 1903,
+     "wikipedia_infobox": 1903
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Union_Station_%28Pittsburgh%29",
+     "https://www.wikidata.org/wiki/Q7886093",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Union%20Station%20Pittsburgh"
+    ],
+    "qid": "Q7886093"
+   },
+   "label_name": "Union Station (Pennsylvania Station)"
+  },
+  {
+   "name": "Kaufmann's department store (400 Fifth Ave)",
+   "kind": "generic_footprint",
+   "at": [
+    40.4396,
+    -79.99822
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "low",
+   "note": "building construction year NOT found in reachable sources; store chain history 1871 (Wikidata); Macy's sold the downtown store in 2015 for redevelopment (Wikipedia); building NOT demolished as far as sources show; coords: Wikipedia vs OSM 0 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": null,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat",
+    "style": "department store",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "osm"
+    ],
+    "coord_agree_osm_m": 0,
+    "year_by_source": {
+     "wikidata_inception": 1871
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Kaufmann%27s",
+     "https://www.wikidata.org/wiki/Q14505904",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Kaufmann%27s%20Pittsburgh"
+    ],
+    "qid": "Q14505904"
+   },
+   "label_name": "Kaufmann's department store (400 Fifth Ave)"
+  },
+  {
+   "name": "Heinz Hall (Loew's Penn Theatre)",
+   "kind": "generic_footprint",
+   "at": [
+    40.4425,
+    -80.0017
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1927,
+     "y1": 1928
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened 1927 (infobox, Wikidata); coords: Wikipedia vs OSM 8 m apart",
+   "meta": {
+    "zone": "Cultural District",
+    "completed": 1927,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat",
+    "style": "Rapp & Rapp movie palace",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 8,
+    "year_by_source": {
+     "wikidata_opened": 1927
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Heinz_Hall",
+     "https://www.wikidata.org/wiki/Q12059806",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Heinz%20Hall%20Pittsburgh"
+    ],
+    "qid": "Q12059806"
+   },
+   "label_name": "Heinz Hall (Loew's Penn Theatre)"
+  },
+  {
+   "name": "Benedum Center (Stanley Theatre)",
+   "kind": "generic_footprint",
+   "at": [
+    40.44278,
+    -79.99972
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1928,
+     "y1": 1929
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "Wikidata opening 1928; infobox says opened Feb 27 1927 (conflict; Stanley Theatre name used 1928-1987); coords: Wikipedia vs OSM 36 m apart",
+   "meta": {
+    "zone": "Cultural District",
+    "completed": 1928,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat",
+    "style": "Hoffman-Henon movie palace",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 36,
+    "year_by_source": {
+     "wikidata_inception": 1927,
+     "wikidata_opened": 1928,
+     "wikipedia_infobox": 1927
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Benedum_Center",
+     "https://www.wikidata.org/wiki/Q817087",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Benedum%20Center%20Pittsburgh"
+    ],
+    "qid": "Q817087"
+   },
+   "label_name": "Benedum Center (Stanley Theatre)"
+  },
+  {
+   "name": "Wabash Pittsburgh Terminal",
+   "kind": "station",
+   "at": [
+    40.441,
+    -80.0045
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 60
+   },
+   "phases": [
+    {
+     "y": 1904,
+     "y1": 1905
+    }
+   ],
+   "demolished": 1954,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "opened April 13 1904; closed Oct 31 1931; demolition Oct 1953 - early 1954 (Wikipedia); 197 ft per Wikipedia = 60 m; 11 floors, Beaux-Arts dome (11th-floor cupola lost after 1931)",
+   "meta": {
+    "zone": "Point (now Gateway Center/Point)",
+    "completed": 1904,
+    "demolished": 1954,
+    "height_m": 60,
+    "height_osm_m": null,
+    "stories": 11,
+    "roof": "dome (cupola removed after 1931)",
+    "style": "Beaux-Arts, Theodore Link",
+    "status": "demolished",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikidata_opened": 1904,
+     "wikipedia_infobox": 1904,
+     "wikipedia_text": 1904
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Wabash_Pittsburgh_Terminal",
+     "https://www.wikidata.org/wiki/Q7958647"
+    ],
+    "qid": "Q7958647"
+   },
+   "label_name": "Wabash Pittsburgh Terminal"
+  },
+  {
+   "name": "Forbes Field",
+   "kind": "stadium",
+   "at": [
+    40.44194,
+    -79.95417
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1909,
+     "y1": 1910
+    }
+   ],
+   "demolished": 1971,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "high",
+   "note": "opened June 30 1909; last game June 28 1970; demolished 1971 (Wikipedia, Wikidata); Wikipedia vs Wikidata coordinates differ ~150 m; site is on Pitt campus (home plate in Posvar Hall); Wikidata coord 161 m from Wikipedia",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1909,
+    "demolished": 1971,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "open",
+    "style": "ballpark, Charles Leavitt Jr.",
+    "status": "demolished",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikidata_inception": 1909,
+     "wikidata_opened": 1909,
+     "wikipedia_infobox": 1909,
+     "wikipedia_text": 1909
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Forbes_Field",
+     "https://www.wikidata.org/wiki/Q1963954"
+    ],
+    "qid": "Q1963954"
+   },
+   "label_name": "Forbes Field"
+  },
+  {
+   "name": "Three Rivers Stadium",
+   "kind": "stadium",
+   "at": [
+    40.44667,
+    -80.01278
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1970,
+     "y1": 1971
+    }
+   ],
+   "demolished": 2001,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "high",
+   "note": "opened July 16 1970; closed Dec 16 2000; demolished Feb 11 2001 (Wikipedia, Wikidata)",
+   "meta": {
+    "zone": "North Shore",
+    "completed": 1970,
+    "demolished": 2001,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "open, circular",
+    "style": "multi-purpose cookie-cutter stadium",
+    "status": "demolished",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikidata_opened": 1970,
+     "wikipedia_text": 1970
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Three_Rivers_Stadium",
+     "https://www.wikidata.org/wiki/Q1189339"
+    ],
+    "qid": "Q1189339"
+   },
+   "label_name": "Three Rivers Stadium"
+  },
+  {
+   "name": "Civic Arena (Mellon Arena, \"Igloo\")",
+   "kind": "bullring",
+   "at": [
+    40.44167,
+    -79.99
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "dome"
+   },
+   "phases": [
+    {
+     "y": 1961,
+     "y1": 1962
+    }
+   ],
+   "demolished": [
+    2011,
+    2012
+   ],
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "high",
+   "note": "opened Sept 17 1961; closed 2010; demolished Sept 26 2011 - Mar 31 2012 (Wikipedia, Wikidata)",
+   "meta": {
+    "zone": "Lower Hill",
+    "completed": 1961,
+    "demolished": [
+     2011,
+     2012
+    ],
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "retractable stainless-steel dome",
+    "style": "Mitchell & Ritchey, domed arena",
+    "status": "demolished",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikidata_inception": 1961,
+     "wikidata_opened": 1961,
+     "wikipedia_infobox": 1961
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Civic_Arena_%28Pittsburgh%29",
+     "https://www.wikidata.org/wiki/Q1237181"
+    ],
+    "qid": "Q1237181"
+   },
+   "label_name": "Civic Arena (Mellon Arena, \"Igloo\")"
+  },
+  {
+   "name": "PNC Park",
+   "kind": "stadium",
+   "at": [
+    40.44694,
+    -80.00583
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 2001,
+     "y1": 2002
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "opened 2001 (infobox, Wikidata, OSM); coords: Wikipedia vs OSM 19 m apart",
+   "meta": {
+    "zone": "North Shore",
+    "completed": 2001,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "open",
+    "style": "ballpark",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 19,
+    "year_by_source": {
+     "wikidata_opened": 2001,
+     "osm_start_date": 2001
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/PNC_Park",
+     "https://www.wikidata.org/wiki/Q1151177",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=PNC%20Park%20Pittsburgh"
+    ],
+    "qid": "Q1151177"
+   },
+   "label_name": "PNC Park"
+  },
+  {
+   "name": "Acrisure Stadium (Heinz Field)",
+   "kind": "stadium",
+   "at": [
+    40.44667,
+    -80.01583
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 2001,
+     "y1": 2002
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "opened 2001 (infobox, Wikidata, OSM); coords: Wikipedia vs OSM 11 m apart",
+   "meta": {
+    "zone": "North Shore",
+    "completed": 2001,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "open",
+    "style": "NFL stadium",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 11,
+    "year_by_source": {
+     "wikidata_opened": 2001,
+     "osm_start_date": 2001
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Acrisure_Stadium",
+     "https://www.wikidata.org/wiki/Q1067148",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Acrisure%20Stadium%20Pittsburgh"
+    ],
+    "qid": "Q1067148"
+   },
+   "label_name": "Acrisure Stadium (Heinz Field)"
+  },
+  {
+   "name": "Soldiers and Sailors Memorial Hall",
+   "kind": "generic_footprint",
+   "at": [
+    40.4451,
+    -79.9564
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1910,
+     "y1": 1911
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "built 1908-1910 (infobox), Wikidata 1910; coords: Wikipedia vs OSM 10 m apart",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1910,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat/hip",
+    "style": "Beaux-Arts, Hornbostel",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 10,
+    "year_by_source": {
+     "wikidata_inception": 1910,
+     "wikipedia_infobox": 1908
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Soldiers_and_Sailors_Memorial_Hall_and_Museum",
+     "https://www.wikidata.org/wiki/Q7557406",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Soldiers%20and%20Sailors%20Memorial%20Hall%20Pittsburgh"
+    ],
+    "qid": "Q7557406"
+   },
+   "label_name": "Soldiers and Sailors Memorial Hall"
+  },
+  {
+   "name": "Mellon Institute",
+   "kind": "generic_footprint",
+   "at": [
+    40.44612,
+    -79.95103
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1937,
+     "y1": 1938
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "built 1937 (infobox); Wikidata 1913 = institute founding, not this building; coords: Wikipedia vs OSM 4 m apart",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1937,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": 4,
+    "roof": "flat colonnaded",
+    "style": "Neoclassical, Benno Janssen",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 4,
+    "year_by_source": {
+     "wikidata_inception": 1913,
+     "wikipedia_infobox": 1937
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Mellon_Institute_of_Industrial_Research",
+     "https://www.wikidata.org/wiki/Q3854267",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Mellon%20Institute%20Pittsburgh"
+    ],
+    "qid": "Q3854267"
+   },
+   "label_name": "Mellon Institute"
+  },
+  {
+   "name": "Heinz Memorial Chapel",
+   "kind": "church",
+   "at": [
+    40.44528,
+    -79.95167
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1938,
+     "y1": 1939
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "built 1933-1938 (infobox); coords: Wikipedia vs OSM 17 m apart",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1938,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "spire",
+    "style": "French Gothic Revival, Klauder",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 17,
+    "year_by_source": {
+     "wikipedia_infobox": 1933,
+     "wikipedia_text": 1938
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Heinz_Memorial_Chapel",
+     "https://www.wikidata.org/wiki/Q5700795",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Heinz%20Memorial%20Chapel%20Pittsburgh"
+    ],
+    "qid": "Q5700795"
+   },
+   "label_name": "Heinz Memorial Chapel"
+  },
+  {
+   "name": "Carnegie Museum / Library (Oakland)",
+   "kind": "generic_footprint",
+   "at": [
+    40.44369,
+    -79.94898
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1895,
+     "y1": 1896
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "first gallery Nov 5 1895; Forbes Ave building 1907 (Wikipedia text); Wikidata 1895/1896; coords: Wikipedia vs OSM 7 m apart",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1895,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat",
+    "style": "Longfellow Alden & Harlow",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 7,
+    "year_by_source": {
+     "wikidata_inception": 1896,
+     "wikidata_opened": 1896
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Carnegie_Museum_of_Art",
+     "https://www.wikidata.org/wiki/Q1043967",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Carnegie%20Museum%20of%20Art%20Pittsburgh"
+    ],
+    "qid": "Q1043967"
+   },
+   "label_name": "Carnegie Museum / Library (Oakland)"
+  },
+  {
+   "name": "Pittsburgh & Lake Erie Railroad Station (Station Square)",
+   "kind": "station",
+   "at": [
+    40.43361,
+    -80.00389
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1898,
+     "y1": 1899
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "Wikipedia infobox built 1898 (Station Square article 1897); opening year in other sources may be later; Likely 1898-1901; coords: Wikipedia vs OSM 28 m apart",
+   "meta": {
+    "zone": "South Side (Station Square)",
+    "completed": 1898,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat with arcaded facade",
+    "style": "Classical Revival, William George Burns",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 28,
+    "year_by_source": {
+     "wikipedia_infobox": 1898
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Pittsburgh_%26_Lake_Erie_Railroad_Station",
+     "https://www.wikidata.org/wiki/Q7199216",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=P%26LE%20Terminal%20Pittsburgh"
+    ],
+    "qid": "Q7199216"
+   },
+   "label_name": "Pittsburgh & Lake Erie Railroad Station (Station Square)"
+  },
+  {
+   "name": "Fort Pitt Block House",
+   "kind": "generic_footprint",
+   "at": [
+    40.4412,
+    -80.0098
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 8
+   },
+   "phases": [
+    {
+     "y": 1764,
+     "y1": 1765
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "built 1764 (infobox, Wikidata, text); oldest extant structure in western PA; coords: Wikipedia vs OSM 2 m apart",
+   "meta": {
+    "zone": "Point",
+    "completed": 1764,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": 2,
+    "roof": "hip",
+    "style": "colonial brick blockhouse",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 2,
+    "year_by_source": {
+     "wikidata_inception": 1764,
+     "wikipedia_infobox": 1764
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fort_Pitt_Block_House",
+     "https://www.wikidata.org/wiki/Q5471838",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Fort%20Pitt%20Block%20House%20Pittsburgh"
+    ],
+    "qid": "Q5471838"
+   },
+   "label_name": "Fort Pitt Block House"
+  },
+  {
+   "name": "Duquesne Incline",
+   "kind": "generic_footprint",
+   "at": [
+    40.43917,
+    -80.01806
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1877,
+     "y1": 1878
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "opened 1877 (infobox, Wikidata); coords: Wikipedia vs OSM 41 m apart",
+   "meta": {
+    "zone": "Mount Washington",
+    "completed": 1877,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "n/a",
+    "style": "funicular, Second Empire station",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 41,
+    "year_by_source": {
+     "wikidata_opened": 1877,
+     "wikipedia_infobox": 1877
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Duquesne_Incline",
+     "https://www.wikidata.org/wiki/Q1266663",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Duquesne%20Incline%20Pittsburgh"
+    ],
+    "qid": "Q1266663"
+   },
+   "label_name": "Duquesne Incline"
+  },
+  {
+   "name": "Monongahela Incline",
+   "kind": "generic_footprint",
+   "at": [
+    40.43194,
+    -80.00556
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1870,
+     "y1": 1871
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "built 1870 by John Endres (Wikipedia text); coords: Wikipedia vs OSM 51 m apart",
+   "meta": {
+    "zone": "South Side / Mt Washington",
+    "completed": 1870,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "n/a",
+    "style": "funicular",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 51,
+    "year_by_source": {
+     "wikipedia_infobox": 1869,
+     "wikipedia_text": 1870
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Monongahela_Incline",
+     "https://www.wikidata.org/wiki/Q6901799",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Monongahela%20Incline%20Pittsburgh"
+    ],
+    "qid": "Q6901799"
+   },
+   "label_name": "Monongahela Incline"
+  },
+  {
+   "name": "Trinity Cathedral",
+   "kind": "church",
+   "at": [
+    40.4413,
+    -79.9987
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 61
+   },
+   "phases": [
+    {
+     "y": 1872,
+     "y1": 1873
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "Wikidata inception 1872; list timeline: tallest building 1872-1888 (200 ft); 200 ft from list timeline (likely spire height); coords: Wikipedia vs OSM 5 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1872,
+    "demolished": null,
+    "height_m": 61,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "spire",
+    "style": "Gothic Revival",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 5,
+    "year_by_source": {
+     "wikidata_inception": 1872,
+     "wikipedia_infobox": 1872
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Trinity_Cathedral_%28Pittsburgh%29",
+     "https://www.wikidata.org/wiki/Q7842607",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Trinity%20Cathedral%20Pittsburgh"
+    ],
+    "qid": "Q7842607"
+   },
+   "label_name": "Trinity Cathedral"
+  },
+  {
+   "name": "First Presbyterian Church",
+   "kind": "church",
+   "at": [
+    40.44152,
+    -79.99912
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1905,
+     "y1": 1906
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "built 1905 (Wikipedia text), T.P. Chandler; coords: Wikipedia vs OSM 3 m apart",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1905,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "tower with pyramid/battlement",
+    "style": "Neo-Gothic",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 3,
+    "year_by_source": {
+     "wikipedia_text": 1905
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/First_Presbyterian_Church_%28Pittsburgh%29",
+     "https://www.wikidata.org/wiki/Q60741349",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=First%20Presbyterian%20Church%20Pittsburgh"
+    ],
+    "qid": "Q60741349"
+   },
+   "label_name": "First Presbyterian Church"
+  },
+  {
+   "name": "Syria Mosque",
+   "kind": "generic_footprint",
+   "at": [
+    40.4455,
+    -79.9551
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1911,
+     "y1": 1912
+    }
+   ],
+   "demolished": 1991,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "completed 1911; demolished 1991 (Wikipedia infobox)",
+   "meta": {
+    "zone": "Oakland",
+    "completed": 1911,
+    "demolished": 1991,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "dome",
+    "style": "Exotic/Moorish Revival",
+    "status": "demolished",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_infobox": 1911
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Syria_Mosque",
+     "https://www.wikidata.org/wiki/Q7663129"
+    ],
+    "qid": "Q7663129"
+   },
+   "label_name": "Syria Mosque"
+  },
+  {
+   "name": "Heinz History Center",
+   "kind": "generic_footprint",
+   "at": [
+    40.4466,
+    -79.9922
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1996,
+     "y1": 1997
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "low",
+   "note": "Wikidata 1996 = museum opening; building older (not verified here); coords: Wikipedia vs OSM 6 m apart",
+   "meta": {
+    "zone": "Strip District",
+    "completed": 1996,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": null,
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 6,
+    "year_by_source": {
+     "wikidata_inception": 1996
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Heinz_History_Center",
+     "https://www.wikidata.org/wiki/Q5700701",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Heinz%20History%20Center%20Pittsburgh"
+    ],
+    "qid": "Q5700701"
+   },
+   "label_name": "Heinz History Center"
+  },
+  {
+   "name": "Fulton Building (Renaissance Pittsburgh Hotel)",
+   "kind": "generic_footprint",
+   "at": [
+    40.4438,
+    -80.0023
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1906,
+     "y1": 1907
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "built 1906 (Wikipedia infobox), Grosvenor Atterbury",
+   "meta": {
+    "zone": "Golden Triangle",
+    "completed": 1906,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "flat Italian Renaissance",
+    "style": "Italian Renaissance",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_infobox": 1906
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fulton_Building",
+     "https://www.wikidata.org/wiki/Q5508402"
+    ],
+    "qid": "Q5508402"
+   },
+   "label_name": "Fulton Building (Renaissance Pittsburgh Hotel)"
+  },
+  {
+   "name": "Point State Park",
+   "kind": "park_structure",
+   "at": [
+    40.4417,
+    -80.00719
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1974,
+     "y1": 1975
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened August 1974 (fountain complete; Wikipedia); built 1950s-1974 on cleared land; coords: Wikipedia vs OSM 246 m apart; Wikidata coord 399 m from Wikipedia",
+   "meta": {
+    "zone": "Point",
+    "completed": 1974,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "n/a",
+    "style": "park (fountain)",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 246,
+    "year_by_source": {
+     "wikidata_inception": 1974
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Point_State_Park",
+     "https://www.wikidata.org/wiki/Q7208170",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Point%20State%20Park%20Pittsburgh"
+    ],
+    "qid": "Q7208170"
+   },
+   "label_name": "Point State Park"
+  },
+  {
+   "name": "Smithfield Street Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.43472,
+    -80.00222
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1883,
+     "y1": 1884
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "opened March 19 1883; widened 1889, 1911 (Wikipedia); coords: Wikipedia vs OSM 16 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Monongahela",
+    "completed": 1883,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": "lenticular truss",
+    "style": "Lindenthal lenticular truss over Monongahela",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 16,
+    "year_by_source": {
+     "wikidata_inception": 1883,
+     "wikidata_opened": 1883
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Smithfield_Street_Bridge",
+     "https://www.wikidata.org/wiki/Q7545513",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Smithfield%20Street%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q7545513"
+   },
+   "label_name": "Smithfield Street Bridge"
+  },
+  {
+   "name": "Fort Pitt Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.43883,
+    -80.01113
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1959,
+     "y1": 1960
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened June 1959 (ribbon cutting June 19 1959); coords: Wikipedia vs OSM 28 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Point",
+    "completed": 1959,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "double-deck bowstring arch",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 28,
+    "year_by_source": {
+     "wikipedia_text": 1959
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fort_Pitt_Bridge",
+     "https://www.wikidata.org/wiki/Q5471837",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Fort%20Pitt%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q5471837"
+   },
+   "label_name": "Fort Pitt Bridge"
+  },
+  {
+   "name": "Fort Duquesne Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.4443,
+    -80.0093
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1969,
+     "y1": 1970
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened Oct 17 1969 (built 1958-63 but not connected; \"Bridge to Nowhere\"); NOT 1963; coords: Wikipedia vs OSM 18 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Point",
+    "completed": 1969,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "bowstring arch over Allegheny",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 18,
+    "year_by_source": {
+     "wikipedia_text": 1969
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fort_Duquesne_Bridge",
+     "https://www.wikidata.org/wiki/Q5471105",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Fort%20Duquesne%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q5471105"
+   },
+   "label_name": "Fort Duquesne Bridge"
+  },
+  {
+   "name": "Roberto Clemente (6th St) Bridge - Three Sisters",
+   "kind": "bridge_arches",
+   "at": [
+    40.4456,
+    -80.0033
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1928,
+     "y1": 1929
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "current bridge completed Sept 29 1928 (Wikipedia); earlier bridges 1819, 1859 Roebling; coords: Wikipedia vs OSM 3 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Allegheny",
+    "completed": 1928,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "self-anchored suspension, yellow",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 3,
+    "year_by_source": {
+     "wikipedia_text": 1928
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Roberto_Clemente_Bridge",
+     "https://www.wikidata.org/wiki/Q7351643",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Roberto%20Clemente%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q7351643"
+   },
+   "label_name": "Roberto Clemente (6th St) Bridge - Three Sisters"
+  },
+  {
+   "name": "Andy Warhol (7th St) Bridge - Three Sisters",
+   "kind": "bridge_arches",
+   "at": [
+    40.44611,
+    -80.00139
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1926,
+     "y1": 1927
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "high",
+   "note": "opened June 17 1926 (Wikipedia, Wikidata); coords: Wikipedia vs OSM 42 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Allegheny",
+    "completed": 1926,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "self-anchored suspension",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 42,
+    "year_by_source": {
+     "wikidata_opened": 1926,
+     "wikipedia_text": 1926
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Andy_Warhol_Bridge",
+     "https://www.wikidata.org/wiki/Q4761451",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Andy%20Warhol%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q4761451"
+   },
+   "label_name": "Andy Warhol (7th St) Bridge - Three Sisters"
+  },
+  {
+   "name": "Rachel Carson (9th St) Bridge - Three Sisters",
+   "kind": "bridge_arches",
+   "at": [
+    40.4467,
+    -79.9998
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1926,
+     "y1": 1927
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ],
+   "conf": "medium",
+   "note": "opened Nov 26 1926 (Wikipedia infobox, Wikidata); coords: Wikipedia vs OSM 17 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Allegheny",
+    "completed": 1926,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "self-anchored suspension",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": true,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 17,
+    "year_by_source": {
+     "wikidata_inception": 1926,
+     "wikidata_opened": 1926
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Rachel_Carson_Bridge",
+     "https://www.wikidata.org/wiki/Q7279183",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Rachel%20Carson%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q7279183"
+   },
+   "label_name": "Rachel Carson (9th St) Bridge - Three Sisters"
+  },
+  {
+   "name": "Hot Metal Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.42827,
+    -79.96078
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1900,
+     "y1": 1901
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "upstream span 1887; downstream Hot Metal span 1900; ped/bike 2007; coords: Wikipedia vs OSM 51 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "South Side",
+    "completed": 1900,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "truss",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 51,
+    "year_by_source": {
+     "wikidata_opened": 1887,
+     "wikipedia_text": 1900
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Hot_Metal_Bridge",
+     "https://www.wikidata.org/wiki/Q5910164",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Hot%20Metal%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q5910164"
+   },
+   "label_name": "Hot Metal Bridge"
+  },
+  {
+   "name": "Liberty Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.4328,
+    -79.9967
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1928,
+     "y1": 1929
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened March 27 1928; coords: Wikipedia vs OSM 44 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Monongahela",
+    "completed": 1928,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "steel cantilever",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 44,
+    "year_by_source": {
+     "wikipedia_text": 1928
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Liberty_Bridge_%28Pittsburgh%29",
+     "https://www.wikidata.org/wiki/Q6541627",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Liberty%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q6541627"
+   },
+   "label_name": "Liberty Bridge"
+  },
+  {
+   "name": "Birmingham Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.4334,
+    -79.9735
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1976,
+     "y1": 1977
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "built 1976 (Wikipedia text); renamed March 1977; Wikidata 1977; coords: Wikipedia vs OSM 31 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "South Side / Oakland",
+    "completed": 1976,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "bowstring arch",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 31,
+    "year_by_source": {
+     "wikidata_inception": 1977,
+     "wikipedia_text": 1976
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Birmingham_Bridge",
+     "https://www.wikidata.org/wiki/Q4916624",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Birmingham%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q4916624"
+   },
+   "label_name": "Birmingham Bridge"
+  },
+  {
+   "name": "Veterans Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.44978,
+    -79.99331
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1988,
+     "y1": 1989
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened Nov 11 1988 (Wikipedia text); coords: Wikipedia vs OSM 0 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Strip / Allegheny",
+    "completed": 1988,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "girder (I-579)",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "osm"
+    ],
+    "coord_agree_osm_m": 0,
+    "year_by_source": {
+     "wikipedia_text": 1988
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://www.wikidata.org/wiki/Q7923609",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Veterans%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q7923609"
+   },
+   "label_name": "Veterans Bridge"
+  },
+  {
+   "name": "Panhandle Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.43309,
+    -79.99807
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1903,
+     "y1": 1904
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "high",
+   "note": "built 1903, raised 1912-14; light rail since 1985; coords: Wikipedia vs OSM 84 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Monongahela",
+    "completed": 1903,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "truss",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 84,
+    "year_by_source": {
+     "wikidata_opened": 1903,
+     "wikipedia_text": 1903
+    },
+    "verified_2_sources": true,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Panhandle_Bridge",
+     "https://www.wikidata.org/wiki/Q7131011",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=Panhandle%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q7131011"
+   },
+   "label_name": "Panhandle Bridge"
+  },
+  {
+   "name": "David McCullough (16th St) Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.45167,
+    -79.99083
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1923,
+     "y1": 1924
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "infobox/Wikidata 1923; text says constructed 1922; coords: Wikipedia vs OSM 91 m apart; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Strip / Troy Hill",
+    "completed": 1923,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "through arch",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata",
+     "osm"
+    ],
+    "coord_agree_osm_m": 91,
+    "year_by_source": {
+     "wikidata_inception": 1923
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/David_McCullough_Bridge",
+     "https://www.wikidata.org/wiki/Q4552241",
+     "https://nominatim.openstreetmap.org/ui/search.html?q=David%20McCullough%20Bridge%20Pittsburgh"
+    ],
+    "qid": "Q4552241"
+   },
+   "label_name": "David McCullough (16th St) Bridge"
+  },
+  {
+   "name": "Fort Wayne (Pennsylvania) Railroad Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.448,
+    -79.9961
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1904,
+     "y1": 1905
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S2",
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "built 1901-1904 (Wikipedia); bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Allegheny",
+    "completed": 1904,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "double-deck truss",
+    "status": "standing",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia",
+     "wikidata"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikidata_opened": 1901,
+     "wikipedia_infobox": 1901,
+     "wikipedia_text": 1904
+    },
+    "verified_2_sources": false,
+    "urls": [
+     "https://en.wikipedia.org/wiki/Fort_Wayne_Railroad_Bridge",
+     "https://www.wikidata.org/wiki/Q5472302"
+    ],
+    "qid": "Q5472302"
+   },
+   "label_name": "Fort Wayne (Pennsylvania) Railroad Bridge"
+  },
+  {
+   "name": "Manchester Bridge (North Side Point Bridge)",
+   "kind": "bridge_arches",
+   "at": [
+    40.4435,
+    -80.0129
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1915,
+     "y1": 1916
+    }
+   ],
+   "demolished": 1970,
+   "label": true,
+   "src": [
+    "S1",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened Aug 8 1915; closed Oct 17 1969; demolished Sept 29 1970; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Point/Allegheny",
+    "completed": 1915,
+    "demolished": 1970,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "Pratt truss",
+    "status": "demolished",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_text": 1915
+    },
+    "verified_2_sources": false,
+    "urls": [],
+    "qid": null
+   },
+   "label_name": "Manchester Bridge (North Side Point Bridge)"
+  },
+  {
+   "name": "Point Bridge (II)",
+   "kind": "bridge_arches",
+   "at": [
+    40.4408,
+    -80.0145
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1927,
+     "y1": 1928
+    }
+   ],
+   "demolished": 1970,
+   "label": true,
+   "src": [
+    "S1",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "opened June 20 1927 (replacing 1877 bridge); closed June 21 1959; demolition Apr-Nov 1970; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "Point/Monongahela",
+    "completed": 1927,
+    "demolished": 1970,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "steel cantilever truss",
+    "status": "demolished",
+    "flood1936_candidate": true,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_text": 1927
+    },
+    "verified_2_sources": false,
+    "urls": [],
+    "qid": null
+   },
+   "label_name": "Point Bridge (II)"
+  },
+  {
+   "name": "Tenth Street (Philip Murray) Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    40.43252,
+    -79.98921
+   ],
+   "footprint": "none",
+   "params": {},
+   "phases": [
+    {
+     "y": 1933,
+     "y1": 1934
+    }
+   ],
+   "demolished": null,
+   "label": true,
+   "src": [
+    "S1",
+    "S4"
+   ],
+   "conf": "medium",
+   "note": "built 1931-1933; predecessor demolished 1931; bridge_arches needs \"line\" (2+ points) or at+ang+length: only the centre point is sourced here",
+   "meta": {
+    "zone": "South Side",
+    "completed": 1933,
+    "demolished": null,
+    "height_m": null,
+    "height_osm_m": null,
+    "stories": null,
+    "roof": null,
+    "style": "suspension",
+    "status": "standing",
+    "flood1936_candidate": false,
+    "city_designated_historic_site": false,
+    "coord_sources": [
+     "wikipedia"
+    ],
+    "coord_agree_osm_m": null,
+    "year_by_source": {
+     "wikipedia_text": 1933
+    },
+    "verified_2_sources": false,
+    "urls": [],
+    "qid": null
+   },
+   "label_name": "Tenth Street (Philip Murray) Bridge"
+  }
+ ],
+ "flood1936": {
+  "confidence": "[Likely] for each building; [Certain] for the flood extent statement",
+  "extent_source": "S6: 65% of downtown flooded from the Point up to Grant Street; crest 46 ft on March 18 1936",
+  "method": "geometric: building lies west of the Grant Street line, built <=1935, still standing. NOT confirmed frame by frame: archive photo sites (Pitt digital library, Heinz History Center, LoC, NARA) are blocked from this sandbox. Verify against actual 1936 frames before using on screen.",
+  "core_10": [
+   {
+    "name": "Fort Pitt Block House",
+    "at": [
+     40.4412,
+     -80.0098
+    ],
+    "built": 1764,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Smithfield Street Bridge",
+    "at": [
+     40.43472,
+     -80.00222
+    ],
+    "built": 1883,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Oliver Building",
+    "at": [
+     40.44115,
+     -79.99817
+    ],
+    "built": 1910,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Commonwealth Building",
+    "at": [
+     40.43906,
+     -80.00084
+    ],
+    "built": 1906,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Fulton Building (Renaissance Pittsburgh Hotel)",
+    "at": [
+     40.4438,
+     -80.0023
+    ],
+    "built": 1906,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Clark Building",
+    "at": [
+     40.44276,
+     -79.99952
+    ],
+    "built": 1928,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Trinity Cathedral",
+    "at": [
+     40.4413,
+     -79.9987
+    ],
+    "built": 1872,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Heinz Hall (Loew's Penn Theatre)",
+    "at": [
+     40.4425,
+     -80.0017
+    ],
+    "built": 1927,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Benedum Center (Stanley Theatre)",
+    "at": [
+     40.44278,
+     -79.99972
+    ],
+    "built": 1928,
+    "still_standing": true,
+    "why": "inside flood zone"
+   },
+   {
+    "name": "Pittsburgh & Lake Erie Railroad Station (Station Square)",
+    "at": [
+     40.43361,
+     -80.00389
+    ],
+    "built": 1898,
+    "still_standing": true,
+    "why": "inside flood zone"
+   }
+  ],
+  "edge_of_zone_on_or_near_Grant_St": [
+   {
+    "name": "Gulf Tower",
+    "at": [
+     40.44258,
+     -79.99522
+    ],
+    "built": 1932,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Koppers Building (Koppers Tower)",
+    "at": [
+     40.44212,
+     -79.99554
+    ],
+    "built": 1929,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Grant Building",
+    "at": [
+     40.43767,
+     -79.99755
+    ],
+    "built": 1930,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Frick Building",
+    "at": [
+     40.43912,
+     -79.99744
+    ],
+    "built": 1902,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Allegheny County Courthouse",
+    "at": [
+     40.4384,
+     -79.9961
+    ],
+    "built": 1888,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Union Station (Pennsylvania Station)",
+    "at": [
+     40.44475,
+     -79.99214
+    ],
+    "built": 1903,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Omni William Penn Hotel",
+    "at": [
+     40.44062,
+     -79.99663
+    ],
+    "built": 1916,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Pittsburgh City-County Building",
+    "at": [
+     40.4381,
+     -79.9969
+    ],
+    "built": 1917,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Roberto Clemente (6th St) Bridge - Three Sisters",
+    "at": [
+     40.4456,
+     -80.0033
+    ],
+    "built": 1928,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Andy Warhol (7th St) Bridge - Three Sisters",
+    "at": [
+     40.44611,
+     -80.00139
+    ],
+    "built": 1926,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Rachel Carson (9th St) Bridge - Three Sisters",
+    "at": [
+     40.4467,
+     -79.9998
+    ],
+    "built": 1926,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Liberty Bridge",
+    "at": [
+     40.4328,
+     -79.9967
+    ],
+    "built": 1928,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   },
+   {
+    "name": "Panhandle Bridge",
+    "at": [
+     40.43309,
+     -79.99807
+    ],
+    "built": 1903,
+    "still_standing": true,
+    "why": "on the flood line (Grant St): water reached it, depth unknown"
+   }
+  ],
+  "gone_since_1936": [
+   "Wabash Pittsburgh Terminal (demolished 1953-54, at the Point, flooded 1936)",
+   "Point Bridge II (1927-1970)",
+   "Manchester Bridge (1915-1970)"
+  ]
+ }
+}

@@ -313,7 +313,7 @@ def lost_pass(ctx):
         q = _poly(ctx.P.ring(l['ring']))
         for g in _polys(q):
             out.append({'r': _ring_out(g), 'h': float(l.get('h', 12)), 'y': float(l['from']), 'd': float(l['to']),
-                        'name': l.get('name', 'lost'), 'kit': 'lost'})
+                        'name': l.get('name', 'lost'), 'kit': 'lost', **({'dfine': 1} if l.get('fine') else {})})   # fine: demolizione in blocchi stretti (strutture che durano pochi anni)
     return out
 
 
@@ -536,6 +536,7 @@ def build(story, D=None, seed=11, quiet=False):
             e = {'name': f.get('name', 'fire'), 'poly': ctx.P.ring(f['ring']), 'y': f['y'], 'y1': f.get('y1', f['y'] + 0.01),
                  'flames': f.get('flames', 40), 'smoke': min(9, f.get('smoke', 6)), 'houses': burned.get(f.get('name', 'fire'), 0)}
             if f.get('origin'): e['origin'] = list(ctx.P.L(*f['origin']))
+            if f.get('style'): e['style'] = f['style']; e['rebuild'] = f.get('rebuild_years', 3)   # opt-in: build_render disegna l'incendio v2 ('blaze')
             fj.append(e)
         json.dump(fj, open(os.path.join(D, 'fires.json'), 'w'))
     if H.get('floods'):   # piene: acqua fangosa sul DEM, vedi build_render.py (DATA/floods.json)

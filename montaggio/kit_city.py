@@ -12,7 +12,7 @@ Scrive: montaggio/public/kit_<slug>.json + copie kit_<slug>_{years,eventi,labels
         e, se mancano, montaggio/years_<slug>.json (da schedule.years) ed eventi_<slug>.json (da story.montaggio.events + soste).
 Tutti i tempi di dissolvenza sono DERIVATI dallo schedule (riavvolgimento, prima sosta, durata): niente numeri a mano.
 Chiavi facoltative in story.city: pop_label, est_until, ticks, popmax. In story.montaggio: open (2 o 4 stringhe),
-title, end, end_sub, brand, title_kicker, tok_exclude, subscribe_t, label_area, sepia_rgb, short_tag, short_seconds.
+title, end, end_sub, brand, channel, title_kicker, tok_exclude, subscribe_t, label_area, sepia_rgb, short_tag, short_seconds.
 Chiavi facoltative del pacing "story" (kit/STORY_SCHEMA.md; se assenti l'output e' identico): city.polities, city.data_reliable_from,
 punti population con etichetta di fonte, montaggio.{cards, chapters, recap, cta, sources_card, label_years}.
 """
@@ -113,7 +113,7 @@ text = {
     'title': mont.get('title', [NAME, f'{yfmt(Y0)} TO NOW']),
     'end': mont.get('end', [f'{NAME} · {yrs_n:,} YEARS', 'WHICH CITY NEXT?']),
     'end_sub': mont.get('end_sub', 'Tell us in the comments'),
-    'brand': mont.get('brand', 'YEAR BUILT'),
+    'brand': mont['brand'] if 'brand' in mont else (mont['channel'].upper() if 'channel' in mont else 'YEAR BUILT'),   # channel: nome del canale (es. 'Ledger of Cities'), reso in maiuscolo; assente = come prima
     'short_name': mont.get('short_name', NAME),
     'short_tag': mont.get('short_tag', f'{yrs_n:,} YEARS IN {mont.get("short_seconds", 28)} SECONDS'),
 }

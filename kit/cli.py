@@ -8,6 +8,7 @@ Comandi
   data <slug>        controlla la cartella DATA e indica lo script di acquisizione per city.data_source
   build <slug>       hist stub + hist -> landmarks -> city json -> regia -> eventi/labs (se i moduli ci sono)
   qa <slug> [--render]   controlli automatici (kit/qa.py), report in cities/<slug>/qa/REPORT.md
+  gate <slug> [--out DIR]   GO dossier del proprietario (kit/gate.py): fotogrammi, grafici, tabella voli, qa, banner, costi, packaging
   pack <slug>        comprime DATA in data_<slug>_src/*.gz (come le altre citta': run.sh li scompatta sul pod)
   montaggio <slug> [--A a.mp3 --B b.mp3] [--overlay]   montaggio/kit_city.py, sfx_kit.py (se ci sono i brani), ov_kit.sh
   all <slug> [--render]  data -> build -> qa -> pack
@@ -137,6 +138,15 @@ def cmd_qa(slug, opts):
     return w
 
 
+def cmd_gate(slug, opts):
+    from . import gate
+    rc, R = gate.run(slug, out=opts.get('out'), data=opts.get('data'), sched=opts.get('schedule'), city=opts.get('city'))
+    if rc:
+        bad = [f'{r[2]}' for r in R.rows if r[1] == 'FAIL']
+        raise Fail(f'{len(bad)} FAIL nel gate: ' + '; '.join(bad[:6]))
+    return R.worst()
+
+
 def cmd_pack(slug, opts):
     st = geo.load_story(slug); D = opts.get('data') or geo.data_dir(st)
     out = os.path.join(geo.ROOT, f'data_{slug}_src'); os.makedirs(out, exist_ok=True)
@@ -171,7 +181,7 @@ def cmd_all(slug, opts):
     return 'OK'
 
 
-CMDS = {'init': cmd_init, 'data': cmd_data, 'build': cmd_build, 'qa': cmd_qa, 'pack': cmd_pack, 'montaggio': cmd_montaggio, 'all': cmd_all}
+CMDS = {'init': cmd_init, 'data': cmd_data, 'build': cmd_build, 'qa': cmd_qa, 'gate': cmd_gate, 'pack': cmd_pack, 'montaggio': cmd_montaggio, 'all': cmd_all}
 
 
 def main(argv=None):

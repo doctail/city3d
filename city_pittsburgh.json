@@ -1,0 +1,360 @@
+{
+ "name": "pittsburgh",
+ "_doc": "Pittsburgh (United States). Generato da kit/city_json.py da cities/pittsburgh/story.json (preset 'central'). Non modificare a mano: cambia la story e rigenera.",
+ "_generated_by": "kit/city_json.py",
+ "lat0": 40.4406,
+ "lon0": -80.0,
+ "radius_m": 9000.0,
+ "hist": "hist_pittsburgh",
+ "story": "cities/pittsburgh/story.json",
+ "core_box": [
+  -9000.0,
+  -9000.0,
+  9000.0,
+  9000.0
+ ],
+ "forest_box": [
+  0,
+  0,
+  1,
+  1
+ ],
+ "parks": [],
+ "roads": [],
+ "outer": {
+  "centers": [
+   [
+    40.4406,
+    -80.0
+   ]
+  ],
+  "curve": [
+   [
+    0,
+    9999
+   ],
+   [
+    1,
+    9999
+   ]
+  ],
+  "max": 9999
+ },
+ "min_area_m2": 12,
+ "land_half_m": 40000,
+ "grid_deg": 0,
+ "marsh": false,
+ "haze_k": 1000000000.0,
+ "water_z": -1.5,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -1.6,
+ "sun_el": 34,
+ "sun_rot": 140,
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "tree_scale": [
+  1.8,
+  3.2
+ ],
+ "tree_lift": 2.5,
+ "land_from_buildings": true,
+ "land_close": 15,
+ "blocks_by_building": true,
+ "urban_ground": "footprints",
+ "urban_buffer": 2.0,
+ "urban_close": 2.0,
+ "dur_min": 0.003,
+ "merge_parts": true,
+ "dem_band": 30.0,
+ "bin": 4,
+ "dbin": 8,
+ "rewind_hold": 4,
+ "ms_per_cambio": 12.0,
+ "budget_cambi_h": 1.0,
+ "field_colors": [
+  "#364c3a",
+  "#3a5144",
+  "#405647",
+  "#4e5c4b",
+  "#5d6251"
+ ],
+ "ground_tint": {
+  "png": "cities/pittsburgh/ground_tint.png",
+  "box": [
+   -12000.0,
+   -12000.0,
+   12000.0,
+   12000.0
+  ],
+  "scene": "S2A_17TNE_20240912_0_L2A"
+ },
+ "style": {
+  "haze": [
+   0.8,
+   0.88,
+   0.96
+  ],
+  "era_split": 1850,
+  "pitched_until": 1850,
+  "pitched_max_area": 600,
+  "glass": [
+   "#8fb0c6",
+   "#9cbbd0",
+   "#86a8c0"
+  ],
+  "glass_h": 70,
+  "glass_min_area": 400,
+  "window": "#2a3a4a",
+  "wall_anc": [
+   "#d7d5ce",
+   "#c7c5c0",
+   "#dadad5"
+  ],
+  "urban_green": "#57614d",
+  "hedge": "#3e5445",
+  "blocks": "#8c887e",
+  "grass": "#57614d",
+  "tree": "#3e5445",
+  "forest_base": "#3e5445",
+  "park_ground": "#57614d",
+  "reclaim": "#7f7969",
+  "urban_phase": "#b8ad98",
+  "street": "#8b8878",
+  "rail": "#8a8378",
+  "bridge_deck": "#b9b2a4",
+  "bridge_side": "#a39d92",
+  "smoke": "#3a3532",
+  "smoke_alpha": 0.85,
+  "flood_water": "#946d3c",
+  "water": "#2c6663",
+  "water2": "#378078",
+  "water_rough": 0.02,
+  "wave_scale": 0.025,
+  "wave_strength": 0.55,
+  "sky_light": 0.167,
+  "sun_energy": 1.78,
+  "sky_in_reflections": true,
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "night_bld_off": 0.82,
+  "night_floor_off": 0.45,
+  "night_win_off": 0.22,
+  "night_win": 4.5,
+  "night_street": 0.9,
+  "night_sky": 0.01,
+  "moon": 0.05,
+  "night_ground": [
+   0.6,
+   6.0,
+   0.25
+  ],
+  "night_lamp": "#ffa955",
+  "bulb": 14.0,
+  "bulb_size": 1.6,
+  "wall_old": [
+   "#d6a28e",
+   "#c98f7a",
+   "#d9c3a0",
+   "#cfd0c8",
+   "#c58470",
+   "#b98672"
+  ],
+  "roof_old": [
+   "#b4b4ba",
+   "#a9a29c",
+   "#bfb9b2",
+   "#9c9ca2",
+   "#b8a79a"
+  ],
+  "wall_new": [
+   "#d29a86",
+   "#c4826c",
+   "#d6b58f",
+   "#cdb9a0",
+   "#d8c8b0",
+   "#cfcac0"
+  ],
+  "roof_new": [
+   "#b4b4ba",
+   "#a9a29c",
+   "#bfb9b2",
+   "#9c9ca2",
+   "#b8a79a",
+   "#c2c2c6",
+   "#a8a8ae"
+  ],
+  "urban": [
+   "#5a5c50",
+   "#636255",
+   "#6b695c",
+   "#747162",
+   "#817b6d",
+   "#6b695c"
+  ],
+  "urban_dark": "#636255",
+  "street_earth": "#7f7969",
+  "sun_color": [
+   1.0,
+   0.96,
+   0.9
+  ],
+  "sky_horizon": [
+   0.78,
+   0.83,
+   0.9
+  ],
+  "sky_tint": [
+   0.9,
+   0.97,
+   1.06
+  ],
+  "sky_ramp": [
+   [
+    1.68,
+    2.061,
+    2.557
+   ],
+   [
+    0.084,
+    0.477,
+    1.876
+   ],
+   [
+    1.68,
+    2.061,
+    2.557
+   ],
+   [
+    0.943,
+    1.587,
+    2.605
+   ],
+   [
+    0.345,
+    0.943,
+    2.462
+   ]
+  ],
+  "wall_eras": [
+   [
+    1915,
+    [
+     "#d29a86",
+     "#c4826c",
+     "#d6b58f",
+     "#cdb9a0",
+     "#b97762",
+     "#d8c8b0",
+     "#c88e78",
+     "#cfcac0",
+     "#b9805f"
+    ]
+   ],
+   [
+    1950,
+    [
+     "#d6a28d",
+     "#c58a74",
+     "#dcc29b",
+     "#d3c9b8",
+     "#c07a64",
+     "#e0cfb5",
+     "#cd9680",
+     "#c9c6bd",
+     "#bd8a62"
+    ]
+   ],
+   [
+    9999,
+    [
+     "#d9d5c8",
+     "#d0cdc2",
+     "#dad9c4",
+     "#c1bfba",
+     "#c49a8d",
+     "#dad7cd",
+     "#cdc8bc",
+     "#c7c5c0"
+    ]
+   ]
+  ],
+  "wall_tall": [
+   "#b4bac2",
+   "#a3aab3",
+   "#bfc3c7",
+   "#c8c8c4",
+   "#9199a3",
+   "#b0b5ba"
+  ],
+  "roof_tall": [
+   "#8e949c",
+   "#9ca2a9"
+  ],
+  "tall_h": 35,
+  "water_coat": 0.25,
+  "water_glint": 0.85
+ },
+ "cover": {
+  "cam": [
+   -1250,
+   -1000,
+   330,
+   -330,
+   120,
+   80
+  ],
+  "lens": 35,
+  "years": [
+   1754.97,
+   2026
+  ],
+  "night_years": [],
+  "text_size": 104,
+  "shots": [
+   {
+    "tag": "forts",
+    "year": 1754.97,
+    "cam": [
+     -920,
+     15,
+     140,
+     -1050,
+     125,
+     3
+    ],
+    "lens": 26,
+    "night": false,
+    "note": "Fort Duquesne walls complete (1754.96); high SE oblique, wide lens 26 so the whole fort sits inside the crop with land around. Thumbnail left, label 1754. Crop --lbox 464,0,1050 on the 1920 frame (choice L3 of 17/11 round 2)"
+   },
+   {
+    "tag": "now",
+    "year": 2026,
+    "cam": [
+     -1250,
+     -1000,
+     330,
+     -330,
+     120,
+     80
+    ],
+    "lens": 35,
+    "night": false,
+    "note": "Mt Washington view NE: Downtown towers, Monongahela and Allegheny. Thumbnail right half, NOW. Crop --rbox 800,0,1050 on the 1920 frame"
+   }
+  ]
+ },
+ "shorts": [
+  [
+   "A",
+   1,
+   7200,
+   10
+  ]
+ ]
+}

@@ -1,0 +1,3 @@
+E2 (building palette lifted), 5x3 km nadir crop alt 3000 m, 2024.5 [crop numbers, not the full 9500 m frame]
+E : built L=77.9 (-26%) R/B 0.960 | E2: built L=95.2 (-9%) R/B 1.035 (S2 107,105,97 L=105.2 R/B 1.104)
+ground unchanged: L=90.2 (+11%) R/B 0.964 (+0%)
