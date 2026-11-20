@@ -8,11 +8,16 @@ D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '
 land = json.load(open(f'{D}/land.json'))
 lg = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in land]).buffer(15, join_style=2).buffer(-15, join_style=2)
 R_SPIKE, R_SLIP = 110, 110
+# gov fix (yb/nyc-gov): islands (land.json components < 10 km2: Roosevelt/Blackwell's, Governors, Ellis, Liberty) are NOT piers. Before, the opening (R 110 m)
+# erased Roosevelt Island (narrower than 220 m) as a 'spike' until 1850 and the closing bridged its channels as 'slips'.
+ISL = [g for g in lg.geoms if g.area < 1e7] if lg.geom_type == 'MultiPolygon' else []
+lg_main = unary_union([g for g in lg.geoms if g.area >= 1e7]) if ISL else lg
+isl_u = unary_union(ISL).buffer(8) if ISL else Polygon()
 reg = box(-9500, -12500, 5500, 2500)
-opened = lg.buffer(-R_SPIKE, 8).buffer(R_SPIKE, 8)
+opened = lg_main.buffer(-R_SPIKE, 8).buffer(R_SPIKE, 8)
 pre = opened.buffer(R_SLIP, 8).buffer(-R_SLIP, 8)   # shore as it was before the piers: opening (spikes) then closing (slips), round joins
-spikes = lg.difference(pre).intersection(reg)
-slips = pre.difference(lg).intersection(reg)
+spikes = lg_main.difference(pre).intersection(reg)
+slips = pre.difference(lg).difference(isl_u).intersection(reg)
 def parts(g, amin): return [p for p in getattr(g, 'geoms', [g]) if p.geom_type == 'Polygon' and p.area > amin]
 pre_b = pre.buffer(6)
 old = [x for x in json.load(open(f'{D}/landphases.json')) if not x.get('yb_pier')]

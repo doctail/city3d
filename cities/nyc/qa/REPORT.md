@@ -1,6 +1,6 @@
 # QA nyc
 
-Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-20 15:53. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -16,7 +16,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 - **PASS** 75 fonti
 - **PASS** date con fonte
 - **WARN** date fuori dall'intervallo del video
-  - history.water[0] East-shore infill (Pearl Street to South Street): 99999; history.water[1] West-shore infill (Greenwich Street to West Street): 99999; history.water[2] Collect Pond: 99999; history.water[3] Battery Park City: 99999; history.water[4] Governors Island south fill: 99999; history.water[5] Ellis Island fill (islands 2 and 3): 99999
+  - history.water[0] East-shore infill (Pearl Street to South Street): 99999; history.water[1] West-shore infill (Greenwich Street to West Street): 99999; history.water[2] Collect Pond: 99999; history.water[3] Battery Park City: 99999; history.water[4] Governors Island south fill: 99999; history.water[5] Governors Island south fill: 99999; history.water[6] Ellis Island fill (islands 2 and 3): 99999
 
 ## b) DATA
 
@@ -36,7 +36,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 - **PASS** anni edifici (145927)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1609 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
 - **WARN** hist (304876 predecessori)
-  - senza y/d 0, d<y 0, nati dopo 2026: 16
+  - senza y/d 0, d<y 0, nati dopo 2026: 26
 - **PASS** anni strade (117786 nastri)
   - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 6597
 
@@ -45,7 +45,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 - **PASS** East-shore infill (Pearl Street to South Street) nel 1800
   - 763 edifici vivi (26/ha, copertura 31%) contro 151 (5/ha, copertura 34%) nel 2026: rapporto 5.05
 - **PASS** New Amsterdam (Battery to Wall Street) nel 1800
-  - 1269 edifici vivi (5/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 5.93
+  - 1295 edifici vivi (5/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 6.05
 - **PASS** Colonial town (Wall Street to Canal Street) nel 1800
   - 9172 edifici vivi (22/ha, copertura 27%) contro 2683 (6/ha, copertura 30%) nel 2026: rapporto 3.42
 
@@ -53,7 +53,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 
 - **WARN** centro storico molto grande: raster limitato a 10 km
 - **WARN** 1709: 7 aree vuote allungate
-  - #1 131x23 m a (40.71640,-74.00340); #2 1252x264 m a (40.70783,-74.00281); #3 188x25 m a (40.71248,-74.00198); #4 148x18 m a (40.70620,-74.01533); #5 122x22 m a (40.70434,-74.01789); #6 144x33 m a (40.69308,-74.01607) — corridoi_1709.png
+  - #1 131x23 m a (40.71640,-74.00340); #2 1254x261 m a (40.70783,-74.00281); #3 188x25 m a (40.71248,-74.00198); #4 148x18 m a (40.70620,-74.01533); #5 122x22 m a (40.70434,-74.01789); #6 136x33 m a (40.69308,-74.01614) — corridoi_1709.png
 - **WARN** 1709: 7 viali larghi gia' visibili (se aperti sventrando: gutting)
   - #8 1514x122 m a (40.71193,-74.00381); #9 643x23 m a (40.70437,-74.00753); #10 387x19 m a (40.69223,-74.01588); #11 301x56 m a (40.70596,-74.01462); #12 277x35 m a (40.69191,-74.01896)
 - **WARN** 1800: 1 corridoi accettati (FAIL -> WARN)
@@ -73,8 +73,8 @@ Generato da `python -m kit.qa` il 2026-11-20 15:11. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (15 s)
-  - oggetti citta' 1903, cambi in tutto il video 68858, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
+- **PASS** costo dei cambi (16 s)
+  - oggetti citta' 1905, cambi in tutto il video 68918, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 146 m/s (limite 250), mediana 14
 - **PASS** drone: accelerazione massima

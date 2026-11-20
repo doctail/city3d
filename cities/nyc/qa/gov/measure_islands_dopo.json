@@ -1,0 +1,156 @@
+{
+ "1650": {
+  "Governors": {
+   "acres": 68.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 3.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "1700": {
+  "Governors": {
+   "acres": 68.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 3.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "1850": {
+  "Governors": {
+   "acres": 73.6,
+   "parts": 3,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 3.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "1900": {
+  "Governors": {
+   "acres": 73.6,
+   "parts": 3,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 3.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "1911": {
+  "Governors": {
+   "acres": 73.6,
+   "parts": 3,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 29.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "1913": {
+  "Governors": {
+   "acres": 183.1,
+   "parts": 3,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 29.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ },
+ "2020": {
+  "Governors": {
+   "acres": 183.1,
+   "parts": 3,
+   "holes": 0
+  },
+  "Ellis": {
+   "acres": 29.3,
+   "parts": 1,
+   "holes": 0
+  },
+  "Liberty": {
+   "acres": 14.6,
+   "parts": 1,
+   "holes": 0
+  },
+  "Roosevelt": {
+   "acres": 147.6,
+   "parts": 1,
+   "holes": 0
+  }
+ }
+}
