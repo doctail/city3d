@@ -17,8 +17,8 @@ for y in TL:
     p, tg, ln = qa._cam_at(sc, t_of(y)); shots.append({'label': f'volo {y:g}', 'year': y, 'pos': p, 'tgt': tg, 'lens': ln})
 shots += [{'label': 'Lacydon -500', 'year': -500, 'pos': [-520, -760, 380], 'tgt': [10, 90, 0], 'lens': 32},
           {'label': 'Lacydon 1300', 'year': 1300, 'pos': [-520, -760, 380], 'tgt': [10, 90, 0], 'lens': 32},
-          {'label': 'Joliette 1800', 'year': 1800, 'pos': [-2600, 700, 650], 'tgt': [-1100, 2000, 0], 'lens': 32},
-          {'label': 'Joliette 1900', 'year': 1900, 'pos': [-2600, 700, 650], 'tgt': [-1100, 2000, 0], 'lens': 32}]
+          {'label': 'Joliette 1800', 'year': 1800, 'pos': [-2300, -300, 1200], 'tgt': [-1000, 1900, 0], 'lens': 32},
+          {'label': 'Joliette 1900', 'year': 1900, 'pos': [-2300, -300, 1200], 'tgt': [-1000, 1900, 0], 'lens': 32}]
 for sh_ in json.load(open(R + '/cities/marseille/story.json'))['city']['cover']['shots']:
     if sh_['tag'] in ('massalia_b', 'now_day'): c_ = sh_['cam']; shots.append({'label': 'COVER ' + sh_['tag'], 'year': sh_['year'], 'pos': c_[:3], 'tgt': c_[3:], 'lens': sh_.get('lens', 35)})
 HOLD = 16; FPS = 24

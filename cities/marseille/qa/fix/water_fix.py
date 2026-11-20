@@ -6,7 +6,7 @@ Uso: water_fix.py [--write]   (DATA = data_marseille)"""
 import json, sys, os, numpy as np, shapely
 from shapely.geometry import Polygon
 from shapely.ops import unary_union
-R = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')); D = os.environ.get('MRS_DATA', R + '/data_marseille')
+R = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..')); D = os.environ.get('YB_DATA') or R + '/data_marseille'   # YB_DATA: il gate (pod parity) lo punta a una cartella temporanea
 FRAC = 0.5
 LC = json.load(open(R + '/city_marseille.json')).get('land_close', 45)
 land = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in json.load(open(D + '/land.json'))]).buffer(LC, join_style=2).buffer(-LC, join_style=2)

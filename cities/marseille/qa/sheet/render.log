@@ -5,3 +5,88 @@
 /home/user/wt/mrs/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
 [build] città in 1452 blocchi per anno, 2907225 vertici (31s, 949 MB)
+/home/user/wt/mrs/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (36s, 1023 MB)
+[build] suolo urbano dalle impronte: 522984 triangoli in 173 decenni (409s, 2146 MB)
+/home/user/wt/mrs/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/home/user/wt/mrs/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 33 poligoni in 15 finestre (409s, 2146 MB)
+[build] strade 177736 (411s, 2286 MB)
+[build] ponti 1 (411s, 2286 MB)
+/home/user/wt/mrs/build_render.py:809: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 2 (411s, 2286 MB)
+[build] boschi 0 celle in 0 blocchi (411s, 2286 MB)
+[build] isolati 18122 (429s, 2344 MB)
+[build] parchi 115 (430s, 2349 MB)
+[build] terra 134 poligoni (430s, 2349 MB)
+[build] monumenti costruiti: 713 parti (430s, 2349 MB)
+[build] rilievo applicato: 2786291 vertici, massimo 1148 m (444s, 2563 MB)
+[build] monumenti: parti staccate dalla scena: 566 (444s, 2556 MB)
+[build] monumenti uniti: 713 -> 296 oggetti (444s, 2556 MB)
+[build] alberi cotti: 2063100 vertici (446s, 2840 MB)
+/home/user/wt/mrs/build_render.py:1383: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 1452 città, 847 statici (446s, 2840 MB)
+[build] dati di costruzione liberati (446s, 2156 MB)
+[build] CPU (446s, 2156 MB)
+[build] denoiser nessuno (446s, 2156 MB)
+[build] render 1 -> 432 1920x1080 16 campioni (446s, 2156 MB)
+08:19.446  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0009.jpg'
+[build] fotogramma 9: 52.6s (anno -600)
+08:47.039  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0025.jpg'
+[build] fotogramma 25: 27.6s (anno -540)
+09:12.770  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0041.jpg'
+[build] fotogramma 41: 25.7s (anno -400)
+09:38.891  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0057.jpg'
+[build] fotogramma 57: 26.1s (anno -200)
+10:11.395  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0073.jpg'
+[build] fotogramma 73: 32.5s (anno -49)
+10:40.567  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0089.jpg'
+[build] fotogramma 89: 29.2s (anno 100)
+11:07.004  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0105.jpg'
+[build] fotogramma 105: 26.4s (anno 400)
+11:35.157  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0121.jpg'
+[build] fotogramma 121: 28.1s (anno 800)
+12:02.477  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0137.jpg'
+[build] fotogramma 137: 27.3s (anno 1100)
+12:28.825  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0153.jpg'
+[build] fotogramma 153: 26.3s (anno 1300)
+12:55.477  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0169.jpg'
+[build] fotogramma 169: 26.7s (anno 1500)
+13:22.182  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0185.jpg'
+[build] fotogramma 185: 26.7s (anno 1650)
+13:49.759  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0201.jpg'
+[build] fotogramma 201: 27.6s (anno 1720)
+14:19.409  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0217.jpg'
+[build] fotogramma 217: 29.7s (anno 1800)
+14:49.926  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0233.jpg'
+[build] fotogramma 233: 30.5s (anno 1850)
+15:23.374  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0249.jpg'
+[build] fotogramma 249: 33.4s (anno 1900)
+15:56.768  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0265.jpg'
+[build] fotogramma 265: 33.4s (anno 1942)
+16:28.870  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0281.jpg'
+[build] fotogramma 281: 32.1s (anno 1944)
+17:01.600  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0297.jpg'
+[build] fotogramma 297: 32.7s (anno 1960)
+17:35.555  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0313.jpg'
+[build] fotogramma 313: 34.0s (anno 2000)
+18:07.200  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0329.jpg'
+[build] fotogramma 329: 31.6s (anno 2026)
+18:34.503  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0345.jpg'
+[build] fotogramma 345: 27.3s (anno -500)
+19:02.209  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0361.jpg'
+[build] fotogramma 361: 27.7s (anno 1300)
+19:29.384  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0377.jpg'
+[build] fotogramma 377: 27.2s (anno 1800)
+19:56.236  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0393.jpg'
+[build] fotogramma 393: 26.8s (anno 1900)
+20:22.659  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0409.jpg'
+[build] fotogramma 409: 26.4s (anno -540)
+20:54.911  render           | Saved: '/home/user/wt/mrs/cities/marseille/qa/sheet/frames/0425.jpg'
+[build] fotogramma 425: 32.3s (anno 2026)
+[build] FATTO 27 fotogrammi, 29.93s a fotogramma (1254s, 3779 MB)
