@@ -1,0 +1,2 @@
+nice -n 10 /tmp/claude-0/blvenv/bin/python /home/user/city3d/build_render.py -- /home/user/city3d/data_nyc /home/user/city3d/cities/nyc/qa/fix/frames_full --frames 1 48 --only 9,25,41 --res 1920 1080 --samples 8 --device CPU --schedule /home/user/city3d/cities/nyc/qa/fix/sched_full.json --city /home/user/city3d/city_nyc.json
+["04:14.007  render           | Saved: '/home/user/city3d/cities/nyc/qa/fix/frames_full/0041.jpg'", '[build] fotogramma 41: 33.6s (anno 2014)', '[build] FATTO 3 fotogrammi, 33.45s a fotogramma (254s, 9393 MB)']

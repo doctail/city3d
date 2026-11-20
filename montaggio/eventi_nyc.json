@@ -26,73 +26,73 @@
    "sub": "1664"
   },
   {
-   "t_in": 83.57,
-   "t_out": 88.57,
+   "t_in": 83.09,
+   "t_out": 88.09,
    "title": "Trinity Church's first building",
    "sub": "1698"
   },
   {
-   "t_in": 93.45,
-   "t_out": 98.45,
+   "t_in": 92.58,
+   "t_out": 97.58,
    "title": "Fraunces Tavern: a house of 1719",
    "sub": "1719"
   },
   {
-   "t_in": 110.43,
-   "t_out": 115.43,
+   "t_in": 109.55,
+   "t_out": 114.55,
    "title": "St. Paul's Chapel is completed",
    "sub": "1766"
   },
   {
-   "t_in": 123.48,
-   "t_out": 128.48,
+   "t_in": 122.5,
+   "t_out": 127.5,
    "title": "The Great Fire burns the west side",
    "sub": "1776"
   },
   {
-   "t_in": 140.44,
-   "t_out": 145.44,
+   "t_in": 139.57,
+   "t_out": 144.57,
    "title": "Washington is inaugurated at Federal Hall",
    "sub": "1789"
   },
   {
-   "t_in": 158.26,
-   "t_out": 169.26,
+   "t_in": 157.39,
+   "t_out": 168.39,
    "title": "Castle Clinton guards the harbor",
    "sub": "1811"
   },
   {
-   "t_in": 187.44,
-   "t_out": 192.44,
+   "t_in": 186.57,
+   "t_out": 191.57,
    "title": "The Great Fire of New York",
    "sub": "1835"
   },
   {
-   "t_in": 267.7,
-   "t_out": 273.7,
+   "t_in": 266.83,
+   "t_out": 272.83,
    "title": "The Brooklyn Bridge opens",
    "sub": "1883"
   },
   {
-   "t_in": 380.1,
-   "t_out": 390.1,
+   "t_in": 379.24,
+   "t_out": 389.24,
    "title": "The Empire State Building opens",
    "sub": "1931"
   },
   {
-   "t_in": 428.4,
-   "t_out": 434.4,
+   "t_in": 427.53,
+   "t_out": 433.53,
    "title": "The Twin Towers rise",
    "sub": "1973"
   },
   {
-   "t_in": 483.21,
-   "t_out": 489.21,
+   "t_in": 482.34,
+   "t_out": 488.34,
    "title": "One World Trade Center opens",
    "sub": "2014"
   }
  ],
- "subscribe_t": 98.5,
+ "subscribe_t": 98.0,
  "cards": [
   {
    "t_in": 15.7,
@@ -178,8 +178,8 @@
    "sober": false
   },
   {
-   "t_in": 83.57,
-   "t_out": 88.57,
+   "t_in": 83.09,
+   "t_out": 88.09,
    "date": "1698",
    "title": "A first count",
    "lines": [
@@ -188,8 +188,8 @@
    "sober": false
   },
   {
-   "t_in": 104.37,
-   "t_out": 110.37,
+   "t_in": 103.49,
+   "t_out": 109.49,
    "date": "1765",
    "title": "The Stamp Act Congress",
    "lines": [
@@ -198,8 +198,8 @@
    "sober": false
   },
   {
-   "t_in": 116.48,
-   "t_out": 123.48,
+   "t_in": 115.5,
+   "t_out": 122.5,
    "date": "1776",
    "title": "The British land",
    "lines": [
@@ -209,8 +209,8 @@
    "sober": false
   },
   {
-   "t_in": 129.22,
-   "t_out": 134.22,
+   "t_in": 128.16,
+   "t_out": 133.16,
    "date": "1783",
    "title": "Evacuation Day",
    "lines": [
@@ -219,8 +219,8 @@
    "sober": false
   },
   {
-   "t_in": 134.26,
-   "t_out": 140.26,
+   "t_in": 133.22,
+   "t_out": 139.22,
    "date": "1785",
    "title": "A capital for the young republic",
    "lines": [
@@ -230,8 +230,8 @@
    "sober": false
   },
   {
-   "t_in": 145.53,
-   "t_out": 150.53,
+   "t_in": 144.81,
+   "t_out": 149.81,
    "date": "1792",
    "title": "The Buttonwood Agreement",
    "lines": [
@@ -240,8 +240,8 @@
    "sober": false
   },
   {
-   "t_in": 158.26,
-   "t_out": 164.26,
+   "t_in": 157.39,
+   "t_out": 163.39,
    "date": "1811",
    "title": "A grid for the island",
    "lines": [
@@ -250,8 +250,8 @@
    "sober": false
   },
   {
-   "t_in": 164.26,
-   "t_out": 169.26,
+   "t_in": 163.39,
+   "t_out": 168.39,
    "date": "1811",
    "title": "The Collect Pond disappears",
    "lines": [
@@ -260,8 +260,8 @@
    "sober": false
   },
   {
-   "t_in": 176.81,
-   "t_out": 181.81,
+   "t_in": 175.94,
+   "t_out": 180.94,
    "date": "1825",
    "title": "The Erie Canal opens",
    "lines": [
@@ -270,8 +270,8 @@
    "sober": false
   },
   {
-   "t_in": 196.0,
-   "t_out": 202.0,
+   "t_in": 195.13,
+   "t_out": 201.13,
    "date": "1842",
    "title": "Croton water",
    "lines": [
@@ -280,8 +280,8 @@
    "sober": false
   },
   {
-   "t_in": 204.16,
-   "t_out": 209.16,
+   "t_in": 203.29,
+   "t_out": 208.29,
    "date": "1846",
    "title": "The tallest spire",
    "lines": [
@@ -290,8 +290,8 @@
    "sober": false
   },
   {
-   "t_in": 210.27,
-   "t_out": 215.27,
+   "t_in": 209.41,
+   "t_out": 214.41,
    "date": "1848",
    "title": "High Bridge",
    "lines": [
@@ -300,8 +300,8 @@
    "sober": false
   },
   {
-   "t_in": 219.22,
-   "t_out": 225.22,
+   "t_in": 218.35,
+   "t_out": 224.35,
    "date": "1855",
    "title": "Immigrant metropolis",
    "lines": [
@@ -310,8 +310,8 @@
    "sober": false
   },
   {
-   "t_in": 226.33,
-   "t_out": 232.33,
+   "t_in": 225.46,
+   "t_out": 231.46,
    "date": "1857",
    "title": "Seneca Village is razed",
    "lines": [
@@ -320,8 +320,8 @@
    "sober": false
   },
   {
-   "t_in": 233.05,
-   "t_out": 238.05,
+   "t_in": 232.18,
+   "t_out": 237.18,
    "date": "1858",
    "title": "Central Park opens",
    "lines": [
@@ -330,8 +330,8 @@
    "sober": false
   },
   {
-   "t_in": 240.68,
-   "t_out": 246.68,
+   "t_in": 239.81,
+   "t_out": 245.81,
    "date": "1863",
    "title": "The Draft Riots",
    "lines": [
@@ -340,8 +340,8 @@
    "sober": false
   },
   {
-   "t_in": 251.11,
-   "t_out": 256.11,
+   "t_in": 250.24,
+   "t_out": 255.24,
    "date": "1871",
    "title": "Grand Central Depot",
    "lines": [
@@ -350,8 +350,8 @@
    "sober": false
   },
   {
-   "t_in": 260.5,
-   "t_out": 265.5,
+   "t_in": 259.63,
+   "t_out": 264.63,
    "date": "1879",
    "title": "St. Patrick's Cathedral",
    "lines": [
@@ -360,8 +360,8 @@
    "sober": false
   },
   {
-   "t_in": 275.32,
-   "t_out": 281.32,
+   "t_in": 274.46,
+   "t_out": 280.46,
    "date": "1886",
    "title": "Liberty Enlightening the World",
    "lines": [
@@ -370,8 +370,8 @@
    "sober": false
   },
   {
-   "t_in": 284.48,
-   "t_out": 290.48,
+   "t_in": 283.61,
+   "t_out": 289.61,
    "date": "1892",
    "title": "Ellis Island",
    "lines": [
@@ -380,8 +380,8 @@
    "sober": false
   },
   {
-   "t_in": 293.54,
-   "t_out": 299.54,
+   "t_in": 292.67,
+   "t_out": 298.67,
    "date": "1898",
    "title": "Five boroughs, one city",
    "lines": [
@@ -390,8 +390,8 @@
    "sober": false
   },
   {
-   "t_in": 302.17,
-   "t_out": 307.17,
+   "t_in": 301.31,
+   "t_out": 306.31,
    "date": "1902",
    "title": "The Flatiron Building",
    "lines": [
@@ -400,8 +400,8 @@
    "sober": false
   },
   {
-   "t_in": 307.81,
-   "t_out": 312.81,
+   "t_in": 306.95,
+   "t_out": 311.95,
    "date": "1903",
    "title": "The Williamsburg Bridge",
    "lines": [
@@ -410,8 +410,8 @@
    "sober": false
   },
   {
-   "t_in": 313.31,
-   "t_out": 318.31,
+   "t_in": 312.45,
+   "t_out": 317.45,
    "date": "1904",
    "title": "The subway opens",
    "lines": [
@@ -420,8 +420,8 @@
    "sober": false
   },
   {
-   "t_in": 320.79,
-   "t_out": 325.79,
+   "t_in": 319.92,
+   "t_out": 324.92,
    "date": "1909",
    "title": "The Queensboro Bridge",
    "lines": [
@@ -430,8 +430,8 @@
    "sober": false
   },
   {
-   "t_in": 326.2,
-   "t_out": 331.2,
+   "t_in": 325.33,
+   "t_out": 330.33,
    "date": "1910",
    "title": "The Manhattan Bridge",
    "lines": [
@@ -440,8 +440,8 @@
    "sober": false
   },
   {
-   "t_in": 331.7,
-   "t_out": 337.7,
+   "t_in": 330.83,
+   "t_out": 336.83,
    "date": "1910",
    "title": "Pennsylvania Station",
    "lines": [
@@ -450,8 +450,8 @@
    "sober": false
   },
   {
-   "t_in": 337.87,
-   "t_out": 342.87,
+   "t_in": 337.0,
+   "t_out": 342.0,
    "date": "1911",
    "title": "The Triangle fire",
    "lines": [
@@ -460,8 +460,8 @@
    "sober": false
   },
   {
-   "t_in": 343.92,
-   "t_out": 348.92,
+   "t_in": 343.06,
+   "t_out": 348.06,
    "date": "1913",
    "title": "Grand Central Terminal",
    "lines": [
@@ -470,8 +470,8 @@
    "sober": false
   },
   {
-   "t_in": 349.2,
-   "t_out": 354.2,
+   "t_in": 348.33,
+   "t_out": 353.33,
    "date": "1913",
    "title": "The Woolworth Building",
    "lines": [
@@ -480,8 +480,8 @@
    "sober": false
   },
   {
-   "t_in": 359.59,
-   "t_out": 364.59,
+   "t_in": 358.72,
+   "t_out": 363.72,
    "date": "1923",
    "title": "Yankee Stadium",
    "lines": [
@@ -490,8 +490,8 @@
    "sober": false
   },
   {
-   "t_in": 368.2,
-   "t_out": 374.2,
+   "t_in": 367.33,
+   "t_out": 373.33,
    "date": "1929",
    "title": "The race to the sky",
    "lines": [
@@ -500,8 +500,8 @@
    "sober": false
   },
   {
-   "t_in": 374.51,
-   "t_out": 379.51,
+   "t_in": 373.64,
+   "t_out": 378.64,
    "date": "1930",
    "title": "The Chrysler Building",
    "lines": [
@@ -510,8 +510,8 @@
    "sober": false
   },
   {
-   "t_in": 380.1,
-   "t_out": 385.1,
+   "t_in": 379.24,
+   "t_out": 384.24,
    "date": "1931",
    "title": "The George Washington Bridge",
    "lines": [
@@ -520,8 +520,8 @@
    "sober": false
   },
   {
-   "t_in": 385.1,
-   "t_out": 390.1,
+   "t_in": 384.24,
+   "t_out": 389.24,
    "date": "1933",
    "title": "Rockefeller Center",
    "lines": [
@@ -530,8 +530,8 @@
    "sober": false
   },
   {
-   "t_in": 393.69,
-   "t_out": 398.69,
+   "t_in": 392.82,
+   "t_out": 397.82,
    "date": "1938",
    "title": "The Cloisters",
    "lines": [
@@ -540,8 +540,8 @@
    "sober": false
   },
   {
-   "t_in": 406.33,
-   "t_out": 411.33,
+   "t_in": 405.46,
+   "t_out": 410.46,
    "date": "1952",
    "title": "Home of the United Nations",
    "lines": [
@@ -550,8 +550,8 @@
    "sober": false
   },
   {
-   "t_in": 417.85,
-   "t_out": 423.85,
+   "t_in": 416.99,
+   "t_out": 422.99,
    "date": "1963",
    "title": "Penn Station is demolished",
    "lines": [
@@ -560,8 +560,8 @@
    "sober": false
   },
   {
-   "t_in": 436.7,
-   "t_out": 441.7,
+   "t_in": 435.83,
+   "t_out": 440.83,
    "date": "1977",
    "title": "The 1977 blackout",
    "lines": [
@@ -570,8 +570,8 @@
    "sober": false
   },
   {
-   "t_in": 454.95,
-   "t_out": 460.95,
+   "t_in": 454.08,
+   "t_out": 460.08,
    "date": "2001",
    "title": "September 11, 2001",
    "lines": [
@@ -580,8 +580,8 @@
    "sober": false
   },
   {
-   "t_in": 463.53,
-   "t_out": 468.53,
+   "t_in": 462.67,
+   "t_out": 467.67,
    "date": "2006",
    "title": "Rebuilding",
    "lines": [
@@ -590,8 +590,8 @@
    "sober": false
   },
   {
-   "t_in": 471.84,
-   "t_out": 476.84,
+   "t_in": 470.97,
+   "t_out": 475.97,
    "date": "2012",
    "title": "Hudson Yards",
    "lines": [
@@ -600,8 +600,8 @@
    "sober": false
   },
   {
-   "t_in": 477.13,
-   "t_out": 482.13,
+   "t_in": 476.27,
+   "t_out": 481.27,
    "date": "2012",
    "title": "Hurricane Sandy",
    "lines": [
@@ -610,8 +610,8 @@
    "sober": false
   },
   {
-   "t_in": 483.21,
-   "t_out": 489.21,
+   "t_in": 482.34,
+   "t_out": 488.34,
    "date": "2015",
    "title": "A new skyline",
    "lines": [
@@ -634,62 +634,62 @@
    "title": "The English Port"
   },
   {
-   "t_in": 113.68,
-   "t_out": 116.48,
+   "t_in": 112.7,
+   "t_out": 115.5,
    "num": "III",
    "title": "Revolution and Republic"
   },
   {
-   "t_in": 155.46,
-   "t_out": 158.26,
+   "t_in": 154.59,
+   "t_out": 157.39,
    "num": "IV",
    "title": "The Gridiron City"
   },
   {
-   "t_in": 216.42,
-   "t_out": 219.22,
+   "t_in": 215.55,
+   "t_out": 218.35,
    "num": "V",
    "title": "Immigrant Metropolis"
   },
   {
-   "t_in": 290.74,
-   "t_out": 293.54,
+   "t_in": 289.87,
+   "t_out": 292.67,
    "num": "VI",
    "title": "Five Boroughs, One City"
   },
   {
-   "t_in": 299.54,
-   "t_out": 302.17,
+   "t_in": 298.67,
+   "t_out": 301.31,
    "num": "VII",
    "title": "The Skyscraper Age"
   },
   {
-   "t_in": 403.53,
-   "t_out": 406.33,
+   "t_in": 402.66,
+   "t_out": 405.46,
    "num": "VIII",
    "title": "Postwar New York"
   },
   {
-   "t_in": 433.9,
-   "t_out": 436.7,
+   "t_in": 433.03,
+   "t_out": 435.83,
    "num": "IX",
    "title": "Crisis and Comeback"
   },
   {
-   "t_in": 460.95,
-   "t_out": 463.53,
+   "t_in": 460.08,
+   "t_out": 462.67,
    "num": "X",
    "title": "The Global City"
   }
  ],
  "cta": {
-  "t_in": 542.8,
-  "t_out": 547.3,
+  "t_in": 541.9,
+  "t_out": 546.4,
   "text": "Which city should grow next? Tell me in the comments"
  },
  "sources_card": {
-  "t_in": 547.3,
-  "t_out": 555.3,
+  "t_in": 546.4,
+  "t_out": 554.4,
   "items": [
    "Buildings, heights, years: NYC Open Data Building Footprints",
    "Borough boundaries and parks: NYC Open Data; New Jersey land: U.S. Census Bureau TIGER/Line",

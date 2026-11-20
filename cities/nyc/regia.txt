@@ -1,13 +1,13 @@
 New York: regia automatica (kit/regia_kit.py)
-Camera drone: 15 tappe in hover (98.0 s) e voli (426.6 s), anni None/s fra le voci, nessuno stacco; vmax 139.54, amax 115.94, jmax 105.81, clear_min 469.13, clear_ground_min 478.83
-Durata 9:15.3  fotogrammi 13327  inquadrature 3  stacco medio ogni 185.1 s
-Musica: waking_monument  b_start None  notte 540.2748639736368
+Camera drone: 15 tappe in hover (98.0 s) e voli (425.7 s), anni None/s fra le voci, nessuno stacco; vmax 146.75, amax 115.91, jmax 105.78, clear_min 469.13, clear_ground_min 478.83
+Durata 9:14.4  fotogrammi 13306  inquadrature 3  stacco medio ogni 184.8 s
+Musica: waking_monument  b_start None  notte 539.4061589505081
 
 ANCORE (video -> anno):
    0:00.0   2026.00  
    0:03.0   2026.00  
    0:09.5   1609.00  
-   9:00.3   2026.00  
+   8:59.4   2026.00  
 
 SOSTE (video -> anni):
   0:15.7-0:28.7  1609.0->1609.9  Henry Hudson's Half Moon enters the bay (1609)  [forza 4.0, water]
@@ -22,82 +22,82 @@ SOSTE (video -> anni):
   1:06.9-1:12.9  1664.6->1665.0  New Amsterdam becomes New York (1664)  [forza 6.0, crowd]
   1:06.9-1:12.9  1664.7->1664.7  New York  [forza 0.0]
   1:13.4-1:19.4  1673.7->1673.7  New Orange  [forza 0.0]
-  1:23.6-1:28.6  1698.3->1699.2  Trinity Church's first building (1698)  [forza 5.0, bell]
-  1:23.6-1:28.6  1698.5->1698.5  A first count  [forza 0.0]
-  1:33.5-1:38.5  1719.7->1720.5  Fraunces Tavern: a house of 1719 (1719)  [forza 3.0, city_hum]
-  1:44.4-1:50.4  1765.8->1765.8  The Stamp Act Congress  [forza 0.0]
-  1:50.4-1:55.4  1766.7->1767.4  St. Paul's Chapel is completed (1766)  [forza 5.0, bell]
-  1:56.5-2:03.5  1776.7->1776.7  The British land  [forza 0.0]
-  2:03.5-2:08.5  1776.7->1776.8  The Great Fire burns the west side (1776)  [forza 8.0, fire]
-  2:09.2-2:14.2  1783.9->1783.9  Evacuation Day  [forza 0.0]
-  2:14.3-2:20.3  1785.2->1785.2  A capital for the young republic  [forza 0.0]
-  2:20.4-2:25.4  1789.2->1789.5  Washington is inaugurated at Federal Hall (1789)  [forza 5.0, bell]
-  2:25.5-2:30.5  1792.4->1792.4  The Buttonwood Agreement  [forza 0.0]
-  2:38.3-2:49.3  1811.0->1812.2  Castle Clinton guards the harbor (1811)  [forza 8.0, boom]
-  2:38.3-2:44.3  1811.3->1811.3  A grid for the island  [forza 0.0]
-  2:44.3-2:49.3  1811.6->1811.6  The Collect Pond disappears  [forza 0.0]
-  2:56.8-3:01.8  1825.8->1825.8  The Erie Canal opens  [forza 0.0]
-  3:07.4-3:12.4  1835.9->1836.1  The Great Fire of New York (1835)  [forza 8.0, fire]
-  3:16.0-3:22.0  1842.5->1842.5  Croton water  [forza 0.0]
-  3:24.2-3:29.2  1846.4->1846.4  The tallest spire  [forza 0.0]
-  3:30.3-3:35.3  1848.4->1848.4  High Bridge  [forza 0.0]
-  3:39.2-3:45.2  1855.5->1855.5  Immigrant metropolis  [forza 0.0]
-  3:46.3-3:52.3  1857.5->1857.5  Seneca Village is razed  [forza 0.0]
-  3:53.1-3:58.1  1858.8->1858.8  Central Park opens  [forza 0.0]
-  4:00.7-4:06.7  1863.5->1863.5  The Draft Riots  [forza 0.0]
-  4:11.1-4:16.1  1871.5->1871.5  Grand Central Depot  [forza 0.0]
-  4:20.5-4:25.5  1879.4->1879.4  St. Patrick's Cathedral  [forza 0.0]
-  4:27.7-4:33.7  1883.3->1883.9  The Brooklyn Bridge opens (1883)  [forza 5.0, horn]
-  4:35.3-4:41.3  1886.8->1886.8  Liberty Enlightening the World  [forza 0.0]
-  4:44.5-4:50.5  1892.5->1892.5  Ellis Island  [forza 0.0]
-  4:53.5-4:59.5  1898.0->1898.0  Five boroughs, one city  [forza 0.0]
-  5:02.2-5:07.2  1902.8->1902.8  The Flatiron Building  [forza 0.0]
-  5:07.8-5:12.8  1903.9->1903.9  The Williamsburg Bridge  [forza 0.0]
-  5:13.3-5:18.3  1904.8->1904.8  The subway opens  [forza 0.0]
-  5:20.8-5:25.8  1909.2->1909.2  The Queensboro Bridge  [forza 0.0]
-  5:26.2-5:31.2  1910.0->1910.0  The Manhattan Bridge  [forza 0.0]
-  5:31.7-5:37.7  1910.9->1910.9  Pennsylvania Station  [forza 0.0]
-  5:37.9-5:42.9  1911.2->1911.2  The Triangle fire  [forza 0.0]
-  5:43.9-5:48.9  1913.1->1913.1  Grand Central Terminal  [forza 0.0]
-  5:49.2-5:54.2  1913.6->1913.6  The Woolworth Building  [forza 0.0]
-  5:59.6-6:04.6  1923.3->1923.3  Yankee Stadium  [forza 0.0]
-  6:08.2-6:14.2  1929.8->1929.8  The race to the sky  [forza 0.0]
-  6:14.5-6:19.5  1930.3->1930.3  The Chrysler Building  [forza 0.0]
-  6:20.1-6:30.1  1931.3->1931.9  The Empire State Building opens (1931)  [forza 3.0, ding]
-  6:20.1-6:25.1  1931.8->1931.8  The George Washington Bridge  [forza 0.0]
-  6:25.1-6:30.1  1933.8->1933.8  Rockefeller Center  [forza 0.0]
-  6:33.7-6:38.7  1938.4->1938.4  The Cloisters  [forza 0.0]
-  6:46.3-6:51.3  1952.1->1952.1  Home of the United Nations  [forza 0.0]
-  6:57.9-7:03.9  1963.8->1963.8  Penn Station is demolished  [forza 0.0]
-  7:08.4-7:14.4  1971.0->1973.4  The Twin Towers rise (1973)  [forza 4.0, hammer]
-  7:16.7-7:21.7  1977.5->1977.5  The 1977 blackout  [forza 0.0]
-  7:34.9-7:40.9  2001.7->2001.7  September 11, 2001  [forza 0.0]
-  7:43.5-7:48.5  2006.3->2006.3  Rebuilding  [forza 0.0]
-  7:51.8-7:56.8  2012.3->2012.3  Hudson Yards  [forza 0.0]
-  7:57.1-8:02.1  2012.8->2012.8  Hurricane Sandy  [forza 0.0]
-  8:03.2-8:09.2  2014.7->2015.4  One World Trade Center opens (2014)  [forza 4.0, chime]
-  8:03.2-8:09.2  2015.5->2015.5  A new skyline  [forza 0.0]
+  1:23.1-1:28.1  1698.3->1699.2  Trinity Church's first building (1698)  [forza 5.0, bell]
+  1:23.1-1:28.1  1698.5->1698.5  A first count  [forza 0.0]
+  1:32.6-1:37.6  1719.7->1720.5  Fraunces Tavern: a house of 1719 (1719)  [forza 3.0, city_hum]
+  1:43.5-1:49.5  1765.8->1765.8  The Stamp Act Congress  [forza 0.0]
+  1:49.6-1:54.6  1766.7->1767.4  St. Paul's Chapel is completed (1766)  [forza 5.0, bell]
+  1:55.5-2:02.5  1776.7->1776.7  The British land  [forza 0.0]
+  2:02.5-2:07.5  1776.7->1776.8  The Great Fire burns the west side (1776)  [forza 8.0, fire]
+  2:08.2-2:13.2  1783.9->1783.9  Evacuation Day  [forza 0.0]
+  2:13.2-2:19.2  1785.2->1785.2  A capital for the young republic  [forza 0.0]
+  2:19.6-2:24.6  1789.2->1789.5  Washington is inaugurated at Federal Hall (1789)  [forza 5.0, bell]
+  2:24.8-2:29.8  1792.4->1792.4  The Buttonwood Agreement  [forza 0.0]
+  2:37.4-2:48.4  1811.0->1812.2  Castle Clinton guards the harbor (1811)  [forza 8.0, boom]
+  2:37.4-2:43.4  1811.3->1811.3  A grid for the island  [forza 0.0]
+  2:43.4-2:48.4  1811.6->1811.6  The Collect Pond disappears  [forza 0.0]
+  2:55.9-3:00.9  1825.8->1825.8  The Erie Canal opens  [forza 0.0]
+  3:06.6-3:11.6  1835.9->1836.1  The Great Fire of New York (1835)  [forza 8.0, fire]
+  3:15.1-3:21.1  1842.5->1842.5  Croton water  [forza 0.0]
+  3:23.3-3:28.3  1846.4->1846.4  The tallest spire  [forza 0.0]
+  3:29.4-3:34.4  1848.4->1848.4  High Bridge  [forza 0.0]
+  3:38.3-3:44.3  1855.5->1855.5  Immigrant metropolis  [forza 0.0]
+  3:45.5-3:51.5  1857.5->1857.5  Seneca Village is razed  [forza 0.0]
+  3:52.2-3:57.2  1858.8->1858.8  Central Park opens  [forza 0.0]
+  3:59.8-4:05.8  1863.5->1863.5  The Draft Riots  [forza 0.0]
+  4:10.2-4:15.2  1871.5->1871.5  Grand Central Depot  [forza 0.0]
+  4:19.6-4:24.6  1879.4->1879.4  St. Patrick's Cathedral  [forza 0.0]
+  4:26.8-4:32.8  1883.3->1883.9  The Brooklyn Bridge opens (1883)  [forza 5.0, horn]
+  4:34.5-4:40.5  1886.8->1886.8  Liberty Enlightening the World  [forza 0.0]
+  4:43.6-4:49.6  1892.5->1892.5  Ellis Island  [forza 0.0]
+  4:52.7-4:58.7  1898.0->1898.0  Five boroughs, one city  [forza 0.0]
+  5:01.3-5:06.3  1902.8->1902.8  The Flatiron Building  [forza 0.0]
+  5:06.9-5:11.9  1903.9->1903.9  The Williamsburg Bridge  [forza 0.0]
+  5:12.4-5:17.4  1904.8->1904.8  The subway opens  [forza 0.0]
+  5:19.9-5:24.9  1909.2->1909.2  The Queensboro Bridge  [forza 0.0]
+  5:25.3-5:30.3  1910.0->1910.0  The Manhattan Bridge  [forza 0.0]
+  5:30.8-5:36.8  1910.9->1910.9  Pennsylvania Station  [forza 0.0]
+  5:37.0-5:42.0  1911.2->1911.2  The Triangle fire  [forza 0.0]
+  5:43.1-5:48.1  1913.1->1913.1  Grand Central Terminal  [forza 0.0]
+  5:48.3-5:53.3  1913.6->1913.6  The Woolworth Building  [forza 0.0]
+  5:58.7-6:03.7  1923.3->1923.3  Yankee Stadium  [forza 0.0]
+  6:07.3-6:13.3  1929.8->1929.8  The race to the sky  [forza 0.0]
+  6:13.6-6:18.6  1930.3->1930.3  The Chrysler Building  [forza 0.0]
+  6:19.2-6:29.2  1931.3->1931.9  The Empire State Building opens (1931)  [forza 3.0, ding]
+  6:19.2-6:24.2  1931.8->1931.8  The George Washington Bridge  [forza 0.0]
+  6:24.2-6:29.2  1933.8->1933.8  Rockefeller Center  [forza 0.0]
+  6:32.8-6:37.8  1938.4->1938.4  The Cloisters  [forza 0.0]
+  6:45.5-6:50.5  1952.1->1952.1  Home of the United Nations  [forza 0.0]
+  6:57.0-7:03.0  1963.8->1963.8  Penn Station is demolished  [forza 0.0]
+  7:07.5-7:13.5  1971.0->1973.4  The Twin Towers rise (1973)  [forza 4.0, hammer]
+  7:15.8-7:20.8  1977.5->1977.5  The 1977 blackout  [forza 0.0]
+  7:34.1-7:40.1  2001.7->2001.7  September 11, 2001  [forza 0.0]
+  7:42.7-7:47.7  2006.3->2006.3  Rebuilding  [forza 0.0]
+  7:51.0-7:56.0  2012.3->2012.3  Hudson Yards  [forza 0.0]
+  7:56.3-8:01.3  2012.8->2012.8  Hurricane Sandy  [forza 0.0]
+  8:02.3-8:08.3  2014.7->2015.4  One World Trade Center opens (2014)  [forza 4.0, chime]
+  8:02.3-8:08.3  2015.5->2015.5  A new skyline  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
   0:30   1624.0  (0.00 anni/s)
   1:00   1653.6  (0.24 anni/s)
-  1:30   1705.2  (4.20 anni/s)
+  1:30   1707.9  (4.56 anni/s)
   2:00   1776.7  (0.00 anni/s)
-  2:30   1792.4  (0.00 anni/s)
+  2:30   1792.9  (2.16 anni/s)
   3:00   1825.8  (0.00 anni/s)
-  3:30   1847.9  (1.80 anni/s)
-  4:00   1862.3  (1.80 anni/s)
-  4:30   1883.5  (0.10 anni/s)
-  5:00   1898.8  (1.80 anni/s)
+  3:30   1848.4  (0.00 anni/s)
+  4:00   1863.5  (0.22 anni/s)
+  4:30   1883.6  (0.10 anni/s)
+  5:00   1900.4  (1.80 anni/s)
   5:30   1910.0  (0.00 anni/s)
   6:00   1923.3  (0.00 anni/s)
-  6:30   1931.9  (0.56 anni/s)
+  6:30   1933.3  (1.80 anni/s)
   7:00   1963.8  (0.00 anni/s)
-  7:30   1992.7  (1.82 anni/s)
+  7:30   1994.3  (1.82 anni/s)
   8:00   2012.8  (0.00 anni/s)
-  8:30   2019.7  (0.21 anni/s)
-  9:00   2025.9  (0.21 anni/s)
+  8:30   2019.9  (0.21 anni/s)
+  9:00   2026.0  (0.00 anni/s)
 
 Velocita fuori dalle soste: mediana 1.80 anni/s, max 11.8 anni/s
 Soste: 67, 382 s (72% del giorno)

@@ -579,11 +579,30 @@
   ],
   "style": {
    "glint_free": true,
-   "roof_old": ["#b1623a", "#984727", "#a4552f", "#8a4a2e", "#b86d42", "#7f3f26"],
-   "glass": ["#8fa9b8", "#85a1b2", "#9ab3c0"]
+   "roof_old": [
+    "#b1623a",
+    "#984727",
+    "#a4552f",
+    "#8a4a2e",
+    "#b86d42",
+    "#7f3f26"
+   ],
+   "glass": [
+    "#8fa9b8",
+    "#85a1b2",
+    "#9ab3c0"
+   ],
+   "water": "#06506a",
+   "water2": "#126a84"
   },
   "city_overrides": {
-   "field_colors": ["#4b551b", "#5f6a24", "#78642e", "#8a7331", "#6b6a2a"],
+   "field_colors": [
+    "#4b551b",
+    "#5f6a24",
+    "#78642e",
+    "#8a7331",
+    "#6b6a2a"
+   ],
    "urban_ground": "off",
    "vegetation": {
     "box": [
@@ -2073,7 +2092,7 @@
       -73.9798
      ]
     ],
-    "from": 1609,
+    "from": 1850,
     "until": 1930.0,
     "src": [
      "S46"
@@ -2101,7 +2120,7 @@
       -74.015
      ]
     ],
-    "from": 1609,
+    "from": 1785,
     "until": 1966.6,
     "src": [
      "S50"
@@ -2129,7 +2148,7 @@
       -73.9998
      ]
     ],
-    "from": 1609,
+    "from": 1810,
     "until": 1895.0,
     "src": [],
     "conf": "low",
@@ -2155,7 +2174,7 @@
       -74.005
      ]
     ],
-    "from": 1609,
+    "from": 1815,
     "until": 1930.0,
     "src": [
      "S59"
@@ -3471,7 +3490,8 @@
    "params": {
     "h": 87,
     "podium_h": 12,
-    "crown": "flat"
+    "crown": "flat",
+    "c": "limestone"
    },
    "phases": [
     {
@@ -3557,7 +3577,8 @@
    "params": {
     "h": 241,
     "podium_h": 30,
-    "crown": "spire"
+    "crown": "spire",
+    "c": "limestone"
    },
    "phases": [
     {
@@ -3621,7 +3642,8 @@
       0.72,
       0.82
      ]
-    ]
+    ],
+    "c": "steel"
    },
    "phases": [
     {
@@ -3654,7 +3676,8 @@
       0.72,
       0.82
      ]
-    ]
+    ],
+    "c": "limestone"
    },
    "phases": [
     {
@@ -3681,7 +3704,8 @@
    "params": {
     "h": 259,
     "podium_h": 40,
-    "crown": "flat"
+    "crown": "flat",
+    "c": "limestone"
    },
    "phases": [
     {
@@ -3738,7 +3762,9 @@
     "w": 63,
     "plan": "rect",
     "podium_h": 6,
-    "crown": "mast"
+    "crown": "mast",
+    "c": "steel",
+    "setbacks": []
    },
    "phases": [
     {
@@ -3772,7 +3798,9 @@
     "w": 63,
     "plan": "rect",
     "podium_h": 6,
-    "crown": "flat"
+    "crown": "flat",
+    "c": "steel",
+    "setbacks": []
    },
    "phases": [
     {
