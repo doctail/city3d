@@ -2,13 +2,16 @@
 
 Stato: scritto dalla chat, NON ancora acceso nessun pod. Il GO vale solo se la chat lo conferma nel messaggio che contiene questo testo.
 
-## Prima riga: due correzioni a run.sh trovate nella verifica (commit `0194a7d`, gia' incluse)
+## 20/11 sera: edifici in acqua corretti + navi accese (commit `b9ff8fe`)
+- `water_fix.py` (dentro restore_after_build.sh): 0 edifici in acqua per anno (prima fino a 433 nel 1750). Navi NYC 1609-1905 (`city_nyc.json` -> `ships`). Fotogrammi che cambiano rispetto al render precedente: 129-7622. Il parity md5 di `hist.json` qui sotto non vale piu' (hist cambia di proposito).
+
+## Prima riga: due correzioni a run.sh trovate nella verifica (commit `b9ff8fe`, gia' incluse)
 1. `CITY=nyc` entrava nel ramo VECCHIO (`D=data`, `fetch_nyc.py` scarica i dati da internet, nessun `--city`). Ora il ramo vecchio vale solo senza `cities/nyc/story.json`: NYC usa `data_nyc` + `city_nyc.json` come le altre citta'.
 2. `hist_nyc.py` e' il modulo VECCHIO (non lo stub del kit) e `data_nyc_src` non conteneva landmarks, ponti, fires, floods, landphases (moli): il pod avrebbe reso una citta' senza monumenti, ponti e moli. Ora `data_nyc_src` e' ripacchettato e run.sh per NYC fa `kit.hist_kit build` + `restore_after_build.sh` (moli e DEM).
    Verifica [Certain]: in una copia pulita, da `data_nyc_src` -> hist -> restore escono file con lo STESSO md5 di `data_nyc` locale (hist, landphases, landmarks, roads, bridges, fires, floods, dem). Costo locale del passo hist: 2 min 9 s.
 
 ## Costo (NON misurato sul pod) AGGIORNATO 20/11
-- Il primo lancio sul pod ha misurato 4-5 s a fotogramma (non 1,2 s come Lione): ETA ~15 h. Pod fermato dal proprietario. Causa: 959K alberi (PERF_ANALISI.md). Rimedio approvato: alberi a 1/3 di densita' con chiome x1,6 (`vegetation` in city_nyc.json e story.json), commit 0194a7d.
+- Il primo lancio sul pod ha misurato 4-5 s a fotogramma (non 1,2 s come Lione): ETA ~15 h. Pod fermato dal proprietario. Causa: 959K alberi (PERF_ANALISI.md). Rimedio approvato: alberi a 1/3 di densita' con chiome x1,6 (`vegetation` in city_nyc.json e story.json), commit b9ff8fe.
 - Stima con 1/3 alberi, SENZA `SEG` (SEG non provato end-to-end, non usarlo): ~2,25 s a fotogramma (misura locale CPU ~2x, NON del pod) x 13.186 = ~8,2 h giorno + notte e scena. Totale atteso **~8-9 h, ~5-5,5 EUR** [Likely]. Controllare il tempo dei primi fotogrammi: se resta sopra ~3 s a fotogramma, fermare e avvisare la chat.
 - Prezzo: A40 Secure era 0,59 $/h il 16/10 (da `PRODUZIONE_TIMELAPSE.md`, non rimisurato): **~3,0-3,8 $** (circa 2,7-3,3 EUR). Il prezzo vero e' quello che mostra RunPod all'accensione.
 - Copertine: NON si fanno sul pod (vedi sotto), risparmiano ~35 min di `run.sh full` e 5 processi da ~10 GB di RAM.
@@ -27,8 +30,8 @@ echo "== codice"
 [ -d city3d ] || git clone -q https://github.com/doctail/city3d
 cd city3d && git fetch -q origin && git checkout -q main && git pull -q --ff-only
 git log -1 --oneline
-git merge-base --is-ancestor 0194a7d HEAD || { echo "STOP: il pod non ha il commit 0194a7d (codice vecchio). Non lanciare."; exit 3; }
-git diff --quiet 0194a7d HEAD -- run.sh build_render.py kit schedule_nyc.json schedule_nyc_night.json city_nyc.json cities/nyc/story.json data_nyc_src || { echo "STOP: i file di render sono cambiati dopo 0194a7d. Avvisa la chat."; exit 4; }
+git merge-base --is-ancestor b9ff8fe HEAD || { echo "STOP: il pod non ha il commit b9ff8fe (codice vecchio). Non lanciare."; exit 3; }
+git diff --quiet b9ff8fe HEAD -- run.sh build_render.py kit schedule_nyc.json schedule_nyc_night.json city_nyc.json cities/nyc/story.json cities/nyc/traffic.json cities/nyc/qa/fix/restore_after_build.sh cities/nyc/qa/fix/water_fix.py cities/nyc/qa/fix/piers.py data_nyc_src || { echo "STOP: i file di render sono cambiati dopo b9ff8fe. Avvisa la chat."; exit 4; }
 rm -rf out/full out/night 2>/dev/null   # i fotogrammi del primo lancio hanno gli alberi vecchi: run.sh riprende da dove si e' fermato, quindi vanno cancellati
 echo "== lancio full (giorno 13186 + notte 240 fotogrammi, niente copertine)"
 nohup env CITY=nyc NOCOVER=1 bash run.sh full > /workspace/city3d/full.log 2>&1 &
@@ -39,7 +42,7 @@ bash /workspace/go_nyc.sh
 
 ### Banner da verificare (compare dopo 3-8 min, dopo apt/pip e il passo dati)
 ```
-cd /workspace/city3d && grep -E "VERSIONE|fotogrammi|uso:|hist_kit\] edifici vivi|restore\] landphases|MANCANO|STOP|rror" full.log | cut -c1-200
+cd /workspace/city3d && grep -E "VERSIONE|fotogrammi|uso:|hist_kit\] edifici vivi|restore\] landphases|changed [0-9]+ delayed|navi:|MANCANO|STOP|rror" full.log | cut -c1-200
 ```
 Deve mostrare TUTTO questo (se manca una riga o c'e' un errore: fermare e mandare la riga in chat):
 - `VERSIONE: <hash di git log -1> ... | schedule_nyc: 554 s, lens 32.0`
@@ -47,6 +50,7 @@ Deve mostrare TUTTO questo (se manca una riga o c'e' un errore: fermare e mandar
 - `uso: OPTIX` (se `CUDA` va bene ma piu' lento; se `CPU` lo script si ferma da solo)
 - `[hist_kit] edifici vivi: 1609: 0, 1500: 0, 1800: 12043, 1900: 291454` (identico al locale)
 - `[restore] landphases 714 pier entries 347 dem D max 202 m`
+- `changed 1638 delayed 1622 dropped 16` (water_fix: edifici in acqua) e `[build] navi: 83 istanze, 0 scartate (terra) []` (navi accese: `"ships"` in city_nyc.json, non e' il default)
 
 ### Avanzamento in tempo reale (una riga, ogni 60 s)
 ```
