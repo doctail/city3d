@@ -1,6 +1,6 @@
 """Follower City - reel FINALE Day 1: 1080x1920 nativo, 30 fps, 11 s. Scena = anim_day1 (stesso setup/animazione).
 Si rendono SOLO i frame unici (render a 1188x2112, 1.1x, cosi' lo zoom di montaggio non fa mai upscale):
-  n=0 (scena vuota), n=30..105 (pop-up, 30 fps), n=105..150 (finestre che si accendono, 1 frame su 2, i vuoti si fondono), n=150 (statico).
+  n=0 (scena vuota), n=30..99 (pop-up, 30 fps; 99..179 coperti dalla scheda profilo), n=180..225 (finestre, 1 su 2, i vuoti si fondono), n=225 (statico).
 Uso:  python -u anim_day1_final.py render [--samples 32] [--threads 2] [--only 0,60,120]
       python -u anim_day1_final.py assemble
 """
@@ -21,12 +21,13 @@ RW, RH = 1188, 2112
 FPS = T.FPS
 A.FPS = FPS; A.RES = (RW, RH)
 A.F_POP = int(T.T_POP * FPS); A.F_GLOW0 = int(T.T_GLOW0 * FPS); A.F_GLOW1 = int(T.T_GLOW1 * FPS)
+A.F_CARD0 = int(T.T_CARD0 * FPS)
 A.F_PUSH = 10 ** 6; A.NF = 10 ** 6 + 10        # camera ferma: lo zoom e' in montaggio
 NTOT = int(T.DUR * FPS)
 
 
 def unique_frames():
-    L = [0] + list(range(A.F_POP, A.F_GLOW0)) + list(range(A.F_GLOW0, A.F_GLOW1, 2)) + [A.F_GLOW1]
+    L = [0] + list(range(A.F_POP, A.F_CARD0)) + list(range(A.F_GLOW0, A.F_GLOW1, 2)) + [A.F_GLOW1]
     return L
 
 
