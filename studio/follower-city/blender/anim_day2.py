@@ -23,7 +23,7 @@ D_RISE = 11.0
 N_TOT = N_NEW + 1
 FINAL_N = 12.0
 END_TGT = (0.0, 9.0, 3.2)         # centro dell abitato a 12 palazzi
-END_AZ, END_EL, END_DIST, END_LENS = 24.0, 26.0, 70.0, 27.0   # elevazione sempre < 30 gradi
+END_AZ, END_EL, END_DIST, END_LENS = 22.0, 25.0, 92.0, 32.0   # elevazione sempre < 30 gradi
 START_PULL = 1.75                 # inquadratura iniziale piu' larga: strada + lampione + orto attorno al palazzo 1
 PULL_F0 = 172                     # da qui l'ultimo allontanamento (tenuta ferma sul 12 <= 1.5 s)
 PULL_K, PULL_EL = 1.26, 1.5

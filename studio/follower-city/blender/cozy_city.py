@@ -1151,10 +1151,10 @@ def build_scene(N, seed, res, samples, lot_props=None):
             road.append((xa, ycen - 2.0, xb, ycen + 2.0))
             for (ya, yb) in ((ycen - 3.5, ycen - 2.0), (ycen + 2.0, ycen + 3.5)):
                 paving.append((xa, ya, -4.5, yb)); paving.append((4.5, ya, xb, yb))
-    link(bpy.data.objects.new("road", flat_quad_mesh(road[:1], 0.02, m_asphalt(), "road")), coll)
+    link(bpy.data.objects.new("road", flat_quad_mesh(road[:1], 0.09, m_asphalt(), "road")), coll)
     link(bpy.data.objects.new("paving2", flat_quad_mesh(paving, 0.14, m_paving(), "paving2")), coll)
     if len(road) > 1:
-        link(bpy.data.objects.new("road2", flat_quad_mesh(road[1:], 0.03, m_asphalt(), "road2")), coll)
+        link(bpy.data.objects.new("road2", flat_quad_mesh(road[1:], 0.1, m_asphalt(), "road2")), coll)
     # sentiero di terra battuta che prosegue nel prato, alle due estremita' del viale
     dirt = [(-1.3, rd1, 1.3, rd1 + 260.0), (-1.3, rd0 - 60.0, 1.3, rd0)]
     link(bpy.data.objects.new("track", flat_quad_mesh(dirt, 0.015, flat("dirt", (0.62, 0.50, 0.34), rough=0.95), "track")), coll)
@@ -1162,10 +1162,11 @@ def build_scene(N, seed, res, samples, lot_props=None):
     sb = MB()
     for s in slots:
         x0 = s['xf']
+        sb_ = sb if (lot_props is None or s['rank'] == 0) else lot_props.setdefault(s['rank'], MB())
         if s['side'] == 'W':
-            sb.box(x0 - SW, s['y0'] - 2.4, 0.0, x0 + BLK_D + 0.6, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
+            sb_.box(x0 - SW, s['y0'] - 2.4, 0.0, x0 + BLK_D + 0.6, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
         else:
-            sb.box(x0 - BLK_D - 0.6, s['y0'] - 2.4, 0.0, x0 + SW, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
+            sb_.box(x0 - BLK_D - 0.6, s['y0'] - 2.4, 0.0, x0 + SW, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
     link(bpy.data.objects.new("sidewalks", sb.build("sidewalks")), coll)
     # rotaie del tram (solo quando c'e' il tram)
     if N >= 45:
@@ -1203,8 +1204,7 @@ def build_scene(N, seed, res, samples, lot_props=None):
         rg = rgs(seed, 'prop', i)
         PM0 = PM
         if lot_props is not None and i >= 1:
-            PM = MB()
-            lot_props[i] = PM
+            PM = lot_props.setdefault(i, MB())
         yc = s['yc']
         sg = -1 if s['side'] == 'W' else 1
         xcurb = s['xf'] + sg * (SW - 0.35)
