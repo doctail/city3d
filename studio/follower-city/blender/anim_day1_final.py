@@ -35,6 +35,7 @@ def render(samples, threads, only):
     os.makedirs(RAW, exist_ok=True)
     S = A.setup(samples)
     sc = S[0]
+    S[2].data.shift_y = 0.11          # il palazzo scende: titoli nella zona sicura alta senza coprire il tetto
     sc.cycles.denoiser = 'OPENIMAGEDENOISE'
     sc.render.threads_mode = 'FIXED'; sc.render.threads = threads
     L = unique_frames()

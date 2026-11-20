@@ -46,10 +46,33 @@ def zoomed(im, t):
     x0 = (rw - cw) / 2; y0 = (rh - ch) * 0.5
     return im.resize((W, H), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + ch))
 
-def txt(d, cx, y, s, font_, fill, a=255, stroke=None, shadow=True, sw=7):
+def txt(d, cx, y, s, font_, fill, a=255, stroke=None, shadow=True, sw=5):
     w = d.textlength(s, font=font_); x = cx - w / 2
     if shadow: d.text((x + 3, y + 6), s, font=font_, fill=(40, 22, 10, int(a * .45)), stroke_width=sw, stroke_fill=(40, 22, 10, int(a * .45)))
     d.text((x, y), s, font=font_, fill=(*fill, a), stroke_width=sw if stroke else 0, stroke_fill=(*(stroke or (0, 0, 0)), a))
+
+def fit(path, s, maxw):
+    sz = 200
+    while sz > 40 and ImageFont.truetype(path, sz).getlength(s) > maxw: sz -= 4
+    return font(path, sz)
+
+def heart(d, cx, cy, r, fill):
+    d.ellipse((cx - r, cy - r, cx, cy), fill=fill); d.ellipse((cx, cy - r, cx + r, cy), fill=fill)
+    d.polygon([(cx - r, cy - r * 0.35), (cx + r, cy - r * 0.35), (cx, cy + r * 1.05)], fill=fill)
+
+def comment_card(lay, d, t, y, text, name, k0):
+    k = max(0.0, t - k0)
+    if k <= 0: return
+    p = min(1.0, spring(k * 1.3)); a = int(255 * sstep(0, 0.2, k))
+    yy = y + (1 - p) * 260
+    x0, x1, h = 80, W - 80, 210
+    d.rounded_rectangle((x0 + 4, yy + 12, x1 + 4, yy + h + 12), radius=40, fill=(40, 22, 10, int(a * .30)))
+    d.rounded_rectangle((x0, yy, x1, yy + h), radius=40, fill=(255, 252, 246, a))
+    d.ellipse((x0 + 34, yy + 34, x0 + 34 + 110, yy + 34 + 110), fill=(*SAGE, a))
+    d.text((x0 + 34 + 55 - d.textlength(name[1], font=font(FX, 52)) / 2, yy + 34 + 22), name[1], font=font(FX, 52), fill=(255, 255, 255, a))
+    d.text((x0 + 175, yy + 38), name[0], font=font(FB, 40), fill=(*INK, a))
+    d.text((x0 + 175, yy + 98), text, font=font(FX, 68), fill=(*INK, a))
+    heart(d, x1 - 70, yy + 105, 26, (*TERRA, a))
 
 def scene_text(im, t):
     lay = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
@@ -63,6 +86,22 @@ def scene_text(im, t):
         txt(d, W / 2, 300, "Day 1", font(FX, 190), CREAM, a, stroke=(70, 40, 20), sw=9)
         a2 = int(255 * sstep(T.T_END + 0.4, T.T_END + 0.7, t))
         txt(d, W / 2, 540, "See you tomorrow!", font(FB, 92), CREAM, a2, stroke=(70, 40, 20))
+    if T.T_COMMENT0 <= t < T.T_COMMENT1:
+        a = int(255 * sstep(T.T_COMMENT0, T.T_COMMENT0 + 0.3, t)); st = (70, 40, 20)
+        txt(d, W / 2, 300, "Comment OG", fit(FX, "Comment OG", 940), CREAM, a, stroke=st)
+        txt(d, W / 2, 470, "to claim your OG ticket", fit(FB, "to claim your OG ticket", 940), CREAM, a, stroke=st)
+        comment_card(lay, d, t, 1370, "OG", ("@your_username", "Y"), T.T_COMMENT0 + 0.7)
+        comment_card(lay, d, t, 1130, "OG!", ("@another_user", "A"), T.T_COMMENT0 + 1.6)
+    if T.T_FOLLOW <= t < T.T_END:
+        a = int(255 * sstep(T.T_FOLLOW, T.T_FOLLOW + 0.3, t)); st = (70, 40, 20)
+        txt(d, W / 2, 300, "Follow to become", fit(FX, "Follow to become", 940), CREAM, a, stroke=st)
+        txt(d, W / 2, 470, "a building", font(FX, 150), CREAM, a, stroke=st)
+        k = max(0.0, t - T.T_FOLLOW - 0.4); pp = 1 + 0.06 * math.sin(k * 9) * math.exp(-k * 2)
+        bw, bh = 520 * pp, 130 * pp
+        d.rounded_rectangle((W / 2 - bw / 2 + 4, 740 + 10, W / 2 + bw / 2 + 4, 740 + bh + 10), radius=40, fill=(40, 22, 10, int(a * .3)))
+        d.rounded_rectangle((W / 2 - bw / 2, 740, W / 2 + bw / 2, 740 + bh), radius=40, fill=(*SAGE, a))
+        fb_ = font(FB, 64); w_ = d.textlength("Follow", font=fb_)
+        d.text((W / 2 - w_ / 2, 740 + bh / 2 - 40), "Follow", font=fb_, fill=(255, 255, 255, a))
     return Image.alpha_composite(im.convert("RGBA"), lay).convert("RGB")
 
 _av = None
