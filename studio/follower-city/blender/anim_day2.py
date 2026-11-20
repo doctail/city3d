@@ -3,7 +3,7 @@ Regola di regia: il Giorno N parte dallo stato del giorno prima -> il palazzo n.
 compaiono uno alla volta con il pop-up del Day 1 (sale, overshoot, polvere), ritmo che accelera (timeline_day2.py). Finestre/insegne
 si accendono per palazzo (colore oggetto -> emissione). Camera = camera_for(N continuo) che segue il conteggio (low-pass).
 Uso:  python -u anim_day2.py render [--samples 24]   (idempotente)   |   python -u anim_day2.py assemble
-Lancio tracciato:  nohup python -u anim_day2.py render > day2.log 2>&1 &   poi  pgrep -f anim_day2 ; tail day2.log
+Lancio tracciato:  nohup python -u anim_day2.py render > day2v2.log 2>&1 &   poi  pgrep -f anim_day2 ; tail day2.log
 """
 import sys, os, math, time, subprocess
 import bpy, bmesh
@@ -15,9 +15,9 @@ sys.path.insert(0, os.path.join(HERE, "..", "test"))
 import timeline_day2 as T
 from timeline_day2 import spring, FPS, NF, POP_START, RATE, IMPACT, N_NEW
 
-RAW = os.path.join(HERE, "day2_frames")
-TXT = os.path.join(HERE, "day2_text")
-OUT = os.path.join(HERE, "cozy_day2_silent.mp4")
+RAW = os.path.join(HERE, "day2v2_frames")
+TXT = os.path.join(HERE, "day2v2_text")
+OUT = os.path.join(HERE, "cozy_day2_v2_silent.mp4")
 RES = (270, 480)
 D_RISE = 11.0
 N_TOT = N_NEW + 1
