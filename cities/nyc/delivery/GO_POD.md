@@ -29,6 +29,7 @@ cd city3d && git fetch -q origin && git checkout -q main && git pull -q --ff-onl
 git log -1 --oneline
 git merge-base --is-ancestor 0194a7d HEAD || { echo "STOP: il pod non ha il commit 0194a7d (codice vecchio). Non lanciare."; exit 3; }
 git diff --quiet 0194a7d HEAD -- run.sh build_render.py kit schedule_nyc.json schedule_nyc_night.json city_nyc.json cities/nyc/story.json data_nyc_src || { echo "STOP: i file di render sono cambiati dopo 0194a7d. Avvisa la chat."; exit 4; }
+rm -rf out/full out/night 2>/dev/null   # i fotogrammi del primo lancio hanno gli alberi vecchi: run.sh riprende da dove si e' fermato, quindi vanno cancellati
 echo "== lancio full (giorno 13186 + notte 240 fotogrammi, niente copertine)"
 nohup env CITY=nyc NOCOVER=1 bash run.sh full > /workspace/city3d/full.log 2>&1 &
 sleep 2; echo "lanciato, pid $!"
