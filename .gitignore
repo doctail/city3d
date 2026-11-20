@@ -14,3 +14,9 @@ montaggio/out/
 cities/lyon/mappe_raw/
 cities/lyon/mappe/overlay_*.png
 cities/*/gate/work/
+
+# follower-city: frame intermedi
+studio/follower-city/blender/day2_frames/
+studio/follower-city/blender/day2_frames_probe/
+studio/follower-city/blender/day2_text/
+studio/follower-city/blender/*_silent.mp4

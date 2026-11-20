@@ -174,7 +174,7 @@ def m_win_dark():
 
 
 def m_asphalt():
-    return flat("cobble", (0.52, 0.45, 0.38), rough=0.9) if True else brick("cobble", (0.60, 0.54, 0.47), (0.53, 0.47, 0.41), (0.33, 0.29, 0.25), bw=0.22, bh=0.14, scale=1.0, bump=0.15, msz=0.02, off=0.5, rough=0.8)
+    return brick("cobble", (0.60, 0.54, 0.47), (0.53, 0.47, 0.41), (0.33, 0.29, 0.25), bw=0.22, bh=0.14, scale=1.0, bump=0.15, msz=0.02, off=0.5, rough=0.8)
 
 
 def m_paving():
@@ -1163,9 +1163,9 @@ def build_scene(N, seed, res, samples, lot_props=None):
     for s in slots:
         x0 = s['xf']
         if s['side'] == 'W':
-            sb.box(x0 - SW, s['y0'] - 2.4, 0.0, x0 + BLK_D + 0.6, s['y0'] + s['w'] + 2.4, 0.14, m_paving())
+            sb.box(x0 - SW, s['y0'] - 2.4, 0.0, x0 + BLK_D + 0.6, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
         else:
-            sb.box(x0 - BLK_D - 0.6, s['y0'] - 2.4, 0.0, x0 + SW, s['y0'] + s['w'] + 2.4, 0.14, m_paving())
+            sb.box(x0 - BLK_D - 0.6, s['y0'] - 2.4, 0.0, x0 + SW, s['y0'] + s['w'] + 2.4, 0.14 + 0.002 * s['rank'], m_paving())
     link(bpy.data.objects.new("sidewalks", sb.build("sidewalks")), coll)
     # rotaie del tram (solo quando c'e' il tram)
     if N >= 45:
