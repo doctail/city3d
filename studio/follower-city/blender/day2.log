@@ -1,0 +1,531 @@
+00:01.457  cycles           | WARNING CUEW initialization failed: Error opening the library
+[cozy5] N=12 lotti=12 mesh=12 cam=(2.6, -48.6, 23.2) f/7.50 24mm build=1.2s
+00:05.977  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0000.png.tmp.png'
+[day2] frame 000/264 4.5s
+00:10.418  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0001.png.tmp.png'
+[day2] frame 001/264 4.4s
+00:14.775  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0002.png.tmp.png'
+[day2] frame 002/264 4.3s
+00:19.255  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0003.png.tmp.png'
+[day2] frame 003/264 4.5s
+00:23.690  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0004.png.tmp.png'
+[day2] frame 004/264 4.4s
+00:28.079  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0005.png.tmp.png'
+[day2] frame 005/264 4.4s
+00:32.372  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0006.png.tmp.png'
+[day2] frame 006/264 4.3s
+00:36.599  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0007.png.tmp.png'
+[day2] frame 007/264 4.2s
+00:40.904  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0008.png.tmp.png'
+[day2] frame 008/264 4.3s
+00:45.374  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0009.png.tmp.png'
+[day2] frame 009/264 4.5s
+00:49.811  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0010.png.tmp.png'
+[day2] frame 010/264 4.4s
+00:54.646  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0011.png.tmp.png'
+[day2] frame 011/264 4.8s
+00:59.184  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0012.png.tmp.png'
+[day2] frame 012/264 4.5s
+01:03.671  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0013.png.tmp.png'
+[day2] frame 013/264 4.5s
+01:08.274  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0014.png.tmp.png'
+[day2] frame 014/264 4.6s
+01:12.934  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0015.png.tmp.png'
+[day2] frame 015/264 4.7s
+01:17.409  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0016.png.tmp.png'
+[day2] frame 016/264 4.5s
+01:21.931  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0017.png.tmp.png'
+[day2] frame 017/264 4.5s
+01:26.562  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0018.png.tmp.png'
+[day2] frame 018/264 4.6s
+01:31.120  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0019.png.tmp.png'
+[day2] frame 019/264 4.6s
+01:35.515  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0020.png.tmp.png'
+[day2] frame 020/264 4.4s
+01:39.986  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0021.png.tmp.png'
+[day2] frame 021/264 4.5s
+01:44.576  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0022.png.tmp.png'
+[day2] frame 022/264 4.6s
+01:49.348  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0023.png.tmp.png'
+[day2] frame 023/264 4.8s
+01:53.769  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0024.png.tmp.png'
+[day2] frame 024/264 4.4s
+01:58.512  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0025.png.tmp.png'
+[day2] frame 025/264 4.7s
+02:03.211  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0026.png.tmp.png'
+[day2] frame 026/264 4.7s
+02:07.951  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0027.png.tmp.png'
+[day2] frame 027/264 4.7s
+02:12.701  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0028.png.tmp.png'
+[day2] frame 028/264 4.7s
+02:17.521  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0029.png.tmp.png'
+[day2] frame 029/264 4.8s
+02:22.180  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0030.png.tmp.png'
+[day2] frame 030/264 4.7s
+02:26.891  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0031.png.tmp.png'
+[day2] frame 031/264 4.7s
+02:31.594  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0032.png.tmp.png'
+[day2] frame 032/264 4.7s
+02:36.235  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0033.png.tmp.png'
+[day2] frame 033/264 4.6s
+02:41.039  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0034.png.tmp.png'
+[day2] frame 034/264 4.8s
+02:45.696  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0035.png.tmp.png'
+[day2] frame 035/264 4.7s
+02:50.689  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0036.png.tmp.png'
+[day2] frame 036/264 5.0s
+02:55.513  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0037.png.tmp.png'
+[day2] frame 037/264 4.8s
+03:00.386  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0038.png.tmp.png'
+[day2] frame 038/264 4.9s
+03:05.368  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0039.png.tmp.png'
+[day2] frame 039/264 5.0s
+03:10.312  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0040.png.tmp.png'
+[day2] frame 040/264 4.9s
+03:15.171  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0041.png.tmp.png'
+[day2] frame 041/264 4.9s
+03:20.048  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0042.png.tmp.png'
+[day2] frame 042/264 4.9s
+03:24.835  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0043.png.tmp.png'
+[day2] frame 043/264 4.8s
+03:29.532  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0044.png.tmp.png'
+[day2] frame 044/264 4.7s
+03:34.166  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0045.png.tmp.png'
+[day2] frame 045/264 4.6s
+03:38.945  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0046.png.tmp.png'
+[day2] frame 046/264 4.8s
+03:43.631  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0047.png.tmp.png'
+[day2] frame 047/264 4.7s
+03:48.347  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0048.png.tmp.png'
+[day2] frame 048/264 4.7s
+03:53.013  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0049.png.tmp.png'
+[day2] frame 049/264 4.7s
+03:57.626  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0050.png.tmp.png'
+[day2] frame 050/264 4.6s
+04:02.357  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0051.png.tmp.png'
+[day2] frame 051/264 4.7s
+04:07.159  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0052.png.tmp.png'
+[day2] frame 052/264 4.8s
+04:12.180  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0053.png.tmp.png'
+[day2] frame 053/264 5.0s
+04:16.973  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0054.png.tmp.png'
+[day2] frame 054/264 4.8s
+04:22.046  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0055.png.tmp.png'
+[day2] frame 055/264 5.1s
+04:26.716  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0056.png.tmp.png'
+[day2] frame 056/264 4.7s
+04:31.430  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0057.png.tmp.png'
+[day2] frame 057/264 4.7s
+04:36.204  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0058.png.tmp.png'
+[day2] frame 058/264 4.8s
+04:41.001  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0059.png.tmp.png'
+[day2] frame 059/264 4.8s
+04:45.635  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0060.png.tmp.png'
+[day2] frame 060/264 4.6s
+04:50.304  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0061.png.tmp.png'
+[day2] frame 061/264 4.7s
+04:54.862  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0062.png.tmp.png'
+[day2] frame 062/264 4.6s
+04:59.567  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0063.png.tmp.png'
+[day2] frame 063/264 4.7s
+05:04.096  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0064.png.tmp.png'
+[day2] frame 064/264 4.5s
+05:08.647  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0065.png.tmp.png'
+[day2] frame 065/264 4.5s
+05:13.291  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0066.png.tmp.png'
+[day2] frame 066/264 4.7s
+05:17.737  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0067.png.tmp.png'
+[day2] frame 067/264 4.4s
+05:22.324  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0068.png.tmp.png'
+[day2] frame 068/264 4.6s
+05:26.913  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0069.png.tmp.png'
+[day2] frame 069/264 4.6s
+05:31.510  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0070.png.tmp.png'
+[day2] frame 070/264 4.6s
+05:36.144  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0071.png.tmp.png'
+[day2] frame 071/264 4.6s
+05:40.742  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0072.png.tmp.png'
+[day2] frame 072/264 4.6s
+05:45.534  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0073.png.tmp.png'
+[day2] frame 073/264 4.8s
+05:50.138  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0074.png.tmp.png'
+[day2] frame 074/264 4.6s
+05:54.607  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0075.png.tmp.png'
+[day2] frame 075/264 4.5s
+05:59.142  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0076.png.tmp.png'
+[day2] frame 076/264 4.5s
+06:03.715  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0077.png.tmp.png'
+[day2] frame 077/264 4.6s
+06:08.273  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0078.png.tmp.png'
+[day2] frame 078/264 4.6s
+06:12.931  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0079.png.tmp.png'
+[day2] frame 079/264 4.7s
+06:17.503  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0080.png.tmp.png'
+[day2] frame 080/264 4.6s
+06:22.037  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0081.png.tmp.png'
+[day2] frame 081/264 4.5s
+06:26.688  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0082.png.tmp.png'
+[day2] frame 082/264 4.6s
+06:31.227  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0083.png.tmp.png'
+[day2] frame 083/264 4.5s
+06:35.787  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0084.png.tmp.png'
+[day2] frame 084/264 4.6s
+06:40.443  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0085.png.tmp.png'
+[day2] frame 085/264 4.6s
+06:45.060  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0086.png.tmp.png'
+[day2] frame 086/264 4.6s
+06:49.801  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0087.png.tmp.png'
+[day2] frame 087/264 4.7s
+06:54.381  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0088.png.tmp.png'
+[day2] frame 088/264 4.6s
+06:59.466  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0089.png.tmp.png'
+[day2] frame 089/264 5.1s
+07:04.395  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0090.png.tmp.png'
+[day2] frame 090/264 4.9s
+07:09.316  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0091.png.tmp.png'
+[day2] frame 091/264 4.9s
+07:14.002  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0092.png.tmp.png'
+[day2] frame 092/264 4.7s
+07:18.659  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0093.png.tmp.png'
+[day2] frame 093/264 4.6s
+07:23.110  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0094.png.tmp.png'
+[day2] frame 094/264 4.4s
+07:27.627  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0095.png.tmp.png'
+[day2] frame 095/264 4.5s
+07:32.069  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0096.png.tmp.png'
+[day2] frame 096/264 4.4s
+07:36.679  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0097.png.tmp.png'
+[day2] frame 097/264 4.6s
+07:41.232  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0098.png.tmp.png'
+[day2] frame 098/264 4.5s
+07:45.775  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0099.png.tmp.png'
+[day2] frame 099/264 4.5s
+07:50.275  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0100.png.tmp.png'
+[day2] frame 100/264 4.5s
+07:54.604  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0101.png.tmp.png'
+[day2] frame 101/264 4.3s
+07:58.971  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0102.png.tmp.png'
+[day2] frame 102/264 4.4s
+08:03.503  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0103.png.tmp.png'
+[day2] frame 103/264 4.5s
+08:07.957  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0104.png.tmp.png'
+[day2] frame 104/264 4.4s
+08:12.354  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0105.png.tmp.png'
+[day2] frame 105/264 4.4s
+08:16.586  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0106.png.tmp.png'
+[day2] frame 106/264 4.2s
+08:20.867  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0107.png.tmp.png'
+[day2] frame 107/264 4.3s
+08:25.140  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0108.png.tmp.png'
+[day2] frame 108/264 4.3s
+08:29.473  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0109.png.tmp.png'
+[day2] frame 109/264 4.3s
+08:33.785  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0110.png.tmp.png'
+[day2] frame 110/264 4.3s
+08:38.206  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0111.png.tmp.png'
+[day2] frame 111/264 4.4s
+08:42.539  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0112.png.tmp.png'
+[day2] frame 112/264 4.3s
+08:46.881  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0113.png.tmp.png'
+[day2] frame 113/264 4.3s
+08:51.177  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0114.png.tmp.png'
+[day2] frame 114/264 4.3s
+08:55.374  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0115.png.tmp.png'
+[day2] frame 115/264 4.2s
+08:59.733  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0116.png.tmp.png'
+[day2] frame 116/264 4.4s
+09:03.979  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0117.png.tmp.png'
+[day2] frame 117/264 4.2s
+09:08.384  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0118.png.tmp.png'
+[day2] frame 118/264 4.4s
+09:12.558  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0119.png.tmp.png'
+[day2] frame 119/264 4.2s
+09:16.829  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0120.png.tmp.png'
+[day2] frame 120/264 4.3s
+09:21.033  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0121.png.tmp.png'
+[day2] frame 121/264 4.2s
+09:25.212  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0122.png.tmp.png'
+[day2] frame 122/264 4.2s
+09:29.381  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0123.png.tmp.png'
+[day2] frame 123/264 4.2s
+09:33.475  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0124.png.tmp.png'
+[day2] frame 124/264 4.1s
+09:37.543  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0125.png.tmp.png'
+[day2] frame 125/264 4.1s
+09:41.901  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0126.png.tmp.png'
+[day2] frame 126/264 4.3s
+09:46.168  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0127.png.tmp.png'
+[day2] frame 127/264 4.3s
+09:50.477  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0128.png.tmp.png'
+[day2] frame 128/264 4.3s
+09:54.754  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0129.png.tmp.png'
+[day2] frame 129/264 4.3s
+09:58.974  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0130.png.tmp.png'
+[day2] frame 130/264 4.2s
+10:03.262  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0131.png.tmp.png'
+[day2] frame 131/264 4.3s
+10:07.437  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0132.png.tmp.png'
+[day2] frame 132/264 4.2s
+10:11.803  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0133.png.tmp.png'
+[day2] frame 133/264 4.4s
+10:16.026  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0134.png.tmp.png'
+[day2] frame 134/264 4.2s
+10:20.315  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0135.png.tmp.png'
+[day2] frame 135/264 4.3s
+10:24.540  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0136.png.tmp.png'
+[day2] frame 136/264 4.2s
+10:28.839  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0137.png.tmp.png'
+[day2] frame 137/264 4.3s
+10:33.179  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0138.png.tmp.png'
+[day2] frame 138/264 4.3s
+10:37.486  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0139.png.tmp.png'
+[day2] frame 139/264 4.3s
+10:41.815  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0140.png.tmp.png'
+[day2] frame 140/264 4.3s
+10:46.137  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0141.png.tmp.png'
+[day2] frame 141/264 4.3s
+10:50.390  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0142.png.tmp.png'
+[day2] frame 142/264 4.3s
+10:54.643  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0143.png.tmp.png'
+[day2] frame 143/264 4.2s
+10:58.817  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0144.png.tmp.png'
+[day2] frame 144/264 4.2s
+11:03.175  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0145.png.tmp.png'
+[day2] frame 145/264 4.4s
+11:07.825  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0146.png.tmp.png'
+[day2] frame 146/264 4.7s
+11:12.115  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0147.png.tmp.png'
+[day2] frame 147/264 4.3s
+11:16.382  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0148.png.tmp.png'
+[day2] frame 148/264 4.3s
+11:20.685  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0149.png.tmp.png'
+[day2] frame 149/264 4.3s
+11:24.941  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0150.png.tmp.png'
+[day2] frame 150/264 4.2s
+11:29.253  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0151.png.tmp.png'
+[day2] frame 151/264 4.3s
+11:33.589  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0152.png.tmp.png'
+[day2] frame 152/264 4.3s
+11:38.018  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0153.png.tmp.png'
+[day2] frame 153/264 4.4s
+11:42.353  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0154.png.tmp.png'
+[day2] frame 154/264 4.3s
+11:46.919  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0155.png.tmp.png'
+[day2] frame 155/264 4.6s
+11:51.341  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0156.png.tmp.png'
+[day2] frame 156/264 4.4s
+11:55.700  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0157.png.tmp.png'
+[day2] frame 157/264 4.4s
+12:00.278  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0158.png.tmp.png'
+[day2] frame 158/264 4.6s
+12:04.744  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0159.png.tmp.png'
+[day2] frame 159/264 4.5s
+12:09.197  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0160.png.tmp.png'
+[day2] frame 160/264 4.4s
+12:13.776  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0161.png.tmp.png'
+[day2] frame 161/264 4.6s
+12:18.132  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0162.png.tmp.png'
+[day2] frame 162/264 4.3s
+12:22.403  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0163.png.tmp.png'
+[day2] frame 163/264 4.3s
+12:26.809  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0164.png.tmp.png'
+[day2] frame 164/264 4.4s
+12:31.201  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0165.png.tmp.png'
+[day2] frame 165/264 4.4s
+12:35.573  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0166.png.tmp.png'
+[day2] frame 166/264 4.4s
+12:39.934  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0167.png.tmp.png'
+[day2] frame 167/264 4.4s
+12:44.378  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0168.png.tmp.png'
+[day2] frame 168/264 4.4s
+12:48.710  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0169.png.tmp.png'
+[day2] frame 169/264 4.3s
+12:53.185  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0170.png.tmp.png'
+[day2] frame 170/264 4.5s
+12:57.643  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0171.png.tmp.png'
+[day2] frame 171/264 4.5s
+13:01.967  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0172.png.tmp.png'
+[day2] frame 172/264 4.3s
+13:06.297  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0173.png.tmp.png'
+[day2] frame 173/264 4.3s
+13:10.683  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0174.png.tmp.png'
+[day2] frame 174/264 4.4s
+13:15.076  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0175.png.tmp.png'
+[day2] frame 175/264 4.4s
+13:19.654  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0176.png.tmp.png'
+[day2] frame 176/264 4.6s
+13:24.157  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0177.png.tmp.png'
+[day2] frame 177/264 4.5s
+13:28.556  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0178.png.tmp.png'
+[day2] frame 178/264 4.4s
+13:33.020  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0179.png.tmp.png'
+[day2] frame 179/264 4.5s
+13:37.416  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0180.png.tmp.png'
+[day2] frame 180/264 4.4s
+13:41.866  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0181.png.tmp.png'
+[day2] frame 181/264 4.4s
+13:46.243  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0182.png.tmp.png'
+[day2] frame 182/264 4.4s
+13:50.789  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0183.png.tmp.png'
+[day2] frame 183/264 4.5s
+13:55.306  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0184.png.tmp.png'
+[day2] frame 184/264 4.5s
+13:59.859  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0185.png.tmp.png'
+[day2] frame 185/264 4.5s
+14:04.315  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0186.png.tmp.png'
+[day2] frame 186/264 4.5s
+14:08.894  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0187.png.tmp.png'
+[day2] frame 187/264 4.6s
+14:13.506  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0188.png.tmp.png'
+[day2] frame 188/264 4.6s
+14:17.964  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0189.png.tmp.png'
+[day2] frame 189/264 4.5s
+14:22.426  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0190.png.tmp.png'
+[day2] frame 190/264 4.5s
+14:27.002  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0191.png.tmp.png'
+[day2] frame 191/264 4.6s
+14:31.317  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0192.png.tmp.png'
+[day2] frame 192/264 4.3s
+14:35.682  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0193.png.tmp.png'
+[day2] frame 193/264 4.4s
+14:40.010  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0194.png.tmp.png'
+[day2] frame 194/264 4.3s
+14:44.456  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0195.png.tmp.png'
+[day2] frame 195/264 4.4s
+14:48.939  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0196.png.tmp.png'
+[day2] frame 196/264 4.5s
+14:53.592  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0197.png.tmp.png'
+[day2] frame 197/264 4.6s
+14:58.175  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0198.png.tmp.png'
+[day2] frame 198/264 4.6s
+15:02.527  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0199.png.tmp.png'
+[day2] frame 199/264 4.3s
+15:06.954  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0200.png.tmp.png'
+[day2] frame 200/264 4.4s
+15:11.506  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0201.png.tmp.png'
+[day2] frame 201/264 4.5s
+15:16.157  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0202.png.tmp.png'
+[day2] frame 202/264 4.7s
+15:20.723  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0203.png.tmp.png'
+[day2] frame 203/264 4.5s
+15:25.110  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0204.png.tmp.png'
+[day2] frame 204/264 4.4s
+15:29.579  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0205.png.tmp.png'
+[day2] frame 205/264 4.5s
+15:33.979  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0206.png.tmp.png'
+[day2] frame 206/264 4.4s
+15:38.286  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0207.png.tmp.png'
+[day2] frame 207/264 4.3s
+15:42.584  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0208.png.tmp.png'
+[day2] frame 208/264 4.3s
+15:46.955  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0209.png.tmp.png'
+[day2] frame 209/264 4.4s
+15:51.425  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0210.png.tmp.png'
+[day2] frame 210/264 4.5s
+15:56.006  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0211.png.tmp.png'
+[day2] frame 211/264 4.6s
+16:00.318  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0212.png.tmp.png'
+[day2] frame 212/264 4.3s
+16:04.820  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0213.png.tmp.png'
+[day2] frame 213/264 4.5s
+16:09.098  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0214.png.tmp.png'
+[day2] frame 214/264 4.3s
+16:13.438  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0215.png.tmp.png'
+[day2] frame 215/264 4.3s
+16:17.714  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0216.png.tmp.png'
+[day2] frame 216/264 4.3s
+16:21.973  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0217.png.tmp.png'
+[day2] frame 217/264 4.2s
+16:26.184  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0218.png.tmp.png'
+[day2] frame 218/264 4.2s
+16:30.569  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0219.png.tmp.png'
+[day2] frame 219/264 4.4s
+16:34.930  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0220.png.tmp.png'
+[day2] frame 220/264 4.4s
+16:39.373  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0221.png.tmp.png'
+[day2] frame 221/264 4.4s
+16:43.735  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0222.png.tmp.png'
+[day2] frame 222/264 4.4s
+16:47.983  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0223.png.tmp.png'
+[day2] frame 223/264 4.2s
+16:52.211  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0224.png.tmp.png'
+[day2] frame 224/264 4.2s
+16:56.413  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0225.png.tmp.png'
+[day2] frame 225/264 4.2s
+17:00.975  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0226.png.tmp.png'
+[day2] frame 226/264 4.5s
+17:05.503  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0227.png.tmp.png'
+[day2] frame 227/264 4.5s
+17:09.887  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0228.png.tmp.png'
+[day2] frame 228/264 4.4s
+17:14.264  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0229.png.tmp.png'
+[day2] frame 229/264 4.4s
+17:18.745  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0230.png.tmp.png'
+[day2] frame 230/264 4.5s
+17:23.151  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0231.png.tmp.png'
+[day2] frame 231/264 4.4s
+17:27.582  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0232.png.tmp.png'
+[day2] frame 232/264 4.4s
+17:31.924  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0233.png.tmp.png'
+[day2] frame 233/264 4.3s
+17:36.242  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0234.png.tmp.png'
+[day2] frame 234/264 4.3s
+17:40.567  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0235.png.tmp.png'
+[day2] frame 235/264 4.3s
+17:44.824  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0236.png.tmp.png'
+[day2] frame 236/264 4.2s
+17:49.177  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0237.png.tmp.png'
+[day2] frame 237/264 4.3s
+17:53.515  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0238.png.tmp.png'
+[day2] frame 238/264 4.3s
+17:57.808  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0239.png.tmp.png'
+[day2] frame 239/264 4.3s
+18:02.252  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0240.png.tmp.png'
+[day2] frame 240/264 4.4s
+18:06.709  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0241.png.tmp.png'
+[day2] frame 241/264 4.5s
+18:11.287  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0242.png.tmp.png'
+[day2] frame 242/264 4.6s
+18:15.749  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0243.png.tmp.png'
+[day2] frame 243/264 4.5s
+18:20.072  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0244.png.tmp.png'
+[day2] frame 244/264 4.3s
+18:24.496  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0245.png.tmp.png'
+[day2] frame 245/264 4.4s
+18:29.078  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0246.png.tmp.png'
+[day2] frame 246/264 4.6s
+18:33.554  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0247.png.tmp.png'
+[day2] frame 247/264 4.5s
+18:38.006  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0248.png.tmp.png'
+[day2] frame 248/264 4.4s
+18:42.460  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0249.png.tmp.png'
+[day2] frame 249/264 4.5s
+18:46.946  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0250.png.tmp.png'
+[day2] frame 250/264 4.5s
+18:51.344  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0251.png.tmp.png'
+[day2] frame 251/264 4.4s
+18:55.749  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0252.png.tmp.png'
+[day2] frame 252/264 4.4s
+19:00.144  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0253.png.tmp.png'
+[day2] frame 253/264 4.4s
+19:04.972  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0254.png.tmp.png'
+[day2] frame 254/264 4.8s
+19:09.385  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0255.png.tmp.png'
+[day2] frame 255/264 4.4s
+19:13.879  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0256.png.tmp.png'
+[day2] frame 256/264 4.5s
+19:18.578  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0257.png.tmp.png'
+[day2] frame 257/264 4.7s
+19:23.136  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0258.png.tmp.png'
+[day2] frame 258/264 4.5s
+19:27.663  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0259.png.tmp.png'
+[day2] frame 259/264 4.5s
+19:32.039  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0260.png.tmp.png'
+[day2] frame 260/264 4.4s
+19:36.605  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0261.png.tmp.png'
+[day2] frame 261/264 4.6s
+19:41.116  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0262.png.tmp.png'
+[day2] frame 262/264 4.5s
+19:45.374  render           | Saved: '/home/user/city3d/studio/follower-city/blender/day2_frames/0263.png.tmp.png'
+[day2] frame 263/264 4.3s
+[day2] RENDER FINITO: 264 frame nuovi in 1184s (4.48 s/frame medi)
