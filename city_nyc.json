@@ -298,6 +298,7 @@
    10
   ]
  ],
+ "ships": "cities/nyc/traffic.json",
  "vegetation": {
   "box": [
    -9000,
