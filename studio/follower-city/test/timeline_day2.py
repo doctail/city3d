@@ -2,7 +2,7 @@
 Il palazzo n.1 e' gia' in piedi (contatore 1); i palazzi 2..12 (rank 1..11 della citta') compaiono con ritmo che accelera."""
 import math
 FPS = 24
-NF = 264
+NF = 240
 DUR = NF / FPS
 N_NEW = 11
 F_FIRST = 20            # inizio salita del primo palazzo nuovo

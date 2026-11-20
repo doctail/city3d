@@ -1,4 +1,4 @@
-"""Follower City - clip di prova 'Day 2' (1 -> 12 palazzi): 270x480, 24 fps, 264 frame (11 s). Analitico, nessun keyframe.
+"""Follower City - clip di prova 'Day 2' (1 -> 12 palazzi): 270x480, 24 fps, 240 frame (10 s). Analitico, nessun keyframe.
 Regola di regia: il Giorno N parte dallo stato del giorno prima -> il palazzo n.1 (rank 0) e' gia' in piedi e acceso; i rank 1..11
 compaiono uno alla volta con il pop-up del Day 1 (sale, overshoot, polvere), ritmo che accelera (timeline_day2.py). Finestre/insegne
 si accendono per palazzo (colore oggetto -> emissione). Camera = camera_for(N continuo) che segue il conteggio (low-pass).
@@ -22,8 +22,11 @@ RES = (270, 480)
 D_RISE = 11.0
 N_TOT = N_NEW + 1
 FINAL_N = 12.0
-END_TGT = (0.0, 9.0, 2.0)         # centro dell abitato a 12 palazzi
-END_AZ, END_EL, END_DIST = 8.0, 44.0, 65.0
+END_TGT = (0.0, 9.0, 3.2)         # centro dell abitato a 12 palazzi
+END_AZ, END_EL, END_DIST, END_LENS = 24.0, 26.0, 70.0, 27.0   # elevazione sempre < 30 gradi
+START_PULL = 1.75                 # inquadratura iniziale piu' larga: strada + lampione + orto attorno al palazzo 1
+PULL_F0 = 172                     # da qui l'ultimo allontanamento (tenuta ferma sul 12 <= 1.5 s)
+PULL_K, PULL_EL = 1.26, 1.5
 GLOW_DELAY, GLOW_LEN = 10, 16
 
 
@@ -60,7 +63,8 @@ def cam_curve():
 
 
 def setup(samples):
-    sc = cc.build_scene(N_TOT, 7, RES, samples)
+    LP = {}
+    sc = cc.build_scene(N_TOT, 7, RES, samples, lot_props=LP)
     sc.cycles.use_animated_seed = False
     make_glow_materials()
     slots = cc.all_slots(7)[:N_TOT]
@@ -73,7 +77,7 @@ def setup(samples):
     # orti sui lotti E in attesa (spariscono quando il lotto sale)
     gardens = {}
     for q in slots[1:]:
-        if q['side'] == 'E' and not q['lm']:
+        if True:
             b = cc.MB(); cc.prop_garden(b, q, cc.rgs(7, 'garden', q['rank']))
             o = cc.link(bpy.data.objects.new(f"garden{q['rank']}", b.build(f"garden{q['rank']}")), sc.collection)
             gardens[q['rank']] = o
@@ -107,11 +111,13 @@ def setup(samples):
             a = rg.uniform(0, 6.283)
             leaves.append((o, xf - sg * 4 + 5.5 * math.cos(a), yc + 0.5 * w * math.sin(a), rg.uniform(2.0, 4.5), rg.uniform(0, 6.28), rg.uniform(0.12, 0.2), rg.uniform(0, 0.2)))
         FX[k] = (puffs, leaves)
-    return sc, cam, lots, bases, gardens, FX, cam_curve()
+    lprops = {k: bpy.data.objects[f"lprops{k}"] for k in range(1, N_TOT)}
+    p0, t0, _, _, _ = cc.camera_for(1, 7)
+    return sc, cam, lots, bases, gardens, FX, cam_curve(), lprops, (Vector(p0), Vector(t0))
 
 
 def set_frame(f, S):
-    sc, cam, lots, bases, gardens, FX, ncam = S
+    sc, cam, lots, bases, gardens, FX, ncam, lprops, (P0, T0) = S
     for k in range(1, N_TOT):
         o, base = lots[k], bases[k]
         f0, rate, fi = POP_START[k - 1], RATE[k - 1], IMPACT[k - 1]
@@ -127,6 +133,8 @@ def set_frame(f, S):
         o.color = (g, g, g, 1)
         if k in gardens:
             gardens[k].scale = (1, 1, 1) if f < f0 else (0, 0, 0)
+        pp = sstep(fi - 2, fi + 9, f)                      # alberi, lampioni, persone: escono dal prato dopo il palazzo
+        lprops[k].location = (0, 0, -(1.0 - pp) * 9.0 - (0.0 if f >= fi - 2 else 30.0))
         puffs, leaves = FX[k]
         for (po, px, py, nx, ny, sz, dl) in puffs:
             tt = (f - fi) / FPS - dl
@@ -144,18 +152,21 @@ def set_frame(f, S):
             lo.location = (lx + 0.8 * math.sin(ph + 3 * tt), ly + 0.8 * math.cos(ph + 2.4 * tt), 0.5 + hv * (1 - (1 - kk) ** 2) * 1.2 - 1.0 * kk * kk * 1.2)
             lo.rotation_euler = (1.3 * tt * 4 + ph, 0.9 * tt * 5, ph)
             lo.scale = (sz,) * 3 if kk < 0.85 else (sz * (1 - kk) / 0.15,) * 3
-    # camera: stato di partenza = fine Day 1 (push-in 0.83), poi camera_for(N) che segue il conteggio
+    # camera: parte larga sul palazzo 1 (posa di camera_for(1) tirata indietro), poi sale/si allontana verso la posa finale (el < 30)
     N = ncam[f]
-    pos, tgt, lens, fstop, fd = cc.camera_for(N, 7)
-    kd = 0.83 + 0.17 * sstep(1.0, 3.0, N)
-    w = sstep(2.5, 11.0, N)                           # camera_for(N) -> posa alta/obliqua man mano che i palazzi crescono
-    az, el = math.radians(END_AZ), math.radians(END_EL)
-    ep = Vector(END_TGT) + END_DIST * Vector((math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)))
-    P = Vector(pos).lerp(ep, w); Tg = Vector(tgt).lerp(Vector(END_TGT), w)
-    cam.location = Tg + (P - Tg) * kd
-    cam.data.lens = lens
+    w = sstep(1.3, 11.2, N)
+    q = sstep(PULL_F0, NF - 1, f)
+    v0 = P0 - T0; d0 = v0.length * START_PULL; hz = math.hypot(v0.x, v0.y)
+    el0, az0 = math.atan2(v0.z, hz), math.atan2(v0.x, -v0.y)
+    T0b = T0 + Vector((0, 0, 0.6))
+    d = d0 * (END_DIST / d0) ** w * (1 + (PULL_K - 1) * q)
+    el = el0 + (math.radians(END_EL) - el0) * w + math.radians(PULL_EL) * q
+    az = az0 + (math.radians(END_AZ) - az0) * w
+    Tg = T0b.lerp(Vector(END_TGT), w) + Vector((0, 0, 1.5 * q))
+    cam.location = Tg + d * Vector((math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)))
+    cam.data.lens = 24.0 + (END_LENS - 24.0) * w
     bpy.data.objects["ctgt"].location = Tg
-    cam.data.dof.focus_distance = (cam.location - Tg).length
+    cam.data.dof.focus_distance = d
     bpy.context.view_layer.update()
 
 
@@ -197,14 +208,14 @@ def overlay():
             x = cx - w / 2
             d.text((x, y + 1.5), s, font=font, fill=(40, 22, 10, int(alpha * 0.5)), stroke_width=sw, stroke_fill=(40, 22, 10, int(alpha * 0.5)))
             d.text((x, y), s, font=font, fill=(*fill, alpha), stroke_width=sw, stroke_fill=(70, 40, 20, int(alpha * 0.95)))
-        txt("1 follower = 1 building", ftit, W / 2, 46, a)                  # alto, safe zone, piccolo con contorno
+        txt("1 follower = 1 building", ftit, W / 2, 62, a, sw=2)             # alto centro, safe zone, piccolo con contorno
         n = 1 + sum(1 for x in imps if f >= int(math.ceil(x)))
         last = max([x for x in imps if f >= int(math.ceil(x))] or [-99])
         since = f - int(math.ceil(last)) if last > -99 else 99
         sc_ = 1.0 + 0.30 * max(0.0, 1 - since / 5.0) ** 1.5 if since < 5 else 1.0
         fc = ImageFont.truetype(fp, int(round(40 * sc_)))
-        txt(str(n), fc, W / 2, 68 - (fc.size - 40) * 0.5, a, fill=(255, 226, 150), sw=3)
-        txt("Day 2", fday, W / 2, H - 66, a)
+        txt(str(n), fc, W - 52, 92 - (fc.size - 40) * 0.5, a, fill=(255, 226, 150), sw=3)   # alto a destra, safe zone, fuori dal palazzo
+        txt("Day 2", fday, W / 2, H - 122, a)
         Image.alpha_composite(im, lay).convert("RGB").save(os.path.join(TXT, f"{f:04d}.png"))
 
 
