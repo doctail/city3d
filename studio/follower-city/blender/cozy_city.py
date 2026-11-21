@@ -795,7 +795,7 @@ def m_soil(): return flat("soil", (0.36, 0.25, 0.16), rough=0.95)
 def prop_garden(b, s, rg):
     """orto recintato sul lotto libero s: aiuole di terra con cavoli/insalata, staccionata bassa, un attrezzo."""
     sg = -1 if s['side'] == 'W' else 1          # W: il lotto sta a x > xf ; E: x < xf
-    xin0, xin1 = s['xf'] + sg * 1.6, s['xf'] + sg * 7.2
+    xin0, xin1 = s['xf'] - sg * 1.6, s['xf'] - sg * 7.2   # il lotto sta dietro la facciata (E: x<xf, W: x>xf)
     xa, xb = min(xin0, xin1), max(xin0, xin1)
     ya, yb = s['y0'] + 0.5, s['y0'] + s['w'] - 0.5
     b.box(xa - 0.2, ya - 0.2, 0.0, xb + 0.2, yb + 0.2, 0.06, m_soil())
@@ -821,6 +821,9 @@ def prop_garden(b, s, rg):
 
 # ---------------------------------------------------------------- lotti e citta'
 LANDMARKS = {(0, -1, 'W', 3): 'tower', (-1, 1, 'E', 3): 'church'}
+PICK = None      # Day 2: lista di rank dei lotti da costruire (in ordine di apparizione), al posto dei primi N
+LOT_OVERRIDE = {}  # indice lotto -> dict che aggiorna i parametri di lot_params
+SPECIAL = {}     # indice lotto (nella lista) -> funzione (P, slot) -> MB   (villa, edificio OG)
 
 
 def all_slots(seed):
@@ -1120,7 +1123,8 @@ def build_scene(N, seed, res, samples, lot_props=None):
     sc = bpy.context.scene
     coll = sc.collection
     pos, tgt, lens, fstop, fdist = camera_for(N, seed)
-    slots = all_slots(seed)[:N]
+    _all = all_slots(seed)
+    slots = [_all[r] for r in PICK] if PICK else _all[:N]
     big_ground(coll)
 
     # ---- strade: solo dove c'e' l'abitato (pezzo di viale + traverse tra lotti usati); il resto e' prato/orto
@@ -1181,9 +1185,13 @@ def build_scene(N, seed, res, samples, lot_props=None):
     PM = MB()
     for i, s in enumerate(slots):
         P = lot_params(s, seed)
-        key = tuple(sorted(P.items())) + (s['lm'],)
+        if i in LOT_OVERRIDE:
+            P.update(LOT_OVERRIDE[i])
+        key = tuple(sorted(P.items())) + (s['lm'], i if i in SPECIAL else -1)
         if key not in cache:
-            if s['lm'] == 'tower':
+            if i in SPECIAL:
+                cache[key] = SPECIAL[i](P, s).build(f"special{i}")
+            elif s['lm'] == 'tower':
                 P2 = dict(P, w=8.4)
                 cache[key] = mk_tower(P2).build("tower")
             elif s['lm'] == 'church':
@@ -1208,6 +1216,8 @@ def build_scene(N, seed, res, samples, lot_props=None):
         yc = s['yc']
         sg = -1 if s['side'] == 'W' else 1
         xcurb = s['xf'] + sg * (SW - 0.35)
+        if i in SPECIAL:
+            PM = PM0; continue
         if i % 2 == 0:
             prop_lamp(PM, xcurb, s['y0'] + 0.5, 0.14)
         if i % 3 == 1:
@@ -1232,7 +1242,8 @@ def build_scene(N, seed, res, samples, lot_props=None):
     prop_bench(PM, s0['xf'] + sg0 * 1.3, s0['y0'] + s0['w'] + 3.0 if False else s0['y0'] - 2.4, 'y') if False else None
     prop_planter(PM, s0['xf'] + sg0 * 0.5, s0['y0'] + s0['w'] + 0.2, fr)
     # orti sui lotti vicini ancora liberi (spariscono quando il lotto viene costruito)
-    free = [q for q in all_slots(seed)[N:N + 14] if not q['lm'] and q['side'] == 'E']   # lato E = lato del primo palazzo (la camera sta a est)
+    _used = {q['rank'] for q in slots}
+    free = [q for q in (_all[N:N + 14] if not PICK else [x for x in _all[:24] if x['rank'] not in _used]) if not q['lm'] and q['side'] == 'E']   # lato E = lato del primo palazzo (la camera sta a est)
     for q in free:
         prop_garden(PM, q, rgs(seed, 'garden', q['rank']))
     # alberi sparsi nel prato attorno all'abitato (posizioni fisse, scartati se cadono sull'abitato)
