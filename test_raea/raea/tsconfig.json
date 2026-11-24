@@ -1,0 +1,6 @@
+{
+  "//": "Controllo dei tipi contro l'SDK del clone raea (RAEA_SDK, default /home/user/shinyobjectz/raea/sdk). Si usa con: RAEA_SDK=... bash ../typecheck.sh",
+  "extends": "/home/user/shinyobjectz/raea/sdk/tsconfig.base.json",
+  "compilerOptions": { "skipLibCheck": true, "allowImportingTsExtensions": true, "noEmit": true, "types": [] },
+  "include": ["nyc20.tsx", "scene.gen.ts"]
+}
