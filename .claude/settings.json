@@ -1,0 +1,16 @@
+{
+  "extraKnownMarketplaces": {
+    "ecc": { "source": { "source": "github", "repo": "affaan-m/ECC" } },
+    "raea": { "source": { "source": "github", "repo": "shinyobjectz/raea" } }
+  },
+  "enabledPlugins": {
+    "ecc@ecc": true,
+    "raea@raea": true
+  },
+  "env": {
+    "ECC_HOOK_PROFILE": "minimal",
+    "ECC_GATEGUARD": "off",
+    "ECC_SESSION_START_CONTEXT": "off",
+    "ECC_CONTEXT_MONITOR_COST_WARNINGS": "off"
+  }
+}
