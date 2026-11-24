@@ -10721,6 +10721,8 @@
   "max_duration": 780,
   "night": true,
   "pacing": "story",
+  "open_look": "area:[40.7090,-74.0105,900]",
+  "open_look_hold": 11.0,
   "open": {
    "year": 2026,
    "rewind_to": 1609
