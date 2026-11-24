@@ -18,7 +18,7 @@ Stato: scritto dalla chat, NON ancora acceso nessun pod. Il GO vale solo se la c
 - Il banner qui sotto e' aggiornato (landphases 1227, pier entries 331, water_fix 1799/1773/26).
 
 ## 20/11 sera: edifici in acqua corretti + navi accese (commit `77d9576`)
-- `water_fix.py` (dentro restore_after_build.sh): 0 edifici in acqua per anno (prima fino a 433 nel 1750). Navi NYC 1609-1905 (`city_nyc.json` -> `ships`). Fotogrammi che cambiano rispetto al render precedente: 129-7622. Il parity md5 di `hist.json` qui sotto non vale piu' (hist cambia di proposito).
+- `water_fix.py` (dentro restore_after_build.sh): edifici con baricentro in acqua: 0 tra 1609 e 1687, pochi dopo (soprattutto edifici moderni su Governors Island, fuori campo camera); prima fino a 433 nel 1750. Navi NYC 1609-1905 (`city_nyc.json` -> `ships`). Fotogrammi che cambiano rispetto al render precedente: 129-7622. Il parity md5 di `hist.json` qui sotto non vale piu' (hist cambia di proposito).
 
 ## Prima riga: due correzioni a run.sh trovate nella verifica (commit `77d9576`, gia' incluse)
 1. `CITY=nyc` entrava nel ramo VECCHIO (`D=data`, `fetch_nyc.py` scarica i dati da internet, nessun `--city`). Ora il ramo vecchio vale solo senza `cities/nyc/story.json`: NYC usa `data_nyc` + `city_nyc.json` come le altre citta'.
@@ -63,7 +63,7 @@ Deve mostrare TUTTO questo (se manca una riga o c'e' un errore: fermare e mandar
 - `VERSIONE: <hash di git log -1> ... | schedule_nyc: 554 s, lens 32.0`
 - `fotogrammi 13305, notte dal fotogramma 12946, nomi %05d`
 - `uso: OPTIX` (se `CUDA` va bene ma piu' lento; se `CPU` lo script si ferma da solo)
-- `[hist_kit] edifici vivi: 1609: 0, 1500: 0, 1800: 12043, 1900: 291454` (identico al locale)
+- `[hist_kit] edifici vivi: 1609: 0, 1500: 0, 1800: 12189, 1900: 291472` (identico al locale)
 - `[restore] landphases 1227 pier entries 331 dem D max 202 m`
 - `changed 1799 delayed 1773 dropped 26` (water_fix: edifici in acqua) e `[build] navi: 83 istanze, 0 scartate (terra) []` (navi accese: `"ships"` in city_nyc.json, non e' il default)
 
@@ -117,3 +117,9 @@ che esegue `kit_city.py nyc` (tempi HUD/titolo/fine dallo schedule), `sfx_kit.py
 - `kit_city` avvisa: years di prova a 7.839 fotogrammi (si risolve con il `years.json` vero) e `city.est_until` assente (usa 1800: la popolazione prima e' mostrata con "~").
 - Overlay: 13.306 fotogrammi (554,4 s). Il render ne fa 13.305: nel montaggio `-shortest` chiude alla durata piu' corta.
 - Controlli R13 sull'overlay vero (fermo immagine a ogni inizio capitolo, ogni cartello, primi 12 s, ultimi 15 s): da fare dopo, NON fatti.
+
+
+## Note dalla prova generale (PROVA_GENERALE.md, 24/11)
+- Il pod usa la schedule COMMITTATA (run.sh non rigenera la regia): 13305 fotogrammi. Il numero 13310 compare solo ricostruendo la regia, non rilevante.
+- I moli compaiono tutti insieme nel 1850 (~1,8 km2), accettato.
+- Il fotogramma 1 ha la luce di `cities/nyc/qa/rehearsal/f1_pod.jpg` (sole basso, ombra lunga), non quella di qa/cam/0001.jpg: il proprietario approva quel look prima del GO.
