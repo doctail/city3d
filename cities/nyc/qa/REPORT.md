@@ -1,6 +1,6 @@
 # QA nyc
 
-Generato da `python -m kit.qa` il 2026-11-20 15:53. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-24 11:09. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -16,7 +16,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:53. Esito complessivo: **WARN**
 - **PASS** 75 fonti
 - **PASS** date con fonte
 - **WARN** date fuori dall'intervallo del video
-  - history.water[0] East-shore infill (Pearl Street to South Street): 99999; history.water[1] West-shore infill (Greenwich Street to West Street): 99999; history.water[2] Collect Pond: 99999; history.water[3] Battery Park City: 99999; history.water[4] Governors Island south fill: 99999; history.water[5] Governors Island south fill: 99999; history.water[6] Ellis Island fill (islands 2 and 3): 99999
+  - history.water[0] East-shore infill (Pearl Street to South Street) step 1/8: 99999; history.water[1] East-shore infill (Pearl Street to South Street) step 2/8: 99999; history.water[2] East-shore infill (Pearl Street to South Street) step 3/8: 99999; history.water[3] East-shore infill (Pearl Street to South Street) step 4/8: 99999; history.water[4] East-shore infill (Pearl Street to South Street) step 5/8: 99999; history.water[5] East-shore infill (Pearl Street to South Street) step 6/8: 99999; history.water[6] East-shore infill (Pearl Street to South Street) step 7/8: 99999; history.water[7] East-shore infill (Pearl Street to South Street) step 8/8: 99999
 
 ## b) DATA
 
@@ -27,7 +27,7 @@ Generato da `python -m kit.qa` il 2026-11-20 15:53. Esito complessivo: **WARN**
 - **PASS** roads.json
   - 117786 voci
 - **PASS** hist.json
-  - 304876 voci
+  - 304947 voci
 - **PASS** land.json
   - 320 voci
 - **PASS** landmarks.json
@@ -35,46 +35,56 @@ Generato da `python -m kit.qa` il 2026-11-20 15:53. Esito complessivo: **WARN**
 - **PASS** dem.npz
 - **PASS** anni edifici (145927)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1609 (compaiono all'inizio): 0, d<=y: 0, ring<3: 0
-- **WARN** hist (304876 predecessori)
+- **WARN** hist (304947 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 26
 - **PASS** anni strade (117786 nastri)
-  - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 6597
+  - senza anno 0, dopo 2026: 0; visibili all'inizio 0, nel 1800 6764
 
 ## c) Densita' storica
 
-- **PASS** East-shore infill (Pearl Street to South Street) nel 1800
-  - 763 edifici vivi (26/ha, copertura 31%) contro 151 (5/ha, copertura 34%) nel 2026: rapporto 5.05
+- **PASS** East-shore infill (Pearl Street to South Street) step 1/8 nel 1800
+  - 103 edifici vivi (26/ha, copertura 30%) contro 12 (3/ha, copertura 30%) nel 2026: rapporto 8.58
+- **PASS** East-shore infill (Pearl Street to South Street) step 2/8 nel 1800
+  - 60 edifici vivi (16/ha, copertura 21%) contro 5 (1/ha, copertura 30%) nel 2026: rapporto 12.00
+- **PASS** East-shore infill (Pearl Street to South Street) step 3/8 nel 1800
+  - 118 edifici vivi (30/ha, copertura 33%) contro 14 (4/ha, copertura 30%) nel 2026: rapporto 8.43
+- **PASS** East-shore infill (Pearl Street to South Street) step 4/8 nel 1800
+  - 113 edifici vivi (28/ha, copertura 36%) contro 28 (7/ha, copertura 23%) nel 2026: rapporto 4.04
+- **PASS** East-shore infill (Pearl Street to South Street) step 5/8 nel 1800
+  - 152 edifici vivi (37/ha, copertura 46%) contro 31 (7/ha, copertura 90%) nel 2026: rapporto 4.90
+- **PASS** East-shore infill (Pearl Street to South Street) step 6/8 nel 1800
+  - 126 edifici vivi (30/ha, copertura 33%) contro 20 (5/ha, copertura 13%) nel 2026: rapporto 6.30
+- **PASS** East-shore infill (Pearl Street to South Street) step 7/8 nel 1800
+  - 76 edifici vivi (18/ha, copertura 22%) contro 33 (8/ha, copertura 29%) nel 2026: rapporto 2.30
 - **PASS** New Amsterdam (Battery to Wall Street) nel 1800
-  - 1295 edifici vivi (5/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 6.05
+  - 1308 edifici vivi (5/ha, copertura 6%) contro 214 (1/ha, copertura 7%) nel 2026: rapporto 6.11
 - **PASS** Colonial town (Wall Street to Canal Street) nel 1800
-  - 9172 edifici vivi (22/ha, copertura 27%) contro 2683 (6/ha, copertura 30%) nel 2026: rapporto 3.42
+  - 9182 edifici vivi (22/ha, copertura 27%) contro 2683 (6/ha, copertura 30%) nel 2026: rapporto 3.42
 
 ## d) Corridoi vuoti
 
 - **WARN** centro storico molto grande: raster limitato a 10 km
-- **WARN** 1709: 7 aree vuote allungate
-  - #1 131x23 m a (40.71640,-74.00340); #2 1254x261 m a (40.70783,-74.00281); #3 188x25 m a (40.71248,-74.00198); #4 148x18 m a (40.70620,-74.01533); #5 122x22 m a (40.70434,-74.01789); #6 136x33 m a (40.69308,-74.01614) — corridoi_1709.png
+- **WARN** 1709: 10 aree vuote allungate
+  - #1 131x23 m a (40.71640,-74.00340); #2 188x25 m a (40.71248,-74.00198); #3 179x26 m a (40.70727,-74.00407); #4 148x18 m a (40.70620,-74.01533); #5 140x23 m a (40.70557,-74.00651); #6 281x57 m a (40.70379,-74.00547) — corridoi_1709.png
 - **WARN** 1709: 7 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #8 1514x122 m a (40.71193,-74.00381); #9 643x23 m a (40.70437,-74.00753); #10 387x19 m a (40.69223,-74.01588); #11 301x56 m a (40.70596,-74.01462); #12 277x35 m a (40.69191,-74.01896)
-- **WARN** 1800: 1 corridoi accettati (FAIL -> WARN)
-  - #0 1344x220 m a (40.71047,-74.01540) — West-shore landfill strip (Greenwich-West Street) drawn as modern land at 1800: the water-phase ring rises it from 1800 and the zone is born 1800-1830; verify by frame
+  - #11 1479x140 m a (40.71047,-74.00347); #12 427x22 m a (40.70325,-74.00758); #13 387x19 m a (40.69223,-74.01588); #14 301x56 m a (40.70596,-74.01462); #15 277x35 m a (40.69191,-74.01896)
 - **WARN** 1800: 13 aree vuote allungate
   - #1 175x34 m a (40.71751,-73.98521); #2 140x27 m a (40.71651,-74.00580); #3 192x23 m a (40.71239,-73.98244); #4 161x40 m a (40.71237,-73.99966); #5 188x25 m a (40.71248,-74.00198); #6 186x36 m a (40.71119,-73.98208) — corridoi_1800.png
-- **WARN** 1800: 10 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #14 3115x176 m a (40.71248,-73.99401); #15 425x71 m a (40.71649,-74.00255); #16 387x19 m a (40.69223,-74.01588); #17 361x29 m a (40.70864,-74.01185); #18 327x50 m a (40.71765,-74.01306)
+- **WARN** 1800: 11 viali larghi gia' visibili (se aperti sventrando: gutting)
+  - #14 3116x175 m a (40.71248,-73.99384); #15 654x40 m a (40.71606,-74.01310); #16 425x71 m a (40.71649,-74.00255); #17 387x19 m a (40.69223,-74.01588); #18 361x29 m a (40.70864,-74.01185)
 - **WARN** 1900: 4 corridoi accettati (FAIL -> WARN)
   - #0 123x20 m a (40.76572,-73.95160) — 1900 waterfront sliver (East River / Roosevelt Island channel), not a street; #0 163x26 m a (40.73672,-73.90777) — 1900 Newtown Creek bank sliver, not a street; #0 188x18 m a (40.72357,-73.96104) — 1900 Greenpoint waterfront sliver, not a street; #0 193x30 m a (40.71242,-73.95435) — 1900 Williamsburg waterfront sliver, not a street
 - **WARN** 1900: 420 aree vuote allungate
-  - #1 555x129 m a (40.76719,-73.94581); #2 8147x315 m a (40.72485,-73.91137); #3 211x30 m a (40.76849,-73.91515); #4 326x34 m a (40.76790,-73.91332); #5 216x15 m a (40.76755,-73.98021); #6 165x36 m a (40.76715,-73.91285) — corridoi_1900.png
+  - #1 555x129 m a (40.76719,-73.94581); #2 8147x314 m a (40.72485,-73.91137); #3 211x30 m a (40.76849,-73.91515); #4 327x34 m a (40.76790,-73.91332); #5 216x15 m a (40.76755,-73.98021); #6 165x36 m a (40.76715,-73.91285) — corridoi_1900.png
 - **WARN** 1900: 67 viali larghi gia' visibili (se aperti sventrando: gutting)
-  - #421 7217x393 m a (40.73632,-73.98376); #422 6339x214 m a (40.70913,-73.97152); #423 4706x325 m a (40.74248,-73.93317); #424 1966x148 m a (40.70254,-73.94297); #425 1603x22 m a (40.69431,-73.95457)
+  - #421 7214x393 m a (40.73632,-73.98376); #422 6339x214 m a (40.70913,-73.97152); #423 4705x325 m a (40.74248,-73.93317); #424 1966x148 m a (40.70254,-73.94297); #425 1603x22 m a (40.69431,-73.95457)
 - **WARN** 1950: 415 aree vuote allungate
   - #1 555x129 m a (40.76719,-73.94581); #2 9421x165 m a (40.72485,-73.90775); #3 143x19 m a (40.76847,-73.90794); #4 216x15 m a (40.76755,-73.98021); #5 323x27 m a (40.76667,-73.99963); #6 122x22 m a (40.76714,-73.98478) — corridoi_1950.png
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (16 s)
-  - oggetti citta' 1905, cambi in tutto il video 68918, max in un fotogramma 683 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
+- **PASS** costo dei cambi (19 s)
+  - oggetti citta' 1918, cambi in tutto il video 69414, max in un fotogramma 684 (~8 s), costo dei soli cambi ~0.23 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 146 m/s (limite 250), mediana 14
 - **PASS** drone: accelerazione massima

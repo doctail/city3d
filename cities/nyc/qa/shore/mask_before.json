@@ -1,0 +1,194 @@
+{
+ "1650": {
+  "land_m2": 3096786
+ },
+ "1690": {
+  "land_m2": 3096786,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1700": {
+  "land_m2": 3390246,
+  "new_m2": 261072,
+  "new_parts": [
+   {
+    "area": 224630,
+    "rect_fill": 0.45
+   },
+   {
+    "area": 8706,
+    "rect_fill": 0.67
+   },
+   {
+    "area": 16083,
+    "rect_fill": 0.57
+   },
+   {
+    "area": 2203,
+    "rect_fill": 0.7
+   },
+   {
+    "area": 4635,
+    "rect_fill": 0.79
+   },
+   {
+    "area": 4814,
+    "rect_fill": 0.84
+   }
+  ]
+ },
+ "1710": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1720": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1730": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1740": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1750": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1760": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1770": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1780": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1790": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1795": {
+  "land_m2": 3390246,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1800": {
+  "land_m2": 3696975,
+  "new_m2": 277958,
+  "new_parts": [
+   {
+    "area": 43412,
+    "rect_fill": 0.54
+   },
+   {
+    "area": 49548,
+    "rect_fill": 0.48
+   },
+   {
+    "area": 14182,
+    "rect_fill": 0.81
+   },
+   {
+    "area": 139493,
+    "rect_fill": 0.55
+   },
+   {
+    "area": 2177,
+    "rect_fill": 0.59
+   },
+   {
+    "area": 6963,
+    "rect_fill": 0.83
+   },
+   {
+    "area": 6005,
+    "rect_fill": 0.72
+   },
+   {
+    "area": 2806,
+    "rect_fill": 0.64
+   },
+   {
+    "area": 6849,
+    "rect_fill": 0.51
+   },
+   {
+    "area": 3120,
+    "rect_fill": 0.59
+   },
+   {
+    "area": 3404,
+    "rect_fill": 0.88
+   }
+  ]
+ },
+ "1805": {
+  "land_m2": 3696975,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1810": {
+  "land_m2": 3696975,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1820": {
+  "land_m2": 3797633,
+  "new_m2": 82444,
+  "new_parts": [
+   {
+    "area": 43328,
+    "rect_fill": 0.41
+   },
+   {
+    "area": 6872,
+    "rect_fill": 0.73
+   },
+   {
+    "area": 4458,
+    "rect_fill": 0.83
+   },
+   {
+    "area": 13550,
+    "rect_fill": 0.48
+   },
+   {
+    "area": 7743,
+    "rect_fill": 0.53
+   },
+   {
+    "area": 2012,
+    "rect_fill": 0.66
+   },
+   {
+    "area": 4481,
+    "rect_fill": 0.75
+   }
+  ]
+ },
+ "1830": {
+  "land_m2": 3797633,
+  "new_m2": 0,
+  "new_parts": []
+ },
+ "1840": {
+  "land_m2": 3797633,
+  "new_m2": 0,
+  "new_parts": []
+ }
+}
