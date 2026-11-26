@@ -670,7 +670,9 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
     if drone:
         from kit import drone_kit as DK
         dcfg = DK.cfg_of(R); (m26x, m26y), r26 = D.extent(2026.0); fx_, fy_ = focus if focus else (m26x, m26y); d_rc = max(5000.0, 1.8 * r26)
-        fin = dict(x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26) if recap_s else dict(x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=max(6000.0, 1.3 * r26), el=34.0, kind='city', R=r26)
+        fin = dict(x=m26x, y=m26y, tzo=0.0, d=d_rc, el=52.0, kind='city', R=r26) if recap_s else dict(x=(m26x + fx_) / 2, y=(m26y + fy_) / 2, tzo=0.0, d=float(R.get('fin_d', max(6000.0, 1.3 * r26))), el=34.0, kind='city', R=r26)   # regia.fin_d (opt-in): distanza della tappa finale (il volo finale con 6 km durava ~70 s senza schede)
+        if R.get('fin_at'):   # opt-in: centro della tappa finale (es. 'area:[lat,lon,r]') invece della media fra 2026 e il primo bersaglio
+            _ft = D.target(R['fin_at']); fin['x'], fin['y'] = _ft['x'], _ft['y']
         chy = [float(c['y']) for c in (MO_.get('chapters') or [])] + [float(c['y']) for c in (MO_.get('cards') or []) if c.get('chapter')]
         lead = float(op.get('story_lead', 3.4 + (2.8 if SOSTE and chy and min(chy) <= min(s['y0'] for s in SOSTE) else 0.0)))
         hold_tail = float(R.get('end_hold', (cta_s + src_s) or 4.0)); max_dur = R.get('max_duration')

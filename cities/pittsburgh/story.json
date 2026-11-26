@@ -10469,19 +10469,6 @@
     "note": "Hover for the Pittsburgh-gets-its-name card (1758.9); Fort Pitt walls drawn 1759.0-1761.5."
    },
    {
-    "y0": 1764.2,
-    "y1": 1765.0,
-    "dur": 6,
-    "caption": "The Block House (1764)",
-    "target": "Fort Pitt Block House",
-    "shot": "close",
-    "drone_d": 650.0,
-    "fx": "build",
-    "conf": "medium",
-    "weight": 8,
-    "note": "Hover for the Block House card (1764.5)."
-   },
-   {
     "y0": 1816.0,
     "y1": 1842.0,
     "dur": 12.0,
@@ -10643,6 +10630,19 @@
     ],
     "conf": "medium",
     "weight": 4
+   },
+   {
+    "y0": 1764.2,
+    "y1": 1765.0,
+    "dur": 6,
+    "caption": "The Block House (1764)",
+    "target": "Fort Pitt Block House",
+    "shot": "close",
+    "drone_d": 650.0,
+    "fx": "build",
+    "conf": "medium",
+    "weight": 8,
+    "note": "Hover for the Block House card (1764.5)."
    }
   ],
   "rmin": 1.0,
@@ -10653,7 +10653,8 @@
    "d_min": 1400,
    "drift_vmax": 8,
    "rho_max": 1500.0,
-   "v_leg": 90.0
+   "v_leg": 90.0,
+   "rate_cap": 1.2
   },
   "lens": 32,
   "reading": {
@@ -10661,7 +10662,9 @@
    "base": 3.6,
    "min": 4.0,
    "max": 9.0
-  }
+  },
+  "fin_d": 2000,
+  "fin_at": "area:[40.4420,-80.0040,300]"
  },
  "montaggio": {
   "style": "mattia",
@@ -10746,6 +10749,21 @@
     "chapter": "A Town on the Frontier"
    },
    {
+    "y": 1788.0,
+    "title": "A town across the river",
+    "lines": [
+     "Across the Allegheny River, the town of Allegheny is laid out in 1788.",
+     "It will be Allegheny City from 1840 and join Pittsburgh in 1907."
+    ],
+    "src": [
+     "S5",
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Round 4: fills the 1777-1794 stretch (no card for 14 s). Dates from the zone note 'Allegheny City (North Side)': laid out 1788, city 1840, annexed 1907 (S5, S2)."
+   },
+   {
     "y": 1794.0,
     "title": "A borough on the frontier",
     "lines": [
@@ -10773,6 +10791,33 @@
     "conf": "medium",
     "shot": "wide",
     "note": "Timeline S5: 1792 abandoned, 3 Aug 1797 decommissioned and \"subsequently demolished\"; demolition date itself not found."
+   },
+   {
+    "y": 1803.0,
+    "title": "A town of 1,565",
+    "lines": [
+     "In 1800 Pittsburgh has 1,565 people and over 60 shops."
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Round 4: fills the 1797-1810 stretch. 1,565 people (census) and 60 shops are in the 'first steamboat' card source (S2); 'a few years away' = the 1811 steamboat/1816 factory-town cards."
+   },
+   {
+    "y": 1810.0,
+    "title": "Three times larger",
+    "lines": [
+     "The 1810 census counts 4,768 people in Pittsburgh, about three times the 1,565 of 1800."
+    ],
+    "src": [
+     "S5",
+     "S23"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "note": "Round 4: breaks the 1797-1811 jump (the counter raced +14 years while the drone was slow). Figures from city.population (census)."
    },
    {
     "y": 1811.5,
@@ -11399,6 +11444,35 @@
     "conf": "medium",
     "shot": "wide",
     "note": "Year from the Wikipedia tallest list (S13); not cross-checked."
+   },
+   {
+    "y": 2025.5,
+    "title": "Less than half its peak",
+    "lines": [
+     "The 2020 census counted 302,971 people in Pittsburgh.",
+     "That is fewer than half of the 676,806 counted in 1950."
+    ],
+    "src": [
+     "S5",
+     "S23"
+    ],
+    "conf": "high",
+    "shot": "wide",
+    "note": "Round 4 epilogue card; both figures are in city.population (census)."
+   },
+   {
+    "y": 2025.85,
+    "title": "Every building on screen",
+    "lines": [
+     "The model holds 179,756 building footprints from Allegheny County open data.",
+     "Each one appears in the year the records give it, and the older city is rebuilt from history."
+    ],
+    "src": [
+     "S24"
+    ],
+    "conf": "medium",
+    "shot": "wide",
+    "note": "Round 4 epilogue card; count = len(data_pittsburgh/buildings.json)."
    }
   ],
   "chapters": [

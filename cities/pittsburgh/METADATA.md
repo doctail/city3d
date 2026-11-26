@@ -1,6 +1,6 @@
 # Pittsburgh: METADATA (YouTube) — FINALE sul render del pod (19/11/2026, canale "Ledger of Cities")
 
-Titolo, descrizione, capitoli e tag completi e incollabili in 6 lingue: `CONSEGNA_YOUTUBE.md` (orari reali dal render: 588,5 s = 9:48, nessun cold open, R14). Miniatura: `copertina/pittsburgh_thumb_1754_now_1280x720.jpg`. Montaggio: `MONTAGGIO.md`. Reddit, distribuzione, nota stampa: `REDDIT_DISTRIBUZIONE.md`. Struttura come `cities/marseille/METADATA.md`.
+Titolo, descrizione, capitoli e tag completi e incollabili in 6 lingue: `CONSEGNA_YOUTUBE.md` (orari reali dal render: 617,6 s = 10:17, nessun cold open, R14). Miniatura: `copertina/pittsburgh_thumb_1754_now_1280x720.jpg`. Montaggio: `MONTAGGIO.md`. Reddit, distribuzione, nota stampa: `REDDIT_DISTRIBUZIONE.md`. Struttura come `cities/marseille/METADATA.md`.
 
 ## Title (<= 100 characters)
 EVOLUTION OF PITTSBURGH | 3D City Timelapse (1754–NOW) | No AI

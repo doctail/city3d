@@ -14,7 +14,6 @@ T = [
  ('ch', 'II', '1777', dict(en='II · A Town on the Frontier', fr='II · Une ville de la frontière', it='II · Una cittadina di frontiera', es='II · Un pueblo de la frontera', de='II · Eine Stadt an der Grenze', pt='II · Uma vila de fronteira')),
  ('card', 'Fort Pitt is torn down', '1797', dict(en='Fort Pitt is torn down', fr='Le fort Pitt est démoli', it='Fort Pitt viene demolito', es='Se derriba Fort Pitt', de='Fort Pitt wird abgerissen', pt='O Fort Pitt é demolido')),
  ('ch', 'III', '1816', dict(en='III · The Iron City', fr='III · La ville du fer', it='III · La città del ferro', es='III · La ciudad del hierro', de='III · Die Eisenstadt', pt='III · A cidade do ferro')),
- ('card', "A courthouse on Grant's Hill", '1841', dict(en="A courthouse on Grant's Hill", fr="Un palais de justice sur Grant's Hill", it="Un tribunale su Grant's Hill", es="Un juzgado en Grant's Hill", de="Ein Gerichtsgebäude auf Grant's Hill", pt="Um tribunal em Grant's Hill")),
  ('sosta', 'The Great Fire', '1845', dict(en='The Great Fire', fr='Le grand incendie', it='Il grande incendio', es='El gran incendio', de='Der Große Brand', pt='O grande incêndio')),
  ('card', 'The railroads arrive', '1854', dict(en='The railroads arrive', fr='Le chemin de fer arrive', it='Arriva la ferrovia', es='Llega el ferrocarril', de='Die Eisenbahn kommt', pt='A ferrovia chega')),
  ('ch', 'IV', '1859', dict(en='IV · Steel City', fr="IV · La ville de l'acier", it="IV · La città dell'acciaio", es='IV · La ciudad del acero', de='IV · Die Stahlstadt', pt='IV · A cidade do aço')),
@@ -50,8 +49,16 @@ def t_of(kind, key):
     return E['sources_card']['t_in']
 
 
-rows = [(int(math.floor(t_of(k, key))), y, lab) for k, key, y, lab in T]
+_all = [(int(math.floor(t_of(k, key))), y, lab, k) for k, key, y, lab in T]
+rows_k = []
+for r in _all:   # YouTube: voci a distanza >= 10 s; se due sono piu' vicine si toglie la carta (capitoli e soste restano)
+    if rows_k and r[0] - rows_k[-1][0] < 10:
+        if r[3] == 'card': continue
+        if rows_k[-1][3] == 'card': rows_k.pop()
+    rows_k.append(r)
+rows = [(t, y, lab) for t, y, lab, k in rows_k]
 for (a, _, _), (b, _, _) in zip(rows, rows[1:]): assert b - a >= 10, (a, b)
+print('capitoli', len(rows), 'su', len(_all), 'voci (tolte per distanza < 10 s:', [r[2]['en'] for r in _all if r not in rows_k], ')')
 assert rows[0][0] == 0
 fmt = lambda s: f'{s // 60}:{s % 60:02d}'
 
@@ -130,7 +137,7 @@ Limits, so you can check: today's buildings take the year recorded for their par
 If your family lived in the Lower Hill, your memories are welcome."""
 
 o = ['# Pittsburgh: consegna completa YouTube (19/11/2026) — canale "Ledger of Cities"\n',
-     f"Orari dai dati del render del pod (`years.json`, 14.124 fotogrammi = 588,5 s = 9:48; ricavati da `montaggio/eventi_pittsburgh.json`, generati da `cities/pittsburgh/gen_consegna.py`). Regola: capitolo = t_in della carta - 2,8 s; carta/sosta = t_in; arrotondato per difetto; tutte le voci distano >= 10 s (verificato dallo script). Nessun cold open (R14): il video parte dal primo anno, un solo elenco di capitoli. Sources = 9:40. Gli orari valgono se il montaggio finale (overlay + audio) e' quello di `MONTAGGIO.md` (stessa durata del video del pod).\n"]
+     f"Orari dallo schedule 26/11 (14.822 fotogrammi = 617,6 s = 10:17; da rifare con years.json del pod se differisce; ricavati da `montaggio/eventi_pittsburgh.json`, generati da `cities/pittsburgh/gen_consegna.py`). Regola: capitolo = t_in della carta - 2,8 s; carta/sosta = t_in; arrotondato per difetto; tutte le voci distano >= 10 s (verificato dallo script). Nessun cold open (R14): il video parte dal primo anno, un solo elenco di capitoli. Sources = 9:40. Gli orari valgono se il montaggio finale (overlay + audio) e' quello di `MONTAGGIO.md` (stessa durata del video del pod).\n"]
 for lg in L:
     o += [f'\n---\n\n## {NAME[lg]}\n', '### Titolo', '```', TITLE[lg], '```', f'(lunghezza {len(TITLE[lg])})\n', '### Descrizione', '```',
           D[lg] + '\n\n' + chapters(lg, HEAD[lg]) + '\n\n' + SRC, '```']
