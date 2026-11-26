@@ -215,7 +215,7 @@ def check_data(story, D, DD, R):
         R.add(S, st, f'anni edifici ({len(B)})', f'senza anno {nan}, anno 0 (segnaposto): {zero}, dopo {y1:.0f}: {fut}, prima di {y0:.0f} (compaiono all\'inizio): {old}, d<=y: {dly}, ring<3: {bad}')
     if H:
         y = np.array([h.get('y', np.nan) for h in H], float); d = np.array([h.get('d', np.nan) for h in H], float)
-        bad = int(np.isnan(y).sum() + np.isnan(d).sum()); inv = int((d < y).sum()); _wd = np.array([h.get('yb_water') == 'dropped' for h in H], bool); fut = int(((y > y1 + 1) & ~_wd).sum())   # yb_water dropped: voluntary, never shown (hist_kit water_clip)
+        bad = int(np.isnan(y).sum() + np.isnan(d).sum()); inv = int((d < y).sum()); _wd = np.array([bool(h.get('yb_water')) for h in H], bool); fut = int(((y > y1 + 1) & ~_wd).sum())   # yb_water dropped: voluntary, never shown (hist_kit water_clip)
         R.add(S, FAIL if bad else WARN if (inv or fut) else PASS, f'hist ({len(H)} predecessori)', f'senza y/d {bad}, d<y {inv}, nati dopo {y1:.0f}: {fut}')
     RD = DD.get('roads') or []
     if RD:

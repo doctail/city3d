@@ -16,7 +16,13 @@
   "water_clip": {
    "frac": 0.5,
    "land_close": 15,
-   "note": "Shore = modern one in every year (no historical shoreline data). Predecessors < 50% on land are never shown (kit/hist_kit.py water_clip_pass); islands added to land.json by cities/pittsburgh/qa/fix/islands_fix.py."
+   "note": "Shore = modern one in every year (no historical shoreline data). Predecessors < 50% on land are never shown (kit/hist_kit.py water_clip_pass); islands added to land.json by cities/pittsburgh/qa/fix/islands_fix.py.",
+   "industrial": [
+    "Point warehouses and rail yards (cleared 1950-53)"
+   ],
+   "thin": {
+    "Point warehouses and rail yards (cleared 1950-53)": 0.3
+   }
   },
   "population": [
    [
@@ -258,8 +264,8 @@
   "look": {
    "palette": "cities/pittsburgh/palette.json",
    "water_color": [
-    "#1b4b4f",
-    "#245f64"
+    "#0e4950",
+    "#17636b"
    ],
    "sun_color": [
     1.0,
@@ -322,11 +328,11 @@
    "water_glint": 0.85,
    "water_sun": 0.0,
    "field_colors": [
-    "#4b551b",
-    "#5a6420",
-    "#6b6a24",
-    "#78642e",
-    "#5d5a22"
+    "#475a0c",
+    "#58690f",
+    "#6d6a14",
+    "#7d6314",
+    "#5e5a12"
    ]
   },
   "cover": {
@@ -403,11 +409,11 @@
     "#7f858c",
     "#8d9298"
    ],
-   "grass": "#566220",
-   "tree": "#3f4c1c",
-   "forest_base": "#3a4719",
-   "urban_green": "#5d6a28",
-   "park_ground": "#5a6624",
+   "grass": "#4f6a14",
+   "tree": "#394f12",
+   "forest_base": "#33490f",
+   "urban_green": "#586e1a",
+   "park_ground": "#546f18",
    "hedge": "#3a4a20",
    "bridge_fix": true,
    "urban": [
@@ -420,7 +426,24 @@
    ],
    "urban_dark": "#6e6440",
    "street": "#8b8878",
-   "street_earth": "#7f7969"
+   "street_earth": "#7f7969",
+   "roof_ind": [
+    "#6f7479",
+    "#7f858c",
+    "#8d9298",
+    "#5e6166",
+    "#984727",
+    "#8a4a2c",
+    "#9a9fa5"
+   ],
+   "wall_ind": [
+    "#b98672",
+    "#c58470",
+    "#a9795f",
+    "#bdb09a",
+    "#a06a50",
+    "#c9b79a"
+   ]
   }
  },
  "sources": {
@@ -2041,7 +2064,9 @@
      "S7"
     ],
     "conf": "medium",
-    "note": "Rings from fetch_pgh.py flood 46: DEM cells below 224.94 m (738 ft = gauge zero 692 ft + 46 ft) connected to the rivers; normal pool 710 ft. depth is the kit's constant draped depth (test value). 1936 flood: kept as an ordinary event (card), NOT a stop: the draped-water visual is a known limitation."
+    "note": "Rings from fetch_pgh.py flood 46: DEM cells below 224.94 m (738 ft = gauge zero 692 ft + 46 ft) connected to the rivers; normal pool 710 ft. depth is the kit's constant draped depth (test value). 1936 flood: kept as an ordinary event (card), NOT a stop: the draped-water visual is a known limitation.",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (2)",
@@ -3958,7 +3983,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (3)",
@@ -6027,7 +6054,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (4)",
@@ -6488,7 +6517,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (5)",
@@ -8437,7 +8468,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (6)",
@@ -8690,7 +8723,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    },
    {
     "name": "1936 St. Patrick's Day flood (7)",
@@ -9279,7 +9314,9 @@
      "S1",
      "S7"
     ],
-    "conf": "medium"
+    "conf": "medium",
+    "smooth": 16,
+    "cs": 6
    }
   ],
   "water": [],
@@ -9304,7 +9341,8 @@
      "S5"
     ],
     "conf": "medium",
-    "note": "Opened 19 March 1883 (S10); the 1818 wooden bridge burned in the 1845 fire (S10). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render."
+    "note": "Opened 19 March 1883 (S10); the 1818 wooden bridge burned in the 1845 fire (S10). Centre point from Wikipedia/OSM (S13); the line is a sketch of +-180 m. If the local data (bridges.json from street centerlines) already has this deck, the kit only sets its year; otherwise it adds a deck: look at the QA render.",
+    "snap_land": true
    },
    {
     "name": "Fort Pitt Bridge",

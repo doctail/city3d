@@ -418,6 +418,7 @@ def add_bld(bm, col, vyear, vdie, b):
         # (rf: z zinco/ardesia, t tegole, b terrazza); senza dato: zinco nel centro (raggio roof_rf_core), tavolozza normale fuori
         _rf = b.get('rf') or ('z' if (ring[0][0] ** 2 + ring[0][1] ** 2) < ST.get('roof_rf_core', 4500) ** 2 else None)
         if _rf in ST['roof_rf']: rpal = ST['roof_rf'][_rf]
+    if b.get('ind') and ST.get('roof_ind') and not gl and not b.get('lm'): pal, rpal = ST.get('wall_ind', pal), ST['roof_ind']   # capannoni/magazzini (hist_kit water_clip.industrial): tetti in lamiera/ardesia, muri mattone-tan
     wc = srgb(rnd.choice(pal)); rc = srgb(rnd.choice(rpal)); wa = 0.5 if gl else 1.0
     if ys < ST.get('no_windows_before', -99999): wa = 0.05   # Roma: case antiche e medievali senza finestre (stile Latos)
     z0_ = b.get('_z', 0.0) - b.get('_band', 0.0)   # quota del suolo rispetto alla fascia dell'oggetto (rilievo)
@@ -1185,7 +1186,7 @@ if os.path.exists(f'{DATA}/floods.json'):
         for l_ in list(_fp.inputs['Base Color'].links): _fm.node_tree.links.remove(l_)
         _fp.inputs['Base Color'].default_value = (*srgb(ST['flood_water']), 1); _fp.inputs['Roughness'].default_value = 0.25
     for fl_ in _fl:
-        pg_ = Polygon(fl_['r']).buffer(0); gx0_, gy0_, gx1_, gy1_ = pg_.bounds; cs_ = 30.0; nx_ = int((gx1_ - gx0_) / cs_) + 2; ny_ = int((gy1_ - gy0_) / cs_) + 2
+        pg_ = Polygon(fl_['r']).buffer(0); gx0_, gy0_, gx1_, gy1_ = pg_.bounds; cs_ = float(fl_.get('cs', 30.0)); nx_ = int((gx1_ - gx0_) / cs_) + 2; ny_ = int((gy1_ - gy0_) / cs_) + 2
         def zf_(i, j):
             x_, y_ = gx0_ + i * cs_, gy0_ + j * cs_
             return float(dem_at(x_, y_)) + fl_['depth'] if dem_at else fl_['depth']

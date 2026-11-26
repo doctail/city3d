@@ -73,11 +73,11 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#4b551b",
-  "#5a6420",
-  "#6b6a24",
-  "#78642e",
-  "#5d5a22"
+  "#475a0c",
+  "#58690f",
+  "#6d6a14",
+  "#7d6314",
+  "#5e5a12"
  ],
  "ground_tint": {
   "png": "cities/pittsburgh/ground_tint.png",
@@ -111,13 +111,13 @@
    "#c7c5c0",
    "#dadad5"
   ],
-  "urban_green": "#5d6a28",
+  "urban_green": "#586e1a",
   "hedge": "#3a4a20",
   "blocks": "#8c887e",
-  "grass": "#566220",
-  "tree": "#3f4c1c",
-  "forest_base": "#3a4719",
-  "park_ground": "#5a6624",
+  "grass": "#4f6a14",
+  "tree": "#394f12",
+  "forest_base": "#33490f",
+  "park_ground": "#546f18",
   "reclaim": "#7f7969",
   "urban_phase": "#b8ad98",
   "street": "#8b8878",
@@ -127,8 +127,8 @@
   "smoke": "#3a3532",
   "smoke_alpha": 0.85,
   "flood_water": "#946d3c",
-  "water": "#1b4b4f",
-  "water2": "#245f64",
+  "water": "#0e4950",
+  "water2": "#17636b",
   "water_rough": 0.02,
   "wave_scale": 0.025,
   "wave_strength": 0.55,
@@ -316,7 +316,24 @@
    "#7f858c",
    "#8d9298"
   ],
-  "bridge_fix": true
+  "bridge_fix": true,
+  "roof_ind": [
+   "#6f7479",
+   "#7f858c",
+   "#8d9298",
+   "#5e6166",
+   "#984727",
+   "#8a4a2c",
+   "#9a9fa5"
+  ],
+  "wall_ind": [
+   "#b98672",
+   "#c58470",
+   "#a9795f",
+   "#bdb09a",
+   "#a06a50",
+   "#c9b79a"
+  ]
  },
  "cover": {
   "cam": [

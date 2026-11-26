@@ -430,12 +430,33 @@ def roads_pass(ctx, D):
     return (n, m)
 
 
+_LAND_CACHE = {}
+def _snap_to_land(line, D, margin=12.0, step=4.0, max_ext=300.0):
+    """Allunga i due capi di una linea (x,y) lungo la sua direzione finche' cadono sulla terra di DATA/land.json (chiusa 15 m) + margin."""
+    if D not in _LAND_CACHE:
+        lf = os.path.join(D, 'land.json')
+        _LAND_CACHE[D] = prep(unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in json.load(open(lf))]).buffer(15, join_style=2).buffer(-15, join_style=2)) if os.path.exists(lf) else None
+    L = _LAND_CACHE[D]
+    if L is None or len(line) < 2: return line
+    (x0, y0), (x1, y1) = line[0], line[-1]; dx, dy = x1 - x0, y1 - y0; n = math.hypot(dx, dy)
+    if n < 1: return line
+    dx, dy = dx / n, dy / n
+    def ext(px, py, ux, uy):
+        t = 0.0
+        while t < max_ext and not L.contains(Point(px + ux * t, py + uy * t)): t += step
+        return t + margin if t < max_ext else 0.0
+    ta = ext(x0, y0, -dx, -dy); tb = ext(x1, y1, dx, dy)
+    return [(x0 - dx * ta, y0 - dy * ta), (x1 + dx * tb, y1 + dy * tb)]
+
+
 def bridges_pass(ctx, D):
     B = ctx.H.get('bridges', []) or []
     if not B: return (0, 0)
     br = _backup(D, 'bridges'); upd = add = 0
     for s in B:
-        q = LineString(ctx.P.ring(s['line'])).buffer(float(s.get('w', 10)) / 2, cap_style=2)
+        ln = ctx.P.ring(s['line'])
+        if s.get('snap_land'): ln = _snap_to_land(ln, D, float(s.get('snap_land')) if not isinstance(s.get('snap_land'), bool) else 12.0)   # opt-in: i due capi arrivano sulla terra (il segno a mano era corto di 100+ m)
+        q = LineString(ln).buffer(float(s.get('w', 10)) / 2, cap_style=2)
         nm = (s.get('name') or '').strip().casefold(); hit = False
         for e in br:
             same = nm and (e.get('name') or '').strip().casefold() == nm
@@ -515,7 +536,11 @@ def water_clip_pass(ctx, D, hist, cfg):
     if not os.path.exists(lf): return hist, 0
     land = unary_union([(Polygon(r['ext'], r.get('holes', [])) if isinstance(r, dict) else Polygon(r)).buffer(0) for r in json.load(open(lf)) if len(r) >= 1]).buffer(lc, join_style=2).buffer(-lc, join_style=2)
     pl = prep(land); n = 0
+    ind = set(cfg.get('industrial') or []); thin = cfg.get('thin') or {}; rt = random.Random(4242)   # industrial: edifici 'ind' (palette capannoni in build_render); thin: {zona: frazione} scartata a caso (stessa regola di 'dropped', indici stabili)
     for b in hist:
+        if b.get('zone') in ind: b['ind'] = 1
+        if thin.get(b.get('zone')) and not b.get('yb_water') and b['y'] < 9000 and rt.random() < float(thin[b['zone']]):
+            b['yb_water'] = 'thinned'; b['y_orig'] = b['y']; b['d_orig'] = b.get('d'); b['y'] = 99998.0; b['d'] = 99999.0; n += 1; continue
         if b.get('yb_water') or len(b.get('r', [])) < 3 or b['y'] >= 9000: continue
         q = _poly(b['r'])
         if q.is_empty or q.area <= 0: continue
@@ -565,8 +590,16 @@ def build(story, D=None, seed=11, quiet=False):
             fj.append(e)
         json.dump(fj, open(os.path.join(D, 'fires.json'), 'w'))
     if H.get('floods'):   # piene: acqua fangosa sul DEM, vedi build_render.py (DATA/floods.json)
-        json.dump([{'name': f.get('name', 'flood'), 'r': ctx.P.ring(f['ring']), 'y': f['y'], 'y1': f.get('y1', f['y'] + 0.02), 'depth': f.get('depth', 1.0)}
-                   for f in H['floods']], open(os.path.join(D, 'floods.json'), 'w'))
+        fl_out = []
+        for f in H['floods']:
+            e = {'name': f.get('name', 'flood'), 'r': ctx.P.ring(f['ring']), 'y': f['y'], 'y1': f.get('y1', f['y'] + 0.02), 'depth': f.get('depth', 1.0)}
+            if f.get('cs'): e['cs'] = float(f['cs'])   # cella della griglia dell'acqua in build_render (default 30 m)
+            if f.get('smooth'):   # opt-in: bordo a gradini (anelli dalla griglia dell'origine) -> chiusura + apertura di 'smooth' m, poi semplifica
+                sm = float(f['smooth']); g = _poly(e['r']).buffer(sm, join_style=1).buffer(-2 * sm, join_style=1).buffer(sm, join_style=1).simplify(2.0)
+                for q in _polys(g):
+                    if q.area > 400: fl_out.append(dict(e, r=_ring_out(q)))
+            else: fl_out.append(e)
+        json.dump(fl_out, open(os.path.join(D, 'floods.json'), 'w'))
     nroads = roads_pass(ctx, D)
     nbr = bridges_pass(ctx, D)
     walls = walls_parts(ctx, random.Random(seed + 3))
