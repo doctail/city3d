@@ -1,13 +1,13 @@
 # QA pittsburgh
 
-Generato da `python -m kit.qa` il 2026-11-26 12:08. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-26 15:19. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
 | a) Story e fonti | PASS |
 | b) DATA | PASS |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | PASS |
+| e) Costo e schedule | WARN |
 
 ## a) Story e fonti
 
@@ -58,42 +58,42 @@ Generato da `python -m kit.qa` il 2026-11-26 12:08. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (8 s)
-  - oggetti citta' 2338, cambi in tutto il video 78128, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
+- **PASS** costo dei cambi (9 s)
+  - oggetti citta' 2338, cambi in tutto il video 78080, max in un fotogramma 1016 (~12 s), costo dei soli cambi ~0.26 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 163 m/s (limite 250), mediana 8
+  - 181 m/s (limite 250), mediana 7
 - **PASS** drone: accelerazione massima
-  - 103 m/s2 (limite 120), 99% 49
+  - 105 m/s2 (limite 120), 99% 54
 - **PASS** drone: jerk massimo
-  - 92 m/s3 (limite 200), 99% 34
+  - 140 m/s3 (limite 200), 99% 43
 - **PASS** drone: distanza minima da terreno e tetti
   - 222 m (soglia 24); dal solo terreno 222 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
-  - 0 tolte, 14 tenute, 0 solo sorvolate; hover 107 s, volo 454 s; 
+  - 0 tolte, 14 tenute, 0 solo sorvolate; hover 107 s, volo 483 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 9.4 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+  - v max in hover 9.6 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
 - **PASS** drone: voli con gli anni quasi fermi
   - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1731 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1686 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
-- **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 13.9 s (97-111 s)
+- **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
+  - vuoto massimo 16.0 s (38-54 s); 2 oltre 15 s: 38-54, 54-70
 - **PASS** ritmo: anni/s per minuto
-  - 0:00  3.81 | 1:00  0.83 | 2:00  0.50 | 3:00  0.39 | 4:00  0.37 | 5:00  0.38 | 6:00  0.41 | 7:00  0.63 | 8:00  0.28 | 9:00  0.02
+  - 0:00  4.15 | 1:00  0.57 | 2:00  0.72 | 3:00  0.38 | 4:00  0.39 | 5:00  0.37 | 6:00  0.38 | 7:00  0.41 | 8:00  0.51 | 9:00  0.41 | 10:00  0.01
 - **PASS** 14 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)
 - **PASS** evento forte entro 45 s
-  - primo a 15.7 s
+  - primo a 16.0 s
 
 ## Immagini
 
