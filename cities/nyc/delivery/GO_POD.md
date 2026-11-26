@@ -116,7 +116,7 @@ che esegue `kit_city.py nyc` (tempi HUD/titolo/fine dallo schedule), `sfx_kit.py
 - `montaggio/labels_nyc.json` NON esiste: l'overlay uscirebbe senza etichette sui monumenti. Prima del render overlay va generato (`montaggio/labels_cam.py` + `labs_nyc.json`, che esiste) da un agente, altrimenti e' una scelta da registrare.
 - `kit_city` avvisa: years di prova a 7.839 fotogrammi (si risolve con il `years.json` vero) e `city.est_until` assente (usa 1800: la popolazione prima e' mostrata con "~").
 - Overlay: 13.306 fotogrammi (554,4 s). Il render ne fa 13.305: nel montaggio `-shortest` chiude alla durata piu' corta.
-- Controlli R13 sull'overlay vero (fermo immagine a ogni inizio capitolo, ogni cartello, primi 12 s, ultimi 15 s): da fare dopo, NON fatti.
+- Controlli R13 sull'overlay vero: FATTI (26/11), vedi `MONTAGGIO.md`. `labels_nyc.json` generato, `est_until` 1790 [Guessing: primo censimento], overlay e audio prodotti in `out/`; overlay 41 MB diviso in due file.
 
 
 ## Note dalla prova generale (PROVA_GENERALE.md, 24/11)

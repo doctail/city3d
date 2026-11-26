@@ -2,7 +2,7 @@
 
 **20/11/2026 update: chapter times now follow the Lyon/Marseille rule (t_in of the chapter card, VII at its first card); full paste-ready delivery in `delivery/CONSEGNA_YOUTUBE.md`, Reddit/distribution/press in `delivery/REDDIT_DISTRIBUZIONE.md`, montage in `delivery/MONTAGGIO.md`, thumbnail in `delivery/COPERTINE.md`.**
 
-Chapter times (old rule, superseded) were computed from the current direction (`schedule_nyc.json`, regenerated 20/11/2026, video length 9:14, i.e. 554 s = cards-based pacing): the second at which the year counter first reaches the chapter year after the 1609 rewind. They are for the schedule, NOT yet for a final render: recompute with the same rule if the schedule changes. First chapter 0:00, no cold open (R14).
+Chapter times (24/11/2026): confirmed against the pod's real `years.json` (identical to the schedule, max difference 0.0 years); the delivery rule is the one in `delivery/CONSEGNA_YOUTUBE.md` (chapter card `t_in`, VII at its first card). First chapter 0:00, no cold open (R14). The block below is the final one.
 Status tags: every date in the description comes from `story.json` sources S1-S76 (Wikipedia pages fetched 18/11/2026); [Likely]/[Guessing] items are listed in `NOTE_STORIA.md`.
 
 ## Title (<= 100 characters)
