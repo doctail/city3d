@@ -34,8 +34,8 @@ const oneLine = (t) => { t = String(t || '').trim(); if (t.length <= 96) return 
   if (t.length <= 125) return t;
   const cl = [...t.matchAll(/[,;]\s/g)].map((m) => m.index).filter((i) => i >= 45 && i <= 110); return cl.length ? t.slice(0, cl[cl.length - 1]) + '.' : t.slice(0, t.lastIndexOf(' ', 110)) + '...'; };
 // cartello compatto: in basso al centro, sopra la timeline; max 900 px; titolo oro 30 px + una riga 22 px
-const CardM = ({e, k}) => (<div style={{position: 'absolute', left: 0, right: 0, bottom: 96, display: 'flex', justifyContent: 'center', opacity: k, transform: `translateY(${(1 - k) * 8}px)`}}>
-  <div style={{maxWidth: 900, boxSizing: 'border-box', padding: '12px 28px 14px', borderRadius: 12, background: 'rgba(12,14,16,0.84)', borderLeft: `5px solid ${e.sober ? GREY : ACC}`, boxShadow: '0 4px 22px rgba(0,0,0,0.35)', textAlign: 'left'}}>
+const CardM = ({e, k}) => (<div style={{position: 'absolute', left: 0, right: 0, bottom: 96, paddingRight: 80, boxSizing: 'border-box', display: 'flex', justifyContent: 'flex-end', opacity: k, transform: `translateY(${(1 - k) * 8}px)`}}>
+  <div style={{maxWidth: 860, boxSizing: 'border-box', padding: '12px 28px 14px', borderRadius: 12, background: 'rgba(12,14,16,0.84)', borderLeft: `5px solid ${e.sober ? GREY : ACC}`, boxShadow: '0 4px 22px rgba(0,0,0,0.35)', textAlign: 'left'}}>
     <div style={{font: '900 30px Montserrat', color: e.sober ? GREY : ACC, lineHeight: 1.15}}>{e.date} <span style={{opacity: 0.8}}>·</span> {e.title}</div>
     {e.lines && e.lines.length ? <div style={{font: '500 22px Montserrat', color: INK, lineHeight: 1.3, marginTop: 6}}>{oneLine(e.lines[0])}</div> : null}
   </div></div>);
@@ -82,7 +82,7 @@ const SourcesCard = ({e, k, brand}) => { const n = Math.ceil(e.items.length / 2)
   </AbsoluteFill>); };
 
 // ---- dati della citta' (tutto da cfg) ----
-const popAt = (C, y) => { const P = C.POP; for (let i = 1; i < P.length; i++) if (y <= P[i][0]) { const [a, pa] = P[i - 1], [b, pb] = P[i]; const t = (y - a) / (b - a); return Math.exp(Math.log(pa) + (Math.log(pb) - Math.log(pa)) * t); } return P[P.length - 1][1]; };
+const popAt = (C, y) => { const P = C.POP; for (let i = 1; i < P.length; i++) if (y <= P[i][0]) { const [a, pa] = P[i - 1], [b, pb] = P[i]; const t = (y - a) / (b - a); if (pa <= 0 || pb <= 0) return Math.max(0, pa + (pb - pa) * t); return Math.exp(Math.log(pa) + (Math.log(pb) - Math.log(pa)) * t); } return P[P.length - 1][1]; };
 const eraAt = (C, y) => [...C.ERAS].reverse().find((e) => y >= e[0]) || C.ERAS[0];
 const fmtPop = (p) => { const q = p > 1e4 ? 100 : 10; return Math.round(p / q) * q; };
 const fitSize = (text, width, max, ls = 6) => Math.min(max, Math.floor((width / Math.max(1, text.length) - ls) / 0.8));
@@ -140,7 +140,7 @@ const Stop = ({EV, cfg, s}) => { const tok = mkTok(cfg.tok_exclude);
   // se in alto a sinistra c'e' gia' la didascalia dello stesso fatto (stesse parole chiave), il titolo della sosta non si ripete
   const cp = EV.didascalie.find((c) => s >= c.t_in && s < c.t_out); if (cp && tok(cp.title).some((w) => tok(e.title).includes(w))) return null;
   const k = Math.min(1, (s - e.t_in) / 0.5, (e.t_out - s) / 0.5);
-  return (<div style={{position: 'absolute', left: 900, width: 860, bottom: 132, textAlign: 'center', opacity: k, transform: `translateY(${(1 - k) * 16}px)`}}>
+  return (<div style={{position: 'absolute', left: 980, width: 860, bottom: 132, textAlign: 'right', opacity: k, transform: `translateY(${(1 - k) * 16}px)`}}>
     <div style={{display: 'inline-block', padding: '16px 34px', borderRadius: 14, background: 'rgba(12,14,16,0.62)', borderBottom: `4px solid ${ACC}`}}>
       <div style={{font: '900 44px Montserrat', color: INK, textShadow: SH, lineHeight: 1.12, textWrap: 'balance'}}>{e.title}</div>
       {e.sub ? <div style={{font: '700 26px Montserrat', letterSpacing: 4, color: ACC, textShadow: SH, marginTop: 8}}>{e.sub.toUpperCase()}</div> : null}
@@ -186,7 +186,7 @@ const Label = ({LABELS, LAB_END, area, name, f, k, i = 0, year, cap, cfg}) => { 
   const [x, y, z] = p; const [xa, xb, ya, yb] = area; if (z <= 0 || x < xa || x > xb || y < ya || y > yb) return null;
   const up = (92 + 64 * i) * k;
   // se il cartellino coprirebbe la didascalia in alto a sinistra, il filo va verso il basso; se anche sotto c'e' l'HUD, non si mostra
-  const down = cap && x - 110 < 800 && y - up - 52 < 330;
+  const down = (cap && x - 110 < 800 && y - up - 52 < 330) || (x + 200 > 1480 && y - up - 52 < 270);   // 2nd: il cartellino non copre il riquadro popolazione in alto a destra
   if (down && (y + up + 60 > yb || (x - 110 < 620 && y + up + 60 > 760))) return null;
   return (<div style={{position: 'absolute', left: x, top: y, opacity: k}}>
     <div style={{position: 'absolute', left: -7, top: -7, width: 14, height: 14, borderRadius: 7, background: ACC, boxShadow: '0 0 0 3px rgba(0,0,0,0.45)'}} />

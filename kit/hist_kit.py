@@ -510,18 +510,19 @@ def landphases(ctx, objs=()):
             out.append({'r': ring, 'from': a, 'to': b, 'c': 'site', 'name': nm}); continue
         by = collections.defaultdict(list)
         for pt, y in ins: by[math.ceil(y / 10) * 10].append(pt.buffer(10, quad_segs=2))
-        cum = Polygon()
+        cum = Polygon(); seal = bool(w.get('seal')); emitted = []   # seal (opt-in, NYC shore strips): no 0.5 m gaps between the pieces, none dropped: while inactive the strip is one clean block of water
+        def _sealed(p_): return p_.buffer(0.15, join_style=2) if seal else p_
         for u in sorted(by):
             g = unary_union(by[u]).buffer(6, quad_segs=2).buffer(-6, quad_segs=2)
             new = g.difference(cum).intersection(poly); cum = cum.union(g)
             for p_ in _polys(new):
                 if p_.area < 20: continue
-                t = max(a, u)
-                if t > a: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': min(t, b), 'c': 'field', 'name': nm})
-                if t < b: out.append({'r': _ring_out(p_, 1), 'from': t, 'to': b, 'c': 'urban', 'name': nm})
-        rest = poly.difference(cum.buffer(0.5))
+                t = max(a, u); emitted.append(p_); q_ = _sealed(p_)
+                if t > a: out.append({'r': _ring_out(q_, 1), 'from': a, 'to': min(t, b), 'c': 'field', 'name': nm})
+                if t < b: out.append({'r': _ring_out(q_, 1), 'from': t, 'to': b, 'c': 'urban', 'name': nm})
+        rest = poly.difference(unary_union(emitted) if emitted else Polygon()) if seal else poly.difference(cum.buffer(0.5))
         for p_ in _polys(rest):
-            if p_.area >= 20: out.append({'r': _ring_out(p_, 1), 'from': a, 'to': b, 'c': 'field', 'name': nm})
+            if p_.area >= (1 if seal else 20): out.append({'r': _ring_out(_sealed(p_), 1), 'from': a, 'to': b, 'c': 'field', 'name': nm})
     return out
 
 

@@ -848,6 +848,16 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
         d0 = min(dcfg['open_dist'], 0.8 * dcfg['v_leg'] * s0['t0'])
         start = (s0['x'] + d0 * math.sin(az_r), s0['y'] + d0 * math.cos(az_r), dcfg['open_alt'], dcfg['open_speed'])
         ts_, P_, L_, dinfo = DK.fly(stays, DUR, year_at, dem, obst, cruise_fn, start, dcfg)
+        # 24 nov (NYC, owner: il rewind inquadrava il mare): regia.open_look = bersaglio (area:/xy:/monumento) guardato durante il rewind; peso 1 fino a open_look_hold s,
+        # poi raccordo (smoothstep) allo sguardo originale entro l'arrivo alla prima tappa. Posizione della camera invariata; dopo la prima tappa nulla cambia.
+        if R.get('open_look'):
+            olt = D.target(R['open_look'])
+            if olt is None: warn(f"regia.open_look: bersaglio {R['open_look']!r} non trovato")
+            else:
+                h_ = float(R.get('open_look_hold', 7.0)); e_ = float(R.get('open_look_end', stays[0]['t0']))
+                u_ = np.clip((np.asarray(ts_) - h_) / max(e_ - h_, 0.1), 0.0, 1.0); w_ = (1.0 - u_ * u_ * (3.0 - 2.0 * u_))[:, None]
+                Lo = np.array(L_, float); Lt = np.array([olt['x'], olt['y'], float(dem(olt['x'], olt['y']))])
+                L_ = (1.0 - w_) * Lo + w_ * Lt[None, :]
         L_ = DK.limit_pitch(ts_, P_, L_, dcfg['pitch_max'])
         LENS_MM = float(R.get('lens', 35)); cam = DK.cam_keys(ts_, P_, L_, LENS_MM); stays = dinfo['stays']   # 15 nov: obiettivo configurabile (regia.lens, default 35 mm)
         if tinfo['dropped']: warn(f"drone: {len(tinfo['dropped'])} soste senza posto diventano cartelli (peso minimo): " + '; '.join(f"{n_[:30]} ({n_[1]:.0f})" if False else n_[0][:30] for n_ in tinfo['dropped']))

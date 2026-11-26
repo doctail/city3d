@@ -1,6 +1,6 @@
-# New York: complete YouTube delivery (R7), 20/11/2026 (PROVISIONAL until the render)
+# New York: complete YouTube delivery (R7), 20/11/2026, chapters confirmed on the real render's years.json 24/11/2026
 
-First line: everything below is ready to paste EXCEPT what only the render can confirm: (1) chapter times come from `schedule_nyc.json` (554.4 s = 9:14), rule of Lyon/Marseille (chapter = `t_in` in `montaggio/eventi_nyc.json`, floored; VII moved to its first card 5:01.3 because VI-VII are only 8.8 s apart and YouTube needs 10 s; "Sources" = `sources_card.t_in` 546.4 s): recompute against the render's `years.json`; (2) cost: NOT measured on the pod (local CPU basis: 41.6 s per 1080p frame + 254 s scene build, not a pod figure). No cold open (R14). These chapter times REPLACE the ones in METADATA.md (that file used the year-counter rule; both are in the repo history). All gaps between entries are at least 11.4 s (checked by script).
+First line: everything below is ready to paste. Chapter times were recomputed on 24/11/2026 from the pod's real `years.json` (13,186 frames, the owner's upload `years_7.json`): the year at every frame is identical to the schedule's (max difference 0.0 years), so the times did not change (rule of Lyon/Marseille: chapter = `t_in` in `montaggio/eventi_nyc.json`, floored; VII moved to its first card 5:01.3 because VI-VII are only 8.8 s apart and YouTube needs 10 s; "Sources" = `sources_card.t_in` 546.4 s = 9:06). No cold open (R14): the times are the render's as is. All gaps between entries are at least 11.4 s. OPEN: the real cost of the pod is not measured here. Check on `nyc_full.mp4` that its duration is 554.4 s (9:14); `years.json` has 13,186 frames = 549.4 s, 120 frames (5.0 s) fewer than the schedule: if the video is shorter, the Sources card is cut and the final 9:06 chapter still holds (starts before 9:09).
 
 ## Title (60 characters)
 ```
@@ -129,7 +129,7 @@ Nueva York en 417 años: de la isla lenape de 1609 al horizonte de hoy. Cada edi
 ## Settings
 Category: Education or Film & Animation (as the other cities). Language: English. Not made for kids. Thumbnail: `cities/nyc/delivery/copertina/nyc_thumb_1609_now_1280x720.jpg`. Add subtitles/translated titles only if the owner wants (not requested). Do not mention the 9/11 count of victims or any figure the video does not carry.
 
-## What is still open (depends on the render)
-- Recompute the chapter times from `years.json` of the final render (same rule) and replace the block above.
-- Pinned frame check and overlay checks (R13) on the render: not possible locally.
+## What is still open
+- Chapters: done (confirmed on the real `years.json`, 24/11/2026). Nothing to recompute unless the video is not 554.4 s long.
+- R13 on the real overlay: done (see `delivery/MONTAGGIO.md`); the pinned-frame check on the real `nyc_full.mp4` is not possible here (the video is not in the repo).
 - Known visual limits (declared in `qa/CHANGES_final.txt`): Brooklyn Bridge without towers, 1776 burn scar empty until about 1795, angular NJ/Staten shore in the 1785-1795 flights.
