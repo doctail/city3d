@@ -777,6 +777,18 @@ if os.path.exists(f'{DATA}/roads.json'):
     log('strade', len(_rd))
 # ponti (DATA/bridges.json [{"r", "y"}]): impalcato rialzato sull'acqua, fianchi scuri
 def slabs(name, items, z0, z1, m_top, m_side, binw=2.0):
+    if ST.get('bridge_fix'):   # Pittsburgh (story style.bridge_fix): i ponti del kit e di OSM si sovrappongono (stessa quota): facce coincidenti = impalcato nero. Per anno si unisce tutto in un solo poligono e si toglie cio' che e' gia' coperto dagli anni precedenti.
+        _byy = {}
+        for ring_, yv in items:
+            try: _byy.setdefault(round(float(yv), 3), []).append(Polygon(ring_).buffer(0))
+            except Exception: pass
+        _seen = None; _it2 = []
+        for yv in sorted(_byy):
+            u_ = unary_union(_byy[yv]).buffer(0.3, join_style=2).buffer(-0.3, join_style=2)
+            q_ = u_ if _seen is None else u_.difference(_seen); _seen = u_ if _seen is None else _seen.union(u_)
+            for g_ in (q_.geoms if hasattr(q_, 'geoms') else [q_]):
+                if isinstance(g_, Polygon) and g_.area >= 5: _it2.append((list(g_.exterior.coords)[:-1], yv))
+        items = _it2
     groups = {}
     for ring, yv in items: groups.setdefault(int(yv // binw), []).append(ring)
     for k_, rings in sorted(groups.items()):
