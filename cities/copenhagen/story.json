@@ -307,6 +307,37 @@
   ],
   "city_overrides": {
    "hist": "hist_cph_kit"
+  },
+  "look": {
+   "palette": "cities/copenhagen/palette.json",
+   "water_color": [
+    "#0e4950",
+    "#17636b"
+   ],
+   "sun_color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "sky_horizon": [
+    0.78,
+    0.83,
+    0.9
+   ],
+   "exposure": -1.6,
+   "saturation": 1.5,
+   "rb_tol": 0.06,
+   "street_gain": 1.2,
+   "sky_tint": [
+    0.9,
+    0.97,
+    1.06
+   ]
+  },
+  "water_clip": {
+   "frac": 0.5,
+   "land_close": 15,
+   "note": "Shore = OSM modern land.json closed by 15 m + history.water phases (reclaimed land by year). Predecessors < 50% on land never shown (kit/hist_kit.py water_clip_pass)."
   }
  },
  "sources": {
