@@ -495,7 +495,14 @@
    "ground_tint": true,
    "saturation": 1.7,
    "street_gain": 1.3,
-   "rb_tol": 0.06
+   "rb_tol": 0.06,
+   "field_colors": [
+    "#565e43",
+    "#5c6146",
+    "#62644a",
+    "#68674e",
+    "#6e6b51"
+   ]
   }
  },
  "sources": {
