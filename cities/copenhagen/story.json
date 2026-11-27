@@ -7991,7 +7991,8 @@
      "S01",
      "S03"
     ],
-    "note": "Target moved from Christiansborg (built 1928) to the new landmark Absalon's Castle (R2: monument must exist before its hover)"
+    "note": "Target moved from Christiansborg (built 1928) to the new landmark Absalon's Castle (R2: monument must exist before its hover) regia 28/11: drone_d 650 m: apertura vicina al castello (a 1400 m era un punto in mezzo ai campi)",
+    "drone_d": 650
    },
    {
     "y0": 1479.41,
@@ -8379,7 +8380,7 @@
     ],
     "conf": "medium",
     "note": "The 1303 year is the importer's placement only; S01 gives the etymology, not a date: shown without a date",
-    "target": "area:[55.6745,12.5800,300]"
+    "target": "area:[55.6790,12.5870,300]"
    },
    {
     "y": 1368.0,
