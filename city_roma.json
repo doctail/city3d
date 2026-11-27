@@ -205,12 +205,14 @@
   "street_earth": "#8d8271"
  },
  "cover": {
+  "text_size": 86,
+  "text_rx": 960,
   "cam": [
-   -1022,
-   -6632,
-   3081,
-   -42,
-   -190,
+   -700,
+   -2300,
+   1000,
+   330,
+   -480,
    0
   ],
   "lens": 35,
@@ -218,7 +220,54 @@
    -753,
    2026
   ],
-  "night_years": []
+  "night_years": [],
+  "shots": [
+   {
+    "tag": "romulus",
+    "year": -753,
+    "cam": [
+     -700,
+     -2300,
+     1000,
+     330,
+     -480,
+     0
+    ],
+    "lens": 35,
+    "night": false,
+    "note": "DRAFT: Palatine, Forum valley and Colosseum site from the south-west, first-year frame (label 753 BC); same camera as NOW."
+   },
+   {
+    "tag": "imperial_120",
+    "year": 120,
+    "cam": [
+     1500,
+     -1700,
+     650,
+     520,
+     -560,
+     0
+    ],
+    "lens": 35,
+    "night": false,
+    "note": "DRAFT: Imperial Rome ~120 AD, Colosseum + Palatine + Forum from the south-east, extra frame for the contact sheet."
+   },
+   {
+    "tag": "now_day",
+    "year": 2026,
+    "cam": [
+     -700,
+     -2300,
+     1000,
+     330,
+     -480,
+     0
+    ],
+    "lens": 35,
+    "night": false,
+    "note": "same camera as the 753 BC frame, daylight (NOW, right half)"
+   }
+  ]
  },
  "shorts": [
   [
