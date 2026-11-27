@@ -1,6 +1,6 @@
 # Pittsburgh: consegna completa YouTube (19/11/2026) — canale "Ledger of Cities"
 
-Orari dallo schedule 26/11 (14.822 fotogrammi = 617,6 s = 10:17; da rifare con years.json del pod se differisce; ricavati da `montaggio/eventi_pittsburgh.json`, generati da `cities/pittsburgh/gen_consegna.py`). Regola: capitolo = t_in della carta - 2,8 s; carta/sosta = t_in; arrotondato per difetto; tutte le voci distano >= 10 s (verificato dallo script). Nessun cold open (R14): il video parte dal primo anno, un solo elenco di capitoli. Sources = 9:40. Gli orari valgono se il montaggio finale (overlay + audio) e' quello di `MONTAGGIO.md` (stessa durata del video del pod).
+Orari FINALI dal years.json vero del pod (14.822 fotogrammi = 617,6 s = 10:17; eventi rigenerati dagli stessi anni il 27/11: identici; ricavati da `montaggio/eventi_pittsburgh.json`, generati da `cities/pittsburgh/gen_consegna.py`). Regola: capitolo = t_in della carta - 2,8 s; carta/sosta = t_in; arrotondato per difetto; tutte le voci distano >= 10 s (verificato dallo script). Nessun cold open (R14): il video parte dal primo anno, un solo elenco di capitoli. Sources = 10:09. Gli orari valgono se il montaggio finale (overlay + audio) e' quello di `MONTAGGIO.md` (stessa durata del video del pod).
 
 
 ---
