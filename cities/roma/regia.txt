@@ -1,5 +1,5 @@
 Rome: regia automatica (kit/regia_kit.py)
-Camera drone: 22 tappe in hover (114.2 s) e voli (517.6 s), anni 16.14/s fra le voci, nessuno stacco; vmax 181.22, amax 114.89, jmax 112.03, clear_min 458.97, clear_ground_min 499.78
+Camera drone: 22 tappe in hover (114.2 s) e voli (517.6 s), anni 16.14/s fra le voci, nessuno stacco; vmax 181.22, amax 109.0, jmax 112.03, clear_min 458.97, clear_ground_min 497.46
 Durata 11:00.0  fotogrammi 15840  inquadrature 3  stacco medio ogni 220.0 s
 Musica: waking_monument  b_start None  notte None
 

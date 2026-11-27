@@ -1,6 +1,6 @@
 # QA roma
 
-Generato da `python -m kit.qa` il 2026-11-27 09:15. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-27 14:26. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -85,13 +85,13 @@ Generato da `python -m kit.qa` il 2026-11-27 09:15. Esito complessivo: **WARN**
 - **PASS** costo dei cambi (5 s)
   - oggetti citta' 1749, cambi in tutto il video 50842, max in un fotogramma 362 (~4 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 180 m/s (limite 250), mediana 26
+  - 180 m/s (limite 250), mediana 58
 - **PASS** drone: accelerazione massima
-  - 113 m/s2 (limite 120), 99% 61
+  - 107 m/s2 (limite 120), 99% 66
 - **PASS** drone: jerk massimo
-  - 109 m/s3 (limite 200), 99% 49
+  - 109 m/s3 (limite 200), 99% 54
 - **PASS** drone: distanza minima da terreno e tetti
-  - 459 m (soglia 24); dal solo terreno 500 m
+  - 459 m (soglia 24); dal solo terreno 497 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo
@@ -103,7 +103,7 @@ Generato da `python -m kit.qa` il 2026-11-27 09:15. Esito complessivo: **WARN**
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1546 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1559 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso

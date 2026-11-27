@@ -3200,9 +3200,11 @@
    "alt_max": 500,
    "d_min": 1400,
    "drift_vmax": 8,
+   "leg_vmin": 50,
    "rho_max": 1400
   },
   "lens": 32,
+  "card_look": 2.0,
   "fin_d": 1500,
   "fin_at": "area:[41.8990,12.4700,300]"
  },
@@ -3294,6 +3296,7 @@
    {
     "y": -329.0,
     "title": "Circus Maximus",
+    "target": "area:[41.8861,12.4851,350]",
     "lines": [
      "Permanent wooden starting stalls are built in 329 BC.",
      "Later it spans 621 by 118 meters, the largest stadium in ancient Rome."
@@ -3380,6 +3383,7 @@
    {
     "y": -44,
     "title": "The Ides of March",
+    "target": "area:[41.8956,12.4768,250]",
     "lines": [
      "Julius Caesar is assassinated by a group of senators."
     ],
@@ -3741,6 +3745,7 @@
    {
     "y": 536.9,
     "title": "Byzantine Rome",
+    "target": "area:[41.8892,12.4869,350]",
     "lines": [
      "General Belisarius recaptures the city for the Eastern Empire on 9 December."
     ],
@@ -4062,6 +4067,7 @@
    {
     "y": 1861,
     "title": "Italy is united",
+    "target": "area:[41.9028,12.4964,400]",
     "lines": [
      "The Kingdom of Italy forms with Florence as its temporary capital."
     ],

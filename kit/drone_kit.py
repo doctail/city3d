@@ -28,7 +28,7 @@ DEFAULTS = dict(vmax=250.0, amax=120.0, jmax=200.0, clear=30.0,   # limiti (m/s,
                 v_leg=150.0, t_leg_min=3.5, rate_cap=30.0, pace=0.003, rho_max=600.0,   # media di tratto (picco ~1,65x), tratto minimo (s), anni/s massimi fra le voci, raggio massimo di hover su aree
                 open_dist=2000.0, open_alt=900.0, open_speed=40.0,
                 lead_s=3.0, sigma=0.7, sigma_look=0.9,
-                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0, drift_vmax=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
+                cruise_k=0.35, cruise_min=250.0, alt_max=200.0, pitch_max=90.0, d_min=0.0, drift_vmax=0.0, leg_vmin=0.0)   # 15 nov: quota di crociera = cruise_k x raggio citta' + 200 (min cruise_min), quota massima di hover su edifici = alt_max (Lione: 0,6 / 450 / 350, "camera troppo vicina")
 
 
 def cfg_of(R):
@@ -130,10 +130,11 @@ def _hermite(p0, p1, m0, m1, n=300):
     return h00 * np.asarray(p0) + h10 * np.asarray(m0) + h01 * np.asarray(p1) + h11 * np.asarray(m1)
 
 
-def _leg_curve(X, tX, E, dE, app_len):
-    """Curva di tratto: X (tangente tX) -> [A = E - app_len*dE] -> E (tangente dE). Ritorna punti (N,2) e lunghezze cumulate."""
+def _leg_curve(X, tX, E, dE, app_len, via=None):
+    """Curva di tratto: X (tangente tX) -> [V = punto di arco, opz.] -> [A = E - app_len*dE] -> E (tangente dE). Ritorna punti (N,2) e lunghezze cumulate."""
     X, E = np.array(X, float), np.array(E, float)
     pts = [X]; tans = [np.array(tX)]
+    if via is not None: pts.append(np.array(via[0], float)); tans.append(np.array(via[1], float))
     if app_len > 30:
         pts.append(E - app_len * np.array(dE)); tans.append(np.array(dE))
     pts.append(E); tans.append(np.array(dE))
@@ -149,10 +150,10 @@ def _s5(x):
     x = np.clip(x, 0.0, 1.0); return x ** 3 * (10 - 15 * x + 6 * x * x)
 
 
-def _speed_profile(Tf, L, v0, v1, ts):
+def _speed_profile(Tf, L, v0, v1, ts, ramp_s=0.0):
     """Progresso s(t) su [0, Tf]: velocita' nel TEMPO v(t) = lineare(v0, v1) + A * trapezio liscio (salita quintica 30%, discesa 40%:
     picco nella seconda meta'); A si ricava in forma chiusa dalla lunghezza L. Ritorna (s(ts), velocita' di picco)."""
-    tau = np.linspace(0, 1, 2001); bump = _s5(tau / 0.30) * _s5((1.0 - tau) / 0.40); base = v0 + (v1 - v0) * tau
+    tau = np.linspace(0, 1, 2001); bump = _s5(tau / (min(0.30, ramp_s / Tf) if ramp_s > 0 else 0.30)) * _s5((1.0 - tau) / (min(0.40, 1.3 * ramp_s / Tf) if ramp_s > 0 else 0.40)); base = v0 + (v1 - v0) * tau
     A = (L / Tf - np.trapezoid(base, tau)) / np.trapezoid(bump, tau)
     v = np.maximum(base + A * bump, 3.0)
     S = np.concatenate([[0], np.cumsum((v[1:] + v[:-1]) / 2 * np.diff(tau))]) * Tf
@@ -211,7 +212,15 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         chord = math.hypot(H[0] - Xprev[0], H[1] - Xprev[1])
         app = float(np.clip(0.45 * chord, 0, 1600)) if chord > 450 else 0.0
         tX0 = tprev if tprev is not None else din
-        C, cs = _leg_curve(Xprev, tX0, H, din, app); Lc = float(cs[-1])
+        via = None
+        if cfg.get('leg_vmin', 0.0) > 0 and tb - ta > 4.0:   # 27 nov (Roma): opt-in (default 0 = invariato). Tratto lungo nel tempo ma corto in distanza (cartelli + corsa degli anni): la camera restava quasi ferma;
+            # si aggiunge un arco laterale (via-point) cosi' che la velocita' media del tratto sia >= leg_vmin m/s. Nessuna sosta aggiunta: i tempi restano quelli.
+            _, cs0 = _leg_curve(Xprev, tprev if tprev is not None else din, H, din, app); need = cfg['leg_vmin'] * (tb - ta)
+            if cs0[-1] < need:
+                ch_ = max(chord, 1.0); u_ = _unit((H[0] - Xprev[0], H[1] - Xprev[1])); nv = (-u_[1] * (1 if k % 2 == 0 else -1), u_[0] * (1 if k % 2 == 0 else -1))
+                b_ = min(math.sqrt(max((need / 2) ** 2 - (ch_ / 2) ** 2, 0.0)), 900.0)
+                via = (((Xprev[0] + H[0]) / 2 + b_ * nv[0], (Xprev[1] + H[1]) / 2 + b_ * nv[1]), u_)
+        C, cs = _leg_curve(Xprev, tX0, H, din, app, via); Lc = float(cs[-1])
         a_E = float(s['static'][2]) if s.get('static') else s['alt']
         zc = float(cruise_fn(year_at(0.5 * (ta + tb)))); a_X = aprev
         zc_e = max(min(zc, max(a_X, a_E) + 0.30 * Lc), min(a_X, a_E))
@@ -222,7 +231,7 @@ def fly(stays, DUR, year_at, dem, obst, cruise_fn, start, cfg):
         if app > 0: nodes_s.append(s2); nodes_z.append(max(zA_e, a_E))
         nodes_s.append(Lc); nodes_z.append(a_E)
         zf = PchipInterpolator(nodes_s, nodes_z)
-        sp, vpk = _speed_profile(max(tb - ta, 0.5), Lc, vprev, 0.0, ts[m] - ta)
+        sp, vpk = _speed_profile(max(tb - ta, 0.5), Lc, vprev, 0.0, ts[m] - ta, 5.0 if cfg.get('leg_vmin', 0.0) > 0 else 0.0)   # leg_vmin attivo: rampe di accelerazione/frenata di <= 5 s (anziche' 30%/40% del tratto)
         Pref[m, 0] = np.interp(sp, cs, C[:, 0]); Pref[m, 1] = np.interp(sp, cs, C[:, 1]); AGL[m] = zf(sp)
         if a_E >= max(zA, zc) * 1.2 and a_E > a_X:      # arrivo su un hover ALTO (aree, citta'): salita dolce nel tempo, non a fine tratto
             AGL[m] = a_X + (a_E - a_X) * _s5((ts[m] - ta) / max(tb - ta, 0.5))

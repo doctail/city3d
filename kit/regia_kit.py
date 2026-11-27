@@ -861,6 +861,23 @@ def run(story, data_dir=None, out_dir=None, regia_dir=None, music=None, quiet=Fa
                 Lo = np.array(L_, float); Lt = np.array([olt['x'], olt['y'], float(dem(olt['x'], olt['y']))])
                 L_ = (1.0 - w_) * Lo + w_ * Lt[None, :]
         L_ = DK.limit_pitch(ts_, P_, L_, dcfg['pitch_max'])
+        # 27 nov (Roma): regia.card_look = s (opt-in, default assente = invariato). Ogni cartello CON `target` che scorre durante un tratto di volo (non su un hover; i raccordi non entrano negli hover; bersagli sotto la camera oltre pitch_max+3 gradi esclusi), applicato DOPO limit_pitch (prima, la perturbazione faceva scattare limit_pitch)
+        # porta lo sguardo sul suo bersaglio per la durata del cartello, con raccordi di s secondi (smoothstep); posizione della camera invariata.
+        if R.get('card_look'):
+            r_ = max(float(R['card_look']), 0.3); tt_ = np.asarray(ts_); Wc = np.zeros(len(tt_)); LTc = np.zeros((len(tt_), 3)); ncl = 0
+            ss_ = lambda x: np.clip(x, 0.0, 1.0) ** 2 * (3.0 - 2.0 * np.clip(x, 0.0, 1.0))
+            for t0_, t1_, s_ in SOSTA_T:
+                if not s_.get('_card') or s_.get('_on_hover') or s_.get('_tg') is None: continue
+                a_, b_ = float(t0_), float(t1_)
+                for h0_, h1_ in [(x_['t0'], x_['t1']) for x_ in stays]:   # niente sguardo da cartello vicino/dentro un hover
+                    if b_ > h0_ - r_ and a_ < h0_: b_ = h0_ - r_
+                    if a_ < h1_ + r_ and b_ > h1_: a_ = h1_ + r_
+                if b_ - a_ < 1.0: continue
+                tg3_ = np.array([s_['_tg']['x'], s_['_tg']['y'], float(dem(s_['_tg']['x'], s_['_tg']['y']))]); mk_ = (tt_ >= a_) & (tt_ <= b_)
+                if mk_.any() and (np.degrees(np.arctan2(P_[mk_, 2] - tg3_[2], np.hypot(P_[mk_, 0] - tg3_[0], P_[mk_, 1] - tg3_[1]))).max() > dcfg['pitch_max'] + 3.0): continue   # bersaglio troppo sotto la camera (inclinazione > pitch_max + 3): niente sguardo da cartello
+                w_ = ss_((tt_ - (a_ - r_)) / r_) * (1.0 - ss_((tt_ - b_) / r_)); tg_ = s_['_tg']
+                LTc += w_[:, None] * np.array([tg_['x'], tg_['y'], float(dem(tg_['x'], tg_['y']))]); Wc += w_; ncl += 1
+            if ncl: L_ = np.asarray(L_, float) * (1.0 - np.minimum(Wc, 1.0))[:, None] + LTc / np.maximum(Wc, 1.0)[:, None]
         LENS_MM = float(R.get('lens', 35)); cam = DK.cam_keys(ts_, P_, L_, LENS_MM); stays = dinfo['stays']   # 15 nov: obiettivo configurabile (regia.lens, default 35 mm)
         if tinfo['dropped']: warn(f"drone: {len(tinfo['dropped'])} soste senza posto diventano cartelli (peso minimo): " + '; '.join(f"{n_[:30]} ({n_[1]:.0f})" if False else n_[0][:30] for n_ in tinfo['dropped']))
         dst = DK.stats_of(ts_, P_, L_, dem, obst, year_at)
