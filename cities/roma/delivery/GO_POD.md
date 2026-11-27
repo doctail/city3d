@@ -1,8 +1,8 @@
 # Roma: GO POD (BOZZA, 27/11/2026). NON ancora dato: serve il GO scritto della chat e il merge su main. Un solo messaggio da incollare.
 
-Commit di render: `4d35e46` (oggi SOLO su `claude/prossima-citta-finire-2o3ryt`; il GO vale quando `main` lo contiene: merge pulito verificato con `git merge-tree`, main ha 2 commit in piu' che toccano solo `kit/regia_check.py` e `montaggio/years_pittsburgh.json`). Lo script sotto si ferma da solo se main non contiene 4d35e46.
+Commit di render: `fd2ea51` = `origin/main` (28/11, verificato con `git rev-parse origin/main`; contiene schedule_roma.json, city_roma.json, kit e story.json attuali; i commit successivi di questo branch toccano solo `cities/roma/gate/` e questo file). Il GO vale se `main` contiene fd2ea51. Lo script sotto si ferma da solo se manca o se i file di render sono cambiati dopo.
 Verificato sui file (27/11): POD PARITY 0 differenze (md5 di tutti i json/npz, rieseguita); `run.sh` per Roma esegue `hist_kit build` + `restore_after_build.sh` (esiste, idempotente); start_year -753, field_colors 5 toni oliva, look/palette, 22 soste, incendi `destroy` (455-547 d.C.), 4 ponti, 1 area d'acqua (Isola Tiberina) attivi in `story.json` e `city_roma.json`; costo cambi 50.842 (~0,17 h, budget 1 h); edifici su acqua: 0 fino al 1800, 1 nel 1900-1950, 3 nel 2000-2026 (residui, da accettare). Schedule: 660 s, 15.840 fotogrammi (%05d), niente notte, lens 32.
-Aperti (WARN, non FAIL): regia_check (versione di main) 0 tempi morti ma 12 tratti con camera ferma >8 s e anno +10 (8-22 s e' il rewind iniziale; 26-51 s +177 a; 99-133 s +148 a; 470-496 s +173 a; Pittsburgh ne aveva 3); corridoi/aree vuote del gate sezione d (accettate in story); densita' 1500 (11.352 vs 10.110 nel 2026). Cover: in `city_roma.json` ora 3 scatti (753 a.C., 120 d.C., 2026); il gate va rilanciato dopo il merge per vedere la bozza.
+Aperti (WARN, non FAIL): regia_check (versione di main) 0 tempi morti ma 12 tratti con camera ferma >8 s e anno +10 (8-22 s e' il rewind iniziale; 26-51 s +177 a; 99-133 s +148 a; 470-496 s +173 a; Pittsburgh ne aveva 3); corridoi/aree vuote del gate sezione d (accettate in story); densita' 1500 (11.352 vs 10.110 nel 2026). Cover: in `city_roma.json` ora 3 scatti (753 a.C., 120 d.C., 2026); gate rilanciato il 27/11 sul commit fd2ea51: bozza miniatura `753 BC > NOW` coerente con i fotogrammi.
 
 ## Costo [Guessing: Roma NON misurata sul pod]
 Base Marsiglia: 0,8 s/fotogramma x 15.840 = ~3,5 h + ~30 min di scena = ~4 h, ~0,5 EUR/h = ~2 EUR. Roma ha 92.562 edifici e 1.706 monumenti: se i primi fotogrammi superano ~2 s, fermare e scrivere in chat. Picco RAM locale ~11 GB per processo (A40 30 GB: un solo processo).
@@ -18,8 +18,8 @@ nvidia-smi --query-gpu=name --format=csv,noheader | grep -q A40 && [ "$CU" = "0"
 [ -d city3d ] || git clone -q https://github.com/doctail/city3d
 cd city3d && git fetch -q origin && git checkout -q main && git pull -q --ff-only
 git log -1 --oneline
-git merge-base --is-ancestor 4d35e46 HEAD || { echo "STOP: manca il commit 4d35e46 (main non e' stato unito o codice vecchio)."; exit 3; }
-git diff --quiet 4d35e46 HEAD -- run.sh build_render.py kit ':!kit/regia_check.py' schedule_roma.json city_roma.json cities/roma/story.json hist_roma.py data_roma_src || { echo "STOP: i file di render sono cambiati dopo il GO. Chiedere in chat."; exit 4; }
+git merge-base --is-ancestor fd2ea51 HEAD || { echo "STOP: manca il commit fd2ea51 (main non e' stato unito o codice vecchio)."; exit 3; }
+git diff --quiet fd2ea51 HEAD -- run.sh build_render.py kit ':!kit/regia_check.py' schedule_roma.json city_roma.json cities/roma/story.json hist_roma.py data_roma_src || { echo "STOP: i file di render sono cambiati dopo il GO. Chiedere in chat."; exit 4; }
 rm -rf out/full 2>/dev/null
 nohup env CITY=roma NOCOVER=1 bash run.sh full > /workspace/city3d/full.log 2>&1 &
 sleep 2; echo "lanciato, pid $!"

@@ -1,6 +1,6 @@
 # QA roma
 
-Generato da `python -m kit.qa` il 2026-11-27 14:08. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-27 15:00. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
