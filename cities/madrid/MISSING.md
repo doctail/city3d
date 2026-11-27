@@ -25,5 +25,5 @@ Ogni citazione in `sources` e' stata verificata a macchina come sottostringa del
 ## Da fare prima del GO (nulla di questo e' stato eseguito)
 1. `kit build madrid` + `qa madrid` (b-e): densita', corridoi, costo, camera (R2: distanza mediana >= 1.200 m, inclinazione < 45 gradi, nessun volo >= 12 s sotto 0,4 anni/s).
 2. Contact sheet locale di 24 fotogrammi 860-2026 (R15) e copertine (860 > NOW) con bpy.
-3. Ponti: `bridges` dei dati non fatti (qui solo 2 landmark `bridge_arches`).
+3. Ponti: `history.bridges` compilato (7 voci, S50-S53: Rey 1816, Franceses 1862, Princesa 1909/1929, Praga c.1925/1952/1968). Segovia e Toledo NON duplicati: restano solo i landmark `bridge_arches`. Linee agganciate alla banda d'acqua di land.json (+-150 m), Overpass/OSM non raggiungibile (nessuna geometria OSM letta), conf low/medium; Franceses = latitudine stimata; Princesa/Praga: date di demolizione non esatte. Da verificare in locale con la build.
 4. Consegna R7: `cities/madrid/METADATA.md` (descrizione, capitoli con orari finali, tag, commento fissato EN+ES, Reddit, distribuzione, nota stampa, comando di montaggio), `kit pack`.

@@ -710,6 +710,30 @@
    "url": "https://en.wikipedia.org/wiki/Madrid",
    "title": "Wikipedia EN, Madrid",
    "quote": "It had a population of over 3.4 million in the city proper in 2025"
+  },
+  "S50": {
+   "url": "https://es.wikipedia.org/wiki/Puente_del_Rey",
+   "title": "Wikipedia ES, Puente del Rey",
+   "quote": "El puente fue edificado en el año 1816 por orden del Rey Fernando VII",
+   "fetched": "2026-11-27"
+  },
+  "S51": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_los_Franceses",
+   "title": "Wikipedia ES, Puente de los Franceses",
+   "quote": "El puente se realizó entre los años 1860 y 1862",
+   "fetched": "2026-11-27"
+  },
+  "S52": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_la_Princesa",
+   "title": "Wikipedia ES, Puente de la Princesa",
+   "quote": "El puente, fabricado en hierro, fue inaugurado en 1909 por el rey Alfonso XIII … En 1929 este puente fue derribado y sustituido por otro de hormigón … En 2006 el puente de hormigón fue derribado",
+   "fetched": "2026-11-27"
+  },
+  "S53": {
+   "url": "https://es.wikipedia.org/wiki/Puente_de_Praga",
+   "title": "Wikipedia ES, Puente de Praga",
+   "quote": "El puente original construido alrededor de 1925 … En el momento de la inauguración del segundo puente, en 1952 … las autoridades determinaron la demolición del puente en 1964 … la inauguración formal de la tercera versión del puente tuvo lugar el 11 de octubre de 1968",
+   "fetched": "2026-11-27"
   }
  },
  "history": {
@@ -1557,7 +1581,155 @@
    }
   ],
   "water": [],
-  "bridges": []
+  "bridges": [
+   {
+    "name": "Puente del Rey",
+    "line": [
+     [
+      40.4205,
+      -3.72258
+     ],
+     [
+      40.4205,
+      -3.72188
+     ]
+    ],
+    "w": 14,
+    "y": 1816,
+    "d": null,
+    "src": [
+     "S50"
+    ],
+    "conf": "medium",
+    "note": "[Certain] built 1816 by order of Fernando VII (S50); widened in 1931 (same source, not modelled). [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Puente de los Franceses (railway viaduct)",
+    "line": [
+     [
+      40.4345,
+      -3.73711
+     ],
+     [
+      40.4345,
+      -3.73641
+     ]
+    ],
+    "w": 10,
+    "y": 1862,
+    "d": null,
+    "src": [
+     "S51"
+    ],
+    "conf": "low",
+    "note": "[Certain] built 1860-1862 for the Norte railway (S51); opening year taken as the end of the works. [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation. Location only \"near the Estacion del Norte\" in the source: latitude is an estimate."
+   },
+   {
+    "name": "Puente de la Princesa (iron, 1909)",
+    "line": [
+     [
+      40.3975,
+      -3.71191
+     ],
+     [
+      40.3975,
+      -3.7112
+     ]
+    ],
+    "w": 12,
+    "y": 1909,
+    "d": 1929,
+    "src": [
+     "S52"
+    ],
+    "conf": "medium",
+    "note": "[Certain] works began 1901, inaugurated 1909, demolished 1929 and replaced by a concrete bridge (S52); exact demolition date not given, 1929 is the year of the replacement. [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Puente de la Princesa (concrete, 1929)",
+    "line": [
+     [
+      40.3975,
+      -3.71191
+     ],
+     [
+      40.3975,
+      -3.7112
+     ]
+    ],
+    "w": 18,
+    "y": 1929,
+    "d": 2006,
+    "src": [
+     "S52"
+    ],
+    "conf": "medium",
+    "note": "[Certain] concrete bridge 18 m wide, demolished 2006 for Madrid Rio (S52); the 2006 replacement (platform) is not modelled as a separate deck. [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Puente de Praga / Matadero (c.1925)",
+    "line": [
+     [
+      40.3938,
+      -3.70295
+     ],
+     [
+      40.3938,
+      -3.70225
+     ]
+    ],
+    "w": 12,
+    "y": 1925,
+    "d": 1952,
+    "src": [
+     "S53"
+    ],
+    "conf": "low",
+    "note": "S53: \"alrededor de 1925\", used for cattle to the Matadero; replaced by the second bridge in 1952 (the source does not say whether it was demolished then). [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Puente de Praga (second, 1952)",
+    "line": [
+     [
+      40.3938,
+      -3.70295
+     ],
+     [
+      40.3938,
+      -3.70225
+     ]
+    ],
+    "w": 14,
+    "y": 1952,
+    "d": 1964,
+    "src": [
+     "S53"
+    ],
+    "conf": "low",
+    "note": "S53: inaugurated 1952, demolition decided in 1964 (works progressive while the third was built; 1964 is the start of the demolition, not a verified end). [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Puente de Praga (third, 1968)",
+    "line": [
+     [
+      40.3938,
+      -3.70295
+     ],
+     [
+      40.3938,
+      -3.70225
+     ]
+    ],
+    "w": 20,
+    "y": 1968.78,
+    "d": null,
+    "src": [
+     "S53"
+    ],
+    "conf": "medium",
+    "note": "S53: formal inauguration 11 October 1968 = 1968.78; later dismantled and reinaugurated for the M-30 burying works (not modelled). [Guessing] POSITION FLAGGED: line snapped to the water band of land.json (E-W cross-section at the approximate latitude), +-150 m; Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   }
+  ]
  },
  "landmarks": [
   {

@@ -1,6 +1,6 @@
 # QA madrid
 
-Generato da `python -m kit.qa` il 2026-11-19 11:51. Esito complessivo: **PASS**
+Generato da `python -m kit.qa` il 2026-11-27 17:46. Esito complessivo: **PASS**
 
 | Sezione | Esito |
 |---|---|
@@ -9,5 +9,5 @@ Generato da `python -m kit.qa` il 2026-11-19 11:51. Esito complessivo: **PASS**
 ## a) Story e fonti
 
 - **PASS** chiavi city
-- **PASS** 49 fonti
+- **PASS** 53 fonti
 - **PASS** date con fonte
