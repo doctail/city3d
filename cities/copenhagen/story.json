@@ -306,7 +306,8 @@
    }
   ],
   "city_overrides": {
-   "hist": "hist_cph_kit"
+   "hist": "hist_cph_kit",
+   "ships": "cities/copenhagen/traffic.json"
   },
   "look": {
    "palette": "cities/copenhagen/palette.json",
@@ -7979,7 +7980,7 @@
    {
     "y0": 1167.0,
     "y1": 1169.0,
-    "dur": 6.0,
+    "dur": 8.0,
     "caption": "Absalon builds his castle (1167)",
     "shot": "medium",
     "target": "Absalon's Castle",
@@ -7995,7 +7996,7 @@
    {
     "y0": 1479.41,
     "y1": 1479.41,
-    "dur": 5.0,
+    "dur": 7.0,
     "caption": "University of Copenhagen (1479)",
     "shot": "medium",
     "target": "area:[55.6800,12.5712,300]",
@@ -8009,8 +8010,8 @@
    },
    {
     "y0": 1606.0,
-    "y1": 1612.5,
-    "dur": 5.0,
+    "y1": 1610.5,
+    "dur": 7.0,
     "caption": "Rosenborg Castle (1606)",
     "shot": "medium",
     "target": "Rosenborg Castle",
@@ -8019,12 +8020,13 @@
     "fx": "build",
     "src": [
      "S07"
-    ]
+    ],
+    "note": "regia 28/11: y1 1610,5 (prima 1612,5) cosi' il volo verso Borsen resta sopra 0,4 anni/s (R2)"
    },
    {
-    "y0": 1618.8,
+    "y0": 1620.0,
     "y1": 1625.6,
-    "dur": 6.0,
+    "dur": 8.0,
     "caption": "Børsen and its dragon spire (1620-25)",
     "shot": "medium",
     "target": "Børsen",
@@ -8033,12 +8035,13 @@
     "fx": "hammer",
     "src": [
      "S05"
-    ]
+    ],
+    "note": "regia 28/11: y0 1620 (S05: \"Construction of the building began in 1620\"), prima 1618,8"
    },
    {
     "y0": 1636.8,
     "y1": 1642.6,
-    "dur": 5.0,
+    "dur": 7.0,
     "caption": "The Round Tower (1637-42)",
     "shot": "medium",
     "target": "Rundetårn",
@@ -8052,7 +8055,7 @@
    {
     "y0": 1670.8,
     "y1": 1683.0,
-    "dur": 5.0,
+    "dur": 7.0,
     "caption": "Nyhavn is dug (1670-75)",
     "shot": "medium",
     "target": "Nyhavn",
@@ -8067,7 +8070,7 @@
    {
     "y0": 1728.79,
     "y1": 1729.05,
-    "dur": 10.0,
+    "dur": 12.0,
     "caption": "The Great Fire (20-23 October 1728)",
     "shot": "medium",
     "target": "area:[55.67990,12.57356,500]",
@@ -8082,7 +8085,7 @@
    {
     "y0": 1752.3,
     "y1": 1760.5,
-    "dur": 6.0,
+    "dur": 8.0,
     "caption": "Frederiksstaden: Amalienborg (1750-60)",
     "shot": "medium",
     "target": "Amalienborg Palace",
@@ -8096,8 +8099,8 @@
    },
    {
     "y0": 1794.14,
-    "y1": 1794.4,
-    "dur": 3.5,
+    "y1": 1795.7,
+    "dur": 5.5,
     "caption": "Christiansborg burns (1794)",
     "shot": "medium",
     "target": "Christiansborg I",
@@ -8107,26 +8110,13 @@
     "src": [
      "S04",
      "S09"
-    ]
-   },
-   {
-    "y0": 1795.42,
-    "y1": 1795.7,
-    "dur": 4.0,
-    "caption": "Fire of 1795 (June 1795)",
-    "shot": "medium",
-    "target": "area:[55.67818,12.57786,500]",
-    "conf": "high",
-    "weight": 6,
-    "fx": "fire",
-    "src": [
-     "S22"
-    ]
+    ],
+    "note": "regia 28/11: y1 esteso al 1795,7 (fuoco del 1795, S22) per tenere il volo successivo sopra 0,4 anni/s"
    },
    {
     "y0": 1807.66,
     "y1": 1807.95,
-    "dur": 14.0,
+    "dur": 12.0,
     "caption": "British bombardment (September 1807)",
     "shot": "medium",
     "target": "area:[55.68153,12.57388,500]",
@@ -8138,23 +8128,9 @@
     ]
    },
    {
-    "y0": 1809.5,
-    "y1": 1820.0,
-    "dur": 5.0,
-    "caption": "Christiansborg rises again (1803-28)",
-    "shot": "medium",
-    "target": "Christiansborg II",
-    "conf": "high",
-    "weight": 3,
-    "fx": "build",
-    "src": [
-     "S04"
-    ]
-   },
-   {
     "y0": 1842.8,
     "y1": 1845.0,
-    "dur": 4.0,
+    "dur": 6.0,
     "caption": "Tivoli opens (1843)",
     "shot": "medium",
     "target": "Tivoli Gardens",
@@ -8167,8 +8143,8 @@
    },
    {
     "y0": 1876.5,
-    "y1": 1883.5,
-    "dur": 4.0,
+    "y1": 1881.5,
+    "dur": 6.0,
     "caption": "Marble Church rebuilt (1874-94)",
     "shot": "medium",
     "target": "Marble Church",
@@ -8178,40 +8154,12 @@
     "src": [
      "S08"
     ],
-    "note": "Importer caption said 1874: S08 sells the ruin in 1874; opening 1894"
+    "note": "regia 28/11: y1 1881,5 (prima 1883,5): i cartelli dopo il 1884,5 non salgono sull'hover della chiesa"
    },
    {
-    "y0": 1884.74,
-    "y1": 1885.0,
-    "dur": 3.5,
-    "caption": "Christiansborg burns again (1884)",
-    "shot": "medium",
-    "target": "Christiansborg II",
-    "conf": "high",
-    "weight": 3,
-    "fx": "fire",
-    "src": [
-     "S04"
-    ]
-   },
-   {
-    "y0": 1886.5,
-    "y1": 1891.6,
-    "dur": 4.0,
-    "caption": "The great dome (1894)",
-    "shot": "medium",
-    "target": "Marble Church",
-    "conf": "high",
-    "weight": 3,
-    "fx": "bell",
-    "src": [
-     "S08"
-    ]
-   },
-   {
-    "y0": 1893.5,
-    "y1": 1905.5,
-    "dur": 5.0,
+    "y0": 1895.0,
+    "y1": 1903.0,
+    "dur": 7.0,
     "caption": "City Hall (1892-1905)",
     "shot": "medium",
     "target": "City Hall",
@@ -8220,12 +8168,13 @@
     "fx": "bell",
     "src": [
      "S13"
-    ]
+    ],
+    "note": "regia 28/11: y0 1895 (S13: lavori 1892-1905): il cartello \"The dome\" (Marble Church, 1894) scorre nel volo con lo sguardo sulla chiesa e non sull'hover del Municipio"
    },
    {
     "y0": 1917.5,
-    "y1": 1928.5,
-    "dur": 5.0,
+    "y1": 1925.5,
+    "dur": 7.0,
     "caption": "Christiansborg III and its tower (1907-28)",
     "shot": "medium",
     "target": "Christiansborg",
@@ -8234,26 +8183,13 @@
     "fx": "build",
     "src": [
      "S04"
-    ]
-   },
-   {
-    "y0": 1929.0,
-    "y1": 1934.5,
-    "dur": 5.0,
-    "caption": "Grundtvig Church (1921-40)",
-    "shot": "medium",
-    "target": "Grundtvig Church",
-    "conf": "high",
-    "weight": 4,
-    "fx": "bell",
-    "src": [
-     "S18"
-    ]
+    ],
+    "note": "regia 28/11: y1 1925,5 (prima 1928,5): il cartello Grundtvig (1929) scorre nel volo con lo sguardo sulla chiesa"
    },
    {
     "y0": 1958.2,
     "y1": 1960.4,
-    "dur": 4.5,
+    "dur": 6.5,
     "caption": "SAS Royal, the first skyscraper in Copenhagen (1960)",
     "shot": "medium",
     "target": "SAS Royal Hotel",
@@ -8266,24 +8202,9 @@
     "note": "Importer caption said Denmark first skyscraper: S19 says first in Copenhagen"
    },
    {
-    "y0": 1995.8,
-    "y1": 2000.6,
-    "dur": 5.0,
-    "caption": "The Øresund Bridge (2000)",
-    "shot": "medium",
-    "target": "Øresund Bridge",
-    "conf": "high",
-    "weight": 6,
-    "fx": "water",
-    "src": [
-     "S17"
-    ],
-    "note": "SUSPECT R2: 20 km from the other targets, long flights at under 0.4 years/s (see report)"
-   },
-   {
-    "y0": 2004.6,
+    "y0": 2004.95,
     "y1": 2005.3,
-    "dur": 4.0,
+    "dur": 6.0,
     "caption": "The Opera House (2005)",
     "shot": "medium",
     "target": "Opera House",
@@ -8293,27 +8214,12 @@
     "src": [
      "S14"
     ],
-    "note": "regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
+    "note": "regia 28/11: y0 2004,95 (il corpo del Teatro dell Opera compare dal 2004,8: monumento visibile nel suo hover)"
    },
    {
-    "y0": 2007.8,
-    "y1": 2008.6,
-    "dur": 4.0,
-    "caption": "Royal Playhouse (2008)",
-    "shot": "medium",
-    "target": "Royal Playhouse",
-    "conf": "medium",
-    "weight": 3,
-    "fx": "chime",
-    "src": [
-     "S15"
-    ],
-    "note": "Opening year not in the fetched page text; S15 only gives the 2008 RIBA award | regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
-   },
-   {
-    "y0": 2019.5,
-    "y1": 2020.3,
-    "dur": 5.0,
+    "y0": 2019.75,
+    "y1": 2019.9,
+    "dur": 7.0,
     "caption": "CopenHill (2019)",
     "shot": "medium",
     "target": "CopenHill",
@@ -8323,7 +8229,7 @@
     "src": [
      "S16"
     ],
-    "note": "regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
+    "note": "regia 28/11: hover 2019,75-2019,9 (apertura 4-6 ott 2019, S16; corpo dal 2019,8): i cartelli del 2022 scorrono nel volo finale"
    }
   ],
   "rmin": 1.0,
@@ -8355,9 +8261,39 @@
    {
     "caption": "Our Saviour's spiral spire (1749-52)",
     "why": "regia 27/11: volo con anni quasi fermi (<0,4 anni/s) fra soste a pochi anni di distanza (R2); resta il cartello"
+   },
+   {
+    "caption": "Fire of 1795 (June 1795)",
+    "why": "regia 28/11: volo 1794->1795 sotto 0,4 anni/s (R2); il fuoco del 1795 resta nel cartello \"The second fire\" e nell'hover di Christiansborg (anni fino a 1795.7)"
+   },
+   {
+    "caption": "Christiansborg rises again (1803-28)",
+    "why": "regia 28/11: volo 1808->1809,5 sotto 0,4 anni/s (R2); restano i cartelli Christiansborg II (1803, 1809, 1828)"
+   },
+   {
+    "caption": "Christiansborg burns again (1884)",
+    "why": "regia 28/11: volo 1883,5->1884,7 sotto 0,4 anni/s (R2); resta il cartello \"It burns again\" (Christiansborg II) come volo con sguardo sul bersaglio"
+   },
+   {
+    "caption": "The great dome (1894)",
+    "why": "regia 28/11: volo 1885->1886,5 e 1891,6->1893,5 sotto 0,4 anni/s (R2); resta il cartello \"The dome\""
+   },
+   {
+    "caption": "Grundtvig Church (1921-40)",
+    "why": "regia 28/11: tappa a 5 km dal resto (volo di 50 s, anni quasi fermi); resta il cartello"
+   },
+   {
+    "caption": "The Øresund Bridge (2000)",
+    "why": "regia 28/11: tappa a 5 km dal resto (volo di 50 s, anni quasi fermi); resta il cartello"
+   },
+   {
+    "caption": "Royal Playhouse (2008)",
+    "why": "regia 28/11: volo 2005->2007,8 sotto 0,4 anni/s (R2); resta il cartello \"The Royal Playhouse\" (Playhouse inquadrata dal volo)"
    }
   ],
-  "card_look": 2.0
+  "card_look": 2.0,
+  "open_look": "Absalon's Castle",
+  "open_look_hold": 12.0
  },
  "montaggio": {
   "style": "mattia",
@@ -8391,6 +8327,32 @@
      "Absalon's Castle"
     ],
     "target": "Absalon's Castle"
+   },
+   {
+    "y": 1186.0,
+    "title": "Valby",
+    "lines": [
+     "The name Valby is first recorded in 1186, as Walbu."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S43"
+    ],
+    "conf": "high",
+    "target": "area:[55.6650,12.5170,500]"
+   },
+   {
+    "y": 1186.8,
+    "title": "Brønshøj",
+    "lines": [
+     "The village of Brønshøj is first mentioned in a letter dated October 21, 1186."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S44"
+    ],
+    "conf": "high",
+    "target": "area:[55.7125,12.5010,500]"
    },
    {
     "y": 1254.0,
@@ -8431,7 +8393,7 @@
      "S01"
     ],
     "conf": "high",
-    "target": "area:[55.6762,12.5788,300]"
+    "target": "area:[55.6780,12.5715,300]"
    },
    {
     "y": 1370.0,
@@ -8450,18 +8412,31 @@
     "target": "Absalon's Castle"
    },
    {
+    "y": 1397.0,
+    "title": "The Kalmar Union",
+    "lines": [
+     "In 1397 Denmark, Sweden and Norway are joined under a single monarch."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S25"
+    ],
+    "conf": "high",
+    "target": "area:[55.6805,12.5735,300]"
+   },
+   {
     "y": 1416.0,
     "title": "Capital of Denmark",
     "lines": [
      "Eric of Pomerania moves his seat to Copenhagen Castle. By about 1416 the city is the capital."
     ],
-    "hold_s": 5.6,
+    "hold_s": 8.6,
     "src": [
      "S01",
      "S02"
     ],
     "conf": "high",
-    "target": "area:[55.6760,12.5800,300]"
+    "target": "Absalon's Castle"
    },
    {
     "y": 1479.41,
@@ -8477,6 +8452,19 @@
     "target": "area:[55.6800,12.5712,300]"
    },
    {
+    "y": 1523.0,
+    "title": "The Kalmar Union ends",
+    "lines": [
+     "In 1523 Gustav Vasa is elected king of Sweden, ending the union with Denmark and Norway that began in 1397."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S25"
+    ],
+    "conf": "high",
+    "target": "area:[55.6760,12.5795,350]"
+   },
+   {
     "y": 1536.5,
     "title": "A year-long siege",
     "lines": [
@@ -8488,6 +8476,19 @@
     ],
     "conf": "high",
     "target": "area:[55.6755,12.5650,350]"
+   },
+   {
+    "y": 1537.0,
+    "title": "Denmark and Norway",
+    "lines": [
+     "From 1536-37 Denmark and Norway form a personal union. It lasts until 1814."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S26"
+    ],
+    "conf": "high",
+    "target": "area:[55.6800,12.5900,400]"
    },
    {
     "y": 1606.0,
@@ -8506,6 +8507,32 @@
     "target": "Rosenborg Castle"
    },
    {
+    "y": 1618.0,
+    "title": "Bastions at Christianshavn",
+    "lines": [
+     "From 1618 to 1623 Christian IV raises earthen embankments with five bastions toward Amager."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S38"
+    ],
+    "conf": "high",
+    "target": "area:[55.6700,12.5990,400]"
+   },
+   {
+    "y": 1619.0,
+    "title": "The first bridge to Christianshavn",
+    "lines": [
+     "Christian IV builds the first bridge between Copenhagen and Christianshavn in 1618-20."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S47"
+    ],
+    "conf": "high",
+    "target": "area:[55.6735,12.5890,250]"
+   },
+   {
     "y": 1620.0,
     "title": "Børsen",
     "lines": [
@@ -8520,6 +8547,19 @@
      "Børsen"
     ],
     "target": "Børsen"
+   },
+   {
+    "y": 1631.0,
+    "title": "Nyboder",
+    "lines": [
+     "Construction of Nyboder begins in 1631. In 1647 it is absorbed by the fortified city."
+    ],
+    "hold_s": 8.5,
+    "src": [
+     "S40"
+    ],
+    "conf": "high",
+    "target": "area:[55.6890,12.5885,350]"
    },
    {
     "y": 1637.51,
@@ -8538,6 +8578,19 @@
     "target": "Rundetårn"
    },
    {
+    "y": 1651.0,
+    "title": "Frederiksberg",
+    "lines": [
+     "The history of Frederiksberg goes back to 2 June 1651."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S42"
+    ],
+    "conf": "high",
+    "target": "area:[55.6740,12.5366,600]"
+   },
+   {
     "y": 1659.12,
     "title": "The Swedish assault",
     "lines": [
@@ -8548,7 +8601,8 @@
      "S24",
      "S02"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "area:[55.6700,12.5990,500]"
    },
    {
     "y": 1660.5,
@@ -8561,7 +8615,8 @@
      "S26"
     ],
     "conf": "medium",
-    "note": "S26 gives the year 1660 only"
+    "note": "S26 gives the year 1660 only",
+    "target": "area:[55.6760,12.5795,350]"
    },
    {
     "y": 1672.0,
@@ -8580,6 +8635,45 @@
     "target": "Nyhavn"
    },
    {
+    "y": 1690.0,
+    "title": "Holmen",
+    "lines": [
+     "From 1690 Holmen is the main base of the Royal Danish Navy."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S41"
+    ],
+    "conf": "high",
+    "target": "area:[55.6850,12.5995,500]"
+   },
+   {
+    "y": 1695.0,
+    "title": "Church of Our Saviour",
+    "lines": [
+     "The Church of Our Saviour is inaugurated in 1695, 14 years after work began in 1682."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S10"
+    ],
+    "conf": "high",
+    "target": "Church of Our Saviour"
+   },
+   {
+    "y": 1700.0,
+    "title": "Frederiksberg Palace",
+    "lines": [
+     "In 1700-03 Frederik IV builds a palace on top of the Frederiksberg hill."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S42"
+    ],
+    "conf": "high",
+    "target": "area:[55.6806,12.5236,400]"
+   },
+   {
     "y": 1711.5,
     "title": "The plague",
     "lines": [
@@ -8593,7 +8687,21 @@
     ],
     "conf": "high",
     "sober": true,
-    "note": "S33 gives 12,000-23,000 dead of about 60,000: range, so \"about a third\""
+    "note": "S33 gives 12,000-23,000 dead of about 60,000: range, so \"about a third\"",
+    "target": "area:[55.6760,12.5760,800]"
+   },
+   {
+    "y": 1712.0,
+    "title": "A new wooden bridge",
+    "lines": [
+     "In 1712 a new wooden bridge is built in the same place as the first link to Christianshavn."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S47"
+    ],
+    "conf": "high",
+    "target": "area:[55.6735,12.5890,250]"
    },
    {
     "y": 1728.8,
@@ -8606,7 +8714,8 @@
      "S21"
     ],
     "conf": "high",
-    "note": "Importer said 15,000 homeless: not in S21, replaced by 20% of the population"
+    "note": "Importer said 15,000 homeless: not in S21, replaced by 20% of the population",
+    "target": "area:[55.6799,12.5736,500]"
    },
    {
     "y": 1733.5,
@@ -8623,6 +8732,32 @@
      "Christiansborg I"
     ],
     "target": "Christiansborg I"
+   },
+   {
+    "y": 1745.0,
+    "title": "The largest palace in the north",
+    "lines": [
+     "Most of the palace complex of Christiansborg is completed in 1745. It is the largest palace in northern Europe at the time."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "target": "Christiansborg I"
+   },
+   {
+    "y": 1749.0,
+    "title": "Kastrup",
+    "lines": [
+     "In 1749 Jacob Fortling obtains a royal license to establish a lime plant in Kastrup."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S45"
+    ],
+    "conf": "high",
+    "target": "area:[55.6340,12.6400,600]"
    },
    {
     "y": 1751.5,
@@ -8674,6 +8809,19 @@
     "target": "Marble Church"
    },
    {
+    "y": 1789.0,
+    "title": "Frederiksholm",
+    "lines": [
+     "On Holmen, Frederiksholm has reached its current size by 1789."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S41"
+    ],
+    "conf": "high",
+    "target": "area:[55.6850,12.5995,500]"
+   },
+   {
     "y": 1794.15,
     "title": "The palace burns",
     "lines": [
@@ -8700,7 +8848,21 @@
     "src": [
      "S22"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "Christiansborg I"
+   },
+   {
+    "y": 1801.0,
+    "title": "100,975 residents",
+    "lines": [
+     "Population figures for 1801 give Copenhagen 100,975 people."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[55.6760,12.5795,350]"
    },
    {
     "y": 1801.25,
@@ -8712,7 +8874,21 @@
     "src": [
      "S01"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "area:[55.6895,12.6070,600]"
+   },
+   {
+    "y": 1803.0,
+    "title": "Christiansborg II begins",
+    "lines": [
+     "Hansen starts building the second Christiansborg in 1803, in a French Empire style."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "target": "Christiansborg II"
    },
    {
     "y": 1807.67,
@@ -8726,23 +8902,8 @@
     ],
     "conf": "high",
     "sober": true,
-    "note": "Importer said three nights: not in S23, removed"
-   },
-   {
-    "y": 1809.5,
-    "title": "Christiansborg II",
-    "lines": [
-     "Hansen builds a second palace in a French Empire style, 1803 to 1828."
-    ],
-    "hold_s": 5.0,
-    "src": [
-     "S04"
-    ],
-    "conf": "high",
-    "labels": [
-     "Christiansborg II"
-    ],
-    "target": "Christiansborg II"
+    "note": "Importer said three nights: not in S23, removed",
+    "target": "area:[55.6760,12.5780,800]"
    },
    {
     "y": 1814.04,
@@ -8755,7 +8916,34 @@
      "S37",
      "S26"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "area:[55.6760,12.5795,350]"
+   },
+   {
+    "y": 1828.0,
+    "title": "Christiansborg II is finished",
+    "lines": [
+     "The second Christiansborg is finished in 1828."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "target": "Christiansborg II"
+   },
+   {
+    "y": 1840.0,
+    "title": "120,819 residents",
+    "lines": [
+     "Population figures for 1840 give Copenhagen 120,819 people."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[55.6760,12.5795,350]"
    },
    {
     "y": 1843.62,
@@ -8783,7 +8971,8 @@
     "src": [
      "S31"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "Christiansborg II"
    },
    {
     "y": 1852.0,
@@ -8796,7 +8985,21 @@
      "S01"
     ],
     "conf": "medium",
-    "note": "\"Early 1850s\" in S01; 1852.0 is the importer's placement"
+    "note": "\"Early 1850s\" in S01; 1852.0 is the importer's placement",
+    "target": "area:[55.6800,12.5620,500]"
+   },
+   {
+    "y": 1871.0,
+    "title": "Refshaleøen",
+    "lines": [
+     "Burmeister & Wain establish a shipyard on Refshaleøen in 1871."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S54"
+    ],
+    "conf": "high",
+    "target": "area:[55.6935,12.6100,500]"
    },
    {
     "y": 1876.5,
@@ -8815,19 +9018,6 @@
     "target": "Marble Church"
    },
    {
-    "y": 1880.0,
-    "title": "Nørrebro and Vesterbro",
-    "lines": [
-     "New districts rise for people moving in from the provinces. The city grows from 120,000 in 1840 to 400,000 by 1901."
-    ],
-    "hold_s": 5.6,
-    "src": [
-     "S01"
-    ],
-    "conf": "high",
-    "note": "Importer said \"population triples in 50 years\": S01 says 120,000 (1840) to 400,000 (1901)"
-   },
-   {
     "y": 1884.74,
     "title": "It burns again",
     "lines": [
@@ -8842,6 +9032,46 @@
      "Christiansborg II"
     ],
     "target": "Christiansborg II"
+   },
+   {
+    "y": 1886.0,
+    "title": "Nørrebro and Vesterbro",
+    "lines": [
+     "New districts rise for people moving in from the provinces. The city grows from 120,000 in 1840 to 400,000 by 1901."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01"
+    ],
+    "conf": "high",
+    "note": "regia 28/11: anno 1880 -> 1886 (volo, non hover della chiesa); S01 non data il passaggio",
+    "target": "area:[55.6790,12.5500,1200]"
+   },
+   {
+    "y": 1888.0,
+    "title": "Ruins of Christiansborg",
+    "lines": [
+     "After the fire of 1884 the ruins of the second Christiansborg stay in place for 23 years."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "target": "Christiansborg II"
+   },
+   {
+    "y": 1890.0,
+    "title": "H. C. Andersens Boulevard",
+    "lines": [
+     "West Boulevard, now H. C. Andersens Boulevard, is laid out in 1890 after the Western Rampart is removed."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S57"
+    ],
+    "conf": "high",
+    "target": "area:[55.6735,12.5675,300]"
    },
    {
     "y": 1894.63,
@@ -8869,7 +9099,21 @@
     "src": [
      "S02"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "area:[55.6770,12.5780,900]"
+   },
+   {
+    "y": 1905.3,
+    "title": "Housing on Islands Brygge",
+    "lines": [
+     "From 1905 residential buildings are built on the inland parts of the new harbor land at Islands Brygge."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S55"
+    ],
+    "conf": "high",
+    "target": "area:[55.6610,12.5780,500]"
    },
    {
     "y": 1905.7,
@@ -8888,12 +9132,25 @@
     "target": "City Hall"
    },
    {
+    "y": 1907.0,
+    "title": "Christiansborg III begins",
+    "lines": [
+     "The ruins of Christiansborg stood for 23 years. The third palace is built from 1907 to 1928."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "target": "Christiansborg"
+   },
+   {
     "y": 1913.64,
     "title": "The Little Mermaid",
     "lines": [
      "Too small to see from up here: 1.25 meters. Unveiled on 23 August 1913."
     ],
-    "hold_s": 5.0,
+    "hold_s": 8.5,
     "src": [
      "S20"
     ],
@@ -8936,6 +9193,32 @@
     "target": "Grundtvig Church"
    },
    {
+    "y": 1933.0,
+    "title": "Islands Brygge",
+    "lines": [
+     "Land is reclaimed in the harbor until 1933, when Islands Brygge reaches its current extent."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S55"
+    ],
+    "conf": "high",
+    "target": "area:[55.6610,12.5780,500]"
+   },
+   {
+    "y": 1937.0,
+    "title": "Knippelsbro",
+    "lines": [
+     "The fifth Knippelsbro, 115 meters long, is inaugurated in 1937."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S47"
+    ],
+    "conf": "high",
+    "target": "area:[55.6735,12.5890,250]"
+   },
+   {
     "y": 1940.27,
     "title": "Occupation",
     "lines": [
@@ -8947,7 +9230,8 @@
      "S02"
     ],
     "conf": "high",
-    "sober": true
+    "sober": true,
+    "target": "area:[55.6935,12.5985,500]"
    },
    {
     "y": 1943.65,
@@ -8960,7 +9244,8 @@
      "S02"
     ],
     "conf": "high",
-    "sober": true
+    "sober": true,
+    "target": "area:[55.6850,12.5995,600]"
    },
    {
     "y": 1945.22,
@@ -8975,6 +9260,19 @@
     "conf": "high",
     "sober": true,
     "note": "Importer said 86 children: S28 says 87 schoolchildren"
+   },
+   {
+    "y": 1954.0,
+    "title": "Langebro",
+    "lines": [
+     "The current Langebro replaces the temporary bridge in 1954."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "target": "area:[55.6685,12.5725,300]"
    },
    {
     "y": 1960.5,
@@ -9002,7 +9300,8 @@
     "src": [
      "S29"
     ],
-    "conf": "high"
+    "conf": "high",
+    "target": "area:[55.6737,12.6005,400]"
    },
    {
     "y": 2000.5,
@@ -9039,6 +9338,19 @@
     "target": "Opera House"
    },
    {
+    "y": 2006.7,
+    "title": "Bryggebroen",
+    "lines": [
+     "The Bryggebroen bridge opens to the public on 14 September 2006."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S50"
+    ],
+    "conf": "high",
+    "target": "area:[55.6643,12.5780,300]"
+   },
+   {
     "y": 2008.0,
     "title": "The Royal Playhouse",
     "lines": [
@@ -9054,6 +9366,45 @@
     ],
     "note": "Opening year not in the fetched page text",
     "target": "Royal Playhouse"
+   },
+   {
+    "y": 2014.49,
+    "title": "Cykelslangen",
+    "lines": [
+     "The Cykelslangen, designed by Dissing+Weitling, opens to the public on 28 June 2014."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S52"
+    ],
+    "conf": "high",
+    "target": "area:[55.6630,12.5655,300]"
+   },
+   {
+    "y": 2016.5,
+    "title": "Inderhavnsbroen",
+    "lines": [
+     "The Inderhavnsbroen opens to the public on 7 July 2016."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S49"
+    ],
+    "conf": "high",
+    "target": "area:[55.6810,12.5945,300]"
+   },
+   {
+    "y": 2019.0,
+    "title": "Lille Langebro",
+    "lines": [
+     "The pedestrian and cycling bridge Lille Langebro is completed in 2019."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S48"
+    ],
+    "conf": "high",
+    "target": "area:[55.6690,12.5735,300]"
    },
    {
     "y": 2019.75,
@@ -9077,12 +9428,52 @@
     "lines": [
      "Today the harbor has 13 official swimming zones and three harbor baths."
     ],
-    "hold_s": 5.0,
+    "hold_s": 5.1,
     "src": [
      "S01"
     ],
     "conf": "medium",
-    "note": "S01 states this as \"now\" (page fetched 2026-11); year placement 2022 is a guess"
+    "note": "S01 states this as \"now\" (page fetched 2026-11); year placement 2022 is a guess",
+    "target": "area:[55.6648,12.5775,400]"
+   },
+   {
+    "y": 2022.0,
+    "title": "644,431 residents",
+    "lines": [
+     "Population figures for 2022 give Copenhagen 644,431 people."
+    ],
+    "hold_s": 8.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[55.6770,12.5780,900]"
+   },
+   {
+    "y": 2025.0,
+    "title": "667,099 residents",
+    "lines": [
+     "On 1 January 2025 Copenhagen counts 667,099 people."
+    ],
+    "hold_s": 8.5,
+    "src": [
+     "S34"
+    ],
+    "conf": "high",
+    "target": "area:[55.6770,12.5780,900]"
+   },
+   {
+    "y": 2025.4,
+    "title": "1.4 million in the urban area",
+    "lines": [
+     "The urban population of Copenhagen is 1.4 million."
+    ],
+    "hold_s": 8.5,
+    "src": [
+     "S01"
+    ],
+    "conf": "medium",
+    "target": "area:[55.6770,12.5780,1500]"
    },
    {
     "y": 2026.0,

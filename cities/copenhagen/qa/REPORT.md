@@ -1,6 +1,6 @@
 # QA copenhagen
 
-Generato da `python -m kit.qa` il 2026-11-27 18:34. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-27 21:23. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -21,7 +21,7 @@ Generato da `python -m kit.qa` il 2026-11-27 18:34. Esito complessivo: **WARN**
 - **PASS** cartella DATA
   - data_copenhagen
 - **PASS** buildings.json
-  - 131938 voci
+  - 131817 voci
 - **PASS** roads.json
   - 128234 voci
 - **PASS** hist.json
@@ -31,7 +31,7 @@ Generato da `python -m kit.qa` il 2026-11-27 18:34. Esito complessivo: **WARN**
 - **PASS** landmarks.json
   - 657 voci
 - **PASS** dem.npz
-- **PASS** anni edifici (131938)
+- **PASS** anni edifici (131817)
   - senza anno 0, anno 0 (segnaposto): 0, dopo 2026: 0, prima di 1167 (compaiono all'inizio): 4, d<=y: 0, ring<3: 0
 - **PASS** hist (135503 predecessori)
   - senza y/d 0, d<y 0, nati dopo 2026: 0
@@ -49,25 +49,25 @@ Generato da `python -m kit.qa` il 2026-11-27 18:34. Esito complessivo: **WARN**
 - **PASS** Medieval city, band to 450 m nel 1800
   - 1640 edifici vivi (27/ha, copertura 42%) contro 814 (13/ha, copertura 67%) nel 2026: rapporto 2.01
 - **PASS** Medieval city, band to 650 m nel 1500
-  - 3699 edifici vivi (37/ha, copertura 43%) contro 1118 (11/ha, copertura 57%) nel 2026: rapporto 3.31
+  - 3698 edifici vivi (37/ha, copertura 43%) contro 1117 (11/ha, copertura 57%) nel 2026: rapporto 3.31
 - **PASS** Medieval city, band to 650 m nel 1800
-  - 2626 edifici vivi (26/ha, copertura 41%) contro 1118 (11/ha, copertura 57%) nel 2026: rapporto 2.35
+  - 2625 edifici vivi (26/ha, copertura 41%) contro 1117 (11/ha, copertura 57%) nel 2026: rapporto 2.35
 - **PASS** Medieval city, band to 900 m nel 1800
-  - 3057 edifici vivi (26/ha, copertura 39%) contro 1214 (10/ha, copertura 53%) nel 2026: rapporto 2.52
+  - 3055 edifici vivi (26/ha, copertura 39%) contro 1212 (10/ha, copertura 53%) nel 2026: rapporto 2.52
 - **PASS** Medieval city, band to 1200 m nel 1800
-  - 3253 edifici vivi (25/ha, copertura 37%) contro 1276 (10/ha, copertura 50%) nel 2026: rapporto 2.55
+  - 3251 edifici vivi (25/ha, copertura 37%) contro 1274 (10/ha, copertura 50%) nel 2026: rapporto 2.55
 - **PASS** Medieval city, outer part (to 1620) nel 1800
-  - 3510 edifici vivi (25/ha, copertura 37%) contro 1331 (9/ha, copertura 49%) nel 2026: rapporto 2.64
+  - 3508 edifici vivi (25/ha, copertura 37%) contro 1329 (9/ha, copertura 49%) nel 2026: rapporto 2.64
 - **PASS** Ny-Kobenhavn (Christian IV extension: Rosenborg, Nyboder) nel 1800
   - 1442 edifici vivi (23/ha, copertura 25%) contro 567 (9/ha, copertura 28%) nel 2026: rapporto 2.54
 - **PASS** Nyhavn quarter nel 1800
-  - 565 edifici vivi (17/ha, copertura 23%) contro 242 (7/ha, copertura 27%) nel 2026: rapporto 2.33
+  - 561 edifici vivi (17/ha, copertura 23%) contro 242 (7/ha, copertura 27%) nel 2026: rapporto 2.32
 - **PASS** Frederiksstaden nel 1800
-  - 1641 edifici vivi (16/ha, copertura 26%) contro 681 (7/ha, copertura 27%) nel 2026: rapporto 2.41
+  - 1639 edifici vivi (16/ha, copertura 26%) contro 680 (7/ha, copertura 27%) nel 2026: rapporto 2.41
 - **PASS** Christianshavn nel 1800
-  - 2187 edifici vivi (20/ha, copertura 20%) contro 856 (8/ha, copertura 22%) nel 2026: rapporto 2.55
+  - 2185 edifici vivi (20/ha, copertura 20%) contro 854 (8/ha, copertura 22%) nel 2026: rapporto 2.56
 - **PASS** Holmen naval base nel 1800
-  - 1172 edifici vivi (11/ha, copertura 12%) contro 264 (2/ha, copertura 14%) nel 2026: rapporto 4.44
+  - 1162 edifici vivi (11/ha, copertura 12%) contro 262 (2/ha, copertura 14%) nel 2026: rapporto 4.44
 
 ## d) Corridoi vuoti
 
@@ -87,37 +87,37 @@ Generato da `python -m kit.qa` il 2026-11-27 18:34. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (9 s)
-  - oggetti citta' 3387, cambi in tutto il video 120655, max in un fotogramma 1084 (~13 s), costo dei soli cambi ~0.40 h (budget 1.0 h)
+- **PASS** costo dei cambi (8 s)
+  - oggetti citta' 3384, cambi in tutto il video 119700, max in un fotogramma 1084 (~13 s), costo dei soli cambi ~0.40 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
   - 230 m/s (limite 250), mediana 11
 - **PASS** drone: accelerazione massima
-  - 125 m/s2 (limite 120), 99% 69
+  - 125 m/s2 (limite 120), 99% 63
 - **PASS** drone: jerk massimo
-  - 83 m/s3 (limite 200), 99% 50
+  - 83 m/s3 (limite 200), 99% 46
 - **PASS** drone: distanza minima da terreno e tetti
-  - 448 m (soglia 24); dal solo terreno 500 m
+  - 469 m (soglia 24); dal solo terreno 500 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
-- **WARN** drone: soste tolte per tempo
-  - 3 tolte, 21 tenute, 0 solo sorvolate; hover 157 s, volo 475 s; The Øresund Bridge (2000) (1996); Grundtvig Church (1921-40) (1929); Christiansborg burns again (1885)
+- **PASS** drone: soste tolte per tempo
+  - 0 tolte, 17 tenute, 0 solo sorvolate; hover 137 s, volo 495 s; 
 - **PASS** drone: hover quasi fermo
-  - v max in hover 8.2 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
-- **WARN** drone: voli con gli anni quasi fermi
-  - 124-142 s (18 s, 0.35 anni/s) verso 'Børsen and its dragon spir'; 283-301 s (18 s, 0.06 anni/s) verso 'Fire of 1795 (June 1795)'; 338-356 s (18 s, 0.09 anni/s) verso 'Christiansborg rises again'; 414-432 s (18 s, 0.17 anni/s) verso 'The great dome (1894)'; 436-454 s (18 s, 0.11 anni/s) verso 'City Hall (1892-1905)'; 557-575 s (18 s, 0.14 anni/s) verso 'Royal Playhouse (2008)'  [uniscili: trasforma una delle due soste vicine in cartello]
+  - v max in hover 8.1 m/s (soglia 12; esclusi 30% o 1,5 s a ogni estremo)
+- **PASS** drone: voli con gli anni quasi fermi
+  - nessun volo >= 12 s sotto 0,4 anni/s (fuori da apertura e finale)  [uniscili: trasforma una delle due soste vicine in cartello]
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1472 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1553 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
 - **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 26.4 s (330-356 s); 14 oltre 15 s: 13-30, 100-118, 118-142, 142-166, 200-218, 254-272
+  - vuoto massimo 18.0 s (185-203 s); 2 oltre 15 s: 92-110, 185-203
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 10.97 | 1:00  4.00 | 2:00  0.87 | 3:00  1.52 | 4:00  0.73 | 5:00  0.37 | 6:00  1.12 | 7:00  0.50 | 8:00  1.32 | 9:00  0.43 | 10:00  0.11
-- **PASS** 24 soste ben formate
+  - 0:00 12.05 | 1:00  3.36 | 2:00  1.96 | 3:00  1.13 | 4:00  0.98 | 5:00  0.90 | 6:00  1.13 | 7:00  0.60 | 8:00  0.78 | 9:00  1.08 | 10:00  0.12
+- **PASS** 17 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
 - **PASS** soste e cartelli sugli anni della story (0,01)

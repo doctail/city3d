@@ -3,150 +3,108 @@
  "soste": [
   {
    "t_in": 12.9,
-   "t_out": 18.9,
+   "t_out": 20.9,
    "title": "Absalon builds his castle",
    "sub": "1167"
   },
   {
-   "t_in": 87.62,
-   "t_out": 92.82,
+   "t_in": 109.61,
+   "t_out": 116.61,
    "title": "University of Copenhagen",
    "sub": "1479"
   },
   {
-   "t_in": 118.34,
-   "t_out": 123.74,
+   "t_in": 150.53,
+   "t_out": 157.53,
    "title": "Rosenborg Castle",
    "sub": "1606"
   },
   {
-   "t_in": 141.74,
-   "t_out": 147.74,
+   "t_in": 176.54,
+   "t_out": 184.54,
    "title": "Børsen and its dragon spire",
    "sub": "1620-25"
   },
   {
-   "t_in": 165.74,
-   "t_out": 171.14,
+   "t_in": 203.27,
+   "t_out": 210.27,
    "title": "The Round Tower",
    "sub": "1637-42"
   },
   {
-   "t_in": 191.31,
-   "t_out": 196.61,
+   "t_in": 230.31,
+   "t_out": 237.31,
    "title": "Nyhavn is dug",
    "sub": "1670-75"
   },
   {
-   "t_in": 218.36,
-   "t_out": 228.36,
+   "t_in": 270.73,
+   "t_out": 282.73,
    "title": "The Great Fire",
    "sub": "20-23 October 1728"
   },
   {
-   "t_in": 246.95,
-   "t_out": 252.95,
+   "t_in": 308.3,
+   "t_out": 316.3,
    "title": "Frederiksstaden: Amalienborg",
    "sub": "1750-60"
   },
   {
-   "t_in": 272.2,
-   "t_out": 283.2,
+   "t_in": 335.59,
+   "t_out": 346.59,
    "title": "Christiansborg burns",
    "sub": "1794"
   },
   {
-   "t_in": 301.2,
-   "t_out": 305.2,
-   "title": "Fire of 1795",
-   "sub": "June 1795"
-  },
-  {
-   "t_in": 323.93,
-   "t_out": 337.93,
+   "t_in": 365.3,
+   "t_out": 377.3,
    "title": "British bombardment",
    "sub": "September 1807"
   },
   {
-   "t_in": 355.93,
-   "t_out": 361.33,
-   "title": "Christiansborg rises again",
-   "sub": "1803-28"
-  },
-  {
-   "t_in": 379.33,
-   "t_out": 384.33,
+   "t_in": 397.44,
+   "t_out": 403.44,
    "title": "Tivoli opens",
    "sub": "1843"
   },
   {
-   "t_in": 402.91,
-   "t_out": 413.91,
+   "t_in": 423.43,
+   "t_out": 429.43,
    "title": "Marble Church rebuilt",
    "sub": "1874-94"
   },
   {
-   "t_in": 414.08,
-   "t_out": 417.58,
-   "title": "Christiansborg burns again",
-   "sub": "1884"
-  },
-  {
-   "t_in": 432.12,
-   "t_out": 436.12,
-   "title": "The great dome",
-   "sub": "1894"
-  },
-  {
-   "t_in": 454.12,
-   "t_out": 470.12,
+   "t_in": 458.89,
+   "t_out": 465.89,
    "title": "City Hall",
    "sub": "1892-1905"
   },
   {
-   "t_in": 489.19,
-   "t_out": 499.99,
+   "t_in": 492.79,
+   "t_out": 499.79,
    "title": "Christiansborg III and its tower",
    "sub": "1907-28"
   },
   {
-   "t_in": 500.06,
-   "t_out": 505.06,
-   "title": "Grundtvig Church",
-   "sub": "1921-40"
-  },
-  {
-   "t_in": 524.82,
-   "t_out": 530.22,
+   "t_in": 541.84,
+   "t_out": 548.34,
    "title": "SAS Royal, the first skyscraper in Copenhagen",
    "sub": "1960"
   },
   {
-   "t_in": 540.28,
-   "t_out": 545.28,
-   "title": "The Øresund Bridge",
-   "sub": "2000"
-  },
-  {
-   "t_in": 551.74,
-   "t_out": 557.14,
+   "t_in": 567.87,
+   "t_out": 578.47,
    "title": "The Opera House",
    "sub": "2005"
   },
   {
-   "t_in": 575.14,
-   "t_out": 580.14,
-   "title": "Royal Playhouse",
-   "sub": "2008"
-  },
-  {
-   "t_in": 598.14,
-   "t_out": 608.54,
+   "t_in": 601.26,
+   "t_out": 608.26,
    "title": "CopenHill",
    "sub": "2019"
   }
  ],
- "subscribe_t": 93.0,
+ "subscribe_t": 90.0,
  "cards": [
   {
    "t_in": 12.9,
@@ -159,8 +117,28 @@
    "sober": false
   },
   {
-   "t_in": 30.09,
-   "t_out": 35.69,
+   "t_in": 23.19,
+   "t_out": 28.59,
+   "date": "1186",
+   "title": "Valby",
+   "lines": [
+    "The name Valby is first recorded in 1186, as Walbu."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 28.7,
+   "t_out": 34.1,
+   "date": "1186",
+   "title": "Brønshøj",
+   "lines": [
+    "The village of Brønshøj is first mentioned in a letter dated October 21, 1186."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 43.17,
+   "t_out": 48.77,
    "date": "1254",
    "title": "A city charter",
    "lines": [
@@ -169,8 +147,8 @@
    "sober": false
   },
   {
-   "t_in": 42.15,
-   "t_out": 47.55,
+   "t_in": 55.38,
+   "t_out": 60.78,
    "date": "1303",
    "title": "København",
    "lines": [
@@ -179,8 +157,8 @@
    "sober": false
   },
   {
-   "t_in": 56.11,
-   "t_out": 61.71,
+   "t_in": 69.54,
+   "t_out": 75.14,
    "date": "1368",
    "title": "Hanseatic raid",
    "lines": [
@@ -189,8 +167,8 @@
    "sober": false
   },
   {
-   "t_in": 61.97,
-   "t_out": 67.57,
+   "t_in": 75.41,
+   "t_out": 81.01,
    "date": "1370",
    "title": "Castle destroyed",
    "lines": [
@@ -199,8 +177,18 @@
    "sober": false
   },
   {
-   "t_in": 73.63,
-   "t_out": 79.23,
+   "t_in": 84.65,
+   "t_out": 89.85,
+   "date": "1397",
+   "title": "The Kalmar Union",
+   "lines": [
+    "In 1397 Denmark, Sweden and Norway are joined under a single monarch."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 92.42,
+   "t_out": 101.02,
    "date": "1416",
    "title": "Capital of Denmark",
    "lines": [
@@ -209,8 +197,8 @@
    "sober": false
   },
   {
-   "t_in": 87.62,
-   "t_out": 92.82,
+   "t_in": 109.61,
+   "t_out": 114.81,
    "date": "1479",
    "title": "A university",
    "lines": [
@@ -219,8 +207,18 @@
    "sober": false
   },
   {
-   "t_in": 100.34,
-   "t_out": 105.94,
+   "t_in": 122.49,
+   "t_out": 128.29,
+   "date": "1523",
+   "title": "The Kalmar Union ends",
+   "lines": [
+    "In 1523 Gustav Vasa is elected king of Sweden, ending the union with Denmark and Norway that began in 1397."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 130.11,
+   "t_out": 135.71,
    "date": "1536",
    "title": "A year-long siege",
    "lines": [
@@ -229,8 +227,18 @@
    "sober": false
   },
   {
-   "t_in": 118.34,
-   "t_out": 123.74,
+   "t_in": 135.78,
+   "t_out": 141.18,
+   "date": "1537",
+   "title": "Denmark and Norway",
+   "lines": [
+    "From 1536-37 Denmark and Norway form a personal union. It lasts until 1814."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 150.53,
+   "t_out": 155.93,
    "date": "1606",
    "title": "Rosenborg Castle",
    "lines": [
@@ -239,8 +247,28 @@
    "sober": false
   },
   {
-   "t_in": 141.74,
-   "t_out": 147.54,
+   "t_in": 158.54,
+   "t_out": 164.14,
+   "date": "1618",
+   "title": "Bastions at Christianshavn",
+   "lines": [
+    "From 1618 to 1623 Christian IV raises earthen embankments with five bastions toward Amager."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 164.27,
+   "t_out": 169.87,
+   "date": "1619",
+   "title": "The first bridge to Christianshavn",
+   "lines": [
+    "Christian IV builds the first bridge between Copenhagen and Christianshavn in 1618-20."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 176.54,
+   "t_out": 182.34,
    "date": "1620",
    "title": "Børsen",
    "lines": [
@@ -249,8 +277,18 @@
    "sober": false
   },
   {
-   "t_in": 165.74,
-   "t_out": 171.14,
+   "t_in": 185.27,
+   "t_out": 193.77,
+   "date": "1631",
+   "title": "Nyboder",
+   "lines": [
+    "Construction of Nyboder begins in 1631. In 1647 it is absorbed by the fortified city."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 203.27,
+   "t_out": 208.67,
    "date": "1637",
    "title": "The Round Tower",
    "lines": [
@@ -259,8 +297,18 @@
    "sober": false
   },
   {
-   "t_in": 173.31,
-   "t_out": 178.91,
+   "t_in": 211.4,
+   "t_out": 216.4,
+   "date": "1651",
+   "title": "Frederiksberg",
+   "lines": [
+    "The history of Frederiksberg goes back to 2 June 1651."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 217.5,
+   "t_out": 223.1,
    "date": "1659",
    "title": "The Swedish assault",
    "lines": [
@@ -269,8 +317,8 @@
    "sober": false
   },
   {
-   "t_in": 179.09,
-   "t_out": 184.69,
+   "t_in": 223.28,
+   "t_out": 228.88,
    "date": "1660",
    "title": "Absolute monarchy",
    "lines": [
@@ -279,8 +327,8 @@
    "sober": false
   },
   {
-   "t_in": 191.31,
-   "t_out": 196.61,
+   "t_in": 230.31,
+   "t_out": 235.61,
    "date": "1672",
    "title": "Nyhavn",
    "lines": [
@@ -289,8 +337,38 @@
    "sober": false
   },
   {
-   "t_in": 200.36,
-   "t_out": 205.96,
+   "t_in": 238.26,
+   "t_out": 243.26,
+   "date": "1690",
+   "title": "Holmen",
+   "lines": [
+    "From 1690 Holmen is the main base of the Royal Danish Navy."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 243.93,
+   "t_out": 249.53,
+   "date": "1695",
+   "title": "Church of Our Saviour",
+   "lines": [
+    "The Church of Our Saviour is inaugurated in 1695, 14 years after work began in 1682."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 250.2,
+   "t_out": 255.6,
+   "date": "1700",
+   "title": "Frederiksberg Palace",
+   "lines": [
+    "In 1700-03 Frederik IV builds a palace on top of the Frederiksberg hill."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 257.16,
+   "t_out": 262.76,
    "date": "1711",
    "title": "The plague",
    "lines": [
@@ -299,8 +377,18 @@
    "sober": true
   },
   {
-   "t_in": 218.36,
-   "t_out": 224.16,
+   "t_in": 262.82,
+   "t_out": 268.42,
+   "date": "1712",
+   "title": "A new wooden bridge",
+   "lines": [
+    "In 1712 a new wooden bridge is built in the same place as the first link to Christianshavn."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 270.73,
+   "t_out": 276.53,
    "date": "1728",
    "title": "The Great Fire",
    "lines": [
@@ -309,8 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 228.95,
-   "t_out": 234.55,
+   "t_in": 283.33,
+   "t_out": 288.93,
    "date": "1733",
    "title": "Christiansborg",
    "lines": [
@@ -319,8 +407,28 @@
    "sober": false
   },
   {
-   "t_in": 236.92,
-   "t_out": 242.52,
+   "t_in": 290.48,
+   "t_out": 296.28,
+   "date": "1745",
+   "title": "The largest palace in the north",
+   "lines": [
+    "Most of the palace complex of Christiansborg is completed in 1745. It is the largest palace in northern Europe at the time."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 296.82,
+   "t_out": 302.22,
+   "date": "1749",
+   "title": "Kastrup",
+   "lines": [
+    "In 1749 Jacob Fortling obtains a royal license to establish a lime plant in Kastrup."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 302.56,
+   "t_out": 308.16,
    "date": "1751",
    "title": "A golden spiral",
    "lines": [
@@ -329,8 +437,8 @@
    "sober": false
   },
   {
-   "t_in": 246.95,
-   "t_out": 252.35,
+   "t_in": 308.3,
+   "t_out": 313.7,
    "date": "1752",
    "title": "Frederiksstaden",
    "lines": [
@@ -339,8 +447,8 @@
    "sober": false
   },
   {
-   "t_in": 254.2,
-   "t_out": 259.6,
+   "t_in": 317.59,
+   "t_out": 322.99,
    "date": "1770",
    "title": "Left unfinished",
    "lines": [
@@ -349,8 +457,18 @@
    "sober": false
   },
   {
-   "t_in": 272.2,
-   "t_out": 277.6,
+   "t_in": 325.55,
+   "t_out": 331.35,
+   "date": "1789",
+   "title": "Frederiksholm",
+   "lines": [
+    "On Holmen, Frederiksholm has reached its current size by 1789."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 335.59,
+   "t_out": 340.99,
    "date": "1794",
    "title": "The palace burns",
    "lines": [
@@ -359,8 +477,8 @@
    "sober": false
   },
   {
-   "t_in": 277.6,
-   "t_out": 283.2,
+   "t_in": 340.99,
+   "t_out": 346.59,
    "date": "1795",
    "title": "The second fire",
    "lines": [
@@ -369,8 +487,18 @@
    "sober": false
   },
   {
-   "t_in": 305.93,
-   "t_out": 311.33,
+   "t_in": 347.3,
+   "t_out": 352.3,
+   "date": "1801",
+   "title": "100,975 residents",
+   "lines": [
+    "Population figures for 1801 give Copenhagen 100,975 people."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 352.33,
+   "t_out": 357.73,
    "date": "1801",
    "title": "Nelson at Copenhagen",
    "lines": [
@@ -379,8 +507,18 @@
    "sober": false
   },
   {
-   "t_in": 323.93,
-   "t_out": 329.53,
+   "t_in": 357.97,
+   "t_out": 363.37,
+   "date": "1803",
+   "title": "Christiansborg II begins",
+   "lines": [
+    "Hansen starts building the second Christiansborg in 1803, in a French Empire style."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 365.3,
+   "t_out": 370.9,
    "date": "1807",
    "title": "British bombardment",
    "lines": [
@@ -389,18 +527,8 @@
    "sober": true
   },
   {
-   "t_in": 329.53,
-   "t_out": 334.53,
-   "date": "1809",
-   "title": "Christiansborg II",
-   "lines": [
-    "Hansen builds a second palace in a French Empire style, 1803 to 1828."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 355.93,
-   "t_out": 361.33,
+   "t_in": 378.12,
+   "t_out": 383.52,
    "date": "1814",
    "title": "Norway is lost",
    "lines": [
@@ -409,8 +537,28 @@
    "sober": false
   },
   {
-   "t_in": 379.33,
-   "t_out": 384.33,
+   "t_in": 385.4,
+   "t_out": 390.4,
+   "date": "1828",
+   "title": "Christiansborg II is finished",
+   "lines": [
+    "The second Christiansborg is finished in 1828."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 392.02,
+   "t_out": 397.02,
+   "date": "1840",
+   "title": "120,819 residents",
+   "lines": [
+    "Population figures for 1840 give Copenhagen 120,819 people."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 397.44,
+   "t_out": 402.44,
    "date": "1843",
    "title": "Tivoli Gardens",
    "lines": [
@@ -419,8 +567,8 @@
    "sober": false
   },
   {
-   "t_in": 384.91,
-   "t_out": 390.31,
+   "t_in": 404.04,
+   "t_out": 409.44,
    "date": "1849",
    "title": "A constitution",
    "lines": [
@@ -429,8 +577,8 @@
    "sober": false
   },
   {
-   "t_in": 390.65,
-   "t_out": 395.95,
+   "t_in": 409.79,
+   "t_out": 415.09,
    "date": "1852",
    "title": "The ramparts open",
    "lines": [
@@ -439,8 +587,18 @@
    "sober": false
   },
   {
-   "t_in": 402.91,
-   "t_out": 408.31,
+   "t_in": 417.65,
+   "t_out": 422.65,
+   "date": "1871",
+   "title": "Refshaleøen",
+   "lines": [
+    "Burmeister & Wain establish a shipyard on Refshaleøen in 1871."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 423.43,
+   "t_out": 428.83,
    "date": "1876",
    "title": "Work restarts",
    "lines": [
@@ -449,18 +607,8 @@
    "sober": false
   },
   {
-   "t_in": 408.31,
-   "t_out": 413.91,
-   "date": "1880",
-   "title": "Nørrebro and Vesterbro",
-   "lines": [
-    "New districts rise for people moving in from the provinces. The city grows from 120,000 in 1840 to 400,000 by 1901."
-   ],
-   "sober": false
-  },
-  {
-   "t_in": 417.62,
-   "t_out": 423.02,
+   "t_in": 429.87,
+   "t_out": 435.27,
    "date": "1884",
    "title": "It burns again",
    "lines": [
@@ -469,8 +617,38 @@
    "sober": false
   },
   {
-   "t_in": 454.12,
-   "t_out": 459.52,
+   "t_in": 435.44,
+   "t_out": 441.04,
+   "date": "1886",
+   "title": "Nørrebro and Vesterbro",
+   "lines": [
+    "New districts rise for people moving in from the provinces. The city grows from 120,000 in 1840 to 400,000 by 1901."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 441.31,
+   "t_out": 446.91,
+   "date": "1888",
+   "title": "Ruins of Christiansborg",
+   "lines": [
+    "After the fire of 1884 the ruins of the second Christiansborg stay in place for 23 years."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 447.18,
+   "t_out": 452.78,
+   "date": "1890",
+   "title": "H. C. Andersens Boulevard",
+   "lines": [
+    "West Boulevard, now H. C. Andersens Boulevard, is laid out in 1890 after the Western Rampart is removed."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 453.4,
+   "t_out": 458.8,
    "date": "1894",
    "title": "The dome",
    "lines": [
@@ -479,8 +657,8 @@
    "sober": false
   },
   {
-   "t_in": 459.52,
-   "t_out": 464.72,
+   "t_in": 458.89,
+   "t_out": 464.09,
    "date": "1901",
    "title": "A bigger city",
    "lines": [
@@ -489,8 +667,18 @@
    "sober": false
   },
   {
-   "t_in": 464.72,
-   "t_out": 470.12,
+   "t_in": 466.2,
+   "t_out": 471.6,
+   "date": "1905",
+   "title": "Housing on Islands Brygge",
+   "lines": [
+    "From 1905 residential buildings are built on the inland parts of the new harbor land at Islands Brygge."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 471.66,
+   "t_out": 477.06,
    "date": "1905",
    "title": "City Hall",
    "lines": [
@@ -499,8 +687,18 @@
    "sober": false
   },
   {
-   "t_in": 471.19,
-   "t_out": 476.19,
+   "t_in": 477.23,
+   "t_out": 482.83,
+   "date": "1907",
+   "title": "Christiansborg III begins",
+   "lines": [
+    "The ruins of Christiansborg stood for 23 years. The third palace is built from 1907 to 1928."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 483.73,
+   "t_out": 492.23,
    "date": "1913",
    "title": "The Little Mermaid",
    "lines": [
@@ -509,8 +707,8 @@
    "sober": false
   },
   {
-   "t_in": 489.19,
-   "t_out": 494.59,
+   "t_in": 492.79,
+   "t_out": 498.19,
    "date": "1917",
    "title": "Christiansborg III",
    "lines": [
@@ -519,8 +717,8 @@
    "sober": false
   },
   {
-   "t_in": 494.59,
-   "t_out": 499.99,
+   "t_in": 500.26,
+   "t_out": 505.66,
    "date": "1929",
    "title": "Grundtvig Church",
    "lines": [
@@ -529,8 +727,28 @@
    "sober": false
   },
   {
-   "t_in": 505.82,
-   "t_out": 511.22,
+   "t_in": 506.2,
+   "t_out": 511.8,
+   "date": "1933",
+   "title": "Islands Brygge",
+   "lines": [
+    "Land is reclaimed in the harbor until 1933, when Islands Brygge reaches its current extent."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 512.34,
+   "t_out": 517.34,
+   "date": "1937",
+   "title": "Knippelsbro",
+   "lines": [
+    "The fifth Knippelsbro, 115 meters long, is inaugurated in 1937."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 517.78,
+   "t_out": 523.18,
    "date": "1940",
    "title": "Occupation",
    "lines": [
@@ -539,8 +757,8 @@
    "sober": true
   },
   {
-   "t_in": 511.66,
-   "t_out": 517.06,
+   "t_in": 523.64,
+   "t_out": 529.04,
    "date": "1943",
    "title": "Ships sunk in the harbor",
    "lines": [
@@ -549,8 +767,8 @@
    "sober": true
   },
   {
-   "t_in": 517.27,
-   "t_out": 523.07,
+   "t_in": 529.25,
+   "t_out": 535.05,
    "date": "1945",
    "title": "The Shellhus raid",
    "lines": [
@@ -559,8 +777,18 @@
    "sober": true
   },
   {
-   "t_in": 524.82,
-   "t_out": 530.22,
+   "t_in": 536.23,
+   "t_out": 541.23,
+   "date": "1954",
+   "title": "Langebro",
+   "lines": [
+    "The current Langebro replaces the temporary bridge in 1954."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 541.84,
+   "t_out": 547.24,
    "date": "1960",
    "title": "SAS Royal Hotel",
    "lines": [
@@ -569,8 +797,8 @@
    "sober": false
   },
   {
-   "t_in": 531.71,
-   "t_out": 537.11,
+   "t_in": 549.87,
+   "t_out": 555.27,
    "date": "1971",
    "title": "Christiania",
    "lines": [
@@ -579,8 +807,8 @@
    "sober": false
   },
   {
-   "t_in": 545.32,
-   "t_out": 551.12,
+   "t_in": 559.15,
+   "t_out": 564.95,
    "date": "2000",
    "title": "The Øresund Bridge",
    "lines": [
@@ -589,8 +817,8 @@
    "sober": false
   },
   {
-   "t_in": 551.74,
-   "t_out": 557.14,
+   "t_in": 567.87,
+   "t_out": 573.27,
    "date": "2005",
    "title": "The Opera House",
    "lines": [
@@ -599,8 +827,18 @@
    "sober": false
   },
   {
-   "t_in": 575.14,
-   "t_out": 580.14,
+   "t_in": 573.27,
+   "t_out": 578.47,
+   "date": "2006",
+   "title": "Bryggebroen",
+   "lines": [
+    "The Bryggebroen bridge opens to the public on 14 September 2006."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 578.83,
+   "t_out": 583.83,
    "date": "2008",
    "title": "The Royal Playhouse",
    "lines": [
@@ -609,8 +847,38 @@
    "sober": false
   },
   {
-   "t_in": 598.14,
-   "t_out": 603.54,
+   "t_in": 584.71,
+   "t_out": 590.11,
+   "date": "2014",
+   "title": "Cykelslangen",
+   "lines": [
+    "The Cykelslangen, designed by Dissing+Weitling, opens to the public on 28 June 2014."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 590.38,
+   "t_out": 595.58,
+   "date": "2016",
+   "title": "Inderhavnsbroen",
+   "lines": [
+    "The Inderhavnsbroen opens to the public on 7 July 2016."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 595.91,
+   "t_out": 601.11,
+   "date": "2019",
+   "title": "Lille Langebro",
+   "lines": [
+    "The pedestrian and cycling bridge Lille Langebro is completed in 2019."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 601.26,
+   "t_out": 606.66,
    "date": "2019",
    "title": "CopenHill",
    "lines": [
@@ -619,12 +887,42 @@
    "sober": false
   },
   {
-   "t_in": 603.54,
-   "t_out": 608.54,
+   "t_in": 608.54,
+   "t_out": 613.64,
    "date": "2022",
    "title": "Swimming in the harbor",
    "lines": [
     "Today the harbor has 13 official swimming zones and three harbor baths."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 613.64,
+   "t_out": 622.14,
+   "date": "2022",
+   "title": "644,431 residents",
+   "lines": [
+    "Population figures for 2022 give Copenhagen 644,431 people."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 622.54,
+   "t_out": 631.04,
+   "date": "2025",
+   "title": "667,099 residents",
+   "lines": [
+    "On 1 January 2025 Copenhagen counts 667,099 people."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 631.1,
+   "t_out": 639.6,
+   "date": "2025",
+   "title": "1.4 million in the urban area",
+   "lines": [
+    "The urban population of Copenhagen is 1.4 million."
    ],
    "sober": false
   },
@@ -647,56 +945,56 @@
    "title": "Absalon's Havn"
   },
   {
-   "t_in": 70.83,
-   "t_out": 73.63,
+   "t_in": 89.85,
+   "t_out": 92.42,
    "num": "II",
    "title": "Royal Capital"
   },
   {
-   "t_in": 97.54,
-   "t_out": 100.34,
+   "t_in": 128.29,
+   "t_out": 130.11,
    "num": "III",
    "title": "Reformation and Renaissance"
   },
   {
-   "t_in": 171.14,
-   "t_out": 173.31,
+   "t_in": 216.3,
+   "t_out": 217.5,
    "num": "IV",
    "title": "Siege and Absolutism"
   },
   {
-   "t_in": 215.56,
-   "t_out": 218.36,
+   "t_in": 268.42,
+   "t_out": 270.73,
    "num": "V",
    "title": "Fire and Rebuilding"
   },
   {
-   "t_in": 303.13,
-   "t_out": 305.93,
+   "t_in": 351.13,
+   "t_out": 352.33,
    "num": "VI",
    "title": "War with Britain"
   },
   {
-   "t_in": 383.71,
-   "t_out": 384.91,
+   "t_in": 402.44,
+   "t_out": 404.04,
    "num": "VII",
    "title": "Constitution and Ramparts"
   },
   {
-   "t_in": 456.72,
-   "t_out": 459.52,
+   "t_in": 457.69,
+   "t_out": 458.89,
    "num": "VIII",
    "title": "Modern Capital"
   },
   {
-   "t_in": 503.02,
-   "t_out": 505.82,
+   "t_in": 516.58,
+   "t_out": 517.78,
    "num": "IX",
    "title": "War and Occupation"
   },
   {
-   "t_in": 530.22,
-   "t_out": 531.71,
+   "t_in": 547.24,
+   "t_out": 549.87,
    "num": "X",
    "title": "Harbor and Bridge"
   }

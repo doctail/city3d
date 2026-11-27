@@ -1,0 +1,301 @@
+{
+ "version": 1,
+ "note": "Traffic is DECORATION (not a historical source): lanes, counts and speeds are art-directed for Copenhagen (Oresund, harbor mouth, Holmen/Nyhavn approach, Malmo crossing). Fleet ages follow the port eras: sail from the start, steam from 1830, tugs, ferries and liners later. Ships never replace a source: every historical card keeps its own src.",
+ "time_scale": 2.0,
+ "seed": 7,
+ "keepout_m": 250,
+ "lanes": {
+  "sound": {
+   "line": [
+    [
+     55.735,
+     12.67
+    ],
+    [
+     55.712,
+     12.668
+    ],
+    [
+     55.7,
+     12.668
+    ],
+    [
+     55.69,
+     12.668
+    ],
+    [
+     55.675,
+     12.672
+    ],
+    [
+     55.655,
+     12.682
+    ]
+   ],
+   "width": 700
+  },
+  "harbor_in": {
+   "line": [
+    [
+     55.69738,
+     12.60719
+    ],
+    [
+     55.69521,
+     12.60528
+    ],
+    [
+     55.69304,
+     12.60432
+    ],
+    [
+     55.69087,
+     12.60432
+    ],
+    [
+     55.6887,
+     12.60193
+    ],
+    [
+     55.68653,
+     12.6005
+    ],
+    [
+     55.68435,
+     12.59907
+    ],
+    [
+     55.68218,
+     12.59811
+    ],
+    [
+     55.6811,
+     12.59811
+    ]
+   ],
+   "width": 60
+  },
+  "crossing": {
+   "line": [
+    [
+     55.7,
+     12.67
+    ],
+    [
+     55.696,
+     12.69
+    ],
+    [
+     55.69,
+     12.71
+    ]
+   ],
+   "width": 150
+  }
+ },
+ "classes": {
+  "sail": {
+   "model": "sail",
+   "lanes": [
+    "sound",
+    "harbor_in"
+   ],
+   "len": [
+    45,
+    70
+   ],
+   "speed": [
+    2.0,
+    4.5
+   ],
+   "density": [
+    [
+     1167,
+     2
+    ],
+    [
+     1254,
+     4
+    ],
+    [
+     1416,
+     6
+    ],
+    [
+     1536,
+     8
+    ],
+    [
+     1620,
+     14
+    ],
+    [
+     1700,
+     20
+    ],
+    [
+     1789,
+     26
+    ],
+    [
+     1850,
+     22
+    ],
+    [
+     1890,
+     12
+    ],
+    [
+     1925,
+     4
+    ],
+    [
+     1935,
+     0
+    ]
+   ],
+   "mode": "loop"
+  },
+  "steam": {
+   "model": "steam",
+   "lanes": [
+    "sound",
+    "harbor_in"
+   ],
+   "len": [
+    60,
+    110
+   ],
+   "speed": [
+    5,
+    9
+   ],
+   "density": [
+    [
+     1830,
+     0
+    ],
+    [
+     1850,
+     3
+    ],
+    [
+     1890,
+     9
+    ],
+    [
+     1930,
+     10
+    ],
+    [
+     1970,
+     7
+    ],
+    [
+     2026,
+     5
+    ]
+   ],
+   "mode": "loop"
+  },
+  "tug": {
+   "model": "tug",
+   "lanes": [
+    "harbor_in",
+    "sound"
+   ],
+   "len": [
+    40,
+    48
+   ],
+   "speed": [
+    3,
+    5
+   ],
+   "density": [
+    [
+     1880,
+     0
+    ],
+    [
+     1910,
+     3
+    ],
+    [
+     1960,
+     4
+    ],
+    [
+     2026,
+     3
+    ]
+   ],
+   "mode": "loop"
+  },
+  "ferry": {
+   "model": "ferry",
+   "lanes": [
+    "crossing"
+   ],
+   "mode": "pingpong",
+   "len": [
+    60,
+    90
+   ],
+   "speed": [
+    5,
+    7
+   ],
+   "density": [
+    [
+     1860,
+     0
+    ],
+    [
+     1890,
+     2
+    ],
+    [
+     1960,
+     3
+    ],
+    [
+     2026,
+     3
+    ]
+   ]
+  },
+  "liner": {
+   "model": "liner",
+   "lanes": [
+    "sound"
+   ],
+   "len": [
+    180,
+    280
+   ],
+   "speed": [
+    8,
+    12
+   ],
+   "density": [
+    [
+     1920,
+     0
+    ],
+    [
+     1950,
+     2
+    ],
+    [
+     2000,
+     3
+    ],
+    [
+     2026,
+     3
+    ]
+   ]
+  }
+ }
+}

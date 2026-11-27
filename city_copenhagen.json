@@ -230,5 +230,6 @@
    "schedule_copenhagen_shortA.json",
    2
   ]
- ]
+ ],
+ "ships": "cities/copenhagen/traffic.json"
 }
