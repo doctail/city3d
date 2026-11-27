@@ -1,6 +1,6 @@
 # QA copenhagen
 
-Generato da `python -m kit.qa` il 2026-11-27 22:19. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-27 23:36. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -87,16 +87,16 @@ Generato da `python -m kit.qa` il 2026-11-27 22:19. Esito complessivo: **WARN**
 
 ## e) Costo e schedule
 
-- **PASS** costo dei cambi (8 s)
+- **PASS** costo dei cambi (9 s)
   - oggetti citta' 3384, cambi in tutto il video 119700, max in un fotogramma 1084 (~13 s), costo dei soli cambi ~0.40 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 224 m/s (limite 250), mediana 8
+  - 222 m/s (limite 250), mediana 9
 - **PASS** drone: accelerazione massima
-  - 122 m/s2 (limite 120), 99% 65
+  - 121 m/s2 (limite 120), 99% 67
 - **PASS** drone: jerk massimo
-  - 82 m/s3 (limite 200), 99% 50
+  - 80 m/s3 (limite 200), 99% 53
 - **PASS** drone: distanza minima da terreno e tetti
-  - 264 m (soglia 24); dal solo terreno 264 m
+  - 220 m (soglia 24); dal solo terreno 220 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
   - 0 salti
 - **PASS** drone: soste tolte per tempo

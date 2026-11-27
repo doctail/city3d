@@ -1,5 +1,5 @@
 Copenhagen: regia automatica (kit/regia_kit.py)
-Camera drone: 17 tappe in hover (137.1 s) e voli (495.0 s), anni 7.41/s fra le voci, nessuno stacco; vmax 226.18, amax 124.04, jmax 83.26, clear_min 264.38, clear_ground_min 264.38
+Camera drone: 17 tappe in hover (137.1 s) e voli (495.0 s), anni 7.41/s fra le voci, nessuno stacco; vmax 223.74, amax 122.71, jmax 82.36, clear_min 219.64, clear_ground_min 219.64
 Durata 11:00.0  fotogrammi 15840  inquadrature 3  stacco medio ogni 220.0 s
 Musica: waking_monument  b_start None  notte 645.0
 
@@ -140,4 +140,4 @@ Soste: 99, 600 s (94% del giorno)
 AVVISI:
   - cartello fuori dagli anni del video, tolto: Copenhagen (2026.0)
   - durata naturale 772 s > max_duration 660 s: tolgo le soste a peso minimo
-  - drone: accelerazione massima 124 m/s2 oltre 120
+  - drone: accelerazione massima 123 m/s2 oltre 120
