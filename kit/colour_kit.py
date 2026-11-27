@@ -199,8 +199,9 @@ def bake_tint(slug, season='summer', years=(2024, 2025), half=12000.0, cell=15.0
     dlat = (half + 500) / 111320.0; dlon = (half + 500) / (111320.0 * math.cos(math.radians(lat)))
     bbox = (lon - dlon, lat - dlat, lon + dlon, lat + dlat)
     zone, band, sq, epsg = mgrs_tile(lat, lon)
-    pick = pick_scenes(zone, band, sq, list(years), SEASONS[season], 1)[0]
-    rgb, scl, tr, crs = read_scene(pick[1], bbox)
+    for pick in pick_scenes(zone, band, sq, list(years), SEASONS[season], 6):   # prima scena che copre >= 50% della bbox (come la palette)
+        rgb, scl, tr, crs = read_scene(pick[1], bbox)
+        if (rgb.sum(0) > 0).mean() >= 0.5: break
     wc = read_worldcover(lat, lon, tr, crs, scl.shape)
     ok = np.isin(scl, SCL_OK) & (rgb.sum(0) > 0) & np.isin(wc, (10, 20, 30, 40, 60))
     alb = tci_to_srgb(rgb).astype(np.float32)

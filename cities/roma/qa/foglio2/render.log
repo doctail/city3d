@@ -1,0 +1,48 @@
+[build] edifici 92562 (0s, 423 MB)
+[build] predecessori storici 67354 (1s, 543 MB)
+[build] rilievo sotto gli edifici: max 220 m (6s, 553 MB)
+[build] monumenti: 1706 parti; tolti 162 edifici nelle impronte (24s, 557 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 24140 blocchi per anno, 2019178 vertici (58s, 1011 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (61s, 1069 MB)
+[build] suolo urbano dalle impronte: 451243 triangoli in 220 decenni (1431s, 2331 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 27 poligoni in 9 finestre (1431s, 2331 MB)
+[build] strade 44335 (1434s, 2390 MB)
+[build] ponti 4 (1434s, 2390 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:786: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 9 (1434s, 2391 MB)
+[build] boschi 0 celle in 0 blocchi (1434s, 2391 MB)
+[build] isolati 31234 (1447s, 2582 MB)
+[build] parchi 816 (1451s, 2648 MB)
+[build] terra 16 poligoni (1451s, 2648 MB)
+[build] monumenti costruiti: 1706 parti (1455s, 2649 MB)
+[build] rilievo applicato: 2658956 vertici, massimo 254 m (1484s, 3199 MB)
+[build] monumenti: parti staccate dalla scena: 1443 (1485s, 3193 MB)
+[build] monumenti uniti: 1706 -> 790 oggetti (1485s, 3193 MB)
+[build] alberi cotti: 10935368 vertici (1491s, 5689 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:1298: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 24140 città, 737 statici (1491s, 5689 MB)
+[build] dati di costruzione liberati (1492s, 5025 MB)
+[build] CPU (1492s, 5025 MB)
+[build] denoiser nessuno (1492s, 5025 MB)
+[build] render 1 -> 96 480x270 4 campioni (1492s, 5025 MB)
+25:08.529  render           | Saved: 'cities/roma/qa/foglio2/raw/0025.jpg'
+[build] fotogramma 25: 16.6s (anno 455)
+25:14.765  render           | Saved: 'cities/roma/qa/foglio2/raw/0041.jpg'
+[build] fotogramma 41: 6.2s (anno 537)
+25:20.283  render           | Saved: 'cities/roma/qa/foglio2/raw/0057.jpg'
+[build] fotogramma 57: 5.5s (anno 540)
+25:25.717  render           | Saved: 'cities/roma/qa/foglio2/raw/0073.jpg'
+[build] fotogramma 73: 5.4s (anno 547)
+25:31.508  render           | Saved: 'cities/roma/qa/foglio2/raw/0089.jpg'
+[build] fotogramma 89: 5.8s (anno 600)
+[build] FATTO 5 fotogrammi, 7.93s a fotogramma (1531s, 8159 MB)

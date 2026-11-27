@@ -1,0 +1,50 @@
+[build] edifici 92572 (1s, 422 MB)
+[build] predecessori storici 39833 (1s, 491 MB)
+[build] rilievo sotto gli edifici: max 220 m (5s, 500 MB)
+[build] monumenti: 1706 parti; tolti 160 edifici nelle impronte (21s, 503 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:76: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('city'); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] città in 2069 blocchi per anno, 1730442 vertici (29s, 690 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:247: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('land_' + mode); m.use_nodes = True; nt = m.node_tree; N = nt.nodes; L = nt.links.new; b = N['Principled BSDF']
+[build] terra in 1 blocchi (31s, 749 MB)
+[build] suolo urbano dalle impronte: 452620 triangoli in 220 decenni (508s, 1714 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:55: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True; b = m.node_tree.nodes['Principled BSDF']
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:237: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new('laguna'); m.use_nodes = True; N = m.node_tree.nodes; L = m.node_tree.links.new; b = N['Principled BSDF']
+[build] terra a fasi 27 poligoni in 9 finestre (508s, 1714 MB)
+[build] strade 44335 (508s, 1774 MB)
+[build] ponti 4 (508s, 1774 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:786: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m_ = bpy.data.materials.new(name); m_.use_nodes = True; nt_ = m_.node_tree; N_ = nt_.nodes
+[build] incendi 1 (508s, 1775 MB)
+[build] boschi 0 celle in 0 blocchi (509s, 1775 MB)
+[build] isolati 31244 (521s, 1838 MB)
+[build] parchi 816 (521s, 1845 MB)
+[build] terra 16 poligoni (521s, 1845 MB)
+[build] monumenti costruiti: 1706 parti (522s, 1845 MB)
+[build] rilievo applicato: 2653395 vertici, massimo 254 m (552s, 2176 MB)
+[build] monumenti: parti staccate dalla scena: 1443 (552s, 2172 MB)
+[build] monumenti uniti: 1706 -> 790 oggetti (552s, 2172 MB)
+[build] alberi cotti: 10936959 vertici (557s, 4767 MB)
+/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/build_render.py:1298: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
+[build] blocchi: 2069 città, 713 statici (557s, 4767 MB)
+[build] dati di costruzione liberati (558s, 3975 MB)
+[build] CPU (558s, 3975 MB)
+[build] denoiser nessuno (558s, 3975 MB)
+[build] render 1 -> 96 480x270 6 campioni (558s, 3975 MB)
+09:31.455  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0009.jpg'
+[build] fotogramma 9: 12.3s (anno -600)
+09:37.913  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0025.jpg'
+[build] fotogramma 25: 6.5s (anno 100)
+09:42.305  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0041.jpg'
+[build] fotogramma 41: 4.4s (anno 600)
+09:46.725  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0057.jpg'
+[build] fotogramma 57: 4.4s (anno 1500)
+09:51.748  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0073.jpg'
+[build] fotogramma 73: 5.0s (anno 1900)
+09:57.294  render           | Saved: '/tmp/claude-0/-home-user/7e545855-4bb7-52b2-9ec5-50dc750c0d44/scratchpad/integ/cities/roma/qa/foglio/raw/0089.jpg'
+[build] fotogramma 89: 5.6s (anno 2026)
+[build] FATTO 6 fotogrammi, 6.36s a fotogramma (596s, 6522 MB)

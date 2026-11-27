@@ -112,6 +112,8 @@ for q in getattr(landg, 'geoms', [landg]):
     land.append({'ext': [[round(x, 1), round(y, 1)] for x, y in list(q.exterior.coords)[:-1]],
                  'holes': [[[round(x, 1), round(y, 1)] for x, y in list(h.coords)[:-1]] for h in q.interiors if Polygon(h).area > 100]})
 json.dump(land, open(f'{DATA}/land.json', 'w'))
+# filtro acqua (edifici con <10% su terra, pile di ponte): passo SEPARATO dopo kit build (serve landphases dello story per la Tiberina):
+#   python tools/filtra_edifici_acqua.py DATA city_roma.json && python -m kit build roma
 pk = []
 for g in parks:
     for q in getattr(g, 'geoms', [g]):

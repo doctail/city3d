@@ -1,315 +1,833 @@
 {
- "didascalie": [
-  {
-   "t_in": 18.88,
-   "t_out": 24.27,
-   "date": "616 BC",
-   "title": "The Etruscan kings",
-   "line": "They drain the marshes between the hills. The Forum is born.",
-   "sober": false
-  },
-  {
-   "t_in": 24.67,
-   "t_out": 29.27,
-   "date": "509 BC",
-   "title": "No more kings",
-   "line": "The last king is driven out. Rome becomes a republic.",
-   "sober": false
-  },
-  {
-   "t_in": 31.33,
-   "t_out": 35.93,
-   "date": "390 BC",
-   "title": "The Gauls sack Rome",
-   "line": "Only the Capitoline Hill holds out.",
-   "sober": false
-  },
-  {
-   "t_in": 42.12,
-   "t_out": 46.73,
-   "date": "312 BC",
-   "title": "The Appian Way",
-   "line": "The first great Roman road, and the first aqueduct.",
-   "sober": false
-  },
-  {
-   "t_in": 47.12,
-   "t_out": 51.73,
-   "date": "146 BC",
-   "title": "Carthage destroyed",
-   "line": "Rome now rules the Mediterranean.",
-   "sober": false
-  },
-  {
-   "t_in": 65.5,
-   "t_out": 70.1,
-   "date": "44 BC",
-   "title": "The Ides of March",
-   "line": "Julius Caesar is murdered in the Senate.",
-   "sober": false
-  },
-  {
-   "t_in": 71.0,
-   "t_out": 76.4,
-   "date": "27 BC",
-   "title": "Augustus, first emperor",
-   "line": "\"I found Rome a city of brick and left it a city of marble.\"",
-   "sober": false
-  },
-  {
-   "t_in": 84.62,
-   "t_out": 89.22,
-   "date": "AD 64",
-   "title": "The Great Fire",
-   "line": "Ten of the fourteen districts burn. Nero rebuilds.",
-   "sober": false
-  },
-  {
-   "t_in": 97.54,
-   "t_out": 102.14,
-   "date": "AD 117",
-   "title": "The empire at its largest",
-   "line": "From Scotland to Iraq, ruled from this city.",
-   "sober": false
-  },
-  {
-   "t_in": 111.42,
-   "t_out": 116.02,
-   "date": "AD 180",
-   "title": "A million people",
-   "line": "The largest city the world has ever seen.",
-   "sober": false
-  },
-  {
-   "t_in": 129.12,
-   "t_out": 133.72,
-   "date": "AD 330",
-   "title": "A new capital",
-   "line": "Constantine moves the emperor to Constantinople.",
-   "sober": false
-  },
-  {
-   "t_in": 138.71,
-   "t_out": 143.31,
-   "date": "AD 476",
-   "title": "The end of the Western Empire",
-   "line": "The last emperor in the West is deposed.",
-   "sober": false
-  },
-  {
-   "t_in": 150.88,
-   "t_out": 156.28,
-   "date": "AD 590",
-   "title": "Plague and floods",
-   "line": "Fewer than 50,000 people live inside walls built for a million.",
-   "sober": false
-  },
-  {
-   "t_in": 159.5,
-   "t_out": 164.1,
-   "date": "AD 800",
-   "title": "Charlemagne",
-   "line": "Crowned emperor in Old St Peter's on Christmas Day.",
-   "sober": false
-  },
-  {
-   "t_in": 171.67,
-   "t_out": 176.27,
-   "date": "1084",
-   "title": "The Normans",
-   "line": "Allies of the Pope burn much of the city.",
-   "sober": false
-  },
-  {
-   "t_in": 178.38,
-   "t_out": 182.97,
-   "date": "1309",
-   "title": "The Popes leave",
-   "line": "The papacy moves to Avignon. Rome falls to ~17,000 people.",
-   "sober": false
-  },
-  {
-   "t_in": 184.5,
-   "t_out": 189.1,
-   "date": "1377",
-   "title": "The Popes return",
-   "line": "Rome starts to grow again, around the Vatican.",
-   "sober": false
-  },
-  {
-   "t_in": 192.25,
-   "t_out": 196.85,
-   "date": "1527",
-   "title": "The Sack of Rome",
-   "line": "Charles V's unpaid troops loot the city for months.",
-   "sober": false
-  },
-  {
-   "t_in": 222.67,
-   "t_out": 227.27,
-   "date": "1762",
-   "title": "Trevi Fountain",
-   "line": "Finished after 30 years of work.",
-   "sober": false
-  },
-  {
-   "t_in": 227.67,
-   "t_out": 232.27,
-   "date": "1798",
-   "title": "Napoleon",
-   "line": "French troops arrive. The Pope is taken prisoner.",
-   "sober": false
-  },
-  {
-   "t_in": 244.08,
-   "t_out": 248.68,
-   "date": "1922",
-   "title": "March on Rome",
-   "line": "Mussolini takes power.",
-   "sober": false
-  },
-  {
-   "t_in": 249.08,
-   "t_out": 253.68,
-   "date": "1944",
-   "title": "Liberation",
-   "line": "Allied troops enter Rome on 4 June 1944.",
-   "sober": true
-  }
- ],
+ "didascalie": [],
  "soste": [
   {
-   "t_in": 8.0,
-   "t_out": 14.0,
+   "t_in": 15.7,
+   "t_out": 21.7,
    "title": "Romulus founds Rome",
    "sub": "753 BC"
   },
   {
-   "t_in": 21.49,
-   "t_out": 25.49,
+   "t_in": 43.54,
+   "t_out": 48.54,
    "title": "Temple of Jupiter",
    "sub": "509 BC"
   },
   {
-   "t_in": 31.87,
-   "t_out": 36.37,
+   "t_in": 63.21,
+   "t_out": 67.71,
    "title": "The Servian Wall",
    "sub": "378 BC"
   },
   {
-   "t_in": 38.32,
-   "t_out": 41.82,
-   "title": "Circus Maximus",
-   "sub": "329 BC"
+   "t_in": 131.35,
+   "t_out": 136.75,
+   "title": "Augustus builds his tomb",
+   "sub": "28 BC"
   },
   {
-   "t_in": 65.0,
-   "t_out": 70.0,
-   "title": "Caesar and Augustus rebuild Rome",
-   "sub": ""
+   "t_in": 157.83,
+   "t_out": 162.83,
+   "title": "The Great Fire of Rome",
+   "sub": "AD 64"
   },
   {
-   "t_in": 74.09,
-   "t_out": 77.09,
-   "title": "Theatre of Marcellus",
-   "sub": "13 BC"
-  },
-  {
-   "t_in": 84.89,
-   "t_out": 90.89,
+   "t_in": 166.33,
+   "t_out": 172.33,
    "title": "The Colosseum",
    "sub": "AD 72-80"
   },
   {
-   "t_in": 93.98,
-   "t_out": 96.98,
-   "title": "Trajan's Column",
-   "sub": "113"
-  },
-  {
-   "t_in": 97.61,
-   "t_out": 102.61,
-   "title": "The Pantheon",
-   "sub": "125"
-  },
-  {
-   "t_in": 103.79,
-   "t_out": 107.29,
-   "title": "Hadrian's Mausoleum",
-   "sub": "135"
-  },
-  {
-   "t_in": 112.71,
-   "t_out": 116.71,
-   "title": "Baths of Caracalla",
-   "sub": "216"
-  },
-  {
-   "t_in": 118.0,
-   "t_out": 124.0,
+   "t_in": 211.47,
+   "t_out": 217.47,
    "title": "The Aurelian Walls",
-   "sub": "271"
+   "sub": "271-275"
   },
   {
-   "t_in": 125.1,
-   "t_out": 129.1,
-   "title": "Old St Peter's",
-   "sub": "326"
+   "t_in": 257.19,
+   "t_out": 261.19,
+   "title": "Old St. Peter's",
+   "sub": "c. 320-360"
   },
   {
-   "t_in": 130.88,
-   "t_out": 134.88,
+   "t_in": 288.78,
+   "t_out": 293.78,
    "title": "Alaric sacks Rome",
    "sub": "410"
   },
   {
-   "t_in": 143.0,
-   "t_out": 150.0,
-   "title": "The aqueducts are cut",
+   "t_in": 318.11,
+   "t_out": 324.11,
+   "title": "The Goths cut the aqueducts",
    "sub": "537"
   },
   {
-   "t_in": 179.47,
-   "t_out": 183.47,
+   "t_in": 425.57,
+   "t_out": 429.57,
    "title": "Earthquake: the Colosseum falls",
    "sub": "1349"
   },
   {
-   "t_in": 190.17,
-   "t_out": 194.17,
-   "title": "New St Peter's",
-   "sub": "1506"
-  },
-  {
-   "t_in": 196.62,
-   "t_out": 201.62,
+   "t_in": 462.71,
+   "t_out": 467.71,
    "title": "Michelangelo's dome",
    "sub": "1590"
   },
   {
-   "t_in": 206.0,
-   "t_out": 210.0,
+   "t_in": 473.69,
+   "t_out": 478.49,
    "title": "Bernini's colonnade",
-   "sub": "1667"
+   "sub": "1667-1676"
   },
   {
-   "t_in": 234.0,
-   "t_out": 238.0,
+   "t_in": 517.36,
+   "t_out": 522.76,
    "title": "Rome, capital of Italy",
    "sub": "1871"
   },
   {
-   "t_in": 238.35,
-   "t_out": 243.35,
+   "t_in": 534.91,
+   "t_out": 539.91,
    "title": "The Vittoriano",
    "sub": "1885-1911"
   },
   {
-   "t_in": 249.72,
-   "t_out": 253.22,
+   "t_in": 581.81,
+   "t_out": 585.31,
    "title": "Rome Olympics",
    "sub": "1960"
   }
  ],
- "subscribe_t": 96.0
+ "subscribe_t": 90.0,
+ "cards": [
+  {
+   "t_in": 15.7,
+   "t_out": 21.1,
+   "date": "753 BC",
+   "title": "Rome begins on the Palatine",
+   "lines": [
+    "Tradition dates the first settlements around the Palatine Hill to 753 BC."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 32.06,
+   "t_out": 36.56,
+   "date": "600 BC",
+   "title": "Cloaca Maxima",
+   "lines": [
+    "Rome's great sewer may date to around 600 BC.",
+    "Parts of it are still used today."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 43.54,
+   "t_out": 48.54,
+   "date": "509 BC",
+   "title": "No more kings",
+   "lines": [
+    "The last king, Tarquin the Proud, is expelled.",
+    "Rome becomes a republic."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 57.29,
+   "t_out": 62.29,
+   "date": "390 BC",
+   "title": "The Gauls sack Rome",
+   "lines": [
+    "After the Battle of the Allia the Gauls burn the city.",
+    "Defenders hold the Capitoline Hill."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 71.01,
+   "t_out": 75.81,
+   "date": "329 BC",
+   "title": "Circus Maximus",
+   "lines": [
+    "Permanent wooden starting stalls are built in 329 BC.",
+    "Later it spans 621 by 118 meters, the largest stadium in ancient Rome."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 77.12,
+   "t_out": 81.92,
+   "date": "312 BC",
+   "title": "The first road and aqueduct",
+   "lines": [
+    "The Appian Way and the Aqua Appia are both begun in 312 BC."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 85.6,
+   "t_out": 90.1,
+   "date": "264 BC",
+   "title": "War with Carthage begins",
+   "lines": [
+    "The First Punic War (264-241 BC) pits Rome against Carthage."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 93.78,
+   "t_out": 98.28,
+   "date": "216 BC",
+   "title": "Disaster at Cannae",
+   "lines": [
+    "Hannibal annihilates the largest army Rome had ever assembled."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 103.66,
+   "t_out": 108.46,
+   "date": "146 BC",
+   "title": "Carthage destroyed",
+   "lines": [
+    "After six days of assault the Romans destroy their rival."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 109.45,
+   "t_out": 113.95,
+   "date": "133 BC",
+   "title": "The late Republic",
+   "lines": [
+    "From 133 BC onward the Republic suffers substantial domestic strife."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 117.87,
+   "t_out": 122.37,
+   "date": "82 BC",
+   "title": "Sulla named dictator",
+   "lines": [
+    "In November 82 BC Sulla is named dictator."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 125.28,
+   "t_out": 130.08,
+   "date": "44 BC",
+   "title": "The Ides of March",
+   "lines": [
+    "Julius Caesar is assassinated by a group of senators."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 131.35,
+   "t_out": 136.75,
+   "date": "27 BC",
+   "title": "Augustus, first emperor",
+   "lines": [
+    "The Republic ends and the Empire begins.",
+    "He is said to have found Rome a city of brick and left it a city of marble."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 137.71,
+   "t_out": 142.51,
+   "date": "13 BC",
+   "title": "Theatre of Marcellus",
+   "lines": [
+    "Completed in 13 BC and formally inaugurated in 12 BC by Augustus."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 144.62,
+   "t_out": 149.12,
+   "date": "AD 14",
+   "title": "Augustus dies",
+   "lines": [
+    "He dies in AD 14 at age 75; the Senate deifies him."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 152.96,
+   "t_out": 157.76,
+   "date": "AD 64",
+   "title": "The Great Fire",
+   "lines": [
+    "Nearly three quarters of Rome is destroyed: 10 of its 14 districts."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 166.33,
+   "t_out": 171.13,
+   "date": "AD 80",
+   "title": "The Colosseum opens",
+   "lines": [
+    "Begun under Vespasian in 72, completed under Titus in 80."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 174.55,
+   "t_out": 179.35,
+   "date": "AD 113",
+   "title": "Trajan's Column",
+   "lines": [
+    "Dedicated in 113, about 35 meters tall with its pedestal."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 180.35,
+   "t_out": 185.15,
+   "date": "AD 126",
+   "title": "The Pantheon",
+   "lines": [
+    "Rebuilt under Hadrian and probably dedicated around 126."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 186.0,
+   "t_out": 190.8,
+   "date": "AD 137",
+   "title": "Hadrian's Mausoleum",
+   "lines": [
+    "Erected on the right bank of the Tiber between 134 and 139.",
+    "Today it is known as Castel Sant'Angelo."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 191.79,
+   "t_out": 197.19,
+   "date": "AD 150",
+   "title": "A city of a million or more",
+   "lines": [
+    "Estimates of Rome's peak population range from 450,000 to over 3.5 million.",
+    "Historians favor 1 to 2 million."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 202.26,
+   "t_out": 207.06,
+   "date": "AD 216",
+   "title": "Baths of Caracalla",
+   "lines": [
+    "Inaugurated in 216, they are among the great imperial baths."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 211.47,
+   "t_out": 216.27,
+   "date": "AD 275",
+   "title": "A wall for the whole city",
+   "lines": [
+    "The Aurelian Walls run 19 km around 13.7 square km."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 219.7,
+   "t_out": 224.5,
+   "date": "AD 306",
+   "title": "The largest baths of all",
+   "lines": [
+    "Built from 298 to 306 under Diocletian."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 224.96,
+   "t_out": 229.76,
+   "date": "AD 312",
+   "title": "Maxentius's basilica",
+   "lines": [
+    "Begun by Maxentius in 308, finished by Constantine in 312."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 230.37,
+   "t_out": 235.17,
+   "date": "AD 320",
+   "title": "Old St. Peter's",
+   "lines": [
+    "Constantine orders a basilica over the site of the Circus of Nero."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 235.94,
+   "t_out": 240.44,
+   "date": "AD 330",
+   "title": "A second capital",
+   "lines": [
+    "Constantinople is consecrated on 11 May 330."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 240.98,
+   "t_out": 245.48,
+   "date": "AD 337",
+   "title": "Constantine dies",
+   "lines": [
+    "Constantine, who made Constantinople the capital, dies in 337."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 262.42,
+   "t_out": 266.92,
+   "date": "AD 380",
+   "title": "Edict of Thessalonica",
+   "lines": [
+    "Theodosius I makes Nicene Christianity the state church."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 268.07,
+   "t_out": 272.57,
+   "date": "AD 395",
+   "title": "The empire divides",
+   "lines": [
+    "His sons Arcadius and Honorius take the East and the West."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 273.57,
+   "t_out": 278.07,
+   "date": "AD 408",
+   "title": "Alaric besieges Rome",
+   "lines": [
+    "The Goths under Alaric lay siege to the city in late 408."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 278.15,
+   "t_out": 282.65,
+   "date": "AD 409",
+   "title": "Rome pays the Goths",
+   "lines": [
+    "The city gives Alaric 5,000 pounds of gold and 30,000 of silver."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 288.78,
+   "t_out": 293.78,
+   "date": "AD 410",
+   "title": "Alaric sacks Rome",
+   "lines": [
+    "The Visigoths enter through the Salarian Gate and pillage the city for three days."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 297.18,
+   "t_out": 301.98,
+   "date": "AD 455",
+   "title": "The Vandals sack Rome",
+   "lines": [
+    "A second sack, more destructive than the first."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 303.59,
+   "t_out": 308.59,
+   "date": "AD 476",
+   "title": "The Western Empire ends",
+   "lines": [
+    "Odoacer deposes Romulus Augustulus, the last emperor in the West."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 313.26,
+   "t_out": 318.06,
+   "date": "AD 536",
+   "title": "Byzantine Rome",
+   "lines": [
+    "General Belisarius recaptures the city for the Eastern Empire on 9 December."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 324.78,
+   "t_out": 329.58,
+   "date": "AD 546",
+   "title": "Totila enters Rome",
+   "lines": [
+    "His Goths scale the walls at night and open the Porta Asinaria."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 329.97,
+   "t_out": 334.97,
+   "date": "AD 552",
+   "title": "A city of 30,000",
+   "lines": [
+    "After the Gothic War the population may have fallen to about 30,000."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 337.88,
+   "t_out": 343.28,
+   "date": "AD 590",
+   "title": "Plague, and an angel",
+   "lines": [
+    "Legend says the Archangel Michael sheathed his sword above the tomb of Hadrian.",
+    "It marks the end of the plague."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 356.02,
+   "t_out": 360.82,
+   "date": "AD 756",
+   "title": "The Papal State",
+   "lines": [
+    "The pope becomes a sovereign ruler. The Papal States last until 1870."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 364.2,
+   "t_out": 369.0,
+   "date": "AD 800",
+   "title": "Charlemagne",
+   "lines": [
+    "Pope Leo III crowns Charlemagne emperor, in Old St. Peter's."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 372.99,
+   "t_out": 377.79,
+   "date": "AD 852",
+   "title": "The Leonine Wall",
+   "lines": [
+    "A three-kilometer wall encircles the Vatican Hill for the first time."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 395.59,
+   "t_out": 400.39,
+   "date": "1084",
+   "title": "The Normans",
+   "lines": [
+    "Italo-Normans sack Rome, called in by Pope Gregory VII."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 417.66,
+   "t_out": 422.46,
+   "date": "1309",
+   "title": "The popes leave",
+   "lines": [
+    "Clement V moves the papal court to Avignon for 67 years."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 431.67,
+   "t_out": 436.67,
+   "date": "1377",
+   "title": "The popes return",
+   "lines": [
+    "Gregory XI reinstates the Holy See in Rome.",
+    "The city has fewer than 20,000 people."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 446.57,
+   "t_out": 451.37,
+   "date": "1506",
+   "title": "A new St. Peter's",
+   "lines": [
+    "Construction of the present basilica begins on 18 April."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 452.98,
+   "t_out": 457.98,
+   "date": "1527",
+   "title": "The Sack of Rome",
+   "lines": [
+    "Mutinous troops of Charles V capture the city.",
+    "The pope takes refuge in Castel Sant'Angelo."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 473.69,
+   "t_out": 478.49,
+   "date": "1676",
+   "title": "Bernini's square",
+   "lines": [
+    "The colonnades of St. Peter's Square are finished."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 484.78,
+   "t_out": 489.58,
+   "date": "1762",
+   "title": "Trevi Fountain",
+   "lines": [
+    "Work began in 1732. Giuseppe Pannini completes it in 1762."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 492.35,
+   "t_out": 497.15,
+   "date": "1798",
+   "title": "A Roman Republic",
+   "lines": [
+    "French troops occupy Rome and a sister republic is proclaimed."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 497.99,
+   "t_out": 502.79,
+   "date": "1809",
+   "title": "Napoleon annexes Rome",
+   "lines": [
+    "Rome becomes part of the First French Empire until 1814."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 505.86,
+   "t_out": 510.86,
+   "date": "1849",
+   "title": "Another Roman Republic",
+   "lines": [
+    "Led by Mazzini, it ends when the French Army enters on 3 July and restores the Pope."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 511.78,
+   "t_out": 516.58,
+   "date": "1861",
+   "title": "Italy is united",
+   "lines": [
+    "The Kingdom of Italy forms with Florence as its temporary capital."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 517.36,
+   "t_out": 522.76,
+   "date": "1871",
+   "title": "Capital of Italy",
+   "lines": [
+    "Italian troops breach the wall near Porta Pia on 20 September 1870.",
+    "Rome becomes the capital on 3 February 1871."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 523.49,
+   "t_out": 528.29,
+   "date": "1881",
+   "title": "A growing capital",
+   "lines": [
+    "The census counts 273,952 residents."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 529.75,
+   "t_out": 534.25,
+   "date": "1900",
+   "title": "Half a million",
+   "lines": [
+    "Rome's population reaches 500,000 at the start of the 20th century."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 540.52,
+   "t_out": 545.32,
+   "date": "1922",
+   "title": "March on Rome",
+   "lines": [
+    "Blackshirts approach the capital, and Mussolini comes to power."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 545.86,
+   "t_out": 550.66,
+   "date": "1929",
+   "title": "Vatican City",
+   "lines": [
+    "The Lateran Pacts recognize Vatican City as an independent state."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 551.35,
+   "t_out": 556.15,
+   "date": "1938",
+   "title": "EUR",
+   "lines": [
+    "Mussolini plans a new district for the 1942 World's Fair."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 556.61,
+   "t_out": 561.61,
+   "date": "1944",
+   "title": "Liberation",
+   "lines": [
+    "American and British troops liberate Rome on June 3-4."
+   ],
+   "sober": true
+  },
+  {
+   "t_in": 561.76,
+   "t_out": 566.56,
+   "date": "1946",
+   "title": "A republic",
+   "lines": [
+    "Rome becomes the capital of the Italian Republic."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 566.87,
+   "t_out": 571.67,
+   "date": "1950",
+   "title": "Termini Station",
+   "lines": [
+    "The new station is inaugurated."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 571.75,
+   "t_out": 576.55,
+   "date": "1951",
+   "title": "A city of 1.65 million",
+   "lines": [
+    "The census counts 1,651,754 residents."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 577.01,
+   "t_out": 581.51,
+   "date": "1957",
+   "title": "Treaty of Rome",
+   "lines": [
+    "The treaty founding the European Economic Community is signed on the Capitoline Hill on 25 March 1957."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 586.08,
+   "t_out": 590.88,
+   "date": "1971",
+   "title": "Peak population",
+   "lines": [
+    "The census counts 2,781,993 residents, the highest on record."
+   ],
+   "sober": false
+  }
+ ],
+ "chapters": [
+  {
+   "t_in": 12.9,
+   "t_out": 15.7,
+   "num": "I",
+   "title": "Kings and Republic"
+  },
+  {
+   "t_in": 130.08,
+   "t_out": 131.35,
+   "num": "II",
+   "title": "Imperial Rome"
+  },
+  {
+   "t_in": 285.98,
+   "t_out": 288.78,
+   "num": "III",
+   "title": "Fall and Faith"
+  },
+  {
+   "t_in": 414.86,
+   "t_out": 417.66,
+   "num": "IV",
+   "title": "Medieval Rome"
+  },
+  {
+   "t_in": 443.77,
+   "t_out": 446.57,
+   "num": "V",
+   "title": "Renaissance and Baroque"
+  },
+  {
+   "t_in": 489.58,
+   "t_out": 492.35,
+   "num": "VI",
+   "title": "Revolution and Unification"
+  },
+  {
+   "t_in": 516.16,
+   "t_out": 517.36,
+   "num": "VII",
+   "title": "Capital of Italy"
+  },
+  {
+   "t_in": 555.41,
+   "t_out": 556.61,
+   "num": "VIII",
+   "title": "Modern Rome"
+  }
+ ],
+ "cta": {
+  "t_in": 647.5,
+  "t_out": 652.0,
+  "text": "Which city should grow next? Tell me in the comments"
+ },
+ "sources_card": {
+  "t_in": 652.0,
+  "t_out": 660.0,
+  "items": [
+   "Buildings, streets, rivers, parks: © OpenStreetMap contributors (ODbL)",
+   "Building ages: ISTAT 2011 census sections, statistical; before 1919 estimated",
+   "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+   "History: Wikipedia EN (Rome, Roman Kingdom, Colosseum, Pantheon, Aurelian Walls and others)",
+   "Population: Wikidata (census figures), Wikipedia IT and EN estimates",
+   "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+  ],
+  "no_ai": "NO AI: every frame is rendered from open data"
+ }
 }

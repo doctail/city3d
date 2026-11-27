@@ -1,0 +1,58 @@
+100 4
+  41.89250,12.47097 y=-133.99 d=546.9956 kit=zone dist_shore=17m
+  41.89219,12.47052 y=-131.38 d=1936.66 kit=zone dist_shore=16m
+  41.89236,12.47075 y=-131.83 d=1692.19 kit=zone dist_shore=40m
+  41.90560,12.47399 y=-13.41 d=546.9863 kit=zone dist_shore=10m
+600 2
+  41.89219,12.47052 y=-131.38 d=1936.66 kit=zone dist_shore=16m
+  41.89236,12.47075 y=-131.83 d=1692.19 kit=zone dist_shore=40m
+1500 3
+  41.89219,12.47052 y=-131.38 d=1936.66 kit=zone dist_shore=16m
+  41.89236,12.47075 y=-131.83 d=1692.19 kit=zone dist_shore=40m
+  41.90560,12.47399 y=1451.08 d=1841.83 kit=fire dist_shore=10m
+2026 22
+  41.93647,12.47444 y=1924.17 d=None kit=cur dist_shore=30m
+  41.93678,12.47443 y=1940.33 d=None kit=cur dist_shore=5m
+  41.89250,12.47097 y=1683.36 d=None kit=cur dist_shore=17m
+  41.89219,12.47052 y=1937.96 d=None kit=cur dist_shore=16m
+  41.89236,12.47075 y=1693.06 d=None kit=cur dist_shore=40m
+  41.93271,12.46165 y=1949.8 d=None kit=cur dist_shore=8m
+  41.91493,12.48276 y=1947.66 d=None kit=cur dist_shore=21m
+  41.92497,12.55797 y=1966.55 d=None kit=cur dist_shore=7m
+  41.90560,12.47399 y=1843.24 d=None kit=cur dist_shore=10m
+  41.82857,12.46451 y=1969.37 d=None kit=cur dist_shore=1m
+  41.82869,12.46446 y=1953.8 d=None kit=cur dist_shore=1m
+  41.93115,12.46082 y=1952.21 d=None kit=cur dist_shore=33m
+  41.91058,12.47242 y=1943.82 d=None kit=cur dist_shore=8m
+  41.91601,12.47033 y=1961.33 d=None kit=cur dist_shore=14m
+  41.91706,12.47041 y=1967.25 d=None kit=cur dist_shore=11m
+  41.93551,12.46697 y=1953.51 d=None kit=cur dist_shore=54m
+  41.93574,12.46687 y=1946.42 d=None kit=cur dist_shore=38m
+  41.93529,12.46707 y=1948.93 d=None kit=cur dist_shore=30m
+  41.93595,12.46677 y=1885.23 d=None kit=cur dist_shore=13m
+  41.93510,12.46716 y=1896.12 d=None kit=cur dist_shore=8m
+  41.92655,12.45982 y=1950.57 d=None kit=cur dist_shore=23m
+  41.91147,12.47199 y=1888.03 d=None kit=cur dist_shore=10m
+--- detail 2026
+41.93647,12.47444 area=35m2 on_land=0% h=19.9 y=1924.17
+41.93678,12.47443 area=44m2 on_land=0% h=17.7 y=1940.33
+41.89250,12.47097 area=97m2 on_land=0% h=15.2 y=1683.36
+41.89219,12.47052 area=99m2 on_land=0% h=20.4 y=1937.96
+41.89236,12.47075 area=108m2 on_land=0% h=13.1 y=1693.06
+41.93271,12.46165 area=329m2 on_land=0% h=18.0 y=1949.8
+41.91493,12.48276 area=75m2 on_land=0% h=18.9 y=1947.66
+41.92497,12.55797 area=255m2 on_land=56% h=27.6 y=1966.55
+41.90560,12.47399 area=426m2 on_land=0% h=13.4 y=1843.24
+41.82857,12.46451 area=21m2 on_land=33% h=24.3 y=1969.37
+41.82869,12.46446 area=23m2 on_land=29% h=17.8 y=1953.8
+41.93115,12.46082 area=3233m2 on_land=26% h=0.1 y=1952.21
+41.91058,12.47242 area=145m2 on_land=0% h=16.0 y=1943.82
+41.91601,12.47033 area=123m2 on_land=0% h=26.2 y=1961.33
+41.91706,12.47041 area=162m2 on_land=0% h=22.8 y=1967.25
+41.93551,12.46697 area=86m2 on_land=0% h=-9.0 y=1953.51
+41.93574,12.46687 area=86m2 on_land=0% h=-9.0 y=1946.42
+41.93529,12.46707 area=86m2 on_land=0% h=-9.0 y=1948.93
+41.93595,12.46677 area=86m2 on_land=0% h=-13.0 y=1885.23
+41.93510,12.46716 area=86m2 on_land=0% h=-13.0 y=1896.12
+41.92655,12.45982 area=3264m2 on_land=58% h=18.2 y=1950.57
+41.91147,12.47199 area=380m2 on_land=0% h=18.0 y=1888.03

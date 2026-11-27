@@ -1,0 +1,11 @@
+yb-qa Roma (2026-11-19). Build: kit build roma --force (hist 8 s, total 20 s, peak 347 MB).
+Initial QA e: FAIL vmax 380 m/s, amax 235, jerk 281, 9 jumps at 112.6 s, hover v 51.7 m/s (cause: stops 3.0-3.5 s apart in years/time: legs too short).
+Tried and reverted (no effect): drone.t_leg_min 7 + v_leg 100; max_duration 1500 + v_leg 95/90; cruise_k 0.1/cruise_min 80.
+Changes (each demoted stop became a montaggio card with same y/title/hold_s/src; sources untouched), in order:
+1) demote 'Theatre of Marcellus (13 BC)' -> jumps gone.
+2) demote 'Circus Maximus (329 BC)'.
+3) demote "Trajan's Column (113)".
+4) demote "Hadrian's Mausoleum (134-139)".
+5) demote 'Baths of Caracalla (216)'.
+6) demote 'The Pantheon (c. 126)' (Colosseum->Pantheon leg was the last vmax 307 m/s).
+Result: QA WARN only; vmax 122 m/s, 16 soste kept. Note: card 'lines' of demoted stops reuse the caption (no new text).

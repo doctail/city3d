@@ -1,0 +1,3930 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "roma",
+  "name": "Rome",
+  "country": "Italy",
+  "lat0": 41.896,
+  "lon0": 12.4823,
+  "radius_m": 9000,
+  "start_year": -753,
+  "end_year": 2026,
+  "title": "EVOLUTION OF ROME | 3D City Timelapse (753 BC-NOW) | No AI",
+  "data_source": "custom",
+  "data_dir": "data_roma",
+  "style_preset": "mediterranean",
+  "population": [
+   [
+    -753,
+    3000,
+    "rough estimate"
+   ],
+   [
+    -550,
+    35000,
+    "rough estimate"
+   ],
+   [
+    -270,
+    187000,
+    "rough estimate"
+   ],
+   [
+    -150,
+    300000,
+    "rough estimate"
+   ],
+   [
+    -27,
+    1000000,
+    "rough estimate"
+   ],
+   [
+    150,
+    1200000,
+    "rough estimate"
+   ],
+   [
+    400,
+    700000,
+    "rough estimate"
+   ],
+   [
+    450,
+    650000,
+    "rough estimate"
+   ],
+   [
+    520,
+    200000,
+    "rough estimate"
+   ],
+   [
+    552,
+    30000,
+    "rough estimate"
+   ],
+   [
+    1150,
+    80000,
+    "historical estimate"
+   ],
+   [
+    1377,
+    17000,
+    "historical estimate"
+   ],
+   [
+    1526.9,
+    55035,
+    "historical estimate"
+   ],
+   [
+    1527.5,
+    20000,
+    "historical estimate"
+   ],
+   [
+    1600,
+    110000,
+    "historical estimate"
+   ],
+   [
+    1750,
+    156000,
+    "historical estimate"
+   ],
+   [
+    1861,
+    194500,
+    "census"
+   ],
+   [
+    1871,
+    212432,
+    "census"
+   ],
+   [
+    1881,
+    273952,
+    "census"
+   ],
+   [
+    1901,
+    422411,
+    "census"
+   ],
+   [
+    1911,
+    518917,
+    "census"
+   ],
+   [
+    1921,
+    660235,
+    "census"
+   ],
+   [
+    1931,
+    930926,
+    "census"
+   ],
+   [
+    1936,
+    1150589,
+    "census"
+   ],
+   [
+    1951,
+    1651754,
+    "census"
+   ],
+   [
+    1961,
+    2188160,
+    "census"
+   ],
+   [
+    1971,
+    2781993,
+    "census"
+   ],
+   [
+    1981,
+    2840259,
+    "census"
+   ],
+   [
+    1991,
+    2775250,
+    "census"
+   ],
+   [
+    2001,
+    2663182,
+    "census"
+   ],
+   [
+    2011,
+    2617175,
+    "census"
+   ],
+   [
+    2023,
+    2748109,
+    "census"
+   ],
+   [
+    2026,
+    2743851,
+    "census"
+   ]
+  ],
+  "pop_src": [
+   "S1",
+   "S52",
+   "S53",
+   "S50",
+   "S42"
+  ],
+  "eras": [
+   [
+    -753,
+    "Kingdom of Rome",
+    "#c9a24a"
+   ],
+   [
+    -509,
+    "Roman Republic",
+    "#b5654a"
+   ],
+   [
+    -27,
+    "Imperial Rome",
+    "#a03a3a"
+   ],
+   [
+    476,
+    "Fall and Gothic Wars",
+    "#9c7a52"
+   ],
+   [
+    756,
+    "Medieval Papal Rome",
+    "#8a6aa0"
+   ],
+   [
+    1377,
+    "Renaissance and Baroque Rome",
+    "#6aa0c8"
+   ],
+   [
+    1798,
+    "Revolution and Napoleon",
+    "#7cb06a"
+   ],
+   [
+    1870.7,
+    "Capital of Italy",
+    "#c98a4a"
+   ],
+   [
+    1922.8,
+    "Fascist Rome",
+    "#8c8c8c"
+   ],
+   [
+    1946,
+    "Republic",
+    "#c9c1b0"
+   ]
+  ],
+  "data_reliable_from": 1919,
+  "pop_conf": [
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "low",
+   "medium",
+   "medium",
+   "low",
+   "medium",
+   "medium",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "high",
+   "medium",
+   "medium"
+  ],
+  "polities": [
+   {
+    "y": -753,
+    "name": "Kingdom of Rome",
+    "flag_colors": [
+     "#5b2a86",
+     "#d4af37"
+    ],
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -509,
+    "name": "Roman Republic",
+    "flag_colors": [
+     "#a50f15",
+     "#d4af37"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -27,
+    "name": "Roman Empire",
+    "flag_colors": [
+     "#a50f15",
+     "#5b2a86"
+    ],
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 476,
+    "name": "Odoacer's Italy · Western Empire ends",
+    "flag_colors": [
+     "#6b6b6b",
+     "#d4af37"
+    ],
+    "src": [
+     "S40",
+     "S39"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 493,
+    "name": "Ostrogothic Kingdom",
+    "flag_colors": [
+     "#5b4a8a",
+     "#d4af37"
+    ],
+    "src": [
+     "S39"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 536.94,
+    "name": "Eastern Roman (Byzantine) Rome",
+    "flag_colors": [
+     "#5b2a86",
+     "#d4af37"
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 756,
+    "name": "Papal State",
+    "flag_colors": [
+     "#f2c500",
+     "#ffffff"
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1798.12,
+    "name": "Roman Republic · French sister republic",
+    "flag_colors": [
+     "#1f3a93",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S27"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1799.8,
+    "name": "Papal State restored",
+    "flag_colors": [
+     "#f2c500",
+     "#ffffff"
+    ],
+    "src": [
+     "S27",
+     "S41"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1809,
+    "name": "French Empire · Napoleonic Rome",
+    "flag_colors": [
+     "#1f3a93",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1814,
+    "name": "Papal State restored",
+    "flag_colors": [
+     "#f2c500",
+     "#ffffff"
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1849.11,
+    "name": "Roman Republic · Mazzini",
+    "flag_colors": [
+     "#009246",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S26"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1849.5,
+    "name": "Papal State · French garrison",
+    "flag_colors": [
+     "#f2c500",
+     "#ffffff"
+    ],
+    "src": [
+     "S26"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1870.72,
+    "name": "Kingdom of Italy",
+    "flag_colors": [
+     "#009246",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S28"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1922.83,
+    "name": "Kingdom of Italy · Fascist regime",
+    "flag_colors": [
+     "#111111",
+     "#a50f15"
+    ],
+    "src": [
+     "S29",
+     "S50"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1944.43,
+    "name": "Kingdom of Italy · Liberated Rome",
+    "flag_colors": [
+     "#009246",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S30"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1946,
+    "name": "Italian Republic",
+    "flag_colors": [
+     "#009246",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "high"
+   }
+  ],
+  "look": {
+   "palette": "cities/roma/palette.json",
+   "ground_tint": true,
+   "saturation": 1.7,
+   "street_gain": 1.3,
+   "rb_tol": 0.06
+  }
+ },
+ "sources": {
+  "S1": {
+   "url": "https://en.wikipedia.org/wiki/Roman_Kingdom",
+   "title": "Wikipedia EN, Roman Kingdom",
+   "quote": "753 BC, with settlements around the Palatine Hill along the river Tiber in central Italy … a significant number for a population of 3,000 Latins … Among these were Rome's great sewer systems, the Cloaca Maxima, which he used to drain the swamp-like area between the Seven Hills of Rome. … Lucius Tarquinius Priscus was the fifth king of Rome and the first of Etruscan birth."
+  },
+  "S2": {
+   "url": "https://en.wikipedia.org/wiki/Roman_Republic",
+   "title": "Wikipedia EN, Roman Republic",
+   "quote": "beginning with the overthrow of the Roman Kingdom (traditionally dated to 509 BC) and ending in 27 BC with the establishment of the Roman Empire … was expelled from Rome in 509 BC"
+  },
+  "S3": {
+   "url": "https://en.wikipedia.org/wiki/Temple_of_Jupiter_Optimus_Maximus",
+   "title": "Wikipedia EN, Temple of Jupiter Optimus Maximus",
+   "quote": "Traditionally dedicated in 509 BC, the first building was the oldest and most important large temple in Archaic Rome."
+  },
+  "S4": {
+   "url": "https://en.wikipedia.org/wiki/Servian_Wall",
+   "title": "Wikipedia EN, Servian Wall",
+   "quote": "is dated by Livy to have been completed in 378 BC … enclosed a total area of 246 hectares (610 acres) … The largest section is preserved outside the Termini Station … Expanding domestic structures simply incorporated existing wall sections into their foundations"
+  },
+  "S5": {
+   "url": "https://en.wikipedia.org/wiki/Circus_Maximus",
+   "title": "Wikipedia EN, Circus Maximus",
+   "quote": "Permanent wooden starting stalls were built in 329 BC. … It measured 621 m (2,037 ft) in length and 118 m (387 ft) in width … it was the first and largest stadium in ancient Rome and its later Empire"
+  },
+  "S6": {
+   "url": "https://en.wikipedia.org/wiki/Colosseum",
+   "title": "Wikipedia EN, Colosseum",
+   "quote": "in 72 and was completed in AD 80 under his successor and heir, Titus … Severe damage was inflicted on the Colosseum by the great earthquake in 1349, causing the outer south side, lying on a less stable alluvial terrain, to collapse."
+  },
+  "S7": {
+   "url": "https://en.wikipedia.org/wiki/Theatre_of_Marcellus",
+   "title": "Wikipedia EN, Theatre of Marcellus",
+   "quote": "it was completed in 13 BC and formally inaugurated in 12 BC by Augustus"
+  },
+  "S8": {
+   "url": "https://en.wikipedia.org/wiki/Mausoleum_of_Augustus",
+   "title": "Wikipedia EN, Mausoleum of Augustus",
+   "quote": "a large tomb built by the Roman emperor Augustus in 28 BC on the Campus Martius … The completed mausoleum measured 90 m (295 ft) in diameter by 42 m (137 ft) in height."
+  },
+  "S9": {
+   "url": "https://en.wikipedia.org/wiki/Trajan%27s_Column",
+   "title": "Wikipedia EN, Trajan's Column",
+   "quote": "Completed and dedicated on 12 May 113 AD … The structure is about 30 metres (98 feet) in height, 35 metres (115 feet) including its large pedestal."
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+   "title": "Wikipedia EN, Pantheon, Rome",
+   "quote": "originally built under Roman emperor Augustus (27 BC–AD 14) and reconstructed under Hadrian (117–138) … the present building was completed by the emperor Hadrian and probably dedicated c. AD 126"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Basilica_of_Maxentius",
+   "title": "Wikipedia EN, Basilica of Maxentius",
+   "quote": "Construction began on the northern side of the forum under the emperor Maxentius in 308 AD, and was completed in 312 by Constantine I"
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Palatine_Hill",
+   "title": "Wikipedia EN, Palatine Hill",
+   "quote": "Excavations show that people have lived in the area since the 10th century BC. … the ruins of the palaces of at least Augustus (27 BC – 14 AD), Tiberius (14–37 AD) and Domitian (81–96 AD) can still be seen"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Castel_Sant%27Angelo",
+   "title": "Wikipedia EN, Castel Sant'Angelo",
+   "quote": "was erected on the right bank (or northern edge) of the Tiber, between 134 and 139 AD … Legend holds that the Archangel Michael appeared atop the mausoleum, sheathing his sword as a sign of the end of the plague of 590"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Baths_of_Caracalla",
+   "title": "Wikipedia EN, Baths of Caracalla",
+   "quote": "The baths were likely built between AD 212 (or 211) and 216/217 … They were inaugurated in AD 216."
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Baths_of_Diocletian",
+   "title": "Wikipedia EN, Baths of Diocletian",
+   "quote": "Named after emperor Diocletian and built from AD 298 to 306, they were the largest of the imperial baths."
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Aurelian_Walls",
+   "title": "Wikipedia EN, Aurelian Walls",
+   "quote": "are a line of city walls built between AD 271 and AD 275 in Rome … The full circuit ran for 19 km (12 mi) surrounding an area of 13.7 km2 (5.3 sq mi). … brick-faced concrete, 3.5 m (11 ft) thick and 8 m (26 ft) high, with a square tower every 100 Roman feet (29.6 m (97 ft)) … on the right bank of the Tiber, the Trastevere district … until 20 September 1870, when the Bersaglieri of the Kingdom of Italy breached the wall near the Porta Pia and captured Rome"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/Old_St._Peter%27s_Basilica",
+   "title": "Wikipedia EN, Old St. Peter's Basilica",
+   "quote": "Construction began by orders of the Roman Emperor Constantine I between 318 and 322 … took about 40 years to complete … in 800, Charlemagne was crowned emperor of the Carolingian Empire there … its last original part being demolished in 1605 … built over the historical site of the Circus of Nero"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica",
+   "title": "Wikipedia EN, St. Peter's Basilica",
+   "quote": "Construction of the present basilica began on 18 April 1506 and was completed on 18 November 1626. … Giacomo della Porta and Domenico Fontana brought the dome to completion in 1590, the last year of the reign of Sixtus V. … Peter's rises to a total height of 136.57 metres (448.1 ft)"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/St._Peter%27s_Square",
+   "title": "Wikipedia EN, St. Peter's Square",
+   "quote": "was redesigned by Gian Lorenzo Bernini from 1667 to 1676, under the direction of Pope Alexander VII"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/Leonine_City",
+   "title": "Wikipedia EN, Leonine City",
+   "quote": "Built from 848 to 852 as the only extension ever made to the walls of Rome, this three-kilometre wall completely encircled the Vatican Hill for the first time in its history. … The walling was constructed of tuff and tiling, forty feet high, with 44 strong towers at bowshot intervals."
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Sack_of_Rome_(410)",
+   "title": "Wikipedia EN, Sack of Rome (410)",
+   "quote": "On 24 August 410 the Visigoths entered Rome through its Salarian Gate, according to some opened by treachery, according to others by want of food, and pillaged the city for three days. ... The Goths under Alaric laid siege to the city in late 408. ... Ultimately, the city was forced to give the Goths 5,000 pounds of gold, 30,000 pounds of silver"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Rome_(537%E2%80%93538)",
+   "title": "Wikipedia EN, Siege of Rome (537-538)",
+   "quote": "The siege of Rome took place from 2 March 537 to 12 March 538 AD … They proceeded to block the aqueducts that were supplying the city with its water, necessary both for drinking and for operating the gristmills. … First they tried to enter through the Aqua Virgo aqueduct."
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Gothic_War_(535%E2%80%93554)",
+   "title": "Wikipedia EN, Gothic War (535-554)",
+   "quote": "Totila finally entered Rome on 17 December 546, when his men scaled the walls at night and opened the Porta Asinaria."
+  },
+  "S24": {
+   "url": "https://en.wikipedia.org/wiki/Great_Fire_of_Rome",
+   "title": "Wikipedia EN, Great Fire of Rome",
+   "quote": "nearly three quarters of Rome had been destroyed (10 out of 14 districts) … The fire started in the merchant shops around Rome's chariot stadium, Circus Maximus. … in the region of the Circus neighboring the Caelian and Palatine Hills of Rome … began on the evening of 18–19 July 64 AD"
+  },
+  "S25": {
+   "url": "https://en.wikipedia.org/wiki/Sack_of_Rome_(1527)",
+   "title": "Wikipedia EN, Sack of Rome (1527)",
+   "quote": "followed the capture of Rome on 6 May 1527 by the mutinous troops of Charles V, Holy Roman Emperor … Clement VII took refuge in Castel Sant'Angelo"
+  },
+  "S26": {
+   "url": "https://en.wikipedia.org/wiki/Roman_Republic_(1849)",
+   "title": "Wikipedia EN, Roman Republic (1849)",
+   "quote": "was a short-lived state declared on 9 February 1849 … The republic was led by Carlo Armellini, Giuseppe Mazzini, and Aurelio Saffi. … The French Army entered Rome on 3 July and reestablished the Holy See's temporal power."
+  },
+  "S27": {
+   "url": "https://en.wikipedia.org/wiki/Roman_Republic_(18th_century)",
+   "title": "Wikipedia EN, Roman Republic (18th century)",
+   "quote": "was a sister republic of the French First Republic that existed from 1798 to 1799 … It was proclaimed on 15 February 1798 after Louis-Alexandre Berthier, a general of the French Revolutionary Army, had occupied the city of Rome on 11 February. … It proved short-lived, as Neapolitan troops restored the Papal States in October 1799."
+  },
+  "S28": {
+   "url": "https://en.wikipedia.org/wiki/Capture_of_Rome",
+   "title": "Wikipedia EN, Capture of Rome",
+   "quote": "The capture of Rome (Italian: Presa di Roma) occurred on 20 September 1870 … Rome was officially made capital of Italy on 3 February 1871"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/March_on_Rome",
+   "title": "Wikipedia EN, March on Rome",
+   "quote": "On 28 October, the fascist demonstrators and Blackshirt paramilitaries approached the capital … ascending to power in the Kingdom of Italy"
+  },
+  "S30": {
+   "url": "https://en.wikipedia.org/wiki/Liberation_of_Rome",
+   "title": "Wikipedia EN, Liberation of Rome",
+   "quote": "The liberation of Rome from German occupation in World War II was carried out on June 3–4, 1944 by American and British troops."
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Avignon_Papacy",
+   "title": "Wikipedia EN, Avignon Papacy",
+   "quote": "Clement refused to move to Rome, and in 1309 he moved his court to the papal enclave at Avignon, where it remained for the next 67 years."
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+   "title": "Wikipedia EN, Trevi Fountain",
+   "quote": "completed by Giuseppe Pannini in 1762 … Work began in 1732."
+  },
+  "S33": {
+   "url": "https://en.wikipedia.org/wiki/1960_Summer_Olympics",
+   "title": "Wikipedia EN, 1960 Summer Olympics",
+   "quote": "were an international multi-sport event held from 25 August to 11 September 1960 in Rome, Italy"
+  },
+  "S34": {
+   "url": "https://en.wikipedia.org/wiki/EUR,_Rome",
+   "title": "Wikipedia EN, EUR, Rome",
+   "quote": "Palazzo della Civiltà Italiana (1938–1943) … The area was originally chosen in the 1930s as the site for the 1942 World's Fair which Benito Mussolini planned to open to celebrate twenty years of Fascism"
+  },
+  "S35": {
+   "url": "https://en.wikipedia.org/wiki/Roma_Termini_railway_station",
+   "title": "Wikipedia EN, Roma Termini railway station",
+   "quote": "It was inaugurated in 1950. … On 25 February 1863, Pope Pius IX opened the first, temporary Termini Station"
+  },
+  "S36": {
+   "url": "https://en.wikipedia.org/wiki/Vittoriano",
+   "title": "Wikipedia EN, Vittoriano",
+   "quote": "a large national monument built between 1885 and 1935 to honour Victor Emmanuel II … The partly completed monument was inaugurated on 4 June 1911"
+  },
+  "S37": {
+   "url": "https://en.wikipedia.org/wiki/Stadio_Olimpico_(Rome)",
+   "title": "Wikipedia EN, Stadio Olimpico (Rome)",
+   "quote": "it was opened on 17 May 1953 with a football game between Italy and Hungary … The Olimpico hosted the opening and closing ceremonies and track-and-field events of the 1960 Olympics"
+  },
+  "S38": {
+   "url": "https://en.wikipedia.org/wiki/Sack_of_Rome_(1084)",
+   "title": "Wikipedia EN, Sack of Rome (1084)",
+   "quote": "In May 1084, Italo-Normans sacked Rome, the result of the Pope Gregory VII's call for aid from the duke of Apulia, Robert Guiscard."
+  },
+  "S39": {
+   "url": "https://en.wikipedia.org/wiki/Ostrogothic_Kingdom",
+   "title": "Wikipedia EN, Ostrogothic Kingdom",
+   "quote": "controlled Italy and neighbouring areas between 493 and 553 … Odoacer had previously become the de facto ruler of Italy"
+  },
+  "S40": {
+   "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+   "title": "Wikipedia EN, Fall of the Western Roman Empire",
+   "quote": "In 476, the Germanic barbarian king Odoacer deposed the last emperor of the Western Roman Empire in Italy, Romulus Augustulus"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Papal_States",
+   "title": "Wikipedia EN, Papal States",
+   "quote": "under the direct sovereign rule of the pope from 756 to 1870 … Following the fall of the First French Empire in 1814, the Congress of Vienna (1814–15) formally restored the Italian territories of the Papal States"
+  },
+  "S42": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Rome",
+   "title": "Wikipedia EN, History of Rome",
+   "quote": "he found Rome a city of brick and left it a city of marble … Estimates of its peak population range from 450,000 to over 3.5 million people with estimates of 1 to 2 million being most popular with historians. … Rome was annexed by Napoleon and was part of the First French Empire from 1809 to 1814. … Only on 17 January 1377, Gregory XI could finally reinstate the Holy See in Rome. … Rome became the capital of the Italian Republic (established in 1946). … recapturing the city next year, on 9 December AD 536 … the population of Rome fell to as low as 30,000 inhabitants … its population falling below 20,000 … Rome was annexed by Napoleon and was part of the First French Empire from 1809 to 1814."
+  },
+  "S43": {
+   "url": "https://en.wikipedia.org/wiki/Charlemagne",
+   "title": "Wikipedia EN, Charlemagne",
+   "quote": "In 800, Charlemagne was crowned emperor in Rome by Pope Leo III."
+  },
+  "S44": {
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Allia",
+   "title": "Wikipedia EN, Battle of the Allia",
+   "quote": "they decided to send the men of military age, the able-bodied senators and their families to the Capitoline Hill with weapons and provisions to defend the fortress"
+  },
+  "S45": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Rome",
+   "title": "Wikipedia EN, History of Rome (Gallic sack)",
+   "quote": "The Gauls destroyed much of Rome's historical records when they sacked the city after the Battle of the Allia in 390 BC (according to Polybius, the battle occurred in 387/386)"
+  },
+  "S46": {
+   "url": "https://en.wikipedia.org/wiki/Appian_Way",
+   "title": "Wikipedia EN, Appian Way",
+   "quote": "began and completed the first section as a military road to the south in 312 BC"
+  },
+  "S47": {
+   "url": "https://en.wikipedia.org/wiki/Aqua_Appia",
+   "title": "Wikipedia EN, Aqua Appia",
+   "quote": "The Aqua Appia was the first Roman aqueduct, and its construction was begun in 312 BC by the censor Appius Claudius Caecus"
+  },
+  "S48": {
+   "url": "https://en.wikipedia.org/wiki/Third_Punic_War",
+   "title": "Wikipedia EN, Third Punic War",
+   "quote": "In early 146 BC the Romans launched their final assault and, over six days, systematically destroyed the city"
+  },
+  "S49": {
+   "url": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar",
+   "title": "Wikipedia EN, Assassination of Julius Caesar",
+   "quote": "Julius Caesar, the Roman dictator, was assassinated on the Ides of March (15 March), 44 BC, by a group of senators"
+  },
+  "S50": {
+   "url": "https://en.wikipedia.org/wiki/Rome",
+   "title": "Wikipedia EN, Rome",
+   "quote": "Rome then became the focus of hopes of Italian reunification after the rest of Italy was united as the Kingdom of Italy in 1861 with the temporary capital in Florence. … Rome then became the focus of hopes of Italian reunification … By 550 BC, Rome was the second largest city in Italy after only Taras (modern Taranto) on the Salento Peninsula. It had an area of about 285 ha (700 acres) and an estimated population of 35,000. … After the Gothic Wars, 535–552, the population may have dwindled temporarily to 30,000. … When the Kingdom of Italy annexed Rome in 1870, the city had a population of about 225,000. … He did away with democracy by 1926"
+  },
+  "S51": {
+   "url": "https://en.wikipedia.org/wiki/Lateran_Treaty",
+   "title": "Wikipedia EN, Lateran Treaty",
+   "quote": "The Lateran Treaty was one component of the Lateran Pacts of 1929 … The treaty recognised Vatican City as an independent state under the sovereignty of the Holy See."
+  },
+  "S52": {
+   "url": "https://it.wikipedia.org/wiki/Demografia_di_Roma",
+   "title": "Wikipedia IT, Demografia di Roma",
+   "quote": "si calcola che Roma possedesse già una popolazione di almeno 30 000 abitanti … con circa 187 000 residenti … Sotto Augusto la popolazione romana si attestava attorno al milione di abitanti … con 1 200 000-1 700 000 residenti stipati in circa 49 000 edifici … fra i 700 000 e il milione di abitanti … ospitava, all'interno delle proprie mura, 650 000 abitanti circa … Il secondo sacco ad opera dei Vandali (455), ben più distruttivo e cruento del precedente … si attestava attorno alle 200 000 unità … non più di 30 000 abitanti alla fine della guerra gotica … gli 80 000 abitanti … 55 035 abitanti … ridottisi però a 20 000 dopo tale luttuoso evento … Nel 1600 Roma aveva raggiunto i 110 000 abitanti … i 156 000 abitanti del 1750"
+  },
+  "S53": {
+   "url": "https://www.wikidata.org/wiki/Q220",
+   "title": "Wikidata, Rome (Q220), population (P1082) with point in time",
+   "quote": "population (P1082), Rome: 550 BC: 35,000; 150 BC: 300,000; 1377: 17,000; 1861: 194,500; 1871: 212,432; 1881: 273,952; 1901: 422,411; 1911: 518,917; 1921: 660,235; 1931: 930,926; 1936: 1,150,589; 1951: 1,651,754; 1961: 2,188,160; 1971: 2,781,993; 1981: 2,840,259; 1991: 2,775,250; 2001: 2,663,182; 2011: 2,617,175; 2023: 2,748,109; 2026: 2,743,851"
+  },
+  "S54": {
+   "url": "https://en.wikipedia.org/wiki/Vatican_City_railway_station",
+   "title": "Wikipedia EN, Vatican City railway station",
+   "quote": "construction beginning on 3 April 1929 ... officially opened on 2 October 1934"
+  },
+  "S55": {
+   "url": "https://en.wikipedia.org/wiki/Lungotevere",
+   "title": "Wikipedia EN, Lungotevere",
+   "quote": "Construction began in 1876 and finished in 1926 ... eliminate and dam the overflows of the Tiber"
+  },
+  "S56": {
+   "url": "https://en.wikipedia.org/wiki/Cloaca_Maxima",
+   "title": "Wikipedia EN, Cloaca Maxima",
+   "quote": "may have initially been constructed around 600 BC under the orders of the king of Rome ... in order to drain local marshes and remove waste from the city. ... Some parts of the sewer are still used today."
+  },
+  "S57": {
+   "url": "https://en.wikipedia.org/wiki/First_Punic_War",
+   "title": "Wikipedia EN, First Punic War",
+   "quote": "The First Punic War (264–241 BC) was the first of three wars fought between Rome and Carthage ... Sicily was annexed as a Roman province."
+  },
+  "S58": {
+   "url": "https://en.wikipedia.org/wiki/Second_Punic_War",
+   "title": "Wikipedia EN, Second Punic War",
+   "quote": "Hannibal defeated the Romans at Cannae in 216 BC, where he annihilated the largest army the Romans had ever assembled."
+  },
+  "S59": {
+   "url": "https://en.wikipedia.org/wiki/Augustus",
+   "title": "Wikipedia EN, Augustus",
+   "quote": "He died in AD 14 at age 75 from natural causes, and the Senate posthumously deified him."
+  },
+  "S60": {
+   "url": "https://en.wikipedia.org/wiki/Constantinople",
+   "title": "Wikipedia EN, Constantinople",
+   "quote": "Constantinople was built over six years and ceremonially consecrated on 11 May 330."
+  },
+  "S61": {
+   "url": "https://en.wikipedia.org/wiki/Edict_of_Thessalonica",
+   "title": "Wikipedia EN, Edict of Thessalonica",
+   "quote": "issued on 27 February AD 380 by Theodosius I, made Nicene Christianity the state church of the Roman Empire."
+  },
+  "S62": {
+   "url": "https://en.wikipedia.org/wiki/Theodosius_I",
+   "title": "Wikipedia EN, Theodosius I",
+   "quote": "His sons, previously made his co-emperors, jointly succeeded him: Arcadius in the eastern half of the empire and Honorius in the west."
+  },
+  "S63": {
+   "url": "https://en.wikipedia.org/wiki/Constantine_the_Great",
+   "title": "Wikipedia EN, Constantine the Great",
+   "quote": "22 May 337 (aged 65) ... He founded the city of Constantinople (now Istanbul) and made it the capital of the Empire."
+  },
+  "S64": {
+   "url": "https://en.wikipedia.org/wiki/Treaty_of_Rome",
+   "title": "Wikipedia EN, Treaty of Rome",
+   "quote": "signed on 25 March 1957 on Capitoline Hill in Rome, Italy, and took effect on 1 January 1958 ... 1957 founding treaty of the European Economic Community"
+  },
+  "S65": {
+   "url": "https://en.wikipedia.org/wiki/Ponte_Fabricio",
+   "title": "Wikipedia EN, Ponte Fabricio",
+   "quote": "the bridge was built in 62 BC ... Completely intact from Roman antiquity, it has been in continuous use ever since."
+  },
+  "S66": {
+   "url": "https://en.wikipedia.org/wiki/Ponte_Cestio",
+   "title": "Wikipedia EN, Ponte Cestio",
+   "quote": "The original bridge was built around the 1st century BC (some time between 62 and 27 BC). ... During the embankment of the Tiber's channel in 1888–1892, ... the reconstruction of a new bridge."
+  },
+  "S67": {
+   "url": "https://en.wikipedia.org/wiki/Ponte_Sant%27Angelo",
+   "title": "Wikipedia EN, Ponte Sant'Angelo",
+   "quote": "completed in 134 AD by Roman Emperor Hadrian ... The bridge is now solely pedestrian"
+  },
+  "S68": {
+   "url": "https://en.wikipedia.org/wiki/Ponte_Milvio",
+   "title": "Wikipedia EN, Ponte Milvio",
+   "quote": "A bridge was built by consul Gaius Claudius Nero in 206 BC ... In 109 BC, censor Marcus Aemilius Scaurus built a new bridge"
+  },
+  "S69": {
+   "url": "https://en.wikipedia.org/wiki/Sixtus_V",
+   "title": "Wikipedia EN, Sixtus V",
+   "quote": "The Pope set no limit to his plans, and achieved much in his short pontificate, always carried through at top speed."
+  },
+  "S70": {
+   "url": "https://en.wikipedia.org/wiki/Campo_Marzio",
+   "title": "Wikipedia EN, Campo Marzio",
+   "quote": "became one of the most densely populated zones of Rome"
+  }
+ },
+ "history": {
+  "zones": [
+   {
+    "name": "First settlements: Palatine, Capitoline and Forum valley",
+    "ring": [
+     [
+      41.8895,
+      12.48
+     ],
+     [
+      41.8935,
+      12.4795
+     ],
+     [
+      41.8958,
+      12.4825
+     ],
+     [
+      41.895,
+      12.4885
+     ],
+     [
+      41.892,
+      12.4915
+     ],
+     [
+      41.8875,
+      12.4905
+     ],
+     [
+      41.8855,
+      12.4865
+     ],
+     [
+      41.886,
+      12.482
+     ]
+    ],
+    "born": [
+     -753,
+     -700
+    ],
+    "seed": [
+     41.8888,
+     12.4872
+    ],
+    "era_height": [
+     2,
+     4
+    ],
+    "src": [
+     "S1",
+     "S12"
+    ],
+    "conf": "low",
+    "note": "Tradition: settlements around the Palatine from 753 BC (S1); people lived there since the 10th century BC (S12). Ring is a HAND SKETCH (+-150 m), not surveyed; born/era_height are hand-set, not data."
+   },
+   {
+    "name": "Servian Rome (walled area, 246 ha)",
+    "ring": [
+     [
+      41.89744,
+      12.48263
+     ],
+     [
+      41.90112,
+      12.49
+     ],
+     [
+      41.90194,
+      12.49614
+     ],
+     [
+      41.89907,
+      12.50064
+     ],
+     [
+      41.89498,
+      12.49982
+     ],
+     [
+      41.89089,
+      12.49696
+     ],
+     [
+      41.88638,
+      12.49368
+     ],
+     [
+      41.88229,
+      12.48754
+     ],
+     [
+      41.88352,
+      12.48099
+     ],
+     [
+      41.88843,
+      12.47977
+     ],
+     [
+      41.89293,
+      12.48181
+     ]
+    ],
+    "born": [
+     -700,
+     -400
+    ],
+    "seed": [
+     41.8888,
+     12.4872
+    ],
+    "era_height": [
+     4,
+     8
+    ],
+    "src": [
+     "S50",
+     "S4"
+    ],
+    "conf": "low",
+    "note": "About 285 ha and ~35,000 people by 550 BC (S50); the later wall encloses 246 ha (S4). Ring = legacy outline scaled to 246 ha around its centroid: shape NOT surveyed. born/era_height hand-set."
+   },
+   {
+    "name": "Republican and Imperial Rome within the Aurelian Walls",
+    "ring": [
+     [
+      41.9105,
+      12.4733
+     ],
+     [
+      41.9115,
+      12.4764
+     ],
+     [
+      41.911,
+      12.4815
+     ],
+     [
+      41.9093,
+      12.4882
+     ],
+     [
+      41.9093,
+      12.5016
+     ],
+     [
+      41.9068,
+      12.507
+     ],
+     [
+      41.904,
+      12.5098
+     ],
+     [
+      41.8985,
+      12.5128
+     ],
+     [
+      41.8915,
+      12.5156
+     ],
+     [
+      41.8875,
+      12.513
+     ],
+     [
+      41.8846,
+      12.5098
+     ],
+     [
+      41.879,
+      12.501
+     ],
+     [
+      41.8735,
+      12.5016
+     ],
+     [
+      41.872,
+      12.4935
+     ],
+     [
+      41.8763,
+      12.4813
+     ],
+     [
+      41.879,
+      12.474
+     ],
+     [
+      41.8815,
+      12.473
+     ],
+     [
+      41.884,
+      12.46
+     ],
+     [
+      41.8925,
+      12.4655
+     ],
+     [
+      41.8975,
+      12.469
+     ],
+     [
+      41.904,
+      12.47
+     ]
+    ],
+    "born": [
+     -400,
+     150
+    ],
+    "seed": [
+     41.8925,
+     12.4853
+    ],
+    "era_height": [
+     8,
+     18
+    ],
+    "src": [
+     "S52",
+     "S16"
+    ],
+    "conf": "low",
+    "note": "Walls of 271-275 enclose 13.7 km2 (S16); about 49,000 buildings, many multi-storey, at the 2nd-century peak (S52). Born ramp from the Forum outward is a hand-set model, era_height (m) an estimate [Guessing]. The kit has no depopulation: ancient blocks stay until the current building replaces them."
+   },
+   {
+    "name": "Vatican and Leonine City",
+    "ring": [
+     [
+      41.90274,
+      12.46162
+     ],
+     [
+      41.90482,
+      12.45929
+     ],
+     [
+      41.90543,
+      12.45532
+     ],
+     [
+      41.90451,
+      12.45104
+     ],
+     [
+      41.90268,
+      12.44799
+     ],
+     [
+      41.90024,
+      12.44799
+     ],
+     [
+      41.89901,
+      12.44982
+     ],
+     [
+      41.90024,
+      12.45532
+     ],
+     [
+      41.89993,
+      12.4599
+     ]
+    ],
+    "born": [
+     320,
+     852
+    ],
+    "seed": [
+     41.9022,
+     12.4533
+    ],
+    "era_height": [
+     4,
+     10
+    ],
+    "src": [
+     "S17",
+     "S20"
+    ],
+    "conf": "low",
+    "note": "Settlement around Old St. Peter's (begun 318-322) until the Leonine Wall (848-852). Ring is a HAND SKETCH (+-150 m). born/era_height hand-set."
+   }
+  ],
+  "walls": [
+   {
+    "name": "Servian Wall",
+    "ring": [
+     [
+      41.89744,
+      12.48263
+     ],
+     [
+      41.90112,
+      12.49
+     ],
+     [
+      41.90194,
+      12.49614
+     ],
+     [
+      41.89907,
+      12.50064
+     ],
+     [
+      41.89498,
+      12.49982
+     ],
+     [
+      41.89089,
+      12.49696
+     ],
+     [
+      41.88638,
+      12.49368
+     ],
+     [
+      41.88229,
+      12.48754
+     ],
+     [
+      41.88352,
+      12.48099
+     ],
+     [
+      41.88843,
+      12.47977
+     ],
+     [
+      41.89293,
+      12.48181
+     ]
+    ],
+    "built": [
+     -390,
+     -378
+    ],
+    "demolished": 271,
+    "height": 10,
+    "width": 3.6,
+    "towers_every_m": 0,
+    "keep": [
+     [
+      41.9017,
+      12.5017,
+      90
+     ]
+    ],
+    "src": [
+     "S4"
+    ],
+    "conf": "low",
+    "note": "Completed 378 BC (Livy, S4); 10 m high, 3.6 m wide, 11 km, 246 ha. Ring: legacy outline scaled to 246 ha, shape not surveyed. Demolition year 271 is a MODELLING CHOICE (Aurelian Walls); the source says only that houses absorbed sections and that the largest section survives at Termini (kept: circle by the station, Wikipedia coordinate)."
+   },
+   {
+    "name": "Aurelian Walls",
+    "ring": [
+     [
+      41.9105,
+      12.4733
+     ],
+     [
+      41.9115,
+      12.4764
+     ],
+     [
+      41.911,
+      12.4815
+     ],
+     [
+      41.9093,
+      12.4882
+     ],
+     [
+      41.9093,
+      12.5016
+     ],
+     [
+      41.9068,
+      12.507
+     ],
+     [
+      41.904,
+      12.5098
+     ],
+     [
+      41.8985,
+      12.5128
+     ],
+     [
+      41.8915,
+      12.5156
+     ],
+     [
+      41.8875,
+      12.513
+     ],
+     [
+      41.8846,
+      12.5098
+     ],
+     [
+      41.879,
+      12.501
+     ],
+     [
+      41.8735,
+      12.5016
+     ],
+     [
+      41.872,
+      12.4935
+     ],
+     [
+      41.8763,
+      12.4813
+     ],
+     [
+      41.879,
+      12.474
+     ],
+     [
+      41.8815,
+      12.473
+     ],
+     [
+      41.884,
+      12.46
+     ],
+     [
+      41.8925,
+      12.4655
+     ],
+     [
+      41.8975,
+      12.469
+     ],
+     [
+      41.904,
+      12.47
+     ]
+    ],
+    "built": [
+     271,
+     275
+    ],
+    "demolished": null,
+    "height": 8,
+    "width": 3.5,
+    "towers_every_m": 29.6,
+    "src": [
+     "S16"
+    ],
+    "conf": "medium",
+    "note": "Built 271-275; 3.5 m thick, 8 m high, a tower every 29.6 m, 19 km (S16). Heightened to 16 m in the 4th century: not modelled. Outline = legacy ring, checked against 10 gate coordinates (Wikipedia): 15-232 m off the gates; area 1,315 ha vs 1,370 ha documented. Includes Trastevere/Janiculum on the right bank."
+   },
+   {
+    "name": "Leonine Wall",
+    "ring": [
+     [
+      41.90274,
+      12.46162
+     ],
+     [
+      41.90482,
+      12.45929
+     ],
+     [
+      41.90543,
+      12.45532
+     ],
+     [
+      41.90451,
+      12.45104
+     ],
+     [
+      41.90268,
+      12.44799
+     ],
+     [
+      41.90024,
+      12.44799
+     ],
+     [
+      41.89901,
+      12.44982
+     ],
+     [
+      41.90024,
+      12.45532
+     ],
+     [
+      41.89993,
+      12.4599
+     ]
+    ],
+    "built": [
+     848,
+     852
+    ],
+    "demolished": null,
+    "height": 12.2,
+    "width": 3,
+    "towers_every_m": 68.2,
+    "src": [
+     "S20"
+    ],
+    "conf": "low",
+    "note": "Built 848-852, 3 km, forty feet high, 44 towers (S20). Ring is a HAND SKETCH around the Vatican Hill (+-150 m); tower spacing = sketched perimeter / 44; width 3 m is a guess."
+   }
+  ],
+  "gutting": [],
+  "lost": [],
+  "fires": [
+   {
+    "name": "Great Fire of Rome",
+    "ring": [
+     [
+      41.8895,
+      12.479
+     ],
+     [
+      41.8895,
+      12.4925
+     ],
+     [
+      41.883,
+      12.4925
+     ],
+     [
+      41.883,
+      12.479
+     ]
+    ],
+    "y": 64.54,
+    "y1": 64.61,
+    "destroy": false,
+    "flames": 30,
+    "smoke": 6,
+    "src": [
+     "S24"
+    ],
+    "conf": "low",
+    "note": "Began 18-19 July 64 in the shops around the Circus Maximus, between the Caelian and Palatine (S24); burned 6 + 3 days; 10 of 14 districts. Ring is a small hand sketch around the Circus area, not the burned area; no building destroyed."
+   },
+   {
+    "name": "Depopulation, outer fringe east (Vandal sack of 455)",
+    "ring": [
+     [
+      41.9068,
+      12.507
+     ],
+     [
+      41.904,
+      12.5098
+     ],
+     [
+      41.8985,
+      12.5128
+     ],
+     [
+      41.8915,
+      12.5156
+     ],
+     [
+      41.8875,
+      12.513
+     ],
+     [
+      41.8846,
+      12.5098
+     ],
+     [
+      41.879,
+      12.501
+     ],
+     [
+      41.8735,
+      12.5016
+     ],
+     [
+      41.872,
+      12.4935
+     ],
+     [
+      41.87628,
+      12.48135
+     ],
+     [
+      41.87693,
+      12.48453
+     ],
+     [
+      41.87813,
+      12.48783
+     ],
+     [
+      41.88258,
+      12.49578
+     ],
+     [
+      41.88577,
+      12.49929
+     ],
+     [
+      41.88826,
+      12.5009
+     ],
+     [
+      41.89093,
+      12.50185
+     ],
+     [
+      41.89506,
+      12.50197
+     ],
+     [
+      41.89905,
+      12.50052
+     ],
+     [
+      41.90257,
+      12.49763
+     ],
+     [
+      41.9093,
+      12.48987
+     ],
+     [
+      41.9093,
+      12.5016
+     ]
+    ],
+    "y": 455.42,
+    "y1": 455.5,
+    "destroy": true,
+    "rebuild_years": 1412.5,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S52",
+     "S40"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1870 (Rome becomes capital in 1871 (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, hills northeast (Siege of 537)",
+    "ring": [
+     [
+      41.9093,
+      12.48987
+     ],
+     [
+      41.90257,
+      12.49763
+     ],
+     [
+      41.90029,
+      12.49971
+     ],
+     [
+      41.89776,
+      12.50117
+     ],
+     [
+      41.89525,
+      12.50192
+     ],
+     [
+      41.89525,
+      12.49209
+     ],
+     [
+      41.89739,
+      12.49077
+     ],
+     [
+      41.90375,
+      12.48369
+     ],
+     [
+      41.90527,
+      12.48065
+     ],
+     [
+      41.90604,
+      12.47664
+     ],
+     [
+      41.90643,
+      12.47574
+     ],
+     [
+      41.91129,
+      12.47574
+     ],
+     [
+      41.9115,
+      12.4764
+     ],
+     [
+      41.911,
+      12.4815
+     ],
+     [
+      41.9093,
+      12.4882
+     ]
+    ],
+    "y": 537.17,
+    "y1": 537.25,
+    "destroy": true,
+    "rebuild_years": 1046.8,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S22",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1586 (Sixtus V opens new streets and the Acqua Felice waters the hills, 1585-90 (S69)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, hills south and west (Siege of 537) 1",
+    "ring": [
+     [
+      41.89525,
+      12.50192
+     ],
+     [
+      41.8923,
+      12.50206
+     ],
+     [
+      41.88958,
+      12.50146
+     ],
+     [
+      41.88577,
+      12.49929
+     ],
+     [
+      41.88258,
+      12.49578
+     ],
+     [
+      41.8789,
+      12.48936
+     ],
+     [
+      41.87747,
+      12.48622
+     ],
+     [
+      41.87628,
+      12.48135
+     ],
+     [
+      41.879,
+      12.474
+     ],
+     [
+      41.8815,
+      12.473
+     ],
+     [
+      41.88231,
+      12.46879
+     ],
+     [
+      41.88236,
+      12.47139
+     ],
+     [
+      41.88336,
+      12.47939
+     ],
+     [
+      41.88399,
+      12.48201
+     ],
+     [
+      41.8847,
+      12.48358
+     ],
+     [
+      41.88794,
+      12.48929
+     ],
+     [
+      41.88954,
+      12.49105
+     ],
+     [
+      41.89211,
+      12.49232
+     ],
+     [
+      41.89349,
+      12.49245
+     ],
+     [
+      41.89525,
+      12.49209
+     ]
+    ],
+    "y": 537.19,
+    "y1": 537.27,
+    "destroy": true,
+    "rebuild_years": 1330.7,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S22",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1870 (Rome becomes capital in 1871 (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, hills south and west (Siege of 537) 2",
+    "ring": [
+     [
+      41.90806,
+      12.47206
+     ],
+     [
+      41.9105,
+      12.4733
+     ],
+     [
+      41.91129,
+      12.47574
+     ],
+     [
+      41.90643,
+      12.47574
+     ]
+    ],
+    "y": 537.19,
+    "y1": 537.27,
+    "destroy": true,
+    "rebuild_years": 1330.7,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S22",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1870 (Rome becomes capital in 1871 (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, hills south and west (Siege of 537) 3",
+    "ring": [
+     [
+      41.88509,
+      12.46215
+     ],
+     [
+      41.88361,
+      12.46419
+     ],
+     [
+      41.88283,
+      12.46607
+     ],
+     [
+      41.884,
+      12.46
+     ],
+     [
+      41.88605,
+      12.46133
+     ]
+    ],
+    "y": 537.19,
+    "y1": 537.27,
+    "destroy": true,
+    "rebuild_years": 1330.7,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S22",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1870 (Rome becomes capital in 1871 (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, inner ring north (Totila, 546) 1",
+    "ring": [
+     [
+      41.90604,
+      12.47664
+     ],
+     [
+      41.90497,
+      12.48148
+     ],
+     [
+      41.90375,
+      12.48369
+     ],
+     [
+      41.89739,
+      12.49077
+     ],
+     [
+      41.89525,
+      12.49209
+     ],
+     [
+      41.89525,
+      12.48534
+     ],
+     [
+      41.90086,
+      12.47891
+     ],
+     [
+      41.90119,
+      12.47798
+     ],
+     [
+      41.90176,
+      12.47443
+     ],
+     [
+      41.90373,
+      12.46996
+     ],
+     [
+      41.90806,
+      12.47206
+     ]
+    ],
+    "y": 546.96,
+    "y1": 547.04,
+    "destroy": true,
+    "rebuild_years": 901.0,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S23",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1450 (growth in the 15th century (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, inner ring north (Totila, 546) 2",
+    "ring": [
+     [
+      41.89525,
+      12.46743
+     ],
+     [
+      41.89784,
+      12.46905
+     ],
+     [
+      41.89662,
+      12.47198
+     ],
+     [
+      41.89614,
+      12.47492
+     ],
+     [
+      41.89525,
+      12.47591
+     ]
+    ],
+    "y": 546.96,
+    "y1": 547.04,
+    "destroy": true,
+    "rebuild_years": 901.0,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S23",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1450 (growth in the 15th century (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   },
+   {
+    "name": "Depopulation, inner ring south (Totila, 546)",
+    "ring": [
+     [
+      41.89525,
+      12.49209
+     ],
+     [
+      41.89211,
+      12.49232
+     ],
+     [
+      41.89078,
+      12.49185
+     ],
+     [
+      41.88896,
+      12.49053
+     ],
+     [
+      41.8875,
+      12.48858
+     ],
+     [
+      41.8847,
+      12.48358
+     ],
+     [
+      41.88372,
+      12.48116
+     ],
+     [
+      41.88236,
+      12.47139
+     ],
+     [
+      41.88231,
+      12.46879
+     ],
+     [
+      41.88283,
+      12.46607
+     ],
+     [
+      41.88361,
+      12.46419
+     ],
+     [
+      41.88454,
+      12.46276
+     ],
+     [
+      41.88605,
+      12.46133
+     ],
+     [
+      41.89525,
+      12.46743
+     ],
+     [
+      41.89525,
+      12.47591
+     ],
+     [
+      41.89376,
+      12.47757
+     ],
+     [
+      41.89307,
+      12.47634
+     ],
+     [
+      41.89212,
+      12.46886
+     ],
+     [
+      41.89129,
+      12.46707
+     ],
+     [
+      41.88985,
+      12.46621
+     ],
+     [
+      41.8883,
+      12.46656
+     ],
+     [
+      41.88729,
+      12.4677
+     ],
+     [
+      41.88679,
+      12.46969
+     ],
+     [
+      41.88782,
+      12.4784
+     ],
+     [
+      41.88833,
+      12.47997
+     ],
+     [
+      41.89113,
+      12.48497
+     ],
+     [
+      41.89189,
+      12.48589
+     ],
+     [
+      41.8926,
+      12.4863
+     ],
+     [
+      41.89363,
+      12.48639
+     ],
+     [
+      41.89438,
+      12.48612
+     ],
+     [
+      41.89525,
+      12.48534
+     ]
+    ],
+    "y": 546.98,
+    "y1": 547.06,
+    "destroy": true,
+    "rebuild_years": 950.9,
+    "flames": 0,
+    "smoke": 0,
+    "src": [
+     "S23",
+     "S52"
+    ],
+    "conf": "low",
+    "note": "Model of depopulation, not a surveyed event: ancient houses in this sector die in the window and are rebuilt about 1500 (growth in the 15th century (S52)). Medieval inhabited core = 300 m around the Tiber bend (Campo Marzio, Trastevere, Isola), which stayed densely populated (S70). Population 30,000 at the end of the Gothic War (S52). Ring computed from distance bands, not a survey."
+   }
+  ],
+  "water": [
+   {
+    "name": "Tiber Island (land)",
+    "ring": [
+     [
+      41.88998,
+      12.47876
+     ],
+     [
+      41.89,
+      12.47845
+     ],
+     [
+      41.89084,
+      12.47608
+     ],
+     [
+      41.89087,
+      12.47605
+     ],
+     [
+      41.89108,
+      12.47605
+     ],
+     [
+      41.89129,
+      12.47675
+     ],
+     [
+      41.89126,
+      12.4769
+     ],
+     [
+      41.89094,
+      12.4779
+     ],
+     [
+      41.89082,
+      12.47814
+     ],
+     [
+      41.89056,
+      12.47842
+     ],
+     [
+      41.89011,
+      12.47882
+     ],
+     [
+      41.89004,
+      12.47884
+     ]
+    ],
+    "from": -9999,
+    "to": 2026.9,
+    "c": "urban",
+    "src": [
+     "S65"
+    ],
+    "conf": "low",
+    "note": "Island outline derived from the building footprints on it, which the Tiber water polygon covers; Ponte Fabricio and Ponte Cestio (S65, S66) link it to the banks."
+   }
+  ],
+  "bridges": [
+   {
+    "name": "Ponte Milvio",
+    "line": [
+     [
+      41.93491,
+      12.46716
+     ],
+     [
+      41.93618,
+      12.46673
+     ]
+    ],
+    "w": 8,
+    "y": -206,
+    "d": null,
+    "src": [
+     "S68"
+    ],
+    "conf": "medium"
+   },
+   {
+    "name": "Ponte Fabricio",
+    "line": [
+     [
+      41.89095,
+      12.47863
+     ],
+     [
+      41.89127,
+      12.47803
+     ]
+    ],
+    "w": 6,
+    "y": -62,
+    "d": null,
+    "src": [
+     "S65"
+    ],
+    "conf": "high"
+   },
+   {
+    "name": "Ponte Cestio",
+    "line": [
+     [
+      41.89,
+      12.47718
+     ],
+     [
+      41.89045,
+      12.47726
+     ]
+    ],
+    "w": 6,
+    "y": -45,
+    "d": null,
+    "src": [
+     "S66"
+    ],
+    "conf": "low",
+    "note": "Original bridge dated only to 62-27 BC; replaced by the present bridge in 1888-1892 (same site, one entry)."
+   },
+   {
+    "name": "Ponte Sant'Angelo",
+    "line": [
+     [
+      41.90126,
+      12.4663
+     ],
+     [
+      41.9024,
+      12.46656
+     ]
+    ],
+    "w": 10,
+    "y": 134,
+    "d": null,
+    "src": [
+     "S67"
+    ],
+    "conf": "high"
+   }
+  ]
+ },
+ "landmarks": [
+  {
+   "name": "Temple of Jupiter",
+   "kind": "generic_footprint",
+   "at": [
+    41.8922,
+    12.4817
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 62,
+    "w": 53,
+    "h": 32,
+    "roof": "gable",
+    "ang": 170,
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": -509.5,
+     "y1": -509
+    }
+   ],
+   "label": true,
+   "src": [
+    "S3"
+   ],
+   "conf": "medium",
+   "note": "Traditionally dedicated 509 BC (S3). Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited.",
+   "label_name": "Temple of Jupiter"
+  },
+  {
+   "name": "Circus Maximus",
+   "kind": "stadium",
+   "at": [
+    41.8859,
+    12.4857
+   ],
+   "footprint": "none",
+   "params": {
+    "a_out": 310.5,
+    "b_out": 59,
+    "h": 25,
+    "roof": false,
+    "ang": 148,
+    "c": "stone",
+    "seat_c": "stone2",
+    "seat_c2": "stone"
+   },
+   "phases": [
+    {
+     "y": -329,
+     "y1": -326
+    }
+   ],
+   "label": true,
+   "src": [
+    "S5"
+   ],
+   "conf": "low",
+   "note": "621 x 118 m (S5). The first stadium is older (royal era); stalls date 329 BC: the model appears in 329 BC (low). Orientation 148 deg from the legacy geometry."
+  },
+  {
+   "name": "Mausoleum of Augustus",
+   "kind": "tower_round",
+   "at": [
+    41.9061,
+    12.4764
+   ],
+   "footprint": "none",
+   "params": {
+    "rad": 45,
+    "h": 42,
+    "top": "flat",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": -29,
+     "y1": -28
+    }
+   ],
+   "label": true,
+   "src": [
+    "S8"
+   ],
+   "conf": "high",
+   "note": "Built 28 BC; 90 m diameter, 42 m high (S8). Earth mound/trees not modelled."
+  },
+  {
+   "name": "Theatre of Marcellus",
+   "kind": "theatre",
+   "at": [
+    41.8919,
+    12.4795
+   ],
+   "footprint": "none",
+   "params": {
+    "r_out": 65,
+    "h": 31,
+    "ang": -90,
+    "tiers": 4
+   },
+   "phases": [
+    {
+     "y": -17,
+     "y1": -13
+    }
+   ],
+   "label": true,
+   "src": [
+    "S7"
+   ],
+   "conf": "medium",
+   "note": "Completed 13 BC, inaugurated 12 BC (S7). Radius and orientation from the legacy bbox (130 x 65 m), orientation [Guessing]."
+  },
+  {
+   "name": "Palatine Palace",
+   "kind": "palace_courtyard",
+   "at": [
+    41.8883,
+    12.4868
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 170,
+    "w": 120,
+    "wing_w": 30,
+    "h": 22,
+    "ang": 150
+   },
+   "phases": [
+    {
+     "y": 81,
+     "y1": 96
+    }
+   ],
+   "label": true,
+   "src": [
+    "S12"
+   ],
+   "conf": "low",
+   "note": "Domitian's palace: his reign 81-96 (S12); construction year not given by the text, so the model spans his reign. Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Colosseum",
+   "kind": "bullring",
+   "at": [
+    41.8903,
+    12.4922
+   ],
+   "footprint": "none",
+   "params": {
+    "style": "roman",
+    "plan": "ellipse",
+    "a_out": 94,
+    "b_out": 78,
+    "h": 48,
+    "ang": 10
+   },
+   "phases": [
+    {
+     "y": 72,
+     "y1": 80
+    }
+   ],
+   "label": true,
+   "src": [
+    "S6"
+   ],
+   "conf": "high",
+   "note": "Begun 72, completed AD 80 (S6). 188 x 156 m from the legacy geometry; the 1349 earthquake collapse (S6) is not modelled."
+  },
+  {
+   "name": "Trajan's Column",
+   "kind": "tower_round",
+   "at": [
+    41.8958,
+    12.4842
+   ],
+   "footprint": "none",
+   "params": {
+    "rad": 1.9,
+    "h": 35,
+    "top": "flat",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 112,
+     "y1": 113
+    }
+   ],
+   "label": true,
+   "src": [
+    "S9"
+   ],
+   "conf": "high",
+   "note": "Dedicated 12 May 113; 35 m with pedestal (S9). Radius [Guessing]; pedestal not modelled."
+  },
+  {
+   "name": "Pantheon",
+   "kind": "tower_round",
+   "at": [
+    41.8986,
+    12.4768
+   ],
+   "footprint": "none",
+   "params": {
+    "rad": 24,
+    "h": 24,
+    "top": "dome",
+    "c": "concrete"
+   },
+   "phases": [
+    {
+     "y": 124,
+     "y1": 126
+    }
+   ],
+   "label": true,
+   "src": [
+    "S10"
+   ],
+   "conf": "medium",
+   "note": "Hadrian's building probably dedicated c. 126 (S10); start of works not given, model spans 124-126. Rotunda + dome only (no portico); radius/height tuned to ~46 m total [Guessing]."
+  },
+  {
+   "name": "Hadrian's Mausoleum",
+   "kind": "tower_round",
+   "at": [
+    41.9031,
+    12.4663
+   ],
+   "footprint": "none",
+   "params": {
+    "rad": 32,
+    "h": 23,
+    "top": "flat",
+    "c": "limestone"
+   },
+   "phases": [
+    {
+     "y": 134,
+     "y1": 139
+    }
+   ],
+   "label": true,
+   "src": [
+    "S13"
+   ],
+   "conf": "medium",
+   "note": "Erected 134-139 (S13); later the papal fortress Castel Sant'Angelo: the fortress phase is not modelled. Radius from the legacy geometry [Guessing].",
+   "label_name": "Hadrian's Mausoleum (Castel Sant'Angelo)"
+  },
+  {
+   "name": "Baths of Caracalla",
+   "kind": "generic_footprint",
+   "at": [
+    41.8794,
+    12.4931
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 220,
+    "w": 114,
+    "h": 36,
+    "roof": "flat",
+    "ang": 142,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 212,
+     "y1": 216
+    }
+   ],
+   "label": true,
+   "src": [
+    "S14"
+   ],
+   "conf": "high",
+   "note": "Built AD 212-216, inaugurated 216 (S14). Central block only. Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Baths of Diocletian",
+   "kind": "generic_footprint",
+   "at": [
+    41.903,
+    12.498
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 240,
+    "w": 150,
+    "h": 30,
+    "roof": "flat",
+    "ang": 135,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 298,
+     "y1": 306
+    }
+   ],
+   "label": true,
+   "src": [
+    "S15"
+   ],
+   "conf": "high",
+   "note": "Built AD 298-306, the largest imperial baths (S15). Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Basilica of Maxentius",
+   "kind": "generic_footprint",
+   "at": [
+    41.8919,
+    12.4884
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 100,
+    "w": 65,
+    "h": 35,
+    "roof": "gable",
+    "ang": 0,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 308,
+     "y1": 312
+    }
+   ],
+   "label": true,
+   "src": [
+    "S11"
+   ],
+   "conf": "high",
+   "note": "Begun 308, completed 312 (S11). Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Old St Peter's",
+   "kind": "generic_footprint",
+   "at": [
+    41.9022,
+    12.4533
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 120,
+    "w": 64,
+    "h": 32,
+    "roof": "gable",
+    "ang": 0,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 320,
+     "y1": 360,
+     "d": 1605
+    }
+   ],
+   "label": true,
+   "src": [
+    "S17"
+   ],
+   "conf": "medium",
+   "note": "Begun 318-322, about 40 years to complete (S17); last original part demolished 1605 (d). Overlaps the new basilica 1506-1605 (gradual demolition). Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited.",
+   "label_name": "Old St. Peter's"
+  },
+  {
+   "name": "St Peter's Basilica",
+   "kind": "church_dome",
+   "at": [
+    41.9022,
+    12.4533
+   ],
+   "footprint": "none",
+   "params": {
+    "plan": "cross",
+    "size": 150,
+    "base_h": 42,
+    "drum_r": 21,
+    "drum_h": 28,
+    "dome_hz": 30,
+    "c": "stone"
+   },
+   "phases": [
+    {
+     "y": 1506,
+     "y1": 1590
+    }
+   ],
+   "label": true,
+   "src": [
+    "S18"
+   ],
+   "conf": "medium",
+   "note": "Begun 18 April 1506, dome completed 1590, basilica completed 1626 (S18); 136.57 m total. The model is complete at 1590 (dome); Maderno's nave 1607-1626 is not separate. Plan/size approximate [Guessing].",
+   "label_name": "St. Peter's Basilica"
+  },
+  {
+   "name": "St Peter's Square",
+   "kind": "bullring",
+   "at": [
+    41.9022,
+    12.4573
+   ],
+   "footprint": "none",
+   "params": {
+    "plan": "ellipse",
+    "a_out": 108,
+    "b_out": 98,
+    "h": 19,
+    "ring_w": 12,
+    "tiers": 1,
+    "arena_k": 0.85,
+    "arena_c": "stone2",
+    "c": "limestone",
+    "tier_c": "limestone",
+    "ang": 0
+   },
+   "phases": [
+    {
+     "y": 1667,
+     "y1": 1676
+    }
+   ],
+   "label": true,
+   "src": [
+    "S19"
+   ],
+   "conf": "medium",
+   "note": "Redesigned by Bernini 1667-1676 (S19). Colonnades approximated by an elliptical ring (legacy bbox 216 x 196 m); not a faithful model.",
+   "label_name": "St. Peter's Square"
+  },
+  {
+   "name": "Vittoriano",
+   "kind": "generic_footprint",
+   "at": [
+    41.8947,
+    12.4831
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 135,
+    "w": 78,
+    "h": 45,
+    "roof": "flat",
+    "ang": 0,
+    "c": "white"
+   },
+   "phases": [
+    {
+     "y": 1885,
+     "y1": 1911
+    }
+   ],
+   "label": true,
+   "src": [
+    "S36"
+   ],
+   "conf": "high",
+   "note": "Built 1885-1935, partly complete and inaugurated 4 June 1911 (S36); the model is complete at 1911. Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Palazzo della Civilta Italiana",
+   "kind": "generic_footprint",
+   "at": [
+    41.8364,
+    12.4659
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 52,
+    "w": 52,
+    "h": 65,
+    "roof": "flat",
+    "ang": 90,
+    "c": "white"
+   },
+   "phases": [
+    {
+     "y": 1938,
+     "y1": 1943
+    }
+   ],
+   "label": true,
+   "src": [
+    "S34"
+   ],
+   "conf": "medium",
+   "note": "Palazzo della Civilta Italiana (1938-1943), the \"Square Colosseum\" (S34). Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited.",
+   "label_name": "Square Colosseum (EUR)"
+  },
+  {
+   "name": "Termini Station",
+   "kind": "station",
+   "at": [
+    41.9009,
+    12.5013
+   ],
+   "footprint": "none",
+   "params": {
+    "l": 230,
+    "w": 60,
+    "h": 20,
+    "ang": 125
+   },
+   "phases": [
+    {
+     "y": 1949,
+     "y1": 1950
+    }
+   ],
+   "label": true,
+   "src": [
+    "S35"
+   ],
+   "conf": "low",
+   "note": "Building inaugurated 1950 (S35); the construction start is not in the text (1949 is a guess). Generic station preset, not the real facade. Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  },
+  {
+   "name": "Stadio Olimpico",
+   "kind": "stadium",
+   "at": [
+    41.9339,
+    12.4547
+   ],
+   "footprint": "none",
+   "params": {
+    "a_out": 140,
+    "b_out": 100,
+    "h": 17,
+    "roof": false,
+    "ang": 177
+   },
+   "phases": [
+    {
+     "y": 1951,
+     "y1": 1953
+    }
+   ],
+   "label": true,
+   "src": [
+    "S37"
+   ],
+   "conf": "medium",
+   "note": "Begun 1928 (Del Debbio), expanded 1937, opened 17 May 1953 (S37); roofed only in 1990 (not modelled). Start 1951 is a guess. Footprint dims from the legacy bespoke geometry (data_roma_src/landmarks.json); heights/proportions approximate [Guessing] unless a source is cited."
+  }
+ ],
+ "qa": {
+  "accept": [
+   {
+    "check": "corridoi",
+    "where": [
+     41.8958,
+     12.5104,
+     900,
+     150
+    ],
+    "reason": "Termini rail yard: first station opened 1863 (S35) on the site of the Villa Montalto-Peretti; no houses stood there in 1800, so the empty strip is correct (rail ribbons start 1850s)"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     41.9008,
+     12.4509,
+     240,
+     60
+    ],
+    "reason": "Vatican railway corridor (works 1929-1934, S54) inside the Vatican gardens, no houses before; ribbon appears at its date"
+   },
+   {
+    "check": "corridoi",
+    "where": [
+     41.8857,
+     12.4794,
+     170,
+     30
+    ],
+    "reason": "Tiber bank strip: Lungotevere embankment works ran 1876-1926 (S55); the ribbon here is dated 1900 by the data, so it is accepted until the road appears"
+   }
+  ]
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": false,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": -753
+  },
+  "soste": [
+   {
+    "y0": -753.0,
+    "y1": -735.0,
+    "dur": 6.0,
+    "caption": "Romulus founds Rome (753 BC)",
+    "shot": "wide",
+    "target": "area:[41.8888,12.4872,300]",
+    "fx": "crowd",
+    "weight": 7,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": -509.0,
+    "y1": -504.0,
+    "dur": 4.0,
+    "caption": "Temple of Jupiter (509 BC)",
+    "shot": "medium",
+    "target": "Temple of Jupiter",
+    "fx": "hammer",
+    "weight": 4,
+    "src": [
+     "S3"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": -378.0,
+    "y1": -372.0,
+    "dur": 4.5,
+    "caption": "The Servian Wall (378 BC)",
+    "shot": "wide",
+    "target": "area:[41.89264,12.49,700]",
+    "fx": "hammer",
+    "weight": 4,
+    "src": [
+     "S4"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": -28.0,
+    "y1": -26.0,
+    "dur": 3.5,
+    "caption": "Augustus builds his tomb (28 BC)",
+    "shot": "medium",
+    "target": "Mausoleum of Augustus",
+    "fx": "horn",
+    "weight": 4,
+    "src": [
+     "S8"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 64.4,
+    "y1": 64.9,
+    "dur": 5.0,
+    "caption": "The Great Fire of Rome (AD 64)",
+    "shot": "medium",
+    "target": "fire:Great Fire of Rome",
+    "fx": "fire",
+    "weight": 7,
+    "src": [
+     "S24"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 77.0,
+    "y1": 84.0,
+    "dur": 6.0,
+    "caption": "The Colosseum (AD 72-80)",
+    "shot": "medium",
+    "target": "Colosseum",
+    "fx": "crowd",
+    "weight": "max",
+    "src": [
+     "S6"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 273.0,
+    "y1": 277.0,
+    "dur": 6.0,
+    "caption": "The Aurelian Walls (271-275)",
+    "shot": "wide",
+    "target": "area:[41.8738,12.501,450]",
+    "fx": "hammer",
+    "weight": 6,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 356.0,
+    "y1": 364.0,
+    "dur": 4.0,
+    "caption": "Old St. Peter's (c. 320-360)",
+    "shot": "medium",
+    "target": "Old St Peter's",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y0": 410.0,
+    "y1": 410.8,
+    "dur": 4.0,
+    "caption": "Alaric sacks Rome (410)",
+    "shot": "wide",
+    "target": "area:[41.9107,12.4981,450]",
+    "fx": "battle",
+    "weight": 8,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 537.0,
+    "y1": 538.2,
+    "dur": 6.0,
+    "caption": "The Goths cut the aqueducts (537)",
+    "shot": "wide",
+    "target": "area:[41.9094,12.4883,450]",
+    "fx": "water",
+    "weight": 6,
+    "src": [
+     "S22"
+    ],
+    "conf": "low"
+   },
+   {
+    "y0": 1349.0,
+    "y1": 1349.6,
+    "dur": 4.0,
+    "caption": "Earthquake: the Colosseum falls (1349)",
+    "shot": "medium",
+    "target": "Colosseum",
+    "fx": "quake",
+    "weight": 8,
+    "src": [
+     "S6"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1588.0,
+    "y1": 1596.0,
+    "dur": 5.0,
+    "caption": "Michelangelo's dome (1590)",
+    "shot": "medium",
+    "target": "St Peter's Basilica",
+    "fx": "bell",
+    "weight": 7,
+    "src": [
+     "S18"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1674.0,
+    "y1": 1680.0,
+    "dur": 4.0,
+    "caption": "Bernini's colonnade (1667-1676)",
+    "shot": "medium",
+    "target": "St Peter's Square",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S19"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1870.6,
+    "y1": 1871.4,
+    "dur": 4.0,
+    "caption": "Rome, capital of Italy (1871)",
+    "shot": "wide",
+    "target": "area:[41.9092,12.5011,450]",
+    "fx": "cannon",
+    "weight": 6,
+    "src": [
+     "S28"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1908.0,
+    "y1": 1914.0,
+    "dur": 5.0,
+    "caption": "The Vittoriano (1885-1911)",
+    "shot": "medium",
+    "target": "Vittoriano",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S36"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1960.4,
+    "y1": 1960.9,
+    "dur": 3.5,
+    "caption": "Rome Olympics (1960)",
+    "shot": "medium",
+    "target": "Stadio Olimpico",
+    "fx": "crowd",
+    "weight": 6,
+    "src": [
+     "S33",
+     "S37"
+    ],
+    "conf": "high"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400
+  },
+  "lens": 32
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "ROME TODAY",
+   "2,743,851 people",
+   "2,778 YEARS",
+   "Open data, reconstruction before 1919"
+  ],
+  "title": [
+   "ROME",
+   "753 BC TO NOW"
+  ],
+  "end": [
+   "ROME · 2,778 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": -753,
+    "title": "Rome begins on the Palatine",
+    "lines": [
+     "Tradition dates the first settlements around the Palatine Hill to 753 BC."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -600,
+    "title": "Cloaca Maxima",
+    "lines": [
+     "Rome's great sewer may date to around 600 BC.",
+     "Parts of it are still used today."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S56"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -509,
+    "title": "No more kings",
+    "lines": [
+     "The last king, Tarquin the Proud, is expelled.",
+     "Rome becomes a republic."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S2",
+     "S1"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -390,
+    "title": "The Gauls sack Rome",
+    "lines": [
+     "After the Battle of the Allia the Gauls burn the city.",
+     "Defenders hold the Capitoline Hill."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S45",
+     "S44"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -329.0,
+    "title": "Circus Maximus",
+    "lines": [
+     "Permanent wooden starting stalls are built in 329 BC.",
+     "Later it spans 621 by 118 meters, the largest stadium in ancient Rome."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S5"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": -312,
+    "title": "The first road and aqueduct",
+    "lines": [
+     "The Appian Way and the Aqua Appia are both begun in 312 BC."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S46",
+     "S47"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -264,
+    "title": "War with Carthage begins",
+    "lines": [
+     "The First Punic War (264-241 BC) pits Rome against Carthage."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S57"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -216,
+    "title": "Disaster at Cannae",
+    "lines": [
+     "Hannibal annihilates the largest army Rome had ever assembled."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S58"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -146,
+    "title": "Carthage destroyed",
+    "lines": [
+     "After six days of assault the Romans destroy their rival."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S48"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -133,
+    "title": "The late Republic",
+    "lines": [
+     "From 133 BC onward the Republic suffers substantial domestic strife."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S2"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -82,
+    "title": "Sulla named dictator",
+    "lines": [
+     "In November 82 BC Sulla is named dictator."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S2"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -44,
+    "title": "The Ides of March",
+    "lines": [
+     "Julius Caesar is assassinated by a group of senators."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S49"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": -27,
+    "title": "Augustus, first emperor",
+    "lines": [
+     "The Republic ends and the Empire begins.",
+     "He is said to have found Rome a city of brick and left it a city of marble."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S2",
+     "S42"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": -13.5,
+    "title": "Theatre of Marcellus",
+    "lines": [
+     "Completed in 13 BC and formally inaugurated in 12 BC by Augustus."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S7"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 14,
+    "title": "Augustus dies",
+    "lines": [
+     "He dies in AD 14 at age 75; the Senate deifies him."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S59"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 64,
+    "title": "The Great Fire",
+    "lines": [
+     "Nearly three quarters of Rome is destroyed: 10 of its 14 districts."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S24"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 80,
+    "title": "The Colosseum opens",
+    "lines": [
+     "Begun under Vespasian in 72, completed under Titus in 80."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S6"
+    ],
+    "conf": "high",
+    "target": "Colosseum",
+    "shot": "medium",
+    "labels": [
+     "Colosseum"
+    ]
+   },
+   {
+    "y": 113,
+    "title": "Trajan's Column",
+    "lines": [
+     "Dedicated in 113, about 35 meters tall with its pedestal."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S9"
+    ],
+    "conf": "high",
+    "target": "Trajan's Column",
+    "shot": "medium",
+    "labels": [
+     "Trajan's Column"
+    ]
+   },
+   {
+    "y": 126,
+    "title": "The Pantheon",
+    "lines": [
+     "Rebuilt under Hadrian and probably dedicated around 126."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S10"
+    ],
+    "conf": "medium",
+    "target": "Pantheon",
+    "shot": "medium",
+    "labels": [
+     "Pantheon"
+    ]
+   },
+   {
+    "y": 137.0,
+    "title": "Hadrian's Mausoleum",
+    "lines": [
+     "Erected on the right bank of the Tiber between 134 and 139.",
+     "Today it is known as Castel Sant'Angelo."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 150,
+    "title": "A city of a million or more",
+    "lines": [
+     "Estimates of Rome's peak population range from 450,000 to over 3.5 million.",
+     "Historians favor 1 to 2 million."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S42",
+     "S52"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 216,
+    "title": "Baths of Caracalla",
+    "lines": [
+     "Inaugurated in 216, they are among the great imperial baths."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S14"
+    ],
+    "conf": "high",
+    "target": "Baths of Caracalla",
+    "shot": "medium",
+    "labels": [
+     "Baths of Caracalla"
+    ]
+   },
+   {
+    "y": 275,
+    "title": "A wall for the whole city",
+    "lines": [
+     "The Aurelian Walls run 19 km around 13.7 square km."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 306,
+    "title": "The largest baths of all",
+    "lines": [
+     "Built from 298 to 306 under Diocletian."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S15"
+    ],
+    "conf": "high",
+    "target": "Baths of Diocletian",
+    "shot": "medium",
+    "labels": [
+     "Baths of Diocletian"
+    ]
+   },
+   {
+    "y": 312,
+    "title": "Maxentius's basilica",
+    "lines": [
+     "Begun by Maxentius in 308, finished by Constantine in 312."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S11"
+    ],
+    "conf": "high",
+    "target": "Basilica of Maxentius",
+    "shot": "medium",
+    "labels": [
+     "Basilica of Maxentius"
+    ]
+   },
+   {
+    "y": 320,
+    "title": "Old St. Peter's",
+    "lines": [
+     "Constantine orders a basilica over the site of the Circus of Nero."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S17"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 330,
+    "title": "A second capital",
+    "lines": [
+     "Constantinople is consecrated on 11 May 330."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S60"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 337,
+    "title": "Constantine dies",
+    "lines": [
+     "Constantine, who made Constantinople the capital, dies in 337."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S63"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 380,
+    "title": "Edict of Thessalonica",
+    "lines": [
+     "Theodosius I makes Nicene Christianity the state church."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S61"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 395,
+    "title": "The empire divides",
+    "lines": [
+     "His sons Arcadius and Honorius take the East and the West."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S62"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 408,
+    "title": "Alaric besieges Rome",
+    "lines": [
+     "The Goths under Alaric lay siege to the city in late 408."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 409,
+    "title": "Rome pays the Goths",
+    "lines": [
+     "The city gives Alaric 5,000 pounds of gold and 30,000 of silver."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 410,
+    "title": "Alaric sacks Rome",
+    "lines": [
+     "The Visigoths enter through the Salarian Gate and pillage the city for three days."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S21"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 455,
+    "title": "The Vandals sack Rome",
+    "lines": [
+     "A second sack, more destructive than the first."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S52"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 476,
+    "title": "The Western Empire ends",
+    "lines": [
+     "Odoacer deposes Romulus Augustulus, the last emperor in the West."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S40"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 536.9,
+    "title": "Byzantine Rome",
+    "lines": [
+     "General Belisarius recaptures the city for the Eastern Empire on 9 December."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S42"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 546.96,
+    "title": "Totila enters Rome",
+    "lines": [
+     "His Goths scale the walls at night and open the Porta Asinaria."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S23"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 552,
+    "title": "A city of 30,000",
+    "lines": [
+     "After the Gothic War the population may have fallen to about 30,000."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S50",
+     "S52"
+    ],
+    "conf": "low"
+   },
+   {
+    "y": 590,
+    "title": "Plague, and an angel",
+    "lines": [
+     "Legend says the Archangel Michael sheathed his sword above the tomb of Hadrian.",
+     "It marks the end of the plague."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S13"
+    ],
+    "conf": "medium",
+    "target": "Hadrian's Mausoleum",
+    "shot": "medium",
+    "labels": [
+     "Hadrian's Mausoleum"
+    ]
+   },
+   {
+    "y": 756,
+    "title": "The Papal State",
+    "lines": [
+     "The pope becomes a sovereign ruler. The Papal States last until 1870."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S41"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 800,
+    "title": "Charlemagne",
+    "lines": [
+     "Pope Leo III crowns Charlemagne emperor, in Old St. Peter's."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S43",
+     "S17"
+    ],
+    "conf": "high",
+    "target": "Old St Peter's",
+    "shot": "medium",
+    "labels": [
+     "Old St Peter's"
+    ]
+   },
+   {
+    "y": 852,
+    "title": "The Leonine Wall",
+    "lines": [
+     "A three-kilometer wall encircles the Vatican Hill for the first time."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S20"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1084,
+    "title": "The Normans",
+    "lines": [
+     "Italo-Normans sack Rome, called in by Pope Gregory VII."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S38"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1309,
+    "title": "The popes leave",
+    "lines": [
+     "Clement V moves the papal court to Avignon for 67 years."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S31"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1377,
+    "title": "The popes return",
+    "lines": [
+     "Gregory XI reinstates the Holy See in Rome.",
+     "The city has fewer than 20,000 people."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S42",
+     "S53"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1506,
+    "title": "A new St. Peter's",
+    "lines": [
+     "Construction of the present basilica begins on 18 April."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S18"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1527,
+    "title": "The Sack of Rome",
+    "lines": [
+     "Mutinous troops of Charles V capture the city.",
+     "The pope takes refuge in Castel Sant'Angelo."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S25"
+    ],
+    "conf": "high",
+    "target": "Hadrian's Mausoleum",
+    "shot": "medium",
+    "labels": [
+     "Hadrian's Mausoleum"
+    ]
+   },
+   {
+    "y": 1676,
+    "title": "Bernini's square",
+    "lines": [
+     "The colonnades of St. Peter's Square are finished."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S19"
+    ],
+    "conf": "medium",
+    "target": "St Peter's Square",
+    "shot": "medium",
+    "labels": [
+     "St Peter's Square"
+    ]
+   },
+   {
+    "y": 1762,
+    "title": "Trevi Fountain",
+    "lines": [
+     "Work began in 1732. Giuseppe Pannini completes it in 1762."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S32"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1798,
+    "title": "A Roman Republic",
+    "lines": [
+     "French troops occupy Rome and a sister republic is proclaimed."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S27"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1809,
+    "title": "Napoleon annexes Rome",
+    "lines": [
+     "Rome becomes part of the First French Empire until 1814."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S42"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1849,
+    "title": "Another Roman Republic",
+    "lines": [
+     "Led by Mazzini, it ends when the French Army enters on 3 July and restores the Pope."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S26"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1861,
+    "title": "Italy is united",
+    "lines": [
+     "The Kingdom of Italy forms with Florence as its temporary capital."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S50"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1871,
+    "title": "Capital of Italy",
+    "lines": [
+     "Italian troops breach the wall near Porta Pia on 20 September 1870.",
+     "Rome becomes the capital on 3 February 1871."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S28",
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1881,
+    "title": "A growing capital",
+    "lines": [
+     "The census counts 273,952 residents."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S53"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1900,
+    "title": "Half a million",
+    "lines": [
+     "Rome's population reaches 500,000 at the start of the 20th century."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S52"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1922,
+    "title": "March on Rome",
+    "lines": [
+     "Blackshirts approach the capital, and Mussolini comes to power."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S29"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1929,
+    "title": "Vatican City",
+    "lines": [
+     "The Lateran Pacts recognize Vatican City as an independent state."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S51"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1938,
+    "title": "EUR",
+    "lines": [
+     "Mussolini plans a new district for the 1942 World's Fair."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S34"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1944,
+    "title": "Liberation",
+    "lines": [
+     "American and British troops liberate Rome on June 3-4."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S30"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1946,
+    "title": "A republic",
+    "lines": [
+     "Rome becomes the capital of the Italian Republic."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S42"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1950,
+    "title": "Termini Station",
+    "lines": [
+     "The new station is inaugurated."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S35"
+    ],
+    "conf": "high",
+    "target": "Termini Station",
+    "shot": "medium",
+    "labels": [
+     "Termini Station"
+    ]
+   },
+   {
+    "y": 1951,
+    "title": "A city of 1.65 million",
+    "lines": [
+     "The census counts 1,651,754 residents."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S53"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1957,
+    "title": "Treaty of Rome",
+    "lines": [
+     "The treaty founding the European Economic Community is signed on the Capitoline Hill on 25 March 1957."
+    ],
+    "hold_s": 4.5,
+    "src": [
+     "S64"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1971,
+    "title": "Peak population",
+    "lines": [
+     "The census counts 2,781,993 residents, the highest on record."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S53"
+    ],
+    "conf": "high"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data",
+   "items": [
+    "Buildings, streets, rivers, parks: © OpenStreetMap contributors (ODbL)",
+    "Building ages: ISTAT 2011 census sections, statistical; before 1919 estimated",
+    "Terrain: Copernicus GLO-30 DEM (ESA / European Commission)",
+    "History: Wikipedia EN (Rome, Roman Kingdom, Colosseum, Pantheon, Aurelian Walls and others)",
+    "Population: Wikidata (census figures), Wikipedia IT and EN estimates",
+    "Music: Unicorn Heads, TrackTribe (YouTube Audio Library)"
+   ]
+  },
+  "chapters": [
+   {
+    "y": -753,
+    "title": "Kings and Republic"
+   },
+   {
+    "y": -27,
+    "title": "Imperial Rome"
+   },
+   {
+    "y": 410,
+    "title": "Fall and Faith"
+   },
+   {
+    "y": 1309,
+    "title": "Medieval Rome"
+   },
+   {
+    "y": 1506,
+    "title": "Renaissance and Baroque"
+   },
+   {
+    "y": 1798,
+    "title": "Revolution and Unification"
+   },
+   {
+    "y": 1871,
+    "title": "Capital of Italy"
+   },
+   {
+    "y": 1944,
+    "title": "Modern Rome"
+   }
+  ]
+ },
+ "legacy": {
+  "metadata_file": "metadata_roma.md",
+  "translations_file": "traduzioni_roma.md",
+  "translation_languages": [
+   "Español (es)",
+   "Português (pt-BR)",
+   "Deutsch (de)",
+   "Français (fr)",
+   "Italiano (it)",
+   "Short (titolo)"
+  ],
+  "video_chapter_lines": 19,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_roma_src",
+   "present": [
+    "buildings.json",
+    "dem.npz",
+    "land.json",
+    "landmarks.json",
+    "parks.json",
+    "roads.json"
+   ],
+   "missing_for_kit": [],
+   "complete": true
+  }
+ },
+ "_notes": [
+  "Filled by yb-historian/yb-modeler from fetched Wikipedia (EN/IT) and Wikidata texts; every quote in sources was checked against the fetched text.",
+  "conf low = estimate or hand-set model parameter; see each note."
+ ]
+}

@@ -824,6 +824,8 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
             if n_.type != 'OUTPUT_MATERIAL': N_.remove(n_)
         e_ = N_.new('ShaderNodeEmission'); e_.inputs['Color'].default_value = (*col, 1); e_.inputs['Strength'].default_value = k
         nt_.links.new(e_.outputs[0], N_['Material Output'].inputs['Surface']); return m_
+    m_glow_big = emat('fire_glow_big', (1.0, 0.32, 0.06), 2.6); _ntg = m_glow_big.node_tree; _mx = _ntg.nodes.new('ShaderNodeMixShader'); _tr = _ntg.nodes.new('ShaderNodeBsdfTransparent')
+    _mx.inputs['Fac'].default_value = 0.35; _ntg.links.new(_ntg.nodes['Emission'].outputs[0], _mx.inputs[2]); _ntg.links.new(_tr.outputs[0], _mx.inputs[1]); _ntg.links.new(_mx.outputs[0], _ntg.nodes['Material Output'].inputs['Surface'])
     m_glow = emat('fire_glow', (1.0, 0.32, 0.06), 4.0); m_flame = emat('fire_flame', (1.0, 0.55, 0.12), 12.0)
     m_smoke = mat('smoke', srgb(ST.get('smoke', '#5f5954')), 1.0); _pb = m_smoke.node_tree.nodes['Principled BSDF']; _pb.inputs['Alpha'].default_value = ST.get('smoke_alpha', 0.7)
     try: m_smoke.surface_render_method = 'BLENDED'
@@ -889,7 +891,7 @@ if os.path.exists(f'{DATA}/fires.json') or (LM and LM.get('fires')):
         bm_ = bmesh.new()
         try: bm_.faces.new([bm_.verts.new((x, y, 0.6)) for x, y in list(pg.exterior.coords)[:-1]])
         except ValueError: pass
-        bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'glow_{int(y0_)}', bm_, m_glow); VIS.append((o_, 'window', (y0_ - 0.0004, y1_ + 0.15)))
+        bmesh.ops.triangulate(bm_, faces=bm_.faces); o_ = obj(f'glow_{int(y0_)}', bm_, m_glow_big if pg.area > 150000 else m_glow); VIS.append((o_, 'window', (y0_ - 0.0004, y1_ + 0.15)))
         x0_, yy0_, x1_, yy1_ = pg.bounds
         def rpts(n):
             out_ = []
