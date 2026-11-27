@@ -18,19 +18,19 @@ def check(sc, dead=10.0, still=8.0, dy=10.0, tgt=150.0, pos=300.0, hover_ok=0.0,
     cam = sc['cam']; Y = sc['years']; ts = [c[0] for c in cam]
     import bisect
     def at(t): return cam[min(bisect.bisect_left(ts, t), len(cam) - 1)]
-    stills = []; t = 0.0
+    flags = []; t = 0.0
     while t + still <= T:
         a, b = at(t), at(t + still)
         d_t = math.dist(a[2], b[2]); d_p = math.dist(a[1], b[1])
         if path: ws = [at(t + k) for k in range(0, int(still) + 1)]; d_t = max(math.dist(a[2], w[2]) for w in ws); d_p = max(math.dist(a[1], w[1]) for w in ws)
-        dY = abs(yat(Y, t + still) - yat(Y, t))
         hv = sum(max(0.0, min(b_, t + still) - max(a_, t)) for a_, b_ in [(x[0], x[1]) for x in sc['soste']]) if hover_ok > 0 else 0.0
-        if d_t < tgt and d_p < pos and dY > dy and not (hover_ok > 0 and hv >= hover_ok): stills.append((t, t + still, dY))
-        t += 1.0
-    m = []
-    for s in stills:
-        if m and s[0] <= m[-1][1]: m[-1] = (m[-1][0], s[1], max(m[-1][2], s[2]))
-        else: m.append(s)
+        flags.append((t, d_t < tgt and d_p < pos and not (hover_ok > 0 and hv >= hover_ok))); t += 1.0
+    m = []; cur = None
+    for t, f in flags:   # tratti fermi contigui: l'anno si somma sull'intero tratto (fix 27/11: prima finestra di 8 s, mancava NYC-like)
+        if f:
+            if cur and t <= cur[1]: cur[1] = t + still
+            else: cur = [t, t + still]; m.append(cur)
+    m = [(a, b, abs(yat(Y, b) - yat(Y, a))) for a, b in m if b - a > still and abs(yat(Y, b) - yat(Y, a)) > dy]
     return gaps, m
 if __name__ == '__main__':
     for slug in [a for a in sys.argv[1:] if not a.startswith('--')]:

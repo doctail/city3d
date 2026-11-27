@@ -10666,7 +10666,7 @@
   "fin_d": 2000,
   "fin_at": "area:[40.4420,-80.0040,300]"
  },
- "montaggio": {
+ "montaggio": {"subscribe_t": 63.0, 
   "style": "mattia",
   "open": [
    "PITTSBURGH TODAY",
