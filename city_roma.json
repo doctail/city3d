@@ -73,11 +73,11 @@
  "ms_per_cambio": 12.0,
  "budget_cambi_h": 1.0,
  "field_colors": [
-  "#565e43",
-  "#5c6146",
-  "#62644a",
-  "#68674e",
-  "#6e6b51"
+  "#4c6a28",
+  "#506928",
+  "#546827",
+  "#596727",
+  "#5d6527"
  ],
  "ground_tint": {
   "png": "cities/roma/ground_tint.png",
