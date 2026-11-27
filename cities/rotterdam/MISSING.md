@@ -19,7 +19,7 @@ Story ricostruita da testi scaricati (Wikipedia NL/EN, Wikidata). Ogni citazione
 - Coordinate delle aree (diga, Waterstad, Hofplein, Lijnbaan, porti sud) = stime / Wikidata.
 
 ## Ancora da fare
-- `history.bridges`: vuoto (il pacchetto dati non ha `bridges.json`; Erasmusbrug 1996, Willemsbrug 1878/1981, Hef non hanno linee verificate). Strade e ponti OSM sono comunque nei nastri di `roads.json` con anni propri.
+- `history.bridges`: compilato (7 voci, S45-S51: Willemsbrug 1878/1981, Erasmusbrug 1996, De Hef 1878/1927, Koninginnebrug 1929, Van Brienenoordbrug 1965; Maastunnel escluso, non e' un ponte). Linee agganciate alla banda d'acqua di land.json con coordinate Wikipedia (+-100 m): Overpass/OSM non raggiungibile, nessuna geometria OSM letta. Conflitti annotati: Willemsbrug 1878/1879, Erasmusbrug 4/6 settembre. Demolizione vecchia Willemsbrug 1981.5 = segnaposto. Willemsspoorbrug (1877-) non modellata (nessuna fonte letta). Da verificare in locale con la build.
 - Canali interrati (Coolvest 1913-22, Binnenrotte 1869-71, Schie/Blaak dopo il 1940): `history.water` disegna solo TERRA a fasi, non acqua che sparisce: serve supporto kit, oppure restano visibili come strade.
 - Porti storici prima del 1875 (Steiger, Oude Haven, Leuvehaven, Waterstad): assenti nei dati (harbours.json parte dal 1875).
 - Maasvlakte (~30 km a ovest) e Nieuwe Waterweg (~20 km): fuori dal raggio dati (9 km): solo cartelli senza bersaglio; la sosta 1872 mostra i porti della riva sud.

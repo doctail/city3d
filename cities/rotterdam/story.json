@@ -614,6 +614,48 @@
    "title": "Wikidata Q34370 (Rotterdam), population P1082",
    "quote": "2000: 592673 … 2010: 603425 … 2022: 655468 … 2023: 664311",
    "fetched": "2026-11-19"
+  },
+  "S45": {
+   "url": "https://nl.wikipedia.org/wiki/Willemsbrug_(Rotterdam)",
+   "title": "Wikipedia NL, Willemsbrug (Rotterdam)",
+   "quote": "De eerste werd ontworpen door C.B. van der Tak, werd in 1878 opengesteld en vernoemd naar koning Willem III. De tweede brug is ontworpen door Cor Veerling en is opgeleverd in 1981",
+   "fetched": "2026-11-27"
+  },
+  "S46": {
+   "url": "https://en.wikipedia.org/wiki/Willemsbrug",
+   "title": "Wikipedia EN, Willemsbrug (old and new bridge)",
+   "quote": "It replaced an older bridge that had been opened in 1879 … it was decided to build the new one 150 metres upstream … After the completion of the new bridge, the old one was demolished.",
+   "fetched": "2026-11-27"
+  },
+  "S47": {
+   "url": "https://nl.wikipedia.org/wiki/Erasmusbrug",
+   "title": "Wikipedia NL, Erasmusbrug",
+   "quote": "Koningin Beatrix verrichtte op 4 september 1996 de officiële opening van de nieuwe oeververbinding",
+   "fetched": "2026-11-27"
+  },
+  "S48": {
+   "url": "https://nl.wikipedia.org/wiki/De_Hef",
+   "title": "Wikipedia NL, De Hef",
+   "quote": "De brug is ontworpen door ingenieur Pieter Joosting en opengesteld op 31 oktober 1927. Deze brug was de eerste van haar soort in West-Europa.",
+   "fetched": "2026-11-27"
+  },
+  "S49": {
+   "url": "https://en.wikipedia.org/wiki/De_Hef",
+   "title": "Wikipedia EN, De Hef",
+   "quote": "The predecessor bridge dated from 1878. Its configuration as a swing bridge proved an obstacle to shipping",
+   "fetched": "2026-11-27"
+  },
+  "S50": {
+   "url": "https://nl.wikipedia.org/wiki/Koninginnebrug_(Rotterdam)",
+   "title": "Wikipedia NL, Koninginnebrug (Rotterdam)",
+   "quote": "De nieuwe brug werd op 14 juni 1929 door minister van Binnenlandse Zaken en Landbouw Kan geopend.",
+   "fetched": "2026-11-27"
+  },
+  "S51": {
+   "url": "https://en.wikipedia.org/wiki/Van_Brienenoord_Bridge",
+   "title": "Wikipedia EN, Van Brienenoord Bridge",
+   "quote": "The east arch (287.5 m long) was built in 1965, constituting the original Van Brienenoord Bridge.",
+   "fetched": "2026-11-27"
   }
  },
  "history": {
@@ -1082,7 +1124,161 @@
    }
   ],
   "water": [],
-  "bridges": []
+  "bridges": [
+   {
+    "name": "Willemsbrug (first, 1878)",
+    "line": [
+     [
+      51.91553,
+      4.49362
+     ],
+     [
+      51.9184,
+      4.49362
+     ]
+    ],
+    "w": 16,
+    "y": 1878,
+    "d": 1981.5,
+    "src": [
+     "S45",
+     "S46",
+     "S2"
+    ],
+    "conf": "medium",
+    "note": "DATE CONFLICT: 1878 (NL, S2) vs 1879 (EN); 1878 used. Demolished after the new bridge opened in 1981 (EN, no exact date: 1981.5 is a placeholder). Position = 150 m downstream (west) of the new bridge, as stated by EN; [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Willemsbrug (cable-stayed, 1981)",
+    "line": [
+     [
+      51.91553,
+      4.4958
+     ],
+     [
+      51.9184,
+      4.4958
+     ]
+    ],
+    "w": 33,
+    "y": 1981,
+    "d": null,
+    "src": [
+     "S45",
+     "S46",
+     "S34"
+    ],
+    "conf": "medium",
+    "note": "[Certain] completed 1981 (NL, EN). Only the main river span is drawn; the 90-degree ramps are not. [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Erasmusbrug (1996)",
+    "line": [
+     [
+      51.90627,
+      4.4867
+     ],
+     [
+      51.91278,
+      4.4867
+     ]
+    ],
+    "w": 33,
+    "y": 1996.68,
+    "d": null,
+    "src": [
+     "S47",
+     "S26"
+    ],
+    "conf": "medium",
+    "note": "DATE CONFLICT: official opening 4 September 1996 (NL, = 1996.68) vs 6 September (EN, S26): 4 Sept used, difference immaterial. [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Koningshavenbrug \"De Hef\" (swing bridge, 1878)",
+    "line": [
+     [
+      51.9134,
+      4.49838
+     ],
+     [
+      51.9134,
+      4.49969
+     ]
+    ],
+    "w": 8,
+    "y": 1878,
+    "d": 1927.83,
+    "src": [
+     "S49"
+    ],
+    "conf": "low",
+    "note": "S49: predecessor swing bridge dated from 1878 and was replaced by the lift bridge in 1927 (opening 31 Oct 1927 = 1927.83); the exact 1878 opening and the swing bridge position are not in the source. [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Koningshavenbrug \"De Hef\" (lift bridge, 1927)",
+    "line": [
+     [
+      51.9134,
+      4.49838
+     ],
+     [
+      51.9134,
+      4.49969
+     ]
+    ],
+    "w": 11,
+    "y": 1927.83,
+    "d": null,
+    "src": [
+     "S48",
+     "S49"
+    ],
+    "conf": "high",
+    "note": "[Certain] opened 31 Oct 1927 (NL); closed to trains 1993 but kept as a monument and still standing (not removed). [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Koninginnebrug (1929)",
+    "line": [
+     [
+      51.9125,
+      4.49613
+     ],
+     [
+      51.9125,
+      4.49758
+     ]
+    ],
+    "w": 14,
+    "y": 1929.45,
+    "d": null,
+    "src": [
+     "S50"
+    ],
+    "conf": "medium",
+    "note": "[Certain] new bridge opened 14 June 1929 (= 1929.45), NL; the earlier Koninginnebrug (moved in 1926) is not modelled. [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   },
+   {
+    "name": "Van Brienenoordbrug (east arch, 1965)",
+    "line": [
+     [
+      51.90184,
+      4.5425
+     ],
+     [
+      51.90699,
+      4.5425
+     ]
+    ],
+    "w": 20,
+    "y": 1965,
+    "d": null,
+    "src": [
+     "S51"
+    ],
+    "conf": "medium",
+    "note": "[Certain] east arch (287.5 m) built 1965 = original bridge (EN); the second arch (added later) is not modelled. [Guessing] POSITION FLAGGED: coordinates from the Wikipedia infobox, line snapped to the water band of land.json (+-100 m); Overpass/OSM unreachable from this session, no OSM geometry read; deck width is an approximation."
+   }
+  ]
  },
  "landmarks": [
   {
