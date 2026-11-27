@@ -8,92 +8,92 @@
    "sub": "753 BC"
   },
   {
-   "t_in": 43.54,
-   "t_out": 48.54,
+   "t_in": 45.41,
+   "t_out": 50.41,
    "title": "Temple of Jupiter",
    "sub": "509 BC"
   },
   {
-   "t_in": 63.21,
-   "t_out": 67.71,
+   "t_in": 63.42,
+   "t_out": 67.92,
    "title": "The Servian Wall",
    "sub": "378 BC"
   },
   {
-   "t_in": 131.35,
-   "t_out": 136.75,
+   "t_in": 127.04,
+   "t_out": 132.44,
    "title": "Augustus builds his tomb",
    "sub": "28 BC"
   },
   {
-   "t_in": 157.83,
-   "t_out": 162.83,
+   "t_in": 152.33,
+   "t_out": 157.33,
    "title": "The Great Fire of Rome",
    "sub": "AD 64"
   },
   {
-   "t_in": 166.33,
-   "t_out": 172.33,
+   "t_in": 160.83,
+   "t_out": 166.83,
    "title": "The Colosseum",
    "sub": "AD 72-80"
   },
   {
-   "t_in": 211.47,
-   "t_out": 217.47,
+   "t_in": 203.48,
+   "t_out": 209.48,
    "title": "The Aurelian Walls",
    "sub": "271-275"
   },
   {
-   "t_in": 257.19,
-   "t_out": 261.19,
+   "t_in": 248.82,
+   "t_out": 252.82,
    "title": "Old St. Peter's",
    "sub": "c. 320-360"
   },
   {
-   "t_in": 288.78,
-   "t_out": 293.78,
+   "t_in": 280.2,
+   "t_out": 285.2,
    "title": "Alaric sacks Rome",
    "sub": "410"
   },
   {
-   "t_in": 318.11,
-   "t_out": 324.11,
+   "t_in": 307.87,
+   "t_out": 313.87,
    "title": "The Goths cut the aqueducts",
    "sub": "537"
   },
   {
-   "t_in": 425.57,
-   "t_out": 429.57,
+   "t_in": 433.46,
+   "t_out": 437.46,
    "title": "Earthquake: the Colosseum falls",
    "sub": "1349"
   },
   {
-   "t_in": 462.71,
-   "t_out": 467.71,
+   "t_in": 467.46,
+   "t_out": 472.46,
    "title": "Michelangelo's dome",
    "sub": "1590"
   },
   {
-   "t_in": 473.69,
-   "t_out": 478.49,
+   "t_in": 477.42,
+   "t_out": 482.22,
    "title": "Bernini's colonnade",
    "sub": "1667-1676"
   },
   {
-   "t_in": 517.36,
-   "t_out": 522.76,
+   "t_in": 518.58,
+   "t_out": 523.98,
    "title": "Rome, capital of Italy",
    "sub": "1871"
   },
   {
-   "t_in": 534.91,
-   "t_out": 539.91,
+   "t_in": 535.65,
+   "t_out": 540.65,
    "title": "The Vittoriano",
    "sub": "1885-1911"
   },
   {
-   "t_in": 581.81,
-   "t_out": 585.31,
+   "t_in": 581.94,
+   "t_out": 585.44,
    "title": "Rome Olympics",
    "sub": "1960"
   }
@@ -111,8 +111,18 @@
    "sober": false
   },
   {
-   "t_in": 32.06,
-   "t_out": 36.56,
+   "t_in": 27.1,
+   "t_out": 31.9,
+   "date": "650 BC",
+   "title": "A home for the Senate",
+   "lines": [
+    "Legend credits King Tullus Hostilius (r. c. 672-640 BC) with the first senate house, the Curia Hostilia."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 35.08,
+   "t_out": 39.58,
    "date": "600 BC",
    "title": "Cloaca Maxima",
    "lines": [
@@ -122,8 +132,8 @@
    "sober": false
   },
   {
-   "t_in": 43.54,
-   "t_out": 48.54,
+   "t_in": 45.41,
+   "t_out": 50.41,
    "date": "509 BC",
    "title": "No more kings",
    "lines": [
@@ -133,8 +143,8 @@
    "sober": false
   },
   {
-   "t_in": 57.29,
-   "t_out": 62.29,
+   "t_in": 57.66,
+   "t_out": 62.66,
    "date": "390 BC",
    "title": "The Gauls sack Rome",
    "lines": [
@@ -144,8 +154,8 @@
    "sober": false
   },
   {
-   "t_in": 71.01,
-   "t_out": 75.81,
+   "t_in": 70.66,
+   "t_out": 75.46,
    "date": "329 BC",
    "title": "Circus Maximus",
    "lines": [
@@ -155,8 +165,8 @@
    "sober": false
   },
   {
-   "t_in": 77.12,
-   "t_out": 81.92,
+   "t_in": 76.54,
+   "t_out": 81.34,
    "date": "312 BC",
    "title": "The first road and aqueduct",
    "lines": [
@@ -165,8 +175,8 @@
    "sober": false
   },
   {
-   "t_in": 85.6,
-   "t_out": 90.1,
+   "t_in": 84.39,
+   "t_out": 88.89,
    "date": "264 BC",
    "title": "War with Carthage begins",
    "lines": [
@@ -175,8 +185,8 @@
    "sober": false
   },
   {
-   "t_in": 93.78,
-   "t_out": 98.28,
+   "t_in": 91.94,
+   "t_out": 96.44,
    "date": "216 BC",
    "title": "Disaster at Cannae",
    "lines": [
@@ -185,8 +195,8 @@
    "sober": false
   },
   {
-   "t_in": 103.66,
-   "t_out": 108.46,
+   "t_in": 100.89,
+   "t_out": 105.69,
    "date": "146 BC",
    "title": "Carthage destroyed",
    "lines": [
@@ -195,8 +205,8 @@
    "sober": false
   },
   {
-   "t_in": 109.45,
-   "t_out": 113.95,
+   "t_in": 106.52,
+   "t_out": 111.02,
    "date": "133 BC",
    "title": "The late Republic",
    "lines": [
@@ -205,8 +215,8 @@
    "sober": false
   },
   {
-   "t_in": 117.87,
-   "t_out": 122.37,
+   "t_in": 114.26,
+   "t_out": 118.76,
    "date": "82 BC",
    "title": "Sulla named dictator",
    "lines": [
@@ -215,8 +225,8 @@
    "sober": false
   },
   {
-   "t_in": 125.28,
-   "t_out": 130.08,
+   "t_in": 121.18,
+   "t_out": 125.98,
    "date": "44 BC",
    "title": "The Ides of March",
    "lines": [
@@ -225,8 +235,8 @@
    "sober": false
   },
   {
-   "t_in": 131.35,
-   "t_out": 136.75,
+   "t_in": 127.04,
+   "t_out": 132.44,
    "date": "27 BC",
    "title": "Augustus, first emperor",
    "lines": [
@@ -236,8 +246,8 @@
    "sober": false
   },
   {
-   "t_in": 137.71,
-   "t_out": 142.51,
+   "t_in": 133.23,
+   "t_out": 138.03,
    "date": "13 BC",
    "title": "Theatre of Marcellus",
    "lines": [
@@ -246,8 +256,8 @@
    "sober": false
   },
   {
-   "t_in": 144.62,
-   "t_out": 149.12,
+   "t_in": 139.78,
+   "t_out": 144.28,
    "date": "AD 14",
    "title": "Augustus dies",
    "lines": [
@@ -256,8 +266,8 @@
    "sober": false
   },
   {
-   "t_in": 152.96,
-   "t_out": 157.76,
+   "t_in": 147.46,
+   "t_out": 152.26,
    "date": "AD 64",
    "title": "The Great Fire",
    "lines": [
@@ -266,8 +276,8 @@
    "sober": false
   },
   {
-   "t_in": 166.33,
-   "t_out": 171.13,
+   "t_in": 160.83,
+   "t_out": 165.63,
    "date": "AD 80",
    "title": "The Colosseum opens",
    "lines": [
@@ -276,8 +286,8 @@
    "sober": false
   },
   {
-   "t_in": 174.55,
-   "t_out": 179.35,
+   "t_in": 168.67,
+   "t_out": 173.47,
    "date": "AD 113",
    "title": "Trajan's Column",
    "lines": [
@@ -286,8 +296,8 @@
    "sober": false
   },
   {
-   "t_in": 180.35,
-   "t_out": 185.15,
+   "t_in": 174.3,
+   "t_out": 179.1,
    "date": "AD 126",
    "title": "The Pantheon",
    "lines": [
@@ -296,8 +306,8 @@
    "sober": false
   },
   {
-   "t_in": 186.0,
-   "t_out": 190.8,
+   "t_in": 179.8,
+   "t_out": 184.6,
    "date": "AD 137",
    "title": "Hadrian's Mausoleum",
    "lines": [
@@ -307,8 +317,8 @@
    "sober": false
   },
   {
-   "t_in": 191.79,
-   "t_out": 197.19,
+   "t_in": 185.42,
+   "t_out": 190.82,
    "date": "AD 150",
    "title": "A city of a million or more",
    "lines": [
@@ -318,8 +328,8 @@
    "sober": false
   },
   {
-   "t_in": 202.26,
-   "t_out": 207.06,
+   "t_in": 195.02,
+   "t_out": 199.82,
    "date": "AD 216",
    "title": "Baths of Caracalla",
    "lines": [
@@ -328,8 +338,8 @@
    "sober": false
   },
   {
-   "t_in": 211.47,
-   "t_out": 216.27,
+   "t_in": 203.48,
+   "t_out": 208.28,
    "date": "AD 275",
    "title": "A wall for the whole city",
    "lines": [
@@ -338,8 +348,8 @@
    "sober": false
   },
   {
-   "t_in": 219.7,
-   "t_out": 224.5,
+   "t_in": 211.33,
+   "t_out": 216.13,
    "date": "AD 306",
    "title": "The largest baths of all",
    "lines": [
@@ -348,8 +358,8 @@
    "sober": false
   },
   {
-   "t_in": 224.96,
-   "t_out": 229.76,
+   "t_in": 216.51,
+   "t_out": 221.31,
    "date": "AD 312",
    "title": "Maxentius's basilica",
    "lines": [
@@ -358,8 +368,8 @@
    "sober": false
   },
   {
-   "t_in": 230.37,
-   "t_out": 235.17,
+   "t_in": 221.82,
+   "t_out": 226.62,
    "date": "AD 320",
    "title": "Old St. Peter's",
    "lines": [
@@ -368,8 +378,8 @@
    "sober": false
   },
   {
-   "t_in": 235.94,
-   "t_out": 240.44,
+   "t_in": 227.25,
+   "t_out": 231.75,
    "date": "AD 330",
    "title": "A second capital",
    "lines": [
@@ -378,8 +388,8 @@
    "sober": false
   },
   {
-   "t_in": 240.98,
-   "t_out": 245.48,
+   "t_in": 232.2,
+   "t_out": 236.7,
    "date": "AD 337",
    "title": "Constantine dies",
    "lines": [
@@ -388,8 +398,18 @@
    "sober": false
   },
   {
-   "t_in": 262.42,
-   "t_out": 266.92,
+   "t_in": 237.78,
+   "t_out": 242.58,
+   "date": "AD 354",
+   "title": "Mausoleum of Constantina",
+   "lines": [
+    "Traditionally built for the emperor Constantine's daughter, who died in 354."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 253.84,
+   "t_out": 258.34,
    "date": "AD 380",
    "title": "Edict of Thessalonica",
    "lines": [
@@ -398,8 +418,8 @@
    "sober": false
   },
   {
-   "t_in": 268.07,
-   "t_out": 272.57,
+   "t_in": 259.29,
+   "t_out": 263.79,
    "date": "AD 395",
    "title": "The empire divides",
    "lines": [
@@ -408,8 +428,8 @@
    "sober": false
   },
   {
-   "t_in": 273.57,
-   "t_out": 278.07,
+   "t_in": 264.62,
+   "t_out": 269.12,
    "date": "AD 408",
    "title": "Alaric besieges Rome",
    "lines": [
@@ -418,8 +438,8 @@
    "sober": false
   },
   {
-   "t_in": 278.15,
-   "t_out": 282.65,
+   "t_in": 269.18,
+   "t_out": 273.68,
    "date": "AD 409",
    "title": "Rome pays the Goths",
    "lines": [
@@ -428,8 +448,8 @@
    "sober": false
   },
   {
-   "t_in": 288.78,
-   "t_out": 293.78,
+   "t_in": 280.2,
+   "t_out": 285.2,
    "date": "AD 410",
    "title": "Alaric sacks Rome",
    "lines": [
@@ -438,8 +458,8 @@
    "sober": false
   },
   {
-   "t_in": 297.18,
-   "t_out": 301.98,
+   "t_in": 288.01,
+   "t_out": 292.81,
    "date": "AD 455",
    "title": "The Vandals sack Rome",
    "lines": [
@@ -448,8 +468,8 @@
    "sober": false
   },
   {
-   "t_in": 303.59,
-   "t_out": 308.59,
+   "t_in": 294.15,
+   "t_out": 299.15,
    "date": "AD 476",
    "title": "The Western Empire ends",
    "lines": [
@@ -458,8 +478,8 @@
    "sober": false
   },
   {
-   "t_in": 313.26,
-   "t_out": 318.06,
+   "t_in": 303.02,
+   "t_out": 307.82,
    "date": "AD 536",
    "title": "Byzantine Rome",
    "lines": [
@@ -468,8 +488,8 @@
    "sober": false
   },
   {
-   "t_in": 324.78,
-   "t_out": 329.58,
+   "t_in": 314.42,
+   "t_out": 319.22,
    "date": "AD 546",
    "title": "Totila enters Rome",
    "lines": [
@@ -478,8 +498,8 @@
    "sober": false
   },
   {
-   "t_in": 329.97,
-   "t_out": 334.97,
+   "t_in": 319.54,
+   "t_out": 324.54,
    "date": "AD 552",
    "title": "A city of 30,000",
    "lines": [
@@ -488,8 +508,8 @@
    "sober": false
   },
   {
-   "t_in": 337.88,
-   "t_out": 343.28,
+   "t_in": 326.96,
+   "t_out": 332.36,
    "date": "AD 590",
    "title": "Plague, and an angel",
    "lines": [
@@ -499,8 +519,28 @@
    "sober": false
   },
   {
-   "t_in": 356.02,
-   "t_out": 360.82,
+   "t_in": 333.57,
+   "t_out": 338.37,
+   "date": "AD 609",
+   "title": "The Pantheon becomes a church",
+   "lines": [
+    "Emperor Phocas gives it to Pope Boniface IV, who consecrates it to Mary and the Martyrs."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 341.8,
+   "t_out": 346.6,
+   "date": "AD 663",
+   "title": "An emperor visits Rome",
+   "lines": [
+    "Constans II stays twelve days and strips bronze from buildings, including the Pantheon."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 352.52,
+   "t_out": 357.32,
    "date": "AD 756",
    "title": "The Papal State",
    "lines": [
@@ -509,8 +549,8 @@
    "sober": false
   },
   {
-   "t_in": 364.2,
-   "t_out": 369.0,
+   "t_in": 360.11,
+   "t_out": 364.91,
    "date": "AD 800",
    "title": "Charlemagne",
    "lines": [
@@ -519,8 +559,8 @@
    "sober": false
   },
   {
-   "t_in": 372.99,
-   "t_out": 377.79,
+   "t_in": 368.22,
+   "t_out": 373.02,
    "date": "AD 852",
    "title": "The Leonine Wall",
    "lines": [
@@ -529,8 +569,18 @@
    "sober": false
   },
   {
-   "t_in": 395.59,
-   "t_out": 400.39,
+   "t_in": 380.02,
+   "t_out": 384.82,
+   "date": "AD 962",
+   "title": "Otto is crowned emperor",
+   "lines": [
+    "Pope John XII crowns the German king Otto I at Old St. Peter's."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 392.57,
+   "t_out": 397.37,
    "date": "1084",
    "title": "The Normans",
    "lines": [
@@ -539,8 +589,38 @@
    "sober": false
   },
   {
-   "t_in": 417.66,
-   "t_out": 422.46,
+   "t_in": 401.12,
+   "t_out": 405.92,
+   "date": "1143",
+   "title": "The Roman Senate returns",
+   "lines": [
+    "Citizens revolt against the pope and renew the Senate on the Capitoline Hill."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 411.97,
+   "t_out": 416.77,
+   "date": "1238",
+   "title": "Torre dei Conti",
+   "lines": [
+    "A medieval tower near the Forum, once 50 to 60 meters tall."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 420.71,
+   "t_out": 425.51,
+   "date": "1300",
+   "title": "The first Holy Year",
+   "lines": [
+    "Pope Boniface VIII offers a full pardon to those who visit the basilicas of St. Peter and St. Paul."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 426.08,
+   "t_out": 430.88,
    "date": "1309",
    "title": "The popes leave",
    "lines": [
@@ -549,8 +629,8 @@
    "sober": false
   },
   {
-   "t_in": 431.67,
-   "t_out": 436.67,
+   "t_in": 439.21,
+   "t_out": 444.21,
    "date": "1377",
    "title": "The popes return",
    "lines": [
@@ -560,8 +640,8 @@
    "sober": false
   },
   {
-   "t_in": 446.57,
-   "t_out": 451.37,
+   "t_in": 452.41,
+   "t_out": 457.21,
    "date": "1506",
    "title": "A new St. Peter's",
    "lines": [
@@ -570,8 +650,8 @@
    "sober": false
   },
   {
-   "t_in": 452.98,
-   "t_out": 457.98,
+   "t_in": 458.54,
+   "t_out": 463.54,
    "date": "1527",
    "title": "The Sack of Rome",
    "lines": [
@@ -581,8 +661,8 @@
    "sober": false
   },
   {
-   "t_in": 473.69,
-   "t_out": 478.49,
+   "t_in": 477.42,
+   "t_out": 482.22,
    "date": "1676",
    "title": "Bernini's square",
    "lines": [
@@ -591,8 +671,8 @@
    "sober": false
   },
   {
-   "t_in": 484.78,
-   "t_out": 489.58,
+   "t_in": 487.44,
+   "t_out": 492.24,
    "date": "1762",
    "title": "Trevi Fountain",
    "lines": [
@@ -601,8 +681,8 @@
    "sober": false
   },
   {
-   "t_in": 492.35,
-   "t_out": 497.15,
+   "t_in": 494.53,
+   "t_out": 499.33,
    "date": "1798",
    "title": "A Roman Republic",
    "lines": [
@@ -611,8 +691,8 @@
    "sober": false
   },
   {
-   "t_in": 497.99,
-   "t_out": 502.79,
+   "t_in": 500.03,
+   "t_out": 504.83,
    "date": "1809",
    "title": "Napoleon annexes Rome",
    "lines": [
@@ -621,8 +701,8 @@
    "sober": false
   },
   {
-   "t_in": 505.86,
-   "t_out": 510.86,
+   "t_in": 507.37,
+   "t_out": 512.37,
    "date": "1849",
    "title": "Another Roman Republic",
    "lines": [
@@ -631,8 +711,8 @@
    "sober": false
   },
   {
-   "t_in": 511.78,
-   "t_out": 516.58,
+   "t_in": 513.13,
+   "t_out": 517.93,
    "date": "1861",
    "title": "Italy is united",
    "lines": [
@@ -641,8 +721,8 @@
    "sober": false
   },
   {
-   "t_in": 517.36,
-   "t_out": 522.76,
+   "t_in": 518.58,
+   "t_out": 523.98,
    "date": "1871",
    "title": "Capital of Italy",
    "lines": [
@@ -652,8 +732,8 @@
    "sober": false
   },
   {
-   "t_in": 523.49,
-   "t_out": 528.29,
+   "t_in": 524.59,
+   "t_out": 529.39,
    "date": "1881",
    "title": "A growing capital",
    "lines": [
@@ -662,8 +742,8 @@
    "sober": false
   },
   {
-   "t_in": 529.75,
-   "t_out": 534.25,
+   "t_in": 530.6,
+   "t_out": 535.1,
    "date": "1900",
    "title": "Half a million",
    "lines": [
@@ -672,8 +752,8 @@
    "sober": false
   },
   {
-   "t_in": 540.52,
-   "t_out": 545.32,
+   "t_in": 541.16,
+   "t_out": 545.96,
    "date": "1922",
    "title": "March on Rome",
    "lines": [
@@ -682,8 +762,8 @@
    "sober": false
   },
   {
-   "t_in": 545.86,
-   "t_out": 550.66,
+   "t_in": 546.4,
+   "t_out": 551.2,
    "date": "1929",
    "title": "Vatican City",
    "lines": [
@@ -692,8 +772,8 @@
    "sober": false
   },
   {
-   "t_in": 551.35,
-   "t_out": 556.15,
+   "t_in": 551.78,
+   "t_out": 556.58,
    "date": "1938",
    "title": "EUR",
    "lines": [
@@ -702,8 +782,8 @@
    "sober": false
   },
   {
-   "t_in": 556.61,
-   "t_out": 561.61,
+   "t_in": 556.96,
+   "t_out": 561.96,
    "date": "1944",
    "title": "Liberation",
    "lines": [
@@ -712,8 +792,8 @@
    "sober": true
   },
   {
-   "t_in": 561.76,
-   "t_out": 566.56,
+   "t_in": 562.08,
+   "t_out": 566.88,
    "date": "1946",
    "title": "A republic",
    "lines": [
@@ -722,8 +802,8 @@
    "sober": false
   },
   {
-   "t_in": 566.87,
-   "t_out": 571.67,
+   "t_in": 567.14,
+   "t_out": 571.94,
    "date": "1950",
    "title": "Termini Station",
    "lines": [
@@ -732,8 +812,8 @@
    "sober": false
   },
   {
-   "t_in": 571.75,
-   "t_out": 576.55,
+   "t_in": 572.0,
+   "t_out": 576.8,
    "date": "1951",
    "title": "A city of 1.65 million",
    "lines": [
@@ -742,8 +822,8 @@
    "sober": false
   },
   {
-   "t_in": 577.01,
-   "t_out": 581.51,
+   "t_in": 577.18,
+   "t_out": 581.68,
    "date": "1957",
    "title": "Treaty of Rome",
    "lines": [
@@ -760,6 +840,66 @@
     "The census counts 2,781,993 residents, the highest on record."
    ],
    "sober": false
+  },
+  {
+   "t_in": 591.46,
+   "t_out": 596.26,
+   "date": "1980",
+   "title": "The first metro line",
+   "lines": [
+    "Line A enters service in February 1980."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 596.89,
+   "t_out": 601.69,
+   "date": "1990",
+   "title": "World Cup final",
+   "lines": [
+    "West Germany beats Argentina 1-0 at the Stadio Olimpico."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 602.33,
+   "t_out": 607.13,
+   "date": "2000",
+   "title": "The Great Jubilee",
+   "lines": [
+    "Rome's churches and cathedrals are renovated for the Jubilee year."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 608.02,
+   "t_out": 612.82,
+   "date": "2014",
+   "title": "Metro Line C",
+   "lines": [
+    "It opens on 9 November 2014, running from the Colosseum toward the east."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 613.07,
+   "t_out": 617.87,
+   "date": "2018",
+   "title": "A metro station as a museum",
+   "lines": [
+    "San Giovanni opens as the first \"archeostation\", showing layers of history found during excavation."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 618.32,
+   "t_out": 623.12,
+   "date": "2025",
+   "title": "The 2025 Jubilee",
+   "lines": [
+    "A new Holy Year opens on December 24, 2024."
+   ],
+   "sober": false
   }
  ],
  "chapters": [
@@ -770,44 +910,44 @@
    "title": "Kings and Republic"
   },
   {
-   "t_in": 130.08,
-   "t_out": 131.35,
+   "t_in": 125.84,
+   "t_out": 127.04,
    "num": "II",
    "title": "Imperial Rome"
   },
   {
-   "t_in": 285.98,
-   "t_out": 288.78,
+   "t_in": 277.4,
+   "t_out": 280.2,
    "num": "III",
    "title": "Fall and Faith"
   },
   {
-   "t_in": 414.86,
-   "t_out": 417.66,
+   "t_in": 424.88,
+   "t_out": 426.08,
    "num": "IV",
    "title": "Medieval Rome"
   },
   {
-   "t_in": 443.77,
-   "t_out": 446.57,
+   "t_in": 449.61,
+   "t_out": 452.41,
    "num": "V",
    "title": "Renaissance and Baroque"
   },
   {
-   "t_in": 489.58,
-   "t_out": 492.35,
+   "t_in": 492.24,
+   "t_out": 494.53,
    "num": "VI",
    "title": "Revolution and Unification"
   },
   {
-   "t_in": 516.16,
-   "t_out": 517.36,
+   "t_in": 517.38,
+   "t_out": 518.58,
    "num": "VII",
    "title": "Capital of Italy"
   },
   {
-   "t_in": 555.41,
-   "t_out": 556.61,
+   "t_in": 555.76,
+   "t_out": 556.96,
    "num": "VIII",
    "title": "Modern Rome"
   }

@@ -848,6 +848,76 @@
    "url": "https://en.wikipedia.org/wiki/Campo_Marzio",
    "title": "Wikipedia EN, Campo Marzio",
    "quote": "became one of the most densely populated zones of Rome"
+  },
+  "S71": {
+   "url": "https://en.wikipedia.org/wiki/Tullus_Hostilius",
+   "title": "Wikipedia EN, Tullus Hostilius",
+   "quote": "(r. c. 672 – c. 640 BC) was the legendary third King of Rome. … He is also credited with constructing the first Roman senate building, the Curia Hostilia, and the open assembly space Comitium"
+  },
+  "S72": {
+   "url": "https://en.wikipedia.org/wiki/Mausoleum_of_Constantina",
+   "title": "Wikipedia EN, Mausoleum of Constantina",
+   "quote": "According to the traditional view, the mausoleum was built in the reign of Constantine I for his daughter Constantina, later also known as Constantia or Costanza, who died in 354."
+  },
+  "S73": {
+   "url": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+   "title": "Wikipedia EN, Pantheon, Rome",
+   "quote": "In 609, the Byzantine emperor Phocas (who also had his namesake column constructed nearby) gave the building to Pope Boniface IV, who converted it into a Christian church"
+  },
+  "S74": {
+   "url": "https://en.wikipedia.org/wiki/Otto_I,_Holy_Roman_Emperor",
+   "title": "Wikipedia EN, Otto I, Holy Roman Emperor",
+   "quote": "Otto reached Rome on 31 January 962; three days later, he was crowned Emperor by Pope John XII at Old St. Peter's Basilica."
+  },
+  "S75": {
+   "url": "https://en.wikipedia.org/wiki/Commune_of_Rome",
+   "title": "Wikipedia EN, Commune of Rome",
+   "quote": "between August and October 1143, the Roman citizens, encouraged by the reformist preacher Arnold of Brescia, rebelled against the then Pope, Lucius II and proceeded to renew the old Senate on the Capitoline Hill."
+  },
+  "S76": {
+   "url": "https://en.wikipedia.org/wiki/Holy_Year",
+   "title": "Wikipedia EN, Holy Year",
+   "quote": "the tradition dates to 1300, when Pope Boniface VIII convoked a holy year"
+  },
+  "S77": {
+   "url": "https://en.wikipedia.org/wiki/Torre_dei_Conti",
+   "title": "Wikipedia EN, Torre dei Conti",
+   "quote": "Now standing at 29 metres (95 ft), it was once 50–60 metres (160–200 ft) tall, and gained the nickname of Torre Maggiore (Major Tower) for its size. … The tower's main phase of construction was by the architect Marchione d'Arezzo in 1238."
+  },
+  "S78": {
+   "url": "https://en.wikipedia.org/wiki/Constans_II",
+   "title": "Wikipedia EN, Constans II",
+   "quote": "In 663 Constans visited Rome for twelve days … he stripped buildings (including the Pantheon) of their ornaments and bronze to be carried back to Constantinople"
+  },
+  "S79": {
+   "url": "https://en.wikipedia.org/wiki/Rome_Metro",
+   "title": "Wikipedia EN, Rome Metro",
+   "quote": "Line A entered service in February 1980."
+  },
+  "S80": {
+   "url": "https://en.wikipedia.org/wiki/1990_FIFA_World_Cup_final",
+   "title": "Wikipedia EN, 1990 FIFA World Cup final",
+   "quote": "The game took place on 8 July at the Stadio Olimpico in Italy's capital and largest city, Rome, and was won 1–0 by West Germany"
+  },
+  "S81": {
+   "url": "https://en.wikipedia.org/wiki/Great_Jubilee",
+   "title": "Wikipedia EN, Great Jubilee",
+   "quote": "The various churches and cathedrals in Rome took advantage of the Jubilee to perform long-needed renovations."
+  },
+  "S82": {
+   "url": "https://en.wikipedia.org/wiki/Rome_Metro",
+   "title": "Wikipedia EN, Rome Metro",
+   "quote": "Opened on 9 November 2014, line C currently runs radially from Colosseo, serving as an interchange station for Line B"
+  },
+  "S83": {
+   "url": "https://en.wikipedia.org/wiki/Rome_Metro",
+   "title": "Wikipedia EN, Rome Metro",
+   "quote": "San Giovanni station was the first archeostation to be opened on 12 May 2018."
+  },
+  "S84": {
+   "url": "https://en.wikipedia.org/wiki/Holy_Year",
+   "title": "Wikipedia EN, Holy Year",
+   "quote": "The 2025 jubilee year commenced on 24 December 2024, also marking the 1,700th anniversary of the Council of Nicaea (325 AD)."
   }
  },
  "history": {
@@ -3002,6 +3072,20 @@
     "conf": "medium"
    },
    {
+    "y": -650,
+    "title": "A home for the Senate",
+    "lines": [
+     "Legend credits King Tullus Hostilius (r. c. 672-640 BC) with the first senate house, the Curia Hostilia."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S71"
+    ],
+    "conf": "low",
+    "target": "area:[41.8925,12.4853,350]",
+    "shot": "wide"
+   },
+   {
     "y": -600,
     "title": "Cloaca Maxima",
     "lines": [
@@ -3368,6 +3452,20 @@
     "conf": "high"
    },
    {
+    "y": 354,
+    "title": "Mausoleum of Constantina",
+    "lines": [
+     "Traditionally built for the emperor Constantine's daughter, who died in 354."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S72"
+    ],
+    "conf": "medium",
+    "target": "area:[41.9186,12.5143,350]",
+    "shot": "wide"
+   },
+   {
     "y": 380,
     "title": "Edict of Thessalonica",
     "lines": [
@@ -3507,6 +3605,40 @@
     ]
    },
    {
+    "y": 609,
+    "title": "The Pantheon becomes a church",
+    "lines": [
+     "Emperor Phocas gives it to Pope Boniface IV, who consecrates it to Mary and the Martyrs."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S73"
+    ],
+    "conf": "high",
+    "target": "Pantheon",
+    "shot": "medium",
+    "labels": [
+     "Pantheon"
+    ]
+   },
+   {
+    "y": 663,
+    "title": "An emperor visits Rome",
+    "lines": [
+     "Constans II stays twelve days and strips bronze from buildings, including the Pantheon."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S78"
+    ],
+    "conf": "high",
+    "target": "Pantheon",
+    "shot": "medium",
+    "labels": [
+     "Pantheon"
+    ]
+   },
+   {
     "y": 756,
     "title": "The Papal State",
     "lines": [
@@ -3549,6 +3681,23 @@
     "conf": "high"
    },
    {
+    "y": 962,
+    "title": "Otto is crowned emperor",
+    "lines": [
+     "Pope John XII crowns the German king Otto I at Old St. Peter's."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S74"
+    ],
+    "conf": "high",
+    "target": "Old St Peter's",
+    "shot": "medium",
+    "labels": [
+     "Old St Peter's"
+    ]
+   },
+   {
     "y": 1084,
     "title": "The Normans",
     "lines": [
@@ -3559,6 +3708,48 @@
      "S38"
     ],
     "conf": "high"
+   },
+   {
+    "y": 1143,
+    "title": "The Roman Senate returns",
+    "lines": [
+     "Citizens revolt against the pope and renew the Senate on the Capitoline Hill."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S75"
+    ],
+    "conf": "high",
+    "target": "area:[41.8934,12.4828,300]",
+    "shot": "wide"
+   },
+   {
+    "y": 1238,
+    "title": "Torre dei Conti",
+    "lines": [
+     "A medieval tower near the Forum, once 50 to 60 meters tall."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S77"
+    ],
+    "conf": "medium",
+    "target": "area:[41.8943,12.4880,300]",
+    "shot": "wide"
+   },
+   {
+    "y": 1300,
+    "title": "The first Holy Year",
+    "lines": [
+     "Pope Boniface VIII offers a full pardon to those who visit the basilicas of St. Peter and St. Paul."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S76"
+    ],
+    "conf": "high",
+    "target": "St Peter's Basilica",
+    "shot": "wide"
    },
    {
     "y": 1309,
@@ -3842,6 +4033,78 @@
     "hold_s": 4.8,
     "src": [
      "S53"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1980,
+    "title": "The first metro line",
+    "lines": [
+     "Line A enters service in February 1980."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S79"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1990,
+    "title": "World Cup final",
+    "lines": [
+     "West Germany beats Argentina 1-0 at the Stadio Olimpico."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S80"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2000,
+    "title": "The Great Jubilee",
+    "lines": [
+     "Rome's churches and cathedrals are renovated for the Jubilee year."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S81"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2014,
+    "title": "Metro Line C",
+    "lines": [
+     "It opens on 9 November 2014, running from the Colosseum toward the east."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S82"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2018,
+    "title": "A metro station as a museum",
+    "lines": [
+     "San Giovanni opens as the first \"archeostation\", showing layers of history found during excavation."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S83"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2025,
+    "title": "The 2025 Jubilee",
+    "lines": [
+     "A new Holy Year opens on December 24, 2024."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S84"
     ],
     "conf": "high"
    }

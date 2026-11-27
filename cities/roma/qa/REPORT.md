@@ -1,6 +1,6 @@
 # QA roma
 
-Generato da `python -m kit.qa` il 2026-11-27 08:01. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-27 08:38. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
@@ -8,12 +8,12 @@ Generato da `python -m kit.qa` il 2026-11-27 08:01. Esito complessivo: **WARN**
 | b) DATA | PASS |
 | c) Densita' storica | WARN |
 | d) Corridoi vuoti | WARN |
-| e) Costo e schedule | WARN |
+| e) Costo e schedule | PASS |
 
 ## a) Story e fonti
 
 - **PASS** chiavi city
-- **PASS** 70 fonti
+- **PASS** 84 fonti
 - **PASS** date con fonte
 
 ## b) DATA
@@ -83,13 +83,13 @@ Generato da `python -m kit.qa` il 2026-11-27 08:01. Esito complessivo: **WARN**
 ## e) Costo e schedule
 
 - **PASS** costo dei cambi (5 s)
-  - oggetti citta' 1749, cambi in tutto il video 50639, max in un fotogramma 362 (~4 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
+  - oggetti citta' 1749, cambi in tutto il video 50444, max in un fotogramma 362 (~4 s), costo dei soli cambi ~0.17 h (budget 1.0 h)
 - **PASS** drone: velocita' massima
-  - 117 m/s (limite 250), mediana 18
+  - 118 m/s (limite 250), mediana 17
 - **PASS** drone: accelerazione massima
-  - 91 m/s2 (limite 120), 99% 36
+  - 97 m/s2 (limite 120), 99% 39
 - **PASS** drone: jerk massimo
-  - 81 m/s3 (limite 200), 99% 37
+  - 92 m/s3 (limite 200), 99% 45
 - **PASS** drone: distanza minima da terreno e tetti
   - 460 m (soglia 24); dal solo terreno 500 m
 - **PASS** drone: discontinuita' (target 0, tagli dichiarati: 0)
@@ -103,15 +103,15 @@ Generato da `python -m kit.qa` il 2026-11-27 08:01. Esito complessivo: **WARN**
 - **PASS** drone: monumenti visibili durante il loro hover
   - ogni monumento bersaglio ha il corpo costruito a meta' hover  [Confluences: il corpo compariva a fine hover]
 - **PASS** drone: distanza della camera
-  - mediana 1559 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
+  - mediana 1553 m equivalenti a 35 mm (obiettivo 32 mm); riferimenti: Copenaghen 1397, Parigi 1427, Madrid 2538, Lione 930 (giudicata troppo vicina); soglia 1200
 - **PASS** drone: esattezza anni
   - soste: y0 e y1 esatti sulla finestra di hover; cartelli fuori hover esatti; cartelli durante un hover e voli: anni flessibili (il contatore scorre fra le voci)
 - **PASS** drone: grafico del percorso
   - qa/drone_path.png
-- **WARN** ritmo: nessun vuoto > 15 s senza stimolo nuovo
-  - vuoto massimo 22.6 s (373-396 s); 5 oltre 15 s: 16-32, 241-257, 338-356, 373-396, 396-418
+- **PASS** ritmo: nessun vuoto > 15 s senza stimolo nuovo
+  - vuoto massimo 13.2 s (439-452 s)
 - **PASS** ritmo: anni/s per minuto
-  - 0:00 40.27 | 1:00  5.13 | 2:00  3.39 | 3:00  3.48 | 4:00  2.08 | 5:00  5.02 | 6:00  9.22 | 7:00  6.51 | 8:00  3.59 | 9:00  1.08 | 10:00  0.77
+  - 0:00 40.27 | 1:00  5.46 | 2:00  3.33 | 3:00  3.62 | 4:00  2.26 | 5:00  5.15 | 6:00  8.18 | 7:00  6.47 | 8:00  3.93 | 9:00  1.28 | 10:00  0.60
 - **PASS** 16 soste ben formate
 - **PASS** soste ordinate e non sovrapposte
 - **PASS** didascalie "Titolo (data)"
