@@ -1,18 +1,17 @@
 {
  "name": "copenhagen",
- "_doc": "Copenaghen. Origine locale: Raadhuspladsen (x est, y nord, metri). Dati: BBR INSPIRE (punti con anno, piani, altezza) + impronte OSM (Geofabrik), acqua/costa/parchi da OSM. Storia: hist_copenhagen.py (da scrivere).",
+ "_doc": "Copenhagen (Denmark). Generato da kit/city_json.py da cities/copenhagen/story.json (preset 'nordic'). Non modificare a mano: cambia la story e rigenera.",
+ "_generated_by": "kit/city_json.py",
  "lat0": 55.6761,
  "lon0": 12.5683,
- "radius_m": 9000,
- "land_half_m": 60000,
- "min_area_m2": 12,
- "osm_pbf": "https://download.geofabrik.de/europe/denmark-latest.osm.pbf",
- "bbr_zip": "https://ftp.sdfe.dk/main.html?download&weblink=2c950b3aadfeedc3b136df8525234819&realfilename=DK%5FINSPIRE%5FBBR%2Ezip",
+ "radius_m": 9000.0,
+ "hist": "hist_cph_kit",
+ "story": "cities/copenhagen/story.json",
  "core_box": [
-  -9000,
-  -9000,
-  9000,
-  9000
+  -9000.0,
+  -9000.0,
+  9000.0,
+  9000.0
  ],
  "forest_box": [
   0,
@@ -22,10 +21,57 @@
  ],
  "parks": [],
  "roads": [],
+ "outer": {
+  "centers": [
+   [
+    55.6761,
+    12.5683
+   ]
+  ],
+  "curve": [
+   [
+    0,
+    9999
+   ],
+   [
+    1,
+    9999
+   ]
+  ],
+  "max": 9999
+ },
+ "min_area_m2": 12,
+ "land_half_m": 40000,
  "grid_deg": 0,
  "marsh": false,
  "haze_k": 1000000000.0,
  "water_z": -1.5,
+ "view_transform": "Standard",
+ "look": "None",
+ "exposure": -2.0,
+ "sun_el": 20,
+ "sun_rot": 230,
+ "park_trees": 0.02,
+ "block_trees": 0.0008,
+ "tree_scale": [
+  1.8,
+  3.2
+ ],
+ "tree_lift": 2.5,
+ "land_from_buildings": true,
+ "land_close": 15,
+ "blocks_by_building": true,
+ "urban_ground": "footprints",
+ "urban_buffer": 2.0,
+ "urban_close": 2.0,
+ "dur_min": 0.003,
+ "merge_parts": true,
+ "dem_band": 30.0,
+ "bin": 4,
+ "dbin": 8,
+ "rewind_hold": 4,
+ "ms_per_cambio": 12.0,
+ "budget_cambi_h": 1.0,
  "field_colors": [
   "#4e9a34",
   "#5aa53c",
@@ -33,11 +79,6 @@
   "#63a944",
   "#55a039"
  ],
- "park_trees": 0.02,
- "block_trees": 0.0008,
- "view_transform": "Standard",
- "look": "None",
- "exposure": -2.0,
  "style": {
   "haze": [
    0.8,
@@ -47,6 +88,65 @@
   "era_split": 1900,
   "pitched_until": 1930,
   "pitched_max_area": 500,
+  "glass": [
+   "#7fb2d0",
+   "#6ea6c8",
+   "#8ec0da"
+  ],
+  "glass_h": 60,
+  "glass_min_area": 400,
+  "window": "#2a3a4a",
+  "wall_anc": [
+   "#cfc8bc",
+   "#bdb6aa",
+   "#c9c2b4"
+  ],
+  "urban_green": "#7fb04e",
+  "hedge": "#2f6a25",
+  "blocks": "#8f8778",
+  "grass": "#76b84a",
+  "tree": "#3f8a35",
+  "forest_base": "#5d9c3f",
+  "park_ground": "#5f8a3e",
+  "reclaim": "#c9b993",
+  "urban_phase": "#b8ad98",
+  "street": "#e3dac6",
+  "rail": "#8a8378",
+  "bridge_deck": "#b9b2a4",
+  "bridge_side": "#a39d92",
+  "smoke": "#3a3532",
+  "smoke_alpha": 0.85,
+  "flood_water": "#946d3c",
+  "water": "#0f6c7c",
+  "water2": "#2a9fae",
+  "water_rough": 0.02,
+  "wave_scale": 0.025,
+  "wave_strength": 0.55,
+  "sky_light": 0.35,
+  "sun_energy": 5.0,
+  "sky_in_reflections": true,
+  "sunset_el": 4.0,
+  "sunset_sun": 9.0,
+  "exp_sunset": 0.35,
+  "twilight_sun": 0.12,
+  "twilight_sky": 0.05,
+  "twilight_sky_col": "#1f2f5a",
+  "exp_twilight": 0.0,
+  "night_bld_off": 0.82,
+  "night_floor_off": 0.45,
+  "night_win_off": 0.22,
+  "night_win": 4.5,
+  "night_street": 0.9,
+  "night_sky": 0.01,
+  "moon": 0.05,
+  "night_ground": [
+   0.6,
+   6.0,
+   0.25
+  ],
+  "night_lamp": "#ffa955",
+  "bulb": 14.0,
+  "bulb_size": 1.6,
   "wall_old": [
    "#d9a441",
    "#e3b85c",
@@ -71,24 +171,12 @@
    "#d2d0c9",
    "#aeafac"
   ],
-  "wall_anc": [
-   "#cfc8bc",
-   "#bdb6aa",
-   "#c9c2b4"
-  ],
   "roof_new": [
    "#7d7f82",
    "#929496",
    "#6f7174",
    "#a3a4a3"
   ],
-  "glass": [
-   "#7fb2d0",
-   "#6ea6c8",
-   "#8ec0da"
-  ],
-  "glass_h": 60,
-  "window": "#2a3a4a",
   "urban": [
    "#d6cbb2",
    "#cfc4aa",
@@ -97,47 +185,26 @@
    "#d3c8ae",
    "#ccc1a7"
   ],
-  "urban_dark": "#e8dfcb",
-  "urban_green": "#7fb04e",
-  "hedge": "#2f6a25",
-  "blocks": "#8f8778",
-  "grass": "#76b84a",
-  "tree": "#3f8a35",
-  "forest_base": "#5d9c3f",
-  "water": "#0f6c7c",
-  "water_rough": 0.02,
-  "sky_light": 0.35,
-  "sun_energy": 5.0,
-  "night_off": 0.82,
-  "night_win": 4.5,
-  "moon": 0.05,
-  "night_street": 0.9,
-  "night_sky": 0.01,
-  "bridge_side": "#a39d92",
-  "glass_min_area": 400,
-  "bulb": 14.0,
-  "sky_in_reflections": true,
-  "wave_scale": 0.025,
-  "wave_strength": 0.55,
-  "water2": "#2a9fae",
-  "sunset_el": 4.0,
-  "sunset_sun": 9.0,
-  "exp_sunset": 0.35,
-  "twilight_sun": 0.12,
-  "twilight_sky": 0.05,
-  "twilight_sky_col": "#1f2f5a",
-  "exp_twilight": 0.0
+  "urban_dark": "#e8dfcb"
  },
- "hist": "hist_copenhagen",
- "land_from_buildings": true,
- "dur_min": 0.003,
- "tree_scale": [
-  1.8,
-  3.2
- ],
- "tree_lift": 2.5,
- "land_close": 1,
- "blocks_by_building": true,
+ "cover": {
+  "cam": [
+   -3673,
+   -23091,
+   11545,
+   0,
+   1048,
+   0
+  ],
+  "lens": 35,
+  "years": [
+   1167,
+   2026
+  ],
+  "night_years": [
+   2026
+  ]
+ },
  "shorts": [
   [
    "A",
@@ -146,23 +213,6 @@
    1,
    "schedule_copenhagen_shortA.json",
    2
-  ],
-  [
-   "B",
-   1,
-   624,
-   1,
-   "schedule_copenhagen_shortB.json",
-   2
-  ],
-  [
-   "C",
-   1,
-   672,
-   1,
-   "schedule_copenhagen_shortC.json",
-   2
   ]
- ],
- "_shorts": "Shorts 20 ott 2026: tutti con regia propria (regia_copenhagen_shorts.py). A = controllo, tutta la storia 1167-2026 (28 s). B = incendio del 1728 (26 s). C = Christiansborg brucia due volte (28 s). Formato: [nome, primo, ultimo, passo, regia?, bin?]"
+ ]
 }

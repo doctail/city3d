@@ -1,0 +1,9167 @@
+{
+ "version": 1,
+ "city": {
+  "slug": "copenhagen",
+  "name": "Copenhagen",
+  "country": "Denmark",
+  "lat0": 55.6761,
+  "lon0": 12.5683,
+  "radius_m": 9000,
+  "start_year": 1167,
+  "end_year": 2026,
+  "title": "EVOLUTION OF COPENHAGEN | 3D City Timelapse (1167-NOW) | No AI",
+  "data_source": "custom",
+  "data_dir": "data_copenhagen",
+  "style_preset": "nordic",
+  "population": [
+   [
+    1711,
+    65000,
+    "historical estimate"
+   ],
+   [
+    1801,
+    100975,
+    "historical estimate"
+   ],
+   [
+    1840,
+    120819,
+    "historical estimate"
+   ],
+   [
+    1860,
+    155143,
+    "historical estimate"
+   ],
+   [
+    1870,
+    181291,
+    "historical estimate"
+   ],
+   [
+    1890,
+    312859,
+    "historical estimate"
+   ],
+   [
+    1910,
+    453576,
+    "historical estimate"
+   ],
+   [
+    1921,
+    561344,
+    "historical estimate"
+   ],
+   [
+    1930,
+    617069,
+    "historical estimate"
+   ],
+   [
+    1950,
+    768105,
+    "historical estimate"
+   ],
+   [
+    1972,
+    601200,
+    "historical estimate"
+   ],
+   [
+    1992,
+    466000,
+    "historical estimate"
+   ],
+   [
+    1998,
+    488000,
+    "historical estimate"
+   ],
+   [
+    2005,
+    502362,
+    "population register"
+   ],
+   [
+    2010,
+    528208,
+    "population register"
+   ],
+   [
+    2017,
+    602481,
+    "population register"
+   ],
+   [
+    2022,
+    644431,
+    "population register"
+   ],
+   [
+    2025,
+    667099,
+    "population register"
+   ],
+   [
+    2026,
+    667099,
+    "population register"
+   ]
+  ],
+  "pop_src": [
+   "S34",
+   "S01",
+   "S33"
+  ],
+  "eras": [
+   [
+    1167,
+    "Absalon's Havn",
+    "#c9a24a"
+   ],
+   [
+    1416,
+    "Royal capital",
+    "#9c7a52"
+   ],
+   [
+    1536.5,
+    "Lutheran Denmark–Norway",
+    "#8a6aa0"
+   ],
+   [
+    1660.5,
+    "Absolute monarchy",
+    "#b5654a"
+   ],
+   [
+    1849.43,
+    "Constitutional Denmark",
+    "#6aa0c8"
+   ],
+   [
+    1940.27,
+    "German occupation",
+    "#8c8c8c"
+   ],
+   [
+    1945.34,
+    "Modern Copenhagen",
+    "#7cb06a"
+   ]
+  ],
+  "data_reliable_from": 1728,
+  "polities": [
+   {
+    "y": 1167,
+    "name": "Kingdom of Denmark · Havn held by Bishop Absalon",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S01",
+     "S03"
+    ],
+    "conf": "high",
+    "note": "Absalon is granted the land around Havn in 1167 (S03); the Crown only takes the town back in 1416 (S02)"
+   },
+   {
+    "y": 1397,
+    "name": "Kalmar Union · Denmark, Norway, Sweden",
+    "flag_colors": [
+     "#f2c500",
+     "#c8102e",
+     "#1f3a93"
+    ],
+    "src": [
+     "S25"
+    ],
+    "conf": "high",
+    "note": "Union runs 1397-1523 (S25); the bishop still holds Havn until 1416"
+   },
+   {
+    "y": 1416,
+    "name": "Kalmar Union · Royal capital of Eric of Pomerania",
+    "flag_colors": [
+     "#f2c500",
+     "#c8102e",
+     "#1f3a93"
+    ],
+    "src": [
+     "S01",
+     "S02"
+    ],
+    "conf": "medium"
+   },
+   {
+    "y": 1523.43,
+    "name": "Kingdom of Denmark · Union broken",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S25"
+    ],
+    "conf": "medium",
+    "note": "Gustav Vasa elected 6 June 1523 (1523.43); Frederick I renounced Sweden in 1524"
+   },
+   {
+    "y": 1536.5,
+    "name": "Denmark–Norway · Lutheran kingdom",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S01",
+     "S26"
+    ],
+    "conf": "medium",
+    "note": "Capitulation of Copenhagen July 1536 (S01); personal union 1536/37 (S26)"
+   },
+   {
+    "y": 1658.6,
+    "name": "Denmark–Norway · Besieged by Sweden",
+    "flag_colors": [
+     "#006aa7",
+     "#fecc02"
+    ],
+    "src": [
+     "S24"
+    ],
+    "conf": "medium",
+    "note": "Swedes invade Zealand Aug 1658 and surround Copenhagen; the city is NOT occupied: it holds (S24, S02). Chip shows the besieging power, not occupation"
+   },
+   {
+    "y": 1660.5,
+    "name": "Denmark–Norway · Absolute monarchy",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S26"
+    ],
+    "conf": "medium",
+    "note": "Absolutism in 1660 (year only in S26); King's Law 1665"
+   },
+   {
+    "y": 1814.04,
+    "name": "Kingdom of Denmark · absolute monarchy after Kiel",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S37",
+     "S26"
+    ],
+    "conf": "high",
+    "note": "Treaty of Kiel 14 Jan 1814: Norway ceded to Sweden"
+   },
+   {
+    "y": 1849.43,
+    "name": "Kingdom of Denmark · Constitutional monarchy",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S31"
+    ],
+    "conf": "high",
+    "note": "5 June 1849"
+   },
+   {
+    "y": 1940.27,
+    "name": "German-occupied Denmark",
+    "flag_colors": [
+     "#2b2b2b",
+     "#a50f15"
+    ],
+    "src": [
+     "S27",
+     "S02"
+    ],
+    "conf": "high",
+    "note": "9 April 1940"
+   },
+   {
+    "y": 1945.34,
+    "name": "Kingdom of Denmark · Constitutional monarchy",
+    "flag_colors": [
+     "#c8102e",
+     "#ffffff"
+    ],
+    "src": [
+     "S27",
+     "S02"
+    ],
+    "conf": "medium",
+    "note": "Occupation ends 4 May (S02) or 5 May 1945 (S27): both pages disagree by one day; 5 May used"
+   }
+  ],
+  "city_overrides": {
+   "hist": "hist_cph_kit"
+  }
+ },
+ "sources": {
+  "S01": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen",
+   "title": "Wikipedia: Copenhagen",
+   "quote": "Bishop Absalon's construction of a modest fortress on the little island of Slotsholmen in 1167 … In 1254, it received a city charter under Bishop Jakob Erlandsen … by about 1416 Copenhagen had emerged as the capital of Denmark when Eric of Pomerania moved his seat to Copenhagen Castle … inaugurated on 1 June 1479 by King Christian I … a siege from July 1535 to July 1536 forced it to capitulate to Christian III … Copenhagen lost some 22,000 of its population of 65,000 to the plague in 1711 … On 2 April 1801, Parker's fleet encountered the Dano-Norwegian navy anchored near Copenhagen … In the early 1850s, the ramparts were opened to build housing around The Lakes … the districts of Nørrebro and Vesterbro developed to accommodate those who came from the provinces … from 120,000 in 1840 to 400,000 by 1901 … urban population of 1.4 million … Copenhagen harbour now has 13 official swimming zones and three harbour baths"
+  },
+  "S02": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Copenhagen",
+   "title": "Wikipedia: History of Copenhagen",
+   "quote": "From June 1711 to March 1712, it was haunted by the plague which killed about a third of the population … During 1658-59 it withstood a severe siege by the Swedes under Charles X and successfully repelled a major assault … In 1901, Copenhagen expanded further, incorporating communities with 40,000 people … In August 1943, when the government's collaboration with the occupation forces collapsed, several ships were sunk in Copenhagen Harbour by the Royal Danish Navy to prevent them being used by the Germans … the extensive redevelopment of Amager … occupied by German troops along with the rest of the country from April 9, 1940, until May 4, 1945 … The crown succeeded in 1416, when Eric of Pomerania took over control of the town"
+  },
+  "S03": {
+   "url": "https://en.wikipedia.org/wiki/Absalon",
+   "title": "Wikipedia: Absalon",
+   "quote": "In 1167, Absalon was granted the land around the city of Havn"
+  },
+  "S04": {
+   "url": "https://en.wikipedia.org/wiki/Christiansborg_Palace",
+   "title": "Wikipedia: Christiansborg Palace",
+   "quote": "In 1370, King Valdemar IV of Denmark was defeated in a conflict with the Hanseatic League, who ordered the castle to be demolished … They sent 40 stonemasons to demolish the castle stone by stone … in 1733 work started on a magnificent baroque palace … Most of the palace complex was completed in 1745 and was the largest palace in northern Europe at the time … The palace and church were ruined by a fire in 1794 … Hansen started building the second Christiansborg in 1803 in a French Empire style … finished in 1828 … The second Christiansborg burned down in 1884 … The ruins remained in place for the following 23 years … which was built from 1907 to 1928 … at 106 meters became the tallest tower in the city"
+  },
+  "S05": {
+   "url": "https://en.wikipedia.org/wiki/B%C3%B8rsen",
+   "title": "Wikipedia: Børsen",
+   "quote": "Construction of the building began in 1620 and was largely completed in 1624 with the exception of the spire (installed in 1625) … spire, shaped as the tails of four dragons twined together, reaching a height of 56 m"
+  },
+  "S06": {
+   "url": "https://en.wikipedia.org/wiki/Rundet%C3%A5rn",
+   "title": "Wikipedia: Rundetårn (Round Tower)",
+   "quote": "The foundation stone was laid on 7 July 1637 … In 1642, the tower was finally completed … a 7.5-turn helical corridor leading to the platform at the top (34.8 meters above ground)"
+  },
+  "S07": {
+   "url": "https://en.wikipedia.org/wiki/Rosenborg_Castle",
+   "title": "Wikipedia: Rosenborg Castle",
+   "quote": "originally built as a country summerhouse in 1606 … finally evolving into its present condition by the year 1624"
+  },
+  "S08": {
+   "url": "https://en.wikipedia.org/wiki/Frederik%27s_Church",
+   "title": "Wikipedia: Frederik's Church (Marble Church)",
+   "quote": "popularly known as The Marble Church … The foundation stone was set by King Frederick V on 31 October 1749 … In 1770, the original plans for the church were abandoned by Johann Friedrich Struensee … sold the ruins of the uncompleted church and the church square to Carl Frederik Tietgen … The church was finally opened to the public on 19 August 1894 … the largest church dome in Scandinavia with a span of 31 metres"
+  },
+  "S09": {
+   "url": "https://en.wikipedia.org/wiki/Amalienborg",
+   "title": "Wikipedia: Amalienborg",
+   "quote": "laid around an octagonal courtyard … Building of the palaces on the western side of the square started in 1750 … after Christiansborg Palace burned in 1794 the royal family bought the palaces"
+  },
+  "S10": {
+   "url": "https://en.wikipedia.org/wiki/Church_of_Our_Saviour,_Copenhagen",
+   "title": "Wikipedia: Church of Our Saviour",
+   "quote": "did not start until 1682 … inaugurated 14 years later in 1695 … approved by the King in 1749 … Three years later the spire was finished and the King climbed the tower at a ceremony on 28 August 1752 … The black and golden spire reaches a height of 90 metres and the external staircase turns four times counterclockwise around it"
+  },
+  "S11": {
+   "url": "https://en.wikipedia.org/wiki/Nyhavn",
+   "title": "Wikipedia: Nyhavn",
+   "quote": "Nyhavn was constructed by King Christian V from 1670 to 1675, dug by Danish soldiers and Swedish prisoners of war"
+  },
+  "S12": {
+   "url": "https://en.wikipedia.org/wiki/Tivoli_Gardens",
+   "title": "Wikipedia: Tivoli Gardens",
+   "quote": "The park opened on 15 August 1843 … Until the 1850s Tivoli was outside the city, accessible from the city only through the Vesterport"
+  },
+  "S13": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen_City_Hall",
+   "title": "Wikipedia: Copenhagen City Hall",
+   "quote": "constructed between 1892 and 1905 … inaugurated on 12 September 1905 … at 105.6 metres"
+  },
+  "S14": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen_Opera_House",
+   "title": "Wikipedia: Copenhagen Opera House",
+   "quote": "It opened on 15 January 2005 … donated the Opera House to the Danish state in August 2000"
+  },
+  "S15": {
+   "url": "https://en.wikipedia.org/wiki/Royal_Danish_Playhouse",
+   "title": "Wikipedia: Royal Danish Playhouse",
+   "quote": "With about 40 per cent of the building projecting over the water … RIBA European Award in 2008"
+  },
+  "S16": {
+   "url": "https://en.wikipedia.org/wiki/Amager_Bakke",
+   "title": "Wikipedia: Amager Bakke (CopenHill)",
+   "quote": "combined heat and power waste-to-energy plant … opened to the public 4–6 October 2019 … 85 meters tall sloped roof that doubles as year-round artificial ski slope"
+  },
+  "S17": {
+   "url": "https://en.wikipedia.org/wiki/%C3%98resund_Bridge",
+   "title": "Wikipedia: Øresund Bridge",
+   "quote": "Construction began in 1995 and it opened to traffic on 1 July 2000"
+  },
+  "S18": {
+   "url": "https://en.wikipedia.org/wiki/Grundtvig%27s_Church",
+   "title": "Wikipedia: Grundtvig's Church",
+   "quote": "on 8 September 1921, Grundtvig's birthday … leading to the initial inauguration of the so-called Tower Church in 1927 … continued until 1940 … reminiscent of a westwork or of the exterior of a church organ … 49 m (160 ft) tall bell tower"
+  },
+  "S19": {
+   "url": "https://en.wikipedia.org/wiki/Radisson_Collection_Royal_Hotel,_Copenhagen",
+   "title": "Wikipedia: Royal Hotel (SAS Royal), Copenhagen",
+   "quote": "It was opened on July 1, 1960 … At 69.60 meters in height, it was the first skyscraper in Copenhagen"
+  },
+  "S20": {
+   "url": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(statue)",
+   "title": "Wikipedia: The Little Mermaid (statue)",
+   "quote": "unveiled on August 23, 1913 … It is 1.25 metres (4.1 ft) tall"
+  },
+  "S21": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen_Fire_of_1728",
+   "title": "Wikipedia: Copenhagen Fire of 1728",
+   "quote": "It began on the evening of 20 October 1728 and continued to burn until the morning of the 23rd of October 1728 … It destroyed approximately 28% of the city … left 20% of the population homeless … No less than 47% of the section of the city, which dates back to the Middle Ages, was completely lost"
+  },
+  "S22": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen_Fire_of_1795",
+   "title": "Wikipedia: Copenhagen Fire of 1795",
+   "quote": "started on Friday, 5 June 1795 … It had destroyed 909 houses and partially damaged 74 … Just over 6,000 of the just under 100,000 residents in the capital were made homeless"
+  },
+  "S23": {
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Copenhagen_(1807)",
+   "title": "Wikipedia: Battle of Copenhagen (1807)",
+   "quote": "On 2 September, the British began bombarding Copenhagen … the bombardment killed roughly 195 civilians and injured 768 … The bombardment included 300 Congreve rockets, which caused fires … over a thousand buildings were burned"
+  },
+  "S24": {
+   "url": "https://en.wikipedia.org/wiki/Dano-Swedish_War_(1658%E2%80%931660)",
+   "title": "Wikipedia: Dano-Swedish War (1658-1660)",
+   "quote": "The Swedish army surrounded Copenhagen, hoping to starve it into submission … Charles then tried a decisive assault on the city, hoping to conquer it and win the war; this plan likewise failed … the assault of its capital on February 12, 1659 … When the Swedish invaded Zealand in August 1658"
+  },
+  "S25": {
+   "url": "https://en.wikipedia.org/wiki/Kalmar_Union",
+   "title": "Wikipedia: Kalmar Union",
+   "quote": "From 1397 to 1523, it joined under a single monarch the three kingdoms of Denmark, Sweden (then including much of present-day Finland), and Norway … Gustav Vasa's election as King of Sweden on 6 June 1523"
+  },
+  "S26": {
+   "url": "https://en.wikipedia.org/wiki/Denmark%E2%80%93Norway",
+   "title": "Wikipedia: Denmark-Norway",
+   "quote": "From 1536/1537, Denmark and Norway formed a personal union … in that year it became one of the most stringent absolute monarchies in Europe … formalized by an absolutist constitution, the King's Law … The Dano-Norwegian union lasted until 1814"
+  },
+  "S27": {
+   "url": "https://en.wikipedia.org/wiki/Denmark_in_World_War_II",
+   "title": "Wikipedia: Denmark in World War II (occupation)",
+   "quote": "On 9 April 1940, Germany invaded Denmark … German ships began disembarking troops at the docks in Copenhagen … which lasted until the Allied victory on 5 May 1945"
+  },
+  "S28": {
+   "url": "https://en.wikipedia.org/wiki/Operation_Carthage",
+   "title": "Wikipedia: Operation Carthage",
+   "quote": "Operation Carthage, on 21 March 1945, was a British air raid on Copenhagen … the raid caused 123 civilian deaths (including 87 schoolchildren and 18 adults at the school)"
+  },
+  "S29": {
+   "url": "https://en.wikipedia.org/wiki/Freetown_Christiania",
+   "title": "Wikipedia: Freetown Christiania",
+   "quote": "On 26 September 1971, Christiania was declared open … It began in 1971 as a squatted military base"
+  },
+  "S31": {
+   "url": "https://en.wikipedia.org/wiki/Constitution_of_Denmark",
+   "title": "Wikipedia: Constitution of Denmark",
+   "quote": "The first democratic constitution was adopted in 1849, replacing the 1665 absolutist constitution … Its adoption in 1849 ended an absolute monarchy and introduced democracy … Denmark celebrates the adoption of the Constitution on 5 June … The constitution defines Denmark as a constitutional monarchy"
+  },
+  "S32": {
+   "url": "https://en.wikipedia.org/wiki/Hanseatic_League",
+   "title": "Wikipedia: Hanseatic League",
+   "quote": "allied in the Confederation of Cologne in 1368, sacked Copenhagen and Helsingborg"
+  },
+  "S33": {
+   "url": "https://en.wikipedia.org/wiki/Great_Northern_War_plague_outbreak",
+   "title": "Wikipedia: Great Northern War plague outbreak",
+   "quote": "from June to November 1711, between 12,000 and 23,000 people died out of a population of ~60,000"
+  },
+  "S37": {
+   "url": "https://en.wikipedia.org/wiki/Treaty_of_Kiel",
+   "title": "Wikipedia: Treaty of Kiel",
+   "quote": "further ceded the Kingdom of Norway to Sweden in return for Swedish Pomerania … on 14 January 1814 in Kiel"
+  },
+  "S34": {
+   "url": "https://www.wikidata.org/wiki/Q1748",
+   "title": "Wikidata: Copenhagen (population P1082; Statistics Denmark BY1 for 2017, 2022, 2025)",
+   "quote": "population 667,099 (2025-01-01, preferred rank, reference statbank.dk BY1); 644,431 (2022); 602,481 (2017); 120,819 (1840); 100,975 (1801)"
+  },
+  "S38": {
+   "url": "https://en.wikipedia.org/wiki/Christianshavn",
+   "title": "Wikipedia: Christianshavn",
+   "quote": "In 1612, Christian IV initiated an ambitious programme to fortify Copenhagen … During the period 1618–1623, he erected earthen embarkments with five bastions in the marshy area between Copenhagen and the island of Amager … In 1639 the little merchant and fortress town of Christianshavn was established … The fortifications were further developed with six more bastions in the 1660s, and seven more bastions between 1682 and 1692"
+  },
+  "S39": {
+   "url": "https://en.wikipedia.org/wiki/Fortifications_of_Copenhagen",
+   "title": "Wikipedia: Fortifications of Copenhagen",
+   "quote": "The first fortification was the castle built by bishop Absalon in 1167 on Slotsholmen at the foundation of the city … The city was extensively fortified by Christian IV in the mid 17th century … To the west the city was protected by a series of ramparts and bastions northwards from the Indrehavn … To the north, at the end of the wall, a fort was built, the Kastellet"
+  },
+  "S40": {
+   "url": "https://en.wikipedia.org/wiki/Nyboder",
+   "title": "Wikipedia: Nyboder",
+   "quote": "Construction of Nyboder was commenced in 1631 … In 1647, one year before Christian IV's death, Nyboder was definitively absorbed by the fortified city"
+  },
+  "S41": {
+   "url": "https://en.wikipedia.org/wiki/Holmen,_Copenhagen",
+   "title": "Wikipedia: Holmen, Copenhagen",
+   "quote": "From 1682–92 Christianshavns Vold was extended northwards to protect the area which had been chosen for the fleet … This efforts gradually formed an island, which was given the name Nyholm … From 1690 to 1993 Holmen was the main base of the Royal Danish Navy … In 1789 Frederiksholm had reached its current size"
+  },
+  "S42": {
+   "url": "https://en.wikipedia.org/wiki/Frederiksberg",
+   "title": "Wikipedia: Frederiksberg",
+   "quote": "the history of Frederiksberg goes back to 2 June 1651 … In 1700–1703, King Frederik IV built a palace on top of the hill … In 1852, Parliament removed restrictions which prohibited permanent construction outside Copenhagen's city walls"
+  },
+  "S43": {
+   "url": "https://en.wikipedia.org/wiki/Valby",
+   "title": "Wikipedia: Valby",
+   "quote": "The first recorded mention of the name Valby is from 1186, as Walbu"
+  },
+  "S44": {
+   "url": "https://en.wikipedia.org/wiki/Brønshøj",
+   "title": "Wikipedia: Brønshøj",
+   "quote": "The first mention of the village Brønshøj (Brunshoga), is in a letter dated October 21, 1186 … In 1901, Brønshøj, together with several of the neighboring villages, was incorporated into the municipality of Copenhagen"
+  },
+  "S45": {
+   "url": "https://en.wikipedia.org/wiki/Kastrup",
+   "title": "Wikipedia: Kastrup",
+   "quote": "In 1749 Jacob Fortling obtained a royal license to establish a lime plant in Kastrup"
+  },
+  "S46": {
+   "url": "https://en.wikipedia.org/wiki/Nordhavn,_Copenhagen",
+   "title": "Wikipedia: Nordhavn",
+   "quote": "Nordhavnen, or Nordhavn, is a harbour area at the coast of the Øresund, founded at the end of the 19th century in Copenhagen"
+  },
+  "S47": {
+   "url": "https://en.wikipedia.org/wiki/Knippelsbro",
+   "title": "Wikipedia: Knippelsbro",
+   "quote": "The first bridge between Copenhagen and Christianshavn was constructed in 1618–20 by Christian IV … A new wooden bridge was built in the same location in 1712 … The bridge, the fifth on the site, is 115 metres long and was inaugurated in 1937"
+  },
+  "S48": {
+   "url": "https://en.wikipedia.org/wiki/Langebro",
+   "title": "Wikipedia: Langebro",
+   "quote": "Completed in 1690, the first bridge located roughly where Langebro is today was known as Kalvebodbro … The temporary bridge was replaced by the current Langebro in 1954 … Lille Langebro pedestrian and cycling bridge north of Langebro was completed in 2019"
+  },
+  "S49": {
+   "url": "https://en.wikipedia.org/wiki/Inderhavnsbroen",
+   "title": "Wikipedia: Inderhavnsbroen",
+   "quote": "opened to the public on 7 July 2016"
+  },
+  "S50": {
+   "url": "https://en.wikipedia.org/wiki/Bryggebroen",
+   "title": "Wikipedia: Bryggebroen",
+   "quote": "The bridge which opened to public on 14 September 2006"
+  },
+  "S51": {
+   "url": "https://en.wikipedia.org/wiki/Teglværksbroen",
+   "title": "Wikipedia: Teglværksbroen",
+   "quote": "installed on the site in January 2011"
+  },
+  "S52": {
+   "url": "https://en.wikipedia.org/wiki/Cykelslangen",
+   "title": "Wikipedia: Cykelslangen",
+   "quote": "designed by Dissing+Weitling and opened to the public on 28 June 2014"
+  },
+  "S53": {
+   "url": "https://en.wikipedia.org/wiki/Frederiksstaden",
+   "title": "Wikipedia: Frederiksstaden",
+   "quote": "Constructed during the reign of Frederick V in the second half of the 18th century"
+  },
+  "S54": {
+   "url": "https://en.wikipedia.org/wiki/Refshaleøen",
+   "title": "Wikipedia: Refshaleøen",
+   "quote": "Reclamation increased the size of the island considerably in the 1870s when the port's waterways were made deeper … Burmeister & Wain established a shipyard on the island in 1871"
+  },
+  "S55": {
+   "url": "https://en.wikipedia.org/wiki/Islands_Brygge",
+   "title": "Wikipedia: Islands Brygge",
+   "quote": "In 1901, the Port Authorities extended the existing reclamation southwards … From 1905 construction of residential buildings on the most inland parts of the new land began … Still more land was reclaimed until 1933, when Islands Brygge reached its current extent"
+  },
+  "S57": {
+   "url": "https://en.wikipedia.org/wiki/Christians_Brygge",
+   "title": "Wikipedia: Christians Brygge",
+   "quote": "Christians Brygge was built in connection with the filling of the Arsenal Dock in 1868 … where the Rysensteen Bastion of Copenhagen's old West Rampart had still not been removed … Christiansgade was extended when the Western Rampart was removed and connected to the new West Boulevard (now H. C. Andersens Boulevard) which was laid out in 1890"
+  },
+  "S56": {
+   "url": "https://en.wikipedia.org/wiki/Christians_Brygge",
+   "title": "Wikipedia: Christians Brygge",
+   "quote": "Christians Brygge was built in connection with the filling of the Arsenal Dock in 1868 … where the Rysensteen Bastion of Copenhagen's old West Rampart had still not been removed … Christiansgade was extended when the Western Rampart was removed and connected to the new West Boulevard (now H. C. Andersens Boulevard) which was laid out in 1890"
+  }
+ },
+ "history": {
+  "zones": [
+   {
+    "name": "Medieval city, band to 250 m",
+    "ring": [
+     [
+      55.677835,
+      12.57945
+     ],
+     [
+      55.676976,
+      12.579097
+     ],
+     [
+      55.676259,
+      12.578192
+     ],
+     [
+      55.675793,
+      12.576872
+     ],
+     [
+      55.675649,
+      12.575339
+     ],
+     [
+      55.675849,
+      12.573825
+     ],
+     [
+      55.676363,
+      12.572562
+     ],
+     [
+      55.677113,
+      12.571742
+     ],
+     [
+      55.677983,
+      12.571488
+     ],
+     [
+      55.678843,
+      12.571841
+     ],
+     [
+      55.67956,
+      12.572746
+     ],
+     [
+      55.680026,
+      12.574066
+     ],
+     [
+      55.68017,
+      12.575599
+     ],
+     [
+      55.679969,
+      12.577113
+     ],
+     [
+      55.679455,
+      12.578376
+     ],
+     [
+      55.678706,
+      12.579197
+     ]
+    ],
+    "born": [
+     1185,
+     1250
+    ],
+    "seed": [
+     55.677909,
+     12.575469
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S01"
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+   },
+   {
+    "name": "Medieval city, band to 450 m",
+    "ring": [
+     [
+      55.677457,
+      12.568778
+     ],
+     [
+      55.680741,
+      12.57032
+     ],
+     [
+      55.68156,
+      12.572298
+     ],
+     [
+      55.681945,
+      12.574533
+     ],
+     [
+      55.681842,
+      12.577325
+     ],
+     [
+      55.681139,
+      12.579833
+     ],
+     [
+      55.679945,
+      12.581678
+     ],
+     [
+      55.678441,
+      12.582577
+     ],
+     [
+      55.676856,
+      12.582394
+     ],
+     [
+      55.675431,
+      12.581157
+     ],
+     [
+      55.674384,
+      12.579054
+     ],
+     [
+      55.673873,
+      12.576405
+     ],
+     [
+      55.673977,
+      12.573614
+     ],
+     [
+      55.674762,
+      12.570921
+     ],
+     [
+      55.676229,
+      12.568939
+     ]
+    ],
+    "born": [
+     1250,
+     1330
+    ],
+    "seed": [
+     55.677909,
+     12.575469
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+   },
+   {
+    "name": "Medieval city, band to 650 m",
+    "ring": [
+     [
+      55.680171,
+      12.585027
+     ],
+     [
+      55.678294,
+      12.585802
+     ],
+     [
+      55.676387,
+      12.585471
+     ],
+     [
+      55.674743,
+      12.584193
+     ],
+     [
+      55.674743,
+      12.583435
+     ],
+     [
+      55.674153,
+      12.583435
+     ],
+     [
+      55.673244,
+      12.581773
+     ],
+     [
+      55.672178,
+      12.577779
+     ],
+     [
+      55.672851,
+      12.570192
+     ],
+     [
+      55.673219,
+      12.569226
+     ],
+     [
+      55.677457,
+      12.568778
+     ],
+     [
+      55.683366,
+      12.571615
+     ],
+     [
+      55.683608,
+      12.572922
+     ]
+    ],
+    "born": [
+     1330,
+     1450
+    ],
+    "seed": [
+     55.677909,
+     12.575469
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+   },
+   {
+    "name": "Medieval city, band to 900 m",
+    "ring": [
+     [
+      55.678841,
+      12.589711
+     ],
+     [
+      55.676847,
+      12.589684
+     ],
+     [
+      55.674743,
+      12.588677
+     ],
+     [
+      55.674743,
+      12.583435
+     ],
+     [
+      55.67114,
+      12.583435
+     ],
+     [
+      55.670635,
+      12.581907
+     ],
+     [
+      55.672029,
+      12.579452
+     ],
+     [
+      55.672934,
+      12.569256
+     ],
+     [
+      55.677457,
+      12.568778
+     ],
+     [
+      55.683903,
+      12.571885
+     ]
+    ],
+    "born": [
+     1450,
+     1560
+    ],
+    "seed": [
+     55.677909,
+     12.575469
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+   },
+   {
+    "name": "Medieval city, band to 1200 m",
+    "ring": [
+     [
+      55.677462,
+      12.594568
+     ],
+     [
+      55.674743,
+      12.593755
+     ],
+     [
+      55.674743,
+      12.583435
+     ],
+     [
+      55.669767,
+      12.583435
+     ],
+     [
+      55.672029,
+      12.579452
+     ],
+     [
+      55.672934,
+      12.569256
+     ],
+     [
+      55.677457,
+      12.568778
+     ],
+     [
+      55.683903,
+      12.571885
+     ]
+    ],
+    "born": [
+     1560,
+     1620
+    ],
+    "seed": [
+     55.677909,
+     12.575469
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+   },
+   {
+    "name": "Medieval city, outer part (to 1620)",
+    "ring": [
+     [
+      55.683903,
+      12.571885
+     ],
+     [
+      55.675874,
+      12.600162
+     ],
+     [
+      55.674743,
+      12.600162
+     ],
+     [
+      55.674743,
+      12.583435
+     ],
+     [
+      55.669767,
+      12.583435
+     ],
+     [
+      55.672029,
+      12.579452
+     ],
+     [
+      55.672934,
+      12.569256
+     ],
+     [
+      55.677457,
+      12.568778
+     ]
+    ],
+    "born": [
+     1620,
+     1620
+    ],
+    "seed": null,
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Ny-Kobenhavn (Christian IV extension: Rosenborg, Nyboder)",
+    "ring": [
+     [
+      55.689217,
+      12.580248
+     ],
+     [
+      55.691027,
+      12.589011
+     ],
+     [
+      55.690369,
+      12.585824
+     ],
+     [
+      55.681166,
+      12.585824
+     ],
+     [
+      55.681166,
+      12.585028
+     ],
+     [
+      55.680171,
+      12.585028
+     ],
+     [
+      55.683903,
+      12.571885
+     ],
+     [
+      55.687408,
+      12.573876
+     ]
+    ],
+    "born": [
+     1612,
+     1720
+    ],
+    "seed": [
+     55.687137,
+     12.583913
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S38",
+     "S40"
+    ],
+    "conf": "medium",
+    "note": "estensione a nord di Christian IV: programma di fortificazione 1612 (S38), Nyboder dal 1631 (S40); rampa interna stimata"
+   },
+   {
+    "name": "Nyhavn quarter",
+    "ring": [
+     [
+      55.681166,
+      12.585028
+     ],
+     [
+      55.681076,
+      12.600162
+     ],
+     [
+      55.675874,
+      12.600162
+     ],
+     [
+      55.680171,
+      12.585028
+     ]
+    ],
+    "born": [
+     1670,
+     1700
+    ],
+    "seed": [
+     55.678814,
+     12.585028
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S11"
+    ],
+    "conf": "medium",
+    "note": "canale scavato 1670-75 (S11); rampa delle case 1670-1700 stimata"
+   },
+   {
+    "name": "Frederiksstaden",
+    "ring": [
+     [
+      55.690369,
+      12.585824
+     ],
+     [
+      55.692384,
+      12.595383
+     ],
+     [
+      55.68967,
+      12.600162
+     ],
+     [
+      55.681076,
+      12.600162
+     ],
+     [
+      55.681076,
+      12.585824
+     ]
+    ],
+    "born": [
+     1750,
+     1775
+    ],
+    "seed": [
+     55.68397,
+     12.593153
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S53"
+    ],
+    "conf": "medium",
+    "note": "seconda meta del Settecento, regno di Frederik V (S53); rampa 1750-75 di hist_copenhagen.py stimata"
+   },
+   {
+    "name": "Christianshavn",
+    "ring": [
+     [
+      55.67022,
+      12.604942
+     ],
+     [
+      55.665697,
+      12.595383
+     ],
+     [
+      55.668863,
+      12.585028
+     ],
+     [
+      55.669767,
+      12.583435
+     ],
+     [
+      55.674743,
+      12.583435
+     ],
+     [
+      55.674743,
+      12.608128
+     ]
+    ],
+    "born": [
+     1620,
+     1720
+    ],
+    "seed": [
+     55.672029,
+     12.592993
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S38"
+    ],
+    "conf": "medium",
+    "note": "bastioni 1618-23, citta mercantile 1639 (S38); rampa 1620-1720 stimata"
+   },
+   {
+    "name": "Holmen naval base",
+    "ring": [
+     [
+      55.686956,
+      12.611314
+     ],
+     [
+      55.679719,
+      12.612907
+     ],
+     [
+      55.674743,
+      12.608128
+     ],
+     [
+      55.674743,
+      12.600162
+     ],
+     [
+      55.68967,
+      12.600162
+     ]
+    ],
+    "born": [
+     1690,
+     1760
+    ],
+    "seed": [
+     55.682433,
+     12.601755
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S41"
+    ],
+    "conf": "medium",
+    "note": "base navale dal 1690, Nyholm 1690s, isole fino al 1789 (S41); rampa stimata"
+   },
+   {
+    "name": "Frederiksberg (Ny Amager)",
+    "ring": [
+     [
+      55.674291,
+      12.545996
+     ],
+     [
+      55.672214,
+      12.545269
+     ],
+     [
+      55.670453,
+      12.543197
+     ],
+     [
+      55.669276,
+      12.540096
+     ],
+     [
+      55.668863,
+      12.536438
+     ],
+     [
+      55.669276,
+      12.53278
+     ],
+     [
+      55.670453,
+      12.529679
+     ],
+     [
+      55.672214,
+      12.527607
+     ],
+     [
+      55.674291,
+      12.526879
+     ],
+     [
+      55.676368,
+      12.527607
+     ],
+     [
+      55.678129,
+      12.529679
+     ],
+     [
+      55.679305,
+      12.53278
+     ],
+     [
+      55.679719,
+      12.536438
+     ],
+     [
+      55.679305,
+      12.540096
+     ],
+     [
+      55.678129,
+      12.543197
+     ],
+     [
+      55.676368,
+      12.545269
+     ]
+    ],
+    "born": [
+     1651,
+     1850
+    ],
+    "seed": [
+     55.674291,
+     12.536438
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S42"
+    ],
+    "conf": "medium",
+    "note": "Ny Amager 2 giu 1651, palazzo 1700-03 (S42); rampa stimata"
+   },
+   {
+    "name": "Valby village",
+    "ring": [
+     [
+      55.662006,
+      12.524011
+     ],
+     [
+      55.660275,
+      12.523405
+     ],
+     [
+      55.658807,
+      12.521678
+     ],
+     [
+      55.657827,
+      12.519094
+     ],
+     [
+      55.657482,
+      12.516046
+     ],
+     [
+      55.657827,
+      12.512998
+     ],
+     [
+      55.658807,
+      12.510413
+     ],
+     [
+      55.660275,
+      12.508687
+     ],
+     [
+      55.662006,
+      12.50808
+     ],
+     [
+      55.663737,
+      12.508687
+     ],
+     [
+      55.665204,
+      12.510413
+     ],
+     [
+      55.666184,
+      12.512998
+     ],
+     [
+      55.666529,
+      12.516046
+     ],
+     [
+      55.666184,
+      12.519094
+     ],
+     [
+      55.665204,
+      12.521678
+     ],
+     [
+      55.663737,
+      12.523405
+     ]
+    ],
+    "born": [
+     1186,
+     1890
+    ],
+    "seed": [
+     55.662006,
+     12.516046
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S43"
+    ],
+    "conf": "medium",
+    "note": "prima menzione 1186 (S43); crescita stimata"
+   },
+   {
+    "name": "Bronshoj village",
+    "ring": [
+     [
+      55.705013,
+      12.50303
+     ],
+     [
+      55.703282,
+      12.502424
+     ],
+     [
+      55.701814,
+      12.500697
+     ],
+     [
+      55.700834,
+      12.498113
+     ],
+     [
+      55.700489,
+      12.495064
+     ],
+     [
+      55.700834,
+      12.492016
+     ],
+     [
+      55.701814,
+      12.489432
+     ],
+     [
+      55.703282,
+      12.487705
+     ],
+     [
+      55.705013,
+      12.487099
+     ],
+     [
+      55.706744,
+      12.487705
+     ],
+     [
+      55.708211,
+      12.489432
+     ],
+     [
+      55.709192,
+      12.492016
+     ],
+     [
+      55.709536,
+      12.495064
+     ],
+     [
+      55.709192,
+      12.498113
+     ],
+     [
+      55.708211,
+      12.500697
+     ],
+     [
+      55.706744,
+      12.502424
+     ]
+    ],
+    "born": [
+     1186,
+     1905
+    ],
+    "seed": [
+     55.705013,
+     12.495064
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S44"
+    ],
+    "conf": "medium",
+    "note": "prima menzione 1186 (S44); crescita stimata"
+   },
+   {
+    "name": "Sundbyvester (Amager)",
+    "ring": [
+     [
+      55.663001,
+      12.607969
+     ],
+     [
+      55.66127,
+      12.607362
+     ],
+     [
+      55.659802,
+      12.605636
+     ],
+     [
+      55.658822,
+      12.603051
+     ],
+     [
+      55.658477,
+      12.600003
+     ],
+     [
+      55.658822,
+      12.596955
+     ],
+     [
+      55.659802,
+      12.59437
+     ],
+     [
+      55.66127,
+      12.592644
+     ],
+     [
+      55.663001,
+      12.592037
+     ],
+     [
+      55.664732,
+      12.592644
+     ],
+     [
+      55.666199,
+      12.59437
+     ],
+     [
+      55.66718,
+      12.596955
+     ],
+     [
+      55.667524,
+      12.600003
+     ],
+     [
+      55.66718,
+      12.603051
+     ],
+     [
+      55.666199,
+      12.605636
+     ],
+     [
+      55.664732,
+      12.607362
+     ]
+    ],
+    "born": [
+     1620,
+     1875
+    ],
+    "seed": [
+     55.663001,
+     12.600003
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Kastrup",
+    "ring": [
+     [
+      55.633998,
+      12.648434
+     ],
+     [
+      55.63192,
+      12.647706
+     ],
+     [
+      55.630159,
+      12.645634
+     ],
+     [
+      55.628983,
+      12.642533
+     ],
+     [
+      55.62857,
+      12.638875
+     ],
+     [
+      55.628983,
+      12.635217
+     ],
+     [
+      55.630159,
+      12.632116
+     ],
+     [
+      55.63192,
+      12.630044
+     ],
+     [
+      55.633998,
+      12.629316
+     ],
+     [
+      55.636075,
+      12.630044
+     ],
+     [
+      55.637836,
+      12.632116
+     ],
+     [
+      55.639012,
+      12.635217
+     ],
+     [
+      55.639425,
+      12.638875
+     ],
+     [
+      55.639012,
+      12.642533
+     ],
+     [
+      55.637836,
+      12.645634
+     ],
+     [
+      55.636075,
+      12.647706
+     ]
+    ],
+    "born": [
+     1749,
+     1910
+    ],
+    "seed": [
+     55.633998,
+     12.638875
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S45"
+    ],
+    "conf": "medium",
+    "note": "primo insediamento industriale 1749 (S45); crescita stimata (hist_copenhagen.py partiva dal 1700)"
+   },
+   {
+    "name": "Post-rampart ring, to 0.5 km",
+    "ring": [
+     [
+      55.668592,
+      12.567023
+     ],
+     [
+      55.669582,
+      12.563908
+     ],
+     [
+      55.671244,
+      12.561867
+     ],
+     [
+      55.677766,
+      12.560831
+     ],
+     [
+      55.688839,
+      12.566319
+     ],
+     [
+      55.690981,
+      12.568992
+     ],
+     [
+      55.693468,
+      12.577526
+     ],
+     [
+      55.696902,
+      12.595742
+     ],
+     [
+      55.696318,
+      12.599314
+     ],
+     [
+      55.693484,
+      12.60471
+     ],
+     [
+      55.690989,
+      12.614922
+     ],
+     [
+      55.689676,
+      12.617679
+     ],
+     [
+      55.687808,
+      12.619137
+     ],
+     [
+      55.679154,
+      12.620811
+     ],
+     [
+      55.668863,
+      12.612565
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.667386,
+      12.576364
+     ]
+    ],
+    "born": [
+     1853,
+     1864
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "src": [
+     "S42",
+     "S01"
+    ],
+    "conf": "medium",
+    "note": "rampe aperte nei primi anni 1850, restrizioni tolte nel 1852 (S42, S01); stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 1 km",
+    "ring": [
+     [
+      55.66425,
+      12.56479
+     ],
+     [
+      55.665851,
+      12.559344
+     ],
+     [
+      55.668503,
+      12.555367
+     ],
+     [
+      55.671234,
+      12.553609
+     ],
+     [
+      55.676915,
+      12.552875
+     ],
+     [
+      55.679788,
+      12.553385
+     ],
+     [
+      55.690269,
+      12.558762
+     ],
+     [
+      55.694177,
+      12.563306
+     ],
+     [
+      55.697719,
+      12.574804
+     ],
+     [
+      55.701049,
+      12.590805
+     ],
+     [
+      55.701421,
+      12.5961
+     ],
+     [
+      55.700252,
+      12.603246
+     ],
+     [
+      55.697299,
+      12.609258
+     ],
+     [
+      55.694738,
+      12.619438
+     ],
+     [
+      55.692854,
+      12.623393
+     ],
+     [
+      55.688659,
+      12.62696
+     ],
+     [
+      55.679151,
+      12.628807
+     ],
+     [
+      55.676408,
+      12.627734
+     ],
+     [
+      55.668863,
+      12.621144
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.66358,
+      12.571486
+     ]
+    ],
+    "born": [
+     1864,
+     1874
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 1.5 km",
+    "ring": [
+     [
+      55.659908,
+      12.562557
+     ],
+     [
+      55.661788,
+      12.555626
+     ],
+     [
+      55.664134,
+      12.551065
+     ],
+     [
+      55.667866,
+      12.547088
+     ],
+     [
+      55.672121,
+      12.545402
+     ],
+     [
+      55.677514,
+      12.544881
+     ],
+     [
+      55.680953,
+      12.545688
+     ],
+     [
+      55.692532,
+      12.551748
+     ],
+     [
+      55.69695,
+      12.556886
+     ],
+     [
+      55.699122,
+      12.561814
+     ],
+     [
+      55.701683,
+      12.570806
+     ],
+     [
+      55.705381,
+      12.588516
+     ],
+     [
+      55.70594,
+      12.596459
+     ],
+     [
+      55.704609,
+      12.605753
+     ],
+     [
+      55.701113,
+      12.613806
+     ],
+     [
+      55.698629,
+      12.623499
+     ],
+     [
+      55.696454,
+      12.628381
+     ],
+     [
+      55.693639,
+      12.632112
+     ],
+     [
+      55.690373,
+      12.634441
+     ],
+     [
+      55.679713,
+      12.636804
+     ],
+     [
+      55.674753,
+      12.635147
+     ],
+     [
+      55.668863,
+      12.629723
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.657693,
+      12.571486
+     ],
+     [
+      55.659305,
+      12.568064
+     ]
+    ],
+    "born": [
+     1874,
+     1885
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 2 km",
+    "ring": [
+     [
+      55.655045,
+      12.564475
+     ],
+     [
+      55.657437,
+      12.552809
+     ],
+     [
+      55.661201,
+      12.545001
+     ],
+     [
+      55.665108,
+      12.540528
+     ],
+     [
+      55.670687,
+      12.53764
+     ],
+     [
+      55.677533,
+      12.536916
+     ],
+     [
+      55.682119,
+      12.537991
+     ],
+     [
+      55.69424,
+      12.544372
+     ],
+     [
+      55.699263,
+      12.549805
+     ],
+     [
+      55.702396,
+      12.556029
+     ],
+     [
+      55.705838,
+      12.567659
+     ],
+     [
+      55.709714,
+      12.586227
+     ],
+     [
+      55.710472,
+      12.594674
+     ],
+     [
+      55.710185,
+      12.601077
+     ],
+     [
+      55.708684,
+      12.60921
+     ],
+     [
+      55.704927,
+      12.618353
+     ],
+     [
+      55.70252,
+      12.627561
+     ],
+     [
+      55.700434,
+      12.632571
+     ],
+     [
+      55.696872,
+      12.637965
+     ],
+     [
+      55.692641,
+      12.641563
+     ],
+     [
+      55.680839,
+      12.644708
+     ],
+     [
+      55.674161,
+      12.643229
+     ],
+     [
+      55.664352,
+      12.635125
+     ],
+     [
+      55.664777,
+      12.634878
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.652454,
+      12.571486
+     ]
+    ],
+    "born": [
+     1885,
+     1897
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 3 km",
+    "ring": [
+     [
+      55.647427,
+      12.552926
+     ],
+     [
+      55.650642,
+      12.541996
+     ],
+     [
+      55.655334,
+      12.532874
+     ],
+     [
+      55.661195,
+      12.526165
+     ],
+     [
+      55.669564,
+      12.521832
+     ],
+     [
+      55.67757,
+      12.520985
+     ],
+     [
+      55.68445,
+      12.522598
+     ],
+     [
+      55.697656,
+      12.529621
+     ],
+     [
+      55.70519,
+      12.53777
+     ],
+     [
+      55.709891,
+      12.547105
+     ],
+     [
+      55.714148,
+      12.561364
+     ],
+     [
+      55.718379,
+      12.581649
+     ],
+     [
+      55.719516,
+      12.59432
+     ],
+     [
+      55.7187,
+      12.607067
+     ],
+     [
+      55.716835,
+      12.616123
+     ],
+     [
+      55.71261,
+      12.627227
+     ],
+     [
+      55.710302,
+      12.635685
+     ],
+     [
+      55.707173,
+      12.6432
+     ],
+     [
+      55.70183,
+      12.651291
+     ],
+     [
+      55.695484,
+      12.656687
+     ],
+     [
+      55.690322,
+      12.658739
+     ],
+     [
+      55.679708,
+      12.660701
+     ],
+     [
+      55.67466,
+      12.659863
+     ],
+     [
+      55.669788,
+      12.657386
+     ],
+     [
+      55.657104,
+      12.646783
+     ],
+     [
+      55.65294,
+      12.641795
+     ],
+     [
+      55.652557,
+      12.641203
+     ],
+     [
+      55.660165,
+      12.635792
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642283,
+      12.572108
+     ],
+     [
+      55.64661,
+      12.557723
+     ]
+    ],
+    "born": [
+     1897,
+     1911
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 4 km",
+    "ring": [
+     [
+      55.639794,
+      12.543664
+     ],
+     [
+      55.643211,
+      12.532909
+     ],
+     [
+      55.649468,
+      12.520746
+     ],
+     [
+      55.657281,
+      12.511801
+     ],
+     [
+      55.666133,
+      12.506667
+     ],
+     [
+      55.677608,
+      12.505054
+     ],
+     [
+      55.684522,
+      12.50628
+     ],
+     [
+      55.701072,
+      12.514869
+     ],
+     [
+      55.709279,
+      12.523107
+     ],
+     [
+      55.714483,
+      12.531597
+     ],
+     [
+      55.719774,
+      12.545377
+     ],
+     [
+      55.722459,
+      12.555069
+     ],
+     [
+      55.726266,
+      12.573008
+     ],
+     [
+      55.728425,
+      12.589684
+     ],
+     [
+      55.727987,
+      12.60677
+     ],
+     [
+      55.725967,
+      12.619113
+     ],
+     [
+      55.723855,
+      12.626835
+     ],
+     [
+      55.715425,
+      12.65065
+     ],
+     [
+      55.708715,
+      12.662231
+     ],
+     [
+      55.700537,
+      12.67038
+     ],
+     [
+      55.69377,
+      12.673899
+     ],
+     [
+      55.679705,
+      12.676632
+     ],
+     [
+      55.672974,
+      12.675515
+     ],
+     [
+      55.666478,
+      12.672213
+     ],
+     [
+      55.652732,
+      12.660731
+     ],
+     [
+      55.64718,
+      12.65408
+     ],
+     [
+      55.644455,
+      12.648835
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.660165,
+      12.635792
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.63217,
+      12.571486
+     ],
+     [
+      55.63827,
+      12.551008
+     ]
+    ],
+    "born": [
+     1911,
+     1923
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 5 km",
+    "ring": [
+     [
+      55.631509,
+      12.537266
+     ],
+     [
+      55.63578,
+      12.523823
+     ],
+     [
+      55.639412,
+      12.515776
+     ],
+     [
+      55.643602,
+      12.508619
+     ],
+     [
+      55.64828,
+      12.502472
+     ],
+     [
+      55.653368,
+      12.497437
+     ],
+     [
+      55.658783,
+      12.493599
+     ],
+     [
+      55.664433,
+      12.491019
+     ],
+     [
+      55.677646,
+      12.489123
+     ],
+     [
+      55.686288,
+      12.490655
+     ],
+     [
+      55.704488,
+      12.500117
+     ],
+     [
+      55.709809,
+      12.504674
+     ],
+     [
+      55.714746,
+      12.510415
+     ],
+     [
+      55.719216,
+      12.517242
+     ],
+     [
+      55.723142,
+      12.525038
+     ],
+     [
+      55.727865,
+      12.538253
+     ],
+     [
+      55.730769,
+      12.548774
+     ],
+     [
+      55.735708,
+      12.572493
+     ],
+     [
+      55.737435,
+      12.588259
+     ],
+     [
+      55.73757,
+      12.598971
+     ],
+     [
+      55.736888,
+      12.609617
+     ],
+     [
+      55.734363,
+      12.625045
+     ],
+     [
+      55.731723,
+      12.634698
+     ],
+     [
+      55.722542,
+      12.660484
+     ],
+     [
+      55.718616,
+      12.668204
+     ],
+     [
+      55.714154,
+      12.674961
+     ],
+     [
+      55.706624,
+      12.683046
+     ],
+     [
+      55.701169,
+      12.686935
+     ],
+     [
+      55.695474,
+      12.689545
+     ],
+     [
+      55.682521,
+      12.69241
+     ],
+     [
+      55.674074,
+      12.69194
+     ],
+     [
+      55.665824,
+      12.688712
+     ],
+     [
+      55.650853,
+      12.676927
+     ],
+     [
+      55.643634,
+      12.669386
+     ],
+     [
+      55.63733,
+      12.659626
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.642908,
+      12.651623
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.62256,
+      12.571486
+     ],
+     [
+      55.624542,
+      12.562329
+     ],
+     [
+      55.629977,
+      12.544439
+     ]
+    ],
+    "born": [
+     1923,
+     1931
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 6 km",
+    "ring": [
+     [
+      55.621685,
+      12.537869
+     ],
+     [
+      55.626445,
+      12.519915
+     ],
+     [
+      55.63044,
+      12.509784
+     ],
+     [
+      55.635142,
+      12.500643
+     ],
+     [
+      55.640474,
+      12.492644
+     ],
+     [
+      55.649455,
+      12.483074
+     ],
+     [
+      55.655953,
+      12.478467
+     ],
+     [
+      55.662733,
+      12.475372
+     ],
+     [
+      55.677684,
+      12.473192
+     ],
+     [
+      55.688054,
+      12.47503
+     ],
+     [
+      55.699606,
+      12.480374
+     ],
+     [
+      55.707904,
+      12.485365
+     ],
+     [
+      55.717315,
+      12.494107
+     ],
+     [
+      55.725578,
+      12.505915
+     ],
+     [
+      55.730288,
+      12.51527
+     ],
+     [
+      55.734265,
+      12.525628
+     ],
+     [
+      55.740228,
+      12.547582
+     ],
+     [
+      55.744373,
+      12.567915
+     ],
+     [
+      55.745996,
+      12.580451
+     ],
+     [
+      55.746649,
+      12.593256
+     ],
+     [
+      55.74632,
+      12.6061
+     ],
+     [
+      55.744004,
+      12.624931
+     ],
+     [
+      55.739591,
+      12.642561
+     ],
+     [
+      55.731749,
+      12.665301
+     ],
+     [
+      55.724948,
+      12.679582
+     ],
+     [
+      55.719594,
+      12.68769
+     ],
+     [
+      55.713687,
+      12.694506
+     ],
+     [
+      55.707328,
+      12.699913
+     ],
+     [
+      55.700624,
+      12.703821
+     ],
+     [
+      55.686451,
+      12.707756
+     ],
+     [
+      55.679698,
+      12.708494
+     ],
+     [
+      55.672945,
+      12.707747
+     ],
+     [
+      55.663045,
+      12.703872
+     ],
+     [
+      55.64698,
+      12.691324
+     ],
+     [
+      55.638317,
+      12.682275
+     ],
+     [
+      55.633084,
+      12.67465
+     ],
+     [
+      55.63393,
+      12.669033
+     ],
+     [
+      55.633815,
+      12.660355
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.633485,
+      12.655346
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.63474,
+      12.653654
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.642908,
+      12.651623
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.613169,
+      12.571486
+     ],
+     [
+      55.616311,
+      12.555718
+     ]
+    ],
+    "born": [
+     1931,
+     1940
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 7 km",
+    "ring": [
+     [
+      55.614939,
+      12.524471
+     ],
+     [
+      55.620919,
+      12.50565
+     ],
+     [
+      55.626003,
+      12.494384
+     ],
+     [
+      55.631869,
+      12.484364
+     ],
+     [
+      55.638418,
+      12.475759
+     ],
+     [
+      55.645542,
+      12.46871
+     ],
+     [
+      55.657044,
+      12.461305
+     ],
+     [
+      55.66507,
+      12.458601
+     ],
+     [
+      55.673664,
+      12.45746
+     ],
+     [
+      55.681778,
+      12.45752
+     ],
+     [
+      55.68982,
+      12.459406
+     ],
+     [
+      55.702091,
+      12.465055
+     ],
+     [
+      55.71132,
+      12.470614
+     ],
+     [
+      55.7223,
+      12.480813
+     ],
+     [
+      55.728899,
+      12.489629
+     ],
+     [
+      55.734788,
+      12.499887
+     ],
+     [
+      55.742075,
+      12.517587
+     ],
+     [
+      55.74873,
+      12.542138
+     ],
+     [
+      55.753038,
+      12.563337
+     ],
+     [
+      55.754932,
+      12.577962
+     ],
+     [
+      55.755645,
+      12.600406
+     ],
+     [
+      55.753788,
+      12.622645
+     ],
+     [
+      55.749436,
+      12.643777
+     ],
+     [
+      55.739214,
+      12.674299
+     ],
+     [
+      55.734128,
+      12.685713
+     ],
+     [
+      55.728244,
+      12.695869
+     ],
+     [
+      55.718142,
+      12.708371
+     ],
+     [
+      55.710723,
+      12.71468
+     ],
+     [
+      55.702902,
+      12.719239
+     ],
+     [
+      55.687573,
+      12.723564
+     ],
+     [
+      55.679694,
+      12.724425
+     ],
+     [
+      55.671816,
+      12.723554
+     ],
+     [
+      55.660266,
+      12.719033
+     ],
+     [
+      55.643107,
+      12.705721
+     ],
+     [
+      55.633,
+      12.695164
+     ],
+     [
+      55.624011,
+      12.681174
+     ],
+     [
+      55.629725,
+      12.680634
+     ],
+     [
+      55.632566,
+      12.676603
+     ],
+     [
+      55.634011,
+      12.667334
+     ],
+     [
+      55.633815,
+      12.660355
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.633485,
+      12.655346
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.63474,
+      12.653654
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.642908,
+      12.651623
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.603865,
+      12.571486
+     ],
+     [
+      55.606472,
+      12.555903
+     ]
+    ],
+    "born": [
+     1940,
+     1950
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 9 km",
+    "ring": [
+     [
+      55.600634,
+      12.503323
+     ],
+     [
+      55.609193,
+      12.480048
+     ],
+     [
+      55.616247,
+      12.466336
+     ],
+     [
+      55.624245,
+      12.454338
+     ],
+     [
+      55.637716,
+      12.439983
+     ],
+     [
+      55.652505,
+      12.430462
+     ],
+     [
+      55.668057,
+      12.426133
+     ],
+     [
+      55.677797,
+      12.425399
+     ],
+     [
+      55.688205,
+      12.426652
+     ],
+     [
+      55.707062,
+      12.434419
+     ],
+     [
+      55.723017,
+      12.444935
+     ],
+     [
+      55.736617,
+      12.459646
+     ],
+     [
+      55.744662,
+      12.471935
+     ],
+     [
+      55.751728,
+      12.485967
+     ],
+     [
+      55.760231,
+      12.509754
+     ],
+     [
+      55.764011,
+      12.523594
+     ],
+     [
+      55.768618,
+      12.545039
+     ],
+     [
+      55.770894,
+      12.557694
+     ],
+     [
+      55.771037,
+      12.573773
+     ],
+     [
+      55.770276,
+      12.590134
+     ],
+     [
+      55.766998,
+      12.616858
+     ],
+     [
+      55.761292,
+      12.642285
+     ],
+     [
+      55.756764,
+      12.656634
+     ],
+     [
+      55.751459,
+      12.670132
+     ],
+     [
+      55.745429,
+      12.682649
+     ],
+     [
+      55.73873,
+      12.694066
+     ],
+     [
+      55.731429,
+      12.704271
+     ],
+     [
+      55.723594,
+      12.713166
+     ],
+     [
+      55.715302,
+      12.720667
+     ],
+     [
+      55.706633,
+      12.7267
+     ],
+     [
+      55.69767,
+      12.731207
+     ],
+     [
+      55.688498,
+      12.734146
+     ],
+     [
+      55.679208,
+      12.735488
+     ],
+     [
+      55.669887,
+      12.735219
+     ],
+     [
+      55.660627,
+      12.733343
+     ],
+     [
+      55.651515,
+      12.729877
+     ],
+     [
+      55.64264,
+      12.724856
+     ],
+     [
+      55.634088,
+      12.718326
+     ],
+     [
+      55.623327,
+      12.707386
+     ],
+     [
+      55.61584,
+      12.697607
+     ],
+     [
+      55.608933,
+      12.686583
+     ],
+     [
+      55.601398,
+      12.67159
+     ],
+     [
+      55.603981,
+      12.669891
+     ],
+     [
+      55.606323,
+      12.670251
+     ],
+     [
+      55.606916,
+      12.675361
+     ],
+     [
+      55.610284,
+      12.680049
+     ],
+     [
+      55.610272,
+      12.681332
+     ],
+     [
+      55.610389,
+      12.680113
+     ],
+     [
+      55.611186,
+      12.679971
+     ],
+     [
+      55.611852,
+      12.68129
+     ],
+     [
+      55.610678,
+      12.681346
+     ],
+     [
+      55.611946,
+      12.681513
+     ],
+     [
+      55.611805,
+      12.679794
+     ],
+     [
+      55.612666,
+      12.679509
+     ],
+     [
+      55.613524,
+      12.681414
+     ],
+     [
+      55.614483,
+      12.681545
+     ],
+     [
+      55.629725,
+      12.680634
+     ],
+     [
+      55.632121,
+      12.677744
+     ],
+     [
+      55.633498,
+      12.672604
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.63342,
+      12.655528
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.634655,
+      12.653713
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.642908,
+      12.651623
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.585426,
+      12.571486
+     ],
+     [
+      55.589551,
+      12.544623
+     ]
+    ],
+    "born": [
+     1950,
+     1962
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Post-rampart ring, to 12 km",
+    "ring": [
+     [
+      55.669887,
+      12.735219
+     ],
+     [
+      55.657569,
+      12.732363
+     ],
+     [
+      55.648526,
+      12.728374
+     ],
+     [
+      55.63975,
+      12.722844
+     ],
+     [
+      55.631323,
+      12.715825
+     ],
+     [
+      55.623327,
+      12.707386
+     ],
+     [
+      55.61584,
+      12.697607
+     ],
+     [
+      55.608933,
+      12.686583
+     ],
+     [
+      55.601398,
+      12.67159
+     ],
+     [
+      55.603981,
+      12.669891
+     ],
+     [
+      55.606323,
+      12.670251
+     ],
+     [
+      55.606916,
+      12.675361
+     ],
+     [
+      55.610284,
+      12.680049
+     ],
+     [
+      55.610272,
+      12.681332
+     ],
+     [
+      55.610389,
+      12.680113
+     ],
+     [
+      55.611186,
+      12.679971
+     ],
+     [
+      55.611852,
+      12.68129
+     ],
+     [
+      55.610678,
+      12.681346
+     ],
+     [
+      55.611946,
+      12.681513
+     ],
+     [
+      55.611805,
+      12.679794
+     ],
+     [
+      55.612666,
+      12.679509
+     ],
+     [
+      55.613524,
+      12.681414
+     ],
+     [
+      55.614483,
+      12.681545
+     ],
+     [
+      55.629725,
+      12.680634
+     ],
+     [
+      55.632121,
+      12.677744
+     ],
+     [
+      55.633498,
+      12.672604
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.63342,
+      12.655528
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.634655,
+      12.653713
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.642908,
+      12.651623
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.581141,
+      12.571486
+     ],
+     [
+      55.581315,
+      12.55736
+     ],
+     [
+      55.58238,
+      12.541051
+     ],
+     [
+      55.584348,
+      12.525005
+     ],
+     [
+      55.5872,
+      12.509377
+     ],
+     [
+      55.590908,
+      12.494315
+     ],
+     [
+      55.595436,
+      12.479966
+     ],
+     [
+      55.600741,
+      12.466468
+     ],
+     [
+      55.606771,
+      12.453951
+     ],
+     [
+      55.61347,
+      12.442534
+     ],
+     [
+      55.620771,
+      12.432329
+     ],
+     [
+      55.628606,
+      12.423434
+     ],
+     [
+      55.636898,
+      12.415933
+     ],
+     [
+      55.645567,
+      12.4099
+     ],
+     [
+      55.65453,
+      12.405393
+     ],
+     [
+      55.663702,
+      12.402454
+     ],
+     [
+      55.672992,
+      12.401112
+     ],
+     [
+      55.682313,
+      12.401381
+     ],
+     [
+      55.691573,
+      12.403257
+     ],
+     [
+      55.700685,
+      12.406723
+     ],
+     [
+      55.70956,
+      12.411744
+     ],
+     [
+      55.718112,
+      12.418274
+     ],
+     [
+      55.72626,
+      12.426248
+     ],
+     [
+      55.733925,
+      12.43559
+     ],
+     [
+      55.741033,
+      12.44621
+     ],
+     [
+      55.747516,
+      12.458007
+     ],
+     [
+      55.753311,
+      12.470865
+     ],
+     [
+      55.758362,
+      12.484661
+     ],
+     [
+      55.762621,
+      12.499264
+     ],
+     [
+      55.766047,
+      12.514531
+     ],
+     [
+      55.768607,
+      12.530315
+     ],
+     [
+      55.770276,
+      12.546466
+     ],
+     [
+      55.771037,
+      12.562827
+     ],
+     [
+      55.770885,
+      12.57924
+     ],
+     [
+      55.76982,
+      12.595549
+     ],
+     [
+      55.767852,
+      12.611595
+     ],
+     [
+      55.765,
+      12.627223
+     ],
+     [
+      55.761292,
+      12.642285
+     ],
+     [
+      55.756764,
+      12.656634
+     ],
+     [
+      55.751459,
+      12.670132
+     ],
+     [
+      55.745429,
+      12.682649
+     ],
+     [
+      55.73873,
+      12.694066
+     ],
+     [
+      55.731429,
+      12.704271
+     ],
+     [
+      55.723594,
+      12.713166
+     ],
+     [
+      55.715302,
+      12.720667
+     ],
+     [
+      55.706633,
+      12.7267
+     ],
+     [
+      55.69767,
+      12.731207
+     ],
+     [
+      55.688498,
+      12.734146
+     ],
+     [
+      55.679208,
+      12.735488
+     ]
+    ],
+    "born": [
+     1962,
+     1975
+    ],
+    "seed": [
+     55.679536,
+     12.591184
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 1 km",
+    "ring": [
+     [
+      55.667341,
+      12.576303
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.608048
+     ],
+     [
+      55.667662,
+      12.608119
+     ],
+     [
+      55.664225,
+      12.606708
+     ],
+     [
+      55.661355,
+      12.603087
+     ],
+     [
+      55.659491,
+      12.597808
+     ],
+     [
+      55.658916,
+      12.591675
+     ],
+     [
+      55.659195,
+      12.590244
+     ],
+     [
+      55.663126,
+      12.591762
+     ],
+     [
+      55.659015,
+      12.589807
+     ],
+     [
+      55.660018,
+      12.584566
+     ],
+     [
+      55.660508,
+      12.588346
+     ],
+     [
+      55.660768,
+      12.588891
+     ],
+     [
+      55.660987,
+      12.588513
+     ],
+     [
+      55.661641,
+      12.585834
+     ],
+     [
+      55.663334,
+      12.586165
+     ],
+     [
+      55.663591,
+      12.585552
+     ],
+     [
+      55.66164,
+      12.58559
+     ],
+     [
+      55.660763,
+      12.58838
+     ],
+     [
+      55.660276,
+      12.583784
+     ],
+     [
+      55.661993,
+      12.580219
+     ],
+     [
+      55.664225,
+      12.577686
+     ]
+    ],
+    "born": [
+     1868,
+     1893
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 2 km",
+    "ring": [
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.624015
+     ],
+     [
+      55.662142,
+      12.622368
+     ],
+     [
+      55.65648,
+      12.616827
+     ],
+     [
+      55.652002,
+      12.607217
+     ],
+     [
+      55.65002,
+      12.596356
+     ],
+     [
+      55.650344,
+      12.584918
+     ],
+     [
+      55.652991,
+      12.586508
+     ],
+     [
+      55.65306,
+      12.58699
+     ],
+     [
+      55.653957,
+      12.588437
+     ],
+     [
+      55.654187,
+      12.588079
+     ],
+     [
+      55.654604,
+      12.584859
+     ],
+     [
+      55.655475,
+      12.587935
+     ],
+     [
+      55.657043,
+      12.583164
+     ],
+     [
+      55.658045,
+      12.587715
+     ],
+     [
+      55.658468,
+      12.588568
+     ],
+     [
+      55.659908,
+      12.584258
+     ],
+     [
+      55.660508,
+      12.588346
+     ],
+     [
+      55.660768,
+      12.588891
+     ],
+     [
+      55.660987,
+      12.588513
+     ],
+     [
+      55.661641,
+      12.585834
+     ],
+     [
+      55.663334,
+      12.586165
+     ],
+     [
+      55.663591,
+      12.585552
+     ],
+     [
+      55.66164,
+      12.58559
+     ],
+     [
+      55.660763,
+      12.58838
+     ],
+     [
+      55.659813,
+      12.583758
+     ],
+     [
+      55.658455,
+      12.588086
+     ],
+     [
+      55.656986,
+      12.582675
+     ],
+     [
+      55.655497,
+      12.587585
+     ],
+     [
+      55.654526,
+      12.584357
+     ],
+     [
+      55.653881,
+      12.587996
+     ],
+     [
+      55.653139,
+      12.586879
+     ],
+     [
+      55.652695,
+      12.584014
+     ],
+     [
+      55.650516,
+      12.583739
+     ],
+     [
+      55.652002,
+      12.577177
+     ],
+     [
+      55.654212,
+      12.571486
+     ]
+    ],
+    "born": [
+     1893,
+     1908
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 3 km",
+    "ring": [
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.658668,
+      12.637097
+     ],
+     [
+      55.654388,
+      12.633587
+     ],
+     [
+      55.650741,
+      12.629142
+     ],
+     [
+      55.647554,
+      12.623709
+     ],
+     [
+      55.644455,
+      12.616093
+     ],
+     [
+      55.642558,
+      12.609032
+     ],
+     [
+      55.641181,
+      12.599982
+     ],
+     [
+      55.640833,
+      12.590633
+     ],
+     [
+      55.64134,
+      12.582873
+     ],
+     [
+      55.643503,
+      12.571486
+     ]
+    ],
+    "born": [
+     1908,
+     1922
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 4 km",
+    "ring": [
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.660165,
+      12.635792
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.648444,
+      12.645852
+     ],
+     [
+      55.643222,
+      12.638707
+     ],
+     [
+      55.63925,
+      12.63099
+     ],
+     [
+      55.636045,
+      12.622236
+     ],
+     [
+      55.633693,
+      12.61268
+     ],
+     [
+      55.631946,
+      12.598443
+     ],
+     [
+      55.63215,
+      12.583071
+     ],
+     [
+      55.64033,
+      12.585479
+     ],
+     [
+      55.640759,
+      12.584921
+     ],
+     [
+      55.640772,
+      12.576167
+     ],
+     [
+      55.640498,
+      12.583895
+     ],
+     [
+      55.638703,
+      12.583503
+     ],
+     [
+      55.640461,
+      12.584207
+     ],
+     [
+      55.640209,
+      12.585235
+     ],
+     [
+      55.632169,
+      12.58284
+     ],
+     [
+      55.632338,
+      12.581018
+     ],
+     [
+      55.632932,
+      12.580938
+     ],
+     [
+      55.63237,
+      12.580711
+     ],
+     [
+      55.633739,
+      12.571486
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ]
+    ],
+    "born": [
+     1922,
+     1931
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 6 km",
+    "ring": [
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.634655,
+      12.653713
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.634757,
+      12.65688
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.63342,
+      12.655528
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.633815,
+      12.660355
+     ],
+     [
+      55.634014,
+      12.666772
+     ],
+     [
+      55.628342,
+      12.657539
+     ],
+     [
+      55.623838,
+      12.647874
+     ],
+     [
+      55.619277,
+      12.634474
+     ],
+     [
+      55.61656,
+      12.622922
+     ],
+     [
+      55.614722,
+      12.610845
+     ],
+     [
+      55.613795,
+      12.598448
+     ],
+     [
+      55.613795,
+      12.585945
+     ],
+     [
+      55.614975,
+      12.571486
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ]
+    ],
+    "born": [
+     1931,
+     1945
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   },
+   {
+    "name": "Amager front, to 9 km",
+    "ring": [
+     [
+      55.663795,
+      12.571486
+     ],
+     [
+      55.668863,
+      12.577707
+     ],
+     [
+      55.668863,
+      12.582608
+     ],
+     [
+      55.667917,
+      12.589707
+     ],
+     [
+      55.668863,
+      12.594638
+     ],
+     [
+      55.668863,
+      12.631625
+     ],
+     [
+      55.664875,
+      12.634892
+     ],
+     [
+      55.665282,
+      12.634411
+     ],
+     [
+      55.664539,
+      12.63062
+     ],
+     [
+      55.664661,
+      12.632259
+     ],
+     [
+      55.66366,
+      12.632748
+     ],
+     [
+      55.664323,
+      12.635032
+     ],
+     [
+      55.664775,
+      12.634938
+     ],
+     [
+      55.663286,
+      12.635595
+     ],
+     [
+      55.661166,
+      12.63523
+     ],
+     [
+      55.650749,
+      12.642257
+     ],
+     [
+      55.648028,
+      12.646516
+     ],
+     [
+      55.647869,
+      12.648491
+     ],
+     [
+      55.6463,
+      12.647804
+     ],
+     [
+      55.644764,
+      12.648504
+     ],
+     [
+      55.64434,
+      12.650519
+     ],
+     [
+      55.642885,
+      12.652432
+     ],
+     [
+      55.644264,
+      12.650151
+     ],
+     [
+      55.644292,
+      12.648864
+     ],
+     [
+      55.643301,
+      12.647777
+     ],
+     [
+      55.642431,
+      12.648634
+     ],
+     [
+      55.642833,
+      12.651182
+     ],
+     [
+      55.642316,
+      12.650591
+     ],
+     [
+      55.640972,
+      12.651849
+     ],
+     [
+      55.640934,
+      12.652925
+     ],
+     [
+      55.641565,
+      12.654489
+     ],
+     [
+      55.643337,
+      12.652434
+     ],
+     [
+      55.643315,
+      12.653211
+     ],
+     [
+      55.641486,
+      12.654916
+     ],
+     [
+      55.640481,
+      12.653372
+     ],
+     [
+      55.639097,
+      12.654742
+     ],
+     [
+      55.638237,
+      12.657409
+     ],
+     [
+      55.63676,
+      12.656581
+     ],
+     [
+      55.636812,
+      12.65529
+     ],
+     [
+      55.635582,
+      12.655204
+     ],
+     [
+      55.636397,
+      12.656922
+     ],
+     [
+      55.63554,
+      12.657789
+     ],
+     [
+      55.634655,
+      12.653713
+     ],
+     [
+      55.63518,
+      12.656452
+     ],
+     [
+      55.634785,
+      12.655048
+     ],
+     [
+      55.634757,
+      12.65688
+     ],
+     [
+      55.634395,
+      12.65679
+     ],
+     [
+      55.634081,
+      12.654574
+     ],
+     [
+      55.63342,
+      12.655528
+     ],
+     [
+      55.634304,
+      12.656624
+     ],
+     [
+      55.633498,
+      12.672604
+     ],
+     [
+      55.632121,
+      12.677744
+     ],
+     [
+      55.629725,
+      12.680634
+     ],
+     [
+      55.614483,
+      12.681545
+     ],
+     [
+      55.613524,
+      12.681414
+     ],
+     [
+      55.612666,
+      12.679509
+     ],
+     [
+      55.611805,
+      12.679794
+     ],
+     [
+      55.611946,
+      12.681513
+     ],
+     [
+      55.610678,
+      12.681346
+     ],
+     [
+      55.611852,
+      12.68129
+     ],
+     [
+      55.611186,
+      12.679971
+     ],
+     [
+      55.610389,
+      12.680113
+     ],
+     [
+      55.610272,
+      12.681332
+     ],
+     [
+      55.610284,
+      12.680049
+     ],
+     [
+      55.606916,
+      12.675361
+     ],
+     [
+      55.606323,
+      12.670251
+     ],
+     [
+      55.603981,
+      12.669891
+     ],
+     [
+      55.600275,
+      12.67189
+     ],
+     [
+      55.593797,
+      12.651371
+     ],
+     [
+      55.590861,
+      12.638285
+     ],
+     [
+      55.588667,
+      12.624755
+     ],
+     [
+      55.587236,
+      12.610912
+     ],
+     [
+      55.586583,
+      12.596888
+     ],
+     [
+      55.587404,
+      12.571486
+     ],
+     [
+      55.615803,
+      12.571486
+     ],
+     [
+      55.616045,
+      12.572708
+     ],
+     [
+      55.616787,
+      12.574822
+     ],
+     [
+      55.617011,
+      12.573925
+     ],
+     [
+      55.616113,
+      12.572627
+     ],
+     [
+      55.616496,
+      12.571486
+     ],
+     [
+      55.640894,
+      12.571486
+     ],
+     [
+      55.640758,
+      12.57545
+     ],
+     [
+      55.641011,
+      12.571486
+     ],
+     [
+      55.642338,
+      12.572125
+     ]
+    ],
+    "born": [
+     1945,
+     1962
+    ],
+    "seed": [
+     55.667958,
+     12.592197
+    ],
+    "era_height": [
+     [
+      1000,
+      7,
+      10
+     ],
+     [
+      1600,
+      9,
+      12
+     ],
+     [
+      1730,
+      11,
+      15
+     ],
+     [
+      1850,
+      14,
+      18
+     ],
+     [
+      1900,
+      14,
+      19
+     ]
+    ],
+    "conf": "low",
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte"
+   }
+  ],
+  "walls": [
+   {
+    "name": "Bastioned ramparts (Christian IV and later)",
+    "ring": [
+     [
+      55.672934,
+      12.569256
+     ],
+     [
+      55.677457,
+      12.568778
+     ],
+     [
+      55.681528,
+      12.57069
+     ],
+     [
+      55.684694,
+      12.572283
+     ],
+     [
+      55.687408,
+      12.573876
+     ],
+     [
+      55.689217,
+      12.580248
+     ],
+     [
+      55.691027,
+      12.589011
+     ],
+     [
+      55.692384,
+      12.595383
+     ],
+     [
+      55.68967,
+      12.600162
+     ],
+     [
+      55.686956,
+      12.611314
+     ],
+     [
+      55.679719,
+      12.612907
+     ],
+     [
+      55.674743,
+      12.608128
+     ],
+     [
+      55.67022,
+      12.604942
+     ],
+     [
+      55.665697,
+      12.595383
+     ],
+     [
+      55.668863,
+      12.585028
+     ],
+     [
+      55.672029,
+      12.579452
+     ]
+    ],
+    "built": [
+     1612,
+     1692
+    ],
+    "demolished": [
+     1853,
+     1890
+    ],
+    "height": 8,
+    "width": 5,
+    "towers_every_m": 0,
+    "keep": [
+     [
+      55.691398,
+      12.594379,
+      320
+     ],
+     [
+      55.668863,
+      12.595383,
+      450
+     ]
+    ],
+    "src": [
+     "S38",
+     "S39",
+     "S42",
+     "S01",
+     "S56"
+    ],
+    "conf": "medium",
+    "note": "cinta = WALL_P di hist_copenhagen.py (poligono approssimato Vester/Norre Voldgade, bastioni, Kastellet). Costruzione: programma 1612, bastioni 1618-23, altri 1660s e 1682-92 (S38). Demolizione: rampe aperte nei primi anni 1850s (S01), restrizioni tolte nel 1852 (S42); il bastione Rysensteen (vallo ovest) esisteva ancora nel 1868 e il vallo ovest fu tolto per il viale aperto nel 1890 (S56): demolizione a tratti 1853-1890, gli anni per tratto sono una stima. keep = Kastellet (nord) e bastioni di Christianshavn (sud-est), ancora in piedi."
+   }
+  ],
+  "gutting": [],
+  "lost": [],
+  "fires": [
+   {
+    "name": "Great Fire of 1728",
+    "ring": [
+     [
+      55.6761,
+      12.568937
+     ],
+     [
+      55.679266,
+      12.569256
+     ],
+     [
+      55.683337,
+      12.571168
+     ],
+     [
+      55.683156,
+      12.573557
+     ],
+     [
+      55.681709,
+      12.576584
+     ],
+     [
+      55.6799,
+      12.577859
+     ],
+     [
+      55.678181,
+      12.576903
+     ],
+     [
+      55.677005,
+      12.574354
+     ],
+     [
+      55.676371,
+      12.571486
+     ]
+    ],
+    "y": 1728.8,
+    "y1": 1728.81,
+    "destroy": true,
+    "flames": 50,
+    "smoke": 8,
+    "src": [
+     "S21"
+    ],
+    "conf": "high",
+    "note": "20-23 ott 1728 (S21); origine Lille Sankt Clemens Straede vicino a Vesterport (S21, ora via Frederiksberggade / Radhuspladsen)",
+    "origin": [
+     55.677186,
+     12.570212
+    ]
+   },
+   {
+    "name": "Fire of 1795",
+    "ring": [
+     [
+      55.676824,
+      12.572283
+     ],
+     [
+      55.679085,
+      12.573557
+     ],
+     [
+      55.6799,
+      12.577221
+     ],
+     [
+      55.679357,
+      12.581045
+     ],
+     [
+      55.678362,
+      12.583435
+     ],
+     [
+      55.676824,
+      12.582638
+     ],
+     [
+      55.676462,
+      12.578655
+     ],
+     [
+      55.676462,
+      12.575469
+     ]
+    ],
+    "y": 1795.43,
+    "y1": 1795.44,
+    "destroy": true,
+    "flames": 45,
+    "smoke": 8,
+    "src": [
+     "S22"
+    ],
+    "conf": "high",
+    "note": "dal 5 giu 1795, magazzini della marina a Gammelholm (S22); la pagina dice \"died out on Sunday, 7 July\" ma il 5 giu 1795 era venerdi: finestra 5-7 giu; contorno stimato",
+    "origin": [
+     55.677638,
+     12.583116
+    ]
+   },
+   {
+    "name": "Bombardment of 1807",
+    "ring": [
+     [
+      55.678814,
+      12.570212
+     ],
+     [
+      55.683337,
+      12.571008
+     ],
+     [
+      55.684242,
+      12.574672
+     ],
+     [
+      55.682433,
+      12.577221
+     ],
+     [
+      55.680171,
+      12.576584
+     ],
+     [
+      55.678814,
+      12.573557
+     ]
+    ],
+    "y": 1807.67,
+    "y1": 1807.68,
+    "destroy": true,
+    "flames": 25,
+    "smoke": 6,
+    "src": [
+     "S23"
+    ],
+    "conf": "high",
+    "note": "bombardamento 2-5 set 1807 con razzi Congreve (S23); oltre mille edifici bruciati (S23, hist_copenhagen.py ne stimava 300); contorno e origini stimati"
+   }
+  ],
+  "water": [
+   {
+    "name": "Holmen reclaimed land",
+    "ring": [
+     [
+      55.678814,
+      12.600959
+     ],
+     [
+      55.678814,
+      12.6145
+     ],
+     [
+      55.687408,
+      12.615297
+     ],
+     [
+      55.688313,
+      12.603349
+     ]
+    ],
+    "from": 1700,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S41"
+    ],
+    "conf": "medium",
+    "note": "isola Nyholm dal 1690-92 (S41); anno 1700 di hist_copenhagen.py. Sostituisce DATA/reclaim.json: al build kit togliere reclaim.json (altrimenti lastra doppia)"
+   },
+   {
+    "name": "Refshaleoeen reclaimed land",
+    "ring": [
+     [
+      55.685146,
+      12.615297
+     ],
+     [
+      55.68967,
+      12.635211
+     ],
+     [
+      55.697812,
+      12.635211
+     ],
+     [
+      55.693288,
+      12.616093
+     ]
+    ],
+    "from": 1872,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S54"
+    ],
+    "conf": "medium",
+    "note": "bonifica negli anni 1870, cantiere B&W 1871 (S54); 1872 di hist_copenhagen.py. Sostituisce DATA/reclaim.json: al build kit togliere reclaim.json (altrimenti lastra doppia)"
+   },
+   {
+    "name": "Nordhavn reclaimed land",
+    "ring": [
+     [
+      55.699621,
+      12.606535
+     ],
+     [
+      55.700526,
+      12.635211
+     ],
+     [
+      55.717714,
+      12.63999
+     ],
+     [
+      55.715,
+      12.609721
+     ]
+    ],
+    "from": 1895,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S46"
+    ],
+    "conf": "medium",
+    "note": "Nordhavn fondato a fine Ottocento (S46); 1895 stima. Sostituisce DATA/reclaim.json: al build kit togliere reclaim.json (altrimenti lastra doppia)"
+   },
+   {
+    "name": "Sydhavn reclaimed land",
+    "ring": [
+     [
+      55.643533,
+      12.558741
+     ],
+     [
+      55.653484,
+      12.573079
+     ],
+     [
+      55.647151,
+      12.577859
+     ],
+     [
+      55.6372,
+      12.565114
+     ]
+    ],
+    "from": 1905,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S55"
+    ],
+    "conf": "medium",
+    "note": "stima: anno e contorno da hist_copenhagen.py (RECLAIM), nessuna fonte letta. Sostituisce DATA/reclaim.json: al build kit togliere reclaim.json (altrimenti lastra doppia)"
+   },
+   {
+    "name": "Islands Brygge reclaimed land",
+    "ring": [
+     [
+      55.664792,
+      12.577221
+     ],
+     [
+      55.665697,
+      12.580726
+     ],
+     [
+      55.653936,
+      12.581841
+     ],
+     [
+      55.653031,
+      12.578496
+     ]
+    ],
+    "from": 1901,
+    "to": 2027,
+    "c": "field",
+    "src": [
+     "S55"
+    ],
+    "conf": "medium",
+    "note": "riempimento verso sud nel 1901, case dal 1905, estensione finale 1933 (S55); hist_copenhagen.py usava 1905. Sostituisce DATA/reclaim.json: al build kit togliere reclaim.json (altrimenti lastra doppia)"
+   }
+  ],
+  "bridges": [
+   {
+    "name": "Knippelsbro",
+    "line": [
+     [
+      55.674542,
+      12.587576
+     ],
+     [
+      55.675018,
+      12.586787
+     ]
+    ],
+    "w": 10.0,
+    "y": 1620,
+    "d": null,
+    "src": [
+     "S47"
+    ],
+    "conf": "medium",
+    "note": "primo ponte 1618-20 (S47); ponti successivi 1712, 1816, 1869, 1908, 1937 sullo stesso sito, impalcato unico nel modello"
+   },
+   {
+    "name": "Langebro",
+    "line": [
+     [
+      55.670765,
+      12.577802
+     ],
+     [
+      55.669796,
+      12.579735
+     ]
+    ],
+    "w": 23.0,
+    "y": 1690,
+    "d": null,
+    "src": [
+     "S48"
+    ],
+    "conf": "medium",
+    "note": "primo ponte (Kalvebodbro) completato nel 1690 circa nel sito attuale (S48); ponte attuale 1954"
+   },
+   {
+    "name": "Bryggebroen",
+    "line": [
+     [
+      55.6642,
+      12.5639
+     ],
+     [
+      55.6656,
+      12.5698
+     ]
+    ],
+    "w": 7.0,
+    "y": 2006,
+    "d": null,
+    "src": [
+     "S50"
+    ],
+    "conf": "high",
+    "note": "aperto 14 set 2006 (S50)"
+   },
+   {
+    "name": "Teglværksbroen",
+    "line": [
+     [
+      55.648127,
+      12.55095
+     ],
+     [
+      55.647331,
+      12.550058
+     ]
+    ],
+    "w": 20.8,
+    "y": 2011,
+    "d": null,
+    "src": [
+     "S51"
+    ],
+    "conf": "medium",
+    "note": "foglia installata a gennaio 2011 (S51); legacy diceva 2010: corretto, apertura al traffico non nel testo"
+   },
+   {
+    "name": "Cykelslangen",
+    "line": [
+     [
+      55.66269,
+      12.56343
+     ],
+     [
+      55.662319,
+      12.564536
+     ]
+    ],
+    "w": 12.0,
+    "y": 2014,
+    "d": null,
+    "src": [
+     "S52"
+    ],
+    "conf": "high",
+    "note": "aperto 28 giu 2014 (S52)"
+   },
+   {
+    "name": "Inderhavnsbroen",
+    "line": [
+     [
+      55.67975,
+      12.59325
+     ],
+     [
+      55.678391,
+      12.595828
+     ]
+    ],
+    "w": 9.1,
+    "y": 2016,
+    "d": null,
+    "src": [
+     "S49"
+    ],
+    "conf": "high",
+    "note": "aperto 7 lug 2016 (S49)"
+   },
+   {
+    "name": "Lille Langebro",
+    "line": [
+     [
+      55.670812,
+      12.581158
+     ],
+     [
+      55.670868,
+      12.580616
+     ]
+    ],
+    "w": 4.6,
+    "y": 2019,
+    "d": null,
+    "src": [
+     "S48"
+    ],
+    "conf": "medium",
+    "note": "completato nel 2019 (S48); mese non nel testo"
+   }
+  ]
+ },
+ "landmarks": [
+  {
+   "name": "Christiansborg",
+   "kind": "palace_courtyard",
+   "at": [
+    55.6759,
+    12.579399
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1907,
+     "y1": 1928
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1928 (primo anno della scheda), altezza 106 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S04"
+   ],
+   "note": "Christiansborg III (1907-28). Preset approximation: courtyard palace on the cadastre footprint; the 106 m tower (S04) is not modeled. Shape not verified",
+   "_legacy_h": 106
+  },
+  {
+   "name": "Børsen",
+   "kind": "generic_footprint",
+   "at": [
+    55.675517,
+    12.584026
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "gable"
+   },
+   "phases": [
+    {
+     "y": 1620,
+     "y1": 1625
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1625 (primo anno della scheda), altezza 56 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S05"
+   ],
+   "note": "Extruded footprint, gable roof; the 56 m dragon spire (S05) is not modeled. The 2024 fire (spire toppled) is NOT shown: not checked against the data",
+   "_legacy_h": 56
+  },
+  {
+   "name": "Rundetårn",
+   "kind": "tower_round",
+   "at": [
+    55.681362,
+    12.575794
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 34.8,
+    "top": "flat"
+   },
+   "phases": [
+    {
+     "y": 1637.51,
+     "y1": 1642
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1642 (primo anno della scheda), altezza 40 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "medium",
+   "src": [
+    "S06"
+   ],
+   "note": "Round tower with the sourced height 34.8 m (platform); flat top",
+   "_legacy_h": 40
+  },
+  {
+   "name": "Rosenborg Castle",
+   "kind": "castle",
+   "at": [
+    55.685691,
+    12.577437
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1606,
+     "y1": 1624
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1624 (primo anno della scheda), altezza 52 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S07"
+   ],
+   "note": "Preset approximation (square enclosure with corner towers); shape not verified",
+   "_legacy_h": 52
+  },
+  {
+   "name": "Marble Church",
+   "kind": "church_dome",
+   "at": [
+    55.684968,
+    12.589573
+   ],
+   "footprint": "auto",
+   "params": {
+    "plan": "round"
+   },
+   "phases": [
+    {
+     "y": 1749.83,
+     "y1": 1770
+    },
+    {
+     "y": 1874,
+     "y1": 1894.63
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1894 (primo anno della scheda), altezza 77 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S08"
+   ],
+   "note": "Domed church, round plan; the 31 m dome span (S08) is a sourced fact, not yet a parameter",
+   "_legacy_h": 77
+  },
+  {
+   "name": "Amalienborg Palace",
+   "kind": "generic_footprint",
+   "at": [
+    55.683998,
+    12.593212
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1750,
+     "y1": 1760
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1760 (primo anno della scheda), altezza 20 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S09"
+   ],
+   "note": "Extruded footprint of one palace, hip roof; four palaces around the octagon are not modeled",
+   "_legacy_h": 20
+  },
+  {
+   "name": "Church of Our Saviour",
+   "kind": "church",
+   "at": [
+    55.672788,
+    12.594054
+   ],
+   "footprint": "auto",
+   "params": {
+    "tower_h": 90
+   },
+   "phases": [
+    {
+     "y": 1682,
+     "y1": 1695
+    },
+    {
+     "y": 1749,
+     "y1": 1752,
+     "groups": [
+      "towers",
+      "spire"
+     ]
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1752 (primo anno della scheda), altezza 90 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S10"
+   ],
+   "note": "Church (nave 1682-95) plus tower and spire 1749-52 as separate groups; tower_h 90 m is the sourced spire height. Group names assumed from the cathedral preset",
+   "_legacy_h": 90
+  },
+  {
+   "name": "Nyhavn",
+   "kind": "generic_footprint",
+   "at": [
+    55.6799,
+    12.5904
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "gable"
+   },
+   "phases": [
+    {
+     "y": 1673,
+     "y1": 1680
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1673 (primo anno della scheda), altezza 12 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S11"
+   ],
+   "note": "Placeholder: extruded footprint of a canal-side house; the canal itself comes from the data (reclaim/water), not from this landmark",
+   "_legacy_h": 12
+  },
+  {
+   "name": "Tivoli Gardens",
+   "kind": "park_structure",
+   "at": [
+    55.6737,
+    12.568099
+   ],
+   "footprint": "auto",
+   "params": {
+    "kind": "pagoda"
+   },
+   "phases": [
+    {
+     "y": 1843.62,
+     "y1": 1844.5
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1843 (primo anno della scheda), altezza 30 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S12"
+   ],
+   "note": "Placeholder: a pagoda-style park structure marks the garden (opened 1843). Not a real Tivoli building",
+   "_legacy_h": 30
+  },
+  {
+   "name": "City Hall",
+   "kind": "generic_footprint",
+   "at": [
+    55.675583,
+    12.57051
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "hip"
+   },
+   "phases": [
+    {
+     "y": 1892,
+     "y1": 1905.7
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1905 (primo anno della scheda), altezza 106 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S13"
+   ],
+   "note": "Extruded footprint; the 105.6 m clock tower (S13) is not modeled",
+   "_legacy_h": 106
+  },
+  {
+   "name": "Opera House",
+   "kind": "generic_footprint",
+   "at": [
+    55.681987,
+    12.600741
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "flat"
+   },
+   "phases": [
+    {
+     "y": 2001.45,
+     "y1": 2004.75
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2005 (primo anno della scheda), altezza 44 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S14"
+   ],
+   "note": "Extruded footprint, flat roof; the cantilevered roof is not modeled",
+   "_legacy_h": 44
+  },
+  {
+   "name": "Royal Playhouse",
+   "kind": "generic_footprint",
+   "at": [
+    55.680071,
+    12.594701
+   ],
+   "footprint": "auto",
+   "params": {
+    "roof": "flat"
+   },
+   "phases": [
+    {
+     "y": 2005,
+     "y1": 2008
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2008 (primo anno della scheda), altezza 36 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S15"
+   ],
+   "note": "Extruded footprint, flat roof (about 40% of the building is over the water, S15). Opening year 2008 not in the page text fetched: only the 2008 RIBA award",
+   "_legacy_h": 36
+  },
+  {
+   "name": "CopenHill",
+   "kind": "generic_footprint",
+   "at": [
+    55.684807,
+    12.620556
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 85,
+    "roof": "flat"
+   },
+   "phases": [
+    {
+     "y": 2014,
+     "y1": 2019.75
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2019 (primo anno della scheda), altezza 90 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S16"
+   ],
+   "note": "Extruded footprint at the sourced height 85 m; the sloped ski-slope roof is not modeled",
+   "_legacy_h": 90
+  },
+  {
+   "name": "Øresund Bridge",
+   "kind": "bridge_arches",
+   "at": [
+    55.577081,
+    12.841287
+   ],
+   "footprint": "auto",
+   "params": {},
+   "phases": [
+    {
+     "y": 1995,
+     "y1": 2000.5
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 2000 (primo anno della scheda), altezza 204 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S17"
+   ],
+   "note": "Preset approximation (arched bridge): the real bridge is cable-stayed, 7,845 m; the 204 m pylons are not modeled. Located 20 km from the origin: outside the fine core (radius_m 9000, as in the old render)",
+   "_legacy_h": 204,
+   "outside_core": true
+  },
+  {
+   "name": "Grundtvig Church",
+   "kind": "church",
+   "at": [
+    55.716589,
+    12.53332
+   ],
+   "footprint": "auto",
+   "params": {
+    "tower_h": 49
+   },
+   "phases": [
+    {
+     "y": 1921.69,
+     "y1": 1940
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1940 (primo anno della scheda), altezza 49 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "low",
+   "src": [
+    "S18"
+   ],
+   "note": "Church with the sourced 49 m bell tower; yellow-brick organ-like west facade is not modeled",
+   "_legacy_h": 49
+  },
+  {
+   "name": "SAS Royal Hotel",
+   "kind": "skyscraper",
+   "at": [
+    55.675046,
+    12.563416
+   ],
+   "footprint": "auto",
+   "params": {
+    "h": 69.6
+   },
+   "phases": [
+    {
+     "y": 1958,
+     "y1": 1960.5
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1960 (primo anno della scheda), altezza 70 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "medium",
+   "src": [
+    "S19"
+   ],
+   "note": "Skyscraper at the sourced height 69.6 m",
+   "_legacy_h": 70
+  },
+  {
+   "name": "The Little Mermaid",
+   "kind": "park_structure",
+   "at": [
+    55.6929,
+    12.5993
+   ],
+   "footprint": "auto",
+   "params": {
+    "kind": "statue"
+   },
+   "phases": [
+    {
+     "y": 1913.64,
+     "y1": 1913.65
+    }
+   ],
+   "label": true,
+   "_legacy": "geometria bespoke in landmarks_copenhagen.py; anno = 1913 (primo anno della scheda), altezza 2 m; posizione da data_copenhagen_src/landmarks.json[labels]",
+   "conf": "medium",
+   "src": [
+    "S20"
+   ],
+   "note": "Statue, 1.25 m (S20)",
+   "_legacy_h": 2
+  },
+  {
+   "name": "Absalon's Castle",
+   "kind": "castle",
+   "at": [
+    55.6759,
+    12.579399
+   ],
+   "params": {
+    "l": 50,
+    "w": 40
+   },
+   "phases": [
+    {
+     "y": 1167,
+     "y1": 1169
+    }
+   ],
+   "label": true,
+   "src": [
+    "S01",
+    "S03",
+    "S04"
+   ],
+   "conf": "low",
+   "note": "Castle on Slotsholmen where Christiansborg stands (S01); built from 1167 (S03), demolished by the Hanseatic League c. 1370 (S04). Size is illustrative: not sourced",
+   "demolished": [
+    1370.0,
+    1370.3
+   ]
+  },
+  {
+   "name": "Christiansborg I",
+   "kind": "palace_courtyard",
+   "at": [
+    55.6759,
+    12.579399
+   ],
+   "params": {
+    "l": 120,
+    "w": 90,
+    "wing_w": 20,
+    "h": 22
+   },
+   "phases": [
+    {
+     "y": 1733,
+     "y1": 1745
+    }
+   ],
+   "label": true,
+   "src": [
+    "S04"
+   ],
+   "conf": "low",
+   "note": "First Christiansborg (1733-45), burned 1794 (S04). Footprint size illustrative: not sourced",
+   "demolished": [
+    1794.14,
+    1794.4
+   ]
+  },
+  {
+   "name": "Christiansborg II",
+   "kind": "palace_courtyard",
+   "at": [
+    55.6759,
+    12.579399
+   ],
+   "params": {
+    "l": 120,
+    "w": 90,
+    "wing_w": 20,
+    "h": 24
+   },
+   "phases": [
+    {
+     "y": 1803,
+     "y1": 1828
+    }
+   ],
+   "label": true,
+   "src": [
+    "S04"
+   ],
+   "conf": "low",
+   "note": "Second Christiansborg (1803-28), burned 1884 (S04). Footprint size illustrative: not sourced",
+   "demolished": [
+    1884.74,
+    1885.0
+   ]
+  }
+ ],
+ "qa": {
+  "accept": []
+ },
+ "regia": {
+  "camera": "drone",
+  "music": "waking_monument",
+  "duration": "auto",
+  "max_duration": 660,
+  "night": true,
+  "pacing": "story",
+  "open": {
+   "year": 2026,
+   "rewind_to": 1167
+  },
+  "soste": [
+   {
+    "y0": 1167.0,
+    "y1": 1169.0,
+    "dur": 6.0,
+    "caption": "Absalon builds his castle (1167)",
+    "shot": "medium",
+    "target": "Absalon's Castle",
+    "conf": "high",
+    "weight": 6,
+    "fx": "stone",
+    "src": [
+     "S01",
+     "S03"
+    ],
+    "note": "Target moved from Christiansborg (built 1928) to the new landmark Absalon's Castle (R2: monument must exist before its hover)"
+   },
+   {
+    "y0": 1479.41,
+    "y1": 1479.41,
+    "dur": 5.0,
+    "caption": "University of Copenhagen (1479)",
+    "shot": "medium",
+    "target": "area:[55.6800,12.5712,300]",
+    "conf": "high",
+    "weight": 3,
+    "fx": "stone",
+    "src": [
+     "S01"
+    ],
+    "note": "regia 27/11: sosta aggiunta (stessa fonte del cartello) per spezzare 85 s di camera quasi ferma fra Absalon e Rosenborg"
+   },
+   {
+    "y0": 1606.0,
+    "y1": 1612.5,
+    "dur": 5.0,
+    "caption": "Rosenborg Castle (1606)",
+    "shot": "medium",
+    "target": "Rosenborg Castle",
+    "conf": "high",
+    "weight": 5,
+    "fx": "build",
+    "src": [
+     "S07"
+    ]
+   },
+   {
+    "y0": 1618.8,
+    "y1": 1625.6,
+    "dur": 6.0,
+    "caption": "Børsen and its dragon spire (1620-25)",
+    "shot": "medium",
+    "target": "Børsen",
+    "conf": "high",
+    "weight": 6,
+    "fx": "hammer",
+    "src": [
+     "S05"
+    ]
+   },
+   {
+    "y0": 1636.8,
+    "y1": 1642.6,
+    "dur": 5.0,
+    "caption": "The Round Tower (1637-42)",
+    "shot": "medium",
+    "target": "Rundetårn",
+    "conf": "high",
+    "weight": 5,
+    "fx": "build",
+    "src": [
+     "S06"
+    ]
+   },
+   {
+    "y0": 1670.8,
+    "y1": 1683.0,
+    "dur": 5.0,
+    "caption": "Nyhavn is dug (1670-75)",
+    "shot": "medium",
+    "target": "Nyhavn",
+    "conf": "high",
+    "weight": 4,
+    "fx": "water",
+    "src": [
+     "S11"
+    ],
+    "note": "Importer caption said 1671-73; S11 says 1670 to 1675"
+   },
+   {
+    "y0": 1728.79,
+    "y1": 1729.05,
+    "dur": 10.0,
+    "caption": "The Great Fire (20-23 October 1728)",
+    "shot": "medium",
+    "target": "area:[55.67990,12.57356,500]",
+    "conf": "high",
+    "weight": "max",
+    "fx": "fire",
+    "src": [
+     "S21"
+    ],
+    "note": "ONE max: the largest fire in the city history (28% of the city, 47% of the medieval part, S21); historian choice, the owner can move it"
+   },
+   {
+    "y0": 1752.3,
+    "y1": 1760.5,
+    "dur": 6.0,
+    "caption": "Frederiksstaden: Amalienborg (1750-60)",
+    "shot": "medium",
+    "target": "Amalienborg Palace",
+    "conf": "medium",
+    "weight": 6,
+    "fx": "stone",
+    "src": [
+     "S09"
+    ],
+    "note": "Palaces on the western side start 1750 (S09); end year 1760 is the importer's, not in the page"
+   },
+   {
+    "y0": 1794.14,
+    "y1": 1794.4,
+    "dur": 3.5,
+    "caption": "Christiansborg burns (1794)",
+    "shot": "medium",
+    "target": "Christiansborg I",
+    "conf": "high",
+    "weight": 4,
+    "fx": "fire",
+    "src": [
+     "S04",
+     "S09"
+    ]
+   },
+   {
+    "y0": 1795.42,
+    "y1": 1795.7,
+    "dur": 4.0,
+    "caption": "Fire of 1795 (June 1795)",
+    "shot": "medium",
+    "target": "area:[55.67818,12.57786,500]",
+    "conf": "high",
+    "weight": 6,
+    "fx": "fire",
+    "src": [
+     "S22"
+    ]
+   },
+   {
+    "y0": 1807.66,
+    "y1": 1807.95,
+    "dur": 14.0,
+    "caption": "British bombardment (September 1807)",
+    "shot": "medium",
+    "target": "area:[55.68153,12.57388,500]",
+    "conf": "high",
+    "weight": 9,
+    "fx": "boom",
+    "src": [
+     "S23"
+    ]
+   },
+   {
+    "y0": 1809.5,
+    "y1": 1820.0,
+    "dur": 5.0,
+    "caption": "Christiansborg rises again (1803-28)",
+    "shot": "medium",
+    "target": "Christiansborg II",
+    "conf": "high",
+    "weight": 3,
+    "fx": "build",
+    "src": [
+     "S04"
+    ]
+   },
+   {
+    "y0": 1842.8,
+    "y1": 1845.0,
+    "dur": 4.0,
+    "caption": "Tivoli opens (1843)",
+    "shot": "medium",
+    "target": "Tivoli Gardens",
+    "conf": "high",
+    "weight": 5,
+    "fx": "crowd",
+    "src": [
+     "S12"
+    ]
+   },
+   {
+    "y0": 1876.5,
+    "y1": 1883.5,
+    "dur": 4.0,
+    "caption": "Marble Church rebuilt (1874-94)",
+    "shot": "medium",
+    "target": "Marble Church",
+    "conf": "high",
+    "weight": 4,
+    "fx": "build",
+    "src": [
+     "S08"
+    ],
+    "note": "Importer caption said 1874: S08 sells the ruin in 1874; opening 1894"
+   },
+   {
+    "y0": 1884.74,
+    "y1": 1885.0,
+    "dur": 3.5,
+    "caption": "Christiansborg burns again (1884)",
+    "shot": "medium",
+    "target": "Christiansborg II",
+    "conf": "high",
+    "weight": 3,
+    "fx": "fire",
+    "src": [
+     "S04"
+    ]
+   },
+   {
+    "y0": 1886.5,
+    "y1": 1891.6,
+    "dur": 4.0,
+    "caption": "The great dome (1894)",
+    "shot": "medium",
+    "target": "Marble Church",
+    "conf": "high",
+    "weight": 3,
+    "fx": "bell",
+    "src": [
+     "S08"
+    ]
+   },
+   {
+    "y0": 1893.5,
+    "y1": 1905.5,
+    "dur": 5.0,
+    "caption": "City Hall (1892-1905)",
+    "shot": "medium",
+    "target": "City Hall",
+    "conf": "high",
+    "weight": 5,
+    "fx": "bell",
+    "src": [
+     "S13"
+    ]
+   },
+   {
+    "y0": 1917.5,
+    "y1": 1928.5,
+    "dur": 5.0,
+    "caption": "Christiansborg III and its tower (1907-28)",
+    "shot": "medium",
+    "target": "Christiansborg",
+    "conf": "high",
+    "weight": 4,
+    "fx": "build",
+    "src": [
+     "S04"
+    ]
+   },
+   {
+    "y0": 1929.0,
+    "y1": 1934.5,
+    "dur": 5.0,
+    "caption": "Grundtvig Church (1921-40)",
+    "shot": "medium",
+    "target": "Grundtvig Church",
+    "conf": "high",
+    "weight": 4,
+    "fx": "bell",
+    "src": [
+     "S18"
+    ]
+   },
+   {
+    "y0": 1958.2,
+    "y1": 1960.4,
+    "dur": 4.5,
+    "caption": "SAS Royal, the first skyscraper in Copenhagen (1960)",
+    "shot": "medium",
+    "target": "SAS Royal Hotel",
+    "conf": "high",
+    "weight": 4,
+    "fx": "build",
+    "src": [
+     "S19"
+    ],
+    "note": "Importer caption said Denmark first skyscraper: S19 says first in Copenhagen"
+   },
+   {
+    "y0": 1995.8,
+    "y1": 2000.6,
+    "dur": 5.0,
+    "caption": "The Øresund Bridge (2000)",
+    "shot": "medium",
+    "target": "Øresund Bridge",
+    "conf": "high",
+    "weight": 6,
+    "fx": "water",
+    "src": [
+     "S17"
+    ],
+    "note": "SUSPECT R2: 20 km from the other targets, long flights at under 0.4 years/s (see report)"
+   },
+   {
+    "y0": 2004.6,
+    "y1": 2005.3,
+    "dur": 4.0,
+    "caption": "The Opera House (2005)",
+    "shot": "medium",
+    "target": "Opera House",
+    "conf": "high",
+    "weight": 5,
+    "fx": "chime",
+    "src": [
+     "S14"
+    ],
+    "note": "regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
+   },
+   {
+    "y0": 2007.8,
+    "y1": 2008.6,
+    "dur": 4.0,
+    "caption": "Royal Playhouse (2008)",
+    "shot": "medium",
+    "target": "Royal Playhouse",
+    "conf": "medium",
+    "weight": 3,
+    "fx": "chime",
+    "src": [
+     "S15"
+    ],
+    "note": "Opening year not in the fetched page text; S15 only gives the 2008 RIBA award | regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
+   },
+   {
+    "y0": 2019.5,
+    "y1": 2020.3,
+    "dur": 5.0,
+    "caption": "CopenHill (2019)",
+    "shot": "medium",
+    "target": "CopenHill",
+    "conf": "high",
+    "weight": 5,
+    "fx": "crowd",
+    "src": [
+     "S16"
+    ],
+    "note": "regia 27/11: finestra spostata dopo la comparsa del corpo (QA monumenti visibili)"
+   }
+  ],
+  "rmin": 1.0,
+  "rmax": 8.0,
+  "drone": {
+   "pitch_max": 30,
+   "alt_max": 500,
+   "d_min": 1400,
+   "drift_vmax": 8,
+   "rho_max": 1400,
+   "v_leg": 110,
+   "t_leg_min": 18,
+   "rate_cap": 8
+  },
+  "lens": 32,
+  "night_hold": 15,
+  "night_t": 645.0,
+  "fin_d": 2500,
+  "fin_at": "area:[55.6785,12.5850,300]",
+  "_note_removed": [
+   {
+    "caption": "The Hanseatic League razes the castle (1370)",
+    "why": "regia 27/11: stesso bersaglio del 1167 (castello di Absalon): la camera restava ferma ~90 s con l'anno +136; resta come cartello \"Castle destroyed (1370)\" (montaggio.cards)."
+   },
+   {
+    "caption": "Christiansborg I (1733-45)",
+    "why": "regia 27/11: volo con anni quasi fermi (<0,4 anni/s) fra soste a pochi anni di distanza (R2); resta il cartello"
+   },
+   {
+    "caption": "Our Saviour's spiral spire (1749-52)",
+    "why": "regia 27/11: volo con anni quasi fermi (<0,4 anni/s) fra soste a pochi anni di distanza (R2); resta il cartello"
+   }
+  ],
+  "card_look": 2.0
+ },
+ "montaggio": {
+  "style": "mattia",
+  "open": [
+   "COPENHAGEN TODAY",
+   "667,099 people"
+  ],
+  "title": [
+   "COPENHAGEN",
+   "1167 TO NOW"
+  ],
+  "end": [
+   "COPENHAGEN · 859 YEARS",
+   "WHICH CITY NEXT?"
+  ],
+  "label_years": true,
+  "cards": [
+   {
+    "y": 1167.3,
+    "title": "Bishop Absalon's castle",
+    "lines": [
+     "On a small island Absalon builds a fortress against Wendish pirates. A harbor town, Havn, grows around it."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S01",
+     "S03"
+    ],
+    "conf": "high",
+    "labels": [
+     "Absalon's Castle"
+    ],
+    "target": "Absalon's Castle"
+   },
+   {
+    "y": 1254.0,
+    "title": "A city charter",
+    "lines": [
+     "Bishop Jakob Erlandsen grants Havn a charter, backed by the local fishing merchants."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01"
+    ],
+    "conf": "high",
+    "target": "area:[55.6790,12.5713,300]"
+   },
+   {
+    "y": 1303.0,
+    "title": "København",
+    "lines": [
+     "The name means \"merchants' harbor\": a town born from the harbor and trade."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S01"
+    ],
+    "conf": "medium",
+    "note": "The 1303 year is the importer's placement only; S01 gives the etymology, not a date: shown without a date",
+    "target": "area:[55.6745,12.5800,300]"
+   },
+   {
+    "y": 1368.0,
+    "title": "Hanseatic raid",
+    "lines": [
+     "Hanseatic towns sack Copenhagen. They had attacked it again and again."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S32",
+     "S01"
+    ],
+    "conf": "high",
+    "target": "area:[55.6762,12.5788,300]"
+   },
+   {
+    "y": 1370.0,
+    "title": "Castle destroyed",
+    "lines": [
+     "The Hanseatic League orders the king's castle torn down: 40 stonemasons take it apart stone by stone."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "labels": [
+     "Absalon's Castle"
+    ],
+    "target": "Absalon's Castle"
+   },
+   {
+    "y": 1416.0,
+    "title": "Capital of Denmark",
+    "lines": [
+     "Eric of Pomerania moves his seat to Copenhagen Castle. By about 1416 the city is the capital."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01",
+     "S02"
+    ],
+    "conf": "high",
+    "target": "area:[55.6760,12.5800,300]"
+   },
+   {
+    "y": 1479.41,
+    "title": "A university",
+    "lines": [
+     "King Christian I inaugurates the University of Copenhagen on 1 June 1479."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S01"
+    ],
+    "conf": "high",
+    "target": "area:[55.6800,12.5712,300]"
+   },
+   {
+    "y": 1536.5,
+    "title": "A year-long siege",
+    "lines": [
+     "From July 1535 to July 1536 the city holds out, then capitulates to Christian III. The Reformation of 1536 follows."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01"
+    ],
+    "conf": "high",
+    "target": "area:[55.6755,12.5650,350]"
+   },
+   {
+    "y": 1606.0,
+    "title": "Rosenborg Castle",
+    "lines": [
+     "Christian IV builds a country summerhouse that grows into a Dutch Renaissance castle."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S07"
+    ],
+    "conf": "high",
+    "labels": [
+     "Rosenborg Castle"
+    ],
+    "target": "Rosenborg Castle"
+   },
+   {
+    "y": 1620.0,
+    "title": "Børsen",
+    "lines": [
+     "A stock exchange topped by a spire of four dragon tails twined together."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S05"
+    ],
+    "conf": "high",
+    "labels": [
+     "Børsen"
+    ],
+    "target": "Børsen"
+   },
+   {
+    "y": 1637.51,
+    "title": "The Round Tower",
+    "lines": [
+     "An observatory with no stairs: a 7.5-turn ramp climbs to the platform."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S06"
+    ],
+    "conf": "high",
+    "labels": [
+     "Rundetårn"
+    ],
+    "target": "Rundetårn"
+   },
+   {
+    "y": 1659.12,
+    "title": "The Swedish assault",
+    "lines": [
+     "Sweden storms the besieged capital on 12 February 1659. The city holds."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S24",
+     "S02"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1660.5,
+    "title": "Absolute monarchy",
+    "lines": [
+     "Denmark–Norway becomes one of the most stringent absolute monarchies in Europe. The King's Law of 1665 makes it official."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S26"
+    ],
+    "conf": "medium",
+    "note": "S26 gives the year 1660 only"
+   },
+   {
+    "y": 1672.0,
+    "title": "Nyhavn",
+    "lines": [
+     "Danish soldiers and Swedish prisoners of war dig a canal from the sea to Kongens Nytorv (1670-75)."
+    ],
+    "hold_s": 5.3,
+    "src": [
+     "S11"
+    ],
+    "conf": "high",
+    "labels": [
+     "Nyhavn"
+    ],
+    "target": "Nyhavn"
+   },
+   {
+    "y": 1711.5,
+    "title": "The plague",
+    "lines": [
+     "The plague kills about a third of the people: some 22,000 of 65,000."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01",
+     "S02",
+     "S33"
+    ],
+    "conf": "high",
+    "sober": true,
+    "note": "S33 gives 12,000-23,000 dead of about 60,000: range, so \"about a third\""
+   },
+   {
+    "y": 1728.8,
+    "title": "The Great Fire",
+    "lines": [
+     "Three days of flames, 20-23 October. 28% of the city burns, 47% of the medieval part. 20% of the people lose their homes."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S21"
+    ],
+    "conf": "high",
+    "note": "Importer said 15,000 homeless: not in S21, replaced by 20% of the population"
+   },
+   {
+    "y": 1733.5,
+    "title": "Christiansborg",
+    "lines": [
+     "Work starts on a baroque palace in 1733. Most of it is finished by 1745: the largest palace in northern Europe."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "labels": [
+     "Christiansborg I"
+    ],
+    "target": "Christiansborg I"
+   },
+   {
+    "y": 1751.5,
+    "title": "A golden spiral",
+    "lines": [
+     "The 90 m spire has an outside staircase turning four times around it. Approved in 1749, finished in 1752."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S10"
+    ],
+    "conf": "high",
+    "labels": [
+     "Church of Our Saviour"
+    ],
+    "note": "Importer said 400 steps, the last 150 outside: not in S10, removed",
+    "target": "Church of Our Saviour"
+   },
+   {
+    "y": 1752.4,
+    "title": "Frederiksstaden",
+    "lines": [
+     "A new district around an octagonal square: four palaces called Amalienborg."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S09"
+    ],
+    "conf": "high",
+    "labels": [
+     "Amalienborg Palace"
+    ],
+    "target": "Amalienborg Palace"
+   },
+   {
+    "y": 1770.0,
+    "title": "Left unfinished",
+    "lines": [
+     "In 1770 the plans for Frederik's Church are dropped. The church stands incomplete for decades."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S08"
+    ],
+    "conf": "high",
+    "labels": [
+     "Marble Church"
+    ],
+    "target": "Marble Church"
+   },
+   {
+    "y": 1794.15,
+    "title": "The palace burns",
+    "lines": [
+     "Christiansborg is ruined by fire in 1794. The royal family moves to Amalienborg."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S04",
+     "S09"
+    ],
+    "conf": "high",
+    "labels": [
+     "Christiansborg I"
+    ],
+    "target": "Christiansborg I"
+   },
+   {
+    "y": 1795.43,
+    "title": "The second fire",
+    "lines": [
+     "5 June 1795: 909 houses burn and over 6,000 people lose their homes."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S22"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1801.25,
+    "title": "Nelson at Copenhagen",
+    "lines": [
+     "On 2 April 1801 a British fleet attacks the Dano-Norwegian navy anchored off the city."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S01"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1807.67,
+    "title": "British bombardment",
+    "lines": [
+     "From 2 September the British bombard the city, with 300 Congreve rockets. About 195 civilians are killed."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S23"
+    ],
+    "conf": "high",
+    "sober": true,
+    "note": "Importer said three nights: not in S23, removed"
+   },
+   {
+    "y": 1809.5,
+    "title": "Christiansborg II",
+    "lines": [
+     "Hansen builds a second palace in a French Empire style, 1803 to 1828."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "labels": [
+     "Christiansborg II"
+    ],
+    "target": "Christiansborg II"
+   },
+   {
+    "y": 1814.04,
+    "title": "Norway is lost",
+    "lines": [
+     "The Treaty of Kiel hands Norway to Sweden and ends the union that began in 1536/37."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S37",
+     "S26"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1843.62,
+    "title": "Tivoli Gardens",
+    "lines": [
+     "Tivoli opens on 15 August 1843 on the glacis outside the West Gate."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S12"
+    ],
+    "conf": "high",
+    "labels": [
+     "Tivoli Gardens"
+    ],
+    "target": "Tivoli Gardens"
+   },
+   {
+    "y": 1849.43,
+    "title": "A constitution",
+    "lines": [
+     "5 June 1849: the first democratic constitution ends the absolute monarchy."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S31"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1852.0,
+    "title": "The ramparts open",
+    "lines": [
+     "In the early 1850s the ramparts open and housing spreads around the Lakes."
+    ],
+    "hold_s": 5.3,
+    "src": [
+     "S01"
+    ],
+    "conf": "medium",
+    "note": "\"Early 1850s\" in S01; 1852.0 is the importer's placement"
+   },
+   {
+    "y": 1876.5,
+    "title": "Work restarts",
+    "lines": [
+     "In 1874 the ruin is sold to Carl Frederik Tietgen, who must build a church on it."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S08"
+    ],
+    "conf": "high",
+    "labels": [
+     "Marble Church"
+    ],
+    "target": "Marble Church"
+   },
+   {
+    "y": 1880.0,
+    "title": "Nørrebro and Vesterbro",
+    "lines": [
+     "New districts rise for people moving in from the provinces. The city grows from 120,000 in 1840 to 400,000 by 1901."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S01"
+    ],
+    "conf": "high",
+    "note": "Importer said \"population triples in 50 years\": S01 says 120,000 (1840) to 400,000 (1901)"
+   },
+   {
+    "y": 1884.74,
+    "title": "It burns again",
+    "lines": [
+     "The second Christiansborg burns down in 1884. The ruins stand for 23 years."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "labels": [
+     "Christiansborg II"
+    ],
+    "target": "Christiansborg II"
+   },
+   {
+    "y": 1894.63,
+    "title": "The dome",
+    "lines": [
+     "Frederik's Church opens on 19 August 1894 with the largest church dome in Scandinavia: 31 m across."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S08"
+    ],
+    "conf": "high",
+    "labels": [
+     "Marble Church"
+    ],
+    "target": "Marble Church"
+   },
+   {
+    "y": 1901.0,
+    "title": "A bigger city",
+    "lines": [
+     "Copenhagen takes in suburbs with 40,000 people. Frederiksberg becomes an enclave."
+    ],
+    "hold_s": 5.2,
+    "src": [
+     "S02"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 1905.7,
+    "title": "City Hall",
+    "lines": [
+     "Inaugurated on 12 September 1905. Its clock tower is 105.6 meters tall."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S13"
+    ],
+    "conf": "high",
+    "labels": [
+     "City Hall"
+    ],
+    "target": "City Hall"
+   },
+   {
+    "y": 1913.64,
+    "title": "The Little Mermaid",
+    "lines": [
+     "Too small to see from up here: 1.25 meters. Unveiled on 23 August 1913."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S20"
+    ],
+    "conf": "high",
+    "labels": [
+     "The Little Mermaid"
+    ],
+    "target": "The Little Mermaid"
+   },
+   {
+    "y": 1917.5,
+    "title": "Christiansborg III",
+    "lines": [
+     "The third palace, built 1907 to 1928, gets a 106 m tower: the tallest in the city."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S04"
+    ],
+    "conf": "high",
+    "labels": [
+     "Christiansborg"
+    ],
+    "target": "Christiansborg"
+   },
+   {
+    "y": 1929.0,
+    "title": "Grundtvig Church",
+    "lines": [
+     "Yellow brick, with a west facade like a church organ. The tower church opens in 1927; work lasts until 1940."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S18"
+    ],
+    "conf": "high",
+    "labels": [
+     "Grundtvig Church"
+    ],
+    "target": "Grundtvig Church"
+   },
+   {
+    "y": 1940.27,
+    "title": "Occupation",
+    "lines": [
+     "9 April 1940: German troops land at the docks of Copenhagen."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S27",
+     "S02"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1943.65,
+    "title": "Ships sunk in the harbor",
+    "lines": [
+     "In August 1943 the Danish Navy sinks several ships in the harbor so the Germans cannot use them."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S02"
+    ],
+    "conf": "high",
+    "sober": true
+   },
+   {
+    "y": 1945.22,
+    "title": "The Shellhus raid",
+    "lines": [
+     "21 March 1945: a British air raid on the Gestapo headquarters also hits a school. 123 civilians die, 87 of them schoolchildren."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S28"
+    ],
+    "conf": "high",
+    "sober": true,
+    "note": "Importer said 86 children: S28 says 87 schoolchildren"
+   },
+   {
+    "y": 1960.5,
+    "title": "SAS Royal Hotel",
+    "lines": [
+     "Arne Jacobsen's hotel opens on 1 July 1960: the first skyscraper in Copenhagen, 69.6 m."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S19"
+    ],
+    "conf": "high",
+    "labels": [
+     "SAS Royal Hotel"
+    ],
+    "target": "SAS Royal Hotel"
+   },
+   {
+    "y": 1971.73,
+    "title": "Christiania",
+    "lines": [
+     "On 26 September 1971 squatters take over a military base and declare Freetown Christiania open."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S29"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2000.5,
+    "title": "The Øresund Bridge",
+    "lines": [
+     "Opened to traffic on 1 July 2000: road and rail connect Copenhagen and Malmö."
+    ],
+    "hold_s": 5.8,
+    "src": [
+     "S17",
+     "S02"
+    ],
+    "conf": "high",
+    "labels": [
+     "Øresund Bridge"
+    ],
+    "note": "Importer said 16 km: length not in the S17 segment quoted (7,845 m main link per page; not used on screen)",
+    "target": "Øresund Bridge"
+   },
+   {
+    "y": 2005.04,
+    "title": "The Opera House",
+    "lines": [
+     "Opened on 15 January 2005, a donation to the state from the A.P. Møller foundation."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S14"
+    ],
+    "conf": "high",
+    "labels": [
+     "Opera House"
+    ],
+    "target": "Opera House"
+   },
+   {
+    "y": 2008.0,
+    "title": "The Royal Playhouse",
+    "lines": [
+     "A theater with about 40% of the building projecting over the water."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S15"
+    ],
+    "conf": "medium",
+    "labels": [
+     "Royal Playhouse"
+    ],
+    "note": "Opening year not in the fetched page text",
+    "target": "Royal Playhouse"
+   },
+   {
+    "y": 2019.75,
+    "title": "CopenHill",
+    "lines": [
+     "A waste-to-energy power plant with a ski slope on its 85 m roof, opened in October 2019."
+    ],
+    "hold_s": 5.4,
+    "src": [
+     "S16"
+    ],
+    "conf": "high",
+    "labels": [
+     "CopenHill"
+    ],
+    "target": "CopenHill"
+   },
+   {
+    "y": 2022.0,
+    "title": "Swimming in the harbor",
+    "lines": [
+     "Today the harbor has 13 official swimming zones and three harbor baths."
+    ],
+    "hold_s": 5.0,
+    "src": [
+     "S01"
+    ],
+    "conf": "medium",
+    "note": "S01 states this as \"now\" (page fetched 2026-11); year placement 2022 is a guess"
+   },
+   {
+    "y": 2026.0,
+    "title": "Copenhagen",
+    "lines": [
+     "667,099 people live in the municipality. The urban area counts about 1.4 million."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S34",
+     "S01"
+    ],
+    "conf": "high",
+    "note": "667,099 = Wikidata P1082 2025-01-01 (Statistics Denmark BY1); not from a Wikipedia page"
+   }
+  ],
+  "events": [],
+  "cta": "Which city should grow next? Tell me in the comments",
+  "sources_card": {
+   "seconds": 8,
+   "max": 14,
+   "no_ai": "NO AI: every frame is rendered from open data"
+  },
+  "chapters": [
+   {
+    "y": 1167.3,
+    "title": "Absalon's Havn"
+   },
+   {
+    "y": 1416.0,
+    "title": "Royal Capital"
+   },
+   {
+    "y": 1536.5,
+    "title": "Reformation and Renaissance"
+   },
+   {
+    "y": 1659.12,
+    "title": "Siege and Absolutism"
+   },
+   {
+    "y": 1728.8,
+    "title": "Fire and Rebuilding"
+   },
+   {
+    "y": 1801.25,
+    "title": "War with Britain"
+   },
+   {
+    "y": 1849.43,
+    "title": "Constitution and Ramparts"
+   },
+   {
+    "y": 1901.0,
+    "title": "Modern Capital"
+   },
+   {
+    "y": 1940.27,
+    "title": "War and Occupation"
+   },
+   {
+    "y": 1971.73,
+    "title": "Harbor and Bridge"
+   }
+  ]
+ },
+ "legacy": {
+  "metadata_file": "metadata_copenhagen.md",
+  "translations_file": null,
+  "translation_languages": [],
+  "video_chapter_lines": 23,
+  "old_thumbnail_files": [],
+  "data_package": {
+   "dir": "data_copenhagen_src",
+   "present": [
+    "bridges.json",
+    "buildings.json",
+    "fires.json",
+    "land.json",
+    "landmarks.json",
+    "parks.json",
+    "reclaim.json",
+    "roads.json"
+   ],
+   "missing_for_kit": [
+    "dem.npz"
+   ],
+   "complete": false
+  }
+ },
+ "_legacy_gaps": [
+  {
+   "path": "history.zones",
+   "field": "zones",
+   "reason": "still empty: medieval/early-modern city before the cadastre (only 167 real buildings before 1728) needs rings + born + era_height; hand-set parameters of hist_copenhagen.py are not sourced"
+  },
+  {
+   "path": "history.walls/gutting/lost/bridges",
+   "field": "all",
+   "reason": "not filled in this pass (ramparts, lost buildings, bridges: no sourced geometry fetched)"
+  },
+  {
+   "path": "city",
+   "field": "data_reliable_from",
+   "reason": "1728 is a guess (before the 1728 fire only 167 real buildings survive); confirm with the contact sheet"
+  },
+  {
+   "path": "metadata",
+   "field": "description/tags/chapters-with-times/pinned comment/Reddit",
+   "reason": "to be written after the first render times exist (cities/copenhagen/METADATA.md)"
+  }
+ ]
+}
