@@ -1,5 +1,5 @@
 Rome: regia automatica (kit/regia_kit.py)
-Camera drone: 16 tappe in hover (80.6 s) e voli (551.2 s), anni 15.73/s fra le voci, nessuno stacco; vmax 118.79, amax 98.9, jmax 94.16, clear_min 460.34, clear_ground_min 499.95
+Camera drone: 22 tappe in hover (114.2 s) e voli (517.6 s), anni 16.14/s fra le voci, nessuno stacco; vmax 181.22, amax 114.89, jmax 112.03, clear_min 458.97, clear_ground_min 499.78
 Durata 11:00.0  fotogrammi 15840  inquadrature 3  stacco medio ogni 220.0 s
 Musica: waking_monument  b_start None  notte None
 
@@ -12,126 +12,135 @@ ANCORE (video -> anno):
 SOSTE (video -> anni):
   0:15.7-0:21.7  -753.0->-735.0  Romulus founds Rome (753 BC)  [forza 6.0, crowd]
   0:15.7-0:21.1  -753.0->-753.0  Rome begins on the Palatine  [forza 0.0]
-  0:27.1-0:31.9  -650.0->-650.0  A home for the Senate  [forza 0.0]
-  0:35.1-0:39.6  -600.0->-600.0  Cloaca Maxima  [forza 0.0]
-  0:45.4-0:50.4  -509.0->-504.0  Temple of Jupiter (509 BC)  [forza 4.0, hammer]
-  0:45.4-0:50.4  -509.0->-509.0  No more kings  [forza 0.0]
-  0:57.7-1:02.7  -390.0->-390.0  The Gauls sack Rome  [forza 0.0]
-  1:03.4-1:07.9  -378.0->-372.0  The Servian Wall (378 BC)  [forza 4.0, hammer]
-  1:10.7-1:15.5  -329.0->-329.0  Circus Maximus  [forza 0.0]
-  1:16.5-1:21.3  -312.0->-312.0  The first road and aqueduct  [forza 0.0]
-  1:24.4-1:28.9  -264.0->-264.0  War with Carthage begins  [forza 0.0]
-  1:31.9-1:36.4  -216.0->-216.0  Disaster at Cannae  [forza 0.0]
-  1:40.9-1:45.7  -146.0->-146.0  Carthage destroyed  [forza 0.0]
-  1:46.5-1:51.0  -133.0->-133.0  The late Republic  [forza 0.0]
-  1:54.3-1:58.8  -82.0->-82.0  Sulla named dictator  [forza 0.0]
-  2:01.2-2:06.0  -44.0->-44.0  The Ides of March  [forza 0.0]
-  2:07.0-2:12.4  -28.0->-26.0  Augustus builds his tomb (28 BC)  [forza 5.0, horn]
-  2:07.0-2:12.4  -27.0->-27.0  Augustus, first emperor  [forza 0.0]
-  2:13.2-2:18.0  -13.5->-13.5  Theatre of Marcellus  [forza 0.0]
-  2:19.8-2:24.3  14.0->14.0  Augustus dies  [forza 0.0]
-  2:27.5-2:32.3  64.0->64.0  The Great Fire  [forza 0.0]
-  2:32.3-2:37.3  64.4->64.9  The Great Fire of Rome (AD 64)  [forza 8.0, fire]
-  2:40.8-2:46.8  77.0->84.0  The Colosseum (AD 72-80)  [forza 6.0, crowd]
-  2:40.8-2:45.6  80.0->80.0  The Colosseum opens  [forza 0.0]
-  2:48.7-2:53.5  113.0->113.0  Trajan's Column  [forza 0.0]
-  2:54.3-2:59.1  126.0->126.0  The Pantheon  [forza 0.0]
-  2:59.8-3:04.6  137.0->137.0  Hadrian's Mausoleum  [forza 0.0]
-  3:05.4-3:10.8  150.0->150.0  A city of a million or more  [forza 0.0]
-  3:15.0-3:19.8  216.0->216.0  Baths of Caracalla  [forza 0.0]
-  3:23.5-3:29.5  273.0->277.0  The Aurelian Walls (271-275)  [forza 4.0, hammer]
-  3:23.5-3:28.3  275.0->275.0  A wall for the whole city  [forza 0.0]
-  3:31.3-3:36.1  306.0->306.0  The largest baths of all  [forza 0.0]
-  3:36.5-3:41.3  312.0->312.0  Maxentius's basilica  [forza 0.0]
-  3:41.8-3:46.6  320.0->320.0  Old St. Peter's  [forza 0.0]
-  3:47.3-3:51.8  330.0->330.0  A second capital  [forza 0.0]
-  3:52.2-3:56.7  337.0->337.0  Constantine dies  [forza 0.0]
-  3:57.8-4:02.6  354.0->354.0  Mausoleum of Constantina  [forza 0.0]
-  4:08.8-4:12.8  356.0->364.0  Old St. Peter's (c. 320-360)  [forza 5.0, bell]
-  4:13.8-4:18.3  380.0->380.0  Edict of Thessalonica  [forza 0.0]
-  4:19.3-4:23.8  395.0->395.0  The empire divides  [forza 0.0]
-  4:24.6-4:29.1  408.0->408.0  Alaric besieges Rome  [forza 0.0]
-  4:29.2-4:33.7  409.0->409.0  Rome pays the Goths  [forza 0.0]
-  4:40.2-4:45.2  410.0->410.8  Alaric sacks Rome (410)  [forza 8.0, battle]
-  4:40.2-4:45.2  410.0->410.0  Alaric sacks Rome  [forza 0.0]
-  4:48.0-4:52.8  455.0->455.0  The Vandals sack Rome  [forza 0.0]
-  4:54.1-4:59.1  476.0->476.0  The Western Empire ends  [forza 0.0]
-  5:03.0-5:07.8  536.9->536.9  Byzantine Rome  [forza 0.0]
-  5:07.9-5:13.9  537.0->538.2  The Goths cut the aqueducts (537)  [forza 4.0, water]
-  5:14.4-5:19.2  547.0->547.0  Totila enters Rome  [forza 0.0]
-  5:19.5-5:24.5  552.0->552.0  A city of 30,000  [forza 0.0]
-  5:27.0-5:32.4  590.0->590.0  Plague, and an angel  [forza 0.0]
-  5:33.6-5:38.4  609.0->609.0  The Pantheon becomes a church  [forza 0.0]
-  5:41.8-5:46.6  663.0->663.0  An emperor visits Rome  [forza 0.0]
-  5:52.5-5:57.3  756.0->756.0  The Papal State  [forza 0.0]
-  6:00.1-6:04.9  800.0->800.0  Charlemagne  [forza 0.0]
-  6:08.2-6:13.0  852.0->852.0  The Leonine Wall  [forza 0.0]
-  6:20.0-6:24.8  962.0->962.0  Otto is crowned emperor  [forza 0.0]
-  6:32.6-6:37.4  1084.0->1084.0  The Normans  [forza 0.0]
-  6:41.1-6:45.9  1143.0->1143.0  The Roman Senate returns  [forza 0.0]
-  6:52.0-6:56.8  1238.0->1238.0  Torre dei Conti  [forza 0.0]
-  7:00.7-7:05.5  1300.0->1300.0  The first Holy Year  [forza 0.0]
-  7:06.1-7:10.9  1309.0->1309.0  The popes leave  [forza 0.0]
-  7:13.5-7:17.5  1349.0->1349.6  Earthquake: the Colosseum falls (1349)  [forza 8.0, quake]
-  7:19.2-7:24.2  1377.0->1377.0  The popes return  [forza 0.0]
-  7:32.4-7:37.2  1506.0->1506.0  A new St. Peter's  [forza 0.0]
-  7:38.5-7:43.5  1527.0->1527.0  The Sack of Rome  [forza 0.0]
-  7:47.5-7:52.5  1588.0->1596.0  Michelangelo's dome (1590)  [forza 5.0, bell]
-  7:57.4-8:02.2  1674.0->1680.0  Bernini's colonnade (1667-1676)  [forza 6.0, crowd]
-  7:57.4-8:02.2  1676.0->1676.0  Bernini's square  [forza 0.0]
-  8:07.4-8:12.2  1762.0->1762.0  Trevi Fountain  [forza 0.0]
-  8:14.5-8:19.3  1798.0->1798.0  A Roman Republic  [forza 0.0]
-  8:20.0-8:24.8  1809.0->1809.0  Napoleon annexes Rome  [forza 0.0]
-  8:27.4-8:32.4  1849.0->1849.0  Another Roman Republic  [forza 0.0]
-  8:33.1-8:37.9  1861.0->1861.0  Italy is united  [forza 0.0]
-  8:38.6-8:44.0  1870.6->1871.4  Rome, capital of Italy (1871)  [forza 4.0, cannon]
-  8:38.6-8:44.0  1871.0->1871.0  Capital of Italy  [forza 0.0]
-  8:44.6-8:49.4  1881.0->1881.0  A growing capital  [forza 0.0]
-  8:50.6-8:55.1  1900.0->1900.0  Half a million  [forza 0.0]
-  8:55.7-9:00.7  1908.0->1914.0  The Vittoriano (1885-1911)  [forza 6.0, crowd]
-  9:01.2-9:06.0  1922.0->1922.0  March on Rome  [forza 0.0]
-  9:06.4-9:11.2  1929.0->1929.0  Vatican City  [forza 0.0]
-  9:11.8-9:16.6  1938.0->1938.0  EUR  [forza 0.0]
-  9:17.0-9:22.0  1944.0->1944.0  Liberation  [forza 0.0]
-  9:22.1-9:26.9  1946.0->1946.0  A republic  [forza 0.0]
-  9:27.1-9:31.9  1950.0->1950.0  Termini Station  [forza 0.0]
-  9:32.0-9:36.8  1951.0->1951.0  A city of 1.65 million  [forza 0.0]
-  9:37.2-9:41.7  1957.0->1957.0  Treaty of Rome  [forza 0.0]
-  9:41.9-9:45.4  1960.4->1960.9  Rome Olympics (1960)  [forza 6.0, crowd]
-  9:46.1-9:50.9  1971.0->1971.0  Peak population  [forza 0.0]
-  9:51.5-9:56.3  1980.0->1980.0  The first metro line  [forza 0.0]
-  9:56.9-10:01.7  1990.0->1990.0  World Cup final  [forza 0.0]
-  10:02.3-10:07.1  2000.0->2000.0  The Great Jubilee  [forza 0.0]
-  10:08.0-10:12.8  2014.0->2014.0  Metro Line C  [forza 0.0]
-  10:13.1-10:17.9  2018.0->2018.0  A metro station as a museum  [forza 0.0]
-  10:18.3-10:23.1  2025.0->2025.0  The 2025 Jubilee  [forza 0.0]
+  0:27.0-0:31.8  -650.0->-650.0  A home for the Senate  [forza 0.0]
+  0:34.9-0:39.4  -600.0->-600.0  Cloaca Maxima  [forza 0.0]
+  0:45.0-0:50.0  -509.0->-504.0  Temple of Jupiter (509 BC)  [forza 4.0, hammer]
+  0:45.0-0:50.0  -509.0->-509.0  No more kings  [forza 0.0]
+  0:57.1-1:02.1  -390.0->-390.0  The Gauls sack Rome  [forza 0.0]
+  1:02.9-1:07.4  -378.0->-372.0  The Servian Wall (378 BC)  [forza 4.0, hammer]
+  1:10.0-1:14.8  -329.0->-329.0  Circus Maximus  [forza 0.0]
+  1:15.9-1:20.7  -312.0->-312.0  The first road and aqueduct  [forza 0.0]
+  1:23.6-1:28.1  -264.0->-264.0  War with Carthage begins  [forza 0.0]
+  1:31.1-1:35.6  -216.0->-216.0  Disaster at Cannae  [forza 0.0]
+  1:40.0-1:44.8  -146.0->-146.0  Carthage destroyed  [forza 0.0]
+  1:45.6-1:50.1  -133.0->-133.0  The late Republic  [forza 0.0]
+  1:53.2-1:57.7  -82.0->-82.0  Sulla named dictator  [forza 0.0]
+  2:00.1-2:04.9  -44.0->-44.0  The Ides of March  [forza 0.0]
+  2:05.9-2:11.3  -28.0->-26.0  Augustus builds his tomb (28 BC)  [forza 5.0, horn]
+  2:05.9-2:11.3  -27.0->-27.0  Augustus, first emperor  [forza 0.0]
+  2:12.1-2:16.9  -13.5->-13.5  Theatre of Marcellus  [forza 0.0]
+  2:18.6-2:23.1  14.0->14.0  Augustus dies  [forza 0.0]
+  2:26.2-2:31.0  64.0->64.0  The Great Fire  [forza 0.0]
+  2:31.1-2:36.1  64.4->64.9  The Great Fire of Rome (AD 64)  [forza 8.0, fire]
+  2:39.6-2:45.6  77.0->84.0  The Colosseum (AD 72-80)  [forza 6.0, crowd]
+  2:39.6-2:44.4  80.0->80.0  The Colosseum opens  [forza 0.0]
+  2:47.3-2:52.1  113.0->113.0  Trajan's Column  [forza 0.0]
+  2:53.0-2:57.8  126.0->126.0  The Pantheon  [forza 0.0]
+  2:58.4-3:03.2  137.0->137.0  Hadrian's Mausoleum  [forza 0.0]
+  3:04.0-3:09.4  150.0->150.0  A city of a million or more  [forza 0.0]
+  3:13.5-3:18.3  216.0->216.0  Baths of Caracalla  [forza 0.0]
+  3:21.9-3:27.9  273.0->277.0  The Aurelian Walls (271-275)  [forza 4.0, hammer]
+  3:21.9-3:26.7  275.0->275.0  A wall for the whole city  [forza 0.0]
+  3:28.4-3:33.2  285.0->285.0  Nineteen kilometers of wall  [forza 0.0]
+  3:34.0-3:38.8  298.0->298.0  Diocletian's baths begin  [forza 0.0]
+  3:47.9-3:52.7  306.0->306.6  The largest baths of all (306)  [forza 5.0, bell]
+  3:47.9-3:52.7  306.0->306.0  The largest baths of all  [forza 0.0]
+  3:53.1-3:57.9  312.0->312.0  Maxentius's basilica  [forza 0.0]
+  3:58.4-4:03.2  320.0->320.0  Old St. Peter's  [forza 0.0]
+  4:03.8-4:08.3  330.0->330.0  A second capital  [forza 0.0]
+  4:08.7-4:13.2  337.0->337.0  Constantine dies  [forza 0.0]
+  4:14.3-4:19.1  354.0->354.0  Mausoleum of Constantina  [forza 0.0]
+  4:19.2-4:23.2  356.0->364.0  Old St. Peter's (c. 320-360)  [forza 5.0, bell]
+  4:24.2-4:28.7  380.0->380.0  Edict of Thessalonica  [forza 0.0]
+  4:29.6-4:34.1  395.0->395.0  The empire divides  [forza 0.0]
+  4:34.9-4:39.4  408.0->408.0  Alaric besieges Rome  [forza 0.0]
+  4:39.5-4:44.0  409.0->409.0  Rome pays the Goths  [forza 0.0]
+  4:50.6-4:55.6  410.0->410.8  Alaric sacks Rome (410)  [forza 8.0, battle]
+  4:50.6-4:55.6  410.0->410.0  Alaric sacks Rome  [forza 0.0]
+  4:58.3-5:03.1  455.0->455.0  The Vandals sack Rome  [forza 0.0]
+  5:04.4-5:09.4  476.0->476.0  The Western Empire ends  [forza 0.0]
+  5:13.2-5:18.0  536.9->536.9  Byzantine Rome  [forza 0.0]
+  5:18.0-5:24.0  537.0->538.2  The Goths cut the aqueducts (537)  [forza 4.0, water]
+  5:24.6-5:29.4  547.0->547.0  Totila enters Rome  [forza 0.0]
+  5:29.7-5:34.7  552.0->552.0  A city of 30,000  [forza 0.0]
+  5:37.0-5:42.4  590.0->590.0  Plague, and an angel  [forza 0.0]
+  5:43.7-5:48.5  609.0->609.6  The Pantheon becomes a church (609)  [forza 5.0, bell]
+  5:43.7-5:48.5  609.0->609.0  The Pantheon becomes a church  [forza 0.0]
+  5:51.8-5:56.6  663.0->663.0  An emperor visits Rome  [forza 0.0]
+  6:02.3-6:07.1  756.0->756.0  The Papal State  [forza 0.0]
+  6:09.9-6:14.7  800.0->800.6  Charlemagne crowned (800)  [forza 5.0, bell]
+  6:09.9-6:14.7  800.0->800.0  Charlemagne  [forza 0.0]
+  6:17.9-6:22.7  852.0->852.0  The Leonine Wall  [forza 0.0]
+  6:29.5-6:34.3  962.0->962.6  Otto crowned emperor (962)  [forza 5.0, bell]
+  6:29.5-6:34.3  962.0->962.0  Otto is crowned emperor  [forza 0.0]
+  6:41.8-6:46.6  1084.0->1084.0  The Normans  [forza 0.0]
+  6:56.4-7:01.2  1143.0->1143.6  The Senate returns (1143)  [forza 6.0, crowd]
+  6:56.4-7:01.2  1143.0->1143.0  The Roman Senate returns  [forza 0.0]
+  7:07.0-7:11.8  1238.0->1238.0  Torre dei Conti  [forza 0.0]
+  7:15.7-7:20.5  1300.0->1300.0  The first Holy Year  [forza 0.0]
+  7:21.0-7:25.8  1309.0->1309.0  The popes leave  [forza 0.0]
+  7:28.3-7:32.3  1349.0->1349.6  Earthquake: the Colosseum falls (1349)  [forza 8.0, quake]
+  7:34.0-7:39.0  1377.0->1377.0  The popes return  [forza 0.0]
+  7:47.0-7:51.8  1506.0->1506.0  A new St. Peter's  [forza 0.0]
+  7:53.1-7:58.1  1527.0->1527.0  The Sack of Rome  [forza 0.0]
+  8:02.0-8:07.0  1588.0->1596.0  Michelangelo's dome (1590)  [forza 5.0, bell]
+  8:11.8-8:16.6  1674.0->1680.0  Bernini's colonnade (1667-1676)  [forza 6.0, crowd]
+  8:11.8-8:16.6  1676.0->1676.0  Bernini's square  [forza 0.0]
+  8:21.7-8:26.5  1762.0->1762.0  Trevi Fountain  [forza 0.0]
+  8:28.7-8:33.5  1798.0->1798.0  A Roman Republic  [forza 0.0]
+  8:34.2-8:39.0  1809.0->1809.0  Napoleon annexes Rome  [forza 0.0]
+  8:41.5-8:46.5  1849.0->1849.0  Another Roman Republic  [forza 0.0]
+  8:47.2-8:52.0  1861.0->1861.0  Italy is united  [forza 0.0]
+  8:52.6-8:58.0  1870.6->1871.4  Rome, capital of Italy (1871)  [forza 4.0, cannon]
+  8:52.6-8:58.0  1871.0->1871.0  Capital of Italy  [forza 0.0]
+  8:58.6-9:03.4  1881.0->1881.0  A growing capital  [forza 0.0]
+  9:04.6-9:09.1  1900.0->1900.0  Half a million  [forza 0.0]
+  9:09.6-9:14.6  1908.0->1914.0  The Vittoriano (1885-1911)  [forza 6.0, crowd]
+  9:15.1-9:19.9  1922.0->1922.0  March on Rome  [forza 0.0]
+  9:20.4-9:25.2  1929.0->1929.0  Vatican City  [forza 0.0]
+  9:25.7-9:30.5  1938.0->1938.0  EUR  [forza 0.0]
+  9:30.9-9:35.9  1944.0->1944.0  Liberation  [forza 0.0]
+  9:36.0-9:40.8  1946.0->1946.0  A republic  [forza 0.0]
+  9:41.1-9:45.9  1950.0->1950.0  Termini Station  [forza 0.0]
+  9:45.9-9:50.7  1951.0->1951.0  A city of 1.65 million  [forza 0.0]
+  9:51.1-9:55.6  1957.0->1957.0  Treaty of Rome  [forza 0.0]
+  9:55.9-9:59.4  1960.4->1960.9  Rome Olympics (1960)  [forza 6.0, crowd]
+  9:60.0-10:04.8  1971.0->1971.0  Peak population  [forza 0.0]
+  10:05.3-10:10.1  1980.0->1980.0  The first metro line  [forza 0.0]
+  10:10.8-10:15.6  1990.0->1990.0  World Cup final  [forza 0.0]
+  10:16.2-10:21.0  2000.0->2000.0  The Great Jubilee  [forza 0.0]
+  10:21.9-10:26.7  2014.0->2014.0  Metro Line C  [forza 0.0]
+  10:26.9-10:31.7  2018.0->2018.0  A metro station as a museum  [forza 0.0]
+  10:32.2-10:41.8  2025.0->2025.8  The 2025 Jubilee opens at St. Peter's (2025)  [forza 5.8, bell]
+  10:32.2-10:37.0  2025.0->2025.0  The 2025 Jubilee  [forza 0.0]
+  10:37.0-10:41.8  2025.0->2025.0  The Holy Door  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
   0:30   -650.0  (0.00 anni/s)
   1:00   -390.0  (0.00 anni/s)
-  1:30   -246.5  (15.72 anni/s)
-  2:00    -62.6  (15.72 anni/s)
+  1:30   -234.1  (16.14 anni/s)
+  2:00    -45.3  (10.62 anni/s)
   2:30     64.0  (0.00 anni/s)
-  3:00    137.0  (1.45 anni/s)
-  3:30    285.1  (15.73 anni/s)
-  4:00    354.0  (0.00 anni/s)
-  4:30    409.0  (0.00 anni/s)
-  5:00    489.4  (15.73 anni/s)
-  5:30    590.0  (0.00 anni/s)
-  6:00    798.2  (11.45 anni/s)
-  6:30   1043.5  (15.73 anni/s)
-  7:00   1288.9  (15.72 anni/s)
-  7:30   1468.1  (15.73 anni/s)
-  8:00   1677.2  (1.25 anni/s)
-  8:30   1849.0  (0.00 anni/s)
-  9:00   1913.2  (1.20 anni/s)
-  9:30   1950.0  (0.00 anni/s)
-  10:00   1990.0  (0.00 anni/s)
-  10:30   2025.3  (0.04 anni/s)
+  3:00    137.0  (0.00 anni/s)
+  3:30    285.0  (0.00 anni/s)
+  4:00    320.0  (0.00 anni/s)
+  4:30    395.0  (0.00 anni/s)
+  5:00    455.0  (0.00 anni/s)
+  5:30    552.0  (0.00 anni/s)
+  6:00    718.3  (16.14 anni/s)
+  6:30    962.1  (0.12 anni/s)
+  7:00   1143.5  (0.12 anni/s)
+  7:30   1349.2  (0.15 anni/s)
+  8:00   1556.8  (15.96 anni/s)
+  8:30   1798.0  (0.00 anni/s)
+  9:00   1881.0  (0.00 anni/s)
+  9:30   1938.0  (0.00 anni/s)
+  10:00   1971.0  (7.65 anni/s)
+  10:30   2018.0  (0.00 anni/s)
 
-Velocita fuori dalle soste: mediana 15.73 anni/s, max 15.7 anni/s
-Soste: 95, 460 s (72% del giorno)
+Velocita fuori dalle soste: mediana 16.14 anni/s, max 16.2 anni/s
+Soste: 104, 508 s (80% del giorno)
 
 AVVISI:
-  - durata naturale 713 s > max_duration 660 s: tolgo le soste a peso minimo
+  - durata naturale 740 s > max_duration 660 s: tolgo le soste a peso minimo

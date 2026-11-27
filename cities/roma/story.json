@@ -918,6 +918,11 @@
    "url": "https://en.wikipedia.org/wiki/Holy_Year",
    "title": "Wikipedia EN, Holy Year",
    "quote": "The 2025 jubilee year commenced on 24 December 2024, also marking the 1,700th anniversary of the Council of Nicaea (325 AD)."
+  },
+  "S85": {
+   "url": "https://en.wikipedia.org/wiki/Jubilee_2025",
+   "title": "Wikipedia EN, Jubilee 2025",
+   "quote": "opened the Holy Door of the Basilica of Saint Peter in the Vatican, officially marking the beginning of the Holy Year (Pope Francis, 24 December 2024)"
   }
  },
  "history": {
@@ -2903,6 +2908,20 @@
     "conf": "high"
    },
    {
+    "y0": 306.0,
+    "y1": 306.6,
+    "dur": 4.0,
+    "caption": "The largest baths of all (306)",
+    "shot": "medium",
+    "target": "Baths of Diocletian",
+    "fx": "bell",
+    "weight": 4,
+    "src": [
+     "S15"
+    ],
+    "conf": "high"
+   },
+   {
     "y0": 356.0,
     "y1": 364.0,
     "dur": 4.0,
@@ -2943,6 +2962,63 @@
      "S22"
     ],
     "conf": "low"
+   },
+   {
+    "y0": 609,
+    "y1": 609.6,
+    "dur": 4.0,
+    "caption": "The Pantheon becomes a church (609)",
+    "shot": "medium",
+    "target": "Pantheon",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S73"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 800.0,
+    "y1": 800.6,
+    "dur": 4.0,
+    "caption": "Charlemagne crowned (800)",
+    "shot": "medium",
+    "target": "Old St Peter's",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S43",
+     "S17"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 962.0,
+    "y1": 962.6,
+    "dur": 4.0,
+    "caption": "Otto crowned emperor (962)",
+    "shot": "medium",
+    "target": "Old St Peter's",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S74"
+    ],
+    "conf": "high"
+   },
+   {
+    "y0": 1143,
+    "y1": 1143.6,
+    "dur": 4.0,
+    "caption": "The Senate returns (1143)",
+    "shot": "wide",
+    "target": "area:[41.8934,12.4828,300]",
+    "fx": "crowd",
+    "weight": 5,
+    "src": [
+     "S75"
+    ],
+    "conf": "high"
    },
    {
     "y0": 1349.0,
@@ -3028,6 +3104,21 @@
      "S37"
     ],
     "conf": "high"
+   },
+   {
+    "y0": 2025,
+    "y1": 2025.8,
+    "dur": 9.0,
+    "caption": "The 2025 Jubilee opens at St. Peter's (2025)",
+    "shot": "medium",
+    "target": "St Peter's Basilica",
+    "fx": "bell",
+    "weight": 5,
+    "src": [
+     "S84",
+     "S85"
+    ],
+    "conf": "high"
    }
   ],
   "rmin": 1.0,
@@ -3039,7 +3130,9 @@
    "drift_vmax": 8,
    "rho_max": 1400
   },
-  "lens": 32
+  "lens": 32,
+  "fin_d": 1500,
+  "fin_at": "area:[41.8990,12.4700,300]"
  },
  "montaggio": {
   "style": "mattia",
@@ -3378,6 +3471,30 @@
     "hold_s": 4.8,
     "src": [
      "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 285,
+    "title": "Nineteen kilometers of wall",
+    "lines": [
+     "The full circuit of the Aurelian Walls runs for 19 km."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S16"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 298,
+    "title": "Diocletian's baths begin",
+    "lines": [
+     "Work starts in 298 on the largest of the imperial baths."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S15"
     ],
     "conf": "high"
    },
@@ -3747,9 +3864,7 @@
     "src": [
      "S76"
     ],
-    "conf": "high",
-    "target": "St Peter's Basilica",
-    "shot": "wide"
+    "conf": "high"
    },
    {
     "y": 1309,
@@ -4105,6 +4220,18 @@
     "hold_s": 4.8,
     "src": [
      "S84"
+    ],
+    "conf": "high"
+   },
+   {
+    "y": 2025,
+    "title": "The Holy Door",
+    "lines": [
+     "Pope Francis opens the Holy Door of St. Peter's Basilica to begin the Holy Year."
+    ],
+    "hold_s": 4.8,
+    "src": [
+     "S85"
     ],
     "conf": "high"
    }
