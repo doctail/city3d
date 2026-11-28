@@ -1,6 +1,6 @@
 # QA copenhagen
 
-Generato da `python -m kit.qa` il 2026-11-27 23:36. Esito complessivo: **WARN**
+Generato da `python -m kit.qa` il 2026-11-28 00:26. Esito complessivo: **WARN**
 
 | Sezione | Esito |
 |---|---|
