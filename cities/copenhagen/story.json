@@ -7980,7 +7980,7 @@
    {
     "y0": 1167.0,
     "y1": 1169.0,
-    "dur": 8.0,
+    "dur": 12.0,
     "caption": "Absalon builds his castle (1167)",
     "shot": "medium",
     "target": "Absalon's Castle",
@@ -7991,7 +7991,7 @@
      "S01",
      "S03"
     ],
-    "note": "Target moved from Christiansborg (built 1928) to the new landmark Absalon's Castle (R2: monument must exist before its hover) regia 28/11: drone_d 650 m: apertura vicina al castello (a 1400 m era un punto in mezzo ai campi)",
+    "note": "Target moved from Christiansborg (built 1928) to the new landmark Absalon's Castle (R2: monument must exist before its hover) regia 28/11: drone_d 650 m: apertura vicina al castello (a 1400 m era un punto in mezzo ai campi) regia 28/11: dur 12 s (prima 8) per non lasciare 12,7 s senza schede dopo aver tolto Valby/Brønshøj.",
     "drone_d": 540
    },
    {
@@ -8290,6 +8290,10 @@
    {
     "caption": "Royal Playhouse (2008)",
     "why": "regia 28/11: volo 2005->2007,8 sotto 0,4 anni/s (R2); resta il cartello \"The Royal Playhouse\" (Playhouse inquadrata dal volo)"
+   },
+   {
+    "caption": "Valby (1186), Brønshøj (1186)",
+    "why": "regia 28/11: villaggi a 3-5 km, camera bassa e quasi orizzontale con molto cielo nel tratto 22-34 s; nessun cartello esistente e sourced fra 1169 e 1254 su bersaglio centrale, quindi tolti (fonti S43, S44 restano in story.sources); il tratto e' coperto dai cartelli 1254 e 1303 sul centro."
    }
   ],
   "card_look": 2.0,
@@ -8328,32 +8332,6 @@
      "Absalon's Castle"
     ],
     "target": "Absalon's Castle"
-   },
-   {
-    "y": 1186.0,
-    "title": "Valby",
-    "lines": [
-     "The name Valby is first recorded in 1186, as Walbu."
-    ],
-    "hold_s": 5.4,
-    "src": [
-     "S43"
-    ],
-    "conf": "high",
-    "target": "area:[55.6650,12.5170,500]"
-   },
-   {
-    "y": 1186.8,
-    "title": "Brønshøj",
-    "lines": [
-     "The village of Brønshøj is first mentioned in a letter dated October 21, 1186."
-    ],
-    "hold_s": 5.4,
-    "src": [
-     "S44"
-    ],
-    "conf": "high",
-    "target": "area:[55.7125,12.5010,500]"
    },
    {
     "y": 1254.0,
