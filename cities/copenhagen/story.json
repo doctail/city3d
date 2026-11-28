@@ -611,6 +611,11 @@
    "url": "https://en.wikipedia.org/wiki/Christians_Brygge",
    "title": "Wikipedia: Christians Brygge",
    "quote": "Christians Brygge was built in connection with the filling of the Arsenal Dock in 1868 … where the Rysensteen Bastion of Copenhagen's old West Rampart had still not been removed … Christiansgade was extended when the Western Rampart was removed and connected to the new West Boulevard (now H. C. Andersens Boulevard) which was laid out in 1890"
+  },
+  "S58": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Copenhagen",
+   "title": "Wikipedia: History of Copenhagen (Absalon's town)",
+   "quote": "In a letter from 1186, Pope Urban III refers to the city as Hafn, but this is probably just a shortened version of the full name."
   }
  },
  "history": {
@@ -8332,6 +8337,23 @@
      "Absalon's Castle"
     ],
     "target": "Absalon's Castle"
+   },
+   {
+    "y": 1186.0,
+    "title": "Hafn in a papal letter",
+    "lines": [
+     "In a letter from 1186, Pope Urban III calls the town Hafn, probably a short form of its full name, Merchants' Harbor."
+    ],
+    "hold_s": 5.6,
+    "src": [
+     "S58"
+    ],
+    "conf": "high",
+    "labels": [
+     "Absalon's Castle"
+    ],
+    "target": "Absalon's Castle",
+    "note": "regia 28/11: scheda nuova per il volo 1169->1254 (prima 12 s senza schede). Fonte S58 (citazione letterale verificata nel testo scaricato di History of Copenhagen); Saxo/Portus Mercatorum non e' datato, quindi non usato come data."
    },
    {
     "y": 1254.0,

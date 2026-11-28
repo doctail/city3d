@@ -8,98 +8,98 @@
    "sub": "1167"
   },
   {
-   "t_in": 105.76,
-   "t_out": 112.76,
+   "t_in": 108.93,
+   "t_out": 115.93,
    "title": "University of Copenhagen",
    "sub": "1479"
   },
   {
-   "t_in": 147.87,
-   "t_out": 154.87,
+   "t_in": 150.06,
+   "t_out": 157.06,
    "title": "Rosenborg Castle",
    "sub": "1606"
   },
   {
-   "t_in": 173.95,
-   "t_out": 181.95,
+   "t_in": 176.08,
+   "t_out": 184.08,
    "title": "Børsen and its dragon spire",
    "sub": "1620-25"
   },
   {
-   "t_in": 200.73,
-   "t_out": 207.73,
+   "t_in": 202.82,
+   "t_out": 209.82,
    "title": "The Round Tower",
    "sub": "1637-42"
   },
   {
-   "t_in": 228.05,
-   "t_out": 235.05,
+   "t_in": 229.91,
+   "t_out": 236.91,
    "title": "Nyhavn is dug",
    "sub": "1670-75"
   },
   {
-   "t_in": 268.9,
-   "t_out": 280.9,
+   "t_in": 270.4,
+   "t_out": 282.4,
    "title": "The Great Fire",
    "sub": "20-23 October 1728"
   },
   {
-   "t_in": 306.69,
-   "t_out": 314.69,
+   "t_in": 308.02,
+   "t_out": 316.02,
    "title": "Frederiksstaden: Amalienborg",
    "sub": "1750-60"
   },
   {
-   "t_in": 334.07,
-   "t_out": 345.07,
+   "t_in": 335.32,
+   "t_out": 346.32,
    "title": "Christiansborg burns",
    "sub": "1794"
   },
   {
-   "t_in": 363.83,
-   "t_out": 375.83,
+   "t_in": 365.04,
+   "t_out": 377.04,
    "title": "British bombardment",
    "sub": "September 1807"
   },
   {
-   "t_in": 396.3,
-   "t_out": 402.3,
+   "t_in": 397.24,
+   "t_out": 403.24,
    "title": "Tivoli opens",
    "sub": "1843"
   },
   {
-   "t_in": 422.59,
-   "t_out": 428.59,
+   "t_in": 423.28,
+   "t_out": 429.28,
    "title": "Marble Church rebuilt",
    "sub": "1874-94"
   },
   {
-   "t_in": 458.18,
-   "t_out": 465.18,
+   "t_in": 458.77,
+   "t_out": 465.77,
    "title": "City Hall",
    "sub": "1892-1905"
   },
   {
-   "t_in": 492.21,
-   "t_out": 499.21,
+   "t_in": 492.69,
+   "t_out": 499.69,
    "title": "Christiansborg III and its tower",
    "sub": "1907-28"
   },
   {
-   "t_in": 541.57,
-   "t_out": 548.07,
+   "t_in": 541.79,
+   "t_out": 548.29,
    "title": "SAS Royal, the first skyscraper in Copenhagen",
    "sub": "1960"
   },
   {
-   "t_in": 567.71,
-   "t_out": 578.31,
+   "t_in": 567.84,
+   "t_out": 578.44,
    "title": "The Opera House",
    "sub": "2005"
   },
   {
-   "t_in": 601.24,
-   "t_out": 608.24,
+   "t_in": 601.25,
+   "t_out": 608.25,
    "title": "CopenHill",
    "sub": "2019"
   }
@@ -117,8 +117,18 @@
    "sober": false
   },
   {
-   "t_in": 37.17,
-   "t_out": 42.77,
+   "t_in": 27.22,
+   "t_out": 32.82,
+   "date": "1186",
+   "title": "Hafn in a papal letter",
+   "lines": [
+    "In a letter from 1186, Pope Urban III calls the town Hafn, probably a short form of its full name, Merchants' Harbor."
+   ],
+   "sober": false
+  },
+  {
+   "t_in": 42.11,
+   "t_out": 47.71,
    "date": "1254",
    "title": "A city charter",
    "lines": [
@@ -127,8 +137,8 @@
    "sober": false
   },
   {
-   "t_in": 49.85,
-   "t_out": 55.25,
+   "t_in": 54.4,
+   "t_out": 59.8,
    "date": "1303",
    "title": "København",
    "lines": [
@@ -137,8 +147,8 @@
    "sober": false
   },
   {
-   "t_in": 64.63,
-   "t_out": 70.23,
+   "t_in": 68.68,
+   "t_out": 74.28,
    "date": "1368",
    "title": "Hanseatic raid",
    "lines": [
@@ -147,8 +157,8 @@
    "sober": false
   },
   {
-   "t_in": 70.52,
-   "t_out": 76.12,
+   "t_in": 74.55,
+   "t_out": 80.15,
    "date": "1370",
    "title": "Castle destroyed",
    "lines": [
@@ -157,8 +167,8 @@
    "sober": false
   },
   {
-   "t_in": 80.02,
-   "t_out": 85.22,
+   "t_in": 83.84,
+   "t_out": 89.04,
    "date": "1397",
    "title": "The Kalmar Union",
    "lines": [
@@ -167,8 +177,8 @@
    "sober": false
   },
   {
-   "t_in": 87.96,
-   "t_out": 96.56,
+   "t_in": 91.63,
+   "t_out": 100.23,
    "date": "1416",
    "title": "Capital of Denmark",
    "lines": [
@@ -177,8 +187,8 @@
    "sober": false
   },
   {
-   "t_in": 105.76,
-   "t_out": 110.96,
+   "t_in": 108.93,
+   "t_out": 114.13,
    "date": "1479",
    "title": "A university",
    "lines": [
@@ -187,8 +197,8 @@
    "sober": false
   },
   {
-   "t_in": 119.05,
-   "t_out": 124.85,
+   "t_in": 121.88,
+   "t_out": 127.68,
    "date": "1523",
    "title": "The Kalmar Union ends",
    "lines": [
@@ -197,8 +207,8 @@
    "sober": false
   },
   {
-   "t_in": 126.8,
-   "t_out": 132.4,
+   "t_in": 129.53,
+   "t_out": 135.13,
    "date": "1536",
    "title": "A year-long siege",
    "lines": [
@@ -207,8 +217,8 @@
    "sober": false
   },
   {
-   "t_in": 132.47,
-   "t_out": 137.87,
+   "t_in": 135.2,
+   "t_out": 140.6,
    "date": "1537",
    "title": "Denmark and Norway",
    "lines": [
@@ -217,8 +227,8 @@
    "sober": false
   },
   {
-   "t_in": 147.87,
-   "t_out": 153.27,
+   "t_in": 150.06,
+   "t_out": 155.46,
    "date": "1606",
    "title": "Rosenborg Castle",
    "lines": [
@@ -227,8 +237,8 @@
    "sober": false
   },
   {
-   "t_in": 155.95,
-   "t_out": 161.55,
+   "t_in": 158.08,
+   "t_out": 163.68,
    "date": "1618",
    "title": "Bastions at Christianshavn",
    "lines": [
@@ -237,8 +247,8 @@
    "sober": false
   },
   {
-   "t_in": 161.7,
-   "t_out": 167.3,
+   "t_in": 163.82,
+   "t_out": 169.42,
    "date": "1619",
    "title": "The first bridge to Christianshavn",
    "lines": [
@@ -247,8 +257,8 @@
    "sober": false
   },
   {
-   "t_in": 173.95,
-   "t_out": 179.75,
+   "t_in": 176.08,
+   "t_out": 181.88,
    "date": "1620",
    "title": "Børsen",
    "lines": [
@@ -257,8 +267,8 @@
    "sober": false
   },
   {
-   "t_in": 182.73,
-   "t_out": 191.23,
+   "t_in": 184.82,
+   "t_out": 193.32,
    "date": "1631",
    "title": "Nyboder",
    "lines": [
@@ -267,8 +277,8 @@
    "sober": false
   },
   {
-   "t_in": 200.73,
-   "t_out": 206.13,
+   "t_in": 202.82,
+   "t_out": 208.22,
    "date": "1637",
    "title": "The Round Tower",
    "lines": [
@@ -277,8 +287,8 @@
    "sober": false
   },
   {
-   "t_in": 208.95,
-   "t_out": 213.95,
+   "t_in": 210.97,
+   "t_out": 215.97,
    "date": "1651",
    "title": "Frederiksberg",
    "lines": [
@@ -287,8 +297,8 @@
    "sober": false
   },
   {
-   "t_in": 215.12,
-   "t_out": 220.72,
+   "t_in": 217.08,
+   "t_out": 222.68,
    "date": "1659",
    "title": "The Swedish assault",
    "lines": [
@@ -297,8 +307,8 @@
    "sober": false
   },
   {
-   "t_in": 220.92,
-   "t_out": 226.52,
+   "t_in": 222.86,
+   "t_out": 228.46,
    "date": "1660",
    "title": "Absolute monarchy",
    "lines": [
@@ -307,8 +317,8 @@
    "sober": false
   },
   {
-   "t_in": 228.05,
-   "t_out": 233.35,
+   "t_in": 229.91,
+   "t_out": 235.21,
    "date": "1672",
    "title": "Nyhavn",
    "lines": [
@@ -317,8 +327,8 @@
    "sober": false
   },
   {
-   "t_in": 236.06,
-   "t_out": 241.06,
+   "t_in": 237.87,
+   "t_out": 242.87,
    "date": "1690",
    "title": "Holmen",
    "lines": [
@@ -327,8 +337,8 @@
    "sober": false
   },
   {
-   "t_in": 241.78,
-   "t_out": 247.38,
+   "t_in": 243.55,
+   "t_out": 249.15,
    "date": "1695",
    "title": "Church of Our Saviour",
    "lines": [
@@ -337,8 +347,8 @@
    "sober": false
   },
   {
-   "t_in": 248.1,
-   "t_out": 253.5,
+   "t_in": 249.83,
+   "t_out": 255.23,
    "date": "1700",
    "title": "Frederiksberg Palace",
    "lines": [
@@ -347,8 +357,8 @@
    "sober": false
   },
   {
-   "t_in": 255.16,
-   "t_out": 260.76,
+   "t_in": 256.8,
+   "t_out": 262.4,
    "date": "1711",
    "title": "The plague",
    "lines": [
@@ -357,8 +367,8 @@
    "sober": true
   },
   {
-   "t_in": 260.83,
-   "t_out": 266.43,
+   "t_in": 262.47,
+   "t_out": 268.07,
    "date": "1712",
    "title": "A new wooden bridge",
    "lines": [
@@ -367,8 +377,8 @@
    "sober": false
   },
   {
-   "t_in": 268.9,
-   "t_out": 274.7,
+   "t_in": 270.4,
+   "t_out": 276.2,
    "date": "1728",
    "title": "The Great Fire",
    "lines": [
@@ -377,8 +387,8 @@
    "sober": false
   },
   {
-   "t_in": 281.54,
-   "t_out": 287.14,
+   "t_in": 283.01,
+   "t_out": 288.61,
    "date": "1733",
    "title": "Christiansborg",
    "lines": [
@@ -387,8 +397,8 @@
    "sober": false
   },
   {
-   "t_in": 288.8,
-   "t_out": 294.6,
+   "t_in": 290.18,
+   "t_out": 295.98,
    "date": "1745",
    "title": "The largest palace in the north",
    "lines": [
@@ -397,8 +407,8 @@
    "sober": false
   },
   {
-   "t_in": 295.18,
-   "t_out": 300.58,
+   "t_in": 296.53,
+   "t_out": 301.93,
    "date": "1749",
    "title": "Kastrup",
    "lines": [
@@ -407,8 +417,8 @@
    "sober": false
   },
   {
-   "t_in": 300.94,
-   "t_out": 306.54,
+   "t_in": 302.27,
+   "t_out": 307.87,
    "date": "1751",
    "title": "A golden spiral",
    "lines": [
@@ -417,8 +427,8 @@
    "sober": false
   },
   {
-   "t_in": 306.69,
-   "t_out": 312.09,
+   "t_in": 308.02,
+   "t_out": 313.42,
    "date": "1752",
    "title": "Frederiksstaden",
    "lines": [
@@ -427,8 +437,8 @@
    "sober": false
   },
   {
-   "t_in": 316.07,
-   "t_out": 321.47,
+   "t_in": 317.32,
+   "t_out": 322.72,
    "date": "1770",
    "title": "Left unfinished",
    "lines": [
@@ -437,8 +447,8 @@
    "sober": false
   },
   {
-   "t_in": 324.21,
-   "t_out": 330.01,
+   "t_in": 325.31,
+   "t_out": 331.11,
    "date": "1789",
    "title": "Frederiksholm",
    "lines": [
@@ -447,8 +457,8 @@
    "sober": false
   },
   {
-   "t_in": 334.07,
-   "t_out": 339.47,
+   "t_in": 335.32,
+   "t_out": 340.72,
    "date": "1794",
    "title": "The palace burns",
    "lines": [
@@ -457,8 +467,8 @@
    "sober": false
   },
   {
-   "t_in": 339.47,
-   "t_out": 345.07,
+   "t_in": 340.72,
+   "t_out": 346.32,
    "date": "1795",
    "title": "The second fire",
    "lines": [
@@ -467,8 +477,8 @@
    "sober": false
   },
   {
-   "t_in": 345.83,
-   "t_out": 350.83,
+   "t_in": 347.04,
+   "t_out": 352.04,
    "date": "1801",
    "title": "100,975 residents",
    "lines": [
@@ -477,8 +487,8 @@
    "sober": false
   },
   {
-   "t_in": 350.87,
-   "t_out": 356.27,
+   "t_in": 352.07,
+   "t_out": 357.47,
    "date": "1801",
    "title": "Nelson at Copenhagen",
    "lines": [
@@ -487,8 +497,8 @@
    "sober": false
   },
   {
-   "t_in": 356.52,
-   "t_out": 361.92,
+   "t_in": 357.71,
+   "t_out": 363.11,
    "date": "1803",
    "title": "Christiansborg II begins",
    "lines": [
@@ -497,8 +507,8 @@
    "sober": false
   },
   {
-   "t_in": 363.83,
-   "t_out": 369.43,
+   "t_in": 365.04,
+   "t_out": 370.64,
    "date": "1807",
    "title": "British bombardment",
    "lines": [
@@ -507,8 +517,8 @@
    "sober": true
   },
   {
-   "t_in": 376.71,
-   "t_out": 382.11,
+   "t_in": 377.87,
+   "t_out": 383.27,
    "date": "1814",
    "title": "Norway is lost",
    "lines": [
@@ -517,8 +527,8 @@
    "sober": false
   },
   {
-   "t_in": 384.13,
-   "t_out": 389.13,
+   "t_in": 385.18,
+   "t_out": 390.18,
    "date": "1828",
    "title": "Christiansborg II is finished",
    "lines": [
@@ -527,8 +537,8 @@
    "sober": false
   },
   {
-   "t_in": 390.86,
-   "t_out": 395.86,
+   "t_in": 391.82,
+   "t_out": 396.82,
    "date": "1840",
    "title": "120,819 residents",
    "lines": [
@@ -537,8 +547,8 @@
    "sober": false
   },
   {
-   "t_in": 396.3,
-   "t_out": 401.3,
+   "t_in": 397.24,
+   "t_out": 402.24,
    "date": "1843",
    "title": "Tivoli Gardens",
    "lines": [
@@ -547,8 +557,8 @@
    "sober": false
   },
   {
-   "t_in": 402.94,
-   "t_out": 408.34,
+   "t_in": 403.84,
+   "t_out": 409.24,
    "date": "1849",
    "title": "A constitution",
    "lines": [
@@ -557,8 +567,8 @@
    "sober": false
   },
   {
-   "t_in": 408.71,
-   "t_out": 414.01,
+   "t_in": 409.6,
+   "t_out": 414.9,
    "date": "1852",
    "title": "The ramparts open",
    "lines": [
@@ -567,8 +577,8 @@
    "sober": false
   },
   {
-   "t_in": 416.76,
-   "t_out": 421.76,
+   "t_in": 417.49,
+   "t_out": 422.49,
    "date": "1871",
    "title": "Refshaleøen",
    "lines": [
@@ -577,8 +587,8 @@
    "sober": false
   },
   {
-   "t_in": 422.59,
-   "t_out": 427.99,
+   "t_in": 423.28,
+   "t_out": 428.68,
    "date": "1876",
    "title": "Work restarts",
    "lines": [
@@ -587,8 +597,8 @@
    "sober": false
   },
   {
-   "t_in": 429.06,
-   "t_out": 434.46,
+   "t_in": 429.72,
+   "t_out": 435.12,
    "date": "1884",
    "title": "It burns again",
    "lines": [
@@ -597,8 +607,8 @@
    "sober": false
   },
   {
-   "t_in": 434.64,
-   "t_out": 440.24,
+   "t_in": 435.3,
+   "t_out": 440.9,
    "date": "1886",
    "title": "Nørrebro and Vesterbro",
    "lines": [
@@ -607,8 +617,8 @@
    "sober": false
   },
   {
-   "t_in": 440.53,
-   "t_out": 446.13,
+   "t_in": 441.17,
+   "t_out": 446.77,
    "date": "1888",
    "title": "Ruins of Christiansborg",
    "lines": [
@@ -617,8 +627,8 @@
    "sober": false
   },
   {
-   "t_in": 446.42,
-   "t_out": 452.02,
+   "t_in": 447.04,
+   "t_out": 452.64,
    "date": "1890",
    "title": "H. C. Andersens Boulevard",
    "lines": [
@@ -627,8 +637,8 @@
    "sober": false
   },
   {
-   "t_in": 452.69,
-   "t_out": 458.09,
+   "t_in": 453.27,
+   "t_out": 458.67,
    "date": "1894",
    "title": "The dome",
    "lines": [
@@ -637,8 +647,8 @@
    "sober": false
   },
   {
-   "t_in": 458.18,
-   "t_out": 463.38,
+   "t_in": 458.77,
+   "t_out": 463.97,
    "date": "1901",
    "title": "A bigger city",
    "lines": [
@@ -647,8 +657,8 @@
    "sober": false
   },
   {
-   "t_in": 465.51,
-   "t_out": 470.91,
+   "t_in": 466.08,
+   "t_out": 471.48,
    "date": "1905",
    "title": "Housing on Islands Brygge",
    "lines": [
@@ -657,8 +667,8 @@
    "sober": false
   },
   {
-   "t_in": 470.97,
-   "t_out": 476.37,
+   "t_in": 471.53,
+   "t_out": 476.93,
    "date": "1905",
    "title": "City Hall",
    "lines": [
@@ -667,8 +677,8 @@
    "sober": false
   },
   {
-   "t_in": 476.56,
-   "t_out": 482.16,
+   "t_in": 477.11,
+   "t_out": 482.71,
    "date": "1907",
    "title": "Christiansborg III begins",
    "lines": [
@@ -677,8 +687,8 @@
    "sober": false
   },
   {
-   "t_in": 483.12,
-   "t_out": 491.62,
+   "t_in": 483.62,
+   "t_out": 492.12,
    "date": "1913",
    "title": "The Little Mermaid",
    "lines": [
@@ -687,8 +697,8 @@
    "sober": false
   },
   {
-   "t_in": 492.21,
-   "t_out": 497.61,
+   "t_in": 492.69,
+   "t_out": 498.09,
    "date": "1917",
    "title": "Christiansborg III",
    "lines": [
@@ -697,8 +707,8 @@
    "sober": false
   },
   {
-   "t_in": 499.72,
-   "t_out": 505.12,
+   "t_in": 500.16,
+   "t_out": 505.56,
    "date": "1929",
    "title": "Grundtvig Church",
    "lines": [
@@ -707,8 +717,8 @@
    "sober": false
   },
   {
-   "t_in": 505.7,
-   "t_out": 511.3,
+   "t_in": 506.11,
+   "t_out": 511.71,
    "date": "1933",
    "title": "Islands Brygge",
    "lines": [
@@ -717,8 +727,8 @@
    "sober": false
   },
   {
-   "t_in": 511.87,
-   "t_out": 516.87,
+   "t_in": 512.26,
+   "t_out": 517.26,
    "date": "1937",
    "title": "Knippelsbro",
    "lines": [
@@ -727,8 +737,8 @@
    "sober": false
   },
   {
-   "t_in": 517.34,
-   "t_out": 522.74,
+   "t_in": 517.7,
+   "t_out": 523.1,
    "date": "1940",
    "title": "Occupation",
    "lines": [
@@ -737,8 +747,8 @@
    "sober": true
   },
   {
-   "t_in": 523.23,
-   "t_out": 528.63,
+   "t_in": 523.56,
+   "t_out": 528.96,
    "date": "1943",
    "title": "Ships sunk in the harbor",
    "lines": [
@@ -747,8 +757,8 @@
    "sober": true
   },
   {
-   "t_in": 528.86,
-   "t_out": 534.66,
+   "t_in": 529.18,
+   "t_out": 534.98,
    "date": "1945",
    "title": "The Shellhus raid",
    "lines": [
@@ -757,8 +767,8 @@
    "sober": true
   },
   {
-   "t_in": 535.93,
-   "t_out": 540.93,
+   "t_in": 536.18,
+   "t_out": 541.18,
    "date": "1954",
    "title": "Langebro",
    "lines": [
@@ -767,8 +777,8 @@
    "sober": false
   },
   {
-   "t_in": 541.57,
-   "t_out": 546.97,
+   "t_in": 541.79,
+   "t_out": 547.19,
    "date": "1960",
    "title": "SAS Royal Hotel",
    "lines": [
@@ -777,8 +787,8 @@
    "sober": false
   },
   {
-   "t_in": 549.71,
-   "t_out": 555.11,
+   "t_in": 549.84,
+   "t_out": 555.24,
    "date": "1971",
    "title": "Christiania",
    "lines": [
@@ -787,8 +797,8 @@
    "sober": false
   },
   {
-   "t_in": 559.26,
-   "t_out": 565.06,
+   "t_in": 559.17,
+   "t_out": 564.97,
    "date": "2000",
    "title": "The Øresund Bridge",
    "lines": [
@@ -797,8 +807,8 @@
    "sober": false
   },
   {
-   "t_in": 567.71,
-   "t_out": 573.11,
+   "t_in": 567.84,
+   "t_out": 573.24,
    "date": "2005",
    "title": "The Opera House",
    "lines": [
@@ -807,8 +817,8 @@
    "sober": false
   },
   {
-   "t_in": 573.11,
-   "t_out": 578.31,
+   "t_in": 573.24,
+   "t_out": 578.44,
    "date": "2006",
    "title": "Bryggebroen",
    "lines": [
@@ -817,8 +827,8 @@
    "sober": false
   },
   {
-   "t_in": 578.7,
-   "t_out": 583.7,
+   "t_in": 578.81,
+   "t_out": 583.81,
    "date": "2008",
    "title": "The Royal Playhouse",
    "lines": [
@@ -827,8 +837,8 @@
    "sober": false
   },
   {
-   "t_in": 584.64,
-   "t_out": 590.04,
+   "t_in": 584.69,
+   "t_out": 590.09,
    "date": "2014",
    "title": "Cykelslangen",
    "lines": [
@@ -837,8 +847,8 @@
    "sober": false
   },
   {
-   "t_in": 590.33,
-   "t_out": 595.53,
+   "t_in": 590.37,
+   "t_out": 595.57,
    "date": "2016",
    "title": "Inderhavnsbroen",
    "lines": [
@@ -847,8 +857,8 @@
    "sober": false
   },
   {
-   "t_in": 595.89,
-   "t_out": 601.09,
+   "t_in": 595.91,
+   "t_out": 601.11,
    "date": "2019",
    "title": "Lille Langebro",
    "lines": [
@@ -857,8 +867,8 @@
    "sober": false
   },
   {
-   "t_in": 601.24,
-   "t_out": 606.64,
+   "t_in": 601.25,
+   "t_out": 606.65,
    "date": "2019",
    "title": "CopenHill",
    "lines": [
@@ -887,8 +897,8 @@
    "sober": false
   },
   {
-   "t_in": 622.57,
-   "t_out": 631.07,
+   "t_in": 622.55,
+   "t_out": 631.05,
    "date": "2025",
    "title": "667,099 residents",
    "lines": [
@@ -897,8 +907,8 @@
    "sober": false
   },
   {
-   "t_in": 631.13,
-   "t_out": 639.63,
+   "t_in": 631.1,
+   "t_out": 639.6,
    "date": "2025",
    "title": "1.4 million in the urban area",
    "lines": [
@@ -925,56 +935,56 @@
    "title": "Absalon's Havn"
   },
   {
-   "t_in": 85.22,
-   "t_out": 87.96,
+   "t_in": 89.04,
+   "t_out": 91.63,
    "num": "II",
    "title": "Royal Capital"
   },
   {
-   "t_in": 124.85,
-   "t_out": 126.8,
+   "t_in": 127.68,
+   "t_out": 129.53,
    "num": "III",
    "title": "Reformation and Renaissance"
   },
   {
-   "t_in": 213.92,
-   "t_out": 215.12,
+   "t_in": 215.88,
+   "t_out": 217.08,
    "num": "IV",
    "title": "Siege and Absolutism"
   },
   {
-   "t_in": 266.43,
-   "t_out": 268.9,
+   "t_in": 268.07,
+   "t_out": 270.4,
    "num": "V",
    "title": "Fire and Rebuilding"
   },
   {
-   "t_in": 349.67,
-   "t_out": 350.87,
+   "t_in": 350.87,
+   "t_out": 352.07,
    "num": "VI",
    "title": "War with Britain"
   },
   {
-   "t_in": 401.3,
-   "t_out": 402.94,
+   "t_in": 402.24,
+   "t_out": 403.84,
    "num": "VII",
    "title": "Constitution and Ramparts"
   },
   {
-   "t_in": 456.98,
-   "t_out": 458.18,
+   "t_in": 457.57,
+   "t_out": 458.77,
    "num": "VIII",
    "title": "Modern Capital"
   },
   {
-   "t_in": 516.14,
-   "t_out": 517.34,
+   "t_in": 516.5,
+   "t_out": 517.7,
    "num": "IX",
    "title": "War and Occupation"
   },
   {
-   "t_in": 546.97,
-   "t_out": 549.71,
+   "t_in": 547.19,
+   "t_out": 549.84,
    "num": "X",
    "title": "Harbor and Bridge"
   }

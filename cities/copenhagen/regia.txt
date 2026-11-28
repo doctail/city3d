@@ -1,5 +1,5 @@
 Copenhagen: regia automatica (kit/regia_kit.py)
-Camera drone: 17 tappe in hover (141.1 s) e voli (491.0 s), anni 6.93/s fra le voci, nessuno stacco; vmax 222.85, amax 122.21, jmax 82.11, clear_min 219.64, clear_ground_min 219.64
+Camera drone: 17 tappe in hover (141.1 s) e voli (491.0 s), anni 7.32/s fra le voci, nessuno stacco; vmax 223.58, amax 122.61, jmax 82.29, clear_min 219.64, clear_ground_min 219.64
 Durata 11:00.0  fotogrammi 15840  inquadrature 3  stacco medio ogni 220.0 s
 Musica: waking_monument  b_start None  notte 645.0
 
@@ -12,117 +12,118 @@ ANCORE (video -> anno):
 SOSTE (video -> anni):
   0:12.9-0:24.9  1167.0->1169.0  Absalon builds his castle (1167)  [forza 5.5, stone]
   0:12.9-0:18.7  1167.3->1167.3  Bishop Absalon's castle  [forza 0.0]
-  0:37.2-0:42.8  1254.0->1254.0  A city charter  [forza 0.0]
-  0:49.8-0:55.2  1303.0->1303.0  København  [forza 0.0]
-  1:04.6-1:10.2  1368.0->1368.0  Hanseatic raid  [forza 0.0]
-  1:10.5-1:16.1  1370.0->1370.0  Castle destroyed  [forza 0.0]
-  1:20.0-1:25.2  1397.0->1397.0  The Kalmar Union  [forza 0.0]
-  1:28.0-1:36.6  1416.0->1416.0  Capital of Denmark  [forza 0.0]
-  1:45.8-1:52.8  1479.4->1479.4  University of Copenhagen (1479)  [forza 4.2, stone]
-  1:45.8-1:51.0  1479.4->1479.4  A university  [forza 0.0]
-  1:59.0-2:04.8  1523.0->1523.0  The Kalmar Union ends  [forza 0.0]
-  2:06.8-2:12.4  1536.5->1536.5  A year-long siege  [forza 0.0]
-  2:12.5-2:17.9  1537.0->1537.0  Denmark and Norway  [forza 0.0]
-  2:27.9-2:34.9  1606.0->1610.5  Rosenborg Castle (1606)  [forza 4.2, build]
-  2:27.9-2:33.3  1606.0->1606.0  Rosenborg Castle  [forza 0.0]
-  2:36.0-2:41.6  1618.0->1618.0  Bastions at Christianshavn  [forza 0.0]
-  2:41.7-2:47.3  1619.0->1619.0  The first bridge to Christianshavn  [forza 0.0]
-  2:54.0-3:02.0  1620.0->1625.6  Børsen and its dragon spire (1620-25)  [forza 4.5, hammer]
-  2:54.0-2:59.8  1620.0->1620.0  Børsen  [forza 0.0]
-  3:02.7-3:11.2  1631.0->1631.0  Nyboder  [forza 0.0]
-  3:20.7-3:27.7  1636.8->1642.6  The Round Tower (1637-42)  [forza 4.2, build]
-  3:20.7-3:26.1  1637.5->1637.5  The Round Tower  [forza 0.0]
-  3:28.9-3:33.9  1651.0->1651.0  Frederiksberg  [forza 0.0]
-  3:35.1-3:40.7  1659.1->1659.1  The Swedish assault  [forza 0.0]
-  3:40.9-3:46.5  1660.5->1660.5  Absolute monarchy  [forza 0.0]
-  3:48.0-3:55.0  1670.8->1683.0  Nyhavn is dug (1670-75)  [forza 4.2, water]
-  3:48.0-3:53.3  1672.0->1672.0  Nyhavn  [forza 0.0]
-  3:56.1-4:01.1  1690.0->1690.0  Holmen  [forza 0.0]
-  4:01.8-4:07.4  1695.0->1695.0  Church of Our Saviour  [forza 0.0]
-  4:08.1-4:13.5  1700.0->1700.0  Frederiksberg Palace  [forza 0.0]
-  4:15.2-4:20.8  1711.5->1711.5  The plague  [forza 0.0]
-  4:20.8-4:26.4  1712.0->1712.0  A new wooden bridge  [forza 0.0]
-  4:28.9-4:40.9  1728.8->1729.0  The Great Fire (20-23 October 1728)  [forza 9.5, fire]
-  4:28.9-4:34.7  1728.8->1728.8  The Great Fire  [forza 0.0]
-  4:41.5-4:47.1  1733.5->1733.5  Christiansborg  [forza 0.0]
-  4:48.8-4:54.6  1745.0->1745.0  The largest palace in the north  [forza 0.0]
-  4:55.2-5:00.6  1749.0->1749.0  Kastrup  [forza 0.0]
-  5:00.9-5:06.5  1751.5->1751.5  A golden spiral  [forza 0.0]
-  5:06.7-5:14.7  1752.3->1760.5  Frederiksstaden: Amalienborg (1750-60)  [forza 4.5, stone]
-  5:06.7-5:12.1  1752.4->1752.4  Frederiksstaden  [forza 0.0]
-  5:16.1-5:21.5  1770.0->1770.0  Left unfinished  [forza 0.0]
-  5:24.2-5:30.0  1789.0->1789.0  Frederiksholm  [forza 0.0]
-  5:34.1-5:45.1  1794.1->1795.7  Christiansborg burns (1794)  [forza 8.0, fire]
-  5:34.1-5:39.5  1794.2->1794.2  The palace burns  [forza 0.0]
-  5:39.5-5:45.1  1795.4->1795.4  The second fire  [forza 0.0]
-  5:45.8-5:50.8  1801.0->1801.0  100,975 residents  [forza 0.0]
-  5:50.9-5:56.3  1801.2->1801.2  Nelson at Copenhagen  [forza 0.0]
-  5:56.5-6:01.9  1803.0->1803.0  Christiansborg II begins  [forza 0.0]
-  6:03.8-6:15.8  1807.7->1808.0  British bombardment (September 1807)  [forza 9.5, boom]
-  6:03.8-6:09.4  1807.7->1807.7  British bombardment  [forza 0.0]
-  6:16.7-6:22.1  1814.0->1814.0  Norway is lost  [forza 0.0]
-  6:24.1-6:29.1  1828.0->1828.0  Christiansborg II is finished  [forza 0.0]
-  6:30.9-6:35.9  1840.0->1840.0  120,819 residents  [forza 0.0]
-  6:36.3-6:42.3  1842.8->1845.0  Tivoli opens (1843)  [forza 6.0, crowd]
-  6:36.3-6:41.3  1843.6->1843.6  Tivoli Gardens  [forza 0.0]
-  6:42.9-6:48.3  1849.4->1849.4  A constitution  [forza 0.0]
-  6:48.7-6:54.0  1852.0->1852.0  The ramparts open  [forza 0.0]
-  6:56.8-7:01.8  1871.0->1871.0  Refshaleøen  [forza 0.0]
-  7:02.6-7:08.6  1876.5->1881.5  Marble Church rebuilt (1874-94)  [forza 4.0, build]
-  7:02.6-7:08.0  1876.5->1876.5  Work restarts  [forza 0.0]
-  7:09.1-7:14.5  1884.7->1884.7  It burns again  [forza 0.0]
-  7:14.6-7:20.2  1886.0->1886.0  Nørrebro and Vesterbro  [forza 0.0]
-  7:20.5-7:26.1  1888.0->1888.0  Ruins of Christiansborg  [forza 0.0]
-  7:26.4-7:32.0  1890.0->1890.0  H. C. Andersens Boulevard  [forza 0.0]
-  7:32.7-7:38.1  1894.6->1894.6  The dome  [forza 0.0]
-  7:38.2-7:45.2  1895.0->1903.0  City Hall (1892-1905)  [forza 5.2, bell]
-  7:38.2-7:43.4  1901.0->1901.0  A bigger city  [forza 0.0]
-  7:45.5-7:50.9  1905.3->1905.3  Housing on Islands Brygge  [forza 0.0]
-  7:51.0-7:56.4  1905.7->1905.7  City Hall  [forza 0.0]
-  7:56.6-8:02.2  1907.0->1907.0  Christiansborg III begins  [forza 0.0]
-  8:03.1-8:11.6  1913.6->1913.6  The Little Mermaid  [forza 0.0]
-  8:12.2-8:19.2  1917.5->1925.5  Christiansborg III and its tower (1907-28)  [forza 4.2, build]
-  8:12.2-8:17.6  1917.5->1917.5  Christiansborg III  [forza 0.0]
-  8:19.7-8:25.1  1929.0->1929.0  Grundtvig Church  [forza 0.0]
-  8:25.7-8:31.3  1933.0->1933.0  Islands Brygge  [forza 0.0]
-  8:31.9-8:36.9  1937.0->1937.0  Knippelsbro  [forza 0.0]
-  8:37.3-8:42.7  1940.3->1940.3  Occupation  [forza 0.0]
-  8:43.2-8:48.6  1943.7->1943.7  Ships sunk in the harbor  [forza 0.0]
-  8:48.9-8:54.7  1945.2->1945.2  The Shellhus raid  [forza 0.0]
-  8:55.9-9:00.9  1954.0->1954.0  Langebro  [forza 0.0]
-  9:01.6-9:08.1  1958.2->1960.4  SAS Royal, the first skyscraper in Copenhagen (1960)  [forza 4.1, build]
-  9:01.6-9:07.0  1960.5->1960.5  SAS Royal Hotel  [forza 0.0]
-  9:09.7-9:15.1  1971.7->1971.7  Christiania  [forza 0.0]
-  9:19.3-9:25.1  2000.5->2000.5  The Øresund Bridge  [forza 0.0]
-  9:27.7-9:38.3  2005.0->2005.3  The Opera House (2005)  [forza 4.0, chime]
-  9:27.7-9:33.1  2005.0->2005.0  The Opera House  [forza 0.0]
-  9:33.1-9:38.3  2006.7->2006.7  Bryggebroen  [forza 0.0]
-  9:38.7-9:43.7  2008.0->2008.0  The Royal Playhouse  [forza 0.0]
-  9:44.6-9:50.0  2014.5->2014.5  Cykelslangen  [forza 0.0]
-  9:50.3-9:55.5  2016.5->2016.5  Inderhavnsbroen  [forza 0.0]
+  0:27.2-0:32.8  1186.0->1186.0  Hafn in a papal letter  [forza 0.0]
+  0:42.1-0:47.7  1254.0->1254.0  A city charter  [forza 0.0]
+  0:54.4-0:59.8  1303.0->1303.0  København  [forza 0.0]
+  1:08.7-1:14.3  1368.0->1368.0  Hanseatic raid  [forza 0.0]
+  1:14.5-1:20.1  1370.0->1370.0  Castle destroyed  [forza 0.0]
+  1:23.8-1:29.0  1397.0->1397.0  The Kalmar Union  [forza 0.0]
+  1:31.6-1:40.2  1416.0->1416.0  Capital of Denmark  [forza 0.0]
+  1:48.9-1:55.9  1479.4->1479.4  University of Copenhagen (1479)  [forza 4.2, stone]
+  1:48.9-1:54.1  1479.4->1479.4  A university  [forza 0.0]
+  2:01.9-2:07.7  1523.0->1523.0  The Kalmar Union ends  [forza 0.0]
+  2:09.5-2:15.1  1536.5->1536.5  A year-long siege  [forza 0.0]
+  2:15.2-2:20.6  1537.0->1537.0  Denmark and Norway  [forza 0.0]
+  2:30.1-2:37.1  1606.0->1610.5  Rosenborg Castle (1606)  [forza 4.2, build]
+  2:30.1-2:35.5  1606.0->1606.0  Rosenborg Castle  [forza 0.0]
+  2:38.1-2:43.7  1618.0->1618.0  Bastions at Christianshavn  [forza 0.0]
+  2:43.8-2:49.4  1619.0->1619.0  The first bridge to Christianshavn  [forza 0.0]
+  2:56.1-3:04.1  1620.0->1625.6  Børsen and its dragon spire (1620-25)  [forza 4.5, hammer]
+  2:56.1-3:01.9  1620.0->1620.0  Børsen  [forza 0.0]
+  3:04.8-3:13.3  1631.0->1631.0  Nyboder  [forza 0.0]
+  3:22.8-3:29.8  1636.8->1642.6  The Round Tower (1637-42)  [forza 4.2, build]
+  3:22.8-3:28.2  1637.5->1637.5  The Round Tower  [forza 0.0]
+  3:31.0-3:36.0  1651.0->1651.0  Frederiksberg  [forza 0.0]
+  3:37.1-3:42.7  1659.1->1659.1  The Swedish assault  [forza 0.0]
+  3:42.9-3:48.5  1660.5->1660.5  Absolute monarchy  [forza 0.0]
+  3:49.9-3:56.9  1670.8->1683.0  Nyhavn is dug (1670-75)  [forza 4.2, water]
+  3:49.9-3:55.2  1672.0->1672.0  Nyhavn  [forza 0.0]
+  3:57.9-4:02.9  1690.0->1690.0  Holmen  [forza 0.0]
+  4:03.5-4:09.1  1695.0->1695.0  Church of Our Saviour  [forza 0.0]
+  4:09.8-4:15.2  1700.0->1700.0  Frederiksberg Palace  [forza 0.0]
+  4:16.8-4:22.4  1711.5->1711.5  The plague  [forza 0.0]
+  4:22.5-4:28.1  1712.0->1712.0  A new wooden bridge  [forza 0.0]
+  4:30.4-4:42.4  1728.8->1729.0  The Great Fire (20-23 October 1728)  [forza 9.5, fire]
+  4:30.4-4:36.2  1728.8->1728.8  The Great Fire  [forza 0.0]
+  4:43.0-4:48.6  1733.5->1733.5  Christiansborg  [forza 0.0]
+  4:50.2-4:56.0  1745.0->1745.0  The largest palace in the north  [forza 0.0]
+  4:56.5-5:01.9  1749.0->1749.0  Kastrup  [forza 0.0]
+  5:02.3-5:07.9  1751.5->1751.5  A golden spiral  [forza 0.0]
+  5:08.0-5:16.0  1752.3->1760.5  Frederiksstaden: Amalienborg (1750-60)  [forza 4.5, stone]
+  5:08.0-5:13.4  1752.4->1752.4  Frederiksstaden  [forza 0.0]
+  5:17.3-5:22.7  1770.0->1770.0  Left unfinished  [forza 0.0]
+  5:25.3-5:31.1  1789.0->1789.0  Frederiksholm  [forza 0.0]
+  5:35.3-5:46.3  1794.1->1795.7  Christiansborg burns (1794)  [forza 8.0, fire]
+  5:35.3-5:40.7  1794.2->1794.2  The palace burns  [forza 0.0]
+  5:40.7-5:46.3  1795.4->1795.4  The second fire  [forza 0.0]
+  5:47.0-5:52.0  1801.0->1801.0  100,975 residents  [forza 0.0]
+  5:52.1-5:57.5  1801.2->1801.2  Nelson at Copenhagen  [forza 0.0]
+  5:57.7-6:03.1  1803.0->1803.0  Christiansborg II begins  [forza 0.0]
+  6:05.0-6:17.0  1807.7->1808.0  British bombardment (September 1807)  [forza 9.5, boom]
+  6:05.0-6:10.6  1807.7->1807.7  British bombardment  [forza 0.0]
+  6:17.9-6:23.3  1814.0->1814.0  Norway is lost  [forza 0.0]
+  6:25.2-6:30.2  1828.0->1828.0  Christiansborg II is finished  [forza 0.0]
+  6:31.8-6:36.8  1840.0->1840.0  120,819 residents  [forza 0.0]
+  6:37.2-6:43.2  1842.8->1845.0  Tivoli opens (1843)  [forza 6.0, crowd]
+  6:37.2-6:42.2  1843.6->1843.6  Tivoli Gardens  [forza 0.0]
+  6:43.8-6:49.2  1849.4->1849.4  A constitution  [forza 0.0]
+  6:49.6-6:54.9  1852.0->1852.0  The ramparts open  [forza 0.0]
+  6:57.5-7:02.5  1871.0->1871.0  Refshaleøen  [forza 0.0]
+  7:03.3-7:09.3  1876.5->1881.5  Marble Church rebuilt (1874-94)  [forza 4.0, build]
+  7:03.3-7:08.7  1876.5->1876.5  Work restarts  [forza 0.0]
+  7:09.7-7:15.1  1884.7->1884.7  It burns again  [forza 0.0]
+  7:15.3-7:20.9  1886.0->1886.0  Nørrebro and Vesterbro  [forza 0.0]
+  7:21.2-7:26.8  1888.0->1888.0  Ruins of Christiansborg  [forza 0.0]
+  7:27.0-7:32.6  1890.0->1890.0  H. C. Andersens Boulevard  [forza 0.0]
+  7:33.3-7:38.7  1894.6->1894.6  The dome  [forza 0.0]
+  7:38.8-7:45.8  1895.0->1903.0  City Hall (1892-1905)  [forza 5.2, bell]
+  7:38.8-7:44.0  1901.0->1901.0  A bigger city  [forza 0.0]
+  7:46.1-7:51.5  1905.3->1905.3  Housing on Islands Brygge  [forza 0.0]
+  7:51.5-7:56.9  1905.7->1905.7  City Hall  [forza 0.0]
+  7:57.1-8:02.7  1907.0->1907.0  Christiansborg III begins  [forza 0.0]
+  8:03.6-8:12.1  1913.6->1913.6  The Little Mermaid  [forza 0.0]
+  8:12.7-8:19.7  1917.5->1925.5  Christiansborg III and its tower (1907-28)  [forza 4.2, build]
+  8:12.7-8:18.1  1917.5->1917.5  Christiansborg III  [forza 0.0]
+  8:20.2-8:25.6  1929.0->1929.0  Grundtvig Church  [forza 0.0]
+  8:26.1-8:31.7  1933.0->1933.0  Islands Brygge  [forza 0.0]
+  8:32.3-8:37.3  1937.0->1937.0  Knippelsbro  [forza 0.0]
+  8:37.7-8:43.1  1940.3->1940.3  Occupation  [forza 0.0]
+  8:43.6-8:49.0  1943.7->1943.7  Ships sunk in the harbor  [forza 0.0]
+  8:49.2-8:55.0  1945.2->1945.2  The Shellhus raid  [forza 0.0]
+  8:56.2-9:01.2  1954.0->1954.0  Langebro  [forza 0.0]
+  9:01.8-9:08.3  1958.2->1960.4  SAS Royal, the first skyscraper in Copenhagen (1960)  [forza 4.1, build]
+  9:01.8-9:07.2  1960.5->1960.5  SAS Royal Hotel  [forza 0.0]
+  9:09.8-9:15.2  1971.7->1971.7  Christiania  [forza 0.0]
+  9:19.2-9:25.0  2000.5->2000.5  The Øresund Bridge  [forza 0.0]
+  9:27.8-9:38.4  2005.0->2005.3  The Opera House (2005)  [forza 4.0, chime]
+  9:27.8-9:33.2  2005.0->2005.0  The Opera House  [forza 0.0]
+  9:33.2-9:38.4  2006.7->2006.7  Bryggebroen  [forza 0.0]
+  9:38.8-9:43.8  2008.0->2008.0  The Royal Playhouse  [forza 0.0]
+  9:44.7-9:50.1  2014.5->2014.5  Cykelslangen  [forza 0.0]
+  9:50.4-9:55.6  2016.5->2016.5  Inderhavnsbroen  [forza 0.0]
   9:55.9-10:01.1  2019.0->2019.0  Lille Langebro  [forza 0.0]
-  10:01.2-10:08.2  2019.8->2019.9  CopenHill (2019)  [forza 6.2, crowd]
-  10:01.2-10:06.6  2019.8->2019.8  CopenHill  [forza 0.0]
+  10:01.3-10:08.3  2019.8->2019.9  CopenHill (2019)  [forza 6.2, crowd]
+  10:01.3-10:06.7  2019.8->2019.8  CopenHill  [forza 0.0]
   10:08.5-10:13.6  2022.0->2022.0  Swimming in the harbor  [forza 0.0]
   10:13.6-10:22.1  2022.0->2022.0  644,431 residents  [forza 0.0]
-  10:22.6-10:31.1  2025.0->2025.0  667,099 residents  [forza 0.0]
+  10:22.5-10:31.0  2025.0->2025.0  667,099 residents  [forza 0.0]
   10:31.1-10:39.6  2025.4->2025.4  1.4 million in the urban area  [forza 0.0]
 
 ANNO OGNI 30 s:
   0:00   2026.0  (0.00 anni/s)
-  0:30   1204.3  (6.93 anni/s)
-  1:00   1335.9  (6.93 anni/s)
-  1:30   1416.0  (0.00 anni/s)
-  2:00   1523.0  (0.00 anni/s)
-  2:30   1607.4  (0.64 anni/s)
-  3:00   1624.2  (0.70 anni/s)
-  3:30   1651.0  (0.00 anni/s)
+  0:30   1186.0  (0.00 anni/s)
+  1:00   1304.5  (6.59 anni/s)
+  1:30   1404.1  (7.32 anni/s)
+  2:00   1509.2  (7.32 anni/s)
+  2:30   1605.6  (4.74 anni/s)
+  3:00   1622.7  (0.70 anni/s)
+  3:30   1643.9  (6.41 anni/s)
   4:00   1690.0  (0.00 anni/s)
-  4:30   1728.8  (0.02 anni/s)
+  4:30   1725.9  (7.20 anni/s)
   5:00   1749.0  (0.00 anni/s)
-  5:30   1789.0  (0.61 anni/s)
+  5:30   1789.0  (0.00 anni/s)
   6:00   1803.0  (0.00 anni/s)
-  6:30   1834.1  (6.92 anni/s)
+  6:30   1828.0  (1.04 anni/s)
   7:00   1871.0  (0.00 anni/s)
   7:30   1890.0  (0.00 anni/s)
   8:00   1907.0  (0.00 anni/s)
@@ -132,10 +133,10 @@ ANNO OGNI 30 s:
   10:00   2019.0  (0.00 anni/s)
   10:30   2025.0  (0.00 anni/s)
 
-Velocita fuori dalle soste: mediana 6.92 anni/s, max 6.9 anni/s
-Soste: 97, 593 s (93% del giorno)
+Velocita fuori dalle soste: mediana 7.32 anni/s, max 7.3 anni/s
+Soste: 98, 599 s (94% del giorno)
 
 AVVISI:
   - cartello fuori dagli anni del video, tolto: Copenhagen (2026.0)
-  - durata naturale 765 s > max_duration 660 s: tolgo le soste a peso minimo
-  - drone: accelerazione massima 122 m/s2 oltre 120
+  - durata naturale 770 s > max_duration 660 s: tolgo le soste a peso minimo
+  - drone: accelerazione massima 123 m/s2 oltre 120
