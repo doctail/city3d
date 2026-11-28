@@ -142,7 +142,7 @@ def check_story(story, R):
             for p in pts:
                 if not (isinstance(p, (list, tuple)) and len(p) >= 2): badring.append(label); break
                 x, y = P.L(p[0], p[1])
-                if math.hypot(x, y) > rad and not it.get('outside_core'): far.append(f'{label} ({p[0]:.4f},{p[1]:.4f})'); break
+                if math.hypot(x, y) > rad: far.append(f'{label} ({p[0]:.4f},{p[1]:.4f})'); break
     H = story.get('history', {}) or {}
     for kind, items in H.items():
         for i, it in enumerate(items or []):
