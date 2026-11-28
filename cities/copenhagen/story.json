@@ -616,10 +616,79 @@
    "url": "https://en.wikipedia.org/wiki/History_of_Copenhagen",
    "title": "Wikipedia: History of Copenhagen (Absalon's town)",
    "quote": "In a letter from 1186, Pope Urban III refers to the city as Hafn, but this is probably just a shortened version of the full name."
+  },
+  "S59": {
+   "url": "https://en.wikipedia.org/wiki/Copenhagen",
+   "title": "Wikipedia: Copenhagen (lead)",
+   "quote": "Settled as a Viking fishing village in the 10th century in the vicinity of what is now Gammel Strand"
+  },
+  "S60": {
+   "url": "https://en.wikipedia.org/wiki/History_of_Copenhagen",
+   "title": "Wikipedia: History of Copenhagen (First settlements)",
+   "quote": "The city probably had a harbour located at present day Højbro Plads. … another smaller settlement at what is now Kongens Nytorv"
   }
  },
  "history": {
   "zones": [
+   {
+    "name": "Havn, fishing village and landing place",
+    "ring": [
+     [
+      55.677547,
+      12.579452
+     ],
+     [
+      55.677186,
+      12.580057
+     ],
+     [
+      55.677276,
+      12.580886
+     ],
+     [
+      55.677023,
+      12.581841
+     ],
+     [
+      55.676806,
+      12.582877
+     ],
+     [
+      55.677186,
+      12.583275
+     ],
+     [
+      55.677774,
+      12.582638
+     ],
+     [
+      55.678271,
+      12.581364
+     ],
+     [
+      55.678181,
+      12.57977
+     ]
+    ],
+    "born": [
+     1100,
+     1167
+    ],
+    "seed": null,
+    "era_height": [
+     [
+      1000,
+      3,
+      5
+     ]
+    ],
+    "src": [
+     "S59",
+     "S60"
+    ],
+    "conf": "low",
+    "note": "stima per forma e dimensione: le fonti dicono solo \"vicinity of Gammel Strand\" (S59) e porto a Hojbro Plads (S60); anello piccolo sulla riva nord del canale di Slotsholmen, abitato gia' in piedi al 1167"
+   },
    {
     "name": "Medieval city, band to 250 m",
     "ring": [
@@ -689,7 +758,7 @@
      ]
     ],
     "born": [
-     1185,
+     1167,
      1250
     ],
     "seed": [
@@ -724,10 +793,11 @@
      ]
     ],
     "src": [
-     "S01"
+     "S01",
+     "S60"
     ],
     "conf": "low",
-    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; ancore: Havn 1167, carta di citta 1254 (S01)"
+    "note": "stima: curva di urbanizzazione calibrata sul 10o percentile degli anni BBR per cella (hist_copenhagen.py), non da fonte; la prima citta' (XI secolo) aveva due insediamenti, uno a ovest (Vestergade, Gammeltorv/Nytorv) e uno a Kongens Nytorv (S60): nascita spostata al 1167; la zona Havn (fishing village) ha la precedenza dove si sovrappongono; ancore: carta di citta 1254 (S01)"
    },
    {
     "name": "Medieval city, band to 450 m",
