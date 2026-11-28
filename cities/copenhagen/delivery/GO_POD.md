@@ -1,6 +1,6 @@
 # Copenaghen: GO POD (BOZZA, NON dato). Il GO lo da' la chat dopo l'ok del proprietario sui 6 fotogrammi (`cities/copenhagen/delivery/foglio6/`). Un solo messaggio da incollare.
 
-Commit di render: `e9a799f` (branch `yb/copenhagen-go`, regia e navi nuove; va unito a `main` PRIMA del GO, il pod scarica main). Sostituire l'hash con quello del merge se cambia.
+Commit di render: `efb1ab3` (branch `yb/copenhagen-go`, regia e navi nuove; va unito a `main` PRIMA del GO, il pod scarica main). Sostituire l'hash con quello del merge se cambia.
 Schedule: 660 s, 15.840 fotogrammi (nomi %05d), notte dal fotogramma 15.481 (giorno fino a 15.721, notte 15.601-15.840), lens 32, 17 soste in hover, 131.817 edifici al 2026.
 Il pod usa `hist_kit` (story) tramite `cities/copenhagen/qa/fix/restore_after_build.sh`: `hist_copenhagen.py` e `data_copenhagen_src` NON cambiano.
 
@@ -18,8 +18,8 @@ nvidia-smi --query-gpu=name --format=csv,noheader | grep -q A40 && [ "$CU" = "0"
 [ -d city3d ] || git clone -q https://github.com/doctail/city3d
 cd city3d && git fetch -q origin && git checkout -q main && git pull -q --ff-only
 git log -1 --oneline
-git merge-base --is-ancestor e9a799f HEAD || { echo "STOP: manca il commit e9a799f (codice vecchio)."; exit 3; }
-git diff --quiet e9a799f HEAD -- run.sh build_render.py kit tools schedule_copenhagen.json schedule_copenhagen_night.json city_copenhagen.json cities/copenhagen/traffic.json cities/copenhagen/story.json cities/copenhagen/palette.json cities/copenhagen/qa/fix hist_cph_kit.py data_copenhagen_src || { echo "STOP: i file di render sono cambiati dopo il GO. Chiedere in chat."; exit 4; }
+git merge-base --is-ancestor efb1ab3 HEAD || { echo "STOP: manca il commit efb1ab3 (codice vecchio)."; exit 3; }
+git diff --quiet efb1ab3 HEAD -- run.sh build_render.py kit tools schedule_copenhagen.json schedule_copenhagen_night.json city_copenhagen.json cities/copenhagen/traffic.json cities/copenhagen/story.json cities/copenhagen/palette.json cities/copenhagen/qa/fix hist_cph_kit.py data_copenhagen_src || { echo "STOP: i file di render sono cambiati dopo il GO. Chiedere in chat."; exit 4; }
 rm -rf out/full out/night 2>/dev/null
 nohup env CITY=copenhagen NOCOVER=1 bash run.sh full > /workspace/city3d/full.log 2>&1 &
 sleep 2; echo "lanciato, pid $!"
